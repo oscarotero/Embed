@@ -17,6 +17,7 @@ class OEmbed extends Provider {
 			$connection = curl_init($url);
 
 			curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 
 			$response = curl_exec($connection);

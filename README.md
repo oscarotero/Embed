@@ -3,6 +3,12 @@ Embed
 
 PHP library to get info and embed any web service or page (using oembed, opengraph, etc)
 
+Requirements:
+
+* PHP 5.3+
+* Curl library installed
+* A PSR-0 compatible autoloader class
+
 Usage:
 
 ```php
