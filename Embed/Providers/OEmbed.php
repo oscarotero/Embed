@@ -13,17 +13,7 @@ class OEmbed extends Provider {
 	}
 
 	protected function loadData ($url, $format) {
-		try {
-			$connection = curl_init($url);
-
-			curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
-			curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-
-			$response = curl_exec($connection);
-			curl_close($connection);
-
-		} catch (\Exception $E) {
+		if (($response = $this->loadContent($url)) === false) {
 			return false;
 		}
 

@@ -1,33 +1,11 @@
 <?php
 namespace Embed\Providers;
 
-class OpenGraph extends Provider {
-	public function __construct ($url) {
-		$this->url = $url;
-		$this->parameters = (object)array();
-
-		$this->loadData($url);
-	}
-
+class OpenGraph extends Html {
 	protected function loadData ($url) {
-		try {
-			$connection = curl_init($url);
-
-			curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
-			curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-
-			$response = curl_exec($connection);
-			curl_close($connection);
-
-			$errors = libxml_use_internal_errors(true);
-			$Html = new \DOMDocument();
-			$Html->loadHTML($response);
-			libxml_use_internal_errors($errors);
-		} catch (\Exception $E) {
+		if (($Html = parent::loadHtml($url)) === false) {
 			return false;
 		}
-		
 
 		$Tags = $Html->getElementsByTagName('meta');
 

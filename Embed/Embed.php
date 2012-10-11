@@ -39,8 +39,9 @@ class Embed {
 		'Jest',
 		'Majorleaguegaming',
 		'N23hq',
+		'Jsfiddle',
 		
-		'OpenGraph',
+		'Generic',
 		'Embedly',
 	);
 

@@ -36,5 +36,18 @@ abstract class Provider {
 	public function getUrl () {
 		return $this->url;
 	}
+
+	protected function loadContent ($url) {
+		$connection = curl_init($url);
+
+		curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+
+		$response = curl_exec($connection);
+		curl_close($connection);
+
+		return empty($response) ? false : $response;
+	}
 }
 ?>

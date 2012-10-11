@@ -2,18 +2,24 @@
 namespace Embed\Services;
 
 use Embed\Url;
-use Embed\Providers\OEmbed;
+use Embed\Providers\Provider;
+use Embed\Providers\OpenGraph;
 
-class Dotsub extends Service {
+class Jsfiddle extends Service {
 	static public function create (Url $Url) {
 		if (!$Url->match('http://jsfiddle.net/*')) {
 			return false;
 		}
 
-		$Url->setScheme('http');
+		return new static(new OpenGraph($Url->getUrl().'/'));
+	}
 
-		$Service = new static(new OpenGraph($Url->getUrl()));
+	public function __construct (Provider $Provider) {
+		parent::__construct($Provider);
 
-		$Service->setProperty('html', '<iframe style="width: 100%; height: 300px" src="'.$Url->getUrl().'embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>');
+		//Fix embed code
+		if (!$this->Provider->isEmpty()) {
+			$this->Provider->setParameter('html', '<iframe style="width: 100%; height: 300px" src="'.$this->getUrl().'embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>');
+		}
 	}
 }
