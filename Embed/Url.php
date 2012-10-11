@@ -109,6 +109,7 @@ class Url {
 
 	public function setParameter ($name, $value) {
 		$this->info['query'][$name] = $value;
+		$this->buildUrl();
 	}
 
 	public function getFragment () {

@@ -19,6 +19,6 @@ class Mobypicture extends Service {
 	}
 
 	public function getProviderName () {
-		return $this->Provider->getParameter('provider');
+		return $this->Provider->get('provider');
 	}
 }

@@ -3,37 +3,30 @@ namespace Embed\Services;
 
 use Embed\Url;
 use Embed\Providers\Provider;
-use Embed\Providers\OpenGraph as OpenGraphProvider;
-use Embed\Providers\Html as HtmlProvider;
+use Embed\Providers\OpenGraph;
 
 class Generic extends Service {
 	static public function create (Url $Url) {
-		$OpenGraph = new OpenGraphProvider($Url->getUrl());
-
-		if (!$OpenGraph->isEmpty()) {
-			return new static($OpenGraph);
-		}
-
-		return new HtmlProvider($Url->getUrl());
+		return new static(new OpenGraph($Url->getUrl()));
 	}
 
 	public function __construct (Provider $Provider) {
 		parent::__construct($Provider);
 
 		//Fix type
-		$this->Provider->setParameter('type', 'link');
+		$this->Provider->set('type', 'link');
 
 		//Fix provider name
-		if (!$this->Provider->hasParameter('site_name')) {
-			$this->Provider->setParameter('site_name', parse_url($this->getUrl(), PHP_URL_HOST));
+		if (!$this->Provider->has('site_name')) {
+			$this->Provider->set('site_name', parse_url($this->getUrl(), PHP_URL_HOST));
 		}
 	}
 
 	public function getImage () {
-		return $this->Provider->getParameter('image');
+		return $this->Provider->get('image');
 	}
 
 	public function getProviderName () {
-		return $this->Provider->getParameter('site_name');
+		return $this->Provider->get('site_name');
 	}
 }

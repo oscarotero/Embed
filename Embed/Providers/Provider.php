@@ -1,42 +1,86 @@
 <?php
+/**
+ * Abstract class with basic functions to all providers (data store, load content, etc)
+ */
 namespace Embed\Providers;
 
 abstract class Provider {
 	protected $url;
-	protected $parameters;
+	protected $parameters = array();
 
-	public function setParameter ($name, $value) {
-		$this->parameters->$name = $value;
+	
+	/**
+	 * Save a value
+	 * 
+	 * @param string $name Name of the value
+	 * @param string $value The value to save
+	 */
+	public function set ($name, $value) {
+		$this->parameters[$name] = $value;
 	}
 
-	public function getParameters () {
+
+	/**
+	 * Returns all stored values
+	 * 
+	 * @return array The values
+	 */
+	public function getAll () {
 		return $this->parameters;
 	}
 
-	public function getParameter ($name) {
-		return isset($this->parameters->$name) ? $this->parameters->$name : null;
+
+	/**
+	 * Get a value or null if not exists
+	 * 
+	 * @param string $name Value name
+	 * 
+	 * @return string/null
+	 */
+	public function get ($name) {
+		return isset($this->parameters[$name]) ? $this->parameters[$name] : null;
 	}
 
-	public function hasParameter ($name) {
-		return isset($this->parameters->$name);
+
+	/**
+	 * Check if a value exists
+	 * 
+	 * @param string $name Value name
+	 * 
+	 * @return boolean True if exists, false if not
+	 */
+	public function has ($name) {
+		return isset($this->parameters[$name]);
 	}
 
+
+	/**
+	 * Check if any value exists or the provider is empty
+	 * 
+	 * @return boolean True if is empty, false if not
+	 */
 	public function isEmpty () {
-		if (!isset($this->parameters)) {
-			return false;
-		}
-
-		foreach ($this->parameters as $parameter) {
-			return false;
-		}
-
-		return true;
+		return $this->parameters ? false : true;
 	}
 
+
+	/**
+	 * Returns the url of the provider
+	 * 
+	 * @return string The url
+	 */
 	public function getUrl () {
 		return $this->url;
 	}
 
+	
+	/**
+	 * Load the content of a url and return it
+	 * 
+	 * @param string $url The url to load
+	 * 
+	 * @return string The content of the url or false
+	 */
 	protected function loadContent ($url) {
 		$connection = curl_init($url);
 

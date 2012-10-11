@@ -11,7 +11,7 @@ abstract class Service {
 		$this->Provider = $Provider;
 
 		//Clear extra code
-		$html = $Provider->getParameter('html');
+		$html = $Provider->get('html');
 
 		if (isset($html)) {
 			if (strpos($html, '</iframe>') !== false) {
@@ -22,7 +22,7 @@ abstract class Service {
 				$html = preg_replace('|^.*(<embed.*</embed>).*$|', '$1', $html);
 			}
 
-			$Provider->setParameter('html', $html);
+			$Provider->set('html', $html);
 		}
 	}
 
@@ -51,23 +51,23 @@ abstract class Service {
 			file_put_contents($directory.$file, file_get_contents('http://icons.duckduckgo.com/i/'.$file));
 		}
 
-		$this->Provider->setParameter('icon', $file);
+		$this->Provider->set('icon', $file);
 
 		return $file;
 	}
 
 	public function getIcon () {
-		return $this->Provider->getParameter('icon');
+		return $this->Provider->get('icon');
 	}
 
 	//Dimensions
 
 	public function getWidth () {
-		return $this->Provider->getParameter('width');
+		return $this->Provider->get('width');
 	}
 
 	public function getHeight () {
-		return $this->Provider->getParameter('height');
+		return $this->Provider->get('height');
 	}
 
 	public function getAspectRatio () {
@@ -85,23 +85,23 @@ abstract class Service {
 	//Content info
 
 	public function getTitle () {
-		return $this->Provider->getParameter('title');
+		return $this->Provider->get('title');
 	}
 
 	public function getDescription () {
-		return $this->Provider->getParameter('description');
+		return $this->Provider->get('description');
 	}
 
 	public function getImage () {
 		if ($this->getType() === 'photo') {
-			return $this->Provider->getParameter('url') ?: $this->Provider->getParameter('thumbnail_url');
+			return $this->Provider->get('url') ?: $this->Provider->get('thumbnail_url');
 		}
 
-		return $this->Provider->getParameter('thumbnail_url');
+		return $this->Provider->get('thumbnail_url');
 	}
 
 	public function getEmbedCode () {
-		return $this->Provider->getParameter('html');
+		return $this->Provider->get('html');
 	}
 
 	public function getUrl () {
@@ -109,22 +109,22 @@ abstract class Service {
 	}
 
 	public function getType () {
-		return $this->Provider->getParameter('type');
+		return $this->Provider->get('type');
 	}
 
 	public function getAuthorName () {
-		return $this->Provider->getParameter('author_name');
+		return $this->Provider->get('author_name');
 	}
 
 	public function getAuthorUrl () {
-		return $this->Provider->getParameter('author_url');
+		return $this->Provider->get('author_url');
 	}
 
 	public function getProviderName () {
-		return $this->Provider->getParameter('provider_name');
+		return $this->Provider->get('provider_name');
 	}
 
 	public function getProviderUrl () {
-		return $this->Provider->getParameter('provider_url');
+		return $this->Provider->get('provider_url');
 	}
 }

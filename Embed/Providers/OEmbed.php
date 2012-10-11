@@ -1,10 +1,13 @@
 <?php
+/**
+ * Generic oembed provider.
+ * Load the oembed data of an url and store it
+ */
 namespace Embed\Providers;
 
 class OEmbed extends Provider {
 	public function __construct ($endPoint, $url, $format = 'json', $params = array()) {
 		$this->url = $url;
-		$this->parameters = (object)array();
 
 		$params['url'] = $url;
 		$params['format'] = $format;
@@ -18,12 +21,12 @@ class OEmbed extends Provider {
 		}
 
 		if ($format === 'json') {
-			$this->parameters = json_decode($response);
+			$this->parameters = (array)json_decode($response);
 		} else if ($format === 'xml') {
 			$Xml = new \SimpleXMLElement($response);
 
 			foreach ($Xml as $element) {
-				$this->parameters->{$element->getName()} = (string)$element;
+				$this->set($element->getName(), (string)$element);
 			}
 		} else {
 			throw new \Exception("No valid format specified");

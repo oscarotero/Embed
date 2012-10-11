@@ -16,7 +16,11 @@ class Viddler extends Service {
 	public function __construct (OEmbed $Provider) {
 		parent::__construct($Provider);
 
+		if ($this->Provider->isEmpty()) {
+			return false;
+		}
+
 		//Fix embed code
-		$Provider->setParameter('html', str_replace('http://www.viddler.com/v/', 'http://www.viddler.com/embed/', $Provider->getParameter('html')));
+		$Provider->set('html', str_replace('http://www.viddler.com/v/', 'http://www.viddler.com/embed/', $Provider->get('html')));
 	}
 }

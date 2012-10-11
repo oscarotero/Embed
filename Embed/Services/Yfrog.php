@@ -21,12 +21,14 @@ class Yfrog extends Service {
 	public function __construct (OEmbed $Provider) {
 		parent::__construct($Provider);
 
-		if (!$this->Provider->isEmpty()) {
-			//Fix thumbnail url
-			$Provider->setParameter('thumbnail_url', str_replace('/twitter.yfrog.com/', '/yfrog.com/', $Provider->getParameter('thumbnail_url')));
-
-			//Normalize type
-			$Provider->setParameter('type', 'photo');
+		if ($this->Provider->isEmpty()) {
+			return false;
 		}
+
+		//Fix thumbnail url
+		$Provider->set('thumbnail_url', str_replace('/twitter.yfrog.com/', '/yfrog.com/', $Provider->get('thumbnail_url')));
+
+		//Normalize type
+		$Provider->set('type', 'photo');
 	}
 }

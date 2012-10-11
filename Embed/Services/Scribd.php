@@ -16,11 +16,15 @@ class Scribd extends Service {
 	public function __construct (OEmbed $Provider) {
 		parent::__construct($Provider);
 
-		//Generate embed code
-		if (!$this->Provider->isEmpty() && !$this->Provider->hasParameter('html')) {
-			$embed_url = preg_replace('|^http://www\.scribd\.com/doc/([\d]+)/(.*)$|', 'http://www.scribd.com/embeds/$1/content', $Provider->getUrl());
+		if ($this->Provider->isEmpty()) {
+			return false;
+		}
 
-			$Provider->setParameter('html', '<iframe src="'.$embed_url.'" scrolling="no" width="100%" height="600" frameborder="0"></iframe>');
+		//Generate embed code
+		if (!$this->Provider->has('html')) {
+			$embed_url = preg_replace('|^http://www\.scribd\.com/doc/([\d]+)/(.*)$|', 'http://www.scribd.com/embeds/$1/content', $this->getUrl());
+
+			$Provider->set('html', '<iframe src="'.$embed_url.'" scrolling="no" width="100%" height="600" frameborder="0"></iframe>');
 		}
 	}
 }

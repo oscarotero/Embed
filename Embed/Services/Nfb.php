@@ -14,6 +14,6 @@ class Nfb extends Service {
 	}
 
 	public function getDescription () {
-		return $this->Provider->getParameter('video_description');
+		return $this->Provider->get('video_description');
 	}
 }
