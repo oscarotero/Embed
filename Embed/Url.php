@@ -1,18 +1,69 @@
 <?php
+/**
+ * Class to manipulate urls
+ */
 namespace Embed;
 
 class Url {
 	private $info;
 	private $url;
+	private $content;
 
+	
+	/**
+	 * Constructor. Sets the url
+	 * 
+	 * @param string $url The url value
+	 */
 	public function __construct ($url) {
 		$this->setUrl($url);
 	}
 
+	
+	/**
+	 * Magic function to print the url value
+	 */
 	public function __toString () {
 		return $this->getUrl();
 	}
 
+	
+	/**
+	 * Resolve the possible redirects for this url (for example bit.ly or any other url shortcutter)
+	 */
+	public function resolve () {
+		$connection = curl_init($this->url);
+
+		curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($connection, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+
+		$response = curl_exec($connection);
+		$this->setUrl(curl_getinfo($connection, CURLINFO_EFFECTIVE_URL));
+		$this->content = utf8_decode(trim($response));
+
+		curl_close($connection);
+	}
+
+
+	/**
+	 * Get the content of the url
+	 */
+	public function getContent () {
+		if (!isset($this->content)) {
+			$this->resolve();
+		}
+
+		return $this->content;
+	}
+
+
+	/**
+	 * Set a new url
+	 * 
+	 * @param string $url The url
+	 */
 	public function setUrl ($url) {
 		$this->info = parse_url($url);
 
@@ -35,10 +86,26 @@ class Url {
 		$this->buildUrl();
 	}
 
+
+	/**
+	 * Return the url
+	 * 
+	 * @return string The current url
+	 */
 	public function getUrl () {
 		return $this->url;
 	}
 
+
+	/**
+	 * Check if the url match with a specific pattern. The patterns only accepts * and ?
+	 * For example:
+	 * https?://youtube.com/* (any url http or https, with more after the latest "/")
+	 * 
+	 * @param string/array $pattern The pattern or an array with various patterns
+	 * 
+	 * @return boolean True if the url match, false if not
+	 */
 	public function match ($pattern) {
 		if (is_array($pattern)) {
 			foreach ($pattern as $p) {
@@ -55,28 +122,69 @@ class Url {
 		return (preg_match('|^'.$pattern.'$|i', $this->url) === 1) ? true : false;
 	}
 
+
+	/**
+	 * Return the scheme of the url (for example http, https, ftp, etc)
+	 * 
+	 * @return string The scheme or null
+	 */
 	public function getScheme () {
 		return isset($this->info['scheme']) ? $this->info['scheme'] : null;
 	}
 
+	
+	/**
+	 * Change the scheme of the url
+	 * 
+	 * @param string $scheme The new scheme
+	 */
 	public function setScheme ($scheme) {
 		$this->info['scheme'] = $scheme;
 		$this->buildUrl();
 	}
 
+
+	/**
+	 * Return the host of the url (for example google.com)
+	 * 
+	 * @return string The host or null
+	 */
 	public function getHost () {
 		return isset($this->info['host']) ? $this->info['host'] : null;
 	}
 
+
+	/**
+	 * Change the host of the url
+	 * 
+	 * @param string $host The new host
+	 */
 	public function setHost ($host) {
 		$this->info['host'] = $host;
 		$this->buildUrl();
 	}
 
+
+	/**
+	 * Return a specific directory in the path of the url
+	 * 
+	 * @param int $key The position of the subdirectory (0 based index)
+	 * 
+	 * @return string The directory or null
+	 */
 	public function getPath ($key = 0) {
 		return isset($this->info['path'][$key]) ? $this->info['path'][$key] : null;
 	}
 
+
+	/**
+	 * Check if the path has a specific directory
+	 * 
+	 * @param int $key The position of the directory (0-based index)
+	 * @param string $value The optional value of the directory (check not only if exists, but also if its value)
+	 * 
+	 * @return boolean True if the path has the directory, false if not
+	 */
 	public function hasPath ($key, $value = null) {
 		if (!isset($this->info['path'][$key])) {
 			return false;
@@ -89,6 +197,13 @@ class Url {
 		return true;
 	}
 
+
+	/**
+	 * Remove a portion of the path
+	 * 
+	 * @param int $offset The position to start to remove
+	 * @param int $length The number of directories to remove. If not specified, removes until the end
+	 */
 	public function splicePath ($offset, $length = null) {
 		if (isset($length)) {
 			array_splice($this->info['path'], $offset, $length);
@@ -99,23 +214,61 @@ class Url {
 		$this->buildUrl();
 	}
 
+
+	/**
+	 * Check if the url has a GET parameter
+	 * 
+	 * @param string $name The parameter name
+	 * 
+	 * @return boolean True if it exists, false if not
+	 */
 	public function hasParameter ($name) {
 		return isset($this->info['query'][$name]);
 	}
 
+
+	/**
+	 * Returns a GET parameter value
+	 * 
+	 * @param string $name The parameter name
+	 * 
+	 * @return string The parameter value or null
+	 */
 	public function getParameter ($name) {
 		return isset($this->info['query'][$name]) ? $this->info['query'][$name] : null;
 	}
 
-	public function setParameter ($name, $value) {
-		$this->info['query'][$name] = $value;
+
+	/**
+	 * Set a new GET parameter or modify an existing one
+	 * 
+	 * @param string $name The parameter name or an array of parameters
+	 * @param string $value The parameter value
+	 */
+	public function setParameter ($name, $value = null) {
+		if (is_array($name)) {
+			$this->info['query'] = empty($this->info['query']) ? $name : array_replace($this->info['query'], $name);
+		} else {
+			$this->info['query'][$name] = $value;
+		}
+		
 		$this->buildUrl();
 	}
 
+
+	/**
+	 * Return the url fragment
+	 * 
+	 * @return string The fragment value or null
+	 */
 	public function getFragment () {
 		return isset($this->info['fragment']) ? $this->info['fragment'] : null;
 	}
 
+
+	/**
+	 * Private function to regenerate the url after any change (scheme, host, parameters, etc)
+	 */
 	private function buildUrl () {
 		$url = '';
 
@@ -135,7 +288,10 @@ class Url {
 			$url .= '#'.$this->info['fragment'];
 		}
 
-		$this->url = $url;
+		if ($this->url !== $url) {
+			$this->url = $url;
+			$this->content = null;
+		}
 	}
 }
 ?>

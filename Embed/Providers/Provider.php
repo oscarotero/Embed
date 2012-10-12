@@ -72,26 +72,5 @@ abstract class Provider {
 	public function getUrl () {
 		return $this->url;
 	}
-
-	
-	/**
-	 * Load the content of a url and return it
-	 * 
-	 * @param string $url The url to load
-	 * 
-	 * @return string The content of the url or false
-	 */
-	protected function loadContent ($url) {
-		$connection = curl_init($url);
-
-		curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-
-		$response = curl_exec($connection);
-		curl_close($connection);
-
-		return empty($response) ? false : $response;
-	}
 }
 ?>

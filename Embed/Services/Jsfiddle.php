@@ -11,7 +11,7 @@ class Jsfiddle extends Service {
 			return false;
 		}
 
-		return new static(new OpenGraph($Url->getUrl().'/'));
+		return new static(new OpenGraph($Url->getUrl()));
 	}
 
 	public function __construct (Provider $Provider) {
@@ -22,6 +22,8 @@ class Jsfiddle extends Service {
 		}
 
 		//Fix embed code
-		$this->Provider->set('html', '<iframe style="width: 100%; height: 300px" src="'.$this->getUrl().'embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>');
+		$url = $this->getUrl();
+		$url .= (substr($url, -1) === '/') ? 'embedded/' : '/embedded/';
+		$this->Provider->set('html', '<iframe style="width: 100%; height: 300px" src="'.$url.'" allowfullscreen="allowfullscreen" frameborder="0"></iframe>');
 	}
 }

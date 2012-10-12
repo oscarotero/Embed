@@ -7,7 +7,7 @@ use Embed\Providers\OpenGraph;
 
 class Generic extends Service {
 	static public function create (Url $Url) {
-		return new static(new OpenGraph($Url->getUrl()));
+		return new static(new OpenGraph($Url));
 	}
 
 	public function __construct (Provider $Provider) {

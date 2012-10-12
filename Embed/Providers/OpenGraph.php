@@ -6,16 +6,18 @@
  */
 namespace Embed\Providers;
 
-class OpenGraph extends Provider {
-	public function __construct ($url) {
-		$this->url = $url;
+use Embed\Url;
 
-		$this->loadData($url);
+class OpenGraph extends Provider {
+	public function __construct (Url $Url) {
+		$this->url = $Url->getUrl();
+
+		$this->loadData($Url);
 	}
 
-	protected function loadData ($url) {
+	protected function loadData (Url $Url) {
 		try {
-			if (($response = $this->loadContent($url)) === false) {
+			if (($response = $Url->getContent()) === '') {
 				return false;
 			}
 
@@ -29,17 +31,11 @@ class OpenGraph extends Provider {
 
 		$Title = $Html->getElementsByTagName('title');
 
-		if ($Title || ($Title->length > 0)) {
+		if ($Title && ($Title->length > 0)) {
 			$this->set('title', $Title->item(0)->nodeValue);
 		}
 
-		$Tags = $Html->getElementsByTagName('meta');
-
-		if (!$Tags || ($Tags->length === 0)) {
-			return false;
-		}
-
-		foreach ($Tags as $Tag) {
+		foreach ($Html->getElementsByTagName('meta') as $Tag) {
 			if ($Tag->hasAttribute('name') && $Tag->getAttribute('name') === 'description' && !$this->has('description')) {
 				$this->set('description', $Tag->getAttribute('content'));
 				continue;

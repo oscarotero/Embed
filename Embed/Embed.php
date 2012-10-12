@@ -47,6 +47,7 @@ class Embed {
 
 	public static function create ($url) {
 		$Url = new Url($url);
+		$Url->resolve();
 
 		foreach (self::$services as $name) {
 			$service = call_user_func(array('Embed\\Services\\'.$name, 'create'), $Url, isset(self::$options[$name]) ? self::$options[$name] : array());

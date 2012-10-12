@@ -54,7 +54,7 @@ spl_autoload_register('autoload');
 	<body>
 		<form action="test.php">
 			<fieldset>
-				<label>Url to test: <input type="url" name="url"></label>
+				<label>Url to test: <input type="url" name="url" autofocus placeholder="http://"></label>
 				<button type="submit">Test</button>
 			</fieldset>
 		</form>

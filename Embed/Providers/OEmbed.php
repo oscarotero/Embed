@@ -5,6 +5,8 @@
  */
 namespace Embed\Providers;
 
+use Embed\Url;
+
 class OEmbed extends Provider {
 	public function __construct ($endPoint, $url, $format = 'json', $params = array()) {
 		$this->url = $url;
@@ -12,24 +14,33 @@ class OEmbed extends Provider {
 		$params['url'] = $url;
 		$params['format'] = $format;
 
-		$this->loadData($endPoint.'?'.http_build_query($params), $format);
+		$Url = new Url($endPoint);
+
+		$Url->setParameter($params);
+
+		$this->loadData($Url);
 	}
 
-	protected function loadData ($url, $format) {
-		if (($response = $this->loadContent($url)) === false) {
+	protected function loadData (Url $Url) {
+		if (($response = $Url->getContent()) === '') {
 			return false;
 		}
 
-		if ($format === 'json') {
-			$this->parameters = (array)json_decode($response);
-		} else if ($format === 'xml') {
-			$Xml = new \SimpleXMLElement($response);
+		switch ($Url->getParameter('format')) {
+			case 'json':
+				$this->parameters = (array)json_decode($response);
+				break;
 
-			foreach ($Xml as $element) {
-				$this->set($element->getName(), (string)$element);
-			}
-		} else {
-			throw new \Exception("No valid format specified");
+			case 'xml':
+				$Xml = new \SimpleXMLElement($response);
+
+				foreach ($Xml as $element) {
+					$this->set($element->getName(), (string)$element);
+				}
+			
+			default:
+				throw new \Exception("No valid format specified");
+				break;
 		}
 	}
 }
