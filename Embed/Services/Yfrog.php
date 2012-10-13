@@ -8,7 +8,7 @@ class Yfrog extends Service {
 	static public function create (Url $Url) {
 		$patterns = array(
 			'http://twitter.yfrog.com/*',
-			'http://www.yfrog.com/*',
+			'http://www.yfrog.com/*'
 		);
 
 		if (!$Url->match($patterns)) {

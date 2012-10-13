@@ -7,8 +7,8 @@ use Embed\Providers\OEmbed;
 class Kinomap extends Service {
 	static public function create (Url $Url) {
 		$patterns = array(
-			'http://www.kinomap.com/*kms*',
-			'http://kinomap.com/*kms*'
+			'http://www.kinomap.com/*',
+			'http://kinomap.com/*'
 		);
 
 		if (!$Url->match($patterns)) {

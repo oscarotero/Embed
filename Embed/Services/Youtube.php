@@ -6,14 +6,9 @@ use Embed\Providers\OEmbed;
 
 class Youtube extends Service {
 	static public function create (Url $Url) {
-		$patterns = array(
-			'http://www.youtube.com/watch*',
-			'https://www.youtube.com/watch*'
-		);
-
 		if ($Url->match('http://www.youtube.com/embed/*')) {
-			$Url = new Url('http://youtube.com/watch?v='.$Url->getPath(1));
-		} else if (!$Url->match($patterns) || !$Url->hasParameter('v')) {
+			$Url = new Url('http://youtube.com/watch?v='.$Url->getDirectory(1));
+		} else if (!$Url->match('https?://www.youtube.com/watch*') || !$Url->hasParameter('v')) {
 			return false;
 		}
 

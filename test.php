@@ -1,18 +1,20 @@
 <?php
 function autoload ($className) {
-    $className = ltrim($className, '\\');
-    $fileName  = '';
-    $namespace = '';
-    
-    if ($lastNsPos = strripos($className, '\\')) {
-        $namespace = substr($className, 0, $lastNsPos);
-        $className = substr($className, $lastNsPos + 1);
-        $fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
-    }
+	$className = ltrim($className, '\\');
+	$fileName  = '';
+	$namespace = '';
+	
+	if ($lastNsPos = strripos($className, '\\')) {
+		$namespace = substr($className, 0, $lastNsPos);
+		$className = substr($className, $lastNsPos + 1);
+		$fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
+	}
 
-    $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
+	$fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
 
-    require $fileName;
+	if (is_file($fileName)) {
+		require $fileName;
+	}
 }
 
 spl_autoload_register('autoload');
@@ -62,6 +64,12 @@ spl_autoload_register('autoload');
 		<?php if (!empty($_GET['url'])): ?>
 		<section>
 			<?php $Service = Embed\Embed::create($_GET['url']); ?>
+
+			<?php if ($Service === false): ?>
+
+			<p>The url is not valid!</p>
+			
+			<?php else: ?>
 
 			<table>
 				<tr>
@@ -121,7 +129,11 @@ spl_autoload_register('autoload');
 					<td><pre><?php echo htmlspecialchars(print_r($Service, true)); ?></pre></td>
 				</tr>
 			</table>
+
+			<?php endif; ?>
+
 		</section>
+		
 		<?php endif; ?>
 
 	</body>

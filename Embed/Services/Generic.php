@@ -13,13 +13,18 @@ class Generic extends Service {
 	public function __construct (Provider $Provider) {
 		parent::__construct($Provider);
 
+		$host = parse_url($this->getUrl(), PHP_URL_HOST);
+
 		//Fix type
 		$this->Provider->set('type', 'link');
 
 		//Fix provider name
 		if (!$this->Provider->has('site_name')) {
-			$this->Provider->set('site_name', parse_url($this->getUrl(), PHP_URL_HOST));
+			$this->Provider->set('site_name', $host);
 		}
+
+		//Fix provider url
+		$this->Provider->set('provider_url', 'http://'.$host);
 	}
 
 	public function getImage () {

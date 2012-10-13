@@ -8,6 +8,8 @@ class Url {
 	private $info;
 	private $url;
 	private $content;
+	private $contentType;
+	private $httpCode;
 
 	
 	/**
@@ -34,14 +36,16 @@ class Url {
 	public function resolve () {
 		$connection = curl_init($this->url);
 
-		curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($connection, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt($connection, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($connection, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($connection, CURLOPT_MAXREDIRS, 10);
 		curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 
-		$response = curl_exec($connection);
+		$this->content = utf8_decode(trim(curl_exec($connection)));
+		$this->httpCode = intval(curl_getinfo($connection, CURLINFO_HTTP_CODE));
+		$this->contentType = curl_getinfo($connection, CURLINFO_CONTENT_TYPE);
 		$this->setUrl(curl_getinfo($connection, CURLINFO_EFFECTIVE_URL));
-		$this->content = utf8_decode(trim($response));
 
 		curl_close($connection);
 	}
@@ -49,6 +53,8 @@ class Url {
 
 	/**
 	 * Get the content of the url
+	 * 
+	 * @return string The content or false
 	 */
 	public function getContent () {
 		if (!isset($this->content)) {
@@ -56,6 +62,48 @@ class Url {
 		}
 
 		return $this->content;
+	}
+
+
+	/**
+	 * Get the http code of the url
+	 * 
+	 * @return int The http code
+	 */
+	public function getHttpCode () {
+		if (!isset($this->content)) {
+			$this->resolve();
+		}
+
+		return $this->httpCode;
+	}
+
+
+	/**
+	 * Get the content-type of the url
+	 * 
+	 * @return string The content-type header or null
+	 */
+	public function getContentType () {
+		if (!isset($this->content)) {
+			$this->resolve();
+		}
+
+		return $this->contentType;
+	}
+
+
+	/**
+	 * Check if the url is valid or not
+	 * 
+	 * @return boolean True if it's valid, false if not
+	 */
+	public function isValid () {
+		if ($this->getHttpCode() !== 200) {
+			return false;
+		}
+
+		return true;
 	}
 
 
@@ -145,7 +193,7 @@ class Url {
 
 
 	/**
-	 * Return the host of the url (for example google.com)
+	 * Return the host of the url (for example: google.com)
 	 * 
 	 * @return string The host or null
 	 */
@@ -166,36 +214,43 @@ class Url {
 
 
 	/**
+	 * Return the domain of the url (for example: google)
+	 * 
+	 * @return string The domain or null
+	 */
+	public function getDomain () {
+		$host = $this->getHost();
+
+		if (!$host) {
+			return null;
+		}
+
+		$host = array_reverse(explode('.', $host));
+
+		switch (count($host)) {
+			case 1:
+				return $host[0];
+
+			case 2:
+				return $host[1];
+
+			default:
+				return ($host[1] === 'co') ? $host[2] : $host[1];
+		}
+	}
+
+
+	/**
 	 * Return a specific directory in the path of the url
 	 * 
 	 * @param int $key The position of the subdirectory (0 based index)
 	 * 
 	 * @return string The directory or null
 	 */
-	public function getPath ($key = 0) {
+	public function getDirectory ($key) {
 		return isset($this->info['path'][$key]) ? $this->info['path'][$key] : null;
 	}
 
-
-	/**
-	 * Check if the path has a specific directory
-	 * 
-	 * @param int $key The position of the directory (0-based index)
-	 * @param string $value The optional value of the directory (check not only if exists, but also if its value)
-	 * 
-	 * @return boolean True if the path has the directory, false if not
-	 */
-	public function hasPath ($key, $value = null) {
-		if (!isset($this->info['path'][$key])) {
-			return false;
-		}
-
-		if (isset($value)) {
-			return ($this->info['path'][$key] === $value) ? true : false;
-		}
-
-		return true;
-	}
 
 
 	/**
