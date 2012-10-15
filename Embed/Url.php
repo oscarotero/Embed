@@ -29,7 +29,7 @@ class Url {
 		return $this->getUrl();
 	}
 
-	
+
 	/**
 	 * Resolve the possible redirects for this url (for example bit.ly or any other url shortcutter)
 	 */
@@ -42,7 +42,14 @@ class Url {
 		curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 
-		$this->content = utf8_decode(trim(curl_exec($connection)));
+		$string = curl_exec($connection);
+
+		if (mb_detect_encoding($string, 'UTF-8', true) === TRUE) {
+			$string = utf8_decode($string);
+		}
+
+		$this->content = trim($string);
+
 		$this->httpCode = intval(curl_getinfo($connection, CURLINFO_HTTP_CODE));
 		$this->contentType = curl_getinfo($connection, CURLINFO_CONTENT_TYPE);
 		$this->setUrl(curl_getinfo($connection, CURLINFO_EFFECTIVE_URL));
