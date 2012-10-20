@@ -44,7 +44,7 @@ class Url {
 
 		$string = curl_exec($connection);
 
-		if (mb_detect_encoding($string, 'UTF-8', true) === TRUE) {
+		if ((mb_detect_encoding($string) === 'UTF-8') && mb_check_encoding($string, 'UTF-8')) {
 			$string = utf8_decode($string);
 		}
 
