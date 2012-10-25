@@ -102,7 +102,7 @@ abstract class Service {
 
 	public function saveImage ($directory, $replace = false) {
 		if (($image = $this->getImage())) {
-			$file = base64_encode($image).'.'.pathinfo($image, PATHINFO_EXTENSION);
+			$file = base64_encode($image).'.'.pathinfo(parse_url($image, PHP_URL_PATH), PATHINFO_EXTENSION);
 
 			if (self::saveFile($image, $directory, $file, $replace) === true) {
 				$this->Provider->set('image', $file);
