@@ -7,6 +7,18 @@ use Embed\Providers\Provider;
 abstract class Service {
 	protected $Provider;
 
+	private static function saveFile ($url, $directory, $file, $replace) {
+		if (!is_file($directory.$file) || $replace === true) {
+			if (!is_dir($directory)) {
+				mkdir($directory, 0777, true);
+			}
+
+			return (file_put_contents($directory.$file, file_get_contents($url)) === false) ? false : true;
+		}
+
+		return true;
+	}
+
 	public function __construct (Provider $Provider) {
 		$this->Provider = $Provider;
 
@@ -43,17 +55,13 @@ abstract class Service {
 	public function saveIcon ($directory, $replace = false) {
 		$file = parse_url($this->getUrl(), PHP_URL_HOST).'.ico';
 
-		if (!is_file($directory.$file) || $replace === true) {
-			if (!is_dir($directory)) {
-				mkdir($directory, 0777, true);
-			}
+		if (self::saveFile("http://icons.duckduckgo.com/i/$file", $directory, $file, $replace) === true) {
+			$this->Provider->set('icon', $file);
 
-			file_put_contents($directory.$file, file_get_contents('http://icons.duckduckgo.com/i/'.$file));
+			return true;
 		}
 
-		$this->Provider->set('icon', $file);
-
-		return $file;
+		return false;
 	}
 
 	public function getIcon () {
@@ -92,7 +100,25 @@ abstract class Service {
 		return $this->Provider->get('description');
 	}
 
+	public function saveImage ($directory, $replace = false) {
+		if (($image = $this->getImage())) {
+			$file = base64_encode($image).'.'.pathinfo($image, PATHINFO_EXTENSION);
+
+			if (self::saveFile($image, $directory, $file, $replace) === true) {
+				$this->Provider->set('image', $file);
+
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	public function getImage () {
+		if ($this->Provider->has('image')) {
+			return $this->Provider->get('image');
+		}
+
 		if ($this->getType() === 'photo') {
 			return $this->Provider->get('url') ?: $this->Provider->get('thumbnail_url');
 		}
