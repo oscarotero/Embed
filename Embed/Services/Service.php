@@ -13,10 +13,10 @@ abstract class Service {
 				mkdir($directory, 0777, true);
 			}
 
-			return (file_put_contents($directory.$file, file_get_contents($url)) === false) ? false : true;
+			return (file_put_contents($directory.$file, file_get_contents($url)) === false) ? false : $file;
 		}
 
-		return true;
+		return $file;
 	}
 
 	public function __construct (Provider $Provider) {
@@ -54,8 +54,9 @@ abstract class Service {
 
 	public function saveIcon ($directory, $replace = false) {
 		$file = parse_url($this->getUrl(), PHP_URL_HOST).'.ico';
+		$file = self::saveFile("http://icons.duckduckgo.com/i/$file", $directory, $file, $replace);
 
-		if (self::saveFile("http://icons.duckduckgo.com/i/$file", $directory, $file, $replace) === true) {
+		if ($file !== false) {
 			$this->Provider->set('icon', $file);
 
 			return true;
@@ -102,9 +103,35 @@ abstract class Service {
 
 	public function saveImage ($directory, $replace = false) {
 		if (($image = $this->getImage())) {
-			$file = base64_encode($image).'.'.pathinfo(parse_url($image, PHP_URL_PATH), PATHINFO_EXTENSION);
+			$file = base64_encode($image);
 
-			if (self::saveFile($image, $directory, $file, $replace) === true) {
+			try {
+				$info = getimagesize($image);
+			} catch (\Exception $Exception) {
+				return false;
+			}
+
+			switch ($info[2]) {
+				case IMAGETYPE_GIF:
+					$file .= '.gif';
+					break;
+
+				case IMAGETYPE_JPEG:
+					$file .= '.jpg';
+					break;
+
+				case IMAGETYPE_PNG:
+					$file .= '.png';
+					break;
+
+				case IMAGETYPE_ICO:
+					$file .= '.ico';
+					break;
+			}
+
+			$file = self::saveFile($image, $directory, $file, $replace);
+
+			if ($file !== false) {
 				$this->Provider->set('image', $file);
 
 				return true;
