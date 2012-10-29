@@ -44,6 +44,12 @@ class OpenGraph extends Provider {
 			if ($Tag->hasAttribute('property') && (strpos($Tag->getAttribute('property'), 'og:') === 0)) {
 				$name = strtr(substr($Tag->getAttribute('property'), 3), '-', '_');
 				$this->set($name, $Tag->getAttribute('content'));
+				continue;
+			}
+
+			if ($Tag->hasAttribute('name') && (strpos($Tag->getAttribute('name'), 'og:') === 0)) {
+				$name = strtr(substr($Tag->getAttribute('name'), 3), '-', '_');
+				$this->set($name, $Tag->getAttribute('content'));
 			}
 		}
 	}
