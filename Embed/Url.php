@@ -48,11 +48,10 @@ class Url {
 			$string = utf8_decode($string);
 		}
 
-		$this->content = trim($string);
-
 		$this->httpCode = intval(curl_getinfo($connection, CURLINFO_HTTP_CODE));
 		$this->contentType = curl_getinfo($connection, CURLINFO_CONTENT_TYPE);
 		$this->setUrl(curl_getinfo($connection, CURLINFO_EFFECTIVE_URL));
+		$this->content = trim($string);
 
 		curl_close($connection);
 	}
@@ -64,7 +63,7 @@ class Url {
 	 * @return string The content or false
 	 */
 	public function getContent () {
-		if (!isset($this->content)) {
+		if ($this->content === null) {
 			$this->resolve();
 		}
 

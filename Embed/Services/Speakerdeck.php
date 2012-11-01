@@ -6,7 +6,7 @@ use Embed\Providers\OEmbed;
 
 class Speakerdeck extends Service {
 	static public function create (Url $Url) {
-		if (!$Url->match('https://speakerdeck.com/u/*')) {
+		if (!$Url->match('https://speakerdeck.com/*')) {
 			return false;
 		}
 
