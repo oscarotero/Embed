@@ -23,6 +23,8 @@ class Html extends Provider {
 			return false;
 		}
 
+		$urlBase = $Url->getScheme().'://'.$Url->getHost();
+
 		foreach ($Html->getElementsByTagName('link') as $Link) {
 			if ($Link->hasAttribute('rel') && $Link->hasAttribute('href')) {
 				$rel = trim(strtolower($Link->getAttribute('rel')));
@@ -31,12 +33,17 @@ class Html extends Provider {
 					$href = trim($Link->getAttribute('href'));
 
 					if (strpos($href, '://') === false) {
-						$href = $Url->getScheme().'://'.$Url->getHost().$href;
+						$href = $urlBase.$href;
 					}
 
 					$this->set('icon', $href);
 				}
 			}
+		}
+
+		if (!$this->get('icon') && ($ch = curl_init($urlBase.'/favicon.ico')) !== false) {
+			$this->set('icon', $urlBase.'/favicon.ico');
+			curl_close($ch);
 		}
 
 		$Title = $Html->getElementsByTagName('title');
