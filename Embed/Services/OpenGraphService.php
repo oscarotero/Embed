@@ -34,7 +34,7 @@ abstract class OpenGraphService {
 		$this->title = $this->OEmbed->get('title') ?: $this->Html->get('title');
 		$this->description = $this->OEmbed->get('description') ?: $this->Html->get('description');
 		$this->code = $this->OEmbed->get('html');
-		$this->url = $this->Url->getUrl();
+		$this->url = $this->OpenGraph->get('url') ?: $this->Html->get('canonical') ?: $this->Url->getUrl();
 		$this->type = $this->OEmbed->get('type');
 		$this->authorName = $this->OEmbed->get('author_name');
 		$this->authorUrl = $this->OEmbed->get('author_url');

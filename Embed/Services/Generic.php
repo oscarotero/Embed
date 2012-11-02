@@ -26,7 +26,7 @@ class Generic extends Service {
 	protected function setData () {
 		$this->title = $this->OpenGraph->get('title') ?: $this->TwitterCards->get('title') ?: $this->Html->get('title');
 		$this->description = $this->OpenGraph->get('description') ?: $this->TwitterCards->get('description') ?: $this->Html->get('description');
-		$this->url = $this->OpenGraph->get('url') ?: $this->TwitterCards->get('url') ?: $this->Url->getUrl();
+		$this->url = $this->OpenGraph->get('url') ?: $this->TwitterCards->get('url') ?: $this->Html->get('canonical') ?: $this->Url->getUrl();
 		$this->type = 'link';
 		$this->image = $this->OpenGraph->get('image') ?: $this->TwitterCards->get('image');
 

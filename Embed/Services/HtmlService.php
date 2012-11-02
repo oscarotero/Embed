@@ -28,7 +28,7 @@ abstract class HtmlService extends Service {
 	protected function setData () {
 		$this->title = $this->Html->get('title');
 		$this->description = $this->Html->get('description');
-		$this->url = $this->Url->getUrl();
+		$this->url = $this->Html->get('canonical') ?: $this->Url->getUrl();
 		$this->type = 'link';
 
 		$host = parse_url($this->url, PHP_URL_HOST);

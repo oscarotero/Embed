@@ -28,15 +28,16 @@ class Html extends Provider {
 		foreach ($Html->getElementsByTagName('link') as $Link) {
 			if ($Link->hasAttribute('rel') && $Link->hasAttribute('href')) {
 				$rel = trim(strtolower($Link->getAttribute('rel')));
+				$href = trim($Link->getAttribute('href'));
+
+				if (strpos($href, '://') === false) {
+					$href = $urlBase.$href;
+				}
 
 				if ($rel === 'shortcut icon' || $rel === 'icon') {
-					$href = trim($Link->getAttribute('href'));
-
-					if (strpos($href, '://') === false) {
-						$href = $urlBase.$href;
-					}
-
 					$this->set('icon', $href);
+				} else if ($rel === 'canonical') {
+					$this->set('canonical', $href);
 				}
 			}
 		}
