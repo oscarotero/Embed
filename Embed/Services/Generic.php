@@ -29,7 +29,6 @@ class Generic extends Service {
 		$this->image = $this->OpenGraph->get('image');
 
 		if ($this->image) {
-			$this->type = 'photo';
 			$this->width = $this->OpenGraph->get('image:width');
 			$this->height = $this->OpenGraph->get('image:height');
 		}
