@@ -130,7 +130,7 @@ spl_autoload_register('autoload');
 				</tr>
 				<tr>
 					<th>Object</th>
-					<td><pre><?php echo htmlspecialchars(print_r($Service, true)); ?></pre></td>
+					<td><pre><?php echo htmlspecialchars(print_r($Service, true), ENT_IGNORE); ?></pre></td>
 				</tr>
 			</table>
 

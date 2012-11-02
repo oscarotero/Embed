@@ -9,12 +9,6 @@ use Embed\Url;
 
 class TwitterCards extends Provider {
 	public function __construct (Url $Url) {
-		$this->url = $Url->getUrl();
-
-		$this->loadData($Url);
-	}
-
-	protected function loadData (Url $Url) {
 		try {
 			if (($response = $Url->getContent()) === '') {
 				return false;
