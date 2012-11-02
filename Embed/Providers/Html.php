@@ -30,7 +30,9 @@ class Html extends Provider {
 				$rel = trim(strtolower($Link->getAttribute('rel')));
 				$href = trim($Link->getAttribute('href'));
 
-				if (strpos($href, '://') === false) {
+				if (strpos($href, '//') === 0) {
+					$href = $Url->getScheme().':'.$href;
+				} else if (strpos($href, '://') === false) {
 					$href = $urlBase.$href;
 				}
 
