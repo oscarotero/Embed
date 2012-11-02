@@ -27,8 +27,18 @@ class Generic extends Service {
 		$this->title = $this->OpenGraph->get('title') ?: $this->TwitterCards->get('title') ?: $this->Html->get('title');
 		$this->description = $this->OpenGraph->get('description') ?: $this->TwitterCards->get('description') ?: $this->Html->get('description');
 		$this->url = $this->OpenGraph->get('url') ?: $this->TwitterCards->get('url') ?: $this->Html->get('canonical') ?: $this->Url->getUrl();
-		$this->type = 'link';
 		$this->image = $this->OpenGraph->get('image') ?: $this->TwitterCards->get('image') ?: $this->Html->get('image_src');
+
+		//Detect type
+		$this->type = $this->OpenGraph->get('type');
+
+		if (strpos($this->type, ':') !== false) {
+			$this->type = substr(strrchr($this->type, ':'), 1);
+		}
+
+		if (!$this->type || !in_array($this->type, array('video', 'photo', 'link', 'rich'))) {
+			$this->type = 'link';
+		}
 
 		if ($this->image) {
 			$this->width = $this->OpenGraph->get('image:width');
