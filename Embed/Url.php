@@ -153,23 +153,25 @@ class Url {
 
 	/**
 	 * Check if the url match with a specific pattern. The patterns only accepts * and ?
-	 * For example:
-	 * https?://youtube.com/* (any url http or https, with more after the latest "/")
 	 * 
-	 * @param array $pattern The patterns to check
+	 * @param string/array $pattern The pattern or an array with various patterns
 	 * 
-	 * @return boolean True if the url match with one of the patterns, false if not
+	 * @return boolean True if the url match, false if not
 	 */
-	public function match (array $pattern) {
-		foreach ($pattern as $pattern) {
-			$pattern = str_replace(array('\\*', '\\?'), array('.+', '?'), preg_quote($pattern, '|'));
-
-			if (preg_match('|^'.$pattern.'$|i', $this->url) === 1) {
-				return true;
+	public function match ($pattern) {
+		if (is_array($pattern)) {
+			foreach ($pattern as $p) {
+				if ($this->match($p) === true) {
+					return true;
+				}
 			}
+
+			return false;
 		}
 
-		return false;
+		$pattern = str_replace(array('\\*', '\\?'), array('.+', '?'), preg_quote($pattern, '|'));
+
+		return (preg_match('|^'.$pattern.'$|i', $this->url) === 1) ? true : false;
 	}
 
 
