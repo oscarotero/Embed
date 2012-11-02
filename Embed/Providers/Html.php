@@ -34,10 +34,16 @@ class Html extends Provider {
 					$href = $urlBase.$href;
 				}
 
-				if ($rel === 'shortcut icon' || $rel === 'icon') {
-					$this->set('icon', $href);
-				} else if ($rel === 'canonical') {
-					$this->set('canonical', $href);
+				switch ($rel) {
+					case 'shortcut icon':
+						$this->set('icon', $href);
+						break;
+
+					case 'icon':
+					case 'canonical':
+					case 'image_src':
+						$this->set($rel, $href);
+						break;
 				}
 			}
 		}
