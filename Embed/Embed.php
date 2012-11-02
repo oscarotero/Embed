@@ -26,11 +26,15 @@ class Embed {
 			$class = 'N'.$class;
 		}
 
-		if (class_exists($namespace.$class)) {
-			$service = call_user_func(array($namespace.$class, 'create'), $Url, isset(self::$options[$class]) ? self::$options[$class] : array());
+		$fullClass = $namespace.$class;
 
-			if ($service && $service->hasData()) {
-				return $service;
+		if (class_exists($fullClass)) {
+			if (($ServiceUrl = call_user_func(array($fullClass, 'check'), $Url)) !== false) {
+				$Service = new $fullClass($ServiceUrl);
+
+				if ($Service->hasData()) {
+					return $Service;
+				}
 			}
 		}
 
@@ -39,10 +43,16 @@ class Embed {
 				continue;
 			}
 
-			$service = call_user_func(array($namespace.$name, 'create'), $Url, isset(self::$options[$name]) ? self::$options[$name] : array());
+			$fullClass = $namespace.$name;
 
-			if ($service && $service->hasData()) {
-				return $service;
+			if (class_exists($fullClass)) {
+				if (($ServiceUrl = call_user_func(array($fullClass, 'check'), $Url)) !== false) {
+					$Service = new $fullClass($ServiceUrl);
+
+					if ($Service->hasData()) {
+						return $Service;
+					}
+				}
 			}
 		}
 

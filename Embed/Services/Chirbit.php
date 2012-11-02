@@ -1,19 +1,19 @@
 <?php
 namespace Embed\Services;
 
-use Embed\Url;
-use Embed\Providers\OEmbed;
+class Chirbit extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://chirb.it/oembed.json',
+			'patterns' => array(
+				'http://chirb.it/*'
+			)
+		)
+	);
 
-class Chirbit extends Service {
-	static public function create (Url $Url) {
-		if (!$Url->match('http://chirb.it/*')) {
-			return false;
-		}
+	protected function setData () {
+		parent::setData();
 
-		return new static(new OEmbed('http://chirb.it/oembed.json', $Url->getUrl()));
-	}
-
-	public function getImage () {
-		return null;
+		$this->image = null;
 	}
 }

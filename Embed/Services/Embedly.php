@@ -2,16 +2,22 @@
 namespace Embed\Services;
 
 use Embed\Url;
-use Embed\Providers\OEmbed;
 
-class Embedly extends Service {
-	static public function create (Url $Url, array $options) {
-		if (isset($options['key'])) {
-			return new static(new OEmbed('http://api.embed.ly/1/oembed', $Url->getUrl(), 'json', array(
-				'key' => $options['key']
-			)));
+class Embedly extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://api.embed.ly/1/oembed',
+			'params' => array(
+				'key' => null
+			)
+		)
+	);
+
+	static public function check (Url $Url) {
+		if (!isset(static::$settings['oembed']['params']['key'])) {
+			return false;
 		}
 
-		return false;
+		return $Url;
 	}
 }

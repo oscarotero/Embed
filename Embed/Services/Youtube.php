@@ -2,16 +2,24 @@
 namespace Embed\Services;
 
 use Embed\Url;
-use Embed\Providers\OEmbed;
 
-class Youtube extends Service {
-	static public function create (Url $Url) {
+class Youtube extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://www.youtube.com/oembed',
+			'format' => 'json'
+		)
+	);
+
+	static public function check (Url $Url) {
 		if ($Url->match('http://www.youtube.com/embed/*')) {
-			$Url = new Url('http://youtube.com/watch?v='.$Url->getDirectory(1));
-		} else if (!$Url->match('https?://www.youtube.com/watch*') || !$Url->hasParameter('v')) {
-			return false;
+			return new Url('http://youtube.com/watch?v='.$Url->getDirectory(1));
 		}
 
-		return new static(new OEmbed('http://www.youtube.com/oembed', $Url->getUrl()));
+		if ($Url->match('https?://www.youtube.com/watch*') && $Url->hasParameter('v')) {
+			return $Url;
+		}
+
+		return false;
 	}
 }

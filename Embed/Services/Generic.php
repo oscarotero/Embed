@@ -2,36 +2,41 @@
 namespace Embed\Services;
 
 use Embed\Url;
-use Embed\Providers\Provider;
+use Embed\Providers\Html;
 use Embed\Providers\OpenGraph;
 
 class Generic extends Service {
-	static public function create (Url $Url) {
-		return new static(new OpenGraph($Url));
+	public function __construct (Url $Url) {
+		$this->Url = $Url;
+		$this->Html = new Html($Url);
+
+		if (!$this->Html->isEmpty()) {
+			$this->OpenGraph = new OpenGraph($Url);
+
+			$this->setData();
+		}
 	}
 
-	public function __construct (Provider $Provider) {
-		parent::__construct($Provider);
+	public function hasData () {
+		return $this->Html->isEmpty() ? false : true;
+	}
 
-		$host = parse_url($this->getUrl(), PHP_URL_HOST);
+	protected function setData () {
+		$this->title = $this->OpenGraph->get('title') ?: $this->Html->get('title');
+		$this->description = $this->OpenGraph->get('description') ?: $this->Html->get('description');
+		$this->url = $this->OpenGraph->get('url') ?: $this->Url->getUrl();
+		$this->type = 'link';
+		$this->image = $this->OpenGraph->get('image');
 
-		//Fix type
-		$this->Provider->set('type', 'link');
-
-		//Fix provider name
-		if (!$this->Provider->has('site_name')) {
-			$this->Provider->set('site_name', $host);
+		if ($this->image) {
+			$this->type = 'photo';
+			$this->width = $this->OpenGraph->get('image:width');
+			$this->height = $this->OpenGraph->get('image:height');
 		}
 
-		//Fix provider url
-		$this->Provider->set('provider_url', 'http://'.$host);
-	}
-
-	public function getImage () {
-		return $this->Provider->get('image');
-	}
-
-	public function getProviderName () {
-		return $this->Provider->get('site_name');
+		$host = parse_url($this->url, PHP_URL_HOST);
+		$this->providerName = $host;
+		$this->providerUrl = "http://$host";
+		$this->providerIcon = $this->Html->get('icon');
 	}
 }

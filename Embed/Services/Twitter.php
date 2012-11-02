@@ -2,16 +2,22 @@
 namespace Embed\Services;
 
 use Embed\Url;
-use Embed\Providers\OEmbed;
 
-class Twitter extends Service {
-	static public function create (Url $Url) {
-		if (!$Url->match('https?://twitter.com/*/status/*')) {
-			return false;
+class Twitter extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'https://api.twitter.com/1/statuses/oembed.json',
+			'patterns' => array(
+				'https?://twitter.com/*/status/*'
+			)
+		)
+	);
+
+	static public function check (Url $Url) {
+		if (($Url = parent::check($Url))) {
+			$Url->splicePath(3);
 		}
 
-		$Url->splicePath(3);
-
-		return new static(new OEmbed('https://api.twitter.com/1/statuses/oembed.json', $Url->getUrl()));
+		return $Url;
 	}
 }

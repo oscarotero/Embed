@@ -8,27 +8,27 @@ namespace Embed\Providers;
 use Embed\Url;
 
 class OEmbed extends Provider {
-	public function __construct ($endPoint, $url, $format = 'json', $params = array()) {
-		$this->url = $url;
+	public function __construct (Url $Url, array $settings) {
+		$format = isset($settings['format']) ? $settings['format'] : 'json';
 
-		$params['url'] = $url;
+		$params = isset($settings['params']) ? $settings['params'] : array();
+		$params['url'] = $Url->getUrl();
 		$params['format'] = $format;
 
-		$Url = new Url($endPoint);
+		$EndPoint = new Url($settings['endPoint']);
+		$EndPoint->setParameter($params);
 
-		$Url->setParameter($params);
-
-		$this->loadData($Url);
-	}
-
-	protected function loadData (Url $Url) {
-		if (($response = $Url->getContent()) === '') {
+		if (($response = $EndPoint->getContent()) === '') {
 			return false;
 		}
 
-		switch ($Url->getParameter('format')) {
+		switch ($format) {
 			case 'json':
-				$this->parameters = (array)json_decode($response);
+				$parameters = (array)json_decode($response);
+
+				if (empty($parameters['Error'])) {
+					$this->parameters = $parameters;
+				}
 				break;
 
 			case 'xml':
@@ -37,6 +37,7 @@ class OEmbed extends Provider {
 				foreach ($Xml as $element) {
 					$this->set($element->getName(), (string)$element);
 				}
+				break;
 			
 			default:
 				throw new \Exception("No valid format specified");

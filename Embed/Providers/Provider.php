@@ -5,7 +5,6 @@
 namespace Embed\Providers;
 
 abstract class Provider {
-	protected $url;
 	protected $parameters = array();
 
 	
@@ -15,8 +14,12 @@ abstract class Provider {
 	 * @param string $name Name of the value
 	 * @param string $value The value to save
 	 */
-	public function set ($name, $value) {
-		$this->parameters[$name] = $value;
+	public function set ($name, $value = null) {
+		if (($value === null) && is_array($name)) {
+			$this->parameters = array_replace($this->parameters, $name);
+		} else {
+			$this->parameters[$name] = $value;
+		}
 	}
 
 

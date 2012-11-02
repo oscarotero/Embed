@@ -2,16 +2,22 @@
 namespace Embed\Services;
 
 use Embed\Url;
-use Embed\Providers\OEmbed;
 
-class Dotsub extends Service {
-	static public function create (Url $Url) {
-		if (!$Url->match('https?://dotsub.com/view/*')) {
-			return false;
+class Dotsub extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://dotsub.com/services/oembed',
+			'patterns' => array(
+				'https?://dotsub.com/view/*'
+			)
+		)
+	);
+
+	static public function check (Url $Url) {
+		if (($Url = parent::check($Url))) {
+			$Url->setScheme('http');
 		}
 
-		$Url->setScheme('http');
-
-		return new static(new OEmbed('http://dotsub.com/services/oembed', $Url->getUrl()));
+		return $Url;
 	}
 }

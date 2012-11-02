@@ -1,24 +1,20 @@
 <?php
 namespace Embed\Services;
 
-use Embed\Url;
-use Embed\Providers\OEmbed;
+class Mobypicture extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://api.mobypicture.com/oEmbed',
+			'patterns' => array(
+				'http://www.mobypicture.com/user/*/view/*',
+				'http://moby.to/*'
+			)
+		)
+	);
 
-class Mobypicture extends Service {
-	static public function create (Url $Url) {
-		$patterns = array(
-			'http://www.mobypicture.com/user/*/view/*',
-			'http://moby.to/*'
-		);
+	protected function setData () {
+		parent::setData();
 
-		if (!$Url->match($patterns)) {
-			return false;
-		}
-
-		return new static(new OEmbed('http://api.mobypicture.com/oEmbed', $Url->getUrl()));
-	}
-
-	public function getProviderName () {
-		return $this->Provider->get('provider');
+		$this->providerName = $this->OEmbed->get('provider');
 	}
 }

@@ -1,15 +1,13 @@
 <?php
 namespace Embed\Services;
 
-use Embed\Url;
-use Embed\Providers\OEmbed;
-
-class Soundcloud extends Service {
-	static public function create (Url $Url) {
-		if (!$Url->match('http://soundcloud.com/*')) {
-			return false;
-		}
-
-		return new static(new OEmbed('http://soundcloud.com/oembed', $Url->getUrl()));
-	}
+class Soundcloud extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://soundcloud.com/oembed',
+			'patterns' => array(
+				'http://soundcloud.com/*'
+			)
+		)
+	);
 }

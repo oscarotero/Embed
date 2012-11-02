@@ -1,19 +1,13 @@
 <?php
 namespace Embed\Services;
 
-use Embed\Url;
-use Embed\Providers\OEmbed;
-
-class Github extends Service {
-	static public function create (Url $Url) {
-		$patterns = array(
-			'https://gist.github.com/*'
-		);
-
-		if (!$Url->match($patterns)) {
-			return false;
-		}
-
-		return new static(new OEmbed('https://github.com/api/oembed', $Url->getUrl()));
-	}
+class Github extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'https://github.com/api/oembed',
+			'patterns' => array(
+				'https://gist.github.com/*'
+			)
+		)
+	);
 }

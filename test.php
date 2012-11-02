@@ -74,55 +74,59 @@ spl_autoload_register('autoload');
 			<table>
 				<tr>
 					<th>Title</th>
-					<td><?php echo $Service->getTitle(); ?></td>
+					<td><?php echo $Service->title; ?></td>
 				</tr>
 				<tr>
 					<th>Description</th>
-					<td><?php echo $Service->getDescription(); ?></td>
+					<td><?php echo $Service->description; ?></td>
 				</tr>
 				<tr>
 					<th>Image</th>
-					<td><img src="<?php echo $Service->getImage(); ?>"></td>
+					<td><img src="<?php echo $Service->image; ?>"></td>
 				</tr>
 				<tr>
 					<th>Embed code</th>
-					<td><?php echo $Service->getEmbedCode(); ?></td>
+					<td><?php echo $Service->code; ?></td>
 				</tr>
 				<tr>
 					<th>Url</th>
-					<td><?php echo $Service->getUrl(); ?></td>
+					<td><?php echo $Service->url; ?></td>
 				</tr>
 				<tr>
 					<th>Type</th>
-					<td><?php echo $Service->getType(); ?></td>
+					<td><?php echo $Service->type; ?></td>
 				</tr>
 				<tr>
 					<th>Author name</th>
-					<td><?php echo $Service->getAuthorName(); ?></td>
+					<td><?php echo $Service->authorName; ?></td>
 				</tr>
 				<tr>
 					<th>Author url</th>
-					<td><?php echo $Service->getAuthorUrl(); ?></td>
+					<td><?php echo $Service->authorUrl; ?></td>
+				</tr>
+				<tr>
+					<th>Provider icon</th>
+					<td><img src="<?php echo $Service->providerIcon; ?>"></td>
 				</tr>
 				<tr>
 					<th>Provider name</th>
-					<td><?php echo $Service->getProviderName(); ?></td>
+					<td><?php echo $Service->providerName; ?></td>
 				</tr>
 				<tr>
 					<th>Provider url</th>
-					<td><?php echo $Service->getProviderUrl(); ?></td>
+					<td><?php echo $Service->providerUrl; ?></td>
 				</tr>
 				<tr>
 					<th>Width</th>
-					<td><?php echo $Service->getWidth(); ?></td>
+					<td><?php echo $Service->width; ?></td>
 				</tr>
 				<tr>
 					<th>Height</th>
-					<td><?php echo $Service->getHeight(); ?></td>
+					<td><?php echo $Service->height; ?></td>
 				</tr>
 				<tr>
 					<th>Aspect ratio</th>
-					<td><?php echo $Service->getAspectRatio(); ?></td>
+					<td><?php echo $Service->aspectRatio; ?></td>
 				</tr>
 				<tr>
 					<th>Object</th>

@@ -1,34 +1,32 @@
 <?php
 namespace Embed\Services;
 
-use Embed\Url;
-use Embed\Providers\OEmbed;
+class Yfrog extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://www.yfrog.com/api/oembed',
+			'patterns' => array(
+				'http://twitter.yfrog.com/*',
+				'http://www.yfrog.com/*'
+			)
+		)
+	);
 
-class Yfrog extends Service {
-	static public function create (Url $Url) {
-		$patterns = array(
-			'http://twitter.yfrog.com/*',
-			'http://www.yfrog.com/*'
-		);
+	protected function setData () {
+		parent::setData();
 
-		if (!$Url->match($patterns)) {
-			return false;
+		$this->image = str_replace('/twitter.yfrog.com/', '/yfrog.com/', $this->image);
+		$this->image = str_replace(':small', ':medium', $this->image);
+
+		$this->type = 'photo';
+
+		$author = strstr($this->title, 'Shared by ');
+
+		if ($author) {
+			$this->authorName = trim(substr($author, 10));
+			$this->authorUrl = "http://yfrog.com/user/$this->authorName/profile";
 		}
 
-		return new static(new OEmbed('http://www.yfrog.com/api/oembed', $Url->getUrl()));
-	}
-
-	public function __construct (OEmbed $Provider) {
-		parent::__construct($Provider);
-
-		if ($this->Provider->isEmpty()) {
-			return false;
-		}
-
-		//Fix thumbnail url
-		$Provider->set('thumbnail_url', str_replace('/twitter.yfrog.com/', '/yfrog.com/', $Provider->get('thumbnail_url')));
-
-		//Normalize type
-		$Provider->set('type', 'photo');
+		$this->title = null;
 	}
 }

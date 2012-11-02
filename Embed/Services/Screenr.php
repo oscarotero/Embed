@@ -1,15 +1,13 @@
 <?php
 namespace Embed\Services;
 
-use Embed\Url;
-use Embed\Providers\OEmbed;
-
-class Screenr extends Service {
-	static public function create (Url $Url) {
-		if (!$Url->match('http://www.screenr.com/*')) {
-			return false;
-		}
-
-		return new static(new OEmbed('http://www.screenr.com/api/oembed.json', $Url->getUrl()));
-	}
+class Screenr extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://www.screenr.com/api/oembed.json',
+			'patterns' => array(
+				'http://www.screenr.com/*'
+			)
+		)
+	);
 }

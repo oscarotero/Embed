@@ -2,21 +2,23 @@
 namespace Embed\Services;
 
 use Embed\Url;
-use Embed\Providers\OEmbed;
 
-class Flickr extends Service {
-	static public function create (Url $Url) {
-		$patterns = array(
-			'https?://*.flickr.com/photos/*',
-			'https?://flickr.com/photos/*'
-		);
+class Flickr extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://www.flickr.com/services/oembed/',
+			'patterns' => array(
+				'https?://*.flickr.com/photos/*/*',
+				'https?://flickr.com/photos/*/*'
+			)
+		)
+	);
 
-		if (!$Url->match($patterns)) {
-			return false;
+	static public function check (Url $Url) {
+		if (($Url = parent::check($Url))) {
+			$Url->setScheme('http');
 		}
 
-		$Url->setScheme('http');
-
-		return new static(new OEmbed('http://www.flickr.com/services/oembed/', $Url->getUrl()));
+		return $Url;
 	}
 }

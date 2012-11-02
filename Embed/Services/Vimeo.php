@@ -1,15 +1,13 @@
 <?php
 namespace Embed\Services;
 
-use Embed\Url;
-use Embed\Providers\OEmbed;
-
-class Vimeo extends Service {
-	static public function create (Url $Url) {
-		if (!$Url->match('http://vimeo.com/*')) {
-			return false;
-		}
-
-		return new static(new OEmbed('http://vimeo.com/api/oembed.json', $Url->getUrl()));
-	}
+class Vimeo extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://vimeo.com/api/oembed.json',
+			'patterns' => array(
+				'http://vimeo.com/*'
+			)
+		)
+	);
 }

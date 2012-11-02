@@ -1,20 +1,14 @@
 <?php
 namespace Embed\Services;
 
-use Embed\Url;
-use Embed\Providers\OEmbed;
-
-class Skitch extends Service {
-	static public function create (Url $Url) {
-		$patterns = array(
-			'http://skitch.com/*',
-			'http://img.skitch.com/*'
-		);
-
-		if (!$Url->match($patterns)) {
-			return false;
-		}
-
-		return new static(new OEmbed('http://skitch.com/oembed/', $Url->getUrl()));
-	}
+class Skitch extends OEmbedService {
+	static public $settings = array(
+		'oembed' => array(
+			'endPoint' => 'http://skitch.com/oembed/',
+			'patterns' => array(
+				'http://skitch.com/*',
+				'http://img.skitch.com/*'
+			)
+		)
+	);
 }
