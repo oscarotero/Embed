@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Kinomap extends OEmbedService {
+class Kinomap extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://www.kinomap.com/oembed',

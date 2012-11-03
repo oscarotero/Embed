@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Photobucket extends OEmbedService {
+class Photobucket extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://s51.photobucket.com/oembed/',

@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Urtak extends OEmbedService {
+class Urtak extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://oembed.urtak.com/1/oembed',

@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Mobypicture extends OEmbedService {
+class Mobypicture extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://api.mobypicture.com/oEmbed',

@@ -3,7 +3,7 @@ namespace Embed\Services;
 
 use Embed\Url;
 
-class Twitter extends OEmbedService {
+class Twitter extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'https://api.twitter.com/1/statuses/oembed.json',

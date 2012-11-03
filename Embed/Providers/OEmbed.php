@@ -27,7 +27,9 @@ class OEmbed extends Provider {
 				$parameters = (array)json_decode($response);
 
 				if (empty($parameters['Error'])) {
-					$this->parameters = $parameters;
+					foreach ($parameters as $name => $value) {
+						$this->set($name, $value);
+					}
 				}
 				break;
 

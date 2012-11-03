@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Jsfiddle extends HtmlService {
+class Jsfiddle extends Generic {
 	static public $settings = array(
 		'patterns' => array(
 			'http://jsfiddle.net/*'

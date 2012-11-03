@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Viddler extends OEmbedService {
+class Viddler extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://lab.viddler.com/services/oembed/',

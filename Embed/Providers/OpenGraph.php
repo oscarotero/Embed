@@ -24,12 +24,12 @@ class OpenGraph extends Provider {
 
 		foreach ($Html->getElementsByTagName('meta') as $Tag) {
 			if ($Tag->hasAttribute('property') && (strpos($Tag->getAttribute('property'), 'og:') === 0)) {
-				$this->set(substr($Tag->getAttribute('property'), 3), $Tag->getAttribute('content'));
+				$this->set(substr($Tag->getAttribute('property'), 3), $Tag->getAttribute('content') ?: $Tag->getAttribute('value'));
 				continue;
 			}
 
 			if ($Tag->hasAttribute('name') && (strpos($Tag->getAttribute('name'), 'og:') === 0)) {
-				$this->set(substr($Tag->getAttribute('name'), 3), $Tag->getAttribute('content'));
+				$this->set(substr($Tag->getAttribute('name'), 3), $Tag->getAttribute('content') ?: $Tag->getAttribute('value'));
 			}
 		}
 	}

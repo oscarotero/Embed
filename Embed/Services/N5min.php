@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class N5min extends OEmbedService {
+class N5min extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://api.5min.com/oembed.json',

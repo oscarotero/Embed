@@ -3,7 +3,7 @@ namespace Embed\Services;
 
 use Embed\Url;
 
-class Dotsub extends OEmbedService {
+class Dotsub extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://dotsub.com/services/oembed',

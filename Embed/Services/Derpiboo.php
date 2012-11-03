@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Derpiboo extends OEmbedService {
+class Derpiboo extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://derpibooru.org/oembed.json',

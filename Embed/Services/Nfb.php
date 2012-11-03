@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Nfb extends OEmbedService {
+class Nfb extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://www.nfb.ca/remote/services/oembed/',

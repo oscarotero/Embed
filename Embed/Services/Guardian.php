@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Guardian extends OEmbedService {
+class Guardian extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://discussionapi.guardian.co.uk/discussion-api/oembed',

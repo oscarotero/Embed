@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class N23hq extends OEmbedService {
+class N23hq extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://www.23hq.com/23/oembed',

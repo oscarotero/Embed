@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Jest extends OEmbedService {
+class Jest extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://www.jest.com/oembed.json',

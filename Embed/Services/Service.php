@@ -10,12 +10,12 @@ abstract class Service {
 	public $description;
 	public $code;
 	public $url;
-	public $type;
 	public $authorName;
 	public $authorUrl;
 	public $providerIcon;
 	public $providerName;
 	public $providerUrl;
+	public $type;
 	public $image;
 	public $width;
 	public $height;

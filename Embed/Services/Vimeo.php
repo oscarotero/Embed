@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Vimeo extends OEmbedService {
+class Vimeo extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://vimeo.com/api/oembed.json',

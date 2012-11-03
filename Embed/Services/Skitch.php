@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Skitch extends OEmbedService {
+class Skitch extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://skitch.com/oembed/',

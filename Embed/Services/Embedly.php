@@ -3,7 +3,7 @@ namespace Embed\Services;
 
 use Embed\Url;
 
-class Embedly extends OEmbedService {
+class Embedly extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://api.embed.ly/1/oembed',

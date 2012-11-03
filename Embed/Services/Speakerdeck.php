@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Speakerdeck extends OEmbedService {
+class Speakerdeck extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://speakerdeck.com/oembed.json',

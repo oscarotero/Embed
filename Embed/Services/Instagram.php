@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Instagram extends OEmbedService {
+class Instagram extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://api.instagram.com/oembed',

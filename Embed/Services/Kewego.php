@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Kewego extends OEmbedService {
+class Kewego extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://api.kewego.com/services/oembed/',

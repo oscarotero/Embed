@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Scribd extends OEmbedService {
+class Scribd extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://www.scribd.com/services/oembed',

@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Github extends OEmbedService {
+class Github extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'https://github.com/api/oembed',

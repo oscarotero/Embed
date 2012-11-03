@@ -3,7 +3,7 @@ namespace Embed\Services;
 
 use Embed\Url;
 
-class Youtube extends OEmbedService {
+class Youtube extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://www.youtube.com/oembed',

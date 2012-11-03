@@ -152,9 +152,21 @@ $tests = array(
 		<meta charset="utf-8">
 		
 		<title>Embed tests</title>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#open-all').click(function () {
+					$('ul a').each(function () {
+						window.open($(this).attr('href'));
+					});
+				});
+			});
+		</script>
 	</head>
 
 	<body>
+		<button id="open-all">Open all links</button>
 		<ul>
 		<?php foreach ($tests as $titulo => $urls): ?>
 			<li><strong><?php echo $titulo; ?></strong>

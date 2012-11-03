@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Dailymile extends OEmbedService {
+class Dailymile extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://api.dailymile.com/oembed',

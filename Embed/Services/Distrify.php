@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Distrify extends OEmbedService {
+class Distrify extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://distrify.com/oembed.json',

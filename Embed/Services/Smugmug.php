@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Smugmug extends OEmbedService {
+class Smugmug extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://api.smugmug.com/services/oembed/',

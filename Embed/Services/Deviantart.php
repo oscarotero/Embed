@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Deviantart extends OEmbedService {
+class Deviantart extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://backend.deviantart.com/oembed',

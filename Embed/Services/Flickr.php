@@ -3,7 +3,7 @@ namespace Embed\Services;
 
 use Embed\Url;
 
-class Flickr extends OEmbedService {
+class Flickr extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://www.flickr.com/services/oembed/',

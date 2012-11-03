@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Slideshare extends OEmbedService {
+class Slideshare extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://www.slideshare.net/api/oembed/2',

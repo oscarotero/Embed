@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Meetup extends OEmbedService {
+class Meetup extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://api.meetup.com/oembed',

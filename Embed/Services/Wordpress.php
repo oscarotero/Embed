@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Wordpress extends OEmbedService {
+class Wordpress extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://public-api.wordpress.com/oembed/1.0/',

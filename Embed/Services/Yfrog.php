@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Yfrog extends OEmbedService {
+class Yfrog extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://www.yfrog.com/api/oembed',
