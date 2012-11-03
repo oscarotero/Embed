@@ -2,16 +2,6 @@
 namespace Embed;
 
 class Embed {
-	static public $options = array();
-	static public $multidomainServices = array(
-		'Chirbit',
-		'Mobypicture',
-		'Distrify',
-
-		'Generic',
-		'Embedly',
-	);
-
 	public static function create ($url) {
 		$Url = new Url($url);
 
@@ -26,11 +16,11 @@ class Embed {
 			$class = 'N'.$class;
 		}
 
-		$fullClass = $namespace.$class;
+		$class = $namespace.$class;
 
-		if (class_exists($fullClass)) {
-			if (($ServiceUrl = call_user_func(array($fullClass, 'check'), $Url)) !== false) {
-				$Service = new $fullClass($ServiceUrl);
+		if (class_exists($class)) {
+			if (($ServiceUrl = call_user_func(array($class, 'check'), $Url)) !== false) {
+				$Service = new $class($ServiceUrl);
 
 				if ($Service->hasData()) {
 					return $Service;
@@ -38,22 +28,10 @@ class Embed {
 			}
 		}
 
-		foreach (self::$multidomainServices as $name) {
-			if ($name === $class) {
-				continue;
-			}
+		$Service = new Services\Generic($Url);
 
-			$fullClass = $namespace.$name;
-
-			if (class_exists($fullClass)) {
-				if (($ServiceUrl = call_user_func(array($fullClass, 'check'), $Url)) !== false) {
-					$Service = new $fullClass($ServiceUrl);
-
-					if ($Service->hasData()) {
-						return $Service;
-					}
-				}
-			}
+		if ($Service->hasData()) {
+			return $Service;
 		}
 
 		return false;
