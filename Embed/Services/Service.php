@@ -20,8 +20,4 @@ abstract class Service {
 	public $width;
 	public $height;
 	public $aspectRatio;
-
-	static public function check (Url $Url) {
-		return (!isset(static::$settings['patterns']) || $Url->match(static::$settings['patterns'])) ? $Url : false;
-	}
 }

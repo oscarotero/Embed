@@ -9,6 +9,7 @@ class Embed {
 			return false;
 		}
 
+		//Search the service using the domain
 		$namespace = 'Embed\\Services\\';
 		$class = str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $Url->getDomain()))));
 
@@ -20,18 +21,18 @@ class Embed {
 
 		if (class_exists($class)) {
 			if (($ServiceUrl = call_user_func(array($class, 'check'), $Url)) !== false) {
-				$Service = new $class($ServiceUrl);
-
-				if ($Service->hasData()) {
-					return $Service;
-				}
+				return new $class($ServiceUrl);
 			}
 		}
 
-		$Service = new Services\Generic($Url);
+		//Generic web page
+		if (($ServiceUrl = Services\Generic::check($Url))) {
+			return new Services\Generic($ServiceUrl);
+		}
 
-		if ($Service->hasData()) {
-			return $Service;
+		//External file
+		if (($ServiceUrl = Services\File::check($Url))) {
+			return new Services\File($ServiceUrl);
 		}
 
 		return false;

@@ -9,6 +9,20 @@ use Embed\Providers\OpenGraph;
 use Embed\Providers\TwitterCards;
 
 class Generic extends Service {
+	static public function check (Url $Url) {
+		if (strpos($Url->getContentType(), 'text/html') === false) {
+			return false;
+		}
+		if (isset(static::$settings['patterns']) && !$Url->match(static::$settings['patterns'])) {
+			return false;
+		}
+		if (isset(static::$settings['oembed']['patterns']) && !$Url->match(static::$settings['oembed']['patterns'])) {
+			return false;
+		}
+
+		return $Url;
+	}
+
 	public function __construct (Url $Url) {
 		$this->Url = $Url;
 		$this->Html = new Html($Url);
@@ -20,10 +34,6 @@ class Generic extends Service {
 
 			$this->setData();
 		}
-	}
-
-	public function hasData () {
-		return $this->Html->isEmpty() ? false : true;
 	}
 
 	protected function setData () {
