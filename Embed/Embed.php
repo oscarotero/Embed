@@ -25,6 +25,11 @@ class Embed {
 			}
 		}
 
+		//Using Embedly
+		if (($ServiceUrl = Services\Embedly::check($Url))) {
+			return new Services\Embedly($ServiceUrl);
+		}
+
 		//Generic web page
 		if (($ServiceUrl = Services\Generic::check($Url))) {
 			return new Services\Generic($ServiceUrl);

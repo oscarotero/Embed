@@ -87,21 +87,23 @@ $Video->providerName;
 $Video->providerUrl;
 $Video->providerIcon;
 
+
+//Use the Embedly provider
+
+$Url = new Embed\Url('http://php.net/');
+
+Embed\Services\Embedly::setApiKey('your_api_key');
+
+$Info = Embed\Services\Embedly($Url);
+
+
 //Use the Generic provider to get the generic info
 
 $Url = new Embed\Url('http://php.net/');
 $Info = Embed\Services\Generic($Url);
 
-echo $Info->title; // PHP: Hypertext Preprocessor
-echo $Info->providerName; // php.net
-//etc..
-
-//Detect the provider automatically (if there is not any specific provider, use the generic as fallback)
 
 $WebInfo1 = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
 $WebInfo2 = Embed\Embed::create('http://www.vimeo.com/29067223');
 $WebInfo2 = Embed\Embed::create('http://google.com');
-
-$WebInfo1->title;
-$WebInfo2->title;
 ```
