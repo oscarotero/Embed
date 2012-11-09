@@ -34,7 +34,9 @@ class Html extends Provider {
 
 				switch ($rel) {
 					case 'shortcut icon':
-						$this->set('icon', $href);
+						if (@getimagesize($href)) {
+							$this->set('icon', $href);
+						}
 						break;
 
 					case 'icon':
