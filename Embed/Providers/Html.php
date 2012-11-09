@@ -56,9 +56,8 @@ class Html extends Provider {
 			}
 		}
 
-		if (!$this->get('icon') && ($ch = curl_init($urlBase.'/favicon.ico')) !== false) {
+		if (!$this->get('icon') && @getimagesize($urlBase.'/favicon.ico')) {
 			$this->set('icon', $urlBase.'/favicon.ico');
-			curl_close($ch);
 		}
 
 		$Title = $Html->getElementsByTagName('title');
