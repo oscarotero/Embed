@@ -9,16 +9,7 @@ use Embed\Url;
 
 class OpenGraph extends Provider {
 	public function __construct (Url $Url) {
-		try {
-			if (($response = $Url->getContent()) === '') {
-				return false;
-			}
-
-			$errors = libxml_use_internal_errors(true);
-			$Html = new \DOMDocument();
-			$Html->loadHTML($response);
-			libxml_use_internal_errors($errors);
-		} catch (\Exception $E) {
+		if (!($Html = $Url->getHtmlContent())) {
 			return false;
 		}
 

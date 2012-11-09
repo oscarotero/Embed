@@ -7,6 +7,7 @@ namespace Embed;
 class Url {
 	private $info;
 	private $url;
+	private $htmlContent;
 	private $content;
 	private $contentType;
 	private $httpCode;
@@ -81,6 +82,32 @@ class Url {
 		}
 
 		return $this->content;
+	}
+
+
+	/**
+	 * Get the content of the url as a DOMDocument object
+	 * 
+	 * @return DOMDocument The content or false
+	 */
+	public function getHtmlContent () {
+		if ($this->htmlContent === null) {
+			try {
+				if (($response = $this->getContent()) === '') {
+					return $this->htmlContent = false;
+				}
+
+				$errors = libxml_use_internal_errors(true);
+				$this->htmlContent = new \DOMDocument();
+				$response = mb_convert_encoding($response, 'HTML-ENTITIES', 'UTF-8'); 
+				$this->htmlContent->loadHTML($response);
+				libxml_use_internal_errors($errors);
+			} catch (\Exception $E) {
+				return $this->htmlContent = false;
+			}
+		}
+
+		return $this->htmlContent;
 	}
 
 
@@ -362,7 +389,7 @@ class Url {
 
 		if ($this->url !== $url) {
 			$this->url = $url;
-			$this->content = null;
+			$this->content = $this->htmlContent = null;
 		}
 	}
 }
