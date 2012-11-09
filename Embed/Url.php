@@ -44,13 +44,26 @@ class Url {
 
 		$string = curl_exec($connection);
 
-		if ((mb_detect_encoding($string) === 'UTF-8') && mb_check_encoding($string, 'UTF-8')) {
-			$string = utf8_decode($string);
+		$this->httpCode = intval(curl_getinfo($connection, CURLINFO_HTTP_CODE));
+		$this->setUrl(curl_getinfo($connection, CURLINFO_EFFECTIVE_URL));
+
+		$contentType = curl_getinfo($connection, CURLINFO_CONTENT_TYPE);
+
+		if (strpos($contentType, ';') !== false) {
+			list($contentType, $charset) = explode(';', $contentType);
+
+			$charset = substr(strtoupper(strstr($charset, '=')), 1);
+
+			if (!empty($charset) && ($charset !== 'UTF-8')) {
+				mb_convert_encoding($string, 'UTF-8', $charset);
+			}
+		} else {
+			if ((mb_detect_encoding($string) === 'UTF-8') && mb_check_encoding($string, 'UTF-8')) {
+				$string = utf8_decode($string);
+			}
 		}
 
-		$this->httpCode = intval(curl_getinfo($connection, CURLINFO_HTTP_CODE));
-		$this->contentType = curl_getinfo($connection, CURLINFO_CONTENT_TYPE);
-		$this->setUrl(curl_getinfo($connection, CURLINFO_EFFECTIVE_URL));
+		$this->contentType = trim($contentType);
 		$this->content = trim($string);
 
 		curl_close($connection);

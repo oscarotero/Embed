@@ -50,6 +50,9 @@ spl_autoload_register('autoload');
 				background: #DDD;
 				font-weight: bold;
 			}
+			img {
+				border: solid 1px black;
+			}
 		</style>
 	</head>
 
@@ -82,7 +85,7 @@ spl_autoload_register('autoload');
 				</tr>
 				<tr>
 					<th>Image</th>
-					<td><img src="<?php echo $Service->image; ?>"></td>
+					<td><img src="<?php echo $Service->image; ?>"> <?php echo $Service->image; ?></td>
 				</tr>
 				<tr>
 					<th>Embed code</th>
@@ -106,7 +109,7 @@ spl_autoload_register('autoload');
 				</tr>
 				<tr>
 					<th>Provider icon</th>
-					<td><img src="<?php echo $Service->providerIcon; ?>"></td>
+					<td><img src="<?php echo $Service->providerIcon; ?>"> <?php echo $Service->providerIcon; ?></td>
 				</tr>
 				<tr>
 					<th>Provider name</th>

@@ -17,6 +17,7 @@ class Html extends Provider {
 
 			$errors = libxml_use_internal_errors(true);
 			$Html = new \DOMDocument();
+			$response = mb_convert_encoding($response, 'HTML-ENTITIES', 'UTF-8'); 
 			$Html->loadHTML($response);
 			libxml_use_internal_errors($errors);
 		} catch (\Exception $E) {
@@ -24,6 +25,7 @@ class Html extends Provider {
 		}
 
 		$urlBase = $Url->getScheme().'://'.$Url->getHost();
+		$url = $Url->getUrl();
 
 		foreach ($Html->getElementsByTagName('link') as $Link) {
 			if ($Link->hasAttribute('rel') && $Link->hasAttribute('href')) {
@@ -33,7 +35,11 @@ class Html extends Provider {
 				if (strpos($href, '//') === 0) {
 					$href = $Url->getScheme().':'.$href;
 				} else if (strpos($href, '://') === false) {
-					$href = $urlBase.$href;
+					if ($href[0] === '/') {
+						$href = $urlBase.$href;
+					} else {
+						$href = $Url->getUrl().'/'.$href;
+					}
 				}
 
 				switch ($rel) {
