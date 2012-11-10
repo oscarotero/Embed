@@ -100,4 +100,8 @@ $Info = new Embed\Services\Embedly($Url);
 
 $Url = new Embed\Url('http://php.net/');
 $Info = new Embed\Services\Generic($Url);
+
+
+//Autodetect the provider
+$Info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
 ```
