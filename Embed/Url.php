@@ -32,6 +32,18 @@ class Url {
 
 
 	/**
+	 * Magic function to serialize and unserialize the object (keeps only the url for performance)
+	 */
+	public function __sleep () {
+		return array('url');
+	}
+
+	public function __wakeup () {
+		$this->setUrl($this->url);
+	}
+
+
+	/**
 	 * Resolve the possible redirects for this url (for example bit.ly or any other url shortcutter)
 	 */
 	public function resolve () {
