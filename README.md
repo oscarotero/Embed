@@ -65,7 +65,7 @@ Usage:
 //Load a youtube video:
 
 $Url = new Embed\Url('https://www.youtube.com/watch?v=PP1xn5wHtxE');
-$Video = Embed\Services\Youtube($Url);
+$Video = new Embed\Services\Youtube($Url);
 
 //Get content info
 
@@ -90,20 +90,14 @@ $Video->providerIcon;
 
 //Use the Embedly provider
 
-$Url = new Embed\Url('http://php.net/');
-
 Embed\Services\Embedly::setApiKey('your_api_key');
 
-$Info = Embed\Services\Embedly($Url);
+$Url = new Embed\Url('http://php.net/');
+$Info = new Embed\Services\Embedly($Url);
 
 
 //Use the Generic provider to get the generic info
 
 $Url = new Embed\Url('http://php.net/');
-$Info = Embed\Services\Generic($Url);
-
-
-$WebInfo1 = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
-$WebInfo2 = Embed\Embed::create('http://www.vimeo.com/29067223');
-$WebInfo2 = Embed\Embed::create('http://google.com');
+$Info = new Embed\Services\Generic($Url);
 ```
