@@ -41,6 +41,7 @@ spl_autoload_register('autoload');
 				padding-top: 5px;
 				padding-bottom: 5px;
 				border-top: solid 1px #CCC;
+				vertical-align: top;
 			}
 			input {
 				width: 400px;

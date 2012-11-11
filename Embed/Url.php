@@ -327,6 +327,30 @@ class Url {
 
 
 	/**
+	 * Set a new path
+	 */
+	public function setPath ($path) {
+		$this->info['path'] = array();
+
+		foreach (explode('/', $path) as $dir) {
+			if ($dir !== '') {
+				$this->info['path'][] = $dir;
+			}
+		}
+
+		$this->buildUrl();
+	}
+
+
+	/**
+	 * Return the url path
+	 */
+	public function getPath () {
+		return implode('/', $this->info['path']);
+	}
+
+
+	/**
 	 * Check if the url has a GET parameter
 	 * 
 	 * @param string $name The parameter name
@@ -374,6 +398,18 @@ class Url {
 	 */
 	public function getFragment () {
 		return isset($this->info['fragment']) ? $this->info['fragment'] : null;
+	}
+
+
+	/**
+	 * Set the url fragment
+	 * 
+	 * @param string $fragment The new fragment value
+	 */
+	public function setFragment ($fragment) {
+		$this->info['fragment'];
+
+		$this->buildUrl();
 	}
 
 
