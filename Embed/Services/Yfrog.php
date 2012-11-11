@@ -26,7 +26,5 @@ class Yfrog extends Generic {
 			$this->authorName = trim(substr($author, 10));
 			$this->authorUrl = "http://yfrog.com/user/$this->authorName/profile";
 		}
-
-		$this->title = null;
 	}
 }
