@@ -52,6 +52,7 @@ class Url {
 		curl_setopt($connection, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($connection, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($connection, CURLOPT_MAXREDIRS, 10);
+		curl_setopt($connection, CURLOPT_TIMEOUT, 10);
 		curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 
@@ -69,10 +70,6 @@ class Url {
 
 			if (!empty($charset) && ($charset !== 'UTF-8')) {
 				mb_convert_encoding($string, 'UTF-8', $charset);
-			}
-		} else {
-			if ((mb_detect_encoding($string) === 'UTF-8') && mb_check_encoding($string, 'UTF-8')) {
-				$string = utf8_decode($string);
 			}
 		}
 
@@ -109,11 +106,17 @@ class Url {
 					return $this->htmlContent = false;
 				}
 
+				if (strpos($this->getContentType(), 'text/html') === false) {
+					return new \DOMDocument();
+				}
+
 				$errors = libxml_use_internal_errors(true);
 				$this->htmlContent = new \DOMDocument();
-				$response = mb_convert_encoding($response, 'HTML-ENTITIES', 'UTF-8'); 
+				$response = mb_convert_encoding($response, 'HTML-ENTITIES', 'UTF-8');
+				$response = preg_replace('/<head[^>]*>/','<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">',$response);
 				$this->htmlContent->loadHTML($response);
 				libxml_use_internal_errors($errors);
+
 			} catch (\Exception $E) {
 				return $this->htmlContent = false;
 			}

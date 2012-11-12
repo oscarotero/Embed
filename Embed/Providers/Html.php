@@ -22,6 +22,10 @@ class Html extends Provider {
 				$rel = trim(strtolower($Link->getAttribute('rel')));
 				$href = trim($Link->getAttribute('href'));
 
+				if (empty($href)) {
+					continue;
+				}
+
 				if (strpos($href, '//') === 0) {
 					$href = $Url->getScheme().':'.$href;
 				} else if (strpos($href, '://') === false) {
@@ -33,13 +37,13 @@ class Html extends Provider {
 				}
 
 				switch ($rel) {
+					case 'icon':
 					case 'shortcut icon':
 						if (@getimagesize($href)) {
 							$this->set('icon', $href);
 						}
 						break;
 
-					case 'icon':
 					case 'canonical':
 					case 'image_src':
 						$this->set($rel, $href);
@@ -48,8 +52,12 @@ class Html extends Provider {
 			}
 		}
 
-		if (!$this->get('icon') && @getimagesize($urlBase.'/favicon.ico')) {
-			$this->set('icon', $urlBase.'/favicon.ico');
+		if (!$this->get('icon')) {
+			if (@getimagesize($urlBase.'/favicon.png')) {
+				$this->set('icon', $urlBase.'/favicon.png');
+			} elseif (@getimagesize($urlBase.'/favicon.ico')) {
+				$this->set('icon', $urlBase.'/favicon.ico');
+			}
 		}
 
 		$Title = $Html->getElementsByTagName('title');

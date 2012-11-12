@@ -10,9 +10,6 @@ use Embed\Providers\TwitterCards;
 
 class Generic extends Service {
 	static public function check (Url $Url) {
-		if (strpos($Url->getContentType(), 'text/html') === false) {
-			return false;
-		}
 		if (isset(static::$settings['patterns']) && !$Url->match(static::$settings['patterns'])) {
 			return false;
 		}
@@ -67,10 +64,16 @@ class Generic extends Service {
 		}
 
 		//Image
-		if (($this->type === 'photo') && $this->OEmbed->get('url')) {
-			$this->image = $this->OEmbed->get('url');
-		} else {
-			$this->image = $this->OEmbed->get('thumbnail_url') ?: $this->OpenGraph->get('image') ?: $this->TwitterCards->get('image') ?: $this->Html->get('image_src');
+		if (($this->type === 'photo') && ($img = $this->OEmbed->get('url')) && @getimagesize($img)) {
+			$this->image = $img;
+		} else if (($img = $this->OEmbed->get('thumbnail_url')) && @getimagesize($img)) {
+			$this->image = $img;
+		} else if (($img = $this->OpenGraph->get('image')) && @getimagesize($img)) {
+			$this->image = $img;
+		} else if (($img = $this->TwitterCards->get('image')) && @getimagesize($img)) {
+			$this->image = $img;
+		} else if (($img = $this->TwitterCards->get('image_src')) && @getimagesize($img)) {
+			$this->image = $img;
 		}
 
 		//Dimmensions
