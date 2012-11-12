@@ -2,13 +2,7 @@
 namespace Embed;
 
 class Embed {
-	public static function create ($url) {
-		$Url = new Url($url);
-
-		if (!$Url->isValid()) {
-			return false;
-		}
-
+	public static function create (Url $Url) {
 		//Search the service using the domain
 		$namespace = 'Embed\\Services\\';
 		$class = str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $Url->getDomain()))));

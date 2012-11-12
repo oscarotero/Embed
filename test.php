@@ -67,9 +67,15 @@ spl_autoload_register('autoload');
 
 		<?php if (!empty($_GET['url'])): ?>
 		<section>
-			<?php $Service = Embed\Embed::create($_GET['url']); ?>
+			<?php
+			$Url = new Embed\Url($_GET['url']);
 
-			<?php if ($Service === false): ?>
+			if ($Url->isValid()) {
+				$Service = Embed\Embed::create($Url);
+			}
+			?>
+
+			<?php if (empty($Service)): ?>
 
 			<p>The url is not valid!</p>
 			

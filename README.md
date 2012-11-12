@@ -103,5 +103,6 @@ $Info = new Embed\Services\Generic($Url);
 
 
 //Autodetect the provider
-$Info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
+$Url = new Embed\Url('https://www.youtube.com/watch?v=PP1xn5wHtxE');
+$Info = Embed\Embed::create($Url);
 ```
