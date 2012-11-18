@@ -72,6 +72,11 @@ class Html extends Provider {
 				break;
 			}
 
+			if ($Tag->hasAttribute('name') && $Tag->getAttribute('name') === 'image') {
+				$this->set('image', $Tag->getAttribute('content'));
+				break;
+			}
+
 			if ($Tag->hasAttribute('http-equiv') && strtolower($Tag->getAttribute('http-equiv')) === 'description') {
 				$this->set('description', $Tag->getAttribute('content'));
 				break;

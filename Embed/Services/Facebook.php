@@ -14,8 +14,9 @@ class Facebook extends Generic {
 
 		$this->width = 600;
 		$this->height = 400;
+		$this->providerName = 'Facebook';
 
-		$href = '//www.facebook.com/plugins/likebox.php?'.http_build_query(array(
+		$this->setIframeCode('//www.facebook.com/plugins/likebox.php?'.http_build_query(array(
 			'href' => $this->Url->getUrl(),
 			'width' => $this->width,
 			'height' => $this->height,
@@ -23,10 +24,6 @@ class Facebook extends Generic {
 			'show_faces' => 'false',
 			'stream' => 'true',
 			'header' => 'false'
-		));
-
-		$this->code = '<iframe src="'.$href.'" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:'.$this->width.'px; height:'.$this->height.'px;" allowTransparency="true"></iframe>';
-		$this->providerName = 'Facebook';
+		)));
 	}
 }
-

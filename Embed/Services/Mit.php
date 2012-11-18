@@ -15,9 +15,8 @@ class Mit extends Generic {
 
 		$this->width = 512;
 		$this->height = 385;
-
-		$href = str_replace('/video/view/', '/video/embed/', $this->url);
-		$this->code = '<iframe src="'.$href.'" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:'.$this->width.'px; height:'.$this->height.'px;" allowTransparency="true"></iframe>';
 		$this->providerName = 'MIT Media Lab';
+
+		$this->setIframeCode(str_replace('/video/view/', '/video/embed/', $this->url));
 	}
 }

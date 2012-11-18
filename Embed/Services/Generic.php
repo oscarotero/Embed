@@ -59,6 +59,9 @@ class Generic extends Service {
 				$this->type = $type;
 				break;
 
+			case 'movie':
+				$this->type = 'video';
+
 			default:
 				$this->type = 'link';
 		}
@@ -72,7 +75,9 @@ class Generic extends Service {
 			$this->image = $img;
 		} else if (($img = $this->TwitterCards->get('image')) && @getimagesize($img)) {
 			$this->image = $img;
-		} else if (($img = $this->TwitterCards->get('image_src')) && @getimagesize($img)) {
+		} else if (($img = $this->Html->get('image_src')) && @getimagesize($img)) {
+			$this->image = $img;
+		} else if (($img = $this->Html->get('image')) && @getimagesize($img)) {
 			$this->image = $img;
 		}
 
