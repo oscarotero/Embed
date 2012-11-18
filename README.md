@@ -3,6 +3,7 @@ Embed
 
 PHP library to get info and embed any web page (using oembed, opengraph, twitter cards, etc). It's compatible with the following services:
 
+* Aljazeera
 * Blip
 * Chirbit
 * Clickthrough
