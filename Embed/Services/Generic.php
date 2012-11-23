@@ -67,26 +67,18 @@ class Generic extends Service {
 		}
 
 		//Image
-		if (($this->type === 'photo') && ($img = $this->OEmbed->get('url')) && @getimagesize($img)) {
+		if (($this->type === 'photo') && ($img = $this->OEmbed->get('url')) && ($imgDimmensions = @getimagesize($img))) {
 			$this->image = $img;
-		} else if (($img = $this->OEmbed->get('thumbnail_url')) && @getimagesize($img)) {
+		} else if (($img = $this->OEmbed->get('thumbnail_url')) && ($imgDimmensions = @getimagesize($img))) {
 			$this->image = $img;
-		} else if (($img = $this->OpenGraph->get('image')) && @getimagesize($img)) {
+		} else if (($img = $this->OpenGraph->get('image')) && ($imgDimmensions = @getimagesize($img))) {
 			$this->image = $img;
-		} else if (($img = $this->TwitterCards->get('image')) && @getimagesize($img)) {
+		} else if (($img = $this->TwitterCards->get('image')) && ($imgDimmensions = @getimagesize($img))) {
 			$this->image = $img;
-		} else if (($img = $this->Html->get('image_src')) && @getimagesize($img)) {
+		} else if (($img = $this->Html->get('image_src')) && ($imgDimmensions = @getimagesize($img))) {
 			$this->image = $img;
-		} else if (($img = $this->Html->get('image')) && @getimagesize($img)) {
+		} else if (($img = $this->Html->get('image')) && ($imgDimmensions = @getimagesize($img))) {
 			$this->image = $img;
-		}
-
-		//Dimmensions
-		$this->width = $this->OEmbed->get('width') ?: $this->OpenGraph->get('image:width') ?: $this->OpenGraph->get('video:width');
-		$this->height = $this->OEmbed->get('height') ?: $this->OpenGraph->get('image:height') ?: $this->OpenGraph->get('video:height');
-
-		if ($this->width && (strpos($this->width, '%') === false) && $this->height && (strpos($this->height, '%') === false)) {
-			$this->aspectRatio = round(($this->height / $this->width) * 100, 3);
 		}
 
 		//Clear extra code
@@ -100,6 +92,19 @@ class Generic extends Service {
 			}
 
 			$this->code = $html;
+		}
+
+		//Dimmensions
+		$this->width = $this->OEmbed->get('width') ?: $this->OpenGraph->get('image:width') ?: $this->OpenGraph->get('video:width');
+		$this->height = $this->OEmbed->get('height') ?: $this->OpenGraph->get('image:height') ?: $this->OpenGraph->get('video:height');
+
+		if (!empty($imgDimmensions) && empty($this->width) && empty($this->height) && empty($this->code) && $this->type === 'link') {
+			$this->width = $imgDimmensions[0];
+			$this->height = $imgDimmensions[1];
+		}
+
+		if ($this->width && (strpos($this->width, '%') === false) && $this->height && (strpos($this->height, '%') === false)) {
+			$this->aspectRatio = round(($this->height / $this->width) * 100, 3);
 		}
 	}
 }
