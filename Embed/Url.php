@@ -112,8 +112,12 @@ class Url {
 
 				$errors = libxml_use_internal_errors(true);
 				$this->htmlContent = new \DOMDocument();
-				$response = mb_convert_encoding($response, 'HTML-ENTITIES', 'UTF-8');
-				$response = preg_replace('/<head[^>]*>/','<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">',$response);
+
+				if ((mb_detect_encoding($response) === 'UTF-8') && mb_check_encoding($response, 'UTF-8')) {
+					$response = mb_convert_encoding($response, 'HTML-ENTITIES', 'UTF-8');
+					$response = preg_replace('/<head[^>]*>/','<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $response);
+				}
+
 				$this->htmlContent->loadHTML($response);
 				libxml_use_internal_errors($errors);
 
