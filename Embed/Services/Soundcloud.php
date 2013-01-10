@@ -6,7 +6,7 @@ class Soundcloud extends Generic {
 		'oembed' => array(
 			'endPoint' => 'http://soundcloud.com/oembed',
 			'patterns' => array(
-				'http://soundcloud.com/*'
+				'https?://soundcloud.com/*'
 			)
 		)
 	);
