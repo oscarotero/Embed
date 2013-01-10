@@ -30,4 +30,11 @@ abstract class Service {
 	protected function setIframeCode ($href) {
 		$this->code = '<iframe src="'.$href.'" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:'.$this->width.'px; height:'.$this->height.'px;" allowTransparency="true"></iframe>';
 	}
+
+	protected function setVideoCode ($poster, $ogg, $mp4) {
+		$this->code = '<video poster="'.$poster.'" width="'.$this->width.'" height="'.$this->height.'" controls>'
+					.'<source src="'.$ogg.'">'
+					.'<source src="'.$mp4.'">'
+					.'</video>';
+	}
 }

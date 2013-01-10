@@ -15,7 +15,7 @@ class Provider {
 	 * @param string $value The value to save
 	 */
 	public function set ($name, $value) {
-		$this->parameters[trim($name)] = trim($value);
+		$this->parameters[trim($name)] = is_string($value) ? trim($value) : $value;
 	}
 
 
@@ -60,16 +60,6 @@ class Provider {
 	 */
 	public function isEmpty () {
 		return $this->parameters ? false : true;
-	}
-
-
-	/**
-	 * Returns the url of the provider
-	 * 
-	 * @return string The url
-	 */
-	public function getUrl () {
-		return $this->url;
 	}
 }
 ?>
