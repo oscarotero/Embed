@@ -193,6 +193,10 @@ class Url {
 				}
 			}
 
+			if (preg_match('/\.([\w]+)$/', end($path), $match)) {
+				$this->info['extension'] = $match[1];
+			}
+
 			$this->info['path'] = $path;
 		}
 
@@ -233,6 +237,15 @@ class Url {
 		return (preg_match('|^'.$pattern.'$|i', $this->url) === 1) ? true : false;
 	}
 
+
+	/**
+	 * Return the extension of the url (html, php, jpg, etc)
+	 * 
+	 * @return string The scheme or null
+	 */
+	public function getExtension () {
+		return isset($this->info['extension']) ? $this->info['extension'] : null;
+	}
 
 	/**
 	 * Return the scheme of the url (for example http, https, ftp, etc)

@@ -10,11 +10,13 @@ class File extends Service {
 		'application/pdf' => 'PDF',
 		'application/msword' => 'MS Word',
 		'application/vnd.ms-powerpoint' => 'MS Powerpoint',
-		'application/vnd.ms-excel' => 'MS Excel'
+		'application/vnd.ms-excel' => 'MS Excel',
+		'application/zip' => 'ZIP',
+		'application/postscript' => 'AI',
+		'application/octet-stream' => 'File'
 	);
 
 	static public function check (Url $Url) {
-		echo $Url->getContentType();
 		return isset(static::$validTypes[$Url->getContentType()]) ? $Url : false;
 	}
 

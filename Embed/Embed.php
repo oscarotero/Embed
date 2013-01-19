@@ -7,6 +7,13 @@ class Embed {
 			return false;
 		}
 
+		//Check if the url is a file
+		if (($ServiceUrl = Services\File::check($Url))) {
+			return new Services\File($ServiceUrl);
+		}
+		echo $Url->getContentType();
+		die('ola');
+
 		//Search the service using the domain
 		$namespace = 'Embed\\Services\\';
 		$class = str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $Url->getDomain()))));
@@ -31,11 +38,6 @@ class Embed {
 		//Generic web page
 		if (($ServiceUrl = Services\Generic::check($Url))) {
 			return new Services\Generic($ServiceUrl);
-		}
-
-		//External file
-		if (($ServiceUrl = Services\File::check($Url))) {
-			return new Services\File($ServiceUrl);
 		}
 
 		return false;
