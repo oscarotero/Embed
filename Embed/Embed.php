@@ -11,8 +11,6 @@ class Embed {
 		if (($ServiceUrl = Services\File::check($Url))) {
 			return new Services\File($ServiceUrl);
 		}
-		echo $Url->getContentType();
-		die('ola');
 
 		//Search the service using the domain
 		$namespace = 'Embed\\Services\\';
