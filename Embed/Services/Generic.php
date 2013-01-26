@@ -27,7 +27,12 @@ class Generic extends Service {
 		if (!$this->Html->isEmpty()) {
 			$this->OpenGraph = new OpenGraph($Url);
 			$this->TwitterCards = new TwitterCards($Url);
-			$this->OEmbed = isset(static::$settings['oembed']) ? new OEmbed($Url, static::$settings['oembed']) : new Provider();
+
+			if ($this->Html->get('oembed')) {
+				$this->OEmbed = new OEmbed(new Url($this->Html->get('oembed')));
+			} else {
+				$this->OEmbed = isset(static::$settings['oembed']) ? OEmbed::create($Url, static::$settings['oembed']) : new Provider();
+			}
 
 			$this->setData();
 		}

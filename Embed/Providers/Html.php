@@ -67,19 +67,40 @@ class Html extends Provider {
 		}
 
 		foreach ($Html->getElementsByTagName('meta') as $Tag) {
-			if ($Tag->hasAttribute('name') && $Tag->getAttribute('name') === 'description') {
-				$this->set('description', $Tag->getAttribute('content'));
-				break;
-			}
-
+			//Image
 			if ($Tag->hasAttribute('name') && $Tag->getAttribute('name') === 'image') {
 				$this->set('image', $Tag->getAttribute('content'));
-				break;
+				continue;
+			}
+
+			//Description
+			if ($Tag->hasAttribute('name') && $Tag->getAttribute('name') === 'description') {
+				$this->set('description', $Tag->getAttribute('content'));
+				continue;
 			}
 
 			if ($Tag->hasAttribute('http-equiv') && strtolower($Tag->getAttribute('http-equiv')) === 'description') {
 				$this->set('description', $Tag->getAttribute('content'));
-				break;
+				continue;
+			}
+
+			//Geoposition
+			if ($Tag->hasAttribute('name') && (strpos($Tag->getAttribute('name'), 'geo.') === 0)) {
+				$this->set($Tag->getAttribute('name'), $Tag->getAttribute('content') ?: $Tag->getAttribute('value'));
+				continue;
+			}
+
+			if ($Tag->hasAttribute('name') && $Tag->getAttribute('name') === 'ICBM') {
+				$this->set('ICBM', $Tag->getAttribute('content'));
+				continue;
+			}
+		}
+
+		//Oembed
+		foreach ($Html->getElementsByTagName('link') as $Link) {
+			if (($Link->hasAttribute('rel') && $Link->getAttribute('rel') === 'alternate') && ($Link->hasAttribute('type') && $Link->getAttribute('type') === 'application/json+oembed')) {
+				$this->set('oembed', $Link->getAttribute('href'));
+				continue;
 			}
 		}
 	}
