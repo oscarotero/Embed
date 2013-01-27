@@ -54,12 +54,10 @@ class Provider {
 
 
 	/**
-	 * Check if any value exists or the provider is empty
-	 * 
-	 * @return boolean True if is empty, false if not
+	 * Specific get values
 	 */
-	public function isEmpty () {
-		return $this->parameters ? false : true;
+	public function __call ($name, $arguments) {
+		return null;
 	}
 }
 ?>

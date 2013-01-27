@@ -23,67 +23,46 @@ class Generic extends Service {
 	public function __construct (Url $Url) {
 		$this->Url = $Url;
 		$this->Html = new Html($Url);
+		$this->OpenGraph = new OpenGraph($Url);
+		$this->TwitterCards = new TwitterCards($Url);
 
-		if (!$this->Html->isEmpty()) {
-			$this->OpenGraph = new OpenGraph($Url);
-			$this->TwitterCards = new TwitterCards($Url);
-
-			if ($this->Html->get('oembed')) {
-				$this->OEmbed = new OEmbed(new Url($this->Html->get('oembed')));
-			} else {
-				$this->OEmbed = isset(static::$settings['oembed']) ? OEmbed::create($Url, static::$settings['oembed']) : new Provider();
-			}
-
-			$this->setData();
+		if ($this->Html->get('oembed')) {
+			$oembedUrl = $Url->getAbsolute($this->Html->get('oembed'));
+			$this->OEmbed = new OEmbed(new Url($oembedUrl));
+		} else {
+			$this->OEmbed = isset(static::$settings['oembed']) ? OEmbed::create($Url, static::$settings['oembed']) : new Provider();
 		}
+
+		$this->setData();
 	}
 
 	protected function setData () {
-		$this->title = $this->OEmbed->get('title') ?: $this->OpenGraph->get('title') ?: $this->TwitterCards->get('title') ?: $this->Html->get('title');
-		$this->description = $this->OEmbed->get('description') ?: $this->OpenGraph->get('description') ?: $this->TwitterCards->get('description') ?: $this->Html->get('description');
-		$this->code = $this->OEmbed->get('html');
-		$this->url = $this->OpenGraph->get('url') ?: $this->TwitterCards->get('url') ?: $this->Html->get('canonical') ?: $this->Url->getUrl();
-		$this->authorName = $this->OEmbed->get('author_name');
-		$this->authorUrl = $this->OEmbed->get('author_url');
-		$this->providerIcon = $this->Html->get('icon');
-		$this->providerName = $this->OEmbed->get('provider_name') ?: $this->Url->getHost();
-		$this->providerUrl = $this->OEmbed->get('provider_url') ?: ($this->Url->getScheme().'://'.$this->Url->getHost());
+		$properties = array(
+			'title',
+			'description',
+			'type',
+			'code',
+			'url',
+			'authorName',
+			'authorUrl',
+			'providerIcon',
+			'providerName',
+			'providerUrl',
+			'image',
+			'width',
+			'height',
+			'aspectRatio'
+		);
 
-		//Type
-		$type = $this->OEmbed->get('type') ?: $this->OpenGraph->get('type') ?: $this->TwitterCards->get('card');
+		foreach ($properties as $name) {
+			$method = 'get'.$name;
 
-		if (strpos($type, ':') !== false) {
-			$type = substr(strrchr($type, ':'), 1);
+			$this->$name = $this->OEmbed->$method() ?: $this->OpenGraph->$method() ?: $this->TwitterCards->$method();
 		}
 
-		switch ($type) {
-			case 'video':
-			case 'photo':
-			case 'link':
-			case 'rich':
-				$this->type = $type;
-				break;
-
-			case 'movie':
-				$this->type = 'video';
-
-			default:
-				$this->type = 'link';
-		}
-
-		//Image
-		if (($this->type === 'photo') && ($img = $this->OEmbed->get('url')) && ($imgDimmensions = @getimagesize($img))) {
-			$this->image = $img;
-		} else if (($img = $this->OEmbed->get('thumbnail_url')) && ($imgDimmensions = @getimagesize($img))) {
-			$this->image = $img;
-		} else if (($img = $this->OpenGraph->get('image')) && ($imgDimmensions = @getimagesize($img))) {
-			$this->image = $img;
-		} else if (($img = $this->TwitterCards->get('image')) && ($imgDimmensions = @getimagesize($img))) {
-			$this->image = $img;
-		} else if (($img = $this->Html->get('image_src')) && ($imgDimmensions = @getimagesize($img))) {
-			$this->image = $img;
-		} else if (($img = $this->Html->get('image')) && ($imgDimmensions = @getimagesize($img))) {
-			$this->image = $img;
+		//Calculate aspect ratio
+		if ($this->width && (strpos($this->width, '%') === false) && $this->height && (strpos($this->height, '%') === false)) {
+			$this->aspectRatio = round(($this->height / $this->width) * 100, 3);
 		}
 
 		//Clear extra code
@@ -97,19 +76,6 @@ class Generic extends Service {
 			}
 
 			$this->code = $html;
-		}
-
-		//Dimmensions
-		$this->width = $this->OEmbed->get('width') ?: $this->OpenGraph->get('image:width') ?: $this->OpenGraph->get('video:width');
-		$this->height = $this->OEmbed->get('height') ?: $this->OpenGraph->get('image:height') ?: $this->OpenGraph->get('video:height');
-
-		if (!empty($imgDimmensions) && empty($this->width) && empty($this->height) && empty($this->code) && $this->type === 'link') {
-			$this->width = $imgDimmensions[0];
-			$this->height = $imgDimmensions[1];
-		}
-
-		if ($this->width && (strpos($this->width, '%') === false) && $this->height && (strpos($this->height, '%') === false)) {
-			$this->aspectRatio = round(($this->height / $this->width) * 100, 3);
 		}
 	}
 }

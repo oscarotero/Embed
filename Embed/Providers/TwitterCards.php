@@ -24,5 +24,37 @@ class TwitterCards extends Provider {
 			}
 		}
 	}
+
+	public function getTitle () {
+		return $this->get('title');
+	}
+
+	public function getDescription () {
+		return $this->get('description');
+	}
+
+	public function getType () {
+		$type = $this->get('card');
+
+		if (strpos($type, ':') !== false) {
+			$type = substr(strrchr($type, ':'), 1);
+		}
+
+		switch ($type) {
+			case 'video':
+			case 'photo':
+			case 'link':
+			case 'rich':
+				return $type;
+		}
+	}
+
+	public function getUrl () {
+		return $this->get('url');
+	}
+
+	public function getImage () {
+		return $this->get('image');
+	}
 }
 ?>

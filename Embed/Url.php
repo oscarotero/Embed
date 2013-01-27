@@ -178,6 +178,10 @@ class Url {
 	 * @param string $url The url
 	 */
 	public function setUrl ($url) {
+		if (strpos($url, '//') === 0) {
+			$url = "http:$url";
+		}
+
 		$this->info = parse_url($url);
 
 		if (isset($this->info['query'])) {
@@ -459,6 +463,36 @@ class Url {
 			$this->url = $url;
 			$this->content = $this->htmlContent = null;
 		}
+	}
+
+
+	/**
+	 * Return an absolute url based in a relative
+	 *
+	 * @return string The absolute url
+	 */
+	public function getAbsolute ($url) {
+		if (preg_match('|^\w://|', $url)) {
+			return $url;
+		}
+
+		if (strpos($url, '://') === 0) {
+			return $this->getScheme().$url;
+		}
+
+		if (strpos($url, '//') === 0) {
+			return $this->getScheme().":$url";
+		}
+
+		if ($url[0] === '/') {
+			return $this->getScheme().'://'.$this->getHost().$url;
+		}
+
+		if ($url[0] === '?') {
+			return $this->getScheme().'://'.$this->getHost().$this->getPath().$url;
+		}
+
+		return $this->getScheme().'://'.$this->getHost().'/'.$url;
 	}
 }
 ?>

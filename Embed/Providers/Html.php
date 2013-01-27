@@ -14,9 +14,6 @@ class Html extends Provider {
 			return false;
 		}
 
-		$urlBase = $Url->getScheme().'://'.$Url->getHost();
-		$url = $Url->getUrl();
-
 		foreach ($Html->getElementsByTagName('link') as $Link) {
 			if ($Link->hasAttribute('rel') && $Link->hasAttribute('href')) {
 				$rel = trim(strtolower($Link->getAttribute('rel')));
@@ -26,22 +23,12 @@ class Html extends Provider {
 					continue;
 				}
 
-				if (strpos($href, '//') === 0) {
-					$href = $Url->getScheme().':'.$href;
-				} else if (strpos($href, '://') === false) {
-					if ($href[0] === '/') {
-						$href = $urlBase.$href;
-					} else {
-						$href = $Url->getUrl().'/'.$href;
-					}
-				}
+				$href = $Url->getAbsolute($href);
 
 				switch ($rel) {
 					case 'icon':
 					case 'shortcut icon':
-						if (@getimagesize($href)) {
-							$this->set('icon', $href);
-						}
+						$this->set('icon', $href);
 						break;
 
 					case 'canonical':
@@ -53,10 +40,13 @@ class Html extends Provider {
 		}
 
 		if (!$this->get('icon')) {
-			if (@getimagesize($urlBase.'/favicon.png')) {
-				$this->set('icon', $urlBase.'/favicon.png');
-			} elseif (@getimagesize($urlBase.'/favicon.ico')) {
-				$this->set('icon', $urlBase.'/favicon.ico');
+			$fav_ico = $Url->getAbsolute('/favicon.ico');
+			$fav_png = $Url->getAbsolute('/favicon.png');
+
+			if (@getimagesize($fav_ico)) {
+				$this->set('icon', $fav_ico);
+			} elseif (@getimagesize($fav_png)) {
+				$this->set('icon', $fav_png);
 			}
 		}
 
@@ -96,13 +86,41 @@ class Html extends Provider {
 			}
 		}
 
-		//Oembed
+		//Oembed link
 		foreach ($Html->getElementsByTagName('link') as $Link) {
 			if (($Link->hasAttribute('rel') && $Link->getAttribute('rel') === 'alternate') && ($Link->hasAttribute('type') && $Link->getAttribute('type') === 'application/json+oembed')) {
+				$this->set('oembed', $Link->getAttribute('href'));
+				break;
+			}
+			if (($Link->hasAttribute('rel') && $Link->getAttribute('rel') === 'alternate') && ($Link->hasAttribute('type') && $Link->getAttribute('type') === 'application/xml+oembed')) {
 				$this->set('oembed', $Link->getAttribute('href'));
 				continue;
 			}
 		}
+	}
+
+	public function getTitle () {
+		return $this->get('title');
+	}
+
+	public function getDescription () {
+		return $this->get('description');
+	}
+
+	public function getType () {
+		return 'link';
+	}
+
+	public function getUrl () {
+		return $this->get('canonical');
+	}
+
+	public function getProviderIcon () {
+		return $this->get('icon');
+	}
+
+	public function getImage () {
+		return $this->get('image_src') ?: $this->get('image');
 	}
 }
 ?>

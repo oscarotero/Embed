@@ -24,5 +24,53 @@ class OpenGraph extends Provider {
 			}
 		}
 	}
+
+	public function getTitle () {
+		return $this->get('title');
+	}
+
+	public function getDescription () {
+		return $this->get('description');
+	}
+
+	public function getType () {
+		$type = $this->get('type');
+
+		if (strpos($type, ':') !== false) {
+			$type = substr(strrchr($type, ':'), 1);
+		}
+
+		switch ($type) {
+			case 'video':
+			case 'photo':
+			case 'link':
+			case 'rich':
+				return $type;
+		}
+
+		if ($this->has('video')) {
+			return 'video';
+		}
+	}
+
+	public function getUrl () {
+		return $this->get('url');
+	}
+
+	public function getProviderName () {
+		return $this->get('site_name');
+	}
+
+	public function getImage () {
+		return $this->get('image');
+	}
+
+	public function getWidth () {
+		return $this->get('image:width') ?: $this->get('video:width');
+	}
+
+	public function getHeight () {
+		return $this->get('image:height') ?: $this->get('video:height');
+	}
 }
 ?>

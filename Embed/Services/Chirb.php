@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Services;
 
-class Chirb extends Generic {
+class sChirb extends Generic {
 	static public $settings = array(
 		'oembed' => array(
 			'endPoint' => 'http://chirb.it/oembed.json',
