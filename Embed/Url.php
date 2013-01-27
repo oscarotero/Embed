@@ -472,7 +472,7 @@ class Url {
 	 * @return string The absolute url
 	 */
 	public function getAbsolute ($url) {
-		if (preg_match('|^\w://|', $url)) {
+		if (preg_match('|^\w+://|', $url)) {
 			return $url;
 		}
 

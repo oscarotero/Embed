@@ -35,6 +35,12 @@ class Html extends Provider {
 					case 'image_src':
 						$this->set($rel, $href);
 						break;
+
+					case 'alternate':
+						if ($Link->hasAttribute('type') && ($Link->getAttribute('type') === 'application/json+oembed' || $Link->getAttribute('type') === 'application/xml+oembed')) {
+							$this->set('oembed', $Link->getAttribute('href'));
+						}
+						break;
 				}
 			}
 		}
@@ -43,10 +49,10 @@ class Html extends Provider {
 			$fav_ico = $Url->getAbsolute('/favicon.ico');
 			$fav_png = $Url->getAbsolute('/favicon.png');
 
-			if (@getimagesize($fav_ico)) {
-				$this->set('icon', $fav_ico);
-			} elseif (@getimagesize($fav_png)) {
+			if (@getimagesize($fav_png)) {
 				$this->set('icon', $fav_png);
+			} elseif (@getimagesize($fav_ico)) {
+				$this->set('icon', $fav_ico);
 			}
 		}
 
@@ -57,44 +63,18 @@ class Html extends Provider {
 		}
 
 		foreach ($Html->getElementsByTagName('meta') as $Tag) {
-			//Image
-			if ($Tag->hasAttribute('name') && $Tag->getAttribute('name') === 'image') {
-				$this->set('image', $Tag->getAttribute('content'));
+			if ($Tag->hasAttribute('name')) {
+				$name = strtolower($Tag->getAttribute('name'));
+			} else if ($Tag->hasAttribute('http-equiv')) {
+				$name = strtolower($Tag->getAttribute('http-equiv'));
+			} else if ($Tag->hasAttribute('property')) {
+				$name = strtolower($Tag->getAttribute('property'));
+			} else {
 				continue;
 			}
 
-			//Description
-			if ($Tag->hasAttribute('name') && $Tag->getAttribute('name') === 'description') {
-				$this->set('description', $Tag->getAttribute('content'));
-				continue;
-			}
-
-			if ($Tag->hasAttribute('http-equiv') && strtolower($Tag->getAttribute('http-equiv')) === 'description') {
-				$this->set('description', $Tag->getAttribute('content'));
-				continue;
-			}
-
-			//Geoposition
-			if ($Tag->hasAttribute('name') && (strpos($Tag->getAttribute('name'), 'geo.') === 0)) {
-				$this->set($Tag->getAttribute('name'), $Tag->getAttribute('content') ?: $Tag->getAttribute('value'));
-				continue;
-			}
-
-			if ($Tag->hasAttribute('name') && $Tag->getAttribute('name') === 'ICBM') {
-				$this->set('ICBM', $Tag->getAttribute('content'));
-				continue;
-			}
-		}
-
-		//Oembed link
-		foreach ($Html->getElementsByTagName('link') as $Link) {
-			if (($Link->hasAttribute('rel') && $Link->getAttribute('rel') === 'alternate') && ($Link->hasAttribute('type') && $Link->getAttribute('type') === 'application/json+oembed')) {
-				$this->set('oembed', $Link->getAttribute('href'));
-				break;
-			}
-			if (($Link->hasAttribute('rel') && $Link->getAttribute('rel') === 'alternate') && ($Link->hasAttribute('type') && $Link->getAttribute('type') === 'application/xml+oembed')) {
-				$this->set('oembed', $Link->getAttribute('href'));
-				continue;
+			if ($Tag->hasAttribute('content')) {
+				$this->set($name, $Tag->getAttribute('content'));
 			}
 		}
 	}

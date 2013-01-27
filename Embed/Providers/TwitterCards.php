@@ -46,6 +46,15 @@ class TwitterCards extends Provider {
 			case 'link':
 			case 'rich':
 				return $type;
+
+			case 'player':
+				return 'video';
+		}
+	}
+
+	public function getCode () {
+		if ($this->has('player')) {
+			return static::getIframeCode($this->get('player'), $this->getWidth(), $this->getHeight());
 		}
 	}
 
@@ -53,8 +62,20 @@ class TwitterCards extends Provider {
 		return $this->get('url');
 	}
 
+	public function getAuthorName () {
+		return $this->get('creator');
+	}
+
 	public function getImage () {
 		return $this->get('image');
+	}
+
+	public function getWidth () {
+		return $this->get('player:width');
+	}
+
+	public function getHeight () {
+		return $this->get('player:height');
 	}
 }
 ?>

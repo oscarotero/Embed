@@ -20,7 +20,7 @@ class Generic extends Service {
 		return $Url;
 	}
 
-	public function __construct (Url $Url) {
+	public function __construct (Url $Url, $followCanonical = true) {
 		$this->Url = $Url;
 		$this->Html = new Html($Url);
 		$this->OpenGraph = new OpenGraph($Url);
@@ -34,6 +34,10 @@ class Generic extends Service {
 		}
 
 		$this->setData();
+
+		if ($followCanonical && ($Url->getUrl() !== $this->url)) {
+			static::__construct(new Url($this->url), false);
+		}
 	}
 
 	protected function setData () {
@@ -57,7 +61,7 @@ class Generic extends Service {
 		foreach ($properties as $name) {
 			$method = 'get'.$name;
 
-			$this->$name = $this->OEmbed->$method() ?: $this->OpenGraph->$method() ?: $this->TwitterCards->$method();
+			$this->$name = $this->OEmbed->$method() ?: $this->OpenGraph->$method() ?: $this->TwitterCards->$method() ?: $this->Html->$method();
 		}
 
 		//Calculate aspect ratio
@@ -76,6 +80,19 @@ class Generic extends Service {
 			}
 
 			$this->code = $html;
+		}
+
+		//Calculate url properties
+		if (!$this->url) {
+			$this->url = $this->Url->getUrl();
+		}
+
+		if (!$this->providerName) {
+			$this->providerName = $this->Url->getDomain();
+		}
+
+		if (!$this->providerUrl) {
+			$this->providerUrl = $this->Url->getScheme().'://'.$this->Url->getHost();
 		}
 	}
 }
