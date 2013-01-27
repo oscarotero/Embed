@@ -53,6 +53,20 @@ class OpenGraph extends Provider {
 		}
 	}
 
+	public function getCode () {
+		if ($this->has('video')) {
+			switch ($this->get('video:type')) {
+				case 'application/x-shockwave-flash':
+					return static::getFlashCode($this->get('video'), $this->getWidth(), $this->getHeight());
+			}
+
+			switch (pathinfo(parse_url($this->get('video'), PHP_URL_PATH), PATHINFO_EXTENSION)) {
+				case 'swf':
+					return static::getFlashCode($this->get('video'), $this->getWidth(), $this->getHeight());
+			}
+		}
+	}
+
 	public function getUrl () {
 		return $this->get('url');
 	}

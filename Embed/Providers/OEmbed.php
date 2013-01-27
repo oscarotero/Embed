@@ -8,19 +8,6 @@ namespace Embed\Providers;
 use Embed\Url;
 
 class OEmbed extends Provider {
-	public static function create (Url $Url, array $settings) {
-		$format = isset($settings['format']) ? $settings['format'] : 'json';
-
-		$params = isset($settings['params']) ? $settings['params'] : array();
-		$params['url'] = $Url->getUrl();
-		$params['format'] = $format;
-
-		$EndPoint = new Url($settings['endPoint']);
-		$EndPoint->setParameter($params);
-
-		return new static($EndPoint, $format);
-	}
-
 	public function __construct (Url $Url, $format = 'json') {
 		if (($response = $Url->getContent()) === '') {
 			return false;

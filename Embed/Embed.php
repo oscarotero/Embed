@@ -7,6 +7,13 @@ class Embed {
 			return false;
 		}
 
+		if (($ServiceUrl = Adapters\Webpage::check($Url))) {
+			return new Adapters\Webpage($ServiceUrl);
+		}
+
+		return false;
+
+
 		//Check if the url is a file
 		if (($ServiceUrl = Services\File::check($Url))) {
 			return new Services\File($ServiceUrl);

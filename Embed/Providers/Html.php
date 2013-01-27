@@ -32,6 +32,7 @@ class Html extends Provider {
 						break;
 
 					case 'canonical':
+					case 'video_src':
 					case 'image_src':
 						$this->set($rel, $href);
 						break;
@@ -88,7 +89,16 @@ class Html extends Provider {
 	}
 
 	public function getType () {
-		return 'link';
+		return $this->has('video_src') ? 'video' : 'link';
+	}
+
+	public function getCode () {
+		if ($this->has('video_src')) {
+			switch ($this->get('video_type')) {
+				case 'application/x-shockwave-flash':
+					return static::getFlashCode($this->get('video_src'), $this->getWidth(), $this->getHeight());
+			}
+		}
 	}
 
 	public function getUrl () {
@@ -101,6 +111,14 @@ class Html extends Provider {
 
 	public function getImage () {
 		return $this->get('image_src') ?: $this->get('image');
+	}
+
+	public function getWidth () {
+		return $this->get('image_width') ?: $this->get('video_width');
+	}
+
+	public function getHeight () {
+		return $this->get('image_height') ?: $this->get('video_height');
 	}
 }
 ?>
