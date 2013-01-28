@@ -3,7 +3,7 @@ namespace Embed\Providers;
 
 use Embed\Url;
 
-class Embedly extends Generic {
+class Embedly {
 	static public $api_key;
 	static public $patterns = array(
 		'http://*yfrog.*/*',
