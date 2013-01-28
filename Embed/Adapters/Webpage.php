@@ -13,7 +13,7 @@ class Webpage {
 	static public $settings = array();
 
 	static public function check (Url $Url) {
-		return $Url;
+		return true;
 	}
 
 	public function __construct (Url $Url, $followCanonical = true) {
@@ -28,15 +28,13 @@ class Webpage {
 			$this->OEmbed = OEmbedImplementations::create($Url);
 		}
 
-		if (!$this->OEmbed) {
-			$this->OEmbed = new Provider;
+		$canonical = $this->getUrl();
+
+		if ($followCanonical && ($Url->getUrl() !== $canonical)) {
+			static::__construct(new Url($canonical), false);
 		}
 
 		$this->setData();
-
-		if ($followCanonical && ($Url->getUrl() !== $this->url)) {
-			static::__construct(new Url($this->url), false);
-		}
 	}
 
 	protected function setData () {
@@ -60,38 +58,132 @@ class Webpage {
 		foreach ($properties as $name) {
 			$method = 'get'.$name;
 
-			$this->$name = $this->OEmbed->$method() ?: $this->OpenGraph->$method() ?: $this->TwitterCards->$method() ?: $this->Html->$method();
+			$this->$name = $this->$method();
+		}
+	}
+
+	public function getTitle () {
+		if (isset($this->OEmbed) && $this->OEmbed->getTitle()) {
+			return $this->OEmbed->getTitle();
 		}
 
-		//Calculate aspect ratio
-		if ($this->width && (strpos($this->width, '%') === false) && $this->height && (strpos($this->height, '%') === false)) {
-			$this->aspectRatio = round(($this->height / $this->width) * 100, 3);
+		return $this->OpenGraph->getTitle() ?: $this->TwitterCards->getTitle() ?: $this->Html->getTitle();
+	}
+
+	public function getDescription () {
+		if (isset($this->OEmbed) && $this->OEmbed->getDescription()) {
+			return $this->OEmbed->getDescription();
 		}
 
-		//Clear extra code
-		if (($html = $this->code)) {
-			if (strpos($html, '</iframe>') !== false) {
-				$html = preg_replace('|^.*(<iframe.*</iframe>).*$|', '$1', $html);
-			} else if (strpos($html, '</object>') !== false) {
-				$html = preg_replace('|^.*(<object.*</object>).*$|', '$1', $html);
-			} else if (strpos($html, '</embed>') !== false) {
-				$html = preg_replace('|^.*(<embed.*</embed>).*$|', '$1', $html);
+		return $this->OpenGraph->getDescription() ?: $this->TwitterCards->getDescription() ?: $this->Html->getDescription();
+	}
+
+	public function getType () {
+		if (isset($this->OEmbed) && $this->OEmbed->getType()) {
+			return $this->OEmbed->getType();
+		}
+
+		return $this->OpenGraph->getType() ?: $this->TwitterCards->getType() ?: $this->Html->getType() ?: 'link';
+	}
+
+	public function getCode () {
+		if (isset($this->OEmbed) && $this->OEmbed->getCode()) {
+			$code = $this->OEmbed->getType();
+		} else {
+			$code = $this->OpenGraph->getCode() ?: $this->TwitterCards->getCode() ?: $this->Html->getCode();
+		}
+
+		if ($code) {
+			if (strpos($code, '</iframe>') !== false) {
+				return preg_replace('|^.*(<iframe.*</iframe>).*$|', '$1', $code);
 			}
 
-			$this->code = $html;
+			if (strpos($code, '</object>') !== false) {
+				return preg_replace('|^.*(<object.*</object>).*$|', '$1', $code);
+			}
+
+			if (strpos($code, '</embed>') !== false) {
+				return preg_replace('|^.*(<embed.*</embed>).*$|', '$1', $code);
+			}
+
+			return $code;
+		}
+	}
+
+	public function getUrl () {
+		if (isset($this->OEmbed) && $this->OEmbed->getUrl()) {
+			return $this->OEmbed->getUrl();
 		}
 
-		//Calculate url properties
-		if (!$this->url) {
-			$this->url = $this->Url->getUrl();
+		return $this->OpenGraph->getUrl() ?: $this->TwitterCards->getUrl() ?: $this->Html->getUrl() ?: $this->Url->getUrl();
+	}
+
+	public function getAuthorName () {
+		if (isset($this->OEmbed) && $this->OEmbed->getAuthorName()) {
+			return $this->OEmbed->getAuthorName();
 		}
 
-		if (!$this->providerName) {
-			$this->providerName = $this->Url->getDomain();
+		return $this->OpenGraph->getAuthorName() ?: $this->TwitterCards->getAuthorName() ?: $this->Html->getAuthorName();
+	}
+
+	public function getAuthorUrl () {
+		if (isset($this->OEmbed) && $this->OEmbed->getAuthorUrl()) {
+			return $this->OEmbed->getAuthorUrl();
 		}
 
-		if (!$this->providerUrl) {
-			$this->providerUrl = $this->Url->getScheme().'://'.$this->Url->getHost();
+		return $this->OpenGraph->getAuthorUrl() ?: $this->TwitterCards->getAuthorUrl() ?: $this->Html->getAuthorUrl();
+	}
+
+	public function getProviderIcon () {
+		return $this->Html->getProviderIcon();
+	}
+
+	public function getProviderName () {
+		if (isset($this->OEmbed) && $this->OEmbed->getProviderName()) {
+			return $this->OEmbed->getProviderName();
+		}
+
+		return $this->OpenGraph->getProviderName() ?: $this->TwitterCards->getProviderName() ?: $this->Html->getProviderName() ?: $this->Url->getDomain();
+	}
+
+	public function getProviderUrl () {
+		if (isset($this->OEmbed) && $this->OEmbed->getProviderUrl()) {
+			return $this->OEmbed->getProviderUrl();
+		}
+
+		return $this->OpenGraph->getProviderUrl() ?: $this->TwitterCards->getProviderUrl() ?: $this->Html->getProviderUrl() ?: ($this->Url->getScheme().'://'.$this->Url->getHost());
+	}
+
+	public function getImage () {
+		if (isset($this->OEmbed) && $this->OEmbed->getImage()) {
+			return $this->OEmbed->getImage();
+		}
+
+		return $this->OpenGraph->getImage() ?: $this->TwitterCards->getImage() ?: $this->Html->getImage();
+	}
+
+	public function getWidth () {
+		if (isset($this->OEmbed) && $this->OEmbed->getWidth()) {
+			return $this->OEmbed->getWidth();
+		}
+
+		return $this->OpenGraph->getWidth() ?: $this->TwitterCards->getWidth() ?: $this->Html->getWidth();
+	}
+
+	public function getHeight () {
+		if (isset($this->OEmbed) && $this->OEmbed->getHeight()) {
+			return $this->OEmbed->getHeight();
+		}
+
+		return $this->OpenGraph->getHeight() ?: $this->TwitterCards->getHeight() ?: $this->Html->getHeight();
+	}
+
+	public function getAspectRatio () {
+		$width = $this->getWidth();
+		$height = $this->getHeight();
+
+		if ($width && (strpos($width, '%') === false) && $height && (strpos($height, '%') === false)) {
+			return round(($height / $width) * 100, 3);
 		}
 	}
 }

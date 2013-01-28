@@ -62,19 +62,23 @@ class Provider {
 
 
 	//Utils
-	protected static function getIframeCode ($href, $width = 0, $height = 0) {
+	public static function getIframeCode ($href, $width = 0, $height = 0) {
 		if (!$width) {
-			$width = 600;
+			$width = '600px';
+		} else if (is_int($width)) {
+			$width .= 'px';
 		}
 
 		if (!$height) {
-			$height = 400;
+			$height = '400px';
+		} else if (is_int($height)) {
+			$height .= 'px';
 		}
 
-		return '<iframe src="'.$href.'" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:'.$width.'px; height:'.$height.'px;" allowTransparency="true"></iframe>';
+		return '<iframe src="'.$href.'" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:'.$width.'; height:'.$height.';" allowTransparency="true"></iframe>';
 	}
 
-	protected static function getFlashCode ($href, $width = 0, $height = 0) {
+	public static function getFlashCode ($href, $width = 0, $height = 0) {
 		if (!$width) {
 			$width = 600;
 		}
@@ -84,6 +88,16 @@ class Provider {
 		}
 
 		return '<object width="'.$width.'" height="'.$height.'" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0"><param name="movie" value="'.$href.'" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><embed src="'.$href.'" width="'.$width.'" height="'.$height.'" type="application/x-shockwave-flash" allowFullScreen="true" allowScriptAccess="always" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></embed></object>';
+	}
+
+	public static function getVideoCode ($poster, array $sources, $width = 0, $height = 0) {
+		$code = '<video poster="'.$poster.'" width="'.$width.'" height="'.$height.'" controls>';
+
+		foreach ($sources as $source) {
+			$code .= '<source src="'.$source.'">';
+		}
+
+		return $code.'</video>';
 	}
 }
 ?>

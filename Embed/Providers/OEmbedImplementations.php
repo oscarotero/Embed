@@ -93,6 +93,10 @@ class OEmbedImplementations extends Provider {
 		array(
 			'endPoint' => 'http://oembed.urtak.com/1/oembed',
 			'patterns' => array('https://urtak.com/u/*','https://urtak.com/clr/*')
+		),
+		array(
+			'endPoint' => 'http://www.yfrog.com/api/oembed',
+			'patterns' => array('http://twitter.yfrog.com/*','http://www.yfrog.com/*')
 		)
 	);
 

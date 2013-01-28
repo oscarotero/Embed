@@ -7,8 +7,17 @@ class Embed {
 			return false;
 		}
 
-		if (($ServiceUrl = Adapters\Webpage::check($Url))) {
-			return new Adapters\Webpage($ServiceUrl);
+		//Search the adapter using the domain
+		$class = 'Embed\\Adapters\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $Url->getDomain()))));
+
+		if (class_exists($class)) {
+			if (call_user_func(array($class, 'check'), $Url)) {
+				return new $class($Url);
+			}
+		}
+
+		if (Adapters\Webpage::check($Url)) {
+			return new Adapters\Webpage($Url);
 		}
 
 		return false;
