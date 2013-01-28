@@ -14,8 +14,12 @@ class Provider {
 	 * @param string $name Name of the value
 	 * @param string $value The value to save
 	 */
-	public function set ($name, $value) {
-		$this->parameters[trim($name)] = is_string($value) ? trim($value) : $value;
+	public function set ($name, $value = null) {
+		if (is_array($name)) {
+			$this->parameters = array_replace($this->parameters, $name);
+		} else {
+			$this->parameters[trim($name)] = is_string($value) ? trim($value) : $value;
+		}
 	}
 
 
@@ -36,8 +40,16 @@ class Provider {
 	 * 
 	 * @return string/null
 	 */
-	public function get ($name) {
-		return isset($this->parameters[$name]) ? $this->parameters[$name] : null;
+	public function get ($name, $subname = null) {
+		if ($subname === null) {
+			return isset($this->parameters[$name]) ? $this->parameters[$name] : null;
+		}
+		
+		if (!isset($this->parameters[$name][$subname])) {
+			return null;
+		}
+
+		return $this->parameters[$name][$subname];
 	}
 
 
@@ -87,7 +99,16 @@ class Provider {
 	}
 
 	public static function getVideoCode ($poster, array $sources, $width = 0, $height = 0) {
-		$code = '<video poster="'.$poster.'" width="'.$width.'" height="'.$height.'" controls>';
+		$code = '<video poster="'.$poster.'"';
+
+		if ($width) {
+			$code .= ' width="'.$width.'"';
+		}
+		if ($height) {
+			$code .= ' height="'.$height.'"';
+		}
+
+		$code .= ' controls>';
 
 		foreach ($sources as $source) {
 			$code .= '<source src="'.$source.'">';

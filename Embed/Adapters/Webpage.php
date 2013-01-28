@@ -17,6 +17,18 @@ class Webpage {
 	}
 
 	public function __construct (Url $Url, $followCanonical = true) {
+		$this->initProviders($Url);
+
+		$canonical = $this->getUrl();
+
+		if ($followCanonical && ($Url->getUrl() !== $canonical)) {
+			$this->initProviders(new Url($canonical));
+		}
+
+		$this->setData();
+	}
+
+	protected function initProviders (Url $Url) {
 		$this->Url = $Url;
 		$this->Html = new Html($Url);
 		$this->OpenGraph = new OpenGraph($Url);
@@ -27,14 +39,6 @@ class Webpage {
 		} else {
 			$this->OEmbed = OEmbedImplementations::create($Url);
 		}
-
-		$canonical = $this->getUrl();
-
-		if ($followCanonical && ($Url->getUrl() !== $canonical)) {
-			static::__construct(new Url($canonical), false);
-		}
-
-		$this->setData();
 	}
 
 	protected function setData () {
@@ -62,38 +66,30 @@ class Webpage {
 		}
 	}
 
-	public function getTitle () {
-		if (isset($this->OEmbed) && $this->OEmbed->getTitle()) {
-			return $this->OEmbed->getTitle();
+	public function getFromProviders ($name) {
+		$method = 'get'.$name;
+
+		if (isset($this->OEmbed) && ($value = $this->OEmbed->$method())) {
+			return $value;
 		}
 
-		return $this->OpenGraph->getTitle() ?: $this->TwitterCards->getTitle() ?: $this->Html->getTitle();
+		return $this->OpenGraph->$method() ?: $this->TwitterCards->$method() ?: $this->Html->$method();
+	}
+
+	public function getTitle () {
+		return $this->getFromProviders('title');
 	}
 
 	public function getDescription () {
-		if (isset($this->OEmbed) && $this->OEmbed->getDescription()) {
-			return $this->OEmbed->getDescription();
-		}
-
-		return $this->OpenGraph->getDescription() ?: $this->TwitterCards->getDescription() ?: $this->Html->getDescription();
+		return $this->getFromProviders('description');
 	}
 
 	public function getType () {
-		if (isset($this->OEmbed) && $this->OEmbed->getType()) {
-			return $this->OEmbed->getType();
-		}
-
-		return $this->OpenGraph->getType() ?: $this->TwitterCards->getType() ?: $this->Html->getType() ?: 'link';
+		return $this->getFromProviders('type') ?: 'link';
 	}
 
 	public function getCode () {
-		if (isset($this->OEmbed) && $this->OEmbed->getCode()) {
-			$code = $this->OEmbed->getType();
-		} else {
-			$code = $this->OpenGraph->getCode() ?: $this->TwitterCards->getCode() ?: $this->Html->getCode();
-		}
-
-		if ($code) {
+		if ($code = $this->getFromProviders('code')) {
 			if (strpos($code, '</iframe>') !== false) {
 				return preg_replace('|^.*(<iframe.*</iframe>).*$|', '$1', $code);
 			}
@@ -111,31 +107,19 @@ class Webpage {
 	}
 
 	public function getUrl () {
-		if (isset($this->OEmbed) && $this->OEmbed->getUrl()) {
-			return $this->OEmbed->getUrl();
-		}
-
-		return $this->OpenGraph->getUrl() ?: $this->TwitterCards->getUrl() ?: $this->Html->getUrl() ?: $this->Url->getUrl();
+		return $this->getFromProviders('url') ?: $this->Url->getUrl();
 	}
 
 	public function getAuthorName () {
-		if (isset($this->OEmbed) && $this->OEmbed->getAuthorName()) {
-			return $this->OEmbed->getAuthorName();
-		}
-
-		return $this->OpenGraph->getAuthorName() ?: $this->TwitterCards->getAuthorName() ?: $this->Html->getAuthorName();
+		return $this->getFromProviders('authorName');
 	}
 
 	public function getAuthorUrl () {
-		if (isset($this->OEmbed) && $this->OEmbed->getAuthorUrl()) {
-			return $this->OEmbed->getAuthorUrl();
-		}
-
-		return $this->OpenGraph->getAuthorUrl() ?: $this->TwitterCards->getAuthorUrl() ?: $this->Html->getAuthorUrl();
+		return $this->getFromProviders('authorUrl');
 	}
 
 	public function getProviderIcon () {
-		if (($icon = $this->Html->getProviderIcon())) {
+		if (($icon = $this->getFromProviders('providerIcon'))) {
 			return $icon;
 		}
 
@@ -153,43 +137,23 @@ class Webpage {
 	}
 
 	public function getProviderName () {
-		if (isset($this->OEmbed) && $this->OEmbed->getProviderName()) {
-			return $this->OEmbed->getProviderName();
-		}
-
-		return $this->OpenGraph->getProviderName() ?: $this->TwitterCards->getProviderName() ?: $this->Html->getProviderName() ?: $this->Url->getDomain();
+		return $this->getFromProviders('providerName') ?: $this->Url->getDomain();
 	}
 
 	public function getProviderUrl () {
-		if (isset($this->OEmbed) && $this->OEmbed->getProviderUrl()) {
-			return $this->OEmbed->getProviderUrl();
-		}
-
-		return $this->OpenGraph->getProviderUrl() ?: $this->TwitterCards->getProviderUrl() ?: $this->Html->getProviderUrl() ?: ($this->Url->getScheme().'://'.$this->Url->getHost());
+		return $this->getFromProviders('providerName') ?: ($this->Url->getScheme().'://'.$this->Url->getHost());
 	}
 
 	public function getImage () {
-		if (isset($this->OEmbed) && $this->OEmbed->getImage()) {
-			return $this->OEmbed->getImage();
-		}
-
-		return $this->OpenGraph->getImage() ?: $this->TwitterCards->getImage() ?: $this->Html->getImage();
+		return $this->getFromProviders('image');
 	}
 
 	public function getWidth () {
-		if (isset($this->OEmbed) && $this->OEmbed->getWidth()) {
-			return $this->OEmbed->getWidth();
-		}
-
-		return $this->OpenGraph->getWidth() ?: $this->TwitterCards->getWidth() ?: $this->Html->getWidth();
+		return $this->getFromProviders('width');
 	}
 
 	public function getHeight () {
-		if (isset($this->OEmbed) && $this->OEmbed->getHeight()) {
-			return $this->OEmbed->getHeight();
-		}
-
-		return $this->OpenGraph->getHeight() ?: $this->TwitterCards->getHeight() ?: $this->Html->getHeight();
+		return $this->getFromProviders('height');
 	}
 
 	public function getAspectRatio () {

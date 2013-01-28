@@ -106,10 +106,6 @@ class Url {
 					return $this->htmlContent = false;
 				}
 
-				if (strpos($this->getContentType(), 'text/html') === false) {
-					return new \DOMDocument();
-				}
-
 				$errors = libxml_use_internal_errors(true);
 				$this->htmlContent = new \DOMDocument();
 
@@ -127,6 +123,38 @@ class Url {
 		}
 
 		return $this->htmlContent;
+	}
+
+
+
+	/**
+	 * Clear all cached content (raw, html, json, etc)
+	 */
+	public function clearCache () {
+		$this->content = $this->htmlContent = $this->jsonContent = null;
+	}
+
+
+
+	/**
+	 * Get the content of the url as an array from json
+	 *
+	 * @return array The content or false
+	 */
+	public function getJsonContent () {
+		if ($this->jsonContent === null) {
+			try {
+				if (($response = $this->getContent()) === '') {
+					return $this->jsonContent = false;
+				}
+
+				$this->jsonContent = json_decode($response, true);
+			} catch (\Exception $E) {
+				return $this->jsonContent = false;
+			}
+		}
+
+		return $this->jsonContent;
 	}
 
 
@@ -461,7 +489,7 @@ class Url {
 
 		if ($this->url !== $url) {
 			$this->url = $url;
-			$this->content = $this->htmlContent = null;
+			$this->clearCache();
 		}
 	}
 
