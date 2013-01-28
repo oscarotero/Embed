@@ -46,17 +46,6 @@ class Html extends Provider {
 			}
 		}
 
-		if (!$this->get('icon')) {
-			$fav_ico = $Url->getAbsolute('/favicon.ico');
-			$fav_png = $Url->getAbsolute('/favicon.png');
-
-			if (@getimagesize($fav_png)) {
-				$this->set('icon', $fav_png);
-			} elseif (@getimagesize($fav_ico)) {
-				$this->set('icon', $fav_ico);
-			}
-		}
-
 		$Title = $Html->getElementsByTagName('title');
 
 		if ($Title && ($Title->length > 0)) {

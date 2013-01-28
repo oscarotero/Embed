@@ -135,7 +135,21 @@ class Webpage {
 	}
 
 	public function getProviderIcon () {
-		return $this->Html->getProviderIcon();
+		if (($icon = $this->Html->getProviderIcon())) {
+			return $icon;
+		}
+
+		$icon = $this->Url->getAbsolute('/favicon.png');
+
+		if (@getimagesize($icon)) {
+			return $icon;
+		}
+
+		$icon = $this->Url->getAbsolute('/favicon.ico');
+
+		if (@getimagesize($icon)) {
+			return $icon;
+		}
 	}
 
 	public function getProviderName () {
