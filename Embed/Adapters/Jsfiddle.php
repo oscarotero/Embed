@@ -10,6 +10,6 @@ class Jsfiddle extends Webpage {
 
 		$embed_url = $url.((substr($url, -1) === '/') ? 'embedded/' : '/embedded/');
 
-		return Provider::getIframeCode($embed_url, '100%', 300);
+		return Provider::getIframeCode($embed_url);
 	}
 }

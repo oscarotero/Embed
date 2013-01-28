@@ -64,18 +64,14 @@ class Provider {
 	//Utils
 	public static function getIframeCode ($href, $width = 0, $height = 0) {
 		if (!$width) {
-			$width = '600px';
-		} else if (is_int($width)) {
-			$width .= 'px';
+			$width = 600;
 		}
 
 		if (!$height) {
-			$height = '400px';
-		} else if (is_int($height)) {
-			$height .= 'px';
+			$height = 400;
 		}
 
-		return '<iframe src="'.$href.'" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:'.$width.'; height:'.$height.';" allowTransparency="true"></iframe>';
+		return '<iframe src="'.$href.'" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:'.$width.'px; height:'.$height.'px;" allowTransparency="true"></iframe>';
 	}
 
 	public static function getFlashCode ($href, $width = 0, $height = 0) {
