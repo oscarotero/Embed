@@ -2,7 +2,7 @@
 	"name": "embed/embed",
 	"type": "library",
 	"description": "PHP library to retrieve page info using oembed, opengraph, etc",
-	"keywords": ["oembed", "opengraph", "embed"],
+	"keywords": ["oembed", "opengraph", "twitter cards", "embed", "embedly"],
 	"homepage": "https://github.com/oscarotero/Embed",
 	"license": "AGPL-3.0",
 	"authors": [

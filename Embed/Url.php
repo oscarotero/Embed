@@ -6,6 +6,7 @@ namespace Embed;
 
 class Url {
 	private $info;
+	private $startingUrl;
 	private $url;
 	private $htmlContent;
 	private $content;
@@ -35,7 +36,7 @@ class Url {
 	 * Magic function to serialize and unserialize the object (keeps only the url for performance)
 	 */
 	public function __sleep () {
-		return array('url');
+		return array('url', 'startingUrl');
 	}
 
 	public function __wakeup () {
@@ -47,6 +48,7 @@ class Url {
 	 * Resolve the possible redirects for this url (for example bit.ly or any other url shortcutter)
 	 */
 	public function resolve () {
+		$this->startingUrl = $this->url;
 		$connection = curl_init($this->url);
 
 		curl_setopt($connection, CURLOPT_RETURNTRANSFER, true);
@@ -243,6 +245,16 @@ class Url {
 	 */
 	public function getUrl () {
 		return $this->url;
+	}
+
+
+	/**
+	 * Return the starting url (before all possible redirects)
+	 * 
+	 * @return string The starting url
+	 */
+	public function getStartingUrl () {
+		return $this->startingUrl ?: $this->url;
 	}
 
 
