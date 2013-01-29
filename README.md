@@ -13,7 +13,7 @@ Requirements:
 Usage:
 
 ```php
-//Load a youtube video:
+//Load any url:
 
 $Url = new Embed\Url('https://www.youtube.com/watch?v=PP1xn5wHtxE');
 $Info = Embed\Embed::create($Url);
@@ -38,3 +38,8 @@ $Info->providerName;
 $Info->providerUrl;
 $Info->providerIcon;
 ```
+
+Online demo
+-----------
+
+http://oscarotero.com/embed/test.php
