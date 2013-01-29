@@ -8,10 +8,12 @@ namespace Embed\Providers;
 use Embed\Url;
 
 class OEmbed extends Provider {
-	public function __construct (Url $Url, $format = 'json') {
+	public function __construct (Url $Url) {
 		if (($response = $Url->getContent()) === '') {
 			return false;
 		}
+
+		$format = (($Url->getExtension() === 'xml') || ($Url->getParameter('format') === 'xml')) ? 'xml' : 'json';
 
 		switch ($format) {
 			case 'json':

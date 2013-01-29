@@ -40,7 +40,7 @@ class Html extends Provider {
 
 					case 'alternate':
 						if ($Link->hasAttribute('type') && ($Link->getAttribute('type') === 'application/json+oembed' || $Link->getAttribute('type') === 'application/xml+oembed')) {
-							$this->set('oembed', $Link->getAttribute('href'));
+							$this->set('oembed', $href);
 						}
 						break;
 				}

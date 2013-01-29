@@ -14,10 +14,6 @@ class OEmbedImplementations extends Provider {
 			'patterns' => array('http://blip.tv/*')
 		),
 		array(
-			'endPoint' => 'http://chirb.it/oembed.json',
-			'patterns' => array('http://chirb.it/*')
-		),
-		array(
 			'endPoint' => 'http://backend.deviantart.com/oembed',
 			'patterns' => array('http://www.deviantart.com/art/*', 'http://www.deviantart.com/#/d*'),
 			'params' => array('for' => 'embed')
@@ -103,14 +99,13 @@ class OEmbedImplementations extends Provider {
 	public static function create (Url $Url) {
 		foreach (static::$implementations as $settings) {
 			if ($Url->match($settings['patterns'])) {
-				$format = isset($settings['format']) ? $settings['format'] : 'json';
-
-				$params = isset($settings['params']) ? $settings['params'] : array();
-				$params['url'] = $Url->getUrl();
-				$params['format'] = $format;
-
 				$EndPoint = new Url($settings['endPoint']);
-				$EndPoint->setParameter($params);
+
+				if (isset($settings['params'])) {
+					$EndPoint->setParameter($settings['params']);
+				}
+
+				$EndPoint->setParameter('url', $Url->getUrl());
 
 				return new OEmbed($EndPoint);
 			}
