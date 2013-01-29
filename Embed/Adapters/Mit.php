@@ -1,10 +1,13 @@
 <?php
+/**
+ * Adapter to fix some issues from mit.edu (not complete yet)
+ */
 namespace Embed\Adapters;
 
 use Embed\Url;
-use Embed\Providers\Provider;
+use Embed\Viewers;
 
-class Mit extends Webpage {
+class Mit extends Webpage implements AdapterInterface {
 
 	static public function check (Url $Url) {
 		return $Url->match(array(
@@ -16,7 +19,7 @@ class Mit extends Webpage {
 	public function getCode () {
 		$url = $this->getUrl();
 
-		return Provider::getIframeCode(str_replace('/video/view/', '/video/embed/', $url));
+		return Viewers::iframe(str_replace('/video/view/', '/video/embed/', $url));
 	}
 
 	public function getProviderName () {

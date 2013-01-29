@@ -1,8 +1,10 @@
 <?php
+/**
+ * Adapter to fix some bugs from yfrog.com meta tags
+ */
 namespace Embed\Adapters;
 
-class Yfrog extends Webpage {
-	
+class Yfrog extends Webpage implements AdapterInterface {
 	public function getImage () {
 		$image = parent::getImage();
 

@@ -6,6 +6,7 @@
 namespace Embed\Providers;
 
 use Embed\Url;
+use Embed\Viewers;
 
 class TwitterCards extends Provider {
 	public function __construct (Url $Url) {
@@ -54,7 +55,7 @@ class TwitterCards extends Provider {
 
 	public function getCode () {
 		if ($this->has('player')) {
-			return static::getIframeCode($this->get('player'), $this->getWidth(), $this->getHeight());
+			return Viewers::iframe($this->get('player'), $this->getWidth(), $this->getHeight());
 		}
 	}
 

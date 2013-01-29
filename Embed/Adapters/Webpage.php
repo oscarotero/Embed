@@ -1,31 +1,19 @@
 <?php
+/**
+ * Adapter to provide all information from any webpage (detects html meta tags, opengraph, twitter cards, oembed, etc)
+ */
 namespace Embed\Adapters;
 
 use Embed\Url;
-use Embed\Providers\Provider;
 use Embed\Providers\Html;
 use Embed\Providers\OEmbed;
 use Embed\Providers\OEmbedImplementations;
 use Embed\Providers\OpenGraph;
 use Embed\Providers\TwitterCards;
 
-class Webpage {
-	static public $settings = array();
-
+class Webpage extends Adapter implements AdapterInterface {
 	static public function check (Url $Url) {
 		return true;
-	}
-
-	public function __construct (Url $Url, $followCanonical = true) {
-		$this->initProviders($Url);
-
-		$canonical = $this->getUrl();
-
-		if ($followCanonical && ($Url->getUrl() !== $canonical)) {
-			$this->initProviders(new Url($canonical));
-		}
-
-		$this->setData();
 	}
 
 	protected function initProviders (Url $Url) {
@@ -38,31 +26,6 @@ class Webpage {
 			$this->OEmbed = new OEmbed(new Url($Url->getAbsolute($this->Html->get('oembed'))));
 		} else {
 			$this->OEmbed = OEmbedImplementations::create($Url);
-		}
-	}
-
-	protected function setData () {
-		$properties = array(
-			'title',
-			'description',
-			'type',
-			'code',
-			'url',
-			'authorName',
-			'authorUrl',
-			'providerIcon',
-			'providerName',
-			'providerUrl',
-			'image',
-			'width',
-			'height',
-			'aspectRatio'
-		);
-
-		foreach ($properties as $name) {
-			$method = 'get'.$name;
-
-			$this->$name = $this->$method();
 		}
 	}
 
@@ -119,29 +82,15 @@ class Webpage {
 	}
 
 	public function getProviderIcon () {
-		if (($icon = $this->getFromProviders('providerIcon'))) {
-			return $icon;
-		}
-
-		$icon = $this->Url->getAbsolute('/favicon.png');
-
-		if (@getimagesize($icon)) {
-			return $icon;
-		}
-
-		$icon = $this->Url->getAbsolute('/favicon.ico');
-
-		if (@getimagesize($icon)) {
-			return $icon;
-		}
+		return $this->getFromProviders('providerIcon') ?: parent::getProviderIcon();
 	}
 
 	public function getProviderName () {
-		return $this->getFromProviders('providerName') ?: $this->Url->getDomain();
+		return $this->getFromProviders('providerName') ?: parent::getProviderName();
 	}
 
 	public function getProviderUrl () {
-		return $this->getFromProviders('providerName') ?: ($this->Url->getScheme().'://'.$this->Url->getHost());
+		return $this->getFromProviders('providerUrl') ?: parent::getProviderUrl();
 	}
 
 	public function getImage () {
@@ -154,14 +103,5 @@ class Webpage {
 
 	public function getHeight () {
 		return $this->getFromProviders('height');
-	}
-
-	public function getAspectRatio () {
-		$width = $this->getWidth();
-		$height = $this->getHeight();
-
-		if ($width && (strpos($width, '%') === false) && $height && (strpos($height, '%') === false)) {
-			return round(($height / $width) * 100, 3);
-		}
 	}
 }

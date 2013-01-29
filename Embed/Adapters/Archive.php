@@ -1,10 +1,14 @@
 <?php
+/**
+ * Adapter to provide information from archive.org api
+ */
 namespace Embed\Adapters;
 
 use Embed\Url;
+use Embed\Viewers;
 use Embed\Providers\Provider;
 
-class Archive extends Webpage {
+class Archive extends Webpage implements AdapterInterface {
 	static public function check (Url $Url) {
 		return $Url->match(array(
 			'http://archive.org/details/*'
@@ -50,15 +54,15 @@ class Archive extends Webpage {
 		switch ($this->getMetadata('mediatype')) {
 			case 'movies':
 				$embed_url = str_replace('/details/', '/embed/', $this->getUrl());
-				return Provider::getIframeCode($embed_url);
+				return Viewers::iframe($embed_url);
 
 			case 'audio':
 				$embed_url = str_replace('/details/', '/embed/', $this->getUrl());
-				return Provider::getIframeCode($embed_url, 0, 30);
+				return Viewers::iframe($embed_url, 0, 30);
 
 			case 'texts':
 				$embed_url = str_replace('/details/', '/stream/', $this->getUrl()).'?ui=embed';
-				return Provider::getIframeCode($embed_url, 480, 430);
+				return Viewers::iframe($embed_url, 480, 430);
 		}
 	}
 

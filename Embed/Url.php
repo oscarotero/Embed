@@ -54,7 +54,7 @@ class Url {
 		curl_setopt($connection, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($connection, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($connection, CURLOPT_MAXREDIRS, 10);
-		curl_setopt($connection, CURLOPT_TIMEOUT, 10);
+		curl_setopt($connection, CURLOPT_TIMEOUT, 2);
 		curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 

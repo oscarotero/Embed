@@ -7,6 +7,7 @@
 namespace Embed\Providers;
 
 use Embed\Url;
+use Embed\Viewers;
 
 class Html extends Provider {
 	public function __construct (Url $Url) {
@@ -85,7 +86,7 @@ class Html extends Provider {
 		if ($this->has('video_src')) {
 			switch ($this->get('video_type')) {
 				case 'application/x-shockwave-flash':
-					return static::getFlashCode($this->get('video_src'), $this->getWidth(), $this->getHeight());
+					return Viewers::flash($this->get('video_src'), $this->getWidth(), $this->getHeight());
 			}
 		}
 	}

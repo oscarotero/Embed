@@ -1,10 +1,13 @@
 <?php
+/**
+ * Adapter to provide information from facebook graph API
+ */
 namespace Embed\Adapters;
 
 use Embed\Providers\Provider;
 use Embed\Url;
 
-class Facebook extends Webpage {
+class Facebook extends Webpage implements AdapterInterface {
 	static public $access_token;
 
 	static public function setAccessToken ($access_token) {

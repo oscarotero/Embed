@@ -6,6 +6,7 @@
 namespace Embed\Providers;
 
 use Embed\Url;
+use Embed\Viewers;
 
 class OpenGraph extends Provider {
 	public function __construct (Url $Url) {
@@ -57,12 +58,12 @@ class OpenGraph extends Provider {
 		if ($this->has('video')) {
 			switch ($this->get('video:type')) {
 				case 'application/x-shockwave-flash':
-					return static::getFlashCode($this->get('video'), $this->getWidth(), $this->getHeight());
+					return Viewers::flash($this->get('video'), $this->getWidth(), $this->getHeight());
 			}
 
 			switch (pathinfo(parse_url($this->get('video'), PHP_URL_PATH), PATHINFO_EXTENSION)) {
 				case 'swf':
-					return static::getFlashCode($this->get('video'), $this->getWidth(), $this->getHeight());
+					return Viewers::flash($this->get('video'), $this->getWidth(), $this->getHeight());
 			}
 		}
 	}
