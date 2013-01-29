@@ -75,7 +75,7 @@ class Viewers {
 	}
 
 
-	public static function flash ($href, $width = 0, $height = 0) {
+	public static function flash ($src, $width = 0, $height = 0) {
 		$code = self::element('object', array(
 			'width' => $width ?: 600,
 			'height' => $height ?: 400,
@@ -83,7 +83,7 @@ class Viewers {
 			'codebase' => 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0'
 		));
 
-		$code .= self::element('param', array('name' => 'movie', 'value' => $href));
+		$code .= self::element('param', array('name' => 'movie', 'value' => $src));
 		$code .= self::element('param', array('name' => 'allowFullScreen', 'value' => 'true'));
 		$code .= self::element('param', array('name' => 'allowScriptAccess', 'value' => 'always'));
 		$code .= self::element('embed', array(
