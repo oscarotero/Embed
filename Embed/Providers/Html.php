@@ -39,8 +39,15 @@ class Html extends Provider {
 						break;
 
 					case 'alternate':
-						if ($Link->hasAttribute('type') && ($Link->getAttribute('type') === 'application/json+oembed' || $Link->getAttribute('type') === 'application/xml+oembed')) {
-							$this->set('oembed', $href);
+						if ($Link->hasAttribute('type')) {
+							switch ($Link->getAttribute('type')) {
+								case 'application/json+oembed':
+								case 'application/xml+oembed':
+								case 'text/json+oembed':
+								case 'text/xml+oembed':
+									$this->set('oembed', $href);
+									break;
+							}
 						}
 						break;
 				}
