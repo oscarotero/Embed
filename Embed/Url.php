@@ -10,6 +10,7 @@ class Url {
 	private $url;
 	private $htmlContent;
 	private $content;
+	private $contentCharset;
 	private $contentType;
 	private $httpCode;
 
@@ -54,29 +55,28 @@ class Url {
 		curl_setopt($connection, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($connection, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($connection, CURLOPT_MAXREDIRS, 10);
-		curl_setopt($connection, CURLOPT_TIMEOUT, 2);
+		curl_setopt($connection, CURLOPT_TIMEOUT, 10);
+		curl_setopt($connection, CURLOPT_NOBODY, true);
 		curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 
-		$string = curl_exec($connection);
+		curl_exec($connection);
 
-		$this->httpCode = intval(curl_getinfo($connection, CURLINFO_HTTP_CODE));
 		$this->setUrl(curl_getinfo($connection, CURLINFO_EFFECTIVE_URL));
+		$this->httpCode = intval(curl_getinfo($connection, CURLINFO_HTTP_CODE));
 
 		$contentType = curl_getinfo($connection, CURLINFO_CONTENT_TYPE);
+
+		$charset = '';
 
 		if (strpos($contentType, ';') !== false) {
 			list($contentType, $charset) = explode(';', $contentType);
 
 			$charset = substr(strtoupper(strstr($charset, '=')), 1);
-
-			if (!empty($charset) && ($charset !== 'UTF-8')) {
-				mb_convert_encoding($string, 'UTF-8', $charset);
-			}
 		}
 
+		$this->contentCharset = trim($charset);
 		$this->contentType = trim($contentType);
-		$this->content = trim($string);
 
 		curl_close($connection);
 	}
@@ -89,7 +89,24 @@ class Url {
 	 */
 	public function getContent () {
 		if ($this->content === null) {
-			$this->resolve();
+			if ($this->httpCode === null) {
+				$this->resolve();
+			}
+
+			$connection = curl_init($this->url);
+
+			curl_setopt($connection, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($connection, CURLOPT_TIMEOUT, 30);
+			curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+
+			$content = curl_exec($connection);
+
+			if (!empty($this->contentCharset) && ($this->contentCharset !== 'UTF-8')) {
+				mb_convert_encoding($content, 'UTF-8', $this->contentCharset);
+			}
+
+			$this->content = trim($content);
 		}
 
 		return $this->content;
@@ -166,7 +183,7 @@ class Url {
 	 * @return int The http code
 	 */
 	public function getHttpCode () {
-		if (!isset($this->content)) {
+		if ($this->httpCode === null) {
 			$this->resolve();
 		}
 
@@ -180,7 +197,7 @@ class Url {
 	 * @return string The content-type header or null
 	 */
 	public function getContentType () {
-		if (!isset($this->content)) {
+		if ($this->contentType === null) {
 			$this->resolve();
 		}
 
@@ -234,6 +251,7 @@ class Url {
 			$this->info['path'] = $path;
 		}
 
+		$this->startingUrl = $this->contentCharset = $this->contentType = $this->httpCode = null;
 		$this->buildUrl();
 	}
 
