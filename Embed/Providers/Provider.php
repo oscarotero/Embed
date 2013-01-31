@@ -24,23 +24,18 @@ class Provider {
 
 
 	/**
-	 * Returns all stored values
-	 * 
-	 * @return array The values
-	 */
-	public function getAll () {
-		return $this->parameters;
-	}
-
-
-	/**
 	 * Get a value or null if not exists
 	 * 
 	 * @param string $name Value name
+	 * @param string $subname A subvalue name
 	 * 
 	 * @return string/null
 	 */
-	public function get ($name, $subname = null) {
+	public function get ($name = null, $subname = null) {
+		if ($name === null) {
+			return $this->parameters;
+		}
+
 		if ($subname === null) {
 			return isset($this->parameters[$name]) ? $this->parameters[$name] : null;
 		}

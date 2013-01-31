@@ -54,6 +54,9 @@ spl_autoload_register('autoload');
 			img {
 				border: solid 1px black;
 			}
+			table {
+				width: 100%;
+			}
 		</style>
 	</head>
 
@@ -139,8 +142,33 @@ spl_autoload_register('autoload');
 					<td><?php echo $Service->aspectRatio; ?></td>
 				</tr>
 				<tr>
-					<th>Object</th>
-					<td><pre><?php echo htmlspecialchars(print_r($Service, true), ENT_IGNORE); ?></pre></td>
+					<th>Http request result</th>
+					<td>
+						<ul>
+						<?php
+						foreach ($Url->getResult() as $name => $value) {
+							if (is_array($value)) {
+								$value = print_r($value, true);
+							}
+							echo "<li><strong>$name:</strong> $value</li>";
+						}
+						?>
+						</ul>
+					</td>
+				</tr>
+				<?php foreach ($Service as $name => $Provider) {
+					if (is_object($Provider) && strpos(get_class($Provider), 'Embed\\Provider') === 0) {
+						$content = htmlspecialchars(print_r($Provider, true), ENT_IGNORE);
+
+						echo '<tr><th>'.$name.'</th><td><pre>'.$content.'</pre></td></tr>';
+					}
+				}
+				?>
+				<tr>
+					<th>Content</th>
+					<td>
+						<pre><?php echo htmlspecialchars($Url->getContent(), ENT_IGNORE); ?></pre>
+					</td>
 				</tr>
 			</table>
 

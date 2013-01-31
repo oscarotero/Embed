@@ -5,15 +5,11 @@
 namespace Embed;
 
 class Url {
-	private $connection;
+	private $result;
 	private $info;
-	private $startingUrl;
 	private $url;
 	private $htmlContent;
 	private $content;
-	private $contentCharset;
-	private $contentType;
-	private $httpCode;
 
 	
 	/**
@@ -27,16 +23,6 @@ class Url {
 
 
 	/**
-	 * Magic method to close the connection on destruct
-	 */
-	public function __destruct () {
-		if ($this->connection !== null) {
-			curl_close($this->connection);
-		}
-	}
-
-	
-	/**
 	 * Magic function to print the url value
 	 */
 	public function __toString () {
@@ -48,7 +34,7 @@ class Url {
 	 * Magic function to serialize and unserialize the object (keeps only the url for performance)
 	 */
 	public function __sleep () {
-		return array('url', 'startingUrl');
+		return array('url', 'result');
 	}
 
 	public function __wakeup () {
@@ -59,43 +45,83 @@ class Url {
 	/**
 	 * Resolve the possible redirects for this url (for example bit.ly or any other url shortcutter)
 	 */
-	public function resolve () {
-		$this->startingUrl = $this->url;
+	private function resolve () {
+		$connection = curl_init();
 
-		if ($this->connection === null) {
-			$this->connection = curl_init();
+		curl_setopt_array($connection, array(
+			CURLOPT_URL => $this->url,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_CONNECTTIMEOUT => 5,
+			CURLOPT_TIMEOUT => 5,
+			CURLOPT_SSL_VERIFYPEER => false,
+			CURLOPT_SSL_VERIFYHOST => false,
+			CURLOPT_ENCODING => '',
+			CURLOPT_AUTOREFERER => true,
+			CURLOPT_USERAGENT => $_SERVER['HTTP_USER_AGENT']
+		));
 
-			curl_setopt($this->connection, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($this->connection, CURLOPT_FOLLOWLOCATION, true);
-			curl_setopt($this->connection, CURLOPT_MAXREDIRS, 10);
-			curl_setopt($this->connection, CURLOPT_CONNECTTIMEOUT, 5);
-			curl_setopt($this->connection, CURLOPT_TIMEOUT, 10);
-			curl_setopt($this->connection, CURLOPT_SSL_VERIFYPEER, false);
-			curl_setopt($this->connection, CURLOPT_SSL_VERIFYHOST, false);
-			curl_setopt($this->connection, CURLOPT_ENCODING, '');
-			curl_setopt($this->connection, CURLOPT_AUTOREFERER, true);
-			curl_setopt($this->connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-		}
+		$content = curl_exec($connection);
+		$this->result = curl_getinfo($connection);
 
-		curl_setopt($this->connection, CURLOPT_URL, $this->url);
-		//curl_setopt($this->connection, CURLOPT_NOBODY, true);
-		curl_exec($this->connection);
+		curl_close($connection);
 
-		$this->setUrl(curl_getinfo($this->connection, CURLINFO_EFFECTIVE_URL));
-		$this->httpCode = intval(curl_getinfo($this->connection, CURLINFO_HTTP_CODE));
+		$this->result['starting_url'] = $this->url;
+		$this->setUrl($this->result['url']);
 
-		$contentType = curl_getinfo($this->connection, CURLINFO_CONTENT_TYPE);
-
-		$charset = '';
-
-		if (strpos($contentType, ';') !== false) {
-			list($contentType, $charset) = explode(';', $contentType);
+		if (strpos($this->getResult('content_type'), ';') !== false) {
+			list($contentType, $charset) = explode(';', $this->getResult('content_type'));
 
 			$charset = substr(strtoupper(strstr($charset, '=')), 1);
+
+			if (!empty($charset) && ($charset !== 'UTF-8')) {
+				mb_convert_encoding($content, 'UTF-8', $charset);
+			}
 		}
 
-		$this->contentCharset = trim($charset);
-		$this->contentType = trim($contentType);
+		$this->content = trim($content);
+	}
+
+
+	/**
+	 * Get the result of the http request
+	 * 
+	 * @param string $name If it is not specified, returns all result info
+	 * 
+	 * @return array/string The result info
+	 */
+	public function getResult ($name = null) {
+		if (!$this->result) {
+			$this->resolve();
+		}
+
+		if ($name === null) {
+			return $this->result;
+		}
+
+		return isset($this->result[$name]) ? $this->result[$name] : null;
+	}
+
+
+
+	/**
+	 * Get the http code of the url
+	 * 
+	 * @return int The http code
+	 */
+	public function getHttpCode () {
+		return intval($this->getResult('http_code'));
+	}
+
+
+	/**
+	 * Get the content-type of the url
+	 * 
+	 * @return string The content-type header or null
+	 */
+	public function getContentType () {
+		return $this->getResult('content_type');
 	}
 
 
@@ -106,23 +132,7 @@ class Url {
 	 */
 	public function getContent () {
 		if ($this->content === null) {
-			if ($this->httpCode === null) {
-				$this->resolve();
-			}
-
-			//curl_setopt($this->connection, CURLOPT_URL, $this->url);
-			curl_setopt($this->connection, CURLOPT_NOBODY, false);
-
-			$content = curl_exec($this->connection);
-echo 'CURLINFO_CONNECT_TIME'.curl_getinfo($this->connection, CURLINFO_CONNECT_TIME).'<br>';
-echo 'CURLINFO_STARTTRANSFER_TIME'.curl_getinfo($this->connection, CURLINFO_STARTTRANSFER_TIME).'<br>';
-echo 'CURLINFO_REDIRECT_COUNT'.curl_getinfo($this->connection, CURLINFO_REDIRECT_COUNT).'<br>';
-echo 'CURLINFO_REDIRECT_TIME'.curl_getinfo($this->connection, CURLINFO_REDIRECT_TIME).'<br>';
-			if (!empty($this->contentCharset) && ($this->contentCharset !== 'UTF-8')) {
-				mb_convert_encoding($content, 'UTF-8', $this->contentCharset);
-			}
-
-			$this->content = trim($content);
+			$this->resolve();
 		}
 
 		return $this->content;
@@ -163,15 +173,6 @@ echo 'CURLINFO_REDIRECT_TIME'.curl_getinfo($this->connection, CURLINFO_REDIRECT_
 
 
 	/**
-	 * Clear all cached content (raw, html, json, etc)
-	 */
-	public function clearCache () {
-		$this->content = $this->htmlContent = $this->jsonContent = null;
-	}
-
-
-
-	/**
 	 * Get the content of the url as an array from json
 	 *
 	 * @return array The content or false
@@ -193,32 +194,14 @@ echo 'CURLINFO_REDIRECT_TIME'.curl_getinfo($this->connection, CURLINFO_REDIRECT_
 	}
 
 
-	/**
-	 * Get the http code of the url
-	 * 
-	 * @return int The http code
-	 */
-	public function getHttpCode () {
-		if ($this->httpCode === null) {
-			$this->resolve();
-		}
-
-		return $this->httpCode;
-	}
-
 
 	/**
-	 * Get the content-type of the url
-	 * 
-	 * @return string The content-type header or null
+	 * Clear all cached content (raw, html, json, etc)
 	 */
-	public function getContentType () {
-		if ($this->contentType === null) {
-			$this->resolve();
-		}
-
-		return $this->contentType;
+	public function clearCache () {
+		$this->content = $this->htmlContent = $this->jsonContent = null;
 	}
+
 
 
 	/**
@@ -267,7 +250,6 @@ echo 'CURLINFO_REDIRECT_TIME'.curl_getinfo($this->connection, CURLINFO_REDIRECT_
 			$this->info['path'] = $path;
 		}
 
-		$this->startingUrl = $this->contentCharset = $this->contentType = $this->httpCode = null;
 		$this->buildUrl();
 	}
 
@@ -288,7 +270,7 @@ echo 'CURLINFO_REDIRECT_TIME'.curl_getinfo($this->connection, CURLINFO_REDIRECT_
 	 * @return string The starting url
 	 */
 	public function getStartingUrl () {
-		return $this->startingUrl ?: $this->url;
+		return $this->result ? $this->result['starting_url'] : $this->url;
 	}
 
 
@@ -535,6 +517,7 @@ echo 'CURLINFO_REDIRECT_TIME'.curl_getinfo($this->connection, CURLINFO_REDIRECT_
 
 		if ($this->url !== $url) {
 			$this->url = $url;
+			$this->result = array();
 			$this->clearCache();
 		}
 	}
