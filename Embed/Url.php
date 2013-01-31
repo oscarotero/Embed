@@ -68,13 +68,17 @@ class Url {
 			curl_setopt($this->connection, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($this->connection, CURLOPT_FOLLOWLOCATION, true);
 			curl_setopt($this->connection, CURLOPT_MAXREDIRS, 10);
+			curl_setopt($this->connection, CURLOPT_CONNECTTIMEOUT, 5);
 			curl_setopt($this->connection, CURLOPT_TIMEOUT, 10);
 			curl_setopt($this->connection, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($this->connection, CURLOPT_SSL_VERIFYHOST, false);
+			curl_setopt($this->connection, CURLOPT_ENCODING, '');
+			curl_setopt($this->connection, CURLOPT_AUTOREFERER, true);
 			curl_setopt($this->connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 		}
 
 		curl_setopt($this->connection, CURLOPT_URL, $this->url);
-		curl_setopt($this->connection, CURLOPT_NOBODY, true);
+		//curl_setopt($this->connection, CURLOPT_NOBODY, true);
 		curl_exec($this->connection);
 
 		$this->setUrl(curl_getinfo($this->connection, CURLINFO_EFFECTIVE_URL));
@@ -106,11 +110,14 @@ class Url {
 				$this->resolve();
 			}
 
-			curl_setopt($this->connection, CURLOPT_URL, $this->url);
+			//curl_setopt($this->connection, CURLOPT_URL, $this->url);
 			curl_setopt($this->connection, CURLOPT_NOBODY, false);
 
 			$content = curl_exec($this->connection);
-
+echo 'CURLINFO_CONNECT_TIME'.curl_getinfo($this->connection, CURLINFO_CONNECT_TIME).'<br>';
+echo 'CURLINFO_STARTTRANSFER_TIME'.curl_getinfo($this->connection, CURLINFO_STARTTRANSFER_TIME).'<br>';
+echo 'CURLINFO_REDIRECT_COUNT'.curl_getinfo($this->connection, CURLINFO_REDIRECT_COUNT).'<br>';
+echo 'CURLINFO_REDIRECT_TIME'.curl_getinfo($this->connection, CURLINFO_REDIRECT_TIME).'<br>';
 			if (!empty($this->contentCharset) && ($this->contentCharset !== 'UTF-8')) {
 				mb_convert_encoding($content, 'UTF-8', $this->contentCharset);
 			}
