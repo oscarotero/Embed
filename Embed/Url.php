@@ -5,6 +5,7 @@
 namespace Embed;
 
 class Url {
+	private $connection;
 	private $info;
 	private $startingUrl;
 	private $url;
@@ -22,6 +23,16 @@ class Url {
 	 */
 	public function __construct ($url) {
 		$this->setUrl($url);
+	}
+
+
+	/**
+	 * Magic method to close the connection on destruct
+	 */
+	public function __destruct () {
+		if ($this->connection !== null) {
+			curl_close($this->connection);
+		}
 	}
 
 	
@@ -50,22 +61,26 @@ class Url {
 	 */
 	public function resolve () {
 		$this->startingUrl = $this->url;
-		$connection = curl_init($this->url);
 
-		curl_setopt($connection, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($connection, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($connection, CURLOPT_MAXREDIRS, 10);
-		curl_setopt($connection, CURLOPT_TIMEOUT, 10);
-		curl_setopt($connection, CURLOPT_NOBODY, true);
-		curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+		if ($this->connection === null) {
+			$this->connection = curl_init();
 
-		curl_exec($connection);
+			curl_setopt($this->connection, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($this->connection, CURLOPT_FOLLOWLOCATION, true);
+			curl_setopt($this->connection, CURLOPT_MAXREDIRS, 10);
+			curl_setopt($this->connection, CURLOPT_TIMEOUT, 10);
+			curl_setopt($this->connection, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($this->connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+		}
 
-		$this->setUrl(curl_getinfo($connection, CURLINFO_EFFECTIVE_URL));
-		$this->httpCode = intval(curl_getinfo($connection, CURLINFO_HTTP_CODE));
+		curl_setopt($this->connection, CURLOPT_URL, $this->url);
+		curl_setopt($this->connection, CURLOPT_NOBODY, true);
+		curl_exec($this->connection);
 
-		$contentType = curl_getinfo($connection, CURLINFO_CONTENT_TYPE);
+		$this->setUrl(curl_getinfo($this->connection, CURLINFO_EFFECTIVE_URL));
+		$this->httpCode = intval(curl_getinfo($this->connection, CURLINFO_HTTP_CODE));
+
+		$contentType = curl_getinfo($this->connection, CURLINFO_CONTENT_TYPE);
 
 		$charset = '';
 
@@ -77,8 +92,6 @@ class Url {
 
 		$this->contentCharset = trim($charset);
 		$this->contentType = trim($contentType);
-
-		curl_close($connection);
 	}
 
 
@@ -93,14 +106,10 @@ class Url {
 				$this->resolve();
 			}
 
-			$connection = curl_init($this->url);
+			curl_setopt($this->connection, CURLOPT_URL, $this->url);
+			curl_setopt($this->connection, CURLOPT_NOBODY, false);
 
-			curl_setopt($connection, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($connection, CURLOPT_TIMEOUT, 30);
-			curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
-			curl_setopt($connection, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-
-			$content = curl_exec($connection);
+			$content = curl_exec($this->connection);
 
 			if (!empty($this->contentCharset) && ($this->contentCharset !== 'UTF-8')) {
 				mb_convert_encoding($content, 'UTF-8', $this->contentCharset);
