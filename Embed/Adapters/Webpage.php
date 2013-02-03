@@ -72,7 +72,7 @@ class Webpage extends Adapter implements AdapterInterface {
 	}
 
 	public function getUrl () {
-		return $this->getFromProviders('url') ?: $this->Url->getUrl();
+		return ($url = $this->getFromProviders('url')) ? $this->Url->getAbsolute($url) : $this->Url->getUrl();
 	}
 
 	public function getAuthorName () {
