@@ -34,6 +34,8 @@ class Facebook extends Webpage implements AdapterInterface {
 				$id = $StartingUrl->getDirectory(1);
 			} else if ($StartingUrl->getDirectory(1) === 'posts') {
 				$id = $StartingUrl->getDirectory(2);
+			} else if ($StartingUrl->getDirectory(2) === 'posts') {
+				$id = $StartingUrl->getDirectory(3);
 			} else {
 				$id = $StartingUrl->getDirectory(0);
 			}
@@ -58,7 +60,7 @@ class Facebook extends Webpage implements AdapterInterface {
 	}
 
 	public function getUrl () {
-		return $this->Facebook->get('link') ?: $this->Url->getStartingUrl();
+		return $this->Url->getStartingUrl();
 	}
 
 	public function getProviderName () {
