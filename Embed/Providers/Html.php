@@ -24,8 +24,6 @@ class Html extends Provider {
 					continue;
 				}
 
-				$href = $Url->getAbsolute($href);
-
 				switch ($rel) {
 					case 'icon':
 					case 'shortcut icon':

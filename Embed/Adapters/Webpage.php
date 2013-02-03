@@ -80,11 +80,11 @@ class Webpage extends Adapter implements AdapterInterface {
 	}
 
 	public function getAuthorUrl () {
-		return $this->getFromProviders('authorUrl');
+		return ($url = $this->getFromProviders('authorUrl')) ? $this->Url->getAbsolute($url) : null;
 	}
 
 	public function getProviderIcon () {
-		return $this->getFromProviders('providerIcon') ?: parent::getProviderIcon();
+		return ($url = $this->getFromProviders('providerIcon')) ? $this->Url->getAbsolute($url) : parent::getProviderIcon();
 	}
 
 	public function getProviderName () {
@@ -92,11 +92,11 @@ class Webpage extends Adapter implements AdapterInterface {
 	}
 
 	public function getProviderUrl () {
-		return $this->getFromProviders('providerUrl') ?: parent::getProviderUrl();
+		return ($url = $this->getFromProviders('providerUrl')) ? $this->Url->getAbsolute($url) : parent::getProviderUrl();
 	}
 
 	public function getImage () {
-		return $this->getFromProviders('image');
+		return ($url = $this->getFromProviders('image')) ? $this->Url->getAbsolute($url) : null;
 	}
 
 	public function getWidth () {
