@@ -59,6 +59,13 @@ class OpenGraph extends Provider {
 			switch ($this->get('video:type')) {
 				case 'application/x-shockwave-flash':
 					return Viewers::flash($this->get('video'), $this->getWidth(), $this->getHeight());
+
+				case 'application/mp4':
+				case 'video/mp4':
+				case 'video/ogg':
+				case 'video/ogv':
+				case 'video/webm':
+					return Viewers::videoHtml($this->getImage(), $this->get('video'), $this->getWidth(), $this->getHeight());
 			}
 
 			switch (pathinfo(parse_url($this->get('video'), PHP_URL_PATH), PATHINFO_EXTENSION)) {
