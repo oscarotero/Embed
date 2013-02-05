@@ -481,6 +481,23 @@ class Url {
 	}
 
 
+
+	/**
+	 * Return the fragments as an array
+	 * 
+	 * @return array The fragment values
+	 */
+	public function getFragmentArray () {
+		if ($fragment = $this->getFragment()) {
+			parse_str($fragment, $values);
+
+			return $values;
+		}
+
+		return array();
+	}
+
+
 	/**
 	 * Set the url fragment
 	 * 
