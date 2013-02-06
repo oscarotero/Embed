@@ -350,10 +350,12 @@ class Url {
 
 	/**
 	 * Return the domain of the url (for example: google)
+	 *
+	 * @param boolean $first_level True to return the first level domain (.com, .es, etc)
 	 * 
 	 * @return string The domain or null
 	 */
-	public function getDomain () {
+	public function getDomain ($first_level = false) {
 		$host = $this->getHost();
 
 		if (!$host) {
@@ -367,9 +369,13 @@ class Url {
 				return $host[0];
 
 			case 2:
-				return $host[1];
+				return $first_level ? ($host[1].'.'.$host[0]) : $host[1];
 
 			default:
+				if ($first_level) {
+					return ($host[1] === 'co') ? ($host[2].'.'.$host[1].'.'.$host[0]) : ($host[1].'.'.$host[0]);
+				}
+
 				return ($host[1] === 'co') ? $host[2] : $host[1];
 		}
 	}

@@ -71,7 +71,7 @@ abstract class Adapter {
 	}
 
 	public function getProviderUrl () {
-		return ($this->Url->getScheme().'://'.$this->Url->getHost());
+		return ($this->Url->getScheme().'://'.$this->Url->getDomain(true));
 	}
 
 	public function getAspectRatio () {
