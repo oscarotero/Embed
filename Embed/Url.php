@@ -571,11 +571,7 @@ class Url {
 			return $this->getScheme().'://'.$this->getHost().'/'.$this->getPath().$url;
 		}
 
-		if (strpos($url, '../') === 0) {
-			return $this->getScheme().'://'.$this->getHost().'/'.$this->getPath().'/'.$url;
-		}
-
-		return $this->getScheme().'://'.$this->getHost().'/'.$url;
+		return $this->getScheme().'://'.$this->getHost().'/'.$this->getPath().'/'.$url;
 	}
 }
 ?>
