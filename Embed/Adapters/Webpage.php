@@ -42,7 +42,7 @@ class Webpage extends Adapter implements AdapterInterface {
 	}
 
 	public function getTitle () {
-		return $this->getFromProviders('title');
+		return $this->getFromProviders('title') ?: parent::getTitle();
 	}
 
 	public function getDescription () {

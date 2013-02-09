@@ -48,6 +48,10 @@ abstract class Adapter {
 		}
 	}
 
+	public function getTitle () {
+		return $this->Url->getUrl();
+	}
+
 	public function getUrl () {
 		return $this->Url->getUrl();
 	}
