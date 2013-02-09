@@ -8,6 +8,8 @@ class Url {
 	private $result;
 	private $info;
 	private $url;
+	private $xmlContent;
+	private $jsonContent;
 	private $htmlContent;
 	private $content;
 
@@ -195,10 +197,33 @@ class Url {
 
 
 	/**
+	 * Get the content of the url as an XML element
+	 *
+	 * @return SimpleXMLElement The content or false
+	 */
+	public function getXMLContent () {
+		if ($this->xmlContent === null) {
+			try {
+				if (($response = $this->getContent()) === '') {
+					return $this->xmlContent = false;
+				}
+
+				$this->xmlContent = new \SimpleXMLElement($response);
+			} catch (\Exception $E) {
+				return $this->xmlContent = false;
+			}
+		}
+
+		return $this->xmlContent;
+	}
+
+
+
+	/**
 	 * Clear all cached content (raw, html, json, etc)
 	 */
 	public function clearCache () {
-		$this->content = $this->htmlContent = $this->jsonContent = null;
+		$this->content = $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
 	}
 
 

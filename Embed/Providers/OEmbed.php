@@ -9,17 +9,11 @@ use Embed\Url;
 
 class OEmbed extends Provider {
 	public function __construct (Url $Url) {
-		if (($response = $Url->getContent()) === '') {
-			return false;
-		}
-
 		$format = (($Url->getExtension() === 'xml') || ($Url->getParameter('format') === 'xml')) ? 'xml' : 'json';
 
 		switch ($format) {
 			case 'json':
-				$parameters = (array)json_decode($response);
-
-				if (empty($parameters['Error'])) {
+				if (($parameters = $Url->getJsonContent()) && empty($parameters['Error'])) {
 					foreach ($parameters as $name => $value) {
 						$this->set($name, $value);
 					}
@@ -27,10 +21,10 @@ class OEmbed extends Provider {
 				break;
 
 			case 'xml':
-				$Xml = new \SimpleXMLElement($response);
-
-				foreach ($Xml as $element) {
-					$this->set($element->getName(), (string)$element);
+				if ($parameters = $Url->getXmlContent()) {
+					foreach ($parameters as $element) {
+						$this->set($element->getName(), (string)$element);
+					}
 				}
 				break;
 			
