@@ -66,7 +66,11 @@ class OEmbed extends Provider {
 	}
 
 	public function getUrl () {
-		return $this->get('url');
+		if ($this->getType() === 'photo') {
+			return $this->get('web_page');
+		}
+
+		return $this->get('url') ?: $this->get('web_page');
 	}
 
 	public function getAuthorName () {
