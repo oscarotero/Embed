@@ -56,7 +56,7 @@ class Url {
 			CURLOPT_FOLLOWLOCATION => true,
 			CURLOPT_MAXREDIRS => 20,
 			CURLOPT_CONNECTTIMEOUT => 5,
-			CURLOPT_TIMEOUT => 5,
+			CURLOPT_TIMEOUT => 10,
 			CURLOPT_SSL_VERIFYPEER => false,
 			CURLOPT_SSL_VERIFYHOST => false,
 			CURLOPT_ENCODING => '',
@@ -262,9 +262,7 @@ class Url {
 			$path = array();
 
 			foreach (explode('/', $this->info['path']) as $dir) {
-				if ($dir !== '') {
-					$path[] = $dir;
-				}
+				$path[] = $dir;
 			}
 
 			if (preg_match('/\.([\w]+)$/', end($path), $match)) {
@@ -553,7 +551,7 @@ class Url {
 			$url .= $this->info['host'];
 		}
 		if (isset($this->info['path'])) {
-			$url .= '/'.implode('/', $this->info['path']);
+			$url .= implode('/', $this->info['path']);
 		}
 		if (isset($this->info['query'])) {
 			$url .= '?'.http_build_query($this->info['query']);
@@ -593,10 +591,10 @@ class Url {
 		}
 
 		if ($url[0] === '?') {
-			return $this->getScheme().'://'.$this->getHost().'/'.$this->getPath().$url;
+			return $this->getScheme().'://'.$this->getHost().$this->getPath().$url;
 		}
 
-		return $this->getScheme().'://'.$this->getHost().'/'.$this->getPath().'/'.$url;
+		return $this->getScheme().'://'.$this->getHost().$this->getPath().'/'.$url;
 	}
 }
 ?>

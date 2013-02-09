@@ -11,6 +11,7 @@ use Embed\Providers\OEmbedImplementations;
 use Embed\Providers\OpenGraph;
 use Embed\Providers\TwitterCards;
 use Embed\Providers\Dcterms;
+use Embed\Providers\Facebook;
 
 class Webpage extends Adapter implements AdapterInterface {
 	static public function check (Url $Url) {
@@ -23,6 +24,7 @@ class Webpage extends Adapter implements AdapterInterface {
 		$this->OpenGraph = new OpenGraph($Url);
 		$this->TwitterCards = new TwitterCards($Url);
 		$this->Dcterms = new Dcterms($Url);
+		$this->Facebook = new Facebook($Url);
 
 		if ($this->Html->get('oembed')) {
 			$this->OEmbed = new OEmbed(new Url($Url->getAbsolute($this->Html->get('oembed'))));
@@ -38,7 +40,7 @@ class Webpage extends Adapter implements AdapterInterface {
 			return $value;
 		}
 
-		return $this->OpenGraph->$method() ?: $this->TwitterCards->$method() ?: $this->Dcterms->$method() ?: $this->Html->$method();
+		return $this->OpenGraph->$method() ?: $this->TwitterCards->$method() ?: $this->Facebook->$method() ?: $this->Dcterms->$method() ?: $this->Html->$method();
 	}
 
 	public function getTitle () {
