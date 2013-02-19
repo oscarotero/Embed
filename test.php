@@ -31,18 +31,6 @@ spl_autoload_register('autoload');
 			body {
 				font-family: sans-serif;
 			}
-			th {
-				text-align: right;
-			}
-			td {
-				padding-left: 20px;
-			}
-			th, td {
-				padding-top: 5px;
-				padding-bottom: 5px;
-				border-top: solid 1px #CCC;
-				vertical-align: top;
-			}
 			input {
 				width: 400px;
 			}
@@ -54,9 +42,23 @@ spl_autoload_register('autoload');
 			img {
 				border: solid 1px black;
 			}
-			table {
+			table.embed {
 				width: 100%;
 			}
+			table.embed > tr > th,
+			table.embed > tr > td {
+				padding-top: 5px;
+				padding-bottom: 5px;
+				border-top: solid 1px #CCC;
+				vertical-align: top;
+			}
+			table.embed > tr > th {
+				text-align: right;
+			}
+			table.embed > tr > td {
+				padding-left: 20px;
+			}
+
 		</style>
 	</head>
 
@@ -84,7 +86,7 @@ spl_autoload_register('autoload');
 			
 			<?php else: ?>
 
-			<table>
+			<table class="embed">
 				<tr>
 					<th>Title</th>
 					<td><?php echo $Service->title; ?></td>
