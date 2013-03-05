@@ -594,7 +594,11 @@ class Url {
 			return $this->getScheme().'://'.$this->getHost().$this->getPath().$url;
 		}
 
-		return $this->getScheme().'://'.$this->getHost().$this->getPath().'/'.$url;
+		if (substr($this->getPath(), -1) === '/') {
+			return $this->getScheme().'://'.$this->getHost().$this->getPath().$url;
+		}
+		
+		return $this->getScheme().'://'.$this->getHost().dirname($this->getPath()).$url;
 	}
 }
 ?>
