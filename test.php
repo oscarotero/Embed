@@ -75,9 +75,7 @@ spl_autoload_register('autoload');
 			<?php
 			$Url = new Embed\Url($_GET['url']);
 
-			if ($Url->isValid()) {
-				$Service = Embed\Embed::create($Url);
-			}
+			$Service = Embed\Embed::create($Url);
 			?>
 
 			<?php if (empty($Service)): ?>

@@ -69,7 +69,9 @@ class Url {
 		curl_close($connection);
 
 		$this->result['starting_url'] = $this->url;
-		$this->setUrl($this->result['url']);
+
+		$this->parseUrl($this->result['url']);
+		$this->buildUrl(true);
 
 		if (strpos($this->getResult('content_type'), ';') !== false) {
 			list($contentType, $charset) = explode(';', $this->getResult('content_type'));
@@ -93,7 +95,7 @@ class Url {
 	 * @return array/string The result info
 	 */
 	public function getResult ($name = null) {
-		if (!$this->result) {
+		if ($this->result === null) {
 			$this->resolve();
 		}
 
@@ -223,7 +225,7 @@ class Url {
 	 * Clear all cached content (raw, html, json, etc)
 	 */
 	public function clearCache () {
-		$this->content = $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
+		$this->result = $this->content = $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
 	}
 
 
@@ -248,30 +250,7 @@ class Url {
 	 * @param string $url The url
 	 */
 	public function setUrl ($url) {
-		if (strpos($url, '//') === 0) {
-			$url = "http:$url";
-		}
-
-		$this->info = parse_url($url);
-
-		if (isset($this->info['query'])) {
-			parse_str($this->info['query'], $this->info['query']);
-		}
-
-		if (isset($this->info['path'])) {
-			$path = array();
-
-			foreach (explode('/', $this->info['path']) as $dir) {
-				$path[] = $dir;
-			}
-
-			if (preg_match('/\.([\w]+)$/', end($path), $match)) {
-				$this->info['extension'] = $match[1];
-			}
-
-			$this->info['path'] = $path;
-		}
-
+		$this->parseUrl($url);
 		$this->buildUrl();
 	}
 
@@ -541,7 +520,7 @@ class Url {
 	/**
 	 * Private function to regenerate the url after any change (scheme, host, parameters, etc)
 	 */
-	private function buildUrl () {
+	private function buildUrl ($maintainCache = false) {
 		$url = '';
 
 		if (isset($this->info['scheme'])) {
@@ -560,10 +539,42 @@ class Url {
 			$url .= '#'.$this->info['fragment'];
 		}
 
-		if ($this->url !== $url) {
-			$this->url = $url;
-			$this->result = array();
+		$this->url = $url;
+		
+		if (!$maintainCache && ($this->url !== $url)) {
 			$this->clearCache();
+		}
+	}
+
+
+	/**
+	 * Parse a url and split into different pieces
+	 *
+	 * @param  string $url The url to parse
+	 */
+	private function parseUrl ($url) {
+		if (strpos($url, '//') === 0) {
+			$url = "http:$url";
+		}
+
+		$this->info = parse_url($url);
+
+		if (isset($this->info['query'])) {
+			parse_str($this->info['query'], $this->info['query']);
+		}
+
+		if (isset($this->info['path'])) {
+			$path = array();
+
+			foreach (explode('/', $this->info['path']) as $dir) {
+				$path[] = $dir;
+			}
+
+			if (preg_match('/\.([\w]+)$/', end($path), $match)) {
+				$this->info['extension'] = $match[1];
+			}
+
+			$this->info['path'] = $path;
 		}
 	}
 
