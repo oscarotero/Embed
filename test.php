@@ -45,17 +45,17 @@ spl_autoload_register('autoload');
 			table.embed {
 				width: 100%;
 			}
-			table.embed > tr > th,
-			table.embed > tr > td {
+			table.embed th,
+			table.embed td {
 				padding-top: 5px;
 				padding-bottom: 5px;
 				border-top: solid 1px #CCC;
 				vertical-align: top;
 			}
-			table.embed > tr > th {
+			table.embed th {
 				text-align: right;
 			}
-			table.embed > tr > td {
+			table.embed td {
 				padding-left: 20px;
 			}
 

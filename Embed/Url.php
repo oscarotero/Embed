@@ -13,6 +13,34 @@ class Url {
 	private $htmlContent;
 	private $content;
 
+
+	/**
+	 * Check if an url is an image and gets its data.
+	 * 
+	 * @param  string $url The image url
+	 * 
+	 * @return array image data (width, height, format)
+	 * @return false if it's not an image
+	 */
+	public static function isImage ($url) {
+		if (!($handle = @fopen($url, 'r'))) {
+			return false;
+		}
+
+		$result = mb_convert_encoding(fread($handle, 2), '8BIT');
+		fclose($handle);
+
+		switch ($result) {
+			case "BM":
+			case "GI":
+			case chr(0xFF).chr(0xd8):
+			case chr(0x89).'P':
+				return true;
+		}
+
+		return false;
+	}
+
 	
 	/**
 	 * Constructor. Sets the url

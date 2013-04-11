@@ -59,13 +59,13 @@ abstract class Adapter {
 	public function getProviderIcon () {
 		$icon = $this->Url->getAbsolute('/favicon.png');
 
-		if (@getimagesize($icon)) {
+		if (Url::isImage($icon)) {
 			return $icon;
 		}
 
 		$icon = $this->Url->getAbsolute('/favicon.ico');
 
-		if (@getimagesize($icon)) {
+		if (Url::isImage($icon)) {
 			return $icon;
 		}
 	}
