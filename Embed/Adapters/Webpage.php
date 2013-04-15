@@ -14,33 +14,62 @@ use Embed\Providers\Dcterms;
 use Embed\Providers\Facebook;
 
 class Webpage extends Adapter implements AdapterInterface {
+	public $providers = array();
+
 	static public function check (Url $Url) {
 		return true;
 	}
 
 	protected function initProviders (Url $Url) {
 		$this->Url = $Url;
-		$this->Html = new Html($Url);
-		$this->OpenGraph = new OpenGraph($Url);
-		$this->TwitterCards = new TwitterCards($Url);
-		$this->Dcterms = new Dcterms($Url);
-		$this->Facebook = new Facebook($Url);
 
-		if ($this->Html->get('oembed')) {
-			$this->OEmbed = new OEmbed(new Url($Url->getAbsolute($this->Html->get('oembed'))));
-		} else {
-			$this->OEmbed = OEmbedImplementations::create($Url);
+		$this->providers = array(
+			'Html' => new Html($Url),
+			'OpenGraph' => new OpenGraph($Url),
+			'TwitterCards' => new TwitterCards($Url),
+			'Dcterms' => new Dcterms($Url),
+			'Facebook' => new Facebook($Url)
+		);
+
+		if ($this->providers['Html']->get('oembed')) {
+			$this->providers['OEmbed'] = new OEmbed(new Url($Url->getAbsolute($this->providers['Html']->get('oembed'))));
+		} else if (($OEmbed = OEmbedImplementations::create($Url))) {
+			$this->providers['OEmbed'] = $OEmbed;
 		}
 	}
 
 	public function getFromProviders ($name) {
 		$method = 'get'.$name;
 
-		if (isset($this->OEmbed) && ($value = $this->OEmbed->$method())) {
-			return $value;
+		foreach ($this->providers as $Provider) {
+			if ($url = $Provider->$method()) {
+				return $url;
+			}
 		}
+	}
 
-		return $this->OpenGraph->$method() ?: $this->TwitterCards->$method() ?: $this->Facebook->$method() ?: $this->Dcterms->$method() ?: $this->Html->$method();
+	public function getUrlFromProviders ($name) {
+		$method = 'get'.$name;
+
+		foreach ($this->providers as $Provider) {
+			if ($url = $Provider->$method()) {
+				return $this->Url->getAbsolute($url);
+			}
+		}
+	}
+
+	public function getImageFromProviders ($name) {
+		$method = 'get'.$name;
+
+		foreach ($this->providers as $Provider) {
+			if ($url = $Provider->$method()) {
+				$url = $this->Url->getAbsolute($url);
+
+				if (Url::isImage($url)) {
+					return $url;
+				}
+			}
+		}
 	}
 
 	public function getTitle () {
@@ -74,7 +103,7 @@ class Webpage extends Adapter implements AdapterInterface {
 	}
 
 	public function getUrl () {
-		return ($url = $this->getFromProviders('url')) ? $this->Url->getAbsolute($url) : $this->Url->getUrl();
+		return $this->getUrlFromProviders('url') ?: $this->Url->getUrl();
 	}
 
 	public function getAuthorName () {
@@ -82,11 +111,11 @@ class Webpage extends Adapter implements AdapterInterface {
 	}
 
 	public function getAuthorUrl () {
-		return ($url = $this->getFromProviders('authorUrl')) ? $this->Url->getAbsolute($url) : null;
+		return $this->getUrlFromProviders('authorUrl');
 	}
 
 	public function getProviderIcon () {
-		return ($url = $this->getFromProviders('providerIcon')) ? $this->Url->getAbsolute($url) : parent::getProviderIcon();
+		return $this->getImageFromProviders('providerIcon') ?: parent::getProviderIcon();
 	}
 
 	public function getProviderName () {
@@ -94,11 +123,11 @@ class Webpage extends Adapter implements AdapterInterface {
 	}
 
 	public function getProviderUrl () {
-		return ($url = $this->getFromProviders('providerUrl')) ? $this->Url->getAbsolute($url) : parent::getProviderUrl();
+		return $this->getUrlFromProviders('providerUrl') ?: parent::getProviderUrl();
 	}
 
 	public function getImage () {
-		return ($url = $this->getFromProviders('image')) ? $this->Url->getAbsolute($url) : null;
+		return $this->getImageFromProviders('image');
 	}
 
 	public function getWidth () {

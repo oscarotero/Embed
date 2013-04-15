@@ -17,7 +17,7 @@ class Codepen extends Webpage implements AdapterInterface {
 	public function getCode () {
 		$embed_url = str_replace('/pen/', '/embed/', $this->getUrl());
 
-		return Viewers::iframe($embed_url);
+		return Viewers::iframe($embed_url, 600, 300);
 	}
 
 	public function getProviderName () {

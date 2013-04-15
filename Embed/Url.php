@@ -19,11 +19,10 @@ class Url {
 	 * 
 	 * @param  string $url The image url
 	 * 
-	 * @return array image data (width, height, format)
-	 * @return false if it's not an image
+	 * @return boolean
 	 */
 	public static function isImage ($url) {
-		if (!($handle = @fopen($url, 'r'))) {
+		if (!$url || !($handle = @fopen($url, 'r'))) {
 			return false;
 		}
 
@@ -31,11 +30,14 @@ class Url {
 		fclose($handle);
 
 		switch ($result) {
-			case "BM":
-			case "GI":
+			case 'BM':
+			case 'GI':
 			case chr(0xFF).chr(0xd8):
 			case chr(0x89).'P':
 				return true;
+
+			case chr(0x00).chr(0x00):
+				return @getimagesize($url);
 		}
 
 		return false;

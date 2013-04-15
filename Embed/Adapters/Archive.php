@@ -18,18 +18,18 @@ class Archive extends Webpage implements AdapterInterface {
 	protected function initProviders (Url $Url) {
 		parent::initProviders($Url);
 
-		$this->Archive = new Provider();
+		$this->providers['Archive'] = new Provider();
 
 		$UrlApi = clone $Url;
 		$UrlApi->setParameter('output', 'json');
 
 		if ($json = $UrlApi->getJsonContent()) {
-			$this->Archive->set($json);
+			$this->providers['Archive']->set($json);
 		}
 	}
 
 	private function getMetadata ($key) {
-		if (($metadata = $this->Archive->get('metadata', $key)) && isset($metadata[0])) {
+		if (($metadata = $this->providers['Archive']->get('metadata', $key)) && isset($metadata[0])) {
 			return $metadata[0];
 		}
 	}
@@ -71,6 +71,6 @@ class Archive extends Webpage implements AdapterInterface {
 	}
 
 	public function getImage () {
-		return $this->Archive->get('misc', 'image') ?: parent::getImage();
+		return $this->providers['Archive']->get('misc', 'image') ?: parent::getImage();
 	}
 }

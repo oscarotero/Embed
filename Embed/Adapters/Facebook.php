@@ -23,7 +23,7 @@ class Facebook extends Webpage implements AdapterInterface {
 	protected function initProviders (Url $Url) {
 		parent::initProviders($Url);
 
-		$this->Facebook = new Provider();
+		$this->providers['Facebook'] = new Provider();
 
 		if (static::$access_token) {
 			$StartingUrl = new Url($Url->getStartingUrl());
@@ -45,18 +45,14 @@ class Facebook extends Webpage implements AdapterInterface {
 				$UrlApi->setParameter('access_token', static::$access_token);
 
 				if ($json = $UrlApi->getJsonContent()) {
-					$this->Facebook->set($json);
+					$this->providers['Facebook']->set($json);
 				}
 			}
 		}
 	}
 
 	public function getTitle () {
-		return $this->Facebook->get('name') ?: parent::getTitle();
-	}
-
-	public function getDescription () {
-		return $this->Facebook->get('description') ?: parent::getDescription();
+		return $this->providers['Facebook']->get('name') ?: parent::getTitle();
 	}
 
 	public function getUrl () {
@@ -68,20 +64,12 @@ class Facebook extends Webpage implements AdapterInterface {
 	}
 
 	public function getImage () {
-		$id = $this->Facebook->get('id');
+		$id = $this->providers['Facebook']->get('id');
 
 		if ($id) {
 			return 'https://graph.facebook.com/'.$id.'/picture';
 		}
 		
 		return parent::getImage();
-	}
-
-	public function getWidth () {
-		return $this->Facebook->get('width') ?: parent::getWidth();
-	}
-
-	public function getHeight () {
-		return $this->Facebook->get('height') ?: parent::getHeight();
 	}
 }

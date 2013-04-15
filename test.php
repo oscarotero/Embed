@@ -156,12 +156,9 @@ spl_autoload_register('autoload');
 						</ul>
 					</td>
 				</tr>
-				<?php foreach ($Service as $name => $Provider) {
-					if (is_object($Provider) && strpos(get_class($Provider), 'Embed\\Provider') === 0) {
-						$content = htmlspecialchars(print_r($Provider, true), ENT_IGNORE);
-
-						echo '<tr><th>'.$name.'</th><td><pre>'.$content.'</pre></td></tr>';
-					}
+				<?php foreach ($Service->providers as $name => $Provider) {
+					$content = htmlspecialchars(print_r($Provider, true), ENT_IGNORE);
+					echo '<tr><th>'.$name.'</th><td><pre>'.$content.'</pre></td></tr>';
 				}
 				?>
 				<tr>

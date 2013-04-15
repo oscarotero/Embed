@@ -56,21 +56,5 @@ class Facebook extends Provider {
 			return $images[0]['url'];
 		}
 	}
-
-	public function getWidth () {
-		$this->init();
-
-		if (($images = $this->get('image')) && isset($images[0]['width'])) {
-			return $images[0]['width'];
-		}
-	}
-
-	public function getHeight () {
-		$this->init();
-
-		if (($images = $this->get('image')) && isset($images[0]['height'])) {
-			return $images[0]['height'];
-		}
-	}
 }
 ?>
