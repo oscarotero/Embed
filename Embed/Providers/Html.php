@@ -15,15 +15,13 @@ class Html extends Provider {
 			return false;
 		}
 
-        $base_url = $Url->getUrl();
-        
         $images = array();
         $icons = array();
 
 		foreach ($Html->getElementsByTagName('link') as $Link) {
 			if ($Link->hasAttribute('rel') && $Link->hasAttribute('href')) {
 				$rel = trim(strtolower($Link->getAttribute('rel')));
-				$href = $this->_getFullUrl($Link->getAttribute('href'));
+				$href = $Url->getAbsolute($Link->getAttribute('href'));
 
 				if (empty($href)) {
 					continue;
@@ -38,6 +36,7 @@ class Html extends Provider {
                         array_push($icons, $href);
                         break;
 
+                    case 'apple-touch-icon-precomposed':
                     case 'apple-touch-icon':
                         array_push($icons, $href);
                         break;
@@ -74,14 +73,14 @@ class Html extends Provider {
 			if ($Tag->hasAttribute('name')) {
 				$name = strtolower($Tag->getAttribute('name'));
                 if($name === 'msapplication-tileimage'){
-                    array_push($icons, $this->_getFullUrl($base_url, $Tag->getAttribute('content')));
+                    array_push($icons, $Url->getAbsolute($Tag->getAttribute('content')));
                 }
                 else if($name === 'twitter:image'){
                     $img = new \stdClass();
                     $img->width = null;
                     $img->height = null;
                     $img->alt = null;
-                    $img->src = $this->_getFullUrl($base_url, $Tag->getAttribute('content'));
+                    $img->src = $Url->getAbsolute($Tag->getAttribute('content'));
                     array_push($images, $img);
                 }
 			} else if ($Tag->hasAttribute('http-equiv')) {
@@ -93,7 +92,7 @@ class Html extends Provider {
                     $img->width = null;
                     $img->height = null;
                     $img->alt = null;
-                    $img->src = $this->_getFullUrl($base_url, $Tag->getAttribute('content'));
+                    $img->src = $Url->getAbsolute($Tag->getAttribute('content'));
                     array_push($images, $img);
                 }                
 			} else {
@@ -113,7 +112,7 @@ class Html extends Provider {
                 $img->width = null;
                 $img->height = null;
                 $img->alt = null;
-                $img->src = $this->_getFullUrl($base_url, $Tag->getAttribute('src'));
+                $img->src = $Url->getAbsolute($Tag->getAttribute('src'));
                 if($Tag->hasAttribute('width') === true){
                     $img->width = (int) $Tag->getAttribute('width');
                 }
@@ -250,85 +249,6 @@ class Html extends Provider {
         }
         return isset($icons[$index]) === true ? $icons[$index] : null;
     }
-    
-    
-    /**
-     * Resolves a src of an image to it's full path.
-     *
-     * @access public
-     * @author Oliver Lillie
-     * @param string $base 
-     * @param string $src 
-     * @return string
-     */
-    protected function _getFullUrl($base, $src){
-        $src = trim($src);
-        if(substr($src, 0, 2) === '//'){
-            $src = 'https:'.$src;
-        }
-        if(substr($src, 0, 4) !== 'http'){
-            $src = $this->_resolveUrl($url_string, $src);
-        }
-        
-        return $this->_resolveUrl($base, $src);
-    }
-    
-    /**
-     * Resolves urls like realpath
-     *
-     * @see http://www.php.net/manual/en/function.realpath.php#85388
-     * @access public
-     * @author Isaac Z. Schlueter i at foohack dot com
-     * @param string $base 
-     * @param string $src 
-     * @return string
-     */
-    protected function _resolveUrl($base, $href) { 
-        // href="" ==> current url. 
-        if(!$href) { 
-            return $base; 
-        } 
 
-        // href="http://..." ==> href isn't relative 
-        $rel_parsed = parse_url($href); 
-        if (array_key_exists('scheme', $rel_parsed) === true){ 
-            return $href; 
-        } 
-
-        // add an extra character so that, if it ends in a /, we don't lose the last piece. 
-        $base_parsed = parse_url($base.' '); 
-        // if it's just server.com and no path, then put a / there. 
-        if(array_key_exists('path', $base_parsed) === false){ 
-            $base_parsed = parse_url($base.'/ '); 
-        } 
-
-        // href="/ ==> throw away current path. 
-        if($href{0} === "/") { 
-            $path = $href; 
-        }
-        else{ 
-            $path = dirname($base_parsed['path']).'/'.$href; 
-        } 
-
-        // bla/./bloo ==> bla/bloo 
-        $path = preg_replace('~/\./~', '/', $path); 
-
-        // resolve /../ 
-        // loop through all the parts, popping whenever there's a .., pushing otherwise. 
-        $parts = array(); 
-        foreach (explode('/', preg_replace('~/+~', '/', $path)) as $part){
-            if($part === ".."){ 
-                array_pop($parts); 
-            }
-            else if($part!=""){ 
-                $parts[] = $part; 
-            } 
-        } 
-
-        return ( 
-            (array_key_exists('scheme', $base_parsed) === true) ? 
-                $base_parsed['scheme'] . '://' . $base_parsed['host'] : ''
-        ) . '/' . implode('/', $parts); 
-    }
 }
 ?>
