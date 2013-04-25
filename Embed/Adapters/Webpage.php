@@ -26,10 +26,10 @@ class Webpage extends Adapter implements AdapterInterface {
 
 		$this->providers = array(
 			'Html' => new Html($Url),
-			'OpenGraph' => new OpenGraph($Url),
-			'TwitterCards' => new TwitterCards($Url),
 			'Dcterms' => new Dcterms($Url),
-			'Facebook' => new Facebook($Url)
+			'Facebook' => new Facebook($Url),
+			'TwitterCards' => new TwitterCards($Url),
+			'OpenGraph' => new OpenGraph($Url)
 		);
 
 		if ($this->providers['Html']->get('oembed')) {
@@ -37,6 +37,8 @@ class Webpage extends Adapter implements AdapterInterface {
 		} else if (($OEmbed = OEmbedImplementations::create($Url))) {
 			$this->providers['OEmbed'] = $OEmbed;
 		}
+
+		$this->providers = array_reverse($this->providers);
 	}
 
 	public function getFromProviders ($name) {
@@ -62,7 +64,7 @@ class Webpage extends Adapter implements AdapterInterface {
 	public function getImageFromProviders ($name) {
 		$method = 'get'.$name;
 
-		foreach ($this->providers as $Provider) {
+		foreach ($this->providers as $k => $Provider) {
 			if ($url = $Provider->$method()) {
 				$url = $this->Url->getAbsolute($url);
 
