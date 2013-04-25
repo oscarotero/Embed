@@ -6,6 +6,7 @@
 namespace Embed\Providers;
 
 use Embed\Url;
+use Embed\Providers\OEmbed;
 
 class OEmbed extends Provider {
 	public function __construct (Url $Url) {
@@ -32,6 +33,7 @@ class OEmbed extends Provider {
 				throw new \Exception("No valid format specified");
 				break;
 		}
+        
 	}
 
 	public function getTitle () {
