@@ -1,10 +1,7 @@
 <?php
-
 namespace Embed\Providers\OEmbed;
 
-use Embed\Providers;
-
-class SoundCloud extends \Embed\Providers\OEmbedImplementationAbstract {
+class Soundcloud extends \Embed\Providers\OEmbedImplementationAbstract {
     public static function getEndPoint()
     {
         return 'http://soundcloud.com/oembed';

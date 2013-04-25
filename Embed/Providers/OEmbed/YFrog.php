@@ -1,10 +1,7 @@
 <?php
-
 namespace Embed\Providers\OEmbed;
 
-use Embed\Providers;
-
-class YFrog extends \Embed\Providers\OEmbedImplementationAbstract {
+class Yfrog extends \Embed\Providers\OEmbedImplementationAbstract {
     public static function getEndPoint()
     {
         return 'http://www.yfrog.com/api/oembed';

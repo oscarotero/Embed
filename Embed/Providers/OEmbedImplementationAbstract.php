@@ -11,14 +11,18 @@ abstract class OEmbedImplementationAbstract{
      * @author Oliver Lillie
      * @return string
      */
-    abstract public static function getEndPoint();
+    public static function getEndPoint() {
+        return '';
+    }
     
     /**
      * @access public
      * @author Oliver Lillie
      * @return array
      */
-    abstract public static function getPatterns();
+    public static function getPatterns() {
+        return array();
+    }
     
     /**
      * @access public

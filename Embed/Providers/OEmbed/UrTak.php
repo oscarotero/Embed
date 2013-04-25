@@ -1,10 +1,7 @@
 <?php
-
 namespace Embed\Providers\OEmbed;
 
-use Embed\Providers;
-
-class UrTak extends \Embed\Providers\OEmbedImplementationAbstract {
+class Urtak extends \Embed\Providers\OEmbedImplementationAbstract {
     public static function getEndPoint()
     {
         return 'http://oembed.urtak.com/1/oembed';

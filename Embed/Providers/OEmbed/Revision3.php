@@ -1,8 +1,5 @@
 <?php
-
 namespace Embed\Providers\OEmbed;
-
-use Embed\Providers;
 
 class Revision3 extends \Embed\Providers\OEmbedImplementationAbstract {
     public static function getEndPoint()

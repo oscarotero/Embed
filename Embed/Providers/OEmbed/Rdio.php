@@ -1,8 +1,5 @@
 <?php
-
 namespace Embed\Providers\OEmbed;
-
-use Embed\Providers;
 
 class Rdio extends \Embed\Providers\OEmbedImplementationAbstract {
     public static function getEndPoint()

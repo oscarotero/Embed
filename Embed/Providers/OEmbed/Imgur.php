@@ -1,8 +1,6 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-use Embed\Providers;
-
 class Imgur extends \Embed\Providers\OEmbedImplementationAbstract {
     public static function getEndPoint()
     {

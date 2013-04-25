@@ -11,35 +11,29 @@ use Embed\Providers\OEmbed;
 class OEmbedImplementations extends Provider {
 
 	public static function create (Url $Url) {
-        static $implementations = null;
-        if($implementations === null)
-        {
-            $implementations = array();
-            $oembed_classes = glob(__DIR__.'/OEmbed/*.php');
-            foreach ($oembed_classes as $file)
-            {
-                $class_name = basename($file, '.php');
-                $class = 'Embed\\Providers\\OEmbed\\'.$class_name;
-                $implementations[$class_name] = array(
-                    'patterns' => call_user_func(array($class, 'getPatterns')),
-                    'endPoint' => call_user_func(array($class, 'getEndpoint')),
-                    'params' => call_user_func(array($class, 'getParams')),
-                );
+
+        //Search the oembed provider using the domain
+        $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $Url->getDomain()))));
+
+        if (class_exists($class)) {
+            $settings = array(
+                'patterns' => $class::getPatterns(),
+                'endPoint' => $class::getEndpoint(),
+                'params' => $class::getParams()
+            );
+
+            if ($Url->match($settings['patterns'])) {
+                $EndPoint = new Url($settings['endPoint']);
+
+                if (empty($settings['params']) === false) {
+                    $EndPoint->setParameter($settings['params']);
+                }
+
+                $EndPoint->setParameter('url', $Url->getUrl());
+
+                return new OEmbed($EndPoint);
             }
         }
-		foreach ($implementations as $settings) {
-			if ($Url->match($settings['patterns'])) {
-				$EndPoint = new Url($settings['endPoint']);
-
-				if (empty($settings['params']) === false) {
-					$EndPoint->setParameter($settings['params']);
-				}
-
-				$EndPoint->setParameter('url', $Url->getUrl());
-
-				return new OEmbed($EndPoint);
-			}
-		}
 	}
 }
 ?>

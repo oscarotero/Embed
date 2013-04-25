@@ -1,10 +1,7 @@
 <?php
-
 namespace Embed\Providers\OEmbed;
 
-use Embed\Providers;
-
-class MeetUp extends \Embed\Providers\OEmbedImplementationAbstract {
+class Meetup extends \Embed\Providers\OEmbedImplementationAbstract {
     public static function getEndPoint()
     {
         return 'http://api.meetup.com/oembed';

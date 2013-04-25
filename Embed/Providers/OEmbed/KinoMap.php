@@ -1,10 +1,7 @@
 <?php
-
 namespace Embed\Providers\OEmbed;
 
-use Embed\Providers;
-
-class KinoMap extends \Embed\Providers\OEmbedImplementationAbstract {
+class Kinomap extends \Embed\Providers\OEmbedImplementationAbstract {
     public static function getEndPoint()
     {
         return 'http://www.kinomap.com/oembed';
