@@ -12,6 +12,7 @@ use Embed\Providers\OpenGraph;
 use Embed\Providers\TwitterCards;
 use Embed\Providers\Dcterms;
 use Embed\Providers\Facebook;
+use Embed\Providers\Images;
 
 class Webpage extends Adapter implements AdapterInterface {
 	public $providers = array();
@@ -28,7 +29,8 @@ class Webpage extends Adapter implements AdapterInterface {
 			'OpenGraph' => new OpenGraph($Url),
 			'TwitterCards' => new TwitterCards($Url),
 			'Dcterms' => new Dcterms($Url),
-			'Facebook' => new Facebook($Url)
+			'Facebook' => new Facebook($Url),
+			'Images' => new Images($Url),
 		);
 
 		if ($this->providers['Html']->get('oembed')) {
