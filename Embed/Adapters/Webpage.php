@@ -12,6 +12,7 @@ use Embed\Providers\OpenGraph;
 use Embed\Providers\TwitterCards;
 use Embed\Providers\Dcterms;
 use Embed\Providers\Facebook;
+use Embed\Providers\Images;
 
 class Webpage extends Adapter implements AdapterInterface {
 	public $providers = array();
