@@ -13,7 +13,7 @@ abstract class Adapter {
 	public $providers = array();
 	public $options = array(
 		'minImageWidth' => 100,
-		'minImageHeight' => 100
+		'minImageHeight' => 80
 	);
 
 	abstract protected function initProviders (Url $Url);
