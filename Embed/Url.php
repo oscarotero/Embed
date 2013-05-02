@@ -60,7 +60,8 @@ class Url {
 			CURLOPT_SSL_VERIFYPEER => false,
 			CURLOPT_SSL_VERIFYHOST => false,
 			CURLOPT_ENCODING => '',
-			CURLOPT_AUTOREFERER => true
+			CURLOPT_AUTOREFERER => true,
+			CURLOPT_USERAGENT => 'Embed PHP Library'
 		));
 
 		$content = curl_exec($connection);

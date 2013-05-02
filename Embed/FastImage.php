@@ -34,7 +34,11 @@ class FastImage
 		
 		$this->uri = $uri;
 
-		$this->handle = @fopen($uri, 'r');
+		$this->handle = @fopen($uri, 'r', false, stream_context_create(array(
+			'http' => array(
+				'user_agent' => 'Embed/FastImage PHP Library'
+			)
+		)));
 
 		if ($this->handle === false) {
 			throw new \Exception('Failed to open streem');
