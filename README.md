@@ -13,8 +13,10 @@ Requirements:
 Usage:
 
 ```php
-//Load any url:
+//Load library (if you don't have composer or any psr-0 compatible loader):
+include('Embed/autoloader.php');
 
+//Load any url:
 $Url = new Embed\Url('https://www.youtube.com/watch?v=PP1xn5wHtxE');
 $Info = Embed\Embed::create($Url);
 
