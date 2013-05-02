@@ -25,6 +25,8 @@ interface AdapterInterface {
 
 	public function getAuthorUrl ();
 
+	public function getProviderIcons ();
+	
 	public function getProviderIcon ();
 
 	public function getProviderName ();
@@ -32,6 +34,10 @@ interface AdapterInterface {
 	public function getProviderUrl ();
 
 	public function getImage ();
+
+	public function getImageWidth ();
+
+	public function getImageHeight ();
 
 	public function getWidth ();
 

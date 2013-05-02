@@ -22,4 +22,8 @@ class Google extends Webpage implements AdapterInterface {
 
 		return Viewers::iframe($Url->getUrl());
 	}
+
+	public function getImages () {
+		return array();
+	}
 }

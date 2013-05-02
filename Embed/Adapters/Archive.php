@@ -23,7 +23,7 @@ class Archive extends Webpage implements AdapterInterface {
 		$UrlApi = clone $Url;
 		$UrlApi->setParameter('output', 'json');
 
-		if ($json = $UrlApi->getJsonContent()) {
+		if (($json = $UrlApi->getJsonContent())) {
 			$this->providers['Archive']->set($json);
 		}
 	}
@@ -70,7 +70,21 @@ class Archive extends Webpage implements AdapterInterface {
 		return $this->getMetadata('creator') ?: parent::getAuthorName();
 	}
 
-	public function getImage () {
-		return $this->providers['Archive']->get('misc', 'image') ?: parent::getImage();
+	public function getImages () {
+		$images = array();
+
+		if (($image = $this->providers['Archive']->get('misc', 'image'))) {
+			$images[] = $this->Url->getAbsolute($image);
+		}
+
+		if (($files = $this->providers['Archive']->get('files'))) {
+			foreach ($files as $url => $info) {
+				if ($info['format'] === 'Thumbnail') {
+					$images[] = $this->Url->getAbsolute($url);
+				}
+			}
+		}
+
+		return $images;
 	}
 }

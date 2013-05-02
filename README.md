@@ -25,8 +25,12 @@ $Info->description;
 $Info->url;
 $Info->type;
 
-$Info->code;
+$Info->images;
 $Info->image;
+$Info->imageWidth;
+$Info->imageHeight;
+
+$Info->code;
 $Info->width;
 $Info->height;
 $Info->aspectRatio;
@@ -34,9 +38,10 @@ $Info->aspectRatio;
 $Info->authorName;
 $Info->authorUrl;
 
+$Info->providerIcons;
+$Info->providerIcon;
 $Info->providerName;
 $Info->providerUrl;
-$Info->providerIcon;
 ```
 
 Online demo

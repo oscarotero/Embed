@@ -7,44 +7,30 @@
 namespace Embed\Adapters;
 
 use Embed\Url;
+use Embed\FastImage;
 
 abstract class Adapter {
-	public function __construct (Url $Url) {
-		$this->initProviders($Url);
-
-		$canonical = $this->getUrl();
-
-		if ($Url->getUrl() !== $canonical) {
-			$this->initProviders(new Url($canonical));
-		}
-
-		$this->setData();
-	}
+	public $providers = array();
+	public $options = array(
+		'minImageWidth' => 100,
+		'minImageHeight' => 100
+	);
 
 	abstract protected function initProviders (Url $Url);
 
-	protected function setData () {
-		$properties = array(
-			'title',
-			'description',
-			'type',
-			'code',
-			'url',
-			'authorName',
-			'authorUrl',
-			'providerIcon',
-			'providerName',
-			'providerUrl',
-			'image',
-			'width',
-			'height',
-			'aspectRatio'
-		);
+	public function __construct (Url $Url) {
+		$this->initProviders($Url);
 
-		foreach ($properties as $name) {
-			$method = 'get'.$name;
+		if ($Url->getUrl() !== $this->url) {
+			$this->initProviders(new Url($this->url));
+		}
+	}
 
-			$this->$name = $this->$method();
+	public function __get ($name) {
+		$method = 'get'.$name;
+
+		if (method_exists($this, $method)) {
+			return $this->$name = $this->$method();
 		}
 	}
 
@@ -56,17 +42,48 @@ abstract class Adapter {
 		return $this->Url->getUrl();
 	}
 
-	public function getProviderIcon () {
-		$icon = $this->Url->getAbsolute('/favicon.png');
+	public function getAspectRatio () {
+		$width = $this->width;
+		$height = $this->height;
 
-		if (Url::isImage($icon)) {
-			return $icon;
+		if ($width && (strpos($width, '%') === false) && $height && (strpos($height, '%') === false)) {
+			return round(($height / $width) * 100, 3);
 		}
+	}
 
-		$icon = $this->Url->getAbsolute('/favicon.ico');
+	public function getImage () {
+		foreach ($this->images as $image) {
+			try {
+				$Image = new FastImage($image);
+			} catch (\Exception $Exception) {
+				continue;
+			}
+			
 
-		if (Url::isImage($icon)) {
-			return $icon;
+			if ($Image->getType()) {
+				list($width, $height) = $Image->getSize();
+
+				if (($width >= $this->options['minImageWidth']) && ($height >= $this->options['minImageHeight'])) {
+					$this->imageWidth = $width;
+					$this->imageHeight = $height;
+
+					return $image;
+				}
+			}
+		}
+	}
+
+	public function getProviderIcon () {
+		foreach ($this->providerIcons as $icon) {
+			try {
+				$Icon = new FastImage($icon);
+			} catch (\Exception $Exception) {
+				continue;
+			}
+
+			if ($Icon->getType()) {
+				return $icon;
+			}
 		}
 	}
 
@@ -76,14 +93,5 @@ abstract class Adapter {
 
 	public function getProviderUrl () {
 		return ($this->Url->getScheme().'://'.$this->Url->getDomain(true));
-	}
-
-	public function getAspectRatio () {
-		$width = $this->getWidth();
-		$height = $this->getHeight();
-
-		if ($width && (strpos($width, '%') === false) && $height && (strpos($height, '%') === false)) {
-			return round(($height / $width) * 100, 3);
-		}
 	}
 }

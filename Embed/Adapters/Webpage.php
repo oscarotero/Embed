@@ -5,6 +5,7 @@
 namespace Embed\Adapters;
 
 use Embed\Url;
+
 use Embed\Providers\Html;
 use Embed\Providers\OEmbed;
 use Embed\Providers\OEmbedImplementations;
@@ -12,11 +13,8 @@ use Embed\Providers\OpenGraph;
 use Embed\Providers\TwitterCards;
 use Embed\Providers\Dcterms;
 use Embed\Providers\Facebook;
-use Embed\Providers\Images;
 
 class Webpage extends Adapter implements AdapterInterface {
-	public $providers = array();
-
 	static public function check (Url $Url) {
 		return true;
 	}
@@ -61,18 +59,47 @@ class Webpage extends Adapter implements AdapterInterface {
 		}
 	}
 
-	public function getImageFromProviders ($name) {
-		$method = 'get'.$name;
+	public function getImages () {
+		$images = array();
 
-		foreach ($this->providers as $k => $Provider) {
-			if ($url = $Provider->$method()) {
-				$url = $this->Url->getAbsolute($url);
+		foreach ($this->providers as $Provider) {
+			$imgs = $Provider->getImage();
 
-				if (Url::isImage($url)) {
-					return $url;
+			if ($imgs) {
+				if (is_array($imgs)) {
+					foreach ($imgs as $imgs) {
+						$images[] = $this->Url->getAbsolute($imgs);
+					}
+				} else {
+					$images[] = $this->Url->getAbsolute($imgs);
 				}
 			}
 		}
+
+		return array_unique($images);
+	}
+
+	public function getProviderIcons () {
+		$icons = array();
+
+		foreach ($this->providers as $Provider) {
+			$ics = $Provider->getProviderIcon();
+
+			if ($ics) {
+				if (is_array($ics)) {
+					foreach ($ics as $ics) {
+						$icons[] = $this->Url->getAbsolute($ics);
+					}
+				} else {
+					$icons[] = $this->Url->getAbsolute($ics);
+				}
+			}
+		}
+
+		$icons[] = $this->Url->getAbsolute('/favicon.png');
+		$icons[] = $this->Url->getAbsolute('/favicon.ico');
+
+		return array_unique($icons);
 	}
 
 	public function getTitle () {
@@ -117,10 +144,6 @@ class Webpage extends Adapter implements AdapterInterface {
 		return $this->getUrlFromProviders('authorUrl');
 	}
 
-	public function getProviderIcon () {
-		return $this->getImageFromProviders('providerIcon') ?: parent::getProviderIcon();
-	}
-
 	public function getProviderName () {
 		return $this->getFromProviders('providerName') ?: parent::getProviderName();
 	}
@@ -129,15 +152,19 @@ class Webpage extends Adapter implements AdapterInterface {
 		return $this->getUrlFromProviders('providerUrl') ?: parent::getProviderUrl();
 	}
 
-	public function getImage () {
-		return $this->getImageFromProviders('image');
-	}
-
 	public function getWidth () {
 		return $this->getFromProviders('width');
 	}
 
 	public function getHeight () {
 		return $this->getFromProviders('height');
+	}
+
+	public function getImageWidth () {
+		return null;
+	}
+
+	public function getImageHeight () {
+		return null;
 	}
 }

@@ -1,8 +1,7 @@
 <?php
 /**
- * Generic opengraph provider.
- * Load the opengraph data of an url and store it
- * It also loads the <title> and <meta name="description"> tags
+ * Generic html provider.
+ * Load the html data of an url and store it
  */
 namespace Embed\Providers;
 
@@ -21,7 +20,7 @@ class Html extends Provider {
 		foreach ($Html->getElementsByTagName('link') as $Link) {
 			if ($Link->hasAttribute('rel') && $Link->hasAttribute('href')) {
 				$rel = trim(strtolower($Link->getAttribute('rel')));
-				$href = $Url->getAbsolute($Link->getAttribute('href'));
+				$href = $Link->getAttribute('href');
 
 				if (empty($href)) {
 					continue;
@@ -80,11 +79,11 @@ class Html extends Provider {
 
 				switch ($name) {
 					case 'msapplication-tileimage':
-						$icons[] = $Url->getAbsolute($Tag->getAttribute('content'));
+						$icons[] = $Tag->getAttribute('content');
 						continue 2;
 
 					case 'twitter:image':
-						$images[] = $Url->getAbsolute($Tag->getAttribute('content'));
+						$images[] = $Tag->getAttribute('content');
 						continue 2;
 				}
 			}
@@ -98,7 +97,7 @@ class Html extends Provider {
 		//img tags
 		foreach ($Html->getElementsByTagName('img') as $Tag) {
 			if ($Tag->hasAttribute('src')) {
-				$images[] = $Url->getAbsolute($Tag->getAttribute('src'));
+				$images[] = $Tag->getAttribute('src');
 			}
 		}
 
@@ -132,13 +131,11 @@ class Html extends Provider {
 	}
 
 	public function getProviderIcon () {
-		return $this->get('icon');
+		return $this->get('icons');
 	}
 
 	public function getImage () {
-		$images = $this->get('images');
-
-		return $images ? $images[0] : null;
+		return $this->get('images');
 	}
 
 	public function getWidth () {
@@ -148,83 +145,4 @@ class Html extends Provider {
 	public function getHeight () {
 		return $this->get('video_height');
 	}
-	
-	/**
-	 * Returns an array of stdClass objects of the images found.
-	 *
-	 * @access public
-	 * @author Oliver Lillie
-	 * @return array
-	 */
-	public function getImages(){
-		return $this->get('images');
-	}
-	
-	/**
-	 * Returns an array of strings of the srcs of the icons found.
-	 *
-	 * @access public
-	 * @author Oliver Lillie
-	 * @return array
-	 */
-	public function getIcons(){
-		return $this->get('icons');
-	}
-	
-	/**
-	 * Contains the current image index.
-	 *
-	 * @access public
-	 * @author Oliver Lillie
-	 * @var integer
-	 */
-	protected $_image_index = -1;
-
-	/**
-	 * Returns a specific image src specified by $index, otherwise returns null.
-	 * If no index is specified then the next image src is returned.
-	 *
-	 * @access public
-	 * @author Oliver Lillie
-	 * @param mixed $index Integer index of the requested image or null.
-	 * @return mixed Returns a string if the given index is available otherwise
-	 *  returns null.
-	 */
-	public function getImageFromSet ($index=null) {
-		$images = $this->get('images');
-		if($index === null){
-			$index = $this->_image_index;
-			$this->_image_index += 1;
-		}
-		return isset($images[$index]) === true ? $images[$index] : null;
-	}
-	
-	/**
-	 * Contains the current icon index.
-	 *
-	 * @access public
-	 * @author Oliver Lillie
-	 * @var integer
-	 */
-	protected $_icon_index = -1;
-	
-	/**
-	 * Returns a specific icon src specified by $index, otherwise returns null.
-	 * If no index is specified then the next icon src is returned.
-	 *
-	 * @access public
-	 * @author Oliver Lillie
-	 * @param mixed $index Integer index of the requested icon or null.
-	 * @return mixed Returns a string if the given index is available otherwise
-	 *  returns null.
-	 */
-	public function getIconFromSet($index=null){
-		$icons = $this->get('icons');
-		if($index === null){
-			$index = $this->_icon_index += 1;
-			$this->_icon_index += 1;
-		}
-		return isset($icons[$index]) === true ? $icons[$index] : null;
-	}
-
 }

@@ -15,36 +15,6 @@ class Url {
 
 
 	/**
-	 * Check if an url is an image and gets its data.
-	 * 
-	 * @param  string $url The image url
-	 * 
-	 * @return boolean
-	 */
-	public static function isImage ($url) {
-		if (!$url || !($handle = @fopen($url, 'r'))) {
-			return false;
-		}
-
-		$result = mb_convert_encoding(fread($handle, 2), '8BIT');
-		fclose($handle);
-
-		switch ($result) {
-			case 'BM':
-			case 'GI':
-			case chr(0xFF).chr(0xd8):
-			case chr(0x89).'P':
-				return true;
-
-			case chr(0x00).chr(0x00):
-				return @getimagesize($url);
-		}
-
-		return false;
-	}
-
-	
-	/**
 	 * Constructor. Sets the url
 	 * 
 	 * @param string $url The url value
@@ -569,11 +539,11 @@ class Url {
 			$url .= '#'.$this->info['fragment'];
 		}
 
-		$this->url = $url;
-		
 		if (!$maintainCache && ($this->url !== $url)) {
 			$this->clearCache();
 		}
+
+		$this->url = $url;
 	}
 
 

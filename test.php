@@ -98,6 +98,14 @@ spl_autoload_register('autoload');
 					<td><img src="<?php echo $Service->image; ?>"> <?php echo $Service->image; ?></td>
 				</tr>
 				<tr>
+					<th>Image size</th>
+					<td><?php echo $Service->imageWidth.' x '.$Service->imageHeight; ?></td>
+				</tr>
+				<tr>
+					<th>All images</th>
+					<td><pre><?php print_r($Service->images); ?></pre></td>
+				</tr>
+				<tr>
 					<th>Embed code</th>
 					<td><?php echo $Service->code; ?></td>
 				</tr>
@@ -120,6 +128,10 @@ spl_autoload_register('autoload');
 				<tr>
 					<th>Provider icon</th>
 					<td><img src="<?php echo $Service->providerIcon; ?>"> <?php echo $Service->providerIcon; ?></td>
+				</tr>
+				<tr>
+					<th>All icons</th>
+					<td><pre><?php print_r($Service->providerIcons); ?></pre></td>
 				</tr>
 				<tr>
 					<th>Provider name</th>

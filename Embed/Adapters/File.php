@@ -21,11 +21,11 @@ class File extends Adapter implements AdapterInterface {
 		'audio/ogg' => array('audio', 'audioHtml'),
 		'audio/mp3' => array('audio', 'audioHtml'),
 		'audio/webm' => array('audio', 'audioHtml'),
-		'image/jpeg' => array('video', 'imageHtml'),
-		'image/gif' => array('video', 'imageHtml'),
-		'image/png' => array('video', 'imageHtml'),
-		'image/bmp' => array('video', 'imageHtml'),
-		'image/ico' => array('video', 'imageHtml'),
+		'image/jpeg' => array('image', 'imageHtml'),
+		'image/gif' => array('image', 'imageHtml'),
+		'image/png' => array('image', 'imageHtml'),
+		'image/bmp' => array('image', 'imageHtml'),
+		'image/ico' => array('image', 'imageHtml'),
 		'text/rtf' => array('rich', 'google'),
 		'application/pdf' => array('rich', 'google'),
 		'application/msword' => array('rich', 'google'),
@@ -80,7 +80,17 @@ class File extends Adapter implements AdapterInterface {
 		return null;
 	}
 
-	public function getImage () {
+	public function getImages () {
+		if ($this->getType() === 'image') {
+			return array($this->getUrl());
+		}
+	}
+
+	public function getImageWidth () {
+		return null;
+	}
+
+	public function getImageHeight () {
 		return null;
 	}
 
@@ -90,5 +100,12 @@ class File extends Adapter implements AdapterInterface {
 
 	public function getHeight () {
 		return null;
+	}
+
+	public function getProviderIcons () {
+		return array(
+			$this->Url->getAbsolute('/favicon.png'),
+			$this->Url->getAbsolute('/favicon.ico')
+		);
 	}
 }

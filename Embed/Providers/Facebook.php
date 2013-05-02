@@ -15,10 +15,6 @@ class Facebook extends Provider {
 	}
 
 	private function init () {
-		if ($this->init === true) {
-			return true;
-		}
-
 		$this->init = true;
 
 		$GraphUrl = new Url('https://graph.facebook.com/fql');
@@ -37,24 +33,53 @@ class Facebook extends Provider {
 		}
 	}
 
-	public function getTitle () {
-		$this->init();
+	public function get ($name = null, $subname = null) {
+		if ($this->init === false) {
+			$this->init();
+		}
 
+		return parent::get($name, $subname);
+	}
+
+	public function getTitle () {
 		return $this->get('title');
 	}
 
 	public function getDescription () {
-		$this->init();
-
 		return $this->get('description');
 	}
 
 	public function getImage () {
-		$this->init();
+		$images = array();
 
-		if ($images = $this->get('image')) {
-			return $images[0]['url'];
+		if ($imgs = $this->get('image')) {
+			foreach ($imgs as $img) {
+				$images[] = $img['url'];
+			}
 		}
+
+		return $images;
+	}
+
+	public function getAuthorName () {
+		$author = $this->get('data', 'author') ?: $this->get('admins');
+
+		if (isset($author[0]['name'])) {
+			return $author[0]['name'];
+		}
+	}
+
+	public function getAuthorUrl () {
+		$author = $this->get('data', 'author') ?: $this->get('admins');
+
+		if (isset($author[0]['url'])) {
+			return $author[0]['url'];
+		}
+	}
+
+	public function getProviderName () {
+		return $this->get('site_name');
+
 	}
 }
 ?>
