@@ -1,6 +1,6 @@
 <?php
 /**
- * Class from Tom Moor (https://github.com/tommoor/fastimage)
+ * Class created by Tom Moor (https://github.com/tommoor/fastimage)
  * 
  * FastImage - Because sometimes you just want the size!
  * Based on the Ruby Implementation by Steven Sykes (https://github.com/sdsykes/fastimage)
