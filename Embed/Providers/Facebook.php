@@ -42,7 +42,11 @@ class Facebook extends Provider {
 	}
 
 	public function getTitle () {
-		return $this->get('title');
+		$title = $this->get('title');
+
+		if ($title != $this->get('url')) {
+			return $title;
+		}
 	}
 
 	public function getDescription () {
