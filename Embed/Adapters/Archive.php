@@ -9,6 +9,8 @@ use Embed\Viewers;
 use Embed\Providers\Provider;
 
 class Archive extends Webpage implements AdapterInterface {
+	public $Api;
+
 	static public function check (Url $Url) {
 		return $Url->match(array(
 			'http://archive.org/details/*'
@@ -18,18 +20,18 @@ class Archive extends Webpage implements AdapterInterface {
 	protected function initProviders (Url $Url) {
 		parent::initProviders($Url);
 
-		$this->providers['Archive'] = new Provider();
+		$this->Api = new Provider();
 
 		$UrlApi = clone $Url;
 		$UrlApi->setParameter('output', 'json');
 
 		if (($json = $UrlApi->getJsonContent())) {
-			$this->providers['Archive']->set($json);
+			$this->Api->set($json);
 		}
 	}
 
 	private function getMetadata ($key) {
-		if (($metadata = $this->providers['Archive']->get('metadata', $key)) && isset($metadata[0])) {
+		if (($metadata = $this->Api->get('metadata', $key)) && isset($metadata[0])) {
 			return $metadata[0];
 		}
 	}
@@ -73,11 +75,11 @@ class Archive extends Webpage implements AdapterInterface {
 	public function getImages () {
 		$images = array();
 
-		if (($image = $this->providers['Archive']->get('misc', 'image'))) {
+		if (($image = $this->Api->get('misc', 'image'))) {
 			$images[] = $this->Url->getAbsolute($image);
 		}
 
-		if (($files = $this->providers['Archive']->get('files'))) {
+		if (($files = $this->Api->get('files'))) {
 			foreach ($files as $url => $info) {
 				if ($info['format'] === 'Thumbnail') {
 					$images[] = $this->Url->getAbsolute($url);

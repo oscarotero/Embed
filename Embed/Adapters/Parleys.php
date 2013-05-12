@@ -8,7 +8,7 @@ use Embed\Url;
 
 class Parleys extends Webpage implements AdapterInterface {
 	static public function check (Url $Url) {
-		//'http://www.parleys.com/#st=5&id=2912&sl=0'
+		// http://www.parleys.com/#st=5&id=2912&sl=0
 		if ($Url->match(['*.parleys.com/#*'])) {
 			return true;
 		}

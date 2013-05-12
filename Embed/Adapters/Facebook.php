@@ -10,6 +10,8 @@ use Embed\Url;
 class Facebook extends Webpage implements AdapterInterface {
 	static public $access_token;
 
+	public $Api;
+
 	static public function setAccessToken ($access_token) {
 		static::$access_token = $access_token;
 	}
@@ -23,7 +25,7 @@ class Facebook extends Webpage implements AdapterInterface {
 	protected function initProviders (Url $Url) {
 		parent::initProviders($Url);
 
-		$this->providers['Facebook'] = new Provider();
+		$this->Api = new Provider();
 
 		if (static::$access_token) {
 			$StartingUrl = new Url($Url->getStartingUrl());
@@ -45,14 +47,14 @@ class Facebook extends Webpage implements AdapterInterface {
 				$UrlApi->setParameter('access_token', static::$access_token);
 
 				if ($json = $UrlApi->getJsonContent()) {
-					$this->providers['Facebook']->set($json);
+					$this->Api->set($json);
 				}
 			}
 		}
 	}
 
 	public function getTitle () {
-		return $this->providers['Facebook']->get('name') ?: parent::getTitle();
+		return $this->Api->get('name') ?: parent::getTitle();
 	}
 
 	public function getUrl () {
@@ -64,7 +66,7 @@ class Facebook extends Webpage implements AdapterInterface {
 	}
 
 	public function getImage () {
-		$id = $this->providers['Facebook']->get('id');
+		$id = $this->Api->get('id');
 
 		if ($id) {
 			return 'https://graph.facebook.com/'.$id.'/picture';
