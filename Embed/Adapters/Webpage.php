@@ -114,6 +114,10 @@ class Webpage extends Adapter implements AdapterInterface {
 		return $this->getFromProviders('type') ?: 'link';
 	}
 
+	public function getSource () {
+		return $this->getUrlFromProviders('source');
+	}
+
 	public function getCode () {
 		if ($code = $this->getFromProviders('code')) {
 			if (strpos($code, '</iframe>') !== false) {

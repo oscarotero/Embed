@@ -98,6 +98,16 @@
 					<td><?php echo $Service->type; ?></td>
 				</tr>
 				<tr>
+					<th>Source</th>
+					<td><?php
+						if ($Service->source) {
+							echo $Service->source;
+							echo ' / <a href="test-sources.php?url='.$Service->source.'" target="_blank">Test</a>';
+						}
+						?>
+					</td>
+				</tr>
+				<tr>
 					<th>Author name</th>
 					<td><?php echo $Service->authorName; ?></td>
 				</tr>

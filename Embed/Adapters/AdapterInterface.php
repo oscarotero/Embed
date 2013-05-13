@@ -17,6 +17,8 @@ interface AdapterInterface {
 
 	public function getType ();
 
+	public function getSource ();
+
 	public function getCode ();
 
 	public function getUrl ();

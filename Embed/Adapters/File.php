@@ -37,7 +37,7 @@ class File extends Adapter implements AdapterInterface {
 	);
 
 	static public function check (Url $Url) {
-		return isset(static::$contentTypes[$Url->getContentType()]);
+		return isset(static::$contentTypes[$Url->getMimeType()]);
 	}
 
 	protected function initProviders (Url $Url) {
@@ -53,11 +53,15 @@ class File extends Adapter implements AdapterInterface {
 	}
 
 	public function getType () {
-		return static::$contentTypes[$this->Url->getContentType()][0];
+		return static::$contentTypes[$this->Url->getMimeType()][0];
+	}
+
+	public function getSource () {
+		return null;
 	}
 
 	public function getCode () {
-		switch (static::$contentTypes[$this->Url->getContentType()][1]) {
+		switch (static::$contentTypes[$this->Url->getMimeType()][1]) {
 			case 'videoHtml':
 				return Viewers::videoHtml($this->getImage(), $this->getUrl(), $this->getWidth(), $this->getHeight());
 

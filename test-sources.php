@@ -38,14 +38,26 @@
 			<?php
 			$Url = new Embed\Url($_GET['url']);
 
-			$Source = new Embed\Sources\Feed($Url);
+			$Source = Embed\Embed::createSource($Url);
 			?>
 
+			<?php if (empty($Source)): ?>
+
+			<p>The url is not valid!</p>
+			
+			<?php else: ?>
+
+			<h1><a href="<?php echo $Source->url; ?>"><?php echo $Source->url; ?></a></h1>
+			
+			<a href="test.php?url=<?php echo $Source->url; ?>" target="_blank">Test</a>
+
 			<ul>
-				<?php foreach ($Source->getUrls() as $url): ?>
+				<?php foreach ($Source->urls as $url): ?>
 				<li><a href="<?php echo $url; ?>"><?php echo $url; ?></a></li>
 				<?php endforeach ?>
 			</ul>
+
+			<?php endif; ?>
 		</section>
 		<?php endif; ?>
 

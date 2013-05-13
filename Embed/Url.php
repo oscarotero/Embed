@@ -75,13 +75,17 @@ class Url {
 		$this->buildUrl(true);
 
 		if (strpos($this->getResult('content_type'), ';') !== false) {
-			list($contentType, $charset) = explode(';', $this->getResult('content_type'));
+			list($mimeType, $charset) = explode(';', $this->getResult('content_type'));
+
+			$this->result['mime_type'] = $mimeType;
 
 			$charset = substr(strtoupper(strstr($charset, '=')), 1);
 
 			if (!empty($charset) && ($charset !== 'UTF-8')) {
 				mb_convert_encoding($content, 'UTF-8', $charset);
 			}
+		} else if (strpos($this->getResult('content_type'), '/') !== false) {
+			$this->result['mime_type'] = $this->getResult('content_type');
 		}
 
 		$this->content = trim($content);
@@ -124,8 +128,8 @@ class Url {
 	 * 
 	 * @return string The content-type header or null
 	 */
-	public function getContentType () {
-		return $this->getResult('content_type');
+	public function getMimeType () {
+		return $this->getResult('mime_type');
 	}
 
 

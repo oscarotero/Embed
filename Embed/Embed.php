@@ -27,5 +27,18 @@ class Embed {
 
 		return false;
 	}
+
+	public static function createSource (Url $Url) {
+		if (!$Url->isValid()) {
+			return false;
+		}
+
+		//If is a xml feed (rss/atom)
+		if (Sources\Feed::check($Url)) {
+			return new Sources\Feed($Url);
+		}
+
+		return false;
+	}
 }
 ?>

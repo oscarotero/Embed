@@ -6,8 +6,18 @@ namespace Embed\Sources;
 
 use Embed\Url;
 
-class Feed implements SourceInterface {
+class Feed extends Source implements SourceInterface {
+	protected $url;
 	protected $urls = array();
+
+	static public function check (Url $Url) {
+		switch ($Url->getMimeType()) {
+			case 'text/xml':
+				return true;
+		}
+
+		return false;
+	}
 
 	public function __construct (Url $Url) {
 		$Xml = $Url->getXMLContent();
@@ -16,14 +26,23 @@ class Feed implements SourceInterface {
 			throw new \Exception('The xml is not valid');
 		}
 
-		$this->urls = self::getRssUrls($Xml) ?: self::getAtomUrls($Xml);
+		$data = self::parseRss($Xml) ?: self::parseAtom($Xml);
+		
+		if ($data) {
+			$this->url = $data['url'];
+			$this->urls = $data['urls'];
+		}
+	}
+
+	public function getUrl () {
+		return $this->url;
 	}
 
 	public function getUrls () {
 		return (array)$this->urls;
 	}
 
-	static protected function getRssUrls (\SimpleXMLElement $Xml) {
+	static protected function parseRss (\SimpleXMLElement $Xml) {
 		if (!isset($Xml->channel->item)) {
 			return false;
 		}
@@ -34,10 +53,13 @@ class Feed implements SourceInterface {
 			$urls[] = (string)$item->link;
 		}
 
-		return $urls;
+		return array(
+			'url' => $Xml->channel->link,
+			'urls' => $urls
+		);
 	}
 
-	static protected function getAtomUrls (\SimpleXMLElement $Xml) {
+	static protected function parseAtom (\SimpleXMLElement $Xml) {
 		if (!isset($Xml->entry)) {
 			return false;
 		}
@@ -55,6 +77,9 @@ class Feed implements SourceInterface {
 			$urls[] = (string)$entry->link->attributes()->href;
 		}
 
-		return $urls;
+		return array(
+			'url' => $Xml->link->attributes()->href,
+			'urls' => $urls
+		);
 	}
 }

@@ -14,7 +14,7 @@ class Html extends Provider {
 			return false;
 		}
 
-		$images = $icons = array();
+		$images = $icons = $feeds = array();
 
 		//Links
 		foreach ($Html->getElementsByTagName('link') as $Link) {
@@ -31,10 +31,6 @@ class Html extends Provider {
 					case 'favico':
 					case 'icon':
 					case 'shortcut icon':
-						$this->set('icon', $href);
-						$icons[] = $href;
-						break;
-
 					case 'apple-touch-icon-precomposed':
 					case 'apple-touch-icon':
 						$icons[] = $href;
@@ -57,6 +53,11 @@ class Html extends Provider {
 								case 'text/json+oembed':
 								case 'text/xml+oembed':
 									$this->set('oembed', $href);
+									break;
+
+								case 'application/rss+xml':
+								case 'application/atom+xml':
+									$feeds[] = $href;
 									break;
 							}
 						}
@@ -81,10 +82,6 @@ class Html extends Provider {
 					case 'msapplication-tileimage':
 						$icons[] = $Tag->getAttribute('content');
 						continue 2;
-
-					case 'twitter:image':
-						$images[] = $Tag->getAttribute('content');
-						continue 2;
 				}
 			}
 
@@ -103,6 +100,7 @@ class Html extends Provider {
 
 		$this->set('icons', $icons);
 		$this->set('images', $images);
+		$this->set('feeds', $feeds);
 	}
 
 	public function getTitle () {
@@ -115,6 +113,12 @@ class Html extends Provider {
 
 	public function getType () {
 		return $this->has('video_src') ? 'video' : 'link';
+	}
+
+	public function getSource () {
+		$feeds = $this->get('feeds');
+
+		return isset($feeds[0]) ? $feeds[0] : null;
 	}
 
 	public function getCode () {
