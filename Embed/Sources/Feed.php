@@ -54,7 +54,7 @@ class Feed extends Source implements SourceInterface {
 		}
 
 		return array(
-			'url' => $Xml->channel->link,
+			'url' => (string)$Xml->channel->link,
 			'urls' => $urls
 		);
 	}
@@ -78,7 +78,7 @@ class Feed extends Source implements SourceInterface {
 		}
 
 		return array(
-			'url' => $Xml->link->attributes()->href,
+			'url' => (string)$Xml->link->attributes()->href,
 			'urls' => $urls
 		);
 	}
