@@ -13,6 +13,7 @@ class Feed extends Source implements SourceInterface {
 	static public function check (Url $Url) {
 		switch ($Url->getMimeType()) {
 			case 'text/xml':
+			case 'text/html':
 				return true;
 		}
 
