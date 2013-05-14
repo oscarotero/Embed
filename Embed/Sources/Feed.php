@@ -14,6 +14,8 @@ class Feed extends Source implements SourceInterface {
 		switch ($Url->getMimeType()) {
 			case 'text/xml':
 			case 'text/html':
+			case 'application/atom+xml':
+			case 'application/rss+xml':
 				return true;
 		}
 
