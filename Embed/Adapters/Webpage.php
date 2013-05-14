@@ -111,7 +111,23 @@ class Webpage extends Adapter implements AdapterInterface {
 	}
 
 	public function getType () {
-		return $this->getFromProviders('type') ?: 'link';
+		$type = $this->getFromProviders('type');
+
+		if ($type) {
+			return $type;
+		}
+
+		$code = $this->code;
+
+		if (empty($code)) {
+			return 'link';
+		}
+
+		if (strpos($code, '</iframe>') || strpos($code, '</object>') || strpos($code, '</embed>') || strpos($code, '</script>')) {
+			return 'rich';
+		}
+
+		return 'link';
 	}
 
 	public function getSource () {
