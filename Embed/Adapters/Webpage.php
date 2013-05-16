@@ -63,14 +63,10 @@ class Webpage extends Adapter implements AdapterInterface {
 		$images = array();
 
 		foreach ($this->providers as $Provider) {
-			$imgs = $Provider->getImage();
+			$imgs = (array)$Provider->getImage();
 
-			if ($imgs) {
-				if (is_array($imgs)) {
-					foreach ($imgs as $imgs) {
-						$images[] = $this->Url->getAbsolute($imgs);
-					}
-				} else {
+			foreach ($imgs as $imgs) {
+				if (!empty($imgs)) {
 					$images[] = $this->Url->getAbsolute($imgs);
 				}
 			}
