@@ -112,7 +112,7 @@ class Html extends Provider {
 	}
 
 	public function getType () {
-		return $this->has('video_src') ? 'video' : 'link';
+		return $this->has('video_src') ? 'video' : null;
 	}
 
 	public function getSource () {

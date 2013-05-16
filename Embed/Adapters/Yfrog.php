@@ -16,7 +16,7 @@ class Yfrog extends Webpage implements AdapterInterface {
 
 	public function getType () {
 		if ($this->getImage()) {
-			return 'photo';
+			return 'image';
 		}
 	}
 

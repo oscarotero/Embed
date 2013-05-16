@@ -45,8 +45,15 @@ class Archive extends Webpage implements AdapterInterface {
 	}
 
 	public function getType () {
-		if ($this->getMetadata('mediatype') === 'movies') {
-			return 'video';
+		switch ($this->getMetadata('mediatype')) {
+			case 'movies':
+				return 'video';
+
+			case 'audio':
+				return 'audio';
+
+			case 'texts':
+				return 'rich';
 		}
 
 		return parent::getType();

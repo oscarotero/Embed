@@ -12,8 +12,8 @@ use Embed\FastImage;
 abstract class Adapter {
 	public $providers = array();
 	public $options = array(
-		'minImageWidth' => 100,
-		'minImageHeight' => 80
+		'minImageWidth' => 0,
+		'minImageHeight' => 0
 	);
 
 	abstract protected function initProviders (Url $Url);
