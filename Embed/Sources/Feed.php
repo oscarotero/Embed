@@ -47,20 +47,28 @@ class Feed extends Source implements SourceInterface {
 	}
 
 	static protected function parseRss (\SimpleXMLElement $Xml) {
-		if (!isset($Xml->channel->item)) {
+		if (isset($Xml->channel->item)) {
+			$items = $Xml->channel->item;
+		} else if (isset($Xml->item)) {
+			$items = $Xml->item;
+		} else {
 			return false;
-		}
-
-		$urls = array();
-
-		foreach ($Xml->channel->item as $item) {
-			$urls[] = (string)$item->link;
 		}
 
 		return array(
 			'url' => (string)$Xml->channel->link,
-			'urls' => $urls
+			'urls' => self::getItemsLinks($items)
 		);
+	}
+
+	static protected function getItemsLinks (\SimpleXMLElement $items) {
+		$urls = array();
+
+		foreach ($items as $item) {
+			$urls[] = (string)$item->link;
+		}
+
+		return $urls;
 	}
 
 	static protected function parseAtom (\SimpleXMLElement $Xml) {
@@ -68,9 +76,16 @@ class Feed extends Source implements SourceInterface {
 			return false;
 		}
 
+		return array(
+			'url' => (string)$Xml->link->attributes()->href,
+			'urls' => self::getEntriesLinks($Xml->entry)
+		);
+	}
+
+	static protected function getEntriesLinks (\SimpleXMLElement $entries) {
 		$urls = array();
 
-		foreach ($Xml->entry as $entry) {
+		foreach ($entries as $entry) {
 			foreach ($entry->link as $link) {
 				if ($link->attributes()->rel === 'alternate') {
 					$urls[] = (string)$link->attributes()->href;
@@ -81,9 +96,6 @@ class Feed extends Source implements SourceInterface {
 			$urls[] = (string)$entry->link->attributes()->href;
 		}
 
-		return array(
-			'url' => (string)$Xml->link->attributes()->href,
-			'urls' => $urls
-		);
+		return $urls;
 	}
 }
