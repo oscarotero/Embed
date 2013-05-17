@@ -62,6 +62,24 @@
 
 			<p>The url is not valid!</p>
 			
+			<table class="embed">
+				<tr>
+					<th>Http request result</th>
+					<td>
+						<ul>
+						<?php
+						foreach ($Url->getResult() as $name => $value) {
+							if (is_array($value)) {
+								$value = print_r($value, true);
+							}
+							echo "<li><strong>$name:</strong> $value</li>";
+						}
+						?>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
 			<?php else: ?>
 
 			<table class="embed">

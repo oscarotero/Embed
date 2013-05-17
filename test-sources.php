@@ -22,6 +22,22 @@
 			img {
 				border: solid 1px black;
 			}
+			table.embed {
+				width: 100%;
+			}
+			table.embed th,
+			table.embed td {
+				padding-top: 5px;
+				padding-bottom: 5px;
+				border-top: solid 1px #CCC;
+				vertical-align: top;
+			}
+			table.embed th {
+				text-align: right;
+			}
+			table.embed td {
+				padding-left: 20px;
+			}
 		</style>
 	</head>
 
@@ -59,6 +75,15 @@
 
 			<?php endif; ?>
 		</section>
+
+		<table class="embed">
+			<tr>
+				<th>Content</th>
+				<td>
+					<pre><?php echo htmlspecialchars($Url->getContent(), ENT_IGNORE); ?></pre>
+				</td>
+			</tr>
+		</table>
 		<?php endif; ?>
 
 	</body>

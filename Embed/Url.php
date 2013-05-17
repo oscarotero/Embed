@@ -67,6 +67,11 @@ class Url {
 		$content = curl_exec($connection);
 		$this->result = curl_getinfo($connection);
 
+		if ($content === false) {
+			$this->result['error'] = curl_error($connection);
+			$this->result['error_number'] = curl_errno($connection);
+		}
+
 		curl_close($connection);
 
 		$this->result['starting_url'] = $this->url;
