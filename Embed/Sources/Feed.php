@@ -26,16 +26,20 @@ class Feed extends Source implements SourceInterface {
 	public function __construct (Url $Url) {
 		$Xml = $Url->getXMLContent();
 
-		if (!$Xml) {
-			throw new \Exception('The xml is not valid');
-		}
-
-		$data = self::parseRss($Xml) ?: self::parseAtom($Xml);
+		if ($Xml) {
+			$data = self::parseRss($Xml) ?: self::parseAtom($Xml);
 		
-		if ($data) {
-			$this->url = $data['url'];
-			$this->urls = $data['urls'];
+			if (is_array($data)) {
+				$this->url = $data['url'];
+				$this->urls = $data['urls'];
+
+				$this->valid = true;
+			}
 		}
+	}
+
+	public function isValid () {
+		return $this->valid;
 	}
 
 	public function getUrl () {

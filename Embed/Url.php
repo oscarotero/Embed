@@ -219,8 +219,9 @@ class Url {
 				if (($response = $this->getContent()) === '') {
 					return $this->xmlContent = false;
 				}
-
+				$errors = libxml_use_internal_errors(true);
 				$this->xmlContent = new \SimpleXMLElement($response);
+				libxml_use_internal_errors($errors);
 			} catch (\Exception $E) {
 				return $this->xmlContent = false;
 			}

@@ -11,6 +11,8 @@ interface SourceInterface {
 
 	public function __construct (Url $Url);
 
+	public function isValid ();
+
 	public function getUrl ();
 
 	public function getUrls ();

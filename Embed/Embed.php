@@ -35,7 +35,11 @@ class Embed {
 
 		//If is a xml feed (rss/atom)
 		if (Sources\Feed::check($Url)) {
-			return new Sources\Feed($Url);
+			$Sources = new Sources\Feed($Url);
+
+			if ($Sources->isValid()) {
+				return $Sources;
+			}
 		}
 
 		return false;
