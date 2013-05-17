@@ -133,15 +133,15 @@ class Webpage extends Adapter implements AdapterInterface {
 	public function getCode () {
 		if ($code = $this->getFromProviders('code')) {
 			if (strpos($code, '</iframe>') !== false) {
-				return preg_replace('|^.*(<iframe.*</iframe>).*$|', '$1', $code);
+				return preg_replace('|^(<iframe.*</iframe>).*$|Us', '$1', $code);
 			}
 
 			if (strpos($code, '</object>') !== false) {
-				return preg_replace('|^.*(<object.*</object>).*$|', '$1', $code);
+				return preg_replace('|^.*(<object.*</object>).*$|Us', '$1', $code);
 			}
 
 			if (strpos($code, '</embed>') !== false) {
-				return preg_replace('|^.*(<embed.*</embed>).*$|', '$1', $code);
+				return preg_replace('|^.*(<embed.*</embed>).*$|Us', '$1', $code);
 			}
 
 			return $code;
