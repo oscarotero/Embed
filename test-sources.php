@@ -42,17 +42,22 @@
 	</head>
 
 	<body>
-		<form action="test-sources.php">
+		<form action="test-sources.php" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<label>Url to test: <input type="url" name="url" autofocus placeholder="http://"></label>
+				<label>Upload Opml: <input type="file" name="opml"></label>
 				<button type="submit">Test</button>
 			</fieldset>
 		</form>
 
-		<?php if (!empty($_GET['url'])): ?>
+		<?php
+		$url = !empty($_POST['url']) ? $_POST['url'] : (!empty($_GET['url']) ? $_GET['url'] : null);
+
+		if ($url): ?>
 		<section>
 			<?php
-			$Url = new Embed\Url($_GET['url']);
+
+			$Url = new Embed\Url($url);
 
 			$Source = Embed\Embed::createSource($Url);
 			?>
@@ -84,6 +89,18 @@
 				</td>
 			</tr>
 		</table>
+		
+		<?php elseif (!empty($_FILES['opml']['tmp_name'])): ?>
+		<section>
+			<?php
+			$string = file_get_contents($_FILES['opml']['tmp_name']);
+			$feeds = Embed\Sources\Feed::createFromOPML($string);
+
+			echo '<pre>';
+			var_dump($feeds);
+			echo '</pre>';
+			?>
+		</section>
 		<?php endif; ?>
 
 	</body>

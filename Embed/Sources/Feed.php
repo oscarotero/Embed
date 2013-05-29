@@ -7,8 +7,38 @@ namespace Embed\Sources;
 use Embed\Url;
 
 class Feed extends Source implements SourceInterface {
-	protected $url;
+	protected $sourceUrl;
+	protected $providerUrl;
 	protected $urls = array();
+
+	static public function createFromOPML ($string) {
+		$Xml = new \SimpleXMLElement($string);
+
+		if (!isset($Xml->body->outline)) {
+			return false;
+		}
+
+		$result = array();
+
+		foreach ($Xml->body->outline as $outline) {
+			$sources = array();
+
+			foreach ($outline as $feed) {
+				$Url = new Url((string)$feed->attributes()->xmlUrl);
+
+				if (static::check($Url)) {
+					$sources[] = new static($Url);
+				}
+			}
+
+			$result[] = array(
+				'text' => (string)$outline->attributes()->text,
+				'sources' => $sources
+			);
+		}
+
+		return $result;
+	}
 
 	static public function check (Url $Url) {
 		switch ($Url->getMimeType()) {
@@ -30,9 +60,9 @@ class Feed extends Source implements SourceInterface {
 			$data = self::parseRss($Xml) ?: self::parseAtom($Xml);
 		
 			if (is_array($data)) {
-				$this->url = $data['url'];
+				$this->sourceUrl = $Url->getUrl();
+				$this->providerUrl = $data['url'];
 				$this->urls = $data['urls'];
-
 				$this->valid = true;
 			}
 		}
@@ -42,8 +72,12 @@ class Feed extends Source implements SourceInterface {
 		return $this->valid;
 	}
 
-	public function getUrl () {
-		return $this->url;
+	public function getSourceUrl () {
+		return $this->sourceUrl;
+	}
+
+	public function getProviderUrl () {
+		return $this->providerUrl;
 	}
 
 	public function getUrls () {
@@ -80,8 +114,14 @@ class Feed extends Source implements SourceInterface {
 			return false;
 		}
 
+		if (!empty($Xml->link) && !empty($Xml->link->attributes()->href)) {
+			$url = (string)$Xml->link->attributes()->href;
+		} else {
+			$url = '';
+		}
+
 		return array(
-			'url' => (string)$Xml->link->attributes()->href,
+			'url' => $url,
 			'urls' => self::getEntriesLinks($Xml->entry)
 		);
 	}
@@ -90,6 +130,10 @@ class Feed extends Source implements SourceInterface {
 		$urls = array();
 
 		foreach ($entries as $entry) {
+			if (empty($entry->link)) {
+				continue;
+			}
+
 			foreach ($entry->link as $link) {
 				if ($link->attributes()->rel === 'alternate') {
 					$urls[] = (string)$link->attributes()->href;

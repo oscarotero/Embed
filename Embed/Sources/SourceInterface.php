@@ -13,7 +13,9 @@ interface SourceInterface {
 
 	public function isValid ();
 
-	public function getUrl ();
+	public function getSourceUrl ();
+
+	public function getProviderUrl ();
 
 	public function getUrls ();
 }
