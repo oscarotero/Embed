@@ -114,10 +114,18 @@ class Feed extends Source implements SourceInterface {
 			return false;
 		}
 
-		if (!empty($Xml->link) && !empty($Xml->link->attributes()->href)) {
-			$url = (string)$Xml->link->attributes()->href;
-		} else {
-			$url = '';
+		$url = '';
+
+		foreach ($Xml->link as $link) {
+			$attributes = $link->attributes();
+
+			if (empty($attributes->href) || ($attributes->rel == 'self')) {
+				continue;
+			}
+
+			$url = (string)$attributes->href;
+
+			break;
 		}
 
 		return array(
@@ -130,10 +138,6 @@ class Feed extends Source implements SourceInterface {
 		$urls = array();
 
 		foreach ($entries as $entry) {
-			if (empty($entry->link)) {
-				continue;
-			}
-
 			foreach ($entry->link as $link) {
 				if ($link->attributes()->rel === 'alternate') {
 					$urls[] = (string)$link->attributes()->href;
