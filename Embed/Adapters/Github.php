@@ -23,6 +23,10 @@ class Github extends Webpage implements AdapterInterface {
 		return '<script src="'.$url.'.js"></script>';
 	}
 
+	public function getUrl () {
+		return $this->Url->getUrl();
+	}
+
 	public function getProviderName () {
 		return 'Gist';
 	}
