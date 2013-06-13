@@ -58,7 +58,7 @@ class Feed extends Source implements SourceInterface {
 
 		if ($Xml) {
 			$data = self::parseRss($Xml) ?: self::parseAtom($Xml);
-		
+
 			if (is_array($data)) {
 				$this->sourceUrl = $Url->getUrl();
 				$this->providerUrl = $data['url'];
@@ -85,7 +85,7 @@ class Feed extends Source implements SourceInterface {
 	}
 
 	static protected function parseRss (\SimpleXMLElement $Xml) {
-		if (isset($Xml->channel->item)) {
+		if (isset($Xml->channel)) {
 			$items = $Xml->channel->item;
 		} else if (isset($Xml->item)) {
 			$items = $Xml->item;
@@ -119,7 +119,7 @@ class Feed extends Source implements SourceInterface {
 		foreach ($Xml->link as $link) {
 			$attributes = $link->attributes();
 
-			if (empty($attributes->href) || ($attributes->rel == 'self')) {
+			if (empty($attributes->href) || ((string)$attributes->rel === 'self')) {
 				continue;
 			}
 
@@ -139,7 +139,7 @@ class Feed extends Source implements SourceInterface {
 
 		foreach ($entries as $entry) {
 			foreach ($entry->link as $link) {
-				if ($link->attributes()->rel === 'alternate') {
+				if ((string)$link->attributes()->rel === 'alternate') {
 					$urls[] = (string)$link->attributes()->href;
 					continue 2;
 				}
