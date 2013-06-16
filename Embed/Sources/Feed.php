@@ -139,13 +139,21 @@ class Feed extends Source implements SourceInterface {
 
 		foreach ($entries as $entry) {
 			foreach ($entry->link as $link) {
-				if ((string)$link->attributes()->rel === 'alternate') {
-					$urls[] = (string)$link->attributes()->href;
+				$attributes = $link->attributes();
+
+				if (!empty($attributes->href) && ((string)$attributes->rel === 'alternate')) {
+					$urls[] = (string)$attributes->href;
 					continue 2;
 				}
 			}
 
-			$urls[] = (string)$entry->link->attributes()->href;
+			if ($entry->link) {
+				$attributes = $link->attributes();
+
+				if (!empty($attributes->href)) {
+					$urls[] = (string)$attributes->href;
+				}
+			}
 		}
 
 		return $urls;
