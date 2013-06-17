@@ -74,7 +74,7 @@
 			<a href="<?php echo $Source->sourceUrl; ?>" target="_blank">Source url</a>
 
 			<ul>
-				<?php foreach ($Source->urls as $url): ?>
+				<?php foreach ($Source->items as $url): ?>
 				<li>
 					<a href="<?php echo $url['url']; ?>"><?php echo $url['url']; ?></a><br>
 					<time><?php echo $url['pubdate']; ?></time>

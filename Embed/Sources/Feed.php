@@ -81,7 +81,7 @@ class Feed extends Source implements SourceInterface {
 	}
 
 	public function getItems () {
-		return (array)$this->urls;
+		return (array)$this->items;
 	}
 
 	static protected function parseRss (\SimpleXMLElement $Xml) {
