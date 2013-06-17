@@ -55,9 +55,9 @@ class FastImage
 	public function getSize()
 	{
 		$this->strpos = 0;
-		if ($this->getType())
+		if ($this->getType() && ($size = $this->parseSize()))
 		{
-			return array_values($this->parseSize());
+			return array_values($size);
 		}
 		
 		return false;
