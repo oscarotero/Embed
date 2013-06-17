@@ -62,7 +62,7 @@ class Feed extends Source implements SourceInterface {
 			if (is_array($data)) {
 				$this->sourceUrl = $Url->getUrl();
 				$this->providerUrl = $data['url'];
-				$this->urls = $data['urls'];
+				$this->items = $data['items'];
 				$this->valid = true;
 			}
 		}
@@ -95,7 +95,7 @@ class Feed extends Source implements SourceInterface {
 
 		return array(
 			'url' => (string)$Xml->channel->link,
-			'urls' => self::getRssItems($items)
+			'items' => self::getRssItems($items)
 		);
 	}
 
@@ -146,7 +146,7 @@ class Feed extends Source implements SourceInterface {
 
 		return array(
 			'url' => $url,
-			'urls' => self::getAtomEntries($Xml->entry)
+			'items' => self::getAtomEntries($Xml->entry)
 		);
 	}
 
