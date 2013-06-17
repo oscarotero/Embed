@@ -9,7 +9,7 @@ use Embed\Url;
 class Feed extends Source implements SourceInterface {
 	protected $sourceUrl;
 	protected $providerUrl;
-	protected $urls = array();
+	protected $items = array();
 
 	static public function createFromOPML ($string) {
 		$Xml = new \SimpleXMLElement($string);
@@ -80,33 +80,49 @@ class Feed extends Source implements SourceInterface {
 		return $this->providerUrl;
 	}
 
-	public function getUrls () {
+	public function getItems () {
 		return (array)$this->urls;
 	}
 
 	static protected function parseRss (\SimpleXMLElement $Xml) {
-		if (isset($Xml->channel)) {
-			$items = $Xml->channel->item;
-		} else if (isset($Xml->item)) {
+		if (isset($Xml->item)) {
 			$items = $Xml->item;
+		} else if (isset($Xml->channel)) {
+			$items = $Xml->channel->item;
 		} else {
 			return false;
 		}
 
 		return array(
 			'url' => (string)$Xml->channel->link,
-			'urls' => self::getItemsLinks($items)
+			'urls' => self::getRssItems($items)
 		);
 	}
 
-	static protected function getItemsLinks (\SimpleXMLElement $items) {
-		$urls = array();
+	static protected function getRssItems (\SimpleXMLElement $Items) {
+		$items = array();
 
-		foreach ($items as $item) {
-			$urls[] = (string)$item->link;
+		$namespaces = $Items->getNamespaces(true);
+		
+		foreach ($Items as $Item) {
+			$item = array(
+				'url' => null,
+				'pubdate' => null
+			);
+
+			$item['url'] = (string)$Item->link;
+			$item['pubdate'] = ((string)$Item->pubdate ?: (string)$Item->pubDate);
+
+			if (!$item['pubdate'] && isset($namespaces['dc']) && ($Children = $Item->children($namespaces['dc']))) {
+				$item['pubdate'] = $Children->date;
+			}
+
+			if ($item['url']) {
+				$items[] = $item;
+			}
 		}
 
-		return $urls;
+		return $items;
 	}
 
 	static protected function parseAtom (\SimpleXMLElement $Xml) {
@@ -130,32 +146,48 @@ class Feed extends Source implements SourceInterface {
 
 		return array(
 			'url' => $url,
-			'urls' => self::getEntriesLinks($Xml->entry)
+			'urls' => self::getAtomEntries($Xml->entry)
 		);
 	}
 
-	static protected function getEntriesLinks (\SimpleXMLElement $entries) {
-		$urls = array();
+	static protected function getAtomEntries (\SimpleXMLElement $Entries) {
+		$items = array();
 
-		foreach ($entries as $entry) {
-			foreach ($entry->link as $link) {
+		foreach ($Entries as $Entry) {
+			$item = array(
+				'url' => null,
+				'pubdate' => null
+			);
+
+			if ($Entry->updated) {
+				$item['pubdate'] = (string)$Entry->updated;
+			}
+
+
+			foreach ($Entry->link as $link) {
 				$attributes = $link->attributes();
 
 				if (!empty($attributes->href) && ((string)$attributes->rel === 'alternate')) {
-					$urls[] = (string)$attributes->href;
-					continue 2;
+					$item['url'] = (string)$attributes->href;
+					break;
 				}
 			}
 
-			if ($entry->link) {
-				$attributes = $link->attributes();
+			if (!$item['url']) {
+				if ($Entry->link) {
+					$attributes = $link->attributes();
 
-				if (!empty($attributes->href)) {
-					$urls[] = (string)$attributes->href;
+					if (!empty($attributes->href)) {
+						$item['url'] = (string)$attributes->href;
+					}
 				}
+			}
+
+			if ($item['url']) {
+				$items[] = $item;
 			}
 		}
 
-		return $urls;
+		return $items;
 	}
 }

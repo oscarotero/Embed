@@ -17,5 +17,5 @@ interface SourceInterface {
 
 	public function getProviderUrl ();
 
-	public function getUrls ();
+	public function getItems ();
 }

@@ -75,7 +75,10 @@
 
 			<ul>
 				<?php foreach ($Source->urls as $url): ?>
-				<li><a href="<?php echo $url; ?>"><?php echo $url; ?></a></li>
+				<li>
+					<a href="<?php echo $url['url']; ?>"><?php echo $url['url']; ?></a><br>
+					<time><?php echo $url['pubdate']; ?></time>
+				</li>
 				<?php endforeach ?>
 			</ul>
 
