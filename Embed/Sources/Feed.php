@@ -159,10 +159,13 @@ class Feed extends Source implements SourceInterface {
 				'pubdate' => null
 			);
 
-			if ($Entry->updated) {
+			if ($Entry->created) {
+				$item['pubdate'] = (string)$Entry->created;
+			} else if ($Entry->updated) {
 				$item['pubdate'] = (string)$Entry->updated;
+			} else if ($Entry->modified) {
+				$item['pubdate'] = (string)$Entry->modified;
 			}
-
 
 			foreach ($Entry->link as $link) {
 				$attributes = $link->attributes();
