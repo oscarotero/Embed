@@ -55,15 +55,15 @@ class Viewers {
 		));
 	}
 
-	public static function iframe ($src, $width = 0, $height = 0) {
-		$width = $width ? $width.'px' : '600px';
-		$height = $height ? $height.'px' : '400px';
+	public static function iframe ($src, $width = 0, $height = 0, $extra_styles ='') {
+		$width = $width ? (is_int($width) ? $width.'px' : $width) : '600px';
+		$height = $height ? (is_int($height) ? $height.'px' : $height) : '400px';
 
 		return self::element('iframe', array(
 			'src' => $src,
 			'frameborder' => 0,
 			'allowTransparency' => 'true',
-			'style' => "border:none; overflow:hidden; width:$width; height:$height;"
+			'style' => "border:none;overflow:hidden;width:$width;height:$height;$extra_styles"
 		)).'</iframe>';
 	}
 
