@@ -9,7 +9,7 @@ use Embed\Url;
 interface AdapterInterface {
 	static public function check (Url $Url);
 
-	public function __construct (Url $Url);
+	public function __construct (Url $Url, array $options = null);
 
 	public function getTitle ();
 

@@ -55,7 +55,10 @@
 			<?php
 			$Url = new Embed\Url($_GET['url']);
 
-			$Service = Embed\Embed::create($Url);
+			$Service = Embed\Embed::create($Url, array(
+				'minImageWidth' => 70,
+				'minImageHeight' => 70
+			));
 			?>
 
 			<?php if (empty($Service)): ?>

@@ -18,7 +18,11 @@ abstract class Adapter {
 
 	abstract protected function initProviders (Url $Url);
 
-	public function __construct (Url $Url) {
+	public function __construct (Url $Url, array $options = null) {
+		if ($options !== null) {
+			$this->options = array_replace($this->options, $options);
+		}
+
 		$this->initProviders($Url);
 
 		if ($Url->getUrl() !== $this->url) {
@@ -59,7 +63,6 @@ abstract class Adapter {
 				continue;
 			}
 			
-
 			if ($Image->getType()) {
 				list($width, $height) = $Image->getSize();
 
