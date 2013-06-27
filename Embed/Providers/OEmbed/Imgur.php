@@ -8,6 +8,9 @@ class Imgur extends \Embed\Providers\OEmbedImplementationAbstract {
     }
     public static function getPatterns()
     {
-        return array('http://imgur.com/*');
+        return array(
+        	'http://imgur.com/*',
+        	'http://i.imgur.com/*'
+        );
     }
 }

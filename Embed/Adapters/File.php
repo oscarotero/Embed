@@ -42,22 +42,14 @@ class File extends Adapter implements AdapterInterface {
 
 	protected function initProviders (Url $Url) {
 		$this->Url = $Url;
-	}
 
-	public function getTitle () {
-		return $this->Url->getUrl();
-	}
-
-	public function getDescription () {
-		return null;
+		if (($OEmbed = OEmbedImplementations::create($Url))) {
+			$this->providers['OEmbed'] = $OEmbed;
+		}
 	}
 
 	public function getType () {
 		return static::$contentTypes[$this->Url->getMimeType()][0];
-	}
-
-	public function getSource () {
-		return null;
 	}
 
 	public function getCode () {
@@ -68,42 +60,15 @@ class File extends Adapter implements AdapterInterface {
 			case 'audioHtml':
 				return Viewers::audioHtml($this->getUrl());
 
-			case 'imageHtml':
-				return Viewers::imageHtml($this->getUrl(), $this->getTitle(), $this->getWidth(), $this->getHeight());
-
 			case 'google':
 				return Viewers::google($this->getUrl());
 		}
-	}
-
-	public function getAuthorName () {
-		return null;
-	}
-
-	public function getAuthorUrl () {
-		return null;
 	}
 
 	public function getImages () {
 		if ($this->getType() === 'image') {
 			return array($this->getUrl());
 		}
-	}
-
-	public function getImageWidth () {
-		return null;
-	}
-
-	public function getImageHeight () {
-		return null;
-	}
-
-	public function getWidth () {
-		return null;
-	}
-
-	public function getHeight () {
-		return null;
 	}
 
 	public function getProviderIcons () {
