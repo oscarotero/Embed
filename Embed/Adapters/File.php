@@ -21,11 +21,11 @@ class File extends Adapter implements AdapterInterface {
 		'audio/ogg' => array('audio', 'audioHtml'),
 		'audio/mp3' => array('audio', 'audioHtml'),
 		'audio/webm' => array('audio', 'audioHtml'),
-		'image/jpeg' => array('image', 'imageHtml'),
-		'image/gif' => array('image', 'imageHtml'),
-		'image/png' => array('image', 'imageHtml'),
-		'image/bmp' => array('image', 'imageHtml'),
-		'image/ico' => array('image', 'imageHtml'),
+		'image/jpeg' => array('photo', 'imageHtml'),
+		'image/gif' => array('photo', 'imageHtml'),
+		'image/png' => array('photo', 'imageHtml'),
+		'image/bmp' => array('photo', 'imageHtml'),
+		'image/ico' => array('photo', 'imageHtml'),
 		'text/rtf' => array('rich', 'google'),
 		'application/pdf' => array('rich', 'google'),
 		'application/msword' => array('rich', 'google'),
@@ -66,7 +66,7 @@ class File extends Adapter implements AdapterInterface {
 	}
 
 	public function getImages () {
-		if ($this->getType() === 'image') {
+		if ($this->getType() === 'photo') {
 			return array($this->getUrl());
 		}
 	}
