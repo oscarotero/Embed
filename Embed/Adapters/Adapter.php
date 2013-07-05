@@ -13,7 +13,9 @@ abstract class Adapter {
 	public $providers = array();
 	public $options = array(
 		'minImageWidth' => 0,
-		'minImageHeight' => 0
+		'minImageHeight' => 0,
+		'getBiggerImage' => false,
+		'getBiggerIcon' => false
 	);
 
 	abstract protected function initProviders (Url $Url);
@@ -77,6 +79,12 @@ abstract class Adapter {
 	}
 
 	public function getProviderIcon () {
+		if ($this->options['getBiggerIcon']) {
+			$icons = FastImage::sortImagesBySize($this->providerIcons);
+
+			return key($icons);
+		}
+
 		foreach ($this->providerIcons as $icon) {
 			try {
 				$Icon = new FastImage($icon);

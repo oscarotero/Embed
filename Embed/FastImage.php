@@ -252,4 +252,35 @@ class FastImage
 	{
 		$this->close();
 	}
+
+	public static function sortImagesBySize (array $images) {
+		if (count($images) < 2) {
+			return $images;
+		}
+
+		$sortedImages = array();
+
+		foreach ($images as $image) {
+			try {
+				$Image = new static($image);
+
+				if ($Image->getType() === 'ico') {
+					$sortedImages[$image] = 0;
+
+					continue;
+				}
+
+				list($width, $height) = $Image->getSize();
+
+				$sortedImages[$image] = $width*$height;
+
+			} catch (\Exception $Exception) {
+				continue;
+			}
+		}
+
+		arsort($sortedImages);
+
+		return array_keys($sortedImages);
+	}
 }

@@ -5,6 +5,7 @@
 namespace Embed\Adapters;
 
 use Embed\Url;
+use Embed\FastImage;
 
 use Embed\Providers\Html;
 use Embed\Providers\OEmbed;
@@ -64,6 +65,10 @@ class Webpage extends Adapter implements AdapterInterface {
 
 		foreach ($this->providers as $Provider) {
 			$imgs = (array)$Provider->getImage();
+
+			if ($this->options['getBiggerImage']) {
+				$imgs = FastImage::sortImagesBySize($imgs);
+			}
 
 			foreach ($imgs as $imgs) {
 				if (!empty($imgs)) {

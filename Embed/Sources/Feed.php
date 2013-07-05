@@ -7,38 +7,7 @@ namespace Embed\Sources;
 use Embed\Url;
 
 class Feed extends Source implements SourceInterface {
-	protected $sourceUrl;
-	protected $providerUrl;
-	protected $items = array();
-
-	static public function createFromOPML ($string) {
-		$Xml = new \SimpleXMLElement($string);
-
-		if (!isset($Xml->body->outline)) {
-			return false;
-		}
-
-		$result = array();
-
-		foreach ($Xml->body->outline as $outline) {
-			$sources = array();
-
-			foreach ($outline as $feed) {
-				$Url = new Url((string)$feed->attributes()->xmlUrl);
-
-				if (static::check($Url)) {
-					$sources[] = new static($Url);
-				}
-			}
-
-			$result[] = array(
-				'text' => (string)$outline->attributes()->text,
-				'sources' => $sources
-			);
-		}
-
-		return $result;
-	}
+	protected $data;
 
 	static public function check (Url $Url) {
 		switch ($Url->getMimeType()) {
@@ -54,34 +23,27 @@ class Feed extends Source implements SourceInterface {
 	}
 
 	public function __construct (Url $Url) {
-		$Xml = $Url->getXMLContent();
+		$this->Url = $Url;
 
-		if ($Xml) {
-			$data = self::parseRss($Xml) ?: self::parseAtom($Xml);
-
-			if (is_array($data)) {
-				$this->sourceUrl = $Url->getUrl();
-				$this->providerUrl = $data['url'];
-				$this->items = $data['items'];
-				$this->valid = true;
-			}
+		if (($Xml = $this->Url->getXMLContent())) {
+			$this->data = self::parseRss($Xml) ?: self::parseAtom($Xml);
 		}
 	}
 
 	public function isValid () {
-		return $this->valid;
+		return is_array($this->data);
 	}
 
 	public function getSourceUrl () {
-		return $this->sourceUrl;
+		return $this->Url->getUrl();
 	}
 
 	public function getProviderUrl () {
-		return $this->providerUrl;
+		return !empty($this->data['url']) ? $this->data['url'] : ($this->Url->getScheme().'://'.$this->Url->getDomain());
 	}
 
 	public function getItems () {
-		return (array)$this->items;
+		return isset($this->data['items']) ? (array)$this->data['items'] : array();
 	}
 
 	static protected function parseRss (\SimpleXMLElement $Xml) {
