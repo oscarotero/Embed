@@ -40,12 +40,48 @@ abstract class Adapter {
 		}
 	}
 
+	public function getFromProviders ($name) {
+		$method = 'get'.$name;
+
+		foreach ($this->providers as $Provider) {
+			if (($value = $Provider->$method())) {
+				return $value;
+			}
+		}
+	}
+
+	public function getUrlFromProviders ($name) {
+		$method = 'get'.$name;
+
+		foreach ($this->providers as $Provider) {
+			if (($url = $Provider->$method())) {
+				return $this->Url->getAbsolute($url);
+			}
+		}
+	}
+
 	public function getTitle () {
-		return $this->Url->getUrl();
+		return $this->getFromProviders('title') ?: $this->Url->getUrl();
+	}
+
+	public function getDescription () {
+		return $this->getFromProviders('description');
 	}
 
 	public function getUrl () {
-		return $this->Url->getUrl();
+		return $this->getUrlFromProviders('url') ?: $this->Url->getUrl();
+	}
+
+	public function getSource () {
+		return $this->getUrlFromProviders('source');
+	}
+
+	public function getAuthorName () {
+		return $this->getFromProviders('authorName');
+	}
+
+	public function getAuthorUrl () {
+		return $this->getUrlFromProviders('authorUrl');
 	}
 
 	public function getAspectRatio () {
@@ -99,10 +135,26 @@ abstract class Adapter {
 	}
 
 	public function getProviderName () {
-		return $this->Url->getDomain();
+		return $this->getFromProviders('providerName') ?: $this->Url->getDomain();
 	}
 
 	public function getProviderUrl () {
-		return ($this->Url->getScheme().'://'.$this->Url->getDomain(true));
+		return $this->getUrlFromProviders('providerUrl') ?: ($this->Url->getScheme().'://'.$this->Url->getDomain(true));
+	}
+
+	public function getImageWidth () {
+		return null;
+	}
+
+	public function getImageHeight () {
+		return null;
+	}
+
+	public function getWidth () {
+		return $this->getFromProviders('width');
+	}
+
+	public function getHeight () {
+		return $this->getFromProviders('height');
 	}
 }

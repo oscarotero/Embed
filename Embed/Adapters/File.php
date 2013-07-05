@@ -21,11 +21,11 @@ class File extends Adapter implements AdapterInterface {
 		'audio/ogg' => array('audio', 'audioHtml'),
 		'audio/mp3' => array('audio', 'audioHtml'),
 		'audio/webm' => array('audio', 'audioHtml'),
-		'image/jpeg' => array('image', 'imageHtml'),
-		'image/gif' => array('image', 'imageHtml'),
-		'image/png' => array('image', 'imageHtml'),
-		'image/bmp' => array('image', 'imageHtml'),
-		'image/ico' => array('image', 'imageHtml'),
+		'image/jpeg' => array('photo', 'imageHtml'),
+		'image/gif' => array('photo', 'imageHtml'),
+		'image/png' => array('photo', 'imageHtml'),
+		'image/bmp' => array('photo', 'imageHtml'),
+		'image/ico' => array('photo', 'imageHtml'),
 		'text/rtf' => array('rich', 'google'),
 		'application/pdf' => array('rich', 'google'),
 		'application/msword' => array('rich', 'google'),
@@ -42,22 +42,14 @@ class File extends Adapter implements AdapterInterface {
 
 	protected function initProviders (Url $Url) {
 		$this->Url = $Url;
-	}
 
-	public function getTitle () {
-		return $this->Url->getUrl();
-	}
-
-	public function getDescription () {
-		return null;
+		if (($OEmbed = OEmbedImplementations::create($Url))) {
+			$this->providers['OEmbed'] = $OEmbed;
+		}
 	}
 
 	public function getType () {
 		return static::$contentTypes[$this->Url->getMimeType()][0];
-	}
-
-	public function getSource () {
-		return null;
 	}
 
 	public function getCode () {
@@ -68,42 +60,15 @@ class File extends Adapter implements AdapterInterface {
 			case 'audioHtml':
 				return Viewers::audioHtml($this->getUrl());
 
-			case 'imageHtml':
-				return Viewers::imageHtml($this->getUrl(), $this->getTitle(), $this->getWidth(), $this->getHeight());
-
 			case 'google':
 				return Viewers::google($this->getUrl());
 		}
 	}
 
-	public function getAuthorName () {
-		return null;
-	}
-
-	public function getAuthorUrl () {
-		return null;
-	}
-
 	public function getImages () {
-		if ($this->getType() === 'image') {
+		if ($this->getType() === 'photo') {
 			return array($this->getUrl());
 		}
-	}
-
-	public function getImageWidth () {
-		return null;
-	}
-
-	public function getImageHeight () {
-		return null;
-	}
-
-	public function getWidth () {
-		return null;
-	}
-
-	public function getHeight () {
-		return null;
 	}
 
 	public function getProviderIcons () {

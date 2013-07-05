@@ -40,26 +40,6 @@ class Webpage extends Adapter implements AdapterInterface {
 		$this->providers = array_reverse($this->providers);
 	}
 
-	public function getFromProviders ($name) {
-		$method = 'get'.$name;
-
-		foreach ($this->providers as $Provider) {
-			if ($url = $Provider->$method()) {
-				return $url;
-			}
-		}
-	}
-
-	public function getUrlFromProviders ($name) {
-		$method = 'get'.$name;
-
-		foreach ($this->providers as $Provider) {
-			if ($url = $Provider->$method()) {
-				return $this->Url->getAbsolute($url);
-			}
-		}
-	}
-
 	public function getImages () {
 		$images = array();
 
@@ -103,14 +83,6 @@ class Webpage extends Adapter implements AdapterInterface {
 		return array_unique($icons);
 	}
 
-	public function getTitle () {
-		return $this->getFromProviders('title') ?: parent::getTitle();
-	}
-
-	public function getDescription () {
-		return $this->getFromProviders('description');
-	}
-
 	public function getType () {
 		$type = $this->getFromProviders('type');
 
@@ -131,10 +103,6 @@ class Webpage extends Adapter implements AdapterInterface {
 		return 'link';
 	}
 
-	public function getSource () {
-		return $this->getUrlFromProviders('source');
-	}
-
 	public function getCode () {
 		if ($code = $this->getFromProviders('code')) {
 			if (strpos($code, '</iframe>') !== false) {
@@ -153,39 +121,5 @@ class Webpage extends Adapter implements AdapterInterface {
 		}
 	}
 
-	public function getUrl () {
-		return $this->getUrlFromProviders('url') ?: $this->Url->getUrl();
-	}
-
-	public function getAuthorName () {
-		return $this->getFromProviders('authorName');
-	}
-
-	public function getAuthorUrl () {
-		return $this->getUrlFromProviders('authorUrl');
-	}
-
-	public function getProviderName () {
-		return $this->getFromProviders('providerName') ?: parent::getProviderName();
-	}
-
-	public function getProviderUrl () {
-		return $this->getUrlFromProviders('providerUrl') ?: parent::getProviderUrl();
-	}
-
-	public function getWidth () {
-		return $this->getFromProviders('width');
-	}
-
-	public function getHeight () {
-		return $this->getFromProviders('height');
-	}
-
-	public function getImageWidth () {
-		return null;
-	}
-
-	public function getImageHeight () {
-		return null;
-	}
+	
 }
