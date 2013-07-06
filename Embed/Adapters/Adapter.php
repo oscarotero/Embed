@@ -118,7 +118,7 @@ abstract class Adapter {
 		if ($this->options['getBiggerIcon']) {
 			$icons = FastImage::sortImagesBySize($this->providerIcons);
 
-			return key($icons);
+			return current($icons);
 		}
 
 		foreach ($this->providerIcons as $icon) {
