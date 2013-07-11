@@ -84,13 +84,15 @@ class Webpage extends Adapter implements AdapterInterface {
 	}
 
 	public function getType () {
-		$type = $this->getFromProviders('type');
+		$code = $this->code;
 
-		if ($type) {
-			return $type;
+		if (strpos($code, '</video>')) {
+			return 'video';
 		}
 
-		$code = $this->code;
+		if (($type = $this->getFromProviders('type'))) {
+			return $type;
+		}
 
 		if (empty($code)) {
 			return 'link';
