@@ -11,13 +11,21 @@
 			body {
 				font-family: sans-serif;
 			}
-			input {
+			input[type="url"] {
 				width: 400px;
 			}
-			fieldset {
+			input[type="number"] {
+				width: 50px;
+			}
+			fieldset.main {
 				border: none;
 				background: #DDD;
 				font-weight: bold;
+			}
+			fieldset.options {
+				border: none;
+				background: #DDD;
+				font-size: 0.9em;
 			}
 			img {
 				border: solid 1px black;
@@ -42,11 +50,24 @@
 		</style>
 	</head>
 
+	<?php 
+	function getOption ($name, $default = null) {
+		return isset($_GET['options'][$name]) ? $_GET['options'][$name] : $default;
+	}
+	?>
+
 	<body>
 		<form action="test.php">
-			<fieldset>
-				<label>Url to test: <input type="url" name="url" autofocus placeholder="http://"></label>
+			<fieldset class="main">
+				<label>Url to test: <input type="url" name="url" autofocus placeholder="http://" value="<?php echo isset($_GET['url']) ? $_GET['url'] : ''; ?>"></label>
 				<button type="submit">Test</button>
+			</fieldset>
+			<fieldset class="options">
+				<label>Min image width: <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 70); ?>"></label>
+				<label>Min image height: <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 70); ?>"></label>
+				
+				<label><input type="checkbox" name="options[getBiggerImage]" value="1" <?php echo getOption('getBiggerImage') ? 'checked' : ''; ?>> Get bigger image</label>
+				<label><input type="checkbox" name="options[getBiggerIcon]" value="1" <?php echo getOption('getBiggerIcon') ? 'checked' : ''; ?>> Get bigger icon</label>
 			</fieldset>
 		</form>
 
@@ -55,14 +76,7 @@
 			<?php
 			$Url = new Embed\Url($_GET['url']);
 
-			$options = array(
-				'minImageWidth' => 70,
-				'minImageHeight' => 70
-			);
-
-			if (isset($_GET['options'])) {
-				$options = array_merge($options, (array)$_GET['options']);
-			}
+			$options = isset($_GET['options']) ? (array)$_GET['options'] : array();
 
 			$Service = Embed\Embed::create($Url, $options);
 			?>

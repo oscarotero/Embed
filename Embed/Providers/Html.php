@@ -92,7 +92,18 @@ class Html extends Provider {
 		}
 		
 		//img tags
-		foreach ($Html->getElementsByTagName('img') as $Tag) {
+		//Search the main element:
+		$Content = $Html->getElementsByTagName('main'); //<main> element
+
+		if ($Content->length === 0) {
+			$Content = $Html->getElementById('main'); //#main element
+		}
+
+		if (!$Content) {
+			$Content = $Html; //Search in the entire document
+		}
+
+		foreach ($Content->getElementsByTagName('img') as $Tag) {
 			if ($Tag->hasAttribute('src')) {
 				$images[] = $Tag->getAttribute('src');
 			}
