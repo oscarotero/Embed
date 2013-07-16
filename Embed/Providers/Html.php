@@ -96,7 +96,7 @@ class Html extends Provider {
 		$Content = $Html->getElementsByTagName('main'); //<main> element
 
 		if ($Content->length === 0) {
-			$Content = $Html->getElementById('main'); //#main element
+			$Content = $Html->getElementById('main') ?: $Html->getElementById('content') ?: $Html->getElementById('page'); //commons ids
 		}
 
 		if (!$Content) {
