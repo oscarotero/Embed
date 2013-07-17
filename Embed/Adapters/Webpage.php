@@ -44,7 +44,16 @@ class Webpage extends Adapter implements AdapterInterface {
 		$images = array();
 
 		foreach ($this->providers as $Provider) {
-			$imgs = (array)$Provider->getImage();
+			$imgs = $Provider->getImage();
+
+			if (empty($imgs)) {
+				continue;
+			}
+
+			if (!is_array($imgs)) {
+				$images[] = $this->Url->getAbsolute($imgs);
+				continue;
+			}
 
 			if ($this->options['getBiggerImage']) {
 				$imgs = FastImage::sortImagesBySize($imgs);
