@@ -54,15 +54,9 @@ class Facebook extends Provider {
 	}
 
 	public function getImage () {
-		$images = array();
-
 		if ($imgs = $this->get('image')) {
-			foreach ($imgs as $img) {
-				$images[] = $img['url'];
-			}
+			return current($imgs);
 		}
-
-		return $images;
 	}
 
 	public function getAuthorName () {
