@@ -444,7 +444,7 @@ class Url {
 	 * Return the url path
 	 */
 	public function getPath () {
-		return implode('/', $this->info['path']);
+		return isset($this->info['path']) ? implode('/', $this->info['path']) : '';
 	}
 
 
