@@ -63,8 +63,8 @@
 				<button type="submit">Test</button>
 			</fieldset>
 			<fieldset class="options">
-				<label>Min image width: <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 70); ?>"></label>
-				<label>Min image height: <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 70); ?>"></label>
+				<label>Min image width: <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 0); ?>"></label>
+				<label>Min image height: <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 0); ?>"></label>
 				
 				<label><input type="checkbox" name="options[getBiggerImage]" value="1" <?php echo getOption('getBiggerImage') ? 'checked' : ''; ?>> Get bigger image</label>
 				<label><input type="checkbox" name="options[getBiggerIcon]" value="1" <?php echo getOption('getBiggerIcon') ? 'checked' : ''; ?>> Get bigger icon</label>
