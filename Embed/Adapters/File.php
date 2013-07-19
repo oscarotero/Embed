@@ -69,6 +69,8 @@ class File extends Adapter implements AdapterInterface {
 		if ($this->getType() === 'photo') {
 			return array($this->getUrl());
 		}
+
+		return array();
 	}
 
 	public function getProviderIcons () {
