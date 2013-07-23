@@ -25,7 +25,6 @@ class Webpage extends Adapter implements AdapterInterface {
 
 		$this->providers = array(
 			'Html' => new Html($Url),
-			'Dcterms' => new Dcterms($Url),
 			'Facebook' => new Facebook($Url),
 			'TwitterCards' => new TwitterCards($Url),
 			'OpenGraph' => new OpenGraph($Url)
