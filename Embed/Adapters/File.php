@@ -75,8 +75,8 @@ class File extends Adapter implements AdapterInterface {
 
 	public function getProviderIcons () {
 		return array(
-			$this->Url->getAbsolute('/favicon.png'),
-			$this->Url->getAbsolute('/favicon.ico')
+			$this->Url->getAbsolute('/favicon.ico'),
+			$this->Url->getAbsolute('/favicon.png')
 		);
 	}
 }

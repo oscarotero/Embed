@@ -85,8 +85,8 @@ class Webpage extends Adapter implements AdapterInterface {
 			}
 		}
 
-		$icons[] = $this->Url->getAbsolute('/favicon.png');
 		$icons[] = $this->Url->getAbsolute('/favicon.ico');
+		$icons[] = $this->Url->getAbsolute('/favicon.png');
 
 		return array_unique($icons);
 	}
