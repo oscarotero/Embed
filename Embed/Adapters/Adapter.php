@@ -15,7 +15,8 @@ abstract class Adapter {
 		'minImageWidth' => 0,
 		'minImageHeight' => 0,
 		'getBiggerImage' => false,
-		'getBiggerIcon' => false
+		'getBiggerIcon' => false,
+		'facebookAccessToken' => null
 	);
 
 	abstract protected function initProviders (Url $Url);

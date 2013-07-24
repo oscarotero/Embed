@@ -8,13 +8,7 @@ use Embed\Providers\Provider;
 use Embed\Url;
 
 class Facebook extends Webpage implements AdapterInterface {
-	static public $access_token;
-
 	public $Api;
-
-	static public function setAccessToken ($access_token) {
-		static::$access_token = $access_token;
-	}
 
 	static public function check (Url $Url) {
 		return $Url->match(array(
@@ -27,13 +21,17 @@ class Facebook extends Webpage implements AdapterInterface {
 
 		$this->Api = new Provider();
 
-		if (static::$access_token) {
+		if ($this->options['facebookAccessToken']) {
 			$StartingUrl = new Url($Url->getStartingUrl());
 
 			if ($StartingUrl->hasParameter('fbid')) {
 				$id = $StartingUrl->getParameter('fbid');
+			} else if ($StartingUrl->hasParameter('story_fbid')) {
+				$id = $StartingUrl->getParameter('story_fbid');
 			} else if ($StartingUrl->getDirectory(0) === 'events') {
 				$id = $StartingUrl->getDirectory(1);
+			} else if ($StartingUrl->getDirectory(0) === 'pages') {
+				$id = $StartingUrl->getDirectory(2);
 			} else if ($StartingUrl->getDirectory(1) === 'posts') {
 				$id = $StartingUrl->getDirectory(2);
 			} else if ($StartingUrl->getDirectory(2) === 'posts') {
@@ -44,7 +42,7 @@ class Facebook extends Webpage implements AdapterInterface {
 
 			if ($id) {
 				$UrlApi = new Url('https://graph.facebook.com/'.$id);
-				$UrlApi->setParameter('access_token', static::$access_token);
+				$UrlApi->setParameter('access_token', $this->options['facebookAccessToken']);
 
 				if ($json = $UrlApi->getJsonContent()) {
 					$this->Api->set($json);
@@ -57,21 +55,35 @@ class Facebook extends Webpage implements AdapterInterface {
 		return $this->Api->get('name') ?: parent::getTitle();
 	}
 
+	public function getDescription () {
+		return $this->Api->get('description') ?: $this->Api->get('about') ?: parent::getTitle();
+	}
+
 	public function getUrl () {
-		return $this->Url->getStartingUrl();
+		return $this->Api->get('link') ?: $this->Url->getStartingUrl();
 	}
 
 	public function getProviderName () {
 		return 'Facebook';
 	}
 
-	public function getImage () {
+	public function getSource () {
 		$id = $this->Api->get('id');
 
 		if ($id) {
-			return 'https://graph.facebook.com/'.$id.'/picture';
+			return 'https://www.facebook.com/feeds/page.php?id='.$id.'&format=rss20';
+		}
+	}
+
+	public function getImages () {
+		$images = parent::getImages();
+
+		$id = $this->Api->get('id');
+
+		if ($id) {
+			array_unshift($images, 'https://graph.facebook.com/'.$id.'/picture');
 		}
 		
-		return parent::getImage();
+		return $images;
 	}
 }

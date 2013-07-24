@@ -540,9 +540,9 @@ class Url {
 		if (isset($this->info['host'])) {
 			$url .= $this->info['host'];
 		}
-		if (isset($this->info['path'])) {
-			$url .= implode('/', $this->info['path']);
-		}
+		
+		$url .= '/'.$this->getPath();
+
 		if (isset($this->info['query'])) {
 			$url .= '?'.http_build_query($this->info['query']);
 		}
@@ -575,17 +575,11 @@ class Url {
 		}
 
 		if (isset($this->info['path'])) {
-			$path = array();
+			$this->setPath($this->info['path']);
 
-			foreach (explode('/', $this->info['path']) as $dir) {
-				$path[] = $dir;
-			}
-
-			if (preg_match('/\.([\w]+)$/', end($path), $match)) {
+			if (preg_match('/\.([\w]+)$/', end($this->info['path']), $match)) {
 				$this->info['extension'] = $match[1];
 			}
-
-			$this->info['path'] = $path;
 		}
 	}
 

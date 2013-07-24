@@ -42,22 +42,19 @@
 	</head>
 
 	<body>
-		<form action="test-sources.php" method="post" enctype="multipart/form-data">
+		<form action="test-sources.php" method="get">
 			<fieldset>
-				<label>Url to test: <input type="url" name="url" autofocus placeholder="http://"></label>
-				<label>Upload Opml: <input type="file" name="opml"></label>
+				<label>Url to test: <input type="url" name="url" autofocus placeholder="http://" value="<?php echo isset($_GET['url']) ? $_GET['url'] : ''; ?>"></label>
 				<button type="submit">Test</button>
 			</fieldset>
 		</form>
 
 		<?php
-		$url = !empty($_POST['url']) ? $_POST['url'] : (!empty($_GET['url']) ? $_GET['url'] : null);
-
-		if ($url): ?>
+		if (!empty($_GET['url'])): ?>
 		<section>
 			<?php
 
-			$Url = new Embed\Url($url);
+			$Url = new Embed\Url($_GET['url']);
 
 			$Source = Embed\Embed::createSource($Url);
 			?>
@@ -76,7 +73,7 @@
 			<ul>
 				<?php foreach ($Source->items as $url): ?>
 				<li>
-					<a href="<?php echo $url['url']; ?>"><?php echo $url['url']; ?></a><br>
+					<a href="<?php echo $url['url']; ?>"><?php echo $url['url']; ?></a> | <a href="test.php?url=<?php echo urlencode($url['url']); ?>" target="_blank">Test</a><br>
 					<time><?php echo $url['pubdate']; ?></time>
 				</li>
 				<?php endforeach ?>

@@ -143,7 +143,7 @@
 					<td><?php
 						if ($Service->source) {
 							echo $Service->source;
-							echo ' / <a href="test-sources.php?url='.$Service->source.'" target="_blank">Test</a>';
+							echo ' / <a href="test-sources.php?url='.urlencode($Service->source).'" target="_blank">Test</a>';
 						}
 						?>
 					</td>
