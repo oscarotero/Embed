@@ -67,6 +67,10 @@ class Facebook extends Webpage implements AdapterInterface {
 		return 'Facebook';
 	}
 
+	public function getAuthorName () {
+		return $this->Api->get('username') ?: parent::getAuthorName();
+	}
+
 	public function getSource () {
 		$id = $this->Api->get('id');
 
