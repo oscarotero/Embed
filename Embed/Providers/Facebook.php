@@ -44,7 +44,7 @@ class Facebook extends Provider {
 	public function getTitle () {
 		$title = $this->get('title');
 
-		if ((strpos($title, $this->get('url')) !== 0) && (strpos($this->get('url'), $title) !== 0)) {
+		if (strpos($title, '://') === false) {
 			return $title;
 		}
 	}
