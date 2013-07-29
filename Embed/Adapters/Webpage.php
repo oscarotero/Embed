@@ -26,8 +26,8 @@ class Webpage extends Adapter implements AdapterInterface {
 		$this->providers = array(
 			'Html' => new Html($Url),
 			'Facebook' => new Facebook($Url),
-			'TwitterCards' => new TwitterCards($Url),
-			'OpenGraph' => new OpenGraph($Url)
+			'OpenGraph' => new OpenGraph($Url),
+			'TwitterCards' => new TwitterCards($Url)
 		);
 
 		if ($this->providers['Html']->get('oembed')) {
