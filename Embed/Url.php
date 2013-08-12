@@ -594,6 +594,10 @@ class Url {
 			return '';
 		}
 
+		if (strpos($url, 'data:') === 0) {
+			return $url;
+		}
+
 		if (preg_match('|^\w+://|', $url)) {
 			return $url;
 		}
