@@ -22,15 +22,17 @@ class FastImage
 	private $type;
 	private $handle;
 	
-	public function __construct($uri = null)
-	{
-		if ($uri) $this->load($uri);
+	public function __construct ($uri = null) {
+		if ($uri) {
+			$this->load($uri);
+		}
 	}
 
 
-	public function load($uri)
-	{
-		if ($this->handle) $this->close();
+	public function load ($uri) {
+		if ($this->handle) {
+			$this->close();
+		}
 		
 		$this->uri = $uri;
 
@@ -261,6 +263,10 @@ class FastImage
 		$sortedImages = array();
 
 		foreach ($images as $image) {
+			if (!$image) {
+				continue;
+			}
+
 			try {
 				$Image = new static($image);
 
