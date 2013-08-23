@@ -406,24 +406,6 @@ class Url {
 	}
 
 
-
-	/**
-	 * Remove a portion of the path
-	 * 
-	 * @param int $offset The position to start to remove
-	 * @param int $length The number of directories to remove. If not specified, removes until the end
-	 */
-	public function splicePath ($offset, $length = null) {
-		if (isset($length)) {
-			array_splice($this->info['path'], $offset, $length);
-		} else {
-			array_splice($this->info['path'], $offset);
-		}
-
-		$this->buildUrl();
-	}
-
-
 	/**
 	 * Set a new path
 	 */
@@ -436,6 +418,10 @@ class Url {
 			}
 		}
 
+		if (substr($path, -1) !== '/') {
+			$this->info['file'] = array_pop($this->info['path']);
+		}
+
 		$this->buildUrl();
 	}
 
@@ -443,8 +429,14 @@ class Url {
 	/**
 	 * Return the url path
 	 */
-	public function getPath () {
-		return isset($this->info['path']) ? implode('/', $this->info['path']) : '';
+	public function getPath ($file = false) {
+		$path = isset($this->info['path']) ? implode('/', $this->info['path']) : '';
+
+		if ($file && !empty($this->info['file'])) {
+			$path .= '/'.$this->info['file'];
+		}
+
+		return $path;
 	}
 
 
@@ -543,6 +535,10 @@ class Url {
 		
 		$url .= '/'.$this->getPath();
 
+		if (isset($this->info['file'])) {
+			$url .= '/'.$this->info['file'];
+		}
+
 		if (isset($this->info['query'])) {
 			$url .= '?'.http_build_query($this->info['query']);
 		}
@@ -577,7 +573,7 @@ class Url {
 		if (isset($this->info['path'])) {
 			$this->setPath($this->info['path']);
 
-			if (preg_match('/\.([\w]+)$/', end($this->info['path']), $match)) {
+			if (!empty($this->info['file']) && preg_match('/\.([\w]+)$/', $this->info['file'], $match)) {
 				$this->info['extension'] = $match[1];
 			}
 		}
@@ -615,14 +611,13 @@ class Url {
 		}
 
 		if ($url[0] === '?') {
-			return $this->getScheme().'://'.$this->getHost().$this->getPath().$url;
+			return $this->getScheme().'://'.$this->getHost().'/'.$this->getPath().$url;
 		}
 
-		if (substr($this->getPath(), -1) === '/') {
-			return $this->getScheme().'://'.$this->getHost().$this->getPath().$url;
-		}
-		
-		return $this->getScheme().'://'.$this->getHost().dirname($this->getPath()).$url;
+		$path = $this->getPath();
+		$path = !$path ? '/' : "/$path/";
+
+		return $this->getScheme().'://'.$this->getHost().$path.$url;
 	}
 }
 ?>
