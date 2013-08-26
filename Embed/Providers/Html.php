@@ -101,13 +101,32 @@ class Html extends Provider {
 			$Content = $Content->item(0);
 		}
 
+		//Wordpress
 		if (!$Content) {
-			$Content = $Html; //Search in the entire document
+			foreach ($Html->getElementsByTagName('article') as $Article) {
+				if ($Article->hasAttribute('id') && (strpos($Article->getAttribute('id'), 'post-') === 0)) {
+					$Content = $Article;
+					break;
+				}
+			}
 		}
+
+		//Search in the entire document
+		if (!$Content) {
+			$Content = $Html;
+		}
+
+		$host = $Url->getHost();
 
 		foreach ($Content->getElementsByTagName('img') as $Tag) {
 			if ($Tag->hasAttribute('src')) {
-				$images[] = $Tag->getAttribute('src');
+				$image = $Tag->getAttribute('src');
+
+				if (strpos($image, '://') && (strpos(parse_url($image, PHP_URL_HOST), $host) === false)) {
+					continue;
+				}
+
+				$images[] = $image;
 			}
 		}
 

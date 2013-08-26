@@ -20,6 +20,7 @@ class File extends Adapter implements AdapterInterface {
 		'video/mp4' => array('video', 'videoHtml'),
 		'audio/ogg' => array('audio', 'audioHtml'),
 		'audio/mp3' => array('audio', 'audioHtml'),
+		'audio/mpeg' => array('audio', 'audioHtml'),
 		'audio/webm' => array('audio', 'audioHtml'),
 		'image/jpeg' => array('photo', 'imageHtml'),
 		'image/gif' => array('photo', 'imageHtml'),
