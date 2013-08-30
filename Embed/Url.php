@@ -48,6 +48,8 @@ class Url {
 	 * Resolve the possible redirects for this url (for example bit.ly or any other url shortcutter)
 	 */
 	private function resolve () {
+		UrlJsRedirect::resolve($this);
+
 		$connection = curl_init();
 
 		curl_setopt_array($connection, array(
@@ -532,8 +534,10 @@ class Url {
 		if (isset($this->info['host'])) {
 			$url .= $this->info['host'];
 		}
-		
-		$url .= '/'.$this->getPath();
+
+		if (($path = $this->getPath())) {
+			$url .= '/'.$path;
+		}
 
 		if (isset($this->info['file'])) {
 			$url .= '/'.$this->info['file'];
