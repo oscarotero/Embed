@@ -31,10 +31,8 @@ class Marca extends Webpage implements AdapterInterface {
 						$value = $param->getAttribute('value');
 
 						if (substr($value, 0, $startValueLength) === $startValue) {
-							$value = substr($value, $startValueLength);
+							return Viewers::videoHtml($this->getImage(), substr($value, $startValueLength));
 						}
-
-						return Viewers::videoHtml($this->getImage(), $value);
 					}
 				}
 			}
