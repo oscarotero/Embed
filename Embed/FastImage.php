@@ -29,7 +29,8 @@ class FastImage
 	}
 
 
-	public function load ($uri) {
+	public function load($uri)
+	{
 		if ($this->handle) {
 			$this->close();
 		}
