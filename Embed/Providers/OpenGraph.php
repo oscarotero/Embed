@@ -14,16 +14,27 @@ class OpenGraph extends Provider {
 			return false;
 		}
 
+		$images = array();
+
 		foreach ($Html->getElementsByTagName('meta') as $Tag) {
 			if ($Tag->hasAttribute('property') && (strpos($Tag->getAttribute('property'), 'og:') === 0)) {
-				$this->set(substr($Tag->getAttribute('property'), 3), $Tag->getAttribute('content') ?: $Tag->getAttribute('value'));
+				$name = substr($Tag->getAttribute('property'), 3);
+			} else if ($Tag->hasAttribute('name') && (strpos($Tag->getAttribute('name'), 'og:') === 0)) {
+				$name = substr($Tag->getAttribute('name'), 3);
+			} else {
 				continue;
 			}
 
-			if ($Tag->hasAttribute('name') && (strpos($Tag->getAttribute('name'), 'og:') === 0)) {
-				$this->set(substr($Tag->getAttribute('name'), 3), $Tag->getAttribute('content') ?: $Tag->getAttribute('value'));
+			$value = $Tag->getAttribute('content') ?: $Tag->getAttribute('value');
+
+			if ($name === 'image') {
+				$images[] = $value;
+			} else {
+				$this->set($name, $value);
 			}
 		}
+
+		$this->set('image', $images);
 	}
 
 	public function getTitle () {
