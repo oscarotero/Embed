@@ -66,7 +66,8 @@ class Url {
 			CURLOPT_USERAGENT => 'Embed PHP Library'
 		));
 
-		$content = curl_exec($connection);
+//		$content = curl_exec($connection);
+		$content = $this->curl_exec_follow($connection);
 		$this->result = curl_getinfo($connection);
 
 		if ($content === false) {
@@ -98,6 +99,88 @@ class Url {
 		$this->content = trim($content);
 	}
 
+    /**
+     *          * Execute curl request and follow redirects even if open_basedir is defined or safe_mode is on
+     *          *
+     *          * @param resource $ch A curl handler returned by curl_init().
+     *          *
+     *          * @param int $maxredirect Max number of redirect to follow. 5 redirects is default is default
+     *          *
+     *          * @return array/string The result info
+     *          */
+    function curl_exec_follow($ch, &$maxredirect = null) {
+	$mr = $maxredirect === null ? 5 : intval($maxredirect);
+	if (ini_get('open_basedir') == '' && ini_get('safe_mode' == 'Off')) {
+	    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, $mr > 0);
+	    curl_setopt($ch, CURLOPT_MAXREDIRS, $mr);
+	} else {
+	    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+	    $allowed_schemes = array(
+				     "http"
+				     ,"https"
+				     );
+	    if ($mr > 0) {
+		$newurl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+		
+		$domain_url_info = parse_url($newurl);
+		
+		$rch = curl_copy_handle($ch);
+		curl_setopt($rch, CURLOPT_HEADER, true);
+		curl_setopt($rch, CURLOPT_NOBODY, true);
+		curl_setopt($rch, CURLOPT_FORBID_REUSE, false);
+		curl_setopt($rch, CURLOPT_RETURNTRANSFER, true);
+		do {
+		    curl_setopt($rch, CURLOPT_URL, $newurl);
+		    $header = curl_exec($rch);
+		    if (curl_errno($rch)) {
+			$code = 0;
+		    } else {
+			$code = curl_getinfo($rch, CURLINFO_HTTP_CODE);
+			if ($code == 301 || $code == 302) {
+			    preg_match('/Location:(.*?)\n/', $header, $matches);
+			    $newurl = trim(array_pop($matches));
+			    $url_info = parse_url($newurl);
+			    // if no scheme is defined then the url is relative and it is safe to follow the redirect
+			    if( isset($url_info["scheme"])){
+				if( !in_array($url_info["scheme"],$allowed_schemes) ){
+				    // stop if url has scheme and it is not an allowed scheme
+				    $code = 0;
+				}
+				else{
+				    // update domain url info to redirected domain
+				    $domain_url_info = $url_info;
+				}
+			    }
+			    else{
+				// $newurl does not contain domain name so add it
+				if($newurl[0] == "/"){
+				    $path="";
+				}
+				else{
+				    $path = isset($domain_url_info["path"]) ? $domain_url_info["path"] : "/";
+				}
+				$newurl = $domain_url_info["scheme"] ."://". $domain_url_info["host"] . $path . $newurl;
+			    }
+			    
+			} else {
+			    $code = 0;
+			}
+		    }
+		} while ($code && --$mr);
+		curl_close($rch);
+		if (!$mr) {
+		    if ($maxredirect === null) {
+			trigger_error('Too many redirects. When following redirects, libcurl hit the maximum amount.', E_USER_WARNING);
+		    } else {
+			$maxredirect = 0;
+		    }
+		    return false;
+					}
+		curl_setopt($ch, CURLOPT_URL, $newurl);
+	    }
+	}
+	return curl_exec($ch);
+    }
 
 	/**
 	 * Get the result of the http request
