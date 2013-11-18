@@ -5,6 +5,7 @@
 namespace Embed;
 
 class Url {
+	public static $resolver = 'Embed\\UrlResolver';
 	private $result;
 	private $info;
 	private $url;
@@ -50,32 +51,11 @@ class Url {
 	private function resolve () {
 		UrlJsRedirect::resolve($this);
 
-		$connection = curl_init();
+		$resolver = static::$resolver;
 
-		curl_setopt_array($connection, array(
-			CURLOPT_URL => $this->url,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_FOLLOWLOCATION => true,
-			CURLOPT_MAXREDIRS => 20,
-			CURLOPT_CONNECTTIMEOUT => 10,
-			CURLOPT_TIMEOUT => 10,
-			CURLOPT_SSL_VERIFYPEER => false,
-			CURLOPT_SSL_VERIFYHOST => false,
-			CURLOPT_ENCODING => '',
-			CURLOPT_AUTOREFERER => true,
-			CURLOPT_USERAGENT => 'Embed PHP Library'
-		));
+		list($content, $result) = $resolver::resolve($this->url);
 
-		$content = curl_exec($connection);
-		$this->result = curl_getinfo($connection);
-
-		if ($content === false) {
-			$this->result['error'] = curl_error($connection);
-			$this->result['error_number'] = curl_errno($connection);
-		}
-
-		curl_close($connection);
-
+		$this->result = $result;
 		$this->result['starting_url'] = $this->url;
 
 		$this->parseUrl($this->result['url']);
