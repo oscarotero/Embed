@@ -32,6 +32,6 @@ class UrlResolver {
 
 		curl_close($connection);
 
-		return [$content, $result];
+		return array($content, $result);
 	}
 }
