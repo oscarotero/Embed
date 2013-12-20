@@ -65,11 +65,14 @@
 			<fieldset class="options">
 				<label>Min image width: <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 0); ?>"></label>
 				<label>Min image height: <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 0); ?>"></label>
-				
-				<label><input type="checkbox" name="options[getBiggerImage]" value="1" <?php echo getOption('getBiggerImage') ? 'checked' : ''; ?>> Get bigger image</label>
-				<label><input type="checkbox" name="options[getBiggerIcon]" value="1" <?php echo getOption('getBiggerIcon') ? 'checked' : ''; ?>> Get bigger icon</label>
-				<br>
-				<label>Facebook access token<input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label>
+				<p>
+					<label><input type="checkbox" name="options[getBiggerImage]" value="1" <?php echo getOption('getBiggerImage') ? 'checked' : ''; ?>> Get bigger image</label>
+					<label><input type="checkbox" name="options[getBiggerIcon]" value="1" <?php echo getOption('getBiggerIcon') ? 'checked' : ''; ?>> Get bigger icon</label>
+				</p>
+				<p>
+				<label>Facebook access token: <input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label><br>
+				<label>Soundcloud client id: <input type="text" name="options[soundcloudClientId]" value="<?php echo getOption('soundcloudClientId', 'YOUR_CLIENT_ID'); ?>"></label>
+				</p>
 			</fieldset>
 		</form>
 
