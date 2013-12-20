@@ -54,8 +54,8 @@ class Facebook extends Provider {
 	}
 
 	public function getImage () {
-		if ($imgs = $this->get('image')) {
-			return current($imgs);
+		if (($imgs = $this->get('image')) && isset($imgs[0]['url'])) {
+			return $imgs[0]['url'];
 		}
 	}
 
