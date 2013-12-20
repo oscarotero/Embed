@@ -14,6 +14,7 @@ use Embed\Providers\OpenGraph;
 use Embed\Providers\TwitterCards;
 use Embed\Providers\Dcterms;
 use Embed\Providers\Facebook;
+use Embed\Providers\Embedly;
 
 class Webpage extends Adapter implements AdapterInterface {
 	static public function check (Url $Url) {
@@ -33,6 +34,8 @@ class Webpage extends Adapter implements AdapterInterface {
 		if ($this->providers['Html']->get('oembed')) {
 			$this->providers['OEmbed'] = new OEmbed(new Url($Url->getAbsolute($this->providers['Html']->get('oembed'))));
 		} else if (($OEmbed = OEmbedImplementations::create($Url))) {
+			$this->providers['OEmbed'] = $OEmbed;
+		} else if ($this->options['embedlyKey'] && ($OEmbed = Embedly::create($Url, $this->options['embedlyKey']))) {
 			$this->providers['OEmbed'] = $OEmbed;
 		}
 

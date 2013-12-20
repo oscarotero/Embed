@@ -71,6 +71,7 @@
 				</p>
 				<p>
 				<label>Facebook access token: <input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label><br>
+				<label>Embedly key: <input type="text" name="options[embedlyKey]" value="<?php echo getOption('embedlyKey'); ?>"></label><br>
 				<label>Soundcloud client id: <input type="text" name="options[soundcloudClientId]" value="<?php echo getOption('soundcloudClientId', 'YOUR_CLIENT_ID'); ?>"></label>
 				</p>
 			</fieldset>

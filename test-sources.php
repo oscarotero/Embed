@@ -74,6 +74,9 @@
 				<?php foreach ($Source->items as $url): ?>
 				<li>
 					<a href="<?php echo $url['url']; ?>"><?php echo $url['url']; ?></a> | <a href="test.php?url=<?php echo urlencode($url['url']); ?>" target="_blank">Test</a><br>
+					<?php if ($url['originUrl']): ?>
+					<a href="<?php echo $url['originUrl']; ?>"><?php echo $url['originUrl']; ?></a> | <a href="test.php?url=<?php echo urlencode($url['originUrl']); ?>" target="_blank">Test origin Url</a><br>
+					<?php endif; ?>
 					<time><?php echo $url['pubdate']; ?></time>
 				</li>
 				<?php endforeach ?>

@@ -69,14 +69,21 @@ class Feed extends Source implements SourceInterface {
 		foreach ($Items as $Item) {
 			$item = array(
 				'url' => null,
+				'originUrl' => null,
 				'pubdate' => null
 			);
 
 			$item['url'] = (string)$Item->link;
+			$item['originUrl'] = ((string)$Item->origLink ?: (string)$Item->comments);
+			
 			$item['pubdate'] = ((string)$Item->pubdate ?: (string)$Item->pubDate);
 
 			if (!$item['pubdate'] && isset($namespaces['dc']) && ($Children = $Item->children($namespaces['dc']))) {
-				$item['pubdate'] = $Children->date;
+				$item['pubdate'] = (string)$Children->date;
+			}
+
+			if (!$item['originUrl'] && isset($namespaces['feedburner']) && ($Children = $Item->children($namespaces['feedburner']))) {
+				$item['originUrl'] = (string)$Children->origLink;
 			}
 
 			if ($item['url']) {
@@ -118,6 +125,7 @@ class Feed extends Source implements SourceInterface {
 		foreach ($Entries as $Entry) {
 			$item = array(
 				'url' => null,
+				'originUrl' => null,
 				'pubdate' => null
 			);
 
@@ -134,6 +142,15 @@ class Feed extends Source implements SourceInterface {
 
 				if (!empty($attributes->href) && ((string)$attributes->rel === 'alternate')) {
 					$item['url'] = (string)$attributes->href;
+					break;
+				}
+			}
+
+			foreach ($Entry->link as $link) {
+				$attributes = $link->attributes();
+
+				if (!empty($attributes->href) && ((string)$attributes->rel === 'comments')) {
+					$item['originUrl'] = (string)$attributes->href;
 					break;
 				}
 			}

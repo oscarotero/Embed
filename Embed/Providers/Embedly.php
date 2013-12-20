@@ -4,7 +4,6 @@ namespace Embed\Providers;
 use Embed\Url;
 
 class Embedly {
-	static public $api_key;
 	static public $patterns = array(
 		'http://*yfrog.*/*',
 		'http://twitter.com/*/status/*/photo/*',
@@ -640,12 +639,8 @@ class Embedly {
 		'http://www.gogoyoko.com/song/*'
 	);
 
-	static public function setApiKey ($key) {
-		static::$api_key = $key;
-	}
-
-	static public function create (Url $Url) {
-		if (!static::$api_key) {
+	static public function create (Url $Url, $api_key) {
+		if (!$api_key) {
 			return false;
 		}
 
@@ -655,7 +650,7 @@ class Embedly {
 			$EndPoint->setParameter(array(
 				'url' => $Url->getUrl(),
 				'format' => 'json',
-				'key' => static::$api_key
+				'key' => $api_key
 			));
 
 			return new OEmbed($EndPoint);
