@@ -16,7 +16,8 @@ abstract class Adapter {
 		'minImageHeight' => 0,
 		'getBiggerImage' => false,
 		'getBiggerIcon' => false,
-		'facebookAccessToken' => null
+		'facebookAccessToken' => null,
+		'soundcloudClientId' => null
 	);
 
 	abstract protected function initProviders (Url $Url);
