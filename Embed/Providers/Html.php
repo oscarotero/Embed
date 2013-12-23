@@ -82,6 +82,12 @@ class Html extends Provider {
 					case 'msapplication-tileimage':
 						$icons[] = $Tag->getAttribute('content');
 						continue 2;
+
+					default:
+						if ($Tag->hasAttribute('content')) {
+							$this->set($name, $Tag->getAttribute('content'));
+						}
+						continue 2;
 				}
 			}
 
