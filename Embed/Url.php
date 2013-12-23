@@ -393,6 +393,7 @@ class Url {
 	 */
 	public function setPath ($path) {
 		$this->info['path'] = array();
+		$this->info['file'] = null;
 
 		foreach (explode('/', $path) as $dir) {
 			if ($dir !== '') {
@@ -412,10 +413,10 @@ class Url {
 	 * Return the url path
 	 */
 	public function getPath ($file = false) {
-		$path = isset($this->info['path']) ? implode('/', $this->info['path']) : '';
+		$path = isset($this->info['path']) ? '/'.implode('/', $this->info['path']).'/' : '/';
 
 		if ($file && !empty($this->info['file'])) {
-			$path .= '/'.$this->info['file'];
+			$path .= $this->info['file'];
 		}
 
 		return $path;
@@ -515,13 +516,7 @@ class Url {
 			$url .= $this->info['host'];
 		}
 
-		if (($path = $this->getPath())) {
-			$url .= '/'.$path;
-		}
-
-		if (isset($this->info['file'])) {
-			$url .= '/'.$this->info['file'];
-		}
+		$url .= $this->getPath(true);
 
 		if (isset($this->info['query'])) {
 			$url .= '?'.http_build_query($this->info['query']);
@@ -594,14 +589,6 @@ class Url {
 			return $this->getScheme().'://'.$this->getHost().$url;
 		}
 
-		if ($url[0] === '?') {
-			return $this->getScheme().'://'.$this->getHost().'/'.$this->getPath().$url;
-		}
-
-		$path = $this->getPath();
-		$path = !$path ? '/' : "/$path/";
-
-		return $this->getScheme().'://'.$this->getHost().$path.$url;
+		return $this->getScheme().'://'.$this->getHost().$this->getPath().$url;
 	}
 }
-?>
