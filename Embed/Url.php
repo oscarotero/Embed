@@ -154,6 +154,9 @@ class Url {
 					$response = preg_replace('/<head[^>]*>/','<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $response);
 				}
 
+				//Remove all script elements (thanks https://github.com/jasny)
+				$response = preg_replace('%<script\b(?:"(?:[^"\\\\\\\\]++|\\\\\\\\.)*+"|\'(?:[^\\\\\\\\]++|\\\\\\\\.)*+\'|[^>"]++)*>(?:"(?:[^"\\\\\\\\]++|\\\\\\\\.)*+"|\'(?:[^\\\\\\\\]++|\\\\\\\\.)*+\'|//.*?\n|/\*(?:[^\*]++|\*)*?\*/|[^<"/]++|/|(?R)|<)*?</\s*script>%si', '', $response);
+
 				$this->htmlContent->loadHTML($response);
 				libxml_use_internal_errors($errors);
 
