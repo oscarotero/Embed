@@ -75,6 +75,6 @@ http://oscarotero.com/embed/test.php
 
 Contributors
 ------------
-https://github.com/oscarotero (creator and maintainer)
-
-https://github.com/buggedcom
+* https://github.com/oscarotero (creator and maintainer)
+* https://github.com/buggedcom
+* https://github.com/jasny
