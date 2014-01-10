@@ -416,7 +416,7 @@ class Url {
 	 * Return the url path
 	 */
 	public function getPath ($file = false) {
-		$path = isset($this->info['path']) ? '/'.implode('/', $this->info['path']).'/' : '/';
+		$path = isset($this->info['path']) && !empty($this->info['path']) ? '/'.implode('/', $this->info['path']).'/' : '/';
 
 		if ($file && !empty($this->info['file'])) {
 			$path .= $this->info['file'];
