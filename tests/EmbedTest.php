@@ -37,7 +37,7 @@ class EmbedTest extends PHPUnit_Framework_TestCase {
 			'http://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314.html', 
 			array(
 				'title' => 'Echoes of George W. Bush blues in Barack Obama\'s 2nd term',
-				'description' => 'As Barack Obama heads into his sixth year in the White House, his aides says they are all too familiar with the notion that his predicament looks similar to George W. Bush’s eight years ago. They’re two presidents dogged by crises largely of their own making, whose welcome with Americans has worn thin after two marathon elections. One president...',
+				'description' => 'As Barack Obama heads into his sixth year in the White House, his aides says they are all too familiar with the notion that his predicament looks similar to George W. Bush&rsquo;s eight years ago. They&rsquo;re two presidents dogged by crises largely of their own making, whose welcome with Americans has worn thin after two marathon elections. One president...',
 				'image' => 'http://images.politico.com/global/2013/12/18/131218_george_w_bush_barack_obama_ap_605.jpg',
 				'imageWidth' => 605,
 				'imageHeight' => 328,
