@@ -39,7 +39,7 @@ class Feed extends Source implements SourceInterface {
 	}
 
 	public function getProviderUrl () {
-		return !empty($this->data['url']) ? $this->data['url'] : ($this->Url->getScheme().'://'.$this->Url->getDomain());
+		return !empty($this->data['url']) ? $this->data['url'] : ($this->Url->getScheme().'://'.$this->Url->getHost());
 	}
 
 	public function getItems () {
@@ -109,6 +109,8 @@ class Feed extends Source implements SourceInterface {
 			}
 
 			$url = (string)$attributes->href;
+
+			var_dump($url);
 
 			break;
 		}
