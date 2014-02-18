@@ -107,11 +107,7 @@ class Feed extends Source implements SourceInterface {
 			if (empty($attributes->href) || ((string)$attributes->rel === 'self')) {
 				continue;
 			}
-
 			$url = (string)$attributes->href;
-
-			var_dump($url);
-
 			break;
 		}
 
