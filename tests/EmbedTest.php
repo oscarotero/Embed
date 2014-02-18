@@ -77,7 +77,7 @@ class EmbedTest extends PHPUnit_Framework_TestCase {
 				'type' => 'video',
 				'providerName' => 'Dailymotion',
 				'providerUrl' => 'http://www.dailymotion.com',
-				'providerIcon' => 'http://static1.dmcdn.net/images/apple-touch-icon.png.vcbf86c6fe83fbbe19'
+				'providerIcon' => 'http://static1.dmcdn.net/images/apple-touch-icon.png.vcbf86c6fe83fbbe11'
 			)
 		);
 	}
