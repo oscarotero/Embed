@@ -122,13 +122,14 @@ class Html extends Provider {
 			$Content = $Html;
 		}
 
-		$host = $Url->getHost();
+		$domain = $Url->getDomain();
 
 		foreach ($Content->getElementsByTagName('img') as $Tag) {
 			if ($Tag->hasAttribute('src')) {
 				$image = $Tag->getAttribute('src');
 
-				if (strpos($image, '://') && (strpos(parse_url($image, PHP_URL_HOST), $host) === false)) {
+				//Check whether the image is in the same domain
+				if ((strpos($image, '//') === false) || (($ImgUrl = new Url($image)) && ($ImgUrl->getDomain() !== $domain))) {
 					continue;
 				}
 
