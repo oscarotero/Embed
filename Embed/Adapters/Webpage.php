@@ -57,10 +57,6 @@ class Webpage extends Adapter implements AdapterInterface {
 				continue;
 			}
 
-			if ($this->options['getBiggerImage']) {
-				$imgs = FastImage::sortImagesBySize($imgs);
-			}
-
 			foreach ($imgs as $imgs) {
 				if (!empty($imgs)) {
 					$images[] = $this->Url->getAbsolute($imgs);
@@ -68,7 +64,13 @@ class Webpage extends Adapter implements AdapterInterface {
 			}
 		}
 
-		return array_unique($images);
+		$images = array_unique($images);
+
+		if ($this->options['getBiggerImage']) {
+			$images = FastImage::sortImagesBySize($images);
+		}
+
+		return $images;
 	}
 
 	public function getProviderIcons () {
