@@ -8,6 +8,8 @@ class UrlResolver {
 	public static function resolve ($url) {
 		$connection = curl_init();
 
+		$tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
+
 		curl_setopt_array($connection, array(
 			CURLOPT_URL => $url,
 			CURLOPT_RETURNTRANSFER => true,
@@ -19,6 +21,8 @@ class UrlResolver {
 			CURLOPT_SSL_VERIFYHOST => false,
 			CURLOPT_ENCODING => '',
 			CURLOPT_AUTOREFERER => true,
+			CURLOPT_COOKIEJAR => $tmpCookies,
+			CURLOPT_COOKIEFILE => $tmpCookies,
 			CURLOPT_USERAGENT => 'Embed PHP Library'
 		));
 
