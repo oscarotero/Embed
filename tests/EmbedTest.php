@@ -99,4 +99,14 @@ class EmbedTest extends PHPUnit_Framework_TestCase
             $this->assertEquals($expected_url, $parsed_url->getUrl());
         }
     }
+
+    public function testUrlDirectory()
+    {
+        $url = new Embed\Url('http://domain.com/first//second/third');
+
+        $this->assertEquals('first', $url->getDirectory(0));
+        $this->assertEquals('second', $url->getDirectory(1));
+        $this->assertEquals('third', $url->getDirectory(2));
+        $this->assertNull($url->getDirectory(3));
+    }
 }

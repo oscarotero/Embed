@@ -395,6 +395,10 @@ class Url
      */
     public function getDirectory($key)
     {
+        if ($key === count($this->info['path'])) {
+            return $this->info['file'];
+        }
+
         return isset($this->info['path'][$key]) ? $this->info['path'][$key] : null;
     }
 
