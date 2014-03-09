@@ -1,4 +1,9 @@
-<?php include('Embed/autoloader.php'); ?>
+<?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+
+include('Embed/autoloader.php');
+?>
 
 <!DOCTYPE html>
 
@@ -51,7 +56,7 @@
     </head>
 
     <?php
-    public function getOption($name, $default = null)
+    function getOption($name, $default = null)
     {
         return isset($_GET['options'][$name]) ? $_GET['options'][$name] : $default;
     }
