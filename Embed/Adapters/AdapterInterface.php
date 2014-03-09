@@ -6,44 +6,45 @@ namespace Embed\Adapters;
 
 use Embed\Url;
 
-interface AdapterInterface {
-	static public function check (Url $Url);
+interface AdapterInterface
+{
+    public static function check (Url $Url);
 
-	public function __construct (Url $Url, array $options = null);
+    public function __construct (Url $Url, array $options = null);
 
-	public function getTitle ();
+    public function getTitle ();
 
-	public function getDescription ();
+    public function getDescription ();
 
-	public function getType ();
+    public function getType ();
 
-	public function getSource ();
+    public function getSource ();
 
-	public function getCode ();
+    public function getCode ();
 
-	public function getUrl ();
+    public function getUrl ();
 
-	public function getAuthorName ();
+    public function getAuthorName ();
 
-	public function getAuthorUrl ();
+    public function getAuthorUrl ();
 
-	public function getProviderIcons ();
-	
-	public function getProviderIcon ();
+    public function getProviderIcons ();
 
-	public function getProviderName ();
+    public function getProviderIcon ();
 
-	public function getProviderUrl ();
+    public function getProviderName ();
 
-	public function getImage ();
+    public function getProviderUrl ();
 
-	public function getImageWidth ();
+    public function getImage ();
 
-	public function getImageHeight ();
+    public function getImageWidth ();
 
-	public function getWidth ();
+    public function getImageHeight ();
 
-	public function getHeight ();
+    public function getWidth ();
 
-	public function getAspectRatio ();
+    public function getHeight ();
+
+    public function getAspectRatio ();
 }

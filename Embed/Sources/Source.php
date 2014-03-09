@@ -1,19 +1,19 @@
 <?php
 /**
  * Base Source extended by all sources
- * 
+ *
  * Provide default functionalities
  */
-namespace Embed\sources;
+namespace Embed\Sources;
 
-use Embed\Url;
+abstract class Source
+{
+    public function __get($name)
+    {
+        $method = 'get'.$name;
 
-abstract class Source {
-	public function __get ($name) {
-		$method = 'get'.$name;
-
-		if (method_exists($this, $method)) {
-			return $this->$name = $this->$method();
-		}
-	}
+        if (method_exists($this, $method)) {
+            return $this->$name = $this->$method();
+        }
+    }
 }

@@ -1,7 +1,8 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Kewego extends \Embed\Providers\OEmbedImplementationAbstract {
+class Kewego extends \Embed\Providers\OEmbedImplementationAbstract
+{
     public static function getEndPoint()
     {
         return 'http://api.kewego.com/services/oembed/';

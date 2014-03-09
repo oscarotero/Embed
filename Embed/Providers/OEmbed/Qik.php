@@ -1,7 +1,8 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Qik extends \Embed\Providers\OEmbedImplementationAbstract {
+class Qik extends \Embed\Providers\OEmbedImplementationAbstract
+{
     public static function getEndPoint()
     {
         return 'http://qik.com/api/oembed.json';

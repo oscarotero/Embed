@@ -1,7 +1,8 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Dotsub extends \Embed\Providers\OEmbedImplementationAbstract {
+class DotSub extends \Embed\Providers\OEmbedImplementationAbstract
+{
     public static function getEndPoint()
     {
         return 'http://dotsub.com/services/oembed';

@@ -1,7 +1,8 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Skitch extends \Embed\Providers\OEmbedImplementationAbstract {
+class Skitch extends \Embed\Providers\OEmbedImplementationAbstract
+{
     public static function getEndPoint()
     {
         return 'http://skitch.com/oembed/';

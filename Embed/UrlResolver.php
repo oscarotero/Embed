@@ -4,38 +4,40 @@
  */
 namespace Embed;
 
-class UrlResolver {
-	public static function resolve ($url) {
-		$connection = curl_init();
+class UrlResolver
+{
+    public static function resolve($url)
+    {
+        $connection = curl_init();
 
-		$tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
+        $tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
 
-		curl_setopt_array($connection, array(
-			CURLOPT_URL => $url,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_FOLLOWLOCATION => true,
-			CURLOPT_MAXREDIRS => 20,
-			CURLOPT_CONNECTTIMEOUT => 10,
-			CURLOPT_TIMEOUT => 10,
-			CURLOPT_SSL_VERIFYPEER => false,
-			CURLOPT_SSL_VERIFYHOST => false,
-			CURLOPT_ENCODING => '',
-			CURLOPT_AUTOREFERER => true,
-			CURLOPT_COOKIEJAR => $tmpCookies,
-			CURLOPT_COOKIEFILE => $tmpCookies,
-			CURLOPT_USERAGENT => 'Embed PHP Library'
-		));
+        curl_setopt_array($connection, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_MAXREDIRS => 20,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_ENCODING => '',
+            CURLOPT_AUTOREFERER => true,
+            CURLOPT_COOKIEJAR => $tmpCookies,
+            CURLOPT_COOKIEFILE => $tmpCookies,
+            CURLOPT_USERAGENT => 'Embed PHP Library'
+        ));
 
-		$content = curl_exec($connection);
-		$result = curl_getinfo($connection);
+        $content = curl_exec($connection);
+        $result = curl_getinfo($connection);
 
-		if ($content === false) {
-			$result['error'] = curl_error($connection);
-			$result['error_number'] = curl_errno($connection);
-		}
+        if ($content === false) {
+            $result['error'] = curl_error($connection);
+            $result['error_number'] = curl_errno($connection);
+        }
 
-		curl_close($connection);
+        curl_close($connection);
 
-		return array($content, $result);
-	}
+        return array($content, $result);
+    }
 }

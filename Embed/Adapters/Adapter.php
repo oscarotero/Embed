@@ -1,7 +1,7 @@
 <?php
 /**
  * Base Adapter extended by all adapters
- * 
+ *
  * Provide default functionalities
  */
 namespace Embed\Adapters;
@@ -9,155 +9,175 @@ namespace Embed\Adapters;
 use Embed\Url;
 use Embed\FastImage;
 
-abstract class Adapter {
-	public $providers = array();
-	public $options = array(
-		'minImageWidth' => 0,
-		'minImageHeight' => 0,
-		'getBiggerImage' => false,
-		'getBiggerIcon' => false,
-		'facebookAccessToken' => null,
-		'soundcloudClientId' => null,
-		'embedlyKey' => null
-	);
+abstract class Adapter
+{
+    public $providers = array();
+    public $options = array(
+        'minImageWidth' => 0,
+        'minImageHeight' => 0,
+        'getBiggerImage' => false,
+        'getBiggerIcon' => false,
+        'facebookAccessToken' => null,
+        'soundcloudClientId' => null,
+        'embedlyKey' => null
+    );
 
-	abstract protected function initProviders (Url $Url);
+    abstract protected function initProviders (Url $Url);
 
-	public function __construct (Url $Url, array $options = null) {
-		if ($options !== null) {
-			$this->options = array_replace($this->options, $options);
-		}
+    public function __construct(Url $Url, array $options = null)
+    {
+        if ($options !== null) {
+            $this->options = array_replace($this->options, $options);
+        }
 
-		$this->initProviders($Url);
+        $this->initProviders($Url);
 
-		if ($Url->getUrl() !== $this->url) {
-			$this->initProviders(new Url($this->url));
-		}
-	}
+        if ($Url->getUrl() !== $this->url) {
+            $this->initProviders(new Url($this->url));
+        }
+    }
 
-	public function __get ($name) {
-		$method = 'get'.$name;
+    public function __get($name)
+    {
+        $method = 'get'.$name;
 
-		if (method_exists($this, $method)) {
-			return $this->$name = $this->$method();
-		}
-	}
+        if (method_exists($this, $method)) {
+            return $this->$name = $this->$method();
+        }
+    }
 
-	public function getFromProviders ($name) {
-		$method = 'get'.$name;
+    public function getFromProviders($name)
+    {
+        $method = 'get'.$name;
 
-		foreach ($this->providers as $Provider) {
-			if (($value = $Provider->$method())) {
-				return $value;
-			}
-		}
-	}
+        foreach ($this->providers as $Provider) {
+            if (($value = $Provider->$method())) {
+                return $value;
+            }
+        }
+    }
 
-	public function getUrlFromProviders ($name) {
-		$method = 'get'.$name;
+    public function getUrlFromProviders($name)
+    {
+        $method = 'get'.$name;
 
-		foreach ($this->providers as $Provider) {
-			if (($url = $Provider->$method())) {
-				return $this->Url->getAbsolute($url);
-			}
-		}
-	}
+        foreach ($this->providers as $Provider) {
+            if (($url = $Provider->$method())) {
+                return $this->Url->getAbsolute($url);
+            }
+        }
+    }
 
-	public function getTitle () {
-		return $this->getFromProviders('title') ?: $this->Url->getUrl();
-	}
+    public function getTitle()
+    {
+        return $this->getFromProviders('title') ?: $this->Url->getUrl();
+    }
 
-	public function getDescription () {
-		return $this->getFromProviders('description');
-	}
+    public function getDescription()
+    {
+        return $this->getFromProviders('description');
+    }
 
-	public function getUrl () {
-		return $this->getUrlFromProviders('url') ?: $this->Url->getUrl();
-	}
+    public function getUrl()
+    {
+        return $this->getUrlFromProviders('url') ?: $this->Url->getUrl();
+    }
 
-	public function getSource () {
-		return $this->getUrlFromProviders('source');
-	}
+    public function getSource()
+    {
+        return $this->getUrlFromProviders('source');
+    }
 
-	public function getAuthorName () {
-		return $this->getFromProviders('authorName');
-	}
+    public function getAuthorName()
+    {
+        return $this->getFromProviders('authorName');
+    }
 
-	public function getAuthorUrl () {
-		return $this->getUrlFromProviders('authorUrl');
-	}
+    public function getAuthorUrl()
+    {
+        return $this->getUrlFromProviders('authorUrl');
+    }
 
-	public function getAspectRatio () {
-		$width = $this->width;
-		$height = $this->height;
+    public function getAspectRatio()
+    {
+        $width = $this->width;
+        $height = $this->height;
 
-		if ($width && (strpos($width, '%') === false) && $height && (strpos($height, '%') === false)) {
-			return round(($height / $width) * 100, 3);
-		}
-	}
+        if ($width && (strpos($width, '%') === false) && $height && (strpos($height, '%') === false)) {
+            return round(($height / $width) * 100, 3);
+        }
+    }
 
-	public function getImage () {
-		foreach ($this->images as $image) {
-			try {
-				$Image = new FastImage($image);
-			} catch (\Exception $Exception) {
-				continue;
-			}
-			
-			if ($Image->getType()) {
-				list($width, $height) = $Image->getSize();
+    public function getImage()
+    {
+        foreach ($this->images as $image) {
+            try {
+                $Image = new FastImage($image);
+            } catch (\Exception $Exception) {
+                continue;
+            }
 
-				if (($width >= $this->options['minImageWidth']) && ($height >= $this->options['minImageHeight'])) {
-					$this->imageWidth = $width;
-					$this->imageHeight = $height;
+            if ($Image->getType()) {
+                list($width, $height) = $Image->getSize();
 
-					return $image;
-				}
-			}
-		}
-	}
+                if (($width >= $this->options['minImageWidth']) && ($height >= $this->options['minImageHeight'])) {
+                    $this->imageWidth = $width;
+                    $this->imageHeight = $height;
 
-	public function getProviderIcon () {
-		if ($this->options['getBiggerIcon']) {
-			$icons = FastImage::sortImagesBySize($this->providerIcons);
+                    return $image;
+                }
+            }
+        }
+    }
 
-			return current($icons);
-		}
+    public function getProviderIcon()
+    {
+        if ($this->options['getBiggerIcon']) {
+            $icons = FastImage::sortImagesBySize($this->providerIcons);
 
-		foreach ($this->providerIcons as $icon) {
-			try {
-				$Icon = new FastImage($icon);
-			} catch (\Exception $Exception) {
-				continue;
-			}
+            return current($icons);
+        }
 
-			if ($Icon->getType()) {
-				return $icon;
-			}
-		}
-	}
+        foreach ($this->providerIcons as $icon) {
+            try {
+                $Icon = new FastImage($icon);
+            } catch (\Exception $Exception) {
+                continue;
+            }
 
-	public function getProviderName () {
-		return $this->getFromProviders('providerName') ?: $this->Url->getDomain();
-	}
+            if ($Icon->getType()) {
+                return $icon;
+            }
+        }
+    }
 
-	public function getProviderUrl () {
-		return $this->getUrlFromProviders('providerUrl') ?: ($this->Url->getScheme().'://'.$this->Url->getDomain(true));
-	}
+    public function getProviderName()
+    {
+        return $this->getFromProviders('providerName') ?: $this->Url->getDomain();
+    }
 
-	public function getImageWidth () {
-		return null;
-	}
+    public function getProviderUrl()
+    {
+        return $this->getUrlFromProviders('providerUrl') ?: ($this->Url->getScheme().'://'.$this->Url->getDomain(true));
+    }
 
-	public function getImageHeight () {
-		return null;
-	}
+    public function getImageWidth()
+    {
+        return null;
+    }
 
-	public function getWidth () {
-		return $this->getFromProviders('width');
-	}
+    public function getImageHeight()
+    {
+        return null;
+    }
 
-	public function getHeight () {
-		return $this->getFromProviders('height');
-	}
+    public function getWidth()
+    {
+        return $this->getFromProviders('width');
+    }
+
+    public function getHeight()
+    {
+        return $this->getFromProviders('height');
+    }
 }

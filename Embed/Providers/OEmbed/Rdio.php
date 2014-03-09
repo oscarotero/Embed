@@ -1,7 +1,8 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Rdio extends \Embed\Providers\OEmbedImplementationAbstract {
+class Rdio extends \Embed\Providers\OEmbedImplementationAbstract
+{
     public static function getEndPoint()
     {
         return 'http://www.rdio.com/api/oembed/';

@@ -6,12 +6,11 @@
 namespace Embed\Providers;
 
 use Embed\Url;
-use Embed\Providers\OEmbed;
 
-class OEmbedImplementations extends Provider {
-
-	public static function create (Url $Url) {
-
+class OEmbedImplementations extends Provider
+{
+    public static function create(Url $Url)
+    {
         //Search the oembed provider using the domain
         $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $Url->getDomain()))));
 
@@ -34,6 +33,5 @@ class OEmbedImplementations extends Provider {
                 return new OEmbed($EndPoint);
             }
         }
-	}
+    }
 }
-?>

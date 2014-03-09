@@ -5,25 +5,28 @@
  */
 namespace Embed\Providers;
 
-abstract class OEmbedImplementationAbstract{
+abstract class OEmbedImplementationAbstract
+{
     /**
      * @access public
      * @author Oliver Lillie
      * @return string
      */
-    public static function getEndPoint() {
+    public static function getEndPoint()
+    {
         return '';
     }
-    
+
     /**
      * @access public
      * @author Oliver Lillie
      * @return array
      */
-    public static function getPatterns() {
+    public static function getPatterns()
+    {
         return array();
     }
-    
+
     /**
      * @access public
      * @author Oliver Lillie

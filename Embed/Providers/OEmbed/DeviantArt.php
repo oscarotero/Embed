@@ -1,8 +1,8 @@
 <?php
-
 namespace Embed\Providers\OEmbed;
 
-class Deviantart extends \Embed\Providers\OEmbedImplementationAbstract {
+class DeviantArt extends \Embed\Providers\OEmbedImplementationAbstract
+{
     public static function getEndPoint()
     {
         return 'http://backend.deviantart.com/oembed';

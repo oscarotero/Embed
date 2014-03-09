@@ -8,108 +8,118 @@ namespace Embed\Providers;
 use Embed\Url;
 use Embed\Viewers;
 
-class OpenGraph extends Provider {
-	public function __construct (Url $Url) {
-		if (!($Html = $Url->getHtmlContent())) {
-			return false;
-		}
+class OpenGraph extends Provider
+{
+    public function __construct(Url $Url)
+    {
+        if (!($Html = $Url->getHtmlContent())) {
+            return false;
+        }
 
-		$images = array();
+        $images = array();
 
-		foreach ($Html->getElementsByTagName('meta') as $Tag) {
-			if ($Tag->hasAttribute('property') && (strpos($Tag->getAttribute('property'), 'og:') === 0)) {
-				$name = substr($Tag->getAttribute('property'), 3);
-			} else if ($Tag->hasAttribute('name') && (strpos($Tag->getAttribute('name'), 'og:') === 0)) {
-				$name = substr($Tag->getAttribute('name'), 3);
-			} else {
-				continue;
-			}
+        foreach ($Html->getElementsByTagName('meta') as $Tag) {
+            if ($Tag->hasAttribute('property') && (strpos($Tag->getAttribute('property'), 'og:') === 0)) {
+                $name = substr($Tag->getAttribute('property'), 3);
+            } elseif ($Tag->hasAttribute('name') && (strpos($Tag->getAttribute('name'), 'og:') === 0)) {
+                $name = substr($Tag->getAttribute('name'), 3);
+            } else {
+                continue;
+            }
 
-			$value = $Tag->getAttribute('content') ?: $Tag->getAttribute('value');
+            $value = $Tag->getAttribute('content') ?: $Tag->getAttribute('value');
 
-			if ($name === 'image') {
-				$images[] = $value;
-			} else {
-				$this->set($name, $value);
-			}
-		}
+            if ($name === 'image') {
+                $images[] = $value;
+            } else {
+                $this->set($name, $value);
+            }
+        }
 
-		$this->set('image', $images);
-	}
+        $this->set('image', $images);
+    }
 
-	public function getTitle () {
-		return $this->get('title');
-	}
+    public function getTitle()
+    {
+        return $this->get('title');
+    }
 
-	public function getDescription () {
-		return $this->get('description');
-	}
+    public function getDescription()
+    {
+        return $this->get('description');
+    }
 
-	public function getType () {
-		$type = $this->get('type');
+    public function getType()
+    {
+        $type = $this->get('type');
 
-		if (strpos($type, ':') !== false) {
-			$type = substr(strrchr($type, ':'), 1);
-		}
+        if (strpos($type, ':') !== false) {
+            $type = substr(strrchr($type, ':'), 1);
+        }
 
-		switch ($type) {
-			case 'video':
-			case 'photo':
-			case 'link':
-			case 'rich':
-				return $type;
-		}
+        switch ($type) {
+            case 'video':
+            case 'photo':
+            case 'link':
+            case 'rich':
+                return $type;
+        }
 
-		if ($this->has('video')) {
-			return 'video';
-		}
-	}
+        if ($this->has('video')) {
+            return 'video';
+        }
+    }
 
-	public function getCode () {
-		if ($this->has('video')) {
-			switch (pathinfo(parse_url($this->get('video'), PHP_URL_PATH), PATHINFO_EXTENSION)) {
-				case 'swf':
-					return Viewers::flash($this->get('video'), $this->getWidth(), $this->getHeight());
+    public function getCode()
+    {
+        if ($this->has('video')) {
+            switch (pathinfo(parse_url($this->get('video'), PHP_URL_PATH), PATHINFO_EXTENSION)) {
+                case 'swf':
+                    return Viewers::flash($this->get('video'), $this->getWidth(), $this->getHeight());
 
-				case 'mp4':
-				case 'ogg':
-				case 'ogv':
-				case 'webm':
-					return Viewers::videoHtml($this->getImage(), $this->get('video'), $this->getWidth(), $this->getHeight());
-			}
-				
-			switch ($this->get('video:type')) {
-				case 'application/x-shockwave-flash':
-					return Viewers::flash($this->get('video'), $this->getWidth(), $this->getHeight());
+                case 'mp4':
+                case 'ogg':
+                case 'ogv':
+                case 'webm':
+                    return Viewers::videoHtml($this->getImage(), $this->get('video'), $this->getWidth(), $this->getHeight());
+            }
 
-				case 'application/mp4':
-				case 'video/mp4':
-				case 'video/ogg':
-				case 'video/ogv':
-				case 'video/webm':
-					return Viewers::videoHtml($this->getImage(), $this->get('video'), $this->getWidth(), $this->getHeight());
-			}
-		}
-	}
+            switch ($this->get('video:type')) {
+                case 'application/x-shockwave-flash':
+                    return Viewers::flash($this->get('video'), $this->getWidth(), $this->getHeight());
 
-	public function getUrl () {
-		return $this->get('url');
-	}
+                case 'application/mp4':
+                case 'video/mp4':
+                case 'video/ogg':
+                case 'video/ogv':
+                case 'video/webm':
+                    return Viewers::videoHtml($this->getImage(), $this->get('video'), $this->getWidth(), $this->getHeight());
+            }
+        }
+    }
 
-	public function getProviderName () {
-		return $this->get('site_name');
-	}
+    public function getUrl()
+    {
+        return $this->get('url');
+    }
 
-	public function getImage () {
-		return $this->get('image');
-	}
+    public function getProviderName()
+    {
+        return $this->get('site_name');
+    }
 
-	public function getWidth () {
-		return $this->get('image:width') ?: $this->get('video:width');
-	}
+    public function getImage()
+    {
+        return $this->get('image');
+    }
 
-	public function getHeight () {
-		return $this->get('image:height') ?: $this->get('video:height');
-	}
+    public function getWidth()
+    {
+        return $this->get('image:width') ?: $this->get('video:width');
+    }
+
+    public function getHeight()
+    {
+        return $this->get('image:height') ?: $this->get('video:height');
+    }
 }
-?>
