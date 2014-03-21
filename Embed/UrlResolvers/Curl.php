@@ -115,11 +115,7 @@ class Curl implements UrlResolverInterface
     protected function resolve()
     {
         $connection = curl_init();
-echo '<pre>';
-var_dump($this->url);
-debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
-echo '</pre>';
-echo '<hr>';
+
         $tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
 
         curl_setopt_array($connection, array(
