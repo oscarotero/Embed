@@ -1,8 +1,8 @@
 <?php
 /**
- * Class to manipulate urls
+ * Class to resolve javascript based redirections
  */
-namespace Embed;
+namespace Embed\UrlResolvers;
 
 class UrlJsRedirect
 {

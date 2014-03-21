@@ -6,14 +6,35 @@ namespace Embed;
 
 class Url
 {
-    public static $resolver = 'Embed\\UrlResolver';
-    private $result;
+    public static $defaultResolver = 'Embed\\UrlResolvers\\Curl';
+
+    private $resolver;
     private $info;
-    private $url;
     private $xmlContent;
     private $jsonContent;
     private $htmlContent;
-    private $content;
+
+
+    /**
+     * Set a default url resolver used for http requests
+     *
+     * @param string $className
+     */
+    public static function setDefaultResolver($className)
+    {
+        if (!class_exists($className)) {
+            throw new \Exception("This class does not exists");
+        }
+
+        $reflection = new \ReflectionClass($className);
+
+        if (!in_array('Embed\\UrlResolvers\\UrlResolverInterface', $reflection->getInterfaceNames())) {
+            throw new \Exception("The resolver class must implement the Embed\\UrlResolvers\\UrlResolverInterface interface");
+        }
+
+        self::$defaultResolver = $className;
+    }
+
 
     /**
      * Constructor. Sets the url
@@ -25,80 +46,57 @@ class Url
         $this->setUrl($url);
     }
 
-    /**
-     * Magic function to print the url value
-     */
-    public function __toString()
-    {
-        return $this->getUrl();
-    }
 
     /**
-     * Magic function to serialize and unserialize the object (keeps only the url for performance)
-     */
-    public function __sleep()
-    {
-        return array('url', 'result');
-    }
-
-    public function __wakeup()
-    {
-        $this->setUrl($this->url);
-    }
-
-    /**
-     * Resolve the possible redirects for this url (for example bit.ly or any other url shortcutter)
-     */
-    private function resolve()
-    {
-        UrlJsRedirect::resolve($this);
-
-        $resolver = static::$resolver;
-
-        list($content, $result) = $resolver::resolve($this->url);
-
-        $this->result = $result;
-        $this->result['starting_url'] = $this->url;
-
-        $this->parseUrl($this->result['url']);
-        $this->buildUrl(true);
-
-        if (strpos($this->getResult('content_type'), ';') !== false) {
-            list($mimeType, $charset) = explode(';', $this->getResult('content_type'));
-
-            $this->result['mime_type'] = $mimeType;
-
-            $charset = substr(strtoupper(strstr($charset, '=')), 1);
-
-            if (!empty($charset) && ($charset !== 'UTF-8')) {
-                $content = @mb_convert_encoding($content, 'UTF-8', $charset);
-            }
-        } elseif (strpos($this->getResult('content_type'), '/') !== false) {
-            $this->result['mime_type'] = $this->getResult('content_type');
-        }
-
-        $this->content = trim($content);
-    }
-
-    /**
-     * Get the result of the http request
+     * Set a new url
      *
-     * @param string $name If it is not specified, returns all result info
-     *
-     * @return array/string The result info
+     * @param string $url The url
      */
-    public function getResult($name = null)
+    public function setUrl($url)
     {
-        if ($this->result === null) {
-            $this->resolve();
+        if ($url instanceof UrlResolvers\UrlResolverInterface) {
+            $this->resolver = $url;
+        } else {
+            $this->resolver = new static::$defaultResolver($url);
         }
 
-        if ($name === null) {
-            return $this->result;
-        }
-
-        return isset($this->result[$name]) ? $this->result[$name] : null;
+        $this->parseUrl($this->resolver->getLatestUrl());
+        $this->updateUrl();
     }
+
+
+    /**
+     * Return the url
+     *
+     * @return string The current url
+     */
+    public function getUrl()
+    {
+        return $this->resolver->getLatestUrl();
+    }
+
+
+    /**
+     * Return the http request info (for debug purposes)
+     *
+     * @return array
+     */
+    public function getRequestInfo()
+    {
+        return $this->resolver->getRequestInfo();
+    }
+
+
+    /**
+     * Return the starting url (before all possible redirects)
+     *
+     * @return string The starting url
+     */
+    public function getStartingUrl()
+    {
+        return $this->resolver->getStartingUrl();
+    }
+
 
     /**
      * Get the http code of the url
@@ -107,8 +105,9 @@ class Url
      */
     public function getHttpCode()
     {
-        return intval($this->getResult('http_code'));
+        return $this->resolver->getHttpCode();
     }
+
 
     /**
      * Get the content-type of the url
@@ -117,8 +116,9 @@ class Url
      */
     public function getMimeType()
     {
-        return $this->getResult('mime_type');
+        return $this->resolver->getMimeType();
     }
+
 
     /**
      * Get the content of the url
@@ -127,12 +127,9 @@ class Url
      */
     public function getContent()
     {
-        if ($this->content === null) {
-            $this->resolve();
-        }
-
-        return $this->content;
+        return $this->resolver->getContent();
     }
+
 
     /**
      * Get the content of the url as a DOMDocument object
@@ -169,6 +166,7 @@ class Url
         return $this->htmlContent;
     }
 
+
     /**
      * Get the content of the url as an array from json
      *
@@ -190,6 +188,7 @@ class Url
 
         return $this->jsonContent;
     }
+
 
     /**
      * Get the content of the url as an XML element
@@ -214,13 +213,6 @@ class Url
         return $this->xmlContent;
     }
 
-    /**
-     * Clear all cached content (raw, html, json, etc)
-     */
-    public function clearCache()
-    {
-        $this->result = $this->content = $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
-    }
 
     /**
      * Check if the url is valid or not
@@ -234,40 +226,6 @@ class Url
         }
 
         return true;
-    }
-
-
-    /**
-     * Set a new url
-     *
-     * @param string $url The url
-     */
-    public function setUrl($url)
-    {
-        $this->parseUrl($url);
-        $this->buildUrl();
-    }
-
-
-    /**
-     * Return the url
-     *
-     * @return string The current url
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-
-    /**
-     * Return the starting url (before all possible redirects)
-     *
-     * @return string The starting url
-     */
-    public function getStartingUrl()
-    {
-        return $this->result ? $this->result['starting_url'] : $this->url;
     }
 
 
@@ -292,7 +250,7 @@ class Url
 
         $pattern = str_replace(array('\\*', '\\?'), array('.+', '?'), preg_quote($pattern, '|'));
 
-        return (preg_match('|^'.$pattern.'$|i', $this->url) === 1) ? true : false;
+        return (preg_match('|^'.$pattern.'$|i', $this->getUrl()) === 1) ? true : false;
     }
 
 
@@ -325,7 +283,7 @@ class Url
     public function setScheme($scheme)
     {
         $this->info['scheme'] = $scheme;
-        $this->buildUrl();
+        $this->updateUrl();
     }
 
 
@@ -348,7 +306,7 @@ class Url
     public function setHost($host)
     {
         $this->info['host'] = $host;
-        $this->buildUrl();
+        $this->updateUrl();
     }
 
 
@@ -421,7 +379,7 @@ class Url
             $this->info['file'] = array_pop($this->info['path']);
         }
 
-        $this->buildUrl();
+        $this->updateUrl();
     }
 
 
@@ -480,7 +438,7 @@ class Url
             $this->info['query'][$name] = $value;
         }
 
-        $this->buildUrl();
+        $this->updateUrl();
     }
 
 
@@ -522,14 +480,14 @@ class Url
     {
         $this->info['fragment'];
 
-        $this->buildUrl();
+        $this->updateUrl();
     }
 
 
     /**
-     * Private function to regenerate the url after any change (scheme, host, parameters, etc)
+     * Private function to update the url in the resolver and clear cache after any change (scheme, host, parameters, etc)
      */
-    private function buildUrl($maintainCache = false)
+    private function updateUrl()
     {
         $url = '';
 
@@ -549,16 +507,15 @@ class Url
             $url .= '#'.$this->info['fragment'];
         }
 
-        if (!$maintainCache && ($this->url !== $url)) {
-            $this->clearCache();
+        if (($this->resolver->getStartingUrl() !== $url) && ($this->resolver->getLatestUrl() !== $url)) {
+            $this->resolver->setUrl($url);
+            $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
         }
-
-        $this->url = $url;
     }
 
 
     /**
-     * Parse a url and split into different pieces
+     * Parse an url and split into different pieces
      *
      * @param string $url The url to parse
      */
