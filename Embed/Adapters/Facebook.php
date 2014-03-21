@@ -92,6 +92,12 @@ class Facebook extends Webpage implements AdapterInterface
     {
         $images = parent::getImages();
 
+        $cover = $this->Api->get('cover');
+
+        if ($cover && !empty($cover['source'])) {
+            array_unshift($images, $cover['source']);
+        }
+
         $id = $this->Api->get('id');
 
         if ($id) {
