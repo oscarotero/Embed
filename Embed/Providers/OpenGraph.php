@@ -63,6 +63,9 @@ class OpenGraph extends Provider
             case 'link':
             case 'rich':
                 return $type;
+
+            case 'article':
+                return 'link';
         }
 
         if ($this->has('video')) {
