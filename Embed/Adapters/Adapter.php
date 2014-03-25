@@ -46,7 +46,7 @@ abstract class Adapter
         }
     }
 
-    public function getFromProviders($name)
+    public function getFromProviders($name, $returnFirst = true)
     {
         $method = 'get'.$name;
         $values = array();
@@ -54,6 +54,10 @@ abstract class Adapter
 
         foreach ($this->providers as $Provider) {
             if (($value = $Provider->$method())) {
+                if ($returnFirst === true) {
+                    return $value;
+                }
+
                 if (isset($values[$value])) {
                     ++$values[$value];
                 } else {
