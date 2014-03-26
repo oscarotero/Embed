@@ -128,14 +128,12 @@ class Html extends Provider
 
         foreach ($Content->getElementsByTagName('img') as $Tag) {
             if ($Tag->hasAttribute('src')) {
-                $image = $Tag->getAttribute('src');
+                $image = new Url($Tag->getAttribute('src'));
 
                 //Check whether the image is in the same domain
-                if ((strpos($image, '//') === false) || (($ImgUrl = new Url($image)) && ($ImgUrl->getDomain() !== $domain))) {
-                    continue;
+                if (!$image->getDomain() || $image->getDomain() === $domain) {
+                    $images[] = $image->getUrl();
                 }
-
-                $images[] = $image;
             }
         }
 
