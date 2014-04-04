@@ -201,7 +201,7 @@ include('Embed/autoloader.php');
                     <td>
                         <ul>
                         <?php
-                        foreach ($Url->getResult() as $name => $value) {
+                        foreach ($Url->getRequestInfo() as $name => $value) {
                             if (is_array($value)) {
                                 $value = print_r($value, true);
                             }

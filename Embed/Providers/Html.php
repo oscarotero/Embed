@@ -6,6 +6,7 @@
 namespace Embed\Providers;
 
 use Embed\Url;
+use Embed\UrlInfo;
 use Embed\Viewers;
 
 class Html extends Provider
@@ -128,9 +129,10 @@ class Html extends Provider
 
         foreach ($Content->getElementsByTagName('img') as $Tag) {
             if ($Tag->hasAttribute('src')) {
-                $image = new Url($Tag->getAttribute('src'));
+                $image = new UrlInfo($Tag->getAttribute('src'));
 
                 //Check whether the image is in the same domain
+
                 if (!$image->getDomain() || $image->getDomain() === $domain) {
                     $images[] = $image->getUrl();
                 }
