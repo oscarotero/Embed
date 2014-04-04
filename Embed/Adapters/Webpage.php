@@ -108,7 +108,7 @@ class Webpage extends Adapter implements AdapterInterface
             return 'video';
         }
 
-        if (($type = $this->getFromProviders('type'))) {
+        if (($type = $this->getFromProviders('type', false))) {
             return $type;
         }
 

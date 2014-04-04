@@ -59,6 +59,14 @@ class Facebook extends Provider
         return $this->get('description');
     }
 
+    public function getType()
+    {
+        switch ($this->get('type')) {
+            case 'article':
+                return 'link';
+        }
+    }
+
     public function getImage()
     {
         if (($imgs = $this->get('image')) && isset($imgs[0]['url'])) {

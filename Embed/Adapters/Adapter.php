@@ -46,15 +46,31 @@ abstract class Adapter
         }
     }
 
-    public function getFromProviders($name)
+    public function getFromProviders($name, $returnFirst = true)
     {
         $method = 'get'.$name;
+        $values = array();
+        $current = null;
 
         foreach ($this->providers as $Provider) {
             if (($value = $Provider->$method())) {
-                return $value;
+                if ($returnFirst === true) {
+                    return $value;
+                }
+
+                if (isset($values[$value])) {
+                    ++$values[$value];
+                } else {
+                    $values[$value] = 1;
+                }
+
+                if ($current === null || $values[$current] > $values[$value]) {
+                    $current = $value;
+                }
             }
         }
+
+        return $current;
     }
 
     public function getUrlFromProviders($name)
