@@ -4,13 +4,13 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
+use Embed\Request;
 
 class Github extends Webpage implements AdapterInterface
 {
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
-        return $Url->match(array(
+        return $request->match(array(
             'https://gist.github.com/*/*'
         ));
     }
@@ -28,7 +28,7 @@ class Github extends Webpage implements AdapterInterface
 
     public function getUrl()
     {
-        return $this->Url->getUrl();
+        return $this->request->getUrl();
     }
 
     public function getProviderName()

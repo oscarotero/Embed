@@ -4,14 +4,14 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
+use Embed\Request;
 use Embed\Viewers;
 
 class Mit extends Webpage implements AdapterInterface
 {
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
-        return $Url->match(array(
+        return $request->match(array(
             'http://media.mit.edu/video/view/*',
             'http://www.media.mit.edu/video/view/*'
         ));
@@ -19,9 +19,7 @@ class Mit extends Webpage implements AdapterInterface
 
     public function getCode()
     {
-        $url = $this->getUrl();
-
-        return Viewers::iframe(str_replace('/video/view/', '/video/embed/', $url));
+        return Viewers::iframe(str_replace('/video/view/', '/video/embed/', $this->getUrl()));
     }
 
     public function getProviderName()

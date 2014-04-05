@@ -8,14 +8,14 @@ class Cadenaser extends Webpage implements AdapterInterface
 {
     public function getCode()
     {
-        $Dom = $this->Url->getHtmlContent();
+        $dom = $this->request->getHtmlContent();
 
-        foreach ($Dom->getElementsByTagName('div') as $Div) {
-            if ($Div->hasAttribute('class') && ($Div->getAttribute('class') === 'llevatelo')) {
-                $Input = $Div->getElementsByTagName('input');
+        foreach ($dom->getElementsByTagName('div') as $div) {
+            if ($div->hasAttribute('class') && ($div->getAttribute('class') === 'llevatelo')) {
+                $input = $div->getElementsByTagName('input');
 
-                if ($Input->length && $Input->item(0)->hasAttribute('value')) {
-                    return $Input->item(0)->getAttribute('value');
+                if ($input->length && $input->item(0)->hasAttribute('value')) {
+                    return $input->item(0)->getAttribute('value');
                 }
             }
         }

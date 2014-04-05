@@ -8,10 +8,10 @@ class Rtve extends Webpage implements AdapterInterface
 {
     public function getCode()
     {
-        $Dom = $this->Url->getHtmlContent();
+        $dom = $this->request->getHtmlContent();
 
-        if (($Textarea = $Dom->getElementById('embed_area')) && ($Object = $Textarea->getElementsByTagName('object')) && $Object->length) {
-            return $Object->item(0)->C14N();
+        if (($textarea = $dom->getElementById('embed_area')) && ($object = $textarea->getElementsByTagName('object')) && $object->length) {
+            return $object->item(0)->C14N();
         }
 
         return parent::getCode();
@@ -19,12 +19,12 @@ class Rtve extends Webpage implements AdapterInterface
 
     public function getDescription()
     {
-        $Dom = $this->Url->getHtmlContent();
+        $dom = $this->request->getHtmlContent();
 
-        if (($Textarea = $Dom->getElementById('embed_area')) && ($Metas = $Textarea->getElementsByTagName('meta'))) {
-            foreach ($Metas as $Meta) {
-                if ($Meta->hasAttribute('itemprop') && ($Meta->getAttribute('itemprop') === 'description') && $Meta->hasAttribute('content') && !empty($Meta->getAttribute('content'))) {
-                    return $Meta->getAttribute('content');
+        if (($textarea = $dom->getElementById('embed_area')) && ($metas = $textarea->getElementsByTagName('meta'))) {
+            foreach ($metas as $meta) {
+                if ($meta->hasAttribute('itemprop') && ($meta->getAttribute('itemprop') === 'description') && $meta->hasAttribute('content') && !empty($meta->getAttribute('content'))) {
+                    return $meta->getAttribute('content');
                 }
             }
         }

@@ -5,19 +5,19 @@
  */
 namespace Embed\Providers;
 
-use Embed\Url;
+use Embed\Request;
 
 class Dcterms extends Provider
 {
-    public function __construct(Url $Url)
+    public function __construct(Request $request)
     {
-        if (!($Html = $Url->getHtmlContent())) {
+        if (!($html = $request->getHtmlContent())) {
             return false;
         }
 
-        foreach ($Html->getElementsByTagName('meta') as $Tag) {
-            if ($Tag->hasAttribute('name') && (stripos($Tag->getAttribute('name'), 'dc.') === 0)) {
-                $this->set(strtolower(substr($Tag->getAttribute('name'), 3)), $Tag->getAttribute('content'));
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            if ($meta->hasAttribute('name') && (stripos($meta->getAttribute('name'), 'dc.') === 0)) {
+                $this->set(strtolower(substr($meta->getAttribute('name'), 3)), $meta->getAttribute('content'));
             }
         }
     }

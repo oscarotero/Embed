@@ -86,14 +86,12 @@ include('Embed/autoloader.php');
         <?php if (!empty($_GET['url'])): ?>
         <section>
             <?php
-            $Url = new Embed\Url($_GET['url']);
-
+            $url = new Embed\Request($_GET['url']);
             $options = isset($_GET['options']) ? (array) $_GET['options'] : array();
-
-            $Service = Embed\Embed::create($Url, $options);
+            $info = Embed\Embed::create($url, $options);
             ?>
 
-            <?php if (empty($Service)): ?>
+            <?php if (empty($info)): ?>
 
             <p>The url is not valid!</p>
 
@@ -103,7 +101,7 @@ include('Embed/autoloader.php');
                     <td>
                         <ul>
                         <?php
-                        foreach ($Url->getResult() as $name => $value) {
+                        foreach ($url->getResult() as $name => $value) {
                             if (is_array($value)) {
                                 $value = print_r($value, true);
                             }
@@ -120,88 +118,88 @@ include('Embed/autoloader.php');
             <table class="embed">
                 <tr>
                     <th>Title</th>
-                    <td><?php echo $Service->title; ?></td>
+                    <td><?php echo $info->title; ?></td>
                 </tr>
                 <tr>
                     <th>Description</th>
-                    <td><?php echo $Service->description; ?></td>
+                    <td><?php echo $info->description; ?></td>
                 </tr>
                 <tr>
                     <th>Image</th>
-                    <td><img src="<?php echo $Service->image; ?>"> <?php echo $Service->image; ?></td>
+                    <td><img src="<?php echo $info->image; ?>"> <?php echo $info->image; ?></td>
                 </tr>
                 <tr>
                     <th>Image size</th>
-                    <td><?php echo $Service->imageWidth.' x '.$Service->imageHeight; ?></td>
+                    <td><?php echo $info->imageWidth.' x '.$info->imageHeight; ?></td>
                 </tr>
                 <tr>
                     <th>All images</th>
-                    <td><pre><?php print_r($Service->images); ?></pre></td>
+                    <td><pre><?php print_r($info->images); ?></pre></td>
                 </tr>
                 <tr>
                     <th>Embed code</th>
-                    <td><?php echo $Service->code; ?></td>
+                    <td><?php echo $info->code; ?></td>
                 </tr>
                 <tr>
                     <th>Url</th>
-                    <td><?php echo $Service->url; ?></td>
+                    <td><?php echo $info->url; ?></td>
                 </tr>
                 <tr>
                     <th>Type</th>
-                    <td><?php echo $Service->type; ?></td>
+                    <td><?php echo $info->type; ?></td>
                 </tr>
                 <tr>
                     <th>Source</th>
                     <td><?php
-                        if ($Service->source) {
-                            echo $Service->source;
-                            echo ' / <a href="test-sources.php?url='.urlencode($Service->source).'" target="_blank">Test</a>';
+                        if ($info->source) {
+                            echo $info->source;
+                            echo ' / <a href="test-sources.php?url='.urlencode($info->source).'" target="_blank">Test</a>';
                         }
                         ?>
                     </td>
                 </tr>
                 <tr>
                     <th>Author name</th>
-                    <td><?php echo $Service->authorName; ?></td>
+                    <td><?php echo $info->authorName; ?></td>
                 </tr>
                 <tr>
                     <th>Author url</th>
-                    <td><?php echo $Service->authorUrl; ?></td>
+                    <td><?php echo $info->authorUrl; ?></td>
                 </tr>
                 <tr>
                     <th>Provider icon</th>
-                    <td><img src="<?php echo $Service->providerIcon; ?>"> <?php echo $Service->providerIcon; ?></td>
+                    <td><img src="<?php echo $info->providerIcon; ?>"> <?php echo $info->providerIcon; ?></td>
                 </tr>
                 <tr>
                     <th>All icons</th>
-                    <td><pre><?php print_r($Service->providerIcons); ?></pre></td>
+                    <td><pre><?php print_r($info->providerIcons); ?></pre></td>
                 </tr>
                 <tr>
                     <th>Provider name</th>
-                    <td><?php echo $Service->providerName; ?></td>
+                    <td><?php echo $info->providerName; ?></td>
                 </tr>
                 <tr>
                     <th>Provider url</th>
-                    <td><?php echo $Service->providerUrl; ?></td>
+                    <td><?php echo $info->providerUrl; ?></td>
                 </tr>
                 <tr>
                     <th>Width</th>
-                    <td><?php echo $Service->width; ?></td>
+                    <td><?php echo $info->width; ?></td>
                 </tr>
                 <tr>
                     <th>Height</th>
-                    <td><?php echo $Service->height; ?></td>
+                    <td><?php echo $info->height; ?></td>
                 </tr>
                 <tr>
                     <th>Aspect ratio</th>
-                    <td><?php echo $Service->aspectRatio; ?></td>
+                    <td><?php echo $info->aspectRatio; ?></td>
                 </tr>
                 <tr>
                     <th>Http request result</th>
                     <td>
                         <ul>
                         <?php
-                        foreach ($Url->getRequestInfo() as $name => $value) {
+                        foreach ($url->getRequestInfo() as $name => $value) {
                             if (is_array($value)) {
                                 $value = print_r($value, true);
                             }
@@ -211,15 +209,15 @@ include('Embed/autoloader.php');
                         </ul>
                     </td>
                 </tr>
-                <?php foreach ($Service->providers as $name => $Provider) {
-                    $content = htmlspecialchars(print_r($Provider, true), ENT_IGNORE);
+                <?php foreach ($info->providers as $name => $provider) {
+                    $content = htmlspecialchars(print_r($provider, true), ENT_IGNORE);
                     echo '<tr><th>'.$name.'</th><td><pre>'.$content.'</pre></td></tr>';
                 }
                 ?>
                 <tr>
                     <th>Content</th>
                     <td>
-                        <pre><?php echo htmlspecialchars($Url->getContent(), ENT_IGNORE); ?></pre>
+                        <pre><?php echo htmlspecialchars($url->getContent(), ENT_IGNORE); ?></pre>
                     </td>
                 </tr>
             </table>

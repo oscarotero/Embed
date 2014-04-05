@@ -5,50 +5,51 @@
 namespace Embed\Adapters;
 
 use Embed\Providers\Provider;
+use Embed\Request;
 use Embed\Url;
 
 class Facebook extends Webpage implements AdapterInterface
 {
-    public $Api;
+    public $api;
 
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
-        return $Url->match(array(
+        return $request->match(array(
             'https://www.facebook.com/*'
         ));
     }
 
-    protected function initProviders(Url $Url)
+    protected function initProviders(Request $request)
     {
-        parent::initProviders($Url);
+        parent::initProviders($request);
 
-        $this->Api = new Provider();
+        $this->api = new Provider();
 
         if ($this->options['facebookAccessToken']) {
-            $StartingUrl = new Url($Url->getStartingUrl());
+            $url = new Url($request->getStartingUrl());
 
-            if ($StartingUrl->hasParameter('fbid')) {
-                $id = $StartingUrl->getParameter('fbid');
-            } elseif ($StartingUrl->hasParameter('story_fbid')) {
-                $id = $StartingUrl->getParameter('story_fbid');
-            } elseif ($StartingUrl->getDirectory(0) === 'events') {
-                $id = $StartingUrl->getDirectory(1);
-            } elseif ($StartingUrl->getDirectory(0) === 'pages') {
-                $id = $StartingUrl->getDirectory(2);
-            } elseif ($StartingUrl->getDirectory(1) === 'posts') {
-                $id = $StartingUrl->getDirectory(2);
-            } elseif ($StartingUrl->getDirectory(2) === 'posts') {
-                $id = $StartingUrl->getDirectory(3);
+            if ($url->hasParameter('fbid')) {
+                $id = $url->getParameter('fbid');
+            } elseif ($url->hasParameter('story_fbid')) {
+                $id = $url->getParameter('story_fbid');
+            } elseif ($url->getDirectory(0) === 'events') {
+                $id = $url->getDirectory(1);
+            } elseif ($url->getDirectory(0) === 'pages') {
+                $id = $url->getDirectory(2);
+            } elseif ($url->getDirectory(1) === 'posts') {
+                $id = $url->getDirectory(2);
+            } elseif ($url->getDirectory(2) === 'posts') {
+                $id = $url->getDirectory(3);
             } else {
-                $id = $StartingUrl->getDirectory(0);
+                $id = $url->getDirectory(0);
             }
 
             if ($id) {
-                $UrlApi = new Url('https://graph.facebook.com/'.$id);
-                $UrlApi->setParameter('access_token', $this->options['facebookAccessToken']);
+                $api = new Request('https://graph.facebook.com/'.$id);
+                $api->setParameter('access_token', $this->options['facebookAccessToken']);
 
-                if ($json = $UrlApi->getJsonContent()) {
-                    $this->Api->set($json);
+                if ($json = $api->getJsonContent()) {
+                    $this->api->set($json);
                 }
             }
         }
@@ -56,17 +57,17 @@ class Facebook extends Webpage implements AdapterInterface
 
     public function getTitle()
     {
-        return $this->Api->get('name') ?: parent::getTitle();
+        return $this->api->get('name') ?: parent::getTitle();
     }
 
     public function getDescription()
     {
-        return $this->Api->get('description') ?: $this->Api->get('about') ?: parent::getTitle();
+        return $this->api->get('description') ?: $this->api->get('about') ?: parent::getTitle();
     }
 
     public function getUrl()
     {
-        return $this->Api->get('link') ?: $this->Url->getStartingUrl();
+        return $this->api->get('link') ?: $this->request->getStartingUrl();
     }
 
     public function getProviderName()
@@ -76,12 +77,12 @@ class Facebook extends Webpage implements AdapterInterface
 
     public function getAuthorName()
     {
-        return $this->Api->get('username') ?: parent::getAuthorName();
+        return $this->api->get('username') ?: parent::getAuthorName();
     }
 
     public function getSource()
     {
-        $id = $this->Api->get('id');
+        $id = $this->api->get('id');
 
         if ($id) {
             return 'https://www.facebook.com/feeds/page.php?id='.$id.'&format=rss20';
@@ -92,13 +93,13 @@ class Facebook extends Webpage implements AdapterInterface
     {
         $images = parent::getImages();
 
-        $cover = $this->Api->get('cover');
+        $cover = $this->api->get('cover');
 
         if ($cover && !empty($cover['source'])) {
             array_unshift($images, $cover['source']);
         }
 
-        $id = $this->Api->get('id');
+        $id = $this->api->get('id');
 
         if ($id) {
             array_unshift($images, 'https://graph.facebook.com/'.$id.'/picture');

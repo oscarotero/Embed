@@ -2,7 +2,7 @@
 /**
  * Class to resolve javascript based redirections
  */
-namespace Embed\UrlResolvers;
+namespace Embed\RequestResolvers;
 
 class UrlJsRedirect
 {
@@ -10,11 +10,11 @@ class UrlJsRedirect
         'google' => 'https?://www.google.com/url*'
     );
 
-    public static function resolve(Url $Url)
+    public static function resolve(Url $url)
     {
         foreach (static::$urls as $method => $matches) {
-            if ($Url->match($matches)) {
-                static::$method($Url);
+            if ($url->match($matches)) {
+                static::$method($url);
 
                 return true;
             }
@@ -23,10 +23,10 @@ class UrlJsRedirect
         return false;
     }
 
-    protected static function google(Url $Url)
+    protected static function google(Url $url)
     {
-        if (($url = $Url->getParameter('url'))) {
-            $Url->setUrl($url);
+        if (($urlString = $url->getParameter('url'))) {
+            $url->setUrl($urlString);
         }
     }
 }

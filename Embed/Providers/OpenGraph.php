@@ -5,29 +5,29 @@
  */
 namespace Embed\Providers;
 
-use Embed\Url;
+use Embed\Request;
 use Embed\Viewers;
 
 class OpenGraph extends Provider
 {
-    public function __construct(Url $Url)
+    public function __construct(Request $request)
     {
-        if (!($Html = $Url->getHtmlContent())) {
+        if (!($html = $request->getHtmlContent())) {
             return false;
         }
 
         $images = array();
 
-        foreach ($Html->getElementsByTagName('meta') as $Tag) {
-            if ($Tag->hasAttribute('property') && (strpos($Tag->getAttribute('property'), 'og:') === 0)) {
-                $name = substr($Tag->getAttribute('property'), 3);
-            } elseif ($Tag->hasAttribute('name') && (strpos($Tag->getAttribute('name'), 'og:') === 0)) {
-                $name = substr($Tag->getAttribute('name'), 3);
+        foreach ($html->getElementsByTagName('meta') as $tag) {
+            if ($tag->hasAttribute('property') && (strpos($tag->getAttribute('property'), 'og:') === 0)) {
+                $name = substr($tag->getAttribute('property'), 3);
+            } elseif ($tag->hasAttribute('name') && (strpos($tag->getAttribute('name'), 'og:') === 0)) {
+                $name = substr($tag->getAttribute('name'), 3);
             } else {
                 continue;
             }
 
-            $value = $Tag->getAttribute('content') ?: $Tag->getAttribute('value');
+            $value = $tag->getAttribute('content') ?: $tag->getAttribute('value');
 
             if ($name === 'image') {
                 $images[] = $value;

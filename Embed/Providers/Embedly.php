@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers;
 
-use Embed\Url;
+use Embed\Request;
 
 class Embedly
 {
@@ -640,22 +640,22 @@ class Embedly
         'http://www.gogoyoko.com/song/*'
     );
 
-    public static function create(Url $Url, $api_key)
+    public static function create(Request $request, $api_key)
     {
         if (!$api_key) {
             return false;
         }
 
-        if ($Url->match(static::$patterns)) {
-            $EndPoint = new Url('http://api.embed.ly/1/oembed');
+        if ($request->match(static::$patterns)) {
+            $endPoint = new Request('http://api.embed.ly/1/oembed');
 
-            $EndPoint->setParameter(array(
-                'url' => $Url->getUrl(),
+            $endPoint->setParameter(array(
+                'url' => $request->getUrl(),
                 'format' => 'json',
                 'key' => $api_key
             ));
 
-            return new OEmbed($EndPoint);
+            return new OEmbed($endPoint);
         }
     }
 }

@@ -5,13 +5,13 @@
 namespace Embed\Adapters;
 
 use Embed\Viewers;
-use Embed\Url;
+use Embed\Request;
 
 class Codepen extends Webpage implements AdapterInterface
 {
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
-        return $Url->match(array(
+        return $request->match(array(
             'http://codepen.io/*/pen/*'
         ));
     }

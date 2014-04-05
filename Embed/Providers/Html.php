@@ -6,24 +6,24 @@
 namespace Embed\Providers;
 
 use Embed\Url;
-use Embed\UrlInfo;
+use Embed\Request;
 use Embed\Viewers;
 
 class Html extends Provider
 {
-    public function __construct(Url $Url)
+    public function __construct(Request $request)
     {
-        if (!($Html = $Url->getHtmlContent())) {
+        if (!($html = $request->getHtmlContent())) {
             return false;
         }
 
         $images = $icons = $feeds = array();
 
         //Links
-        foreach ($Html->getElementsByTagName('link') as $Link) {
-            if ($Link->hasAttribute('rel') && $Link->hasAttribute('href')) {
-                $rel = trim(strtolower($Link->getAttribute('rel')));
-                $href = $Link->getAttribute('href');
+        foreach ($html->getElementsByTagName('link') as $link) {
+            if ($link->hasAttribute('rel') && $link->hasAttribute('href')) {
+                $rel = trim(strtolower($link->getAttribute('rel')));
+                $href = $link->getAttribute('href');
 
                 if (empty($href)) {
                     continue;
@@ -49,8 +49,8 @@ class Html extends Provider
                         break;
 
                     case 'alternate':
-                        if ($Link->hasAttribute('type')) {
-                            switch ($Link->getAttribute('type')) {
+                        if ($link->hasAttribute('type')) {
+                            switch ($link->getAttribute('type')) {
                                 case 'application/json+oembed':
                                 case 'application/xml+oembed':
                                 case 'text/json+oembed':
@@ -70,71 +70,71 @@ class Html extends Provider
         }
 
         //Title
-        $Title = $Html->getElementsByTagName('title');
+        $title = $html->getElementsByTagName('title');
 
-        if ($Title && ($Title->length > 0)) {
-            $this->set('title', $Title->item(0)->nodeValue);
+        if ($title && ($title->length > 0)) {
+            $this->set('title', $title->item(0)->nodeValue);
         }
 
         //Meta info
-        foreach ($Html->getElementsByTagName('meta') as $Tag) {
-            if ($Tag->hasAttribute('name')) {
-                $name = strtolower($Tag->getAttribute('name'));
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            if ($meta->hasAttribute('name')) {
+                $name = strtolower($meta->getAttribute('name'));
 
                 switch ($name) {
                     case 'msapplication-tileimage':
-                        $icons[] = $Tag->getAttribute('content');
+                        $icons[] = $meta->getAttribute('content');
                         continue 2;
 
                     default:
-                        if ($Tag->hasAttribute('content')) {
-                            $this->set($name, $Tag->getAttribute('content'));
+                        if ($meta->hasAttribute('content')) {
+                            $this->set($name, $meta->getAttribute('content'));
                         }
                         continue 2;
                 }
             }
 
-            if ($Tag->hasAttribute('http-equiv') && $Tag->hasAttribute('content')) {
-                $name = strtolower($Tag->getAttribute('http-equiv'));
-                $this->set($name, $Tag->getAttribute('content'));
+            if ($meta->hasAttribute('http-equiv') && $meta->hasAttribute('content')) {
+                $name = strtolower($meta->getAttribute('http-equiv'));
+                $this->set($name, $meta->getAttribute('content'));
             }
         }
 
         //img tags
         //Search the main element:
-        $Content = $Html->getElementsByTagName('main'); //<main> element
+        $content = $html->getElementsByTagName('main'); //<main> element
 
-        if ($Content->length === 0) {
-            $Content = $Html->getElementById('main') ?: $Html->getElementById('content') ?: $Html->getElementById('page'); //commons ids
+        if ($content->length === 0) {
+            $content = $html->getElementById('main') ?: $html->getElementById('content') ?: $html->getElementById('page'); //commons ids
         } else {
-            $Content = $Content->item(0);
+            $content = $content->item(0);
         }
 
         //Wordpress
-        if (!$Content) {
-            foreach ($Html->getElementsByTagName('article') as $Article) {
-                if ($Article->hasAttribute('id') && (strpos($Article->getAttribute('id'), 'post-') === 0)) {
-                    $Content = $Article;
+        if (!$content) {
+            foreach ($html->getElementsByTagName('article') as $article) {
+                if ($article->hasAttribute('id') && (strpos($article->getAttribute('id'), 'post-') === 0)) {
+                    $content = $article;
                     break;
                 }
             }
         }
 
         //Search in the entire document
-        if (!$Content) {
-            $Content = $Html;
+        if (!$content) {
+            $content = $html;
         }
 
-        $domain = $Url->getDomain();
+        $domain = $request->getDomain();
 
-        foreach ($Content->getElementsByTagName('img') as $Tag) {
-            if ($Tag->hasAttribute('src')) {
-                $image = new UrlInfo($Tag->getAttribute('src'));
+        foreach ($content->getElementsByTagName('img') as $img) {
+            if ($img->hasAttribute('src')) {
+                $src = new Url($img->getAttribute('src'));
 
                 //Check whether the image is in the same domain
 
-                if (!$image->getDomain() || $image->getDomain() === $domain) {
-                    $images[] = $image->getUrl();
+                if (!$src->getDomain() || $src->getDomain() === $domain) {
+                    $images[] = $src->getUrl();
                 }
             }
         }

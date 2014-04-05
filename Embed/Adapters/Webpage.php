@@ -4,7 +4,7 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
+use Embed\Request;
 use Embed\FastImage;
 
 use Embed\Providers\Html;
@@ -17,28 +17,28 @@ use Embed\Providers\Embedly;
 
 class Webpage extends Adapter implements AdapterInterface
 {
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
         return true;
     }
 
-    protected function initProviders(Url $Url)
+    protected function initProviders(Request $request)
     {
-        $this->Url = $Url;
+        $this->request = $request;
 
         $this->providers = array(
-            'Html' => new Html($Url),
-            'Facebook' => new Facebook($Url),
-            'TwitterCards' => new TwitterCards($Url),
-            'OpenGraph' => new OpenGraph($Url)
+            'Html' => new Html($request),
+            'Facebook' => new Facebook($request),
+            'TwitterCards' => new TwitterCards($request),
+            'OpenGraph' => new OpenGraph($request)
         );
 
         if ($this->providers['Html']->get('oembed')) {
-            $this->providers['OEmbed'] = new OEmbed(new Url($Url->getAbsolute($this->providers['Html']->get('oembed'))));
-        } elseif (($OEmbed = OEmbedImplementations::create($Url))) {
-            $this->providers['OEmbed'] = $OEmbed;
-        } elseif ($this->options['embedlyKey'] && ($OEmbed = Embedly::create($Url, $this->options['embedlyKey']))) {
-            $this->providers['OEmbed'] = $OEmbed;
+            $this->providers['OEmbed'] = new OEmbed(new Request($request->getAbsolute($this->providers['Html']->get('oembed'))));
+        } elseif (($oEmbed = OEmbedImplementations::create($request))) {
+            $this->providers['OEmbed'] = $oEmbed;
+        } elseif ($this->options['embedlyKey'] && ($oEmbed = Embedly::create($request, $this->options['embedlyKey']))) {
+            $this->providers['OEmbed'] = $oEmbed;
         }
 
         $this->providers = array_reverse($this->providers);
@@ -48,21 +48,21 @@ class Webpage extends Adapter implements AdapterInterface
     {
         $images = array();
 
-        foreach ($this->providers as $Provider) {
-            $imgs = $Provider->getImage();
+        foreach ($this->providers as $provider) {
+            $src = $provider->getImage();
 
-            if (empty($imgs)) {
+            if (empty($src)) {
                 continue;
             }
 
-            if (!is_array($imgs)) {
-                $images[] = $this->Url->getAbsolute($imgs);
+            if (!is_array($src)) {
+                $images[] = $this->request->getAbsolute($src);
                 continue;
             }
 
-            foreach ($imgs as $imgs) {
-                if (!empty($imgs)) {
-                    $images[] = $this->Url->getAbsolute($imgs);
+            foreach ($src as $src) {
+                if (!empty($src)) {
+                    $images[] = $this->request->getAbsolute($src);
                 }
             }
         }
@@ -80,22 +80,22 @@ class Webpage extends Adapter implements AdapterInterface
     {
         $icons = array();
 
-        foreach ($this->providers as $Provider) {
-            $ics = $Provider->getProviderIcon();
+        foreach ($this->providers as $provider) {
+            $src = $provider->getProviderIcon();
 
-            if ($ics) {
-                if (is_array($ics)) {
-                    foreach ($ics as $ics) {
-                        $icons[] = $this->Url->getAbsolute($ics);
+            if ($src) {
+                if (is_array($src)) {
+                    foreach ($src as $src) {
+                        $icons[] = $this->request->getAbsolute($src);
                     }
                 } else {
-                    $icons[] = $this->Url->getAbsolute($ics);
+                    $icons[] = $this->request->getAbsolute($src);
                 }
             }
         }
 
-        $icons[] = $this->Url->getAbsolute('/favicon.ico');
-        $icons[] = $this->Url->getAbsolute('/favicon.png');
+        $icons[] = $this->request->getAbsolute('/favicon.ico');
+        $icons[] = $this->request->getAbsolute('/favicon.png');
 
         return array_unique($icons);
     }

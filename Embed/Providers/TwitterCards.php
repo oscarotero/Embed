@@ -5,25 +5,25 @@
  */
 namespace Embed\Providers;
 
-use Embed\Url;
+use Embed\Request;
 use Embed\Viewers;
 
 class TwitterCards extends Provider
 {
-    public function __construct(Url $Url)
+    public function __construct(Request $request)
     {
-        if (!($Html = $Url->getHtmlContent())) {
+        if (!($html = $request->getHtmlContent())) {
             return false;
         }
 
-        foreach ($Html->getElementsByTagName('meta') as $Tag) {
-            if ($Tag->hasAttribute('property') && (strpos($Tag->getAttribute('property'), 'twitter:') === 0)) {
-                $this->set(substr($Tag->getAttribute('property'), 8), $Tag->getAttribute('content') ?: $Tag->getAttribute('value'));
+        foreach ($html->getElementsByTagName('meta') as $tag) {
+            if ($tag->hasAttribute('property') && (strpos($tag->getAttribute('property'), 'twitter:') === 0)) {
+                $this->set(substr($tag->getAttribute('property'), 8), $tag->getAttribute('content') ?: $tag->getAttribute('value'));
                 continue;
             }
 
-            if ($Tag->hasAttribute('name') && (strpos($Tag->getAttribute('name'), 'twitter:') === 0)) {
-                $this->set(substr($Tag->getAttribute('name'), 8), $Tag->getAttribute('content') ?: $Tag->getAttribute('value'));
+            if ($tag->hasAttribute('name') && (strpos($tag->getAttribute('name'), 'twitter:') === 0)) {
+                $this->set(substr($tag->getAttribute('name'), 8), $tag->getAttribute('content') ?: $tag->getAttribute('value'));
             }
         }
     }

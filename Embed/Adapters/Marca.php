@@ -4,14 +4,14 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
+use Embed\Request;
 use Embed\Viewers;
 
 class Marca extends Webpage implements AdapterInterface
 {
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
-        return $Url->match(array(
+        return $request->match(array(
             'http://www.marca.com/*'
         ));
     }

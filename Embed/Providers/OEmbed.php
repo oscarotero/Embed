@@ -5,17 +5,17 @@
  */
 namespace Embed\Providers;
 
-use Embed\Url;
+use Embed\Request;
 
 class OEmbed extends Provider
 {
-    public function __construct(Url $Url)
+    public function __construct(Request $request)
     {
-        $format = (($Url->getExtension() === 'xml') || ($Url->getParameter('format') === 'xml')) ? 'xml' : 'json';
+        $format = (($request->getExtension() === 'xml') || ($request->getParameter('format') === 'xml')) ? 'xml' : 'json';
 
         switch ($format) {
             case 'json':
-                if (($parameters = $Url->getJsonContent()) && empty($parameters['Error'])) {
+                if (($parameters = $request->getJsonContent()) && empty($parameters['Error'])) {
                     foreach ($parameters as $name => $value) {
                         $this->set($name, $value);
                     }
@@ -23,7 +23,7 @@ class OEmbed extends Provider
                 break;
 
             case 'xml':
-                if ($parameters = $Url->getXmlContent()) {
+                if ($parameters = $request->getXmlContent()) {
                     foreach ($parameters as $element) {
                         $this->set($element->getName(), (string) $element);
                     }

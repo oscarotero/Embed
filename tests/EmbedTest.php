@@ -5,7 +5,7 @@ class EmbedTest extends PHPUnit_Framework_TestCase
 {
     private function checkUrl($url, array $values)
     {
-        $info = Embed\Embed::create(new Embed\Url($url));
+        $info = Embed\Embed::create($url);
 
         foreach ($values as $name => $value) {
             $this->assertEquals($value, $info->$name);

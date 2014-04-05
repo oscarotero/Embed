@@ -4,13 +4,13 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
+use Embed\Request;
 
 interface AdapterInterface
 {
-    public static function check (Url $Url);
+    public static function check (Request $request);
 
-    public function __construct (Url $Url, array $options = null);
+    public function __construct (Request $request, array $options = null);
 
     public function getTitle ();
 

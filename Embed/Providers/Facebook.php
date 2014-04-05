@@ -4,33 +4,33 @@
  */
 namespace Embed\Providers;
 
-use Embed\Url;
+use Embed\Request;
 
 class Facebook extends Provider
 {
     private $init = false;
     private $url;
 
-    public function __construct(Url $Url)
+    public function __construct(Request $request)
     {
-        $this->url = $Url->getUrl();
+        $this->url = $request->getUrl();
     }
 
     private function init()
     {
         $this->init = true;
 
-        $GraphUrl = new Url('https://graph.facebook.com/fql');
-        $GraphUrl->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$this->url.'"');
+        $graph = new Request('https://graph.facebook.com/fql');
+        $graph->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$this->url.'"');
 
-        if (!$GraphUrl->isValid()) {
+        if (!$graph->isValid()) {
             return false;
         }
 
-        if (($info = $GraphUrl->getJsonContent()) && isset($info['data'][0]['comments_fbid'])) {
-            $GraphUrl = new Url('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
+        if (($info = $graph->getJsonContent()) && isset($info['data'][0]['comments_fbid'])) {
+            $graph = new Request('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
 
-            if ($json = $GraphUrl->getJsonContent()) {
+            if ($json = $graph->getJsonContent()) {
                 $this->set($json);
             }
         }

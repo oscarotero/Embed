@@ -4,15 +4,16 @@
  */
 namespace Embed\Sources;
 
-use Embed\Url;
+use Embed\Request;
 
 class Feed extends Source implements SourceInterface
 {
     protected $data;
+    protected $request;
 
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
-        switch ($Url->getMimeType()) {
+        switch ($request->getMimeType()) {
             case 'text/xml':
             case 'text/html':
             case 'application/xml':
@@ -24,12 +25,12 @@ class Feed extends Source implements SourceInterface
         return false;
     }
 
-    public function __construct(Url $Url)
+    public function __construct(Request $request)
     {
-        $this->Url = $Url;
+        $this->request = $request;
 
-        if (($Xml = $this->Url->getXMLContent())) {
-            $this->data = self::parseRss($Xml) ?: self::parseAtom($Xml);
+        if (($xml = $this->request->getXMLContent())) {
+            $this->data = self::parseRss($xml) ?: self::parseAtom($xml);
         }
     }
 
@@ -40,12 +41,12 @@ class Feed extends Source implements SourceInterface
 
     public function getSourceUrl()
     {
-        return $this->Url->getUrl();
+        return $this->request->getUrl();
     }
 
     public function getProviderUrl()
     {
-        return !empty($this->data['url']) ? $this->data['url'] : ($this->Url->getScheme().'://'.$this->Url->getHost());
+        return !empty($this->data['url']) ? $this->data['url'] : ($this->request->getScheme().'://'.$this->request->getHost());
     }
 
     public function getItems()
@@ -53,65 +54,64 @@ class Feed extends Source implements SourceInterface
         return isset($this->data['items']) ? (array) $this->data['items'] : array();
     }
 
-    protected static function parseRss(\SimpleXMLElement $Xml)
+    protected static function parseRss(\SimpleXMLElement $xml)
     {
-        if (isset($Xml->item)) {
-            $items = $Xml->item;
-        } elseif (isset($Xml->channel)) {
-            $items = $Xml->channel->item;
+        if (isset($xml->item)) {
+            $items = $xml->item;
+        } elseif (isset($xml->channel)) {
+            $items = $xml->channel->item;
         } else {
             return false;
         }
 
         return array(
-            'url' => (string) $Xml->channel->link,
+            'url' => (string) $xml->channel->link,
             'items' => self::getRssItems($items)
         );
     }
 
-    protected static function getRssItems(\SimpleXMLElement $Items)
+    protected static function getRssItems(\SimpleXMLElement $items)
     {
-        $items = array();
+        $rssItems = array();
 
         $namespaces = $Items->getNamespaces(true);
 
-        foreach ($Items as $Item) {
-            $item = array(
+        foreach ($items as $item) {
+            $rssItem = array(
                 'url' => null,
                 'originUrl' => null,
                 'pubdate' => null
             );
 
-            $item['url'] = (string) $Item->link;
-            $item['originUrl'] = ((string) $Item->origLink ?: (string) $Item->comments);
+            $rssItem['url'] = (string) $item->link;
+            $rssItem['originUrl'] = ((string) $item->origLink ?: (string) $item->comments);
+            $rssItem['pubdate'] = ((string) $item->pubdate ?: (string) $item->pubDate);
 
-            $item['pubdate'] = ((string) $Item->pubdate ?: (string) $Item->pubDate);
-
-            if (!$item['pubdate'] && isset($namespaces['dc']) && ($Children = $Item->children($namespaces['dc']))) {
-                $item['pubdate'] = (string) $Children->date;
+            if (!$rssItem['pubdate'] && isset($namespaces['dc']) && ($children = $item->children($namespaces['dc']))) {
+                $rssItem['pubdate'] = (string) $children->date;
             }
 
-            if (!$item['originUrl'] && isset($namespaces['feedburner']) && ($Children = $Item->children($namespaces['feedburner']))) {
-                $item['originUrl'] = (string) $Children->origLink;
+            if (!$rssItem['originUrl'] && isset($namespaces['feedburner']) && ($children = $item->children($namespaces['feedburner']))) {
+                $rssItem['originUrl'] = (string) $children->origLink;
             }
 
-            if ($item['url']) {
-                $items[] = $item;
+            if ($rssItem['url']) {
+                $rssItems[] = $rssItem;
             }
         }
 
-        return $items;
+        return $rssItem;
     }
 
-    protected static function parseAtom(\SimpleXMLElement $Xml)
+    protected static function parseAtom(\SimpleXMLElement $xml)
     {
-        if (!isset($Xml->entry)) {
+        if (!isset($xml->entry)) {
             return false;
         }
 
         $url = '';
 
-        foreach ($Xml->link as $link) {
+        foreach ($xml->link as $link) {
             $attributes = $link->attributes();
 
             if (empty($attributes->href) || ((string) $attributes->rel === 'self')) {
@@ -123,30 +123,30 @@ class Feed extends Source implements SourceInterface
 
         return array(
             'url' => $url,
-            'items' => self::getAtomEntries($Xml->entry)
+            'items' => self::getAtomEntries($xml->entry)
         );
     }
 
-    protected static function getAtomEntries(\SimpleXMLElement $Entries)
+    protected static function getAtomEntries(\SimpleXMLElement $entries)
     {
         $items = array();
 
-        foreach ($Entries as $Entry) {
+        foreach ($entries as $entry) {
             $item = array(
                 'url' => null,
                 'originUrl' => null,
                 'pubdate' => null
             );
 
-            if ($Entry->created) {
-                $item['pubdate'] = (string) $Entry->created;
-            } elseif ($Entry->updated) {
-                $item['pubdate'] = (string) $Entry->updated;
-            } elseif ($Entry->modified) {
-                $item['pubdate'] = (string) $Entry->modified;
+            if ($entry->created) {
+                $item['pubdate'] = (string) $entry->created;
+            } elseif ($entry->updated) {
+                $item['pubdate'] = (string) $entry->updated;
+            } elseif ($entry->modified) {
+                $item['pubdate'] = (string) $entry->modified;
             }
 
-            foreach ($Entry->link as $link) {
+            foreach ($entry->link as $link) {
                 $attributes = $link->attributes();
 
                 if (!empty($attributes->href) && ((string) $attributes->rel === 'alternate')) {
@@ -155,7 +155,7 @@ class Feed extends Source implements SourceInterface
                 }
             }
 
-            foreach ($Entry->link as $link) {
+            foreach ($entry->link as $link) {
                 $attributes = $link->attributes();
 
                 if (!empty($attributes->href) && ((string) $attributes->rel === 'comments')) {
@@ -165,7 +165,7 @@ class Feed extends Source implements SourceInterface
             }
 
             if (!$item['url']) {
-                if ($Entry->link) {
+                if ($entry->link) {
                     $attributes = $link->attributes();
 
                     if (!empty($attributes->href)) {

@@ -5,25 +5,26 @@
 namespace Embed\Adapters;
 
 use Embed\Url;
+use Embed\Request;
 use Embed\Viewers;
 
 class Google extends Webpage implements AdapterInterface
 {
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
-        return $Url->match(array(
+        return $request->match(array(
             'https://maps.google.*'
         ));
     }
 
     public function getCode()
     {
-        $Url = clone $this->Url;
+        $url = new Url($this->request->getUrl());
 
-        $Url->setParameter('output', 'embed');
-        $Url->setParameter('s', '');
+        $url->setParameter('output', 'embed');
+        $url->setParameter('s', '');
 
-        return Viewers::iframe($Url->getUrl());
+        return Viewers::iframe($url->getUrl());
     }
 
     public function getImages()

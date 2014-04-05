@@ -6,7 +6,7 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
+use Embed\Request;
 use Embed\FastImage;
 
 abstract class Adapter
@@ -22,18 +22,18 @@ abstract class Adapter
         'embedlyKey' => null
     );
 
-    abstract protected function initProviders (Url $Url);
+    abstract protected function initProviders (Request $request);
 
-    public function __construct(Url $Url, array $options = null)
+    public function __construct(Request $request, array $options = null)
     {
         if ($options !== null) {
             $this->options = array_replace($this->options, $options);
         }
 
-        $this->initProviders($Url);
+        $this->initProviders($request);
 
-        if ($Url->getUrl() !== $this->url) {
-            $this->initProviders(new Url($this->url));
+        if ($request->getUrl() !== $this->url) {
+            $this->initProviders(new Request($this->url));
         }
     }
 
@@ -52,8 +52,8 @@ abstract class Adapter
         $values = array();
         $current = null;
 
-        foreach ($this->providers as $Provider) {
-            if (($value = $Provider->$method())) {
+        foreach ($this->providers as $provider) {
+            if (($value = $provider->$method())) {
                 if ($returnFirst === true) {
                     return $value;
                 }
@@ -77,16 +77,16 @@ abstract class Adapter
     {
         $method = 'get'.$name;
 
-        foreach ($this->providers as $Provider) {
-            if (($url = $Provider->$method())) {
-                return $this->Url->getAbsolute($url);
+        foreach ($this->providers as $provider) {
+            if (($url = $provider->$method())) {
+                return $this->request->getAbsolute($url);
             }
         }
     }
 
     public function getTitle()
     {
-        return $this->getFromProviders('title') ?: $this->Url->getUrl();
+        return $this->getFromProviders('title') ?: $this->request->getUrl();
     }
 
     public function getDescription()
@@ -96,7 +96,7 @@ abstract class Adapter
 
     public function getUrl()
     {
-        return $this->getUrlFromProviders('url') ?: $this->Url->getUrl();
+        return $this->getUrlFromProviders('url') ?: $this->request->getUrl();
     }
 
     public function getSource()
@@ -126,21 +126,21 @@ abstract class Adapter
 
     public function getImage()
     {
-        foreach ($this->images as $image) {
+        foreach ($this->images as $src) {
             try {
-                $Image = new FastImage($image);
-            } catch (\Exception $Exception) {
+                $image = new FastImage($src);
+            } catch (\Exception $exception) {
                 continue;
             }
 
-            if ($Image->getType()) {
-                list($width, $height) = $Image->getSize();
+            if ($image->getType()) {
+                list($width, $height) = $image->getSize();
 
                 if (($width >= $this->options['minImageWidth']) && ($height >= $this->options['minImageHeight'])) {
                     $this->imageWidth = $width;
                     $this->imageHeight = $height;
 
-                    return $image;
+                    return $src;
                 }
             }
         }
@@ -154,27 +154,27 @@ abstract class Adapter
             return current($icons);
         }
 
-        foreach ($this->providerIcons as $icon) {
+        foreach ($this->providerIcons as $src) {
             try {
-                $Icon = new FastImage($icon);
-            } catch (\Exception $Exception) {
+                $icon = new FastImage($src);
+            } catch (\Exception $exception) {
                 continue;
             }
 
-            if ($Icon->getType()) {
-                return $icon;
+            if ($icon->getType()) {
+                return $src;
             }
         }
     }
 
     public function getProviderName()
     {
-        return $this->getFromProviders('providerName') ?: $this->Url->getDomain();
+        return $this->getFromProviders('providerName') ?: $this->request->getDomain();
     }
 
     public function getProviderUrl()
     {
-        return $this->getUrlFromProviders('providerUrl') ?: ($this->Url->getScheme().'://'.$this->Url->getDomain(true));
+        return $this->getUrlFromProviders('providerUrl') ?: ($this->request->getScheme().'://'.$this->request->getDomain(true));
     }
 
     public function getImageWidth()

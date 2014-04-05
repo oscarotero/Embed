@@ -4,7 +4,7 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
+use Embed\Request;
 use Embed\Viewers;
 use Embed\Providers\OEmbed;
 use Embed\Providers\OEmbedImplementations;
@@ -35,28 +35,28 @@ class File extends Adapter implements AdapterInterface
         'application/octet-stream' => array('rich', 'google')
     );
 
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
-        return isset(static::$contentTypes[$Url->getMimeType()]);
+        return isset(static::$contentTypes[$request->getMimeType()]);
     }
 
-    protected function initProviders(Url $Url)
+    protected function initProviders(Request $request)
     {
-        $this->Url = $Url;
+        $this->request = $request;
 
-        if (($OEmbed = OEmbedImplementations::create($Url))) {
-            $this->providers['OEmbed'] = $OEmbed;
+        if (($oEmbed = OEmbedImplementations::create($request))) {
+            $this->providers['OEmbed'] = $oEmbed;
         }
     }
 
     public function getType()
     {
-        return static::$contentTypes[$this->Url->getMimeType()][0];
+        return static::$contentTypes[$this->request->getMimeType()][0];
     }
 
     public function getCode()
     {
-        switch (static::$contentTypes[$this->Url->getMimeType()][1]) {
+        switch (static::$contentTypes[$this->request->getMimeType()][1]) {
             case 'videoHtml':
                 return Viewers::videoHtml($this->getImage(), $this->getUrl(), $this->getWidth(), $this->getHeight());
 
@@ -80,8 +80,8 @@ class File extends Adapter implements AdapterInterface
     public function getProviderIcons()
     {
         return array(
-            $this->Url->getAbsolute('/favicon.ico'),
-            $this->Url->getAbsolute('/favicon.png')
+            $this->request->getAbsolute('/favicon.ico'),
+            $this->request->getAbsolute('/favicon.png')
         );
     }
 }

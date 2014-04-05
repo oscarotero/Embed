@@ -2,9 +2,9 @@
 /**
  * Default class to resolve urls
  */
-namespace Embed\UrlResolvers;
+namespace Embed\RequestResolvers;
 
-class Curl implements UrlResolverInterface
+class Curl implements RequestResolverInterface
 {
     protected $content;
     protected $result;

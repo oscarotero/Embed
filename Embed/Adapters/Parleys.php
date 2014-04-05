@@ -4,30 +4,26 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
+use Embed\Request;
 
 class Parleys extends Webpage implements AdapterInterface
 {
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
         // http://www.parleys.com/#st=5&id=2912&sl=0
-        if ($Url->match(['*.parleys.com/#*'])) {
-            return true;
-        }
-
-        return false;
+        return $request->match(['*.parleys.com/#*']);
     }
 
     public function getUrl()
     {
-        $fragments = $this->Url->getFragmentArray();
+        $fragments = $this->request->getFragmentArray();
 
         if (!empty($fragments['id'])) {
             return 'http://parleys.com/d/'.$fragments['id'];
         }
 
-        if ($this->Url->hasParameter('id')) {
-            return 'http://parleys.com/d/'.$this->Url->getParameter('id');
+        if ($this->request->hasParameter('id')) {
+            return 'http://parleys.com/d/'.$this->request->getParameter('id');
         }
 
         return parent::getUrl();

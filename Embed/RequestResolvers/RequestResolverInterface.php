@@ -2,9 +2,9 @@
 /**
  * Default class to resolve urls
  */
-namespace Embed\UrlResolvers;
+namespace Embed\RequestResolvers;
 
-interface UrlResolverInterface
+interface RequestResolverInterface
 {
 
     /**

@@ -4,38 +4,38 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
+use Embed\Request;
 use Embed\Viewers;
 use Embed\Providers\Provider;
 
 class Archive extends Webpage implements AdapterInterface
 {
-    public $Api;
+    public $api;
 
-    public static function check(Url $Url)
+    public static function check(Request $request)
     {
-        return $Url->match(array(
+        return $request->match(array(
             'http://archive.org/details/*'
         ));
     }
 
-    protected function initProviders(Url $Url)
+    protected function initProviders(Request $request)
     {
-        parent::initProviders($Url);
+        parent::initProviders($request);
 
-        $this->Api = new Provider();
+        $this->api = new Provider();
 
-        $UrlApi = clone $Url;
-        $UrlApi->setParameter('output', 'json');
+        $api = clone $request;
+        $api->setParameter('output', 'json');
 
-        if (($json = $UrlApi->getJsonContent())) {
-            $this->Api->set($json);
+        if (($json = $api->getJsonContent())) {
+            $this->api->set($json);
         }
     }
 
     private function getMetadata($key)
     {
-        if (($metadata = $this->Api->get('metadata', $key)) && isset($metadata[0])) {
+        if (($metadata = $this->api->get('metadata', $key)) && isset($metadata[0])) {
             return $metadata[0];
         }
     }
@@ -95,14 +95,14 @@ class Archive extends Webpage implements AdapterInterface
     {
         $images = array();
 
-        if (($image = $this->Api->get('misc', 'image'))) {
-            $images[] = $this->Url->getAbsolute($image);
+        if (($image = $this->api->get('misc', 'image'))) {
+            $images[] = $this->request->getAbsolute($image);
         }
 
-        if (($files = $this->Api->get('files'))) {
+        if (($files = $this->api->get('files'))) {
             foreach ($files as $url => $info) {
                 if ($info['format'] === 'Thumbnail') {
-                    $images[] = $this->Url->getAbsolute($url);
+                    $images[] = $this->request->getAbsolute($url);
                 }
             }
         }

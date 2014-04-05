@@ -6,13 +6,14 @@
 namespace Embed\Providers;
 
 use Embed\Url;
+use Embed\Request;
 
 class OEmbedImplementations extends Provider
 {
-    public static function create(Url $Url)
+    public static function create(Url $url)
     {
         //Search the oembed provider using the domain
-        $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $Url->getDomain()))));
+        $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $url->getDomain()))));
 
         if (class_exists($class)) {
             $settings = array(
@@ -21,16 +22,16 @@ class OEmbedImplementations extends Provider
                 'params' => $class::getParams()
             );
 
-            if ($Url->match($settings['patterns'])) {
-                $EndPoint = new Url($settings['endPoint']);
+            if ($url->match($settings['patterns'])) {
+                $endPoint = new Request($settings['endPoint']);
 
                 if (empty($settings['params']) === false) {
-                    $EndPoint->setParameter($settings['params']);
+                    $endPoint->setParameter($settings['params']);
                 }
 
-                $EndPoint->setParameter('url', $Url->getUrl());
+                $endPoint->setParameter('url', $url->getUrl());
 
-                return new OEmbed($EndPoint);
+                return new OEmbed($endPoint);
             }
         }
     }
