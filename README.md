@@ -20,33 +20,32 @@ Usage:
 include('Embed/autoloader.php');
 
 //Load any url:
-$Url = new Embed\Url('https://www.youtube.com/watch?v=PP1xn5wHtxE');
-$Info = Embed\Embed::create($Url);
+$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
 
 //Get content info
 
-$Info->title;
-$Info->description;
-$Info->url;
-$Info->type;
+$info->title;
+$info->description;
+$info->url;
+$info->type;
 
-$Info->images;
-$Info->image;
-$Info->imageWidth;
-$Info->imageHeight;
+$info->images;
+$info->image;
+$info->imageWidth;
+$info->imageHeight;
 
-$Info->code;
-$Info->width;
-$Info->height;
-$Info->aspectRatio;
+$info->code;
+$info->width;
+$info->height;
+$info->aspectRatio;
 
-$Info->authorName;
-$Info->authorUrl;
+$info->authorName;
+$info->authorUrl;
 
-$Info->providerIcons;
-$Info->providerIcon;
-$Info->providerName;
-$Info->providerUrl;
+$info->providerIcons;
+$info->providerIcon;
+$info->providerName;
+$info->providerUrl;
 ```
 
 Available options
@@ -65,9 +64,17 @@ $options = array(
 	'getBiggerImage' => true
 );
 
-$Url = new Embed\Url('https://www.youtube.com/watch?v=PP1xn5wHtxE');
+$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', $options);
+```
 
-$Info = Embed\Embed::create($Url, $options);
+Customize the request
+---------------------
+
+Embed provides a RequestResolvers\Curl class to resolve all requests using the curl library. You can create your own request resolver class creating a class implementing the RequestResolverInterface.
+
+```php
+//Configure the request resolver class:
+Embed\Request::setDefaultResolver('MyCustomResolverClass');
 ```
 
 
