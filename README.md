@@ -2,6 +2,7 @@ Embed
 =====
 
 [![Build Status](https://travis-ci.org/oscarotero/Embed.png?branch=v1.3.3)](https://travis-ci.org/oscarotero/Embed)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/Embed/badges/quality-score.png?s=79e37032db280b9795388124c030dcf4309343d1)](https://scrutinizer-ci.com/g/oscarotero/Embed/)
 
 PHP library to get info and embed any web page (using oembed, opengraph, twitter-cards, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc).
 Has adapters to some webpages like (archive.org, github, deviantart, etc).
