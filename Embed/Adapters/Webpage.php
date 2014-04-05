@@ -6,14 +6,7 @@ namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\FastImage;
-
-use Embed\Providers\Html;
-use Embed\Providers\OEmbed;
-use Embed\Providers\OEmbedImplementations;
-use Embed\Providers\OpenGraph;
-use Embed\Providers\TwitterCards;
-use Embed\Providers\Facebook;
-use Embed\Providers\Embedly;
+use Embed\Providers;
 
 class Webpage extends Adapter implements AdapterInterface
 {
@@ -27,17 +20,17 @@ class Webpage extends Adapter implements AdapterInterface
         $this->request = $request;
 
         $this->providers = array(
-            'Html' => new Html($request),
-            'Facebook' => new Facebook($request),
-            'TwitterCards' => new TwitterCards($request),
-            'OpenGraph' => new OpenGraph($request)
+            'Html' => new Providers\Html($request),
+            'Facebook' => new Providers\Facebook($request),
+            'TwitterCards' => new Providers\TwitterCards($request),
+            'OpenGraph' => new Providers\OpenGraph($request)
         );
 
         if ($this->providers['Html']->get('oembed')) {
-            $this->providers['OEmbed'] = new OEmbed(new Request($request->getAbsolute($this->providers['Html']->get('oembed'))));
-        } elseif (($oEmbed = OEmbedImplementations::create($request))) {
+            $this->providers['OEmbed'] = new Providers\OEmbed(new Request($request->getAbsolute($this->providers['Html']->get('oembed'))));
+        } elseif (($oEmbed = Providers\OEmbedImplementations::create($request))) {
             $this->providers['OEmbed'] = $oEmbed;
-        } elseif ($this->options['embedlyKey'] && ($oEmbed = Embedly::create($request, $this->options['embedlyKey']))) {
+        } elseif ($this->options['embedlyKey'] && ($oEmbed = Providers\Embedly::create($request, $this->options['embedlyKey']))) {
             $this->providers['OEmbed'] = $oEmbed;
         }
 

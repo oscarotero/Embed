@@ -37,7 +37,7 @@ class File extends Adapter implements AdapterInterface
 
     public static function check(Request $request)
     {
-        return isset(static::$contentTypes[$request->getMimeType()]);
+        return isset(self::$contentTypes[$request->getMimeType()]);
     }
 
     protected function initProviders(Request $request)
@@ -51,12 +51,12 @@ class File extends Adapter implements AdapterInterface
 
     public function getType()
     {
-        return static::$contentTypes[$this->request->getMimeType()][0];
+        return self::$contentTypes[$this->request->getMimeType()][0];
     }
 
     public function getCode()
     {
-        switch (static::$contentTypes[$this->request->getMimeType()][1]) {
+        switch (self::$contentTypes[$this->request->getMimeType()][1]) {
             case 'videoHtml':
                 return Viewers::videoHtml($this->getImage(), $this->getUrl(), $this->getWidth(), $this->getHeight());
 

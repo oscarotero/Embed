@@ -87,7 +87,7 @@
             <tr>
                 <th>Content</th>
                 <td>
-                    <pre><?php echo htmlspecialchars($url->getContent(), ENT_IGNORE); ?></pre>
+                    <pre><?php echo htmlspecialchars($request->getContent(), ENT_IGNORE); ?></pre>
                 </td>
             </tr>
         </table>

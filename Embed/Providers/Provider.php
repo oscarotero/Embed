@@ -12,7 +12,7 @@ class Provider
      * Save a value
      *
      * @param string $name  Name of the value
-     * @param string $value The value to save
+     * @param mixed $value The value to save
      */
     public function set($name, $value = null)
     {

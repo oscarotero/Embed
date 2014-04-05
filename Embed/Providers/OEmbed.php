@@ -32,7 +32,6 @@ class OEmbed extends Provider
 
             default:
                 throw new \Exception("No valid format specified");
-                break;
         }
 
     }

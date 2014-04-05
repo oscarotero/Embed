@@ -1,9 +1,27 @@
 <?php
 /**
- * Base Adapter extended by all adapters
+ * Base class extended by all adapters
  *
- * Provide default functionalities
+ * @property $title
+ * @property $description
+ * @property $url
+ * @property $type
+ * @property $images
+ * @property $image
+ * @property $imageWidth
+ * @property $imageHeight
+ * @property $code
+ * @property $width
+ * @property $height
+ * @property $aspectRatio
+ * @property $authorName
+ * @property $authorUrl
+ * @property $providerIcons
+ * @property $providerIcon
+ * @property $providerName
+ * @property $providerUrl
  */
+
 namespace Embed\Adapters;
 
 use Embed\Request;

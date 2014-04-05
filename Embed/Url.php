@@ -285,7 +285,7 @@ class Url
      */
     public function setFragment($fragment)
     {
-        $this->info['fragment'];
+        $this->info['fragment'] = $fragment;
     }
 
 
