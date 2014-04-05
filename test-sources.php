@@ -53,25 +53,23 @@
         if (!empty($_GET['url'])): ?>
         <section>
             <?php
-
-            $Url = new Embed\Url($_GET['url']);
-
-            $Source = Embed\Embed::createSource($Url);
+            $request = new Embed\Request($_GET['url']);
+            $source = Embed\Embed::createSource($request);
             ?>
 
-            <?php if (empty($Source)): ?>
+            <?php if (empty($source)): ?>
 
             <p>The url is not valid!</p>
 
             <?php else: ?>
 
-            <h1><a href="<?php echo $Source->providerUrl; ?>"><?php echo $Source->providerUrl; ?></a></h1>
+            <h1><a href="<?php echo $source->providerUrl; ?>"><?php echo $source->providerUrl; ?></a></h1>
 
-            <a href="test.php?url=<?php echo $Source->providerUrl; ?>" target="_blank">Test</a><br>
-            <a href="<?php echo $Source->sourceUrl; ?>" target="_blank">Source url</a>
+            <a href="test.php?url=<?php echo $source->providerUrl; ?>" target="_blank">Test</a><br>
+            <a href="<?php echo $source->sourceUrl; ?>" target="_blank">Source url</a>
 
             <ul>
-                <?php foreach ($Source->items as $url): ?>
+                <?php foreach ($source->items as $url): ?>
                 <li>
                     <a href="<?php echo $url['url']; ?>"><?php echo $url['url']; ?></a> | <a href="test.php?url=<?php echo urlencode($url['url']); ?>" target="_blank">Test</a><br>
                     <?php if ($url['originUrl']): ?>
@@ -89,22 +87,10 @@
             <tr>
                 <th>Content</th>
                 <td>
-                    <pre><?php echo htmlspecialchars($Url->getContent(), ENT_IGNORE); ?></pre>
+                    <pre><?php echo htmlspecialchars($url->getContent(), ENT_IGNORE); ?></pre>
                 </td>
             </tr>
         </table>
-
-        <?php elseif (!empty($_FILES['opml']['tmp_name'])): ?>
-        <section>
-            <?php
-            $string = file_get_contents($_FILES['opml']['tmp_name']);
-            $feeds = Embed\Sources\Feed::createFromOPML($string);
-
-            echo '<pre>';
-            var_dump($feeds);
-            echo '</pre>';
-            ?>
-        </section>
         <?php endif; ?>
 
     </body>

@@ -45,7 +45,7 @@ class Request extends Url
         if ($url instanceof RequestResolvers\RequestResolverInterface) {
             $this->resolver = $url;
         } else {
-            $this->resolver = new static::$defaultResolver($url);
+            $this->resolver = new self::$defaultResolver($url);
         }
 
         $this->parseUrl($this->resolver->getLatestUrl());

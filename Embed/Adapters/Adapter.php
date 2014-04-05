@@ -11,6 +11,8 @@ use Embed\FastImage;
 
 abstract class Adapter
 {
+    protected $request;
+
     public $providers = array();
     public $options = array(
         'minImageWidth' => 0,

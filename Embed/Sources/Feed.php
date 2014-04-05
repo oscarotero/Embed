@@ -74,7 +74,7 @@ class Feed extends Source implements SourceInterface
     {
         $rssItems = array();
 
-        $namespaces = $Items->getNamespaces(true);
+        $namespaces = $items->getNamespaces(true);
 
         foreach ($items as $item) {
             $rssItem = array(
@@ -100,7 +100,7 @@ class Feed extends Source implements SourceInterface
             }
         }
 
-        return $rssItem;
+        return $rssItems;
     }
 
     protected static function parseAtom(\SimpleXMLElement $xml)
