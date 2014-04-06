@@ -85,7 +85,13 @@ class OpenGraph extends Provider
                     case 'ogg':
                     case 'ogv':
                     case 'webm':
-                        return Viewers::videoHtml($this->getImage(), $this->get('video'), $this->getWidth(), $this->getHeight());
+                        $image = $this->getImage();
+
+                        if (is_array($image)) {
+                            $image = current($image);
+                        }
+
+                        return Viewers::videoHtml($image, $this->get('video'), $this->getWidth(), $this->getHeight());
                 }
             }
 
@@ -98,7 +104,13 @@ class OpenGraph extends Provider
                 case 'video/ogg':
                 case 'video/ogv':
                 case 'video/webm':
-                    return Viewers::videoHtml($this->getImage(), $this->get('video'), $this->getWidth(), $this->getHeight());
+                    $image = $this->getImage();
+
+                    if (is_array($image)) {
+                        $image = current($image);
+                    }
+
+                    return Viewers::videoHtml($image, $this->get('video'), $this->getWidth(), $this->getHeight());
             }
         }
     }
