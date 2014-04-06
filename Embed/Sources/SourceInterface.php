@@ -4,13 +4,13 @@
  */
 namespace Embed\Sources;
 
-use Embed\Url;
+use Embed\Request;
 
 interface SourceInterface
 {
-    public static function check (Url $Url);
+    public static function check (Request $request);
 
-    public function __construct (Url $Url);
+    public function __construct (Request $request);
 
     public function isValid ();
 
