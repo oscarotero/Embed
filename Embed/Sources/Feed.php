@@ -164,13 +164,11 @@ class Feed extends Source implements SourceInterface
                 }
             }
 
-            if (!$item['url']) {
-                if ($entry->link) {
-                    $attributes = $link->attributes();
+            if (!$item['url'] && isset($link)) {
+                $attributes = $link->attributes();
 
-                    if (!empty($attributes->href)) {
-                        $item['url'] = (string) $attributes->href;
-                    }
+                if (!empty($attributes->href)) {
+                    $item['url'] = (string) $attributes->href;
                 }
             }
 
