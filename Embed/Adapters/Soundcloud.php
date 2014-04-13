@@ -1,6 +1,6 @@
 <?php
 /**
- * Adapter to provide information from soundcloud.com api
+ * Adapter to provide information from soundcloud.com API
  */
 namespace Embed\Adapters;
 

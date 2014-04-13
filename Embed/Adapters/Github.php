@@ -1,6 +1,6 @@
 <?php
 /**
- * Adapter to get the embed code from codepen
+ * Adapter to get the embed code from gist.github.com
  */
 namespace Embed\Adapters;
 

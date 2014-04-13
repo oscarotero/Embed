@@ -1,6 +1,6 @@
 <?php
 /**
- * Adapter to provide all information from any webpage (detects html meta tags, opengraph, twitter cards, oembed, etc)
+ * Adapter to provide all information from any webpage
  */
 namespace Embed\Adapters;
 

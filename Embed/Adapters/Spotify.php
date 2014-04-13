@@ -1,6 +1,6 @@
 <?php
 /**
- * Adapter to fix some issues from jsfiddle
+ * Adapter to get the embed code from spotify
  */
 namespace Embed\Adapters;
 

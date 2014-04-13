@@ -1,6 +1,6 @@
 <?php
 /**
- * Adapter to get the embed code from cadenaser.com
+ * Adapter to get some info from rtve.es
  */
 namespace Embed\Adapters;
 
