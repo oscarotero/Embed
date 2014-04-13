@@ -13,6 +13,7 @@ class Google extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->match(array(
+            'https://maps.google.*',
             'https://www.google.com/maps*'
         ));
     }
