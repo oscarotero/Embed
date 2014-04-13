@@ -51,19 +51,21 @@ class Url
      */
     public function match($pattern)
     {
-        if (is_array($pattern)) {
-            foreach ($pattern as $p) {
-                if ($this->match($p) === true) {
-                    return true;
-                }
-            }
+        $url = $this->getUrl();
 
-            return false;
+        if (!is_array($pattern)) {
+            $pattern = array($pattern);
         }
 
-        $pattern = str_replace(array('\\*', '\\?'), array('.+', '?'), preg_quote($pattern, '|'));
+        foreach ($pattern as $pattern) {
+            $pattern = str_replace(array('\\*', '\\?'), array('.+', '?'), preg_quote($pattern, '|'));
 
-        return (preg_match('|^'.$pattern.'$|i', $this->getUrl()) === 1) ? true : false;
+            if (preg_match('|^'.$pattern.'$|i', $url)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 
