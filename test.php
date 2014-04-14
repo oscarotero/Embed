@@ -110,6 +110,10 @@ include('Embed/autoloader.php');
     {
         return isset($_GET['options'][$name]) ? $_GET['options'][$name] : $default;
     }
+    function getResolverOption($name, $default = null)
+    {
+        return isset($_GET['resolver'][$name]) ? $_GET['resolver'][$name] : $default;
+    }
     ?>
 
     <body>
@@ -131,10 +135,10 @@ include('Embed/autoloader.php');
             <fieldset class="options">
                 <h2>Request resolver options:</h2>
 
-                <label><span>User agent:</span> <input type="text" name="options[user_agent]" value="<?php echo getOption('user_agent', 'Embed PHP Library'); ?>"></label>
-                <label><span>Max redirections:</span> <input type="number" name="options[max_redirections]" value="<?php echo getOption('max_redirections', 20); ?>"></label>
-                <label><span>Connection timeout:</span> <input type="number" name="options[connection_timeout]" value="<?php echo getOption('connection_timeout', 10); ?>"></label>
-                <label><span>Timeout:</span> <input type="number" name="options[timeout]" value="<?php echo getOption('timeout', 10); ?>"></label>
+                <label><span>User agent:</span> <input type="text" name="resolver[user_agent]" value="<?php echo getResolverOption('user_agent', 'Embed PHP Library'); ?>"></label>
+                <label><span>Max redirections:</span> <input type="number" name="resolver[max_redirections]" value="<?php echo getResolverOption('max_redirections', 20); ?>"></label>
+                <label><span>Connection timeout:</span> <input type="number" name="resolver[connection_timeout]" value="<?php echo getResolverOption('connection_timeout', 10); ?>"></label>
+                <label><span>Timeout:</span> <input type="number" name="resolver[timeout]" value="<?php echo getResolverOption('timeout', 10); ?>"></label>
             </fieldset>
             <fieldset class="action">
                 <button type="submit">Test</button>
@@ -144,8 +148,12 @@ include('Embed/autoloader.php');
         <?php if (!empty($_GET['url'])): ?>
         <section>
             <?php
-            $url = new Embed\Request($_GET['url']);
             $options = isset($_GET['options']) ? (array) $_GET['options'] : array();
+            $resolverOptions = isset($_GET['resolver']) ? (array) $_GET['resolver'] : array();
+            
+            Embed\Request::setResolverConfig($resolverOptions);
+
+            $url = new Embed\Request($_GET['url']);
             $info = Embed\Embed::create($url, $options);
             ?>
 
@@ -184,7 +192,11 @@ include('Embed/autoloader.php');
                 </tr>
                 <tr>
                     <th>Image</th>
-                    <td><img src="<?php echo $info->image; ?>"> <?php echo $info->image; ?></td>
+                    <td>
+                        <?php if ($info->image): ?>
+                        <img src="<?php echo $info->image; ?>"> <?php echo $info->image; ?>
+                        <?php endif; ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Image size</th>
