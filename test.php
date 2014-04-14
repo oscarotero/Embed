@@ -66,6 +66,14 @@ include('Embed/autoloader.php');
                 display: inline-block;
                 width: 200px;
             }
+            a {
+                color: #999;
+                font-size: 0.9em;
+            }
+            a:hover {
+                color: black;
+                text-decoration: none;
+            }
             button[type="submit"] {
                 font-size: 1.6rem;
                 font-weight: bold;
@@ -142,6 +150,8 @@ include('Embed/autoloader.php');
             </fieldset>
             <fieldset class="action">
                 <button type="submit">Test</button>
+                &nbsp;&nbsp;&nbsp;
+                <a href="https://github.com/oscarotero/Embed/">Get the source code from Github</a>
             </fieldset>
         </form>
 
