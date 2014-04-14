@@ -6,7 +6,8 @@ namespace Embed;
 
 class Request extends Url
 {
-    private static $defaultResolver = 'Embed\\RequestResolvers\\Curl';
+    private static $resolverClass = 'Embed\\RequestResolvers\\Curl';
+    private static $resolverConfig;
 
     private $resolver;
     private $xmlContent;
@@ -19,7 +20,7 @@ class Request extends Url
      *
      * @param string $className
      */
-    public static function setDefaultResolver($className)
+    public static function setDefaultResolver($className, array $config = null)
     {
         if (!class_exists($className)) {
             throw new \Exception("This class does not exists");
@@ -31,7 +32,22 @@ class Request extends Url
             throw new \Exception("The resolver class must implement the Embed\\RequestResolvers\\RequestResolverInterface interface");
         }
 
-        self::$defaultResolver = $className;
+        self::$resolverClass = $className;
+
+        if ($config !== null) {
+            self::setResolverConfig($config);
+        }
+    }
+
+
+    /**
+     * Set the resolver configuration used for http requests
+     *
+     * @param array $config
+     */
+    public static function setResolverConfig(array $config)
+    {
+        self::$resolverConfig = $config;
     }
 
 
@@ -45,7 +61,11 @@ class Request extends Url
         if ($url instanceof RequestResolvers\RequestResolverInterface) {
             $this->resolver = $url;
         } else {
-            $this->resolver = new self::$defaultResolver($url);
+            $this->resolver = new self::$resolverClass($url);
+        }
+
+        if (self::$resolverConfig) {
+            $this->resolver->setConfig(self::$resolverConfig);
         }
 
         $this->parseUrl($this->resolver->getLatestUrl());

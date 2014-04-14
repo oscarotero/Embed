@@ -9,6 +9,12 @@ class Curl implements RequestResolverInterface
     protected $content;
     protected $result;
     protected $url;
+    protected $config = array(
+        'user_agent' => 'Embed PHP Library',
+        'max_redirections' => 20,
+        'connection_timeout' => 10,
+        'timeout' => 10,
+    );
 
 
     /**
@@ -17,6 +23,15 @@ class Curl implements RequestResolverInterface
     public function __construct($url)
     {
         $this->url = $url;
+    }
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setConfig(array $config)
+    {
+        $this->config = $config + $this->config;
     }
 
 
@@ -122,16 +137,16 @@ class Curl implements RequestResolverInterface
             CURLOPT_URL => $this->url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_MAXREDIRS => 20,
-            CURLOPT_CONNECTTIMEOUT => 10,
-            CURLOPT_TIMEOUT => 10,
+            CURLOPT_MAXREDIRS => $this->config['max_redirections'],
+            CURLOPT_CONNECTTIMEOUT => $this->config['connection_timeout'],
+            CURLOPT_TIMEOUT => $this->config['timeout'],
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_SSL_VERIFYHOST => false,
             CURLOPT_ENCODING => '',
             CURLOPT_AUTOREFERER => true,
             CURLOPT_COOKIEJAR => $tmpCookies,
             CURLOPT_COOKIEFILE => $tmpCookies,
-            CURLOPT_USERAGENT => 'Embed PHP Library'
+            CURLOPT_USERAGENT => $this->config['user_agent']
         ));
 
         $this->content = curl_exec($connection);

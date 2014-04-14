@@ -16,6 +16,14 @@ interface RequestResolverInterface
 
 
     /**
+     * Sets the configuration
+     *
+     * @param array $config
+     */
+    public function setConfig(array $config);
+
+
+    /**
      * Set a new url (and clear data of previous url)
      */
     public function setUrl($url);
