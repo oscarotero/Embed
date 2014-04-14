@@ -12,31 +12,81 @@ include('Embed/autoloader.php');
         <meta charset="utf-8">
 
         <title>Embed tests</title>
+
         <style type="text/css">
             body {
                 font-family: sans-serif;
+                min-width: 650px;
             }
             input[type="url"] {
+                width: 400px;
+                width: calc(100% - 220px);
+            }
+            input[type="text"] {
                 width: 400px;
             }
             input[type="number"] {
                 width: 50px;
             }
-            fieldset.main {
+            input[type="url"], input[type="number"], input[type="text"] {
                 border: none;
-                background: #DDD;
+                background: white;
+                padding: 4px;
+                border-radius: 2px;
+            }
+            fieldset.main {
                 font-weight: bold;
+                background: #BBB;
+                border-bottom: solid 1px #999;
+                border-radius: 2px 2px 0 0;
             }
             fieldset.options {
-                border: none;
-                background: #DDD;
                 font-size: 0.9em;
+                border-bottom: solid 1px #CCC;
+            }
+            fieldset.options label:hover {
+                background: #DDD;
+            }
+            fieldset {
+                border: none;
+                background: #EEE;
+            }
+            fieldset h2 {
+                font-size: 1.2em;
+                margin-left: 6px;
+            }
+            fieldset label {
+                display: block;
+                margin-top: 5px;
+                padding: 3px 6px;
+                border-radius: 2px;
+                cursor: pointer;
+            }
+            fieldset label span {
+                display: inline-block;
+                width: 200px;
+            }
+            button[type="submit"] {
+                font-size: 1.6rem;
+                font-weight: bold;
+                font-family: Arial;
+                background: yellowgreen;
+                border: none;
+                border-radius: 2px;
+                padding: 0.2em 1em;
+                cursor: pointer;
+                margin-top: 5px;
+            }
+            button[type="submit"]:hover {
+                background: black;
+                color: white;
             }
             img {
                 border: solid 1px black;
             }
             table.embed {
                 width: 100%;
+                margin-top: 100px;
             }
             table.embed th,
             table.embed td {
@@ -65,21 +115,29 @@ include('Embed/autoloader.php');
     <body>
         <form action="test.php">
             <fieldset class="main">
-                <label>Url to test: <input type="url" name="url" autofocus placeholder="http://" value="<?php echo isset($_GET['url']) ? $_GET['url'] : ''; ?>"></label>
-                <button type="submit">Test</button>
+                <label><span>Url to test:</span> <input type="url" name="url" autofocus placeholder="http://" value="<?php echo isset($_GET['url']) ? $_GET['url'] : ''; ?>"></label>
             </fieldset>
             <fieldset class="options">
-                <label>Min image width: <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 0); ?>"></label>
-                <label>Min image height: <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 0); ?>"></label>
-                <p>
-                    <label><input type="checkbox" name="options[getBiggerImage]" value="1" <?php echo getOption('getBiggerImage') ? 'checked' : ''; ?>> Get bigger image</label>
-                    <label><input type="checkbox" name="options[getBiggerIcon]" value="1" <?php echo getOption('getBiggerIcon') ? 'checked' : ''; ?>> Get bigger icon</label>
-                </p>
-                <p>
-                <label>Facebook access token: <input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label><br>
-                <label>Embedly key: <input type="text" name="options[embedlyKey]" value="<?php echo getOption('embedlyKey'); ?>"></label><br>
-                <label>Soundcloud client id: <input type="text" name="options[soundcloudClientId]" value="<?php echo getOption('soundcloudClientId', 'YOUR_CLIENT_ID'); ?>"></label>
-                </p>
+                <h2>Info options</h2>
+
+                <label><span>Min image width:</span> <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 0); ?>"></label>
+                <label><span>Min image height:</span> <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 0); ?>"></label>
+                <label><span>Get bigger image</span> <input type="checkbox" name="options[getBiggerImage]" value="1" <?php echo getOption('getBiggerImage') ? 'checked' : ''; ?>></label>
+                <label><span>Get bigger icon</span> <input type="checkbox" name="options[getBiggerIcon]" value="1" <?php echo getOption('getBiggerIcon') ? 'checked' : ''; ?>></label>
+                <label><span>Facebook access token:</span> <input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label>
+                <label><span>Embedly key:</span> <input type="text" name="options[embedlyKey]" value="<?php echo getOption('embedlyKey'); ?>"></label>
+                <label><span>Soundcloud client id:</span> <input type="text" name="options[soundcloudClientId]" value="<?php echo getOption('soundcloudClientId', 'YOUR_CLIENT_ID'); ?>"></label>
+            </fieldset>
+            <fieldset class="options">
+                <h2>Request resolver options:</h2>
+
+                <label><span>User agent:</span> <input type="text" name="options[user_agent]" value="<?php echo getOption('user_agent', 'Embed PHP Library'); ?>"></label>
+                <label><span>Max redirections:</span> <input type="number" name="options[max_redirections]" value="<?php echo getOption('max_redirections', 20); ?>"></label>
+                <label><span>Connection timeout:</span> <input type="number" name="options[connection_timeout]" value="<?php echo getOption('connection_timeout', 10); ?>"></label>
+                <label><span>Timeout:</span> <input type="number" name="options[timeout]" value="<?php echo getOption('timeout', 10); ?>"></label>
+            </fieldset>
+            <fieldset class="action">
+                <button type="submit">Test</button>
             </fieldset>
         </form>
 
