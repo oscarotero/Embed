@@ -1,31 +1,31 @@
 <?php
-/**
- * Base class extended by all adapters
- *
- * @property $title
- * @property $description
- * @property $url
- * @property $type
- * @property $images
- * @property $image
- * @property $imageWidth
- * @property $imageHeight
- * @property $code
- * @property $width
- * @property $height
- * @property $aspectRatio
- * @property $authorName
- * @property $authorUrl
- * @property $providerIcons
- * @property $providerIcon
- * @property $providerName
- * @property $providerUrl
- */
-
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\FastImage;
+
+/**
+ * Base class extended by all adapters
+ *
+ * @property null|string  $title
+ * @property null|string  $description
+ * @property null|string  $url
+ * @property null|string  $type
+ * @property null|array   $images
+ * @property null|string  $image
+ * @property null|integer $imageWidth
+ * @property null|integer $imageHeight
+ * @property null|string  $code
+ * @property null|integer $width
+ * @property null|integer $height
+ * @property null|float   $aspectRatio
+ * @property null|string  $authorName
+ * @property null|string  $authorUrl
+ * @property null|string  $providerIcons
+ * @property null|string  $providerIcon
+ * @property null|string  $providerName
+ * @property null|string  $providerUrl
+ */
 
 abstract class Adapter
 {
