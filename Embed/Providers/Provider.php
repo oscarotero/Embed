@@ -11,8 +11,8 @@ class Provider
     /**
      * Save a value
      *
-     * @param string $name  Name of the value
-     * @param mixed $value The value to save
+     * @param string|array $name  Name of the value
+     * @param mixed        $value The value to save
      */
     public function set($name, $value = null)
     {
@@ -26,8 +26,8 @@ class Provider
     /**
      * Get a value or null if not exists
      *
-     * @param string $name    Value name
-     * @param string $subname A subvalue name
+     * @param null|string $name    Value name
+     * @param null|string $subname A subvalue name
      *
      * @return string/null
      */

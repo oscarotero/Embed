@@ -11,7 +11,7 @@ use Embed\FastImage;
  * @property null|string  $description
  * @property null|string  $url
  * @property null|string  $type
- * @property null|array   $images
+ * @property array        $images
  * @property null|string  $image
  * @property null|integer $imageWidth
  * @property null|integer $imageHeight
@@ -21,7 +21,7 @@ use Embed\FastImage;
  * @property null|float   $aspectRatio
  * @property null|string  $authorName
  * @property null|string  $authorUrl
- * @property null|string  $providerIcons
+ * @property array        $providerIcons
  * @property null|string  $providerIcon
  * @property null|string  $providerName
  * @property null|string  $providerUrl
