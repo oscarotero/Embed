@@ -218,9 +218,10 @@ class FastImage
                     break;
 
                 case 'readsize':
-                    $c = $this->getChars(7);
-
-                    return array($this->readInt(substr($c, 5, 2)), $this->readInt(substr($c, 3, 2)));
+                    if (($c = $this->getChars(7))) {
+                        return array($this->readInt(substr($c, 5, 2)), $this->readInt(substr($c, 3, 2)));
+                    }
+                    return null;
 
                 default:
                     $this->getChars(2);
