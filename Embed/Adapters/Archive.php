@@ -99,7 +99,7 @@ class Archive extends Webpage implements AdapterInterface
             $images[] = $this->request->getAbsolute($image);
         }
 
-        if (($files = $this->api->get('files'))) {
+        if (is_array($files = $this->api->get('files'))) {
             foreach ($files as $url => $info) {
                 if ($info['format'] === 'Thumbnail') {
                     $images[] = $this->request->getAbsolute($url);
