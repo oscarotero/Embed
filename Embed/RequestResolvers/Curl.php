@@ -112,7 +112,7 @@ class Curl implements RequestResolverInterface
      *
      * @param string $name Parameter name
      *
-     * @return array/string The result info
+     * @return array|string The result info
      */
     protected function getResult($name)
     {

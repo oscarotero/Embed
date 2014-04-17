@@ -76,29 +76,19 @@ class OpenGraph extends Provider
     public function getCode()
     {
         if ($this->has('video')) {
-            if (($videoPath = parse_url($this->get('video'), PHP_URL_PATH))) {
-                switch (pathinfo($videoPath, PATHINFO_EXTENSION)) {
-                    case 'swf':
-                        return Viewers::flash($this->get('video'), $this->getWidth(), $this->getHeight());
-
-                    case 'mp4':
-                    case 'ogg':
-                    case 'ogv':
-                    case 'webm':
-                        $image = $this->getImage();
-
-                        if (is_array($image)) {
-                            $image = current($image);
-                        }
-
-                        return Viewers::videoHtml($image, $this->get('video'), $this->getWidth(), $this->getHeight());
-                }
+            if (!($videoPath = parse_url($this->get('video'), PHP_URL_PATH)) || !($type = pathinfo($videoPath, PATHINFO_EXTENSION))) {
+                $type = $this->get('video:type');
             }
-
-            switch ($this->get('video:type')) {
+            
+            switch ($type) {
+                case 'swf':
                 case 'application/x-shockwave-flash':
                     return Viewers::flash($this->get('video'), $this->getWidth(), $this->getHeight());
 
+                case 'mp4':
+                case 'ogg':
+                case 'ogv':
+                case 'webm':
                 case 'application/mp4':
                 case 'video/mp4':
                 case 'video/ogg':

@@ -45,19 +45,19 @@ class Url
     /**
      * Check if the url match with a specific pattern. The patterns only accepts * and ?
      *
-     * @param string/array $pattern The pattern or an array with various patterns
+     * @param string|array $patterns The pattern or an array with various patterns
      *
      * @return boolean True if the url match, false if not
      */
-    public function match($pattern)
+    public function match($patterns)
     {
         $url = $this->getUrl();
 
-        if (!is_array($pattern)) {
-            $pattern = array($pattern);
+        if (!is_array($patterns)) {
+            $patterns = array($patterns);
         }
 
-        foreach ($pattern as $pattern) {
+        foreach ($patterns as $pattern) {
             $pattern = str_replace(array('\\*', '\\?'), array('.+', '?'), preg_quote($pattern, '|'));
 
             if (preg_match('|^'.$pattern.'$|i', $url)) {

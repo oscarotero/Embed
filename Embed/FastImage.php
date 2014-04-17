@@ -10,6 +10,8 @@
  *
  * MIT Licensed
  * @version 0.1
+ *
+ * Modified for Embed library by Oscar Otero (https://github.com/oscarotero/Embed)
  */
 
 namespace Embed;
@@ -29,6 +31,11 @@ class FastImage
         }
     }
 
+    /**
+     * Opens an image stream
+     *
+     * @param string $uri
+     */
     public function load($uri)
     {
         if ($this->handle) {
@@ -48,14 +55,25 @@ class FastImage
         }
     }
 
+    /**
+     * Closes the stream
+     */
     public function close()
     {
-        if ($this->handle) fclose($this->handle);
+        if ($this->handle) {
+            fclose($this->handle);
+        }
     }
 
+    /**
+     * Gets the image size
+     *
+     * @return array|false
+     */
     public function getSize()
     {
         $this->strpos = 0;
+
         if ($this->getType() && ($size = $this->parseSize())) {
             return array_values($size);
         }
@@ -63,6 +81,11 @@ class FastImage
         return false;
     }
 
+    /**
+     * Gets the image type
+     *
+     * @return string|false
+     */
     public function getType()
     {
         $this->strpos = 0;
@@ -88,6 +111,11 @@ class FastImage
         return $this->type;
     }
 
+    /**
+     * Parses the image type
+     *
+     * @return array|null
+     */
     private function parseSize()
     {
         $this->strpos = 0;
@@ -106,6 +134,11 @@ class FastImage
         return null;
     }
 
+    /**
+     * Parses the image size for PNG
+     *
+     * @return array
+     */
     private function parseSizeForPNG()
     {
         $chars = $this->getChars(25);
@@ -113,6 +146,11 @@ class FastImage
         return unpack("N*", substr($chars, 16, 8));
     }
 
+    /**
+     * Parses the image size for GIF
+     *
+     * @return array
+     */
     private function parseSizeForGIF()
     {
         $chars = $this->getChars(11);
@@ -120,6 +158,11 @@ class FastImage
         return unpack("S*", substr($chars, 6, 4));
     }
 
+    /**
+     * Parses the image size for BMP
+     *
+     * @return array
+     */
     private function parseSizeForBMP()
     {
         $chars = $this->getChars(29);
@@ -129,6 +172,11 @@ class FastImage
         return (reset($type) == 40) ? unpack('L*', substr($chars, 4)) : unpack('L*', substr($chars, 4, 8));
     }
 
+    /**
+     * Parses the image size for JPEG
+     *
+     * @return array
+     */
     private function parseSizeForJPEG()
     {
         $state = null;
@@ -179,6 +227,13 @@ class FastImage
         }
     }
 
+    /**
+     * Gets the stream characters until a specific position
+     *
+     * @param integer $n The end position of characters
+     *
+     * @return false|string
+     */
     private function getChars($n)
     {
         $response = null;
@@ -206,6 +261,11 @@ class FastImage
         return mb_convert_encoding($result, "8BIT");
     }
 
+    /**
+     * Returns the current byte
+     *
+     * @return false|string
+     */
     private function getByte()
     {
         $c = $this->getChars(1);
@@ -214,11 +274,16 @@ class FastImage
         return reset($b);
     }
 
+    /**
+     * Returns an integer
+     *
+     * @return integer
+     */
     private function readInt($str)
     {
         $size = unpack("C*", $str);
 
-            return ($size[1] << 8) + $size[2];
+        return ($size[1] << 8) + $size[2];
     }
 
     public function __destruct()
@@ -226,6 +291,13 @@ class FastImage
         $this->close();
     }
 
+    /**
+     * Sort an array of images by their size
+     *
+     * @param array $images
+     *
+     * @return array
+     */
     public static function sortImagesBySize(array $images)
     {
         if (count($images) < 2) {

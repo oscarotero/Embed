@@ -29,7 +29,7 @@ class Provider
      * @param null|string $name    Value name
      * @param null|string $subname A subvalue name
      *
-     * @return string/null
+     * @return string|null
      */
     public function get($name = null, $subname = null)
     {
