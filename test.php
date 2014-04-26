@@ -152,6 +152,8 @@ include('Embed/autoloader.php');
                 <button type="submit">Test</button>
                 &nbsp;&nbsp;&nbsp;
                 <a href="https://github.com/oscarotero/Embed/">Get the source code from Github</a>
+                &nbsp;&nbsp; - &nbsp;&nbsp;
+                <a href="javascript:(function(){window.open('http://oscarotero.com/embed/test.php?url='+document.location)})();">or the bookmarklet</a>
             </fieldset>
         </form>
 

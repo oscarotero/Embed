@@ -12,11 +12,50 @@ class Facebook extends Webpage implements AdapterInterface
 {
     public $api;
 
+    private $isPost = false;
+
     public static function check(Request $request)
     {
         return $request->match(array(
             'https://www.facebook.com/*'
         ));
+    }
+
+    private function getId($url)
+    {
+        $url = new Url($url);
+
+        if ($url->hasParameter('story_fbid')) {
+            $this->isPost = true;
+
+            return $url->getParameter('story_fbid');
+        }
+
+        if ($url->hasParameter('fbid')) {
+            return $url->getParameter('fbid');
+        }
+
+        if ($url->hasParameter('id')) {
+            return $url->getParameter('id');
+        }
+
+        if ($url->getDirectory(0) === 'events') {
+            return $url->getDirectory(1);
+        }
+
+        if ($url->getDirectory(0) === 'pages') {
+            return $url->getDirectory(2);
+        }
+
+        if ($url->getDirectory(1) === 'posts') {
+            return $url->getDirectory(2);
+        }
+
+        if ($url->getDirectory(2) === 'posts') {
+            return $url->getDirectory(3);
+        }
+
+        return $url->getDirectory(0);
     }
 
     protected function initProviders(Request $request)
@@ -25,26 +64,8 @@ class Facebook extends Webpage implements AdapterInterface
 
         $this->api = new Provider();
 
-        if ($this->options['facebookAccessToken']) {
-            $url = new Url($request->getStartingUrl());
-
-            if ($url->hasParameter('fbid')) {
-                $id = $url->getParameter('fbid');
-            } elseif ($url->hasParameter('story_fbid')) {
-                $id = $url->getParameter('story_fbid');
-            } elseif ($url->getDirectory(0) === 'events') {
-                $id = $url->getDirectory(1);
-            } elseif ($url->getDirectory(0) === 'pages') {
-                $id = $url->getDirectory(2);
-            } elseif ($url->getDirectory(1) === 'posts') {
-                $id = $url->getDirectory(2);
-            } elseif ($url->getDirectory(2) === 'posts') {
-                $id = $url->getDirectory(3);
-            } else {
-                $id = $url->getDirectory(0);
-            }
-
-            if ($id) {
+        if (($id = $this->getId($request->getStartingUrl()))) {
+            if ($this->options['facebookAccessToken']) {
                 $api = new Request('https://graph.facebook.com/'.$id);
                 $api->setParameter('access_token', $this->options['facebookAccessToken']);
 
@@ -52,6 +73,8 @@ class Facebook extends Webpage implements AdapterInterface
                     $this->api->set($json);
                 }
             }
+
+            $this->api->set('id', $id);
         }
     }
 
@@ -62,12 +85,34 @@ class Facebook extends Webpage implements AdapterInterface
 
     public function getDescription()
     {
-        return $this->api->get('description') ?: $this->api->get('about') ?: parent::getTitle();
+        return $this->api->get('description') ?: $this->api->get('about') ?: parent::getDescription();
     }
 
     public function getUrl()
     {
-        return $this->api->get('link') ?: $this->request->getStartingUrl();
+        if ($this->isPost) {
+            return $this->request->getStartingUrl();
+        }
+
+        return $this->api->get('url') ?: $this->request->getStartingUrl();
+    }
+
+    public function getCode()
+    {
+        if ($this->isPost) {
+            return <<<EOT
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/gl_ES/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-post" data-href="{$this->url}" data-width="500"></div>
+EOT;
+        }
     }
 
     public function getProviderName()

@@ -18,16 +18,16 @@ class OpenGraph extends Provider
 
         $images = array();
 
-        foreach ($html->getElementsByTagName('meta') as $tag) {
-            if ($tag->hasAttribute('property') && (strpos($tag->getAttribute('property'), 'og:') === 0)) {
-                $name = substr($tag->getAttribute('property'), 3);
-            } elseif ($tag->hasAttribute('name') && (strpos($tag->getAttribute('name'), 'og:') === 0)) {
-                $name = substr($tag->getAttribute('name'), 3);
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            if (strpos($meta->getAttribute('property'), 'og:') === 0) {
+                $name = substr($meta->getAttribute('property'), 3);
+            } elseif (strpos($meta->getAttribute('name'), 'og:') === 0) {
+                $name = substr($meta->getAttribute('name'), 3);
             } else {
                 continue;
             }
 
-            $value = $tag->getAttribute('content') ?: $tag->getAttribute('value');
+            $value = $meta->getAttribute('content') ?: $meta->getAttribute('value');
 
             if ($name === 'image') {
                 $images[] = $value;

@@ -112,7 +112,7 @@ class Curl implements RequestResolverInterface
      *
      * @param string $name Parameter name
      *
-     * @return array|string The result info
+     * @return null|string The result info
      */
     protected function getResult($name)
     {
@@ -159,18 +159,20 @@ class Curl implements RequestResolverInterface
 
         curl_close($connection);
 
-        if (strpos($this->getResult('content_type'), ';') !== false) {
-            list($mimeType, $charset) = explode(';', $this->result['content_type']);
+        if (($content_type = $this->getResult('content_type'))) {
+            if (strpos($content_type, ';') !== false) {
+                list($mimeType, $charset) = explode(';', $content_type);
 
-            $this->result['mime_type'] = $mimeType;
+                $this->result['mime_type'] = $mimeType;
 
-            $charset = substr(strtoupper(strstr($charset, '=')), 1);
+                $charset = substr(strtoupper(strstr($charset, '=')), 1);
 
-            if (!empty($charset) && !empty($this->content) && ($charset !== 'UTF-8')) {
-                $this->content = @mb_convert_encoding($this->content, 'UTF-8', $charset);
+                if (!empty($charset) && !empty($this->content) && ($charset !== 'UTF-8')) {
+                    $this->content = @mb_convert_encoding($this->content, 'UTF-8', $charset);
+                }
+            } elseif (strpos($content_type, '/') !== false) {
+                $this->result['mime_type'] = $content_type;
             }
-        } elseif (strpos($this->getResult('content_type'), '/') !== false) {
-            $this->result['mime_type'] = $this->result['content_type'];
         }
     }
 }

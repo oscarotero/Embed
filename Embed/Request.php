@@ -110,7 +110,7 @@ class Request extends Url
     /**
      * Get the http code of the url
      *
-     * @return int The http code
+     * @return integer The http code
      */
     public function getHttpCode()
     {
@@ -143,7 +143,7 @@ class Request extends Url
     /**
      * Get the content of the url as a DOMDocument object
      *
-     * @return DOMDocument The content or false
+     * @return \DOMDocument The content or false
      */
     public function getHtmlContent()
     {
@@ -179,7 +179,7 @@ class Request extends Url
     /**
      * Get the content of the url as an array from json
      *
-     * @return array The content or false
+     * @return false|array The content or false
      */
     public function getJsonContent()
     {
@@ -202,7 +202,7 @@ class Request extends Url
     /**
      * Get the content of the url as an XML element
      *
-     * @return SimpleXMLElement The content or false
+     * @return false|\SimpleXMLElement The content or false
      */
     public function getXMLContent()
     {

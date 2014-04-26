@@ -16,9 +16,7 @@ class OEmbed extends Provider
         switch ($format) {
             case 'json':
                 if (($parameters = $request->getJsonContent()) && empty($parameters['Error'])) {
-                    foreach ($parameters as $name => $value) {
-                        $this->set($name, $value);
-                    }
+                    $this->set($parameters);
                 }
                 break;
 
