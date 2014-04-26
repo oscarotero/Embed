@@ -6,6 +6,9 @@ namespace Embed\Adapters;
 
 class Cadenaser extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         $dom = $this->request->getHtmlContent();

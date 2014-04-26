@@ -11,6 +11,9 @@ class Feed extends Source implements SourceInterface
     protected $data;
     protected $request;
 
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         switch ($request->getMimeType()) {
@@ -25,6 +28,10 @@ class Feed extends Source implements SourceInterface
         return false;
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function __construct(Request $request)
     {
         $this->request = $request;
@@ -34,26 +41,50 @@ class Feed extends Source implements SourceInterface
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function isValid()
     {
         return is_array($this->data);
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getSourceUrl()
     {
         return $this->request->getUrl();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderUrl()
     {
         return !empty($this->data['url']) ? $this->data['url'] : ($this->request->getScheme().'://'.$this->request->getHost());
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getItems()
     {
         return isset($this->data['items']) ? (array) $this->data['items'] : array();
     }
 
+
+    /**
+     * Search data from Rss
+     * 
+     * @param \SimpleXMLElement $xml
+     * 
+     * @return false|array
+     */
     protected static function parseRss(\SimpleXMLElement $xml)
     {
         if (isset($xml->item)) {
@@ -70,6 +101,14 @@ class Feed extends Source implements SourceInterface
         );
     }
 
+
+    /**
+     * Search items from XML
+     * 
+     * @param \SimpleXMLElement $items
+     * 
+     * @return array
+     */
     protected static function getRssItems(\SimpleXMLElement $items)
     {
         $rssItems = array();
@@ -103,6 +142,14 @@ class Feed extends Source implements SourceInterface
         return $rssItems;
     }
 
+
+    /**
+     * Search data from Atom xml
+     * 
+     * @param \SimpleXMLElement $xml
+     * 
+     * @return false|array
+     */
     protected static function parseAtom(\SimpleXMLElement $xml)
     {
         if (!isset($xml->entry)) {
@@ -127,6 +174,14 @@ class Feed extends Source implements SourceInterface
         );
     }
 
+
+    /**
+     * Search entries from Atom xml
+     * 
+     * @param \SimpleXMLElement $xml
+     * 
+     * @return array
+     */
     protected static function getAtomEntries(\SimpleXMLElement $entries)
     {
         $items = array();

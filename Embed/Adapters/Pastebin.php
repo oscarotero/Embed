@@ -9,6 +9,9 @@ use Embed\Viewers;
 
 class Pastebin extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         return $request->match(array(
@@ -16,6 +19,10 @@ class Pastebin extends Webpage implements AdapterInterface
         ));
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         $embed_url = 'http://pastebin.com/embed_iframe.php?i='.($this->request->getParameter('i') ?: $this->request->getDirectory(0));

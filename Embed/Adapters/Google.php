@@ -10,6 +10,9 @@ use Embed\Viewers;
 
 class Google extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         return $request->match(array(
@@ -18,6 +21,10 @@ class Google extends Webpage implements AdapterInterface
         ));
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         $url = new Url($this->request->getUrl());
@@ -28,6 +35,10 @@ class Google extends Webpage implements AdapterInterface
         return Viewers::iframe($url->getUrl());
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getImages()
     {
         return array();

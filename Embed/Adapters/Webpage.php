@@ -10,11 +10,18 @@ use Embed\Providers;
 
 class Webpage extends Adapter implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         return true;
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     protected function initProviders(Request $request)
     {
         $this->request = $request;
@@ -37,6 +44,10 @@ class Webpage extends Adapter implements AdapterInterface
         $this->providers = array_reverse($this->providers);
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getImages()
     {
         $images = array();
@@ -69,6 +80,10 @@ class Webpage extends Adapter implements AdapterInterface
         return $images;
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderIcons()
     {
         $icons = array();
@@ -93,6 +108,10 @@ class Webpage extends Adapter implements AdapterInterface
         return array_unique($icons);
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getType()
     {
         $code = $this->code;
@@ -116,6 +135,10 @@ class Webpage extends Adapter implements AdapterInterface
         return 'link';
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         if ($code = $this->getFromProviders('code')) {

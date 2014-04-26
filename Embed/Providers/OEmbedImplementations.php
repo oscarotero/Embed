@@ -10,6 +10,14 @@ use Embed\Request;
 
 class OEmbedImplementations extends Provider
 {
+
+    /**
+     * Creates a new OEmbed instance
+     * 
+     * @param Url $url
+     * 
+     * @return null|OEmbed
+     */
     public static function create(Url $url)
     {
         //Search the oembed provider using the domain

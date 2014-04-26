@@ -11,6 +11,11 @@ use Embed\Viewers;
 
 class Html extends Provider
 {
+    /**
+     * Constructor
+     * 
+     * @param Request $request
+     */
     public function __construct(Request $request)
     {
         if (!($html = $request->getHtmlContent())) {
@@ -144,21 +149,45 @@ class Html extends Provider
         $this->set('feeds', $feeds);
     }
 
+
+    /**
+     * Gets the title
+     * 
+     * @return string|null
+     */
     public function getTitle()
     {
         return $this->get('title');
     }
 
+
+    /**
+     * Gets the description
+     * 
+     * @return string|null
+     */
     public function getDescription()
     {
         return $this->get('description');
     }
 
+
+    /**
+     * Gets the type
+     * 
+     * @return string|null
+     */
     public function getType()
     {
         return $this->has('video_src') ? 'video' : null;
     }
 
+
+    /**
+     * Gets the source
+     * 
+     * @return string|null
+     */
     public function getSource()
     {
         $feeds = $this->get('feeds');
@@ -166,6 +195,12 @@ class Html extends Provider
         return isset($feeds[0]) ? $feeds[0] : null;
     }
 
+
+    /**
+     * Gets the code
+     * 
+     * @return string|null
+     */
     public function getCode()
     {
         if ($this->has('video_src')) {
@@ -176,26 +211,56 @@ class Html extends Provider
         }
     }
 
+
+    /**
+     * Gets the url
+     * 
+     * @return string|null
+     */
     public function getUrl()
     {
         return $this->get('canonical');
     }
 
+
+    /**
+     * Gets all provider icons
+     * 
+     * @return array
+     */
     public function getProviderIcon()
     {
         return $this->get('icons');
     }
 
+
+    /**
+     * Gets the images found
+     * 
+     * @return array
+     */
     public function getImage()
     {
         return $this->get('images');
     }
 
+
+    /**
+     * Gets the code width
+     * 
+     * @return integer|null
+     */
     public function getWidth()
     {
         return $this->get('video_width');
     }
 
+
+    /**
+     * Gets the code height
+     * 
+     * @return integer|null
+     */
     public function getHeight()
     {
         return $this->get('video_height');

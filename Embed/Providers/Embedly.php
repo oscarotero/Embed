@@ -640,10 +640,19 @@ class Embedly
         'http://www.gogoyoko.com/song/*'
     );
 
+
+    /**
+     * Creates a new OEmbed instance using the embed.ly API
+     * 
+     * @param Request     $request
+     * @param null|string $api_key The API key of embed.ly service
+     * 
+     * @return null|OEmbed
+     */
     public static function create(Request $request, $api_key)
     {
         if (!$api_key) {
-            return false;
+            return null;
         }
 
         if ($request->match(static::$patterns)) {

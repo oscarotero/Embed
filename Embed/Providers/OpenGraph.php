@@ -10,6 +10,11 @@ use Embed\Viewers;
 
 class OpenGraph extends Provider
 {
+    /**
+     * Constructor
+     * 
+     * @param Request $request
+     */
     public function __construct(Request $request)
     {
         if (!($html = $request->getHtmlContent())) {
@@ -39,16 +44,34 @@ class OpenGraph extends Provider
         $this->set('image', $images);
     }
 
+
+    /**
+     * Gets the title
+     * 
+     * @return string|null
+     */
     public function getTitle()
     {
         return $this->get('title');
     }
 
+
+    /**
+     * Gets the description
+     * 
+     * @return string|null
+     */
     public function getDescription()
     {
         return $this->get('description');
     }
 
+
+    /**
+     * Gets the url type
+     * 
+     * @return string|null
+     */
     public function getType()
     {
         $type = $this->get('type');
@@ -73,6 +96,12 @@ class OpenGraph extends Provider
         }
     }
 
+
+    /**
+     * Gets the embedded code
+     * 
+     * @return string|null
+     */
     public function getCode()
     {
         if ($this->has('video')) {
@@ -105,26 +134,56 @@ class OpenGraph extends Provider
         }
     }
 
+
+    /**
+     * Gets the url
+     * 
+     * @return string|null
+     */
     public function getUrl()
     {
         return $this->get('url');
     }
 
+
+    /**
+     * Gets the provider name
+     * 
+     * @return string|null
+     */
     public function getProviderName()
     {
         return $this->get('site_name');
     }
 
+
+    /**
+     * Gets the image
+     * 
+     * @return array
+     */
     public function getImage()
     {
         return $this->get('image');
     }
 
+
+    /**
+     * Gets the code width
+     * 
+     * @return integer|null
+     */
     public function getWidth()
     {
         return $this->get('image:width') ?: $this->get('video:width');
     }
 
+
+    /**
+     * Gets the code height
+     * 
+     * @return integer|null
+     */
     public function getHeight()
     {
         return $this->get('image:height') ?: $this->get('video:height');

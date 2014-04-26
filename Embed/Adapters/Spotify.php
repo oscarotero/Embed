@@ -9,6 +9,9 @@ use Embed\Request;
 
 class Spotify extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
 	public static function check(Request $request)
     {
         return $request->match(array(
@@ -16,6 +19,10 @@ class Spotify extends Webpage implements AdapterInterface
         ));
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         $uri = 'spotify'.str_replace('/', ':', $this->request->getPath(true));

@@ -6,6 +6,9 @@ namespace Embed\Adapters;
 
 class Yfrog extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public function getImage()
     {
         $image = parent::getImage();
@@ -17,6 +20,10 @@ class Yfrog extends Webpage implements AdapterInterface
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getType()
     {
         if ($this->getImage()) {
@@ -24,6 +31,10 @@ class Yfrog extends Webpage implements AdapterInterface
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getAuthorName()
     {
         if ($author = strstr($this->getTitle(), 'Shared by')) {
@@ -31,6 +42,10 @@ class Yfrog extends Webpage implements AdapterInterface
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getAuthorUrl()
     {
         if ($author_name = $this->getAuthorName()) {

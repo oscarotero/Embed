@@ -8,6 +8,14 @@ namespace Embed\Sources;
 
 abstract class Source
 {
+	/**
+     * Magic method to execute methods on get paramaters
+     * For example, $source->sourceUrl executes $source->getSourceUrl()
+     * 
+     * @param string $name The property name
+     * 
+     * @return mixed
+     */
     public function __get($name)
     {
         $method = 'get'.$name;

@@ -9,6 +9,11 @@ use Embed\Request;
 
 class Dcterms extends Provider
 {
+    /**
+     * Constructor
+     * 
+     * @param Request $request
+     */
     public function __construct(Request $request)
     {
         if (!($html = $request->getHtmlContent())) {
@@ -22,16 +27,34 @@ class Dcterms extends Provider
         }
     }
 
+
+    /**
+     * Gets the title
+     * 
+     * @return string|null
+     */
     public function getTitle()
     {
         return $this->get('title');
     }
 
+
+    /**
+     * Gets the description
+     * 
+     * @return string|null
+     */
     public function getDescription()
     {
         return $this->get('description');
     }
 
+
+    /**
+     * Gets the author name
+     * 
+     * @return string|null
+     */
     public function getAuthorName()
     {
         return $this->get('author');

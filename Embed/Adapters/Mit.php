@@ -9,6 +9,9 @@ use Embed\Viewers;
 
 class Mit extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         return $request->match(array(
@@ -17,11 +20,19 @@ class Mit extends Webpage implements AdapterInterface
         ));
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         return Viewers::iframe(str_replace('/video/view/', '/video/embed/', $this->getUrl()));
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderName()
     {
         return 'MIT Media Lab';

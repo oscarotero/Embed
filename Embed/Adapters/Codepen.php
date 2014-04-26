@@ -9,6 +9,9 @@ use Embed\Request;
 
 class Codepen extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         return $request->match(array(
@@ -16,6 +19,10 @@ class Codepen extends Webpage implements AdapterInterface
         ));
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         $embed_url = str_replace('/pen/', '/embed/', $this->getUrl());
@@ -23,6 +30,10 @@ class Codepen extends Webpage implements AdapterInterface
         return Viewers::iframe($embed_url, 600, 300);
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderName()
     {
         return 'CodePen';

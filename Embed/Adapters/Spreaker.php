@@ -8,6 +8,9 @@ use Embed\Viewers;
 
 class Spreaker extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         $dom = $this->request->getHtmlContent();

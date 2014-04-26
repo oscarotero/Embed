@@ -9,6 +9,11 @@ use Embed\Request;
 
 class OEmbed extends Provider
 {
+    /**
+     * Constructor
+     * 
+     * @param Request $request
+     */
     public function __construct(Request $request)
     {
         $format = (($request->getExtension() === 'xml') || ($request->getParameter('format') === 'xml')) ? 'xml' : 'json';
@@ -34,16 +39,34 @@ class OEmbed extends Provider
 
     }
 
+
+    /**
+     * Gets the title
+     * 
+     * @return string|null
+     */
     public function getTitle()
     {
         return $this->get('title');
     }
 
+
+    /**
+     * Gets the description
+     * 
+     * @return string|null
+     */
     public function getDescription()
     {
         return $this->get('description');
     }
 
+
+    /**
+     * Gets the type
+     * 
+     * @return string|null
+     */
     public function getType()
     {
         $type = $this->get('type');
@@ -64,11 +87,23 @@ class OEmbed extends Provider
         }
     }
 
+
+    /**
+     * Gets the code
+     * 
+     * @return string|null
+     */
     public function getCode()
     {
         return $this->get('html');
     }
 
+
+    /**
+     * Gets the url
+     * 
+     * @return string|null
+     */
     public function getUrl()
     {
         if ($this->getType() === 'photo') {
@@ -78,26 +113,55 @@ class OEmbed extends Provider
         return $this->get('url') ?: $this->get('web_page');
     }
 
+
+    /**
+     * Gets the author name
+     * 
+     * @return string|null
+     */
     public function getAuthorName()
     {
         return $this->get('author_name');
     }
 
+
+    /**
+     * Gets the author url
+     * 
+     * @return string|null
+     */
     public function getAuthorUrl()
     {
         return $this->get('author_url');
     }
 
+
+    /**
+     * Gets the provider name
+     * 
+     * @return string|null
+     */
     public function getProviderName()
     {
         return $this->get('provider_name');
     }
 
+
+    /**
+     * Gets the provider url
+     * 
+     * @return string|null
+     */
     public function getProviderUrl()
     {
         return $this->get('provider_url');
     }
 
+    /**
+     * Gets the image
+     * 
+     * @return string|null
+     */
     public function getImage()
     {
         if ($this->getType() === 'photo') {
@@ -107,11 +171,23 @@ class OEmbed extends Provider
         return $this->get('thumbnail_url');
     }
 
+
+    /**
+     * Gets the code width
+     * 
+     * @return integer|null
+     */
     public function getWidth()
     {
         return $this->get('width');
     }
 
+
+    /**
+     * Gets the code height
+     * 
+     * @return integer|null
+     */
     public function getHeight()
     {
         return $this->get('height');

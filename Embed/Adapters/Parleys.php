@@ -8,12 +8,19 @@ use Embed\Request;
 
 class Parleys extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         // http://www.parleys.com/#st=5&id=2912&sl=0
         return $request->match(['*.parleys.com/#*']);
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getUrl()
     {
         $fragments = $this->request->getFragmentArray();
@@ -29,6 +36,10 @@ class Parleys extends Webpage implements AdapterInterface
         return parent::getUrl();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderIcon()
     {
         return 'http://parleys.com/favicon.ico';

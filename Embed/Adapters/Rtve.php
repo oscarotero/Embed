@@ -6,6 +6,9 @@ namespace Embed\Adapters;
 
 class Rtve extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         $dom = $this->request->getHtmlContent();
@@ -17,6 +20,10 @@ class Rtve extends Webpage implements AdapterInterface
         return parent::getCode();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDescription()
     {
         $dom = $this->request->getHtmlContent();

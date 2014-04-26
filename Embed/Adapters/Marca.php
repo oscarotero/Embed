@@ -9,6 +9,9 @@ use Embed\Viewers;
 
 class Marca extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         return $request->match(array(
@@ -16,6 +19,10 @@ class Marca extends Webpage implements AdapterInterface
         ));
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         if (($code = parent::getCode())) {

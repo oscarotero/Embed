@@ -10,6 +10,11 @@ use Embed\Viewers;
 
 class TwitterCards extends Provider
 {
+    /**
+     * Constructor
+     * 
+     * @param Request $request
+     */
     public function __construct(Request $request)
     {
         if (!($html = $request->getHtmlContent())) {
@@ -28,16 +33,34 @@ class TwitterCards extends Provider
         }
     }
 
+
+    /**
+     * Gets the title
+     * 
+     * @return string|null
+     */
     public function getTitle()
     {
         return $this->get('title');
     }
 
+
+    /**
+     * Gets the description
+     * 
+     * @return string|null
+     */
     public function getDescription()
     {
         return $this->get('description');
     }
 
+
+    /**
+     * Gets the url type
+     * 
+     * @return string|null
+     */
     public function getType()
     {
         $type = $this->get('card');
@@ -58,6 +81,12 @@ class TwitterCards extends Provider
         }
     }
 
+
+    /**
+     * Gets the embedded code
+     * 
+     * @return string|null
+     */
     public function getCode()
     {
         if ($this->has('player')) {
@@ -65,26 +94,56 @@ class TwitterCards extends Provider
         }
     }
 
+
+    /**
+     * Gets the url
+     * 
+     * @return string|null
+     */
     public function getUrl()
     {
         return $this->get('url');
     }
 
+
+    /**
+     * Gets the author name
+     * 
+     * @return string|null
+     */
     public function getAuthorName()
     {
         return $this->get('creator');
     }
 
+
+    /**
+     * Gets the image
+     * 
+     * @return string|null
+     */
     public function getImage()
     {
         return $this->get('image');
     }
 
+
+    /**
+     * Gets the code width
+     * 
+     * @return integer|null
+     */
     public function getWidth()
     {
         return $this->get('player:width');
     }
 
+
+    /**
+     * Gets the code height
+     * 
+     * @return integer|null
+     */
     public function getHeight()
     {
         return $this->get('player:height');

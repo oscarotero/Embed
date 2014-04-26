@@ -8,6 +8,9 @@ use Embed\Request;
 
 class Github extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         return $request->match(array(
@@ -15,6 +18,10 @@ class Github extends Webpage implements AdapterInterface
         ));
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         $url = $this->getUrl();
@@ -26,16 +33,28 @@ class Github extends Webpage implements AdapterInterface
         return '<script src="'.$url.'.js"></script>';
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getUrl()
     {
         return $this->request->getUrl();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderName()
     {
         return 'Gist';
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderUrl()
     {
         return 'https://gist.github.com';

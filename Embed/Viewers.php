@@ -6,6 +6,14 @@ namespace Embed;
 
 class Viewers
 {
+    /**
+     * Creates an html element
+     * 
+     * @param string $name  Element name
+     * @param array  $attrs Element attributes
+     * 
+     * @return string
+     */
     private static function element($name, array $attrs)
     {
         $str = "<$name";
@@ -23,6 +31,17 @@ class Viewers
         return "$str>";
     }
 
+
+    /**
+     * Creates a <video> element
+     * 
+     * @param string        $poster  Poster attribute
+     * @param string|array  $sources Video sources
+     * @param integer       $width   Width attribute
+     * @param integer       $height  Height attribute
+     * 
+     * @return string
+     */
     public static function videoHtml($poster, $sources, $width = 0, $height = 0)
     {
         $code = self::element('video', array(
@@ -39,6 +58,14 @@ class Viewers
         return $code.'</video>';
     }
 
+
+    /**
+     * Creates an <audio> element
+     * 
+     * @param string|array  $sources Audio sources
+     * 
+     * @return string
+     */
     public static function audioHtml($sources)
     {
         $code = "<audio controls>";
@@ -50,6 +77,17 @@ class Viewers
         return $code.'</audio>';
     }
 
+
+    /**
+     * Creates an <img> element
+     * 
+     * @param string  $src    Image source attribute
+     * @param string  $alt    Alt attribute
+     * @param integer $width  Width attribute
+     * @param integer $height Height attribute
+     * 
+     * @return string
+     */
     public static function imageHtml($src, $alt = '', $width = 0, $height = 0)
     {
         return self::element('img', array(
@@ -60,6 +98,17 @@ class Viewers
         ));
     }
 
+
+    /**
+     * Creates an <iframe> element
+     * 
+     * @param string  $src          Iframe source attribute
+     * @param integer $width        Width attribute
+     * @param integer $height       Height attribute
+     * @param integer $extra_styles Extra css styles
+     * 
+     * @return string
+     */
     public static function iframe($src, $width = 0, $height = 0, $extra_styles ='')
     {
         $width = $width ? (is_int($width) ? $width.'px' : $width) : '600px';
@@ -73,6 +122,14 @@ class Viewers
         )).'</iframe>';
     }
 
+
+    /**
+     * Creates an <iframe> element with a google viewer
+     * 
+     * @param string  $src  The file loaded by the viewer (pdf, doc, etc)
+     * 
+     * @return string
+     */
     public static function google($src)
     {
         return self::iframe('http://docs.google.com/viewer?'.http_build_query(array(
@@ -81,6 +138,16 @@ class Viewers
         )), 600, 600);
     }
 
+
+    /**
+     * Creates a flash element
+     * 
+     * @param string  $src    The swf file source
+     * @param integer $width  Width attribute
+     * @param integer $height Height attribute
+     * 
+     * @return string
+     */
     public static function flash($src, $width = 0, $height = 0)
     {
         $code = self::element('object', array(

@@ -14,6 +14,10 @@ class Facebook extends Webpage implements AdapterInterface
 
     private $isPost = false;
 
+
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         return $request->match(array(
@@ -21,6 +25,14 @@ class Facebook extends Webpage implements AdapterInterface
         ));
     }
 
+
+    /**
+     * Returns the id found in an facebook url
+     * 
+     * @param string $url
+     * 
+     * @return null|string
+     */
     private function getId($url)
     {
         $url = new Url($url);
@@ -58,6 +70,10 @@ class Facebook extends Webpage implements AdapterInterface
         return $url->getDirectory(0);
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     protected function initProviders(Request $request)
     {
         parent::initProviders($request);
@@ -78,16 +94,28 @@ class Facebook extends Webpage implements AdapterInterface
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getTitle()
     {
         return $this->api->get('name') ?: parent::getTitle();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDescription()
     {
         return $this->api->get('description') ?: $this->api->get('about') ?: parent::getDescription();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getUrl()
     {
         if ($this->isPost) {
@@ -97,6 +125,10 @@ class Facebook extends Webpage implements AdapterInterface
         return $this->api->get('url') ?: $this->request->getStartingUrl();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         if ($this->isPost) {
@@ -115,16 +147,28 @@ EOT;
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderName()
     {
         return 'Facebook';
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getAuthorName()
     {
         return $this->api->get('username') ?: parent::getAuthorName();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getSource()
     {
         $id = $this->api->get('id');
@@ -134,6 +178,10 @@ EOT;
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getImages()
     {
         $images = parent::getImages();

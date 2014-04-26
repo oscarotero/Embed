@@ -35,11 +35,19 @@ class File extends Adapter implements AdapterInterface
         'application/octet-stream' => array('rich', 'google')
     );
 
+
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         return isset(self::$contentTypes[$request->getMimeType()]);
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     protected function initProviders(Request $request)
     {
         $this->request = $request;
@@ -49,11 +57,19 @@ class File extends Adapter implements AdapterInterface
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getType()
     {
         return self::$contentTypes[$this->request->getMimeType()][0];
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         switch (self::$contentTypes[$this->request->getMimeType()][1]) {
@@ -68,6 +84,10 @@ class File extends Adapter implements AdapterInterface
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getImages()
     {
         if ($this->getType() === 'photo') {
@@ -77,6 +97,10 @@ class File extends Adapter implements AdapterInterface
         return array();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderIcons()
     {
         return array(

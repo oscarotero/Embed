@@ -41,8 +41,17 @@ abstract class Adapter
         'embedlyKey' => null
     );
 
+    /**
+     * Initializes all providers used in this adapter (oembed, opengraph, etc)
+     * 
+     * @param Request $request
+     */
     abstract protected function initProviders (Request $request);
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function __construct(Request $request, array $options = null)
     {
         if ($options !== null) {
@@ -56,6 +65,15 @@ abstract class Adapter
         }
     }
 
+
+    /**
+     * Magic method to execute and save the url data.
+     * For example, on call $this->title, executes $this->getTitle()
+     * 
+     * @param string $name
+     * 
+     * @return mixed
+     */
     public function __get($name)
     {
         $method = 'get'.$name;
@@ -65,6 +83,15 @@ abstract class Adapter
         }
     }
 
+
+    /**
+     * Search and returns data from the providers
+     * 
+     * @param string  $name        The data name (title, description, image, etc)
+     * @param boolean $returnFirst If it's true, returns the first value found, else returns the most popular value
+     * 
+     * @return mixed
+     */
     public function getFromProviders($name, $returnFirst = true)
     {
         $method = 'get'.$name;
@@ -92,6 +119,15 @@ abstract class Adapter
         return $current;
     }
 
+
+    /**
+     * Search and returns url type data from the providers (image, providerIcon, providerUrl, etc)
+     * If the url found is relative, transforms it to absolute
+     * 
+     * @param string $name The data name
+     * 
+     * @return null|string
+     */
     public function getUrlFromProviders($name)
     {
         $method = 'get'.$name;
@@ -103,36 +139,64 @@ abstract class Adapter
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getTitle()
     {
         return $this->getFromProviders('title') ?: $this->request->getUrl();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDescription()
     {
         return $this->getFromProviders('description');
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getUrl()
     {
         return $this->getUrlFromProviders('url') ?: $this->request->getUrl();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getSource()
     {
         return $this->getUrlFromProviders('source');
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getAuthorName()
     {
         return $this->getFromProviders('authorName');
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getAuthorUrl()
     {
         return $this->getUrlFromProviders('authorUrl');
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getAspectRatio()
     {
         $width = $this->width;
@@ -143,6 +207,10 @@ abstract class Adapter
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getImage()
     {
         foreach ($this->images as $src) {
@@ -165,6 +233,10 @@ abstract class Adapter
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderIcon()
     {
         if ($this->options['getBiggerIcon']) {
@@ -186,31 +258,55 @@ abstract class Adapter
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderName()
     {
         return $this->getFromProviders('providerName') ?: $this->request->getDomain();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getProviderUrl()
     {
         return $this->getUrlFromProviders('providerUrl') ?: ($this->request->getScheme().'://'.$this->request->getDomain(true));
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getImageWidth()
     {
         return null;
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getImageHeight()
     {
         return null;
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getWidth()
     {
         return $this->getFromProviders('width');
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getHeight()
     {
         return $this->getFromProviders('height');

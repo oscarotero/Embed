@@ -12,6 +12,10 @@ class Archive extends Webpage implements AdapterInterface
 {
     public $api;
 
+
+    /**
+     * {@inheritDoc}
+     */
     public static function check(Request $request)
     {
         return $request->match(array(
@@ -19,6 +23,10 @@ class Archive extends Webpage implements AdapterInterface
         ));
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     protected function initProviders(Request $request)
     {
         parent::initProviders($request);
@@ -33,6 +41,12 @@ class Archive extends Webpage implements AdapterInterface
         }
     }
 
+
+    /**
+     * Gets a metadata value from the arquive.org's api
+     * 
+     * @param string $key
+     */
     private function getMetadata($key)
     {
         if (($metadata = $this->api->get('metadata', $key)) && isset($metadata[0])) {
@@ -40,16 +54,28 @@ class Archive extends Webpage implements AdapterInterface
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getTitle()
     {
         return $this->getMetadata('title') ?: parent::getTitle();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDescription()
     {
         return $this->getMetadata('description') ?: parent::getDescription();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getType()
     {
         switch ($this->getMetadata('mediatype')) {
@@ -66,6 +92,10 @@ class Archive extends Webpage implements AdapterInterface
         return parent::getType();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCode()
     {
         switch ($this->getMetadata('mediatype')) {
@@ -86,11 +116,19 @@ class Archive extends Webpage implements AdapterInterface
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getAuthorName()
     {
         return $this->getMetadata('creator') ?: parent::getAuthorName();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public function getImages()
     {
         $images = array();

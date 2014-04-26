@@ -10,6 +10,13 @@ class UrlJsRedirect
         'google' => 'https?://www.google.com/url*'
     );
 
+    /**
+     * Resolve the url redirection
+     * 
+     * @param Url $url Url to resolve
+     * 
+     * @return boolean True if the url has changed, false if not
+     */
     public static function resolve(Url $url)
     {
         foreach (static::$urls as $method => $matches) {
@@ -23,6 +30,12 @@ class UrlJsRedirect
         return false;
     }
 
+
+    /**
+     * Resolve a google redirection url
+     * 
+     * @param Url $url
+     */
     protected static function google(Url $url)
     {
         if (($urlString = $url->getParameter('url'))) {
