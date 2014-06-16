@@ -105,7 +105,6 @@ class Html extends Provider
             }
         }
 
-        //img tags
         //Search the main element:
         $content = $html->getElementsByTagName('main'); //<main> element
 
@@ -137,10 +136,30 @@ class Html extends Provider
                 $src = new Url($img->getAttribute('src'));
 
                 //Check whether the image is in the same domain
-
-                if (!$src->getDomain() || $src->getDomain() === $domain) {
-                    $images[] = $src->getUrl();
+                if ($src->getDomain() && $src->getDomain() !== $domain) {
+                    continue;
                 }
+
+                //Check whether the image is inside an external link
+                $parent = $img->parentNode;
+
+                while ($parent && isset($parent->tagName)) {
+                    if ($parent->tagName === 'a') {
+                        if ($parent->hasAttribute('href')) {
+                            $href = new Url($parent->getAttribute('href'));
+                            
+                            if ($href->getDomain() && $src->getDomain() !== $domain) {
+                                continue 2;
+                            }
+                        }
+
+                        break;
+                    }
+
+                    $parent = $parent->parentNode;
+                }
+                
+                $images[] = $src->getUrl();
             }
         }
 
