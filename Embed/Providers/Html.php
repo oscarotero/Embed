@@ -135,12 +135,18 @@ class Html extends Provider
             if ($img->hasAttribute('src')) {
                 $src = new Url($img->getAttribute('src'));
 
-                //Check whether the image is in the same domain
-                if ($src->getDomain() && $src->getDomain() !== $domain) {
+                //Is src relative?
+                if (!$src->getDomain()) {
+                    $images[] = $src->getUrl();
                     continue;
                 }
 
-                //Check whether the image is inside an external link
+                //Avoid external images
+                if ($src->getDomain() !== $domain) {
+                    continue;
+                }
+
+                //Avoid images in external links
                 $parent = $img->parentNode;
 
                 while ($parent && isset($parent->tagName)) {
