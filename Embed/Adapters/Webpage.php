@@ -34,8 +34,10 @@ class Webpage extends Adapter implements AdapterInterface
         );
 
         if ($this->providers['Html']->get('oembed')) {
-            $this->providers['OEmbed'] = new Providers\OEmbed(new Request($request->getAbsolute($this->providers['Html']->get('oembed'))));
-        } elseif (($oEmbed = Providers\OEmbedImplementations::create($request))) {
+            $request = new Request($request->getAbsolute($this->providers['Html']->get('oembed')));
+            $request->setParameter($this->options['oembedParameters']);
+            $this->providers['OEmbed'] = new Providers\OEmbed($request);
+        } elseif (($oEmbed = Providers\OEmbedImplementations::create($request, $this->options['oembedParameters']))) {
             $this->providers['OEmbed'] = $oEmbed;
         } elseif ($this->options['embedlyKey'] && ($oEmbed = Providers\Embedly::create($request, $this->options['embedlyKey']))) {
             $this->providers['OEmbed'] = $oEmbed;

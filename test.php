@@ -116,7 +116,7 @@ include('Embed/autoloader.php');
     <?php
     function getOption($name, $default = null)
     {
-        return isset($_GET['options'][$name]) ? $_GET['options'][$name] : $default;
+        return htmlspecialchars(isset($_GET['options'][$name]) ? $_GET['options'][$name] : $default, ENT_QUOTES, 'UTF-8');
     }
     function getResolverOption($name, $default = null)
     {
@@ -139,6 +139,7 @@ include('Embed/autoloader.php');
                 <label><span>Facebook access token:</span> <input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label>
                 <label><span>Embedly key:</span> <input type="text" name="options[embedlyKey]" value="<?php echo getOption('embedlyKey'); ?>"></label>
                 <label><span>Soundcloud client id:</span> <input type="text" name="options[soundcloudClientId]" value="<?php echo getOption('soundcloudClientId', 'YOUR_CLIENT_ID'); ?>"></label>
+                <label><span>oEmbed extra Parameters (in json format):</span> <input type="text" name="options[oembedParameters]" value="<?php echo getOption('oembedParameters'); ?>"></label>
             </fieldset>
             <fieldset class="options">
                 <h2>Request resolver options:</h2>
@@ -161,6 +162,11 @@ include('Embed/autoloader.php');
         <section>
             <?php
             $options = isset($_GET['options']) ? (array) $_GET['options'] : array();
+
+            if (isset($options['oembedParameters'])) {
+                $options['oembedParameters'] = $options['oembedParameters'] ? json_decode($options['oembedParameters'], true) : array();
+            }
+
             $resolverOptions = isset($_GET['resolver']) ? (array) $_GET['resolver'] : array();
             
             Embed\Request::setResolverConfig($resolverOptions);
@@ -220,7 +226,10 @@ include('Embed/autoloader.php');
                 </tr>
                 <tr>
                     <th>Embed code</th>
-                    <td><?php echo $info->code; ?></td>
+                    <td>
+                        <?php echo $info->code; ?>
+                        <pre><?php echo htmlspecialchars($info->code, ENT_IGNORE); ?></pre>
+                    </td>
                 </tr>
                 <tr>
                     <th>Url</th>

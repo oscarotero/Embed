@@ -18,7 +18,7 @@ class OEmbedImplementations extends Provider
      * 
      * @return null|OEmbed
      */
-    public static function create(Url $url)
+    public static function create(Url $url, array $extraParameters = array())
     {
         //Search the oembed provider using the domain
         $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $url->getDomain()))));
@@ -32,6 +32,10 @@ class OEmbedImplementations extends Provider
 
             if ($url->match($settings['patterns'])) {
                 $endPoint = new Request($settings['endPoint']);
+
+                if ($extraParameters) {
+                    $endPoint->setParameter($extraParameters);
+                }
 
                 if (empty($settings['params']) === false) {
                     $endPoint->setParameter($settings['params']);

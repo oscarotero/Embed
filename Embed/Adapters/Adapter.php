@@ -38,7 +38,8 @@ abstract class Adapter
         'getBiggerIcon' => false,
         'facebookAccessToken' => null,
         'soundcloudClientId' => null,
-        'embedlyKey' => null
+        'embedlyKey' => null,
+        'oembedParameters' => array()
     );
 
     /**
