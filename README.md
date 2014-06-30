@@ -58,6 +58,7 @@ Available options
 * facebookAccessToken (string): Used to get info from facebook pages when these pages are not public and a access token is required
 * soundcloudClientId (string): Used to get info of links from soundcloud. By default, it uses "YOUR_CLIENT_ID" that its a valid client id :P
 * embedlyKey (string): If it's defined, get info from embedly service (only for know supported services and if the page doesn't have its own oembed service)
+* oembedParameters (array): Extra GET parameters to the oembed requests.
 
 ```php
 $options = array(
