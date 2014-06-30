@@ -3,9 +3,9 @@ include_once dirname(__DIR__).'/Embed/autoloader.php';
 
 class EmbedTest extends PHPUnit_Framework_TestCase
 {
-    private function checkUrl($url, array $values)
+    private function checkUrl($url, array $values, array $options = null)
     {
-        $info = Embed\Embed::create($url);
+        $info = Embed\Embed::create($url, $options);
 
         foreach ($values as $name => $value) {
             $this->assertEquals($value, $info->$name);
@@ -53,22 +53,6 @@ class EmbedTest extends PHPUnit_Framework_TestCase
         );
 
         $this->checkUrl(
-            'http://www.usatoday.com/story/tech/2013/07/19/microsoft-stock-plummets-12/2569413/',
-            array(
-                'title' => 'Microsoft stock plummets 11%',
-                'description' => 'Investors grow skittish over PC prospects.',
-                'image' => 'http://www.gannett-cdn.com/-mm-/fe06d222bdd27d15d6ac2b2c11dd7a17f46ceda0/c=141-0-3330-2406&r=x117&c=155x114/local/-/media/USATODAY/GenericImages/2013/07/18/1374181578000-B01-MONEYLINE-BALLMER-12-56733869.JPG',
-                'imageWidth' => 155,
-                'imageHeight' => 114,
-                'url' => 'http://www.usatoday.com/story/tech/2013/07/19/microsoft-stock-plummets-12/2569413/',
-                'type' => 'link',
-                'providerName' => 'usatoday',
-                'providerUrl' => 'http://usatoday.com',
-                'providerIcon' => 'http://www.gannett-cdn.com/sites/usatoday/images/favicon.png'
-            )
-        );
-
-        $this->checkUrl(
             'http://www.dailymotion.com/video/xy0wd_chats-paresseux',
             array(
                 'title' => 'Chats paresseux',
@@ -81,6 +65,23 @@ class EmbedTest extends PHPUnit_Framework_TestCase
                 'providerName' => 'Dailymotion',
                 'providerUrl' => 'http://www.dailymotion.com',
                 'providerIcon' => 'http://static1.dmcdn.net/images/apple-touch-icon.png.vcbf86c6fe83fbbe11'
+            )
+        );
+
+        $this->checkUrl(
+            'https://twitter.com/pepephone/status/436461658601713664',
+            array(
+                'code' => '<blockquote class="twitter-tweet"><p>RT <a href="https://twitter.com/PabloHerreros">@PabloHerreros</a> Pepephone rompe la baraja - <a href="http://t.co/mFn7mcB1vy">http://t.co/mFn7mcB1vy</a></p>&mdash; pepephone (@pepephone) <a href="https://twitter.com/pepephone/statuses/436461658601713664">February 20, 2014</a></blockquote>'."\n".'<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>'
+            )
+        );
+
+        $this->checkUrl(
+            'https://twitter.com/pepephone/status/436461658601713664',
+            array(
+                'code' => '<blockquote class="twitter-tweet"><p>RT <a href="https://twitter.com/PabloHerreros">@PabloHerreros</a> Pepephone rompe la baraja - <a href="http://t.co/mFn7mcB1vy">http://t.co/mFn7mcB1vy</a></p>&mdash; pepephone (@pepephone) <a href="https://twitter.com/pepephone/statuses/436461658601713664">February 20, 2014</a></blockquote>'
+            ),
+            array(
+                'oembedParameters' => array('omit_script' => true)
             )
         );
     }
