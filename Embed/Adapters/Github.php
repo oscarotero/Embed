@@ -5,6 +5,7 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
+use Embed\Providers\Provider;
 
 class Github extends Webpage implements AdapterInterface
 {
@@ -22,24 +23,27 @@ class Github extends Webpage implements AdapterInterface
     /**
      * {@inheritDoc}
      */
-    public function getCode()
+    protected function initProviders(Request $request)
     {
-        $url = $this->getUrl();
+        parent::initProviders($request);
 
-        if (substr($url, -1) === '/') {
-            $url = substr($url, 0, -1);
+        $this->api = new Provider();
+        $api = new Request($request->getUrl().'.json');
+
+        if (($json = $api->getJsonContent())) {
+            $this->api->set($json);
         }
-
-        return '<script src="'.$url.'.js"></script>';
     }
 
 
     /**
      * {@inheritDoc}
      */
-    public function getUrl()
+    public function getCode()
     {
-        return $this->request->getUrl();
+        if (($code = $this->api->get('div')) && ($stylesheet = $this->api->get('stylesheet'))) {
+            return  '<link href="'.$stylesheet.'" rel="stylesheet">'.$code;
+        }
     }
 
 
