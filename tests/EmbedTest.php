@@ -110,4 +110,15 @@ class EmbedTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('third', $url->getDirectory(2));
         $this->assertNull($url->getDirectory(3));
     }
+
+    public function testRedirections()
+    {
+        $this->checkUrl(
+            'https://translate.google.com/translate?sl=de&tl=en&js=y&prev=_t&hl=en&ie=UTF-8&u=http%3A%2F%2Fwww.heise.de%2Fnewsticker%2Fmeldung%2FXKeyscore-Quellcode-Tor-Nutzer-werden-von-der-NSA-als-Extremisten-markiert-und-ueberwacht-2248328.html&edit-text=',
+            array(
+                'title' => 'XKeyscore-Quellcode: Tor-Nutzer werden von der NSA als Extremisten markiert und überwacht',
+                'image' => 'http://www.heise.de/imgs/18/1/2/6/2/0/9/3/urn-newsml-dpa-com-20090101-140212-99-03856_large_4_3-2f16ffb85099e6ad.jpeg'
+            )
+        );
+    }
 }

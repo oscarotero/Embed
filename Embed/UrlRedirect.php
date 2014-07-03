@@ -1,14 +1,16 @@
 <?php
 /**
- * Class to resolve javascript based redirections
+ * Class to resolve some specific redirections
  */
-namespace Embed\RequestResolvers;
+namespace Embed;
 
-class UrlJsRedirect
+class UrlRedirect
 {
     protected static $urls = array(
-        'google' => 'https?://www.google.com/url*'
+        'google' => 'https?://www.google.com/url*',
+        'googleTranslator' => 'https?://translate.google.com/translate*'
     );
+
 
     /**
      * Resolve the url redirection
@@ -39,6 +41,19 @@ class UrlJsRedirect
     protected static function google(Url $url)
     {
         if (($urlString = $url->getParameter('url'))) {
+            $url->setUrl($urlString);
+        }
+    }
+
+
+    /**
+     * Resolve a google translation url
+     * 
+     * @param Url $url
+     */
+    protected static function googleTranslator(Url $url)
+    {
+        if (($urlString = $url->getParameter('u'))) {
             $url->setUrl($urlString);
         }
     }
