@@ -149,10 +149,10 @@ class Url
 
             default:
                 if ($first_level) {
-                    return ($host[1] === 'co') ? ($host[2].'.'.$host[1].'.'.$host[0]) : ($host[1].'.'.$host[0]);
+                    return ($host[1] === 'co' || $host[1] === 'com') ? ($host[2].'.'.$host[1].'.'.$host[0]) : ($host[1].'.'.$host[0]);
                 }
 
-                return ($host[1] === 'co') ? $host[2] : $host[1];
+                return ($host[1] === 'co' || $host[1] === 'com') ? $host[2] : $host[1];
         }
     }
 
