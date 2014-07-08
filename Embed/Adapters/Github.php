@@ -35,6 +35,14 @@ class Github extends Webpage implements AdapterInterface
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getType()
+    {
+        return $this->getCode() ? 'rich' : 'link';
+    }
+
 
     /**
      * {@inheritDoc}
