@@ -60,10 +60,14 @@ class Facebook extends Webpage implements AdapterInterface
         }
 
         if ($url->getDirectory(1) === 'posts') {
+            $this->isPost = true;
+
             return $url->getDirectory(2);
         }
 
         if ($url->getDirectory(2) === 'posts') {
+            $this->isPost = true;
+
             return $url->getDirectory(3);
         }
 
