@@ -8,7 +8,8 @@ class UrlRedirect
 {
     protected static $urls = array(
         'google' => 'https?://www.google.com/url*',
-        'googleTranslator' => 'https?://translate.google.com/translate*'
+        'googleTranslator' => 'https?://translate.google.com/translate*',
+        'hashBang' => '*#!*'
     );
 
 
@@ -55,6 +56,19 @@ class UrlRedirect
     {
         if (($urlString = $url->getParameter('u'))) {
             $url->setUrl($urlString);
+        }
+    }
+
+
+    /**
+     * Resolve an url with hashbang
+     * 
+     * @param Url $url
+     */
+    protected static function hashBang(Url $url)
+    {
+        if (($path = preg_replace('|^(/?!)|', '', $url->getFragment()))) {
+            $url->setPath($url->getPath().$path);
         }
     }
 }

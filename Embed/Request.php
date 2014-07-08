@@ -68,8 +68,7 @@ class Request extends Url
             $this->resolver->setConfig(self::$resolverConfig);
         }
 
-        $this->parseUrl($this->resolver->getLatestUrl());
-
+        $this->parseUrl($url);
         $this->updateUrl();
     }
 
@@ -82,6 +81,19 @@ class Request extends Url
     public function getUrl()
     {
         return $this->resolver->getLatestUrl();
+    }
+
+
+    /**
+     * Check if the url match with a specific pattern. The patterns only accepts * and ?
+     *
+     * @param string|array $patterns The pattern or an array with various patterns
+     *
+     * @return boolean True if the url match, false if not
+     */
+    public function match($patterns)
+    {
+        return static::urlMatches($this->getStartingUrl(), $patterns) || static::urlMatches($this->getUrl(), $patterns);
     }
 
 
@@ -289,9 +301,7 @@ class Request extends Url
     {
         $url = $this->buildUrl();
 
-        if (($this->resolver->getStartingUrl() !== $url) && ($this->resolver->getLatestUrl() !== $url)) {
-            $this->resolver->setUrl($url);
-            $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
-        }
+        $this->resolver->setUrl($url);
+        $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
     }
 }

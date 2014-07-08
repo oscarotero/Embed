@@ -51,21 +51,7 @@ class Url
      */
     public function match($patterns)
     {
-        $url = $this->getUrl();
-
-        if (!is_array($patterns)) {
-            $patterns = array($patterns);
-        }
-
-        foreach ($patterns as $pattern) {
-            $pattern = str_replace(array('\\*', '\\?'), array('.+', '?'), preg_quote($pattern, '|'));
-
-            if (preg_match('|^'.$pattern.'$|i', $url)) {
-                return true;
-            }
-        }
-
-        return false;
+        return static::urlMatches($this->getUrl(), $patterns);
     }
 
 
@@ -377,5 +363,30 @@ class Url
         }
 
         return $this->getScheme().'://'.$this->getHost().$this->getPath().$url;
+    }
+
+
+    /**
+     * Check if the url match with a specific pattern. The patterns only accepts * and ?
+     *
+     * @param string|array $patterns The pattern or an array with various patterns
+     *
+     * @return boolean True if the url match, false if not
+     */
+    protected static function urlMatches($url, $patterns)
+    {
+        if (!is_array($patterns)) {
+            $patterns = array($patterns);
+        }
+
+        foreach ($patterns as $pattern) {
+            $pattern = str_replace(array('\\*', '\\?'), array('.+', '?'), preg_quote($pattern, '|'));
+
+            if (preg_match('|^'.$pattern.'$|i', $url)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
