@@ -17,6 +17,6 @@ class Rdio extends \Embed\Providers\OEmbedImplementationAbstract
 	 */
     public static function getPatterns()
     {
-        return array('http://www.rdio.com/*');
+        return array('https?://www.rdio.com/*');
     }
 }
