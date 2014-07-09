@@ -19,9 +19,6 @@ class Embed
             throw new \InvalidArgumentException("Embed::create only accepts instances of Embed\\Request or strings");
         }
 
-        //Resolve special redirections
-        UrlRedirect::resolve($url);
-
         if (!$url->isValid()) {
             return false;
         }

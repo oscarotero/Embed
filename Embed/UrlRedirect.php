@@ -16,21 +16,23 @@ class UrlRedirect
     /**
      * Resolve the url redirection
      * 
-     * @param Url $url Url to resolve
+     * @param string $oldUrl Url to resolve
      * 
-     * @return boolean True if the url has changed, false if not
+     * @return string The new url
      */
-    public static function resolve(Url $url)
+    public static function resolve($oldUrl)
     {
+        $url = new Url($oldUrl);
+
         foreach (static::$urls as $method => $matches) {
             if ($url->match($matches)) {
                 static::$method($url);
 
-                return true;
+                break;
             }
         }
 
-        return false;
+        return $url->getUrl();
     }
 
 

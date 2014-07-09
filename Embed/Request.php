@@ -61,14 +61,14 @@ class Request extends Url
         if ($url instanceof RequestResolvers\RequestResolverInterface) {
             $this->resolver = $url;
         } else {
-            $this->resolver = new self::$resolverClass($url);
+            $this->resolver = new self::$resolverClass(UrlRedirect::resolve($url));
         }
 
         if (self::$resolverConfig) {
             $this->resolver->setConfig(self::$resolverConfig);
         }
 
-        $this->parseUrl($url);
+        $this->parseUrl($this->getUrl());
         $this->updateUrl();
     }
 

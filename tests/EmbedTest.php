@@ -138,5 +138,14 @@ class EmbedTest extends PHPUnit_Framework_TestCase
                 'image' => 'http://www.heise.de/imgs/18/1/2/6/2/0/9/3/urn-newsml-dpa-com-20090101-140212-99-03856_large_4_3-2f16ffb85099e6ad.jpeg'
             )
         );
+
+
+        $info1 = Embed\Embed::create('http://rd.io/x/Q1IjXC8s');
+        $info2 = Embed\Embed::create('http://www.rdio.com/artist/Soundgarden/album/Superunknown/');
+        $this->assertEquals($info1->code, $info2->code);
+
+        $info1 = Embed\Embed::create('https://twitter.com/#!/twitter/status/99530515043983360');
+        $info2 = Embed\Embed::create('https://twitter.com/twitter/status/99530515043983360');
+        $this->assertEquals($info1->code, $info2->code);
     }
 }
