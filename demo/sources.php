@@ -1,4 +1,4 @@
-<?php include('Embed/autoloader.php'); ?>
+<?php include('../Embed/autoloader.php'); ?>
 
 <!DOCTYPE html>
 
