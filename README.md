@@ -107,7 +107,7 @@ Embed\Request::setDefaultResolver('MyCustomResolverClass', array(
 Online demo
 -----------
 
-http://oscarotero.com/embed/test.php
+http://oscarotero.com/embed/tests
 
 Contributors
 ------------
