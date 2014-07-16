@@ -42,7 +42,7 @@
     </head>
 
     <body>
-        <form action="test-sources.php" method="get">
+        <form action="sources.php" method="get">
             <fieldset>
                 <label>Url to test: <input type="url" name="url" autofocus placeholder="http://" value="<?php echo isset($_GET['url']) ? $_GET['url'] : ''; ?>"></label>
                 <button type="submit">Test</button>

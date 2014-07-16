@@ -125,7 +125,7 @@ include('Embed/autoloader.php');
     ?>
 
     <body>
-        <form action="test.php">
+        <form action="index.php">
             <fieldset class="main">
                 <label><span>Url to test:</span> <input type="url" name="url" autofocus placeholder="http://" value="<?php echo isset($_GET['url']) ? $_GET['url'] : ''; ?>"></label>
             </fieldset>
