@@ -24,8 +24,5 @@
 		"psr-0": {
 			"Embed": ""
 		}
-	},
-	"archive": {
-        "exclude": ["/demo"]
-    }
+	}
 }
