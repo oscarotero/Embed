@@ -283,6 +283,10 @@ abstract class Adapter
      */
     public function getImageWidth()
     {
+        if ($this->image && property_exists($this, 'imageWidth')) {
+            return $this->imageWidth;
+        }
+
         return null;
     }
 
@@ -292,6 +296,10 @@ abstract class Adapter
      */
     public function getImageHeight()
     {
+        if ($this->image && property_exists($this, 'imageHeight')) {
+            return $this->imageHeight;
+        }
+
         return null;
     }
 
