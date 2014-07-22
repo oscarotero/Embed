@@ -84,6 +84,14 @@ class EmbedTest extends PHPUnit_Framework_TestCase
                 'oembedParameters' => array('omit_script' => true)
             )
         );
+
+        $this->checkUrl(
+            'http://melihasweettimes.files.wordpress.com/2011/11/dsc01636.jpg',
+            array(
+                'imageWidth' => 1200,
+                'imageHeight' => 1600
+            )
+        );
     }
 
     public function testUrlParser()
