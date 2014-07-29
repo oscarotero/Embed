@@ -21,7 +21,7 @@ class EmbedTest extends PHPUnit_Framework_TestCase
             array(
                 'title' => 'Noisy kittens waiting for dinner!',
                 'description' => 'Disclaimer - 7 week old fostered kittens waiting on their dinner being prepared. They had been ill with cat flu and were just starting to get their appetite ...',
-                'image' => 'http://i1.ytimg.com/vi/eiHXASgRTcA/hqdefault.jpg',
+                'image' => 'http://i.ytimg.com/vi/eiHXASgRTcA/hqdefault.jpg',
                 'imageWidth' => 480,
                 'imageHeight' => 360,
                 'url' => 'http://www.youtube.com/watch?v=eiHXASgRTcA',
