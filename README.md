@@ -59,6 +59,7 @@ Available options
 * soundcloudClientId (string): Used to get info of links from soundcloud. By default, it uses "YOUR_CLIENT_ID" that its a valid client id :P
 * embedlyKey (string): If it's defined, get info from embedly service (only for know supported services and if the page doesn't have its own oembed service)
 * oembedParameters (array): Extra GET parameters to the oembed requests.
+* ignoreFacebookProvider (bool): If it's true, the facebook provider won't be used. This reduces the number of requests and prevent some false values (the facebook scrapping is not perfect).
 
 ```php
 $options = array(
