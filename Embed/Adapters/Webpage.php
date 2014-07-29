@@ -33,6 +33,10 @@ class Webpage extends Adapter implements AdapterInterface
             'OpenGraph' => new Providers\OpenGraph($request)
         );
 
+        if ($this->options['ignoreFacebookProvider']) {
+            unset($this->providers['Facebook']);
+        }
+
         if ($this->providers['Html']->get('oembed')) {
             $request = new Request($request->getAbsolute($this->providers['Html']->get('oembed')));
             $request->setParameter($this->options['oembedParameters']);

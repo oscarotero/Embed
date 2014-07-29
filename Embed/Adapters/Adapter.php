@@ -39,7 +39,8 @@ abstract class Adapter
         'facebookAccessToken' => null,
         'soundcloudClientId' => null,
         'embedlyKey' => null,
-        'oembedParameters' => array()
+        'oembedParameters' => array(),
+        'ignoreFacebookProvider' => false
     );
 
     /**

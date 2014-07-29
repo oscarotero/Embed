@@ -139,6 +139,7 @@ include('../Embed/autoloader.php');
                 <label><span>Facebook access token:</span> <input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label>
                 <label><span>Embedly key:</span> <input type="text" name="options[embedlyKey]" value="<?php echo getOption('embedlyKey'); ?>"></label>
                 <label><span>Soundcloud client id:</span> <input type="text" name="options[soundcloudClientId]" value="<?php echo getOption('soundcloudClientId', 'YOUR_CLIENT_ID'); ?>"></label>
+                <label><span>Ignore facebook provider</span> <input type="checkbox" name="options[ignoreFacebookProvider]" value="1" <?php echo getOption('ignoreFacebookProvider') ? 'checked' : ''; ?>></label>
                 <label><span>oEmbed extra Parameters (in json format):</span> <input type="text" name="options[oembedParameters]" value="<?php echo getOption('oembedParameters'); ?>"></label>
             </fieldset>
             <fieldset class="options">
@@ -154,7 +155,7 @@ include('../Embed/autoloader.php');
                 &nbsp;&nbsp;&nbsp;
                 <a href="https://github.com/oscarotero/Embed/">Get the source code from Github</a>
                 &nbsp;&nbsp; - &nbsp;&nbsp;
-                <a href="javascript:(function(){window.open('http://oscarotero.com/embed/test.php?url='+document.location)})();">or the bookmarklet</a>
+                <a href="javascript:(function(){window.open('http://oscarotero.com/embed/demo/index.php?url='+document.location)})();">or the bookmarklet</a>
             </fieldset>
         </form>
 
