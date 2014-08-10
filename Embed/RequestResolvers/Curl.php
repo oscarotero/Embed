@@ -6,6 +6,7 @@ namespace Embed\RequestResolvers;
 
 class Curl implements RequestResolverInterface
 {
+    protected $isBinary;
     protected $content;
     protected $result;
     protected $url;
@@ -156,41 +157,13 @@ class Curl implements RequestResolverInterface
         ));
 
         $this->content = '';
-        $isBinary = null;
-        $binaryContentTypes = self::$binaryContentTypes;
+        $this->isBinary = null;
 
-        curl_setopt($connection, CURLOPT_HEADERFUNCTION, function ($connection, $string) use (&$isBinary, $binaryContentTypes) {
-            if (($isBinary === null) && strpos($string, ':')) {
-                list($name, $value) = array_map('trim', explode(':', $string, 2));
-
-                if (strtolower($name) === 'content-type') {
-                    $isBinary = false;
-
-                    foreach ($binaryContentTypes as $regex) {
-                        if (preg_match($regex, strtolower($value))) {
-                            $isBinary = true;
-                            break;
-                        }
-                    }
-                }
-            }
-
-            return strlen($string);
-        });
-
-        $content &= $this->content;
-
-        curl_setopt($connection, CURLOPT_WRITEFUNCTION, function ($connection, $string) use (&$isBinary, &$content) {
-            if ($isBinary) {
-                return 0;
-            }
-
-            $content .= $string;
-
-            return strlen($string);
-        });
+        curl_setopt($connection, CURLOPT_HEADERFUNCTION, array($this, 'headerCallback'));
+        curl_setopt($connection, CURLOPT_WRITEFUNCTION, array($this, 'writeCallback'));
 
         curl_exec($connection);
+
         $this->result = curl_getinfo($connection);
 
         if ($this->content === false) {
@@ -215,5 +188,34 @@ class Curl implements RequestResolverInterface
                 $this->result['mime_type'] = $content_type;
             }
         }
+    }
+
+    protected function headerCallback ($connection, $string) {
+        if (($this->isBinary === null) && strpos($string, ':')) {
+            list($name, $value) = array_map('trim', explode(':', $string, 2));
+
+            if (strtolower($name) === 'content-type') {
+                $this->isBinary = false;
+
+                foreach (self::$binaryContentTypes as $regex) {
+                    if (preg_match($regex, strtolower($value))) {
+                        $this->isBinary = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return strlen($string);
+    }
+
+    protected function writeCallback ($connection, $string) {
+        if ($this->isBinary) {
+            return 0;
+        }
+
+        $this->content .= $string;
+
+        return strlen($string);
     }
 }
