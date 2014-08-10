@@ -30,7 +30,6 @@ class EmbedTest extends PHPUnit_Framework_TestCase
                 'authorUrl' => 'http://www.youtube.com/user/smshdchrb',
                 'providerName' => 'YouTube',
                 'providerUrl' => 'http://www.youtube.com/',
-                'providerIcon' => 'https://s.ytimg.com/yts/img/favicon-vfldLzJxy.ico',
                 'width' => 459,
                 'height' => 344
             )
