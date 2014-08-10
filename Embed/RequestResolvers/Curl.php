@@ -16,6 +16,12 @@ class Curl implements RequestResolverInterface
         'timeout' => 10,
     );
 
+    public static $binaryContentTypes = array(
+        '#image/.*#',
+        '#application/(pdf|x-download|zip|pdf|msword|vnd\\.ms|postscript|octet-stream)#',
+        '#application/x-zip.*#'
+    );
+
 
     /**
      * {@inheritdoc}
@@ -149,7 +155,39 @@ class Curl implements RequestResolverInterface
             CURLOPT_USERAGENT => $this->config['user_agent']
         ));
 
-        $this->content = curl_exec($connection);
+        $this->content = '';
+        $isBinary = null;
+
+        curl_setopt($connection, CURLOPT_HEADERFUNCTION, function ($connection, $string) use (&$isBinary) {
+            if (($isBinary === null) && strpos($string, ':')) {
+                list($name, $value) = array_map('trim', explode(':', $string, 2));
+
+                if (strtolower($name) === 'content-type') {
+                    $isBinary = false;
+
+                    foreach (self::$binaryContentTypes as $regex) {
+                        if (preg_match($regex, strtolower($value))) {
+                            $isBinary = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return strlen($string);
+        });
+
+        curl_setopt($connection, CURLOPT_WRITEFUNCTION, function ($connection, $string) use (&$isBinary) {
+            if ($isBinary) {
+                return 0;
+            }
+
+            $this->content .= $string;
+
+            return strlen($string);
+        });
+
+        curl_exec($connection);
         $this->result = curl_getinfo($connection);
 
         if ($this->content === false) {

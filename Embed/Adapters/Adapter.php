@@ -40,7 +40,7 @@ abstract class Adapter
         'soundcloudClientId' => null,
         'embedlyKey' => null,
         'oembedParameters' => array(),
-        'ignoreFacebookProvider' => false
+        'facebookProvider' => false
     );
 
     /**

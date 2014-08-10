@@ -28,13 +28,12 @@ class Webpage extends Adapter implements AdapterInterface
 
         $this->providers = array(
             'Html' => new Providers\Html($request),
-            'Facebook' => new Providers\Facebook($request),
             'TwitterCards' => new Providers\TwitterCards($request),
             'OpenGraph' => new Providers\OpenGraph($request)
         );
 
-        if ($this->options['ignoreFacebookProvider']) {
-            unset($this->providers['Facebook']);
+        if ($this->options['facebookProvider']) {
+            $this->providers['Facebook'] = new Providers\Facebook($request);
         }
 
         if ($this->providers['Html']->get('oembed')) {
