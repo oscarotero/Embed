@@ -1,7 +1,7 @@
 Embed
 =====
 
-[![Build Status](https://travis-ci.org/oscarotero/Embed.png?branch=v1.3.3)](https://travis-ci.org/oscarotero/Embed)
+[![Build Status](https://travis-ci.org/oscarotero/Embed.svg?branch=master)](https://travis-ci.org/oscarotero/Embed)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/Embed/badges/quality-score.png?s=79e37032db280b9795388124c030dcf4309343d1)](https://scrutinizer-ci.com/g/oscarotero/Embed/)
 
 PHP library to get info and embed any web page (using oembed, opengraph, twitter-cards, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc).
@@ -24,28 +24,28 @@ $info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
 
 //Get content info
 
-$info->title;
-$info->description;
-$info->url;
-$info->type;
+$info->title; //The page title
+$info->description; //The page description
+$info->url; //The canonical url
+$info->type; //The page type (link, video, image, rich)
 
-$info->images;
-$info->image;
-$info->imageWidth;
-$info->imageHeight;
+$info->images; //List of all images found in the page
+$info->image; //The image choosen as main image
+$info->imageWidth; //The with of the main image
+$info->imageHeight; //The height  of the main image
 
-$info->code;
-$info->width;
-$info->height;
-$info->aspectRatio;
+$info->code; //The code to embed the image, video, etc
+$info->width; //The with of the embed code
+$info->height; //The height of the embed code
+$info->aspectRatio; //The aspect ratio (width/height)
 
-$info->authorName;
-$info->authorUrl;
+$info->authorName; //The (video/article/image/whatever) author 
+$info->authorUrl; //The author url
 
-$info->providerIcons;
-$info->providerIcon;
-$info->providerName;
-$info->providerUrl;
+$info->providerName; //The provider name of the page (youtube, twitter, instagram, etc)
+$info->providerUrl; //The provider url
+$info->providerIcons; //All provider icons found in the page
+$info->providerIcon; //The icon choosen as main icon
 ```
 
 Available options
@@ -59,7 +59,7 @@ Available options
 * soundcloudClientId (string): Used to get info of links from soundcloud. By default, it uses "YOUR_CLIENT_ID" that its a valid client id :P
 * embedlyKey (string): If it's defined, get info from embedly service (only for know supported services and if the page doesn't have its own oembed service)
 * oembedParameters (array): Extra GET parameters to the oembed requests.
-* ignoreFacebookProvider (bool): If it's true, the facebook provider won't be used. This reduces the number of requests and prevent some false values (the facebook scrapping is not perfect).
+* facebookProvider (bool): If it's true, the facebook provider will be used to get the page information, that uses the facebook scrapping. By default is false because reduce the number of requests and facebook scrapping not always returns right results.
 
 ```php
 $options = array(
@@ -75,11 +75,11 @@ Customize the request
 Embed provides a RequestResolvers\Curl class to resolve all requests using the curl library. You can create your own request resolver class creating a class implementing the RequestResolverInterface.
 
 ```php
-//Configure the request resolver class:
+//Set your own request resolver class:
 Embed\Request::setDefaultResolver('MyCustomResolverClass');
 ```
 
-You can configure also the following options of the request resolver:
+You can configure also the following options of the default request resolver:
 
 * user_agent: User agent used in all requests. By default is "Embed PHP Library"
 * max_redirections: The maximum amount of HTTP redirections to follow. By default is 20
