@@ -157,15 +157,16 @@ class Curl implements RequestResolverInterface
 
         $this->content = '';
         $isBinary = null;
+        $binaryContentTypes = self::$binaryContentTypes;
 
-        curl_setopt($connection, CURLOPT_HEADERFUNCTION, function ($connection, $string) use (&$isBinary) {
+        curl_setopt($connection, CURLOPT_HEADERFUNCTION, function ($connection, $string) use (&$isBinary, $binaryContentTypes) {
             if (($isBinary === null) && strpos($string, ':')) {
                 list($name, $value) = array_map('trim', explode(':', $string, 2));
 
                 if (strtolower($name) === 'content-type') {
                     $isBinary = false;
 
-                    foreach (self::$binaryContentTypes as $regex) {
+                    foreach ($binaryContentTypes as $regex) {
                         if (preg_match($regex, strtolower($value))) {
                             $isBinary = true;
                             break;
