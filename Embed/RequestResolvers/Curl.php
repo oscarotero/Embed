@@ -178,12 +178,14 @@ class Curl implements RequestResolverInterface
             return strlen($string);
         });
 
-        curl_setopt($connection, CURLOPT_WRITEFUNCTION, function ($connection, $string) use (&$isBinary) {
+        $content &= $this->content;
+
+        curl_setopt($connection, CURLOPT_WRITEFUNCTION, function ($connection, $string) use (&$isBinary, &$content) {
             if ($isBinary) {
                 return 0;
             }
 
-            $this->content .= $string;
+            $content .= $string;
 
             return strlen($string);
         });
