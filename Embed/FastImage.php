@@ -317,22 +317,22 @@ class FastImage
                 $Image = new static($image);
 
                 if ($Image->getType() === 'ico') {
-                    $imagesSizes[] = [
+                    $imagesSizes[] = array(
                         'src' => $image,
                         'width' => 0,
                         'height' => 0
-                    ];
+                    );
 
                     continue;
                 }
 
                 list($width, $height) = $Image->getSize();
 
-                $imagesSizes[] = [
+                $imagesSizes[] = array(
                     'src' => $image,
                     'width' => $width,
                     'height' => $height
-                ];
+                );
             } catch (\Exception $Exception) {
                 continue;
             }
