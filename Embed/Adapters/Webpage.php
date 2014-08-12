@@ -76,13 +76,7 @@ class Webpage extends Adapter implements AdapterInterface
             }
         }
 
-        $images = array_unique($images);
-
-        if ($this->options['getBiggerImage']) {
-            $images = FastImage::sortImagesBySize($images);
-        }
-
-        return $images;
+        return array_unique($images);
     }
 
 

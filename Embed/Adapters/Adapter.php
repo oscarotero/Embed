@@ -215,24 +215,87 @@ abstract class Adapter
      */
     public function getImage()
     {
-        foreach ($this->images as $src) {
-            try {
-                $image = new FastImage($src);
-            } catch (\Exception $exception) {
-                continue;
+        if ($this->options['getBiggerImage']) {
+            $image = $this->getBiggerImage(FastImage::getImagesSize($this->images));
+
+            if ($image) {
+                $this->imageWidth = $image['width'];
+                $this->imageHeight = $image['height'];
+
+                return $image['src'];
             }
 
-            if ($image->getType()) {
-                list($width, $height) = $image->getSize();
+            return;
+        }
 
-                if (($width >= $this->options['minImageWidth']) && ($height >= $this->options['minImageHeight'])) {
-                    $this->imageWidth = $width;
-                    $this->imageHeight = $height;
-
-                    return $src;
-                }
+        foreach ($this->images as $src) {
+            if ($this->checkImage($src)) {
+                return $src;
             }
         }
+    }
+
+
+    /**
+     * Returns the first bigger image found
+     *
+     * @param array $images The images array returned by FastImage::getImagesSize()
+     *
+     * @return array|false
+     */
+    protected function getBiggerImage(array $images)
+    {
+        if (!$images) {
+            return false;
+        }
+
+        $biggerArea = 0;
+        $biggerKey = 0;
+
+        foreach ($images as $k => $image) {
+            $area = $image['width'] * $image['height'];
+
+            if ($area > $biggerArea) {
+                $biggerArea = $area;
+                $biggerKey = $k;
+            }
+        }
+
+        return $images[$biggerKey];
+    }
+
+
+    /**
+     * Checks whether the image dimmension is valid
+     *
+     * @param string $src The image path
+     *
+     * @return boolean
+     */
+    protected function checkImage($src)
+    {
+        if (!$src) {
+            return false;
+        }
+
+        try {
+            $image = new FastImage($src);
+        } catch (\Exception $exception) {
+            return false;
+        }
+
+        if ($image->getType()) {
+            list($width, $height) = $image->getSize();
+
+            if (($width >= $this->options['minImageWidth']) && ($height >= $this->options['minImageHeight'])) {
+                $this->imageWidth = $width;
+                $this->imageHeight = $height;
+
+                return true;
+            }
+        }
+
+        return false;
     }
 
 
@@ -242,9 +305,9 @@ abstract class Adapter
     public function getProviderIcon()
     {
         if ($this->options['getBiggerIcon']) {
-            $icons = FastImage::sortImagesBySize($this->providerIcons);
+            $icon = $this->getBiggerImage(FastImage::getImagesSize($this->providerIcons));
 
-            return current($icons);
+            return $icon ? $icon['src'] : null;
         }
 
         foreach ($this->providerIcons as $src) {

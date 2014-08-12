@@ -298,19 +298,15 @@ class FastImage
     }
 
     /**
-     * Sort an array of images by their size
+     * Returns the size of all images
      *
      * @param array $images
      *
      * @return array
      */
-    public static function sortImagesBySize(array $images)
+    public static function getImagesSize(array $images)
     {
-        if (count($images) < 2) {
-            return $images;
-        }
-
-        $sortedImages = array();
+        $imagesSizes = array();
 
         foreach ($images as $image) {
             if (!$image) {
@@ -321,22 +317,27 @@ class FastImage
                 $Image = new static($image);
 
                 if ($Image->getType() === 'ico') {
-                    $sortedImages[$image] = 0;
+                    $imagesSizes[] = [
+                        'src' => $image,
+                        'width' => 0,
+                        'height' => 0
+                    ];
 
                     continue;
                 }
 
                 list($width, $height) = $Image->getSize();
 
-                $sortedImages[$image] = $width*$height;
-
+                $imagesSizes[] = [
+                    'src' => $image,
+                    'width' => $width,
+                    'height' => $height
+                ];
             } catch (\Exception $Exception) {
                 continue;
             }
         }
 
-        arsort($sortedImages);
-
-        return array_keys($sortedImages);
+        return $imagesSizes;
     }
 }
