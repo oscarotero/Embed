@@ -74,6 +74,11 @@ include('../Embed/autoloader.php');
                 color: black;
                 text-decoration: none;
             }
+            table a {
+                color: inherit;
+                text-decoration: none;
+                font-size: inherit;
+            }
             button[type="submit"] {
                 font-size: 1.6rem;
                 font-weight: bold;
@@ -132,23 +137,23 @@ include('../Embed/autoloader.php');
             <fieldset class="options">
                 <h2>Info options</h2>
 
-                <label><span>Min image width:</span> <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 0); ?>"></label>
-                <label><span>Min image height:</span> <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 0); ?>"></label>
-                <label><span>Get bigger image</span> <input type="checkbox" name="options[getBiggerImage]" value="1" <?php echo getOption('getBiggerImage') ? 'checked' : ''; ?>></label>
-                <label><span>Get bigger icon</span> <input type="checkbox" name="options[getBiggerIcon]" value="1" <?php echo getOption('getBiggerIcon') ? 'checked' : ''; ?>></label>
-                <label><span>Facebook access token:</span> <input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label>
-                <label><span>Embedly key:</span> <input type="text" name="options[embedlyKey]" value="<?php echo getOption('embedlyKey'); ?>"></label>
-                <label><span>Soundcloud client id:</span> <input type="text" name="options[soundcloudClientId]" value="<?php echo getOption('soundcloudClientId', 'YOUR_CLIENT_ID'); ?>"></label>
-                <label><span>Use facebook provider</span> <input type="checkbox" name="options[facebookProvider]" value="1" <?php echo getOption('facebookProvider') ? 'checked' : ''; ?>></label>
-                <label><span>oEmbed extra Parameters (in json format):</span> <input type="text" name="options[oembedParameters]" value="<?php echo getOption('oembedParameters'); ?>"></label>
+                <label><span>minImageWidth:</span> <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 0); ?>"></label>
+                <label><span>minImageHeight:</span> <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 0); ?>"></label>
+                <label><span>getBiggerImage</span> <input type="checkbox" name="options[getBiggerImage]" value="1" <?php echo getOption('getBiggerImage') ? 'checked' : ''; ?>></label>
+                <label><span>getBiggerIcon</span> <input type="checkbox" name="options[getBiggerIcon]" value="1" <?php echo getOption('getBiggerIcon') ? 'checked' : ''; ?>></label>
+                <label><span>facebookAccessToken:</span> <input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label>
+                <label><span>embedlyKey:</span> <input type="text" name="options[embedlyKey]" value="<?php echo getOption('embedlyKey'); ?>"></label>
+                <label><span>soundcloudClientId:</span> <input type="text" name="options[soundcloudClientId]" value="<?php echo getOption('soundcloudClientId', 'YOUR_CLIENT_ID'); ?>"></label>
+                <label><span>facebookProvider</span> <input type="checkbox" name="options[facebookProvider]" value="1" <?php echo getOption('facebookProvider') ? 'checked' : ''; ?>></label>
+                <label><span>oembedParameters (in json format):</span> <input type="text" name="options[oembedParameters]" value="<?php echo getOption('oembedParameters'); ?>"></label>
             </fieldset>
             <fieldset class="options">
                 <h2>Request resolver options:</h2>
 
-                <label><span>User agent:</span> <input type="text" name="resolver[user_agent]" value="<?php echo getResolverOption('user_agent', 'Embed PHP Library'); ?>"></label>
-                <label><span>Max redirections:</span> <input type="number" name="resolver[max_redirections]" value="<?php echo getResolverOption('max_redirections', 20); ?>"></label>
-                <label><span>Connection timeout:</span> <input type="number" name="resolver[connection_timeout]" value="<?php echo getResolverOption('connection_timeout', 10); ?>"></label>
-                <label><span>Timeout:</span> <input type="number" name="resolver[timeout]" value="<?php echo getResolverOption('timeout', 10); ?>"></label>
+                <label><span>userAgent:</span> <input type="text" name="resolver[userAgent]" value="<?php echo getResolverOption('userAgent', 'Embed PHP Library'); ?>"></label>
+                <label><span>maxRedirections:</span> <input type="number" name="resolver[maxRedirections]" value="<?php echo getResolverOption('maxRedirections', 20); ?>"></label>
+                <label><span>connectionTimeout:</span> <input type="number" name="resolver[connectionTimeout]" value="<?php echo getResolverOption('connectionTimeout', 10); ?>"></label>
+                <label><span>timeout:</span> <input type="number" name="resolver[timeout]" value="<?php echo getResolverOption('timeout', 10); ?>"></label>
             </fieldset>
             <fieldset class="action">
                 <button type="submit">Test</button>
@@ -202,92 +207,97 @@ include('../Embed/autoloader.php');
 
             <table class="embed">
                 <tr>
-                    <th>Title</th>
+                    <th>title</th>
                     <td><?php echo $info->title; ?></td>
                 </tr>
                 <tr>
-                    <th>Description</th>
+                    <th>description</th>
                     <td><?php echo $info->description; ?></td>
                 </tr>
                 <tr>
-                    <th>Image</th>
+                    <th>image</th>
                     <td>
                         <?php if ($info->image): ?>
-                        <img src="<?php echo $info->image; ?>"> <?php echo $info->image; ?>
+                        <img src="<?php echo $info->image; ?>"><br>
+                        <a href="<?php echo $info->image; ?>" target="_blank"><?php echo $info->image; ?></a>
                         <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th>Image size</th>
-                    <td><?php echo $info->imageWidth.' x '.$info->imageHeight; ?></td>
+                    <th>imageWidth</th>
+                    <td><?php echo $info->imageWidth; ?></td>
                 </tr>
                 <tr>
-                    <th>All images</th>
+                    <th>imageHeight</th>
+                    <td><?php echo $info->imageHeight; ?></td>
+                </tr>
+                <tr>
+                    <th>images</th>
                     <td><pre><?php print_r($info->images); ?></pre></td>
                 </tr>
                 <tr>
-                    <th>Embed code</th>
+                    <th>code</th>
                     <td>
                         <?php echo $info->code; ?>
                         <pre><?php echo htmlspecialchars($info->code, ENT_IGNORE); ?></pre>
                     </td>
                 </tr>
                 <tr>
-                    <th>Url</th>
-                    <td><?php echo $info->url; ?></td>
+                    <th>url</th>
+                    <td><a href="<?php echo $info->url; ?>" target="_blank"><?php echo $info->url; ?></a></td>
                 </tr>
                 <tr>
-                    <th>Type</th>
+                    <th>type</th>
                     <td><?php echo $info->type; ?></td>
                 </tr>
                 <tr>
-                    <th>Source</th>
+                    <th>source</th>
                     <td><?php
                         if ($info->source) {
-                            echo $info->source;
-                            echo ' / <a href="test-sources.php?url='.urlencode($info->source).'" target="_blank">Test</a>';
+                            echo '<a href="'.$info->source.'" target="_blank">'.$info->source.'</a>';
+                            echo ' / <a href="sources.php?url='.urlencode($info->source).'" target="_blank">Test</a>';
                         }
                         ?>
                     </td>
                 </tr>
                 <tr>
-                    <th>Author name</th>
+                    <th>authorName</th>
                     <td><?php echo $info->authorName; ?></td>
                 </tr>
                 <tr>
-                    <th>Author url</th>
-                    <td><?php echo $info->authorUrl; ?></td>
+                    <th>authorUrl</th>
+                    <td><a href="<?php echo $info->authorUrl; ?>" target="_blank"><?php echo $info->authorUrl; ?></a>
                 </tr>
                 <tr>
-                    <th>Provider icon</th>
+                    <th>providerIcon</th>
                     <td><img src="<?php echo $info->providerIcon; ?>"> <?php echo $info->providerIcon; ?></td>
                 </tr>
                 <tr>
-                    <th>All icons</th>
+                    <th>providerIcons</th>
                     <td><pre><?php print_r($info->providerIcons); ?></pre></td>
                 </tr>
                 <tr>
-                    <th>Provider name</th>
+                    <th>providerName</th>
                     <td><?php echo $info->providerName; ?></td>
                 </tr>
                 <tr>
-                    <th>Provider url</th>
-                    <td><?php echo $info->providerUrl; ?></td>
+                    <th>providerUrl</th>
+                    <td><a href="<?php echo $info->providerUrl; ?>" target="_blank"><?php echo $info->providerUrl; ?></a>
                 </tr>
                 <tr>
-                    <th>Width</th>
+                    <th>width</th>
                     <td><?php echo $info->width; ?></td>
                 </tr>
                 <tr>
-                    <th>Height</th>
+                    <th>height</th>
                     <td><?php echo $info->height; ?></td>
                 </tr>
                 <tr>
-                    <th>Aspect ratio</th>
+                    <th>aspectRatio</th>
                     <td><?php echo $info->aspectRatio; ?></td>
                 </tr>
                 <tr>
-                    <th>Http request result</th>
+                    <th>Http request info</th>
                     <td>
                         <ul>
                         <?php
