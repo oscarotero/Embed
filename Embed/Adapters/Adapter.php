@@ -218,7 +218,7 @@ abstract class Adapter
         if ($this->options['getBiggerImage']) {
             $image = $this->getBiggerImage(FastImage::getImagesSize($this->images));
 
-            if ($image) {
+            if ($image && ($image['width'] >= $this->options['minImageWidth']) && ($image['height'] >= $this->options['minImageHeight'])) {
                 $this->imageWidth = $image['width'];
                 $this->imageHeight = $image['height'];
 
