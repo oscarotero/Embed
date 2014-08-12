@@ -81,17 +81,17 @@ Embed\Request::setDefaultResolver('MyCustomResolverClass');
 
 You can configure also the following options of the default request resolver:
 
-* user_agent: User agent used in all requests. By default is "Embed PHP Library"
-* max_redirections: The maximum amount of HTTP redirections to follow. By default is 20
-* connection_timeout: The number of seconds to wait while trying to connect. Use 0 to wait indefinitely. By default is 10
+* userAgent: User agent used in all requests. By default is "Embed PHP Library"
+* maxRedirections: The maximum amount of HTTP redirections to follow. By default is 20
+* connectionTimeout: The number of seconds to wait while trying to connect. Use 0 to wait indefinitely. By default is 10
 * timeout: The maximum number of seconds to allow execute the request. By default is 10
 
 To set a new configuration:
 
 ```php
 Embed\Request::setResolverConfig(array(
-	'user_agent' => 'My spider',
-	'connection_timeout' => 0
+	'userAgent' => 'My spider',
+	'connectionTimeout' => 0
 ));
 ```
 
@@ -99,8 +99,8 @@ Or you can set your custom resolver class and the configuration at the same time
 
 ```php
 Embed\Request::setDefaultResolver('MyCustomResolverClass', array(
-	'user_agent' => 'My spider',
-	'connection_timeout' => 0
+	'userAgent' => 'My spider',
+	'connectionTimeout' => 0
 ));
 ```
 
