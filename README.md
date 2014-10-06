@@ -110,6 +110,11 @@ Online demo
 
 http://oscarotero.com/embed/demo
 
+Do you need help?
+-----------------
+
+I can help you in HackHands: https://hackhands.com/oscarotero
+
 Contributors
 ------------
 * https://github.com/oscarotero (creator and maintainer)
