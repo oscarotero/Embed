@@ -28,7 +28,6 @@ class Feed extends Source implements SourceInterface
         return false;
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -41,7 +40,6 @@ class Feed extends Source implements SourceInterface
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -49,7 +47,6 @@ class Feed extends Source implements SourceInterface
     {
         return is_array($this->data);
     }
-
 
     /**
      * {@inheritDoc}
@@ -59,7 +56,6 @@ class Feed extends Source implements SourceInterface
         return $this->request->getUrl();
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -67,7 +63,6 @@ class Feed extends Source implements SourceInterface
     {
         return !empty($this->data['url']) ? $this->data['url'] : ($this->request->getScheme().'://'.$this->request->getHost());
     }
-
 
     /**
      * {@inheritDoc}
@@ -77,12 +72,11 @@ class Feed extends Source implements SourceInterface
         return isset($this->data['items']) ? (array) $this->data['items'] : array();
     }
 
-
     /**
      * Search data from Rss
-     * 
+     *
      * @param \SimpleXMLElement $xml
-     * 
+     *
      * @return false|array
      */
     protected static function parseRss(\SimpleXMLElement $xml)
@@ -97,16 +91,15 @@ class Feed extends Source implements SourceInterface
 
         return array(
             'url' => (string) $xml->channel->link,
-            'items' => self::getRssItems($items)
+            'items' => self::getRssItems($items),
         );
     }
 
-
     /**
      * Search items from XML
-     * 
+     *
      * @param \SimpleXMLElement $items
-     * 
+     *
      * @return array
      */
     protected static function getRssItems(\SimpleXMLElement $items)
@@ -119,7 +112,7 @@ class Feed extends Source implements SourceInterface
             $rssItem = array(
                 'url' => null,
                 'originUrl' => null,
-                'pubdate' => null
+                'pubdate' => null,
             );
 
             $rssItem['url'] = (string) $item->link;
@@ -142,12 +135,11 @@ class Feed extends Source implements SourceInterface
         return $rssItems;
     }
 
-
     /**
      * Search data from Atom xml
-     * 
+     *
      * @param \SimpleXMLElement $xml
-     * 
+     *
      * @return false|array
      */
     protected static function parseAtom(\SimpleXMLElement $xml)
@@ -170,16 +162,15 @@ class Feed extends Source implements SourceInterface
 
         return array(
             'url' => $url,
-            'items' => self::getAtomEntries($xml->entry)
+            'items' => self::getAtomEntries($xml->entry),
         );
     }
 
-
     /**
      * Search entries from Atom xml
-     * 
+     *
      * @param \SimpleXMLElement $xml
-     * 
+     *
      * @return array
      */
     protected static function getAtomEntries(\SimpleXMLElement $entries)
@@ -190,7 +181,7 @@ class Feed extends Source implements SourceInterface
             $item = array(
                 'url' => null,
                 'originUrl' => null,
-                'pubdate' => null
+                'pubdate' => null,
             );
 
             if ($entry->created) {

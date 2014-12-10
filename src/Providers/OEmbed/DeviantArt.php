@@ -11,7 +11,6 @@ class DeviantArt extends \Embed\Providers\OEmbedImplementationAbstract
         return 'http://backend.deviantart.com/oembed';
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -19,7 +18,6 @@ class DeviantArt extends \Embed\Providers\OEmbedImplementationAbstract
     {
         return array('http://www.deviantart.com/art/*', 'http://www.deviantart.com/#/d*');
     }
-
 
     /**
      * {@inheritDoc}

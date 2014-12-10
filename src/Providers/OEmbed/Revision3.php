@@ -3,18 +3,17 @@ namespace Embed\Providers\OEmbed;
 
 class Revision3 extends \Embed\Providers\OEmbedImplementationAbstract
 {
-	/**
-	 * {@inheritDoc}
-	 */
+    /**
+     * {@inheritDoc}
+     */
     public static function getEndPoint()
     {
         return 'http://revision3.com/api/oembed/';
     }
 
-
     /**
-	 * {@inheritDoc}
-	 */
+     * {@inheritDoc}
+     */
     public static function getPatterns()
     {
         return array('http://revision3.com/*');

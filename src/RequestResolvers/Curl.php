@@ -20,9 +20,8 @@ class Curl implements RequestResolverInterface
     public static $binaryContentTypes = array(
         '#image/.*#',
         '#application/(pdf|x-download|zip|pdf|msword|vnd\\.ms|postscript|octet-stream)#',
-        '#application/x-zip.*#'
+        '#application/x-zip.*#',
     );
-
 
     /**
      * {@inheritdoc}
@@ -32,7 +31,6 @@ class Curl implements RequestResolverInterface
         $this->url = $url;
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -40,7 +38,6 @@ class Curl implements RequestResolverInterface
     {
         $this->config = $config + $this->config;
     }
-
 
     /**
      * {@inheritdoc}
@@ -51,7 +48,6 @@ class Curl implements RequestResolverInterface
         $this->url = $url;
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -60,7 +56,6 @@ class Curl implements RequestResolverInterface
         return intval($this->getResult('http_code'));
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -68,7 +63,6 @@ class Curl implements RequestResolverInterface
     {
         return $this->getResult('mime_type');
     }
-
 
     /**
      * {@inheritdoc}
@@ -82,7 +76,6 @@ class Curl implements RequestResolverInterface
         return $this->content;
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -91,7 +84,6 @@ class Curl implements RequestResolverInterface
         return $this->url;
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -99,7 +91,6 @@ class Curl implements RequestResolverInterface
     {
         return $this->getResult('url');
     }
-
 
     /**
      * {@inheritdoc}
@@ -112,7 +103,6 @@ class Curl implements RequestResolverInterface
 
         return $this->result;
     }
-
 
     /**
      * Get the result of the http request
@@ -129,7 +119,6 @@ class Curl implements RequestResolverInterface
 
         return isset($this->result[$name]) ? $this->result[$name] : null;
     }
-
 
     /**
      * Resolves the current url and get the content and other data
@@ -154,7 +143,7 @@ class Curl implements RequestResolverInterface
             CURLOPT_COOKIEJAR => $tmpCookies,
             CURLOPT_COOKIEFILE => $tmpCookies,
             CURLOPT_USERAGENT => $this->config['userAgent'],
-            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ));
 
         $this->content = '';
@@ -191,7 +180,8 @@ class Curl implements RequestResolverInterface
         }
     }
 
-    protected function headerCallback ($connection, $string) {
+    protected function headerCallback($connection, $string)
+    {
         if (($this->isBinary === null) && strpos($string, ':')) {
             list($name, $value) = array_map('trim', explode(':', $string, 2));
 
@@ -210,7 +200,8 @@ class Curl implements RequestResolverInterface
         return strlen($string);
     }
 
-    protected function writeCallback ($connection, $string) {
+    protected function writeCallback($connection, $string)
+    {
         if ($this->isBinary) {
             return 0;
         }

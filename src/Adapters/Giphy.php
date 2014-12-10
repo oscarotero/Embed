@@ -15,10 +15,9 @@ class Giphy extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->match(array(
-            'https?://giphy.com/gifs/*'
+            'https?://giphy.com/gifs/*',
         ));
     }
-
 
     /**
      * {@inheritDoc}

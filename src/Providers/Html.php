@@ -13,7 +13,7 @@ class Html extends Provider
 {
     /**
      * Constructor
-     * 
+     *
      * @param Request $request
      */
     public function __construct(Request $request)
@@ -153,7 +153,7 @@ class Html extends Provider
                     if ($parent->tagName === 'a') {
                         if ($parent->hasAttribute('href')) {
                             $href = new Url($parent->getAttribute('href'));
-                            
+
                             if ($href->getDomain() && $src->getDomain() !== $domain) {
                                 continue 2;
                             }
@@ -164,7 +164,7 @@ class Html extends Provider
 
                     $parent = $parent->parentNode;
                 }
-                
+
                 $images[] = $src->getUrl();
             }
         }
@@ -174,10 +174,9 @@ class Html extends Provider
         $this->set('feeds', $feeds);
     }
 
-
     /**
      * Gets the title
-     * 
+     *
      * @return string|null
      */
     public function getTitle()
@@ -185,10 +184,9 @@ class Html extends Provider
         return $this->get('title');
     }
 
-
     /**
      * Gets the description
-     * 
+     *
      * @return string|null
      */
     public function getDescription()
@@ -196,10 +194,9 @@ class Html extends Provider
         return $this->get('description');
     }
 
-
     /**
      * Gets the type
-     * 
+     *
      * @return string|null
      */
     public function getType()
@@ -207,10 +204,9 @@ class Html extends Provider
         return $this->has('video_src') ? 'video' : null;
     }
 
-
     /**
      * Gets the source
-     * 
+     *
      * @return string|null
      */
     public function getSource()
@@ -220,10 +216,9 @@ class Html extends Provider
         return isset($feeds[0]) ? $feeds[0] : null;
     }
 
-
     /**
      * Gets the code
-     * 
+     *
      * @return string|null
      */
     public function getCode()
@@ -236,10 +231,9 @@ class Html extends Provider
         }
     }
 
-
     /**
      * Gets the url
-     * 
+     *
      * @return string|null
      */
     public function getUrl()
@@ -247,10 +241,9 @@ class Html extends Provider
         return $this->get('canonical');
     }
 
-
     /**
      * Gets all provider icons
-     * 
+     *
      * @return array
      */
     public function getProviderIcon()
@@ -258,10 +251,9 @@ class Html extends Provider
         return $this->get('icons');
     }
 
-
     /**
      * Gets the images found
-     * 
+     *
      * @return array
      */
     public function getImage()
@@ -269,10 +261,9 @@ class Html extends Provider
         return $this->get('images');
     }
 
-
     /**
      * Gets the code width
-     * 
+     *
      * @return integer|null
      */
     public function getWidth()
@@ -280,10 +271,9 @@ class Html extends Provider
         return $this->get('video_width');
     }
 
-
     /**
      * Gets the code height
-     * 
+     *
      * @return integer|null
      */
     public function getHeight()

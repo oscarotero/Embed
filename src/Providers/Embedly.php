@@ -637,22 +637,21 @@ class Embedly
         'http://www.radioreddit.com/songs*',
         'http://radioreddit.com/?q=songs*',
         'http://www.radioreddit.com/?q=songs*',
-        'http://www.gogoyoko.com/song/*'
+        'http://www.gogoyoko.com/song/*',
     );
-
 
     /**
      * Creates a new OEmbed instance using the embed.ly API
-     * 
+     *
      * @param Request     $request
      * @param null|string $api_key The API key of embed.ly service
-     * 
+     *
      * @return null|OEmbed
      */
     public static function create(Request $request, $api_key)
     {
         if (!$api_key) {
-            return null;
+            return;
         }
 
         if ($request->match(static::$patterns)) {
@@ -661,7 +660,7 @@ class Embedly
             $endPoint->setParameter(array(
                 'url' => $request->getUrl(),
                 'format' => 'json',
-                'key' => $api_key
+                'key' => $api_key,
             ));
 
             return new OEmbed($endPoint);

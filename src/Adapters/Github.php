@@ -15,10 +15,9 @@ class Github extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->match(array(
-            'https://gist.github.com/*/*'
+            'https://gist.github.com/*/*',
         ));
     }
-
 
     /**
      * {@inheritDoc}
@@ -43,7 +42,6 @@ class Github extends Webpage implements AdapterInterface
         return $this->getCode() ? 'rich' : 'link';
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -54,7 +52,6 @@ class Github extends Webpage implements AdapterInterface
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -62,7 +59,6 @@ class Github extends Webpage implements AdapterInterface
     {
         return 'Gist';
     }
-
 
     /**
      * {@inheritDoc}

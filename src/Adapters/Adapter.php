@@ -40,16 +40,15 @@ abstract class Adapter
         'soundcloudClientId' => null,
         'embedlyKey' => null,
         'oembedParameters' => array(),
-        'facebookProvider' => false
+        'facebookProvider' => false,
     );
 
     /**
      * Initializes all providers used in this adapter (oembed, opengraph, etc)
-     * 
+     *
      * @param Request $request
      */
-    abstract protected function initProviders (Request $request);
-
+    abstract protected function initProviders(Request $request);
 
     /**
      * {@inheritDoc}
@@ -67,13 +66,12 @@ abstract class Adapter
         }
     }
 
-
     /**
      * Magic method to execute and save the url data.
      * For example, on call $this->title, executes $this->getTitle()
-     * 
+     *
      * @param string $name
-     * 
+     *
      * @return mixed
      */
     public function __get($name)
@@ -85,13 +83,12 @@ abstract class Adapter
         }
     }
 
-
     /**
      * Search and returns data from the providers
-     * 
+     *
      * @param string  $name        The data name (title, description, image, etc)
      * @param boolean $returnFirst If it's true, returns the first value found, else returns the most popular value
-     * 
+     *
      * @return mixed
      */
     public function getFromProviders($name, $returnFirst = true)
@@ -121,13 +118,12 @@ abstract class Adapter
         return $current;
     }
 
-
     /**
      * Search and returns url type data from the providers (image, providerIcon, providerUrl, etc)
      * If the url found is relative, transforms it to absolute
-     * 
+     *
      * @param string $name The data name
-     * 
+     *
      * @return null|string
      */
     public function getUrlFromProviders($name)
@@ -141,7 +137,6 @@ abstract class Adapter
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -149,7 +144,6 @@ abstract class Adapter
     {
         return $this->getFromProviders('title') ?: $this->request->getUrl();
     }
-
 
     /**
      * {@inheritDoc}
@@ -159,7 +153,6 @@ abstract class Adapter
         return $this->getFromProviders('description');
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -167,7 +160,6 @@ abstract class Adapter
     {
         return $this->getUrlFromProviders('url') ?: $this->request->getUrl();
     }
-
 
     /**
      * {@inheritDoc}
@@ -177,7 +169,6 @@ abstract class Adapter
         return $this->getUrlFromProviders('source');
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -186,7 +177,6 @@ abstract class Adapter
         return $this->getFromProviders('authorName');
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -194,7 +184,6 @@ abstract class Adapter
     {
         return $this->getUrlFromProviders('authorUrl');
     }
-
 
     /**
      * {@inheritDoc}
@@ -208,7 +197,6 @@ abstract class Adapter
             return round(($height / $width) * 100, 3);
         }
     }
-
 
     /**
      * {@inheritDoc}
@@ -234,7 +222,6 @@ abstract class Adapter
             }
         }
     }
-
 
     /**
      * Returns the first bigger image found
@@ -263,7 +250,6 @@ abstract class Adapter
 
         return $images[$biggerKey];
     }
-
 
     /**
      * Checks whether the image dimmension is valid
@@ -298,7 +284,6 @@ abstract class Adapter
         return false;
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -323,7 +308,6 @@ abstract class Adapter
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -332,7 +316,6 @@ abstract class Adapter
         return $this->getFromProviders('providerName') ?: $this->request->getDomain();
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -340,7 +323,6 @@ abstract class Adapter
     {
         return $this->getUrlFromProviders('providerUrl') ?: ($this->request->getScheme().'://'.$this->request->getDomain(true));
     }
-
 
     /**
      * {@inheritDoc}
@@ -351,9 +333,8 @@ abstract class Adapter
             return $this->imageWidth;
         }
 
-        return null;
+        return;
     }
-
 
     /**
      * {@inheritDoc}
@@ -364,9 +345,8 @@ abstract class Adapter
             return $this->imageHeight;
         }
 
-        return null;
+        return;
     }
-
 
     /**
      * {@inheritDoc}
@@ -375,7 +355,6 @@ abstract class Adapter
     {
         return $this->getFromProviders('width');
     }
-
 
     /**
      * {@inheritDoc}

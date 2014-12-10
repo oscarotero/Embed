@@ -12,17 +12,15 @@ class Archive extends Webpage implements AdapterInterface
 {
     public $api;
 
-
     /**
      * {@inheritDoc}
      */
     public static function check(Request $request)
     {
         return $request->match(array(
-            'http://archive.org/details/*'
+            'http://archive.org/details/*',
         ));
     }
-
 
     /**
      * {@inheritDoc}
@@ -41,10 +39,9 @@ class Archive extends Webpage implements AdapterInterface
         }
     }
 
-
     /**
      * Gets a metadata value from the arquive.org's api
-     * 
+     *
      * @param string $key
      */
     private function getMetadata($key)
@@ -54,7 +51,6 @@ class Archive extends Webpage implements AdapterInterface
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -63,7 +59,6 @@ class Archive extends Webpage implements AdapterInterface
         return $this->getMetadata('title') ?: parent::getTitle();
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -71,7 +66,6 @@ class Archive extends Webpage implements AdapterInterface
     {
         return $this->getMetadata('description') ?: parent::getDescription();
     }
-
 
     /**
      * {@inheritDoc}
@@ -91,7 +85,6 @@ class Archive extends Webpage implements AdapterInterface
 
         return parent::getType();
     }
-
 
     /**
      * {@inheritDoc}
@@ -116,7 +109,6 @@ class Archive extends Webpage implements AdapterInterface
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -124,7 +116,6 @@ class Archive extends Webpage implements AdapterInterface
     {
         return $this->getMetadata('creator') ?: parent::getAuthorName();
     }
-
 
     /**
      * {@inheritDoc}

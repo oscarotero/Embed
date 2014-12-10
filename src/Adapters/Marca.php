@@ -15,10 +15,9 @@ class Marca extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->match(array(
-            'http://www.marca.com/*'
+            'http://www.marca.com/*',
         ));
     }
-
 
     /**
      * {@inheritDoc}

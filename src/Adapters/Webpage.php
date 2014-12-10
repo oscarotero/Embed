@@ -5,7 +5,6 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\FastImage;
 use Embed\Providers;
 
 class Webpage extends Adapter implements AdapterInterface
@@ -18,7 +17,6 @@ class Webpage extends Adapter implements AdapterInterface
         return true;
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -29,7 +27,7 @@ class Webpage extends Adapter implements AdapterInterface
         $this->providers = array(
             'Html' => new Providers\Html($request),
             'TwitterCards' => new Providers\TwitterCards($request),
-            'OpenGraph' => new Providers\OpenGraph($request)
+            'OpenGraph' => new Providers\OpenGraph($request),
         );
 
         if ($this->options['facebookProvider']) {
@@ -48,7 +46,6 @@ class Webpage extends Adapter implements AdapterInterface
 
         $this->providers = array_reverse($this->providers);
     }
-
 
     /**
      * {@inheritDoc}
@@ -79,7 +76,6 @@ class Webpage extends Adapter implements AdapterInterface
         return array_unique($images);
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -107,7 +103,6 @@ class Webpage extends Adapter implements AdapterInterface
         return array_unique($icons);
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -134,7 +129,6 @@ class Webpage extends Adapter implements AdapterInterface
         return 'link';
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -156,5 +150,4 @@ class Webpage extends Adapter implements AdapterInterface
             return $code;
         }
     }
-
 }

@@ -8,7 +8,7 @@ use Embed\Viewers;
 
 class Jsfiddle extends Webpage implements AdapterInterface
 {
-	/**
+    /**
      * {@inheritDoc}
      */
     public function getCode()

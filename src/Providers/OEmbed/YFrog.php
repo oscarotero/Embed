@@ -3,18 +3,17 @@ namespace Embed\Providers\OEmbed;
 
 class YFrog extends \Embed\Providers\OEmbedImplementationAbstract
 {
-	/**
-	 * {@inheritDoc}
-	 */
+    /**
+     * {@inheritDoc}
+     */
     public static function getEndPoint()
     {
         return 'http://www.yfrog.com/api/oembed';
     }
 
-
     /**
-	 * {@inheritDoc}
-	 */
+     * {@inheritDoc}
+     */
     public static function getPatterns()
     {
         return array('http://twitter.yfrog.com/*','http://www.yfrog.com/*');

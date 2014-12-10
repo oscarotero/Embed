@@ -32,9 +32,8 @@ class File extends Adapter implements AdapterInterface
         'application/vnd.ms-excel' => array('rich', 'google'),
         'application/zip' => array('rich', 'google'),
         'application/postscript' => array('rich', 'google'),
-        'application/octet-stream' => array('rich', 'google')
+        'application/octet-stream' => array('rich', 'google'),
     );
-
 
     /**
      * {@inheritDoc}
@@ -43,7 +42,6 @@ class File extends Adapter implements AdapterInterface
     {
         return isset(self::$contentTypes[$request->getMimeType()]);
     }
-
 
     /**
      * {@inheritDoc}
@@ -57,7 +55,6 @@ class File extends Adapter implements AdapterInterface
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -65,7 +62,6 @@ class File extends Adapter implements AdapterInterface
     {
         return self::$contentTypes[$this->request->getMimeType()][0];
     }
-
 
     /**
      * {@inheritDoc}
@@ -84,7 +80,6 @@ class File extends Adapter implements AdapterInterface
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -97,7 +92,6 @@ class File extends Adapter implements AdapterInterface
         return array();
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -105,7 +99,7 @@ class File extends Adapter implements AdapterInterface
     {
         return array(
             $this->request->getAbsolute('/favicon.ico'),
-            $this->request->getAbsolute('/favicon.png')
+            $this->request->getAbsolute('/favicon.png'),
         );
     }
 }

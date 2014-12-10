@@ -14,7 +14,6 @@ class Request extends Url
     private $jsonContent;
     private $htmlContent;
 
-
     /**
      * Set a default url resolver used for http requests
      *
@@ -39,7 +38,6 @@ class Request extends Url
         }
     }
 
-
     /**
      * Set the resolver configuration used for http requests
      *
@@ -49,7 +47,6 @@ class Request extends Url
     {
         self::$resolverConfig = $config;
     }
-
 
     /**
      * Set a new url
@@ -72,7 +69,6 @@ class Request extends Url
         $this->updateUrl();
     }
 
-
     /**
      * Return the url
      *
@@ -82,7 +78,6 @@ class Request extends Url
     {
         return $this->resolver->getLatestUrl();
     }
-
 
     /**
      * Check if the url match with a specific pattern. The patterns only accepts * and ?
@@ -96,7 +91,6 @@ class Request extends Url
         return static::urlMatches($this->getStartingUrl(), $patterns) || static::urlMatches($this->getUrl(), $patterns);
     }
 
-
     /**
      * Return the http request info (for debug purposes)
      *
@@ -106,7 +100,6 @@ class Request extends Url
     {
         return $this->resolver->getRequestInfo();
     }
-
 
     /**
      * Return the starting url (before all possible redirects)
@@ -118,7 +111,6 @@ class Request extends Url
         return $this->resolver->getStartingUrl();
     }
 
-
     /**
      * Get the http code of the url
      *
@@ -128,7 +120,6 @@ class Request extends Url
     {
         return $this->resolver->getHttpCode();
     }
-
 
     /**
      * Get the content-type of the url
@@ -140,7 +131,6 @@ class Request extends Url
         return $this->resolver->getMimeType();
     }
 
-
     /**
      * Get the content of the url
      *
@@ -150,7 +140,6 @@ class Request extends Url
     {
         return $this->resolver->getContent();
     }
-
 
     /**
      * Get the content of the url as a DOMDocument object
@@ -170,7 +159,7 @@ class Request extends Url
 
                 if ((mb_detect_encoding($response) === 'UTF-8') && mb_check_encoding($response, 'UTF-8')) {
                     $response = mb_convert_encoding($response, 'HTML-ENTITIES', 'UTF-8');
-                    $response = preg_replace('/<head[^>]*>/','<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $response);
+                    $response = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $response);
                 }
 
                 //Remove all script elements, CDATA sections and comments (thanks https://github.com/jasny)
@@ -178,7 +167,6 @@ class Request extends Url
 
                 $this->htmlContent->loadHTML($response);
                 libxml_use_internal_errors($errors);
-
             } catch (\Exception $E) {
                 return $this->htmlContent = false;
             }
@@ -186,7 +174,6 @@ class Request extends Url
 
         return $this->htmlContent;
     }
-
 
     /**
      * Get the content of the url as an array from json
@@ -209,7 +196,6 @@ class Request extends Url
 
         return $this->jsonContent;
     }
-
 
     /**
      * Get the content of the url as an XML element
@@ -234,7 +220,6 @@ class Request extends Url
         return $this->xmlContent;
     }
 
-
     /**
      * Check if the url is valid or not
      *
@@ -249,7 +234,6 @@ class Request extends Url
         return true;
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -259,7 +243,6 @@ class Request extends Url
 
         $this->updateUrl();
     }
-
 
     /**
      * {@inheritdoc}
@@ -271,7 +254,6 @@ class Request extends Url
         $this->updateUrl();
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -282,7 +264,6 @@ class Request extends Url
         $this->updateUrl();
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -292,7 +273,6 @@ class Request extends Url
 
         $this->updateUrl();
     }
-
 
     /**
      * Private function to update the url in the resolver and clear cache after any change (scheme, host, parameters, etc)

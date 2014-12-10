@@ -11,17 +11,15 @@ class Facebook extends Provider
     private $init = false;
     private $url;
 
-
     /**
      * Constructor
-     * 
+     *
      * @param Request $request
      */
     public function __construct(Request $request)
     {
         $this->url = $request->getUrl();
     }
-
 
     /**
      * Init the facebook request data (call only on demand)
@@ -46,7 +44,6 @@ class Facebook extends Provider
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -59,10 +56,9 @@ class Facebook extends Provider
         return parent::get($name, $subname);
     }
 
-
     /**
      * Gets the title
-     * 
+     *
      * @return string|null
      */
     public function getTitle()
@@ -74,10 +70,9 @@ class Facebook extends Provider
         }
     }
 
-
     /**
      * Gets the description
-     * 
+     *
      * @return string|null
      */
     public function getDescription()
@@ -85,10 +80,9 @@ class Facebook extends Provider
         return $this->get('description');
     }
 
-
     /**
      * Gets the type
-     * 
+     *
      * @return string|null
      */
     public function getType()
@@ -99,10 +93,9 @@ class Facebook extends Provider
         }
     }
 
-
     /**
      * Gets the image
-     * 
+     *
      * @return string|null
      */
     public function getImage()
@@ -112,10 +105,9 @@ class Facebook extends Provider
         }
     }
 
-
     /**
      * Gets the author name
-     * 
+     *
      * @return string|null
      */
     public function getAuthorName()
@@ -127,10 +119,9 @@ class Facebook extends Provider
         }
     }
 
-
     /**
      * Gets the author url
-     * 
+     *
      * @return string|null
      */
     public function getAuthorUrl()
@@ -142,15 +133,13 @@ class Facebook extends Provider
         }
     }
 
-
     /**
      * Gets the provider name
-     * 
+     *
      * @return string|null
      */
     public function getProviderName()
     {
         return $this->get('site_name');
-
     }
 }

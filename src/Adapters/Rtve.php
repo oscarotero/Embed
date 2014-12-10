@@ -20,7 +20,6 @@ class Rtve extends Webpage implements AdapterInterface
         return parent::getCode();
     }
 
-
     /**
      * {@inheritDoc}
      */

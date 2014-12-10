@@ -23,7 +23,6 @@ class Provider
         }
     }
 
-
     /**
      * Get a value or null if not exists
      *
@@ -43,12 +42,11 @@ class Provider
         }
 
         if (!isset($this->parameters[$name][$subname])) {
-            return null;
+            return;
         }
 
         return $this->parameters[$name][$subname];
     }
-
 
     /**
      * Check if a value exists
@@ -62,12 +60,11 @@ class Provider
         return isset($this->parameters[$name]);
     }
 
-
     /**
      * Magic method to execute non defined methods and returns null
      */
     public function __call($name, $arguments)
     {
-        return null;
+        return;
     }
 }

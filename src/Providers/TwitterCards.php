@@ -12,7 +12,7 @@ class TwitterCards extends Provider
 {
     /**
      * Constructor
-     * 
+     *
      * @param Request $request
      */
     public function __construct(Request $request)
@@ -33,10 +33,9 @@ class TwitterCards extends Provider
         }
     }
 
-
     /**
      * Gets the title
-     * 
+     *
      * @return string|null
      */
     public function getTitle()
@@ -44,10 +43,9 @@ class TwitterCards extends Provider
         return $this->get('title');
     }
 
-
     /**
      * Gets the description
-     * 
+     *
      * @return string|null
      */
     public function getDescription()
@@ -55,10 +53,9 @@ class TwitterCards extends Provider
         return $this->get('description');
     }
 
-
     /**
      * Gets the url type
-     * 
+     *
      * @return string|null
      */
     public function getType()
@@ -81,10 +78,9 @@ class TwitterCards extends Provider
         }
     }
 
-
     /**
      * Gets the embedded code
-     * 
+     *
      * @return string|null
      */
     public function getCode()
@@ -94,10 +90,9 @@ class TwitterCards extends Provider
         }
     }
 
-
     /**
      * Gets the url
-     * 
+     *
      * @return string|null
      */
     public function getUrl()
@@ -105,10 +100,9 @@ class TwitterCards extends Provider
         return $this->get('url');
     }
 
-
     /**
      * Gets the author name
-     * 
+     *
      * @return string|null
      */
     public function getAuthorName()
@@ -116,10 +110,9 @@ class TwitterCards extends Provider
         return $this->get('creator');
     }
 
-
     /**
      * Gets the image
-     * 
+     *
      * @return string|null
      */
     public function getImage()
@@ -127,10 +120,9 @@ class TwitterCards extends Provider
         return $this->get('image');
     }
 
-
     /**
      * Gets the code width
-     * 
+     *
      * @return integer|null
      */
     public function getWidth()
@@ -138,10 +130,9 @@ class TwitterCards extends Provider
         return $this->get('player:width');
     }
 
-
     /**
      * Gets the code height
-     * 
+     *
      * @return integer|null
      */
     public function getHeight()

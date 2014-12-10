@@ -17,7 +17,6 @@ class Parleys extends Webpage implements AdapterInterface
         return $request->match(['*.parleys.com/#*']);
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -35,7 +34,6 @@ class Parleys extends Webpage implements AdapterInterface
 
         return parent::getUrl();
     }
-
 
     /**
      * {@inheritDoc}

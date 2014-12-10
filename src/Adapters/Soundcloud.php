@@ -17,10 +17,9 @@ class Soundcloud extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->match(array(
-            'https?://soundcloud.com/*'
+            'https?://soundcloud.com/*',
         ));
     }
-
 
     /**
      * {@inheritDoc}
@@ -40,7 +39,6 @@ class Soundcloud extends Webpage implements AdapterInterface
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -48,7 +46,6 @@ class Soundcloud extends Webpage implements AdapterInterface
     {
         return $this->api->get('title') ?: parent::getTitle();
     }
-
 
     /**
      * {@inheritDoc}
@@ -58,7 +55,6 @@ class Soundcloud extends Webpage implements AdapterInterface
         return $this->api->get('description') ?: parent::getDescription();
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -66,7 +62,6 @@ class Soundcloud extends Webpage implements AdapterInterface
     {
         return $this->api->get('permalink_url') ?: parent::getUrl();
     }
-
 
     /**
      * {@inheritDoc}
@@ -82,7 +77,6 @@ class Soundcloud extends Webpage implements AdapterInterface
         return array_unique($images);
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -90,7 +84,6 @@ class Soundcloud extends Webpage implements AdapterInterface
     {
         return $this->api->get('user', 'username') ?: parent::getAuthorName();
     }
-
 
     /**
      * {@inheritDoc}

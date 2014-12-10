@@ -46,8 +46,8 @@ class FastImage
 
         $this->handle = @fopen($uri, 'r', false, stream_context_create(array(
             'http' => array(
-                'user_agent' => 'Embed/FastImage PHP Library'
-            )
+                'user_agent' => 'Embed/FastImage PHP Library',
+            ),
         )));
 
         if ($this->handle === false) {
@@ -131,7 +131,7 @@ class FastImage
                 return $this->parseSizeForJPEG();
         }
 
-        return null;
+        return;
     }
 
     /**
@@ -198,7 +198,7 @@ class FastImage
 
                     if (in_array($b, range(0xe0, 0xef))) {
                         $state = 'skipframe';
-                    } elseif (in_array($b, array_merge(range(0xC0,0xC3), range(0xC5,0xC7), range(0xC9,0xCB), range(0xCD,0xCF)))) {
+                    } elseif (in_array($b, array_merge(range(0xC0, 0xC3), range(0xC5, 0xC7), range(0xC9, 0xCB), range(0xCD, 0xCF)))) {
                         $state = 'readsize';
                     } elseif ($b === 0xFF) {
                         $state = 'sof';
@@ -221,7 +221,8 @@ class FastImage
                     if (($c = $this->getChars(7))) {
                         return array($this->readInt(substr($c, 5, 2)), $this->readInt(substr($c, 3, 2)));
                     }
-                    return null;
+
+                    return;
 
                 default:
                     $this->getChars(2);
@@ -320,7 +321,7 @@ class FastImage
                     $imagesSizes[] = array(
                         'src' => $image,
                         'width' => 0,
-                        'height' => 0
+                        'height' => 0,
                     );
 
                     continue;
@@ -331,7 +332,7 @@ class FastImage
                 $imagesSizes[] = array(
                     'src' => $image,
                     'width' => $width,
-                    'height' => $height
+                    'height' => $height,
                 );
             } catch (\Exception $Exception) {
                 continue;

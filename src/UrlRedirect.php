@@ -9,15 +9,14 @@ class UrlRedirect
     protected static $urls = array(
         'google' => 'https?://www.google.com/url*',
         'googleTranslator' => 'https?://translate.google.com/translate*',
-        'hashBang' => '*#!*'
+        'hashBang' => '*#!*',
     );
-
 
     /**
      * Resolve the url redirection
-     * 
+     *
      * @param string $oldUrl Url to resolve
-     * 
+     *
      * @return string The new url
      */
     public static function resolve($oldUrl)
@@ -35,10 +34,9 @@ class UrlRedirect
         return $url->getUrl();
     }
 
-
     /**
      * Resolve a google redirection url
-     * 
+     *
      * @param Url $url
      */
     protected static function google(Url $url)
@@ -48,10 +46,9 @@ class UrlRedirect
         }
     }
 
-
     /**
      * Resolve a google translation url
-     * 
+     *
      * @param Url $url
      */
     protected static function googleTranslator(Url $url)
@@ -61,10 +58,9 @@ class UrlRedirect
         }
     }
 
-
     /**
      * Resolve an url with hashbang
-     * 
+     *
      * @param Url $url
      */
     protected static function hashBang(Url $url)

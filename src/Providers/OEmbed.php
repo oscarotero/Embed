@@ -11,7 +11,7 @@ class OEmbed extends Provider
 {
     /**
      * Constructor
-     * 
+     *
      * @param Request $request
      */
     public function __construct(Request $request)
@@ -36,13 +36,11 @@ class OEmbed extends Provider
             default:
                 throw new \Exception("No valid format specified");
         }
-
     }
-
 
     /**
      * Gets the title
-     * 
+     *
      * @return string|null
      */
     public function getTitle()
@@ -50,10 +48,9 @@ class OEmbed extends Provider
         return $this->get('title');
     }
 
-
     /**
      * Gets the description
-     * 
+     *
      * @return string|null
      */
     public function getDescription()
@@ -61,10 +58,9 @@ class OEmbed extends Provider
         return $this->get('description');
     }
 
-
     /**
      * Gets the type
-     * 
+     *
      * @return string|null
      */
     public function getType()
@@ -87,10 +83,9 @@ class OEmbed extends Provider
         }
     }
 
-
     /**
      * Gets the code
-     * 
+     *
      * @return string|null
      */
     public function getCode()
@@ -98,10 +93,9 @@ class OEmbed extends Provider
         return $this->get('html');
     }
 
-
     /**
      * Gets the url
-     * 
+     *
      * @return string|null
      */
     public function getUrl()
@@ -113,10 +107,9 @@ class OEmbed extends Provider
         return $this->get('url') ?: $this->get('web_page');
     }
 
-
     /**
      * Gets the author name
-     * 
+     *
      * @return string|null
      */
     public function getAuthorName()
@@ -124,10 +117,9 @@ class OEmbed extends Provider
         return $this->get('author_name');
     }
 
-
     /**
      * Gets the author url
-     * 
+     *
      * @return string|null
      */
     public function getAuthorUrl()
@@ -135,10 +127,9 @@ class OEmbed extends Provider
         return $this->get('author_url');
     }
 
-
     /**
      * Gets the provider name
-     * 
+     *
      * @return string|null
      */
     public function getProviderName()
@@ -146,10 +137,9 @@ class OEmbed extends Provider
         return $this->get('provider_name');
     }
 
-
     /**
      * Gets the provider url
-     * 
+     *
      * @return string|null
      */
     public function getProviderUrl()
@@ -159,7 +149,7 @@ class OEmbed extends Provider
 
     /**
      * Gets the image
-     * 
+     *
      * @return string|null
      */
     public function getImage()
@@ -171,10 +161,9 @@ class OEmbed extends Provider
         return $this->get('thumbnail_url');
     }
 
-
     /**
      * Gets the code width
-     * 
+     *
      * @return integer|null
      */
     public function getWidth()
@@ -182,10 +171,9 @@ class OEmbed extends Provider
         return $this->get('width');
     }
 
-
     /**
      * Gets the code height
-     * 
+     *
      * @return integer|null
      */
     public function getHeight()

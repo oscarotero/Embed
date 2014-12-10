@@ -14,23 +14,21 @@ class Facebook extends Webpage implements AdapterInterface
 
     private $isPost = false;
 
-
     /**
      * {@inheritDoc}
      */
     public static function check(Request $request)
     {
         return $request->match(array(
-            'https://www.facebook.com/*'
+            'https://www.facebook.com/*',
         ));
     }
 
-
     /**
      * Returns the id found in an facebook url
-     * 
+     *
      * @param string $url
-     * 
+     *
      * @return null|string
      */
     private function getId($url)
@@ -74,7 +72,6 @@ class Facebook extends Webpage implements AdapterInterface
         return $url->getDirectory(0);
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -98,7 +95,6 @@ class Facebook extends Webpage implements AdapterInterface
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -107,7 +103,6 @@ class Facebook extends Webpage implements AdapterInterface
         return $this->api->get('name') ?: parent::getTitle();
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -115,7 +110,6 @@ class Facebook extends Webpage implements AdapterInterface
     {
         return $this->api->get('description') ?: $this->api->get('about') ?: parent::getDescription();
     }
-
 
     /**
      * {@inheritDoc}
@@ -128,7 +122,6 @@ class Facebook extends Webpage implements AdapterInterface
 
         return $this->api->get('url') ?: $this->request->getStartingUrl();
     }
-
 
     /**
      * {@inheritDoc}
@@ -151,7 +144,6 @@ EOT;
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -160,7 +152,6 @@ EOT;
         return 'Facebook';
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -168,7 +159,6 @@ EOT;
     {
         return $this->api->get('username') ?: parent::getAuthorName();
     }
-
 
     /**
      * {@inheritDoc}
@@ -181,7 +171,6 @@ EOT;
             return 'https://www.facebook.com/feeds/page.php?id='.$id.'&format=rss20';
         }
     }
-
 
     /**
      * {@inheritDoc}

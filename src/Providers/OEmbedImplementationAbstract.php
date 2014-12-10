@@ -17,7 +17,6 @@ abstract class OEmbedImplementationAbstract
         return '';
     }
 
-
     /**
      * @access public
      * @author Oliver Lillie
@@ -27,7 +26,6 @@ abstract class OEmbedImplementationAbstract
     {
         return array();
     }
-
 
     /**
      * @access public

@@ -12,13 +12,12 @@ class Spotify extends Webpage implements AdapterInterface
     /**
      * {@inheritDoc}
      */
-	public static function check(Request $request)
+    public static function check(Request $request)
     {
         return $request->match(array(
-            'http://open.spotify.com/*'
+            'http://open.spotify.com/*',
         ));
     }
-
 
     /**
      * {@inheritDoc}

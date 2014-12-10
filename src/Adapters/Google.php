@@ -17,10 +17,9 @@ class Google extends Webpage implements AdapterInterface
     {
         return $request->match(array(
             'https://maps.google.*',
-            'https://www.google.com/maps*'
+            'https://www.google.com/maps*',
         ));
     }
-
 
     /**
      * {@inheritDoc}
@@ -34,7 +33,6 @@ class Google extends Webpage implements AdapterInterface
 
         return Viewers::iframe($url->getUrl());
     }
-
 
     /**
      * {@inheritDoc}

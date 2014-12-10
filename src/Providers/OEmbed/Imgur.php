@@ -11,7 +11,6 @@ class Imgur extends \Embed\Providers\OEmbedImplementationAbstract
         return 'http://api.imgur.com/oembed';
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -19,7 +18,7 @@ class Imgur extends \Embed\Providers\OEmbedImplementationAbstract
     {
         return array(
             'http://imgur.com/*',
-            'http://i.imgur.com/*'
+            'http://i.imgur.com/*',
         );
     }
 }

@@ -10,12 +10,11 @@ use Embed\Request;
 
 class OEmbedImplementations extends Provider
 {
-
     /**
      * Creates a new OEmbed instance
-     * 
+     *
      * @param Url $url
-     * 
+     *
      * @return null|OEmbed
      */
     public static function create(Url $url, array $extraParameters = array())
@@ -27,7 +26,7 @@ class OEmbedImplementations extends Provider
             $settings = array(
                 'patterns' => $class::getPatterns(),
                 'endPoint' => $class::getEndpoint(),
-                'params' => $class::getParams()
+                'params' => $class::getParams(),
             );
 
             if ($url->match($settings['patterns'])) {

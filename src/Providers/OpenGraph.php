@@ -12,7 +12,7 @@ class OpenGraph extends Provider
 {
     /**
      * Constructor
-     * 
+     *
      * @param Request $request
      */
     public function __construct(Request $request)
@@ -44,10 +44,9 @@ class OpenGraph extends Provider
         $this->set('image', $images);
     }
 
-
     /**
      * Gets the title
-     * 
+     *
      * @return string|null
      */
     public function getTitle()
@@ -55,10 +54,9 @@ class OpenGraph extends Provider
         return $this->get('title');
     }
 
-
     /**
      * Gets the description
-     * 
+     *
      * @return string|null
      */
     public function getDescription()
@@ -66,10 +64,9 @@ class OpenGraph extends Provider
         return $this->get('description');
     }
 
-
     /**
      * Gets the url type
-     * 
+     *
      * @return string|null
      */
     public function getType()
@@ -96,10 +93,9 @@ class OpenGraph extends Provider
         }
     }
 
-
     /**
      * Gets the embedded code
-     * 
+     *
      * @return string|null
      */
     public function getCode()
@@ -108,7 +104,7 @@ class OpenGraph extends Provider
             if (!($videoPath = parse_url($this->get('video'), PHP_URL_PATH)) || !($type = pathinfo($videoPath, PATHINFO_EXTENSION))) {
                 $type = $this->get('video:type');
             }
-            
+
             switch ($type) {
                 case 'swf':
                 case 'application/x-shockwave-flash':
@@ -134,10 +130,9 @@ class OpenGraph extends Provider
         }
     }
 
-
     /**
      * Gets the url
-     * 
+     *
      * @return string|null
      */
     public function getUrl()
@@ -145,10 +140,9 @@ class OpenGraph extends Provider
         return $this->get('url');
     }
 
-
     /**
      * Gets the provider name
-     * 
+     *
      * @return string|null
      */
     public function getProviderName()
@@ -156,10 +150,9 @@ class OpenGraph extends Provider
         return $this->get('site_name');
     }
 
-
     /**
      * Gets the image
-     * 
+     *
      * @return array
      */
     public function getImage()
@@ -167,10 +160,9 @@ class OpenGraph extends Provider
         return $this->get('image');
     }
 
-
     /**
      * Gets the code width
-     * 
+     *
      * @return integer|null
      */
     public function getWidth()
@@ -178,10 +170,9 @@ class OpenGraph extends Provider
         return $this->get('image:width') ?: $this->get('video:width');
     }
 
-
     /**
      * Gets the code height
-     * 
+     *
      * @return integer|null
      */
     public function getHeight()

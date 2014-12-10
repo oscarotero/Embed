@@ -5,10 +5,10 @@ class Embed
 {
     /**
      * Gets the info from an url
-     * 
+     *
      * @param string|Request $url     The url or a request with the url
      * @param null|array     $options Options passed to the adapter
-     * 
+     *
      * @return false|Adapters\AdapterInterface
      */
     public static function create($url, array $options = null)
@@ -44,12 +44,11 @@ class Embed
         return false;
     }
 
-
     /**
      * Gets the info from a source (list of urls)
-     * 
+     *
      * @param string|Request $url The url or a request with the source url
-     * 
+     *
      * @return false|Sources\SourceInterface
      */
     public static function createSource($url)

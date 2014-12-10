@@ -8,7 +8,6 @@ class Url
 {
     protected $info;
 
-
     /**
      * Constructor. Sets the url
      *
@@ -18,7 +17,6 @@ class Url
     {
         $this->setUrl($url);
     }
-
 
     /**
      * Set a new url
@@ -30,7 +28,6 @@ class Url
         $this->parseUrl($url);
     }
 
-
     /**
      * Return the url
      *
@@ -40,7 +37,6 @@ class Url
     {
         return $this->buildUrl();
     }
-
 
     /**
      * Check if the url match with a specific pattern. The patterns only accepts * and ?
@@ -53,7 +49,6 @@ class Url
     {
         return static::urlMatches($this->getUrl(), $patterns);
     }
-
 
     /**
      * Return the extension of the url (html, php, jpg, etc)
@@ -75,7 +70,6 @@ class Url
         return isset($this->info['scheme']) ? $this->info['scheme'] : null;
     }
 
-
     /**
      * Change the scheme of the url
      *
@@ -85,7 +79,6 @@ class Url
     {
         $this->info['scheme'] = $scheme;
     }
-
 
     /**
      * Return the host of the url (for example: google.com)
@@ -97,7 +90,6 @@ class Url
         return isset($this->info['host']) ? $this->info['host'] : null;
     }
 
-
     /**
      * Change the host of the url
      *
@@ -107,7 +99,6 @@ class Url
     {
         $this->info['host'] = $host;
     }
-
 
     /**
      * Return the domain of the url (for example: google)
@@ -121,7 +112,7 @@ class Url
         $host = $this->getHost();
 
         if (!$host) {
-            return null;
+            return;
         }
 
         $host = array_reverse(explode('.', $host));
@@ -142,7 +133,6 @@ class Url
         }
     }
 
-
     /**
      * Return a specific directory in the path of the url
      *
@@ -158,7 +148,6 @@ class Url
 
         return isset($this->info['path'][$key]) ? $this->info['path'][$key] : null;
     }
-
 
     /**
      * Set a new path
@@ -179,7 +168,6 @@ class Url
         }
     }
 
-
     /**
      * Return the url path
      */
@@ -194,7 +182,6 @@ class Url
         return $path;
     }
 
-
     /**
      * Check if the url has a GET parameter
      *
@@ -207,7 +194,6 @@ class Url
         return isset($this->info['query'][$name]);
     }
 
-
     /**
      * Returns a GET parameter value
      *
@@ -219,7 +205,6 @@ class Url
     {
         return isset($this->info['query'][$name]) ? $this->info['query'][$name] : null;
     }
-
 
     /**
      * Set a new GET parameter or modify an existing one
@@ -236,7 +221,6 @@ class Url
         }
     }
 
-
     /**
      * Return the url fragment
      *
@@ -246,8 +230,6 @@ class Url
     {
         return isset($this->info['fragment']) ? $this->info['fragment'] : null;
     }
-
-
 
     /**
      * Return the fragments as an array
@@ -265,7 +247,6 @@ class Url
         return array();
     }
 
-
     /**
      * Set the url fragment
      *
@@ -275,7 +256,6 @@ class Url
     {
         $this->info['fragment'] = $fragment;
     }
-
 
     /**
      * Build the url using the splitted data
@@ -303,7 +283,6 @@ class Url
         return $url;
     }
 
-
     /**
      * Parse an url and split into different pieces
      *
@@ -329,7 +308,6 @@ class Url
             }
         }
     }
-
 
     /**
      * Return an absolute url based in a relative
@@ -364,7 +342,6 @@ class Url
 
         return $this->getScheme().'://'.$this->getHost().$this->getPath().$url;
     }
-
 
     /**
      * Check if the url match with a specific pattern. The patterns only accepts * and ?

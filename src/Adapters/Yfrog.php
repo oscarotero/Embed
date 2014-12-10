@@ -20,7 +20,6 @@ class Yfrog extends Webpage implements AdapterInterface
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -31,7 +30,6 @@ class Yfrog extends Webpage implements AdapterInterface
         }
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -41,7 +39,6 @@ class Yfrog extends Webpage implements AdapterInterface
             return trim(substr($author, 10));
         }
     }
-
 
     /**
      * {@inheritDoc}

@@ -16,10 +16,9 @@ class Mit extends Webpage implements AdapterInterface
     {
         return $request->match(array(
             'http://media.mit.edu/video/view/*',
-            'http://www.media.mit.edu/video/view/*'
+            'http://www.media.mit.edu/video/view/*',
         ));
     }
-
 
     /**
      * {@inheritDoc}
@@ -28,7 +27,6 @@ class Mit extends Webpage implements AdapterInterface
     {
         return Viewers::iframe(str_replace('/video/view/', '/video/embed/', $this->getUrl()));
     }
-
 
     /**
      * {@inheritDoc}
