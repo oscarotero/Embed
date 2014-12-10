@@ -1,25 +1,63 @@
 <?php
 /**
- * Class to manipulate urls, get the content, etc
+ * Class to execute request and return the content
  */
 namespace Embed;
 
-class Request extends Url
-{
-    private static $resolverClass = 'Embed\\RequestResolvers\\Curl';
-    private static $resolverConfig;
+use Embed\Url;
 
-    private $resolver;
+class Request
+{
+    public $url;
+    public $resolver;
+
+    private $defaultResolverClass = 'Embed\\RequestResolvers\\Curl';
+    private $resolverClass;
+    private $resolverConfig;
+
     private $xmlContent;
     private $jsonContent;
     private $htmlContent;
 
+
     /**
-     * Set a default url resolver used for http requests
+     * Constructor. Sets the url
+     *
+     * @param Url    $url The Url instance
+     * @param null|string $resolverClass The resolver classname
+     * @param null|array $resolverConfig The resolver configuration
+     */
+    public function __construct(Url $url, $resolverClass = null, array $resolverConfig = null)
+    {
+        if ($resolverClass) {
+            $this->setResolverClass($resolverClass);
+        }
+
+        if ($resolverConfig) {
+            $this->setResolverConfig($resolverConfig);
+        }
+
+        $this->setUrl($url);
+    }
+
+
+    /**
+     * Creates a new request with the same configuration than this
+     *
+     * @param string  $url The url string
+     */
+    public function createSubRequest($url)
+    {
+        return new Request(new Url($url), $this->resolverClass, $this->resolverConfig);
+    }
+
+
+    /**
+     * Set the url resolver class used for http requests
      *
      * @param string $className
      */
-    public static function setDefaultResolver($className, array $config = null)
+    public function setResolverClass($className)
     {
         if (!class_exists($className)) {
             throw new \Exception("This class does not exists");
@@ -31,11 +69,7 @@ class Request extends Url
             throw new \Exception("The resolver class must implement the Embed\\RequestResolvers\\RequestResolverInterface interface");
         }
 
-        self::$resolverClass = $className;
-
-        if ($config !== null) {
-            self::setResolverConfig($config);
-        }
+        $this->resolverClass = $className;
     }
 
     /**
@@ -45,28 +79,34 @@ class Request extends Url
      */
     public static function setResolverConfig(array $config)
     {
-        self::$resolverConfig = $config;
+        $this->resolverConfig = $config;
+    }
+
+    /**
+     * Inicialize and returns the resolver instance
+     *
+     * @return mixed
+     */
+    public function getResolver()
+    {
+        if (!$this->resolver) {
+            $resolverClass = $this->resolverClass ?: $this->defaultResolverClass;
+
+            $this->resolver = new $resolverClass(UrlRedirect::resolve($this->url->getUrl()), $this->resolverConfig);
+        }
+
+        return $this->resolver;
     }
 
     /**
      * Set a new url
      *
-     * @param string $url The url
+     * @param Url $url The Url instance
      */
-    public function setUrl($url)
+    public function setUrl(Url $url)
     {
-        if ($url instanceof RequestResolvers\RequestResolverInterface) {
-            $this->resolver = $url;
-        } else {
-            $this->resolver = new self::$resolverClass(UrlRedirect::resolve($url));
-        }
-
-        if (self::$resolverConfig) {
-            $this->resolver->setConfig(self::$resolverConfig);
-        }
-
-        $this->parseUrl($this->getUrl());
-        $this->updateUrl();
+        $this->resolver = $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
+        $this->url = $url;
     }
 
     /**
@@ -76,7 +116,7 @@ class Request extends Url
      */
     public function getUrl()
     {
-        return $this->resolver->getLatestUrl();
+        return $this->getResolver()->getLatestUrl();
     }
 
     /**
@@ -98,7 +138,7 @@ class Request extends Url
      */
     public function getRequestInfo()
     {
-        return $this->resolver->getRequestInfo();
+        return $this->getResolver()->getRequestInfo();
     }
 
     /**
@@ -108,7 +148,7 @@ class Request extends Url
      */
     public function getStartingUrl()
     {
-        return $this->resolver->getStartingUrl();
+        return $this->getResolver()->getStartingUrl();
     }
 
     /**
@@ -118,7 +158,7 @@ class Request extends Url
      */
     public function getHttpCode()
     {
-        return $this->resolver->getHttpCode();
+        return $this->getResolver()->getHttpCode();
     }
 
     /**
@@ -128,7 +168,7 @@ class Request extends Url
      */
     public function getMimeType()
     {
-        return $this->resolver->getMimeType();
+        return $this->getResolver()->getMimeType();
     }
 
     /**
@@ -138,7 +178,7 @@ class Request extends Url
      */
     public function getContent()
     {
-        return $this->resolver->getContent();
+        return $this->getResolver()->getContent();
     }
 
     /**
@@ -232,56 +272,5 @@ class Request extends Url
         }
 
         return true;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setScheme($scheme)
-    {
-        parent::setScheme($scheme);
-
-        $this->updateUrl();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setHost($host)
-    {
-        parent::setHost($host);
-
-        $this->updateUrl();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setPath($path)
-    {
-        parent::setPath($path);
-
-        $this->updateUrl();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setParameter($name, $value = null)
-    {
-        parent::setParameter($name, $value);
-
-        $this->updateUrl();
-    }
-
-    /**
-     * Private function to update the url in the resolver and clear cache after any change (scheme, host, parameters, etc)
-     */
-    private function updateUrl()
-    {
-        $url = $this->buildUrl();
-
-        $this->resolver->setUrl($url);
-        $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
     }
 }

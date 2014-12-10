@@ -62,7 +62,7 @@ abstract class Adapter
         $this->initProviders($request);
 
         if ($request->getUrl() !== $this->url) {
-            $this->initProviders(new Request($this->url));
+            $this->initProviders($request->createSubRequest($this->url));
         }
     }
 
