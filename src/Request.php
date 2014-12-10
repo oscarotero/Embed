@@ -124,7 +124,7 @@ class Request extends Url
     /**
      * Get the content-type of the url
      *
-     * @return string The content-type header or null
+     * @return string|null The content-type header or null
      */
     public function getMimeType()
     {
@@ -134,7 +134,7 @@ class Request extends Url
     /**
      * Get the content of the url
      *
-     * @return string The content or false
+     * @return string|false The content or false
      */
     public function getContent()
     {
@@ -144,7 +144,7 @@ class Request extends Url
     /**
      * Get the content of the url as a DOMDocument object
      *
-     * @return \DOMDocument The content or false
+     * @return \DOMDocument|false
      */
     public function getHtmlContent()
     {

@@ -9,6 +9,8 @@ use Embed\Providers\Provider;
 
 class Github extends Webpage implements AdapterInterface
 {
+    public $api;
+
     /**
      * {@inheritDoc}
      */

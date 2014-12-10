@@ -24,12 +24,12 @@ class Provider
     }
 
     /**
-     * Get a value or null if not exists
+     * Get a value, all values or null if not exists
      *
      * @param null|string $name    Value name
      * @param null|string $subname A subvalue name
      *
-     * @return string|null
+     * @return string|array|null
      */
     public function get($name = null, $subname = null)
     {
