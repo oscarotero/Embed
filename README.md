@@ -4,20 +4,19 @@ Embed
 [![Build Status](https://travis-ci.org/oscarotero/Embed.svg?branch=master)](https://travis-ci.org/oscarotero/Embed)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/Embed/badges/quality-score.png?s=79e37032db280b9795388124c030dcf4309343d1)](https://scrutinizer-ci.com/g/oscarotero/Embed/)
 
-PHP library to get info and embed any web page (using oembed, opengraph, twitter-cards, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc).
+PHP library to get info and embed any web page (using oembed, opengraph, twitter-cards, scrapping the html, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc).
 Has adapters to some webpages like (archive.org, github, deviantart, etc).
 
 Requirements:
 
 * PHP 5.3+
 * Curl library installed
-* A PSR-0 compatible autoloader class
 
 Usage:
 
 ```php
-//Load library (if you don't have composer or any psr-0 compatible loader):
-include('Embed/autoloader.php');
+//Load library (if you don't have composer or any psr-4 compatible loader):
+include('src/autoloader.php');
 
 //Load any url:
 $info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
