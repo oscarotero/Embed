@@ -11,10 +11,17 @@ class Curl implements RequestResolverInterface
     protected $result;
     protected $url;
     protected $config = array(
-        'userAgent' => 'Embed PHP Library',
-        'maxRedirections' => 20,
-        'connectionTimeout' => 10,
-        'timeout' => 10,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_MAXREDIRS => 20,
+        CURLOPT_CONNECTTIMEOUT => 10,
+        CURLOPT_TIMEOUT => 10,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_SSL_VERIFYHOST => false,
+        CURLOPT_ENCODING => '',
+        CURLOPT_AUTOREFERER => true,
+        CURLOPT_USERAGENT => 'Embed PHP Library',
+        CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
     );
 
     public static $binaryContentTypes = array(
@@ -125,32 +132,20 @@ class Curl implements RequestResolverInterface
      */
     protected function resolve()
     {
-        $connection = curl_init();
-
-        $tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
-
-        curl_setopt_array($connection, array(
-            CURLOPT_URL => $this->url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_MAXREDIRS => $this->config['maxRedirections'],
-            CURLOPT_CONNECTTIMEOUT => $this->config['connectionTimeout'],
-            CURLOPT_TIMEOUT => $this->config['timeout'],
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
-            CURLOPT_ENCODING => '',
-            CURLOPT_AUTOREFERER => true,
-            CURLOPT_COOKIEJAR => $tmpCookies,
-            CURLOPT_COOKIEFILE => $tmpCookies,
-            CURLOPT_USERAGENT => $this->config['userAgent'],
-            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
-        ));
-
         $this->content = '';
         $this->isBinary = null;
 
-        curl_setopt($connection, CURLOPT_HEADERFUNCTION, array($this, 'headerCallback'));
-        curl_setopt($connection, CURLOPT_WRITEFUNCTION, array($this, 'writeCallback'));
+        $tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
+
+        $connection = curl_init();
+
+        curl_setopt_array($connection, array(
+            CURLOPT_URL => $this->url,
+            CURLOPT_COOKIEJAR => $tmpCookies,
+            CURLOPT_COOKIEFILE => $tmpCookies,
+            CURLOPT_HEADERFUNCTION => array($this, 'headerCallback'),
+            CURLOPT_WRITEFUNCTION => array($this, 'writeCallback'),
+        ) + $this->config);
 
         curl_exec($connection);
 
