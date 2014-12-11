@@ -7,6 +7,7 @@ use Embed\FastImage;
 /**
  * Base class extended by all adapters
  *
+ * @property Request      $request
  * @property null|string  $title
  * @property null|string  $description
  * @property null|string  $url

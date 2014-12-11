@@ -123,10 +123,6 @@ include('../src/autoloader.php');
     {
         return htmlspecialchars(isset($_GET['options'][$name]) ? $_GET['options'][$name] : $default, ENT_QUOTES, 'UTF-8');
     }
-    function getResolverOption($name, $default = null)
-    {
-        return isset($_GET['resolver'][$name]) ? $_GET['resolver'][$name] : $default;
-    }
     ?>
 
     <body>
@@ -147,14 +143,6 @@ include('../src/autoloader.php');
                 <label><span>facebookProvider</span> <input type="checkbox" name="options[facebookProvider]" value="1" <?php echo getOption('facebookProvider') ? 'checked' : ''; ?>></label>
                 <label><span>oembedParameters (in json format):</span> <input type="text" name="options[oembedParameters]" value="<?php echo getOption('oembedParameters'); ?>"></label>
             </fieldset>
-            <fieldset class="options">
-                <h2>Request resolver options:</h2>
-
-                <label><span>userAgent:</span> <input type="text" name="resolver[userAgent]" value="<?php echo getResolverOption('userAgent', 'Embed PHP Library'); ?>"></label>
-                <label><span>maxRedirections:</span> <input type="number" name="resolver[maxRedirections]" value="<?php echo getResolverOption('maxRedirections', 20); ?>"></label>
-                <label><span>connectionTimeout:</span> <input type="number" name="resolver[connectionTimeout]" value="<?php echo getResolverOption('connectionTimeout', 10); ?>"></label>
-                <label><span>timeout:</span> <input type="number" name="resolver[timeout]" value="<?php echo getResolverOption('timeout', 10); ?>"></label>
-            </fieldset>
             <fieldset class="action">
                 <button type="submit">Test</button>
                 &nbsp;&nbsp;&nbsp;
@@ -173,31 +161,12 @@ include('../src/autoloader.php');
                 $options['oembedParameters'] = $options['oembedParameters'] ? json_decode($options['oembedParameters'], true) : array();
             }
 
-            $request = new Embed\Request(new Embed\Url($_GET['url']), null, isset($_GET['resolver']) ? (array) $_GET['resolver'] : null);
-            $info = Embed\Embed::create($request, $options);
+            $info = Embed\Embed::create($_GET['url'], $options);
             ?>
 
             <?php if (empty($info)): ?>
 
             <p>The url is not valid!</p>
-
-            <table class="embed">
-                <tr>
-                    <th>Http request result</th>
-                    <td>
-                        <ul>
-                        <?php
-                        foreach ($url->getRequestInfo() as $name => $value) {
-                            if (is_array($value)) {
-                                $value = print_r($value, true);
-                            }
-                            echo "<li><strong>$name:</strong> $value</li>";
-                        }
-                        ?>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
 
             <?php else: ?>
 
@@ -297,7 +266,7 @@ include('../src/autoloader.php');
                     <td>
                         <ul>
                         <?php
-                        foreach ($request->getRequestInfo() as $name => $value) {
+                        foreach ($info->request->getRequestInfo() as $name => $value) {
                             if (is_array($value)) {
                                 $value = print_r($value, true);
                             }
@@ -315,7 +284,7 @@ include('../src/autoloader.php');
                 <tr>
                     <th>Content</th>
                     <td>
-                        <pre><?php echo htmlspecialchars($request->getContent(), ENT_IGNORE); ?></pre>
+                        <pre><?php echo htmlspecialchars($info->request->getContent(), ENT_IGNORE); ?></pre>
                     </td>
                 </tr>
             </table>

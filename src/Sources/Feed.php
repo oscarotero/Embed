@@ -9,7 +9,6 @@ use Embed\Request;
 class Feed extends Source implements SourceInterface
 {
     protected $data;
-    protected $request;
 
     /**
      * {@inheritDoc}

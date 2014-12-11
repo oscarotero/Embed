@@ -58,8 +58,7 @@ include('../src/autoloader.php');
         if (!empty($_GET['url'])): ?>
         <section>
             <?php
-            $request = new Embed\Request($_GET['url']);
-            $source = Embed\Embed::createSource($request);
+            $source = Embed\Embed::createSource($_GET['url']);
             ?>
 
             <?php if (empty($source)): ?>
@@ -70,15 +69,15 @@ include('../src/autoloader.php');
 
             <h1><a href="<?php echo $source->providerUrl; ?>"><?php echo $source->providerUrl; ?></a></h1>
 
-            <a href="test.php?url=<?php echo $source->providerUrl; ?>" target="_blank">Test</a><br>
-            <a href="<?php echo $source->sourceUrl; ?>" target="_blank">Source url</a>
+            <a href="index.php?url=<?php echo $source->providerUrl; ?>">Test</a><br>
+            <a href="<?php echo $source->sourceUrl; ?>">Source url</a>
 
             <ul>
                 <?php foreach ($source->items as $url): ?>
                 <li>
-                    <a href="<?php echo $url['url']; ?>"><?php echo $url['url']; ?></a> | <a href="test.php?url=<?php echo urlencode($url['url']); ?>" target="_blank">Test</a><br>
+                    <a href="<?php echo $url['url']; ?>"><?php echo $url['url']; ?></a> | <a href="index.php?url=<?php echo urlencode($url['url']); ?>">Test</a><br>
                     <?php if ($url['originUrl']): ?>
-                    <a href="<?php echo $url['originUrl']; ?>"><?php echo $url['originUrl']; ?></a> | <a href="test.php?url=<?php echo urlencode($url['originUrl']); ?>" target="_blank">Test origin Url</a><br>
+                    <a href="<?php echo $url['originUrl']; ?>"><?php echo $url['originUrl']; ?></a> | <a href="index.php?url=<?php echo urlencode($url['originUrl']); ?>">Test origin Url</a><br>
                     <?php endif; ?>
                     <time><?php echo $url['pubdate']; ?></time>
                 </li>
@@ -92,7 +91,7 @@ include('../src/autoloader.php');
             <tr>
                 <th>Content</th>
                 <td>
-                    <pre><?php echo htmlspecialchars($request->getContent(), ENT_IGNORE); ?></pre>
+                    <pre><?php echo htmlspecialchars($source->request->getContent(), ENT_IGNORE); ?></pre>
                 </td>
             </tr>
         </table>

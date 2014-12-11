@@ -61,7 +61,7 @@ class Embed
             $resolverClass = isset($options['resolver']['class']) ? $options['resolver']['class'] : null;
             $resolverOptions = isset($options['resolver']['options']) ? $options['resolver']['options'] : null;
 
-            $request = new Request($request, $resolverClass, $resolverOptions);
+            $request = new Request(new Url($request), $resolverClass, $resolverOptions);
         } elseif (!($request instanceof Request)) {
             throw new \InvalidArgumentException("Embed::createSource only accepts instances of Embed\\Request or strings");
         }
