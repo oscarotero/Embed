@@ -350,7 +350,7 @@ class Url
      *
      * @return boolean True if the url match, false if not
      */
-    protected static function urlMatches($url, $patterns)
+    public static function urlMatches($url, $patterns)
     {
         if (!is_array($patterns)) {
             $patterns = array($patterns);

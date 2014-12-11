@@ -35,7 +35,7 @@ class Webpage extends Adapter implements AdapterInterface
         }
 
         if ($this->providers['Html']->get('oembed')) {
-            $request = new Request($request->getAbsolute($this->providers['Html']->get('oembed')));
+            $request = $request->CreateSubRequest($request->getAbsolute($this->providers['Html']->get('oembed')));
             $request->setParameter($this->options['oembedParameters']);
             $this->providers['OEmbed'] = new Providers\OEmbed($request);
         } elseif (($oEmbed = Providers\OEmbedImplementations::create($request, $this->options['oembedParameters']))) {

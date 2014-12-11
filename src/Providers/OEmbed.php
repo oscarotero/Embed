@@ -16,7 +16,7 @@ class OEmbed extends Provider
      */
     public function __construct(Request $request)
     {
-        $format = (($request->getExtension() === 'xml') || ($request->getParameter('format') === 'xml')) ? 'xml' : 'json';
+        $format = (($request->url->getExtension() === 'xml') || ($request->url->getParameter('format') === 'xml')) ? 'xml' : 'json';
 
         switch ($format) {
             case 'json':

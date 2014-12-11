@@ -5,7 +5,6 @@
  */
 namespace Embed\Providers;
 
-use Embed\Url;
 use Embed\Request;
 
 class OEmbedImplementations extends Provider
@@ -13,14 +12,14 @@ class OEmbedImplementations extends Provider
     /**
      * Creates a new OEmbed instance
      *
-     * @param Url $url
+     * @param Request $request
      *
      * @return null|OEmbed
      */
-    public static function create(Url $url, array $extraParameters = array())
+    public static function create(Request $request, array $extraParameters = array())
     {
         //Search the oembed provider using the domain
-        $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $url->getDomain()))));
+        $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->url->getDomain()))));
 
         if (class_exists($class)) {
             $settings = array(
@@ -29,18 +28,18 @@ class OEmbedImplementations extends Provider
                 'params' => $class::getParams(),
             );
 
-            if ($url->match($settings['patterns'])) {
-                $endPoint = new Request($settings['endPoint']);
+            if ($request->match($settings['patterns'])) {
+                $endPoint = $request->createSubRequest($settings['endPoint']);
 
                 if ($extraParameters) {
-                    $endPoint->setParameter($extraParameters);
+                    $endPoint->url->setParameter($extraParameters);
                 }
 
                 if (empty($settings['params']) === false) {
-                    $endPoint->setParameter($settings['params']);
+                    $endPoint->url->setParameter($settings['params']);
                 }
 
-                $endPoint->setParameter('url', $url->getUrl());
+                $endPoint->url->setParameter('url', $request->getUrl());
 
                 return new OEmbed($endPoint);
             }

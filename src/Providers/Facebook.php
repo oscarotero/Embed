@@ -8,8 +8,6 @@ use Embed\Request;
 
 class Facebook extends Provider
 {
-    private $init = false;
-    private $url;
 
     /**
      * Constructor
@@ -18,25 +16,11 @@ class Facebook extends Provider
      */
     public function __construct(Request $request)
     {
-        $this->url = $request->getUrl();
-    }
-
-    /**
-     * Init the facebook request data (call only on demand)
-     */
-    private function init()
-    {
-        $this->init = true;
-
-        $graph = new Request('https://graph.facebook.com/fql');
+        $graph = $request->createSubRequest('https://graph.facebook.com/fql');
         $graph->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$this->url.'"');
 
-        if (!$graph->isValid()) {
-            return false;
-        }
-
-        if (($info = $graph->getJsonContent()) && isset($info['data'][0]['comments_fbid'])) {
-            $graph = new Request('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
+        if ($graph->isValid() && ($info = $graph->getJsonContent()) && isset($info['data'][0]['comments_fbid'])) {
+            $graph = $request->createSubRequest('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
 
             if ($json = $graph->getJsonContent()) {
                 $this->set($json);
@@ -44,17 +28,6 @@ class Facebook extends Provider
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function get($name = null, $subname = null)
-    {
-        if ($this->init === false) {
-            $this->init();
-        }
-
-        return parent::get($name, $subname);
-    }
 
     /**
      * Gets the title

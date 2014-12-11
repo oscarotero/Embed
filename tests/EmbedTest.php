@@ -3,17 +3,6 @@ include_once dirname(__DIR__).'/src/autoloader.php';
 
 class EmbedTest extends PHPUnit_Framework_TestCase
 {
-    private function checkUrl($url, array $values, array $options = null)
-    {
-        $info = Embed\Embed::create($url, $options);
-
-        foreach ($values as $name => $value) {
-            $this->assertEquals($value, $info->$name);
-        }
-
-        return $info;
-    }
-
     public function testYoutube()
     {
         $info = Embed\Embed::create('http://www.youtube.com/watch?v=eiHXASgRTcA');

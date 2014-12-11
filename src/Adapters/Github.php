@@ -29,7 +29,7 @@ class Github extends Webpage implements AdapterInterface
         parent::initProviders($request);
 
         $this->api = new Provider();
-        $api = new Request($request->getUrl().'.json');
+        $api = $request->createSubRequest($request->getUrl().'.json');
 
         if (($json = $api->getJsonContent())) {
             $this->api->set($json);

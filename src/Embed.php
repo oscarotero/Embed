@@ -17,7 +17,7 @@ class Embed
             $resolverClass = isset($options['resolver']['class']) ? $options['resolver']['class'] : null;
             $resolverOptions = isset($options['resolver']['options']) ? $options['resolver']['options'] : null;
 
-            $request = new Request($request, $resolverClass, $resolverOptions);
+            $request = new Request(new Url($request), $resolverClass, $resolverOptions);
         } elseif (!($request instanceof Request)) {
             throw new \InvalidArgumentException("Embed::create only accepts instances of Embed\\Request or strings");
         }
@@ -27,7 +27,7 @@ class Embed
         }
 
         //If is a file use File Adapter
-        if (Adapters\File::check($request->url)) {
+        if (Adapters\File::check($request)) {
             return new Adapters\File($request, $options);
         }
 
@@ -35,12 +35,12 @@ class Embed
         $class = 'Embed\\Adapters\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->url->getDomain()))));
 
         if (class_exists($class)) {
-            if (call_user_func(array($class, 'check'), $request->url)) {
+            if (call_user_func(array($class, 'check'), $request)) {
                 return new $class($request, $options);
             }
         }
 
-        if (Adapters\Webpage::check($request->url)) {
+        if (Adapters\Webpage::check($request)) {
             return new Adapters\Webpage($request, $options);
         }
 

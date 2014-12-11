@@ -128,7 +128,7 @@ class Request
      */
     public function match($patterns)
     {
-        return static::urlMatches($this->getStartingUrl(), $patterns) || static::urlMatches($this->getUrl(), $patterns);
+        return Url::urlMatches($this->getStartingUrl(), $patterns) || Url::urlMatches($this->getUrl(), $patterns);
     }
 
     /**

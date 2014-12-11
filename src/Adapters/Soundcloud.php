@@ -30,7 +30,7 @@ class Soundcloud extends Webpage implements AdapterInterface
 
         $this->api = new Provider();
 
-        $api = new Request('http://api.soundcloud.com/resolve.json');
+        $api = $request->createSubRequest('http://api.soundcloud.com/resolve.json');
         $api->setParameter('client_id', isset($this->options['soundcloudClientId']) ? $this->options['soundcloudClientId'] : 'YOUR_CLIENT_ID');
         $api->setParameter('url', $request->getUrl());
 

@@ -655,7 +655,7 @@ class Embedly
         }
 
         if ($request->match(static::$patterns)) {
-            $endPoint = new Request('http://api.embed.ly/1/oembed');
+            $endPoint = $request->createSubRequest('http://api.embed.ly/1/oembed');
 
             $endPoint->setParameter(array(
                 'url' => $request->getUrl(),
