@@ -35,8 +35,8 @@ class Webpage extends Adapter implements AdapterInterface
         }
 
         if ($this->providers['Html']->get('oembed')) {
-            $request = $request->CreateSubRequest($request->getAbsolute($this->providers['Html']->get('oembed')));
-            $request->setParameter($this->options['oembedParameters']);
+            $request = $request->CreateSubRequest($request->url->getAbsolute($this->providers['Html']->get('oembed')));
+            $request->url->setParameter($this->options['oembedParameters']);
             $this->providers['OEmbed'] = new Providers\OEmbed($request);
         } elseif (($oEmbed = Providers\OEmbedImplementations::create($request, $this->options['oembedParameters']))) {
             $this->providers['OEmbed'] = $oEmbed;
@@ -62,13 +62,13 @@ class Webpage extends Adapter implements AdapterInterface
             }
 
             if (!is_array($src)) {
-                $images[] = $this->request->getAbsolute($src);
+                $images[] = $this->request->url->getAbsolute($src);
                 continue;
             }
 
             foreach ($src as $src) {
                 if (!empty($src)) {
-                    $images[] = $this->request->getAbsolute($src);
+                    $images[] = $this->request->url->getAbsolute($src);
                 }
             }
         }
@@ -89,16 +89,16 @@ class Webpage extends Adapter implements AdapterInterface
             if ($src) {
                 if (is_array($src)) {
                     foreach ($src as $src) {
-                        $icons[] = $this->request->getAbsolute($src);
+                        $icons[] = $this->request->url->getAbsolute($src);
                     }
                 } else {
-                    $icons[] = $this->request->getAbsolute($src);
+                    $icons[] = $this->request->url->getAbsolute($src);
                 }
             }
         }
 
-        $icons[] = $this->request->getAbsolute('/favicon.ico');
-        $icons[] = $this->request->getAbsolute('/favicon.png');
+        $icons[] = $this->request->url->getAbsolute('/favicon.ico');
+        $icons[] = $this->request->url->getAbsolute('/favicon.png');
 
         return array_unique($icons);
     }

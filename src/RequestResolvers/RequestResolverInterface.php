@@ -47,18 +47,11 @@ interface RequestResolverInterface
     public function getContent();
 
     /**
-     * Return the starting url (before all possible redirects)
-     *
-     * @return string The starting url
-     */
-    public function getStartingUrl();
-
-    /**
      * Return the final url (after all possible redirects)
      *
      * @return string The final url
      */
-    public function getLatestUrl();
+    public function getUrl();
 
     /**
      * Return the http request info (for debug purposes)

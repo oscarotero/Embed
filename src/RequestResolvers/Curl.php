@@ -11,8 +11,6 @@ class Curl implements RequestResolverInterface
     protected $result;
     protected $url;
     protected $config = array(
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_MAXREDIRS => 20,
         CURLOPT_CONNECTTIMEOUT => 10,
         CURLOPT_TIMEOUT => 10,
@@ -58,6 +56,14 @@ class Curl implements RequestResolverInterface
     /**
      * {@inheritdoc}
      */
+    public function getUrl()
+    {
+        return $this->getResult('url');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getHttpCode()
     {
         return intval($this->getResult('http_code'));
@@ -81,22 +87,6 @@ class Curl implements RequestResolverInterface
         }
 
         return $this->content;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getStartingUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getLatestUrl()
-    {
-        return $this->getResult('url');
     }
 
     /**
@@ -140,6 +130,8 @@ class Curl implements RequestResolverInterface
         $connection = curl_init();
 
         curl_setopt_array($connection, array(
+            CURLOPT_RETURNTRANSFER => false,
+            CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_URL => $this->url,
             CURLOPT_COOKIEJAR => $tmpCookies,
             CURLOPT_COOKIEFILE => $tmpCookies,
@@ -147,11 +139,11 @@ class Curl implements RequestResolverInterface
             CURLOPT_WRITEFUNCTION => array($this, 'writeCallback'),
         ) + $this->config);
 
-        curl_exec($connection);
+        $result = curl_exec($connection);
 
-        $this->result = curl_getinfo($connection);
+        $this->result = curl_getinfo($connection) ?: array();
 
-        if ($this->content === false) {
+        if (!$result) {
             $this->result['error'] = curl_error($connection);
             $this->result['error_number'] = curl_errno($connection);
         }

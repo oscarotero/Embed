@@ -129,7 +129,7 @@ class Html extends Provider
             $content = $html;
         }
 
-        $domain = $request->getDomain();
+        $domain = $request->url->getDomain();
 
         foreach ($content->getElementsByTagName('img') as $img) {
             if ($img->hasAttribute('src')) {

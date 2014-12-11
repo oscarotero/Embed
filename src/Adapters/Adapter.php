@@ -132,7 +132,7 @@ abstract class Adapter
 
         foreach ($this->providers as $provider) {
             if (($url = $provider->$method())) {
-                return $this->request->getAbsolute($url);
+                return $this->request->url->getAbsolute($url);
             }
         }
     }
@@ -313,7 +313,7 @@ abstract class Adapter
      */
     public function getProviderName()
     {
-        return $this->getFromProviders('providerName') ?: $this->request->getDomain();
+        return $this->getFromProviders('providerName') ?: $this->request->url->getDomain();
     }
 
     /**
@@ -321,7 +321,7 @@ abstract class Adapter
      */
     public function getProviderUrl()
     {
-        return $this->getUrlFromProviders('providerUrl') ?: ($this->request->getScheme().'://'.$this->request->getDomain(true));
+        return $this->getUrlFromProviders('providerUrl') ?: ($this->request->url->getScheme().'://'.$this->request->url->getDomain(true));
     }
 
     /**

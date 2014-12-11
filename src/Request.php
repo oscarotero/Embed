@@ -8,6 +8,7 @@ use Embed\Url;
 
 class Request
 {
+    public $startingUrl;
     public $url;
     public $resolver;
 
@@ -38,6 +39,23 @@ class Request
         }
 
         $this->setUrl($url);
+    }
+
+
+    /**
+     * Magic method to retrieve the resolver an url in lazy mode
+     */
+    public function __get($name)
+    {
+        switch ($name) {
+            case 'url':
+                return $this->url = new Url($this->resolver->getUrl());
+
+            case 'resolver':
+                $resolverClass = $this->resolverClass ?: $this->defaultResolverClass;
+
+                return $this->resolver = new $resolverClass(UrlRedirect::resolve($this->startingUrl->getUrl()), $this->resolverConfig);
+        }
     }
 
 
@@ -83,30 +101,16 @@ class Request
     }
 
     /**
-     * Inicialize and returns the resolver instance
-     *
-     * @return mixed
-     */
-    public function getResolver()
-    {
-        if (!$this->resolver) {
-            $resolverClass = $this->resolverClass ?: $this->defaultResolverClass;
-
-            $this->resolver = new $resolverClass(UrlRedirect::resolve($this->url->getUrl()), $this->resolverConfig);
-        }
-
-        return $this->resolver;
-    }
-
-    /**
      * Set a new url
      *
      * @param Url $url The Url instance
      */
     public function setUrl(Url $url)
     {
-        $this->resolver = $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
-        $this->url = $url;
+        $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
+        $this->startingUrl = $url;
+
+        unset($this->url, $this->resolver);
     }
 
     /**
@@ -116,7 +120,7 @@ class Request
      */
     public function getUrl()
     {
-        return $this->getResolver()->getLatestUrl();
+        return $this->resolver->getUrl();
     }
 
     /**
@@ -128,7 +132,7 @@ class Request
      */
     public function match($patterns)
     {
-        return Url::urlMatches($this->getStartingUrl(), $patterns) || Url::urlMatches($this->getUrl(), $patterns);
+        return $this->startingUrl->match($patterns) || $this->url->match($patterns);
     }
 
     /**
@@ -138,7 +142,7 @@ class Request
      */
     public function getRequestInfo()
     {
-        return $this->getResolver()->getRequestInfo();
+        return $this->resolver->getRequestInfo();
     }
 
     /**
@@ -148,7 +152,7 @@ class Request
      */
     public function getStartingUrl()
     {
-        return $this->getResolver()->getStartingUrl();
+        return $this->resolver->getStartingUrl();
     }
 
     /**
@@ -158,7 +162,7 @@ class Request
      */
     public function getHttpCode()
     {
-        return $this->getResolver()->getHttpCode();
+        return $this->resolver->getHttpCode();
     }
 
     /**
@@ -168,7 +172,7 @@ class Request
      */
     public function getMimeType()
     {
-        return $this->getResolver()->getMimeType();
+        return $this->resolver->getMimeType();
     }
 
     /**
@@ -178,7 +182,7 @@ class Request
      */
     public function getContent()
     {
-        return $this->getResolver()->getContent();
+        return $this->resolver->getContent();
     }
 
     /**
