@@ -32,7 +32,7 @@ class Archive extends Webpage implements AdapterInterface
         $this->api = new Provider();
 
         $api = clone $request;
-        $api->setParameter('output', 'json');
+        $api->url->setParameter('output', 'json');
 
         if (($json = $api->getJsonContent())) {
             $this->api->set($json);
@@ -125,13 +125,13 @@ class Archive extends Webpage implements AdapterInterface
         $images = array();
 
         if (($image = $this->api->get('misc', 'image'))) {
-            $images[] = $this->request->getAbsolute($image);
+            $images[] = $this->request->url->getAbsolute($image);
         }
 
         if (is_array($files = $this->api->get('files'))) {
             foreach ($files as $url => $info) {
                 if ($info['format'] === 'Thumbnail') {
-                    $images[] = $this->request->getAbsolute($url);
+                    $images[] = $this->request->url->getAbsolute($url);
                 }
             }
         }

@@ -223,7 +223,7 @@ class Url
     /**
      * Set a new GET parameter or modify an existing one
      *
-     * @param string $name  The parameter name or an array of parameters
+     * @param string|array $name  The parameter name or an array of parameters
      * @param string $value The parameter value
      */
     public function setParameter($name, $value = null)

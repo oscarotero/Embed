@@ -173,7 +173,7 @@ include('../src/autoloader.php');
                 $options['oembedParameters'] = $options['oembedParameters'] ? json_decode($options['oembedParameters'], true) : array();
             }
 
-            $request = new Embed\Request(new Embed\Url($_GET['url'], null, isset($_GET['resolver']) ? (array) $_GET['resolver'] : null));
+            $request = new Embed\Request(new Embed\Url($_GET['url']), null, isset($_GET['resolver']) ? (array) $_GET['resolver'] : null);
             $info = Embed\Embed::create($request, $options);
             ?>
 

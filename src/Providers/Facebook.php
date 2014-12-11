@@ -17,7 +17,7 @@ class Facebook extends Provider
     public function __construct(Request $request)
     {
         $graph = $request->createRequest('https://graph.facebook.com/fql');
-        $graph->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$this->url.'"');
+        $graph->url->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$request->url->getUrl().'"');
 
         if ($graph->isValid() && ($info = $graph->getJsonContent()) && isset($info['data'][0]['comments_fbid'])) {
             $graph = $request->createRequest('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
