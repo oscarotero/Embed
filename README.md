@@ -4,8 +4,7 @@ Embed
 [![Build Status](https://travis-ci.org/oscarotero/Embed.svg?branch=master)](https://travis-ci.org/oscarotero/Embed)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/Embed/badges/quality-score.png?s=79e37032db280b9795388124c030dcf4309343d1)](https://scrutinizer-ci.com/g/oscarotero/Embed/)
 
-PHP library to get info and embed any web page (using oembed, opengraph, twitter-cards, scrapping the html, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc).
-Has adapters to some webpages like (archive.org, github, deviantart, etc).
+PHP library to get information about any web page (using oembed, opengraph, twitter-cards, scrapping the html, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc) and has adapters to some sites like (archive.org, github, facebook, etc).
 
 Requirements:
 
@@ -31,7 +30,7 @@ $info->type; //The page type (link, video, image, rich)
 $info->images; //List of all images found in the page
 $info->image; //The image choosen as main image
 $info->imageWidth; //The with of the main image
-$info->imageHeight; //The height  of the main image
+$info->imageHeight; //The height of the main image
 
 $info->code; //The code to embed the image, video, etc
 $info->width; //The with of the embed code
@@ -59,6 +58,7 @@ Available options
 * embedlyKey (string): If it's defined, get info from embedly service (only for know supported services and if the page doesn't have its own oembed service)
 * oembedParameters (array): Extra GET parameters to the oembed requests.
 * facebookProvider (bool): If it's true, the facebook provider will be used to get the page information, that uses the facebook scrapping. By default is false because reduce the number of requests and facebook scrapping not always returns right results.
+* request (array): Used to customize the request (see below)
 
 ```php
 $options = array(
@@ -71,14 +71,33 @@ $info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', $opti
 Customize the request
 ---------------------
 
-Embed provides a RequestResolvers\Curl class to resolve all requests using the curl library. You can set custom options to the curl request or use your own request resolver class creating a class implementing the RequestResolverInterface. To do that, you have the "resolver" that is an array with two values: "class" (if you want provide your own class) and "options" to set options to the curl library. The options can be any of the available in the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
+Embed uses the `Embed\RequestResolvers\Curl` class to resolve all requests using the curl library. You can set options to the curl request or create your own implementation creating a class implementing the `Embed\RequestResolvers\RequestResolverInterface`.
+
+The resolver configuration is defined under the "resolver" key in the options array. There is two options:
+
+* class: Your custom class name if you want to use your own implementation
+* options: The options passed to the class. If you use the default curl class, the options are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
 
 ```php
+//Customize the curl request of the default Embed\RequestResolvers\Curl
+
 $info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', array(
 	"resolver" => array(
 		"options" => array(
 			CURLOPT_USERAGENT => 'My spider',
 			CURLOPT_MAXREDIRS => 3
+		)
+	)
+));
+
+//Create your own implementation
+
+$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', array(
+	"resolver" => array(
+		"class" => 'My\Custom\RequestResolver'
+		"options" => array(
+			"option1" => "foo",
+			"option2" => "var"
 		)
 	)
 ));
