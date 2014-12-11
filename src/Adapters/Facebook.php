@@ -81,10 +81,10 @@ class Facebook extends Webpage implements AdapterInterface
 
         $this->api = new Provider();
 
-        if (($id = $this->getId($request->getStartingUrl()))) {
+        if (($id = $this->getId($request->startingUrl))) {
             if ($this->options['facebookAccessToken']) {
                 $api = $request->createRequest('https://graph.facebook.com/'.$id);
-                $api->setParameter('access_token', $this->options['facebookAccessToken']);
+                $api->startingUrl->setParameter('access_token', $this->options['facebookAccessToken']);
 
                 if ($json = $api->getJsonContent()) {
                     $this->api->set($json);
@@ -117,10 +117,10 @@ class Facebook extends Webpage implements AdapterInterface
     public function getUrl()
     {
         if ($this->isPost) {
-            return $this->request->getStartingUrl();
+            return $this->request->startingUrl->getUrl();
         }
 
-        return $this->api->get('url') ?: $this->request->getStartingUrl();
+        return $this->api->get('url') ?: $this->request->startingUrl->getUrl();
     }
 
     /**
