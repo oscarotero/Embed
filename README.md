@@ -71,38 +71,18 @@ $info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', $opti
 Customize the request
 ---------------------
 
-Embed provides a RequestResolvers\Curl class to resolve all requests using the curl library. You can create your own request resolver class creating a class implementing the RequestResolverInterface.
+Embed provides a RequestResolvers\Curl class to resolve all requests using the curl library. You can set custom options to the curl request or use your own request resolver class creating a class implementing the RequestResolverInterface. To do that, you have the "resolver" that is an array with two values: "class" (if you want provide your own class) and "options" to set options to the curl library. The options can be any of the available in the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
 
 ```php
-//Set your own request resolver class:
-Embed\Request::setDefaultResolver('MyCustomResolverClass');
-```
-
-You can configure also the following options of the default request resolver:
-
-* userAgent: User agent used in all requests. By default is "Embed PHP Library"
-* maxRedirections: The maximum amount of HTTP redirections to follow. By default is 20
-* connectionTimeout: The number of seconds to wait while trying to connect. Use 0 to wait indefinitely. By default is 10
-* timeout: The maximum number of seconds to allow execute the request. By default is 10
-
-To set a new configuration:
-
-```php
-Embed\Request::setResolverConfig(array(
-	'userAgent' => 'My spider',
-	'connectionTimeout' => 0
+$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', array(
+	"resolver" => array(
+		"options" => array(
+			CURLOPT_USERAGENT => 'My spider',
+			CURLOPT_MAXREDIRS => 3
+		)
+	)
 ));
 ```
-
-Or you can set your custom resolver class and the configuration at the same time:
-
-```php
-Embed\Request::setDefaultResolver('MyCustomResolverClass', array(
-	'userAgent' => 'My spider',
-	'connectionTimeout' => 0
-));
-```
-
 
 Online demo
 -----------
