@@ -53,7 +53,7 @@ class Feed extends Source implements SourceInterface
      */
     public function getSourceUrl()
     {
-        return $this->request->getUrl();
+        return $this->request->url->getUrl();
     }
 
     /**

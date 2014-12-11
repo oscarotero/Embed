@@ -48,26 +48,17 @@ class EmbedTest extends PHPUnit_Framework_TestCase
 
     public function testTwitter()
     {
-        //With no oembed params:
         $info = Embed\Embed::create('https://twitter.com/pepephone/status/436461658601713664');
 
         $this->assertEquals($info->code, '<blockquote class="twitter-tweet"><p>RT <a href="https://twitter.com/PabloHerreros">@PabloHerreros</a> Pepephone rompe la baraja - <a href="http://t.co/mFn7mcB1vy">http://t.co/mFn7mcB1vy</a></p>&mdash; pepephone (@pepephone) <a href="https://twitter.com/pepephone/status/436461658601713664">February 20, 2014</a></blockquote>'."\n".'<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>');
+    }
 
-        //With oembed params:
+    public function testTwitterParams()
+    {
         $info = Embed\Embed::create('https://twitter.com/pepephone/status/436461658601713664', array(
             'oembedParameters' => array('omit_script' => true)
         ));
 
         $this->assertEquals($info->code, '<blockquote class="twitter-tweet"><p>RT <a href="https://twitter.com/PabloHerreros">@PabloHerreros</a> Pepephone rompe la baraja - <a href="http://t.co/mFn7mcB1vy">http://t.co/mFn7mcB1vy</a></p>&mdash; pepephone (@pepephone) <a href="https://twitter.com/pepephone/status/436461658601713664">February 20, 2014</a></blockquote>');
-    }
-
-    public function testImageFile()
-    {
-        //With no oembed params:
-        $info = Embed\Embed::create('http://melihasweettimes.files.wordpress.com/2011/11/dsc01636.jpg');
-
-        $this->assertEquals($info->imageWidth, 1200);
-        $this->assertEquals($info->imageHeight, 1600);
-        $this->assertEquals($info->type, 'photo');
     }
 }

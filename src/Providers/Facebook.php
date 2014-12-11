@@ -16,11 +16,11 @@ class Facebook extends Provider
      */
     public function __construct(Request $request)
     {
-        $graph = $request->createSubRequest('https://graph.facebook.com/fql');
+        $graph = $request->createRequest('https://graph.facebook.com/fql');
         $graph->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$this->url.'"');
 
         if ($graph->isValid() && ($info = $graph->getJsonContent()) && isset($info['data'][0]['comments_fbid'])) {
-            $graph = $request->createSubRequest('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
+            $graph = $request->createRequest('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
 
             if ($json = $graph->getJsonContent()) {
                 $this->set($json);

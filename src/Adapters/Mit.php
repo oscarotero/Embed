@@ -15,8 +15,7 @@ class Mit extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->match(array(
-            'http://media.mit.edu/video/view/*',
-            'http://www.media.mit.edu/video/view/*',
+            'http://video.mit.edu/watch/*',
         ));
     }
 
@@ -25,7 +24,25 @@ class Mit extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        return Viewers::iframe(str_replace('/video/view/', '/video/embed/', $this->getUrl()));
+        $url = $this->getUrl();
+        $url = preg_replace('|(/watch/[\w-]+)-([\d]+)|', '/embed/$2', $url);
+        return Viewers::iframe($url, $this->getWidth(), $this->getHeight());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getWidth()
+    {
+        return 600;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getHeight()
+    {
+        return 337;
     }
 
     /**
@@ -34,5 +51,13 @@ class Mit extends Webpage implements AdapterInterface
     public function getProviderName()
     {
         return 'MIT Media Lab';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getType()
+    {
+        return 'video';
     }
 }

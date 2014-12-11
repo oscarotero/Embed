@@ -61,8 +61,8 @@ abstract class Adapter
 
         $this->initProviders($request);
 
-        if ($request->getUrl() !== $this->url) {
-            $this->initProviders($request->createSubRequest($this->url));
+        if ($request->url->getUrl() !== $this->url) {
+            $this->initProviders($request->createRequest($this->url));
         }
     }
 
@@ -142,7 +142,7 @@ abstract class Adapter
      */
     public function getTitle()
     {
-        return $this->getFromProviders('title') ?: $this->request->getUrl();
+        return $this->getFromProviders('title') ?: $this->request->url->getUrl();
     }
 
     /**
@@ -158,7 +158,7 @@ abstract class Adapter
      */
     public function getUrl()
     {
-        return $this->getUrlFromProviders('url') ?: $this->request->getUrl();
+        return $this->getUrlFromProviders('url') ?: $this->request->url->getUrl();
     }
 
     /**

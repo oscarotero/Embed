@@ -13,6 +13,7 @@ class File extends Adapter implements AdapterInterface
 {
     private static $contentTypes = array(
         'video/ogg' => array('video', 'videoHtml'),
+        'application/ogg' => array('video', 'videoHtml'),
         'video/ogv' => array('video', 'videoHtml'),
         'video/webm' => array('video', 'videoHtml'),
         'video/mp4' => array('video', 'videoHtml'),
@@ -98,8 +99,8 @@ class File extends Adapter implements AdapterInterface
     public function getProviderIcons()
     {
         return array(
-            $this->request->getAbsolute('/favicon.ico'),
-            $this->request->getAbsolute('/favicon.png'),
+            $this->request->url->getAbsolute('/favicon.ico'),
+            $this->request->url->getAbsolute('/favicon.png'),
         );
     }
 }

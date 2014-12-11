@@ -29,17 +29,17 @@ class OEmbedImplementations extends Provider
             );
 
             if ($request->match($settings['patterns'])) {
-                $endPoint = $request->createSubRequest($settings['endPoint']);
+                $endPoint = $request->createRequest($settings['endPoint']);
 
                 if ($extraParameters) {
-                    $endPoint->url->setParameter($extraParameters);
+                    $endPoint->startingUrl->setParameter($extraParameters);
                 }
 
                 if (empty($settings['params']) === false) {
-                    $endPoint->url->setParameter($settings['params']);
+                    $endPoint->startingUrl->setParameter($settings['params']);
                 }
 
-                $endPoint->url->setParameter('url', $request->getUrl());
+                $endPoint->startingUrl->setParameter('url', $request->url->getUrl());
 
                 return new OEmbed($endPoint);
             }

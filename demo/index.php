@@ -173,12 +173,8 @@ include('../src/autoloader.php');
                 $options['oembedParameters'] = $options['oembedParameters'] ? json_decode($options['oembedParameters'], true) : array();
             }
 
-            $resolverOptions = isset($_GET['resolver']) ? (array) $_GET['resolver'] : array();
-            
-            Embed\Request::setResolverConfig($resolverOptions);
-
-            $url = new Embed\Request($_GET['url']);
-            $info = Embed\Embed::create($url, $options);
+            $request = new Embed\Request(new Embed\Url($_GET['url'], null, isset($_GET['resolver']) ? (array) $_GET['resolver'] : null));
+            $info = Embed\Embed::create($request, $options);
             ?>
 
             <?php if (empty($info)): ?>
@@ -301,7 +297,7 @@ include('../src/autoloader.php');
                     <td>
                         <ul>
                         <?php
-                        foreach ($url->getRequestInfo() as $name => $value) {
+                        foreach ($request->getRequestInfo() as $name => $value) {
                             if (is_array($value)) {
                                 $value = print_r($value, true);
                             }
@@ -319,7 +315,7 @@ include('../src/autoloader.php');
                 <tr>
                     <th>Content</th>
                     <td>
-                        <pre><?php echo htmlspecialchars($url->getContent(), ENT_IGNORE); ?></pre>
+                        <pre><?php echo htmlspecialchars($request->getContent(), ENT_IGNORE); ?></pre>
                     </td>
                 </tr>
             </table>

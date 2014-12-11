@@ -26,7 +26,7 @@ class Google extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $url = new Url($this->request->getUrl());
+        $url = new Url($this->request->url->getUrl());
 
         $url->setParameter('output', 'embed');
         $url->setParameter('s', '');

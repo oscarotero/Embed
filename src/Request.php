@@ -9,8 +9,6 @@ use Embed\Url;
 class Request
 {
     public $startingUrl;
-    public $url;
-    public $resolver;
 
     private $defaultResolverClass = 'Embed\\RequestResolvers\\Curl';
     private $resolverClass;
@@ -38,7 +36,7 @@ class Request
             $this->setResolverConfig($resolverConfig);
         }
 
-        $this->setUrl($url);
+        $this->startingUrl = $url;
     }
 
 
@@ -64,7 +62,7 @@ class Request
      *
      * @param string  $url The url string
      */
-    public function createSubRequest($url)
+    public function createRequest($url)
     {
         return new Request(new Url($url), $this->resolverClass, $this->resolverConfig);
     }
@@ -95,32 +93,21 @@ class Request
      *
      * @param array $config
      */
-    public static function setResolverConfig(array $config)
+    public function setResolverConfig(array $config)
     {
         $this->resolverConfig = $config;
     }
 
-    /**
-     * Set a new url
-     *
-     * @param Url $url The Url instance
-     */
-    public function setUrl(Url $url)
-    {
-        $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
-        $this->startingUrl = $url;
-
-        unset($this->url, $this->resolver);
-    }
 
     /**
-     * Return the url
+     * Clear the cache of the response
      *
      * @return string The current url
      */
-    public function getUrl()
+    public function clearCache()
     {
-        return $this->resolver->getUrl();
+        $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
+        unset($this->url, $this->resolver);
     }
 
     /**
@@ -145,15 +132,6 @@ class Request
         return $this->resolver->getRequestInfo();
     }
 
-    /**
-     * Return the starting url (before all possible redirects)
-     *
-     * @return string The starting url
-     */
-    public function getStartingUrl()
-    {
-        return $this->resolver->getStartingUrl();
-    }
 
     /**
      * Get the http code of the url

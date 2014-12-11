@@ -13,33 +13,24 @@ class Parleys extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        // http://www.parleys.com/#st=5&id=2912&sl=0
-        return $request->match(['*.parleys.com/#*']);
+        return $request->match(['*://www.parleys.com/play/*']);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getUrl()
+    public function getCode()
     {
-        $fragments = $this->request->getFragmentArray();
+        $id = $this->request->url->getDirectory(1);
 
-        if (!empty($fragments['id'])) {
-            return 'http://parleys.com/d/'.$fragments['id'];
-        }
-
-        if ($this->request->hasParameter('id')) {
-            return 'http://parleys.com/d/'.$this->request->getParameter('id');
-        }
-
-        return parent::getUrl();
+        return '<div data-parleys-presentation="'.$id.'" style="width:100%;height:300px"><script type = "text/javascript" src="//parleys.com/js/parleys-share.js"></script></div>';
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getProviderIcon()
+    public function getType()
     {
-        return 'http://parleys.com/favicon.ico';
+        return 'video';
     }
 }

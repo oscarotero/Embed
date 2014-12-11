@@ -24,8 +24,9 @@ class Giphy extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        if (($id = $this->request->getDirectory(1))) {
-            return Viewers::iframe('//giphy.com/embed/'.$id, $this->width.'px', $this->height.'px');
+        if (($url = $this->providers['TwitterCards']->get('player'))) {
+            $url = str_replace('/twitter/iframe', '?html5=true', $url);
+            return Viewers::iframe($url, $this->width.'px', $this->height.'px');
         }
     }
 }
