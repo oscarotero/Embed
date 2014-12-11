@@ -6,7 +6,7 @@ class Embed
     /**
      * Gets the info from an url
      *
-     * @param string|Request $request     The url or a request with the url
+     * @param string|Request $request The url or a request with the url
      * @param null|array     $options Options passed to the adapter
      *
      * @return false|Adapters\AdapterInterface
@@ -50,7 +50,7 @@ class Embed
     /**
      * Gets the info from a source (list of urls)
      *
-     * @param string|Request $url The url or a request with the source url
+     * @param string|Request $url     The url or a request with the source url
      * @param null|array     $options Options passed to the adapter
      *
      * @return false|Sources\SourceInterface

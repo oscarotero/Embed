@@ -4,7 +4,6 @@
  */
 namespace Embed;
 
-use Embed\Url;
 
 class Request
 {
@@ -18,13 +17,12 @@ class Request
     private $jsonContent;
     private $htmlContent;
 
-
     /**
      * Constructor. Sets the url
      *
-     * @param Url    $url The Url instance
-     * @param null|string $resolverClass The resolver classname
-     * @param null|array $resolverConfig The resolver configuration
+     * @param Url         $url            The Url instance
+     * @param null|string $resolverClass  The resolver classname
+     * @param null|array  $resolverConfig The resolver configuration
      */
     public function __construct(Url $url, $resolverClass = null, array $resolverConfig = null)
     {
@@ -38,7 +36,6 @@ class Request
 
         $this->startingUrl = $url;
     }
-
 
     /**
      * Magic method to retrieve the resolver an url in lazy mode
@@ -56,17 +53,15 @@ class Request
         }
     }
 
-
     /**
      * Creates a new request with the same configuration than this
      *
-     * @param string  $url The url string
+     * @param string $url The url string
      */
     public function createRequest($url)
     {
         return new Request(new Url($url), $this->resolverClass, $this->resolverConfig);
     }
-
 
     /**
      * Set the url resolver class used for http requests
@@ -97,7 +92,6 @@ class Request
     {
         $this->resolverConfig = $config;
     }
-
 
     /**
      * Clear the cache of the response
@@ -131,7 +125,6 @@ class Request
     {
         return $this->resolver->getRequestInfo();
     }
-
 
     /**
      * Get the http code of the url

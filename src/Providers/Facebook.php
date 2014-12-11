@@ -8,7 +8,6 @@ use Embed\Request;
 
 class Facebook extends Provider
 {
-
     /**
      * Constructor
      *
@@ -27,7 +26,6 @@ class Facebook extends Provider
             }
         }
     }
-
 
     /**
      * Gets the title
