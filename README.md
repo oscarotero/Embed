@@ -29,11 +29,11 @@ $info->type; //The page type (link, video, image, rich)
 
 $info->images; //List of all images found in the page
 $info->image; //The image choosen as main image
-$info->imageWidth; //The with of the main image
+$info->imageWidth; //The width of the main image
 $info->imageHeight; //The height of the main image
 
 $info->code; //The code to embed the image, video, etc
-$info->width; //The with of the embed code
+$info->width; //The width of the embed code
 $info->height; //The height of the embed code
 $info->aspectRatio; //The aspect ratio (width/height)
 
