@@ -11,7 +11,13 @@ Requirements:
 * PHP 5.3+
 * Curl library installed
 
-Usage:
+Online demo
+-----------
+
+http://oscarotero.com/embed/demo
+
+Usage
+-----
 
 ```php
 //Load library (if you don't have composer or any psr-4 compatible loader):
@@ -102,11 +108,6 @@ $info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', array
 	)
 ));
 ```
-
-Online demo
------------
-
-http://oscarotero.com/embed/demo
 
 Do you need help?
 -----------------
