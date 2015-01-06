@@ -18,6 +18,7 @@ class Soundcloud extends Webpage implements AdapterInterface
     {
         return $request->match(array(
             'https?://soundcloud.com/*',
+            'https?://m.soundcloud.com/*',
         ));
     }
 
