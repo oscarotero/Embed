@@ -26,6 +26,15 @@ class UrlTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('second', $url->getDirectory(1));
         $this->assertEquals('third', $url->getDirectory(2));
         $this->assertNull($url->getDirectory(3));
+
+        $url->setDirectory(0, 'one');
+        $url->setDirectory(2, 'four');
+
+        $this->assertEquals('one', $url->getDirectory(0));
+        $this->assertEquals('four', $url->getDirectory(2));
+        $this->assertNull($url->getDirectory(3));
+        
+        $this->assertEquals('http://domain.com/one/second/four', $url->getUrl());
     }
 
     public function testDomain()

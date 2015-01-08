@@ -148,6 +148,28 @@ class Url
     }
 
     /**
+     * Edit a specific directory in the path of the url
+     *
+     * @param int    $key   The position of the subdirectory (0 based index)
+     * @param string $value The new value
+     */
+    public function setDirectory($key, $value)
+    {
+        if ($key > count($this->info['path'])) {
+            $this->info['path'][] = $this->info['file'];
+            $this->info['file'] = $value;
+            return;
+        }
+
+        if ($key === count($this->info['path'])) {
+            $this->info['file'] = $value;
+            return;
+        }
+
+        $this->info['path'][$key] = $value;
+    }
+
+    /**
      * Return a specific directory in the path of the url
      *
      * @param int $key The position of the subdirectory (0 based index)
