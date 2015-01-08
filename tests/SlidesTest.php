@@ -1,7 +1,7 @@
 <?php
 include_once dirname(__DIR__).'/src/autoloader.php';
 
-class SoundcloudTest extends PHPUnit_Framework_TestCase
+class SlidesTest extends PHPUnit_Framework_TestCase
 {
     public function testOne()
     {
