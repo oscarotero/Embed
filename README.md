@@ -10,6 +10,7 @@ Requirements:
 
 * PHP 5.3+
 * Curl library installed
+* [allow_url_fopen: On](http://php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen)
 
 Online demo
 -----------
