@@ -28,6 +28,7 @@ class Webpage extends Adapter implements AdapterInterface
             'Html' => new Providers\Html($request),
             'TwitterCards' => new Providers\TwitterCards($request),
             'OpenGraph' => new Providers\OpenGraph($request),
+            'Sailthru' => new Providers\Sailthru($request),
         );
 
         if ($this->options['facebookProvider']) {

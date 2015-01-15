@@ -25,9 +25,15 @@ class OpenGraph extends Provider
 
         foreach ($html->getElementsByTagName('meta') as $meta) {
             if (strpos($meta->getAttribute('property'), 'og:') === 0) {
-                $name = substr($meta->getAttribute('property'), 3);
+                if (strpos($meta->getAttribute('property'), 'og:article:') === 0) {
+                    $name = substr($meta->getAttribute('property'), 11);
+                } else {
+                    $name = substr($meta->getAttribute('property'), 3);
+                }
             } elseif (strpos($meta->getAttribute('name'), 'og:') === 0) {
                 $name = substr($meta->getAttribute('name'), 3);
+            } elseif (strpos($meta->getAttribute('property'), 'article:') === 0) {
+                $name = substr($meta->getAttribute('property'), 8);
             } else {
                 continue;
             }
@@ -178,5 +184,15 @@ class OpenGraph extends Provider
     public function getHeight()
     {
         return $this->get('image:height') ?: $this->get('video:height');
+    }
+
+    /**
+     * Gets the article publication date
+     *
+     * @return string|null
+     */
+    public function getPublishedTime()
+    {
+	    return $this->get('published_time');
     }
 }
