@@ -49,7 +49,13 @@ class Request
             case 'resolver':
                 $resolverClass = $this->resolverClass ?: $this->defaultResolverClass;
 
-                return $this->resolver = new $resolverClass(UrlRedirect::resolve($this->startingUrl->getUrl()), $this->resolverConfig);
+                $this->resolver = new $resolverClass(UrlRedirect::resolve($this->startingUrl->getUrl()));
+
+                if(is_array($this->resolverConfig)) {
+                    $this->resolver->setConfig($this->resolverConfig);
+                }
+
+                return $this->resolver;
         }
     }
 
