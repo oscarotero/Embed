@@ -91,6 +91,11 @@ class Html extends Provider
                         $icons[] = $meta->getAttribute('content');
                         continue 2;
 
+                    case 'pub_date':
+                    case 'date':
+                        $this->set('datepublished', $meta->getAttribute('content'));
+                        continue 2;
+
                     default:
                         if ($meta->hasAttribute('content')) {
                             $this->set($name, $meta->getAttribute('content'));
@@ -99,9 +104,24 @@ class Html extends Provider
                 }
             }
 
+            if ($meta->hasAttribute('itemprop')) {
+                $name = strtolower($meta->getAttribute('itemprop'));
+                $this->set($name, $meta->getAttribute('content'));
+            }
+
             if ($meta->hasAttribute('http-equiv') && $meta->hasAttribute('content')) {
                 $name = strtolower($meta->getAttribute('http-equiv'));
                 $this->set($name, $meta->getAttribute('content'));
+            }
+        }
+
+        //Time
+        foreach($html->getElementsByTagName('time') as $time) {
+            if ($time->hasAttribute('itemprop')) {
+                $name = strtolower($time->getAttribute('itemprop'));
+                $this->set($name, $time->getAttribute('datetime'));
+            } else if ($time->hasAttribute('datetime')) {
+                $this->set('datepublished', $time->getAttribute('datetime'));
             }
         }
 
@@ -279,5 +299,15 @@ class Html extends Provider
     public function getHeight()
     {
         return $this->get('video_height');
+    }
+
+    /**
+     * Gets the article publication date
+     *
+     * @return string|null
+     */
+    public function getPublishedTime()
+    {
+        return $this->get('datepublished');
     }
 }
