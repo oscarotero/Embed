@@ -364,12 +364,4 @@ abstract class Adapter
     {
         return $this->getFromProviders('height');
     }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getPublishedTime()
-    {
-        return $this->getFromProviders('publishedTime');
-    }
 }

@@ -51,8 +51,6 @@ $info->providerName; //The provider name of the page (youtube, twitter, instagra
 $info->providerUrl; //The provider url
 $info->providerIcons; //All provider icons found in the page
 $info->providerIcon; //The icon choosen as main icon
-
-$info->publishedTime; //The publication date of the article, if present
 ```
 
 Available options

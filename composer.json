@@ -1,5 +1,5 @@
 {
-	"name": "thenextweb/embed",
+	"name": "embed/embed",
 	"type": "library",
 	"description": "PHP library to retrieve page info using oembed, opengraph, etc",
 	"keywords": ["oembed", "opengraph", "twitter cards", "embed", "embedly"],
