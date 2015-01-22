@@ -163,11 +163,4 @@ interface AdapterInterface
      * @return float|null
      */
     public function getAspectRatio();
-    
-     /**
-     * Gets the published time, if the webpage is an article
-     *
-     * @return string|null
-     */   
-    public function getPublishedTime ();
 }
