@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Scribd extends \Embed\Providers\OEmbedImplementationAbstract
+class Scribd extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Justin extends \Embed\Providers\OEmbedImplementationAbstract
+class Justin extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

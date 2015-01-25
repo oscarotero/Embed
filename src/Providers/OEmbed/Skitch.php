@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Skitch extends \Embed\Providers\OEmbedImplementationAbstract
+class Skitch extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

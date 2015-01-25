@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class SmugMug extends \Embed\Providers\OEmbedImplementationAbstract
+class SmugMug extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

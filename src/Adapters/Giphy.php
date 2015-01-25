@@ -4,7 +4,7 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Viewers;
+use Embed\Utils;
 use Embed\Request;
 
 class Giphy extends Webpage implements AdapterInterface
@@ -27,7 +27,7 @@ class Giphy extends Webpage implements AdapterInterface
         if (($url = $this->providers['TwitterCards']->get('player'))) {
             $url = str_replace('/twitter/iframe', '?html5=true', $url);
 
-            return Viewers::iframe($url, $this->width.'px', $this->height.'px');
+            return Utils::iframe($url, $this->width.'px', $this->height.'px');
         }
     }
 }

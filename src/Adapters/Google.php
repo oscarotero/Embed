@@ -6,7 +6,7 @@ namespace Embed\Adapters;
 
 use Embed\Url;
 use Embed\Request;
-use Embed\Viewers;
+use Embed\Utils;
 
 class Google extends Webpage implements AdapterInterface
 {
@@ -31,7 +31,7 @@ class Google extends Webpage implements AdapterInterface
         $url->setParameter('output', 'embed');
         $url->setParameter('s', '');
 
-        return Viewers::iframe($url->getUrl());
+        return Utils::iframe($url->getUrl());
     }
 
     /**

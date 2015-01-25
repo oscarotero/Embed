@@ -262,6 +262,10 @@ include('../src/autoloader.php');
                     <td><?php echo $info->aspectRatio; ?></td>
                 </tr>
                 <tr>
+                    <th>publishedTime</th>
+                    <td><?php echo $info->publishedTime; ?></td>
+                </tr>
+                <tr>
                     <th>Http request info</th>
                     <td>
                         <ul>
@@ -276,8 +280,8 @@ include('../src/autoloader.php');
                         </ul>
                     </td>
                 </tr>
-                <?php foreach ($info->providers as $name => $provider) {
-                    $content = htmlspecialchars(print_r($provider, true), ENT_IGNORE);
+                <?php foreach ($info->getAllProviders() as $name => $provider) {
+                    $content = htmlspecialchars(print_r($provider->bag->get(), true), ENT_IGNORE);
                     echo '<tr><th>'.$name.'</th><td><pre>'.$content.'</pre></td></tr>';
                 }
                 ?>

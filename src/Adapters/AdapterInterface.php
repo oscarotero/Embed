@@ -5,8 +5,9 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
+use Embed\DataInterface;
 
-interface AdapterInterface
+interface AdapterInterface extends DataInterface
 {
     /**
      * Checks whether the request is valid to this Adapter
@@ -26,71 +27,6 @@ interface AdapterInterface
     public function __construct(Request $request, array $options = null);
 
     /**
-     * Gets the title
-     *
-     * @return string|null
-     */
-    public function getTitle();
-
-    /**
-     * Gets the description
-     *
-     * @return string|null
-     */
-    public function getDescription();
-
-    /**
-     * Gets the type of the url
-     * The types are the same than the oEmbed types:
-     * video, photo, link, rich
-     *
-     * @return string|null
-     */
-    public function getType();
-
-    /**
-     * Gets the source url (feed, api, etc)
-     *
-     * @return string|null
-     */
-    public function getSource();
-
-    /**
-     * Gets the embed code
-     *
-     * @return string|null
-     */
-    public function getCode();
-
-    /**
-     * Gets the canonical url
-     *
-     * @return string|null
-     */
-    public function getUrl();
-
-    /**
-     * Gets the author name
-     *
-     * @return string|null
-     */
-    public function getAuthorName();
-
-    /**
-     * Gets the author url
-     *
-     * @return string|null
-     */
-    public function getAuthorUrl();
-
-    /**
-     * Gets all icon provider urls found
-     *
-     * @return array
-     */
-    public function getProviderIcons();
-
-    /**
      * Gets the best icon provider
      * if $options['getBiggerIcon'] is true, returns the bigger image found
      * else, returns the first found
@@ -98,27 +34,6 @@ interface AdapterInterface
      * @return string|null
      */
     public function getProviderIcon();
-
-    /**
-     * Gets the provider name
-     *
-     * @return string|null
-     */
-    public function getProviderName();
-
-    /**
-     * Gets the provider url (usually the home url of the link)
-     *
-     * @return string|null
-     */
-    public function getProviderUrl();
-
-    /**
-     * Gets all images found in the webpage
-     *
-     * @return array
-     */
-    public function getImages();
 
     /**
      * Gets the best image
@@ -143,31 +58,10 @@ interface AdapterInterface
     public function getImageHeight();
 
     /**
-     * Gets the width of the embedded widget
-     *
-     * @return integer|null
-     */
-    public function getWidth();
-
-    /**
-     * Gets the height of the embedded widget
-     *
-     * @return integer|null
-     */
-    public function getHeight();
-
-    /**
      * Gets the aspect ratio of the embedded widget
      * (useful to make it flexible)
      *
      * @return float|null
      */
     public function getAspectRatio();
-    
-     /**
-     * Gets the published time, if the webpage is an article
-     *
-     * @return string|null
-     */   
-    public function getPublishedTime ();
 }

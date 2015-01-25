@@ -1,5 +1,5 @@
 {
-	"name": "thenextweb/embed",
+	"name": "embed/embed",
 	"type": "library",
 	"description": "PHP library to retrieve page info using oembed, opengraph, etc",
 	"keywords": ["oembed", "opengraph", "twitter cards", "embed", "embedly"],
@@ -18,8 +18,25 @@
 		"issues": "https://github.com/oscarotero/Embed/issues"
 	},
 	"require": {
-		"php": ">=5.3.0"
+		"php": ">=5.3.0",
+		"fastimage/fastimage": "0.2"
 	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "fastimage/fastimage",
+				"version": "0.2",
+				"dist": {
+                    "url": "https://github.com/pinleague/fastimage/archive/c9b452aa315a65d1129bb9a820e18ee7130af066.zip",
+                    "type": "zip"
+                },
+                "autoload": {
+                	"classmap": ["src"]
+                }
+			}
+		}
+	],
 	"autoload": {
 		"psr-4": {
 			"Embed\\": "src"

@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Kewego extends \Embed\Providers\OEmbedImplementationAbstract
+class Kewego extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

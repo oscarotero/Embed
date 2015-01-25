@@ -1,11 +1,12 @@
 <?php
-/**
- * Generic oembed provider.
- * Load the oembed data of an url and store it
- */
-namespace Embed\Providers;
+namespace Embed\Providers\Oembed;
 
-abstract class OEmbedImplementationAbstract
+/**
+ * Abstract class extended by all oembed classes
+ * 
+ * Provides the endPoint, pattern and params of the well known oembed implementations
+ */
+abstract class OEmbedImplementation
 {
     /**
      * @access public

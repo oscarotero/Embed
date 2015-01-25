@@ -1,34 +1,55 @@
 <?php
-/**
- * Some helpers to generate code for the viewers
- */
 namespace Embed;
 
-class Viewers
+use FastImage;
+
+/**
+ * Some helpers methods used across the library
+ */
+class Utils
 {
     /**
-     * Creates an html element
+     * Extract all meta elements from html
      *
-     * @param string $name  Element name
-     * @param array  $attrs Element attributes
+     * @param \DOMDocument $html
      *
-     * @return string
+     * @return array with subarrays [name, value, element]
      */
-    private static function element($name, array $attrs)
+    public static function getMetas(\DOMDocument $html)
     {
-        $str = "<$name";
+        $metas = array();
 
-        foreach ($attrs as $name => $value) {
-            if ($value === null) {
-                continue;
-            } elseif ($value === true) {
-                $str .= " $name";
-            } elseif ($value !== false) {
-                $str .= ' '.$name.'="'.htmlspecialchars($value).'"';
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            $name = trim(strtolower($meta->getAttribute('property') ?: $meta->getAttribute('name')));
+            $value = $meta->getAttribute('content') ?: $meta->getAttribute('value');
+            
+            $metas[] = array($name, $value, $meta);
+        }
+
+        return $metas;
+    }
+
+    /**
+     * Extract all link elements from html
+     *
+     * @param \DOMDocument $html
+     *
+     * @return array with subarrays [rel, href, element]
+     */
+    public static function getLinks(\DOMDocument $html)
+    {
+        $links = array();
+
+        foreach ($html->getElementsByTagName('link') as $link) {
+            if ($link->hasAttribute('rel') && $link->hasAttribute('href')) {
+                $rel = trim(strtolower($link->getAttribute('rel')));
+                $href = $link->getAttribute('href');
+            
+                $links[] = array($rel, $href, $link);
             }
         }
 
-        return "$str>";
+        return $links;
     }
 
     /**
@@ -165,5 +186,42 @@ class Viewers
         ));
 
         return $code.'</embed></object>';
+    }
+
+    /**
+     * Returns the size of an image
+     *
+     * @param array $src Image sources
+     *
+     * @return array
+     */
+    static function getImagesSizes(array $src)
+    {
+        return FastImage::batch($src);
+    }
+
+    /**
+     * Creates an html element
+     *
+     * @param string $name  Element name
+     * @param array  $attrs Element attributes
+     *
+     * @return string
+     */
+    private static function element($name, array $attrs)
+    {
+        $str = "<$name";
+
+        foreach ($attrs as $name => $value) {
+            if ($value === null) {
+                continue;
+            } elseif ($value === true) {
+                $str .= " $name";
+            } elseif ($value !== false) {
+                $str .= ' '.$name.'="'.htmlspecialchars($value).'"';
+            }
+        }
+
+        return "$str>";
     }
 }

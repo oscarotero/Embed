@@ -4,7 +4,7 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Viewers;
+use Embed\Utils;
 use Embed\Request;
 
 class Line extends Webpage implements AdapterInterface
@@ -29,7 +29,7 @@ class Line extends Webpage implements AdapterInterface
         $url->setDirectory(0, 'embed');
         $url->setDirectory(2, 'vertical');
 
-        return Viewers::iframe($url->getUrl(), $this->width, $this->height);
+        return Utils::iframe($url->getUrl(), $this->width, $this->height);
     }
 
     /**

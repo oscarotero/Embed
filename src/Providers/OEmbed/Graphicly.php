@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Graphicly extends \Embed\Providers\OEmbedImplementationAbstract
+class Graphicly extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

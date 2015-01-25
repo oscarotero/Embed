@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Ted extends \Embed\Providers\OEmbedImplementationAbstract
+class Ted extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

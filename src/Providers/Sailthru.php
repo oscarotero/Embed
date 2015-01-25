@@ -1,39 +1,63 @@
 <?php
-/**
- * Generic Salithru provider.
- * Load the Salithru data of an url and store it
- */
 namespace Embed\Providers;
 
 use Embed\Request;
+use Embed\Utils;
 
-class Sailthru extends Provider
+/**
+ * Generic Salithru provider.
+ * 
+ * Load the Salithru data of an url and store it
+ */
+class Sailthru extends Provider implements ProviderInterface
 {
     /**
-     * Constructor
-     *
-     * @param Request $request
+     * {@inheritdoc}
      */
-    public function __construct(Request $request)
+    public function init(Request $request, array $options)
     {
         if (!($html = $request->getHtmlContent())) {
             return false;
         }
 
-        foreach ($html->getElementsByTagName('meta') as $meta) {
-            if ($meta->hasAttribute('name') && (stripos($meta->getAttribute('name'), 'sailthru.') === 0)) {
-                $this->set(strtolower(substr($meta->getAttribute('name'), 9)), $meta->getAttribute('content'));
+        foreach (Utils::getMetas($html) as $meta) {
+            list($name, $value) = $meta;
+
+            if (strpos($name, 'sailthru.') === 0) {
+                $this->bag->set(substr($name, 9), $value);
             }
         }
     }
 
     /**
-     * Gets the article publication date
-     *
-     * @return string|null
+     * {@inheritdoc}
+     */
+    public function getImages()
+    {
+        $images = array();
+
+        foreach ($this->bag->get() as $name => $value) {
+            if (strpos($name, 'image') !== false) {
+                $images[] = $value;
+            }
+        }
+
+        return $images;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAuthorName()
+    {
+        return $this->bag->get('author');
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function getPublishedTime()
     {
-        return $this->get('date');
+        return $this->bag->get('date');
     }
 }

@@ -1,121 +1,45 @@
 <?php
-/**
- * Generic html provider.
- * Load the html data of an url and store it
- */
 namespace Embed\Providers;
 
 use Embed\Url;
+use Embed\Bag;
 use Embed\Request;
-use Embed\Viewers;
+use Embed\Utils;
 
-class Html extends Provider
+/**
+ * Generic html provider.
+ * 
+ * Load the html data of an url and store it
+ */
+class Html extends Provider implements ProviderInterface
 {
     /**
-     * Constructor
-     *
-     * @param Request $request
+     * {@inheritdoc}
      */
-    public function __construct(Request $request)
+    public function init(Request $request, array $options)
     {
         if (!($html = $request->getHtmlContent())) {
             return false;
         }
 
-        $images = $icons = $feeds = array();
+        self::extractFromLink($html, $this->bag);
+        self::extractFromMeta($html, $this->bag);
 
-        //Links
-        foreach ($html->getElementsByTagName('link') as $link) {
-            if ($link->hasAttribute('rel') && $link->hasAttribute('href')) {
-                $rel = trim(strtolower($link->getAttribute('rel')));
-                $href = $link->getAttribute('href');
+        $main = self::getMainElement($html);
 
-                if (empty($href)) {
-                    continue;
-                }
-
-                switch ($rel) {
-                    case 'favicon':
-                    case 'favico':
-                    case 'icon':
-                    case 'shortcut icon':
-                    case 'apple-touch-icon-precomposed':
-                    case 'apple-touch-icon':
-                        $icons[] = $href;
-                        break;
-
-                    case 'canonical':
-                    case 'video_src':
-                        $this->set($rel, $href);
-                        break;
-
-                    case 'image_src':
-                        $images[] = $href;
-                        break;
-
-                    case 'alternate':
-                        if ($link->hasAttribute('type')) {
-                            switch ($link->getAttribute('type')) {
-                                case 'application/json+oembed':
-                                case 'application/xml+oembed':
-                                case 'text/json+oembed':
-                                case 'text/xml+oembed':
-                                    $this->set('oembed', $href);
-                                    break;
-
-                                case 'application/rss+xml':
-                                case 'application/atom+xml':
-                                    $feeds[] = $href;
-                                    break;
-                            }
-                        }
-                        break;
-                }
-            }
-        }
+        self::extractImages($main, $this->bag, $request->url->getDomain());
 
         //Title
         $title = $html->getElementsByTagName('title');
 
-        if ($title && ($title->length > 0)) {
-            $this->set('title', $title->item(0)->nodeValue);
+        if ($title->length) {
+            $this->bag->set('title', $title->item(0)->nodeValue);
         }
 
-        //Meta info
-        foreach ($html->getElementsByTagName('meta') as $meta) {
-            if ($meta->hasAttribute('name')) {
-                $name = strtolower($meta->getAttribute('name'));
-
-                switch ($name) {
-                    case 'msapplication-tileimage':
-                        $icons[] = $meta->getAttribute('content');
-                        continue 2;
-
-                    case 'pub_date':
-                    case 'date':
-                        $this->set('datepublished', $meta->getAttribute('content'));
-                        continue 2;
-
-                    default:
-                        if ($meta->hasAttribute('content')) {
-                            $this->set($name, $meta->getAttribute('content'));
-                        }
-                        continue 2;
-                }
-            }
-
-            if ($meta->hasAttribute('itemprop')) {
-                $name = strtolower($meta->getAttribute('itemprop'));
-                $this->set($name, $meta->getAttribute('content'));
-            }
-
-            if ($meta->hasAttribute('http-equiv') && $meta->hasAttribute('content')) {
-                $name = strtolower($meta->getAttribute('http-equiv'));
-                $this->set($name, $meta->getAttribute('content'));
-            }
-        }
+        
 
         //Time
+        /*
         foreach($html->getElementsByTagName('time') as $time) {
             if ($time->hasAttribute('itemprop')) {
                 $name = strtolower($time->getAttribute('itemprop'));
@@ -124,190 +48,270 @@ class Html extends Provider
                 $this->set('datepublished', $time->getAttribute('datetime'));
             }
         }
-
-        //Search the main element:
-        $content = $html->getElementsByTagName('main'); //<main> element
-
-        if ($content->length === 0) {
-            $content = $html->getElementById('main') ?: $html->getElementById('content') ?: $html->getElementById('page'); //commons ids
-        } else {
-            $content = $content->item(0);
-        }
-
-        //Wordpress
-        if (!$content) {
-            foreach ($html->getElementsByTagName('article') as $article) {
-                if ($article->hasAttribute('id') && (strpos($article->getAttribute('id'), 'post-') === 0)) {
-                    $content = $article;
-                    break;
-                }
-            }
-        }
-
-        //Search in the entire document
-        if (!$content) {
-            $content = $html;
-        }
-
-        $domain = $request->url->getDomain();
-
-        foreach ($content->getElementsByTagName('img') as $img) {
-            if ($img->hasAttribute('src')) {
-                $src = new Url($img->getAttribute('src'));
-
-                //Is src relative?
-                if (!$src->getDomain()) {
-                    $images[] = $src->getUrl();
-                    continue;
-                }
-
-                //Avoid external images
-                if ($src->getDomain() !== $domain) {
-                    continue;
-                }
-
-                //Avoid images in external links
-                $parent = $img->parentNode;
-
-                while ($parent && isset($parent->tagName)) {
-                    if ($parent->tagName === 'a') {
-                        if ($parent->hasAttribute('href')) {
-                            $href = new Url($parent->getAttribute('href'));
-
-                            if ($href->getDomain() && $src->getDomain() !== $domain) {
-                                continue 2;
-                            }
-                        }
-
-                        break;
-                    }
-
-                    $parent = $parent->parentNode;
-                }
-
-                $images[] = $src->getUrl();
-            }
-        }
-
-        $this->set('icons', $icons);
-        $this->set('images', $images);
-        $this->set('feeds', $feeds);
+        */
     }
 
     /**
-     * Gets the title
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getTitle()
     {
-        return $this->get('title');
+        return $this->bag->get('title');
     }
 
     /**
-     * Gets the description
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getDescription()
     {
-        return $this->get('description');
+        return $this->bag->get('description');
     }
 
     /**
-     * Gets the type
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getType()
     {
-        return $this->has('video_src') ? 'video' : null;
+        return $this->bag->has('video_src') ? 'video' : null;
     }
 
     /**
-     * Gets the source
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getSource()
     {
-        $feeds = $this->get('feeds');
+        $feeds = $this->bag->get('feeds');
 
         return isset($feeds[0]) ? $feeds[0] : null;
     }
 
     /**
-     * Gets the code
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getCode()
     {
-        if ($this->has('video_src')) {
-            switch ($this->get('video_type')) {
+        if ($this->bag->has('video_src')) {
+            switch ($this->bag->get('video_type')) {
                 case 'application/x-shockwave-flash':
-                    return Viewers::flash($this->get('video_src'), $this->getWidth(), $this->getHeight());
+                    return Utils::flash($this->bag->get('video_src'), $this->getWidth(), $this->getHeight());
             }
         }
     }
 
     /**
-     * Gets the url
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getUrl()
     {
-        return $this->get('canonical');
+        return $this->bag->get('canonical');
     }
 
     /**
-     * Gets all provider icons
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getProviderIcon()
+    public function getProviderIcons()
     {
-        return $this->get('icons');
+        return $this->bag->get('icons');
     }
 
     /**
-     * Gets the images found
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getImage()
+    public function getImages()
     {
-        return $this->get('images');
+        return $this->bag->get('images') ?: array();
     }
 
     /**
-     * Gets the code width
-     *
-     * @return integer|null
+     * {@inheritdoc}
      */
     public function getWidth()
     {
-        return $this->get('video_width');
+        return $this->bag->get('video_width');
     }
 
     /**
-     * Gets the code height
-     *
-     * @return integer|null
+     * {@inheritdoc}
      */
     public function getHeight()
     {
-        return $this->get('video_height');
+        return $this->bag->get('video_height');
     }
 
     /**
-     * Gets the article publication date
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getPublishedTime()
     {
-        return $this->get('datepublished');
+        return $this->bag->get('pub_date')
+            ?: $this->bag->get('date')
+            ?: $this->bag->get('pagerender')
+            ?: $this->bag->get('datepublished');
+    }
+
+    /**
+     * Extract information from the <link> elements
+     * 
+     * @param \DOMDocument $html
+     * @param Bag          $bag
+     */
+    protected static function extractFromLink(\DOMDocument $html, Bag $bag)
+    {
+        foreach (Utils::getLinks($html) as $link) {
+            list($rel, $href, $element) = $link;
+
+            if (empty($href)) {
+                continue;
+            }
+
+            switch ($rel) {
+                case 'favicon':
+                case 'favico':
+                case 'icon':
+                case 'shortcut icon':
+                case 'apple-touch-icon-precomposed':
+                case 'apple-touch-icon':
+                    $bag->add('icons', $href);
+                    break;
+
+                case 'image_src':
+                    $bag->add('images', $href);
+                    break;
+
+                case 'alternate':
+                    switch ($element->getAttribute('type')) {
+                        case 'application/rss+xml':
+                        case 'application/atom+xml':
+                            $bag->add('feeds', $href);
+                            break;
+                    }
+                    break;
+
+                default:
+                    $bag->set($rel, $href);
+            }
+        }
+    }
+
+    /**
+     * Extract information from the <meta> elements
+     * 
+     * @param \DOMDocument $html
+     * @param Bag          $bag
+     */
+    protected static function extractFromMeta(\DOMDocument $html, Bag $bag)
+    {
+        foreach (Utils::getMetas($html) as $meta) {
+            list($name, $value, $element) = $meta;
+
+            if (!$value) {
+                continue;
+            }
+
+            if ($name) {
+                $name = strtolower($name);
+
+                switch ($name) {
+                    case 'msapplication-tileimage':
+                        $bag->add('icons', $value);
+                        continue 2;
+
+                    default:
+                        $bag->set($name, $value);
+                        continue 2;
+                }
+            }
+
+            if ($element->hasAttribute('itemprop')) {
+                $bag->set($element->getAttribute('itemprop'), $value);
+            }
+
+            if ($element->hasAttribute('http-equiv')) {
+                $bag->set($element->getAttribute('http-equiv'), $value);
+            }
+        }
+    }
+
+    /**
+     * Extract <img> elements
+     * 
+     * @param \DOMElement  $html
+     * @param Bag          $bag
+     * @param null|string  $domain
+     */
+    protected static function extractImages(\DOMElement $html, Bag $bag, $domain = null)
+    {
+        foreach ($html->getElementsByTagName('img') as $img) {
+            if ($img->hasAttribute('src')) {
+                $src = new Url($img->getAttribute('src'));
+
+                //Is src relative?
+                if (!$src->getDomain()) {
+                    $bag->add('images', $src->getUrl());
+                    continue;
+                }
+
+                //Avoid external images or in external links
+                if ($domain) {
+                    if ($src->getDomain() !== $domain) {
+                        continue;
+                    }
+
+                    $parent = $img->parentNode;
+
+                    while ($parent && isset($parent->tagName)) {
+                        if ($parent->tagName === 'a') {
+                            if ($parent->hasAttribute('href')) {
+                                $href = new Url($parent->getAttribute('href'));
+
+                                if ($href->getDomain() && $src->getDomain() !== $domain) {
+                                    continue 2;
+                                }
+                            }
+
+                            break;
+                        }
+
+                        $parent = $parent->parentNode;
+                    }
+
+                    $bag->add('images', $src->getUrl());
+                }
+            }
+        }
+    }
+
+    /**
+     * Returns the main element of the document
+     * 
+     * @param \DOMDocument $html
+     * 
+     * @return \DOMElement
+     */
+    protected static function getMainElement(\DOMDocument $html)
+    {
+        // <main>
+        $content = $html->getElementsByTagName('main');
+
+        if ($content->length !== 0) {
+            return $content->item(0);
+        }
+
+        // Popular ids: #main, #content, #page
+        $content = $html->getElementById('main') ?: $html->getElementById('content') ?: $html->getElementById('page');
+
+        if ($content) {
+            return $content;
+        }
+
+        // Wordpress ids: #post-*
+        foreach ($html->getElementsByTagName('article') as $article) {
+            if ($article->hasAttribute('id') && (strpos($article->getAttribute('id'), 'post-') === 0)) {
+                return $article;
+            }
+        }
+
+        // Returns <body>
+        return $html->getElementsByTagName('body')->item(0);
     }
 }

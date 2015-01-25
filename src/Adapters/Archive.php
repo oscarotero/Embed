@@ -5,7 +5,7 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Viewers;
+use Embed\Utils;
 use Embed\Providers\Provider;
 
 class Archive extends Webpage implements AdapterInterface
@@ -95,17 +95,17 @@ class Archive extends Webpage implements AdapterInterface
             case 'movies':
                 $embed_url = str_replace('/details/', '/embed/', $this->getUrl());
 
-                return Viewers::iframe($embed_url);
+                return Utils::iframe($embed_url);
 
             case 'audio':
                 $embed_url = str_replace('/details/', '/embed/', $this->getUrl());
 
-                return Viewers::iframe($embed_url, 0, 30);
+                return Utils::iframe($embed_url, 0, 30);
 
             case 'texts':
                 $embed_url = str_replace('/details/', '/stream/', $this->getUrl()).'?ui=embed';
 
-                return Viewers::iframe($embed_url, 480, 430);
+                return Utils::iframe($embed_url, 480, 430);
         }
     }
 

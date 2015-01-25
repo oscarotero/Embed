@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class MeetUp extends \Embed\Providers\OEmbedImplementationAbstract
+class MeetUp extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Qik extends \Embed\Providers\OEmbedImplementationAbstract
+class Qik extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

@@ -4,7 +4,7 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Viewers;
+use Embed\Utils;
 
 class Jsfiddle extends Webpage implements AdapterInterface
 {
@@ -17,6 +17,6 @@ class Jsfiddle extends Webpage implements AdapterInterface
 
         $embed_url = $url.((substr($url, -1) === '/') ? 'embedded/' : '/embedded/');
 
-        return Viewers::iframe($embed_url);
+        return Utils::iframe($embed_url);
     }
 }

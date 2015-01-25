@@ -5,7 +5,7 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Viewers;
+use Embed\Utils;
 use Embed\Providers\OEmbed;
 use Embed\Providers\OEmbedImplementations;
 
@@ -71,13 +71,13 @@ class File extends Adapter implements AdapterInterface
     {
         switch (self::$contentTypes[$this->request->getMimeType()][1]) {
             case 'videoHtml':
-                return Viewers::videoHtml($this->getImage(), $this->getUrl(), $this->getWidth(), $this->getHeight());
+                return Utils::videoHtml($this->getImage(), $this->getUrl(), $this->getWidth(), $this->getHeight());
 
             case 'audioHtml':
-                return Viewers::audioHtml($this->getUrl());
+                return Utils::audioHtml($this->getUrl());
 
             case 'google':
-                return Viewers::google($this->getUrl());
+                return Utils::google($this->getUrl());
         }
     }
 

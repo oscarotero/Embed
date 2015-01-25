@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Revision3 extends \Embed\Providers\OEmbedImplementationAbstract
+class Revision3 extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

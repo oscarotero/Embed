@@ -4,7 +4,7 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Viewers;
+use Embed\Utils;
 use Embed\Request;
 
 class Slides extends Webpage implements AdapterInterface
@@ -24,7 +24,7 @@ class Slides extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        return Viewers::iframe($this->request->url->getUrl().'/embed', $this->width, $this->height);
+        return Utils::iframe($this->request->url->getUrl().'/embed', $this->width, $this->height);
     }
 
     /**

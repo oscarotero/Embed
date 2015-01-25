@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class DeviantArt extends \Embed\Providers\OEmbedImplementationAbstract
+class DeviantArt extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

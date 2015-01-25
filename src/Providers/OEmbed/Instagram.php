@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Instagram extends \Embed\Providers\OEmbedImplementationAbstract
+class Instagram extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

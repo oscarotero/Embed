@@ -5,7 +5,7 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Viewers;
+use Embed\Utils;
 
 class Pastebin extends Webpage implements AdapterInterface
 {
@@ -26,6 +26,6 @@ class Pastebin extends Webpage implements AdapterInterface
     {
         $embed_url = 'http://pastebin.com/embed_iframe.php?i='.($this->request->url->getParameter('i') ?: $this->request->url->getDirectory(0));
 
-        return Viewers::iframe($embed_url);
+        return Utils::iframe($embed_url);
     }
 }

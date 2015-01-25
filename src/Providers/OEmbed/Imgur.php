@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Imgur extends \Embed\Providers\OEmbedImplementationAbstract
+class Imgur extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

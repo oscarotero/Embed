@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class UrTak extends \Embed\Providers\OEmbedImplementationAbstract
+class UrTak extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

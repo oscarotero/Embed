@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class KinoMap extends \Embed\Providers\OEmbedImplementationAbstract
+class KinoMap extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

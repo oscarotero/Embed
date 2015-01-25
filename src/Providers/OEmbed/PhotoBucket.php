@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class PhotoBucket extends \Embed\Providers\OEmbedImplementationAbstract
+class PhotoBucket extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

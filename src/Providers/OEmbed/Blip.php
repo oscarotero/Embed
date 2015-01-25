@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Blip extends \Embed\Providers\OEmbedImplementationAbstract
+class Blip extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

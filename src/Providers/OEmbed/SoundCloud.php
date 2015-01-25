@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class SoundCloud extends \Embed\Providers\OEmbedImplementationAbstract
+class SoundCloud extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}

@@ -1,7 +1,7 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class YFrog extends \Embed\Providers\OEmbedImplementationAbstract
+class YFrog extends OEmbedImplementation
 {
     /**
      * {@inheritDoc}
