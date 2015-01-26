@@ -35,20 +35,6 @@ class Html extends Provider implements ProviderInterface
         if ($title->length) {
             $this->bag->set('title', $title->item(0)->nodeValue);
         }
-
-        
-
-        //Time
-        /*
-        foreach($html->getElementsByTagName('time') as $time) {
-            if ($time->hasAttribute('itemprop')) {
-                $name = strtolower($time->getAttribute('itemprop'));
-                $this->set($name, $time->getAttribute('datetime'));
-            } else if ($time->hasAttribute('datetime')) {
-                $this->set('datepublished', $time->getAttribute('datetime'));
-            }
-        }
-        */
     }
 
     /**
@@ -127,7 +113,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getWidth()
     {
-        return $this->bag->get('video_width');
+        return (integer) $this->bag->get('video_width') ?: null;
     }
 
     /**
@@ -135,7 +121,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getHeight()
     {
-        return $this->bag->get('video_height');
+        return (integer) $this->bag->get('video_height') ?: null;
     }
 
     /**

@@ -158,12 +158,12 @@ class Utils
      * Creates a flash element
      *
      * @param string  $src    The swf file source
-     * @param integer $width  Width attribute
-     * @param integer $height Height attribute
+     * @param null|integer $width  Width attribute
+     * @param null|integer $height Height attribute
      *
      * @return string
      */
-    public static function flash($src, $width = 0, $height = 0)
+    public static function flash($src, $width = null, $height = null)
     {
         $code = self::element('object', array(
             'width' => $width ?: 600,

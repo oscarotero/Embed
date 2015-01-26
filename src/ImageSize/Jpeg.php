@@ -22,7 +22,7 @@ class Jpeg implements SizeInterface
             switch ($state) {
                 case 'started':
                     if (($b = self::readByte($image)) === false) {
-                        return false;
+                        return null;
                     }
 
                     $state = $b === 0xFF ? 'sof' : 'started';
@@ -57,7 +57,7 @@ class Jpeg implements SizeInterface
                         return array(self::toInteger(substr($c, 5, 2)), self::toInteger(substr($c, 3, 2)));
                     }
 
-                    return;
+                    return null;
 
                 default:
                     $image->getChars(2);

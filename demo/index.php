@@ -286,7 +286,7 @@ include('../src/autoloader.php');
                     </td>
                 </tr>
                 <?php foreach ($info->getAllProviders() as $name => $provider) {
-                    $content = htmlspecialchars(print_r($provider->bag->get(), true), ENT_IGNORE);
+                    $content = htmlspecialchars(print_r($provider->bag->getAll(), true), ENT_IGNORE);
                     echo '<tr><th>'.$name.'</th><td><pre>'.$content.'</pre></td></tr>';
                 }
                 ?>

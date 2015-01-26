@@ -27,14 +27,12 @@ class Facebook extends Webpage implements AdapterInterface
     /**
      * Returns the id found in an facebook url
      *
-     * @param string $url
+     * @param Url $url
      *
      * @return null|string
      */
-    private function getId($url)
+    private function getId(Url $url)
     {
-        $url = new Url($url);
-
         if ($url->hasParameter('story_fbid')) {
             $this->isPost = true;
 

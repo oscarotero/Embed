@@ -66,7 +66,7 @@ class Facebook extends Provider implements ProviderInterface
 
         if (($imgs = $this->bag->get('image'))) {
             foreach ($imgs as $img) {
-                $images[] = $img['url']
+                $images[] = $img['url'];
             }
         }
 

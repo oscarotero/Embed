@@ -48,7 +48,7 @@ class Bag
      * @param null|string $name    Value name
      * @param null|string $subname A subvalue name
      *
-     * @return string|array|null
+     * @return string|null
      */
     public function get($name = null, $subname = null)
     {
@@ -65,6 +65,16 @@ class Bag
         }
 
         return $this->parameters[$name][$subname];
+    }
+
+    /**
+     * Return all stored values
+     *
+     * @return array
+     */
+    public function getAll()
+    {
+        return $this->parameters;
     }
 
     /**
