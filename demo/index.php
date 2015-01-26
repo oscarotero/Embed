@@ -235,7 +235,12 @@ include('../src/autoloader.php');
                 </tr>
                 <tr>
                     <th>providerIcon</th>
-                    <td><img src="<?php echo $info->providerIcon; ?>"> <?php echo $info->providerIcon; ?></td>
+                    <td>
+                        <?php if ($info->providerIcon): ?>
+                        <img src="<?php echo $info->providerIcon; ?>"><br>
+                        <a href="<?php echo $info->providerIcon; ?>" target="_blank"><?php echo $info->providerIcon; ?></a>
+                        <?php endif; ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>providerIcons</th>

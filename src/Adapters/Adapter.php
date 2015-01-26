@@ -4,6 +4,7 @@ namespace Embed\Adapters;
 use Embed\Utils;
 use Embed\Request;
 use Embed\Providers\ProviderInterface;
+use Embed\ImageSize\ImageSize;
 
 /**
  * Base class extended by all adapters
@@ -199,67 +200,6 @@ abstract class Adapter
     }
 
     /**
-     * Returns the first bigger image found
-     *
-     * @param array $images The images array returned by FastImage::getImagesSize()
-     *
-     * @return array|false
-     */
-    protected function getBiggerImage(array $images)
-    {
-        if (!$images) {
-            return false;
-        }
-
-        $biggerArea = 0;
-        $biggerKey = 0;
-
-        foreach ($images as $k => $image) {
-            $area = $image['width'] * $image['height'];
-
-            if ($area > $biggerArea) {
-                $biggerArea = $area;
-                $biggerKey = $k;
-            }
-        }
-
-        return $images[$biggerKey];
-    }
-
-    /**
-     * Checks whether the image dimmension is valid
-     *
-     * @param string $src The image path
-     *
-     * @return boolean
-     */
-    protected function checkImage($src)
-    {
-        if (!$src) {
-            return false;
-        }
-
-        try {
-            $image = new FastImage($src);
-        } catch (\Exception $exception) {
-            return false;
-        }
-
-        if ($image->getType()) {
-            list($width, $height) = $image->getSize();
-
-            if (($width >= $this->options['minImageWidth']) && ($height >= $this->options['minImageHeight'])) {
-                $this->imageWidth = $width;
-                $this->imageHeight = $height;
-
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
      * {@inheritDoc}
      */
     public function getTitle()
@@ -379,7 +319,7 @@ abstract class Adapter
         $icons[] = $this->request->url->getAbsolute('/favicon.ico');
         $icons[] = $this->request->url->getAbsolute('/favicon.png');
 
-        return array_unique($icons);
+        return Utils::getImagesInfo(array_unique($icons));
     }
 
     /**
@@ -388,21 +328,23 @@ abstract class Adapter
     public function getProviderIcon()
     {
         if ($this->options['getBiggerIcon']) {
-            $icon = $this->getBiggerImage(FastImage::getImagesSize($this->providerIcons));
+            $biggerArea = 0;
+            $biggerSrc = null;
 
-            return $icon ? $icon['src'] : null;
+            foreach ($this->providerIcons as $src => $icon) {
+                $area = $icon[0] * $icon[1];
+
+                if ($area > $biggerArea) {
+                    $biggerArea = $area;
+                    $biggerSrc = $k;
+                }
+            }
+
+            return $biggerSrc ? $this->images[$biggerSrc] : null;
         }
 
-        foreach ($this->providerIcons as $src) {
-            try {
-                $icon = new FastImage($src);
-            } catch (\Exception $exception) {
-                continue;
-            }
-
-            if ($icon->getType()) {
-                return $src;
-            }
+        if (($icons = $this->providerIcons) && reset($icons)) {
+            return key($icons);
         }
     }
 
@@ -439,7 +381,7 @@ abstract class Adapter
             }
         }
 
-        return array_unique($images);
+        return Utils::getImagesInfo(array_unique($images));
     }
 
     /**
@@ -447,29 +389,27 @@ abstract class Adapter
      */
     public function getImage()
     {
-        $sizes = Utils::getImagesSizes($this->images);
-
-        foreach ($sizes as $url => $image) {
-            var_dump($url);
-            var_dump($image->getSize());
-            var_dump('<hr>');
-        }
-        die();
         if ($this->options['getBiggerImage']) {
-            $image = $this->getBiggerImage(FastImage::getImagesSize($this->images));
+            $biggerArea = 0;
+            $biggerSrc = null;
 
-            if ($image && ($image['width'] >= $this->options['minImageWidth']) && ($image['height'] >= $this->options['minImageHeight'])) {
-                $this->imageWidth = $image['width'];
-                $this->imageHeight = $image['height'];
+            foreach ($this->images as $src => $image) {
+                $area = $image[0] * $image[1];
 
-                return $image['src'];
+                if (($area > $biggerArea) && ($image[0] >= $this->options['minImageWidth']) && ($image[1] >= $this->options['minImageHeight'])) {
+                    $biggerArea = $area;
+                    $biggerSrc = $k;
+                }
             }
 
-            return;
+            return $biggerSrc ? $this->images[$biggerSrc] : null;
         }
 
-        foreach ($this->images as $src) {
-            if ($this->checkImage($src)) {
+        foreach ($this->images as $src => $image) {
+            if (($image[0] >= $this->options['minImageWidth']) && ($image[1] >= $this->options['minImageHeight'])) {
+                $this->imageWidth = $image[0];
+                $this->imageHeight = $image[1];
+
                 return $src;
             }
         }

@@ -1,7 +1,7 @@
 <?php
 namespace Embed;
 
-use FastImage;
+use Embed\ImageSize\ImageData;
 
 /**
  * Some helpers methods used across the library
@@ -189,15 +189,52 @@ class Utils
     }
 
     /**
-     * Returns the size of an image
+     * Returns the size and mime-types of images
      *
      * @param array $src Image sources
      *
      * @return array
      */
-    static function getImagesSizes(array $src)
+    public static function getImagesInfo(array $images)
     {
-        return FastImage::batch($src);
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $connections = curl_multi_init();
+        $imageData = array();
+
+        foreach ($images as $url) {
+            $imageData[$url] = new ImageData($url, $finfo);
+
+            curl_multi_add_handle($connections, $imageData[$url]->getConnection());
+        }
+
+        $active = null;
+
+        do {
+            $return = curl_multi_exec($connections, $active);
+        } while ($return == CURLM_CALL_MULTI_PERFORM);
+
+        while ($active && $return === CURLM_OK) {
+            if (curl_multi_select($connections) != -1) {
+                do {
+                    $return = curl_multi_exec($connections, $active);
+                } while ($return == CURLM_CALL_MULTI_PERFORM);
+            }
+        }
+
+        $info = array();
+
+        foreach ($imageData as $url => $image) {
+            curl_multi_remove_handle($connections, $image->getConnection());
+
+            if (($data = $image->getData())) {
+                $info[$url] = $data;
+            }
+        }
+
+        finfo_close($finfo);
+        curl_multi_close($connections);
+
+        return $info;
     }
 
     /**
