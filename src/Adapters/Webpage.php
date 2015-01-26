@@ -10,7 +10,7 @@ use Embed\Providers;
 class Webpage extends Adapter implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -18,7 +18,7 @@ class Webpage extends Adapter implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setRequest(Request $request)
     {

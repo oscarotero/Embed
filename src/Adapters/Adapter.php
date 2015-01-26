@@ -48,7 +48,7 @@ abstract class Adapter
     );
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function __construct(Request $request, array $options = null)
     {
@@ -200,7 +200,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTitle()
     {
@@ -208,7 +208,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDescription()
     {
@@ -216,7 +216,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {
@@ -242,7 +242,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getSource()
     {
@@ -252,7 +252,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -274,7 +274,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getUrl()
     {
@@ -286,7 +286,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAuthorName()
     {
@@ -294,7 +294,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAuthorUrl()
     {
@@ -304,7 +304,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderIcons()
     {
@@ -323,7 +323,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderIcon()
     {
@@ -336,7 +336,7 @@ abstract class Adapter
 
                 if ($area > $biggerArea) {
                     $biggerArea = $area;
-                    $biggerSrc = $k;
+                    $biggerSrc = $src;
                 }
             }
 
@@ -349,7 +349,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderName()
     {
@@ -357,7 +357,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderUrl()
     {
@@ -369,7 +369,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImages()
     {
@@ -385,7 +385,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImage()
     {
@@ -398,7 +398,7 @@ abstract class Adapter
 
                 if (($area > $biggerArea) && ($image[0] >= $this->options['minImageWidth']) && ($image[1] >= $this->options['minImageHeight'])) {
                     $biggerArea = $area;
-                    $biggerSrc = $k;
+                    $biggerSrc = $src;
                 }
             }
 
@@ -416,7 +416,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImageWidth()
     {
@@ -426,7 +426,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImageHeight()
     {
@@ -436,7 +436,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getWidth()
     {
@@ -444,7 +444,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getHeight()
     {
@@ -452,7 +452,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAspectRatio()
     {
@@ -465,7 +465,7 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getPublishedTime()
     {

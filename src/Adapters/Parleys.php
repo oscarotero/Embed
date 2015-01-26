@@ -9,7 +9,7 @@ use Embed\Request;
 class Parleys extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -17,7 +17,7 @@ class Parleys extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -27,7 +27,7 @@ class Parleys extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {

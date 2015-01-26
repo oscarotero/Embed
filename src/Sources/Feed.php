@@ -11,7 +11,7 @@ class Feed extends Source implements SourceInterface
     protected $data;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -28,7 +28,7 @@ class Feed extends Source implements SourceInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function __construct(Request $request)
     {
@@ -40,7 +40,7 @@ class Feed extends Source implements SourceInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function isValid()
     {
@@ -48,7 +48,7 @@ class Feed extends Source implements SourceInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getSourceUrl()
     {
@@ -56,7 +56,7 @@ class Feed extends Source implements SourceInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderUrl()
     {
@@ -64,7 +64,7 @@ class Feed extends Source implements SourceInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getItems()
     {

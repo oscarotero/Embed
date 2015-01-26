@@ -1,10 +1,12 @@
 <?php
-/**
- * Class to execute request and return the content
- */
 namespace Embed;
 
-
+/**
+ * Class to execute request and return the content
+ * 
+ * @property Url $url
+ * @property RequestResolvers\RequestResolverInterface $resolver
+ */
 class Request
 {
     public $startingUrl;

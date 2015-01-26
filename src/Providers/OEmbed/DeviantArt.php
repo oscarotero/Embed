@@ -4,7 +4,7 @@ namespace Embed\Providers\OEmbed;
 class DeviantArt extends OEmbedImplementation
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getEndPoint()
     {
@@ -12,7 +12,7 @@ class DeviantArt extends OEmbedImplementation
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getPatterns()
     {
@@ -20,7 +20,7 @@ class DeviantArt extends OEmbedImplementation
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getParams()
     {

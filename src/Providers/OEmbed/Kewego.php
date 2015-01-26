@@ -4,7 +4,7 @@ namespace Embed\Providers\OEmbed;
 class Kewego extends OEmbedImplementation
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getEndPoint()
     {
@@ -12,7 +12,7 @@ class Kewego extends OEmbedImplementation
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getPatterns()
     {

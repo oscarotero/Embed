@@ -6,14 +6,14 @@ namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Utils;
-use Embed\Providers\Provider;
+use Embed\Bag;
 
 class Archive extends Webpage implements AdapterInterface
 {
     public $api;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -23,13 +23,13 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    protected function initProviders(Request $request)
+    public function setRequest(Request $request)
     {
-        parent::initProviders($request);
+        parent::setRequest($request);
 
-        $this->api = new Provider();
+        $this->api = new Bag();
 
         $api = clone $request;
         $api->url->setParameter('output', 'json');
@@ -52,7 +52,7 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTitle()
     {
@@ -60,7 +60,7 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDescription()
     {
@@ -68,7 +68,7 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {
@@ -87,7 +87,7 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -110,7 +110,7 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAuthorName()
     {
@@ -118,20 +118,20 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImages()
     {
         $images = array();
 
         if (($image = $this->api->get('misc', 'image'))) {
-            $images[] = $this->request->url->getAbsolute($image);
+            $images[] = $image;
         }
 
         if (is_array($files = $this->api->get('files'))) {
             foreach ($files as $url => $info) {
                 if ($info['format'] === 'Thumbnail') {
-                    $images[] = $this->request->url->getAbsolute($url);
+                    $images[] = $url;
                 }
             }
         }

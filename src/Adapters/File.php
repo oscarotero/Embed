@@ -6,8 +6,7 @@ namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Utils;
-use Embed\Providers\OEmbed;
-use Embed\Providers\OEmbedImplementations;
+use Embed\Providers;
 
 class File extends Adapter implements AdapterInterface
 {
@@ -37,7 +36,7 @@ class File extends Adapter implements AdapterInterface
     );
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -45,19 +44,17 @@ class File extends Adapter implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    protected function initProviders(Request $request)
+    public function setRequest(Request $request)
     {
         $this->request = $request;
 
-        if (($oEmbed = OEmbedImplementations::create($request))) {
-            $this->providers['OEmbed'] = $oEmbed;
-        }
+        $this->addProvider('OEmbed', new Providers\OEmbed());
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {
@@ -65,7 +62,7 @@ class File extends Adapter implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -82,25 +79,14 @@ class File extends Adapter implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImages()
     {
         if ($this->getType() === 'photo') {
-            return array($this->getUrl());
+            return Utils::getImagesInfo(array($this->getUrl()));
         }
 
         return array();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getProviderIcons()
-    {
-        return array(
-            $this->request->url->getAbsolute('/favicon.ico'),
-            $this->request->url->getAbsolute('/favicon.png'),
-        );
     }
 }

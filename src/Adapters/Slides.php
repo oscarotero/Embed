@@ -10,7 +10,7 @@ use Embed\Request;
 class Slides extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -20,7 +20,7 @@ class Slides extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -28,7 +28,7 @@ class Slides extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getWidth()
     {
@@ -36,7 +36,7 @@ class Slides extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getHeight()
     {

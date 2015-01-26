@@ -10,7 +10,7 @@ use Embed\Request;
 class Spotify extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -20,7 +20,7 @@ class Spotify extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {

@@ -10,7 +10,7 @@ use Embed\Utils;
 class Mit extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -20,7 +20,7 @@ class Mit extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -31,7 +31,7 @@ class Mit extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getWidth()
     {
@@ -39,7 +39,7 @@ class Mit extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getHeight()
     {
@@ -47,7 +47,7 @@ class Mit extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderName()
     {
@@ -55,7 +55,7 @@ class Mit extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {

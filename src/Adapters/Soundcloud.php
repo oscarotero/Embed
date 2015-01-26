@@ -5,14 +5,14 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Providers\Provider;
+use Embed\Bag;
 
 class Soundcloud extends Webpage implements AdapterInterface
 {
     public $api;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -23,13 +23,13 @@ class Soundcloud extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    protected function initProviders(Request $request)
+    protected function setRequest(Request $request)
     {
-        parent::initProviders($request);
+        parent::setRequest($request);
 
-        $this->api = new Provider();
+        $this->api = new Bag();
 
         $api = $request->createRequest('http://api.soundcloud.com/resolve.json');
         $api->startingUrl->setParameter('client_id', isset($this->options['soundcloudClientId']) ? $this->options['soundcloudClientId'] : 'YOUR_CLIENT_ID');
@@ -41,7 +41,7 @@ class Soundcloud extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTitle()
     {
@@ -49,7 +49,7 @@ class Soundcloud extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDescription()
     {
@@ -57,7 +57,7 @@ class Soundcloud extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getUrl()
     {
@@ -65,7 +65,7 @@ class Soundcloud extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImages()
     {
@@ -79,7 +79,7 @@ class Soundcloud extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAuthorName()
     {
@@ -87,7 +87,7 @@ class Soundcloud extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAuthorUrl()
     {

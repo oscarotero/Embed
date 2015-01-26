@@ -9,7 +9,7 @@ use Embed\Utils;
 class Spreaker extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {

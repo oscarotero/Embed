@@ -4,7 +4,7 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Providers\Provider;
+use Embed\Bag;
 use Embed\Request;
 use Embed\Url;
 
@@ -15,7 +15,7 @@ class Facebook extends Webpage implements AdapterInterface
     private $isPost = false;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -73,13 +73,13 @@ class Facebook extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    protected function initProviders(Request $request)
+    public function setRequest(Request $request)
     {
-        parent::initProviders($request);
+        parent::setRequest($request);
 
-        $this->api = new Provider();
+        $this->api = new Bag();
 
         if (($id = $this->getId($request->startingUrl))) {
             if ($this->options['facebookAccessToken']) {
@@ -96,7 +96,7 @@ class Facebook extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTitle()
     {
@@ -104,7 +104,7 @@ class Facebook extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDescription()
     {
@@ -112,7 +112,7 @@ class Facebook extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getUrl()
     {
@@ -124,7 +124,7 @@ class Facebook extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -145,7 +145,7 @@ EOT;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderName()
     {
@@ -153,7 +153,7 @@ EOT;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAuthorName()
     {
@@ -161,7 +161,7 @@ EOT;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getSource()
     {
@@ -173,7 +173,7 @@ EOT;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImages()
     {

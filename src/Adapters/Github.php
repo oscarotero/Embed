@@ -5,14 +5,14 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Providers\Provider;
+use Embed\Bag;
 
 class Github extends Webpage implements AdapterInterface
 {
     public $api;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -22,13 +22,13 @@ class Github extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    protected function initProviders(Request $request)
+    public function setRequest(Request $request)
     {
-        parent::initProviders($request);
+        parent::setRequest($request);
 
-        $this->api = new Provider();
+        $this->api = new Bag();
         $api = $request->createRequest($request->url->getUrl().'.json');
 
         if (($json = $api->getJsonContent())) {
@@ -37,7 +37,7 @@ class Github extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {
@@ -45,7 +45,7 @@ class Github extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -55,7 +55,7 @@ class Github extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderName()
     {
@@ -63,7 +63,7 @@ class Github extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderUrl()
     {

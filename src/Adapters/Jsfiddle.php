@@ -9,7 +9,7 @@ use Embed\Utils;
 class Jsfiddle extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
