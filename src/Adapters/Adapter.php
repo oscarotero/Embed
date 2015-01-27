@@ -340,7 +340,7 @@ abstract class Adapter
                 }
             }
 
-            return $biggerSrc ? $this->images[$biggerSrc] : null;
+            return $biggerSrc;
         }
 
         if (($icons = $this->providerIcons) && reset($icons)) {
@@ -402,13 +402,11 @@ abstract class Adapter
                 }
             }
 
-            return $biggerSrc ? $this->images[$biggerSrc] : null;
+            return $biggerSrc;
         }
 
         foreach ($this->images as $src => $image) {
             if (($image[0] >= $this->options['minImageWidth']) && ($image[1] >= $this->options['minImageHeight'])) {
-                $this->imageWidth = $image[0];
-                $this->imageHeight = $image[1];
 
                 return $src;
             }
@@ -420,8 +418,8 @@ abstract class Adapter
      */
     public function getImageWidth()
     {
-        if ($this->image && property_exists($this, 'imageWidth')) {
-            return $this->imageWidth;
+        if ($this->image) {
+            return $this->images[$this->image][0];
         }
     }
 
@@ -430,8 +428,8 @@ abstract class Adapter
      */
     public function getImageHeight()
     {
-        if ($this->image && property_exists($this, 'imageHeight')) {
-            return $this->imageHeight;
+        if ($this->image) {
+            return $this->images[$this->image][1];
         }
     }
 

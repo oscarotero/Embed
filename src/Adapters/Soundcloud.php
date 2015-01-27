@@ -25,7 +25,7 @@ class Soundcloud extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    protected function setRequest(Request $request)
+    public function setRequest(Request $request)
     {
         parent::setRequest($request);
 

@@ -168,7 +168,7 @@ class Feed extends Source implements SourceInterface
     /**
      * Search entries from Atom xml
      *
-     * @param \SimpleXMLElement $xml
+     * @param \SimpleXMLElement $entries
      *
      * @return array
      */

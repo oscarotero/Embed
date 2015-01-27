@@ -16,7 +16,7 @@ class Gif implements SizeInterface
         $image->rewind();
 
         if (($chars = $image->getChars(11))) {
-            return unpack("S*", substr($chars, 6, 4));
+            return array_values(unpack("S*", substr($chars, 6, 4)));
         }
     }
 }

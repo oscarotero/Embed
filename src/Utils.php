@@ -211,13 +211,15 @@ class Utils
 
         do {
             $return = curl_multi_exec($connections, $active);
-        } while ($return == CURLM_CALL_MULTI_PERFORM);
+        } while ($return === CURLM_CALL_MULTI_PERFORM);
 
         while ($active && $return === CURLM_OK) {
-            if (curl_multi_select($connections) != -1) {
+            if (curl_multi_select($connections) !== -1) {
                 do {
                     $return = curl_multi_exec($connections, $active);
-                } while ($return == CURLM_CALL_MULTI_PERFORM);
+                } while ($return === CURLM_CALL_MULTI_PERFORM);
+            } else {
+                break;
             }
         }
 

@@ -16,7 +16,7 @@ class Png implements SizeInterface
         $image->rewind();
 
         if (($chars = $image->getChars(25))) {
-            return unpack("N*", substr($chars, 16, 8));
+            return array_values(unpack("N*", substr($chars, 16, 8)));
         }
     }
 }

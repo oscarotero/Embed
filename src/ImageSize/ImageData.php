@@ -12,7 +12,7 @@ class ImageData
     protected $position = 0;
     protected $content = '';
     protected $url = '';
-    protected $data = array();
+    protected $data;
     protected $config = array(
         CURLOPT_MAXREDIRS => 20,
         CURLOPT_CONNECTTIMEOUT => 10,
@@ -68,10 +68,8 @@ class ImageData
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_URL => $this->url,
+            CURLOPT_RANGE => "0-{$this->range}",
             CURLOPT_WRITEFUNCTION => array($this, 'writeCallback'),
-            CURLOPT_HTTPHEADER => array(
-                "Range: bytes=0-{$this->range}"
-            ),
         ) + $this->config);
     }
 
@@ -100,7 +98,7 @@ class ImageData
                     $this->data = $size;
                     $this->data[] = $mime;
 
-                    return 0;
+                    return null;
                 }
                 break;
 
@@ -108,11 +106,13 @@ class ImageData
                 $this->data = array(0, 0, $mime);
 
             default:
-                return 0;
+                $this->data = array();
+                return -1;
         }
 
         if (strlen($this->content) >= $this->range) {
-            return 0;
+            $this->data = array();
+            return -1;
         }
 
         return strlen($string);

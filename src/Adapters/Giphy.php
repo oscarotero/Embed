@@ -24,7 +24,7 @@ class Giphy extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        if (($url = $this->providers['TwitterCards']->get('player'))) {
+        if (($url = $this->providers['TwitterCards']->bag->get('player'))) {
             $url = str_replace('/twitter/iframe', '?html5=true', $url);
 
             return Utils::iframe($url, $this->width.'px', $this->height.'px');
