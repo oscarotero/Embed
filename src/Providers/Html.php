@@ -97,7 +97,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getProviderIcons()
     {
-        return $this->bag->get('icons');
+        return (array) $this->bag->get('icons') ?: array();
     }
 
     /**
@@ -105,7 +105,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getImages()
     {
-        return $this->bag->get('images') ?: array();
+        return (array) $this->bag->get('images') ?: array();
     }
 
     /**

@@ -105,7 +105,7 @@ class TwitterCards extends Provider implements ProviderInterface
      */
     public function getImages()
     {
-        return $this->bag->get('images') ?: array();
+        return (array) $this->bag->get('images') ?: array();
     }
 
     /**

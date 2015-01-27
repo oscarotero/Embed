@@ -51,7 +51,7 @@ class Facebook extends Provider implements ProviderInterface
      */
     public function getType()
     {
-        switch ($this->get('type')) {
+        switch ($this->bag->get('type')) {
             case 'article':
                 return 'link';
         }
@@ -64,7 +64,7 @@ class Facebook extends Provider implements ProviderInterface
     {
         $images = array();
 
-        if (($imgs = $this->bag->get('image'))) {
+        if (is_array($imgs = $this->bag->get('image'))) {
             foreach ($imgs as $img) {
                 $images[] = $img['url'];
             }
@@ -102,6 +102,6 @@ class Facebook extends Provider implements ProviderInterface
      */
     public function getProviderName()
     {
-        return $this->get('site_name');
+        return $this->bag->get('site_name');
     }
 }

@@ -45,17 +45,13 @@ class Bag
     /**
      * Get a value, all values or null if not exists
      *
-     * @param null|string $name    Value name
+     * @param string $name    Value name
      * @param null|string $subname A subvalue name
      *
      * @return string|null
      */
-    public function get($name = null, $subname = null)
+    public function get($name, $subname = null)
     {
-        if ($name === null) {
-            return $this->parameters;
-        }
-
         if ($subname === null) {
             return isset($this->parameters[$name]) ? $this->parameters[$name] : null;
         }

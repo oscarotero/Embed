@@ -21,7 +21,7 @@ class OpenGraph extends Provider implements ProviderInterface
         }
 
         foreach (Utils::getMetas($html) as $meta) {
-            list($name, $value, $element) = $meta;
+            list($name, $value) = $meta;
 
             if (strpos($name, 'og:article:') === 0) {
                 $name = substr($name, 11);
@@ -136,7 +136,7 @@ class OpenGraph extends Provider implements ProviderInterface
      */
     public function getImages()
     {
-        return $this->bag->get('image') ?: array();
+        return (array) $this->bag->get('image') ?: array();
     }
 
     /**

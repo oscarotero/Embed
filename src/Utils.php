@@ -191,7 +191,7 @@ class Utils
     /**
      * Returns the size and mime-types of images
      *
-     * @param array $src Image sources
+     * @param array $images Image sources
      *
      * @return array
      */
