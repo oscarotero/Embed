@@ -207,8 +207,6 @@ class Utils
             curl_multi_add_handle($connections, $imageData[$url]->getConnection());
         }
 
-        $active = null;
-
         do {
             $return = curl_multi_exec($connections, $active);
         } while ($return === CURLM_CALL_MULTI_PERFORM);

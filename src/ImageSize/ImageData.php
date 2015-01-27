@@ -10,6 +10,7 @@ class ImageData
     protected $finfo;
     protected $range = 32768;
     protected $position = 0;
+    protected $mime;
     protected $content = '';
     protected $url = '';
     protected $data;
@@ -85,34 +86,39 @@ class ImageData
     {
         $this->content .= $string;
 
-        $mime = finfo_buffer($this->finfo, $this->content);
+        if (!$this->mime) {
+            $this->mime = finfo_buffer($this->finfo, $this->content);
+        }
 
-        switch ($mime) {
+        switch ($this->mime) {
             case 'image/jpeg':
-            case 'image/png':
-            case 'image/gif':
-            case 'image/bmp':
-                $sizer = __NAMESPACE__.'\\'.ucfirst(substr(strstr($mime, '/'), 1));
-
-                if (class_exists($sizer) && ($size = $sizer::getSize($this))) {
+                if ((strlen($this->content) >= $this->range) && ($size = Jpeg::getSize($this))) {
                     $this->data = $size;
-                    $this->data[] = $mime;
-
-                    return null;
+                    $this->data[] = $this->mime;
+                
+                    return -1;
                 }
                 break;
 
+            case 'image/png':
+            case 'image/gif':
+            case 'image/bmp':
+                $sizer = __NAMESPACE__.'\\'.ucfirst(substr(strstr($this->mime, '/'), 1));
+
+                if (class_exists($sizer) && ($size = $sizer::getSize($this))) {
+                    $this->data = $size;
+                    $this->data[] = $this->mime;
+                }
+                
+                return -1;
+
             case 'image/x-icon':
-                $this->data = array(0, 0, $mime);
+                $this->data = array(0, 0, $this->mime);
 
             default:
-                $this->data = array();
-                return -1;
-        }
-
-        if (strlen($this->content) >= $this->range) {
-            $this->data = array();
-            return -1;
+                if ($this->mime) {
+                    return -1;
+                }
         }
 
         return strlen($string);

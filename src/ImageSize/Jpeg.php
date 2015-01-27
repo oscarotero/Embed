@@ -29,7 +29,9 @@ class Jpeg implements SizeInterface
                     break;
 
                 case 'sof':
-                    $b = self::readByte($image);
+                    if (($b = self::readByte($image)) === false) {
+                        return null;
+                    }
 
                     if (in_array($b, range(0xe0, 0xef))) {
                         $state = 'skipframe';
@@ -43,7 +45,9 @@ class Jpeg implements SizeInterface
                     break;
 
                 case 'skipframe':
-                    $skip = self::toInteger($image->getChars(2)) - 2;
+                    if (($skip = self::toInteger($image->getChars(2)) - 2) === false) {
+                        return null;
+                    }
                     $state = 'doskip';
                     break;
 
@@ -85,12 +89,14 @@ class Jpeg implements SizeInterface
     /**
      * Returns an integer
      *
-     * @return integer
+     * @return false|integer
      */
     private static function toInteger($str)
     {
-        $size = unpack("C*", $str);
+        if (($size = unpack("C*", $str))) {
+            return ($size[1] << 8) + $size[2];
+        }
 
-        return ($size[1] << 8) + $size[2];
+        return false;
     }
 }
