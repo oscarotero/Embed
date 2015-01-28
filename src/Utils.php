@@ -1,8 +1,6 @@
 <?php
 namespace Embed;
 
-use Embed\ImageSize\ImageData;
-
 /**
  * Some helpers methods used across the library
  */
@@ -195,14 +193,40 @@ class Utils
      *
      * @return array
      */
+    public static function getImagesInfoSingle(array $images)
+    {
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $info = array();
+
+        foreach ($images as $url) {
+            $image = new ImageInfo($url, $finfo);
+            $image->exec();
+
+            if (($data = $image->getData())) {
+                $info[$url] = $data;
+            }
+        }
+        
+        finfo_close($finfo);
+
+        return $info;
+    }
+
+    /**
+     * Returns the size and mime-types of images
+     *
+     * @param array $images Image sources
+     *
+     * @return array
+     */
     public static function getImagesInfo(array $images)
     {
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $connections = curl_multi_init();
         $imageData = array();
+        $connections = curl_multi_init();
 
         foreach ($images as $url) {
-            $imageData[$url] = new ImageData($url, $finfo);
+            $imageData[$url] = new ImageInfo($url, $finfo);
 
             curl_multi_add_handle($connections, $imageData[$url]->getConnection());
         }
@@ -212,13 +236,13 @@ class Utils
         } while ($return === CURLM_CALL_MULTI_PERFORM);
 
         while ($active && $return === CURLM_OK) {
-            if (curl_multi_select($connections) !== -1) {
-                do {
-                    $return = curl_multi_exec($connections, $active);
-                } while ($return === CURLM_CALL_MULTI_PERFORM);
-            } else {
-                break;
+            if (curl_multi_select($connections) === -1) {
+                usleep(100);
             }
+
+            do {
+                $return = curl_multi_exec($connections, $active);
+            } while ($return === CURLM_CALL_MULTI_PERFORM);
         }
 
         $info = array();

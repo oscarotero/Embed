@@ -258,7 +258,7 @@ abstract class Adapter
     {
         if ($code = $this->getData('code')) {
             if (strpos($code, '</iframe>') !== false) {
-                return preg_replace('|^(<iframe.*</iframe>).*$|Us', '$1', $code);
+                return preg_replace('|^.*(<iframe.*</iframe>).*$|Us', '$1', $code);
             }
 
             if (strpos($code, '</object>') !== false) {
@@ -375,7 +375,7 @@ abstract class Adapter
     {
         $images = array();
 
-        foreach ($this->getAllProviders() as $provider) {
+        foreach ($this->getAllProviders() as $k => $provider) {
             foreach ($provider->getImages() as $image) {
                 $images[] = $this->request->url->getAbsolute($image);
             }

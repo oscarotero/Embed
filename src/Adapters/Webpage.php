@@ -24,11 +24,11 @@ class Webpage extends Adapter implements AdapterInterface
     {
         $this->request = $request;
 
-        $this->addProvider('Html', new Providers\Html());
-        $this->addProvider('TwitterCards', new Providers\TwitterCards());
-        $this->addProvider('OpenGraph', new Providers\OpenGraph());
         $this->addProvider('OEmbed', new Providers\OEmbed());
+        $this->addProvider('OpenGraph', new Providers\OpenGraph());
+        $this->addProvider('TwitterCards', new Providers\TwitterCards());
         $this->addProvider('Dcterms', new Providers\Dcterms());
         $this->addProvider('Sailthru', new Providers\Sailthru());
+        $this->addProvider('Html', new Providers\Html());
     }
 }
