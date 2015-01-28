@@ -6,12 +6,12 @@ namespace Embed;
  */
 class ImageInfo
 {
-    protected static $ranges = array(
-        'image/jpeg' => 32768,
-        'image/png' => 25,
-        'image/gif' => 11,
-        'image/bmp' => 29,
-        'image/x-icon' => 0
+    protected static $mimetypes = array(
+        'image/jpeg',
+        'image/png',
+        'image/gif',
+        'image/bmp',
+        'image/x-icon'
     );
 
     protected $connection;
@@ -32,6 +32,78 @@ class ImageInfo
     );
 
     /**
+     * Get the info of an image
+     * 
+     * @param string $url
+     * 
+     * @return array|null
+     */
+    public static function getImageInfo($url)
+    {
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $image = new static($url, $finfo);
+
+        $curl = $image->getConnection();
+        curl_exec($curl);
+        curl_close($curl);
+
+        $info = $image->getInfo();
+
+        finfo_close($finfo);
+
+        return $info;
+    }
+
+    /**
+     * Get the info of multiple images using curl parallel request
+     * 
+     * @param array $urls
+     * 
+     * @return array
+     */
+    public static function getImagesInfo(array $urls)
+    {
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $images = array();
+        $connections = curl_multi_init();
+
+        foreach ($urls as $url) {
+            $images[$url] = new static($url, $finfo);
+
+            curl_multi_add_handle($connections, $images[$url]->getConnection());
+        }
+
+        do {
+            $return = curl_multi_exec($connections, $active);
+        } while ($return === CURLM_CALL_MULTI_PERFORM);
+
+        while ($active && $return === CURLM_OK) {
+            if (curl_multi_select($connections) === -1) {
+                usleep(100);
+            }
+
+            do {
+                $return = curl_multi_exec($connections, $active);
+            } while ($return === CURLM_CALL_MULTI_PERFORM);
+        }
+
+        $info = array();
+
+        foreach ($images as $url => $image) {
+            curl_multi_remove_handle($connections, $image->getConnection());
+
+            if (($i = $image->getInfo())) {
+                $info[$url] = $i;
+            }
+        }
+
+        finfo_close($finfo);
+        curl_multi_close($connections);
+
+        return $info;
+    }
+
+    /**
      * Init the curl connection
      * 
      * @param string $url The image url
@@ -41,14 +113,12 @@ class ImageInfo
     {
         $this->url = $url;
         $this->finfo = $finfo;
-        
         $this->connection = curl_init();
 
         curl_setopt_array($this->connection, array(
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_URL => $this->url,
-            CURLOPT_RANGE => "0-".self::$ranges['image/jpeg'],
             CURLOPT_WRITEFUNCTION => array($this, 'writeCallback'),
         ) + $this->config);
     }
@@ -64,22 +134,13 @@ class ImageInfo
     }
 
     /**
-     * Execute the curl request.
-     */
-    public function exec()
-    {
-        curl_exec($this->connection);
-        curl_close($this->connection);
-    }
-
-    /**
-     * Get the image data with the format array($width, $height, $mimetype)
+     * Get the image info with the format array($width, $height, $mimetype)
      * 
      * @return null|array
      */
-    public function getData()
+    public function getInfo()
     {
-        if ($this->mime && ($info = @getimagesizefromstring($this->content))) {
+        if ($this->mime && ($info = getimagesizefromstring($this->content))) {
             return array($info[0], $info[1], $this->mime);
         }
     }
@@ -100,8 +161,8 @@ class ImageInfo
             $this->mime = finfo_buffer($this->finfo, $this->content);
         }
 
-        if (isset(static::$ranges[$this->mime])) {
-            if (strlen($this->content) < static::$ranges[$this->mime]) {
+        if (in_array($this->mime, static::$mimetypes, true)) {
+            if (!getimagesizefromstring($this->content)) {
                 return strlen($string);
             }
         } else {

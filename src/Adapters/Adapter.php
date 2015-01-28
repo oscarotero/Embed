@@ -4,7 +4,7 @@ namespace Embed\Adapters;
 use Embed\Utils;
 use Embed\Request;
 use Embed\Providers\ProviderInterface;
-use Embed\ImageSize\ImageSize;
+use Embed\ImageInfo;
 
 /**
  * Base class extended by all adapters
@@ -36,8 +36,8 @@ abstract class Adapter
     protected $request;
     protected $providers = array();
     protected $options = array(
-        'minImageWidth' => 0,
-        'minImageHeight' => 0,
+        'minImageWidth' => 16,
+        'minImageHeight' => 16,
         'getBiggerImage' => false,
         'getBiggerIcon' => false,
         'facebookAccessToken' => null,
@@ -319,7 +319,7 @@ abstract class Adapter
         $icons[] = $this->request->url->getAbsolute('/favicon.ico');
         $icons[] = $this->request->url->getAbsolute('/favicon.png');
 
-        return Utils::getImagesInfo(array_unique($icons));
+        return ImageInfo::getImagesInfo(array_unique($icons));
     }
 
     /**
@@ -381,7 +381,7 @@ abstract class Adapter
             }
         }
 
-        return Utils::getImagesInfo(array_unique($images));
+        return ImageInfo::getImagesInfo(array_unique($images));
     }
 
     /**
@@ -407,7 +407,6 @@ abstract class Adapter
 
         foreach ($this->images as $src => $image) {
             if (($image[0] >= $this->options['minImageWidth']) && ($image[1] >= $this->options['minImageHeight'])) {
-
                 return $src;
             }
         }

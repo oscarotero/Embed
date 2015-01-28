@@ -16,6 +16,6 @@ class Scribd extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://www.scribd.com/doc/*');
+        return array('https?://www.scribd.com/doc/*');
     }
 }

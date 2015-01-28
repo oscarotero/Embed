@@ -133,8 +133,8 @@ include('../src/autoloader.php');
             <fieldset class="options">
                 <h2>Info options</h2>
 
-                <label><span>minImageWidth:</span> <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 0); ?>"></label>
-                <label><span>minImageHeight:</span> <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 0); ?>"></label>
+                <label><span>minImageWidth:</span> <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 16); ?>"></label>
+                <label><span>minImageHeight:</span> <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 16); ?>"></label>
                 <label><span>getBiggerImage</span> <input type="checkbox" name="options[getBiggerImage]" value="1" <?php echo getOption('getBiggerImage') ? 'checked' : ''; ?>></label>
                 <label><span>getBiggerIcon</span> <input type="checkbox" name="options[getBiggerIcon]" value="1" <?php echo getOption('getBiggerIcon') ? 'checked' : ''; ?>></label>
                 <label><span>facebookAccessToken:</span> <input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label>

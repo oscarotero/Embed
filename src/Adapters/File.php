@@ -7,6 +7,7 @@ namespace Embed\Adapters;
 use Embed\Request;
 use Embed\Utils;
 use Embed\Providers;
+use Embed\ImageInfo;
 
 class File extends Adapter implements AdapterInterface
 {
@@ -84,7 +85,7 @@ class File extends Adapter implements AdapterInterface
     public function getImages()
     {
         if ($this->getType() === 'photo') {
-            return Utils::getImagesInfo(array($this->getUrl()));
+            return ImageInfo::getImagesInfo(array($this->getUrl()));
         }
 
         return array();
