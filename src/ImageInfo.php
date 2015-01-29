@@ -17,8 +17,8 @@ class ImageInfo
     protected $connection;
     protected $finfo;
     protected $mime;
+    protected $info;
     protected $content = '';
-    protected $url = '';
     protected $config = array(
         CURLOPT_MAXREDIRS => 20,
         CURLOPT_CONNECTTIMEOUT => 10,
@@ -111,14 +111,13 @@ class ImageInfo
      */
     public function __construct($url, $finfo)
     {
-        $this->url = $url;
         $this->finfo = $finfo;
         $this->connection = curl_init();
 
         curl_setopt_array($this->connection, array(
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_URL => $this->url,
+            CURLOPT_URL => $url,
             CURLOPT_WRITEFUNCTION => array($this, 'writeCallback'),
         ) + $this->config);
     }
@@ -140,9 +139,7 @@ class ImageInfo
      */
     public function getInfo()
     {
-        if ($this->mime && ($info = getimagesizefromstring($this->content))) {
-            return array($info[0], $info[1], $this->mime);
-        }
+        return $this->info;
     }
 
     /**
@@ -162,9 +159,11 @@ class ImageInfo
         }
 
         if (in_array($this->mime, static::$mimetypes, true)) {
-            if (!getimagesizefromstring($this->content)) {
+            if (!($info = getimagesizefromstring($this->content))) {
                 return strlen($string);
             }
+
+            $this->info = array($info[0], $info[1], $this->mime);
         } else {
             $this->mime = null;
         }

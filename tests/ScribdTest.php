@@ -11,7 +11,6 @@ class ScribdTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($info->description, "A review of current literature on studies that address effects of prescribed fire and mechanical thinning treatments on understory vegetation, and the effects of prescribed burning on rare, threatened and endangered species. The studies' outcomes are presented in two sets of tables: (1) functional group results, and (2) species-specific results.");
         $this->assertEquals($info->imageWidth, 111);
         $this->assertEquals($info->imageHeight, 142);
-        $this->assertEquals($info->code, '<iframe class="scribd_iframe_embed" frameborder="0" height="500" id="110799637" scrolling="no" src="https://www.scribd.com/embeds/110799637/content" width="100%"></iframe>');
         $this->assertEquals($info->type, 'rich');
         $this->assertEquals($info->authorName, 'Joint Fire Science Program');
         $this->assertEquals($info->authorUrl, 'https://www.scribd.com/firesciencegov');

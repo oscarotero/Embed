@@ -155,55 +155,11 @@ abstract class Adapter
     }
 
     /**
-     * Search and returns data from the providers
-     *
-     * @param string     $name        The data name (title, description, image, etc)
-     * @param boolean    $returnFirst If it's true, returns the first value found, else returns the most popular value
-     * @param null|array $providers   The providers used to retrieve the data
-     *
-     * @return mixed
-     */
-    public function getData($name, $returnFirst = true, array $providers = null)
-    {
-        $method = 'get'.$name;
-        $values = array();
-        $current = null;
-
-        if ($providers === null) {
-            $providers = array_keys($this->providers);
-        }
-
-        foreach ($providers as $name) {
-            if (!isset($this->providers[$name])) {
-                continue;
-            }
-
-            if (($value = $this->providers[$name]->$method())) {
-                if ($returnFirst === true) {
-                    return $value;
-                }
-
-                if (isset($values[$value])) {
-                    ++$values[$value];
-                } else {
-                    $values[$value] = 1;
-                }
-
-                if ($current === null || $values[$current] > $values[$value]) {
-                    $current = $value;
-                }
-            }
-        }
-
-        return $returnFirst ? null : $current;
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function getTitle()
     {
-        return $this->getData('title') ?: $this->request->url->getUrl();
+        return Utils::getData($this->providers, 'title') ?: $this->request->url->getUrl();
     }
 
     /**
@@ -211,7 +167,7 @@ abstract class Adapter
      */
     public function getDescription()
     {
-        return $this->getData('description');
+        return Utils::getData($this->providers, 'description');
     }
 
     /**
@@ -225,7 +181,7 @@ abstract class Adapter
             return 'video';
         }
 
-        if (($type = $this->getData('type', false)) && ($type !== 'link')) {
+        if (($type = Utils::getData($this->providers, 'type', false)) && ($type !== 'link')) {
             return $type;
         }
 
@@ -245,7 +201,7 @@ abstract class Adapter
      */
     public function getSource()
     {
-        if (($source = $this->getData('source', true))) {
+        if (($source = Utils::getData($this->providers, 'source', true))) {
             return $this->request->url->getAbsolute($source);
         }
     }
@@ -255,7 +211,7 @@ abstract class Adapter
      */
     public function getCode()
     {
-        if ($code = $this->getData('code')) {
+        if ($code = Utils::getData($this->providers, 'code')) {
             if (strpos($code, '</iframe>') !== false) {
                 return preg_replace('|^.*(<iframe.*</iframe>).*$|Us', '$1', $code);
             }
@@ -277,7 +233,7 @@ abstract class Adapter
      */
     public function getUrl()
     {
-        if (($url = $this->getData('url', true))) {
+        if (($url = Utils::getData($this->providers, 'url', true))) {
             return $this->request->url->getAbsolute($url);
         }
 
@@ -289,7 +245,7 @@ abstract class Adapter
      */
     public function getAuthorName()
     {
-        return $this->getData('authorName');
+        return Utils::getData($this->providers, 'authorName');
     }
 
     /**
@@ -297,7 +253,7 @@ abstract class Adapter
      */
     public function getAuthorUrl()
     {
-        if (($url = $this->getData('authorUrl', true))) {
+        if (($url = Utils::getData($this->providers, 'authorUrl', true))) {
             return $this->request->url->getAbsolute($url);
         }
     }
@@ -340,7 +296,7 @@ abstract class Adapter
      */
     public function getProviderName()
     {
-        return $this->getData('providerName') ?: $this->request->url->getDomain();
+        return Utils::getData($this->providers, 'providerName') ?: $this->request->url->getDomain();
     }
 
     /**
@@ -348,7 +304,7 @@ abstract class Adapter
      */
     public function getProviderUrl()
     {
-        if (($url = $this->getData('providerUrl', true))) {
+        if (($url = Utils::getData($this->providers, 'providerUrl', true))) {
             return $this->request->url->getAbsolute($url);
         }
 
@@ -420,7 +376,7 @@ abstract class Adapter
      */
     public function getWidth()
     {
-        return $this->getData('width');
+        return Utils::getData($this->providers, 'width');
     }
 
     /**
@@ -428,7 +384,7 @@ abstract class Adapter
      */
     public function getHeight()
     {
-        return $this->getData('height');
+        return Utils::getData($this->providers, 'height');
     }
 
     /**
@@ -449,6 +405,6 @@ abstract class Adapter
      */
     public function getPublishedTime()
     {
-        return $this->getData('publishedTime');
+        return Utils::getData($this->providers, 'publishedTime');
     }
 }

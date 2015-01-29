@@ -75,6 +75,42 @@ class Utils
     }
 
     /**
+     * Search and returns data from the providers
+     *
+     * @param null|array $providers   The providers used to retrieve the data
+     * @param string     $name        The data name (title, description, image, etc)
+     * @param boolean    $returnFirst If it's true, returns the first value found, else returns the most popular value
+     *
+     * @return mixed
+     */
+    public static function getData(array $providers, $name, $returnFirst = true)
+    {
+        $method = 'get'.$name;
+        $values = array();
+        $current = null;
+
+        foreach ($providers as $provider) {
+            if (($value = $provider->$method())) {
+                if ($returnFirst === true) {
+                    return $value;
+                }
+
+                if (isset($values[$value])) {
+                    ++$values[$value];
+                } else {
+                    $values[$value] = 1;
+                }
+
+                if ($current === null || $values[$current] > $values[$value]) {
+                    $current = $value;
+                }
+            }
+        }
+
+        return $current;
+    }
+
+    /**
      * Creates a <video> element
      *
      * @param string       $poster  Poster attribute
