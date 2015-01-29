@@ -51,6 +51,30 @@ class Utils
     }
 
     /**
+     * Returns the bigger image
+     *
+     * @param array $images
+     *
+     * @return null|string
+     */
+    public static function getBiggerImage(array $images)
+    {
+        $biggerArea = 0;
+        $biggerSrc = null;
+
+        foreach ($images as $src => $image) {
+            $area = $image[0] * $image[1];
+
+            if ($area > $biggerArea) {
+                $biggerArea = $area;
+                $biggerSrc = $src;
+            }
+        }
+
+        return $biggerSrc;
+    }
+
+    /**
      * Creates a <video> element
      *
      * @param string       $poster  Poster attribute

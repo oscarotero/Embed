@@ -44,7 +44,6 @@ abstract class Adapter
         'soundcloudClientId' => null,
         'embedlyKey' => null,
         'oembedParameters' => array(),
-        'facebookProvider' => false,
     );
 
     /**
@@ -328,19 +327,7 @@ abstract class Adapter
     public function getProviderIcon()
     {
         if ($this->options['getBiggerIcon']) {
-            $biggerArea = 0;
-            $biggerSrc = null;
-
-            foreach ($this->providerIcons as $src => $icon) {
-                $area = $icon[0] * $icon[1];
-
-                if ($area > $biggerArea) {
-                    $biggerArea = $area;
-                    $biggerSrc = $src;
-                }
-            }
-
-            return $biggerSrc;
+            return Utils::getBiggerImage($this->providerIcons);
         }
 
         if (($icons = $this->providerIcons) && reset($icons)) {
@@ -390,19 +377,15 @@ abstract class Adapter
     public function getImage()
     {
         if ($this->options['getBiggerImage']) {
-            $biggerArea = 0;
-            $biggerSrc = null;
+            if (($src = Utils::getBiggerImage($this->images))) {
+                $image = $this->images[$src];
 
-            foreach ($this->images as $src => $image) {
-                $area = $image[0] * $image[1];
-
-                if (($area > $biggerArea) && ($image[0] >= $this->options['minImageWidth']) && ($image[1] >= $this->options['minImageHeight'])) {
-                    $biggerArea = $area;
-                    $biggerSrc = $src;
+                if (($image[0] >= $this->options['minImageWidth']) && ($image[1] >= $this->options['minImageHeight'])) {
+                    return $src;
                 }
             }
 
-            return $biggerSrc;
+            return null;
         }
 
         foreach ($this->images as $src => $image) {
