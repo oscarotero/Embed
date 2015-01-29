@@ -110,6 +110,6 @@ interface DataInterface
      * Gets the published time, if the webpage is an article
      *
      * @return string|null
-     */   
+     */
     public function getPublishedTime();
 }

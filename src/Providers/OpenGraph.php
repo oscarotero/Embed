@@ -6,7 +6,7 @@ use Embed\Utils;
 
 /**
  * Generic opengraph provider.
- * 
+ *
  * Load the opengraph data of an url and store it
  */
 class OpenGraph extends Provider implements ProviderInterface
@@ -160,6 +160,6 @@ class OpenGraph extends Provider implements ProviderInterface
      */
     public function getPublishedTime()
     {
-	    return $this->bag->get('published_time');
+        return $this->bag->get('published_time');
     }
 }

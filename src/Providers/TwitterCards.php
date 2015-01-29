@@ -6,7 +6,7 @@ use Embed\Utils;
 
 /**
  * Generic twitter cards provider.
- * 
+ *
  * Load the twitter cards data of an url and store it
  */
 class TwitterCards extends Provider implements ProviderInterface

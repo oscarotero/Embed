@@ -8,7 +8,7 @@ use Embed\Utils;
 
 /**
  * Generic html provider.
- * 
+ *
  * Load the html data of an url and store it
  */
 class Html extends Provider implements ProviderInterface
@@ -137,7 +137,7 @@ class Html extends Provider implements ProviderInterface
 
     /**
      * Extract information from the <link> elements
-     * 
+     *
      * @param \DOMDocument $html
      * @param Bag          $bag
      */
@@ -181,7 +181,7 @@ class Html extends Provider implements ProviderInterface
 
     /**
      * Extract information from the <meta> elements
-     * 
+     *
      * @param \DOMDocument $html
      * @param Bag          $bag
      */
@@ -220,10 +220,10 @@ class Html extends Provider implements ProviderInterface
 
     /**
      * Extract <img> elements
-     * 
-     * @param \DOMElement  $html
-     * @param Bag          $bag
-     * @param null|string  $domain
+     *
+     * @param \DOMElement $html
+     * @param Bag         $bag
+     * @param null|string $domain
      */
     protected static function extractImages(\DOMElement $html, Bag $bag, $domain = null)
     {
@@ -269,9 +269,9 @@ class Html extends Provider implements ProviderInterface
 
     /**
      * Returns the main element of the document
-     * 
+     *
      * @param \DOMDocument $html
-     * 
+     *
      * @return \DOMElement
      */
     protected static function getMainElement(\DOMDocument $html)

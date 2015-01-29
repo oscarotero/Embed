@@ -105,7 +105,7 @@ abstract class Adapter
     /**
      * Adds a new provider
      *
-     * @param string $name
+     * @param string            $name
      * @param ProviderInterface $provider
      */
     public function addProvider($name, ProviderInterface $provider)
@@ -119,7 +119,7 @@ abstract class Adapter
      * Get a provider
      *
      * @param string $name
-     * 
+     *
      * @return null|ProviderInterface
      */
     public function getProvider($name)
@@ -157,9 +157,9 @@ abstract class Adapter
     /**
      * Search and returns data from the providers
      *
-     * @param string  $name         The data name (title, description, image, etc)
-     * @param boolean $returnFirst  If it's true, returns the first value found, else returns the most popular value
-     * @param null|array $providers The providers used to retrieve the data
+     * @param string     $name        The data name (title, description, image, etc)
+     * @param boolean    $returnFirst If it's true, returns the first value found, else returns the most popular value
+     * @param null|array $providers   The providers used to retrieve the data
      *
      * @return mixed
      */
@@ -385,7 +385,7 @@ abstract class Adapter
                 }
             }
 
-            return null;
+            return;
         }
 
         foreach ($this->images as $src => $image) {

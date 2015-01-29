@@ -19,7 +19,7 @@ class YFrog extends OEmbedImplementation
         return array(
             'http://twitter.yfrog.com/*',
             'http://www.yfrog.com/*',
-            'http://a.yfrog.com/*'
+            'http://a.yfrog.com/*',
         );
     }
 }

@@ -55,7 +55,7 @@ class Embed
     /**
      * Gets the info from a source (list of urls)
      *
-     * @param string|Request $request     The url or a request with the source url
+     * @param string|Request $request The url or a request with the source url
      * @param null|array     $options Options passed to the adapter
      *
      * @return false|Sources\SourceInterface
@@ -82,13 +82,13 @@ class Embed
 
     /**
      * Execute an adapter
-     * 
-     * @param string $adapter Adapter class name
-     * @param Request $request
+     *
+     * @param string     $adapter Adapter class name
+     * @param Request    $request
      * @param null|array $options
-     * 
+     *
      * @throws \InvalidArgumentException If the adapter class in not AdapterInterface
-     * 
+     *
      * @return false|AdapterInterface
      */
     private static function executeAdapter($adapter, Request $request, array $options = null)
@@ -105,13 +105,13 @@ class Embed
     }
 
     /**
-     * Init a request 
-     * 
+     * Init a request
+     *
      * @param string|Request $request The url or a request with the url
      * @param null|array     $options Options passed to the adapter
-     * 
+     *
      * @throws \InvalidArgumentException If the class in not Embed\Request instance
-     * 
+     *
      * @return Request
      */
     private static function getRequest($request, array $options = null)

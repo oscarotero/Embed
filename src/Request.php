@@ -3,7 +3,7 @@ namespace Embed;
 
 /**
  * Class to execute request and return the content
- * 
+ *
  * @property Url $url
  * @property RequestResolvers\RequestResolverInterface $resolver
  */
@@ -53,7 +53,7 @@ class Request
 
                 $this->resolver = new $resolverClass(UrlRedirect::resolve($this->startingUrl->getUrl()));
 
-                if(is_array($this->resolverConfig)) {
+                if (is_array($this->resolverConfig)) {
                     $this->resolver->setConfig($this->resolverConfig);
                 }
 

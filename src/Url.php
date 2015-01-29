@@ -158,11 +158,13 @@ class Url
         if ($key > count($this->info['path'])) {
             $this->info['path'][] = $this->info['file'];
             $this->info['file'] = $value;
+
             return;
         }
 
         if ($key === count($this->info['path'])) {
             $this->info['file'] = $value;
+
             return;
         }
 

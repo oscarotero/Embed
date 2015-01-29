@@ -22,79 +22,107 @@ abstract class Provider
     /**
      * {@inheritdoc}
      */
-    public function getTitle() {}
+    public function getTitle()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getDescription() {}
+    public function getDescription()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getType() {}
+    public function getType()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getSource() {}
+    public function getSource()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getCode() {}
+    public function getCode()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getUrl() {}
+    public function getUrl()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getAuthorName() {}
+    public function getAuthorName()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getAuthorUrl() {}
+    public function getAuthorUrl()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getProviderIcons() {
+    public function getProviderIcons()
+    {
         return array();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getProviderName() {}
+    public function getProviderName()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getProviderUrl() {}
+    public function getProviderUrl()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getImages() {
+    public function getImages()
+    {
         return array();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getWidth() {}
+    public function getWidth()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getHeight() {}
+    public function getHeight()
+    {
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function getPublishedTime() {}
+    public function getPublishedTime()
+    {
+    }
 }

@@ -6,7 +6,7 @@ use Embed\Utils;
 
 /**
  * Generic oembed provider.
- * 
+ *
  * Load the oembed data of an url and store it
  */
 class OEmbed extends Provider implements ProviderInterface
@@ -182,9 +182,9 @@ class OEmbed extends Provider implements ProviderInterface
 
     /**
      * Extract oembed information from the <link rel="alternate"> elements
-     * 
+     *
      * @param \DOMDocument $html
-     * 
+     *
      * @return string|null
      */
     protected static function getEndPointFromDom(\DOMDocument $html)
@@ -210,10 +210,10 @@ class OEmbed extends Provider implements ProviderInterface
 
     /**
      * Returns the oembed link from the request
-     * 
+     *
      * @param Request $request
      * @param array   $options
-     * 
+     *
      * @return array|null
      */
     protected static function getEndPointFromRequest(Request $request, array $options)
@@ -232,7 +232,7 @@ class OEmbed extends Provider implements ProviderInterface
         if (!empty($options['embedlyKey']) && $request->match(OEmbed\Embedly::getPatterns())) {
             return array(
                 'endPoint' => OEmbed\Embedly::getEndpoint(),
-                'params' => OEmbed\Embedly::getParams() + ['key' => $options['embedlyKey']]
+                'params' => OEmbed\Embedly::getParams() + ['key' => $options['embedlyKey']],
             );
         }
     }

@@ -6,7 +6,7 @@ use Embed\Utils;
 
 /**
  * Generic Dublin Core provider.
- * 
+ *
  * Load the Dublin Core data of an url and store it
  */
 class Dcterms extends Provider implements ProviderInterface
@@ -54,7 +54,8 @@ class Dcterms extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function getPublishedTime() {
+    public function getPublishedTime()
+    {
         return $this->bag->get('date');
     }
 }

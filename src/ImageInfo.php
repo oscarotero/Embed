@@ -11,7 +11,7 @@ class ImageInfo
         'image/png',
         'image/gif',
         'image/bmp',
-        'image/x-icon'
+        'image/x-icon',
     );
 
     protected $connection;
@@ -33,9 +33,9 @@ class ImageInfo
 
     /**
      * Get the info of an image
-     * 
+     *
      * @param string $url
-     * 
+     *
      * @return array|null
      */
     public static function getImageInfo($url)
@@ -56,9 +56,9 @@ class ImageInfo
 
     /**
      * Get the info of multiple images using curl parallel request
-     * 
+     *
      * @param array $urls
-     * 
+     *
      * @return array
      */
     public static function getImagesInfo(array $urls)
@@ -105,8 +105,8 @@ class ImageInfo
 
     /**
      * Init the curl connection
-     * 
-     * @param string $url The image url
+     *
+     * @param string   $url   The image url
      * @param resource $finfo A fileinfo resource to get the mimetype
      */
     public function __construct($url, $finfo)
@@ -125,7 +125,7 @@ class ImageInfo
 
     /**
      * Returns the curl resource
-     * 
+     *
      * @return resource
      */
     public function getConnection()
@@ -135,7 +135,7 @@ class ImageInfo
 
     /**
      * Get the image info with the format array($width, $height, $mimetype)
-     * 
+     *
      * @return null|array
      */
     public function getInfo()
@@ -147,10 +147,10 @@ class ImageInfo
 
     /**
      * Callback used to save the first bytes of the body content
-     * 
+     *
      * @param resource $connection
      * @param string   $string
-     * 
+     *
      * return integer
      */
     public function writeCallback($connection, $string)

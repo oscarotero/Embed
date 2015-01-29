@@ -45,7 +45,7 @@ class Bag
     /**
      * Get a value, all values or null if not exists
      *
-     * @param string $name    Value name
+     * @param string      $name    Value name
      * @param null|string $subname A subvalue name
      *
      * @return string|null

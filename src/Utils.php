@@ -20,7 +20,7 @@ class Utils
         foreach ($html->getElementsByTagName('meta') as $meta) {
             $name = trim(strtolower($meta->getAttribute('property') ?: $meta->getAttribute('name')));
             $value = $meta->getAttribute('content') ?: $meta->getAttribute('value');
-            
+
             $metas[] = array($name, $value, $meta);
         }
 
@@ -42,7 +42,7 @@ class Utils
             if ($link->hasAttribute('rel') && $link->hasAttribute('href')) {
                 $rel = trim(strtolower($link->getAttribute('rel')));
                 $href = $link->getAttribute('href');
-            
+
                 $links[] = array($rel, $href, $link);
             }
         }
@@ -179,7 +179,7 @@ class Utils
     /**
      * Creates a flash element
      *
-     * @param string  $src    The swf file source
+     * @param string       $src    The swf file source
      * @param null|integer $width  Width attribute
      * @param null|integer $height Height attribute
      *

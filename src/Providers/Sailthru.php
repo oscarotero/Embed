@@ -6,7 +6,7 @@ use Embed\Utils;
 
 /**
  * Generic Salithru provider.
- * 
+ *
  * Load the Salithru data of an url and store it
  */
 class Sailthru extends Provider implements ProviderInterface

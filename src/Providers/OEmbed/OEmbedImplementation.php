@@ -3,7 +3,7 @@ namespace Embed\Providers\Oembed;
 
 /**
  * Abstract class extended by all oembed classes
- * 
+ *
  * Provides the endPoint, pattern and params of the well known oembed implementations
  */
 abstract class OEmbedImplementation
