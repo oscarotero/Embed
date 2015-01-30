@@ -106,13 +106,18 @@ class ImageInfo
     /**
      * Init the curl connection
      *
-     * @param string   $url   The image url
-     * @param resource $finfo A fileinfo resource to get the mimetype
+     * @param string     $url    The image url
+     * @param resource   $finfo  A fileinfo resource to get the mimetype
+     * @param null|array $config Custom options for the curl request
      */
-    public function __construct($url, $finfo)
+    public function __construct($url, $finfo, array $config = null)
     {
         $this->finfo = $finfo;
         $this->connection = curl_init();
+
+        if ($config) {
+            $this->config = array_replace($this->config, $config);
+        }
 
         curl_setopt_array($this->connection, array(
             CURLOPT_RETURNTRANSFER => false,
@@ -156,18 +161,18 @@ class ImageInfo
 
         if (!$this->mime) {
             $this->mime = finfo_buffer($this->finfo, $this->content);
-        }
 
-        if (in_array($this->mime, static::$mimetypes, true)) {
-            if (!($info = getimagesizefromstring($this->content))) {
-                return strlen($string);
+            if (!in_array($this->mime, static::$mimetypes, true)) {
+                $this->mime = null;
+                return -1;
             }
-
-            $this->info = array($info[0], $info[1], $this->mime);
-        } else {
-            $this->mime = null;
         }
 
+        if (!($info = getimagesizefromstring($this->content))) {
+            return strlen($string);
+        }
+
+        $this->info = array($info[0], $info[1], $this->mime);
         return -1;
     }
 }
