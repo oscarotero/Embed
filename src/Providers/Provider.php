@@ -9,14 +9,19 @@ abstract class Provider
     public $bag;
 
     protected $request;
-    protected $options;
+    protected $config = array();
 
     /**
-     * Constructor. Init the bag
+     * {@inheritdoc}
      */
-    public function __construct()
+    public function init(Request $request, array $config = null)
     {
         $this->bag = new Bag();
+        $this->request = $request;
+
+        if ($config) {
+            $this->config = array_replace($this->config, $config);
+        }
     }
 
     /**

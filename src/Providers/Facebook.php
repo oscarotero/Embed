@@ -11,13 +11,13 @@ class Facebook extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function init(Request $request, array $options)
+    public function run()
     {
-        $graph = $request->createRequest('https://graph.facebook.com/fql');
+        $graph = $this->request->createRequest('https://graph.facebook.com/fql');
         $graph->url->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$request->url->getUrl().'"');
 
         if ($graph->isValid() && ($info = $graph->getJsonContent()) && isset($info['data'][0]['comments_fbid'])) {
-            $graph = $request->createRequest('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
+            $graph = $this->request->createRequest('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
 
             if ($json = $graph->getJsonContent()) {
                 $this->bag->set($json);

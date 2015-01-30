@@ -1,7 +1,6 @@
 <?php
 namespace Embed\Providers;
 
-use Embed\Request;
 use Embed\Utils;
 
 /**
@@ -14,9 +13,9 @@ class TwitterCards extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function init(Request $request, array $options)
+    public function run()
     {
-        if (!($html = $request->getHtmlContent())) {
+        if (!($html = $this->request->getHtmlContent())) {
             return false;
         }
 

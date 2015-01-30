@@ -11,20 +11,25 @@ use Embed\Utils;
  */
 class OEmbed extends Provider implements ProviderInterface
 {
+    protected $config = array(
+        'parameters' => array(),
+        'embedlyKey' => null
+    );
+
     /**
      * {@inheritdoc}
      */
-    public function init(Request $request, array $options)
+    public function run()
     {
         $endPoint = null;
-        $params = isset($options['oembedParameters']) ? $options['oembedParameters'] : array();
-        $params['url'] = $request->url->getUrl();
+        $params = isset($this->config['oembedParameters']) ? $this->config['oembedParameters'] : array();
+        $params['url'] = $this->request->url->getUrl();
 
-        if (($html = $request->getHtmlContent())) {
+        if (($html = $this->request->getHtmlContent())) {
             $endPoint = self::getEndPointFromDom($html);
         }
 
-        if (!$endPoint && ($info = self::getEndPointFromRequest($request, $options))) {
+        if (!$endPoint && ($info = self::getEndPointFromRequest($this->request, $this->config))) {
             $endPoint = $info['endPoint'];
             $params += $info['params'];
         }
@@ -33,7 +38,7 @@ class OEmbed extends Provider implements ProviderInterface
             return;
         }
 
-        $endPointRequest = $request->createRequest($endPoint);
+        $endPointRequest = $this->request->createRequest($endPoint);
         $endPointRequest->startingUrl->setParameter($params);
 
         // extract from xml
@@ -212,11 +217,11 @@ class OEmbed extends Provider implements ProviderInterface
      * Returns the oembed link from the request
      *
      * @param Request $request
-     * @param array   $options
+     * @param array   $config
      *
      * @return array|null
      */
-    protected static function getEndPointFromRequest(Request $request, array $options)
+    protected static function getEndPointFromRequest(Request $request, array $config)
     {
         //Search the oembed provider using the domain
         $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->url->getDomain()))));
@@ -229,10 +234,10 @@ class OEmbed extends Provider implements ProviderInterface
         }
 
         //Search using embedly
-        if (!empty($options['embedlyKey']) && $request->match(OEmbed\Embedly::getPatterns())) {
+        if (!empty($config['embedlyKey']) && $request->match(OEmbed\Embedly::getPatterns())) {
             return array(
                 'endPoint' => OEmbed\Embedly::getEndpoint(),
-                'params' => OEmbed\Embedly::getParams() + ['key' => $options['embedlyKey']],
+                'params' => OEmbed\Embedly::getParams() + ['key' => $config['embedlyKey']],
             );
         }
     }

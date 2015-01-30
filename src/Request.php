@@ -11,8 +11,7 @@ class Request
 {
     public $startingUrl;
 
-    private $defaultResolverClass = 'Embed\\RequestResolvers\\Curl';
-    private $resolverClass;
+    private $resolverClass = 'Embed\\RequestResolvers\\Curl';
     private $resolverConfig;
 
     private $xmlContent;
@@ -98,7 +97,7 @@ class Request
      */
     public function setResolverConfig(array $config)
     {
-        $this->resolverConfig = $config;
+        $this->resolverConfig = array_replace($this->resolverConfig, $config);
     }
 
     /**
@@ -244,7 +243,7 @@ class Request
     }
 
     /**
-     * Check if the url is valid or not
+     * Check if the response is valid or not
      *
      * @return boolean True if it's valid, false if not
      */

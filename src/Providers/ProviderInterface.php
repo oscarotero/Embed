@@ -13,7 +13,12 @@ interface ProviderInterface extends DataInterface
      * Init the provider
      *
      * @param Request $request
-     * @param array   $options
+     * @param array   $config
      */
-    public function init(Request $request, array $options);
+    public function init(Request $request, array $config = null);
+
+    /**
+     * Run the provider
+     */
+    public function run();
 }

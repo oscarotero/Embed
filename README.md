@@ -10,7 +10,6 @@ Requirements:
 
 * PHP 5.3+
 * Curl library installed
-* [allow_url_fopen: On](http://php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen)
 
 Online demo
 -----------
@@ -55,61 +54,101 @@ $info->providerIcon; //The icon choosen as main icon
 $info->publishedTime; //The publication date of the article, if present
 ```
 
-Available options
------------------
+Customization
+-------------
+
+You can provide custom settings to Embed passing an array as second argument. In this array you can configurate the adapters, providers, resolvers, etc.
+
+### The adapter
+
+The adapter is the class that get all information of the page from the providers and choose the best result for each value. For example, a page can provide a title using opengraph, twitter cards, oembed, the `<title>` tag in the html, etc. The adapter get all this titles and choose one. Embed has several adapters for each case. There are adapters for a specific sites (archive.org, facebook, google, github, spotify) and a generic adapter (webpage). You can pass custom options to the adapters or even create your own adapter, that must implement the `Embed\Adapters\AdapterInterface`.
+
+
+The available options for the adapters are:
 
 * minImageWidth (int): Minimal image width used to choose the main image
 * minImageHeight (int): Minimal image height used to choose the main image
-* getBiggerImage (bool): Returns the bigger image as the main image (instead the first found). This can make the request slower because it need to check the size of all images.
+* getBiggerImage (bool): Choose the bigger image as the main image (instead the first found).
 * getBiggerIcon (bool): The same than getBiggerImage but used to choose the main icon
-* facebookAccessToken (string): Used to get info from facebook pages when these pages are not public and a access token is required
-* soundcloudClientId (string): Used to get info of links from soundcloud. By default, it uses "YOUR_CLIENT_ID" that its a valid client id :P
-* embedlyKey (string): If it's defined, get info from embedly service (only for know supported services and if the page doesn't have its own oembed service)
-* oembedParameters (array): Extra GET parameters to the oembed requests.
-* facebookProvider (bool): If it's true, the facebook provider will be used to get the page information, that uses the facebook scrapping. By default is false because reduce the number of requests and facebook scrapping not always returns right results.
-* request (array): Used to customize the request (see below)
+* facebookKey (string): Used only in Facebook adapter, to get info from facebook pages when these pages are not public and a access token is required
+* soundcloudKey (string): Used in Soundcloud adapter, to get info from soundcloud. By default, it uses "YOUR_CLIENT_ID" that its a valid client id :P
+
+You can pass also options for the providers that uses the adapter. Currently only two providers receives options: oembed and html. The availabe options are:
+
+* oembed => parameters (array): Extra query parameters to send with the oembed request
+* oembed => embedlyKey (string): If it's defined, get info from embedly service (only for known supported services and if the page doesn't have its own oembed service)
 
 ```php
-$options = array(
-	'getBiggerImage' => true
-);
+$config = array(
+	'adapter' => array(
+		'class' => 'MyCustomClass', //Your custom adapter
 
-$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', $options);
+		'config' => array(
+			'minImageWidth' => 16,
+            'minImageHeight' => 16,
+            'getBiggerImage' => false,
+            'getBiggerIcon' => false,
+            'facebookKey' => null,
+            'soundcloudKey' => null,
+		),
+
+        'providers' => array(
+            'oembed' => array(
+                'parameters' => array(),
+                'embedlyKey' => null
+            ),
+            'html' => array(
+                'maxImages' => 0
+            )
+        )
+	)
+);
 ```
 
-Customize the request
----------------------
+### The request resolver
 
-Embed uses the `Embed\RequestResolvers\Curl` class to resolve all requests using the curl library. You can set options to the curl request or create your own implementation creating a class implementing the `Embed\RequestResolvers\RequestResolverInterface`.
+Embed uses the `Embed\RequestResolvers\Curl` class to resolve all requests using the curl library. You can set options to the curl request or create your custom resolver creating a class implementing the `Embed\RequestResolvers\RequestResolverInterface`.
 
-The resolver configuration is defined under the "resolver" key in the options array. There is two options:
+The resolver configuration is defined under the "resolver". There are two options:
 
 * class: Your custom class name if you want to use your own implementation
-* options: The options passed to the class. If you use the default curl class, the options are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
+* config: The options passed to the class. If you use the default curl class, the config are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
 
 ```php
-//Customize the curl request of the default Embed\RequestResolvers\Curl
+$config = array(
+    'resolver' => array(
+        'class' => 'Embed\\RequestResolvers\\Curl' //The default resolver used
 
-$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', array(
-	"resolver" => array(
-		"options" => array(
-			CURLOPT_USERAGENT => 'My spider',
-			CURLOPT_MAXREDIRS => 3
+        'config' => array(
+            CURLOPT_MAXREDIRS => 20,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_ENCODING => '',
+            CURLOPT_AUTOREFERER => true,
+            CURLOPT_USERAGENT => 'Embed PHP Library',
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+        )
+    )
+);
+```
+
+### Example
+
+```php
+$config = array(
+	'adapter' => array(
+		'config' => array(
+			'minImageWidth' => 16,
+            'minImageHeight' => 16,
 		)
+	),
+	'resolver' => array(
+		CURLOPT_USERAGENT => 'My spider',
+		CURLOPT_MAXREDIRS => 3
 	)
-));
-
-//Create your own implementation
-
-$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', array(
-	"resolver" => array(
-		"class" => 'My\Custom\RequestResolver'
-		"options" => array(
-			"option1" => "foo",
-			"option2" => "var"
-		)
-	)
-));
+);
 ```
 
 Do you need help?

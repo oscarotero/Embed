@@ -155,13 +155,13 @@ include '../src/autoloader.php';
         <?php if (!empty($_GET['url'])): ?>
         <section>
             <?php
-            $options = isset($_GET['options']) ? (array) $_GET['options'] : array();
+            $config = isset($_GET['options']) ? (array) $_GET['options'] : array();
 
-            if (isset($options['oembedParameters'])) {
-                $options['oembedParameters'] = $options['oembedParameters'] ? json_decode($options['oembedParameters'], true) : array();
+            if (isset($config['oembedParameters'])) {
+                $config['oembedParameters'] = $config['oembedParameters'] ? json_decode($config['oembedParameters'], true) : array();
             }
 
-            $info = Embed\Embed::create($_GET['url'], $options);
+            $info = Embed\Embed::create($_GET['url'], $config);
             ?>
 
             <?php if (empty($info)): ?>

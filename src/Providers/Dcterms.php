@@ -14,9 +14,9 @@ class Dcterms extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function init(Request $request, array $options)
+    public function run()
     {
-        if (!($html = $request->getHtmlContent())) {
+        if (!($html = $this->request->getHtmlContent())) {
             return false;
         }
 

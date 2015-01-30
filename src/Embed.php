@@ -9,43 +9,41 @@ class Embed
      * Gets the info from an url
      *
      * @param string|Request $request The url or a request with the url
-     * @param null|array     $options Options passed to the adapter
+     * @param array          $config  Options passed to the adapter
      *
      * @return false|AdapterInterface
      */
-    public static function create($request, array $options = null)
+    public static function create($request, array $config = array())
     {
-        $request = self::getRequest($request, $options);
+        $request = self::getRequest($request, isset($config['request']) ? $config['request'] : null);
 
         if (!$request->isValid()) {
             return false;
         }
 
-        //Use custom adapter
-        if (!empty($options['customAdapter'])) {
-            if (!class_exists($options['customAdapter'])) {
-                throw new \InvalidArgumentException("The class '{$options[customAdapter]}' does not exists");
-            }
+        $adapterConfig = isset($config['adapter']['config']) ? $config['adapter']['config'] : null;
 
-            if (($info = self::executeAdapter($options['customAdapter'], $request, $options))) {
+        //Use custom adapter
+        if (!empty($config['adapter']['class'])) {
+            if (($info = self::executeAdapter($config['adapter']['class'], $request, $adapterConfig))) {
                 return $info;
             }
         }
 
         //If is a file use File Adapter
-        if (($info = self::executeAdapter('Embed\Adapters\File', $request, $options))) {
+        if (($info = self::executeAdapter('Embed\Adapters\File', $request, $adapterConfig))) {
             return $info;
         }
 
         //Search the adapter using the domain
         $adapter = 'Embed\\Adapters\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->url->getDomain()))));
 
-        if (class_exists($adapter) && ($info = self::executeAdapter($adapter, $request, $options))) {
+        if (class_exists($adapter) && ($info = self::executeAdapter($adapter, $request, $adapterConfig))) {
             return $info;
         }
 
         //Use the standard webpage adapter
-        if (($info = self::executeAdapter('Embed\Adapters\Webpage', $request, $options))) {
+        if (($info = self::executeAdapter('Embed\Adapters\Webpage', $request, $adapterConfig))) {
             return $info;
         }
 
@@ -56,13 +54,13 @@ class Embed
      * Gets the info from a source (list of urls)
      *
      * @param string|Request $request The url or a request with the source url
-     * @param null|array     $options Options passed to the adapter
+     * @param null|array     $config  Options passed to the adapter
      *
      * @return false|Sources\SourceInterface
      */
-    public static function createSource($request, array $options = null)
+    public static function createSource($request, array $config = null)
     {
-        $request = self::getRequest($request, $options);
+        $request = self::getRequest($request, $config);
 
         if (!$request->isValid()) {
             return false;
@@ -85,20 +83,20 @@ class Embed
      *
      * @param string     $adapter Adapter class name
      * @param Request    $request
-     * @param null|array $options
+     * @param null|array $config
      *
      * @throws \InvalidArgumentException If the adapter class in not AdapterInterface
      *
      * @return false|AdapterInterface
      */
-    private static function executeAdapter($adapter, Request $request, array $options = null)
+    private static function executeAdapter($adapter, Request $request, array $config = null)
     {
         if (!in_array('Embed\\Adapters\\AdapterInterface', class_implements($adapter))) {
             throw new \InvalidArgumentException("The class '$adapter' must implements 'Embed\\Adapters\\AdapterInterface'");
         }
 
         if (call_user_func(array($adapter, 'check'), $request)) {
-            return new $adapter($request, $options);
+            return new $adapter($request, $config);
         }
 
         return false;
@@ -108,23 +106,28 @@ class Embed
      * Init a request
      *
      * @param string|Request $request The url or a request with the url
-     * @param null|array     $options Options passed to the adapter
+     * @param null|array     $config  Options passed to the adapter
      *
      * @throws \InvalidArgumentException If the class in not Embed\Request instance
      *
      * @return Request
      */
-    private static function getRequest($request, array $options = null)
+    private static function getRequest($request, array $config = null)
     {
         if (is_string($request)) {
-            $resolverClass = isset($options['resolver']['class']) ? $options['resolver']['class'] : null;
-            $resolverOptions = isset($options['resolver']['options']) ? $options['resolver']['options'] : null;
-
-            return new Request(new Url($request), $resolverClass, $resolverOptions);
+            return new Request(new Url($request));
         }
 
         if (!($request instanceof Request)) {
             throw new \InvalidArgumentException("Embed::create only accepts instances of Embed\\Request or strings");
+        }
+
+        if (isset($config['resolver'])) {
+            $request->setResolverClass($config['class']);
+        }
+
+        if (isset($config['config'])) {
+            $request->setResolverConfig($config['config']);
         }
 
         return $request;

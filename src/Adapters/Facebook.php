@@ -80,9 +80,9 @@ class Facebook extends Webpage implements AdapterInterface
         $this->api = new Bag();
 
         if (($id = $this->getId($request->startingUrl))) {
-            if ($this->options['facebookAccessToken']) {
+            if ($this->config['facebookAccessToken']) {
                 $api = $request->createRequest('https://graph.facebook.com/'.$id);
-                $api->startingUrl->setParameter('access_token', $this->options['facebookAccessToken']);
+                $api->startingUrl->setParameter('access_token', $this->config['facebookAccessToken']);
 
                 if ($json = $api->getJsonContent()) {
                     $this->api->set($json);

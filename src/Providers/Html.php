@@ -13,12 +13,16 @@ use Embed\Utils;
  */
 class Html extends Provider implements ProviderInterface
 {
+    protected $config = array(
+        'maxImages' => 0
+    );
+
     /**
      * {@inheritdoc}
      */
-    public function init(Request $request, array $options)
+    public function run()
     {
-        if (!($html = $request->getHtmlContent())) {
+        if (!($html = $this->request->getHtmlContent())) {
             return false;
         }
 
@@ -27,7 +31,7 @@ class Html extends Provider implements ProviderInterface
 
         $main = self::getMainElement($html);
 
-        self::extractImages($main, $this->bag, $request->url->getDomain());
+        self::extractImages($main, $this->bag, $this->request->url->getDomain());
 
         //Title
         $title = $html->getElementsByTagName('title');
@@ -105,7 +109,13 @@ class Html extends Provider implements ProviderInterface
      */
     public function getImages()
     {
-        return (array) $this->bag->get('images');
+        $images = (array) $this->bag->get('images');
+
+        if ($this->config['maxImages']) {
+            return array_slice($images, 0, $this->config['maxImages']);
+        }
+
+        return $images;
     }
 
     /**

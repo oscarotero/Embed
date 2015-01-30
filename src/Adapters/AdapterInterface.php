@@ -22,13 +22,13 @@ interface AdapterInterface extends DataInterface
      * Constructor.
      *
      * @param Request    $request
-     * @param null|array $options
+     * @param null|array $config
      */
-    public function __construct(Request $request, array $options = null);
+    public function __construct(Request $request, array $config = null);
 
     /**
      * Gets the best icon provider
-     * if $options['getBiggerIcon'] is true, returns the bigger image found
+     * if $config['getBiggerIcon'] is true, returns the bigger image found
      * else, returns the first found
      *
      * @return string|null
@@ -37,7 +37,7 @@ interface AdapterInterface extends DataInterface
 
     /**
      * Gets the best image
-     * if $options['getBiggerImage'] is true, returns the biggest image
+     * if $config['getBiggerImage'] is true, returns the biggest image
      *
      * @return string|null
      */

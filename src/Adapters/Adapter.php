@@ -35,27 +35,25 @@ abstract class Adapter
 {
     protected $request;
     protected $providers = array();
-    protected $options = array(
+    protected $config = array(
         'minImageWidth' => 16,
         'minImageHeight' => 16,
         'getBiggerImage' => false,
         'getBiggerIcon' => false,
-        'facebookAccessToken' => null,
-        'soundcloudClientId' => null,
-        'embedlyKey' => null,
-        'oembedParameters' => array(),
+        'facebookKey' => null,
+        'soundcloudKey' => null
     );
 
     /**
      * {@inheritdoc}
      */
-    public function __construct(Request $request, array $options = null)
+    public function __construct(Request $request, array $config = null)
     {
-        if ($options !== null) {
-            $this->options = array_replace($this->options, $options);
-        }
-
         $this->setRequest($request);
+
+        if ($config) {
+            $this->setConfig($config);
+        }
 
         if ($request->url->getUrl() !== $this->url) {
             $this->setRequest($request->createRequest($this->url));
@@ -83,23 +81,23 @@ abstract class Adapter
     }
 
     /**
-     * Set the options
+     * Set the config
      *
-     * @param array $options
+     * @param array $config
      */
-    public function setOptions(array $options)
+    public function setConfig(array $config)
     {
-        $this->options = array_replace($this->options, $options);
+        $this->config = $config;
     }
 
     /**
-     * Get the options
+     * Get the config
      *
      * @return array
      */
-    public function getOptions()
+    public function getConfig()
     {
-        return $this->options;
+        return $this->config;
     }
 
     /**
@@ -110,7 +108,10 @@ abstract class Adapter
      */
     public function addProvider($name, ProviderInterface $provider)
     {
-        $provider->init($this->request, $this->options);
+        $config = isset($this->config['providers'][$name]) ? $this->config['providers'][$name] : null;
+        
+        $provider->init($this->request, $config);
+        $provider->run();
 
         $this->providers[$name] = $provider;
     }
@@ -282,7 +283,7 @@ abstract class Adapter
      */
     public function getProviderIcon()
     {
-        if ($this->options['getBiggerIcon']) {
+        if ($this->config['getBiggerIcon']) {
             return Utils::getBiggerImage($this->providerIcons);
         }
 
@@ -332,11 +333,11 @@ abstract class Adapter
      */
     public function getImage()
     {
-        if ($this->options['getBiggerImage']) {
+        if ($this->config['getBiggerImage']) {
             if (($src = Utils::getBiggerImage($this->images))) {
                 $image = $this->images[$src];
 
-                if (($image[0] >= $this->options['minImageWidth']) && ($image[1] >= $this->options['minImageHeight'])) {
+                if (($image[0] >= $this->config['minImageWidth']) && ($image[1] >= $this->config['minImageHeight'])) {
                     return $src;
                 }
             }
@@ -345,7 +346,7 @@ abstract class Adapter
         }
 
         foreach ($this->images as $src => $image) {
-            if (($image[0] >= $this->options['minImageWidth']) && ($image[1] >= $this->options['minImageHeight'])) {
+            if (($image[0] >= $this->config['minImageWidth']) && ($image[1] >= $this->config['minImageHeight'])) {
                 return $src;
             }
         }
