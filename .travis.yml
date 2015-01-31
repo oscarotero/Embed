@@ -8,7 +8,7 @@ php:
 
 
 before_install:
-	- composer self-update
+  - composer self-update
 
 script:
-	- phpunit tests
+  - phpunit tests
