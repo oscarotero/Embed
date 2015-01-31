@@ -124,7 +124,7 @@ array_insert($adapterData, 15, ['providerIcon' => 'printImage']);
             </fieldset>
         </form>
 
-        <?php if (!empty(get('url'))): ?>
+        <?php if (get('url')): ?>
         <section>
             <h1>Result:</h1>
 
