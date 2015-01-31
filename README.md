@@ -100,12 +100,12 @@ $config = [
 
 ### The providers
 
-The providers get the data from different sources and provide it to the adapter. Each source has it's own provider. For example, there are providers for open graph, twitter cards, oembed, dc terms, sailthru, html, etc. Currently two providers receives options: oembed and html. The availabe options are:
+The providers get the data from different sources. Each source has it's own provider. For example, there are providers for open graph, twitter cards, oembed, dc terms, sailthru, html, etc. Currently two providers receives options: oembed and html. The availabe options are:
 
 oembed:
 
 * parameters (array): Extra query parameters to send with the oembed request
-* embedlyKey (string): If it's defined, get info from embedly service (only for known supported services and if the page doesn't have its own oembed service)
+* embedlyKey (string): If it's defined and the page has not its own oembed service, use the embedly api.
 
 html:
 
@@ -128,9 +128,9 @@ $config = [
 
 ### The request resolver
 
-Embed uses the `Embed\RequestResolvers\Curl` class to resolve all requests using the curl library. You can set options to the curl request or create your custom resolver creating a class implementing the `Embed\RequestResolvers\RequestResolverInterface`.
+Embed uses the `Embed\RequestResolvers\Curl` class to resolve all requests using the curl library. You can set options to the curl request or use your custom resolver creating a class implementing the `Embed\RequestResolvers\RequestResolverInterface`.
 
-The resolver configuration is defined under the "resolver". There are two options:
+The resolver configuration is defined under the "resolver" key and it has two options:
 
 * class: Your custom class name if you want to use your own implementation
 * config: The options passed to the class. If you use the default curl class, the config are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
@@ -157,7 +157,7 @@ $config = [
 
 ### Image info
 
-To check the images and get the mimetype and dimmensions, we have the class `Embed\ImageInfo\Curl`. This class uses curl to make request, get the first bytes of the data to get the image type and dimmensions and close the connection. So the image wont be downloaded entirely, just until the downloaded data is enought to get this information.
+To check the images and get their mimetype and dimmensions, we have the class `Embed\ImageInfo\Curl`. This class uses curl to make request, get the first bytes to get the image type and dimmensions and close the connection. So the image wont be downloaded entirely, just until the downloaded data is enought to get this information.
 
 Like the resolver class, you can provide your own image class (it must implement the `Embed\ImageInfo\ImageInfoInterface`) and/or change the configuration. The available options are the same:
 
