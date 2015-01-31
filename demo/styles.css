@@ -18,8 +18,9 @@ img {
 
 /* form */
 form {
-    background: #444;
-    color: #999;
+    background: #EEE;
+    border-bottom: solid 1px #DDD;
+    color: #666;
     padding: 3em 1.5em;
 }
 fieldset {
@@ -47,6 +48,7 @@ input[type="number"] {
 input[type="url"] {
     font-size: 1.3em;
     padding: 0.5em;
+    color: #666;
 }
 button {
     font-size: 1.6rem;
