@@ -120,7 +120,7 @@ array_insert($adapterData, 15, ['providerIcon' => 'printImage']);
                 &nbsp;&nbsp;&nbsp;
                 <a href="https://github.com/oscarotero/Embed/">Get the source code from Github</a>
                 &nbsp;&nbsp; - &nbsp;&nbsp;
-                <a href="javascript:(function(){window.open('http://oscarotero.com/embed/demo/index.php?url='+document.location)})();">or the bookmarklet</a>
+                <a href="javascript:(function(){window.open('http://oscarotero.com/embed2/demo/index.php?url='+document.location)})();">or the bookmarklet</a>
             </fieldset>
         </form>
 
