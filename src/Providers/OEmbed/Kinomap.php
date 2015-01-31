@@ -1,14 +1,14 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class MeetUp extends OEmbedImplementation
+class Kinomap extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
     public static function getEndPoint()
     {
-        return 'http://api.meetup.com/oembed';
+        return 'http://www.kinomap.com/oembed';
     }
 
     /**
@@ -16,6 +16,6 @@ class MeetUp extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return ['http://www.meetup.com/*'];
+        return ['http://www.kinomap.com/*', 'http://kinomap.com/*'];
     }
 }

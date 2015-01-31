@@ -1,14 +1,14 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class KinoMap extends OEmbedImplementation
+class Soundcloud extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
     public static function getEndPoint()
     {
-        return 'http://www.kinomap.com/oembed';
+        return 'http://soundcloud.com/oembed';
     }
 
     /**
@@ -16,6 +16,6 @@ class KinoMap extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return ['http://www.kinomap.com/*', 'http://kinomap.com/*'];
+        return ['https?://soundcloud.com/*'];
     }
 }

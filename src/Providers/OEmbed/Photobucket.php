@@ -1,14 +1,14 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class SmugMug extends OEmbedImplementation
+class Photobucket extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
     public static function getEndPoint()
     {
-        return 'http://api.smugmug.com/services/oembed/';
+        return 'http://s51.photobucket.com/oembed/';
     }
 
     /**
@@ -16,6 +16,6 @@ class SmugMug extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return ['http://www.smugmug.com/*'];
+        return ['http://*.photobucket.com/*'];
     }
 }

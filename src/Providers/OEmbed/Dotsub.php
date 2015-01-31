@@ -1,14 +1,14 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class PhotoBucket extends OEmbedImplementation
+class Dotsub extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
     public static function getEndPoint()
     {
-        return 'http://s51.photobucket.com/oembed/';
+        return 'http://dotsub.com/services/oembed';
     }
 
     /**
@@ -16,6 +16,6 @@ class PhotoBucket extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return ['http://*.photobucket.com/*'];
+        return ['https?://dotsub.com/view/*'];
     }
 }

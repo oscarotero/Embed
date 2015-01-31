@@ -1,14 +1,14 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class DotSub extends OEmbedImplementation
+class Smugmug extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
     public static function getEndPoint()
     {
-        return 'http://dotsub.com/services/oembed';
+        return 'http://api.smugmug.com/services/oembed/';
     }
 
     /**
@@ -16,6 +16,6 @@ class DotSub extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return ['https?://dotsub.com/view/*'];
+        return ['http://www.smugmug.com/*'];
     }
 }

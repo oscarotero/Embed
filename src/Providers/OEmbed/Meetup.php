@@ -1,14 +1,14 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class SoundCloud extends OEmbedImplementation
+class Meetup extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
     public static function getEndPoint()
     {
-        return 'http://soundcloud.com/oembed';
+        return 'http://api.meetup.com/oembed';
     }
 
     /**
@@ -16,6 +16,6 @@ class SoundCloud extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return ['https?://soundcloud.com/*'];
+        return ['http://www.meetup.com/*'];
     }
 }
