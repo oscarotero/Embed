@@ -12,6 +12,8 @@ class DevianArtTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($info->imageWidth, 695);
         $this->assertEquals($info->imageHeight, 900);
         $this->assertEquals($info->type, 'photo');
-        $this->assertEquals($info->providerName, 'DeviantArt');
+
+        $this->assertInstanceOf('Embed\\Providers\\OEmbed', $info->getProvider('oembed'));
+        $this->assertEquals('DeviantArt', $info->getProvider('oembed')->getProviderName());
     }
 }
