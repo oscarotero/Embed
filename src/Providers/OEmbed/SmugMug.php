@@ -16,6 +16,6 @@ class SmugMug extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://www.smugmug.com/*');
+        return ['http://www.smugmug.com/*'];
     }
 }

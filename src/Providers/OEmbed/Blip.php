@@ -16,6 +16,6 @@ class Blip extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://blip.tv/*');
+        return ['http://blip.tv/*'];
     }
 }

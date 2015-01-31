@@ -25,7 +25,7 @@ abstract class OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array();
+        return [];
     }
 
     /**
@@ -35,6 +35,6 @@ abstract class OEmbedImplementation
      */
     public static function getParams()
     {
-        return array();
+        return [];
     }
 }

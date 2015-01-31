@@ -68,7 +68,7 @@ class Feed extends Source implements SourceInterface
      */
     public function getItems()
     {
-        return isset($this->data['items']) ? (array) $this->data['items'] : array();
+        return isset($this->data['items']) ? (array) $this->data['items'] : [];
     }
 
     /**
@@ -88,10 +88,10 @@ class Feed extends Source implements SourceInterface
             return false;
         }
 
-        return array(
+        return [
             'url' => (string) $xml->channel->link,
             'items' => self::getRssItems($items),
-        );
+        ];
     }
 
     /**
@@ -103,16 +103,16 @@ class Feed extends Source implements SourceInterface
      */
     protected static function getRssItems(\SimpleXMLElement $items)
     {
-        $rssItems = array();
+        $rssItems = [];
 
         $namespaces = $items->getNamespaces(true);
 
         foreach ($items as $item) {
-            $rssItem = array(
+            $rssItem = [
                 'url' => null,
                 'originUrl' => null,
                 'pubdate' => null,
-            );
+            ];
 
             $rssItem['url'] = (string) $item->link;
             $rssItem['originUrl'] = ((string) $item->origLink ?: (string) $item->comments);
@@ -159,10 +159,10 @@ class Feed extends Source implements SourceInterface
             break;
         }
 
-        return array(
+        return [
             'url' => $url,
             'items' => self::getAtomEntries($xml->entry),
-        );
+        ];
     }
 
     /**
@@ -174,14 +174,14 @@ class Feed extends Source implements SourceInterface
      */
     protected static function getAtomEntries(\SimpleXMLElement $entries)
     {
-        $items = array();
+        $items = [];
 
         foreach ($entries as $entry) {
-            $item = array(
+            $item = [
                 'url' => null,
                 'originUrl' => null,
                 'pubdate' => null,
-            );
+            ];
 
             if ($entry->created) {
                 $item['pubdate'] = (string) $entry->created;

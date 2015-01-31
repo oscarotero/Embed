@@ -16,6 +16,6 @@ class Revision3 extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://revision3.com/*');
+        return ['http://revision3.com/*'];
     }
 }

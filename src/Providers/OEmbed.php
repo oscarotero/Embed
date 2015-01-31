@@ -11,10 +11,10 @@ use Embed\Utils;
  */
 class OEmbed extends Provider implements ProviderInterface
 {
-    protected $config = array(
-        'parameters' => array(),
+    protected $config = [
+        'parameters' => [],
         'embedlyKey' => null
-    );
+    ];
 
     /**
      * {@inheritdoc}
@@ -22,7 +22,7 @@ class OEmbed extends Provider implements ProviderInterface
     public function run()
     {
         $endPoint = null;
-        $params = isset($this->config['oembedParameters']) ? $this->config['oembedParameters'] : array();
+        $params = $this->config['parameters'];
         $params['url'] = $this->request->url->getUrl();
 
         if (($html = $this->request->getHtmlContent())) {
@@ -152,7 +152,7 @@ class OEmbed extends Provider implements ProviderInterface
      */
     public function getImages()
     {
-        $images = array();
+        $images = [];
 
         if ($this->getType() === 'photo') {
             $images[] = $this->bag->get('url');
@@ -227,18 +227,18 @@ class OEmbed extends Provider implements ProviderInterface
         $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->url->getDomain()))));
 
         if (class_exists($class) && $request->match($class::getPatterns())) {
-            return array(
+            return [
                 'endPoint' => $class::getEndpoint(),
                 'params' => $class::getParams(),
-            );
+            ];
         }
 
         //Search using embedly
         if (!empty($config['embedlyKey']) && $request->match(OEmbed\Embedly::getPatterns())) {
-            return array(
+            return [
                 'endPoint' => OEmbed\Embedly::getEndpoint(),
                 'params' => OEmbed\Embedly::getParams() + ['key' => $config['embedlyKey']],
-            );
+            ];
         }
     }
 }

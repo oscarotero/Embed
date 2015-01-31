@@ -15,13 +15,13 @@ class Utils
      */
     public static function getMetas(\DOMDocument $html)
     {
-        $metas = array();
+        $metas = [];
 
         foreach ($html->getElementsByTagName('meta') as $meta) {
             $name = trim(strtolower($meta->getAttribute('property') ?: $meta->getAttribute('name')));
             $value = $meta->getAttribute('content') ?: $meta->getAttribute('value');
 
-            $metas[] = array($name, $value, $meta);
+            $metas[] = [$name, $value, $meta];
         }
 
         return $metas;
@@ -36,14 +36,14 @@ class Utils
      */
     public static function getLinks(\DOMDocument $html)
     {
-        $links = array();
+        $links = [];
 
         foreach ($html->getElementsByTagName('link') as $link) {
             if ($link->hasAttribute('rel') && $link->hasAttribute('href')) {
                 $rel = trim(strtolower($link->getAttribute('rel')));
                 $href = $link->getAttribute('href');
 
-                $links[] = array($rel, $href, $link);
+                $links[] = [$rel, $href, $link];
             }
         }
 
@@ -86,7 +86,7 @@ class Utils
     public static function getData(array $providers, $name, $returnFirst = true)
     {
         $method = 'get'.$name;
-        $values = array();
+        $values = [];
         $current = null;
 
         foreach ($providers as $provider) {
@@ -122,15 +122,15 @@ class Utils
      */
     public static function videoHtml($poster, $sources, $width = 0, $height = 0)
     {
-        $code = self::element('video', array(
+        $code = self::element('video', [
             'poster' => ($poster ?: null),
             'width' => ($width ?: null),
             'height' => ($height ?: null),
             'controls' => true,
-        ));
+        ]);
 
         foreach ((array) $sources as $source) {
-            $code .= self::element('source', array('src' => $source));
+            $code .= self::element('source', ['src' => $source]);
         }
 
         return $code.'</video>';
@@ -148,7 +148,7 @@ class Utils
         $code = "<audio controls>";
 
         foreach ((array) $sources as $source) {
-            $code .= self::element('source', array('src' => $source));
+            $code .= self::element('source', ['src' => $source]);
         }
 
         return $code.'</audio>';
@@ -166,12 +166,12 @@ class Utils
      */
     public static function imageHtml($src, $alt = '', $width = 0, $height = 0)
     {
-        return self::element('img', array(
+        return self::element('img', [
             'src' => $src,
             'alt' => $alt,
             'width' => ($width ?: null),
             'height' => ($height ?: null),
-        ));
+        ]);
     }
 
     /**
@@ -189,12 +189,12 @@ class Utils
         $width = $width ? (is_int($width) ? $width.'px' : $width) : '600px';
         $height = $height ? (is_int($height) ? $height.'px' : $height) : '400px';
 
-        return self::element('iframe', array(
+        return self::element('iframe', [
             'src' => $src,
             'frameborder' => 0,
             'allowTransparency' => 'true',
             'style' => "border:none;overflow:hidden;width:$width;height:$height;$extra_styles",
-        )).'</iframe>';
+        ]).'</iframe>';
     }
 
     /**
@@ -206,10 +206,10 @@ class Utils
      */
     public static function google($src)
     {
-        return self::iframe('http://docs.google.com/viewer?'.http_build_query(array(
+        return self::iframe('http://docs.google.com/viewer?'.http_build_query([
             'url' => $src,
             'embedded' => 'true',
-        )), 600, 600);
+        ]), 600, 600);
     }
 
     /**
@@ -223,17 +223,17 @@ class Utils
      */
     public static function flash($src, $width = null, $height = null)
     {
-        $code = self::element('object', array(
+        $code = self::element('object', [
             'width' => $width ?: 600,
             'height' => $height ?: 400,
             'classid' => 'clsid:D27CDB6E-AE6D-11cf-96B8-444553540000',
             'codebase' => 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0',
-        ));
+        ]);
 
-        $code .= self::element('param', array('name' => 'movie', 'value' => $src));
-        $code .= self::element('param', array('name' => 'allowFullScreen', 'value' => 'true'));
-        $code .= self::element('param', array('name' => 'allowScriptAccess', 'value' => 'always'));
-        $code .= self::element('embed', array(
+        $code .= self::element('param', ['name' => 'movie', 'value' => $src]);
+        $code .= self::element('param', ['name' => 'allowFullScreen', 'value' => 'true']);
+        $code .= self::element('param', ['name' => 'allowScriptAccess', 'value' => 'always']);
+        $code .= self::element('embed', [
             'src' => $src,
             'width' => $width ?: 600,
             'height' => $height ?: 400,
@@ -241,7 +241,7 @@ class Utils
             'allowFullScreen' => 'true',
             'allowScriptAccess' => 'always',
             'pluginspage' => 'http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash',
-        ));
+        ]);
 
         return $code.'</embed></object>';
     }

@@ -14,9 +14,9 @@ class Giphy extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'https?://giphy.com/gifs/*',
-        ));
+        ]);
     }
 
     /**
@@ -24,7 +24,7 @@ class Giphy extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        if (($url = $this->providers['TwitterCards']->bag->get('player'))) {
+        if (($url = $this->providers['twittercards']->bag->get('player'))) {
             $url = str_replace('/twitter/iframe', '?html5=true', $url);
 
             return Utils::iframe($url, $this->width.'px', $this->height.'px');

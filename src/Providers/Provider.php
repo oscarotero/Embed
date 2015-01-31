@@ -9,7 +9,7 @@ abstract class Provider
     public $bag;
 
     protected $request;
-    protected $config = array();
+    protected $config = [];
 
     /**
      * {@inheritdoc}
@@ -85,7 +85,7 @@ abstract class Provider
      */
     public function getProviderIcons()
     {
-        return array();
+        return [];
     }
 
     /**
@@ -107,7 +107,7 @@ abstract class Provider
      */
     public function getImages()
     {
-        return array();
+        return [];
     }
 
     /**

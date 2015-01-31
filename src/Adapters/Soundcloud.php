@@ -16,27 +16,29 @@ class Soundcloud extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'https?://soundcloud.com/*',
             'https?://m.soundcloud.com/*',
-        ));
+        ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setRequest(Request $request)
+    public function run()
     {
-        parent::setRequest($request);
+        parent::run();
 
         $this->api = new Bag();
 
-        $api = $request->createRequest('http://api.soundcloud.com/resolve.json');
-        $api->startingUrl->setParameter('client_id', isset($this->config['soundcloudClientId']) ? $this->config['soundcloudClientId'] : 'YOUR_CLIENT_ID');
-        $api->startingUrl->setParameter('url', $request->url->getUrl());
+        if (isset($this->config['soundcloudKey'])) {
+            $api = $this->request->createRequest('http://api.soundcloud.com/resolve.json');
+            $api->startingUrl->setParameter('client_id', $this->config['soundcloudKey']);
+            $api->startingUrl->setParameter('url', $this->request->url->getUrl());
 
-        if ($json = $api->getJsonContent()) {
-            $this->api->set($json);
+            if ($json = $api->getJsonContent()) {
+                $this->api->set($json);
+            }
         }
     }
 

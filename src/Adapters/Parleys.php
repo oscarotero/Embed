@@ -13,7 +13,9 @@ class Parleys extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match(array('*://www.parleys.com/play/*'));
+        return $request->match([
+            '*://www.parleys.com/play/*'
+        ]);
     }
 
     /**

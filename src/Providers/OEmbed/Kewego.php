@@ -16,6 +16,6 @@ class Kewego extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://www.kewego.*/video/*');
+        return ['http://www.kewego.*/video/*'];
     }
 }

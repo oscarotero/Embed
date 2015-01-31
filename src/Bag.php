@@ -6,7 +6,7 @@ namespace Embed;
 
 class Bag
 {
-    protected $parameters = array();
+    protected $parameters = [];
 
     /**
      * Save a value
@@ -34,7 +34,7 @@ class Bag
         $name = trim($name);
 
         if (!isset($this->parameters[$name])) {
-            $this->parameters[$name] = array();
+            $this->parameters[$name] = [];
         } elseif (!is_array($this->parameters[$name])) {
             $this->parameters[$name] = (array) $this->parameters[$name];
         }

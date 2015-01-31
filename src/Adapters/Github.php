@@ -16,20 +16,20 @@ class Github extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'https://gist.github.com/*/*',
-        ));
+        ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setRequest(Request $request)
+    public function run()
     {
-        parent::setRequest($request);
+        parent::run();
 
         $this->api = new Bag();
-        $api = $request->createRequest($request->url->getUrl().'.json');
+        $api = $this->request->createRequest($this->request->url->getUrl().'.json');
 
         if (($json = $api->getJsonContent())) {
             $this->api->set($json);

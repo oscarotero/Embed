@@ -16,7 +16,7 @@ class Embedly extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array(
+        return [
             'http://*yfrog.*/*',
             'http://twitter.com/*/status/*/photo/*',
             'http://twitter.com/*/statuses/*/photo',
@@ -649,7 +649,7 @@ class Embedly extends OEmbedImplementation
             'http://radioreddit.com/?q=songs*',
             'http://www.radioreddit.com/?q=songs*',
             'http://www.gogoyoko.com/song/*',
-        );
+        ];
     }
 
     /**
@@ -657,6 +657,6 @@ class Embedly extends OEmbedImplementation
      */
     public static function getParams()
     {
-        return array('format' => 'json');
+        return ['format' => 'json'];
     }
 }

@@ -15,10 +15,10 @@ class Google extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'https://maps.google.*',
             'https://www.google.com/maps*',
-        ));
+        ]);
     }
 
     /**
@@ -39,6 +39,6 @@ class Google extends Webpage implements AdapterInterface
      */
     public function getImages()
     {
-        return array();
+        return [];
     }
 }

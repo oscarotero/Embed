@@ -7,34 +7,33 @@ namespace Embed\Adapters;
 use Embed\Request;
 use Embed\Utils;
 use Embed\Providers;
-use Embed\ImageInfo;
 
 class File extends Adapter implements AdapterInterface
 {
-    private static $contentTypes = array(
-        'video/ogg' => array('video', 'videoHtml'),
-        'application/ogg' => array('video', 'videoHtml'),
-        'video/ogv' => array('video', 'videoHtml'),
-        'video/webm' => array('video', 'videoHtml'),
-        'video/mp4' => array('video', 'videoHtml'),
-        'audio/ogg' => array('audio', 'audioHtml'),
-        'audio/mp3' => array('audio', 'audioHtml'),
-        'audio/mpeg' => array('audio', 'audioHtml'),
-        'audio/webm' => array('audio', 'audioHtml'),
-        'image/jpeg' => array('photo', 'imageHtml'),
-        'image/gif' => array('photo', 'imageHtml'),
-        'image/png' => array('photo', 'imageHtml'),
-        'image/bmp' => array('photo', 'imageHtml'),
-        'image/ico' => array('photo', 'imageHtml'),
-        'text/rtf' => array('rich', 'google'),
-        'application/pdf' => array('rich', 'google'),
-        'application/msword' => array('rich', 'google'),
-        'application/vnd.ms-powerpoint' => array('rich', 'google'),
-        'application/vnd.ms-excel' => array('rich', 'google'),
-        'application/zip' => array('rich', 'google'),
-        'application/postscript' => array('rich', 'google'),
-        'application/octet-stream' => array('rich', 'google'),
-    );
+    private static $contentTypes = [
+        'video/ogg' => ['video', 'videoHtml'],
+        'application/ogg' => ['video', 'videoHtml'],
+        'video/ogv' => ['video', 'videoHtml'],
+        'video/webm' => ['video', 'videoHtml'],
+        'video/mp4' => ['video', 'videoHtml'],
+        'audio/ogg' => ['audio', 'audioHtml'],
+        'audio/mp3' => ['audio', 'audioHtml'],
+        'audio/mpeg' => ['audio', 'audioHtml'],
+        'audio/webm' => ['audio', 'audioHtml'],
+        'image/jpeg' => ['photo', 'imageHtml'],
+        'image/gif' => ['photo', 'imageHtml'],
+        'image/png' => ['photo', 'imageHtml'],
+        'image/bmp' => ['photo', 'imageHtml'],
+        'image/ico' => ['photo', 'imageHtml'],
+        'text/rtf' => ['rich', 'google'],
+        'application/pdf' => ['rich', 'google'],
+        'application/msword' => ['rich', 'google'],
+        'application/vnd.ms-powerpoint' => ['rich', 'google'],
+        'application/vnd.ms-excel' => ['rich', 'google'],
+        'application/zip' => ['rich', 'google'],
+        'application/postscript' => ['rich', 'google'],
+        'application/octet-stream' => ['rich', 'google'],
+    ];
 
     /**
      * {@inheritdoc}
@@ -47,11 +46,9 @@ class File extends Adapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function setRequest(Request $request)
+    public function run()
     {
-        $this->request = $request;
-
-        $this->addProvider('OEmbed', new Providers\OEmbed());
+        $this->addProvider('oembed', new Providers\OEmbed());
     }
 
     /**
@@ -85,9 +82,9 @@ class File extends Adapter implements AdapterInterface
     public function getImages()
     {
         if ($this->getType() === 'photo') {
-            return ImageInfo::getImagesInfo(array($this->getUrl()));
+            return call_user_func("{$this->imageClass}::getImagesInfo", [$this->getUrl()], $this->imageConfig);
         }
 
-        return array();
+        return [];
     }
 }

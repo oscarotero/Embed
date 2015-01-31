@@ -13,7 +13,7 @@ class Embed
      *
      * @return false|AdapterInterface
      */
-    public static function create($request, array $config = array())
+    public static function create($request, array $config = [])
     {
         $request = self::getRequest($request, isset($config['request']) ? $config['request'] : null);
 
@@ -21,29 +21,27 @@ class Embed
             return false;
         }
 
-        $adapterConfig = isset($config['adapter']['config']) ? $config['adapter']['config'] : null;
-
         //Use custom adapter
         if (!empty($config['adapter']['class'])) {
-            if (($info = self::executeAdapter($config['adapter']['class'], $request, $adapterConfig))) {
+            if (($info = self::executeAdapter($config['adapter']['class'], $request, $config))) {
                 return $info;
             }
         }
 
         //If is a file use File Adapter
-        if (($info = self::executeAdapter('Embed\Adapters\File', $request, $adapterConfig))) {
+        if (($info = self::executeAdapter('Embed\Adapters\File', $request, $config))) {
             return $info;
         }
 
         //Search the adapter using the domain
         $adapter = 'Embed\\Adapters\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->url->getDomain()))));
 
-        if (class_exists($adapter) && ($info = self::executeAdapter($adapter, $request, $adapterConfig))) {
+        if (class_exists($adapter) && ($info = self::executeAdapter($adapter, $request, $config))) {
             return $info;
         }
 
         //Use the standard webpage adapter
-        if (($info = self::executeAdapter('Embed\Adapters\Webpage', $request, $adapterConfig))) {
+        if (($info = self::executeAdapter('Embed\Adapters\Webpage', $request, $config))) {
             return $info;
         }
 
@@ -95,7 +93,7 @@ class Embed
             throw new \InvalidArgumentException("The class '$adapter' must implements 'Embed\\Adapters\\AdapterInterface'");
         }
 
-        if (call_user_func(array($adapter, 'check'), $request)) {
+        if (call_user_func([$adapter, 'check'], $request)) {
             return new $adapter($request, $config);
         }
 

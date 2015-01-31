@@ -16,6 +16,6 @@ class Ted extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://www.ted.com/talks/*');
+        return ['http://www.ted.com/talks/*'];
     }
 }

@@ -16,6 +16,6 @@ class PhotoBucket extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://*.photobucket.com/*');
+        return ['http://*.photobucket.com/*'];
     }
 }

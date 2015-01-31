@@ -16,10 +16,10 @@ class YFrog extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array(
+        return [
             'http://twitter.yfrog.com/*',
             'http://www.yfrog.com/*',
             'http://a.yfrog.com/*',
-        );
+        ];
     }
 }

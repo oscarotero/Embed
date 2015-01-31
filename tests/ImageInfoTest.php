@@ -5,8 +5,8 @@ class ImageInfoTest extends PHPUnit_Framework_TestCase
 {
     public function testOne()
     {
-        $info = Embed\ImageInfo::getImageInfo('http://a.images.blip.tv/NostalgiaCritic-NCTheMatrix187.jpg');
+        $info = Embed\ImageInfo\Curl::getImageInfo('http://a.images.blip.tv/NostalgiaCritic-NCTheMatrix187.jpg');
 
-        $this->assertEquals($info, array(620, 274, 'image/jpeg'));
+        $this->assertEquals($info, [620, 274, 'image/jpeg']);
     }
 }

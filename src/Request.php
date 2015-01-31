@@ -185,7 +185,7 @@ class Request
                 }
 
                 //Remove all script elements, CDATA sections and comments (thanks https://github.com/jasny)
-                $response = preg_replace(array('%<!--(?:[^-]++|-)*?-->|<!\[CDATA\[(?:[^\]]++|\])*?\]\]>%si', '%<script\b(?:"(?:[^"\\\\]++|\\\\.)*+"|\'(?:[^\'\\\\]++|\\\\.)*+\'|[^>"\']++)*>(?:[^<]++|<)*?</\s*script\s*>%si'), '', $response);
+                $response = preg_replace(['%<!--(?:[^-]++|-)*?-->|<!\[CDATA\[(?:[^\]]++|\])*?\]\]>%si', '%<script\b(?:"(?:[^"\\\\]++|\\\\.)*+"|\'(?:[^\'\\\\]++|\\\\.)*+\'|[^>"\']++)*>(?:[^<]++|<)*?</\s*script\s*>%si'], '', $response);
 
                 $this->htmlContent->loadHTML($response);
                 libxml_use_internal_errors($errors);

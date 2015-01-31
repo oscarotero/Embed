@@ -6,11 +6,11 @@ namespace Embed;
 
 class UrlRedirect
 {
-    protected static $urls = array(
+    protected static $urls = [
         'google' => 'https?://www.google.com/url*',
         'googleTranslator' => 'https?://translate.google.com/translate*',
         'hashBang' => '*#!*',
-    );
+    ];
 
     /**
      * Resolve the url redirection

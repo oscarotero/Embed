@@ -27,6 +27,11 @@ interface AdapterInterface extends DataInterface
     public function __construct(Request $request, array $config = null);
 
     /**
+     * Run the provider
+     */
+    public function run();
+
+    /**
      * Gets the best icon provider
      * if $config['getBiggerIcon'] is true, returns the bigger image found
      * else, returns the first found

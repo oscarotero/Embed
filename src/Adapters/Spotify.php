@@ -14,9 +14,9 @@ class Spotify extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'http://open.spotify.com/*',
-        ));
+        ]);
     }
 
     /**

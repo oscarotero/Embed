@@ -16,6 +16,6 @@ class DotSub extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('https?://dotsub.com/view/*');
+        return ['https?://dotsub.com/view/*'];
     }
 }

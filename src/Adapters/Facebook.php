@@ -19,9 +19,9 @@ class Facebook extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'https://www.facebook.com/*',
-        ));
+        ]);
     }
 
     /**
@@ -73,16 +73,16 @@ class Facebook extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function setRequest(Request $request)
+    public function run()
     {
-        parent::setRequest($request);
+        parent::run();
 
         $this->api = new Bag();
 
-        if (($id = $this->getId($request->startingUrl))) {
-            if ($this->config['facebookAccessToken']) {
-                $api = $request->createRequest('https://graph.facebook.com/'.$id);
-                $api->startingUrl->setParameter('access_token', $this->config['facebookAccessToken']);
+        if (($id = $this->getId($this->request->startingUrl))) {
+            if ($this->config['facebookKey']) {
+                $api = $this->request->createRequest('https://graph.facebook.com/'.$id);
+                $api->startingUrl->setParameter('access_token', $this->config['facebookKey']);
 
                 if ($json = $api->getJsonContent()) {
                     $this->api->set($json);

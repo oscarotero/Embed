@@ -16,6 +16,6 @@ class Rdio extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('https?://www.rdio.com/*');
+        return ['https?://www.rdio.com/*'];
     }
 }

@@ -20,15 +20,13 @@ class Webpage extends Adapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function setRequest(Request $request)
+    public function run()
     {
-        $this->request = $request;
-
-        $this->addProvider('OEmbed', new Providers\OEmbed());
-        $this->addProvider('OpenGraph', new Providers\OpenGraph());
-        $this->addProvider('TwitterCards', new Providers\TwitterCards());
-        $this->addProvider('Dcterms', new Providers\Dcterms());
-        $this->addProvider('Sailthru', new Providers\Sailthru());
-        $this->addProvider('Html', new Providers\Html());
+        $this->addProvider('oembed', new Providers\OEmbed());
+        $this->addProvider('opengraph', new Providers\OpenGraph());
+        $this->addProvider('twittercards', new Providers\TwitterCards());
+        $this->addProvider('dcterms', new Providers\Dcterms());
+        $this->addProvider('sailthru', new Providers\Sailthru());
+        $this->addProvider('html', new Providers\Html());
     }
 }

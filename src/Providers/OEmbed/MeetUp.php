@@ -16,6 +16,6 @@ class MeetUp extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://www.meetup.com/*');
+        return ['http://www.meetup.com/*'];
     }
 }

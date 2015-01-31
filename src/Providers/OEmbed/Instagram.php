@@ -16,6 +16,6 @@ class Instagram extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://instagram.com/p/*');
+        return ['http://instagram.com/p/*'];
     }
 }

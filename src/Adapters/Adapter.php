@@ -34,40 +34,51 @@ use Embed\ImageInfo;
 abstract class Adapter
 {
     protected $request;
-    protected $providers = array();
-    protected $config = array(
+
+    protected $providers = [];
+    protected $providersConfig;
+
+    protected $imageClass = 'Embed\\ImageInfo\\Curl';
+    protected $imageConfig;
+
+    protected $config = [
         'minImageWidth' => 16,
         'minImageHeight' => 16,
         'getBiggerImage' => false,
         'getBiggerIcon' => false,
         'facebookKey' => null,
-        'soundcloudKey' => null
-    );
+        'soundcloudKey' => 'YOUR_CLIENT_ID'
+    ];
 
     /**
      * {@inheritdoc}
      */
     public function __construct(Request $request, array $config = null)
     {
-        $this->setRequest($request);
+        $this->request = $request;
 
-        if ($config) {
-            $this->setConfig($config);
+        if (isset($config['adapter']['config'])) {
+            $this->config = array_replace($this->config, $config['adapter']['config']);
         }
+
+        if (isset($config['providers'])) {
+            $this->providersConfig = $config['providers'];
+        }
+
+        if (isset($config['image']['class'])) {
+            $this->imageClass = $config['image']['class'];
+        }
+
+        if (isset($config['image']['config'])) {
+            $this->imageConfig = $config['image']['config'];
+        }
+
+        $this->run();
 
         if ($request->url->getUrl() !== $this->url) {
-            $this->setRequest($request->createRequest($this->url));
+            $this->request = $request->createRequest($this->url);
+            $this->run();
         }
-    }
-
-    /**
-     * Set the request to the adapter
-     *
-     * @param Request $request
-     */
-    public function setRequest(Request $request)
-    {
-        $this->request = $request;
     }
 
     /**
@@ -81,34 +92,14 @@ abstract class Adapter
     }
 
     /**
-     * Set the config
-     *
-     * @param array $config
-     */
-    public function setConfig(array $config)
-    {
-        $this->config = $config;
-    }
-
-    /**
-     * Get the config
-     *
-     * @return array
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
-    /**
      * Adds a new provider
      *
      * @param string            $name
      * @param ProviderInterface $provider
      */
-    public function addProvider($name, ProviderInterface $provider)
+    protected function addProvider($name, ProviderInterface $provider)
     {
-        $config = isset($this->config['providers'][$name]) ? $this->config['providers'][$name] : null;
+        $config = isset($this->providersConfig[$name]) ? $this->providersConfig[$name] : null;
         
         $provider->init($this->request, $config);
         $provider->run();
@@ -264,7 +255,7 @@ abstract class Adapter
      */
     public function getProviderIcons()
     {
-        $icons = array();
+        $icons = [];
 
         foreach ($this->getAllProviders() as $provider) {
             foreach ($provider->getProviderIcons() as $icon) {
@@ -275,7 +266,7 @@ abstract class Adapter
         $icons[] = $this->request->url->getAbsolute('/favicon.ico');
         $icons[] = $this->request->url->getAbsolute('/favicon.png');
 
-        return ImageInfo::getImagesInfo(array_unique($icons));
+        return call_user_func("{$this->imageClass}::getImagesInfo", array_unique($icons), $this->imageConfig);
     }
 
     /**
@@ -317,7 +308,7 @@ abstract class Adapter
      */
     public function getImages()
     {
-        $images = array();
+        $images = [];
 
         foreach ($this->getAllProviders() as $k => $provider) {
             foreach ($provider->getImages() as $image) {
@@ -325,7 +316,7 @@ abstract class Adapter
             }
         }
 
-        return ImageInfo::getImagesInfo(array_unique($images));
+        return call_user_func("{$this->imageClass}::getImagesInfo", array_unique($images), $this->imageConfig);
     }
 
     /**

@@ -1,25 +1,25 @@
 <?php
-namespace Embed;
+namespace Embed\ImageInfo;
 
 /**
  * Class to retrieve the size and mimetype of images using curl
  */
-class ImageInfo
+class Curl implements ImageInfoInterface
 {
-    protected static $mimetypes = array(
+    protected static $mimetypes = [
         'image/jpeg',
         'image/png',
         'image/gif',
         'image/bmp',
         'image/x-icon',
-    );
+    ];
 
     protected $connection;
     protected $finfo;
     protected $mime;
     protected $info;
     protected $content = '';
-    protected $config = array(
+    protected $config = [
         CURLOPT_MAXREDIRS => 20,
         CURLOPT_CONNECTTIMEOUT => 10,
         CURLOPT_TIMEOUT => 10,
@@ -29,46 +29,29 @@ class ImageInfo
         CURLOPT_AUTOREFERER => true,
         CURLOPT_USERAGENT => 'Embed PHP Library',
         CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
-    );
+    ];
 
     /**
-     * Get the info of an image
-     *
-     * @param string $url
-     *
-     * @return array|null
+     * {@inheritdoc}
      */
-    public static function getImageInfo($url)
+    public static function getImagesInfo(array $urls, array $config = null)
     {
+        if (!$urls) {
+            return [];
+        }
+
+        if (count($urls) === 1) {
+            $info = self::getImageInfo($urls[0], $config);
+
+            return $info ? [$urls[0] => $info] : [];
+        }
+
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $image = new static($url, $finfo);
-
-        $curl = $image->getConnection();
-        curl_exec($curl);
-        curl_close($curl);
-
-        $info = $image->getInfo();
-
-        finfo_close($finfo);
-
-        return $info;
-    }
-
-    /**
-     * Get the info of multiple images using curl parallel request
-     *
-     * @param array $urls
-     *
-     * @return array
-     */
-    public static function getImagesInfo(array $urls)
-    {
-        $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $images = array();
+        $images = [];
         $connections = curl_multi_init();
 
         foreach ($urls as $url) {
-            $images[$url] = new static($url, $finfo);
+            $images[$url] = new static($url, $finfo, $config);
 
             curl_multi_add_handle($connections, $images[$url]->getConnection());
         }
@@ -87,7 +70,7 @@ class ImageInfo
             } while ($return === CURLM_CALL_MULTI_PERFORM);
         }
 
-        $info = array();
+        $info = [];
 
         foreach ($images as $url => $image) {
             curl_multi_remove_handle($connections, $image->getConnection());
@@ -99,6 +82,30 @@ class ImageInfo
 
         finfo_close($finfo);
         curl_multi_close($connections);
+
+        return $info;
+    }
+
+    /**
+     * Get the info of only one image
+     *
+     * @param string     $url
+     * @param null|array $config
+     *
+     * @return array|null
+     */
+    public static function getImageInfo($url, array $config = null)
+    {
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $image = new static($url, $finfo, $config);
+
+        $curl = $image->getConnection();
+        curl_exec($curl);
+        curl_close($curl);
+
+        $info = $image->getInfo();
+
+        finfo_close($finfo);
 
         return $info;
     }
@@ -119,12 +126,12 @@ class ImageInfo
             $this->config = array_replace($this->config, $config);
         }
 
-        curl_setopt_array($this->connection, array(
+        curl_setopt_array($this->connection, [
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_URL => $url,
-            CURLOPT_WRITEFUNCTION => array($this, 'writeCallback'),
-        ) + $this->config);
+            CURLOPT_WRITEFUNCTION => [$this, 'writeCallback'],
+        ] + $this->config);
     }
 
     /**
@@ -138,7 +145,7 @@ class ImageInfo
     }
 
     /**
-     * Get the image info with the format array($width, $height, $mimetype)
+     * Get the image info with the format [$width, $height, $mimetype]
      *
      * @return null|array
      */

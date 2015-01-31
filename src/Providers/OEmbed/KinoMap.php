@@ -16,6 +16,6 @@ class KinoMap extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://www.kinomap.com/*', 'http://kinomap.com/*');
+        return ['http://www.kinomap.com/*', 'http://kinomap.com/*'];
     }
 }

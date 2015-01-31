@@ -16,6 +16,6 @@ class SoundCloud extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('https?://soundcloud.com/*');
+        return ['https?://soundcloud.com/*'];
     }
 }

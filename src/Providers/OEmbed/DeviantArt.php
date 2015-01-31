@@ -16,7 +16,7 @@ class DeviantArt extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array('http://www.deviantart.com/art/*', 'http://www.deviantart.com/#/d*');
+        return ['http://www.deviantart.com/art/*', 'http://www.deviantart.com/#/d*'];
     }
 
     /**
@@ -24,6 +24,6 @@ class DeviantArt extends OEmbedImplementation
      */
     public static function getParams()
     {
-        return array('for' => 'embed');
+        return ['for' => 'embed'];
     }
 }

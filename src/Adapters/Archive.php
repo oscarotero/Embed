@@ -17,21 +17,21 @@ class Archive extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'http://archive.org/details/*',
-        ));
+        ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setRequest(Request $request)
+    public function run()
     {
-        parent::setRequest($request);
+        parent::run();
 
         $this->api = new Bag();
 
-        $api = clone $request;
+        $api = clone $this->request;
         $api->url->setParameter('output', 'json');
 
         if (($json = $api->getJsonContent())) {
@@ -122,7 +122,7 @@ class Archive extends Webpage implements AdapterInterface
      */
     public function getImages()
     {
-        $images = array();
+        $images = [];
 
         if (($image = $this->api->get('misc', 'image'))) {
             $images[] = $image;

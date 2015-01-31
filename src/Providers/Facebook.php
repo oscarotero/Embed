@@ -62,7 +62,7 @@ class Facebook extends Provider implements ProviderInterface
      */
     public function getImages()
     {
-        $images = array();
+        $images = [];
 
         if (is_array($imgs = $this->bag->get('image'))) {
             foreach ($imgs as $img) {

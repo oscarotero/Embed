@@ -16,9 +16,9 @@ class Imgur extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return array(
+        return [
             'http://imgur.com/*',
             'http://i.imgur.com/*',
-        );
+        ];
     }
 }

@@ -13,9 +13,9 @@ use Embed\Utils;
  */
 class Html extends Provider implements ProviderInterface
 {
-    protected $config = array(
-        'maxImages' => 0
-    );
+    protected $config = [
+        'maxImages' => -1
+    ];
 
     /**
      * {@inheritdoc}
@@ -101,7 +101,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getProviderIcons()
     {
-        return (array) $this->bag->get('icons') ?: array();
+        return (array) $this->bag->get('icons') ?: [];
     }
 
     /**
@@ -111,7 +111,7 @@ class Html extends Provider implements ProviderInterface
     {
         $images = (array) $this->bag->get('images');
 
-        if ($this->config['maxImages']) {
+        if ($this->config['maxImages'] > -1) {
             return array_slice($images, 0, $this->config['maxImages']);
         }
 
