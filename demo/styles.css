@@ -70,21 +70,19 @@ button[type="submit"]:hover {
 section {
     padding: 1.5em;
 }
-section h1 {
-    font-size: 3em;
+section h1, section h2 {
+    font-size: 2em;
     color: #666;
     letter-spacing: -0.02em;
 }
 section h2 {
-    font-size: 2em;
-    color: #666;
-    letter-spacing: -0.015em;
     margin-top: 3em;
 }
 
 table {
     text-align: left;
-    width: 100%;
+    width: 100vw;
+    table-layout: fixed;
 }
 th, td {
     vertical-align: top;
