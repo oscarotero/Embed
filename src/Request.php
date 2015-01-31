@@ -48,9 +48,7 @@ class Request
                 return $this->url = new Url($this->resolver->getUrl());
 
             case 'resolver':
-                $resolverClass = $this->resolverClass ?: $this->defaultResolverClass;
-
-                $this->resolver = new $resolverClass(UrlRedirect::resolve($this->startingUrl->getUrl()));
+                $this->resolver = new $this->resolverClass(UrlRedirect::resolve($this->startingUrl->getUrl()));
 
                 if (is_array($this->resolverConfig)) {
                     $this->resolver->setConfig($this->resolverConfig);

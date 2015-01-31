@@ -4,6 +4,9 @@ namespace Embed\Providers;
 use Embed\Request;
 use Embed\Bag;
 
+/**
+ * Abstract class used by all providers
+ */
 abstract class Provider
 {
     public $bag;

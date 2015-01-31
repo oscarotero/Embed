@@ -1,11 +1,11 @@
 <?php
-/**
- * Interface used by all sources
- */
 namespace Embed\Sources;
 
 use Embed\Request;
 
+/**
+ * Interface used by all sources
+ */
 interface SourceInterface
 {
     /**

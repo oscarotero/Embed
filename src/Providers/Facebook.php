@@ -14,7 +14,7 @@ class Facebook extends Provider implements ProviderInterface
     public function run()
     {
         $graph = $this->request->createRequest('https://graph.facebook.com/fql');
-        $graph->url->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$request->url->getUrl().'"');
+        $graph->url->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$this->request->url->getUrl().'"');
 
         if ($graph->isValid() && ($info = $graph->getJsonContent()) && isset($info['data'][0]['comments_fbid'])) {
             $graph = $this->request->createRequest('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
