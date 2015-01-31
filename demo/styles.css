@@ -1,0 +1,101 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    min-width: 650px;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: inherit;
+    font-size: 0.9em;
+}
+a:hover {
+    text-decoration: none;
+}
+img {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+/* form */
+form {
+    background: #444;
+    color: #999;
+    padding: 3em 1.5em;
+}
+fieldset {
+    border: none;
+    padding: 0;
+}
+label {
+    display: block;
+    cursor: pointer;
+    font-weight: bold;
+}
+input[type="url"],
+input[type="number"],
+input[type="text"] {
+    border: none;
+    background: white;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 5px 0;
+}
+input[type="number"] {
+    width: 50px;
+}
+input[type="url"] {
+    font-size: 1.3em;
+    padding: 0.5em;
+}
+button {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: Arial;
+    background: yellowgreen;
+    border: none;
+    border-radius: 2px;
+    padding: 0.2em 1em;
+    cursor: pointer;
+    margin-top: 5px;
+}
+button[type="submit"]:hover {
+    background: black;
+    color: white;
+}
+
+/* result */
+section {
+    padding: 1.5em;
+}
+section h1 {
+    font-size: 3em;
+    color: #666;
+    letter-spacing: -0.02em;
+}
+section h2 {
+    font-size: 2em;
+    color: #666;
+    letter-spacing: -0.015em;
+    margin-top: 3em;
+}
+
+table {
+    text-align: left;
+    width: 100%;
+}
+th, td {
+    vertical-align: top;
+    padding: 0.5em 1em 0.5em 0;
+    border-top: solid 1px #DDD;
+}
+th {
+    width: 200px;
+}
+#advanced-data {
+    display: none;
+}
+.view-advanced-data {
+    margin: 2em 0;
+    text-align: center;
+}
