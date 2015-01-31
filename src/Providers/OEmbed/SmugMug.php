@@ -1,10 +1,10 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class SmugMug extends \Embed\Providers\OEmbedImplementationAbstract
+class SmugMug extends OEmbedImplementation
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getEndPoint()
     {
@@ -12,10 +12,10 @@ class SmugMug extends \Embed\Providers\OEmbedImplementationAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getPatterns()
     {
-        return array('http://www.smugmug.com/*');
+        return ['http://www.smugmug.com/*'];
     }
 }

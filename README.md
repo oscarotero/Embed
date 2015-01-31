@@ -4,13 +4,16 @@ Embed
 [![Build Status](https://travis-ci.org/oscarotero/Embed.svg?branch=master)](https://travis-ci.org/oscarotero/Embed)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/Embed/badges/quality-score.png?s=79e37032db280b9795388124c030dcf4309343d1)](https://scrutinizer-ci.com/g/oscarotero/Embed/)
 
-PHP library to get information about any web page (using oembed, opengraph, twitter-cards, scrapping the html, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc) and has adapters to some sites like (archive.org, github, facebook, etc).
+PHP library to get information from any web page (using oembed, opengraph, twitter-cards, scrapping the html, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc) and has adapters to some sites like (archive.org, github, facebook, etc).
 
 Requirements:
 
-* PHP 5.3+
+* PHP 5.4+
 * Curl library installed
-* [allow_url_fopen: On](http://php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen)
+
+
+If you need PHP 5.3 support, use the 1.x version
+------------------------------------------------
 
 Online demo
 -----------
@@ -53,61 +56,158 @@ $info->providerIcons; //All provider icons found in the page
 $info->providerIcon; //The icon choosen as main icon
 ```
 
-Available options
------------------
+Customization
+-------------
+
+You can set some options using an array as second argument. In this array you can configurate the adapters, providers, resolvers, etc.
+
+### The adapter
+
+The adapter is the class that get all information of the page from the providers and choose the best result for each value. For example, a page can provide multiple titles from opengraph, twitter cards, oembed, the `<title>` tag, etc, so the adapter get all this titles and choose the best one.
+
+Embed has an generic adapter called "Webpage" to use in any web but has also some specific adapters for sites like archive.org, facebook, google, github, spotify, etc, that provides information using their own apis, or have any other special issue.
+
+You can configure these adapters and even create your own adapter, that must implement the `Embed\Adapters\AdapterInterface`.
+
+
+The available options for the adapters are:
 
 * minImageWidth (int): Minimal image width used to choose the main image
 * minImageHeight (int): Minimal image height used to choose the main image
-* getBiggerImage (bool): Returns the bigger image as the main image (instead the first found). This can make the request slower because it need to check the size of all images.
+* getBiggerImage (bool): Choose the bigger image as the main image (instead the first found, that usually is the most relevant).
 * getBiggerIcon (bool): The same than getBiggerImage but used to choose the main icon
-* facebookAccessToken (string): Used to get info from facebook pages when these pages are not public and a access token is required
-* soundcloudClientId (string): Used to get info of links from soundcloud. By default, it uses "YOUR_CLIENT_ID" that its a valid client id :P
-* embedlyKey (string): If it's defined, get info from embedly service (only for know supported services and if the page doesn't have its own oembed service)
-* oembedParameters (array): Extra GET parameters to the oembed requests.
-* facebookProvider (bool): If it's true, the facebook provider will be used to get the page information, that uses the facebook scrapping. By default is false because reduce the number of requests and facebook scrapping not always returns right results.
-* request (array): Used to customize the request (see below)
+* facebookKey (string): Used only in Facebook adapter, to get info from facebook pages when these pages are not public and a access token is required
+* soundcloudKey (string): Used in Soundcloud adapter, to get info from soundcloud. By default, it uses "YOUR_CLIENT_ID" that its a valid client id :P
 
 ```php
-$options = array(
-	'getBiggerImage' => true
-);
+$config = [
+	'adapter' => [
+		'class' => 'MyCustomClass', //Your custom adapter
 
-$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', $options);
+		'config' => [
+			'minImageWidth' => 16,
+            'minImageHeight' => 16,
+            'getBiggerImage' => false,
+            'getBiggerIcon' => false,
+            'facebookKey' => null,
+            'soundcloudKey' => null,
+		]
+    ]
+];
 ```
 
-Customize the request
----------------------
+### The providers
 
-Embed uses the `Embed\RequestResolvers\Curl` class to resolve all requests using the curl library. You can set options to the curl request or create your own implementation creating a class implementing the `Embed\RequestResolvers\RequestResolverInterface`.
+The providers get the data from different sources. Each source has it's own provider. For example, there are providers for open graph, twitter cards, oembed, dc terms, sailthru, html, etc. Currently two providers receives options: oembed and html. The availabe options are:
 
-The resolver configuration is defined under the "resolver" key in the options array. There is two options:
+oembed:
 
-* class: Your custom class name if you want to use your own implementation
-* options: The options passed to the class. If you use the default curl class, the options are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
+* parameters (array): Extra query parameters to send with the oembed request
+* embedlyKey (string): If it's defined and the page has not its own oembed service, use the embedly api.
+
+html:
+
+* maxImages (int): Max number of images fetched from the html code. By default is -1 (no limit). Use 0 to no get images.
+
 
 ```php
-//Customize the curl request of the default Embed\RequestResolvers\Curl
+$config = [
+    'providers' => [
+        'oembed' => [
+            'parameters' => [],
+            'embedlyKey' => null
+        ],
+        'html' => [
+            'maxImages' => -1
+        ]
+    ]
+];
+```
 
-$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', array(
-	"resolver" => array(
-		"options" => array(
-			CURLOPT_USERAGENT => 'My spider',
-			CURLOPT_MAXREDIRS => 3
-		)
-	)
-));
+### The request resolver
 
-//Create your own implementation
+Embed uses the `Embed\RequestResolvers\Curl` class to resolve all requests using the curl library. You can set options to the curl request or use your custom resolver creating a class implementing the `Embed\RequestResolvers\RequestResolverInterface`.
 
-$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', array(
-	"resolver" => array(
-		"class" => 'My\Custom\RequestResolver'
-		"options" => array(
-			"option1" => "foo",
-			"option2" => "var"
-		)
-	)
-));
+The resolver configuration is defined under the "resolver" key and it has two options:
+
+* class: Your custom class name if you want to use your own implementation
+* config: The options passed to the class. If you use the default curl class, the config are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
+
+```php
+$config = [
+    'resolver' => [
+        'class' => 'Embed\\RequestResolvers\\Curl' //The default resolver used
+
+        'config' => [
+            CURLOPT_MAXREDIRS => 20,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_ENCODING => '',
+            CURLOPT_AUTOREFERER => true,
+            CURLOPT_USERAGENT => 'Embed PHP Library',
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+        ]
+    ]
+];
+```
+
+### Image info
+
+To check the images and get their mimetype and dimmensions, we have the class `Embed\ImageInfo\Curl`. This class uses curl to make request, get the first bytes to get the image type and dimmensions and close the connection. So the image wont be downloaded entirely, just until the downloaded data is enought to get this information.
+
+Like the resolver class, you can provide your own image class (it must implement the `Embed\ImageInfo\ImageInfoInterface`) and/or change the configuration. The available options are the same:
+
+* class: Your custom class name if you want to use your own implementation
+* config: The options passed to the class. If you use the default curl class, the config are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
+
+
+```php
+$config = [
+    'image' => [
+        'class' => 'Embed\\ImageInfo\\Curl' //The default imageInfo used
+
+        'config' => [
+            CURLOPT_MAXREDIRS => 20,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_ENCODING => '',
+            CURLOPT_AUTOREFERER => true,
+            CURLOPT_USERAGENT => 'Embed PHP Library',
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+        ]
+    ]
+];
+```
+
+### Example
+
+```php
+$config = [
+	'adapter' => [
+		'config' => [
+			'minImageWidth' => 16,
+            'minImageHeight' => 16,
+		]
+	],
+    'providers' => [
+        'html' => [
+            'maxImages' => 3
+        ]
+    ],
+    'resolver' => [
+        'config' => [
+            CURLOPT_USERAGENT => 'My spider',
+            CURLOPT_MAXREDIRS => 3
+        ]
+    ]
+	'image' => [
+		'class' => 'App\\MyImageInfoClass'
+	]
+];
 ```
 
 Do you need help?

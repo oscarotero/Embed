@@ -5,33 +5,33 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Viewers;
-use Embed\Providers\Provider;
+use Embed\Utils;
+use Embed\Bag;
 
 class Archive extends Webpage implements AdapterInterface
 {
     public $api;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'http://archive.org/details/*',
-        ));
+        ]);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    protected function initProviders(Request $request)
+    public function run()
     {
-        parent::initProviders($request);
+        parent::run();
 
-        $this->api = new Provider();
+        $this->api = new Bag();
 
-        $api = clone $request;
+        $api = clone $this->request;
         $api->url->setParameter('output', 'json');
 
         if (($json = $api->getJsonContent())) {
@@ -52,7 +52,7 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTitle()
     {
@@ -60,7 +60,7 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDescription()
     {
@@ -68,7 +68,7 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {
@@ -87,7 +87,7 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -95,22 +95,22 @@ class Archive extends Webpage implements AdapterInterface
             case 'movies':
                 $embed_url = str_replace('/details/', '/embed/', $this->getUrl());
 
-                return Viewers::iframe($embed_url);
+                return Utils::iframe($embed_url);
 
             case 'audio':
                 $embed_url = str_replace('/details/', '/embed/', $this->getUrl());
 
-                return Viewers::iframe($embed_url, 0, 30);
+                return Utils::iframe($embed_url, 0, 30);
 
             case 'texts':
                 $embed_url = str_replace('/details/', '/stream/', $this->getUrl()).'?ui=embed';
 
-                return Viewers::iframe($embed_url, 480, 430);
+                return Utils::iframe($embed_url, 480, 430);
         }
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAuthorName()
     {
@@ -118,20 +118,20 @@ class Archive extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImages()
     {
-        $images = array();
+        $images = [];
 
         if (($image = $this->api->get('misc', 'image'))) {
-            $images[] = $this->request->url->getAbsolute($image);
+            $images[] = $image;
         }
 
         if (is_array($files = $this->api->get('files'))) {
             foreach ($files as $url => $info) {
                 if ($info['format'] === 'Thumbnail') {
-                    $images[] = $this->request->url->getAbsolute($url);
+                    $images[] = $url;
                 }
             }
         }

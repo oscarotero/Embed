@@ -4,12 +4,12 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Viewers;
+use Embed\Utils;
 
 class Spreaker extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -20,7 +20,7 @@ class Spreaker extends Webpage implements AdapterInterface
                 $id = (int) $a->getAttribute('data-episode_id');
 
                 if ($id) {
-                    return Viewers::iframe('http://www.spreaker.com/embed/player/standard?autoplay=false&episode_id='.$id, '100%', 131, 'min-width:400px;');
+                    return Utils::iframe('http://www.spreaker.com/embed/player/standard?autoplay=false&episode_id='.$id, '100%', 131, 'min-width:400px;');
                 }
                 break;
             }

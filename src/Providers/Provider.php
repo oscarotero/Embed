@@ -1,70 +1,136 @@
 <?php
-/**
- * Abstract class with basic functions to all providers (data store, load content, etc)
- */
 namespace Embed\Providers;
 
-class Provider
+use Embed\Request;
+use Embed\Bag;
+
+/**
+ * Abstract class used by all providers
+ */
+abstract class Provider
 {
-    protected $parameters = array();
+    public $bag;
+
+    protected $request;
+    protected $config = [];
 
     /**
-     * Save a value
-     *
-     * @param string|array $name  Name of the value
-     * @param mixed        $value The value to save
+     * {@inheritdoc}
      */
-    public function set($name, $value = null)
+    public function init(Request $request, array $config = null)
     {
-        if (is_array($name)) {
-            $this->parameters = array_replace($this->parameters, $name);
-        } else {
-            $this->parameters[trim($name)] = is_string($value) ? trim($value) : $value;
+        $this->bag = new Bag();
+        $this->request = $request;
+
+        if ($config) {
+            $this->config = array_replace($this->config, $config);
         }
     }
 
     /**
-     * Get a value, all values or null if not exists
-     *
-     * @param null|string $name    Value name
-     * @param null|string $subname A subvalue name
-     *
-     * @return string|array|null
+     * {@inheritdoc}
      */
-    public function get($name = null, $subname = null)
+    public function getTitle()
     {
-        if ($name === null) {
-            return $this->parameters;
-        }
-
-        if ($subname === null) {
-            return isset($this->parameters[$name]) ? $this->parameters[$name] : null;
-        }
-
-        if (!isset($this->parameters[$name][$subname])) {
-            return;
-        }
-
-        return $this->parameters[$name][$subname];
     }
 
     /**
-     * Check if a value exists
-     *
-     * @param string $name Value name
-     *
-     * @return boolean True if exists, false if not
+     * {@inheritdoc}
      */
-    public function has($name)
+    public function getDescription()
     {
-        return isset($this->parameters[$name]);
     }
 
     /**
-     * Magic method to execute non defined methods and returns null
+     * {@inheritdoc}
      */
-    public function __call($name, $arguments)
+    public function getType()
     {
-        return;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSource()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getCode()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUrl()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAuthorName()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAuthorUrl()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProviderIcons()
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProviderName()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProviderUrl()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getImages()
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getWidth()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHeight()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getPublishedTime()
+    {
     }
 }

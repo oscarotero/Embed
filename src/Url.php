@@ -48,13 +48,13 @@ class Url
     public function match($patterns)
     {
         if (!is_array($patterns)) {
-            $patterns = array($patterns);
+            $patterns = [$patterns];
         }
 
         $url = $this->getUrl();
 
         foreach ($patterns as $pattern) {
-            $pattern = str_replace(array('\\*', '\\?'), array('.+', '?'), preg_quote($pattern, '|'));
+            $pattern = str_replace(['\\*', '\\?'], ['.+', '?'], preg_quote($pattern, '|'));
 
             if (preg_match('|^'.$pattern.'$|i', $url)) {
                 return true;
@@ -158,11 +158,13 @@ class Url
         if ($key > count($this->info['path'])) {
             $this->info['path'][] = $this->info['file'];
             $this->info['file'] = $value;
+
             return;
         }
 
         if ($key === count($this->info['path'])) {
             $this->info['file'] = $value;
+
             return;
         }
 
@@ -190,7 +192,7 @@ class Url
      */
     public function setPath($path)
     {
-        $this->info['path'] = array();
+        $this->info['path'] = [];
         $this->info['file'] = null;
 
         foreach (explode('/', $path) as $dir) {
@@ -280,7 +282,7 @@ class Url
             return $values;
         }
 
-        return array();
+        return [];
     }
 
     /**

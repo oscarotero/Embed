@@ -1,10 +1,10 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Blip extends \Embed\Providers\OEmbedImplementationAbstract
+class Blip extends OEmbedImplementation
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getEndPoint()
     {
@@ -12,10 +12,10 @@ class Blip extends \Embed\Providers\OEmbedImplementationAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getPatterns()
     {
-        return array('http://blip.tv/*');
+        return ['http://blip.tv/*'];
     }
 }

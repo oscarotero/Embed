@@ -10,7 +10,7 @@ class Curl implements RequestResolverInterface
     protected $content;
     protected $result;
     protected $url;
-    protected $config = array(
+    protected $config = [
         CURLOPT_MAXREDIRS => 20,
         CURLOPT_CONNECTTIMEOUT => 10,
         CURLOPT_TIMEOUT => 10,
@@ -20,13 +20,13 @@ class Curl implements RequestResolverInterface
         CURLOPT_AUTOREFERER => true,
         CURLOPT_USERAGENT => 'Embed PHP Library',
         CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
-    );
+    ];
 
-    public static $binaryContentTypes = array(
+    public static $binaryContentTypes = [
         '#image/.*#',
         '#application/(pdf|x-download|zip|pdf|msword|vnd\\.ms|postscript|octet-stream|ogg)#',
         '#application/x-zip.*#',
-    );
+    ];
 
     /**
      * {@inheritdoc}
@@ -129,19 +129,19 @@ class Curl implements RequestResolverInterface
 
         $connection = curl_init();
 
-        curl_setopt_array($connection, array(
+        curl_setopt_array($connection, [
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_URL => $this->url,
             CURLOPT_COOKIEJAR => $tmpCookies,
             CURLOPT_COOKIEFILE => $tmpCookies,
-            CURLOPT_HEADERFUNCTION => array($this, 'headerCallback'),
-            CURLOPT_WRITEFUNCTION => array($this, 'writeCallback'),
-        ) + $this->config);
+            CURLOPT_HEADERFUNCTION => [$this, 'headerCallback'],
+            CURLOPT_WRITEFUNCTION => [$this, 'writeCallback'],
+        ] + $this->config);
 
         $result = curl_exec($connection);
 
-        $this->result = curl_getinfo($connection) ?: array();
+        $this->result = curl_getinfo($connection) ?: [];
 
         if (!$result) {
             $this->result['error'] = curl_error($connection);

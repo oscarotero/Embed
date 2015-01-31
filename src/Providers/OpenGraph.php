@@ -1,77 +1,66 @@
 <?php
-/**
- * Generic opengraph provider.
- * Load the opengraph data of an url and store it
- */
 namespace Embed\Providers;
 
 use Embed\Request;
-use Embed\Viewers;
+use Embed\Utils;
 
-class OpenGraph extends Provider
+/**
+ * Generic opengraph provider.
+ *
+ * Load the opengraph data of an url and store it
+ */
+class OpenGraph extends Provider implements ProviderInterface
 {
     /**
-     * Constructor
-     *
-     * @param Request $request
+     * {@inheritdoc}
      */
-    public function __construct(Request $request)
+    public function run()
     {
-        if (!($html = $request->getHtmlContent())) {
+        if (!($html = $this->request->getHtmlContent())) {
             return false;
         }
 
-        $images = array();
+        foreach (Utils::getMetas($html) as $meta) {
+            list($name, $value) = $meta;
 
-        foreach ($html->getElementsByTagName('meta') as $meta) {
-            if (strpos($meta->getAttribute('property'), 'og:') === 0) {
-                $name = substr($meta->getAttribute('property'), 3);
-            } elseif (strpos($meta->getAttribute('name'), 'og:') === 0) {
-                $name = substr($meta->getAttribute('name'), 3);
+            if (strpos($name, 'og:article:') === 0) {
+                $name = substr($name, 11);
+            } elseif (strpos($name, 'og:') === 0) {
+                $name = substr($name, 3);
             } else {
                 continue;
             }
 
-            $value = $meta->getAttribute('content') ?: $meta->getAttribute('value');
-
             if ($name === 'image') {
-                $images[] = $value;
+                $this->bag->add('images', $value);
             } else {
-                $this->set($name, $value);
+                $this->bag->set($name, $value);
             }
         }
-
-        $this->set('image', $images);
     }
 
     /**
-     * Gets the title
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getTitle()
     {
-        return $this->get('title');
+        return $this->bag->get('title');
     }
 
     /**
-     * Gets the description
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getDescription()
     {
-        return $this->get('description');
+        return $this->bag->get('description');
     }
 
     /**
-     * Gets the url type
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getType()
     {
-        $type = $this->get('type');
+        $type = $this->bag->get('type');
 
         if (strpos($type, ':') !== false) {
             $type = substr(strrchr($type, ':'), 1);
@@ -88,27 +77,27 @@ class OpenGraph extends Provider
                 return 'link';
         }
 
-        if ($this->has('video')) {
+        if ($this->bag->has('video')) {
             return 'video';
         }
     }
 
     /**
-     * Gets the embedded code
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getCode()
     {
-        if ($this->has('video')) {
-            if (!($videoPath = parse_url($this->get('video'), PHP_URL_PATH)) || !($type = pathinfo($videoPath, PATHINFO_EXTENSION))) {
-                $type = $this->get('video:type');
+        if ($this->bag->has('video')) {
+            $video = $this->bag->get('video');
+
+            if (!($videoPath = parse_url($video, PHP_URL_PATH)) || !($type = pathinfo($videoPath, PATHINFO_EXTENSION))) {
+                $type = $this->bag->get('video:type');
             }
 
             switch ($type) {
                 case 'swf':
                 case 'application/x-shockwave-flash':
-                    return Viewers::flash($this->get('video'), $this->getWidth(), $this->getHeight());
+                    return Utils::flash($video, $this->getWidth(), $this->getHeight());
 
                 case 'mp4':
                 case 'ogg':
@@ -119,64 +108,58 @@ class OpenGraph extends Provider
                 case 'video/ogg':
                 case 'video/ogv':
                 case 'video/webm':
-                    $image = $this->getImage();
+                    $images = $this->getImages();
 
-                    if (is_array($image)) {
-                        $image = current($image);
-                    }
-
-                    return Viewers::videoHtml($image, $this->get('video'), $this->getWidth(), $this->getHeight());
+                    return Utils::videoHtml(current($images), $video, $this->getWidth(), $this->getHeight());
             }
         }
     }
 
     /**
-     * Gets the url
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getUrl()
     {
-        return $this->get('url');
+        return $this->bag->get('url');
     }
 
     /**
-     * Gets the provider name
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getProviderName()
     {
-        return $this->get('site_name');
+        return $this->bag->get('site_name');
     }
 
     /**
-     * Gets the image
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getImage()
+    public function getImages()
     {
-        return $this->get('image');
+        return (array) $this->bag->get('images') ?: [];
     }
 
     /**
-     * Gets the code width
-     *
-     * @return integer|null
+     * {@inheritdoc}
      */
     public function getWidth()
     {
-        return $this->get('image:width') ?: $this->get('video:width');
+        return $this->bag->get('image:width') ?: $this->bag->get('video:width');
     }
 
     /**
-     * Gets the code height
-     *
-     * @return integer|null
+     * {@inheritdoc}
      */
     public function getHeight()
     {
-        return $this->get('image:height') ?: $this->get('video:height');
+        return $this->bag->get('image:height') ?: $this->bag->get('video:height');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getPublishedTime()
+    {
+        return $this->bag->get('published_time');
     }
 }

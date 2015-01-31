@@ -1,66 +1,61 @@
 <?php
-/**
- * Generic twitter cards provider.
- * Load the twitter cards data of an url and store it
- */
 namespace Embed\Providers;
 
-use Embed\Request;
-use Embed\Viewers;
+use Embed\Utils;
 
-class TwitterCards extends Provider
+/**
+ * Generic twitter cards provider.
+ *
+ * Load the twitter cards data of an url and store it
+ */
+class TwitterCards extends Provider implements ProviderInterface
 {
     /**
-     * Constructor
-     *
-     * @param Request $request
+     * {@inheritdoc}
      */
-    public function __construct(Request $request)
+    public function run()
     {
-        if (!($html = $request->getHtmlContent())) {
+        if (!($html = $this->request->getHtmlContent())) {
             return false;
         }
 
-        foreach ($html->getElementsByTagName('meta') as $tag) {
-            if ($tag->hasAttribute('property') && (strpos($tag->getAttribute('property'), 'twitter:') === 0)) {
-                $this->set(substr($tag->getAttribute('property'), 8), $tag->getAttribute('content') ?: $tag->getAttribute('value'));
-                continue;
-            }
+        foreach (Utils::getMetas($html) as $meta) {
+            list($name, $value) = $meta;
 
-            if ($tag->hasAttribute('name') && (strpos($tag->getAttribute('name'), 'twitter:') === 0)) {
-                $this->set(substr($tag->getAttribute('name'), 8), $tag->getAttribute('content') ?: $tag->getAttribute('value'));
+            if (strpos($name, 'twitter:') === 0) {
+                $name = substr($name, 8);
+
+                if ($name === 'image') {
+                    $this->bag->add('images', $value);
+                } else {
+                    $this->bag->set($name, $value);
+                }
             }
         }
     }
 
     /**
-     * Gets the title
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getTitle()
     {
-        return $this->get('title');
+        return $this->bag->get('title');
     }
 
     /**
-     * Gets the description
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getDescription()
     {
-        return $this->get('description');
+        return $this->bag->get('description');
     }
 
     /**
-     * Gets the url type
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getType()
     {
-        $type = $this->get('card');
+        $type = $this->bag->get('card');
 
         if (strpos($type, ':') !== false) {
             $type = substr(strrchr($type, ':'), 1);
@@ -79,64 +74,52 @@ class TwitterCards extends Provider
     }
 
     /**
-     * Gets the embedded code
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getCode()
     {
-        if ($this->has('player')) {
-            return Viewers::iframe($this->get('player'), $this->getWidth(), $this->getHeight());
+        if ($this->bag->has('player')) {
+            return Utils::iframe($this->bag->get('player'), $this->getWidth(), $this->getHeight());
         }
     }
 
     /**
-     * Gets the url
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getUrl()
     {
-        return $this->get('url');
+        return $this->bag->get('url');
     }
 
     /**
-     * Gets the author name
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getAuthorName()
     {
-        return $this->get('creator');
+        return $this->bag->get('creator');
     }
 
     /**
-     * Gets the image
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
-    public function getImage()
+    public function getImages()
     {
-        return $this->get('image');
+        return (array) $this->bag->get('images') ?: [];
     }
 
     /**
-     * Gets the code width
-     *
-     * @return integer|null
+     * {@inheritdoc}
      */
     public function getWidth()
     {
-        return $this->get('player:width');
+        return $this->bag->get('player:width');
     }
 
     /**
-     * Gets the code height
-     *
-     * @return integer|null
+     * {@inheritdoc}
      */
     public function getHeight()
     {
-        return $this->get('player:height');
+        return $this->bag->get('player:height');
     }
 }

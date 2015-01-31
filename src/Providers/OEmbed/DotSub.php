@@ -1,10 +1,10 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class DotSub extends \Embed\Providers\OEmbedImplementationAbstract
+class DotSub extends OEmbedImplementation
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getEndPoint()
     {
@@ -12,10 +12,10 @@ class DotSub extends \Embed\Providers\OEmbedImplementationAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getPatterns()
     {
-        return array('https?://dotsub.com/view/*');
+        return ['https?://dotsub.com/view/*'];
     }
 }

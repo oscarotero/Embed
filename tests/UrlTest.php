@@ -5,11 +5,11 @@ class UrlTest extends PHPUnit_Framework_TestCase
 {
     public function testParser()
     {
-        $urls = array(
+        $urls = [
             'http://vimeo.com//69912181?' => 'http://vimeo.com/69912181',
             'http://vimeo.com//69912181' => 'http://vimeo.com/69912181',
             'http://vimeo.com/69912181' => 'http://vimeo.com/69912181',
-        );
+        ];
 
         foreach ($urls as $url => $expected_url) {
             $parsed_url = new Embed\Url($url);
@@ -33,7 +33,7 @@ class UrlTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('one', $url->getDirectory(0));
         $this->assertEquals('four', $url->getDirectory(2));
         $this->assertNull($url->getDirectory(3));
-        
+
         $this->assertEquals('http://domain.com/one/second/four', $url->getUrl());
     }
 

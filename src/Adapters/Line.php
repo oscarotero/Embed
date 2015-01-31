@@ -4,23 +4,23 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Viewers;
+use Embed\Utils;
 use Embed\Request;
 
 class Line extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'https://line.do/*',
-        ));
+        ]);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -29,11 +29,11 @@ class Line extends Webpage implements AdapterInterface
         $url->setDirectory(0, 'embed');
         $url->setDirectory(2, 'vertical');
 
-        return Viewers::iframe($url->getUrl(), $this->width, $this->height);
+        return Utils::iframe($url->getUrl(), $this->width, $this->height);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getWidth()
     {
@@ -41,7 +41,7 @@ class Line extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getHeight()
     {

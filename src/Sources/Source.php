@@ -1,11 +1,14 @@
 <?php
-/**
- * Base Source extended by all sources
- *
- * Provide default functionalities
- */
 namespace Embed\Sources;
 
+/**
+ * Base Source extended by all sources
+ * Provide default functionalities
+ * 
+ * @property null|string $providerUrl
+ * @property string      $sourceUrl
+ * @property array       $items
+ */
 abstract class Source
 {
     public $request;

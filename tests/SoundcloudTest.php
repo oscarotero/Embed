@@ -13,7 +13,7 @@ class SoundcloudTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($info->authorName, 'Zeds Dead');
         $this->assertEquals($info->authorUrl, 'http://soundcloud.com/zedsdead');
         $this->assertEquals($info->providerName, 'SoundCloud');
-        $this->assertEquals($info->providerUrl, 'http://soundcloud.com');
+        $this->assertEquals($info->providerUrl, 'https://soundcloud.com');
     }
 
     public function testMobile()
@@ -26,6 +26,6 @@ class SoundcloudTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($info->authorName, 'Zeds Dead');
         $this->assertEquals($info->authorUrl, 'http://soundcloud.com/zedsdead');
         $this->assertEquals($info->providerName, 'SoundCloud');
-        $this->assertEquals($info->providerUrl, 'http://soundcloud.com');
+        $this->assertEquals($info->providerUrl, 'https://soundcloud.com');
     }
 }

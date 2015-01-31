@@ -4,31 +4,31 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Viewers;
+use Embed\Utils;
 use Embed\Request;
 
 class Slides extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'https?://slides.com/*',
-        ));
+        ]);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
-        return Viewers::iframe($this->request->url->getUrl().'/embed', $this->width, $this->height);
+        return Utils::iframe($this->request->url->getUrl().'/embed', $this->width, $this->height);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getWidth()
     {
@@ -36,7 +36,7 @@ class Slides extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getHeight()
     {

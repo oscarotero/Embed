@@ -4,30 +4,30 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Viewers;
+use Embed\Utils;
 use Embed\Request;
 
 class Giphy extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'https?://giphy.com/gifs/*',
-        ));
+        ]);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
-        if (($url = $this->providers['TwitterCards']->get('player'))) {
+        if (($url = $this->providers['twittercards']->bag->get('player'))) {
             $url = str_replace('/twitter/iframe', '?html5=true', $url);
 
-            return Viewers::iframe($url, $this->width.'px', $this->height.'px');
+            return Utils::iframe($url, $this->width.'px', $this->height.'px');
         }
     }
 }

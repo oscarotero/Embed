@@ -1,9 +1,9 @@
 <?php
-/**
- * Default class to resolve urls
- */
 namespace Embed\RequestResolvers;
 
+/**
+ * Interface used by all request resolver classes
+ */
 interface RequestResolverInterface
 {
     /**

@@ -1,10 +1,10 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class SoundCloud extends \Embed\Providers\OEmbedImplementationAbstract
+class SoundCloud extends OEmbedImplementation
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getEndPoint()
     {
@@ -12,10 +12,10 @@ class SoundCloud extends \Embed\Providers\OEmbedImplementationAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getPatterns()
     {
-        return array('https?://soundcloud.com/*');
+        return ['https?://soundcloud.com/*'];
     }
 }

@@ -1,10 +1,10 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class Ted extends \Embed\Providers\OEmbedImplementationAbstract
+class Ted extends OEmbedImplementation
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getEndPoint()
     {
@@ -12,10 +12,10 @@ class Ted extends \Embed\Providers\OEmbedImplementationAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getPatterns()
     {
-        return array('http://www.ted.com/talks/*');
+        return ['http://www.ted.com/talks/*'];
     }
 }

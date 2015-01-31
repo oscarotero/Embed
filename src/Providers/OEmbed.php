@@ -1,71 +1,83 @@
 <?php
-/**
- * Generic oembed provider.
- * Load the oembed data of an url and store it
- */
 namespace Embed\Providers;
 
 use Embed\Request;
+use Embed\Utils;
 
-class OEmbed extends Provider
+/**
+ * Generic oembed provider.
+ *
+ * Load the oembed data of an url and store it
+ */
+class OEmbed extends Provider implements ProviderInterface
 {
+    protected $config = [
+        'parameters' => [],
+        'embedlyKey' => null
+    ];
+
     /**
-     * Constructor
-     *
-     * @param Request $request
+     * {@inheritdoc}
      */
-    public function __construct(Request $request)
+    public function run()
     {
-        $format = (($request->url->getExtension() === 'xml') || ($request->url->getParameter('format') === 'xml')) ? 'xml' : 'json';
+        $endPoint = null;
+        $params = $this->config['parameters'];
+        $params['url'] = $this->request->url->getUrl();
 
-        switch ($format) {
-            case 'json':
-                if (($parameters = $request->getJsonContent()) && empty($parameters['Error'])) {
-                    $this->set($parameters);
+        if (($html = $this->request->getHtmlContent())) {
+            $endPoint = self::getEndPointFromDom($html);
+        }
+
+        if (!$endPoint && ($info = self::getEndPointFromRequest($this->request, $this->config))) {
+            $endPoint = $info['endPoint'];
+            $params += $info['params'];
+        }
+
+        if (!$endPoint) {
+            return;
+        }
+
+        $endPointRequest = $this->request->createRequest($endPoint);
+        $endPointRequest->startingUrl->setParameter($params);
+
+        // extract from xml
+        if (($endPointRequest->url->getExtension() === 'xml') || ($endPointRequest->url->getParameter('format') === 'xml')) {
+            if ($parameters = $endPointRequest->getXmlContent()) {
+                foreach ($parameters as $element) {
+                    $this->bag->set($element->getName(), (string) $element);
                 }
-                break;
-
-            case 'xml':
-                if ($parameters = $request->getXmlContent()) {
-                    foreach ($parameters as $element) {
-                        $this->set($element->getName(), (string) $element);
-                    }
-                }
-                break;
-
-            default:
-                throw new \Exception("No valid format specified");
+            }
+        // extract from json
+        } else {
+            if (($parameters = $endPointRequest->getJsonContent()) && empty($parameters['Error'])) {
+                $this->bag->set($parameters);
+            }
         }
     }
 
     /**
-     * Gets the title
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getTitle()
     {
-        return $this->get('title');
+        return $this->bag->get('title');
     }
 
     /**
-     * Gets the description
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getDescription()
     {
-        return $this->get('description');
+        return $this->bag->get('description');
     }
 
     /**
-     * Gets the type
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getType()
     {
-        $type = $this->get('type');
+        $type = $this->bag->get('type');
 
         if (strpos($type, ':') !== false) {
             $type = substr(strrchr($type, ':'), 1);
@@ -84,100 +96,149 @@ class OEmbed extends Provider
     }
 
     /**
-     * Gets the code
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getCode()
     {
-        return $this->get('html');
+        return $this->bag->get('html');
     }
 
     /**
-     * Gets the url
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getUrl()
     {
         if ($this->getType() === 'photo') {
-            return $this->get('web_page');
+            return $this->bag->get('web_page');
         }
 
-        return $this->get('url') ?: $this->get('web_page');
+        return $this->bag->get('url') ?: $this->bag->get('web_page');
     }
 
     /**
-     * Gets the author name
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getAuthorName()
     {
-        return $this->get('author_name');
+        return $this->bag->get('author_name');
     }
 
     /**
-     * Gets the author url
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getAuthorUrl()
     {
-        return $this->get('author_url');
+        return $this->bag->get('author_url');
     }
 
     /**
-     * Gets the provider name
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getProviderName()
     {
-        return $this->get('provider_name');
+        return $this->bag->get('provider_name');
     }
 
     /**
-     * Gets the provider url
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getProviderUrl()
     {
-        return $this->get('provider_url');
+        return $this->bag->get('provider_url');
     }
 
     /**
-     * Gets the image
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
-    public function getImage()
+    public function getImages()
     {
+        $images = [];
+
         if ($this->getType() === 'photo') {
-            return $this->get('url') ?: $this->get('thumbnail_url');
+            $images[] = $this->bag->get('url');
         }
 
-        return $this->get('thumbnail_url');
+        if ($this->bag->has('image')) {
+            $images[] = $this->bag->get('image');
+        }
+
+        if ($this->bag->has('thumbnail_url')) {
+            $images[] = $this->bag->get('thumbnail_url');
+        }
+
+        return $images;
     }
 
     /**
-     * Gets the code width
-     *
-     * @return integer|null
+     * {@inheritdoc}
      */
     public function getWidth()
     {
-        return $this->get('width');
+        return $this->bag->get('width');
     }
 
     /**
-     * Gets the code height
-     *
-     * @return integer|null
+     * {@inheritdoc}
      */
     public function getHeight()
     {
-        return $this->get('height');
+        return $this->bag->get('height');
+    }
+
+    /**
+     * Extract oembed information from the <link rel="alternate"> elements
+     *
+     * @param \DOMDocument $html
+     *
+     * @return string|null
+     */
+    protected static function getEndPointFromDom(\DOMDocument $html)
+    {
+        foreach (Utils::getLinks($html) as $link) {
+            list($rel, $href, $element) = $link;
+
+            if (empty($href)) {
+                continue;
+            }
+
+            if ($rel === 'alternate') {
+                switch (strtolower($element->getAttribute('type'))) {
+                    case 'application/json+oembed':
+                    case 'application/xml+oembed':
+                    case 'text/json+oembed':
+                    case 'text/xml+oembed':
+                        return $href;
+                }
+            }
+        }
+    }
+
+    /**
+     * Returns the oembed link from the request
+     *
+     * @param Request $request
+     * @param array   $config
+     *
+     * @return array|null
+     */
+    protected static function getEndPointFromRequest(Request $request, array $config)
+    {
+        //Search the oembed provider using the domain
+        $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->url->getDomain()))));
+
+        if (class_exists($class) && $request->match($class::getPatterns())) {
+            return [
+                'endPoint' => $class::getEndpoint(),
+                'params' => $class::getParams(),
+            ];
+        }
+
+        //Search using embedly
+        if (!empty($config['embedlyKey']) && $request->match(OEmbed\Embedly::getPatterns())) {
+            return [
+                'endPoint' => OEmbed\Embedly::getEndpoint(),
+                'params' => OEmbed\Embedly::getParams() + ['key' => $config['embedlyKey']],
+            ];
+        }
     }
 }

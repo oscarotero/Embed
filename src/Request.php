@@ -1,16 +1,17 @@
 <?php
-/**
- * Class to execute request and return the content
- */
 namespace Embed;
 
-
+/**
+ * Class to execute request and return the content
+ *
+ * @property Url $url
+ * @property RequestResolvers\RequestResolverInterface $resolver
+ */
 class Request
 {
     public $startingUrl;
 
-    private $defaultResolverClass = 'Embed\\RequestResolvers\\Curl';
-    private $resolverClass;
+    private $resolverClass = 'Embed\\RequestResolvers\\Curl';
     private $resolverConfig;
 
     private $xmlContent;
@@ -47,11 +48,9 @@ class Request
                 return $this->url = new Url($this->resolver->getUrl());
 
             case 'resolver':
-                $resolverClass = $this->resolverClass ?: $this->defaultResolverClass;
+                $this->resolver = new $this->resolverClass(UrlRedirect::resolve($this->startingUrl->getUrl()));
 
-                $this->resolver = new $resolverClass(UrlRedirect::resolve($this->startingUrl->getUrl()));
-
-                if(is_array($this->resolverConfig)) {
+                if (is_array($this->resolverConfig)) {
                     $this->resolver->setConfig($this->resolverConfig);
                 }
 
@@ -96,7 +95,7 @@ class Request
      */
     public function setResolverConfig(array $config)
     {
-        $this->resolverConfig = $config;
+        $this->resolverConfig = array_replace($this->resolverConfig, $config);
     }
 
     /**
@@ -184,7 +183,7 @@ class Request
                 }
 
                 //Remove all script elements, CDATA sections and comments (thanks https://github.com/jasny)
-                $response = preg_replace(array('%<!--(?:[^-]++|-)*?-->|<!\[CDATA\[(?:[^\]]++|\])*?\]\]>%si', '%<script\b(?:"(?:[^"\\\\]++|\\\\.)*+"|\'(?:[^\'\\\\]++|\\\\.)*+\'|[^>"\']++)*>(?:[^<]++|<)*?</\s*script\s*>%si'), '', $response);
+                $response = preg_replace(['%<!--(?:[^-]++|-)*?-->|<!\[CDATA\[(?:[^\]]++|\])*?\]\]>%si', '%<script\b(?:"(?:[^"\\\\]++|\\\\.)*+"|\'(?:[^\'\\\\]++|\\\\.)*+\'|[^>"\']++)*>(?:[^<]++|<)*?</\s*script\s*>%si'], '', $response);
 
                 $this->htmlContent->loadHTML($response);
                 libxml_use_internal_errors($errors);
@@ -242,7 +241,7 @@ class Request
     }
 
     /**
-     * Check if the url is valid or not
+     * Check if the response is valid or not
      *
      * @return boolean True if it's valid, false if not
      */

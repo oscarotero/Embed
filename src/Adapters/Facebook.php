@@ -4,7 +4,7 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Providers\Provider;
+use Embed\Bag;
 use Embed\Request;
 use Embed\Url;
 
@@ -15,26 +15,24 @@ class Facebook extends Webpage implements AdapterInterface
     private $isPost = false;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'https://www.facebook.com/*',
-        ));
+        ]);
     }
 
     /**
      * Returns the id found in an facebook url
      *
-     * @param string $url
+     * @param Url $url
      *
      * @return null|string
      */
-    private function getId($url)
+    private function getId(Url $url)
     {
-        $url = new Url($url);
-
         if ($url->hasParameter('story_fbid')) {
             $this->isPost = true;
 
@@ -73,18 +71,18 @@ class Facebook extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    protected function initProviders(Request $request)
+    public function run()
     {
-        parent::initProviders($request);
+        parent::run();
 
-        $this->api = new Provider();
+        $this->api = new Bag();
 
-        if (($id = $this->getId($request->startingUrl))) {
-            if ($this->options['facebookAccessToken']) {
-                $api = $request->createRequest('https://graph.facebook.com/'.$id);
-                $api->startingUrl->setParameter('access_token', $this->options['facebookAccessToken']);
+        if (($id = $this->getId($this->request->startingUrl))) {
+            if ($this->config['facebookKey']) {
+                $api = $this->request->createRequest('https://graph.facebook.com/'.$id);
+                $api->startingUrl->setParameter('access_token', $this->config['facebookKey']);
 
                 if ($json = $api->getJsonContent()) {
                     $this->api->set($json);
@@ -96,7 +94,7 @@ class Facebook extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTitle()
     {
@@ -104,7 +102,7 @@ class Facebook extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDescription()
     {
@@ -112,7 +110,7 @@ class Facebook extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getUrl()
     {
@@ -124,7 +122,7 @@ class Facebook extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -145,7 +143,7 @@ EOT;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderName()
     {
@@ -153,7 +151,7 @@ EOT;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAuthorName()
     {
@@ -161,7 +159,7 @@ EOT;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getSource()
     {
@@ -173,7 +171,7 @@ EOT;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImages()
     {

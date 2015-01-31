@@ -1,10 +1,10 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class DeviantArt extends \Embed\Providers\OEmbedImplementationAbstract
+class DeviantArt extends OEmbedImplementation
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getEndPoint()
     {
@@ -12,18 +12,18 @@ class DeviantArt extends \Embed\Providers\OEmbedImplementationAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getPatterns()
     {
-        return array('http://www.deviantart.com/art/*', 'http://www.deviantart.com/#/d*');
+        return ['http://www.deviantart.com/art/*', 'http://www.deviantart.com/#/d*'];
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getParams()
     {
-        return array('for' => 'embed');
+        return ['for' => 'embed'];
     }
 }

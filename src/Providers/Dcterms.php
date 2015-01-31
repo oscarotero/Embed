@@ -1,59 +1,61 @@
 <?php
-/**
- * Generic Dublin Core provider.
- * Load the Dublin Core data of an url and store it
- */
 namespace Embed\Providers;
 
 use Embed\Request;
+use Embed\Utils;
 
-class Dcterms extends Provider
+/**
+ * Generic Dublin Core provider.
+ *
+ * Load the Dublin Core data of an url and store it
+ */
+class Dcterms extends Provider implements ProviderInterface
 {
     /**
-     * Constructor
-     *
-     * @param Request $request
+     * {@inheritdoc}
      */
-    public function __construct(Request $request)
+    public function run()
     {
-        if (!($html = $request->getHtmlContent())) {
+        if (!($html = $this->request->getHtmlContent())) {
             return false;
         }
 
-        foreach ($html->getElementsByTagName('meta') as $meta) {
-            if ($meta->hasAttribute('name') && (stripos($meta->getAttribute('name'), 'dc.') === 0)) {
-                $this->set(strtolower(substr($meta->getAttribute('name'), 3)), $meta->getAttribute('content'));
+        foreach (Utils::getMetas($html) as $meta) {
+            if (stripos($meta[0], 'dc.') === 0) {
+                $this->bag->set(substr($meta[0], 3), $meta[1]);
             }
         }
     }
 
     /**
-     * Gets the title
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getTitle()
     {
-        return $this->get('title');
+        return $this->bag->get('title');
     }
 
     /**
-     * Gets the description
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getDescription()
     {
-        return $this->get('description');
+        return $this->bag->get('description');
     }
 
     /**
-     * Gets the author name
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getAuthorName()
     {
-        return $this->get('author');
+        return $this->bag->get('author');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getPublishedTime()
+    {
+        return $this->bag->get('date');
     }
 }

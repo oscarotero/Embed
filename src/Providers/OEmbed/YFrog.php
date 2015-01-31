@@ -1,10 +1,10 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class YFrog extends \Embed\Providers\OEmbedImplementationAbstract
+class YFrog extends OEmbedImplementation
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getEndPoint()
     {
@@ -12,10 +12,14 @@ class YFrog extends \Embed\Providers\OEmbedImplementationAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getPatterns()
     {
-        return array('http://twitter.yfrog.com/*','http://www.yfrog.com/*');
+        return [
+            'http://twitter.yfrog.com/*',
+            'http://www.yfrog.com/*',
+            'http://a.yfrog.com/*',
+        ];
     }
 }

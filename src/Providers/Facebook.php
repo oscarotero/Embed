@@ -1,89 +1,84 @@
 <?php
-/**
- * Provide information from Facebook Graph API.
- */
 namespace Embed\Providers;
 
 use Embed\Request;
 
-class Facebook extends Provider
+/**
+ * Provide information from Facebook Graph API.
+ */
+class Facebook extends Provider implements ProviderInterface
 {
     /**
-     * Constructor
-     *
-     * @param Request $request
+     * {@inheritdoc}
      */
-    public function __construct(Request $request)
+    public function run()
     {
-        $graph = $request->createRequest('https://graph.facebook.com/fql');
-        $graph->url->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$request->url->getUrl().'"');
+        $graph = $this->request->createRequest('https://graph.facebook.com/fql');
+        $graph->url->setParameter('q', 'SELECT comments_fbid FROM link_stat WHERE url = "'.$this->request->url->getUrl().'"');
 
         if ($graph->isValid() && ($info = $graph->getJsonContent()) && isset($info['data'][0]['comments_fbid'])) {
-            $graph = $request->createRequest('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
+            $graph = $this->request->createRequest('https://graph.facebook.com/'.$info['data'][0]['comments_fbid']);
 
             if ($json = $graph->getJsonContent()) {
-                $this->set($json);
+                $this->bag->set($json);
             }
         }
     }
 
     /**
-     * Gets the title
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getTitle()
     {
-        $title = $this->get('title');
+        $title = $this->bag->get('title');
 
+        //Sometimes, facebook returns the url as title.
         if (strpos($title, '://') === false) {
             return $title;
         }
     }
 
     /**
-     * Gets the description
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getDescription()
     {
-        return $this->get('description');
+        return $this->bag->get('description');
     }
 
     /**
-     * Gets the type
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getType()
     {
-        switch ($this->get('type')) {
+        switch ($this->bag->get('type')) {
             case 'article':
                 return 'link';
         }
     }
 
     /**
-     * Gets the image
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
-    public function getImage()
+    public function getImages()
     {
-        if (($imgs = $this->get('image')) && isset($imgs[0]['url'])) {
-            return $imgs[0]['url'];
+        $images = [];
+
+        if (is_array($imgs = $this->bag->get('image'))) {
+            foreach ($imgs as $img) {
+                $images[] = $img['url'];
+            }
         }
+
+        return $images;
     }
 
     /**
-     * Gets the author name
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getAuthorName()
     {
-        $author = $this->get('data', 'author') ?: $this->get('admins');
+        $author = $this->bag->get('data', 'author') ?: $this->bag->get('admins');
 
         if (isset($author[0]['name'])) {
             return $author[0]['name'];
@@ -91,13 +86,11 @@ class Facebook extends Provider
     }
 
     /**
-     * Gets the author url
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getAuthorUrl()
     {
-        $author = $this->get('data', 'author') ?: $this->get('admins');
+        $author = $this->bag->get('data', 'author') ?: $this->bag->get('admins');
 
         if (isset($author[0]['url'])) {
             return $author[0]['url'];
@@ -105,12 +98,10 @@ class Facebook extends Provider
     }
 
     /**
-     * Gets the provider name
-     *
-     * @return string|null
+     * {@inheritdoc}
      */
     public function getProviderName()
     {
-        return $this->get('site_name');
+        return $this->bag->get('site_name');
     }
 }

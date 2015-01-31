@@ -5,31 +5,31 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Providers\Provider;
+use Embed\Bag;
 
 class Github extends Webpage implements AdapterInterface
 {
     public $api;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'https://gist.github.com/*/*',
-        ));
+        ]);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    protected function initProviders(Request $request)
+    public function run()
     {
-        parent::initProviders($request);
+        parent::run();
 
-        $this->api = new Provider();
-        $api = $request->createRequest($request->url->getUrl().'.json');
+        $this->api = new Bag();
+        $api = $this->request->createRequest($this->request->url->getUrl().'.json');
 
         if (($json = $api->getJsonContent())) {
             $this->api->set($json);
@@ -37,7 +37,7 @@ class Github extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {
@@ -45,7 +45,7 @@ class Github extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -55,7 +55,7 @@ class Github extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderName()
     {
@@ -63,7 +63,7 @@ class Github extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderUrl()
     {

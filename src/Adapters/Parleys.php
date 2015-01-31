@@ -9,15 +9,17 @@ use Embed\Request;
 class Parleys extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
-        return $request->match(array('*://www.parleys.com/play/*'));
+        return $request->match([
+            '*://www.parleys.com/play/*'
+        ]);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
@@ -27,7 +29,7 @@ class Parleys extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {

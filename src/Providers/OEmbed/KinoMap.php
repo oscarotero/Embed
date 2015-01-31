@@ -1,10 +1,10 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-class KinoMap extends \Embed\Providers\OEmbedImplementationAbstract
+class KinoMap extends OEmbedImplementation
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getEndPoint()
     {
@@ -12,10 +12,10 @@ class KinoMap extends \Embed\Providers\OEmbedImplementationAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getPatterns()
     {
-        return array('http://www.kinomap.com/*', 'http://kinomap.com/*');
+        return ['http://www.kinomap.com/*', 'http://kinomap.com/*'];
     }
 }

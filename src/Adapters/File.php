@@ -5,39 +5,38 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Viewers;
-use Embed\Providers\OEmbed;
-use Embed\Providers\OEmbedImplementations;
+use Embed\Utils;
+use Embed\Providers;
 
 class File extends Adapter implements AdapterInterface
 {
-    private static $contentTypes = array(
-        'video/ogg' => array('video', 'videoHtml'),
-        'application/ogg' => array('video', 'videoHtml'),
-        'video/ogv' => array('video', 'videoHtml'),
-        'video/webm' => array('video', 'videoHtml'),
-        'video/mp4' => array('video', 'videoHtml'),
-        'audio/ogg' => array('audio', 'audioHtml'),
-        'audio/mp3' => array('audio', 'audioHtml'),
-        'audio/mpeg' => array('audio', 'audioHtml'),
-        'audio/webm' => array('audio', 'audioHtml'),
-        'image/jpeg' => array('photo', 'imageHtml'),
-        'image/gif' => array('photo', 'imageHtml'),
-        'image/png' => array('photo', 'imageHtml'),
-        'image/bmp' => array('photo', 'imageHtml'),
-        'image/ico' => array('photo', 'imageHtml'),
-        'text/rtf' => array('rich', 'google'),
-        'application/pdf' => array('rich', 'google'),
-        'application/msword' => array('rich', 'google'),
-        'application/vnd.ms-powerpoint' => array('rich', 'google'),
-        'application/vnd.ms-excel' => array('rich', 'google'),
-        'application/zip' => array('rich', 'google'),
-        'application/postscript' => array('rich', 'google'),
-        'application/octet-stream' => array('rich', 'google'),
-    );
+    private static $contentTypes = [
+        'video/ogg' => ['video', 'videoHtml'],
+        'application/ogg' => ['video', 'videoHtml'],
+        'video/ogv' => ['video', 'videoHtml'],
+        'video/webm' => ['video', 'videoHtml'],
+        'video/mp4' => ['video', 'videoHtml'],
+        'audio/ogg' => ['audio', 'audioHtml'],
+        'audio/mp3' => ['audio', 'audioHtml'],
+        'audio/mpeg' => ['audio', 'audioHtml'],
+        'audio/webm' => ['audio', 'audioHtml'],
+        'image/jpeg' => ['photo', 'imageHtml'],
+        'image/gif' => ['photo', 'imageHtml'],
+        'image/png' => ['photo', 'imageHtml'],
+        'image/bmp' => ['photo', 'imageHtml'],
+        'image/ico' => ['photo', 'imageHtml'],
+        'text/rtf' => ['rich', 'google'],
+        'application/pdf' => ['rich', 'google'],
+        'application/msword' => ['rich', 'google'],
+        'application/vnd.ms-powerpoint' => ['rich', 'google'],
+        'application/vnd.ms-excel' => ['rich', 'google'],
+        'application/zip' => ['rich', 'google'],
+        'application/postscript' => ['rich', 'google'],
+        'application/octet-stream' => ['rich', 'google'],
+    ];
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
@@ -45,19 +44,15 @@ class File extends Adapter implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    protected function initProviders(Request $request)
+    public function run()
     {
-        $this->request = $request;
-
-        if (($oEmbed = OEmbedImplementations::create($request))) {
-            $this->providers['OEmbed'] = $oEmbed;
-        }
+        $this->addProvider('oembed', new Providers\OEmbed());
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {
@@ -65,42 +60,31 @@ class File extends Adapter implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
         switch (self::$contentTypes[$this->request->getMimeType()][1]) {
             case 'videoHtml':
-                return Viewers::videoHtml($this->getImage(), $this->getUrl(), $this->getWidth(), $this->getHeight());
+                return Utils::videoHtml($this->getImage(), $this->getUrl(), $this->getWidth(), $this->getHeight());
 
             case 'audioHtml':
-                return Viewers::audioHtml($this->getUrl());
+                return Utils::audioHtml($this->getUrl());
 
             case 'google':
-                return Viewers::google($this->getUrl());
+                return Utils::google($this->getUrl());
         }
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImages()
     {
         if ($this->getType() === 'photo') {
-            return array($this->getUrl());
+            return call_user_func("{$this->imageClass}::getImagesInfo", [$this->getUrl()], $this->imageConfig);
         }
 
-        return array();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getProviderIcons()
-    {
-        return array(
-            $this->request->url->getAbsolute('/favicon.ico'),
-            $this->request->url->getAbsolute('/favicon.png'),
-        );
+        return [];
     }
 }

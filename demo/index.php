@@ -2,7 +2,7 @@
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 
-include('../src/autoloader.php');
+include '../src/autoloader.php';
 ?>
 
 <!DOCTYPE html>
@@ -133,8 +133,8 @@ include('../src/autoloader.php');
             <fieldset class="options">
                 <h2>Info options</h2>
 
-                <label><span>minImageWidth:</span> <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 0); ?>"></label>
-                <label><span>minImageHeight:</span> <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 0); ?>"></label>
+                <label><span>minImageWidth:</span> <input type="number" name="options[minImageWidth]" value="<?php echo getOption('minImageWidth', 16); ?>"></label>
+                <label><span>minImageHeight:</span> <input type="number" name="options[minImageHeight]" value="<?php echo getOption('minImageHeight', 16); ?>"></label>
                 <label><span>getBiggerImage</span> <input type="checkbox" name="options[getBiggerImage]" value="1" <?php echo getOption('getBiggerImage') ? 'checked' : ''; ?>></label>
                 <label><span>getBiggerIcon</span> <input type="checkbox" name="options[getBiggerIcon]" value="1" <?php echo getOption('getBiggerIcon') ? 'checked' : ''; ?>></label>
                 <label><span>facebookAccessToken:</span> <input type="text" name="options[facebookAccessToken]" value="<?php echo getOption('facebookAccessToken'); ?>"></label>
@@ -155,13 +155,13 @@ include('../src/autoloader.php');
         <?php if (!empty($_GET['url'])): ?>
         <section>
             <?php
-            $options = isset($_GET['options']) ? (array) $_GET['options'] : array();
+            $config = isset($_GET['options']) ? (array) $_GET['options'] : [];
 
-            if (isset($options['oembedParameters'])) {
-                $options['oembedParameters'] = $options['oembedParameters'] ? json_decode($options['oembedParameters'], true) : array();
+            if (isset($config['oembedParameters'])) {
+                $config['oembedParameters'] = $config['oembedParameters'] ? json_decode($config['oembedParameters'], true) : [];
             }
 
-            $info = Embed\Embed::create($_GET['url'], $options);
+            $info = Embed\Embed::create($_GET['url'], $config);
             ?>
 
             <?php if (empty($info)): ?>
@@ -235,7 +235,12 @@ include('../src/autoloader.php');
                 </tr>
                 <tr>
                     <th>providerIcon</th>
-                    <td><img src="<?php echo $info->providerIcon; ?>"> <?php echo $info->providerIcon; ?></td>
+                    <td>
+                        <?php if ($info->providerIcon): ?>
+                        <img src="<?php echo $info->providerIcon; ?>"><br>
+                        <a href="<?php echo $info->providerIcon; ?>" target="_blank"><?php echo $info->providerIcon; ?></a>
+                        <?php endif; ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>providerIcons</th>
@@ -262,6 +267,10 @@ include('../src/autoloader.php');
                     <td><?php echo $info->aspectRatio; ?></td>
                 </tr>
                 <tr>
+                    <th>publishedTime</th>
+                    <td><?php echo $info->publishedTime; ?></td>
+                </tr>
+                <tr>
                     <th>Http request info</th>
                     <td>
                         <ul>
@@ -276,10 +285,10 @@ include('../src/autoloader.php');
                         </ul>
                     </td>
                 </tr>
-                <?php foreach ($info->providers as $name => $provider) {
-                    $content = htmlspecialchars(print_r($provider, true), ENT_IGNORE);
-                    echo '<tr><th>'.$name.'</th><td><pre>'.$content.'</pre></td></tr>';
-                }
+                <?php foreach ($info->getAllProviders() as $name => $provider) {
+    $content = htmlspecialchars(print_r($provider->bag->getAll(), true), ENT_IGNORE);
+    echo '<tr><th>'.$name.'</th><td><pre>'.$content.'</pre></td></tr>';
+}
                 ?>
                 <tr>
                     <th>Content</th>

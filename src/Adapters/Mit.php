@@ -5,33 +5,33 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Viewers;
+use Embed\Utils;
 
 class Mit extends Webpage implements AdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function check(Request $request)
     {
-        return $request->match(array(
+        return $request->match([
             'http://video.mit.edu/watch/*',
-        ));
+        ]);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode()
     {
         $url = $this->getUrl();
         $url = preg_replace('|(/watch/[\w-]+)-([\d]+)|', '/embed/$2', $url);
 
-        return Viewers::iframe($url, $this->getWidth(), $this->getHeight());
+        return Utils::iframe($url, $this->getWidth(), $this->getHeight());
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getWidth()
     {
@@ -39,7 +39,7 @@ class Mit extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getHeight()
     {
@@ -47,7 +47,7 @@ class Mit extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviderName()
     {
@@ -55,7 +55,7 @@ class Mit extends Webpage implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType()
     {
