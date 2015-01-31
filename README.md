@@ -18,7 +18,7 @@ If you need PHP 5.3 support, use the 1.x version
 Online demo
 -----------
 
-http://oscarotero.com/embed/demo
+http://oscarotero.com/embed2/demo
 
 Usage
 -----
