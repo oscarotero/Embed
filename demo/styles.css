@@ -61,7 +61,7 @@ button {
     cursor: pointer;
     margin-top: 5px;
 }
-button[type="submit"]:hover {
+button:hover {
     background: black;
     color: white;
 }

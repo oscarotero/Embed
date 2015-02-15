@@ -136,7 +136,7 @@ array_insert($adapterData, 15, ['providerIcon' => 'printImage']);
 
             <?php else: ?>
 
-            <table class="adapter">
+            <table>
                 <?php foreach ($adapterData as $name => $fn): ?>
                 <tr>
                     <th><?php echo $name; ?></th>
@@ -153,7 +153,7 @@ array_insert($adapterData, 15, ['providerIcon' => 'printImage']);
                 <?php foreach ($info->getAllProviders() as $providerName => $provider): ?>
                 <h2><?php echo $providerName; ?> provider</h2>
 
-                <table class="provider">
+                <table>
                     <?php foreach ($providerData as $name => $fn): ?>
                     <tr>
                         <th><?php echo $providerName.'.'.$name; ?></th>
@@ -162,7 +162,7 @@ array_insert($adapterData, 15, ['providerIcon' => 'printImage']);
                     <?php endforeach ?>
 
                     <tr>
-                        <th>Bag with all data collected</th>
+                        <th>All data collected</th>
                         <td><?php printArray($provider->bag->getAll(), false); ?></td>
                     </tr>
 
@@ -177,7 +177,8 @@ array_insert($adapterData, 15, ['providerIcon' => 'printImage']);
                 <?php endforeach ?>
 
                 <h2>Http request info</h2>
-                <table class="request">
+
+                <table>
                     <?php foreach ($info->request->getRequestInfo() as $name => $value): ?>
                     <tr>
                         <th><?php echo $name; ?></th>
