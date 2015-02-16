@@ -2,7 +2,7 @@
 namespace Embed\ImageInfo;
 
 /**
- * Inteface used by all imageinfo interfaces 
+ * Inteface used by all imageinfo interfaces
  */
 interface ImageInfoInterface
 {

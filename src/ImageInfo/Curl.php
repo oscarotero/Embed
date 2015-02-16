@@ -171,6 +171,7 @@ class Curl implements ImageInfoInterface
 
             if (!in_array($this->mime, static::$mimetypes, true)) {
                 $this->mime = null;
+
                 return -1;
             }
         }
@@ -180,6 +181,7 @@ class Curl implements ImageInfoInterface
         }
 
         $this->info = array($info[0], $info[1], $this->mime);
+
         return -1;
     }
 }

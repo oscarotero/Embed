@@ -13,7 +13,7 @@ class OEmbed extends Provider implements ProviderInterface
 {
     protected $config = [
         'parameters' => [],
-        'embedlyKey' => null
+        'embedlyKey' => null,
     ];
 
     /**

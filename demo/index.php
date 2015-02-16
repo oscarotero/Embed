@@ -80,12 +80,13 @@ $providerData = [
     'providerIconsUrls' => 'printArray',
     'providerName' => 'printText',
     'providerUrl' => 'printUrl',
-    'publishedTime' => 'printText'
+    'publishedTime' => 'printText',
 ];
 
 $adapterData = $providerData;
 
-function array_insert (&$array, $position, $insert_array) {
+function array_insert(&$array, $position, $insert_array)
+{
     $first_array = array_splice($array, 0, $position);
     $array = array_merge($first_array, $insert_array, $array);
 }
@@ -156,7 +157,7 @@ array_insert($adapterData, 15, ['providerIcon' => 'printImage']);
             <div id="advanced-data">
                 <?php if (isset($info->api)): ?>
                 <h2>Data provider by the custom API</h2>
-                
+
                 <table>
                     <tr>
                         <th>Data provider by the API</th>

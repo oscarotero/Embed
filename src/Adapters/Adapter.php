@@ -30,7 +30,6 @@ use Embed\ImageInfo;
  * @property null|string  $providerUrl
  * @property null|string  $publishedTime
  */
-
 abstract class Adapter
 {
     protected $request;
@@ -47,7 +46,7 @@ abstract class Adapter
         'getBiggerImage' => false,
         'getBiggerIcon' => false,
         'facebookKey' => null,
-        'soundcloudKey' => 'YOUR_CLIENT_ID'
+        'soundcloudKey' => 'YOUR_CLIENT_ID',
     ];
 
     /**
@@ -100,7 +99,7 @@ abstract class Adapter
     protected function addProvider($name, ProviderInterface $provider)
     {
         $config = isset($this->providersConfig[$name]) ? $this->providersConfig[$name] : null;
-        
+
         $provider->init($this->request, $config);
         $provider->run();
 

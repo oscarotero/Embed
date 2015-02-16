@@ -77,8 +77,8 @@ class Utils
     /**
      * Search and returns the first value retrieved by the providers
      *
-     * @param null|array $providers   The providers used to retrieve the data
-     * @param string     $name        The data name (title, description, image, etc)
+     * @param null|array $providers The providers used to retrieve the data
+     * @param string     $name      The data name (title, description, image, etc)
      *
      * @return mixed
      */
@@ -96,8 +96,8 @@ class Utils
     /**
      * Search and returns all data retrieved by the providers
      *
-     * @param null|array $providers   The providers used to retrieve the data
-     * @param string     $name        The data name (title, description, image, etc)
+     * @param null|array $providers The providers used to retrieve the data
+     * @param string     $name      The data name (title, description, image, etc)
      *
      * @return array
      */
@@ -124,9 +124,9 @@ class Utils
     /**
      * Search and returns the first url value retrieved by the providers
      *
-     * @param Url        $url         The base url used to resolve relative urls
-     * @param null|array $providers   The providers used to retrieve the data
-     * @param string     $name        The data name (title, description, image, etc)
+     * @param Url        $url       The base url used to resolve relative urls
+     * @param null|array $providers The providers used to retrieve the data
+     * @param string     $name      The data name (title, description, image, etc)
      *
      * @return string|null
      */
@@ -142,9 +142,9 @@ class Utils
     /**
      * Search and returns all data retrieved by the providers
      *
-     * @param Url        $url         The base url used to resolve relative urls
-     * @param null|array $providers   The providers used to retrieve the data
-     * @param string     $name        The data name (title, description, image, etc)
+     * @param Url        $url       The base url used to resolve relative urls
+     * @param null|array $providers The providers used to retrieve the data
+     * @param string     $name      The data name (title, description, image, etc)
      *
      * @return array
      */

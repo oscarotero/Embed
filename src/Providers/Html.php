@@ -13,7 +13,7 @@ use Embed\Utils;
 class Html extends Provider implements ProviderInterface
 {
     protected $config = [
-        'maxImages' => -1
+        'maxImages' => -1,
     ];
 
     /**
