@@ -1,7 +1,6 @@
 <?php
 namespace Embed\Providers;
 
-use Embed\Request;
 use Embed\Utils;
 
 /**

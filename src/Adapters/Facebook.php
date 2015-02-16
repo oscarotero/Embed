@@ -29,7 +29,7 @@ class Facebook extends Webpage implements AdapterInterface
      *
      * @param Url $url
      *
-     * @return null|string
+     * @return string
      */
     private function getId(Url $url)
     {
