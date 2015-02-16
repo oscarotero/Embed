@@ -173,9 +173,9 @@ EOT;
     /**
      * {@inheritdoc}
      */
-    public function getImages()
+    public function getImagesUrls()
     {
-        $images = parent::getImages();
+        $images = parent::getImagesUrls();
 
         $cover = $this->api->get('cover');
 

@@ -60,7 +60,9 @@ function printCode($code, $asHtml = true)
         echo $code;
     }
 
-    echo '<pre>'.htmlspecialchars($code, ENT_IGNORE).'</pre>';
+    if ($code) {
+        echo '<pre>'.htmlspecialchars($code, ENT_IGNORE).'</pre>';
+    }
 }
 
 $providerData = [
@@ -68,14 +70,14 @@ $providerData = [
     'description' => 'printText',
     'url' => 'printUrl',
     'type' => 'printText',
-    'images' => 'printArray',
+    'imagesUrls' => 'printArray',
     'code' => 'printCode',
     'source' => 'printUrl',
     'width' => 'printText',
     'height' => 'printText',
     'authorName' => 'printText',
     'authorUrl' => 'printUrl',
-    'providerIcons' => 'printArray',
+    'providerIconsUrls' => 'printArray',
     'providerName' => 'printText',
     'providerUrl' => 'printUrl',
     'publishedTime' => 'printText'
@@ -88,10 +90,12 @@ function array_insert (&$array, $position, $insert_array) {
     $array = array_merge($first_array, $insert_array, $array);
 }
 
+array_insert($adapterData, 4, ['images' => 'printArray']);
 array_insert($adapterData, 4, ['image' => 'printImage']);
 array_insert($adapterData, 5, ['imageWidth' => 'printText']);
 array_insert($adapterData, 6, ['imageHeight' => 'printText']);
 array_insert($adapterData, 12, ['aspectRatio' => 'printText']);
+array_insert($adapterData, 15, ['providerIcons' => 'printArray']);
 array_insert($adapterData, 15, ['providerIcon' => 'printImage']);
 ?>
 
@@ -150,6 +154,17 @@ array_insert($adapterData, 15, ['providerIcon' => 'printImage']);
             </div>
 
             <div id="advanced-data">
+                <?php if (isset($info->api)): ?>
+                <h2>Data provider by the custom API</h2>
+                
+                <table>
+                    <tr>
+                        <th>Data provider by the API</th>
+                        <td><?php printArray($info->api->getAll(), false); ?></td>
+                    </tr>
+                </table>
+                <?php endif ?>
+
                 <?php foreach ($info->getAllProviders() as $providerName => $provider): ?>
                 <h2><?php echo $providerName; ?> provider</h2>
 

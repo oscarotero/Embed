@@ -75,35 +75,111 @@ class Utils
     }
 
     /**
-     * Search and returns data from the providers
+     * Search and returns the first value retrieved by the providers
      *
      * @param null|array $providers   The providers used to retrieve the data
      * @param string     $name        The data name (title, description, image, etc)
-     * @param boolean    $returnFirst If it's true, returns the first value found, else returns the most popular value
      *
      * @return mixed
      */
-    public static function getData(array $providers, $name, $returnFirst = true)
+    public static function getFirstData(array $providers, $name)
     {
         $method = 'get'.$name;
-        $values = [];
-        $current = null;
 
         foreach ($providers as $provider) {
             if (($value = $provider->$method())) {
-                if ($returnFirst === true) {
-                    return $value;
-                }
+                return $value;
+            }
+        }
+    }
 
-                if (isset($values[$value])) {
-                    ++$values[$value];
+    /**
+     * Search and returns all data retrieved by the providers
+     *
+     * @param null|array $providers   The providers used to retrieve the data
+     * @param string     $name        The data name (title, description, image, etc)
+     *
+     * @return array
+     */
+    public static function getAllData(array $providers, $name)
+    {
+        $method = 'get'.$name;
+        $values = [];
+
+        foreach ($providers as $provider) {
+            $value = $provider->$method();
+
+            if (!empty($value)) {
+                if (is_array($value)) {
+                    $values = array_merge($values, $value);
                 } else {
-                    $values[$value] = 1;
+                    $values[] = $value;
                 }
+            }
+        }
 
-                if ($current === null || $values[$current] > $values[$value]) {
-                    $current = $value;
-                }
+        return array_unique($values);
+    }
+
+    /**
+     * Search and returns the first url value retrieved by the providers
+     *
+     * @param Url        $url         The base url used to resolve relative urls
+     * @param null|array $providers   The providers used to retrieve the data
+     * @param string     $name        The data name (title, description, image, etc)
+     *
+     * @return string|null
+     */
+    public static function getFirstUrlData(Url $url, array $providers, $name)
+    {
+        $result = static::getFirstData($providers, $name);
+
+        if ($result) {
+            return $url->getAbsolute($result);
+        }
+    }
+
+    /**
+     * Search and returns all data retrieved by the providers
+     *
+     * @param Url        $url         The base url used to resolve relative urls
+     * @param null|array $providers   The providers used to retrieve the data
+     * @param string     $name        The data name (title, description, image, etc)
+     *
+     * @return array
+     */
+    public static function getAllUrlData(Url $url, array $providers, $name)
+    {
+        $result = static::getAllData($providers, $name);
+
+        foreach ($result as &$each) {
+            $each = $url->getAbsolute($each);
+        }
+
+        return array_unique($result);
+    }
+
+    /**
+     * Returns the most repeated value in an array
+     *
+     * @param array $values
+     *
+     * @return mixed
+     */
+    public static function getMostPopular(array $values)
+    {
+        $popularity = [];
+        $current = null;
+
+        foreach ($values as $value) {
+            if (isset($popularity[$value])) {
+                ++$popularity[$value];
+            } else {
+                $popularity[$value] = 1;
+            }
+
+            if ($current === null || $popularity[$current] > $popularity[$value]) {
+                $current = $value;
             }
         }
 

@@ -32,6 +32,14 @@ interface AdapterInterface extends DataInterface
     public function run();
 
     /**
+     * Gets all icon provider urls found
+     * It returns also the width, height and mime-type
+     *
+     * @return array
+     */
+    public function getProviderIcons();
+
+    /**
      * Gets the best icon provider
      * if $config['getBiggerIcon'] is true, returns the bigger image found
      * else, returns the first found
@@ -39,6 +47,14 @@ interface AdapterInterface extends DataInterface
      * @return string|null
      */
     public function getProviderIcon();
+
+    /**
+     * Gets all images found in the webpage
+     * It returns also the width, height and mime-type
+     *
+     * @return array
+     */
+    public function getImages();
 
     /**
      * Gets the best image

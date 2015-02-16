@@ -134,7 +134,7 @@ class OpenGraph extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function getImages()
+    public function getImagesUrls()
     {
         return (array) $this->bag->get('images') ?: [];
     }

@@ -150,7 +150,7 @@ class OEmbed extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function getImages()
+    public function getImagesUrls()
     {
         $images = [];
 
@@ -160,6 +160,10 @@ class OEmbed extends Provider implements ProviderInterface
 
         if ($this->bag->has('image')) {
             $images[] = $this->bag->get('image');
+        }
+
+        if ($this->bag->has('thumbnail')) {
+            $images[] = $this->bag->get('thumbnail');
         }
 
         if ($this->bag->has('thumbnail_url')) {

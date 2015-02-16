@@ -120,7 +120,7 @@ class Archive extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function getImages()
+    public function getImagesUrls()
     {
         $images = [];
 

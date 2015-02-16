@@ -65,11 +65,12 @@ interface DataInterface
     public function getAuthorUrl();
 
     /**
-     * Gets all icon provider urls found
+     * Gets the urls of all icons of the provider
+     * Note: it doesn't check whether the image exists or not
      *
      * @return array
      */
-    public function getProviderIcons();
+    public function getProviderIconsUrls();
 
     /**
      * Gets the provider name
@@ -86,11 +87,12 @@ interface DataInterface
     public function getProviderUrl();
 
     /**
-     * Gets all images found in the webpage
+     * Gets the urls of all images found in the webpage
+     * Note: it doesn't check whether the image exists or not
      *
      * @return array
      */
-    public function getImages();
+    public function getImagesUrls();
 
     /**
      * Gets the width of the embedded widget

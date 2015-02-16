@@ -37,7 +37,7 @@ class Google extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function getImages()
+    public function getImagesUrls()
     {
         return [];
     }

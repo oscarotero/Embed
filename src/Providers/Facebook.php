@@ -60,7 +60,7 @@ class Facebook extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function getImages()
+    public function getImagesUrls()
     {
         $images = [];
 

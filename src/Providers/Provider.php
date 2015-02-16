@@ -86,7 +86,7 @@ abstract class Provider
     /**
      * {@inheritdoc}
      */
-    public function getProviderIcons()
+    public function getProviderIconsUrls()
     {
         return [];
     }
@@ -108,7 +108,7 @@ abstract class Provider
     /**
      * {@inheritdoc}
      */
-    public function getImages()
+    public function getImagesUrls()
     {
         return [];
     }

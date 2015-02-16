@@ -69,9 +69,9 @@ class Soundcloud extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function getImages()
+    public function getImagesUrls()
     {
-        $images = parent::getImages();
+        $images = parent::getImagesUrls();
 
         if (!$this->api->get('artwork_url') && ($img = $this->api->get('user', 'avatar_url'))) {
             array_unshift($images, str_replace('-large.jpg', '-t500x500.jpg', $img));

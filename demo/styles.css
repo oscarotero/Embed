@@ -15,6 +15,11 @@ img {
     display: block;
     margin-bottom: 0.5em;
 }
+pre {
+    overflow: auto;
+    background: #EEE;
+    padding: 1em;
+}
 
 /* form */
 form {
@@ -81,7 +86,7 @@ section h2 {
 
 table {
     text-align: left;
-    width: 100vw;
+    width: 100%;
     table-layout: fixed;
 }
 th, td {

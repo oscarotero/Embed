@@ -79,10 +79,10 @@ class File extends Adapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function getImages()
+    public function getImagesUrls()
     {
         if ($this->getType() === 'photo') {
-            return call_user_func("{$this->imageClass}::getImagesInfo", [$this->getUrl()], $this->imageConfig);
+            return [$this->getUrl()];
         }
 
         return [];
