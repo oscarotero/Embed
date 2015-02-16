@@ -77,7 +77,7 @@ class Soundcloud extends Webpage implements AdapterInterface
             array_unshift($images, str_replace('-large.jpg', '-t500x500.jpg', $img));
         }
 
-        return array_unique($images);
+        return array_unique($images, SORT_REGULAR);
     }
 
     /**
