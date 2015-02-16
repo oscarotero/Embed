@@ -1,6 +1,4 @@
 <?php
-include_once dirname(__DIR__).'/src/autoloader.php';
-
 class FileTest extends PHPUnit_Framework_TestCase
 {
     public function testJpg()

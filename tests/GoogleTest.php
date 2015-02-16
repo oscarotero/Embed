@@ -1,6 +1,4 @@
 <?php
-include_once dirname(__DIR__).'/src/autoloader.php';
-
 class GoogleTest extends PHPUnit_Framework_TestCase
 {
     public function testMap()

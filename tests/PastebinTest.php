@@ -1,6 +1,4 @@
 <?php
-include_once dirname(__DIR__).'/src/autoloader.php';
-
 class PastebinTest extends PHPUnit_Framework_TestCase
 {
     public function testOne()

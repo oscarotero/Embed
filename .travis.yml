@@ -11,4 +11,4 @@ before_install:
   - composer self-update
 
 script:
-  - phpunit tests
+  - phpunit
