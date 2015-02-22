@@ -119,14 +119,14 @@ class Url
      *
      * @param boolean $first_level True to return the first level domain (.com, .es, etc)
      *
-     * @return string The domain or null
+     * @return string
      */
     public function getDomain($first_level = false)
     {
         $host = $this->getHost();
 
-        if (!$host) {
-            return;
+        if (empty($host)) {
+            return '';
         }
 
         $host = array_reverse(explode('.', $host));

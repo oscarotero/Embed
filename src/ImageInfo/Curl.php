@@ -36,18 +36,14 @@ class Curl implements ImageInfoInterface
      */
     public static function getImagesInfo(array $images, array $config = null)
     {
-        if (!$images) {
+        if (empty($images)) {
             return [];
         }
 
         if (count($images) === 1) {
             $info = self::getImageInfo($images[0], $config);
 
-            if ($info) {
-                return [array_merge($images[0], $info)];
-            }
-
-            return [];
+            return empty($info) ? [] : [array_merge($images[0], $info)];
         }
 
         $finfo = finfo_open(FILEINFO_MIME_TYPE);

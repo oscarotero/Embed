@@ -247,7 +247,7 @@ class Html extends Provider implements ProviderInterface
                 }
 
                 //Avoid external images or in external links
-                if ($domain) {
+                if ($domain !== null) {
                     if ($src->getDomain() !== $domain) {
                         continue;
                     }
@@ -262,6 +262,9 @@ class Html extends Provider implements ProviderInterface
                                 if ($href->getDomain() && $src->getDomain() !== $domain) {
                                     continue 2;
                                 }
+                            }
+                            if ($parent->hasAttribute('rel') && (string) $parent->getAttribute('rel') === 'nofollow') {
+                                continue 2;
                             }
 
                             break;

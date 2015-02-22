@@ -165,7 +165,7 @@ EOT;
     {
         $id = $this->api->get('id');
 
-        if ($id) {
+        if (!empty($id)) {
             return 'https://www.facebook.com/feeds/page.php?id='.$id.'&format=rss20';
         }
     }

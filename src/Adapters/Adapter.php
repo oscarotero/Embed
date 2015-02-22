@@ -319,19 +319,17 @@ abstract class Adapter
     public function getImage()
     {
         if ($this->config['getBiggerImage']) {
-            if (($src = Utils::getBiggerValue($this->images, true)) !== null) {
-                $image = $this->images[$src];
+            $images = $this->images;
 
-                if (($image['width'] >= $this->config['minImageWidth']) && ($image['height'] >= $this->config['minImageHeight'])) {
-                    return $src;
-                }
+            if ($images) {
+                $images = [$images];
             }
-
-            return;
+        } else {
+            $images = Utils::sortByProviders($this->images);
         }
 
-        foreach (Utils::sortByProviders($this->images) as $images) {
-            if (($key = Utils::getBiggerValue($images, true)) !== null) {
+        foreach ($images as $image) {
+            if (($key = Utils::getBiggerValue($image, true)) !== null) {
                 $image = $this->images[$key];
 
                 if (($image['width'] >= $this->config['minImageWidth']) && ($image['height'] >= $this->config['minImageHeight'])) {
@@ -382,11 +380,8 @@ abstract class Adapter
      */
     public function getAspectRatio()
     {
-        $width = $this->width;
-        $height = $this->height;
-
-        if ($width && (strpos($width, '%') === false) && $height && (strpos($height, '%') === false)) {
-            return round(($height / $width) * 100, 3);
+        if (!empty($this->width) && (strpos($this->width, '%') === false) && !empty($this->height) && (strpos($this->height, '%') === false)) {
+            return round(($this->height / $this->width) * 100, 3);
         }
     }
 

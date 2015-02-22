@@ -215,7 +215,7 @@ class Utils
             }
         }
 
-        if (isset($bigger)) {
+        if ($bigger !== null) {
             return $returnKey ? $bigger : $values[$bigger]['value'];
         }
     }

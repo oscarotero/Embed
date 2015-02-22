@@ -27,11 +27,11 @@ class Request
      */
     public function __construct(Url $url, $resolverClass = null, array $resolverConfig = null)
     {
-        if ($resolverClass) {
+        if ($resolverClass !== null) {
             $this->setResolverClass($resolverClass);
         }
 
-        if ($resolverConfig) {
+        if ($resolverConfig !== null) {
             $this->setResolverConfig($resolverConfig);
         }
 

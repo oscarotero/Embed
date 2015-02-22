@@ -10,6 +10,8 @@ use Embed\Bag;
 
 class Archive extends Webpage implements AdapterInterface
 {
+    public $api;
+
     /**
      * {@inheritdoc}
      */
