@@ -150,7 +150,7 @@ abstract class Adapter
      */
     public function getTitle()
     {
-        return Utils::getFirstData($this->providers, 'title') ?: $this->request->url->getUrl();
+        return Utils::getFirstValue(Utils::getData($this->providers, 'title')) ?: $this->request->url->getUrl();
     }
 
     /**
@@ -158,7 +158,7 @@ abstract class Adapter
      */
     public function getDescription()
     {
-        return Utils::getFirstData($this->providers, 'description');
+        return Utils::getFirstValue(Utils::getData($this->providers, 'description'));
     }
 
     /**
@@ -172,7 +172,7 @@ abstract class Adapter
             return 'video';
         }
 
-        if (($type = Utils::getMostPopular(Utils::getAllData($this->providers, 'type'))) && ($type !== 'link')) {
+        if (($type = Utils::getMostPopularValue(Utils::getData($this->providers, 'type'))) && ($type !== 'link')) {
             return $type;
         }
 
@@ -192,7 +192,7 @@ abstract class Adapter
      */
     public function getSource()
     {
-        return Utils::getFirstUrlData($this->request->url, $this->providers, 'source');
+        return Utils::getFirstValue(Utils::getData($this->providers, 'source', $this->request->url));
     }
 
     /**
@@ -200,7 +200,7 @@ abstract class Adapter
      */
     public function getCode()
     {
-        if ($code = Utils::getFirstData($this->providers, 'code')) {
+        if ($code = Utils::getFirstValue(Utils::getData($this->providers, 'code'))) {
             if (strpos($code, '</iframe>') !== false) {
                 return preg_replace('|^.*(<iframe.*</iframe>).*$|Us', '$1', $code);
             }
@@ -222,7 +222,7 @@ abstract class Adapter
      */
     public function getUrl()
     {
-        return Utils::getFirstUrlData($this->request->url, $this->providers, 'url') ?: $this->request->url->getUrl();
+        return Utils::getFirstValue(Utils::getData($this->providers, 'url', $this->request->url)) ?: $this->request->url->getUrl();
     }
 
     /**
@@ -230,7 +230,7 @@ abstract class Adapter
      */
     public function getAuthorName()
     {
-        return Utils::getFirstData($this->providers, 'authorName');
+        return Utils::getFirstValue(Utils::getData($this->providers, 'authorName'));
     }
 
     /**
@@ -238,7 +238,7 @@ abstract class Adapter
      */
     public function getAuthorUrl()
     {
-        return Utils::getFirstUrlData($this->request->url, $this->providers, 'authorUrl');
+        return Utils::getFirstValue(Utils::getData($this->providers, 'authorUrl', $this->request->url));
     }
 
     /**
@@ -246,12 +246,19 @@ abstract class Adapter
      */
     public function getProviderIconsUrls()
     {
-        $icons = Utils::getAllUrlData($this->request->url, $this->providers, 'providerIconsUrls');
+        $icons = Utils::getData($this->providers, 'providerIconsUrls', $this->request->url);
 
-        $icons[] = $this->request->url->getAbsolute('/favicon.ico');
-        $icons[] = $this->request->url->getAbsolute('/favicon.png');
+        Utils::unshiftValue($icons, [
+            'value' => $this->request->url->getAbsolute('/favicon.ico'),
+            'providers' => ['adapter']
+        ]);
 
-        return array_unique($icons);
+        Utils::unshiftValue($icons, [
+            'value' => $this->request->url->getAbsolute('/favicon.png'),
+            'providers' => ['adapter']
+        ]);
+
+        return $icons;
     }
 
     /**
@@ -268,12 +275,10 @@ abstract class Adapter
     public function getProviderIcon()
     {
         if ($this->config['getBiggerIcon']) {
-            return Utils::getBiggerImage($this->providerIcons);
+            return Utils::getBiggerValue($this->providerIcons);
         }
-
-        if (($icons = $this->providerIcons) && reset($icons)) {
-            return key($icons);
-        }
+        
+        return Utils::getFirstValue($this->providerIcons);
     }
 
     /**
@@ -281,7 +286,7 @@ abstract class Adapter
      */
     public function getProviderName()
     {
-        return Utils::getFirstData($this->providers, 'providerName') ?: $this->request->url->getDomain();
+        return Utils::getFirstValue(Utils::getData($this->providers, 'providerName')) ?: $this->request->url->getDomain();
     }
 
     /**
@@ -289,7 +294,7 @@ abstract class Adapter
      */
     public function getProviderUrl()
     {
-        return Utils::getFirstUrlData($this->request->url, $this->providers, 'providerUrl') ?: ($this->request->url->getScheme().'://'.$this->request->url->getDomain(true));
+        return Utils::getFirstValue(Utils::getData($this->providers, 'providerUrl', $this->request->url)) ?: ($this->request->url->getScheme().'://'.$this->request->url->getDomain(true));
     }
 
     /**
@@ -297,7 +302,7 @@ abstract class Adapter
      */
     public function getImagesUrls()
     {
-        return Utils::getAllUrlData($this->request->url, $this->providers, 'imagesUrls');
+        return Utils::getData($this->providers, 'imagesUrls', $this->request->url);
     }
 
     /**
@@ -314,10 +319,10 @@ abstract class Adapter
     public function getImage()
     {
         if ($this->config['getBiggerImage']) {
-            if (($src = Utils::getBiggerImage($this->images))) {
+            if (($src = Utils::getBiggerValue($this->images, true)) !== null) {
                 $image = $this->images[$src];
 
-                if (($image[0] >= $this->config['minImageWidth']) && ($image[1] >= $this->config['minImageHeight'])) {
+                if (($image['width'] >= $this->config['minImageWidth']) && ($image['height'] >= $this->config['minImageHeight'])) {
                     return $src;
                 }
             }
@@ -325,9 +330,13 @@ abstract class Adapter
             return;
         }
 
-        foreach ($this->images as $src => $image) {
-            if (($image[0] >= $this->config['minImageWidth']) && ($image[1] >= $this->config['minImageHeight'])) {
-                return $src;
+        foreach (Utils::sortByProviders($this->images) as $images) {
+            if (($key = Utils::getBiggerValue($images, true)) !== null) {
+                $image = $this->images[$key];
+
+                if (($image['width'] >= $this->config['minImageWidth']) && ($image['height'] >= $this->config['minImageHeight'])) {
+                    return $image['value'];
+                }
             }
         }
     }
@@ -337,8 +346,8 @@ abstract class Adapter
      */
     public function getImageWidth()
     {
-        if ($this->image) {
-            return $this->images[$this->image][0];
+        if (($image = Utils::searchValue($this->images, $this->image)) !== false) {
+            return $image['width'];
         }
     }
 
@@ -347,8 +356,8 @@ abstract class Adapter
      */
     public function getImageHeight()
     {
-        if ($this->image) {
-            return $this->images[$this->image][1];
+        if (($image = Utils::searchValue($this->images, $this->image)) !== false) {
+            return $image['height'];
         }
     }
 
@@ -357,7 +366,7 @@ abstract class Adapter
      */
     public function getWidth()
     {
-        return Utils::getFirstData($this->providers, 'width');
+        return Utils::getFirstValue(Utils::getData($this->providers, 'width'));
     }
 
     /**
@@ -365,7 +374,7 @@ abstract class Adapter
      */
     public function getHeight()
     {
-        return Utils::getFirstData($this->providers, 'height');
+        return Utils::getFirstValue(Utils::getData($this->providers, 'height'));
     }
 
     /**
@@ -386,6 +395,6 @@ abstract class Adapter
      */
     public function getPublishedTime()
     {
-        return Utils::getFirstData($this->providers, 'publishedTime');
+        return Utils::getFirstValue(Utils::getData($this->providers, 'publishedTime'));
     }
 }

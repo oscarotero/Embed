@@ -51,139 +51,173 @@ class Utils
     }
 
     /**
-     * Returns the bigger image
-     *
-     * @param array $images
-     *
-     * @return null|string
-     */
-    public static function getBiggerImage(array $images)
-    {
-        $biggerArea = 0;
-        $biggerSrc = null;
-
-        foreach ($images as $src => $image) {
-            $area = $image[0] * $image[1];
-
-            if ($area > $biggerArea) {
-                $biggerArea = $area;
-                $biggerSrc = $src;
-            }
-        }
-
-        return $biggerSrc;
-    }
-
-    /**
-     * Search and returns the first value retrieved by the providers
-     *
-     * @param null|array $providers The providers used to retrieve the data
-     * @param string     $name      The data name (title, description, image, etc)
-     *
-     * @return mixed
-     */
-    public static function getFirstData(array $providers, $name)
-    {
-        $method = 'get'.$name;
-
-        foreach ($providers as $provider) {
-            if (($value = $provider->$method())) {
-                return $value;
-            }
-        }
-    }
-
-    /**
      * Search and returns all data retrieved by the providers
      *
      * @param null|array $providers The providers used to retrieve the data
      * @param string     $name      The data name (title, description, image, etc)
+     * @param Url        $url       The base url used to resolve relative urls
      *
      * @return array
      */
-    public static function getAllData(array $providers, $name)
+    public static function getData(array $providers, $name, Url $url = null)
     {
         $method = 'get'.$name;
         $values = [];
 
-        foreach ($providers as $provider) {
+        foreach ($providers as $key => $provider) {
             $value = $provider->$method();
 
-            if (!empty($value)) {
-                if (is_array($value)) {
-                    $values = array_merge($values, $value);
+            if (empty($value)) {
+                continue;
+            }
+
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+
+            foreach ($value as $v) {
+                if ($url) {
+                    $v = $url->getAbsolute($v);
+                }
+
+                if (!isset($values[$v])) {
+                    $values[$v] = [
+                        'value' => $v,
+                        'providers' => [$key]
+                    ];
                 } else {
-                    $values[] = $value;
+                    $values[$v]['providers'][] = $key;
                 }
             }
         }
 
-        return array_unique($values);
+        return array_values($values);
     }
 
     /**
-     * Search and returns the first url value retrieved by the providers
+     * Order the data by provider
      *
-     * @param Url        $url       The base url used to resolve relative urls
-     * @param null|array $providers The providers used to retrieve the data
-     * @param string     $name      The data name (title, description, image, etc)
-     *
-     * @return string|null
-     */
-    public static function getFirstUrlData(Url $url, array $providers, $name)
-    {
-        $result = static::getFirstData($providers, $name);
-
-        if ($result) {
-            return $url->getAbsolute($result);
-        }
-    }
-
-    /**
-     * Search and returns all data retrieved by the providers
-     *
-     * @param Url        $url       The base url used to resolve relative urls
-     * @param null|array $providers The providers used to retrieve the data
-     * @param string     $name      The data name (title, description, image, etc)
+     * @param array $values The array provided by self::getData()
      *
      * @return array
      */
-    public static function getAllUrlData(Url $url, array $providers, $name)
+    public static function sortByProviders(array $values)
     {
-        $result = static::getAllData($providers, $name);
+        $sorted = [];
 
-        foreach ($result as &$each) {
-            $each = $url->getAbsolute($each);
+        foreach ($values as $value) {
+            foreach ($value['providers'] as $provider) {
+                if (!isset($sorted[$provider])) {
+                    $sorted[$provider] = [];
+                }
+
+                $sorted[$provider][] = $value;
+            }
         }
 
-        return array_unique($result);
+        return $sorted;
     }
 
     /**
-     * Returns the most repeated value in an array
+     * Unshifts a new value if it does not exists
      *
-     * @param array $values
-     *
-     * @return mixed
+     * @param array   $values The array provided by self::getData()
+     * @param array  $value  The value to insert
      */
-    public static function getMostPopular(array $values)
+    public static function unshiftValue(array &$values, $value)
     {
-        $popularity = [];
-        $current = null;
+        $key = Utils::searchValue($values, $value['value']);
 
-        foreach ($values as $value) {
-            if (isset($popularity[$value])) {
-                ++$popularity[$value];
-            } else {
-                $popularity[$value] = 1;
-            }
+        if ($key === false) {
+            return array_unshift($values, $value);
+        }
 
-            if ($current === null || $popularity[$current] > $popularity[$value]) {
-                $current = $value;
+        $value = array_merge($values[$key], $value);
+
+        array_splice($values, $key, 1);
+
+        return array_unshift($values, $value);
+    }
+
+    /**
+     * Search by a value and returns its key
+     *
+     * @param array   $values The array provided by self::getData()
+     * @param string  $value  The value to search
+     * @param boolean $returnKey  Whether or not return the key instead the value
+     *
+     * @return array|false
+     */
+    public static function searchValue(array $values, $value, $returnKey = false)
+    {
+        foreach ($values as $k => $each) {
+            if ($each['value'] === $value) {
+                return $returnKey ? $k : $each;
             }
         }
 
-        return $current;
+        return false;
+    }
+
+    /**
+     * Returns the first value if exists
+     *
+     * @param array   $values    The array provided by self::getData()
+     * @param boolean $returnKey Whether or not return the key instead the value
+     *
+     * @return string|null
+     */
+    public static function getFirstValue(array $values, $returnKey = false)
+    {
+        if (isset($values[0])) {
+            return $returnKey ? 0 : $values[0]['value'];
+        }
+    }
+
+    /**
+     * Returns the most popular value in an array
+     *
+     * @param array $values The array provided by self::getData()
+     * @param boolean $returnKey Whether or not return the key instead the value
+     *
+     * @return mixed
+     */
+    public static function getMostPopularValue(array $values, $returnKey = false)
+    {
+        $mostPopular = null;
+
+        foreach ($values as $k => $value) {
+            if ($mostPopular === null || count($value['providers']) > count($values[$mostPopular]['providers'])) {
+                $mostPopular = $k;
+            }
+        }
+
+        if (isset($mostPopular)) {
+            return $returnKey ? $mostPopular : $values[$mostPopular]['value'];
+        }
+    }
+
+    /**
+     * Returns the bigger value
+     *
+     * @param array $values The array provided by self::getData()
+     * @param boolean $returnKey Whether or not return the key instead the value
+     *
+     * @return null|string
+     */
+    public static function getBiggerValue(array $values, $returnKey = false)
+    {
+        $bigger = null;
+
+        foreach ($values as $k => $value) {
+            if ($bigger === null || $value['size'] > $values[$bigger]['size']) {
+                $bigger = $k;
+            }
+        }
+
+        if (isset($bigger)) {
+            return $returnKey ? $bigger : $values[$bigger]['value'];
+        }
     }
 
     /**

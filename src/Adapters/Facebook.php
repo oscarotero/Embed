@@ -177,16 +177,18 @@ EOT;
     {
         $images = parent::getImagesUrls();
 
-        $cover = $this->api->get('cover');
-
-        if ($cover && !empty($cover['source'])) {
-            array_unshift($images, $cover['source']);
+        if (($cover = $this->api->get('cover')) && !empty($cover['source'])) {
+            Utils::unshiftValue($images, [
+                'value' => $cover['source'],
+                'providers' => ['api']
+            ]);
         }
 
-        $id = $this->api->get('id');
-
-        if ($id) {
-            array_unshift($images, 'https://graph.facebook.com/'.$id.'/picture');
+        if (($id = $this->api->get('id'))) {
+            Utils::unshiftValue($images, [
+                'value' => 'https://graph.facebook.com/'.$id.'/picture',
+                'providers' => ['api']
+            ]);
         }
 
         return $images;

@@ -6,6 +6,7 @@ namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Bag;
+use Embed\Utils;
 
 class Soundcloud extends Webpage implements AdapterInterface
 {
@@ -61,6 +62,14 @@ class Soundcloud extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
+    public function getType()
+    {
+        return $this->code ? 'rich' : 'link';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getUrl()
     {
         return $this->api->get('permalink_url') ?: parent::getUrl();
@@ -74,10 +83,13 @@ class Soundcloud extends Webpage implements AdapterInterface
         $images = parent::getImagesUrls();
 
         if (!$this->api->get('artwork_url') && ($img = $this->api->get('user', 'avatar_url'))) {
-            array_unshift($images, str_replace('-large.jpg', '-t500x500.jpg', $img));
+            Utils::unshiftValue($images, [
+                'value' => str_replace('-large.jpg', '-t500x500.jpg', $img),
+                'providers' => ['api']
+            ]);
         }
 
-        return array_unique($images);
+        return $images;
     }
 
     /**

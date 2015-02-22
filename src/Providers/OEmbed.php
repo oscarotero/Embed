@@ -23,13 +23,11 @@ class OEmbed extends Provider implements ProviderInterface
     {
         $endPoint = null;
         $params = $this->config['parameters'];
-        $params['url'] = $this->request->url->getUrl();
 
-        if (($html = $this->request->getHtmlContent())) {
-            $endPoint = self::getEndPointFromDom($html);
+        if (($html = $this->request->getHtmlContent()) && ($endPoint = self::getEndPointFromDom($html))) {
+            $params['url'] = $this->request->url->getUrl();
         }
-
-        if (!$endPoint && ($info = self::getEndPointFromRequest($this->request, $this->config))) {
+        elseif (($info = self::getEndPointFromRequest($this->request, $this->config))) {
             $endPoint = $info['endPoint'];
             $params += $info['params'];
         }
@@ -233,7 +231,7 @@ class OEmbed extends Provider implements ProviderInterface
         if (class_exists($class) && $request->match($class::getPatterns())) {
             return [
                 'endPoint' => $class::getEndpoint(),
-                'params' => $class::getParams(),
+                'params' => $class::getParams($request->url),
             ];
         }
 
@@ -241,7 +239,7 @@ class OEmbed extends Provider implements ProviderInterface
         if (!empty($config['embedlyKey']) && $request->match(OEmbed\Embedly::getPatterns())) {
             return [
                 'endPoint' => OEmbed\Embedly::getEndpoint(),
-                'params' => OEmbed\Embedly::getParams() + ['key' => $config['embedlyKey']],
+                'params' => OEmbed\Embedly::getParams($request->url) + ['key' => $config['embedlyKey']],
             ];
         }
     }

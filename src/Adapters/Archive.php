@@ -10,15 +10,13 @@ use Embed\Bag;
 
 class Archive extends Webpage implements AdapterInterface
 {
-    public $api;
-
     /**
      * {@inheritdoc}
      */
     public static function check(Request $request)
     {
         return $request->match([
-            'http://archive.org/details/*',
+            'https?://archive.org/details/*',
         ]);
     }
 
@@ -91,22 +89,23 @@ class Archive extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        switch ($this->getMetadata('mediatype')) {
-            case 'movies':
-                $embed_url = str_replace('/details/', '/embed/', $this->getUrl());
+        return Utils::iframe(str_replace('/details/', '/embed/', $this->getUrl()), $this->getWidth(), $this->getHeight());
+    }
 
-                return Utils::iframe($embed_url);
+    /**
+     * {@inheritdoc}
+     */
+    public function getWidth()
+    {
+        return 640;
+    }
 
-            case 'audio':
-                $embed_url = str_replace('/details/', '/embed/', $this->getUrl());
-
-                return Utils::iframe($embed_url, 0, 30);
-
-            case 'texts':
-                $embed_url = str_replace('/details/', '/stream/', $this->getUrl()).'?ui=embed';
-
-                return Utils::iframe($embed_url, 480, 430);
-        }
+    /**
+     * {@inheritdoc}
+     */
+    public function getHeight()
+    {
+        return 480;
     }
 
     /**
@@ -122,17 +121,21 @@ class Archive extends Webpage implements AdapterInterface
      */
     public function getImagesUrls()
     {
-        $images = [];
+        $images = parent::getImagesUrls();
 
-        if (($image = $this->api->get('misc', 'image'))) {
-            $images[] = $image;
+        if (($url = $this->api->get('misc', 'image'))) {
+            Utils::unshiftValue($images, [
+                'value' => $this->request->url->getAbsolute($url),
+                'providers' => ['api']
+            ]);
         }
 
         if (is_array($files = $this->api->get('files'))) {
             foreach ($files as $url => $info) {
-                if ($info['format'] === 'Thumbnail') {
-                    $images[] = $url;
-                }
+                Utils::unshiftValue($images, [
+                    'value' => $this->request->url->getAbsolute($url),
+                    'providers' => ['api']
+                ]);
             }
         }
 

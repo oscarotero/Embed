@@ -82,7 +82,12 @@ class File extends Adapter implements AdapterInterface
     public function getImagesUrls()
     {
         if ($this->getType() === 'photo') {
-            return [$this->getUrl()];
+            return [
+                [
+                    'value' => $this->getUrl(),
+                    'providers' => ['adapter']
+                ]
+            ];
         }
 
         return [];

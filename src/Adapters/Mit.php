@@ -27,7 +27,7 @@ class Mit extends Webpage implements AdapterInterface
         $url = $this->getUrl();
         $url = preg_replace('|(/watch/[\w-]+)-([\d]+)|', '/embed/$2', $url);
 
-        return Utils::iframe($url, $this->getWidth(), $this->getHeight());
+        return Utils::iframe($url, $this->width, $this->height);
     }
 
     /**

@@ -1,6 +1,8 @@
 <?php
 namespace Embed\Providers\Oembed;
 
+use Embed\Url;
+
 /**
  * Abstract class extended by all oembed classes
  *
@@ -33,8 +35,8 @@ abstract class OEmbedImplementation
      * @author Oliver Lillie
      * @return array
      */
-    public static function getParams()
+    public static function getParams(Url $url)
     {
-        return [];
+        return ['url' => $url->getUrl()];
     }
 }

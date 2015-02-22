@@ -34,76 +34,80 @@ class Curl implements ImageInfoInterface
     /**
      * {@inheritdoc}
      */
-    public static function getImagesInfo(array $urls, array $config = null)
+    public static function getImagesInfo(array $images, array $config = null)
     {
-        if (!$urls) {
+        if (!$images) {
             return [];
         }
 
-        if (count($urls) === 1) {
-            $info = self::getImageInfo($urls[0], $config);
+        if (count($images) === 1) {
+            $info = self::getImageInfo($images[0], $config);
 
-            return $info ? [$urls[0] => $info] : [];
+            if ($info) {
+                return [array_merge($images[0], $info)];
+            }
+
+            return [];
         }
 
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $images = [];
-        $connections = curl_multi_init();
+        $connections = [];
+        $curl = curl_multi_init();
 
-        foreach ($urls as $url) {
-            $images[$url] = new static($url, $finfo, $config);
+        foreach ($images as $k => $image) {
+            $connections[$k] = new static($image['value'], $finfo, $config);
 
-            curl_multi_add_handle($connections, $images[$url]->getConnection());
+            curl_multi_add_handle($curl, $connections[$k]->getConnection());
         }
 
         do {
-            $return = curl_multi_exec($connections, $active);
+            $return = curl_multi_exec($curl, $active);
         } while ($return === CURLM_CALL_MULTI_PERFORM);
 
         while ($active && $return === CURLM_OK) {
-            if (curl_multi_select($connections) === -1) {
+            if (curl_multi_select($curl) === -1) {
                 usleep(100);
             }
 
             do {
-                $return = curl_multi_exec($connections, $active);
+                $return = curl_multi_exec($curl, $active);
             } while ($return === CURLM_CALL_MULTI_PERFORM);
         }
 
-        $info = [];
+        $result = [];
 
-        foreach ($images as $url => $image) {
-            curl_multi_remove_handle($connections, $image->getConnection());
+        foreach ($connections as $k => $connection) {
+            curl_multi_remove_handle($curl, $connection->getConnection());
 
-            if (($i = $image->getInfo())) {
-                $info[$url] = $i;
+            if (($info = $connection->getInfo())) {
+                $result[] = array_merge($images[$k], $info);
             }
         }
 
         finfo_close($finfo);
-        curl_multi_close($connections);
+        curl_multi_close($curl);
 
-        return $info;
+        return $result;
     }
 
     /**
      * Get the info of only one image
      *
-     * @param string     $url
+     * @param string     $image
      * @param null|array $config
      *
      * @return array|null
      */
-    public static function getImageInfo($url, array $config = null)
+    public static function getImageInfo($image, array $config = null)
     {
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $image = new static($url, $finfo, $config);
+        $img = new static($image['value'], $finfo, $config);
 
-        $curl = $image->getConnection();
+        $curl = $img->getConnection();
         curl_exec($curl);
         curl_close($curl);
 
-        $info = $image->getInfo();
+        $info = $img->getInfo();
 
         finfo_close($finfo);
 
@@ -180,7 +184,12 @@ class Curl implements ImageInfoInterface
             return strlen($string);
         }
 
-        $this->info = array($info[0], $info[1], $this->mime);
+        $this->info = [
+            'width' => $info[0],
+            'height' => $info[1],
+            'size' => $info[0] * $info[1],
+            'mime' => $this->mime
+        ];
 
         return -1;
     }

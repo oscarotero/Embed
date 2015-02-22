@@ -83,21 +83,28 @@ $providerData = [
     'publishedTime' => 'printText',
 ];
 
-$adapterData = $providerData;
-
-function array_insert(&$array, $position, $insert_array)
-{
-    $first_array = array_splice($array, 0, $position);
-    $array = array_merge($first_array, $insert_array, $array);
-}
-
-array_insert($adapterData, 4, ['images' => 'printArray']);
-array_insert($adapterData, 4, ['image' => 'printImage']);
-array_insert($adapterData, 5, ['imageWidth' => 'printText']);
-array_insert($adapterData, 6, ['imageHeight' => 'printText']);
-array_insert($adapterData, 12, ['aspectRatio' => 'printText']);
-array_insert($adapterData, 15, ['providerIcons' => 'printArray']);
-array_insert($adapterData, 15, ['providerIcon' => 'printImage']);
+$adapterData = [
+    'title' => 'printText',
+    'description' => 'printText',
+    'url' => 'printUrl',
+    'type' => 'printText',
+    'image' => 'printImage',
+    'imageWidth' => 'printText',
+    'imageHeight' => 'printText',
+    'images' => 'printArray',
+    'code' => 'printCode',
+    'source' => 'printUrl',
+    'width' => 'printText',
+    'height' => 'printText',
+    'aspectRatio' => 'printText',
+    'authorName' => 'printText',
+    'authorUrl' => 'printUrl',
+    'providerIcon' => 'printImage',
+    'providerIcons' => 'printArray',
+    'providerName' => 'printText',
+    'providerUrl' => 'printUrl',
+    'publishedTime' => 'printText',
+];
 ?>
 
 <!DOCTYPE html>

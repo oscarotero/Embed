@@ -107,7 +107,7 @@ class OpenGraph extends Provider implements ProviderInterface
                 case 'video/ogg':
                 case 'video/ogv':
                 case 'video/webm':
-                    $images = $this->getImages();
+                    $images = $this->getImagesUrls();
 
                     return Utils::videoHtml(current($images), $video, $this->getWidth(), $this->getHeight());
             }

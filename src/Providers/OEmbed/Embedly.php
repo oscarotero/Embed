@@ -1,6 +1,8 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
+use Embed\Url;
+
 class Embedly extends OEmbedImplementation
 {
     /**
@@ -655,8 +657,11 @@ class Embedly extends OEmbedImplementation
     /**
      * {@inheritdoc}
      */
-    public static function getParams()
+    public static function getParams(Url $url)
     {
-        return ['format' => 'json'];
+        return [
+            'url' => $url->getUrl(),
+            'format' => 'json'
+        ];
     }
 }

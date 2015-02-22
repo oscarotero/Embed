@@ -1,6 +1,8 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
+use Embed\Url;
+
 class Deviantart extends OEmbedImplementation
 {
     /**
@@ -22,8 +24,11 @@ class Deviantart extends OEmbedImplementation
     /**
      * {@inheritdoc}
      */
-    public static function getParams()
+    public static function getParams(Url $url)
     {
-        return ['for' => 'embed'];
+        return [
+            'url' => $url->getUrl(),
+            'for' => 'embed'
+        ];
     }
 }
