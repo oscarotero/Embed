@@ -250,12 +250,12 @@ abstract class Adapter
 
         Utils::unshiftValue($icons, [
             'value' => $this->request->url->getAbsolute('/favicon.ico'),
-            'providers' => ['adapter']
+            'providers' => ['adapter'],
         ]);
 
         Utils::unshiftValue($icons, [
             'value' => $this->request->url->getAbsolute('/favicon.png'),
-            'providers' => ['adapter']
+            'providers' => ['adapter'],
         ]);
 
         return $icons;
@@ -277,7 +277,7 @@ abstract class Adapter
         if ($this->config['getBiggerIcon']) {
             return Utils::getBiggerValue($this->providerIcons);
         }
-        
+
         return Utils::getFirstValue($this->providerIcons);
     }
 

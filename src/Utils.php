@@ -83,7 +83,7 @@ class Utils
                 if (!isset($values[$v])) {
                     $values[$v] = [
                         'value' => $v,
-                        'providers' => [$key]
+                        'providers' => [$key],
                     ];
                 } else {
                     $values[$v]['providers'][] = $key;
@@ -121,8 +121,8 @@ class Utils
     /**
      * Unshifts a new value if it does not exists
      *
-     * @param array   $values The array provided by self::getData()
-     * @param array  $value  The value to insert
+     * @param array $values The array provided by self::getData()
+     * @param array $value  The value to insert
      */
     public static function unshiftValue(array &$values, $value)
     {
@@ -142,9 +142,9 @@ class Utils
     /**
      * Search by a value and returns its key
      *
-     * @param array   $values The array provided by self::getData()
-     * @param string  $value  The value to search
-     * @param boolean $returnKey  Whether or not return the key instead the value
+     * @param array   $values    The array provided by self::getData()
+     * @param string  $value     The value to search
+     * @param boolean $returnKey Whether or not return the key instead the value
      *
      * @return array|false
      */
@@ -177,7 +177,7 @@ class Utils
     /**
      * Returns the most popular value in an array
      *
-     * @param array $values The array provided by self::getData()
+     * @param array   $values    The array provided by self::getData()
      * @param boolean $returnKey Whether or not return the key instead the value
      *
      * @return mixed
@@ -200,7 +200,7 @@ class Utils
     /**
      * Returns the bigger value
      *
-     * @param array $values The array provided by self::getData()
+     * @param array   $values    The array provided by self::getData()
      * @param boolean $returnKey Whether or not return the key instead the value
      *
      * @return null|string

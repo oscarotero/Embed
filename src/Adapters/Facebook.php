@@ -180,14 +180,14 @@ EOT;
         if (($cover = $this->api->get('cover')) && !empty($cover['source'])) {
             Utils::unshiftValue($images, [
                 'value' => $cover['source'],
-                'providers' => ['api']
+                'providers' => ['api'],
             ]);
         }
 
         if (($id = $this->api->get('id'))) {
             Utils::unshiftValue($images, [
                 'value' => 'https://graph.facebook.com/'.$id.'/picture',
-                'providers' => ['api']
+                'providers' => ['api'],
             ]);
         }
 

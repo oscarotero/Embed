@@ -128,7 +128,7 @@ class Archive extends Webpage implements AdapterInterface
         if (($url = $this->api->get('misc', 'image'))) {
             Utils::unshiftValue($images, [
                 'value' => $this->request->url->getAbsolute($url),
-                'providers' => ['api']
+                'providers' => ['api'],
             ]);
         }
 
@@ -136,7 +136,7 @@ class Archive extends Webpage implements AdapterInterface
             foreach ($files as $url => $info) {
                 Utils::unshiftValue($images, [
                     'value' => $this->request->url->getAbsolute($url),
-                    'providers' => ['api']
+                    'providers' => ['api'],
                 ]);
             }
         }

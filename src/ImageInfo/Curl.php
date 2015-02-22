@@ -184,7 +184,7 @@ class Curl implements ImageInfoInterface
             'width' => $info[0],
             'height' => $info[1],
             'size' => $info[0] * $info[1],
-            'mime' => $this->mime
+            'mime' => $this->mime,
         ];
 
         return -1;

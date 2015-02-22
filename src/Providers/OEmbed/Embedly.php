@@ -661,7 +661,7 @@ class Embedly extends OEmbedImplementation
     {
         return [
             'url' => $url->getUrl(),
-            'format' => 'json'
+            'format' => 'json',
         ];
     }
 }

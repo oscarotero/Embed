@@ -85,8 +85,8 @@ class File extends Adapter implements AdapterInterface
             return [
                 [
                     'value' => $this->getUrl(),
-                    'providers' => ['adapter']
-                ]
+                    'providers' => ['adapter'],
+                ],
             ];
         }
 
