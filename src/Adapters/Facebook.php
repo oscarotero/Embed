@@ -7,6 +7,7 @@ namespace Embed\Adapters;
 use Embed\Bag;
 use Embed\Request;
 use Embed\Url;
+use Embed\Utils;
 
 class Facebook extends Webpage implements AdapterInterface
 {
