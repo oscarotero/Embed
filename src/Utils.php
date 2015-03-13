@@ -126,7 +126,7 @@ class Utils
      */
     public static function unshiftValue(array &$values, $value)
     {
-        $key = Utils::searchValue($values, $value['value']);
+        $key = Utils::searchValue($values, $value['value'], true);
 
         if ($key === false) {
             return array_unshift($values, $value);

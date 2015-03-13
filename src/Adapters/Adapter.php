@@ -321,8 +321,8 @@ abstract class Adapter
         if ($this->config['getBiggerImage']) {
             $images = $this->images;
 
-            if ($images) {
-                $images = [$images];
+            if (empty($images)) {
+                return null;
             }
         } else {
             $images = Utils::sortByProviders($this->images);

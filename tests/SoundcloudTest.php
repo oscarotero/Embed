@@ -38,6 +38,18 @@ class SoundcloudTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($info->providerUrl, 'https://soundcloud.com');
     }
 
+    public function testFour()
+    {
+        $info = Embed\Embed::create('https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup');
+
+        $this->assertEquals($info->title, "LOWE CT Cape Times - World Cup");
+        $this->assertEquals($info->description, "If you did it. Show it on ididthat.net");
+        $this->assertEquals($info->type, 'rich');
+        $this->assertEquals($info->code, '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&show_artwork=true"></iframe>');
+        $this->assertEquals($info->providerName, 'SoundCloud');
+        $this->assertEquals($info->providerUrl, 'https://soundcloud.com');
+    }
+
     public function testMobile()
     {
         $info = Embed\Embed::create('https://m.soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy');
