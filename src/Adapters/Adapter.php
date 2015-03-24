@@ -302,7 +302,15 @@ abstract class Adapter
      */
     public function getImagesUrls()
     {
-        return Utils::getData($this->providers, 'imagesUrls', $this->request->url);
+        $imagesUrls = Utils::getData($this->providers, 'imagesUrls', $this->request->url);
+
+        $imagesUrls = array_filter($imagesUrls, function($imageUrl) {
+            // Clean empty urls
+            return !empty($imageUrl['value']);
+        });
+
+        // Use array_values to reset keys after filter
+        return array_values($imagesUrls);
     }
 
     /**
