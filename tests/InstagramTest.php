@@ -10,7 +10,7 @@ class InstagramTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($info->imageHeight, 640);
         $this->assertEquals($info->type, 'rich');
         $this->assertEquals($info->authorName, 'agarzoniu');
-        $this->assertEquals($info->authorUrl, 'http://instagram.com/agarzoniu');
+        $this->assertEquals($info->authorUrl, 'https://instagram.com/agarzoniu');
         $this->assertEquals($info->providerName, 'Instagram');
     }
 }
