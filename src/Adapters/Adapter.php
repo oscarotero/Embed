@@ -1,6 +1,7 @@
 <?php
 namespace Embed\Adapters;
 
+use Embed\Url;
 use Embed\Utils;
 use Embed\Request;
 use Embed\Providers\ProviderInterface;
@@ -43,6 +44,7 @@ abstract class Adapter
     protected $config = [
         'minImageWidth' => 16,
         'minImageHeight' => 16,
+        'imagesBlacklist' => null,
         'getBiggerImage' => false,
         'getBiggerIcon' => false,
         'facebookKey' => null,
@@ -302,7 +304,29 @@ abstract class Adapter
      */
     public function getImagesUrls()
     {
-        return Utils::getData($this->providers, 'imagesUrls', $this->request->url);
+        $imagesUrls = Utils::getData($this->providers, 'imagesUrls', $this->request->url);
+
+        $blacklist = $this->config['imagesBlacklist'];
+        $hasBlacklist = is_array($blacklist) && count($blacklist) > 0;
+
+        $imagesUrls = array_filter($imagesUrls, function($imageUrl) use ($blacklist, $hasBlacklist) {
+            // Clean empty urls
+            if (empty($imageUrl['value'])) {
+                return false;
+            }
+
+            // Remove image url if on blacklist
+            if ($hasBlacklist) {
+                $url = new Url($imageUrl['value']);
+
+                return !$url->match($blacklist) && !in_array($imageUrl['value'], $blacklist, true);
+            }
+
+            return true;
+        });
+
+        // Use array_values to reset keys after filter
+        return array_values($imagesUrls);
     }
 
     /**
