@@ -74,6 +74,7 @@ The available options for the adapters are:
 
 * minImageWidth (int): Minimal image width used to choose the main image
 * minImageHeight (int): Minimal image height used to choose the main image
+* imagesBlacklist (array): Images that you don't want to be used. Could be plain text or [Url](https://github.com/oscarotero/Embed/blob/master/src/Url.php) match pattern.
 * getBiggerImage (bool): Choose the bigger image as the main image (instead the first found, that usually is the most relevant).
 * getBiggerIcon (bool): The same than getBiggerImage but used to choose the main icon
 * facebookKey (string): Used only in Facebook adapter, to get info from facebook pages when these pages are not public and a access token is required
@@ -87,6 +88,7 @@ $config = [
 		'config' => [
 			'minImageWidth' => 16,
             'minImageHeight' => 16,
+            'imagesBlacklist' => null,
             'getBiggerImage' => false,
             'getBiggerIcon' => false,
             'facebookKey' => null,
@@ -191,6 +193,11 @@ $config = [
 		'config' => [
 			'minImageWidth' => 16,
             'minImageHeight' => 16,
+            'imagesBlacklist' => [
+                'http://example.com/full/path/to/image.jpg',
+                'http?://test.*/*.png/',
+                '*/bad_image.gif'
+            ]
 		]
 	],
     'providers' => [
