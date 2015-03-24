@@ -309,7 +309,7 @@ abstract class Adapter
         $blacklist = $this->config['imagesBlacklist'];
         $hasBlacklist = is_array($blacklist) && count($blacklist) > 0;
 
-        $imagesUrls = array_filter($imagesUrls, function($imageUrl) use ($blacklist, $hasBlacklist) {
+        $imagesUrls = array_filter($imagesUrls, function ($imageUrl) use ($blacklist, $hasBlacklist) {
             // Clean empty urls
             if (empty($imageUrl['value'])) {
                 return false;
@@ -346,7 +346,7 @@ abstract class Adapter
             $images = $this->images;
 
             if (empty($images)) {
-                return null;
+                return;
             }
         } else {
             $images = Utils::sortByProviders($this->images);

@@ -9,12 +9,12 @@ class ImagesBlacklistTest extends PHPUnit_Framework_TestCase
                     'imagesBlacklist' => [
                         'http://www.lopinion.fr/sites/nb.com/files/2015/01/logo-o-default_0.png?p',
                     ],
-                ]
+                ],
             ],
             'providers'     => [
                 'html'          => [
-                    'maxImages' => 0
-                ]
+                    'maxImages' => 0,
+                ],
             ]
         ]);
 
@@ -29,12 +29,12 @@ class ImagesBlacklistTest extends PHPUnit_Framework_TestCase
                     'imagesBlacklist' => [
                         '*/logo-o-default_0.png*',
                     ],
-                ]
+                ],
             ],
             'providers'     => [
                 'html'          => [
-                    'maxImages' => 0
-                ]
+                    'maxImages' => 0,
+                ],
             ]
         ]);
 
@@ -49,12 +49,12 @@ class ImagesBlacklistTest extends PHPUnit_Framework_TestCase
                     'imagesBlacklist' => [
                         '*/logo-o-default_0.png*',
                     ],
-                ]
+                ],
             ],
             'providers'     => [
                 'html'          => [
-                    'maxImages' => 0
-                ]
+                    'maxImages' => 0,
+                ],
             ]
         ]);
 
