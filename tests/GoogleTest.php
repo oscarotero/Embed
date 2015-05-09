@@ -7,6 +7,6 @@ class GoogleTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($info->title, 'Google Maps');
         $this->assertEquals($info->type, 'rich');
-        $this->assertEquals($info->providerName, 'google');
+        $this->assertEquals($info->providerName, 'Google Maps');
     }
 }

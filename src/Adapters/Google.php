@@ -17,7 +17,7 @@ class Google extends Webpage implements AdapterInterface
     {
         return $request->match([
             'https://maps.google.*',
-            'https://www.google.com/maps*',
+            'https://www.google.*/maps*',
         ]);
     }
 
