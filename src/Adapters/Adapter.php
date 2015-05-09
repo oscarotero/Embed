@@ -152,7 +152,7 @@ abstract class Adapter
      */
     public function getTitle()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'title')) ?: $this->request->url->getUrl();
+        return html_entity_decode(Utils::getFirstValue(Utils::getData($this->providers, 'title')) ?: $this->request->url->getUrl());
     }
 
     /**
@@ -160,7 +160,7 @@ abstract class Adapter
      */
     public function getDescription()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'description'));
+        return html_entity_decode(Utils::getFirstValue(Utils::getData($this->providers, 'description')));
     }
 
     /**
