@@ -309,7 +309,7 @@ class Html extends Provider implements ProviderInterface
             }
         }
 
-        // Returns <body>
-        return $html->getElementsByTagName('body')->item(0);
+        // Returns <body> or <html>
+        return $html->getElementsByTagName('body')->item(0) ?: $html->getElementsByTagName('html')->item(0);
     }
 }
