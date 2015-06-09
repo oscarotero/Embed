@@ -5,7 +5,7 @@ class ImgurTest extends PHPUnit_Framework_TestCase
     {
         $info = Embed\Embed::create('http://i.imgur.com/X6rkCc5.jpg');
 
-        $this->assertEquals($info->title, 'Picture of a Mountain Gorilla right before he punched the photographer');
+        $this->assertEquals($info->title, 'http://i.imgur.com/X6rkCc5.jpg');
         $this->assertEquals($info->imageWidth, 2000);
         $this->assertEquals($info->imageHeight, 1332);
         $this->assertEquals($info->type, 'photo');
