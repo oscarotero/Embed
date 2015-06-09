@@ -64,6 +64,10 @@ class File extends Adapter implements AdapterInterface
      */
     public function getCode()
     {
+        if (($code = parent::getcode())) {
+            return $code;
+        }
+
         switch (self::$contentTypes[$this->request->getMimeType()][1]) {
             case 'videoHtml':
                 return Utils::videoHtml($this->getImage(), $this->getUrl(), $this->getWidth(), $this->getHeight());
