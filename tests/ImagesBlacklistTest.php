@@ -13,7 +13,7 @@ class ImagesBlacklistTest extends PHPUnit_Framework_TestCase
             ]
         ]);
 
-        $this->assertEquals('https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif', $info->image);
+        $this->assertEquals('https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif', $info->image);
     }
 
     public function testPlainUrlMatch()
@@ -28,7 +28,7 @@ class ImagesBlacklistTest extends PHPUnit_Framework_TestCase
             ]
         ]);
 
-        $this->assertEquals('https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif', $info->image);
+        $this->assertEquals('https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif', $info->image);
     }
 
     public function testAuthorizedImage()
