@@ -1,5 +1,5 @@
 <?php
-namespace Embed\Providers\Oembed;
+namespace Embed\Providers\OEmbed;
 
 use Embed\Url;
 
