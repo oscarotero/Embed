@@ -61,11 +61,15 @@ class Request
     /**
      * Creates a new request with the same configuration than this
      *
-     * @param string $url The url string
+     * @param string|Url $url The url string
      */
     public function createRequest($url)
     {
-        return new Request(new Url($url), $this->resolverClass, $this->resolverConfig);
+        if (!($url instanceof Url)) {
+            $url = new Url($url);
+        }
+
+        return new Request($url, $this->resolverClass, $this->resolverConfig);
     }
 
     /**
