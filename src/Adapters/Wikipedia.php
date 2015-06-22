@@ -147,4 +147,12 @@ class Wikipedia extends Webpage implements AdapterInterface
 
         return $images;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProviderName()
+    {
+        return 'Wikipedia';
+    }
 }
