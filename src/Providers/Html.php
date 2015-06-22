@@ -98,7 +98,7 @@ class Html extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function getProviderIcons()
+    public function getProviderIconsUrls()
     {
         return (array) $this->bag->get('icons') ?: [];
     }
