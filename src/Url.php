@@ -339,6 +339,10 @@ class Url
 
         if (isset($this->info['query'])) {
             parse_str($this->info['query'], $this->info['query']);
+
+            foreach ($this->info['query'] as &$value) {
+                $value = urldecode($value);
+            }
         }
 
         if (isset($this->info['path'])) {
