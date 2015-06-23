@@ -11,7 +11,6 @@ class Request
 {
     public $startingUrl;
 
-    private static $cache = [];
     private $resolverClass = 'Embed\\RequestResolvers\\Curl';
     private $resolverConfig;
 
@@ -49,13 +48,7 @@ class Request
                 return $this->url = new Url($this->resolver->getUrl());
 
             case 'resolver':
-                $url = UrlRedirect::resolve($this->startingUrl->getUrl());
-
-                if (isset(self::$cache[$url])) {
-                    $this->resolver = self::$cache[$url];
-                } else {
-                    $this->resolver = self::$cache[$url] = new $this->resolverClass($url);
-                }
+                $this->resolver = new $this->resolverClass(UrlRedirect::resolve($this->startingUrl->getUrl()));
 
                 if (is_array($this->resolverConfig)) {
                     $this->resolver->setConfig($this->resolverConfig);
