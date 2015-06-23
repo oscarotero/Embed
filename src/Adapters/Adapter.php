@@ -77,8 +77,14 @@ abstract class Adapter
         $this->run();
 
         if ($request->url->getUrl() !== $this->url) {
-            $this->request = $request->createRequest($this->url);
-            $this->run();
+            $subRequest = $request->createRequest($this->url);
+
+            if ($subRequest->isValid()) {
+                $this->request = $subRequest;
+                $this->run();
+            } else {
+                $this->url = $request->url->getUrl();
+            }
         }
     }
 

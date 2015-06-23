@@ -24,11 +24,11 @@ class OEmbed extends Provider implements ProviderInterface
         $endPoint = null;
         $params = $this->config['parameters'];
 
-        if (($html = $this->request->getHtmlContent()) && ($endPoint = self::getEndPointFromDom($html))) {
-            $params['url'] = $this->request->url->getUrl();
-        } elseif (($info = self::getEndPointFromRequest($this->request, $this->config))) {
-            $endPoint = $info['endPoint'];
-            $params += $info['params'];
+        if (!($html = $this->request->getHtmlContent()) || !($endPoint = self::getEndPointFromDom($html))) {
+            if (($info = self::getEndPointFromRequest($this->request, $this->config))) {
+                $endPoint = $info['endPoint'];
+                $params += $info['params'];
+            }
         }
 
         if (!$endPoint) {
@@ -37,6 +37,10 @@ class OEmbed extends Provider implements ProviderInterface
 
         $endPointRequest = $this->request->createRequest($endPoint);
         $endPointRequest->startingUrl->setParameter($params);
+
+        if (!$endPointRequest->startingUrl->hasParameter('url')) {
+            $endPointRequest->startingUrl->setParameter('url', $this->request->url->getUrl());
+        }
 
         // extract from xml
         if (($endPointRequest->url->getExtension() === 'xml') || ($endPointRequest->url->getParameter('format') === 'xml')) {
