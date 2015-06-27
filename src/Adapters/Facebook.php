@@ -115,11 +115,7 @@ class Facebook extends Webpage implements AdapterInterface
      */
     public function getUrl()
     {
-        if ($this->isPost) {
-            return $this->request->startingUrl->getUrl();
-        }
-
-        return $this->api->get('url') ?: $this->request->startingUrl->getUrl();
+        return $this->api->get('url') ?: parent::getUrl();
     }
 
     /**
@@ -134,12 +130,22 @@ class Facebook extends Webpage implements AdapterInterface
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-post" data-href="{$this->url}" data-width="500"></div>
+<div class="fb-post" data-href="{$this->url}" data-width="{$this->width}"></div>
 EOT;
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getWidth()
+    {
+        if ($this->isPost) {
+          return 500;
         }
     }
 
@@ -157,18 +163,6 @@ EOT;
     public function getAuthorName()
     {
         return $this->api->get('username') ?: parent::getAuthorName();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSource()
-    {
-        $id = $this->api->get('id');
-
-        if (!empty($id)) {
-            return 'https://www.facebook.com/feeds/page.php?id='.$id.'&format=rss20';
-        }
     }
 
     /**
