@@ -31,7 +31,7 @@ class SoundcloudTest extends PHPUnit_Framework_TestCase
         $info = Embed\Embed::create('https://soundcloud.com/calumfoad/sets/flaws-ep-stream');
 
         $this->assertEquals($info->title, "Flaws EP");
-        $this->assertEquals($info->description, "19 year old singer/songwriter from Reading.");
+        $this->assertEquals($info->description, "20 year old singer/songwriter from Reading.");
         $this->assertEquals($info->type, 'rich');
         $this->assertEquals($info->code, '<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F46025307&show_artwork=true"></iframe>');
         $this->assertEquals($info->providerName, 'SoundCloud');
