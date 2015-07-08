@@ -141,7 +141,7 @@ $adapterData = [
             <h1>Result:</h1>
 
             <?php
-            try  {
+            try {
                 $info = Embed\Embed::create(get('url'));
             } catch (Exception $exception) {
                 echo '<p>'.$exception->getMessage().'</p>';

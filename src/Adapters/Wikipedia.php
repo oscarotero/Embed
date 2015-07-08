@@ -64,7 +64,7 @@ class Wikipedia extends Webpage implements AdapterInterface
      * Gets the page info from wikipedia api
      *
      * @param string $key
-     * 
+     *
      * @return string|null
      */
     private function getPageInfo($key)

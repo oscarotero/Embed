@@ -16,7 +16,7 @@ class Flickr extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->match([
-            'https://www.flickr.com/photos/*'
+            'https://www.flickr.com/photos/*',
         ]);
     }
 

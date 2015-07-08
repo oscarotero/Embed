@@ -145,7 +145,7 @@ EOT;
     public function getWidth()
     {
         if ($this->isPost) {
-          return 500;
+            return 500;
         }
     }
 
