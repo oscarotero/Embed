@@ -19,8 +19,6 @@ class Embed
 
         if (!$request->isValid()) {
             throw new Exceptions\InvalidUrlException("The url '{$request->startingUrl->getUrl()}' returns the http code '{$request->getHttpCode()}'");
-
-            return false;
         }
 
         //Use custom adapter
