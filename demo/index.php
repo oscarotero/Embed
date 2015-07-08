@@ -140,13 +140,17 @@ $adapterData = [
         <section>
             <h1>Result:</h1>
 
-            <?php $info = Embed\Embed::create(get('url')); ?>
-
-            <?php if (!$info): ?>
-
-            <p>The url is not valid!</p>
-
-            <?php else: ?>
+            <?php
+            try  {
+                $info = Embed\Embed::create(get('url'));
+            } catch (Exception $exception) {
+                echo '<p>'.$exception->getMessage().'</p>';
+                echo '</section>';
+                echo '</body>';
+                echo '</html>';
+                die();
+            }
+            ?>
 
             <table>
                 <?php foreach ($adapterData as $name => $fn): ?>
@@ -215,8 +219,6 @@ $adapterData = [
                 <pre>
                     <?php printText($info->request->getContent()); ?>
                 </pre>
-
-                <?php endif; ?>
             </div>
         </section>
 

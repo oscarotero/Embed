@@ -18,6 +18,8 @@ class Embed
         $request = self::getRequest($request, isset($config['request']) ? $config['request'] : null);
 
         if (!$request->isValid()) {
+            throw new Exceptions\InvalidUrlException("The url '{$request->startingUrl->getUrl()}' returns the http code '{$request->getHttpCode()}'");
+
             return false;
         }
 
@@ -45,7 +47,7 @@ class Embed
             return $info;
         }
 
-        return false;
+        throw new Exceptions\InvalidUrlException("The url '{$request->startingUrl->getUrl()}' is not supported");
     }
 
     /**
