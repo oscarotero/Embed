@@ -354,6 +354,9 @@ abstract class Adapter
             if (empty($images)) {
                 return;
             }
+
+            $images = [$images];
+
         } else {
             $images = Utils::sortByProviders($this->images);
         }
