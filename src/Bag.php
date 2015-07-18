@@ -43,24 +43,31 @@ class Bag
     }
 
     /**
-     * Get a value, all values or null if not exists
+     * Get a value
      *
-     * @param string      $name    Value name
-     * @param null|string $subname A subvalue name
+     * @param string $name Value name
      *
      * @return string|null
      */
-    public function get($name, $subname = null)
+    public function get($name)
     {
-        if ($subname === null) {
-            return isset($this->parameters[$name]) ? $this->parameters[$name] : null;
+        if (strpos($name, '[') !== false) {
+            $names = explode('[', str_replace(']', '', $name));
+            $key = array_shift($names);
+            $item = isset($this->parameters[$key]) ? $this->parameters[$key] : [];
+
+            foreach ($names as $key) {
+                if (!isset($item[$key])) {
+                    return;
+                }
+
+                $item = $item[$key];
+            }
+
+            return $item;
         }
 
-        if (!isset($this->parameters[$name][$subname])) {
-            return;
-        }
-
-        return $this->parameters[$name][$subname];
+        return isset($this->parameters[$name]) ? $this->parameters[$name] : null;
     }
 
     /**
