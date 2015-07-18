@@ -13,7 +13,7 @@ class Facebook extends Webpage implements AdapterInterface
 {
     public $api;
 
-    private $isPost = false;
+    private $isEmbeddable = false;
 
     /**
      * {@inheritdoc}
@@ -35,7 +35,7 @@ class Facebook extends Webpage implements AdapterInterface
     private function getId(Url $url)
     {
         if ($url->hasParameter('story_fbid')) {
-            $this->isPost = true;
+            $this->isEmbeddable = true;
 
             return $url->getParameter('story_fbid');
         }
@@ -49,6 +49,7 @@ class Facebook extends Webpage implements AdapterInterface
         }
 
         if ($url->getDirectory(0) === 'events') {
+            $this->isEmbeddable = true;
             return $url->getDirectory(1);
         }
 
@@ -57,13 +58,13 @@ class Facebook extends Webpage implements AdapterInterface
         }
 
         if ($url->getDirectory(1) === 'posts') {
-            $this->isPost = true;
+            $this->isEmbeddable = true;
 
             return $url->getDirectory(2);
         }
 
         if ($url->getDirectory(2) === 'posts') {
-            $this->isPost = true;
+            $this->isEmbeddable = true;
 
             return $url->getDirectory(3);
         }
@@ -123,7 +124,7 @@ class Facebook extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        if ($this->isPost) {
+        if ($this->isEmbeddable) {
             return <<<EOT
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -144,7 +145,7 @@ EOT;
      */
     public function getWidth()
     {
-        if ($this->isPost) {
+        if ($this->isEmbeddable) {
             return 500;
         }
     }
