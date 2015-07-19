@@ -14,4 +14,19 @@ class DevianArtTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Embed\\Providers\\OEmbed', $info->getProvider('oembed'));
         $this->assertEquals('DeviantArt', $info->getProvider('oembed')->getProviderName());
     }
+
+    public function testTwo()
+    {
+        $info = Embed\Embed::create('http://pachunka.deviantart.com/art/Cope-145564099');
+
+        $this->assertEquals($info->title, 'Cope');
+        $this->assertEquals($info->description, '$randomduck for president, 2012. There may or may not be some irony surrounding this image.');
+        $this->assertEquals($info->imageWidth, 448);
+        $this->assertEquals($info->imageHeight, 672);
+        $this->assertEquals($info->type, 'photo');
+        $this->assertEquals($info->authorName, 'Pachunka');
+
+        $this->assertInstanceOf('Embed\\Providers\\OEmbed', $info->getProvider('oembed'));
+        $this->assertEquals('DeviantArt', $info->getProvider('oembed')->getProviderName());
+    }
 }

@@ -18,7 +18,7 @@ class Deviantart extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return ['http://www.deviantart.com/art/*', 'http://www.deviantart.com/#/d*'];
+        return ['http://*.deviantart.com/art/*', 'http://www.deviantart.com/#/d*'];
     }
 
     /**
