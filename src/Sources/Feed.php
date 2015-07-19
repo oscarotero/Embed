@@ -52,7 +52,7 @@ class Feed extends Source implements SourceInterface
      */
     public function getSourceUrl()
     {
-        return $this->request->url->getUrl();
+        return $this->request->getUrl();
     }
 
     /**
@@ -60,7 +60,7 @@ class Feed extends Source implements SourceInterface
      */
     public function getProviderUrl()
     {
-        return !empty($this->data['url']) ? $this->data['url'] : ($this->request->url->getScheme().'://'.$this->request->url->getHost());
+        return !empty($this->data['url']) ? $this->data['url'] : ($this->request->getScheme().'://'.$this->request->getHost());
     }
 
     /**

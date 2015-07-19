@@ -8,6 +8,7 @@ class Curl implements RequestResolverInterface
 {
     protected $isBinary;
     protected $result;
+    protected $content;
     protected $url;
     protected $config = [
         CURLOPT_MAXREDIRS => 20,

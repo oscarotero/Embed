@@ -179,13 +179,13 @@ $adapterData = [
 
                     <tr>
                         <th>All data collected</th>
-                        <td><?php printArray($provider->bag->getAll(), false); ?></td>
+                        <td><?php printArray($provider->bag->getAll()); ?></td>
                     </tr>
 
                     <?php if (isset($provider->api)): ?>
                     <tr>
                         <th>Data provider by the API</th>
-                        <td><?php printArray($provider->api->getAll(), false); ?></td>
+                        <td><?php printArray($provider->api->getAll()); ?></td>
                     </tr>
                     <?php endif ?>
 

@@ -27,17 +27,17 @@ class Request extends Url
     public function __construct($url, $resolverClass = null, array $resolverConfig = array())
     {
         if ($resolverClass !== null) {
-            if (!class_exists($className)) {
+            if (!class_exists($resolverClass)) {
                 throw new \InvalidArgumentException("This class does not exists");
             }
 
-            $reflection = new \ReflectionClass($className);
+            $reflection = new \ReflectionClass($resolverClass);
 
             if (!in_array('Embed\\RequestResolvers\\RequestResolverInterface', $reflection->getInterfaceNames())) {
                 throw new \InvalidArgumentException("The resolver class must implement the Embed\\RequestResolvers\\RequestResolverInterface interface");
             }
 
-            $this->resolverClass = $className;
+            $this->resolverClass = $resolverClass;
         }
 
         $this->resolverConfig = array_replace($this->resolverConfig, $resolverConfig);

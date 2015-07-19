@@ -287,10 +287,10 @@ class Utils
     /**
      * Creates an <iframe> element
      *
-     * @param string  $src          Iframe source attribute
-     * @param integer $width        Width attribute
-     * @param integer $height       Height attribute
-     * @param integer $extra_styles Extra css styles
+     * @param string  $src    Iframe source attribute
+     * @param integer $width  Width attribute
+     * @param integer $height Height attribute
+     * @param integer $styles Extra css styles
      *
      * @return string
      */

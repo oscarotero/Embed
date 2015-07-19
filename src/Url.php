@@ -208,7 +208,6 @@ class Url
     /**
      * Returns a clone with other directory in a specific position
      *
-     * @param int|null $key   The position of the subdirectory (0 based index). Null to append
      * @param string   $value The new value
      * 
      * @return Url
@@ -289,7 +288,7 @@ class Url
      *
      * @return array
      */
-    public function getQueryParameters($name)
+    public function getQueryParameters()
     {
         return empty($this->info['query']) ? [] : $this->info['query'];
     }
@@ -407,7 +406,7 @@ class Url
         if (isset($this->info['query'])) {
             parse_str($this->info['query'], $this->info['query']);
 
-            array_walk_recursive($this->info['query'], function (&$value, $key) {
+            array_walk_recursive($this->info['query'], function (&$value) {
                 $value = urldecode($value);
             });
         }

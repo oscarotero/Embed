@@ -19,7 +19,7 @@ class Embed
 
 
         if (!$request->isValid()) {
-            throw new Exceptions\InvalidUrlException("The url '{$request->startingUrl->getUrl()}' returns the http code '{$request->getHttpCode()}'");
+            throw new Exceptions\InvalidUrlException("The url '{$request->getUrl()}' returns the http code '{$request->getHttpCode()}'");
         }
 
         //Use custom adapter
@@ -46,7 +46,7 @@ class Embed
             return $info;
         }
 
-        throw new Exceptions\InvalidUrlException("The url '{$request->startingUrl->getUrl()}' is not supported");
+        throw new Exceptions\InvalidUrlException("The url '{$request->getUrl()}' is not supported");
     }
 
     /**
