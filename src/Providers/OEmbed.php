@@ -52,6 +52,8 @@ class OEmbed extends Provider implements ProviderInterface
             }
         // extract from json
         } else {
+            $endPointRequest = $endPointRequest->withQueryParameter('format', 'json');
+
             if (($parameters = $endPointRequest->getJsonContent()) && empty($parameters['Error'])) {
                 $this->bag->set($parameters);
             }
