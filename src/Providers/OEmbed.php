@@ -195,6 +195,7 @@ class OEmbed extends Provider implements ProviderInterface
 
     /**
      * Extract oembed information from the <link rel="alternate"> elements
+     * Note: Some sites use <meta rel="alternate"> instead
      *
      * @param \DOMDocument $html
      *
@@ -202,20 +203,22 @@ class OEmbed extends Provider implements ProviderInterface
      */
     protected static function getEndPointFromDom(\DOMDocument $html)
     {
-        foreach (Utils::getLinks($html) as $link) {
-            list($rel, $href, $element) = $link;
+        foreach (['link', 'meta'] as $tagName) {
+            foreach (Utils::getLinks($html, $tagName) as $link) {
+                list($rel, $href, $element) = $link;
 
-            if (empty($href)) {
-                continue;
-            }
+                if (empty($href)) {
+                    continue;
+                }
 
-            if ($rel === 'alternate') {
-                switch (strtolower($element->getAttribute('type'))) {
-                    case 'application/json+oembed':
-                    case 'application/xml+oembed':
-                    case 'text/json+oembed':
-                    case 'text/xml+oembed':
-                        return $href;
+                if ($rel === 'alternate') {
+                    switch (strtolower($element->getAttribute('type'))) {
+                        case 'application/json+oembed':
+                        case 'application/xml+oembed':
+                        case 'text/json+oembed':
+                        case 'text/xml+oembed':
+                            return $href;
+                    }
                 }
             }
         }

@@ -31,14 +31,15 @@ class Utils
      * Extract all link elements from html
      *
      * @param \DOMDocument $html
+     * @param string       $tagName
      *
      * @return array with subarrays [rel, href, element]
      */
-    public static function getLinks(\DOMDocument $html)
+    public static function getLinks(\DOMDocument $html, $tagName = 'link')
     {
         $links = [];
 
-        foreach ($html->getElementsByTagName('link') as $link) {
+        foreach ($html->getElementsByTagName($tagName) as $link) {
             if ($link->hasAttribute('rel') && $link->hasAttribute('href')) {
                 $rel = trim(strtolower($link->getAttribute('rel')));
                 $href = $link->getAttribute('href');
