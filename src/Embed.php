@@ -17,7 +17,6 @@ class Embed
     {
         $request = self::getRequest($request, isset($config['request']) ? $config['request'] : null);
 
-
         if (!$request->isValid()) {
             throw new Exceptions\InvalidUrlException("The url '{$request->getUrl()}' returns the http code '{$request->getHttpCode()}'");
         }

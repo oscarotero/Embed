@@ -66,7 +66,7 @@ class Url
 
     /**
      * Returns a clone with other extension
-     * 
+     *
      * @param string $extension
      *
      * @return Url
@@ -97,7 +97,7 @@ class Url
      * Returns a clone with other scheme
      *
      * @param string $scheme
-     * 
+     *
      * @return Url
      */
     public function withScheme($scheme)
@@ -122,7 +122,7 @@ class Url
      * Returns a clone with other host
      *
      * @param string $host
-     * 
+     *
      * @return Url
      */
     public function withHost($host)
@@ -187,7 +187,7 @@ class Url
      *
      * @param int|null $key   The position of the subdirectory (0 based index).
      * @param string   $value The new value
-     * 
+     *
      * @return Url
      */
     public function withDirectoryPosition($key, $value)
@@ -208,8 +208,8 @@ class Url
     /**
      * Returns a clone with other directory in a specific position
      *
-     * @param string   $value The new value
-     * 
+     * @param string $value The new value
+     *
      * @return Url
      */
     public function withAddedDirectory($value)
@@ -237,7 +237,7 @@ class Url
 
     /**
      * Return the url path
-     * 
+     *
      * @return string
      */
     public function getPath()
@@ -257,9 +257,9 @@ class Url
 
     /**
      * Returns a clone with other path
-     * 
+     *
      * @param string $path
-     * 
+     *
      * @return Url
      */
     public function withPath($path)
@@ -310,7 +310,7 @@ class Url
      *
      * @param string $name  The parameter name
      * @param string $value The parameter value
-     * 
+     *
      * @return Url
      */
     public function withQueryParameter($name, $value)
@@ -326,7 +326,7 @@ class Url
      * Returns a clone with new query parameters merged
      *
      * @param array $parameters
-     * 
+     *
      * @return Url
      */
     public function withAddedQueryParameters(array $parameters)
@@ -342,7 +342,7 @@ class Url
      * Returns a clone with new query parameters
      *
      * @param array $parameters
-     * 
+     *
      * @return Url
      */
     public function withQueryParameters(array $parameters)
@@ -452,7 +452,7 @@ class Url
 
     /**
      * Parses and adds path and file value
-     * 
+     *
      * @param string $path
      */
     private function setPath($path)

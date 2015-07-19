@@ -1,7 +1,6 @@
 <?php
 namespace Embed\Providers\OEmbed;
 
-use Embed\Url;
 
 class Embedly extends OEmbedImplementation
 {

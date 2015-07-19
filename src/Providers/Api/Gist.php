@@ -14,7 +14,7 @@ class Gist extends Provider implements ProviderInterface
      */
     public function run()
     {
-      $api = $this->request->withExtension('json');
+        $api = $this->request->withExtension('json');
 
         if (($json = $api->getJsonContent())) {
             $this->bag->set($json);
@@ -26,9 +26,9 @@ class Gist extends Provider implements ProviderInterface
      */
     public function getType()
     {
-      if (!empty($this->getCode())) {
-        return 'rich';
-      }
+        if (!empty($this->getCode())) {
+            return 'rich';
+        }
     }
 
     /**

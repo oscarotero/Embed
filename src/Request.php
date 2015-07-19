@@ -56,7 +56,7 @@ class Request extends Url
     /**
      * Returns the current resolver
      * It also create a new resolver if it's not exists
-     * 
+     *
      * @return RequestResolvers\RequestResolverInterface
      */
     public function getResolver()
@@ -85,7 +85,7 @@ class Request extends Url
      * Creates a new request with the same configuration than this
      *
      * @param string $url
-     * 
+     *
      * @return Request
      */
     public function withUrl($url)

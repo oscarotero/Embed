@@ -52,6 +52,7 @@ class Wikipedia extends Provider implements ProviderInterface
 
         if ($pages) {
             $page = current($pages);
+
             return strip_tags($page['title']);
         }
     }
@@ -65,6 +66,7 @@ class Wikipedia extends Provider implements ProviderInterface
 
         if ($pages) {
             $page = current($pages);
+
             return strip_tags($page['extract']);
         }
     }

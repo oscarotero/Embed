@@ -36,7 +36,7 @@ class Spreaker extends Webpage implements AdapterInterface
                         ->withPath('embed/player/standard')
                         ->withQueryParameters([
                             'autoplay' => 'false',
-                            'episode_id' => $id
+                            'episode_id' => $id,
                         ])
                         ->getUrl();
 

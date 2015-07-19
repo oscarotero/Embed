@@ -36,7 +36,7 @@ class UrlRedirect
      * Resolve a google redirection url
      *
      * @param Url $url
-     * 
+     *
      * @return string
      */
     protected static function google(Url $url)
@@ -52,7 +52,7 @@ class UrlRedirect
      * Resolve a google translation url
      *
      * @param Url $url
-     * 
+     *
      * @return string
      */
     protected static function googleTranslator(Url $url)
@@ -68,7 +68,7 @@ class UrlRedirect
      * Resolve an url with hashbang
      *
      * @param Url $url
-     * 
+     *
      * @return string
      */
     protected static function hashBang(Url $url)
