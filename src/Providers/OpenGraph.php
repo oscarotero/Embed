@@ -159,6 +159,6 @@ class OpenGraph extends Provider implements ProviderInterface
      */
     public function getPublishedTime()
     {
-        return $this->bag->get('published_time');
+        return $this->bag->get('published_time') ?: $this->bag->get('updated_time');
     }
 }
