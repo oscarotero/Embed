@@ -92,7 +92,7 @@ class Request extends Url
     {
         $clone = clone $this;
 
-        $clone->parseUrl($url);
+        $clone->parseUrl($this->getAbsolute($url));
 
         return $clone;
     }
