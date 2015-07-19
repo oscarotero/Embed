@@ -7,7 +7,6 @@ namespace Embed\RequestResolvers;
 class Curl implements RequestResolverInterface
 {
     protected $isBinary;
-    protected $content;
     protected $result;
     protected $url;
     protected $config = [
@@ -31,26 +30,10 @@ class Curl implements RequestResolverInterface
     /**
      * {@inheritdoc}
      */
-    public function __construct($url)
+    public function __construct($url, array $config)
     {
         $this->url = $url;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setConfig(array $config)
-    {
         $this->config = $config + $this->config;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setUrl($url)
-    {
-        $this->result = $this->content = null;
-        $this->url = $url;
     }
 
     /**

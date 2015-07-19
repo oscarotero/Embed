@@ -26,10 +26,9 @@ class Google extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $url = new Url($this->request->url->getUrl());
-
-        $url->setParameter('output', 'embed');
-        $url->setParameter('s', '');
+        $url = (new Url($this->request->getUrl()))
+            ->withQueryParameter('output', 'embed')
+            ->withQueryParameter('s', '');
 
         return Utils::iframe($url->getUrl());
     }

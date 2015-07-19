@@ -27,7 +27,6 @@ class Deviantart extends OEmbedImplementation
     public static function getParams(Url $url)
     {
         return [
-            'url' => $url->getUrl(),
             'for' => 'embed',
         ];
     }

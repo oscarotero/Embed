@@ -9,21 +9,10 @@ interface RequestResolverInterface
     /**
      * Constructor. Sets the url
      *
-     * @param string $url The url value
+     * @param string $url    The url value
+     * @param array  $config The resolver configuration
      */
-    public function __construct($url);
-
-    /**
-     * Sets the configuration
-     *
-     * @param array $config
-     */
-    public function setConfig(array $config);
-
-    /**
-     * Set a new url (and clear data of previous url)
-     */
-    public function setUrl($url);
+    public function __construct($url, array $config);
 
     /**
      * Get the http code of the url, for example: 200

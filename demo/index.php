@@ -166,17 +166,6 @@ $adapterData = [
             </div>
 
             <div id="advanced-data">
-                <?php if (isset($info->api)): ?>
-                <h2>Data provider by the custom API</h2>
-
-                <table>
-                    <tr>
-                        <th>Data provider by the API</th>
-                        <td><?php printArray($info->api->getAll(), false); ?></td>
-                    </tr>
-                </table>
-                <?php endif ?>
-
                 <?php foreach ($info->getAllProviders() as $providerName => $provider): ?>
                 <h2><?php echo $providerName; ?> provider</h2>
 

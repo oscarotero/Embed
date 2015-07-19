@@ -37,6 +37,6 @@ abstract class OEmbedImplementation
      */
     public static function getParams(Url $url)
     {
-        return ['url' => $url->getUrl()];
+        return [];
     }
 }

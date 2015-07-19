@@ -16,21 +16,20 @@ class UrlTest extends PHPUnit_Framework_TestCase
         }
     }
 
-    public function testDirectory()
+    public function testDirectoryPosition()
     {
         $url = new Embed\Url('http://domain.com/first//second/third');
 
-        $this->assertEquals('first', $url->getDirectory(0));
-        $this->assertEquals('second', $url->getDirectory(1));
-        $this->assertEquals('third', $url->getDirectory(2));
-        $this->assertNull($url->getDirectory(3));
+        $this->assertEquals('first', $url->getDirectoryPosition(0));
+        $this->assertEquals('second', $url->getDirectoryPosition(1));
+        $this->assertEquals('third', $url->getDirectoryPosition(2));
+        $this->assertNull($url->getDirectoryPosition(3));
 
-        $url->setDirectory(0, 'one');
-        $url->setDirectory(2, 'four');
+        $url = $url->withDirectoryPosition(0, 'one')->withDirectoryPosition(2, 'four');
 
-        $this->assertEquals('one', $url->getDirectory(0));
-        $this->assertEquals('four', $url->getDirectory(2));
-        $this->assertNull($url->getDirectory(3));
+        $this->assertEquals('one', $url->getDirectoryPosition(0));
+        $this->assertEquals('four', $url->getDirectoryPosition(2));
+        $this->assertNull($url->getDirectoryPosition(3));
 
         $this->assertEquals('http://domain.com/one/second/four', $url->getUrl());
     }

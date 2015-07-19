@@ -4,15 +4,14 @@ namespace Embed;
 /**
  * Class to execute request and return the content
  *
- * @property Url $url
- * @property RequestResolvers\RequestResolverInterface $resolver
  */
-class Request
+class Request extends Url
 {
-    public $startingUrl;
+    private $startingUrl;
 
+    private $resolver;
     private $resolverClass = 'Embed\\RequestResolvers\\Curl';
-    private $resolverConfig;
+    private $resolverConfig = [];
 
     private $xmlContent;
     private $jsonContent;
@@ -21,96 +20,81 @@ class Request
     /**
      * Constructor. Sets the url
      *
-     * @param Url         $url            The Url instance
+     * @param string      $url            The request url
      * @param null|string $resolverClass  The resolver classname
-     * @param null|array  $resolverConfig The resolver configuration
+     * @param array       $resolverConfig The resolver configuration
      */
-    public function __construct(Url $url, $resolverClass = null, array $resolverConfig = null)
+    public function __construct($url, $resolverClass = null, array $resolverConfig = array())
     {
         if ($resolverClass !== null) {
-            $this->setResolverClass($resolverClass);
+            if (!class_exists($className)) {
+                throw new \InvalidArgumentException("This class does not exists");
+            }
+
+            $reflection = new \ReflectionClass($className);
+
+            if (!in_array('Embed\\RequestResolvers\\RequestResolverInterface', $reflection->getInterfaceNames())) {
+                throw new \InvalidArgumentException("The resolver class must implement the Embed\\RequestResolvers\\RequestResolverInterface interface");
+            }
+
+            $this->resolverClass = $className;
         }
 
-        if ($resolverConfig !== null) {
-            $this->setResolverConfig($resolverConfig);
-        }
-
-        $this->startingUrl = $url;
+        $this->resolverConfig = array_replace($this->resolverConfig, $resolverConfig);
+        $this->startingUrl = new Url($url);
+        $this->parseUrl($url);
     }
 
     /**
-     * Magic method to retrieve the resolver an url in lazy mode
+     * Magic method to clean cache on clone the request
      */
-    public function __get($name)
+    public function __clone()
     {
-        switch ($name) {
-            case 'url':
-                return $this->url = new Url($this->resolver->getUrl());
+        $this->xmlContent = $this->jsonContent = $this->htmlContent = $this->resolver = null;
+    }
 
-            case 'resolver':
-                $this->resolver = new $this->resolverClass(UrlRedirect::resolve($this->startingUrl->getUrl()));
-
-                if (is_array($this->resolverConfig)) {
-                    $this->resolver->setConfig($this->resolverConfig);
-                }
-
-                return $this->resolver;
+    /**
+     * Returns the current resolver
+     * It also create a new resolver if it's not exists
+     * 
+     * @return RequestResolvers\RequestResolverInterface
+     */
+    public function getResolver()
+    {
+        if ($this->resolver === null) {
+            $this->resolver = new $this->resolverClass(UrlRedirect::resolve($this->buildUrl()), $this->resolverConfig);
+            $this->parseUrl($this->resolver->getUrl());
         }
+
+        return $this->resolver;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUrl()
+    {
+        if ($this->resolver === null) {
+            $this->getResolver();
+        }
+
+        return parent::getUrl();
     }
 
     /**
      * Creates a new request with the same configuration than this
      *
-     * @param string|Url $url The url string
+     * @param string $url
+     * 
+     * @return Request
      */
-    public function createRequest($url)
+    public function withUrl($url)
     {
-        if (!($url instanceof Url)) {
-            $url = new Url($url);
-        }
+        $clone = clone $this;
 
-        return new Request($url, $this->resolverClass, $this->resolverConfig);
-    }
+        $clone->parseUrl($url);
 
-    /**
-     * Set the url resolver class used for http requests
-     *
-     * @param string $className
-     */
-    public function setResolverClass($className)
-    {
-        if (!class_exists($className)) {
-            throw new \Exception("This class does not exists");
-        }
-
-        $reflection = new \ReflectionClass($className);
-
-        if (!in_array('Embed\\RequestResolvers\\RequestResolverInterface', $reflection->getInterfaceNames())) {
-            throw new \Exception("The resolver class must implement the Embed\\RequestResolvers\\RequestResolverInterface interface");
-        }
-
-        $this->resolverClass = $className;
-    }
-
-    /**
-     * Set the resolver configuration used for http requests
-     *
-     * @param array $config
-     */
-    public function setResolverConfig(array $config)
-    {
-        $this->resolverConfig = array_replace($this->resolverConfig, $config);
-    }
-
-    /**
-     * Clear the cache of the response
-     *
-     * @return string The current url
-     */
-    public function clearCache()
-    {
-        $this->htmlContent = $this->jsonContent = $this->xmlContent = null;
-        unset($this->url, $this->resolver);
+        return $clone;
     }
 
     /**
@@ -122,7 +106,7 @@ class Request
      */
     public function match($patterns)
     {
-        return $this->startingUrl->match($patterns) || $this->url->match($patterns);
+        return $this->startingUrl->match($patterns) || parent::match($patterns);
     }
 
     /**
@@ -132,7 +116,7 @@ class Request
      */
     public function getRequestInfo()
     {
-        return $this->resolver->getRequestInfo();
+        return $this->getResolver()->getRequestInfo();
     }
 
     /**
@@ -142,7 +126,7 @@ class Request
      */
     public function getHttpCode()
     {
-        return $this->resolver->getHttpCode();
+        return $this->getResolver()->getHttpCode();
     }
 
     /**
@@ -152,7 +136,7 @@ class Request
      */
     public function getMimeType()
     {
-        return $this->resolver->getMimeType();
+        return $this->getResolver()->getMimeType();
     }
 
     /**
@@ -162,7 +146,7 @@ class Request
      */
     public function getContent()
     {
-        return $this->resolver->getContent();
+        return $this->getResolver()->getcontent();
     }
 
     /**
@@ -174,22 +158,22 @@ class Request
     {
         if ($this->htmlContent === null) {
             try {
-                if (($response = $this->getContent()) === '') {
+                if (($content = $this->getContent()) === '') {
                     return $this->htmlContent = false;
                 }
 
                 $errors = libxml_use_internal_errors(true);
                 $this->htmlContent = new \DOMDocument();
 
-                if ((mb_detect_encoding($response) === 'UTF-8') && mb_check_encoding($response, 'UTF-8')) {
-                    $response = mb_convert_encoding($response, 'HTML-ENTITIES', 'UTF-8');
-                    $response = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $response);
+                if ((mb_detect_encoding($content) === 'UTF-8') && mb_check_encoding($content, 'UTF-8')) {
+                    $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8');
+                    $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $content);
                 }
 
                 //Remove all script elements, CDATA sections and comments (thanks https://github.com/jasny)
-                //$response = preg_replace(['%<!--(?:[^-]++|-)*?-->|<!\[CDATA\[(?:[^\]]++|\])*?\]\]>%si', '%<script\b(?:"(?:[^"\\\\]++|\\\\.)*+"|\'(?:[^\'\\\\]++|\\\\.)*+\'|[^>"\']++)*>(?:[^<]++|<)*?</\s*script\s*>%si'], '', $response);
+                //$content = preg_replace(['%<!--(?:[^-]++|-)*?-->|<!\[CDATA\[(?:[^\]]++|\])*?\]\]>%si', '%<script\b(?:"(?:[^"\\\\]++|\\\\.)*+"|\'(?:[^\'\\\\]++|\\\\.)*+\'|[^>"\']++)*>(?:[^<]++|<)*?</\s*script\s*>%si'], '', $content);
 
-                $this->htmlContent->loadHTML($response);
+                $this->htmlContent->loadHTML($content);
                 libxml_use_internal_errors($errors);
             } catch (\Exception $E) {
                 return $this->htmlContent = false;
@@ -208,11 +192,11 @@ class Request
     {
         if ($this->jsonContent === null) {
             try {
-                if (($response = $this->getContent()) === '') {
+                if (($content = $this->getContent()) === '') {
                     return $this->jsonContent = false;
                 }
 
-                $this->jsonContent = json_decode($response, true);
+                $this->jsonContent = json_decode($content, true);
             } catch (\Exception $E) {
                 return $this->jsonContent = false;
             }
@@ -230,11 +214,11 @@ class Request
     {
         if ($this->xmlContent === null) {
             try {
-                if (($response = $this->getContent()) === '') {
+                if (($content = $this->getContent()) === '') {
                     return $this->xmlContent = false;
                 }
                 $errors = libxml_use_internal_errors(true);
-                $this->xmlContent = new \SimpleXMLElement($response);
+                $this->xmlContent = new \SimpleXMLElement($content);
                 libxml_use_internal_errors($errors);
             } catch (\Exception $E) {
                 return $this->xmlContent = false;

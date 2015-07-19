@@ -1,5 +1,4 @@
-Embed
-=====
+# Embed
 
 [![Build Status](https://travis-ci.org/oscarotero/Embed.svg?branch=master)](https://travis-ci.org/oscarotero/Embed)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/Embed/badges/quality-score.png?s=79e37032db280b9795388124c030dcf4309343d1)](https://scrutinizer-ci.com/g/oscarotero/Embed/)
@@ -11,17 +10,13 @@ Requirements:
 * PHP 5.4+
 * Curl library installed
 
+If you need PHP 5.3 support, use the 1.x version (but not maintained anymore)
 
-If you need PHP 5.3 support, use the 1.x version
-------------------------------------------------
-
-Online demo
------------
+## Online demo
 
 http://oscarotero.com/embed2/demo
 
-Usage
------
+## Usage
 
 ```php
 //Load library (if you don't have composer or any psr-4 compatible loader):
@@ -56,14 +51,13 @@ $info->providerIcons; //All provider icons found in the page
 $info->providerIcon; //The icon choosen as main icon
 ```
 
-Customization
--------------
+## Customization
 
-You can set some options using an array as second argument. In this array you can configurate the adapters, providers, resolvers, etc.
+You can set some options using an array as second argument. In this array you can configure the adapters, providers, resolvers, etc.
 
 ### The adapter
 
-The adapter is the class that get all information of the page from the providers and choose the best result for each value. For example, a page can provide multiple titles from opengraph, twitter cards, oembed, the `<title>` tag, etc, so the adapter get all this titles and choose the best one.
+The adapter is the class that get all information of the page from the providers and choose the best result for each value. For example, a page can provide multiple titles from opengraph, twitter cards, oembed, the `<title>` html element, etc, so the adapter get all this titles and choose the best one.
 
 Embed has an generic adapter called "Webpage" to use in any web but has also some specific adapters for sites like archive.org, facebook, google, github, spotify, etc, that provides information using their own apis, or have any other special issue.
 
@@ -77,8 +71,6 @@ The available options for the adapters are:
 * imagesBlacklist (array): Images that you don't want to be used. Could be plain text or [Url](https://github.com/oscarotero/Embed/blob/master/src/Url.php) match pattern.
 * getBiggerImage (bool): Choose the bigger image as the main image (instead the first found, that usually is the most relevant).
 * getBiggerIcon (bool): The same than getBiggerImage but used to choose the main icon
-* facebookKey (string): Used only in Facebook adapter, to get info from facebook pages when these pages are not public and a access token is required
-* soundcloudKey (string): Used in Soundcloud adapter, to get info from soundcloud. By default, it uses "YOUR_CLIENT_ID" that its a valid client id :P
 
 ```php
 $config = [
@@ -91,8 +83,6 @@ $config = [
             'imagesBlacklist' => null,
             'getBiggerImage' => false,
             'getBiggerIcon' => false,
-            'facebookKey' => null,
-            'soundcloudKey' => null,
 		]
     ]
 ];
@@ -100,16 +90,32 @@ $config = [
 
 ### The providers
 
-The providers get the data from different sources. Each source has it's own provider. For example, there are providers for open graph, twitter cards, oembed, dc terms, sailthru, html, etc. Currently two providers receives options: oembed and html. The availabe options are:
+The providers get the data from different sources. Each source has it's own provider. For example, there is a provider for open graph, other for twitter cards, for oembed, html, etc. The providers that receive options are:
 
-oembed:
+#### oembed
+
+Used to get data from oembed api if it's available. It accepts two options:
 
 * parameters (array): Extra query parameters to send with the oembed request
 * embedlyKey (string): If it's defined and the page has not its own oembed service, use the embedly api.
 
-html:
+#### html
 
-* maxImages (int): Max number of images fetched from the html code. By default is -1 (no limit). Use 0 to no get images.
+Used to get data directly from the html code of the page:
+
+* maxImages (int): Max number of images fetched from the html code (searching for the `<img>` elements). By default is -1 (no limit). Use 0 to no get images.
+
+#### facebook:
+
+This provider is used only for facebook pages, to get information from the [graph api](https://developers.facebook.com/docs/graph-api):
+
+* key (string): the access token used to get info from pages that are not public
+
+#### soundcloud:
+
+Used only for soundcloud pages, to get information using its api.
+
+* key (string): to get info from soundcloud. By default is "YOUR_CLIENT_ID" that its a valid client id :P
 
 
 ```php
@@ -121,6 +127,9 @@ $config = [
         ],
         'html' => [
             'maxImages' => -1
+        ],
+        'facebook' => [
+            'key' => 'our-access-token'
         ]
     ]
 ];

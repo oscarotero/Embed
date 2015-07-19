@@ -653,15 +653,4 @@ class Embedly extends OEmbedImplementation
             'http://www.gogoyoko.com/song/*',
         ];
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getParams(Url $url)
-    {
-        return [
-            'url' => $url->getUrl(),
-            'format' => 'json',
-        ];
-    }
 }

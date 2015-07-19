@@ -25,8 +25,8 @@ class Flickr extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $url = new Url($this->request->url->getUrl());
-        $url->setDirectory(null, 'player');
+        $url = (new Url($this->request->getUrl()))
+            ->withAddedDirectory('player');
 
         return Utils::iframe($url->getUrl(), $this->width, $this->height);
     }

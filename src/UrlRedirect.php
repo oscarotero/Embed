@@ -17,7 +17,7 @@ class UrlRedirect
      *
      * @param string $oldUrl Url to resolve
      *
-     * @return string The new url
+     * @return string
      */
     public static function resolve($oldUrl)
     {
@@ -25,48 +25,58 @@ class UrlRedirect
 
         foreach (static::$urls as $method => $matches) {
             if ($url->match($matches)) {
-                static::$method($url);
-
-                break;
+                return static::$method($url);
             }
         }
 
-        return $url->getUrl();
+        return $oldUrl;
     }
 
     /**
      * Resolve a google redirection url
      *
      * @param Url $url
+     * 
+     * @return string
      */
     protected static function google(Url $url)
     {
-        if (($urlString = $url->getParameter('url'))) {
-            $url->setUrl($urlString);
+        if (($urlString = $url->getQueryParameter('url'))) {
+            return $urlString;
         }
+
+        return $url->getUrl();
     }
 
     /**
      * Resolve a google translation url
      *
      * @param Url $url
+     * 
+     * @return string
      */
     protected static function googleTranslator(Url $url)
     {
-        if (($urlString = $url->getParameter('u'))) {
-            $url->setUrl($urlString);
+        if (($urlString = $url->getQueryParameter('u'))) {
+            return $urlString;
         }
+
+        return $url->getUrl();
     }
 
     /**
      * Resolve an url with hashbang
      *
      * @param Url $url
+     * 
+     * @return string
      */
     protected static function hashBang(Url $url)
     {
         if (($path = preg_replace('|^(/?!)|', '', $url->getFragment()))) {
-            $url->setPath($url->getPath().$path);
+            return $url->withPath($url->getPath().$path)->getUrl();
         }
+
+        return $url->getUrl();
     }
 }

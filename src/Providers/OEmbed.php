@@ -35,15 +35,16 @@ class OEmbed extends Provider implements ProviderInterface
             return;
         }
 
-        $endPointRequest = $this->request->createRequest($endPoint);
-        $endPointRequest->startingUrl->setParameter($params);
+        $endPointRequest = $this->request
+            ->withUrl($endPoint)
+            ->withAddedQueryParameters($params);
 
-        if (!$endPointRequest->startingUrl->hasParameter('url')) {
-            $endPointRequest->startingUrl->setParameter('url', $this->request->url->getUrl());
+        if (!$endPointRequest->hasQueryParameter('url')) {
+            $endPointRequest = $endPointRequest->withQueryParameter('url', $this->request->getUrl());
         }
 
         // extract from xml
-        if (($endPointRequest->url->getExtension() === 'xml') || ($endPointRequest->url->getParameter('format') === 'xml')) {
+        if (($endPointRequest->getExtension() === 'xml') || ($endPointRequest->getQueryParameter('format') === 'xml')) {
             if ($parameters = $endPointRequest->getXmlContent()) {
                 foreach ($parameters as $element) {
                     $this->bag->set($element->getName(), (string) $element);
@@ -229,12 +230,12 @@ class OEmbed extends Provider implements ProviderInterface
     protected static function getEndPointFromRequest(Request $request, array $config)
     {
         //Search the oembed provider using the domain
-        $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->url->getDomain()))));
+        $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->getDomain()))));
 
         if (class_exists($class) && $request->match($class::getPatterns())) {
             return [
                 'endPoint' => $class::getEndpoint(),
-                'params' => $class::getParams($request->url),
+                'params' => $class::getParams($request),
             ];
         }
 
@@ -242,7 +243,7 @@ class OEmbed extends Provider implements ProviderInterface
         if (!empty($config['embedlyKey']) && $request->match(OEmbed\Embedly::getPatterns())) {
             return [
                 'endPoint' => OEmbed\Embedly::getEndpoint(),
-                'params' => OEmbed\Embedly::getParams($request->url) + ['key' => $config['embedlyKey']],
+                'params' => OEmbed\Embedly::getParams($request) + ['key' => $config['embedlyKey']],
             ];
         }
     }

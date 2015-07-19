@@ -47,8 +47,6 @@ abstract class Adapter
         'imagesBlacklist' => null,
         'getBiggerImage' => false,
         'getBiggerIcon' => false,
-        'facebookKey' => null,
-        'soundcloudKey' => 'YOUR_CLIENT_ID',
     ];
 
     /**
@@ -76,14 +74,15 @@ abstract class Adapter
 
         $this->run();
 
-        if ($request->url->getUrl() !== $this->url) {
-            $subRequest = $request->createRequest($this->url);
+        //if the canonical url is different, repeat the proccess
+        $canonical = $this->getUrl();
 
-            if ($subRequest->isValid()) {
-                $this->request = $subRequest;
+        if ($request->getUrl() !== $canonical) {
+            $request = $request->withUrl($canonical);
+
+            if ($request->isValid()) {
+                $this->request = $request;
                 $this->run();
-            } else {
-                $this->url = $request->url->getUrl();
             }
         }
     }
@@ -158,7 +157,7 @@ abstract class Adapter
      */
     public function getTitle()
     {
-        return html_entity_decode(Utils::getFirstValue(Utils::getData($this->providers, 'title')) ?: $this->request->url->getUrl());
+        return html_entity_decode(Utils::getFirstValue(Utils::getData($this->providers, 'title')) ?: $this->request->getUrl());
     }
 
     /**
@@ -200,7 +199,7 @@ abstract class Adapter
      */
     public function getSource()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'source', $this->request->url));
+        return Utils::getFirstValue(Utils::getData($this->providers, 'source', $this->request));
     }
 
     /**
@@ -230,7 +229,7 @@ abstract class Adapter
      */
     public function getUrl()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'url', $this->request->url)) ?: $this->request->url->getUrl();
+        return Utils::getFirstValue(Utils::getData($this->providers, 'url', $this->request)) ?: $this->request->getUrl();
     }
 
     /**
@@ -246,7 +245,7 @@ abstract class Adapter
      */
     public function getAuthorUrl()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'authorUrl', $this->request->url));
+        return Utils::getFirstValue(Utils::getData($this->providers, 'authorUrl', $this->request));
     }
 
     /**
@@ -254,15 +253,15 @@ abstract class Adapter
      */
     public function getProviderIconsUrls()
     {
-        $icons = Utils::getData($this->providers, 'providerIconsUrls', $this->request->url);
+        $icons = Utils::getData($this->providers, 'providerIconsUrls', $this->request);
 
         Utils::unshiftValue($icons, [
-            'value' => $this->request->url->getAbsolute('/favicon.ico'),
+            'value' => $this->request->getAbsolute('/favicon.ico'),
             'providers' => ['adapter'],
         ]);
 
         Utils::unshiftValue($icons, [
-            'value' => $this->request->url->getAbsolute('/favicon.png'),
+            'value' => $this->request->getAbsolute('/favicon.png'),
             'providers' => ['adapter'],
         ]);
 
@@ -294,7 +293,7 @@ abstract class Adapter
      */
     public function getProviderName()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'providerName')) ?: $this->request->url->getDomain();
+        return Utils::getFirstValue(Utils::getData($this->providers, 'providerName')) ?: $this->request->getDomain();
     }
 
     /**
@@ -302,7 +301,7 @@ abstract class Adapter
      */
     public function getProviderUrl()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'providerUrl', $this->request->url)) ?: ($this->request->url->getScheme().'://'.$this->request->url->getDomain(true));
+        return Utils::getFirstValue(Utils::getData($this->providers, 'providerUrl', $this->request)) ?: ($this->request->getScheme().'://'.$this->request->getDomain(true));
     }
 
     /**
@@ -310,7 +309,7 @@ abstract class Adapter
      */
     public function getImagesUrls()
     {
-        $imagesUrls = Utils::getData($this->providers, 'imagesUrls', $this->request->url);
+        $imagesUrls = Utils::getData($this->providers, 'imagesUrls', $this->request);
 
         $blacklist = $this->config['imagesBlacklist'];
         $hasBlacklist = is_array($blacklist) && count($blacklist) > 0;

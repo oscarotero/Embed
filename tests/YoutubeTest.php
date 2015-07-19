@@ -11,8 +11,8 @@ class YoutubeTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($info->imageHeight, 360);
         $this->assertEquals($info->type, 'video');
         $this->assertEquals($info->authorName, 'smshdchrb');
-        $this->assertEquals($info->authorUrl, 'http://www.youtube.com/user/smshdchrb');
+        $this->assertEquals($info->authorUrl, 'https://www.youtube.com/user/smshdchrb');
         $this->assertEquals($info->providerName, 'YouTube');
-        $this->assertEquals($info->providerUrl, 'http://www.youtube.com/');
+        $this->assertEquals($info->providerUrl, 'https://www.youtube.com/');
     }
 }

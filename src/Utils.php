@@ -294,16 +294,22 @@ class Utils
      *
      * @return string
      */
-    public static function iframe($src, $width = 0, $height = 0, $extra_styles = '')
+    public static function iframe($src, $width = 0, $height = 0, $styles = '')
     {
         $width = $width ? (is_int($width) ? $width.'px' : $width) : '600px';
         $height = $height ? (is_int($height) ? $height.'px' : $height) : '400px';
+
+        if (empty($styles)) {
+            $styles = 'border:none;overflow:hidden;';
+        }
+
+        $styles .= "width:{$width};height:{$height};";
 
         return self::element('iframe', [
             'src' => $src,
             'frameborder' => 0,
             'allowTransparency' => 'true',
-            'style' => "border:none;overflow:hidden;width:$width;height:$height;$extra_styles",
+            'style' => $styles,
         ]).'</iframe>';
     }
 

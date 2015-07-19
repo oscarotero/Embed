@@ -26,10 +26,6 @@ class Instagram extends OEmbedImplementation
      */
     public static function getParams(Url $url)
     {
-        $url = clone $url;
-
-        $url->setScheme('http');
-
-        return ['url' => $url->getUrl()];
+        return ['url' => $url->withScheme('http')->getUrl()];
     }
 }

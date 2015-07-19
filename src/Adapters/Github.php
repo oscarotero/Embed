@@ -5,12 +5,10 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Bag;
+use Embed\Providers\Api;
 
 class Github extends Webpage implements AdapterInterface
 {
-    public $api;
-
     /**
      * {@inheritdoc}
      */
@@ -26,32 +24,9 @@ class Github extends Webpage implements AdapterInterface
      */
     public function run()
     {
+        $this->addProvider('gist', new Api\Gist());
+
         parent::run();
-
-        $this->api = new Bag();
-        $api = $this->request->createRequest($this->request->url->getUrl().'.json');
-
-        if (($json = $api->getJsonContent())) {
-            $this->api->set($json);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getType()
-    {
-        return $this->getCode() ? 'rich' : 'link';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getCode()
-    {
-        if (($code = $this->api->get('div')) && ($stylesheet = $this->api->get('stylesheet'))) {
-            return  '<link href="'.$stylesheet.'" rel="stylesheet">'.$code;
-        }
     }
 
     /**

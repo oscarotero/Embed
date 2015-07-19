@@ -24,7 +24,7 @@ class Spotify extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $uri = 'spotify'.str_replace('/', ':', $this->request->url->getPath(true));
+        $uri = 'spotify'.str_replace('/', ':', $this->request->getPath());
 
         return Utils::iframe('https://embed.spotify.com/?uri='.$uri, 300, 380);
     }

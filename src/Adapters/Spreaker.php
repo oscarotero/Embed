@@ -5,9 +5,21 @@
 namespace Embed\Adapters;
 
 use Embed\Utils;
+use Embed\Request;
+use Embed\Url;
 
 class Spreaker extends Webpage implements AdapterInterface
 {
+    /**
+     * {@inheritdoc}
+     */
+    public static function check(Request $request)
+    {
+        return $request->match([
+            'http?://www.spreaker.com/*',
+        ]);
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -20,8 +32,17 @@ class Spreaker extends Webpage implements AdapterInterface
                 $id = (int) $a->getAttribute('data-episode_id');
 
                 if ($id) {
-                    return Utils::iframe('http://www.spreaker.com/embed/player/standard?autoplay=false&episode_id='.$id, '100%', 131, 'min-width:400px;');
+                    $url = (new Url($this->request->getUrl()))
+                        ->withPath('embed/player/standard')
+                        ->withQueryParameters([
+                            'autoplay' => 'false',
+                            'episode_id' => $id
+                        ])
+                        ->getUrl();
+
+                    return Utils::iframe($url, '100%', 131, 'min-width:400px;border:none;overflow:hidden;');
                 }
+
                 break;
             }
         }

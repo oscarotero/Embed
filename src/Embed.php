@@ -13,9 +13,10 @@ class Embed
      *
      * @return false|AdapterInterface
      */
-    public static function create($request, array $config = [])
+    public static function create($request, array $config = array())
     {
         $request = self::getRequest($request, isset($config['request']) ? $config['request'] : null);
+
 
         if (!$request->isValid()) {
             throw new Exceptions\InvalidUrlException("The url '{$request->startingUrl->getUrl()}' returns the http code '{$request->getHttpCode()}'");
@@ -34,7 +35,7 @@ class Embed
         }
 
         //Search the adapter using the domain
-        $adapter = 'Embed\\Adapters\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->url->getDomain()))));
+        $adapter = 'Embed\\Adapters\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->getDomain()))));
 
         if (class_exists($adapter) && ($info = self::executeAdapter($adapter, $request, $config))) {
             return $info;
@@ -113,19 +114,15 @@ class Embed
     private static function getRequest($request, array $config = null)
     {
         if (is_string($request)) {
-            return new Request(new Url($request));
+            return new Request(
+                $request,
+                isset($config['resolver']) ? $config['resolver'] : null,
+                isset($config['config']) ? $config['config'] : []
+            );
         }
 
         if (!($request instanceof Request)) {
             throw new \InvalidArgumentException("Embed::create only accepts instances of Embed\\Request or strings");
-        }
-
-        if (isset($config['resolver'])) {
-            $request->setResolverClass($config['class']);
-        }
-
-        if (isset($config['config'])) {
-            $request->setResolverConfig($config['config']);
         }
 
         return $request;

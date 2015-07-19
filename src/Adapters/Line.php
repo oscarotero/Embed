@@ -6,6 +6,7 @@ namespace Embed\Adapters;
 
 use Embed\Utils;
 use Embed\Request;
+use Embed\Url;
 
 class Line extends Webpage implements AdapterInterface
 {
@@ -24,12 +25,13 @@ class Line extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $url = clone $this->request->url;
+        $id = $this->request->getDirectoryPosition(2);
 
-        $url->setDirectory(0, 'embed');
-        $url->setDirectory(2, 'vertical');
+        $url = (new Url($this->request->getUrl()))
+            ->withPath("embed/{$id}/vertical")
+            ->getUrl();
 
-        return Utils::iframe($url->getUrl(), $this->width, $this->height);
+        return Utils::iframe($url, $this->width, $this->height, 'border:1px solid #e7e7e7;');
     }
 
     /**
