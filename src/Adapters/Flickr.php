@@ -29,7 +29,7 @@ class Flickr extends Webpage implements AdapterInterface
 
         if (empty($code)) {
             $url = (new Url($this->request->getUrl()))
-                ->withAddedDirectory('player');
+                ->withAddedPath('player');
 
             $code = Utils::iframe($url->getUrl(), $this->width, $this->height);
         }

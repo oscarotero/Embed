@@ -206,26 +206,6 @@ class Url
     }
 
     /**
-     * Returns a clone with other directory in a specific position
-     *
-     * @param string $value The new value
-     *
-     * @return Url
-     */
-    public function withAddedDirectory($value)
-    {
-        $clone = clone $this;
-
-        if (isset($clone->info['file'])) {
-            $clone->info['path'][] = $clone->info['file'];
-        }
-
-        $clone->info['file'] = $value;
-
-        return $clone;
-    }
-
-    /**
      * Return all directories
      *
      * @return string
@@ -269,6 +249,20 @@ class Url
         $clone->setPath($path);
 
         return $clone;
+    }
+
+    /**
+     * Returns a clone with path appended
+     *
+     * @param string $path
+     *
+     * @return Url
+     */
+    public function withAddedPath($path)
+    {
+        $path = $this->getPath().'/'.$path;
+
+        return $this->withPath($path);
     }
 
     /**
