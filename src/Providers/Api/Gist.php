@@ -26,7 +26,7 @@ class Gist extends Provider implements ProviderInterface
      */
     public function getType()
     {
-        if (!empty($this->getCode())) {
+        if ($this->getCode() !== null) {
             return 'rich';
         }
     }
