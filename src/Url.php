@@ -216,6 +216,25 @@ class Url
     }
 
     /**
+     * Slice path
+     *
+     * @param int      $offset
+     * @param int|null $length
+     * 
+     * @return array
+     */
+    public function getSlicePath($offset, $length = null)
+    {
+        $array = explode('/', $this->getPath());
+
+        if (empty($array[0])) {
+            array_shift($array);
+        }
+
+        return array_slice($array, $offset, $length);
+    }
+
+    /**
      * Return the url path
      *
      * @return string
