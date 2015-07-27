@@ -9,4 +9,14 @@ class GoogleTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($info->type, 'rich');
         $this->assertEquals($info->providerName, 'Google Maps');
     }
+
+    public function testDrive()
+    {
+        $info = Embed\Embed::create('https://drive.google.com/file/d/0B2rwN8wAbVSWbmFJdUdnV2VSTTg/view');
+
+        $this->assertEquals($info->title, 'Entrevista_Rianxo_RadioFusion_150724.mp3');
+        $this->assertEquals($info->type, 'rich');
+        $this->assertEquals($info->code, '<iframe src="https://drive.google.com/file/d/0B2rwN8wAbVSWbmFJdUdnV2VSTTg/preview?usp=embed_facebook&amp;pli=1" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:600px;height:400px;"></iframe>');
+        $this->assertEquals($info->providerName, 'Google Docs');
+    }
 }
