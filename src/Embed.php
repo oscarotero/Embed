@@ -116,8 +116,7 @@ class Embed
             return new Request(
                 $request,
                 isset($config['resolver']) ? $config['resolver'] : null,
-                isset($config['config']) ? $config['config'] : [],
-                isset($config['requestConfig']) ? $config['requestConfig'] : []
+                isset($config['config']) ? $config['config'] : []
             );
         }
 

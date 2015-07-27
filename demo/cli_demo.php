@@ -11,11 +11,7 @@ if(!(isset($argv[1]))) {
 
 $url = $argv[1];
 try {
-    $info = Embed\Embed::create($url,[], [
-        'requestConfig' =>  [
-            'allow429' => true
-        ]
-    ]);
+    $info = Embed\Embed::create($url);
     var_dump($info->title);
 } catch (Exception $exception) {
     echo "EXCEPTION\n";
