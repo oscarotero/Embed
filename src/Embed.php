@@ -15,7 +15,7 @@ class Embed
      */
     public static function create($request, array $config = array())
     {
-        $request = self::getRequest($request, isset($config['request']) ? $config['request'] : null);
+        $request = self::getRequest($request, isset($config['resolver']) ? $config['resolver'] : null);
 
         if (!$request->isValid()) {
             throw new Exceptions\InvalidUrlException("The url '{$request->getUrl()}' returns the http code '{$request->getHttpCode()}'");
@@ -115,7 +115,7 @@ class Embed
         if (is_string($request)) {
             return new Request(
                 $request,
-                isset($config['resolver']) ? $config['resolver'] : null,
+                isset($config['class']) ? $config['class'] : null,
                 isset($config['config']) ? $config['config'] : []
             );
         }
