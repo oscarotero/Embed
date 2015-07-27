@@ -23,8 +23,9 @@ class Request extends Url
      * @param string      $url            The request url
      * @param null|string $resolverClass  The resolver classname
      * @param array       $resolverConfig The resolver configuration
+     * @param array       $config         Request config
      */
-    public function __construct($url, $resolverClass = null, array $resolverConfig = array())
+    public function __construct($url, $resolverClass = null, array $resolverConfig = array(), array $config = array())
     {
         if ($resolverClass !== null) {
             if (!class_exists($resolverClass)) {
@@ -42,6 +43,7 @@ class Request extends Url
 
         $this->resolverConfig = array_replace($this->resolverConfig, $resolverConfig);
         $this->startingUrl = new Url($url);
+        $this->config = array_merge(array('allow429' => false), $config);
         $this->parseUrl($url);
     }
 
@@ -235,6 +237,10 @@ class Request extends Url
      */
     public function isValid()
     {
+        if (($this->getHttpCode() == 429) && $this->config['allow429']) {
+            return true;
+        }
+
         if ($this->getHttpCode() !== 200) {
             return false;
         }
