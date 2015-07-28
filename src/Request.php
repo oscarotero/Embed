@@ -9,6 +9,7 @@ class Request extends Url
 {
     private $startingUrl;
 
+    private $config;
     private $resolver;
     private $resolverClass = 'Embed\\RequestResolvers\\Curl';
     private $resolverConfig = [];
@@ -23,9 +24,13 @@ class Request extends Url
      * @param string      $url            The request url
      * @param null|string $resolverClass  The resolver classname
      * @param array       $resolverConfig The resolver configuration
+     * @param array       $config         The request configuration
      */
-    public function __construct($url, $resolverClass = null, array $resolverConfig = array())
+    public function __construct($url, $resolverClass = null, array $resolverConfig = array(), array $config = [])
     {
+        $defaultConfig = [ 'allowedCodes' => [ 200 ] ];
+        $this->config = array_merge($defaultConfig, $config);
+
         if ($resolverClass !== null) {
             if (!class_exists($resolverClass)) {
                 throw new \InvalidArgumentException("This class does not exists");
@@ -245,14 +250,10 @@ class Request extends Url
      */
     public function isValid()
     {
-        if (($this->getHttpCode() == 429)) {
+        if (in_array($this->getHttpCode(), $this->config['allowedCodes'])) {
             return true;
         }
 
-        if ($this->getHttpCode() !== 200) {
-            return false;
-        }
-
-        return true;
+        return false;
     }
 }
