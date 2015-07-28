@@ -27,11 +27,7 @@ class Line extends Webpage implements AdapterInterface
     {
         $id = $this->request->getDirectoryPosition(2);
 
-        $url = (new Url($this->request->getUrl()))
-            ->withPath("embed/{$id}/vertical")
-            ->getUrl();
-
-        return Utils::iframe($url, $this->width, $this->height, 'border:1px solid #e7e7e7;');
+        return Utils::iframe($this->request->createUrl()->withPath("embed/{$id}/vertical"), $this->width, $this->height, 'border:1px solid #e7e7e7;');
     }
 
     /**

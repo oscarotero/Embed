@@ -28,10 +28,7 @@ class Flickr extends Webpage implements AdapterInterface
         $code = parent::getCode();
 
         if (empty($code)) {
-            $url = (new Url($this->request->getUrl()))
-                ->withAddedPath('player');
-
-            $code = Utils::iframe($url->getUrl(), $this->width, $this->height);
+            $code = Utils::iframe($this->request->createUrl()->withAddedPath('player'), $this->width, $this->height);
         }
 
         return $code;

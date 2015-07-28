@@ -19,6 +19,16 @@ class Url
     }
 
     /**
+     * Returns the url
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getUrl();
+    }
+
+    /**
      * Return the url
      *
      * @return string The current url

@@ -18,6 +18,7 @@ class Google extends Webpage implements AdapterInterface
         return $request->match([
             'https://maps.google.*',
             'https://www.google.*/maps*',
+            'https://drive.google.com/file/*/view',
         ]);
     }
 
@@ -26,11 +27,13 @@ class Google extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $url = (new Url($this->request->getUrl()))
-            ->withQueryParameter('output', 'embed')
-            ->withQueryParameter('s', '');
+        $url = $this->request->createUrl();
 
-        return Utils::iframe($url->getUrl());
+        if ($this->request->getHost() === 'drive.google.com') {
+            return Utils::iframe($url->withDirectoryPosition(3, 'preview'));
+        }
+        
+        return Utils::iframe($url->withQueryParameter('output', 'embed')->withQueryParameter('s', ''));
     }
 
     /**
