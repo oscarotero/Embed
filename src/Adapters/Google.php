@@ -27,16 +27,13 @@ class Google extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $url = new Url($this->request->getUrl());
+        $url = $this->request->createUrl();
 
         if ($this->request->getHost() === 'drive.google.com') {
-            $url = $url->withDirectoryPosition(3, 'preview');
-        } else {
-            $url->withQueryParameter('output', 'embed')
-                ->withQueryParameter('s', '');
+            return Utils::iframe($url->withDirectoryPosition(3, 'preview'));
         }
-
-        return Utils::iframe($url->getUrl());
+        
+        return Utils::iframe($url->withQueryParameter('output', 'embed')->withQueryParameter('s', ''));
     }
 
     /**

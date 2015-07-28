@@ -82,6 +82,16 @@ class Request extends Url
     }
 
     /**
+     * Creates and returns an Url clone
+     *
+     * @return Url
+     */
+    public function createUrl()
+    {
+        return new Url($this->getUrl());
+    }
+
+    /**
      * Creates a new request with the same configuration than this
      *
      * @param string $url

@@ -32,15 +32,12 @@ class Spreaker extends Webpage implements AdapterInterface
                 $id = (int) $a->getAttribute('data-episode_id');
 
                 if ($id) {
-                    $url = (new Url($this->request->getUrl()))
+                    return Utils::iframe($this->request->createUrl()
                         ->withPath('embed/player/standard')
                         ->withQueryParameters([
                             'autoplay' => 'false',
                             'episode_id' => $id,
-                        ])
-                        ->getUrl();
-
-                    return Utils::iframe($url, '100%', 131, 'min-width:400px;border:none;overflow:hidden;');
+                        ]), '100%', 131, 'min-width:400px;border:none;overflow:hidden;');
                 }
 
                 break;
