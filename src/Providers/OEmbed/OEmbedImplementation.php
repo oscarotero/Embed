@@ -39,4 +39,14 @@ abstract class OEmbedImplementation
     {
         return [];
     }
+
+    /**
+     * @access public
+     * @author Dave Ross
+     * @return bool
+     */
+    public static function embedInDomIsBroken()
+    {
+        return false;
+    }
 }
