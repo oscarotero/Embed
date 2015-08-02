@@ -9,7 +9,6 @@ class KickstarterTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($info->description, 'Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends & sprouted superfood ingredients.');
         $this->assertEquals($info->width, 480);
         $this->assertEquals($info->height, 360);
-        $this->assertEquals($info->type, 'video');
         $this->assertEquals($info->authorName, 'Oliver Ponce and Erin Shotwell');
         $this->assertEquals($info->providerName, 'Kickstarter');
     }
