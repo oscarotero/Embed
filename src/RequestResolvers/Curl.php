@@ -6,6 +6,7 @@ namespace Embed\RequestResolvers;
 
 class Curl implements RequestResolverInterface
 {
+    protected static $tmpCookies;
     protected $isBinary;
     protected $result;
     protected $content;
@@ -109,7 +110,9 @@ class Curl implements RequestResolverInterface
         $this->content = '';
         $this->isBinary = null;
 
-        $tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
+        if (!self::$tmpCookies) {
+            self::$tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
+        }
 
         $connection = curl_init();
 
@@ -117,8 +120,8 @@ class Curl implements RequestResolverInterface
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_URL => $this->url,
-            CURLOPT_COOKIEJAR => $tmpCookies,
-            CURLOPT_COOKIEFILE => $tmpCookies,
+            CURLOPT_COOKIEJAR => self::$tmpCookies,
+            CURLOPT_COOKIEFILE => self::$tmpCookies,
             CURLOPT_HEADERFUNCTION => [$this, 'headerCallback'],
             CURLOPT_WRITEFUNCTION => [$this, 'writeCallback'],
         ] + $this->config);
