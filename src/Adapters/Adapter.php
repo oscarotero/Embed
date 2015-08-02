@@ -72,13 +72,21 @@ abstract class Adapter
             $this->imageConfig = $config['image']['config'];
         }
 
+        $this->init();
+    }
+
+    /**
+     * Init the adapter
+     */
+    protected function init()
+    {
         $this->run();
 
         //if the canonical url is different, repeat the proccess
         $canonical = $this->getUrl();
 
-        if ($request->getUrl() !== $canonical) {
-            $request = $request->withUrl($canonical);
+        if ($this->request->getUrl() !== $canonical) {
+            $request = $this->request->withUrl($canonical);
 
             if ($request->isValid()) {
                 $this->request = $request;
