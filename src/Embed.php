@@ -15,7 +15,7 @@ class Embed
      */
     public static function create($request, array $config = array())
     {
-        $request = self::getRequest($request, isset($config['resolver']) ? $config['resolver'] : null);
+        $request = self::getRequest($request, isset($config['request']) ? $config['request'] : [], isset($config['resolver']) ? $config['resolver'] : null);
 
         if (!$request->isValid()) {
             throw new Exceptions\InvalidUrlException("The url '{$request->getUrl()}' returns the http code '{$request->getHttpCode()}'");
@@ -51,14 +51,15 @@ class Embed
     /**
      * Gets the info from a source (list of urls)
      *
-     * @param string|Request $request The url or a request with the source url
-     * @param null|array     $config  Options passed to the adapter
+     * @param string|Request $request        The url or a request with the source url
+     * @param null|array     $resolverConfig Options passed to the adapter
+     * @param null|array     $config         Options passed to the request
      *
      * @return false|Sources\SourceInterface
      */
-    public static function createSource($request, array $config = null)
+    public static function createSource($request, array $resolverConfig = null, array $config = [])
     {
-        $request = self::getRequest($request, $config);
+        $request = self::getRequest($request, $resolverConfig, $config);
 
         if (!$request->isValid()) {
             return false;
@@ -103,20 +104,22 @@ class Embed
     /**
      * Init a request
      *
-     * @param string|Request $request The url or a request with the url
-     * @param null|array     $config  Options passed to the adapter
+     * @param string|Request $request         The url or a request with the url
+     * @param null|array     $config          Options passed to the request
+     * @param null|array     $resolverConfig  Options passed to the adapter
      *
      * @throws \InvalidArgumentException If the class in not Embed\Request instance
      *
      * @return Request
      */
-    private static function getRequest($request, array $config = null)
+    private static function getRequest($request, array $config = [], array $resolverConfig = null)
     {
         if (is_string($request)) {
             return new Request(
                 $request,
-                isset($config['class']) ? $config['class'] : null,
-                isset($config['config']) ? $config['config'] : []
+                isset($resolverConfig['class']) ? $resolverConfig['class'] : null,
+                isset($resolverConfig['config']) ? $resolverConfig['config'] : [],
+                $config
             );
         }
 

@@ -135,6 +135,23 @@ $config = [
 ];
 ```
 
+### The request
+
+Embed uses \Embed\Request to wrap necessary http request data. It also checks if request was correct.
+
+The request configuration is defined under the "request" key, and it has one options:
+
+* allowedCodes: array of http codes, that are allowed (i.e response with such code is considered to be valid). By default it allows only 200.
+
+
+```php
+$config = [
+    'request' => [
+        'allowedCodes' => [ 200 ]
+    ]
+];
+```
+
 ### The request resolver
 
 Embed uses the `Embed\RequestResolvers\Curl` class to resolve all requests using the curl library. You can set options to the curl request or use your custom resolver creating a class implementing the `Embed\RequestResolvers\RequestResolverInterface`.
