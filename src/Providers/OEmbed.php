@@ -269,5 +269,8 @@ class OEmbed extends Provider implements ProviderInterface
         if ( class_exists( $class ) && $request->match( $class::getPatterns() ) ) {
             return $class::embedInDomIsBroken();
         }
+
+        // Fall-through default in case this called for an invalid class
+        return false;
     }
 }
