@@ -24,7 +24,7 @@ class OEmbed extends Provider implements ProviderInterface
         $endPoint = null;
         $params = $this->config['parameters'];
 
-        if (!($html = $this->request->getHtmlContent()) || !($endPoint = self::getEndPointFromDom($html))) {
+        if (self::providerEmbedInDomIsBroken($this->request) || (!($html = $this->request->getHtmlContent()) || !($endPoint = self::getEndPointFromDom($html)))) {
             if (($info = self::getEndPointFromRequest($this->request, $this->config))) {
                 $endPoint = $info['endPoint'];
                 $params += $info['params'];
@@ -235,7 +235,7 @@ class OEmbed extends Provider implements ProviderInterface
     protected static function getEndPointFromRequest(Request $request, array $config)
     {
         //Search the oembed provider using the domain
-        $class = 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->getDomain()))));
+        $class = self::getClassFromRequest($request);
 
         if (class_exists($class) && $request->match($class::getPatterns())) {
             return [
@@ -251,5 +251,31 @@ class OEmbed extends Provider implements ProviderInterface
                 'params' => OEmbed\Embedly::getParams($request) + ['key' => $config['embedlyKey']],
             ];
         }
+    }
+
+    /**
+     * Return the class name implementing an oEmbed provider
+     * @param Request $request
+     *
+     * @return string
+     */
+    protected static function getClassFromRequest(Request $request) {
+        return 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->getDomain()))));
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return bool
+     */
+    protected static function providerEmbedInDomIsBroken(Request $request) {
+        $class = self::getClassFromRequest( $request );
+
+        if ( class_exists( $class ) && $request->match( $class::getPatterns() ) ) {
+            return $class::embedInDomIsBroken();
+        }
+
+        // Fall-through default in case this called for an invalid class
+        return false;
     }
 }
