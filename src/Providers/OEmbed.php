@@ -24,7 +24,7 @@ class OEmbed extends Provider implements ProviderInterface
         $endPoint = null;
         $params = $this->config['parameters'];
 
-        if ($this->providerEmbedInDomIsBroken($this->request) || (!($html = $this->request->getHtmlContent()) || !($endPoint = self::getEndPointFromDom($html)))) {
+        if (self::providerEmbedInDomIsBroken($this->request) || (!($html = $this->request->getHtmlContent()) || !($endPoint = self::getEndPointFromDom($html)))) {
             if (($info = self::getEndPointFromRequest($this->request, $this->config))) {
                 $endPoint = $info['endPoint'];
                 $params += $info['params'];
