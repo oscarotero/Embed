@@ -15,7 +15,7 @@ class Google extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match([
+        return $request->isValid() && $request->match([
             'https://maps.google.*',
             'https://www.google.*/maps*',
             'https://drive.google.com/file/*/view',

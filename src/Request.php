@@ -240,15 +240,17 @@ class Request extends Url
 
     /**
      * Check if the response is valid or not
+     * 
+     * @param array $validCodes
      *
      * @return boolean True if it's valid, false if not
      */
-    public function isValid()
+    public function isValid(array $validCodes = null)
     {
-        if ($this->getHttpCode() !== 200) {
-            return false;
+        if ($validCodes === null) {
+            return $this->getHttpCode() === 200;
         }
 
-        return true;
+        return in_array($this->getHttpCode(), $validCodes, true);
     }
 }
