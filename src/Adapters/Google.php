@@ -30,7 +30,7 @@ class Google extends Webpage implements AdapterInterface
         $url = $this->request->createUrl();
 
         if ($this->request->getHost() === 'drive.google.com') {
-            return Utils::iframe($url->withDirectoryPosition(3, 'preview'));
+            return Utils::iframe($url->withDirectoryPosition(3, 'preview')->withQueryParameters([]));
         }
         
         return Utils::iframe($url->withQueryParameter('output', 'embed')->withQueryParameter('s', ''));

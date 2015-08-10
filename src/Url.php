@@ -403,7 +403,7 @@ class Url
 
         $url .= $this->getPath();
 
-        if (isset($this->info['query'])) {
+        if (!empty($this->info['query'])) {
             $url .= '?'.http_build_query($this->info['query']);
         }
         if (isset($this->info['fragment'])) {
