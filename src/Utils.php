@@ -86,7 +86,7 @@ class Utils
                         'value' => $v,
                         'providers' => [$key],
                     ];
-                } else {
+                } elseif (!in_array($key, $values[$v]['providers'], true)) {
                     $values[$v]['providers'][] = $key;
                 }
             }
@@ -109,10 +109,10 @@ class Utils
         foreach ($values as $value) {
             foreach ($value['providers'] as $provider) {
                 if (!isset($sorted[$provider])) {
-                    $sorted[$provider] = [];
+                    $sorted[$provider] = [$value];
+                } else {
+                    $sorted[$provider][] = $value;
                 }
-
-                $sorted[$provider][] = $value;
             }
         }
 
