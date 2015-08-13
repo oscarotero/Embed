@@ -7,7 +7,7 @@ class ImageInfoTest extends TestCaseBase
             'value' => 'http://a.images.blip.tv/NostalgiaCritic-NCTheMatrix187.jpg',
         ]);
 
-        $this->assertString($info, [
+        $this->assertEquals($info, [
             'width' => 620,
             'height' => 274,
             'size' => 169880,
