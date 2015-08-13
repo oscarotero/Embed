@@ -5,7 +5,6 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Providers;
 
 class Lavozdegalicia extends Webpage implements AdapterInterface
 {

@@ -6,7 +6,6 @@ namespace Embed\Adapters;
 
 use Embed\Utils;
 use Embed\Request;
-use Embed\Url;
 
 class Line extends Webpage implements AdapterInterface
 {

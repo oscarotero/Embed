@@ -240,7 +240,7 @@ class Request extends Url
 
     /**
      * Check if the response is valid or not
-     * 
+     *
      * @param array $validCodes
      *
      * @return boolean True if it's valid, false if not

@@ -230,7 +230,7 @@ class Url
      *
      * @param int      $offset
      * @param int|null $length
-     * 
+     *
      * @return array
      */
     public function getSlicePath($offset, $length = null)

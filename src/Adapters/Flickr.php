@@ -4,7 +4,6 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
 use Embed\Request;
 use Embed\Utils;
 

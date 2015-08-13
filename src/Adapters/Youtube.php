@@ -26,6 +26,7 @@ class Youtube extends Webpage implements AdapterInterface
     {
         if ($this->request->getHttpCode() === 429) {
             $this->addProvider('oembed', new Providers\OEmbed());
+
             return;
         }
 

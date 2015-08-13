@@ -20,5 +20,4 @@ class Youtube extends OEmbedImplementation
             'https?://*youtube.*',
         ];
     }
-
 }

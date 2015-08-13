@@ -259,7 +259,8 @@ class OEmbed extends Provider implements ProviderInterface
      *
      * @return string
      */
-    protected static function getClassFromRequest(Request $request) {
+    protected static function getClassFromRequest(Request $request)
+    {
         return 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->getDomain()))));
     }
 
@@ -268,10 +269,11 @@ class OEmbed extends Provider implements ProviderInterface
      *
      * @return bool
      */
-    protected static function providerEmbedInDomIsBroken(Request $request) {
-        $class = self::getClassFromRequest( $request );
+    protected static function providerEmbedInDomIsBroken(Request $request)
+    {
+        $class = self::getClassFromRequest($request);
 
-        if ( class_exists( $class ) && $request->match( $class::getPatterns() ) ) {
+        if (class_exists($class) && $request->match($class::getPatterns())) {
             return $class::embedInDomIsBroken();
         }
 
