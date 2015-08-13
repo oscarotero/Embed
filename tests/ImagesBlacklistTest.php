@@ -1,5 +1,5 @@
 <?php
-class ImagesBlacklistTest extends PHPUnit_Framework_TestCase
+class ImagesBlacklistTest extends TestCaseBase
 {
     public function testPlainText()
     {
@@ -13,7 +13,7 @@ class ImagesBlacklistTest extends PHPUnit_Framework_TestCase
             ]
         ]);
 
-        $this->assertEquals('https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif', $info->image);
+        $this->assertString('https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif', $info->image);
     }
 
     public function testPlainUrlMatch()
@@ -28,7 +28,7 @@ class ImagesBlacklistTest extends PHPUnit_Framework_TestCase
             ]
         ]);
 
-        $this->assertEquals('https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif', $info->image);
+        $this->assertString('https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif', $info->image);
     }
 
     public function testAuthorizedImage()
@@ -43,6 +43,6 @@ class ImagesBlacklistTest extends PHPUnit_Framework_TestCase
             ]
         ]);
 
-        $this->assertEquals('https://avatars1.githubusercontent.com/u/377873?v=3&s=400', $info->image);
+        $this->assertString('https://avatars1.githubusercontent.com/u/377873?v=3&s=400', $info->image);
     }
 }

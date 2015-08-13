@@ -1,12 +1,12 @@
 <?php
-class MitTest extends PHPUnit_Framework_TestCase
+class MitTest extends TestCaseBase
 {
     public function testOne()
     {
         $info = Embed\Embed::create('http://video.mit.edu/watch/2014-friday-after-thanksgiving-chain-reaction-29337/');
 
-        $this->assertEquals($info->title, '2014 Friday After Thanksgiving Chain Reaction | MIT Video');
-        $this->assertEquals($info->type, 'video');
-        $this->assertEquals($info->providerName, 'MIT Media Lab');
+        $this->assertString($info->title, '2014 Friday After Thanksgiving Chain Reaction | MIT Video');
+        $this->assertString($info->type, 'video');
+        $this->assertString($info->providerName, 'MIT Media Lab');
     }
 }

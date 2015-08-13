@@ -1,5 +1,5 @@
 <?php
-class ImageInfoTest extends PHPUnit_Framework_TestCase
+class ImageInfoTest extends TestCaseBase
 {
     public function testOne()
     {
@@ -7,7 +7,7 @@ class ImageInfoTest extends PHPUnit_Framework_TestCase
             'value' => 'http://a.images.blip.tv/NostalgiaCritic-NCTheMatrix187.jpg',
         ]);
 
-        $this->assertEquals($info, [
+        $this->assertString($info, [
             'width' => 620,
             'height' => 274,
             'size' => 169880,

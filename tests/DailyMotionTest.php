@@ -1,17 +1,17 @@
 <?php
-class DailyMotionTest extends PHPUnit_Framework_TestCase
+class DailyMotionTest extends TestCaseBase
 {
     public function testOne()
     {
         $info = Embed\Embed::create('http://www.dailymotion.com/video/xy0wd_chats-paresseux');
 
-        $this->assertEquals($info->title, 'Chats paresseux');
-        $this->assertEquals($info->type, 'video');
-        $this->assertEquals($info->url, 'http://www.dailymotion.com/video/xy0wd_chats-paresseux_animals');
-        $this->assertEquals($info->image, 'http://s1.dmcdn.net/Ay0o/x240-kWu.jpg');
-        $this->assertEquals($info->imageWidth, 320);
-        $this->assertEquals($info->imageHeight, 240);
-        $this->assertEquals($info->providerName, 'Dailymotion');
-        $this->assertEquals($info->providerUrl, 'http://www.dailymotion.com');
+        $this->assertString($info->title, 'Chats paresseux');
+        $this->assertString($info->type, 'video');
+        $this->assertString($info->url, 'http://www.dailymotion.com/video/xy0wd_chats-paresseux_animals');
+        $this->assertString($info->image, 'http://s1.dmcdn.net/Ay0o/x240-kWu.jpg');
+        $this->assertString($info->imageWidth, 320);
+        $this->assertString($info->imageHeight, 240);
+        $this->assertString($info->providerName, 'Dailymotion');
+        $this->assertString($info->providerUrl, 'http://www.dailymotion.com');
     }
 }

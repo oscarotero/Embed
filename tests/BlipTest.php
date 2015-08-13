@@ -1,15 +1,15 @@
 <?php
-class BlipTest extends PHPUnit_Framework_TestCase
+class BlipTest extends TestCaseBase
 {
     public function testOne()
     {
         $info = Embed\Embed::create('http://blip.tv/indevelopment/iamsorry-6839170');
 
-        $this->assertEquals($info->title, '#IAMSORRY');
-        $this->assertEquals($info->imageWidth, 720);
-        $this->assertEquals($info->imageHeight, 405);
-        $this->assertEquals($info->type, 'video');
-        $this->assertEquals($info->providerName, 'Blip');
-        $this->assertEquals($info->code, '<iframe src="http://blip.tv/play/AYOht2YC.x?p=1" width="1280" height="750" frameborder="0" allowfullscreen></iframe>');
+        $this->assertString($info->title, '#IAMSORRY');
+        $this->assertString($info->imageWidth, 720);
+        $this->assertString($info->imageHeight, 405);
+        $this->assertString($info->type, 'video');
+        $this->assertString($info->providerName, 'Blip');
+        $this->assertString($info->code, '<iframe src="http://blip.tv/play/AYOht2YC.x?p=1" width="1280" height="750" frameborder="0" allowfullscreen></iframe>');
     }
 }

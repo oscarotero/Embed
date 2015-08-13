@@ -1,17 +1,17 @@
 <?php
-class UstreamTest extends PHPUnit_Framework_TestCase
+class UstreamTest extends TestCaseBase
 {
     public function testOne()
     {
         $info = Embed\Embed::create('http://www.ustream.tv/channel/red-shoes-billiards-60803-camera-1');
 
-        $this->assertEquals($info->title, 'Red Shoes Billiards 1pkt,banks camera 1');
-        $this->assertEquals($info->imageWidth, 120);
-        $this->assertEquals($info->imageHeight, 90);
-        $this->assertEquals($info->type, 'video');
-        $this->assertEquals($info->authorName, 'redsh0es');
-        $this->assertEquals($info->authorUrl, 'http://www.ustream.tv/user/redsh0es');
-        $this->assertEquals($info->providerName, 'Ustream');
-        $this->assertEquals($info->providerUrl, 'http://www.ustream.tv/');
+        $this->assertString($info->title, 'Red Shoes Billiards 1pkt,banks camera 1');
+        $this->assertString($info->imageWidth, 120);
+        $this->assertString($info->imageHeight, 90);
+        $this->assertString($info->type, 'video');
+        $this->assertString($info->authorName, 'redsh0es');
+        $this->assertString($info->authorUrl, 'http://www.ustream.tv/user/redsh0es');
+        $this->assertString($info->providerName, 'Ustream');
+        $this->assertString($info->providerUrl, 'http://www.ustream.tv/');
     }
 }

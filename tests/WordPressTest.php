@@ -1,16 +1,16 @@
 <?php
-class WordPressTest extends PHPUnit_Framework_TestCase
+class WordPressTest extends TestCaseBase
 {
     public function testOne()
     {
         $info = Embed\Embed::create('http://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/');
 
-        $this->assertEquals($info->title, 'Dave Ross: Optimize Image Files Like a Pro');
-        $this->assertEquals($info->imageWidth, 400);
-        $this->assertEquals($info->imageHeight, 224);
-        $this->assertEquals($info->type, 'video');
-        $this->assertEquals($info->authorName, '@WordPressTV');
-        $this->assertEquals($info->providerName, 'WordPress.tv');
-        $this->assertEquals($info->providerUrl, 'http://wordpress.tv');
+        $this->assertString($info->title, 'Dave Ross: Optimize Image Files Like a Pro');
+        $this->assertString($info->imageWidth, 400);
+        $this->assertString($info->imageHeight, 224);
+        $this->assertString($info->type, 'video');
+        $this->assertString($info->authorName, '@WordPressTV');
+        $this->assertString($info->providerName, 'WordPress.tv');
+        $this->assertString($info->providerUrl, 'http://wordpress.tv');
     }
 }

@@ -1,12 +1,12 @@
 <?php
-class JsfiddleTest extends PHPUnit_Framework_TestCase
+class JsfiddleTest extends TestCaseBase
 {
     public function testOne()
     {
         $info = Embed\Embed::create('http://jsfiddle.net/zhm5rjnz/');
 
-        $this->assertEquals($info->title, 'Edit fiddle - JSFiddle');
-        $this->assertEquals($info->type, 'rich');
-        $this->assertEquals($info->providerName, 'jsfiddle');
+        $this->assertString($info->title, 'Edit fiddle - JSFiddle');
+        $this->assertString($info->type, 'rich');
+        $this->assertString($info->providerName, 'jsfiddle');
     }
 }

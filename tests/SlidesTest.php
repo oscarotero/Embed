@@ -1,16 +1,16 @@
 <?php
-class SlidesTest extends PHPUnit_Framework_TestCase
+class SlidesTest extends TestCaseBase
 {
     public function testOne()
     {
         $info = Embed\Embed::create('http://slides.com/alexwalker/responsive-svg/');
 
-        $this->assertEquals($info->title, 'responsive-svg by Alex Walker');
-        $this->assertEquals($info->type, 'rich');
-        $this->assertEquals($info->code, '<iframe src="http://slides.com/alexwalker/responsive-svg/embed" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:576px;height:420px;"></iframe>');
-        $this->assertEquals($info->width, 576);
-        $this->assertEquals($info->height, 420);
-        $this->assertEquals($info->providerName, 'Slides');
-        $this->assertEquals($info->providerUrl, 'http://slides.com');
+        $this->assertString($info->title, 'responsive-svg by Alex Walker');
+        $this->assertString($info->type, 'rich');
+        $this->assertString($info->code, '<iframe src="http://slides.com/alexwalker/responsive-svg/embed" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:576px;height:420px;"></iframe>');
+        $this->assertString($info->width, 576);
+        $this->assertString($info->height, 420);
+        $this->assertString($info->providerName, 'Slides');
+        $this->assertString($info->providerUrl, 'http://slides.com');
     }
 }
