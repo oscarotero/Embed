@@ -14,4 +14,16 @@ class YoutubeTest extends TestCaseBase
         $this->assertString($info->providerName, 'YouTube');
         $this->assertString($info->providerUrl, 'https://www.youtube.com/');
     }
+
+    public function testPlayList()
+    {
+        $info = Embed\Embed::create('https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST');
+
+        $this->assertString($info->title, 'De espaldas al patriarcado');
+        $this->assertString($info->imageWidth, 480);
+        $this->assertString($info->imageHeight, 360);
+        $this->assertString($info->type, 'video');
+        $this->assertString($info->code, '<iframe width="480" height="270" src="https://www.youtube.com/embed/videoseries?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST" frameborder="0" allowfullscreen></iframe>');
+        $this->assertString($info->authorName, 'Scadrei5');
+    }
 }
