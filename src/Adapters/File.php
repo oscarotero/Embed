@@ -40,7 +40,7 @@ class File extends Adapter implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return isset(self::$contentTypes[$request->getMimeType()]);
+        return $request->isValid() && isset(self::$contentTypes[$request->getMimeType()]);
     }
 
     /**

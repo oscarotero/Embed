@@ -14,7 +14,7 @@ class Mit extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match([
+        return $request->isValid() && $request->match([
             'http://video.mit.edu/watch/*',
         ]);
     }

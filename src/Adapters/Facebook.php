@@ -14,7 +14,7 @@ class Facebook extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->match([
+        return $request->isValid() && $request->match([
             'https://www.facebook.com/*',
         ]);
     }

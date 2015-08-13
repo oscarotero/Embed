@@ -17,7 +17,7 @@ class GoogleTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($info->title, 'Entrevista_Rianxo_RadioFusion_150724.mp3');
         $this->assertEquals($info->type, 'rich');
-        $this->assertEquals($info->code, '<iframe src="https://drive.google.com/file/d/0B2rwN8wAbVSWbmFJdUdnV2VSTTg/preview?pli=1&amp;usp=embed_facebook" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:600px;height:400px;"></iframe>');
+        $this->assertEquals($info->code, '<iframe src="https://drive.google.com/file/d/0B2rwN8wAbVSWbmFJdUdnV2VSTTg/preview" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:600px;height:400px;"></iframe>');
         $this->assertEquals($info->providerName, 'Google Docs');
     }
 }

@@ -17,10 +17,6 @@ class Embed
     {
         $request = self::getRequest($request, isset($config['resolver']) ? $config['resolver'] : null);
 
-        if (!$request->isValid()) {
-            throw new Exceptions\InvalidUrlException("The url '{$request->getUrl()}' returns the http code '{$request->getHttpCode()}'");
-        }
-
         //Use custom adapter
         if (!empty($config['adapter']['class'])) {
             if (($info = self::executeAdapter($config['adapter']['class'], $request, $config))) {
@@ -43,6 +39,10 @@ class Embed
         //Use the standard webpage adapter
         if (($info = self::executeAdapter('Embed\Adapters\Webpage', $request, $config))) {
             return $info;
+        }
+
+        if (!$request->isValid()) {
+            throw new Exceptions\InvalidUrlException("The url '{$request->getUrl()}' returns the http code '{$request->getHttpCode()}'");
         }
 
         throw new Exceptions\InvalidUrlException("The url '{$request->getUrl()}' is not supported");
