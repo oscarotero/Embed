@@ -3,7 +3,7 @@ class FlickrTest extends TestCaseBase
 {
     public function testSets()
     {
-        $info = Embed\Embed::create('https://www.flickr.com/photos/desescribir/sets/72157650686499888');
+        $info = $this->getInfo('https://www.flickr.com/photos/desescribir/sets/72157650686499888');
 
         $this->assertString($info->imageWidth, 1024);
         $this->assertString($info->imageHeight, 680);
@@ -13,7 +13,7 @@ class FlickrTest extends TestCaseBase
 
     public function testProfile()
     {
-        $info = Embed\Embed::create('https://www.flickr.com/photos/desescribir');
+        $info = $this->getInfo('https://www.flickr.com/photos/desescribir');
 
         $this->assertString($info->imageWidth, 2048);
         $this->assertString($info->imageHeight, 1454);

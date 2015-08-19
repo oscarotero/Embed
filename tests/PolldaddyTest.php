@@ -3,7 +3,7 @@ class PolldaddyTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://polldaddy.com/poll/7012505/');
+        $info = $this->getInfo('http://polldaddy.com/poll/7012505/');
 
         $this->assertString($info->title, "Which design do you prefer?");
         $this->assertString($info->description, 'Poll Answers: Option #1, Option #2,');

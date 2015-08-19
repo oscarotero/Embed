@@ -3,7 +3,7 @@ class HowcastTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://www.howcast.com/videos/512882-How-to-Make-an-Alabama-Slammer-Shots-Recipes');
+        $info = $this->getInfo('http://www.howcast.com/videos/512882-How-to-Make-an-Alabama-Slammer-Shots-Recipes');
 
         $this->assertString($info->title, 'How to Make an Alabama Slammer | Howcast');
         $this->assertString($info->image, 'http://98441.cdx.c.ooyala.com/8zcDVjczr8uRcjUmcmfImbxKI6OP6cFf/promo251669269');

@@ -3,7 +3,7 @@ class SpotifyTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://open.spotify.com/track/7nDQMtLxu94xtlTR8bEqjU');
+        $info = $this->getInfo('http://open.spotify.com/track/7nDQMtLxu94xtlTR8bEqjU');
 
         $this->assertString($info->title, 'Zhu - Faded');
         $this->assertString($info->type, 'rich');

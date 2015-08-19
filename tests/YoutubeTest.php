@@ -3,7 +3,7 @@ class YoutubeTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://www.youtube.com/watch?v=eiHXASgRTcA');
+        $info = $this->getInfo('http://www.youtube.com/watch?v=eiHXASgRTcA');
 
         $this->assertString($info->title, 'Noisy kittens waiting for dinner!');
         $this->assertString($info->imageWidth, 480);
@@ -17,7 +17,7 @@ class YoutubeTest extends TestCaseBase
 
     public function testPlayList()
     {
-        $info = Embed\Embed::create('https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST');
+        $info = $this->getInfo('https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST');
 
         $this->assertString($info->title, 'De espaldas al patriarcado');
         $this->assertString($info->imageWidth, 480);

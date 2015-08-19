@@ -3,7 +3,7 @@ class ViddlerTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://www.viddler.com/v/bdce8c7');
+        $info = $this->getInfo('http://www.viddler.com/v/bdce8c7');
 
         $this->assertString($info->title, 'Viddler Platform Overview');
         $this->assertString($info->type, 'video');

@@ -3,7 +3,7 @@ class FacebookTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('https://www.facebook.co/permalink.php?story_fbid=827163017327807&id=149460691764713');
+        $info = $this->getInfo('https://www.facebook.co/permalink.php?story_fbid=827163017327807&id=149460691764713');
 
         $this->assertString($info->title, 'Aquí vos deixamos unhas imaxes da nosa... - DAG, Asociación Galega de Deseñadores | Facebook');
         $this->assertString($info->width, 500);

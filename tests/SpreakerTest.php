@@ -3,7 +3,7 @@ class SpreakerTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://www.spreaker.com/show/deseos-del-alma-poemas_1');
+        $info = $this->getInfo('http://www.spreaker.com/show/deseos-del-alma-poemas_1');
 
         $this->assertString($info->title, 'Te nombro - Poemas');
         $this->assertString($info->type, 'video');

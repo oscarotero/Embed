@@ -3,7 +3,7 @@ class BlipTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://blip.tv/indevelopment/iamsorry-6839170');
+        $info = $this->getInfo('http://blip.tv/indevelopment/iamsorry-6839170');
 
         $this->assertString($info->title, '#IAMSORRY');
         $this->assertString($info->imageWidth, 720);

@@ -3,7 +3,7 @@ class BandcampTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://jeanjean.bandcamp.com/track/coquin-l-l-phant');
+        $info = $this->getInfo('http://jeanjean.bandcamp.com/track/coquin-l-l-phant');
 
         $this->assertString($info->title, "Coquin L'éléphant, by Jean Jean");
         $this->assertString($info->description, 'from the album Symmetry');

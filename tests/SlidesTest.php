@@ -3,7 +3,7 @@ class SlidesTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://slides.com/alexwalker/responsive-svg/');
+        $info = $this->getInfo('http://slides.com/alexwalker/responsive-svg/');
 
         $this->assertString($info->title, 'responsive-svg by Alex Walker');
         $this->assertString($info->type, 'rich');

@@ -3,7 +3,7 @@ class GiphyTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://giphy.com/gifs/puppies-cute-animals-asdfghjkl-6UZFwMYqCeXi8');
+        $info = $this->getInfo('http://giphy.com/gifs/puppies-cute-animals-asdfghjkl-6UZFwMYqCeXi8');
 
         $this->assertString($info->title, 'Puppies Animated GIF');
         $this->assertString($info->type, 'video');

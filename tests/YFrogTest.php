@@ -3,7 +3,7 @@ class YFrogTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://a.yfrog.com/img593/8436/snso.jpg');
+        $info = $this->getInfo('http://a.yfrog.com/img593/8436/snso.jpg');
 
         $this->assertString($info->title, 'http://a.yfrog.com/img593/8436/snso.jpg');
         $this->assertString($info->imageWidth, 4928);

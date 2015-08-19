@@ -3,7 +3,7 @@ class ImagesBlacklistTest extends TestCaseBase
 {
     public function testPlainText()
     {
-        $info = Embed\Embed::create('https://github.com/oscarotero/Embed', [
+        $info = $this->getInfo('https://github.com/oscarotero/Embed', [
             'adapter'       => [
                 'config'        => [
                     'imagesBlacklist' => [
@@ -18,7 +18,7 @@ class ImagesBlacklistTest extends TestCaseBase
 
     public function testPlainUrlMatch()
     {
-        $info = Embed\Embed::create('https://github.com/oscarotero/Embed', [
+        $info = $this->getInfo('https://github.com/oscarotero/Embed', [
             'adapter'       => [
                 'config'        => [
                     'imagesBlacklist' => [
@@ -33,7 +33,7 @@ class ImagesBlacklistTest extends TestCaseBase
 
     public function testAuthorizedImage()
     {
-        $info = Embed\Embed::create('https://github.com/oscarotero/Embed', [
+        $info = $this->getInfo('https://github.com/oscarotero/Embed', [
             'adapter'       => [
                 'config'        => [
                     'imagesBlacklist' => [

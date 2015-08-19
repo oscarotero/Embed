@@ -3,7 +3,7 @@ class ChirbitTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://chirb.it/7A9L9B');
+        $info = $this->getInfo('http://chirb.it/7A9L9B');
 
         $this->assertString($info->title, 'Chirbit [nvanderklippe] Encana conference call');
         $this->assertString($info->width, 398);

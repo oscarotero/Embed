@@ -3,7 +3,7 @@ class LineTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('https://line.do/embed/8oq/vertical');
+        $info = $this->getInfo('https://line.do/embed/8oq/vertical');
 
         $this->assertString($info->title, 'PHP Evolution');
         $this->assertString($info->type, 'rich');

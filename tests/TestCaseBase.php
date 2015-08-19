@@ -15,4 +15,16 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
 
         $this->assertSame($string1, $string2);
     }
+
+    /**
+     * Execute Embed with an url and returns the info
+     *
+     * @param string
+     *
+     * @return AdapterInterface
+     */
+    public function getInfo($url)
+    {
+        return Embed\Embed::create($url);
+    }
 }

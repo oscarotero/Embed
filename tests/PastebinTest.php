@@ -3,7 +3,7 @@ class PastebinTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://pastebin.com/d4biUtRm');
+        $info = $this->getInfo('http://pastebin.com/d4biUtRm');
 
         $this->assertString($info->title, '[Bash] Pushing new git submodule to Heroku - Pastebin.com');
         $this->assertString($info->type, 'rich');

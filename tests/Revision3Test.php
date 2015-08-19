@@ -6,7 +6,7 @@ class Revision3Test extends TestCaseBase
         /*
         oembed provider in revision3 does not work and makes the test fail
 
-        $info = Embed\Embed::create('http://revision3.com/sourcefednerd/sourcefed-plays-hedbanz/');
+        $info = $this->getInfo('http://revision3.com/sourcefednerd/sourcefed-plays-hedbanz/');
 
         $this->assertString($info->title, 'SourceFed Plays - Hedbanz!');
         $this->assertString($info->description, 'Will, Steve, Reina, and Trisha don\'t know who they are anymore.');

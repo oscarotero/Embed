@@ -3,7 +3,7 @@ class KickstarterTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers');
+        $info = $this->getInfo('https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers');
 
         $this->assertString($info->title, "Good Seed Craft Veggie Burgers");
         $this->assertString($info->description, 'Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends & sprouted superfood ingredients.');

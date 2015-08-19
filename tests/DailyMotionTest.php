@@ -3,7 +3,7 @@ class DailyMotionTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://www.dailymotion.com/video/xy0wd_chats-paresseux');
+        $info = $this->getInfo('http://www.dailymotion.com/video/xy0wd_chats-paresseux');
 
         $this->assertString($info->title, 'Chats paresseux');
         $this->assertString($info->type, 'video');

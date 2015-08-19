@@ -3,7 +3,7 @@ class BambuserTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://bambuser.com/v/4740575');
+        $info = $this->getInfo('http://bambuser.com/v/4740575');
 
         $this->assertString($info->title, "#OccupyWestminster #SaveILF #London #olsx  #ONN");
         $this->assertString($info->description, 'Broadcast by dancole on Bambuser.com');

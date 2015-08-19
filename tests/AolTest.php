@@ -3,7 +3,7 @@ class AolTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://on.aol.com/video/whats-next-for-google-in-two-minutes-518288612');
+        $info = $this->getInfo('http://on.aol.com/video/whats-next-for-google-in-two-minutes-518288612');
 
         $this->assertString($info->title, "What's Next for Google in Two Minutes");
         $this->assertString($info->description, "Wherein we smoosh Google's 2014 developer conference keynote from 2.5+ hours down to just under two minutes.");

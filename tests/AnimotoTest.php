@@ -3,7 +3,7 @@ class AnimotoTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('https://animoto.com/play/JzwsBn5FRVxS0qoqcBP5zA');
+        $info = $this->getInfo('https://animoto.com/play/JzwsBn5FRVxS0qoqcBP5zA');
 
         $this->assertString($info->title, 'Juno Groove');
         $this->assertString($info->width, 640);

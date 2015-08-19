@@ -3,7 +3,7 @@ class PoliticoTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314.html');
+        $info = $this->getInfo('http://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314.html');
 
         $this->assertString($info->title, 'Echoes of George W. Bush blues in Barack Obama\'s 2nd term');
         $this->assertString($info->type, 'link');

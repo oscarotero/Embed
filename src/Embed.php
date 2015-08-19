@@ -11,7 +11,10 @@ class Embed
      * @param string|Request $request The url or a request with the url
      * @param array          $config  Options passed to the adapter
      *
-     * @return false|AdapterInterface
+     * @throws Exceptions\InvalidUrlException If the urls is not valid
+     * @throws \InvalidArgumentException      If any config argument is not valid
+     *
+     * @return AdapterInterface
      */
     public static function create($request, array $config = array())
     {

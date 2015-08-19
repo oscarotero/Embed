@@ -30,7 +30,7 @@ class Google extends Webpage implements AdapterInterface
         $url = $this->request->createUrl()
             ->withDirectoryPosition(3, 'preview')
             ->withQueryParameters([]);
-        
+
         return Utils::iframe($url);
 
         //this code of google maps no longer works

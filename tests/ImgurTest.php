@@ -3,7 +3,7 @@ class ImgurTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('http://i.imgur.com/X6rkCc5.jpg');
+        $info = $this->getInfo('http://i.imgur.com/X6rkCc5.jpg');
 
         $this->assertString($info->title, 'http://i.imgur.com/X6rkCc5.jpg');
         $this->assertString($info->imageWidth, 2000);

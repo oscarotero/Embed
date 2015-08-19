@@ -3,7 +3,7 @@ class SoundcloudTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = Embed\Embed::create('https://soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy');
+        $info = $this->getInfo('https://soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy');
 
         $this->assertString($info->title, "Zeds Dead - Lost You (feat. Twin Shadow & D'Angelo Lacy)");
         $this->assertString($info->type, 'rich');
@@ -16,7 +16,7 @@ class SoundcloudTest extends TestCaseBase
 
     public function testTwo()
     {
-        $info = Embed\Embed::create('https://soundcloud.com/bruceneilmusic');
+        $info = $this->getInfo('https://soundcloud.com/bruceneilmusic');
 
         $this->assertString($info->title, "Bruce Neil");
         $this->assertString($info->description, "Bruce Neil from Wokingham is a singer/songwriter with a folk inspired sound, producing songs with heartfelt depth and lyrics that captivate the listener, taking them on an insightful and thought-provoking journey. As a winner of BBC Introducing, resulting in air play nationally, he has recently achieved widespread public attention following the video release of his percussive folk rendition of Guns N’ Roses track Paradise City. Not only did this go viral on social media, it was endorsed by the band themselves and has achieved recognition and air play from several US radio stations. He takes his musical inspiration and guitar-playing style from the likes of Passenger and Mick Flannery.");
@@ -28,7 +28,7 @@ class SoundcloudTest extends TestCaseBase
 
     public function testThree()
     {
-        $info = Embed\Embed::create('https://soundcloud.com/calumfoad/sets/flaws-ep-stream');
+        $info = $this->getInfo('https://soundcloud.com/calumfoad/sets/flaws-ep-stream');
 
         $this->assertString($info->title, "Flaws EP");
         $this->assertString($info->description, "20 year old singer/songwriter from Reading.");
@@ -40,7 +40,7 @@ class SoundcloudTest extends TestCaseBase
 
     public function testFour()
     {
-        $info = Embed\Embed::create('https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup');
+        $info = $this->getInfo('https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup');
 
         $this->assertString($info->title, "LOWE CT Cape Times - World Cup");
         $this->assertString($info->description, "If you did it. Show it on ididthat.net");
@@ -52,7 +52,7 @@ class SoundcloudTest extends TestCaseBase
 
     public function testMobile()
     {
-        $info = Embed\Embed::create('https://m.soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy');
+        $info = $this->getInfo('https://m.soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy');
 
         $this->assertString($info->title, "Zeds Dead - Lost You (feat. Twin Shadow & D'Angelo Lacy)");
         $this->assertString($info->type, 'rich');
