@@ -29,7 +29,7 @@ class Guzzle implements RequestResolverInterface
      */
     public function __construct($url, array $config)
     {
-        $this->client  = new Client($config ?: []);
+        $this->client  = isset($config['client']) ? $config['client'] : new Client();
         $this->request = $this->client->createRequest('GET', $url);
     }
 
