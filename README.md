@@ -170,11 +170,11 @@ $config = [
 // Guzzle (5.x)
 $config = [
     'resolver' => [
-        'class' => 'Embed\\RequestResolvers\\Guzzle', // Guzzle resolver used
+        'class' => 'Embed\\RequestResolvers\\Guzzle5', // Guzzle5 resolver used
 
         'config' => [
             // optional: if you need to use your custom Guzzle instance
-            'client' => $myGuzzleClient, 
+            'client' => $myGuzzleClient,
         ]
     ]
 ];

@@ -4,7 +4,7 @@ namespace Embed\RequestResolvers;
 
 use GuzzleHttp\Client;
 
-class Guzzle implements RequestResolverInterface
+class Guzzle5 implements RequestResolverInterface
 {
     /**
      * @var Client
