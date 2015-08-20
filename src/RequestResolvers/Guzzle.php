@@ -21,6 +21,19 @@ class Guzzle implements RequestResolverInterface
      */
     protected $response;
 
+    protected $defaultConfig = [
+        'verify' => false,
+        'timeout' => 10,
+        'connect_timeout' => 20,
+        'headers' => [
+            'User-Agent' => 'Embed PHP Library',
+        ],
+        'allow_redirects' => [
+            'max' => 20,
+            'referer' => true,
+        ],
+    ];
+
     /**
      * Constructor. Sets the url
      *
@@ -29,7 +42,10 @@ class Guzzle implements RequestResolverInterface
      */
     public function __construct($url, array $config)
     {
-        $this->client  = isset($config['client']) ? $config['client'] : new Client();
+        $this->client  = isset($config['client']) ? $config['client'] : new Client([
+            'defaults' => $this->defaultConfig,
+        ]);
+
         $this->request = $this->client->createRequest('GET', $url);
     }
 
