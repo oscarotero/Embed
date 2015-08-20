@@ -147,9 +147,11 @@ The resolver configuration is defined under the "resolver" key and it has two op
 * config: The options passed to the class. If you use the default curl class, the config are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
 
 ```php
+
+// CURL
 $config = [
     'resolver' => [
-        'class' => 'Embed\\RequestResolvers\\Curl' //The default resolver used
+        'class' => 'Embed\\RequestResolvers\\Curl' // The default resolver used
 
         'config' => [
             CURLOPT_MAXREDIRS => 20,
@@ -161,6 +163,18 @@ $config = [
             CURLOPT_AUTOREFERER => true,
             CURLOPT_USERAGENT => 'Embed PHP Library',
             CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+        ]
+    ]
+];
+
+// Guzzle (5.x)
+$config = [
+    'resolver' => [
+        'class' => 'Embed\\RequestResolvers\\Guzzle5', // Guzzle5 resolver used
+
+        'config' => [
+            // optional: if you need to use your custom Guzzle instance
+            'client' => $myGuzzleClient,
         ]
     ]
 ];
