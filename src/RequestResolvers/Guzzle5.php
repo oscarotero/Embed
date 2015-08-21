@@ -54,9 +54,9 @@ class Guzzle5 implements RequestResolverInterface
      *
      * @return int The http code
      */
-    public function getHttpCode()    
+    public function getHttpCode()
     {
-        return $this->getResponse()->getStatusCode();   
+        return $this->getResponse()->getStatusCode();
     }
 
     /**
@@ -85,7 +85,7 @@ class Guzzle5 implements RequestResolverInterface
      * @return string The final url
      */
     public function getUrl()
-    {   
+    {
         return $this->getResponse()->getEffectiveUrl();
     }
 

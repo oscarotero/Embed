@@ -403,7 +403,9 @@ abstract class Adapter
      */
     public function getWidth()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'width'));
+        $val = Utils::getFirstValue(Utils::getData($this->providers, 'width'));
+
+        return $val ? (is_numeric($val) ? (int) $val : $val) : null;
     }
 
     /**
@@ -411,7 +413,9 @@ abstract class Adapter
      */
     public function getHeight()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'height'));
+        $val = Utils::getFirstValue(Utils::getData($this->providers, 'height'));
+
+        return $val ? (is_numeric($val) ? (int) $val : $val) : null;
     }
 
     /**

@@ -3,14 +3,17 @@ class WordPressTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = $this->getInfo('http://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/');
-
-        $this->assertString($info->title, 'Dave Ross: Optimize Image Files Like a Pro');
-        $this->assertString($info->imageWidth, 400);
-        $this->assertString($info->imageHeight, 224);
-        $this->assertString($info->type, 'video');
-        $this->assertString($info->authorName, '@WordPressTV');
-        $this->assertString($info->providerName, 'WordPress.tv');
-        $this->assertString($info->providerUrl, 'http://wordpress.tv');
+        $this->assertEmbed(
+            'http://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/',
+            [
+                'title' => 'Dave Ross: Optimize Image Files Like a Pro',
+                'imageWidth' => 400,
+                'imageHeight' => 224,
+                'type' => 'video',
+                'authorName' => '@WordPressTV',
+                'providerName' => 'WordPress.tv',
+                'providerUrl' => 'http://wordpress.tv',
+            ]
+        );
     }
 }

@@ -1,4 +1,8 @@
 <phpunit bootstrap="./tests/bootstrap.php">
+	<php>
+		<env name="embed_resolver" value="Guzzle5"/>
+	</php>
+
 	<testsuites>
 		<testsuite name="All tests">
 			<directory>./tests/</directory>

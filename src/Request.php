@@ -28,7 +28,7 @@ class Request extends Url
     {
         if ($resolverClass !== null) {
             if (!class_exists($resolverClass)) {
-                throw new \InvalidArgumentException("This class does not exists");
+                throw new \InvalidArgumentException("The resolver class '{$resolverClass}' does not exists");
             }
 
             $reflection = new \ReflectionClass($resolverClass);

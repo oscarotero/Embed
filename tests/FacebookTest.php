@@ -3,11 +3,7 @@ class FacebookTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = $this->getInfo('https://www.facebook.co/permalink.php?story_fbid=827163017327807&id=149460691764713');
-
-        $this->assertString($info->title, 'Aquí vos deixamos unhas imaxes da nosa... - DAG, Asociación Galega de Deseñadores | Facebook');
-        $this->assertString($info->width, 500);
-        $this->assertString($info->code, <<<EOT
+        $code = <<<EOT
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -18,8 +14,16 @@ class FacebookTest extends TestCaseBase
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="fb-post" data-href="https://www.facebook.com/permalink.php?story_fbid=827163017327807&id=149460691764713" data-width="500"></div>
-EOT
+EOT;
+
+        $this->assertEmbed(
+            'https://www.facebook.co/permalink.php?story_fbid=827163017327807&id=149460691764713',
+            [
+                'title' => 'Aquí vos deixamos unhas imaxes da nosa... - DAG, Asociación Galega de Deseñadores | Facebook',
+                'width' => 500,
+                'code' => $code,
+                'type' => 'rich',
+            ]
         );
-        $this->assertString($info->type, 'rich');
     }
 }

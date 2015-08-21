@@ -3,10 +3,13 @@ class JsfiddleTest extends TestCaseBase
 {
     public function testOne()
     {
-        $info = $this->getInfo('http://jsfiddle.net/zhm5rjnz/');
-
-        $this->assertString($info->title, 'Edit fiddle - JSFiddle');
-        $this->assertString($info->type, 'rich');
-        $this->assertString($info->providerName, 'jsfiddle');
+        $this->assertEmbed(
+            'http://jsfiddle.net/zhm5rjnz/',
+            [
+                'title' => 'Edit fiddle - JSFiddle',
+                'type' => 'rich',
+                'providerName' => 'jsfiddle',
+            ]
+        );
     }
 }
