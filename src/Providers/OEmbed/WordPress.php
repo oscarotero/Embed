@@ -22,7 +22,7 @@ class WordPress extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return ['https?://wordddpress.tv/*'];
+        return ['https?://wordpress.tv/*'];
     }
 
     /**
