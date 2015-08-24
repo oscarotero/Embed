@@ -1,6 +1,6 @@
 <phpunit bootstrap="./tests/bootstrap.php">
 	<php>
-		<env name="embed_resolver" value="Guzzle5"/>
+		<env name="embed_resolver" value="Curl"/>
 	</php>
 
 	<testsuites>
