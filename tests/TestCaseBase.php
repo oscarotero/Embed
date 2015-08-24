@@ -12,8 +12,8 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
      */
     public function assertString($string1, $string2)
     {
-        $string1 = trim(preg_replace('/\s+/m', ' ', mb_convert_encoding($string1, 'UTF-8')));
-        $string2 = trim(preg_replace('/\s+/m', ' ', mb_convert_encoding($string2, 'UTF-8')));
+        $string1 = trim(preg_replace('/\s+/um', ' ', $string1));
+        $string2 = trim(preg_replace('/\s+/um', ' ', $string2));
 
         $this->assertSame($string1, $string2);
     }
