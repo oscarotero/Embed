@@ -4,7 +4,6 @@
  */
 namespace Embed\Adapters;
 
-use Embed\Url;
 use Embed\Request;
 use Embed\Utils;
 
@@ -32,9 +31,6 @@ class Google extends Webpage implements AdapterInterface
             ->withQueryParameters([]);
 
         return Utils::iframe($url);
-
-        //this code of google maps no longer works
-        //return Utils::iframe($url->withQueryParameter('output', 'embed')->withQueryParameter('s', ''));
     }
 
     /**

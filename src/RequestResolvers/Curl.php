@@ -146,7 +146,7 @@ class Curl implements RequestResolverInterface
                 $charset = substr(strtoupper(strstr($charset, '=')), 1);
 
                 if (!empty($charset) && !empty($this->content) && ($charset !== 'UTF-8')) {
-                    $this->content = @mb_convert_encoding($this->content, 'UTF-8', $charset);
+                    $this->content = mb_convert_encoding($this->content, 'UTF-8', $charset);
                 }
             } elseif (strpos($content_type, '/') !== false) {
                 $this->result['mime_type'] = $content_type;

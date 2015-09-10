@@ -5,7 +5,6 @@ namespace Embed\Providers\OEmbed;
  * Class WordPress
  * WordPress.tv embeds
  * @package Embed\Providers\OEmbed
- * @todo Class is named 'WordPress' to fit existing naming scheme, but could be confused with WordPress.com or WordPress.org
  */
 class WordPress extends OEmbedImplementation
 {
