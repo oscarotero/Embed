@@ -59,6 +59,10 @@ class Dcterms extends Provider implements ProviderInterface
      */
     public function getPublishedTime()
     {
-        return $this->bag->get('date');
+        foreach (['date', 'date.created', 'date.issued'] as $key) {
+            if ($found = $this->bag->get($key)) {
+                return $found;
+            }
+        }
     }
 }

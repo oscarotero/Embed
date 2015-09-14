@@ -142,8 +142,6 @@ class Html extends Provider implements ProviderInterface
             'article:published_time',
             'created',
             'date',
-            'date.created',
-            'date.issued',
             'datepublished',
             'datePublished',
             'newsrepublic:publish_date',
