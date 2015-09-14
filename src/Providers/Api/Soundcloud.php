@@ -10,7 +10,7 @@ use Embed\Providers\ProviderInterface;
 class Soundcloud extends Provider implements ProviderInterface
 {
     protected $config = [
-        'key' => 'YOUR_CLIENT_ID',
+        'key' => null,
     ];
 
     /**
