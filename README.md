@@ -52,6 +52,8 @@ $info->providerName; //The provider name of the page (youtube, twitter, instagra
 $info->providerUrl; //The provider url
 $info->providerIcons; //All provider icons found in the page
 $info->providerIcon; //The icon choosen as main icon
+
+$info->publishedDate; //The (video/article/image/whatever) published date
 ```
 
 ## Customization
@@ -118,7 +120,7 @@ This provider is used only for facebook pages, to get information from the [grap
 
 Used only for soundcloud pages, to get information using its api.
 
-* key (string): to get info from soundcloud. By default is "YOUR_CLIENT_ID" that its a valid client id :P
+* key (string): to get info from soundcloud API.
 
 
 ```php
