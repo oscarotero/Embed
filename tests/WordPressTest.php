@@ -9,7 +9,6 @@ class WordPressTest extends TestCaseBase
                 'title' => 'Dave Ross: Optimize Image Files Like a Pro',
                 'imageWidth' => 400,
                 'imageHeight' => 224,
-                'type' => 'video',
                 'authorName' => '@WordPressTV',
                 'providerName' => 'WordPress.tv',
                 'providerUrl' => 'http://wordpress.tv',
