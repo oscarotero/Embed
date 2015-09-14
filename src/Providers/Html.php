@@ -150,6 +150,7 @@ class Html extends Provider implements ProviderInterface
             'publication-date',
             'publish-date',
             'rc.datecreation',
+            'timestamp',
             'article:modified_time',
             'eomportal-lastupdate',
             'shareaholic:article_published_time',
