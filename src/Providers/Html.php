@@ -138,10 +138,29 @@ class Html extends Provider implements ProviderInterface
      */
     public function getPublishedTime()
     {
-        return $this->bag->get('pub_date')
-            ?: $this->bag->get('date')
-            ?: $this->bag->get('pagerender')
-            ?: $this->bag->get('datepublished');
+        $keys = [
+            'article:published_time',
+            'created',
+            'date',
+            'datepublished',
+            'datePublished',
+            'newsrepublic:publish_date',
+            'pagerender',
+            'pub_date',
+            'publication-date',
+            'publish-date',
+            'rc.datecreation',
+            'timestamp',
+            'article:modified_time',
+            'eomportal-lastupdate',
+            'shareaholic:article_published_time',
+        ];
+
+        foreach ($keys as $key) {
+            if ($found = $this->bag->get($key)) {
+                return $found;
+            }
+        }
     }
 
     /**

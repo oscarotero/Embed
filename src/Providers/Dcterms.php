@@ -21,8 +21,11 @@ class Dcterms extends Provider implements ProviderInterface
         }
 
         foreach (Utils::getMetas($html) as $meta) {
-            if (stripos($meta[0], 'dc.') === 0) {
-                $this->bag->set(substr($meta[0], 3), $meta[1]);
+            foreach (['dc.', 'dc:', 'dcterms:'] as $prefix) {
+                if (stripos($meta[0], $prefix) === 0)  {
+                    $key = substr($meta[0], strlen($prefix));
+                    $this->bag->set($key, $meta[1]);
+                }
             }
         }
     }
@@ -56,6 +59,10 @@ class Dcterms extends Provider implements ProviderInterface
      */
     public function getPublishedTime()
     {
-        return $this->bag->get('date');
+        foreach (['date', 'date.created', 'date.issued'] as $key) {
+            if ($found = $this->bag->get($key)) {
+                return $found;
+            }
+        }
     }
 }
