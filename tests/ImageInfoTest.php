@@ -4,13 +4,13 @@ class ImageInfoTest extends TestCaseBase
     public function testOne()
     {
         $info = Embed\ImageInfo\Curl::getImageInfo([
-            'value' => 'http://a.images.blip.tv/NostalgiaCritic-NCTheMatrix187.jpg',
+            'value' => 'http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg',
         ]);
 
         $this->assertEquals($info, [
-            'width' => 620,
-            'height' => 274,
-            'size' => 169880,
+            'width' => 600,
+            'height' => 408,
+            'size' => 244800,
             'mime' => 'image/jpeg',
         ]);
     }

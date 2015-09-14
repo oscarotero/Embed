@@ -6,11 +6,9 @@ class SoundcloudTest extends TestCaseBase
         $this->assertEmbed(
             'https://soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy',
             [
-                'title' => "Zeds Dead - Lost You (feat. Twin Shadow & D'Angelo Lacy)",
+                'title' => "Zeds Dead - Lost You (feat. Twin Shadow & D'Angelo Lacy) by Zeds Dead",
                 'type' => 'rich',
                 'code' => '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F150745932&show_artwork=true"></iframe>',
-                'authorName' => 'Zeds Dead',
-                'authorUrl' => 'http://soundcloud.com/zedsdead',
                 'providerName' => 'SoundCloud',
                 'providerUrl' => 'https://soundcloud.com',
             ]
@@ -37,7 +35,7 @@ class SoundcloudTest extends TestCaseBase
         $this->assertEmbed(
             'https://soundcloud.com/calumfoad/sets/flaws-ep-stream',
             [
-                'title' => "Flaws EP",
+                'title' => "Flaws EP by Calum Foad",
                 'description' => "20 year old singer/songwriter from Reading.",
                 'type' => 'rich',
                 'code' => '<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F46025307&show_artwork=true"></iframe>',
@@ -52,7 +50,7 @@ class SoundcloudTest extends TestCaseBase
         $this->assertEmbed(
             'https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup',
             [
-                'title' => "LOWE CT Cape Times - World Cup",
+                'title' => "LOWE CT Cape Times - World Cup by iDidThat.net",
                 'description' => "If you did it. Show it on ididthat.net",
                 'type' => 'rich',
                 'code' => '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&show_artwork=true"></iframe>',
@@ -67,11 +65,9 @@ class SoundcloudTest extends TestCaseBase
         $this->assertEmbed(
             'https://m.soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy',
             [
-                'title' => "Zeds Dead - Lost You (feat. Twin Shadow & D'Angelo Lacy)",
+                'title' => "Zeds Dead - Lost You (feat. Twin Shadow & D'Angelo Lacy) by Zeds Dead",
                 'type' => 'rich',
                 'code' => '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F150745932&show_artwork=true"></iframe>',
-                'authorName' => 'Zeds Dead',
-                'authorUrl' => 'http://soundcloud.com/zedsdead',
                 'providerName' => 'SoundCloud',
                 'providerUrl' => 'https://soundcloud.com',
             ]
