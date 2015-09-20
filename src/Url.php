@@ -485,7 +485,7 @@ class Url
         $this->info['path'] = [];
 
         if (isset($parts['dirname'])) {
-            foreach (explode(DIRECTORY_SEPARATOR, $parts['dirname']) as $dir) {
+            foreach (explode('/', str_replace(DIRECTORY_SEPARATOR, '/', $parts['dirname'])) as $dir) {
                 if ($dir !== '') {
                     $this->info['path'][] = $dir;
                 }
