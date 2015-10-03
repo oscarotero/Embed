@@ -1,9 +1,9 @@
 <?php
 namespace Embed\ImageInfo;
 
-use Embed\ImageInfo\ImageInfoInterface;
+use GuzzleHttp\Pool;
 
- /**
+/**
   * Class to retrieve the size and mimetype of images using Guzzle5
   */
 class Guzzle5 implements ImageInfoInterface
@@ -14,22 +14,30 @@ class Guzzle5 implements ImageInfoInterface
     public static function getImagesInfo(array $urls, array $config = null)
     {
         if ($config === null || !isset($config['client']) || !($config['client'] instanceof \GuzzleHttp\Client)) {
-            throw new RuntimeException('Guzzle client not passed in config.');
+            throw new \RuntimeException('Guzzle client not passed in config.');
         }
 
         $client = $config['client'];
-        $result = [ ];
 
+        // Build parallel requests
+        $requests = [];
         foreach ($urls as $url) {
-            $response = $client->get($url['value']);
+            $requests[] = $client->createRequest('GET', $url['value']);
+        }
 
+        // Execute in parallel
+        $responses = Pool::batch($client, $requests);
+
+        // Build result set
+        $result = [];
+        foreach ($responses as $i => $response) {
             if (($size = @getimagesizefromstring($response->getBody())) !== false) {
                 $result[] = [
                     'width' => $size[0],
                     'height' => $size[1],
                     'size' => $size[0] * $size[1],
                     'mime' => $response->getHeader('Content-Type'),
-                ] + $url;
+                ] + $urls[$i];
             }
         }
 
