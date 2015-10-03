@@ -24,7 +24,7 @@ class ImageInfoTest extends TestCaseBase
     public function testGuzzle()
     {
         $info = Embed\ImageInfo\Guzzle5::getImagesInfo([[
-            'value' => 'http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg',
+            'value' => self::TEST_IMAGE_URL,
         ]], [
             'client' => new \GuzzleHttp\Client(),
         ]);
