@@ -254,10 +254,10 @@ class Url
     {
         $path = !empty($this->info['path']) ? '/'.implode('/', $this->info['path']).'/' : '/';
 
-        if (!empty($this->info['file'])) {
+        if (isset($this->info['file'])) {
             $path .= $this->info['file'];
 
-            if (!empty($this->info['extension'])) {
+            if (isset($this->info['extension'])) {
                 $path .= '.'.$this->info['extension'];
             }
         }

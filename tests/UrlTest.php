@@ -8,6 +8,7 @@ class UrlTest extends TestCaseBase
             'http://vimeo.com//69912181?' => 'http://vimeo.com/69912181',
             'http://vimeo.com//69912181' => 'http://vimeo.com/69912181',
             'http://vimeo.com/69912181' => 'http://vimeo.com/69912181',
+            'https://www.tumblr.com/oembed/1.0' => 'https://www.tumblr.com/oembed/1.0',
         ];
 
         foreach ($urls as $url => $expected_url) {
