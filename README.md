@@ -196,6 +196,7 @@ Like the resolver class, you can provide your own image class (it must implement
 
 
 ```php
+//CURL
 $config = [
     'image' => [
         'class' => 'Embed\\ImageInfo\\Curl' //The default imageInfo used
@@ -210,6 +211,17 @@ $config = [
             CURLOPT_AUTOREFERER => true,
             CURLOPT_USERAGENT => 'Embed PHP Library',
             CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+        ]
+    ]
+];
+
+// Guzzle (5.x)
+$config = [
+    'resolver' => [
+        'class' => 'Embed\\ImageInfo\\Guzzle5',
+
+        'config' => [
+            'client' => $myGuzzleClient,
         ]
     ]
 ];
