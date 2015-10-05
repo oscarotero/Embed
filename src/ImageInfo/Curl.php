@@ -95,7 +95,7 @@ class Curl implements ImageInfoInterface
      *
      * @return array|null
      */
-    public static function getImageInfo($image, array $config = null)
+    private static function getImageInfo($image, array $config = null)
     {
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $img = new static($image['value'], $finfo, $config);
