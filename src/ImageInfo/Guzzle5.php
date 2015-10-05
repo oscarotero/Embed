@@ -36,7 +36,7 @@ class Guzzle5 implements ImageInfoInterface
                     'width' => $size[0],
                     'height' => $size[1],
                     'size' => $size[0] * $size[1],
-                    'mime' => $response->getHeader('Content-Type'),
+                    'mime' => $size['mime'],
                 ] + $urls[$i];
             }
         }
