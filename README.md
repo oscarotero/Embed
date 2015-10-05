@@ -183,6 +183,8 @@ $config = [
 ];
 ```
 
+[You can see here](https://github.com/oscarotero/Embed/tree/master/src/RequestResolvers) the RequestResolvers included.
+
 ### Image info
 
 To check the images and get their mimetype and dimmensions, we have the class `Embed\ImageInfo\Curl`. This class uses curl to make request, get the first bytes to get the image type and dimmensions and close the connection. So the image wont be downloaded entirely, just until the downloaded data is enought to get this information.
@@ -212,6 +214,9 @@ $config = [
     ]
 ];
 ```
+
+[You can see here](https://github.com/oscarotero/Embed/tree/master/src/ImageInfo) the ImageInfo implementations included.
+
 
 ### Example
 
