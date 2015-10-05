@@ -1,4 +1,5 @@
 <?php
+
 namespace Embed\Providers;
 
 use Embed\Utils;

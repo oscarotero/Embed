@@ -1,4 +1,5 @@
 <?php
+
 class Lavozdegalicia extends TestCaseBase
 {
     public function testOne()

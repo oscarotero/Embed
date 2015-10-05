@@ -1,4 +1,5 @@
 <?php
+
 class ImgurTest extends TestCaseBase
 {
     public function testOne()

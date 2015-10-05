@@ -1,4 +1,5 @@
 <?php
+
 class SpreakerTest extends TestCaseBase
 {
     public function testOne()

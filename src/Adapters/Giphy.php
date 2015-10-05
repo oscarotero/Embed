@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to get the embed code from giphy.com
+ * Adapter to get the embed code from giphy.com.
  */
 namespace Embed\Adapters;
 

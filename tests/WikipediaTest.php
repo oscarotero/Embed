@@ -1,4 +1,5 @@
 <?php
+
 class WikipediaTest extends TestCaseBase
 {
     public function testOne()

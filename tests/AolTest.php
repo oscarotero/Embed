@@ -1,4 +1,5 @@
 <?php
+
 class AolTest extends TestCaseBase
 {
     public function testOne()

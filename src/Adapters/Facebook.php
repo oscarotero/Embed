@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to provide information from any facebook page using its graph API
+ * Adapter to provide information from any facebook page using its graph API.
  */
 namespace Embed\Adapters;
 

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Class to store and access to data
+ * Class to store and access to data.
  */
 namespace Embed;
 
@@ -9,7 +10,7 @@ class Bag
     protected $parameters = [];
 
     /**
-     * Save a value
+     * Save a value.
      *
      * @param string|array $name  Name of the value
      * @param mixed        $value The value to save
@@ -24,7 +25,7 @@ class Bag
     }
 
     /**
-     * Adds a subvalue
+     * Adds a subvalue.
      *
      * @param string $name  Name of the value
      * @param mixed  $value The value to add
@@ -43,7 +44,7 @@ class Bag
     }
 
     /**
-     * Get a value
+     * Get a value.
      *
      * @param string $name Value name
      *
@@ -71,7 +72,7 @@ class Bag
     }
 
     /**
-     * Return all stored values
+     * Return all stored values.
      *
      * @return array
      */
@@ -81,11 +82,11 @@ class Bag
     }
 
     /**
-     * Check if a value exists
+     * Check if a value exists.
      *
      * @param string $name Value name
      *
-     * @return boolean True if exists, false if not
+     * @return bool True if exists, false if not
      */
     public function has($name)
     {

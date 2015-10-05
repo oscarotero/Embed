@@ -1,4 +1,5 @@
 <?php
+
 class InstagramTest extends TestCaseBase
 {
     public function testHttp()

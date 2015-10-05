@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to get the embed code from line.do
+ * Adapter to get the embed code from line.do.
  */
 namespace Embed\Adapters;
 

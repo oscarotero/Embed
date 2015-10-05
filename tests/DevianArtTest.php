@@ -1,4 +1,5 @@
 <?php
+
 class DevianArtTest extends TestCaseBase
 {
     public function testOne()

@@ -1,9 +1,9 @@
 <?php
+
 namespace Embed;
 
 /**
- * Class to execute request and return the content
- *
+ * Class to execute request and return the content.
  */
 class Request extends Url
 {
@@ -18,7 +18,7 @@ class Request extends Url
     private $htmlContent;
 
     /**
-     * Constructor. Sets the url
+     * Constructor. Sets the url.
      *
      * @param string      $url            The request url
      * @param null|string $resolverClass  The resolver classname
@@ -34,7 +34,7 @@ class Request extends Url
             $reflection = new \ReflectionClass($resolverClass);
 
             if (!in_array('Embed\\RequestResolvers\\RequestResolverInterface', $reflection->getInterfaceNames())) {
-                throw new \InvalidArgumentException("The resolver class must implement the Embed\\RequestResolvers\\RequestResolverInterface interface");
+                throw new \InvalidArgumentException('The resolver class must implement the Embed\\RequestResolvers\\RequestResolverInterface interface');
             }
 
             $this->resolverClass = $resolverClass;
@@ -46,7 +46,7 @@ class Request extends Url
     }
 
     /**
-     * Magic method to clean cache on clone the request
+     * Magic method to clean cache on clone the request.
      */
     public function __clone()
     {
@@ -55,7 +55,7 @@ class Request extends Url
 
     /**
      * Returns the current resolver
-     * It also create a new resolver if it's not exists
+     * It also create a new resolver if it's not exists.
      *
      * @return RequestResolvers\RequestResolverInterface
      */
@@ -82,7 +82,7 @@ class Request extends Url
     }
 
     /**
-     * Creates and returns an Url clone
+     * Creates and returns an Url clone.
      *
      * @return Url
      */
@@ -92,7 +92,7 @@ class Request extends Url
     }
 
     /**
-     * Creates a new request with the same configuration than this
+     * Creates a new request with the same configuration than this.
      *
      * @param string $url
      *
@@ -112,7 +112,7 @@ class Request extends Url
      *
      * @param string|array $patterns The pattern or an array with various patterns
      *
-     * @return boolean True if the url match, false if not
+     * @return bool True if the url match, false if not
      */
     public function match($patterns)
     {
@@ -120,7 +120,7 @@ class Request extends Url
     }
 
     /**
-     * Return the http request info (for debug purposes)
+     * Return the http request info (for debug purposes).
      *
      * @return array
      */
@@ -130,9 +130,9 @@ class Request extends Url
     }
 
     /**
-     * Get the http code of the url
+     * Get the http code of the url.
      *
-     * @return integer The http code
+     * @return int The http code
      */
     public function getHttpCode()
     {
@@ -140,7 +140,7 @@ class Request extends Url
     }
 
     /**
-     * Get the content-type of the url
+     * Get the content-type of the url.
      *
      * @return string|null The content-type header or null
      */
@@ -150,7 +150,7 @@ class Request extends Url
     }
 
     /**
-     * Get the content of the url
+     * Get the content of the url.
      *
      * @return string|false The content or false
      */
@@ -160,7 +160,7 @@ class Request extends Url
     }
 
     /**
-     * Get the content of the url as a DOMDocument object
+     * Get the content of the url as a DOMDocument object.
      *
      * @return \DOMDocument|false
      */
@@ -194,7 +194,7 @@ class Request extends Url
     }
 
     /**
-     * Get the content of the url as an array from json
+     * Get the content of the url as an array from json.
      *
      * @return false|array The content or false
      */
@@ -216,7 +216,7 @@ class Request extends Url
     }
 
     /**
-     * Get the content of the url as an XML element
+     * Get the content of the url as an XML element.
      *
      * @return false|\SimpleXMLElement The content or false
      */
@@ -239,11 +239,11 @@ class Request extends Url
     }
 
     /**
-     * Check if the response is valid or not
+     * Check if the response is valid or not.
      *
      * @param array $validCodes
      *
-     * @return boolean True if it's valid, false if not
+     * @return bool True if it's valid, false if not
      */
     public function isValid(array $validCodes = null)
     {

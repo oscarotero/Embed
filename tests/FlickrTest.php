@@ -1,4 +1,5 @@
 <?php
+
 class FlickrTest extends TestCaseBase
 {
     public function testSets()

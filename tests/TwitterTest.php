@@ -1,4 +1,5 @@
 <?php
+
 class TwitterTest extends TestCaseBase
 {
     public function _testNormal()
@@ -24,7 +25,7 @@ class TwitterTest extends TestCaseBase
                             'omit_script' => true,
                         ],
                     ],
-                ]
+                ],
             ]
         );
     }

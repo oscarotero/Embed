@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to provide all information from lavozdegalicia.es that needs a special query parameter to generate a session cookie
+ * Adapter to provide all information from lavozdegalicia.es that needs a special query parameter to generate a session cookie.
  */
 namespace Embed\Adapters;
 

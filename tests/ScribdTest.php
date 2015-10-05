@@ -1,4 +1,5 @@
 <?php
+
 class ScribdTest extends TestCaseBase
 {
     public function testOne()

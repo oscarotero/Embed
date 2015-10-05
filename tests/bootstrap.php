@@ -1,4 +1,5 @@
 <?php
+
 error_reporting(E_ALL);
 
 if (file_exists(__DIR__.'/../vendor/autoload.php')) {

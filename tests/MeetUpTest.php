@@ -1,4 +1,5 @@
 <?php
+
 class MeetUpTest extends TestCaseBase
 {
     public function testOne()

@@ -1,11 +1,12 @@
 <?php
+
 namespace Embed\Providers\Api;
 
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
 
 /**
- * Provider to use the API of gist.github.com
+ * Provider to use the API of gist.github.com.
  */
 class Gist extends Provider implements ProviderInterface
 {

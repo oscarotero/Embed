@@ -1,4 +1,5 @@
 <?php
+
 namespace Embed\Providers\Api;
 
 use Embed\Providers\Provider;
@@ -6,7 +7,7 @@ use Embed\Providers\ProviderInterface;
 use Embed\Url;
 
 /**
- * Provider to use the API of facebook
+ * Provider to use the API of facebook.
  */
 class Facebook extends Provider implements ProviderInterface
 {
@@ -37,7 +38,7 @@ class Facebook extends Provider implements ProviderInterface
         }
 
         /**
-         * Returns the id found in a facebook url
+         * Returns the id found in a facebook url.
          *
          * @param Url $url
          *

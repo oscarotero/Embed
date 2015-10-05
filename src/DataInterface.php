@@ -1,20 +1,21 @@
 <?php
+
 /**
- * Interface used by all adapters and providers
+ * Interface used by all adapters and providers.
  */
 namespace Embed;
 
 interface DataInterface
 {
     /**
-     * Gets the title
+     * Gets the title.
      *
      * @return string|null
      */
     public function getTitle();
 
     /**
-     * Gets the description
+     * Gets the description.
      *
      * @return string|null
      */
@@ -23,42 +24,42 @@ interface DataInterface
     /**
      * Gets the type of the url
      * The types are the same than the oEmbed types:
-     * video, photo, link, rich
+     * video, photo, link, rich.
      *
      * @return string|null
      */
     public function getType();
 
     /**
-     * Gets the source url (feed, api, etc)
+     * Gets the source url (feed, api, etc).
      *
      * @return string|null
      */
     public function getSource();
 
     /**
-     * Gets the embed code
+     * Gets the embed code.
      *
      * @return string|null
      */
     public function getCode();
 
     /**
-     * Gets the canonical url
+     * Gets the canonical url.
      *
      * @return string|null
      */
     public function getUrl();
 
     /**
-     * Gets the author name
+     * Gets the author name.
      *
      * @return string|null
      */
     public function getAuthorName();
 
     /**
-     * Gets the author url
+     * Gets the author url.
      *
      * @return string|null
      */
@@ -66,21 +67,21 @@ interface DataInterface
 
     /**
      * Gets the urls of all icons of the provider
-     * Note: it doesn't check whether the image exists or not
+     * Note: it doesn't check whether the image exists or not.
      *
      * @return array
      */
     public function getProviderIconsUrls();
 
     /**
-     * Gets the provider name
+     * Gets the provider name.
      *
      * @return string|null
      */
     public function getProviderName();
 
     /**
-     * Gets the provider url (usually the home url of the link)
+     * Gets the provider url (usually the home url of the link).
      *
      * @return string|null
      */
@@ -88,28 +89,28 @@ interface DataInterface
 
     /**
      * Gets the urls of all images found in the webpage
-     * Note: it doesn't check whether the image exists or not
+     * Note: it doesn't check whether the image exists or not.
      *
      * @return array
      */
     public function getImagesUrls();
 
     /**
-     * Gets the width of the embedded widget
+     * Gets the width of the embedded widget.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getWidth();
 
     /**
-     * Gets the height of the embedded widget
+     * Gets the height of the embedded widget.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHeight();
 
     /**
-     * Gets the published time, if the webpage is an article
+     * Gets the published time, if the webpage is an article.
      *
      * @return string|null
      */

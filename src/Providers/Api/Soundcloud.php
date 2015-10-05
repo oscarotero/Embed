@@ -1,11 +1,12 @@
 <?php
+
 namespace Embed\Providers\Api;
 
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
 
 /**
- * Provider to use the API of soundcloud
+ * Provider to use the API of soundcloud.
  */
 class Soundcloud extends Provider implements ProviderInterface
 {

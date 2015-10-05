@@ -1,4 +1,5 @@
 <?php
+
 class MitTest extends TestCaseBase
 {
     public function testOne()

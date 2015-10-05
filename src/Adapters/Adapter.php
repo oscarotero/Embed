@@ -1,14 +1,14 @@
 <?php
+
 namespace Embed\Adapters;
 
 use Embed\Url;
 use Embed\Utils;
 use Embed\Request;
 use Embed\Providers\ProviderInterface;
-use Embed\ImageInfo;
 
 /**
- * Base class extended by all adapters
+ * Base class extended by all adapters.
  *
  * @property Request      $request
  * @property null|string  $title
@@ -17,11 +17,11 @@ use Embed\ImageInfo;
  * @property null|string  $type
  * @property array        $images
  * @property null|string  $image
- * @property null|integer $imageWidth
- * @property null|integer $imageHeight
+ * @property null|int $imageWidth
+ * @property null|int $imageHeight
  * @property null|string  $code
- * @property null|integer $width
- * @property null|integer $height
+ * @property null|int $width
+ * @property null|int $height
  * @property null|float   $aspectRatio
  * @property null|string  $authorName
  * @property null|string  $authorUrl
@@ -76,7 +76,7 @@ abstract class Adapter
     }
 
     /**
-     * Init the adapter
+     * Init the adapter.
      */
     protected function init()
     {
@@ -96,7 +96,7 @@ abstract class Adapter
     }
 
     /**
-     * Get the request
+     * Get the request.
      *
      * @return Request
      */
@@ -106,7 +106,7 @@ abstract class Adapter
     }
 
     /**
-     * Adds a new provider
+     * Adds a new provider.
      *
      * @param string            $name
      * @param ProviderInterface $provider
@@ -122,7 +122,7 @@ abstract class Adapter
     }
 
     /**
-     * Get a provider
+     * Get a provider.
      *
      * @param string $name
      *
@@ -134,7 +134,7 @@ abstract class Adapter
     }
 
     /**
-     * Get all providers
+     * Get all providers.
      *
      * @return array
      */
@@ -145,7 +145,7 @@ abstract class Adapter
 
     /**
      * Magic method to execute and save the url data.
-     * For example, on call $this->title, executes $this->getTitle()
+     * For example, on call $this->title, executes $this->getTitle().
      *
      * @param string $name
      *

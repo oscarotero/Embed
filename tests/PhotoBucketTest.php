@@ -1,4 +1,5 @@
 <?php
+
 class PhotoBucketTest extends TestCaseBase
 {
     public function testOne()

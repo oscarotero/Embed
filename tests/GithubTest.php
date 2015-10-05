@@ -1,4 +1,5 @@
 <?php
+
 class GithubTest extends TestCaseBase
 {
     public function testGist()

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter provider more information from google maps
+ * Adapter provider more information from google maps.
  */
 namespace Embed\Adapters;
 

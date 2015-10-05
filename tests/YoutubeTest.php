@@ -1,4 +1,5 @@
 <?php
+
 class YoutubeTest extends TestCaseBase
 {
     public function testOne()

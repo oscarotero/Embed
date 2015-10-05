@@ -1,4 +1,5 @@
 <?php
+
 class PastebinTest extends TestCaseBase
 {
     public function testOne()

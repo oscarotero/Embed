@@ -1,13 +1,14 @@
 <?php
+
 namespace Embed\ImageInfo;
 
 /**
- * Inteface used by all imageinfo interfaces
+ * Inteface used by all imageinfo interfaces.
  */
 interface ImageInfoInterface
 {
     /**
-     * Get the info of multiple images at once
+     * Get the info of multiple images at once.
      *
      * @param array      $urls
      * @param null|array $config

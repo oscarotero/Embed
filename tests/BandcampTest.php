@@ -1,4 +1,5 @@
 <?php
+
 class BandcampTest extends TestCaseBase
 {
     public function testOne()

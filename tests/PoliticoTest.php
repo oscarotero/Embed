@@ -1,4 +1,5 @@
 <?php
+
 class PoliticoTest extends TestCaseBase
 {
     public function testOne()

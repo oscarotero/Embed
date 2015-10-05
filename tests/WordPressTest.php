@@ -1,4 +1,5 @@
 <?php
+
 class WordPressTest extends TestCaseBase
 {
     public function testOne()

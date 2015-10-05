@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Class to resolve some specific redirections
+ * Class to resolve some specific redirections.
  */
 namespace Embed;
 
@@ -13,7 +14,7 @@ class UrlRedirect
     ];
 
     /**
-     * Resolve the url redirection
+     * Resolve the url redirection.
      *
      * @param string $oldUrl Url to resolve
      *
@@ -33,7 +34,7 @@ class UrlRedirect
     }
 
     /**
-     * Resolve a google redirection url
+     * Resolve a google redirection url.
      *
      * @param Url $url
      *
@@ -49,7 +50,7 @@ class UrlRedirect
     }
 
     /**
-     * Resolve a google translation url
+     * Resolve a google translation url.
      *
      * @param Url $url
      *
@@ -65,7 +66,7 @@ class UrlRedirect
     }
 
     /**
-     * Resolve an url with hashbang
+     * Resolve an url with hashbang.
      *
      * @param Url $url
      *

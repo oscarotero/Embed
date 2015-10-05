@@ -1,4 +1,5 @@
 <?php
+
 class FileTest extends TestCaseBase
 {
     public function testJpg()

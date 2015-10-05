@@ -1,4 +1,5 @@
 <?php
+
 class UstreamTest extends TestCaseBase
 {
     public function testOne()

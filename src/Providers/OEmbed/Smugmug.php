@@ -1,4 +1,5 @@
 <?php
+
 namespace Embed\Providers\OEmbed;
 
 class Smugmug extends OEmbedImplementation

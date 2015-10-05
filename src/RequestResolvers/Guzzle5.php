@@ -35,14 +35,14 @@ class Guzzle5 implements RequestResolverInterface
     ];
 
     /**
-     * Constructor. Sets the url
+     * Constructor. Sets the url.
      *
      * @param string $url    The url value
      * @param array  $config The resolver configuration
      */
     public function __construct($url, array $config)
     {
-        $this->client  = isset($config['client']) ? $config['client'] : new Client([
+        $this->client = isset($config['client']) ? $config['client'] : new Client([
             'defaults' => $this->defaultConfig,
         ]);
 
@@ -50,7 +50,7 @@ class Guzzle5 implements RequestResolverInterface
     }
 
     /**
-     * Get the http code of the url, for example: 200
+     * Get the http code of the url, for example: 200.
      *
      * @return int The http code
      */
@@ -60,7 +60,7 @@ class Guzzle5 implements RequestResolverInterface
     }
 
     /**
-     * Get the content-type of the url, for example: text/html
+     * Get the content-type of the url, for example: text/html.
      *
      * @return string The content-type header or null
      */
@@ -70,7 +70,7 @@ class Guzzle5 implements RequestResolverInterface
     }
 
     /**
-     * Get the content of the url
+     * Get the content of the url.
      *
      * @return string The content or false
      */
@@ -80,7 +80,7 @@ class Guzzle5 implements RequestResolverInterface
     }
 
     /**
-     * Return the final url (after all possible redirects)
+     * Return the final url (after all possible redirects).
      *
      * @return string The final url
      */
@@ -90,7 +90,7 @@ class Guzzle5 implements RequestResolverInterface
     }
 
     /**
-     * Return the http request info (for debug purposes)
+     * Return the http request info (for debug purposes).
      *
      * @return array
      */
@@ -100,7 +100,7 @@ class Guzzle5 implements RequestResolverInterface
     }
 
     /**
-     * Get the result of the http request
+     * Get the result of the http request.
      *
      * @return Response
      */

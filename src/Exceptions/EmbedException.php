@@ -1,4 +1,5 @@
 <?php
+
 namespace Embed\Exceptions;
 
 use Exception;

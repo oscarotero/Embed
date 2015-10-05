@@ -1,4 +1,5 @@
 <?php
+
 namespace Embed;
 
 use Embed\Adapters\AdapterInterface;
@@ -6,7 +7,7 @@ use Embed\Adapters\AdapterInterface;
 class Embed
 {
     /**
-     * Gets the info from an url
+     * Gets the info from an url.
      *
      * @param string|Request $request The url or a request with the url
      * @param array          $config  Options passed to the adapter
@@ -52,7 +53,7 @@ class Embed
     }
 
     /**
-     * Gets the info from a source (list of urls)
+     * Gets the info from a source (list of urls).
      *
      * @param string|Request $request The url or a request with the source url
      * @param null|array     $config  Options passed to the adapter
@@ -80,7 +81,7 @@ class Embed
     }
 
     /**
-     * Execute an adapter
+     * Execute an adapter.
      *
      * @param string     $adapter Adapter class name
      * @param Request    $request
@@ -104,7 +105,7 @@ class Embed
     }
 
     /**
-     * Init a request
+     * Init a request.
      *
      * @param string|Request $request The url or a request with the url
      * @param null|array     $config  Options passed to the adapter
@@ -124,7 +125,7 @@ class Embed
         }
 
         if (!($request instanceof Request)) {
-            throw new \InvalidArgumentException("Embed::create only accepts instances of Embed\\Request or strings");
+            throw new \InvalidArgumentException('Embed::create only accepts instances of Embed\\Request or strings');
         }
 
         return $request;

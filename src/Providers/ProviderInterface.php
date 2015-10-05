@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Interface used by all providers
+ * Interface used by all providers.
  */
 namespace Embed\Providers;
 
@@ -10,7 +11,7 @@ use Embed\DataInterface;
 interface ProviderInterface extends DataInterface
 {
     /**
-     * Init the provider
+     * Init the provider.
      *
      * @param Request $request
      * @param array   $config
@@ -18,7 +19,7 @@ interface ProviderInterface extends DataInterface
     public function init(Request $request, array $config = null);
 
     /**
-     * Run the provider
+     * Run the provider.
      */
     public function run();
 }

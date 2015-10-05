@@ -1,4 +1,5 @@
 <?php
+
 class ViddlerTest extends TestCaseBase
 {
     public function testOne()

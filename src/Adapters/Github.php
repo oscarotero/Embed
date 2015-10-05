@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to get the embed code from gist.github.com
+ * Adapter to get the embed code from gist.github.com.
  */
 namespace Embed\Adapters;
 

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to provide information from wikipedia
+ * Adapter to provide information from wikipedia.
  */
 namespace Embed\Adapters;
 

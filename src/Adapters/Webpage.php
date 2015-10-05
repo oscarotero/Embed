@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to provide all information from any webpage
+ * Adapter to provide all information from any webpage.
  */
 namespace Embed\Adapters;
 

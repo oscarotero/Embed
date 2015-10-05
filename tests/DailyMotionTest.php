@@ -1,4 +1,5 @@
 <?php
+
 class DailyMotionTest extends TestCaseBase
 {
     public function testOne()

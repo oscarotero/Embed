@@ -1,13 +1,14 @@
 <?php
+
 namespace Embed;
 
 /**
- * Some helpers methods used across the library
+ * Some helpers methods used across the library.
  */
 class Utils
 {
     /**
-     * Extract all meta elements from html
+     * Extract all meta elements from html.
      *
      * @param \DOMDocument $html
      *
@@ -28,7 +29,7 @@ class Utils
     }
 
     /**
-     * Extract all link elements from html
+     * Extract all link elements from html.
      *
      * @param \DOMDocument $html
      * @param string       $tagName
@@ -52,7 +53,7 @@ class Utils
     }
 
     /**
-     * Search and returns all data retrieved by the providers
+     * Search and returns all data retrieved by the providers.
      *
      * @param null|array $providers The providers used to retrieve the data
      * @param string     $name      The data name (title, description, image, etc)
@@ -96,7 +97,7 @@ class Utils
     }
 
     /**
-     * Order the data by provider
+     * Order the data by provider.
      *
      * @param array $values The array provided by self::getData()
      *
@@ -120,14 +121,14 @@ class Utils
     }
 
     /**
-     * Unshifts a new value if it does not exists
+     * Unshifts a new value if it does not exists.
      *
      * @param array $values The array provided by self::getData()
      * @param array $value  The value to insert
      */
     public static function unshiftValue(array &$values, $value)
     {
-        $key = Utils::searchValue($values, $value['value'], true);
+        $key = self::searchValue($values, $value['value'], true);
 
         if ($key === false) {
             return array_unshift($values, $value);
@@ -141,11 +142,11 @@ class Utils
     }
 
     /**
-     * Search by a value and returns its key
+     * Search by a value and returns its key.
      *
-     * @param array   $values    The array provided by self::getData()
-     * @param string  $value     The value to search
-     * @param boolean $returnKey Whether or not return the key instead the value
+     * @param array  $values    The array provided by self::getData()
+     * @param string $value     The value to search
+     * @param bool   $returnKey Whether or not return the key instead the value
      *
      * @return array|false
      */
@@ -161,10 +162,10 @@ class Utils
     }
 
     /**
-     * Returns the first value if exists
+     * Returns the first value if exists.
      *
-     * @param array   $values    The array provided by self::getData()
-     * @param boolean $returnKey Whether or not return the key instead the value
+     * @param array $values    The array provided by self::getData()
+     * @param bool  $returnKey Whether or not return the key instead the value
      *
      * @return string|null
      */
@@ -176,10 +177,10 @@ class Utils
     }
 
     /**
-     * Returns the most popular value in an array
+     * Returns the most popular value in an array.
      *
-     * @param array   $values    The array provided by self::getData()
-     * @param boolean $returnKey Whether or not return the key instead the value
+     * @param array $values    The array provided by self::getData()
+     * @param bool  $returnKey Whether or not return the key instead the value
      *
      * @return mixed
      */
@@ -199,10 +200,10 @@ class Utils
     }
 
     /**
-     * Returns the bigger value
+     * Returns the bigger value.
      *
-     * @param array   $values    The array provided by self::getData()
-     * @param boolean $returnKey Whether or not return the key instead the value
+     * @param array $values    The array provided by self::getData()
+     * @param bool  $returnKey Whether or not return the key instead the value
      *
      * @return null|string
      */
@@ -222,12 +223,12 @@ class Utils
     }
 
     /**
-     * Creates a <video> element
+     * Creates a <video> element.
      *
      * @param string       $poster  Poster attribute
      * @param string|array $sources Video sources
-     * @param integer      $width   Width attribute
-     * @param integer      $height  Height attribute
+     * @param int          $width   Width attribute
+     * @param int          $height  Height attribute
      *
      * @return string
      */
@@ -248,7 +249,7 @@ class Utils
     }
 
     /**
-     * Creates an <audio> element
+     * Creates an <audio> element.
      *
      * @param string|array $sources Audio sources
      *
@@ -256,7 +257,7 @@ class Utils
      */
     public static function audioHtml($sources)
     {
-        $code = "<audio controls>";
+        $code = '<audio controls>';
 
         foreach ((array) $sources as $source) {
             $code .= self::element('source', ['src' => $source]);
@@ -266,12 +267,12 @@ class Utils
     }
 
     /**
-     * Creates an <img> element
+     * Creates an <img> element.
      *
-     * @param string  $src    Image source attribute
-     * @param string  $alt    Alt attribute
-     * @param integer $width  Width attribute
-     * @param integer $height Height attribute
+     * @param string $src    Image source attribute
+     * @param string $alt    Alt attribute
+     * @param int    $width  Width attribute
+     * @param int    $height Height attribute
      *
      * @return string
      */
@@ -286,12 +287,12 @@ class Utils
     }
 
     /**
-     * Creates an <iframe> element
+     * Creates an <iframe> element.
      *
-     * @param string  $src    Iframe source attribute
-     * @param integer $width  Width attribute
-     * @param integer $height Height attribute
-     * @param integer $styles Extra css styles
+     * @param string $src    Iframe source attribute
+     * @param int    $width  Width attribute
+     * @param int    $height Height attribute
+     * @param int    $styles Extra css styles
      *
      * @return string
      */
@@ -315,7 +316,7 @@ class Utils
     }
 
     /**
-     * Creates an <iframe> element with a google viewer
+     * Creates an <iframe> element with a google viewer.
      *
      * @param string $src The file loaded by the viewer (pdf, doc, etc)
      *
@@ -330,11 +331,11 @@ class Utils
     }
 
     /**
-     * Creates a flash element
+     * Creates a flash element.
      *
-     * @param string       $src    The swf file source
-     * @param null|integer $width  Width attribute
-     * @param null|integer $height Height attribute
+     * @param string   $src    The swf file source
+     * @param null|int $width  Width attribute
+     * @param null|int $height Height attribute
      *
      * @return string
      */
@@ -364,7 +365,7 @@ class Utils
     }
 
     /**
-     * Creates an html element
+     * Creates an html element.
      *
      * @param string $name  Element name
      * @param array  $attrs Element attributes

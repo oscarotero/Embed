@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to generate embed code from pastebin
+ * Adapter to generate embed code from pastebin.
  */
 namespace Embed\Adapters;
 

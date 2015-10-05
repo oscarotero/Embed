@@ -1,4 +1,5 @@
 <?php
+
 class SlidesTest extends TestCaseBase
 {
     public function testOne()

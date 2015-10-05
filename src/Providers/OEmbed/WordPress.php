@@ -1,10 +1,10 @@
 <?php
+
 namespace Embed\Providers\OEmbed;
 
 /**
  * Class WordPress
- * WordPress.tv embeds
- * @package Embed\Providers\OEmbed
+ * WordPress.tv embeds.
  */
 class WordPress extends OEmbedImplementation
 {

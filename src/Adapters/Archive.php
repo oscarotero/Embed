@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to provide information from archive.org API
+ * Adapter to provide information from archive.org API.
  */
 namespace Embed\Adapters;
 

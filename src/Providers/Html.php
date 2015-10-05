@@ -1,4 +1,5 @@
 <?php
+
 namespace Embed\Providers;
 
 use Embed\Url;
@@ -164,7 +165,7 @@ class Html extends Provider implements ProviderInterface
     }
 
     /**
-     * Extract information from the <link> elements
+     * Extract information from the <link> elements.
      *
      * @param \DOMDocument $html
      * @param Bag          $bag
@@ -208,7 +209,7 @@ class Html extends Provider implements ProviderInterface
     }
 
     /**
-     * Extract information from the <meta> elements
+     * Extract information from the <meta> elements.
      *
      * @param \DOMDocument $html
      * @param Bag          $bag
@@ -247,7 +248,7 @@ class Html extends Provider implements ProviderInterface
     }
 
     /**
-     * Extract <img> elements
+     * Extract <img> elements.
      *
      * @param \DOMElement $html
      * @param Bag         $bag
@@ -299,7 +300,7 @@ class Html extends Provider implements ProviderInterface
     }
 
     /**
-     * Returns the main element of the document
+     * Returns the main element of the document.
      *
      * @param \DOMDocument $html
      *

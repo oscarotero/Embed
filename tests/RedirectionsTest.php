@@ -1,4 +1,5 @@
 <?php
+
 class RedirectionsTest extends TestCaseBase
 {
     public function testGoogleTranslate()

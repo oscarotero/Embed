@@ -1,4 +1,5 @@
 <?php
+
 class ArchiveTest extends TestCaseBase
 {
     public function testOne()

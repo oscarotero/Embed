@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Class to split and manipulate url data
+ * Class to split and manipulate url data.
  */
 namespace Embed;
 
@@ -9,7 +10,7 @@ class Url
     protected $info;
 
     /**
-     * Constructor. Sets the url
+     * Constructor. Sets the url.
      *
      * @param string $url The url value
      */
@@ -19,7 +20,7 @@ class Url
     }
 
     /**
-     * Returns the url
+     * Returns the url.
      *
      * @return string
      */
@@ -29,7 +30,7 @@ class Url
     }
 
     /**
-     * Return the url
+     * Return the url.
      *
      * @return string The current url
      */
@@ -43,7 +44,7 @@ class Url
      *
      * @param string|array $patterns The pattern or an array with various patterns
      *
-     * @return boolean True if the url match, false if not
+     * @return bool True if the url match, false if not
      */
     public function match($patterns)
     {
@@ -65,7 +66,7 @@ class Url
     }
 
     /**
-     * Return the extension of the url (html, php, jpg, etc)
+     * Return the extension of the url (html, php, jpg, etc).
      *
      * @return string The scheme or null
      */
@@ -75,7 +76,7 @@ class Url
     }
 
     /**
-     * Returns a clone with other extension
+     * Returns a clone with other extension.
      *
      * @param string $extension
      *
@@ -94,7 +95,7 @@ class Url
     }
 
     /**
-     * Return the scheme of the url (for example http, https, ftp, etc)
+     * Return the scheme of the url (for example http, https, ftp, etc).
      *
      * @return string The scheme or null
      */
@@ -104,7 +105,7 @@ class Url
     }
 
     /**
-     * Returns a clone with other scheme
+     * Returns a clone with other scheme.
      *
      * @param string $scheme
      *
@@ -119,7 +120,7 @@ class Url
     }
 
     /**
-     * Return the host of the url (for example: google.com)
+     * Return the host of the url (for example: google.com).
      *
      * @return string The host or null
      */
@@ -129,7 +130,7 @@ class Url
     }
 
     /**
-     * Returns a clone with other host
+     * Returns a clone with other host.
      *
      * @param string $host
      *
@@ -144,9 +145,9 @@ class Url
     }
 
     /**
-     * Return the domain of the url (for example: google)
+     * Return the domain of the url (for example: google).
      *
-     * @param boolean $first_level True to return the first level domain (.com, .es, etc)
+     * @param bool $first_level True to return the first level domain (.com, .es, etc)
      *
      * @return string
      */
@@ -177,7 +178,7 @@ class Url
     }
 
     /**
-     * Return a specific directory position in the path of the url
+     * Return a specific directory position in the path of the url.
      *
      * @param int $position The position of the directory (0 based index)
      *
@@ -193,7 +194,7 @@ class Url
     }
 
     /**
-     * Returns a clone with other directory in a specific position
+     * Returns a clone with other directory in a specific position.
      *
      * @param int|null $key   The position of the subdirectory (0 based index).
      * @param string   $value The new value
@@ -216,7 +217,7 @@ class Url
     }
 
     /**
-     * Return all directories
+     * Return all directories.
      *
      * @return string
      */
@@ -226,7 +227,7 @@ class Url
     }
 
     /**
-     * Slice path
+     * Slice path.
      *
      * @param int      $offset
      * @param int|null $length
@@ -245,7 +246,7 @@ class Url
     }
 
     /**
-     * Return the url path
+     * Return the url path.
      *
      * @return string
      */
@@ -265,7 +266,7 @@ class Url
     }
 
     /**
-     * Returns a clone with other path
+     * Returns a clone with other path.
      *
      * @param string $path
      *
@@ -281,7 +282,7 @@ class Url
     }
 
     /**
-     * Returns a clone with path appended
+     * Returns a clone with path appended.
      *
      * @param string $path
      *
@@ -295,11 +296,11 @@ class Url
     }
 
     /**
-     * Check if the url has a query parameter
+     * Check if the url has a query parameter.
      *
      * @param string $name
      *
-     * @return boolean
+     * @return bool
      */
     public function hasQueryParameter($name)
     {
@@ -307,7 +308,7 @@ class Url
     }
 
     /**
-     * Returns all query parameters
+     * Returns all query parameters.
      *
      * @return array
      */
@@ -317,7 +318,7 @@ class Url
     }
 
     /**
-     * Returns a query parameter value
+     * Returns a query parameter value.
      *
      * @param string $name
      *
@@ -329,7 +330,7 @@ class Url
     }
 
     /**
-     * Returns a clone with a new query parameter
+     * Returns a clone with a new query parameter.
      *
      * @param string $name  The parameter name
      * @param string $value The parameter value
@@ -346,7 +347,7 @@ class Url
     }
 
     /**
-     * Returns a clone with new query parameters merged
+     * Returns a clone with new query parameters merged.
      *
      * @param array $parameters
      *
@@ -362,7 +363,7 @@ class Url
     }
 
     /**
-     * Returns a clone with new query parameters
+     * Returns a clone with new query parameters.
      *
      * @param array $parameters
      *
@@ -378,7 +379,7 @@ class Url
     }
 
     /**
-     * Return the url fragment
+     * Return the url fragment.
      *
      * @return string
      */
@@ -388,7 +389,7 @@ class Url
     }
 
     /**
-     * Build the url using the splitted data
+     * Build the url using the splitted data.
      */
     protected function buildUrl()
     {
@@ -414,7 +415,7 @@ class Url
     }
 
     /**
-     * Parse an url and split into different pieces
+     * Parse an url and split into different pieces.
      *
      * @param string $url The url to parse
      */
@@ -440,7 +441,7 @@ class Url
     }
 
     /**
-     * Return an absolute url based in a relative
+     * Return an absolute url based in a relative.
      *
      * @return string The absolute url
      */
@@ -474,7 +475,7 @@ class Url
     }
 
     /**
-     * Parses and adds path and file value
+     * Parses and adds path and file value.
      *
      * @param string $path
      */

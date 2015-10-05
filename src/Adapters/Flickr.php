@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter provider more information from flickr
+ * Adapter provider more information from flickr.
  */
 namespace Embed\Adapters;
 

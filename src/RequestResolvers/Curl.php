@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Default class to resolve urls
+ * Default class to resolve urls.
  */
 namespace Embed\RequestResolvers;
 
@@ -87,7 +88,7 @@ class Curl implements RequestResolverInterface
     }
 
     /**
-     * Get the result of the http request
+     * Get the result of the http request.
      *
      * @param string $name Parameter name
      *
@@ -103,7 +104,7 @@ class Curl implements RequestResolverInterface
     }
 
     /**
-     * Resolves the current url and get the content and other data
+     * Resolves the current url and get the content and other data.
      */
     protected function resolve()
     {

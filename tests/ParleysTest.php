@@ -1,4 +1,5 @@
 <?php
+
 class ParleysTest extends TestCaseBase
 {
     public function testOne()

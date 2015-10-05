@@ -1,4 +1,5 @@
 <?php
+
 class UrlTest extends TestCaseBase
 {
     public function testParser()

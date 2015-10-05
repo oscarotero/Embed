@@ -1,4 +1,5 @@
 <?php
+
 namespace Embed\Providers;
 
 use Embed\Request;
@@ -195,7 +196,7 @@ class OEmbed extends Provider implements ProviderInterface
 
     /**
      * Extract oembed information from the <link rel="alternate"> elements
-     * Note: Some sites use <meta rel="alternate"> instead
+     * Note: Some sites use <meta rel="alternate"> instead.
      *
      * @param \DOMDocument $html
      *
@@ -225,7 +226,7 @@ class OEmbed extends Provider implements ProviderInterface
     }
 
     /**
-     * Returns the oembed link from the request
+     * Returns the oembed link from the request.
      *
      * @param Request $request
      * @param array   $config
@@ -254,7 +255,8 @@ class OEmbed extends Provider implements ProviderInterface
     }
 
     /**
-     * Return the class name implementing an oEmbed provider
+     * Return the class name implementing an oEmbed provider.
+     *
      * @param Request $request
      *
      * @return string

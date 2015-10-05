@@ -1,4 +1,5 @@
 <?php
+
 class ChirbitTest extends TestCaseBase
 {
     public function testOne()

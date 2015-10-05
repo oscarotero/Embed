@@ -1,4 +1,5 @@
 <?php
+
 namespace Embed\Providers\OEmbed;
 
 class Yfrog extends OEmbedImplementation

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to get the embed code from slides.com
+ * Adapter to get the embed code from slides.com.
  */
 namespace Embed\Adapters;
 

@@ -1,11 +1,12 @@
 <?php
+
 namespace Embed\Providers\Api;
 
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
 
 /**
- * Provider to use the API of wikipedia
+ * Provider to use the API of wikipedia.
  */
 class Wikipedia extends Provider implements ProviderInterface
 {

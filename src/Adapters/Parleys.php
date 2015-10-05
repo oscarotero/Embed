@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to get more info from parleys.com
+ * Adapter to get more info from parleys.com.
  */
 namespace Embed\Adapters;
 

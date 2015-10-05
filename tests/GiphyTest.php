@@ -1,4 +1,5 @@
 <?php
+
 class GiphyTest extends TestCaseBase
 {
     public function testOne()

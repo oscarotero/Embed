@@ -1,4 +1,5 @@
 <?php
+
 class FacebookTest extends TestCaseBase
 {
     public function testOne()

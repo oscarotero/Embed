@@ -1,4 +1,5 @@
 <?php
+
 class CollegehumorTest extends TestCaseBase
 {
     public function testOne()

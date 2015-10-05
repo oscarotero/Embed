@@ -1,8 +1,9 @@
 <?php
+
 namespace Embed\ImageInfo;
 
 /**
- * Class to retrieve the size and mimetype of images using curl
+ * Class to retrieve the size and mimetype of images using curl.
  */
 class Curl implements ImageInfoInterface
 {
@@ -87,7 +88,7 @@ class Curl implements ImageInfoInterface
     }
 
     /**
-     * Get the info of only one image
+     * Get the info of only one image.
      *
      * @param string     $image
      * @param null|array $config
@@ -111,7 +112,7 @@ class Curl implements ImageInfoInterface
     }
 
     /**
-     * Init the curl connection
+     * Init the curl connection.
      *
      * @param string     $url    The image url
      * @param resource   $finfo  A fileinfo resource to get the mimetype
@@ -135,7 +136,7 @@ class Curl implements ImageInfoInterface
     }
 
     /**
-     * Returns the curl resource
+     * Returns the curl resource.
      *
      * @return resource
      */
@@ -145,7 +146,7 @@ class Curl implements ImageInfoInterface
     }
 
     /**
-     * Get the image info with the format [$width, $height, $mimetype]
+     * Get the image info with the format [$width, $height, $mimetype].
      *
      * @return null|array
      */
@@ -155,7 +156,7 @@ class Curl implements ImageInfoInterface
     }
 
     /**
-     * Callback used to save the first bytes of the body content
+     * Callback used to save the first bytes of the body content.
      *
      * @param resource $connection
      * @param string   $string

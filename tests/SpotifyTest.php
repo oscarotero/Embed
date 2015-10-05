@@ -1,4 +1,5 @@
 <?php
+
 class SpotifyTest extends TestCaseBase
 {
     public function testOne()

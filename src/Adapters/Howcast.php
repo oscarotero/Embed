@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to get the embed code from spreaker.com
+ * Adapter to get the embed code from spreaker.com.
  */
 namespace Embed\Adapters;
 

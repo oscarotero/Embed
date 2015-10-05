@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Class to return the urls from a xml feed
+ * Class to return the urls from a xml feed.
  */
 namespace Embed\Sources;
 
@@ -72,7 +73,7 @@ class Feed extends Source implements SourceInterface
     }
 
     /**
-     * Search data from Rss
+     * Search data from Rss.
      *
      * @param \SimpleXMLElement $xml
      *
@@ -95,7 +96,7 @@ class Feed extends Source implements SourceInterface
     }
 
     /**
-     * Search items from XML
+     * Search items from XML.
      *
      * @param \SimpleXMLElement $items
      *
@@ -135,7 +136,7 @@ class Feed extends Source implements SourceInterface
     }
 
     /**
-     * Search data from Atom xml
+     * Search data from Atom xml.
      *
      * @param \SimpleXMLElement $xml
      *
@@ -166,7 +167,7 @@ class Feed extends Source implements SourceInterface
     }
 
     /**
-     * Search entries from Atom xml
+     * Search entries from Atom xml.
      *
      * @param \SimpleXMLElement $entries
      *

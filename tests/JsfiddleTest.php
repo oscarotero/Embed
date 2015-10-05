@@ -1,4 +1,5 @@
 <?php
+
 class JsfiddleTest extends TestCaseBase
 {
     public function testOne()

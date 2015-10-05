@@ -1,4 +1,5 @@
 <?php
+
 class _23hqTest extends TestCaseBase
 {
     public function testOne()

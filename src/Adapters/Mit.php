@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to fix some issues from mit.edu (not complete yet)
+ * Adapter to fix some issues from mit.edu (not complete yet).
  */
 namespace Embed\Adapters;
 

@@ -1,4 +1,5 @@
 <?php
+
 class HowcastTest extends TestCaseBase
 {
     public function testOne()

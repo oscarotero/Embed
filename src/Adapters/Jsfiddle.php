@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to fix some issues from jsfiddle
+ * Adapter to fix some issues from jsfiddle.
  */
 namespace Embed\Adapters;
 

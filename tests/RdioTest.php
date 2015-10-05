@@ -1,4 +1,5 @@
 <?php
+
 class RdioTest extends TestCaseBase
 {
     public function testOne()

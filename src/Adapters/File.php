@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Adapter to provide information from raw files
+ * Adapter to provide information from raw files.
  */
 namespace Embed\Adapters;
 

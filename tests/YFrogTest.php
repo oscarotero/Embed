@@ -1,4 +1,5 @@
 <?php
+
 class YFrogTest extends TestCaseBase
 {
     public function testOne()

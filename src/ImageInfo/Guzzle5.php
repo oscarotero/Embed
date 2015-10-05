@@ -1,11 +1,12 @@
 <?php
+
 namespace Embed\ImageInfo;
 
 use GuzzleHttp\Pool;
 
 /**
-  * Class to retrieve the size and mimetype of images using Guzzle5
-  */
+ * Class to retrieve the size and mimetype of images using Guzzle5.
+ */
 class Guzzle5 implements ImageInfoInterface
 {
     /**

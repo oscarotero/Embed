@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Base class with custom utilities for testing
+ * Base class with custom utilities for testing.
  */
 use Embed\Embed;
 
@@ -8,7 +9,7 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
 {
     /**
      * Compare two string, replacing some conflicting characters
-     * that generate failing tests
+     * that generate failing tests.
      */
     public function assertString($string1, $string2)
     {
@@ -19,7 +20,7 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Execute Embed with an url and returns the info
+     * Execute Embed with an url and returns the info.
      *
      * @param string
      *

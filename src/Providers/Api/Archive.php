@@ -1,12 +1,12 @@
 <?php
+
 namespace Embed\Providers\Api;
 
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
 
 /**
- * Provider to use the API of arquive.org
- *
+ * Provider to use the API of arquive.org.
  */
 class Archive extends Provider implements ProviderInterface
 {

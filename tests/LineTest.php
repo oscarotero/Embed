@@ -1,4 +1,5 @@
 <?php
+
 class LineTest extends TestCaseBase
 {
     public function testOne()

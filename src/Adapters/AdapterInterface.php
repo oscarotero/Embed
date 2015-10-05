@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Interface used by all adapters
+ * Interface used by all adapters.
  */
 namespace Embed\Adapters;
 
@@ -10,11 +11,11 @@ use Embed\DataInterface;
 interface AdapterInterface extends DataInterface
 {
     /**
-     * Checks whether the request is valid to this Adapter
+     * Checks whether the request is valid to this Adapter.
      *
      * @param Request $request
      *
-     * @return boolean
+     * @return bool
      */
     public static function check(Request $request);
 
@@ -27,13 +28,13 @@ interface AdapterInterface extends DataInterface
     public function __construct(Request $request, array $config = null);
 
     /**
-     * Run the provider
+     * Run the provider.
      */
     public function run();
 
     /**
      * Gets all icon provider urls found
-     * It returns also the width, height and mime-type
+     * It returns also the width, height and mime-type.
      *
      * @return array
      */
@@ -42,7 +43,7 @@ interface AdapterInterface extends DataInterface
     /**
      * Gets the best icon provider
      * if $config['getBiggerIcon'] is true, returns the bigger image found
-     * else, returns the first found
+     * else, returns the first found.
      *
      * @return string|null
      */
@@ -50,7 +51,7 @@ interface AdapterInterface extends DataInterface
 
     /**
      * Gets all images found in the webpage
-     * It returns also the width, height and mime-type
+     * It returns also the width, height and mime-type.
      *
      * @return array
      */
@@ -58,29 +59,29 @@ interface AdapterInterface extends DataInterface
 
     /**
      * Gets the best image
-     * if $config['getBiggerImage'] is true, returns the biggest image
+     * if $config['getBiggerImage'] is true, returns the biggest image.
      *
      * @return string|null
      */
     public function getImage();
 
     /**
-     * Gets the image width
+     * Gets the image width.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getImageWidth();
 
     /**
-     * Gets the image height
+     * Gets the image height.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getImageHeight();
 
     /**
      * Gets the aspect ratio of the embedded widget
-     * (useful to make it flexible)
+     * (useful to make it flexible).
      *
      * @return float|null
      */

@@ -1,4 +1,5 @@
 <?php
+
 class ImagesBlacklistTest extends TestCaseBase
 {
     public function testPlainText()
@@ -14,7 +15,7 @@ class ImagesBlacklistTest extends TestCaseBase
                             'https://avatars1.githubusercontent.com/u/377873?v=3&s=400',
                         ],
                     ],
-                ]
+                ],
             ]
         );
     }
@@ -32,7 +33,7 @@ class ImagesBlacklistTest extends TestCaseBase
                             '*.githubusercontent.com*',
                         ],
                     ],
-                ]
+                ],
             ]
         );
     }
@@ -50,7 +51,7 @@ class ImagesBlacklistTest extends TestCaseBase
                             '*/octocat-spinner-*',
                         ],
                     ],
-                ]
+                ],
             ]
         );
     }
