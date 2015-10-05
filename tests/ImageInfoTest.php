@@ -8,17 +8,18 @@ class ImageInfoTest extends TestCaseBase
     const TEST_IMAGE_SIZE = 244800;
     const TEST_IMAGE_MIME = 'image/jpeg';
 
-    public function testOne()
+    public function testCurl()
     {
-        $info = Embed\ImageInfo\Curl::getImageInfo([
+        $info = Embed\ImageInfo\Curl::getImagesInfo([[
             'value' => self::TEST_IMAGE_URL,
-        ]);
+        ]]);
 
-        $this->assertEquals($info, [
+        $this->assertEquals($info[0], [
             'width' => self::TEST_IMAGE_WIDTH,
             'height' => self::TEST_IMAGE_HEIGHT,
             'size' => self::TEST_IMAGE_SIZE,
             'mime' => self::TEST_IMAGE_MIME,
+            'value' => self::TEST_IMAGE_URL,
         ]);
     }
 
