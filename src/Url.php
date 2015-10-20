@@ -66,6 +66,16 @@ class Url
     }
 
     /**
+     * Return the content of the url (for embedded images).
+     *
+     * @return string The content or null
+     */
+    public function getContent()
+    {
+        return isset($this->info['content']) ? $this->info['content'] : null;
+    }
+
+    /**
      * Return the extension of the url (html, php, jpg, etc).
      *
      * @return string The scheme or null
@@ -395,9 +405,14 @@ class Url
     {
         $url = '';
 
+        if (isset($this->info['content'])) {
+            return 'data:'.$this->info['content'];
+        }
+
         if (isset($this->info['scheme'])) {
             $url .= $this->info['scheme'].'://';
         }
+
         if (isset($this->info['host'])) {
             $url .= $this->info['host'];
         }
@@ -481,6 +496,12 @@ class Url
      */
     private function setPath($path)
     {
+        if ($this->getScheme() === 'data') {
+            $this->info['content'] = $path;
+            $this->info['path'] = $this->info['file'] = $this->info['extension'] = null;
+            return;
+        }
+
         $parts = pathinfo($path);
 
         $this->info['path'] = [];
@@ -495,5 +516,6 @@ class Url
 
         $this->info['file'] = isset($parts['filename']) ? $parts['filename'] : null;
         $this->info['extension'] = isset($parts['extension']) ? $parts['extension'] : null;
+        $this->info['content'] = null;
     }
 }
