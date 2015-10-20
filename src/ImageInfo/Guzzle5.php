@@ -3,6 +3,7 @@
 namespace Embed\ImageInfo;
 
 use GuzzleHttp\Pool;
+use GuzzleHttp\Exception\RequestException;
 
 /**
  * Class to retrieve the size and mimetype of images using Guzzle5.
@@ -23,6 +24,10 @@ class Guzzle5 implements ImageInfoInterface
         // Build parallel requests
         $requests = [];
         foreach ($urls as $url) {
+            if (strpos($url['value'], 'data://') !== false) {
+                continue;
+            }
+
             $requests[] = $client->createRequest('GET', $url['value']);
         }
 
@@ -32,6 +37,10 @@ class Guzzle5 implements ImageInfoInterface
         // Build result set
         $result = [];
         foreach ($responses as $i => $response) {
+            if ($response instanceof RequestException) {
+                continue;
+            }
+
             if (($size = @getimagesizefromstring($response->getBody())) !== false) {
                 $result[] = [
                     'width' => $size[0],
