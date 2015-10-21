@@ -7,6 +7,8 @@ namespace Embed\ImageInfo;
  */
 class Curl implements ImageInfoInterface
 {
+    use UtilsTrait;
+
     protected static $mimetypes = [
         'image/jpeg',
         'image/png',
@@ -168,23 +170,5 @@ class Curl implements ImageInfoInterface
         ];
 
         return -1;
-    }
-
-    protected static function getEmbeddedImageInfo($content)
-    {
-        $pieces = explode(';', $content, 2);
-
-        if ((count($pieces) !== 2) || (strpos($pieces[0], 'image/') === false) || (strpos($pieces[1], 'base64,') !== 0)) {
-            return false;
-        }
-
-        $info = getimagesizefromstring(base64_decode(substr($pieces[1], 7)));
-
-        return [
-            'width' => $info[0],
-            'height' => $info[1],
-            'size' => $info[0] * $info[1],
-            'mime' => $info['mime'],
-        ];
     }
 }
