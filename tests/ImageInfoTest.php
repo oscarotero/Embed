@@ -7,6 +7,8 @@ class ImageInfoTest extends TestCaseBase
     const TEST_IMAGE_HEIGHT = 408;
     const TEST_IMAGE_SIZE = 244800;
     const TEST_IMAGE_MIME = 'image/jpeg';
+    const TEST_IMAGE_BASE64_URL = 'http://www.websiteoptimization.com/speed/tweak/inline-images/folder-test.html';
+    const TEST_IMAGE_BASE64_IMAGE = 'data:image/gif;base64,R0lGODlhEAAOALMAAOazToeHh0tLS/7LZv/0jvb29t/f3//Ub//ge8WSLf/rhf/3kdbW1mxsbP//mf///yH5BAAAAAAALAAAAAAQAA4AAARe8L1Ekyky67QZ1hLnjM5UUde0ECwLJoExKcppV0aCcGCmTIHEIUEqjgaORCMxIC6e0CcguWw6aFjsVMkkIr7g77ZKPJjPZqIyd7sJAgVGoEGv2xsBxqNgYPj/gAwXEQA7';
 
     public function testCurl()
     {
@@ -38,5 +40,39 @@ class ImageInfoTest extends TestCaseBase
             'mime' => self::TEST_IMAGE_MIME,
             'value' => self::TEST_IMAGE_URL,
         ]);
+    }
+
+    public function testBase64Images()
+    {
+        $info = Embed\Embed::create(self::TEST_IMAGE_BASE64_URL, [
+            'adapter' => [
+                'config' => [
+                    'minImageWidth' => 0,
+                    'minImageHeight' => 0,
+                ]
+            ]
+        ]);
+
+        $this->assertEquals($info->image, self::TEST_IMAGE_BASE64_IMAGE);
+    }
+
+    public function testBase64ImagesGuzzle()
+    {
+        $info = Embed\Embed::create(self::TEST_IMAGE_BASE64_URL, [
+            'adapter' => [
+                'config' => [
+                    'minImageWidth' => 0,
+                    'minImageHeight' => 0,
+                ]
+            ],
+            'image' => [
+                'class' => 'Embed\ImageInfo\Guzzle5',
+                'config' => [
+                    'client' => new \GuzzleHttp\Client()
+                ]
+            ]
+        ]);
+
+        $this->assertEquals($info->image, self::TEST_IMAGE_BASE64_IMAGE);
     }
 }
