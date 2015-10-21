@@ -11,7 +11,7 @@ class ViddlerTest extends TestCaseBase
                 'type' => 'video',
                 'code' => '<iframe width="620" height="349" src="http://www.viddler.com/embed/bdce8c7" frameborder="0" allowfullscreen></iframe>',
                 'providerName' => 'Viddler',
-                'providerUrl' => 'http://viddler.com/',
+                'providerUrl' => 'http://www.viddler.com/',
             ]
         );
     }
