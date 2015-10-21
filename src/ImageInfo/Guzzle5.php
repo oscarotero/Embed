@@ -22,9 +22,9 @@ class Guzzle5 implements ImageInfoInterface
         }
 
         $client = $config['client'];
+        $requests = [];
 
         // Build parallel requests
-        $requests = [];
         foreach ($urls as $url) {
             if (strpos($url['value'], 'data:') === 0) {
                 if ($info = static::getEmbeddedImageInfo($url['value'])) {
@@ -40,7 +40,6 @@ class Guzzle5 implements ImageInfoInterface
         $responses = Pool::batch($client, $requests);
 
         // Build result set
-        $result = [];
         foreach ($responses as $i => $response) {
             if ($response instanceof RequestException) {
                 continue;
