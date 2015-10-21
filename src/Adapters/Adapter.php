@@ -356,20 +356,20 @@ abstract class Adapter
     public function getImage()
     {
         if ($this->config['getBiggerImage']) {
-            $images = $this->images;
+            $allImages = $this->images;
 
-            if (empty($images)) {
+            if (empty($allImages)) {
                 return;
             }
 
-            $images = [$images];
+            $allImages = [$allImages];
         } else {
-            $images = Utils::sortByProviders($this->images);
+            $allImages = Utils::sortByProviders($this->images);
         }
 
-        foreach ($images as $image) {
-            if (($key = Utils::getBiggerValue($image, true)) !== null) {
-                $image = $this->images[$key];
+        foreach ($allImages as $images) {
+            if (($key = Utils::getBiggerValue($images, true)) !== null) {
+                $image = $images[$key];
 
                 if (($image['width'] >= $this->config['minImageWidth']) && ($image['height'] >= $this->config['minImageHeight'])) {
                     return $image['value'];
