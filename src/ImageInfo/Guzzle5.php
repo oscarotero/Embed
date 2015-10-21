@@ -22,9 +22,10 @@ class Guzzle5 implements ImageInfoInterface
         }
 
         $client = $config['client'];
-        $requests = [];
+        $result = [];
 
         // Build parallel requests
+        $requests = [];
         foreach ($urls as $url) {
             if (strpos($url['value'], 'data:') === 0) {
                 if ($info = static::getEmbeddedImageInfo($url['value'])) {
