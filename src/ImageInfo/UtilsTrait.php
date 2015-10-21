@@ -5,7 +5,7 @@ namespace Embed\ImageInfo;
 trait UtilsTrait
 {
     /**
-     * Extract image info from embedded images (data:image/jpeg;base64,...)
+     * Extract image info from embedded images (data:image/jpeg;base64,...).
      * 
      * @param string $content
      * 

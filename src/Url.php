@@ -499,6 +499,7 @@ class Url
         if ($this->getScheme() === 'data') {
             $this->info['content'] = $path;
             $this->info['path'] = $this->info['file'] = $this->info['extension'] = null;
+
             return;
         }
 

@@ -49,8 +49,8 @@ class ImageInfoTest extends TestCaseBase
                 'config' => [
                     'minImageWidth' => 0,
                     'minImageHeight' => 0,
-                ]
-            ]
+                ],
+            ],
         ]);
 
         $this->assertEquals($info->image, self::TEST_IMAGE_BASE64_IMAGE);
@@ -63,14 +63,14 @@ class ImageInfoTest extends TestCaseBase
                 'config' => [
                     'minImageWidth' => 0,
                     'minImageHeight' => 0,
-                ]
+                ],
             ],
             'image' => [
                 'class' => 'Embed\ImageInfo\Guzzle5',
                 'config' => [
-                    'client' => new \GuzzleHttp\Client()
-                ]
-            ]
+                    'client' => new \GuzzleHttp\Client(),
+                ],
+            ],
         ]);
 
         $this->assertEquals($info->image, self::TEST_IMAGE_BASE64_IMAGE);
