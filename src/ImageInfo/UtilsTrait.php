@@ -19,13 +19,15 @@ trait UtilsTrait
             return false;
         }
 
-        $info = getimagesizefromstring(base64_decode(substr($pieces[1], 7)));
+        if (($info = @getimagesizefromstring(base64_decode(substr($pieces[1], 7)))) !== false) {
+            return [
+                'width' => $info[0],
+                'height' => $info[1],
+                'size' => $info[0] * $info[1],
+                'mime' => $info['mime'],
+            ];
+        }
 
-        return [
-            'width' => $info[0],
-            'height' => $info[1],
-            'size' => $info[0] * $info[1],
-            'mime' => $info['mime'],
-        ];
+        return false;
     }
 }
