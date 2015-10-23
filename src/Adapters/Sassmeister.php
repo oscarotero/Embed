@@ -27,6 +27,6 @@ class Sassmeister extends Webpage implements AdapterInterface
     {
         $id = $this->request->getDirectoryPosition(1);
 
-        return Utils::iframe("http://embed.sassmeister.com/gist/{$id}");
+        return Utils::iframe('http://embed.sassmeister.com/gist/' . $id);
     }
 }
