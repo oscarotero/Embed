@@ -1,6 +1,6 @@
 <?php
 
-class _23hqTest extends TestCaseBase
+class N23hqTest extends TestCaseBase
 {
     public function testOne()
     {

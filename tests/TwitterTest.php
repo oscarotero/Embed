@@ -2,7 +2,7 @@
 
 class TwitterTest extends TestCaseBase
 {
-    public function _testNormal()
+    public function testNormal()
     {
         $this->assertEmbed(
             'https://twitter.com/pepephone/status/436461658601713664',

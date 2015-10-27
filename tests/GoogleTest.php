@@ -3,7 +3,7 @@
 class GoogleTest extends TestCaseBase
 {
     //the embed code for gmaps does not work. Need to investigate.
-    public function _testMap()
+    public function noTestMap()
     {
         $this->assertEmbed(
             'https://www.google.es/maps/place/Tordoia,+A+Coru%C3%B1a/@43.0871207,-8.5710004,12z/data=!3m1!4b1!4m2!3m1!1s0xd2ef4006f1ef489:0x404f58273ca55a0',
