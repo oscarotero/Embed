@@ -180,9 +180,6 @@ class Request extends Url
                     $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $content);
                 }
 
-                //Remove all script elements, CDATA sections and comments (thanks https://github.com/jasny)
-                //$content = preg_replace(['%<!--(?:[^-]++|-)*?-->|<!\[CDATA\[(?:[^\]]++|\])*?\]\]>%si', '%<script\b(?:"(?:[^"\\\\]++|\\\\.)*+"|\'(?:[^\'\\\\]++|\\\\.)*+\'|[^>"\']++)*>(?:[^<]++|<)*?</\s*script\s*>%si'], '', $content);
-
                 $this->htmlContent->loadHTML($content);
                 libxml_use_internal_errors($errors);
             } catch (\Exception $E) {
