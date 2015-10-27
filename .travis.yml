@@ -16,5 +16,5 @@ before_install:
   - composer install
 
 script: 
-	- ./vendor/bin/phpunit
-	- ./vendor/bin/php7cc ./src
+	- './vendor/bin/phpunit'
+	- './vendor/bin/php7cc ./src'
