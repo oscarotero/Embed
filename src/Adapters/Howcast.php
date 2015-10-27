@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Adapter to get the embed code from spreaker.com.
+ * Adapter to get the embed code from howcast.com.
  */
 namespace Embed\Adapters;
 
@@ -15,7 +15,7 @@ class Howcast extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->isValid() && $request->match([
-            'http?://www.howcast.com/videos/*',
+            'https?://www.howcast.com/videos/*',
         ]);
     }
 
