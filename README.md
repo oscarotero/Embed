@@ -261,14 +261,3 @@ $config = [
 	]
 ];
 ```
-
-Do you need help?
------------------
-
-I can help you in HackHands: https://hackhands.com/oscarotero
-
-Contributors
-------------
-* https://github.com/oscarotero (creator and maintainer)
-* https://github.com/buggedcom
-* https://github.com/jasny
