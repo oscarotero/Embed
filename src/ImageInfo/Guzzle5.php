@@ -46,7 +46,7 @@ class Guzzle5 implements ImageInfoInterface
                 continue;
             }
 
-            if (($size = @getimagesizefromstring($response->getBody())) !== false) {
+            if (($size = getimagesizefromstring($response->getBody())) !== false) {
                 $result[] = [
                     'width' => $size[0],
                     'height' => $size[1],

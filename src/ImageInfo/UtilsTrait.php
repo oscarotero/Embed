@@ -19,7 +19,7 @@ trait UtilsTrait
             return false;
         }
 
-        if (($info = @getimagesizefromstring(base64_decode(substr($pieces[1], 7)))) !== false) {
+        if (($info = getimagesizefromstring(base64_decode(substr($pieces[1], 7)))) !== false) {
             return [
                 'width' => $info[0],
                 'height' => $info[1],
