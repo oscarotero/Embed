@@ -15,6 +15,6 @@ matrix:
 before_install:
   - composer install
 
-script: 
+script:
   - './vendor/bin/phpunit'
   - './vendor/bin/php7cc ./src'
