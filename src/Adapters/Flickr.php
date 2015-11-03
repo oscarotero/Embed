@@ -42,6 +42,8 @@ class Flickr extends Webpage implements AdapterInterface
         if (!parent::getCode()) {
             return 640;
         }
+
+        return parent::getWidth();
     }
 
     /**
@@ -52,6 +54,8 @@ class Flickr extends Webpage implements AdapterInterface
         if (!parent::getCode()) {
             return 425;
         }
+
+        return parent::getHeight();
     }
 
     /**
