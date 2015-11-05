@@ -263,7 +263,7 @@ class OEmbed extends Provider implements ProviderInterface
      */
     protected static function getClassFromRequest(Request $request)
     {
-        return 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->getDomain()))));
+        return 'Embed\\Providers\\OEmbed\\'.$request->getClassNameForDomain();
     }
 
     /**

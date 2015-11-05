@@ -34,7 +34,7 @@ class Embed
         }
 
         //Search the adapter using the domain
-        $adapter = 'Embed\\Adapters\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->getDomain()))));
+        $adapter = 'Embed\\Adapters\\'.$request->getClassNameForDomain();
 
         if (class_exists($adapter) && ($info = self::executeAdapter($adapter, $request, $config))) {
             return $info;
