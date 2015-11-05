@@ -15,8 +15,8 @@ class N500px extends OEmbedImplementation
     public static function getEndPoint(Url $url)
     {
     	
-		if (is_numeric($this->request->getDirectoryPosition(1))) {         
-           return $this->request->createUrl()->withDirectoryPosition(2,'oembed.json');
+		if (is_numeric($url->getDirectoryPosition(1))) {         
+           return $url->createUrl()->withDirectoryPosition(2,'oembed.json');
         }    	
         return '';
     }
