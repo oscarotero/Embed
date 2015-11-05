@@ -217,7 +217,7 @@ $config = [
 
 // Guzzle (5.x)
 $config = [
-    'resolver' => [
+    'image' => [
         'class' => 'Embed\\ImageInfo\\Guzzle5',
 
         'config' => [
