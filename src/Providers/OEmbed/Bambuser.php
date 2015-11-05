@@ -9,7 +9,7 @@ class Bambuser extends OEmbedImplementation
      */
     public static function getEndPoint()
     {
-        return 'http://api.bambuser.com/oembed.json';
+        return 'https://api.bambuser.com/oembed.json';
     }
 
     /**
