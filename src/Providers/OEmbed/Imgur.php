@@ -2,6 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
+use Embed\Url;
+
 class Imgur extends OEmbedImplementation
 {
     /**

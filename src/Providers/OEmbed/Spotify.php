@@ -2,12 +2,14 @@
 
 namespace Embed\Providers\OEmbed;
 
+use Embed\Url;
+
 class Spotify extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
-    public static function getEndPoint()
+    public static function getEndPoint(Url $url)
     {
         return 'https://embed.spotify.com/oembed';
     }

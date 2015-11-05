@@ -9,7 +9,7 @@ class Deviantart extends OEmbedImplementation
     /**
      * {@inheritdoc}
      */
-    public static function getEndPoint()
+    public static function getEndPoint(Url $url)
     {
         return 'http://backend.deviantart.com/oembed';
     }
