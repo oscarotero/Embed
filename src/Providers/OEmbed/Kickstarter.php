@@ -9,7 +9,7 @@ class Kickstarter extends OEmbedImplementation
     /**
      * {@inheritdoc}
      */
-    public static function getEndPoint()
+    public static function getEndPoint(Url $url)
     {
         return 'http://www.kickstarter.com/services/oembed';
     }
