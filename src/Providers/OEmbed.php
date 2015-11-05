@@ -240,7 +240,7 @@ class OEmbed extends Provider implements ProviderInterface
 
         if (class_exists($class) && $request->match($class::getPatterns())) {
             return [
-                'endPoint' => $class::getEndpoint(),
+                'endPoint' => $class::getEndpoint($request),
                 'params' => $class::getParams($request),
             ];
         }
@@ -248,7 +248,7 @@ class OEmbed extends Provider implements ProviderInterface
         //Search using embedly
         if (!empty($config['embedlyKey']) && $request->match(OEmbed\Embedly::getPatterns())) {
             return [
-                'endPoint' => OEmbed\Embedly::getEndpoint(),
+                'endPoint' => OEmbed\Embedly::getEndpoint($request),
                 'params' => OEmbed\Embedly::getParams($request) + ['key' => $config['embedlyKey']],
             ];
         }
