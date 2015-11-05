@@ -28,12 +28,10 @@ class N500px extends Adapter implements AdapterInterface
      */
     public function getCode()
     {
-        $url=$this->getUrl();
-        $matches=array();
-        preg_match('#(https?://500px.com/photo/\d+)#si',$this->getUrl(),$matches);        
-        if (isset($matches[1]) && $matches[1]) {
-           return Utils::iframe($matches[1].'/embed.html', $this->getWidth(), $this->getHeight());
-        }       
+        if (is_numeric($this->request->getDirectoryPosition(1))) {            
+           return Utils::iframe($this->request->createUrl()->withDirectoryPosition(2,'embed.html'), $this->width, $this->height);
+        }
+
         return '';          
     }
 

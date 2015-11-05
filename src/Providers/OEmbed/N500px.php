@@ -14,12 +14,10 @@ class N500px extends OEmbedImplementation
      */
     public static function getEndPoint(Url $url)
     {
-    	$matches=array();
-    	preg_match('#(https?://500px.com/photo/\d+/)#si', $url->getUrl(),$matches);
     	
-    	if (isset($matches[1]) && $matches[1]) {
-    		return $matches[1].'/oembed.json';
-    	}	
+		if (is_numeric($this->request->getDirectoryPosition(1))) {         
+           return $this->request->createUrl()->withDirectoryPosition(2,'oembed.json');
+        }    	
         return '';
     }
 
