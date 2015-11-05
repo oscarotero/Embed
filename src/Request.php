@@ -130,8 +130,9 @@ class Request extends Url
     {
         $className = str_replace(array('-',' '),'', ucwords(strtolower($this->getDomain())));
         if (is_numeric(mb_substr($className, 0, 1)))
+        {
             $className='N'.$className;
-
+        }
         return $className;
     }
 
