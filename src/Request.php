@@ -120,6 +120,22 @@ class Request extends Url
     }
 
     /**
+     * Return ClassName for domain.
+     * 
+     * Domains started with numbers will get N prepended to their class name.
+     *
+     * @return string
+     */
+    public function getClassNameForDomain()
+    {
+        $className = str_replace(array('-',' '),'', ucwords(strtolower($this->getDomain())));
+        if (is_numeric(mb_substr($className, 0, 1)))
+            $className='N'.$className;
+
+        return $className;
+    }
+
+    /**
      * Return the http request info (for debug purposes).
      *
      * @return array
