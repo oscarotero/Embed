@@ -11,7 +11,6 @@ use Embed\Utils;
 
 class N500px extends Adapter implements AdapterInterface
 {
-    
     /**
      * {@inheritdoc}
      */
@@ -19,30 +18,28 @@ class N500px extends Adapter implements AdapterInterface
     {
         return $request->isValid() && $request->match([
             'https?://500px.com/photo/*',
-        ]);;
+        ]);
     }
-    
 
     /**
      * {@inheritdoc}
      */
     public function getCode()
     {
-        if (is_numeric($this->request->getDirectoryPosition(1))) {            
-           return Utils::iframe($this->request->createUrl()->withDirectoryPosition(2,'embed.html'), $this->width, $this->height);
+        if (is_numeric($this->request->getDirectoryPosition(1))) {
+            return Utils::iframe($this->request->createUrl()->withDirectoryPosition(2, 'embed.html'), $this->width, $this->height);
         }
 
-        return '';          
+        return '';
     }
-
 
     /**
      * {@inheritdoc}
      */
     public function run()
-    {        
+    {
         //order is important
-        $this->addProvider('oembed', new Providers\OEmbed());        
+        $this->addProvider('oembed', new Providers\OEmbed());
         $this->addProvider('opengraph', new Providers\OpenGraph());
     }
 }

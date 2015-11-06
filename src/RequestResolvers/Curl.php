@@ -27,7 +27,7 @@ class Curl implements RequestResolverInterface
     public static $binaryContentTypes = [
         '#image/.*#',
         '#application/(pdf|x-download|zip|pdf|msword|vnd\\.ms|postscript|octet-stream|ogg|x-iso9660-image)#',
-        '#application/x-zip.*#'
+        '#application/x-zip.*#',
     ];
 
     /**
