@@ -215,21 +215,30 @@ abstract class Adapter
      */
     public function getCode()
     {
-        if ($code = Utils::getFirstValue(Utils::getData($this->providers, 'code'))) {
+        $allCodes = Utils::getData($this->providers, 'code');
+
+        $default = null;
+
+        foreach ($allCodes as $codeInfo) {
+            $code = $codeInfo['value'];
+
+            // <object> and <embed> codes have less priority
+            if (strpos($code, '</object>') !== false || strpos($code, '</embed>') !== false) {
+                if (empty($default)) {
+                    $default = $code;
+                }
+
+                continue;
+            }
+
             if (strpos($code, '</iframe>') !== false) {
                 return preg_replace('|^.*(<iframe.*</iframe>).*$|Us', '$1', $code);
             }
 
-            if (strpos($code, '</object>') !== false) {
-                return preg_replace('|^.*(<object.*</object>).*$|Us', '$1', $code);
-            }
-
-            if (strpos($code, '</embed>') !== false) {
-                return preg_replace('|^.*(<embed.*</embed>).*$|Us', '$1', $code);
-            }
-
             return $code;
         }
+
+        return $default;
     }
 
     /**
