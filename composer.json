@@ -22,7 +22,6 @@
         "ext-curl": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0",
         "guzzlehttp/guzzle": "5.x",
         "sstalle/php7cc": "^1.0"
     },
