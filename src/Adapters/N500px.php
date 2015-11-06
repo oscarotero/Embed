@@ -44,6 +44,5 @@ class N500px extends Adapter implements AdapterInterface
         //order is important
         $this->addProvider('oembed', new Providers\OEmbed());        
         $this->addProvider('opengraph', new Providers\OpenGraph());
-        echo $this->request->getUrl();
     }
 }
