@@ -111,6 +111,9 @@ class OpenGraph extends Provider implements ProviderInterface
                     $images = $this->getImagesUrls();
 
                     return Utils::videoHtml(current($images), $video, $this->getWidth(), $this->getHeight());
+
+                case 'text/html':
+                    return Utils::iframe($video, $this->getWidth(), $this->getHeight());
             }
         }
     }
