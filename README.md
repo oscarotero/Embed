@@ -2,6 +2,11 @@
 
 [![Build Status](https://travis-ci.org/oscarotero/Embed.svg?branch=master)](https://travis-ci.org/oscarotero/Embed)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/Embed/badges/quality-score.png?s=79e37032db280b9795388124c030dcf4309343d1)](https://scrutinizer-ci.com/g/oscarotero/Embed/)
+[![Reference Status](https://www.versioneye.com/php/embed:embed/reference_badge.svg?style=flat)](https://www.versioneye.com/php/embed:embed/references)
+[![Latest Stable Version](https://poser.pugx.org/embed/embed/v/stable)](https://packagist.org/packages/embed/embed)
+[![Total Downloads](https://poser.pugx.org/embed/embed/downloads)](https://packagist.org/packages/embed/embed)
+[![Monthly Downloads](https://poser.pugx.org/embed/embed/d/monthly)](https://packagist.org/packages/embed/embed)
+[![License](https://poser.pugx.org/embed/embed/license)](https://packagist.org/packages/embed/embed)
 [![Support via Gittip](https://img.shields.io/gratipay/oscarotero.svg)](https://www.gratipay.com/oscarotero/)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e/big.png)](https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e)
