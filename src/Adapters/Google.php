@@ -11,8 +11,6 @@ use Embed\Providers\Api;
 
 class Google extends Webpage implements AdapterInterface
 {
-    protected $mode;
-
     /**
      * {@inheritdoc}
      */
