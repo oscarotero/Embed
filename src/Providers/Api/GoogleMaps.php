@@ -7,7 +7,7 @@ use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
 
 /**
- * Provider to use the API of google
+ * Provider to use the API of google.
  */
 class GoogleMaps extends Provider implements ProviderInterface
 {
@@ -62,7 +62,7 @@ class GoogleMaps extends Provider implements ProviderInterface
                     ->withPath('maps/embed/v1/'.$this->mode)
                     ->withQueryParameters([
                         'q' => $this->request->getDirectoryPosition(2),
-                        'key' => $this->config['key']
+                        'key' => $this->config['key'],
                     ])
                 );
 
@@ -72,7 +72,7 @@ class GoogleMaps extends Provider implements ProviderInterface
                     ->withQueryParameters([
                         'origin' => $this->request->getDirectoryPosition(2),
                         'destination' => $this->request->getDirectoryPosition(3),
-                        'key' => $this->config['key']
+                        'key' => $this->config['key'],
                     ])
                 );
         }
