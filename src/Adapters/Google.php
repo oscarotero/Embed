@@ -7,17 +7,21 @@ namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Utils;
+use Embed\Url;
+use Embed\Providers\Api;
 
 class Google extends Webpage implements AdapterInterface
 {
+    protected $mode;
+
     /**
      * {@inheritdoc}
      */
     public static function check(Request $request)
     {
         return $request->isValid() && $request->match([
-            //'https://maps.google.*',
-            //'https://www.google.*/maps*',
+            'https://maps.google.*',
+            'https://www.google.*/maps*',
             'https://drive.google.com/file/*/view',
         ]);
     }
@@ -25,8 +29,24 @@ class Google extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
+    public function run()
+    {
+        if ($this->request->match('*/maps/*')) {
+            $this->addProvider('google', new Api\GoogleMaps());
+        }
+
+        parent::run();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getCode()
     {
+        if (($google = $this->getProvider('google'))) {
+            return $google->getCode();
+        }
+
         $url = $this->request->createUrl()
             ->withDirectoryPosition(3, 'preview')
             ->withQueryParameters([]);

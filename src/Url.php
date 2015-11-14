@@ -262,7 +262,7 @@ class Url
      */
     public function getPath()
     {
-        $path = !empty($this->info['path']) ? '/'.implode('/', $this->info['path']).'/' : '/';
+        $path = !empty($this->info['path']) ? '/'.implode('/', array_map('urlencode', $this->info['path'])).'/' : '/';
 
         if (isset($this->info['file'])) {
             $path .= $this->info['file'];
@@ -509,6 +509,8 @@ class Url
 
         if (isset($parts['dirname'])) {
             foreach (explode('/', str_replace(DIRECTORY_SEPARATOR, '/', $parts['dirname'])) as $dir) {
+                $dir = trim(urldecode($dir));
+
                 if ($dir !== '') {
                     $this->info['path'][] = $dir;
                 }
