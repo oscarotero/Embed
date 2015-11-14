@@ -19,6 +19,6 @@ class Iframely extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return '*';
+        return ['*'];
     }
 }
