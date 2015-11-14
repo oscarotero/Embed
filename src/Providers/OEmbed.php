@@ -15,6 +15,7 @@ class OEmbed extends Provider implements ProviderInterface
     protected $config = [
         'parameters' => [],
         'embedlyKey' => null,
+        'iframelyKey' => null,
     ];
 
     /**
@@ -250,6 +251,14 @@ class OEmbed extends Provider implements ProviderInterface
             return [
                 'endPoint' => OEmbed\Embedly::getEndpoint($request),
                 'params' => OEmbed\Embedly::getParams($request) + ['key' => $config['embedlyKey']],
+            ];
+        }
+
+        //Search using iframely
+        if (!empty($config['iframelyKey']) && $request->match(OEmbed\Iframely::getPatterns())) {
+            return [
+                'endPoint' => OEmbed\Iframely::getEndpoint($request),
+                'params' => OEmbed\Iframely::getParams($request) + ['api_key' => $config['iframelyKey']],
             ];
         }
     }

@@ -102,7 +102,8 @@ The providers get the data from different sources. Each source has it's own prov
 Used to get data from oembed api if it's available. It accepts two options:
 
 * parameters (array): Extra query parameters to send with the oembed request
-* embedlyKey (string): If it's defined and the page has not its own oembed service, use the embedly api.
+* embedlyKey (string): If it's defined, use embed.ly api as fallback oembed provider.
+* iframelyKey (string): If it's defined, use iframe.ly api as fallback oembed provider.
 
 #### html
 
