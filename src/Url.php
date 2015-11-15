@@ -324,7 +324,7 @@ class Url
      */
     public function getQueryParameters()
     {
-        return empty($this->info['query']) ? [] : $this->info['query'];
+        return $this->info['query'];
     }
 
     /**
@@ -442,14 +442,16 @@ class Url
 
         $this->info = parse_url($url);
 
-        if (isset($this->info['query'])) {
+        if (empty($this->info['query'])) {
+            $this->info['query'] = [];
+        } else {
             $queryString = preg_replace_callback('/(^|(?<=&))[^=[&]+/', function ($key) {
                 return base64_encode(urldecode($key[0]));
             }, $this->info['query']);
 
             parse_str($queryString, $query);
 
-            $this->info['query'] = self::fixQuery($query);
+            $this->info['query'] = $query ? self::fixQuery($query) : [];
         }
 
         if (isset($this->info['path'])) {
