@@ -443,16 +443,40 @@ class Url
         $this->info = parse_url($url);
 
         if (isset($this->info['query'])) {
-            parse_str($this->info['query'], $this->info['query']);
+            $queryString = preg_replace_callback('/(^|(?<=&))[^=[&]+/', function ($key) {
+                return bin2hex(urldecode($key[0]));
+            }, $this->info['query']);
 
-            array_walk_recursive($this->info['query'], function (&$value) {
-                $value = urldecode($value);
-            });
+            parse_str($queryString, $query);
+
+            $this->info['query'] = self::fixQuery($query);
         }
 
         if (isset($this->info['path'])) {
             $this->setPath($this->info['path']);
         }
+    }
+
+    /**
+     * Fix query's key and values.
+     * 
+     * @param array $query
+     * 
+     * @return array
+     */
+    private static function fixQuery(array $query)
+    {
+        $fixed = [];
+
+        foreach ($query as $key => $value) {
+            if (is_array($value)) {
+                $fixed[hex2bin($key)] = self::fixQuery($value);
+            } else {
+                $fixed[hex2bin($key)] = urldecode($value);
+            }
+        }
+
+        return $fixed;
     }
 
     /**
