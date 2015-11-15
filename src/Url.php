@@ -444,7 +444,7 @@ class Url
 
         if (isset($this->info['query'])) {
             $queryString = preg_replace_callback('/(^|(?<=&))[^=[&]+/', function ($key) {
-                return bin2hex(urldecode($key[0]));
+                return base64_encode(urldecode($key[0]));
             }, $this->info['query']);
 
             parse_str($queryString, $query);
@@ -470,9 +470,9 @@ class Url
 
         foreach ($query as $key => $value) {
             if (is_array($value)) {
-                $fixed[hex2bin($key)] = self::fixQuery($value);
+                $fixed[base64_decode($key)] = self::fixQuery($value);
             } else {
-                $fixed[hex2bin($key)] = urldecode($value);
+                $fixed[base64_decode($key)] = urldecode($value);
             }
         }
 
