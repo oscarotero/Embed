@@ -459,10 +459,10 @@ class Url
 
         parse_str($queryString, $query);
 
-        $this->info['query'] = (array) $query;
+        $this->info['query'] = [];
 
-        foreach ($this->info['query'] as $key => $value) {
-            $fixed[hex2bin($key)] = $value;
+        foreach ((array) $query as $key => $value) {
+            $this->info['query'][hex2bin($key)] = $value;
         }
 
         array_walk_recursive($this->info['query'], function (&$value) {
