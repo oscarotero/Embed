@@ -442,43 +442,32 @@ class Url
 
         $this->info = parse_url($url);
 
-        if (empty($this->info['query'])) {
-            $this->info['query'] = [];
-        } else {
-            $queryString = preg_replace_callback('/(^|(?<=&))[^=[&]+/', function ($key) {
-                return base64_encode(urldecode($key[0]));
-            }, $this->info['query']);
-
-            parse_str($queryString, $query);
-
-            $this->info['query'] = $query ? self::fixQuery($query) : [];
-        }
-
         if (isset($this->info['path'])) {
             $this->setPath($this->info['path']);
         }
-    }
 
-    /**
-     * Fix query's key and values.
-     * 
-     * @param array $query
-     * 
-     * @return array
-     */
-    private static function fixQuery(array $query)
-    {
-        $fixed = [];
-
-        foreach ($query as $key => $value) {
-            if (is_array($value)) {
-                $fixed[base64_decode($key)] = self::fixQuery($value);
-            } else {
-                $fixed[base64_decode($key)] = urldecode($value);
-            }
+        if (empty($this->info['query'])) {
+            $this->info['query'] = [];
+            return;
         }
 
-        return $fixed;
+        // Fix dots and other characters used in query's variables names
+        // https://github.com/oscarotero/Embed/issues/101
+        $queryString = preg_replace_callback('/(^|(?<=&))[^=[&]+/', function ($key) {
+            return bin2hex(urldecode($key[0]));
+        }, $this->info['query']);
+
+        parse_str($queryString, $query);
+
+        $this->info['query'] = (array) $query;
+
+        foreach ($this->info['query'] as $key => $value) {
+            $fixed[hex2bin($key)] = $value;
+        }
+
+        array_walk_recursive($this->info['query'], function (&$value) {
+            $value = urldecode($value);
+        });
     }
 
     /**
