@@ -120,6 +120,8 @@ Used to get data directly from the html code of the page:
 
 This provider is used only for facebook pages, to get information from the [graph api](https://developers.facebook.com/docs/graph-api)
 
+* key (string): the key used
+
 #### google
 
 This provider is used only for google maps, to generate the embed code [using the embed api](https://developers.google.com/maps/documentation/embed/)
