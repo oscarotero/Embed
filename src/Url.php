@@ -448,6 +448,7 @@ class Url
 
         if (empty($this->info['query'])) {
             $this->info['query'] = [];
+
             return;
         }
 
