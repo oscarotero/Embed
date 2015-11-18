@@ -24,6 +24,9 @@ class Howcast extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
+        $this->width = null;
+        $this->height = null;
+        
         $dom = $this->request->getHtmlContent();
         $modal = $dom->getElementById('embedModal');
 

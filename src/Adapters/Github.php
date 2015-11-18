@@ -47,6 +47,9 @@ class Github extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
+        $this->width = null;
+        $this->height = null;
+
         if ($this->request->match('https://github.com/*/*/blob/*')) {
             $username = $this->request->getDirectoryPosition(0);
             $repo = $this->request->getDirectoryPosition(1);

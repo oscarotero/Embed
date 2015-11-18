@@ -29,8 +29,26 @@ class N500px extends Adapter implements AdapterInterface
         if (is_numeric($this->request->getDirectoryPosition(1))) {
             return Utils::iframe($this->request->createUrl()->withDirectoryPosition(2, 'embed.html'), $this->width, $this->height);
         }
+    }
 
-        return '';
+    /**
+     * {@inheritdoc}
+     */
+    public function getWidth()
+    {
+        if (is_numeric($this->request->getDirectoryPosition(1))) {
+            return $this->imageWidth;
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHeight()
+    {
+        if (is_numeric($this->request->getDirectoryPosition(1))) {
+            return $this->imageHeight;
+        }
     }
 
     /**

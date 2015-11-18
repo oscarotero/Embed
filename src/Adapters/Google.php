@@ -40,6 +40,9 @@ class Google extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
+        $this->width = null;
+        $this->height = null;
+
         if (($google = $this->getProvider('google'))) {
             return $google->getCode();
         }

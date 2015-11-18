@@ -215,11 +215,11 @@ abstract class Adapter
      */
     public function getCode()
     {
-        $allCodes = Utils::getData($this->providers, 'code');
-
+        $this->width = null;
+        $this->height = null;
         $choosen = null;
 
-        foreach ($allCodes as $code) {
+        foreach (Utils::getData($this->providers, 'code') as $code) {
             // <object> and <embed> codes have less priority
             if (strpos($code['value'], '</object>') !== false || strpos($code['value'], '</embed>') !== false) {
                 if (empty($choosen)) {
@@ -236,9 +236,6 @@ abstract class Adapter
             $choosen = $code;
             break;
         }
-
-        $this->width = null;
-        $this->height = null;
 
         if ($choosen) {
             //get the width/height
@@ -434,7 +431,7 @@ abstract class Adapter
      */
     public function getWidth()
     {
-        $this->code;
+        $this->__get('code');
 
         return $this->width;
     }
@@ -444,7 +441,7 @@ abstract class Adapter
      */
     public function getHeight()
     {
-        $this->code;
+        $this->__get('code');
 
         return $this->height;
     }
