@@ -81,6 +81,14 @@ class OpenGraph extends Provider implements ProviderInterface
             return 'video';
         }
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function getTags()
+    {
+        return $this->bag->has('keywords') ? array_map('trim', explode(',',$this->bag->get('keywords'))) : [];
+    }
 
     /**
      * {@inheritdoc}
