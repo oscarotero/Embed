@@ -52,6 +52,12 @@ abstract class Provider
     /**
      * {@inheritdoc}
      */
+    public function getTags()
+    {
+    }
+    /**
+     * {@inheritdoc}
+     */
     public function getSource()
     {
     }
