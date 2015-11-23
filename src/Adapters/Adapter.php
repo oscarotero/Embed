@@ -207,7 +207,7 @@ abstract class Adapter
      */
     public function getTags()
     {
-        return Utils::getArrayValue(Utils::getData($this->providers, 'tags'));
+        return Utils::getAllValues(Utils::getData($this->providers, 'tags'));
     }
 
     /**

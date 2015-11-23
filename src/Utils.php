@@ -181,7 +181,7 @@ class Utils
      *
      * @return array
      */
-    public static function getArrayValue(array $values, $returnKey = false)
+    public static function getAllValues(array $values, $returnKey = false)
     {
         if ($returnKey){
             return array_keys($values);
