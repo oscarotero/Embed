@@ -21,10 +21,8 @@ class Utils
         foreach ($html->getElementsByTagName('meta') as $meta) {
             $name = trim(strtolower($meta->getAttribute('property') ?: $meta->getAttribute('name')));
             $value = $meta->getAttribute('content') ?: $meta->getAttribute('value');
-
             $metas[] = [$name, $value, $meta];
         }
-
         return $metas;
     }
 
@@ -68,7 +66,6 @@ class Utils
 
         foreach ($providers as $key => $provider) {
             $value = $provider->$method();
-
             if (empty($value)) {
                 continue;
             }
