@@ -27,7 +27,7 @@ class OpenGraph extends Provider implements ProviderInterface
                 $name = substr($name, 11);
             } elseif (strpos($name, 'og:') === 0) {
                 $name = substr($name, 3);
-            } else {
+            } elseif ($name!='keywords') {
                 continue;
             }
 
@@ -81,12 +81,12 @@ class OpenGraph extends Provider implements ProviderInterface
             return 'video';
         }
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function getTags()
-    {
+    {        
         return $this->bag->has('keywords') ? array_map('trim', explode(',',$this->bag->get('keywords'))) : [];
     }
 
