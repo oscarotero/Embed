@@ -201,6 +201,14 @@ abstract class Adapter
 
         return 'link';
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function getTags()
+    {
+        return Utils::getAllValues(Utils::getData($this->providers, 'tags'));
+    }
 
     /**
      * {@inheritdoc}

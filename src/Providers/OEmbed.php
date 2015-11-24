@@ -104,6 +104,21 @@ class OEmbed extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
+    public function getTags()
+    {
+        if ($this->bag->has('meta[keywords]')) {
+            //it means we are using iframe.ly api
+            return array_map('trim', explode(',',$this->bag->get('meta[keywords]')));
+        }
+        
+        return [];
+
+        
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getCode()
     {
         return $this->bag->get('html');

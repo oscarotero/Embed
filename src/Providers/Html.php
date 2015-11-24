@@ -68,6 +68,15 @@ class Html extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
+    public function getTags()
+    {
+        return $this->bag->has('keywords') ? array_map('trim', explode(',',$this->bag->get('keywords'))) : [];
+    }
+
+
+    /**
+     * {@inheritdoc}
+     */
     public function getSource()
     {
         $feeds = $this->bag->get('feeds');

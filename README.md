@@ -39,6 +39,7 @@ $info->title; //The page title
 $info->description; //The page description
 $info->url; //The canonical url
 $info->type; //The page type (link, video, image, rich)
+$info->tags; //The page keywords (tags)
 
 $info->images; //List of all images found in the page
 $info->image; //The image choosen as main image

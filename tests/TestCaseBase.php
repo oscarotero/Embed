@@ -56,6 +56,7 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
                 case 'height':
                 case 'imageWidth':
                 case 'imageHeight':
+                case 'tags':
                     $this->assertSame($value, $i->$name);
                     break;
 
