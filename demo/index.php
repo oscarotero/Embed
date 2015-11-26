@@ -6,6 +6,11 @@ include '../src/autoloader.php';
 
 function get($name, $default = '')
 {
+    if($name == 'url') {
+        if(filter_var($_GET['url'], FILTER_VALIDATE_URL)) {
+            return 'http://doNotTryToXSS.invalid';
+        }
+    }
     return isset($_GET[$name]) ? $_GET[$name] : $default;
 }
 
