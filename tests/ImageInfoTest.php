@@ -29,9 +29,7 @@ class ImageInfoTest extends TestCaseBase
     {
         $info = Embed\ImageInfo\Guzzle5::getImagesInfo([[
             'value' => self::TEST_IMAGE_URL,
-        ]], [
-            'client' => new \GuzzleHttp\Client(),
-        ]);
+        ]]);
 
         $this->assertEquals($info[0], [
             'width' => self::TEST_IMAGE_WIDTH,
@@ -67,9 +65,6 @@ class ImageInfoTest extends TestCaseBase
             ],
             'image' => [
                 'class' => 'Embed\ImageInfo\Guzzle5',
-                'config' => [
-                    'client' => new \GuzzleHttp\Client(),
-                ],
             ],
         ]);
 

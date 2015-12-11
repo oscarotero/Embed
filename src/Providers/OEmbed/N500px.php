@@ -5,17 +5,21 @@ namespace Embed\Providers\OEmbed;
 use Embed\Url;
 
 /**
- * Class WordPress
- * WordPress.tv embeds.
+ * Class N500px
+ * 500px.com embeds.
  */
-class WordPress extends OEmbedImplementation
+class N500px extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
     public static function getEndPoint(Url $url)
     {
-        return 'https://wordpress.tv/oembed';
+        if (is_numeric($url->getDirectoryPosition(1))) {
+            return $url->createUrl()->withDirectoryPosition(2, 'oembed.json');
+        }
+
+        return '';
     }
 
     /**
@@ -23,7 +27,7 @@ class WordPress extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return ['https?://wordpress.tv/*'];
+        return ['https?://500px.com/photo/*'];
     }
 
     /**

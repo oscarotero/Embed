@@ -262,7 +262,7 @@ class Url
      */
     public function getPath()
     {
-        $path = !empty($this->info['path']) ? '/'.implode('/', $this->info['path']).'/' : '/';
+        $path = !empty($this->info['path']) ? '/'.implode('/', array_map('urlencode', $this->info['path'])).'/' : '/';
 
         if (isset($this->info['file'])) {
             $path .= $this->info['file'];
@@ -324,7 +324,7 @@ class Url
      */
     public function getQueryParameters()
     {
-        return empty($this->info['query']) ? [] : $this->info['query'];
+        return $this->info['query'];
     }
 
     /**
@@ -442,17 +442,33 @@ class Url
 
         $this->info = parse_url($url);
 
-        if (isset($this->info['query'])) {
-            parse_str($this->info['query'], $this->info['query']);
-
-            array_walk_recursive($this->info['query'], function (&$value) {
-                $value = urldecode($value);
-            });
-        }
-
         if (isset($this->info['path'])) {
             $this->setPath($this->info['path']);
         }
+
+        if (empty($this->info['query'])) {
+            $this->info['query'] = [];
+
+            return;
+        }
+
+        // Fix dots and other characters used in query's variables names
+        // https://github.com/oscarotero/Embed/issues/101
+        $queryString = preg_replace_callback('/(^|(?<=&))[^=[&]+/', function ($key) {
+            return bin2hex(urldecode($key[0]));
+        }, $this->info['query']);
+
+        parse_str($queryString, $query);
+
+        $this->info['query'] = [];
+
+        foreach ((array) $query as $key => $value) {
+            $this->info['query'][hex2bin($key)] = $value;
+        }
+
+        array_walk_recursive($this->info['query'], function (&$value) {
+            $value = urldecode($value);
+        });
     }
 
     /**
@@ -509,6 +525,8 @@ class Url
 
         if (isset($parts['dirname'])) {
             foreach (explode('/', str_replace(DIRECTORY_SEPARATOR, '/', $parts['dirname'])) as $dir) {
+                $dir = trim(urldecode($dir));
+
                 if ($dir !== '') {
                     $this->info['path'][] = $dir;
                 }

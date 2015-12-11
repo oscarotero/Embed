@@ -25,6 +25,9 @@ class Pastebin extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
+        $this->width = null;
+        $this->height = null;
+
         $embed_url = 'http://pastebin.com/embed_iframe.php?i='.($this->request->getQueryParameter('i') ?: $this->request->getDirectoryPosition(0));
 
         return Utils::iframe($embed_url);

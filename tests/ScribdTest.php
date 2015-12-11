@@ -13,7 +13,7 @@ class ScribdTest extends TestCaseBase
                 'imageHeight' => 142,
                 'type' => 'rich',
                 'authorName' => 'Joint Fire Science Program',
-                'authorUrl' => 'https://www.scribd.com/firesciencegov',
+                'authorUrl' => 'https://www.scribd.com/user/151878975/Joint-Fire-Science-Program',
                 'providerName' => 'Scribd',
             ]
         );

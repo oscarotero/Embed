@@ -71,13 +71,13 @@ class File extends Adapter implements AdapterInterface
 
         switch (self::$contentTypes[$this->request->getMimeType()][1]) {
             case 'videoHtml':
-                return Utils::videoHtml($this->getImage(), $this->getUrl(), $this->getWidth(), $this->getHeight());
+                return Utils::videoHtml($this->image, $this->url, $this->imageWidth, $this->imageHeight);
 
             case 'audioHtml':
-                return Utils::audioHtml($this->getUrl());
+                return Utils::audioHtml($this->url);
 
             case 'google':
-                return Utils::google($this->getUrl());
+                return Utils::google($this->url);
         }
     }
 
@@ -86,10 +86,10 @@ class File extends Adapter implements AdapterInterface
      */
     public function getImagesUrls()
     {
-        if ($this->getType() === 'photo') {
+        if ($this->type === 'photo') {
             return [
                 [
-                    'value' => $this->getUrl(),
+                    'value' => $this->url,
                     'providers' => ['adapter'],
                 ],
             ];

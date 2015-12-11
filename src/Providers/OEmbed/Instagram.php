@@ -9,7 +9,7 @@ class Instagram extends OEmbedImplementation
     /**
      * {@inheritdoc}
      */
-    public static function getEndPoint()
+    public static function getEndPoint(Url $url)
     {
         return 'http://api.instagram.com/oembed';
     }

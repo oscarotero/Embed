@@ -6,7 +6,17 @@ include '../src/autoloader.php';
 
 function get($name, $default = '')
 {
-    return isset($_GET[$name]) ? $_GET[$name] : $default;
+    if (!isset($_GET[$name])) {
+        return $default;
+    }
+
+    if ($name === 'url') {
+        if (!filter_var($_GET['url'], FILTER_VALIDATE_URL)) {
+            return 'http://doNotTryToXSS.invalid';
+        }
+    }
+
+    return $_GET[$name];
 }
 
 function getEscaped($name, $default = '')

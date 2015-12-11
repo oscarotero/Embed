@@ -2,6 +2,7 @@
 
 namespace Embed\ImageInfo;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\Pool;
 use GuzzleHttp\Exception\RequestException;
 
@@ -12,16 +13,28 @@ class Guzzle5 implements ImageInfoInterface
 {
     use UtilsTrait;
 
+    protected static $config = [
+        'verify' => false,
+        'timeout' => 10,
+        'connect_timeout' => 20,
+        'headers' => [
+            'User-Agent' => 'Embed PHP Library',
+        ],
+        'allow_redirects' => [
+            'max' => 20,
+            'referer' => true,
+        ],
+    ];
+
     /**
      * {@inheritdoc}
      */
     public static function getImagesInfo(array $urls, array $config = null)
     {
-        if ($config === null || !isset($config['client']) || !($config['client'] instanceof \GuzzleHttp\Client)) {
-            throw new \RuntimeException('Guzzle client not passed in config.');
-        }
+        $client = isset($config['client']) ? $config['client'] : new Client([
+            'defaults' => static::$config,
+        ]);
 
-        $client = $config['client'];
         $result = [];
 
         // Build parallel requests
@@ -46,7 +59,7 @@ class Guzzle5 implements ImageInfoInterface
                 continue;
             }
 
-            if (($size = @getimagesizefromstring($response->getBody())) !== false) {
+            if (($size = getimagesizefromstring($response->getBody())) !== false) {
                 $result[] = [
                     'width' => $size[0],
                     'height' => $size[1],

@@ -14,4 +14,15 @@ class ArchiveTest extends TestCaseBase
             ]
         );
     }
+
+    public function testTwo()
+    {
+        $this->assertEmbed(
+            'https://archive.org/details/librivoxaudio',
+            [
+                'type' => 'rich',
+                'providerName' => 'Internet Archive',
+            ]
+        );
+    }
 }

@@ -120,6 +120,23 @@ class Request extends Url
     }
 
     /**
+     * Return ClassName for domain.
+     * 
+     * Domains started with numbers will get N prepended to their class name.
+     *
+     * @return string
+     */
+    public function getClassNameForDomain()
+    {
+        $className = str_replace(array('-', ' '), '', ucwords(strtolower($this->getDomain())));
+        if (is_numeric(mb_substr($className, 0, 1))) {
+            $className = 'N'.$className;
+        }
+
+        return $className;
+    }
+
+    /**
      * Return the http request info (for debug purposes).
      *
      * @return array
@@ -179,9 +196,6 @@ class Request extends Url
                     $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8');
                     $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $content);
                 }
-
-                //Remove all script elements, CDATA sections and comments (thanks https://github.com/jasny)
-                //$content = preg_replace(['%<!--(?:[^-]++|-)*?-->|<!\[CDATA\[(?:[^\]]++|\])*?\]\]>%si', '%<script\b(?:"(?:[^"\\\\]++|\\\\.)*+"|\'(?:[^\'\\\\]++|\\\\.)*+\'|[^>"\']++)*>(?:[^<]++|<)*?</\s*script\s*>%si'], '', $content);
 
                 $this->htmlContent->loadHTML($content);
                 libxml_use_internal_errors($errors);

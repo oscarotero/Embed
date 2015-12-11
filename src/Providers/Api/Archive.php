@@ -58,6 +58,14 @@ class Archive extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
+    public function getProviderName()
+    {
+        return 'Internet Archive';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getUrl()
     {
         return $this->bag->get('url');
@@ -76,9 +84,9 @@ class Archive extends Provider implements ProviderInterface
      */
     public function getImagesUrls()
     {
-        $images = (array) $this->api->get('misc', 'image');
+        $images = (array) $this->bag->get('misc[image]');
 
-        foreach (array_keys((array) $this->api->get('files')) as $url) {
+        foreach (array_keys((array) $this->bag->get('files')) as $url) {
             $images[] = $url;
         }
 

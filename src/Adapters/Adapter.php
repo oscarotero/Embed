@@ -215,20 +215,48 @@ abstract class Adapter
      */
     public function getCode()
     {
-        if ($code = Utils::getFirstValue(Utils::getData($this->providers, 'code'))) {
-            if (strpos($code, '</iframe>') !== false) {
-                return preg_replace('|^.*(<iframe.*</iframe>).*$|Us', '$1', $code);
+        $this->width = null;
+        $this->height = null;
+        $choosen = null;
+
+        foreach (Utils::getData($this->providers, 'code') as $code) {
+            // <object> and <embed> codes have less priority
+            if (strpos($code['value'], '</object>') !== false || strpos($code['value'], '</embed>') !== false) {
+                if (empty($choosen)) {
+                    $choosen = $code;
+                }
+
+                continue;
             }
 
-            if (strpos($code, '</object>') !== false) {
-                return preg_replace('|^.*(<object.*</object>).*$|Us', '$1', $code);
+            if (strpos($code['value'], '</iframe>') !== false) {
+                $code['value'] = preg_replace('|^.*(<iframe.*</iframe>).*$|Us', '$1', $code['value']);
             }
 
-            if (strpos($code, '</embed>') !== false) {
-                return preg_replace('|^.*(<embed.*</embed>).*$|Us', '$1', $code);
+            $choosen = $code;
+            break;
+        }
+
+        if ($choosen) {
+            //get the width/height
+            foreach ($choosen['providers'] as $provider) {
+                $this->width = $this->providers[$provider]->getWidth();
+                $this->height = $this->providers[$provider]->getHeight();
+                
+                if (is_numeric($this->width)) {
+                    $this->width = (int) $this->width;
+                }
+
+                if (is_numeric($this->height)) {
+                    $this->height = (int) $this->height;
+                }
+
+                if (!empty($this->width) || !empty($this->height)) {
+                    break;
+                }
             }
 
-            return $code;
+            return $choosen['value'];
         }
     }
 
@@ -281,7 +309,7 @@ abstract class Adapter
      */
     public function getProviderIcons()
     {
-        return call_user_func("{$this->imageClass}::getImagesInfo", $this->getProviderIconsUrls());
+        return call_user_func("{$this->imageClass}::getImagesInfo", $this->getProviderIconsUrls(), $this->imageConfig);
     }
 
     /**
@@ -403,9 +431,9 @@ abstract class Adapter
      */
     public function getWidth()
     {
-        $val = Utils::getFirstValue(Utils::getData($this->providers, 'width'));
+        $this->__get('code');
 
-        return $val ? (is_numeric($val) ? (int) $val : $val) : null;
+        return $this->width;
     }
 
     /**
@@ -413,9 +441,9 @@ abstract class Adapter
      */
     public function getHeight()
     {
-        $val = Utils::getFirstValue(Utils::getData($this->providers, 'height'));
+        $this->__get('code');
 
-        return $val ? (is_numeric($val) ? (int) $val : $val) : null;
+        return $this->height;
     }
 
     /**
