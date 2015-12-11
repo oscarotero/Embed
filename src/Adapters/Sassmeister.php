@@ -6,7 +6,6 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Utils;
 
 class Sassmeister extends Webpage implements AdapterInterface
 {
@@ -27,6 +26,9 @@ class Sassmeister extends Webpage implements AdapterInterface
     {
         $id = $this->request->getDirectoryPosition(1);
 
-        return Utils::iframe('http://embed.sassmeister.com/gist/' . $id);
+        return "<p class=\"sassmeister\" data-gist-id=\"{$id}\" data-height=\"480\" data-theme=\"tomorrow\">" .
+               "<a href=\"http://sassmeister.com/gist/{$id}\">Play with this gist on SassMeister.</a>" .
+               "</p>" .
+               "<script src=\"http://cdn.sassmeister.com/js/embed.js\" async></script>";
     }
 }
