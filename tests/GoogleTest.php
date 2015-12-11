@@ -2,15 +2,13 @@
 
 class GoogleTest extends TestCaseBase
 {
-    //the embed code for gmaps does not work. Need to investigate.
-    public function _testMap()
+    public function testMap()
     {
         $this->assertEmbed(
             'https://www.google.es/maps/place/Tordoia,+A+Coru%C3%B1a/@43.0871207,-8.5710004,12z/data=!3m1!4b1!4m2!3m1!1s0xd2ef4006f1ef489:0x404f58273ca55a0',
             [
-                'title' => 'Google Maps',
-                'type' => 'rich',
-                'code' => '<iframe src="https://www.google.es/maps/place/Tordoia,+A+Coru%C3%B1a/@43.0871207,-8.5710004,12z/data=!3m1!4b1!4m2!3m1!1s0xd2ef4006f1ef489:0x404f58273ca55a0?output=embed&amp;s=" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:600px;height:400px;"></iframe>',
+                'title' => 'Tordoia, A Coruña',
+                'type' => 'link',
                 'providerName' => 'Google Maps',
             ]
         );

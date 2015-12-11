@@ -37,11 +37,27 @@ class Spreaker extends Webpage implements AdapterInterface
                         ->withQueryParameters([
                             'autoplay' => 'false',
                             'episode_id' => $id,
-                        ]), '100%', 131, 'min-width:400px;border:none;overflow:hidden;');
+                        ]), $this->width, $this->height, 'min-width:400px;border:none;overflow:hidden;');
                 }
 
                 break;
             }
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getWidth()
+    {
+        return '100%';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHeight()
+    {
+        return 131;
     }
 }

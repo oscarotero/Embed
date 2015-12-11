@@ -4,14 +4,14 @@ namespace Embed\Providers\OEmbed;
 
 use Embed\Url;
 
-class Photobucket extends OEmbedImplementation
+class Iframely extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
     public static function getEndPoint(Url $url)
     {
-        return 'http://s51.photobucket.com/oembed/';
+        return 'http://open.iframe.ly/api/oembed';
     }
 
     /**
@@ -19,6 +19,6 @@ class Photobucket extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-        return ['http://*.photobucket.com/*'];
+        return ['*'];
     }
 }

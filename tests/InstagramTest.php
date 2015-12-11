@@ -12,7 +12,7 @@ class InstagramTest extends TestCaseBase
                 'imageHeight' => 640,
                 'type' => 'rich',
                 'authorName' => 'agarzoniu',
-                'authorUrl' => 'https://instagram.com/agarzoniu',
+                'authorUrl' => 'https://www.instagram.com/agarzoniu',
                 'providerName' => 'Instagram',
             ]
         );
@@ -28,7 +28,7 @@ class InstagramTest extends TestCaseBase
                 'imageHeight' => 640,
                 'type' => 'rich',
                 'authorName' => 'agarzoniu',
-                'authorUrl' => 'https://instagram.com/agarzoniu',
+                'authorUrl' => 'https://www.instagram.com/agarzoniu',
                 'providerName' => 'Instagram',
             ]
         );

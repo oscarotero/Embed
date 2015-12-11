@@ -14,8 +14,10 @@ class Jsfiddle extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $url = $this->getUrl();
+    	$this->width = null;
+        $this->height = null;
 
+        $url = $this->url;
         $embed_url = $url.((substr($url, -1) === '/') ? 'embedded/' : '/embedded/');
 
         return Utils::iframe($embed_url);

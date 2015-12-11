@@ -2,6 +2,11 @@
 
 [![Build Status](https://travis-ci.org/oscarotero/Embed.svg?branch=master)](https://travis-ci.org/oscarotero/Embed)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/Embed/badges/quality-score.png?s=79e37032db280b9795388124c030dcf4309343d1)](https://scrutinizer-ci.com/g/oscarotero/Embed/)
+[![Reference Status](https://www.versioneye.com/php/embed:embed/reference_badge.svg?style=flat)](https://www.versioneye.com/php/embed:embed/references)
+[![Latest Stable Version](https://poser.pugx.org/embed/embed/v/stable)](https://packagist.org/packages/embed/embed)
+[![Total Downloads](https://poser.pugx.org/embed/embed/downloads)](https://packagist.org/packages/embed/embed)
+[![Monthly Downloads](https://poser.pugx.org/embed/embed/d/monthly)](https://packagist.org/packages/embed/embed)
+[![License](https://poser.pugx.org/embed/embed/license)](https://packagist.org/packages/embed/embed)
 [![Support via Gittip](https://img.shields.io/gratipay/oscarotero.svg)](https://www.gratipay.com/oscarotero/)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e/big.png)](https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e)
@@ -102,7 +107,8 @@ The providers get the data from different sources. Each source has it's own prov
 Used to get data from oembed api if it's available. It accepts two options:
 
 * parameters (array): Extra query parameters to send with the oembed request
-* embedlyKey (string): If it's defined and the page has not its own oembed service, use the embedly api.
+* embedlyKey (string): If it's defined, use embed.ly api as fallback oembed provider.
+* iframelyKey (string): If it's defined, use iframe.ly api as fallback oembed provider.
 
 #### html
 
@@ -110,13 +116,19 @@ Used to get data directly from the html code of the page:
 
 * maxImages (int): Max number of images fetched from the html code (searching for the `<img>` elements). By default is -1 (no limit). Use 0 to no get images.
 
-#### facebook:
+#### facebook
 
-This provider is used only for facebook pages, to get information from the [graph api](https://developers.facebook.com/docs/graph-api):
+This provider is used only for facebook pages, to get information from the [graph api](https://developers.facebook.com/docs/graph-api)
 
-* key (string): the access token used to get info from pages that are not public
+* key (string): the key used
 
-#### soundcloud:
+#### google
+
+This provider is used only for google maps, to generate the embed code [using the embed api](https://developers.google.com/maps/documentation/embed/)
+
+* key (string): the key used
+
+#### soundcloud
 
 Used only for soundcloud pages, to get information using its api.
 
@@ -217,7 +229,7 @@ $config = [
 
 // Guzzle (5.x)
 $config = [
-    'resolver' => [
+    'image' => [
         'class' => 'Embed\\ImageInfo\\Guzzle5',
 
         'config' => [
@@ -261,14 +273,3 @@ $config = [
 	]
 ];
 ```
-
-Do you need help?
------------------
-
-I can help you in HackHands: https://hackhands.com/oscarotero
-
-Contributors
-------------
-* https://github.com/oscarotero (creator and maintainer)
-* https://github.com/buggedcom
-* https://github.com/jasny

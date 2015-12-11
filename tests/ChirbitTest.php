@@ -8,7 +8,7 @@ class ChirbitTest extends TestCaseBase
             'http://chirb.it/7A9L9B',
             [
                 'title' => 'Chirbit [nvanderklippe] Encana conference call',
-                'width' => 398,
+                'width' => 320,
                 'height' => 120,
                 'type' => 'rich',
                 'providerName' => 'Chirbit',

@@ -10,10 +10,11 @@ php:
 
 matrix:
   allow_failures:
-    - php: 7.0
     - php: hhvm
 
 before_install:
   - composer install
 
-script: ./vendor/bin/phpunit
+script:
+  - 'phpunit'
+  - './vendor/bin/php7cc ./src'

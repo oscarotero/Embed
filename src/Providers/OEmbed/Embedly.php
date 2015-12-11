@@ -2,12 +2,14 @@
 
 namespace Embed\Providers\OEmbed;
 
+use Embed\Url;
+
 class Embedly extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
-    public static function getEndPoint()
+    public static function getEndPoint(Url $url)
     {
         return 'http://api.embed.ly/1/oembed';
     }

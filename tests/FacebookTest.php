@@ -14,7 +14,7 @@ class FacebookTest extends TestCaseBase
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-post" data-href="https://www.facebook.com/permalink.php?story_fbid=827163017327807&id=149460691764713" data-width="500"></div>
+<div class="fb-post" data-href="https://www.facebook.com/asociaciondag/posts/827163017327807" data-width="500"></div>
 EOT;
 
         $this->assertEmbed(

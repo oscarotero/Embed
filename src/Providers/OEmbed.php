@@ -15,6 +15,7 @@ class OEmbed extends Provider implements ProviderInterface
     protected $config = [
         'parameters' => [],
         'embedlyKey' => null,
+        'iframelyKey' => null,
     ];
 
     /**
@@ -240,7 +241,7 @@ class OEmbed extends Provider implements ProviderInterface
 
         if (class_exists($class) && $request->match($class::getPatterns())) {
             return [
-                'endPoint' => $class::getEndpoint(),
+                'endPoint' => $class::getEndpoint($request),
                 'params' => $class::getParams($request),
             ];
         }
@@ -248,8 +249,16 @@ class OEmbed extends Provider implements ProviderInterface
         //Search using embedly
         if (!empty($config['embedlyKey']) && $request->match(OEmbed\Embedly::getPatterns())) {
             return [
-                'endPoint' => OEmbed\Embedly::getEndpoint(),
+                'endPoint' => OEmbed\Embedly::getEndpoint($request),
                 'params' => OEmbed\Embedly::getParams($request) + ['key' => $config['embedlyKey']],
+            ];
+        }
+
+        //Search using iframely
+        if (!empty($config['iframelyKey']) && $request->match(OEmbed\Iframely::getPatterns())) {
+            return [
+                'endPoint' => OEmbed\Iframely::getEndpoint($request),
+                'params' => OEmbed\Iframely::getParams($request) + ['api_key' => $config['iframelyKey']],
             ];
         }
     }
@@ -263,7 +272,7 @@ class OEmbed extends Provider implements ProviderInterface
      */
     protected static function getClassFromRequest(Request $request)
     {
-        return 'Embed\\Providers\\OEmbed\\'.str_replace(' ', '', ucwords(strtolower(str_replace('-', ' ', $request->getDomain()))));
+        return 'Embed\\Providers\\OEmbed\\'.$request->getClassNameForDomain();
     }
 
     /**

@@ -2,12 +2,14 @@
 
 namespace Embed\Providers\OEmbed;
 
+use Embed\Url;
+
 class Soundcloud extends OEmbedImplementation
 {
     /**
      * {@inheritdoc}
      */
-    public static function getEndPoint()
+    public static function getEndPoint(Url $url)
     {
         return 'http://soundcloud.com/oembed';
     }
