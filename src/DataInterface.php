@@ -31,7 +31,7 @@ interface DataInterface
     public function getType();
 
     /**
-     * Gets the tags of the url
+     * Gets the tags of the url.
      *
      * @return array
      */

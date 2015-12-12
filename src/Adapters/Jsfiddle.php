@@ -14,7 +14,7 @@ class Jsfiddle extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-    	$this->width = null;
+        $this->width = null;
         $this->height = null;
 
         $url = $this->url;

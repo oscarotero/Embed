@@ -15,7 +15,7 @@ class YoutubeTest extends TestCaseBase
                 'authorUrl' => 'https://www.youtube.com/user/smshdchrb',
                 'providerName' => 'YouTube',
                 'providerUrl' => 'https://www.youtube.com/',
-                'tags'=>[
+                'tags' => [
                     'kittens',
                     'cats',
                     'hungry',

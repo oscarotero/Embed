@@ -33,7 +33,7 @@ class OpenGraph extends Provider implements ProviderInterface
 
             if ($name === 'image') {
                 $this->bag->add('images', $value);
-            } else if (strpos($name, ':tag') !== false) {
+            } elseif (strpos($name, ':tag') !== false) {
                 $this->bag->add('tags', $value);
             } else {
                 $this->bag->set($name, $value);

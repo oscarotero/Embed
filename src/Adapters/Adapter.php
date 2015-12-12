@@ -6,11 +6,11 @@ use Embed\Url;
 use Embed\Utils;
 use Embed\Request;
 use Embed\Providers\ProviderInterface;
+use Embed\GetTrait;
 
 /**
  * Base class extended by all adapters.
  *
- * @property Request      $request
  * @property null|string  $title
  * @property null|string  $description
  * @property null|string  $url
@@ -34,6 +34,11 @@ use Embed\Providers\ProviderInterface;
  */
 abstract class Adapter
 {
+    use GetTrait;
+
+    /**
+     * @var Request
+     */
     protected $request;
 
     protected $providers = [];
@@ -142,23 +147,6 @@ abstract class Adapter
     }
 
     /**
-     * Magic method to execute and save the url data.
-     * For example, on call $this->title, executes $this->getTitle().
-     *
-     * @param string $name
-     *
-     * @return mixed
-     */
-    public function __get($name)
-    {
-        $method = 'get'.$name;
-
-        if (method_exists($this, $method)) {
-            return $this->$name = $this->$method();
-        }
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function getTitle()
@@ -199,7 +187,7 @@ abstract class Adapter
 
         return 'link';
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -248,7 +236,7 @@ abstract class Adapter
             foreach ($choosen['providers'] as $provider) {
                 $this->width = $this->providers[$provider]->getWidth();
                 $this->height = $this->providers[$provider]->getHeight();
-                
+
                 if (is_numeric($this->width)) {
                     $this->width = (int) $this->width;
                 }

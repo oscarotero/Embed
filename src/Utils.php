@@ -23,6 +23,7 @@ class Utils
             $value = $meta->getAttribute('content') ?: $meta->getAttribute('value');
             $metas[] = [$name, $value, $meta];
         }
+
         return $metas;
     }
 
@@ -89,6 +90,7 @@ class Utils
                 }
             }
         }
+
         return array_values($values);
     }
 
@@ -172,9 +174,8 @@ class Utils
         }
     }
 
-
     /**
-     * Returns values as array
+     * Returns values as array.
      *
      * @param array $values    The array provided by self::getData()
      * @param bool  $returnKey Whether or not return the key instead the value
@@ -183,14 +184,14 @@ class Utils
      */
     public static function getAllValues(array $values, $returnKey = false)
     {
-        if ($returnKey){
+        if ($returnKey) {
             return array_keys($values);
-        } 
-        $return_value=[];
-        foreach ($values as $value)
-        {
-            $return_value[]=$value['value'];
-        }        
+        }
+        $return_value = [];
+        foreach ($values as $value) {
+            $return_value[] = $value['value'];
+        }
+
         return $return_value;
     }
 

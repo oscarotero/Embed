@@ -87,7 +87,6 @@ class Html extends Provider implements ProviderInterface
         return array_filter(array_map('trim', $keywords));
     }
 
-
     /**
      * {@inheritdoc}
      */
