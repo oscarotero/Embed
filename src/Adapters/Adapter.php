@@ -15,13 +15,14 @@ use Embed\Providers\ProviderInterface;
  * @property null|string  $description
  * @property null|string  $url
  * @property null|string  $type
+ * @property array        $tags
  * @property array        $images
  * @property null|string  $image
- * @property null|int $imageWidth
- * @property null|int $imageHeight
+ * @property null|int     $imageWidth
+ * @property null|int     $imageHeight
  * @property null|string  $code
- * @property null|int $width
- * @property null|int $height
+ * @property null|int     $width
+ * @property null|int     $height
  * @property null|float   $aspectRatio
  * @property null|string  $authorName
  * @property null|string  $authorUrl
@@ -200,6 +201,14 @@ abstract class Adapter
         }
 
         return 'link';
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function getTags()
+    {
+        return Utils::getAllValues(Utils::getData($this->providers, 'tags'));
     }
 
     /**

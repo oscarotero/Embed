@@ -31,6 +31,13 @@ interface DataInterface
     public function getType();
 
     /**
+     * Gets the tags of the url
+     *
+     * @return array
+     */
+    public function getTags();
+
+    /**
      * Gets the source url (feed, api, etc).
      *
      * @return string|null

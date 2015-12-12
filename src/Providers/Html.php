@@ -68,6 +68,29 @@ class Html extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
+    public function getTags()
+    {
+        $keywords = $this->bag->get('keywords');
+
+        if (!$keywords) {
+            return [];
+        }
+
+        //some sites, contains the keywords separated by commas
+        if (strpos($keywords, ',')) {
+            $keywords = explode(',', $keywords);
+        //and others by spaces (ex: youtube)
+        } else {
+            $keywords = explode(' ', $keywords);
+        }
+
+        return array_filter(array_map('trim', $keywords));
+    }
+
+
+    /**
+     * {@inheritdoc}
+     */
     public function getSource()
     {
         $feeds = $this->bag->get('feeds');

@@ -90,6 +90,22 @@ class Bag
      */
     public function has($name)
     {
+        if (strpos($name, '[') !== false) {
+            $names = explode('[', str_replace(']', '', $name));
+            $key = array_shift($names);
+            $item = isset($this->parameters[$key]) ? $this->parameters[$key] : [];
+
+            foreach ($names as $key) {
+                if (!isset($item[$key])) {
+                    return false;
+                }
+
+                $item = $item[$key];
+            }
+
+            return isset($item);
+        }
+
         return isset($this->parameters[$name]);
     }
 }

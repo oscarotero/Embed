@@ -81,7 +81,7 @@ interface AdapterInterface extends DataInterface
 
     /**
      * Gets the aspect ratio of the embedded widget
-     * (useful to make it flexible).
+     * (useful to make it responsive).
      *
      * @return float|null
      */
