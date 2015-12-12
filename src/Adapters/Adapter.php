@@ -97,9 +97,12 @@ abstract class Adapter
     }
 
     /**
-     * Get the request.
-     *
-     * @return Request
+     * Run the adapter.
+     */
+    abstract protected function run();
+
+    /**
+     * {@inheritdoc}
      */
     public function getRequest()
     {
@@ -123,11 +126,7 @@ abstract class Adapter
     }
 
     /**
-     * Get a provider.
-     *
-     * @param string $name
-     *
-     * @return null|ProviderInterface
+     * {@inheritdoc}
      */
     public function getProvider($name)
     {
@@ -135,9 +134,7 @@ abstract class Adapter
     }
 
     /**
-     * Get all providers.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getAllProviders()
     {

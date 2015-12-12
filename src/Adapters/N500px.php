@@ -54,7 +54,7 @@ class N500px extends Adapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    protected function run()
     {
         //order is important
         $this->addProvider('oembed', new Providers\OEmbed());

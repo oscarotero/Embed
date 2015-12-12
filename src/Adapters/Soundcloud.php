@@ -24,7 +24,7 @@ class Soundcloud extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    protected function run()
     {
         $this->addProvider('soundcloud', new Api\Soundcloud());
 

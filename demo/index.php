@@ -207,7 +207,7 @@ $adapterData = [
                 <h2>Http request info</h2>
 
                 <table>
-                    <?php foreach ($info->request->getRequestInfo() as $name => $value): ?>
+                    <?php foreach ($info->getRequest()->getRequestInfo() as $name => $value): ?>
                     <tr>
                         <th><?php echo $name; ?></th>
                         <td><?php printAny($value); ?></td>
@@ -218,7 +218,7 @@ $adapterData = [
                 <h2>Content</h2>
 
                 <pre>
-                    <?php printText($info->request->getContent()); ?>
+                    <?php printText($info->getRequest()->getContent()); ?>
                 </pre>
             </div>
         </section>

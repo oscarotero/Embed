@@ -25,7 +25,7 @@ class Wikipedia extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    protected function run()
     {
         $this->addProvider('wikipedia', new Api\Wikipedia());
 

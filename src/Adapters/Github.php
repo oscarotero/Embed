@@ -24,7 +24,7 @@ class Github extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    protected function run()
     {
         if ($this->request->getHost() === 'gist.github.com') {
             $this->addProvider('gist', new Api\Gist());

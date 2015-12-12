@@ -12,12 +12,12 @@ class Guzzle5 implements RequestResolverInterface
     protected $client;
 
     /**
-     * @var GuzzleHttp\Request
+     * @var \GuzzleHttp\Request
      */
     protected $request;
 
     /**
-     * @var GuzzleHttp\Response
+     * @var \GuzzleHttp\Response
      */
     protected $response;
 

@@ -23,7 +23,7 @@ class Youtube extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    protected function run()
     {
         if ($this->request->getHttpCode() === 429) {
             $this->addProvider('oembed', new Providers\OEmbed());

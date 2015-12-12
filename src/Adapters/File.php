@@ -47,7 +47,7 @@ class File extends Adapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    protected function run()
     {
         $this->addProvider('oembed', new Providers\OEmbed());
     }

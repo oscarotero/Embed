@@ -28,9 +28,27 @@ interface AdapterInterface extends DataInterface
     public function __construct(Request $request, array $config = null);
 
     /**
-     * Run the provider.
+     * Returns the request instance.
+     *
+     * @return Request
      */
-    public function run();
+    public function getRequest();
+
+    /**
+     * Returns a provider.
+     *
+     * @param string $name
+     *
+     * @return null|ProviderInterface
+     */
+    public function getProvider($name);
+
+    /**
+     * Get all providers.
+     *
+     * @return array
+     */
+    public function getAllProviders();
 
     /**
      * Gets all icon provider urls found

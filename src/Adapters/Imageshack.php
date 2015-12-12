@@ -23,7 +23,7 @@ class Imageshack extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    protected function run()
     {
         $this->addProvider('imageshack', new Api\Imageshack());
 

@@ -24,7 +24,7 @@ class Archive extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    protected function run()
     {
         $this->addProvider('archive', new Api\Archive());
 

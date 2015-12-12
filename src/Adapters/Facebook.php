@@ -23,7 +23,7 @@ class Facebook extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    protected function run()
     {
         $this->addProvider('facebook', new Api\Facebook());
 

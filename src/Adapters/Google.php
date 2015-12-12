@@ -26,7 +26,7 @@ class Google extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    protected function run()
     {
         if ($this->request->match('*/maps/*')) {
             $this->addProvider('google', new Api\GoogleMaps());
