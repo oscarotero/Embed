@@ -136,23 +136,6 @@ Used only for soundcloud pages, to get information using its api.
 * key (string): to get info from soundcloud API.
 
 
-```php
-$config = [
-    'providers' => [
-        'oembed' => [
-            'parameters' => [],
-            'embedlyKey' => null
-        ],
-        'html' => [
-            'maxImages' => -1
-        ],
-        'facebook' => [
-            'key' => 'our-access-token'
-        ]
-    ]
-];
-```
-
 ### The request resolver
 
 Embed uses the `Embed\RequestResolvers\Curl` class to resolve all requests using the curl library. You can set options to the curl request or use your custom resolver creating a class implementing the `Embed\RequestResolvers\RequestResolverInterface`.
@@ -243,7 +226,8 @@ $config = [
 [You can see here](https://github.com/oscarotero/Embed/tree/master/src/ImageInfo) the ImageInfo implementations included.
 
 
-### Example
+### Configuration example
+
 
 ```php
 $config = [
@@ -259,8 +243,15 @@ $config = [
 		]
 	],
     'providers' => [
+        'oembed' => [
+            'parameters' => [],
+            'embedlyKey' => null
+        ],
         'html' => [
             'maxImages' => 3
+        ],
+        'facebook' => [
+            'key' => 'our-access-token'
         ]
     ],
     'resolver' => [
@@ -273,4 +264,24 @@ $config = [
 		'class' => 'App\\MyImageInfoClass'
 	]
 ];
+```
+
+### Access to more data
+
+As said before, the adapter get the data from all providers and choose the best values. But you can get the data directly from the providers, useful if you want to get the specific value returned by any provider.
+
+```php
+use Embed\Embed;
+
+//Get the info
+$info = Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
+
+//Get the oembed provider
+$oembed = $info->getProvider('oembed');
+
+//Get the oembed title:
+echo $oembed->getTitle();
+
+//Get any value returned by oembed api
+$echo $oembed->bag->get('author_name');
 ```

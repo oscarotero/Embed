@@ -133,7 +133,7 @@ class OpenGraph extends Provider implements ProviderInterface
      */
     public function getTags()
     {
-        return $this->bag->get('tags') ?: [];
+        return (array) $this->bag->get('tags') ?: [];
     }
 
     /**

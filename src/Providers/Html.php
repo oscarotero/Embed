@@ -70,11 +70,11 @@ class Html extends Provider implements ProviderInterface
      */
     public function getTags()
     {
-        $keywords = $this->bag->get('keywords');
-
-        if (!$keywords) {
+        if (!$this->bag->has('keywords')) {
             return [];
         }
+
+        $keywords = $this->bag->get('keywords');
 
         //some sites, contains the keywords separated by commas
         if (strpos($keywords, ',')) {
