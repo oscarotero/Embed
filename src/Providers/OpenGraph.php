@@ -33,6 +33,8 @@ class OpenGraph extends Provider implements ProviderInterface
 
             if ($name === 'image') {
                 $this->bag->add('images', $value);
+            } else if (strpos($name, ':tag') !== false) {
+                $this->bag->add('tags', $value);
             } else {
                 $this->bag->set($name, $value);
             }
@@ -124,6 +126,14 @@ class OpenGraph extends Provider implements ProviderInterface
     public function getUrl()
     {
         return $this->bag->get('url');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getTags()
+    {
+        return $this->bag->get('tags') ?: [];
     }
 
     /**
