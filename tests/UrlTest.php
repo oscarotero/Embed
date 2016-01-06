@@ -53,4 +53,12 @@ class UrlTest extends TestCaseBase
         $this->assertSame('domain', $url->getDomain());
         $this->assertSame('domain.com.au', $url->getDomain(1));
     }
+
+    public function testPathsWithDots()
+    {
+        $url = new Embed\Url('https://en.wikipedia.org/wiki/Supernatural_(U.S._TV_series)');
+        $this->assertNull($url->getExtension());
+        $this->assertSame('/wiki/Supernatural_(U.S._TV_series)', $url->getPath());
+        $this->assertSame('Supernatural_(U.S._TV_series)', $url->getDirectoryPosition(1));
+    }
 }

@@ -536,5 +536,14 @@ class Url
         $this->info['file'] = isset($parts['filename']) ? $parts['filename'] : null;
         $this->info['extension'] = isset($parts['extension']) ? $parts['extension'] : null;
         $this->info['content'] = null;
+
+        // bugfix /wiki/Supernatural_(U.S._TV_series) is parsed as:
+        // path: /wiki/
+        // file: Supernatural_(U.S
+        // extension: _TV_series)
+        if (!empty($this->info['extension']) && !preg_match('/^\w+$/', $this->info['extension'])) {
+            $this->info['file'] .= '.'.$this->info['extension'];
+            $this->info['extension'] = null;
+        }
     }
 }

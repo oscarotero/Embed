@@ -68,7 +68,7 @@ class Wikipedia extends Provider implements ProviderInterface
         if ($pages) {
             $page = current($pages);
 
-            return strip_tags($page['extract']);
+            return isset($page['extract']) ? strip_tags($page['extract']) : null;
         }
     }
 
@@ -86,14 +86,16 @@ class Wikipedia extends Provider implements ProviderInterface
 
             $imgs = [];
 
-            foreach ($page['images'] as $image) {
-                switch (strrchr($image['title'], '.')) {
-                    case '.png':
-                    case '.jpg':
-                    case '.gif':
-                    case '.jpeg':
-                        $imgs[] = $image['title'];
-                        break;
+            if (isset($page['images'])) {
+                foreach ($page['images'] as $image) {
+                    switch (strrchr($image['title'], '.')) {
+                        case '.png':
+                        case '.jpg':
+                        case '.gif':
+                        case '.jpeg':
+                            $imgs[] = $image['title'];
+                            break;
+                    }
                 }
             }
 
