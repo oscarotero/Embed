@@ -20,12 +20,14 @@ class JsonLd extends Provider implements ProviderInterface
 
         foreach ($html->getElementsByTagName('script') as $script) {
             if ($script->hasAttribute('type') && strtolower($script->getAttribute('type')) === 'application/ld+json') {
-                if (empty($script->nodeValue)) {
+                $value = trim($script->nodeValue);
+
+                if (empty($value)) {
                     return false;
                 }
 
                 try {
-                    $json = json_decode($script->nodeValue, true);
+                    $json = json_decode($value, true);
                     $this->bag->set($json);
                 } catch (\Exception $exception) {
                     return false;
