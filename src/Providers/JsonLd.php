@@ -37,4 +37,108 @@ class JsonLd extends Provider implements ProviderInterface
             }
         }
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getTitle()
+    {
+        return $this->bag->get('name');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDescription()
+    {
+        return $this->bag->get('description');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getType()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getTags()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getCode()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUrl()
+    {
+        return $this->bag->get('url');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAuthorName()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAuthorUrl()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProviderName()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProviderUrl()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getImagesUrls()
+    {
+        return $this->bag->get('image');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getWidth()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHeight()
+    {
+
+    }
 }
