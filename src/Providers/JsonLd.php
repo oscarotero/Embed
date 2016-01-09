@@ -43,7 +43,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getTitle()
     {
-        return $this->bag->get('name');
+        return $this->getMainProperty('name');
     }
 
     /**
@@ -51,7 +51,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getDescription()
     {
-        return $this->bag->get('description');
+        return $this->getMainProperty('description');
     }
 
     /**
