@@ -91,7 +91,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getAuthorName()
     {
-
+        return $this->bag->get('author[name]');
     }
 
     /**
@@ -99,7 +99,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getAuthorUrl()
     {
-
+        return $this->bag->get('author[url]');
     }
 
     /**
@@ -107,7 +107,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getProviderName()
     {
-
+        return $this->bag->get('provider[name]');
     }
 
     /**
@@ -115,7 +115,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getProviderUrl()
     {
-
+        return $this->bag->get('provider[url]');
     }
 
     /**
@@ -123,6 +123,10 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getImagesUrls()
     {
+        if ($this->bag->has('image[contentUrl]')) {
+            return $this->bag->get('image[contentUrl]');
+        }
+
         return $this->bag->get('image');
     }
 
@@ -131,7 +135,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getWidth()
     {
-
+        return $this->bag->get('image[width]');
     }
 
     /**
@@ -139,6 +143,6 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getHeight()
     {
-
+        return $this->bag->get('image[height]');
     }
 }
