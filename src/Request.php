@@ -199,7 +199,7 @@ class Request extends Url
 
                 $this->htmlContent->loadHTML($content);
                 libxml_use_internal_errors($errors);
-            } catch (\Exception $E) {
+            } catch (\Exception $exception) {
                 return $this->htmlContent = false;
             }
         }
@@ -221,7 +221,7 @@ class Request extends Url
                 }
 
                 $this->jsonContent = json_decode($content, true);
-            } catch (\Exception $E) {
+            } catch (\Exception $exception) {
                 return $this->jsonContent = false;
             }
         }
@@ -244,7 +244,7 @@ class Request extends Url
                 $errors = libxml_use_internal_errors(true);
                 $this->xmlContent = new \SimpleXMLElement($content);
                 libxml_use_internal_errors($errors);
-            } catch (\Exception $E) {
+            } catch (\Exception $exception) {
                 return $this->xmlContent = false;
             }
         }
