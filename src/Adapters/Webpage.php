@@ -28,6 +28,7 @@ class Webpage extends Adapter implements AdapterInterface
         $this->addProvider('twittercards', new Providers\TwitterCards());
         $this->addProvider('dcterms', new Providers\Dcterms());
         $this->addProvider('sailthru', new Providers\Sailthru());
+        $this->addProvider('jsonld', new Providers\JsonLd());
         $this->addProvider('html', new Providers\Html());
     }
 }
