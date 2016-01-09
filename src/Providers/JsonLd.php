@@ -37,4 +37,135 @@ class JsonLd extends Provider implements ProviderInterface
             }
         }
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getTitle()
+    {
+        return $this->getMainProperty('name');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDescription()
+    {
+        return $this->getMainProperty('description');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getType()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getTags()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getCode()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUrl()
+    {
+        return $this->getMainProperty('url');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAuthorName()
+    {
+        return $this->getMainProperty('author[name]');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAuthorUrl()
+    {
+        return $this->getMainProperty('author[url]');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProviderName()
+    {
+        return $this->getMainProperty('provider[name]');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProviderUrl()
+    {
+        return $this->getMainProperty('provider[url]');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getImagesUrls()
+    {
+        if ($this->hasMainProperty('image[contentUrl]')) {
+            return $this->getMainProperty('image[contentUrl]');
+        }
+
+        return $this->getMainProperty('image');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getWidth()
+    {
+        return $this->getMainProperty('image[width]');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHeight()
+    {
+        return $this->getMainProperty('image[height]');
+    }
+
+    private function hasMainEntity()
+    {
+        return $this->bag->has('mainEntity');
+    }
+
+    private function getMainProperty($name)
+    {
+        if ($this->hasMainEntity()) {
+            return $this->bag->get("mainEntity[$name]");
+        }
+
+        return $this->bag->get($name);
+    }
+
+    private function hasMainProperty($name)
+    {
+        if ($this->hasMainEntity()) {
+            return $this->bag->has("mainEntity[$name]");
+        }
+
+        return $this->bag->has($name);
+    }
 }
