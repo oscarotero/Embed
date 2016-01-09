@@ -83,7 +83,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getUrl()
     {
-        return $this->bag->get('url');
+        return $this->getMainProperty('url');
     }
 
     /**
@@ -91,7 +91,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getAuthorName()
     {
-        return $this->bag->get('author[name]');
+        return $this->getMainProperty('author[name]');
     }
 
     /**
@@ -99,7 +99,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getAuthorUrl()
     {
-        return $this->bag->get('author[url]');
+        return $this->getMainProperty('author[url]');
     }
 
     /**
@@ -107,7 +107,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getProviderName()
     {
-        return $this->bag->get('provider[name]');
+        return $this->getMainProperty('provider[name]');
     }
 
     /**
@@ -115,7 +115,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getProviderUrl()
     {
-        return $this->bag->get('provider[url]');
+        return $this->getMainProperty('provider[url]');
     }
 
     /**
@@ -123,11 +123,11 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getImagesUrls()
     {
-        if ($this->bag->has('image[contentUrl]')) {
-            return $this->bag->get('image[contentUrl]');
+        if ($this->hasMainProperty('image[contentUrl]')) {
+            return $this->getMainProperty('image[contentUrl]');
         }
 
-        return $this->bag->get('image');
+        return $this->getMainProperty('image');
     }
 
     /**
@@ -135,7 +135,7 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getWidth()
     {
-        return $this->bag->get('image[width]');
+        return $this->getMainProperty('image[width]');
     }
 
     /**
@@ -143,6 +143,29 @@ class JsonLd extends Provider implements ProviderInterface
      */
     public function getHeight()
     {
-        return $this->bag->get('image[height]');
+        return $this->getMainProperty('image[height]');
+    }
+
+    private function hasMainEntity()
+    {
+        return $this->bag->has('mainEntity');
+    }
+
+    private function getMainProperty($name)
+    {
+        if ($this->hasMainEntity()) {
+            return $this->bag->get("mainEntity[$name]");
+        }
+
+        return $this->bag->get($name);
+    }
+
+    private function hasMainProperty($name)
+    {
+        if ($this->hasMainEntity()) {
+            return $this->bag->has("mainEntity[$name]");
+        }
+
+        return $this->bag->has($name);
     }
 }
