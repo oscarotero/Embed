@@ -5,6 +5,8 @@
  */
 namespace Embed\RequestResolvers;
 
+use Embed\Exceptions\EmbedException;
+
 class Curl implements RequestResolverInterface
 {
     protected static $tmpCookies;
@@ -113,6 +115,14 @@ class Curl implements RequestResolverInterface
 
         if (!self::$tmpCookies) {
             self::$tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
+
+            if (is_file(self::$tmpCookies)) {
+                if (!is_writable(self::$tmpCookies)) {
+                    throw new EmbedException(sprintf('The temporary cookies file "%s" is not writable', self::$tmpCookies));
+                }
+            } elseif (!is_writable(dirname(self::$tmpCookies))) {
+                throw new EmbedException(sprintf('The temporary folder "%s" is not writable', dirname(self::$tmpCookies)));
+            }
         }
 
         $connection = curl_init();
