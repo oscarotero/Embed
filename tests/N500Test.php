@@ -5,12 +5,13 @@ class N500Test extends TestCaseBase
     public function testPhoto()
     {
         $this->assertEmbed(
-            'https://500px.com/photo/127505793/nude-girl-retro-by-david-dubnitskiy',
+            'https://500px.com/photo/138251239/taganay-park-by-daniel-kordan',
             [
-                'imageWidth' => 280,
-                'image' => 'https://drscdn.500px.org/photo/127505793/w%3D280_h%3D280/c415195ae6156c9ba2a3db37130c22be?v=2',
-                'imageHeight' => 280,
-                'authorName' => 'David Dubnitskiy',
+                'title' => 'Taganay park by Daniel Kordan',
+                'image' => 'https://drscdn.500px.org/photo/138251239/m%3D900/70e5e5bfded84619fc86ac901dab18a4',
+                'imageWidth' => 900,
+                'imageHeight' => 600,
+                'authorName' => 'Kordan',
                 'type' => 'photo',
             ]
         );

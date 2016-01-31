@@ -9,7 +9,7 @@ use Embed\Request;
 use Embed\Providers;
 use Embed\Utils;
 
-class N500px extends Adapter implements AdapterInterface
+class N500px extends Webpage implements AdapterInterface
 {
     /**
      * {@inheritdoc}
@@ -49,16 +49,5 @@ class N500px extends Adapter implements AdapterInterface
         if (is_numeric($this->request->getDirectoryPosition(1))) {
             return $this->imageHeight;
         }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function run()
-    {
-        //order is important
-        $this->addProvider('oembed', new Providers\OEmbed());
-        $this->addProvider('opengraph', new Providers\OpenGraph());
-        $this->addProvider('html', new Providers\Html());
     }
 }
