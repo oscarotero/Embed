@@ -283,5 +283,5 @@ $oembed = $info->getProvider('oembed');
 echo $oembed->getTitle();
 
 //Get any value returned by oembed api
-$echo $oembed->bag->get('author_name');
+echo $oembed->bag->get('author_name');
 ```
