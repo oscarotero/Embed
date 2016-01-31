@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter provider more information from flickr.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Utils;
 
+/**
+ * Adapter provider more information from flickr.
+ */
 class Flickr extends Webpage implements AdapterInterface
 {
     /**

@@ -1,10 +1,10 @@
 <?php
 
+namespace Embed;
+
 /**
  * Class to split and manipulate url data.
  */
-namespace Embed;
-
 class Url
 {
     protected $info;

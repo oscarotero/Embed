@@ -1,12 +1,12 @@
 <?php
 
-/**
- * Adapter to get more info from parleys.com.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 
+/**
+ * Adapter to get more info from parleys.com.
+ */
 class Parleys extends Webpage implements AdapterInterface
 {
     /**

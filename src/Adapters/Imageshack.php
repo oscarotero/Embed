@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter to provide information from imageshack.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Providers\Api;
 
+/**
+ * Adapter to provide information from imageshack.
+ */
 class Imageshack extends Webpage implements AdapterInterface
 {
     /**

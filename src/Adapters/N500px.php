@@ -1,14 +1,13 @@
 <?php
 
-/**
- * Adapter to provide all information from any webpage.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Providers;
 use Embed\Utils;
 
+/**
+ * Adapter get embed code from 500px.com.
+ */
 class N500px extends Webpage implements AdapterInterface
 {
     /**

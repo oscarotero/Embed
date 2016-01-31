@@ -1,12 +1,12 @@
 <?php
 
-/**
- * Adapter to fix some issues from jsfiddle.
- */
 namespace Embed\Adapters;
 
 use Embed\Utils;
 
+/**
+ * Adapter to fix some issues from jsfiddle.
+ */
 class Jsfiddle extends Webpage implements AdapterInterface
 {
     /**

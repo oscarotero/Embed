@@ -1,10 +1,10 @@
 <?php
 
+namespace Embed;
+
 /**
  * Class to resolve some specific redirections.
  */
-namespace Embed;
-
 class UrlRedirect
 {
     protected static $urls = [

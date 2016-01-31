@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter to get the embed code from gist.github.com.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Providers\Api;
 
+/**
+ * Adapter to get the embed code from gist.github.com.
+ */
 class Github extends Webpage implements AdapterInterface
 {
     /**

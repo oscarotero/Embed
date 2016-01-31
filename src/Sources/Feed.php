@@ -1,12 +1,12 @@
 <?php
 
-/**
- * Class to return the urls from a xml feed.
- */
 namespace Embed\Sources;
 
 use Embed\Request;
 
+/**
+ * Class to return the urls from a xml feed.
+ */
 class Feed extends Source implements SourceInterface
 {
     protected $data;

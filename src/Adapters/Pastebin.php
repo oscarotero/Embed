@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter to generate embed code from pastebin.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Utils;
 
+/**
+ * Adapter to generate embed code from pastebin.
+ */
 class Pastebin extends Webpage implements AdapterInterface
 {
     /**

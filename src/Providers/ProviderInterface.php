@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Interface used by all providers.
- */
 namespace Embed\Providers;
 
 use Embed\Request;
 use Embed\DataInterface;
 
+/**
+ * Interface used by all providers.
+ */
 interface ProviderInterface extends DataInterface
 {
     /**

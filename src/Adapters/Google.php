@@ -1,14 +1,14 @@
 <?php
 
-/**
- * Adapter provider more information from google maps.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Utils;
 use Embed\Providers\Api;
 
+/**
+ * Adapter provider more information from google maps and google drive.
+ */
 class Google extends Webpage implements AdapterInterface
 {
     /**

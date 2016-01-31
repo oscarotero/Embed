@@ -1,13 +1,14 @@
 <?php
 
-/**
- * Adapter to provide information from wikipedia.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Providers;
 
+/**
+ * Adapter to provide information from youtube.
+ * Required when youtube returns a 429 status code.
+ */
 class Youtube extends Webpage implements AdapterInterface
 {
     /**

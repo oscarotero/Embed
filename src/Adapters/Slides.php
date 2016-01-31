@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter to get the embed code from slides.com.
- */
 namespace Embed\Adapters;
 
 use Embed\Utils;
 use Embed\Request;
 
+/**
+ * Adapter to get the embed code from slides.com.
+ */
 class Slides extends Webpage implements AdapterInterface
 {
     /**

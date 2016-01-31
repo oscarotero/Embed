@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter to provide information from soundcloud.com API.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Providers\Api;
 
+/**
+ * Adapter to provide information from soundcloud.com API.
+ */
 class Soundcloud extends Webpage implements AdapterInterface
 {
     /**

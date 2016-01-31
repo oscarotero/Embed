@@ -1,10 +1,10 @@
 <?php
 
+namespace Embed;
+
 /**
  * Interface used by all adapters and providers.
  */
-namespace Embed;
-
 interface DataInterface
 {
     /**

@@ -1,10 +1,10 @@
 <?php
 
+namespace Embed;
+
 /**
  * Class to store and access to data.
  */
-namespace Embed;
-
 class Bag
 {
     protected $parameters = [];

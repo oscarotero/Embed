@@ -1,12 +1,12 @@
 <?php
 
-/**
- * Adapter to get the embed code from howcast.com.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 
+/**
+ * Adapter to get the embed code from howcast.com.
+ */
 class Howcast extends Webpage implements AdapterInterface
 {
     /**

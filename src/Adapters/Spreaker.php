@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter to get the embed code from spreaker.com.
- */
 namespace Embed\Adapters;
 
 use Embed\Utils;
 use Embed\Request;
 
+/**
+ * Adapter to get the embed code from spreaker.com.
+ */
 class Spreaker extends Webpage implements AdapterInterface
 {
     /**

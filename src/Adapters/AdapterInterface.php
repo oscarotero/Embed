@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Interface used by all adapters.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\DataInterface;
 
+/**
+ * Interface used by all adapters.
+ */
 interface AdapterInterface extends DataInterface
 {
     /**

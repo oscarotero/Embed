@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter to fix some issues from mit.edu (not complete yet).
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Utils;
 
+/**
+ * Adapter to fix some issues from mit.edu (not complete yet).
+ */
 class Mit extends Webpage implements AdapterInterface
 {
     /**

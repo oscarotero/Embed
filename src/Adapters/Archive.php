@@ -1,14 +1,14 @@
 <?php
 
-/**
- * Adapter to provide information from archive.org API.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Utils;
 use Embed\Providers\Api;
 
+/**
+ * Adapter to provide information from archive.org API.
+ */
 class Archive extends Webpage implements AdapterInterface
 {
     /**

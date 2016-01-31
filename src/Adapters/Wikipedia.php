@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter to provide information from wikipedia.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Providers\Api;
 
+/**
+ * Adapter to provide information from wikipedia.
+ */
 class Wikipedia extends Webpage implements AdapterInterface
 {
     public $api;

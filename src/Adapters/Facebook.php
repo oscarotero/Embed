@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter to provide information from any facebook page using its graph API.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Providers\Api;
 
+/**
+ * Adapter to provide information from any facebook page using its graph API.
+ */
 class Facebook extends Webpage implements AdapterInterface
 {
     /**

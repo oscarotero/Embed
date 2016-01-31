@@ -1,13 +1,13 @@
 <?php
 
-/**
- * Adapter to get the embed code from line.do.
- */
 namespace Embed\Adapters;
 
 use Embed\Utils;
 use Embed\Request;
 
+/**
+ * Adapter to get the embed code from line.do.
+ */
 class Line extends Webpage implements AdapterInterface
 {
     /**

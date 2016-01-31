@@ -1,14 +1,14 @@
 <?php
 
-/**
- * Adapter to provide information from raw files.
- */
 namespace Embed\Adapters;
 
 use Embed\Request;
 use Embed\Utils;
 use Embed\Providers;
 
+/**
+ * Adapter to provide information from raw files.
+ */
 class File extends Adapter implements AdapterInterface
 {
     private static $contentTypes = [

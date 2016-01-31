@@ -1,12 +1,12 @@
 <?php
 
-/**
- * Default class to resolve urls.
- */
 namespace Embed\RequestResolvers;
 
 use Embed\Exceptions\EmbedException;
 
+/**
+ * Default class to resolve urls using curl.
+ */
 class Curl implements RequestResolverInterface
 {
     protected static $tmpCookies;
