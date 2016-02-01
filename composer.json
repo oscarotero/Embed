@@ -24,7 +24,7 @@
     "require-dev": {
         "guzzlehttp/guzzle": "5.x",
         "sstalle/php7cc": "^1.0",
-        "phpunit/phpunit": "^4.8"
+        "phpunit/phpunit": "*"
     },
     "suggest": {
         "guzzlehttp/guzzle@5.x": "To use Guzzle5 request resolver"
