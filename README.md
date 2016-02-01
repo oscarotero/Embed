@@ -90,12 +90,12 @@ $config = [
 
 		'config' => [
 			'minImageWidth' => 16,
-            'minImageHeight' => 16,
-            'imagesBlacklist' => null,
-            'getBiggerImage' => false,
-            'getBiggerIcon' => false,
+			'minImageHeight' => 16,
+			'imagesBlacklist' => null,
+			'getBiggerImage' => false,
+			'getBiggerIcon' => false,
 		]
-    ]
+	]
 ];
 ```
 
@@ -146,11 +146,10 @@ The resolver configuration is defined under the "resolver" key and it has two op
 * config: The options passed to the class. If you use the default curl class, the config are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
 
 ```php
-
 // CURL
 $config = [
     'resolver' => [
-        'class' => 'Embed\\RequestResolvers\\Curl' // The default resolver used
+        'class' => 'Embed\\RequestResolvers\\Curl', // The default resolver used
 
         'config' => [
             CURLOPT_MAXREDIRS => 20,
@@ -195,7 +194,7 @@ Like the resolver class, you can provide your own image class (it must implement
 //CURL
 $config = [
     'image' => [
-        'class' => 'Embed\\ImageInfo\\Curl' //The default imageInfo used
+        'class' => 'Embed\\ImageInfo\\Curl', //The default imageInfo used
 
         'config' => [
             CURLOPT_MAXREDIRS => 20,
@@ -231,17 +230,17 @@ $config = [
 
 ```php
 $config = [
-	'adapter' => [
-		'config' => [
-			'minImageWidth' => 16,
+    'adapter' => [
+        'config' => [
+            'minImageWidth' => 16,
             'minImageHeight' => 16,
             'imagesBlacklist' => [
                 'http://example.com/full/path/to/image.jpg',
                 'http?://test.*/*.png/',
                 '*/bad_image.gif'
             ]
-		]
-	],
+        ]
+    ],
     'providers' => [
         'oembed' => [
             'parameters' => [],
@@ -260,9 +259,9 @@ $config = [
             CURLOPT_MAXREDIRS => 3
         ]
     ]
-	'image' => [
-		'class' => 'App\\MyImageInfoClass'
-	]
+    'image' => [
+        'class' => 'App\\MyImageInfoClass'
+    ]
 ];
 ```
 
