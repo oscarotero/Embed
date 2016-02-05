@@ -21,7 +21,7 @@ class InstagramTest extends TestCaseBase
     public function testHttps()
     {
         $this->assertEmbed(
-            'https://instagram.com/p/ySl7G9tO_q/',
+            'https://www.instagram.com/p/ySl7G9tO_q/',
             [
                 'title' => 'Se va llenando el lugar donde Tsipras dará su mitin. Aún pendientes de si Syriza logra la mayoría absoluta, pero ya seguros de la victoria de la izquierda.',
                 'imageWidth' => 640,
