@@ -17,4 +17,3 @@ before_install:
 
 script:
   - 'phpunit'
-  - './vendor/bin/php7cc ./src'
