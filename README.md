@@ -7,7 +7,6 @@
 [![Total Downloads](https://poser.pugx.org/embed/embed/downloads)](https://packagist.org/packages/embed/embed)
 [![Monthly Downloads](https://poser.pugx.org/embed/embed/d/monthly)](https://packagist.org/packages/embed/embed)
 [![License](https://poser.pugx.org/embed/embed/license)](https://packagist.org/packages/embed/embed)
-[![Support via Gittip](https://img.shields.io/gratipay/oscarotero.svg)](https://www.gratipay.com/oscarotero/)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e/big.png)](https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e)
 
@@ -23,6 +22,10 @@ If you need PHP 5.3 support, use the 1.x version (but not maintained anymore)
 ## Online demo
 
 http://oscarotero.com/embed2/demo
+
+If you like this project, consider to contribute:
+
+[![Support via Gittip](https://img.shields.io/gratipay/oscarotero.svg)](https://www.gratipay.com/oscarotero/)
 
 ## Usage
 
