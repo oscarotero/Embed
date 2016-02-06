@@ -13,8 +13,8 @@ EOT;
             [
                 'title' => 'Albert Einstein',
                 'description' => $description,
-                'imageWidth' => 3250,
-                'imageHeight' => 4333,
+                'imageWidth' => 3875,
+                'imageHeight' => 5593,
                 'type' => 'link',
                 'providerName' => 'Wikipedia',
                 'providerUrl' => 'https://wikipedia.org',
