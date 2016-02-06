@@ -6,17 +6,23 @@ class UtilsTest extends TestCaseBase
 {
     public function testSortByProvider()
     {
-        $val = [
-            [
+        $vals = [
+            2 => [
+                'value' => '2',
+                'providers' => ['html'],
+            ],
+            0 => [
+                'value' => '0',
+                'providers' => ['opengraph'],
+            ],
+            1 => [
                 'value' => '1',
                 'providers' => ['html'],
-            ],[
-                'value' => '2',
-                'providers' => ['opengraph'],
-            ],[
-                'value' => '2',
-                'providers' => ['html'],
-            ]
+            ],
         ];
+
+        $first = Utils::getFirstValue($vals);
+
+        $this->assertEquals(2, $first);
     }
 }
