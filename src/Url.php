@@ -521,11 +521,9 @@ class Url
 
         $file = substr(strrchr($path, '/'), 1);
 
-        if ($file !== '') {
+        if (strlen($file)) {
             $path = substr($path, 0, -strlen($file));
-        }
 
-        if ($file) {
             if (preg_match('/(.*)\.([\w]+)$/', $file, $match)) {
                 $this->info['file'] = $match[1];
                 $this->info['extension'] = $match[2];
