@@ -512,10 +512,10 @@ class Url
      */
     private function setPath($path)
     {
+        $this->info['path'] = $this->info['file'] = $this->info['extension'] = $this->info['content'] = null;
+
         if ($this->getScheme() === 'data') {
             $this->info['content'] = $path;
-            $this->info['path'] = $this->info['file'] = $this->info['extension'] = null;
-
             return;
         }
 
@@ -531,7 +531,6 @@ class Url
                 $this->info['extension'] = $match[2];
             } else {
                 $this->info['file'] = $file;
-                $this->info['extension'] = null;
             }
         }
 
