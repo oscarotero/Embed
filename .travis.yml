@@ -16,4 +16,4 @@ before_install:
   - composer install
 
 script:
-  - 'phpunit'
+  - 'phpunit tests/UrlTest.php'
