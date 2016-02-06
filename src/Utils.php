@@ -169,8 +169,10 @@ class Utils
      */
     public static function getFirstValue(array $values, $returnKey = false)
     {
-        if (isset($values[0])) {
-            return $returnKey ? 0 : $values[0]['value'];
+        $first = reset($values);
+
+        if (is_array($first)) {
+            return $returnKey ? key($values) : $first['value'];
         }
     }
 

@@ -51,7 +51,7 @@ class Curl implements ImageInfoInterface
         foreach ($images as $k => $image) {
             if (strpos($image['value'], 'data:') === 0) {
                 if ($info = static::getEmbeddedImageInfo($image['value'])) {
-                    $result[] = array_merge($image, $info);
+                    $result[$k] = array_merge($image, $info);
                 }
 
                 continue;
@@ -81,13 +81,15 @@ class Curl implements ImageInfoInterface
                 curl_multi_remove_handle($curl, $connection->getConnection());
 
                 if (($info = $connection->getInfo())) {
-                    $result[] = array_merge($images[$k], $info);
+                    $result[$k] = array_merge($images[$k], $info);
                 }
             }
         }
 
         finfo_close($finfo);
         curl_multi_close($curl);
+
+        ksort($result, SORT_NUMERIC);
 
         return $result;
     }
