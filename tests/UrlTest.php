@@ -8,7 +8,12 @@ class UrlTest extends TestCaseBase
             'http://vimeo.com//69912181?' => 'http://vimeo.com/69912181',
             'http://vimeo.com//69912181' => 'http://vimeo.com/69912181',
             'http://vimeo.com/69912181' => 'http://vimeo.com/69912181',
+            'http://vimeo.com/69912181/' => 'http://vimeo.com/69912181/',
             'https://www.tumblr.com/oembed/1.0' => 'https://www.tumblr.com/oembed/1.0',
+            'https://www.tumblr.com/oembed/1.0/' => 'https://www.tumblr.com/oembed/1.0/',
+            'https://www.tumblr.com/oembed//1.0//' => 'https://www.tumblr.com/oembed/1.0/',
+            'https://animoto.com/oembeds/create.xml?automated=true&options=start_hq' => 'https://animoto.com/oembeds/create.xml?automated=true&options=start_hq',
+            'http://static2.politico.com/dims4/default/28fb355/2147483647/resize/1160x%3E/quality/90/?url=http%3A%2F%2Fs3-origin-images.politico.com%2F2013%2F12%2F18%2F131218_george_w_bush_barack_obama_ap_60' => 'http://static2.politico.com/dims4/default/28fb355/2147483647/resize/1160x%3E/quality/90/?url=http%3A%2F%2Fs3-origin-images.politico.com%2F2013%2F12%2F18%2F131218_george_w_bush_barack_obama_ap_60'
         ];
 
         foreach ($urls as $url => $expected_url) {

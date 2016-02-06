@@ -519,31 +519,30 @@ class Url
             return;
         }
 
-        $parts = pathinfo($path);
+        $file = substr(strrchr($path, '/'), 1);
 
-        $this->info['path'] = [];
+        if ($file !== '') {
+            $path = substr($path, 0, -strlen($file));
+        }
 
-        if (isset($parts['dirname'])) {
-            foreach (explode('/', str_replace(DIRECTORY_SEPARATOR, '/', $parts['dirname'])) as $dir) {
-                $dir = trim(urldecode($dir));
-
-                if ($dir !== '') {
-                    $this->info['path'][] = $dir;
-                }
+        if ($file) {
+            if (preg_match('/(.*)\.([\w]+)$/', $file, $match)) {
+                $this->info['file'] = $match[1];
+                $this->info['extension'] = $match[2];
+            } else {
+                $this->info['file'] = $file;
+                $this->info['extension'] = null;
             }
         }
 
-        $this->info['file'] = isset($parts['filename']) ? $parts['filename'] : null;
-        $this->info['extension'] = isset($parts['extension']) ? $parts['extension'] : null;
-        $this->info['content'] = null;
+        $this->info['path'] = [];
 
-        // bugfix /wiki/Supernatural_(U.S._TV_series) is parsed as:
-        // path: /wiki/
-        // file: Supernatural_(U.S
-        // extension: _TV_series)
-        if (!empty($this->info['extension']) && !preg_match('/^\w+$/', $this->info['extension'])) {
-            $this->info['file'] .= '.'.$this->info['extension'];
-            $this->info['extension'] = null;
+        foreach (explode('/', $path) as $dir) {
+            $dir = trim(urldecode($dir));
+
+            if ($dir !== '') {
+                $this->info['path'][] = $dir;
+            }
         }
     }
 }
