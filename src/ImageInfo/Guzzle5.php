@@ -39,35 +39,37 @@ class Guzzle5 implements ImageInfoInterface
 
         // Build parallel requests
         $requests = [];
-        foreach ($urls as $url) {
+        foreach ($urls as $k => $url) {
             if (strpos($url['value'], 'data:') === 0) {
                 if ($info = static::getEmbeddedImageInfo($url['value'])) {
-                    $result[] = array_merge($url, $info);
+                    $result[$k] = array_merge($url, $info);
                 }
                 continue;
             }
 
-            $requests[] = $client->createRequest('GET', $url['value']);
+            $requests[$k] = $client->createRequest('GET', $url['value']);
         }
 
         // Execute in parallel
         $responses = Pool::batch($client, $requests);
 
         // Build result set
-        foreach ($responses as $i => $response) {
+        foreach ($responses as $k => $response) {
             if ($response instanceof RequestException) {
                 continue;
             }
 
             if (($size = getimagesizefromstring($response->getBody())) !== false) {
-                $result[] = [
+                $result[$k] = [
                     'width' => $size[0],
                     'height' => $size[1],
                     'size' => $size[0] * $size[1],
                     'mime' => $size['mime'],
-                ] + $urls[$i];
+                ] + $urls[$k];
             }
         }
+
+        ksort($result, SORT_NUMERIC);
 
         return $result;
     }
