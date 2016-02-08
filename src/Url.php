@@ -516,6 +516,7 @@ class Url
 
         if ($this->getScheme() === 'data') {
             $this->info['content'] = $path;
+
             return;
         }
 

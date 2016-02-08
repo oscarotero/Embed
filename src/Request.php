@@ -190,6 +190,8 @@ class Request extends Url
                 }
 
                 $errors = libxml_use_internal_errors(true);
+                $entities = libxml_disable_entity_loader(true);
+
                 $this->htmlContent = new \DOMDocument();
 
                 if ((mb_detect_encoding($content) === 'UTF-8') && mb_check_encoding($content, 'UTF-8')) {
@@ -198,7 +200,9 @@ class Request extends Url
                 }
 
                 $this->htmlContent->loadHTML($content);
+
                 libxml_use_internal_errors($errors);
+                libxml_disable_entity_loader($entities);
             } catch (\Exception $E) {
                 return $this->htmlContent = false;
             }

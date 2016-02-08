@@ -29,9 +29,9 @@ class Html extends Provider implements ProviderInterface
         self::extractFromLink($html, $this->bag);
         self::extractFromMeta($html, $this->bag);
 
-        $main = self::getMainElement($html);
-
-        self::extractImages($main, $this->bag, $this->request->getDomain());
+        if ($main = self::getMainElement($html)) {
+            self::extractImages($main, $this->bag, $this->request->getDomain());
+        }
 
         //Title
         $title = $html->getElementsByTagName('title');
