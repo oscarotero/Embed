@@ -436,8 +436,8 @@ class Url
      */
     protected function parseUrl($url)
     {
-        if (strpos($url, '//') === 0) {
-            $url = "http:$url";
+        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+            throw new Exceptions\InvalidUrlException("The url '{$url}' is not valid");
         }
 
         $this->info = parse_url($url);
