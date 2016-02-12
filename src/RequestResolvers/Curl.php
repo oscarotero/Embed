@@ -18,6 +18,7 @@ class Curl implements RequestResolverInterface
         CURLOPT_MAXREDIRS => 20,
         CURLOPT_CONNECTTIMEOUT => 10,
         CURLOPT_TIMEOUT => 10,
+        CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_ENCODING => '',
         CURLOPT_AUTOREFERER => true,
         CURLOPT_USERAGENT => 'Embed PHP Library',
