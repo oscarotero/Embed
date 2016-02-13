@@ -38,6 +38,9 @@ class Curl implements RequestResolverInterface
     {
         $this->url = $url;
 
+        var_dump(ini_get('open_basedir'));
+        var_dump(ini_get('safe_mode'));
+
         //http://stackoverflow.com/questions/14054652/getting-301-with-curl-despite-followlocation
         if (ini_get('open_basedir') !== '' && ini_get('safe_mode') === false) {
             $this->config[CURLOPT_SSL_VERIFYHOST] = false;
