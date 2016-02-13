@@ -9,6 +9,8 @@ class Url
 {
     protected $info;
 
+    public static $validate = false;
+
     /**
      * Constructor. Sets the url.
      *
@@ -436,7 +438,9 @@ class Url
      */
     protected function parseUrl($url)
     {
-        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+        // do not validate urls because some real urls fails.
+        // Example: http://jouey-.deviantart.com/art/market-153836478 fails.
+        if (self::$validate && substr($url, 0, 5) !== 'data:' && !filter_var($url, FILTER_VALIDATE_URL)) {
             throw new Exceptions\InvalidUrlException("The url '{$url}' is not valid");
         }
 
@@ -478,6 +482,8 @@ class Url
      */
     public function getAbsolute($url)
     {
+        $url = trim($url);
+
         if (empty($url)) {
             return '';
         }

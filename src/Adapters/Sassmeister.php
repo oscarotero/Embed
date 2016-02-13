@@ -24,6 +24,8 @@ class Sassmeister extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
+        $this->width = null;
+        $this->height = 480;
         $id = $this->request->getDirectoryPosition(1);
 
         return "<p class=\"sassmeister\" data-gist-id=\"{$id}\" data-height=\"480\" data-theme=\"tomorrow\">".

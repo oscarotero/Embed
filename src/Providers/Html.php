@@ -30,7 +30,7 @@ class Html extends Provider implements ProviderInterface
         self::extractFromMeta($html, $this->bag);
 
         if ($main = self::getMainElement($html)) {
-            self::extractImages($main, $this->bag, $this->request->getDomain());
+            $this->extractImages($main);
         }
 
         //Title
@@ -273,50 +273,42 @@ class Html extends Provider implements ProviderInterface
      * Extract <img> elements.
      *
      * @param \DOMElement $html
-     * @param Bag         $bag
-     * @param null|string $domain
      */
-    protected static function extractImages(\DOMElement $html, Bag $bag, $domain = null)
+    protected function extractImages(\DOMElement $html)
     {
+        $domain = $this->request->getDomain();
+
         foreach ($html->getElementsByTagName('img') as $img) {
             if ($img->hasAttribute('src')) {
-                $src = new Url($img->getAttribute('src'));
+                $src = $this->request->createUrl($img->getAttribute('src'));
 
-                //Is src relative?
-                if (!$src->getDomain()) {
-                    $bag->add('images', $src->getUrl());
+                //Avoid external images
+                if ($src->getContent() === null && $src->getDomain() !== $domain) {
                     continue;
                 }
 
-                //Avoid external images or in external links
-                if ($domain !== null) {
-                    if ($src->getDomain() !== $domain) {
-                        continue;
-                    }
+                $parent = $img->parentNode;
 
-                    $parent = $img->parentNode;
+                while ($parent && isset($parent->tagName)) {
+                    if ($parent->tagName === 'a') {
+                        if ($parent->hasAttribute('href')) {
+                            $href = $this->request->createUrl($parent->getAttribute('href'));
 
-                    while ($parent && isset($parent->tagName)) {
-                        if ($parent->tagName === 'a') {
-                            if ($parent->hasAttribute('href')) {
-                                $href = new Url($parent->getAttribute('href'));
-
-                                if ($href->getDomain() && $src->getDomain() !== $domain) {
-                                    continue 2;
-                                }
-                            }
-                            if ($parent->hasAttribute('rel') && (string) $parent->getAttribute('rel') === 'nofollow') {
+                            if ($href->getDomain() !== $domain) {
                                 continue 2;
                             }
-
-                            break;
+                        }
+                        if ($parent->hasAttribute('rel') && (string) $parent->getAttribute('rel') === 'nofollow') {
+                            continue 2;
                         }
 
-                        $parent = $parent->parentNode;
+                        break;
                     }
 
-                    $bag->add('images', $src->getUrl());
+                    $parent = $parent->parentNode;
                 }
+
+                $this->bag->add('images', $src->getUrl());
             }
         }
     }
