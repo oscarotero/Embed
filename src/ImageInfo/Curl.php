@@ -20,7 +20,7 @@ class Curl implements ImageInfoInterface
     protected $connection;
     protected $finfo;
     protected $mime;
-    protected $info;
+    protected $info = [];
     protected $content = '';
     protected $config = [
         CURLOPT_MAXREDIRS => 20,
@@ -114,6 +114,7 @@ class Curl implements ImageInfoInterface
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_URL => $url,
+            CURLOPT_HEADERFUNCTION => [$this, 'writeHeaderCallback'],
             CURLOPT_WRITEFUNCTION => [$this, 'writeCallback'],
         ] + $this->config);
     }
@@ -164,7 +165,7 @@ class Curl implements ImageInfoInterface
             return strlen($string);
         }
 
-        $this->info = [
+        $this->info += [
             'width' => $info[0],
             'height' => $info[1],
             'size' => $info[0] * $info[1],
@@ -172,5 +173,30 @@ class Curl implements ImageInfoInterface
         ];
 
         return -1;
+    }
+
+    /**
+     * Callback used to get some information about the file requested
+     *
+     * @param resource $connection
+     * @param string   $string
+     *
+     * return integer
+     */
+    public function writeHeaderCallback($connection, $string)
+    {
+        if (strpos($string, ':')) {
+            list($name, $value) = array_map('trim', explode(':', $string, 2));
+            switch (strtolower($name)) {
+                case 'content-length':
+                    $this->info += ['weight' => (int)$value];
+                    break;
+                case 'last-modified':
+                    $this->info += ['date' => $value];
+                    break;
+            }
+        }
+
+        return strlen($string);
     }
 }
