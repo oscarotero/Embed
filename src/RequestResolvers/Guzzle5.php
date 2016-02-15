@@ -21,6 +21,8 @@ class Guzzle5 implements RequestResolverInterface
      */
     protected $response;
 
+    protected $error;
+
     protected $defaultConfig = [
         'verify' => false,
         'timeout' => 10,
@@ -50,49 +52,55 @@ class Guzzle5 implements RequestResolverInterface
     }
 
     /**
-     * Get the http code of the url, for example: 200.
-     *
-     * @return int The http code
+     * {@inheritdoc}
      */
     public function getHttpCode()
     {
-        return $this->getResponse()->getStatusCode();
+        $response = $this->getResponse();
+
+        return $response ? $response->getStatusCode() : null;
     }
 
     /**
-     * Get the content-type of the url, for example: text/html.
-     *
-     * @return string The content-type header or null
+     * {@inheritdoc}
      */
     public function getMimeType()
     {
-        return $this->getResponse()->getHeader('Content-Type');
+        $response = $this->getResponse();
+
+        return $response ? $response->getHeader('Content-Type') : null;
     }
 
     /**
-     * Get the content of the url.
-     *
-     * @return string The content or false
+     * {@inheritdoc}
+     */
+    public function getError()
+    {
+        return $error;
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function getContent()
     {
-        return $this->getResponse()->getBody()->getContents();
+        $response = $this->getResponse();
+
+        return $response ? $response->getBody()->getContents() : null;
     }
 
     /**
-     * Return the final url (after all possible redirects).
-     *
-     * @return string The final url
+     * {@inheritdoc}
      */
     public function getUrl()
     {
-        return $this->getResponse()->getEffectiveUrl();
+        $response = $this->getResponse();
+
+        return $response ? $response->getEffectiveUrl() : null;
     }
 
     /**
-     * Return the http request info (for debug purposes).
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getRequestInfo()
     {
@@ -100,14 +108,17 @@ class Guzzle5 implements RequestResolverInterface
     }
 
     /**
-     * Get the result of the http request.
-     *
-     * @return Response
+     * {@inheritdoc}
      */
     protected function getResponse()
     {
         if ($this->response === null) {
-            $this->response = $this->client->send($this->request);
+            try {
+                $this->response = $this->client->send($this->request);
+            } catch (\Exception $exception) {
+                $error = $exception->getMessage();
+                $this->response = false;
+            }
         }
 
         return $this->response;

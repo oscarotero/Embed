@@ -173,6 +173,16 @@ class Request extends Url
     }
 
     /**
+     * Get the connection error.
+     *
+     * @return string|null
+     */
+    public function getError()
+    {
+        return $this->getResolver()->getError();
+    }
+
+    /**
      * Get the content of the url.
      *
      * @return string|false The content or false

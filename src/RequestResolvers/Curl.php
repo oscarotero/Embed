@@ -18,6 +18,7 @@ class Curl implements RequestResolverInterface
         CURLOPT_MAXREDIRS => 20,
         CURLOPT_CONNECTTIMEOUT => 10,
         CURLOPT_TIMEOUT => 10,
+        CURLOPT_SSL_VERIFYHOST => false,
         CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_ENCODING => '',
         CURLOPT_AUTOREFERER => true,
@@ -37,14 +38,6 @@ class Curl implements RequestResolverInterface
     public function __construct($url, array $config)
     {
         $this->url = $url;
-
-        var_dump(ini_get('open_basedir'));
-        var_dump(ini_get('safe_mode'));
-
-        //http://stackoverflow.com/questions/14054652/getting-301-with-curl-despite-followlocation
-        if (ini_get('open_basedir') !== '' && ini_get('safe_mode') === false) {
-            $this->config[CURLOPT_SSL_VERIFYHOST] = false;
-        }
 
         $this->config = $config + $this->config;
     }
@@ -71,6 +64,14 @@ class Curl implements RequestResolverInterface
     public function getMimeType()
     {
         return $this->getResult('mime_type');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getError()
+    {
+        return $this->getResult('error');
     }
 
     /**

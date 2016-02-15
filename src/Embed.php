@@ -45,11 +45,13 @@ class Embed
             return $info;
         }
 
-        if (!$request->isValid()) {
-            throw new Exceptions\InvalidUrlException("The url '{$request->getUrl()}' returns the http code '{$request->getHttpCode()}'");
+        $error = $request->getError();
+
+        if (empty($error)) {
+            throw new Exceptions\InvalidUrlException(sprintf("The url '%s' returns the http code %s", $request->getUrl(), $request->getHttpCode()));
         }
 
-        throw new Exceptions\InvalidUrlException("The url '{$request->getUrl()}' is not supported");
+        throw new Exceptions\InvalidUrlException(sprintf("The url '%s' returns the following error: %s", $request->getUrl(), $error));
     }
 
     /**

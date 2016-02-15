@@ -30,6 +30,13 @@ interface RequestResolverInterface
     public function getMimeType();
 
     /**
+     * Returns the connection error if exists
+     *
+     * @return string|null
+     */
+    public function getError();
+
+    /**
      * Get the content of the url.
      *
      * @return string The content or false
