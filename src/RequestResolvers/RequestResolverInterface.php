@@ -30,7 +30,7 @@ interface RequestResolverInterface
     public function getMimeType();
 
     /**
-     * Returns the connection error if exists
+     * Returns the connection error if exists.
      *
      * @return string|null
      */
