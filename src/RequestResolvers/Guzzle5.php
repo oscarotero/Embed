@@ -17,7 +17,7 @@ class Guzzle5 implements RequestResolverInterface
     protected $request;
 
     /**
-     * @var \GuzzleHttp\Response
+     * @var \GuzzleHttp\Response|false
      */
     protected $response;
 
@@ -76,7 +76,7 @@ class Guzzle5 implements RequestResolverInterface
      */
     public function getError()
     {
-        return $error;
+        return $this->error;
     }
 
     /**
@@ -116,7 +116,7 @@ class Guzzle5 implements RequestResolverInterface
             try {
                 $this->response = $this->client->send($this->request);
             } catch (\Exception $exception) {
-                $error = $exception->getMessage();
+                $this->error = $exception->getMessage();
                 $this->response = false;
             }
         }

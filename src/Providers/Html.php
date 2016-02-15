@@ -2,7 +2,6 @@
 
 namespace Embed\Providers;
 
-use Embed\Url;
 use Embed\Bag;
 use Embed\Utils;
 
