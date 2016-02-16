@@ -26,7 +26,7 @@ class TwitterCards extends Provider implements ProviderInterface
             if (strpos($name, 'twitter:') === 0) {
                 $name = substr($name, 8);
 
-                if ($name === 'image') {
+                if ($name === 'image' || $name === 'image:src') {
                     $this->bag->add('images', $value);
                 } else {
                     $this->bag->set($name, $value);
