@@ -542,7 +542,7 @@ class Url
         $this->info['path'] = [];
 
         foreach (explode('/', $path) as $dir) {
-            $dir = trim(urldecode($dir));
+            $dir = urldecode($dir);
 
             if ($dir !== '') {
                 $this->info['path'][] = $dir;
