@@ -215,7 +215,7 @@ class Request extends Url
                     $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $content);
                 }
 
-                $this->htmlContent->loadHTML($content);
+                $this->htmlContent->loadHTML(trim($content));
 
                 libxml_use_internal_errors($errors);
                 libxml_disable_entity_loader($entities);
