@@ -20,6 +20,7 @@ class Google extends Webpage implements AdapterInterface
             'https://maps.google.*',
             'https://www.google.*/maps*',
             'https://drive.google.com/file/*/view',
+            'https://plus.google.com/*/posts/*',
         ]);
     }
 
@@ -43,6 +44,11 @@ class Google extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = null;
 
+        if ($this->request->getHost() === 'plus.google.com') {
+            return '<script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script>'
+                .'<div class="g-post" data-href="'.$this->request->getUrl().'"></div>';
+        }
+
         if (($google = $this->getProvider('google'))) {
             return $google->getCode();
         }
@@ -60,5 +66,17 @@ class Google extends Webpage implements AdapterInterface
     public function getImagesUrls()
     {
         return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProviderName()
+    {
+        if ($this->request->getHost() === 'plus.google.com') {
+            return 'Google Plus';
+        }
+        
+        return parent::getProviderName();
     }
 }
