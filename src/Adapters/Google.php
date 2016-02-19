@@ -76,7 +76,7 @@ class Google extends Webpage implements AdapterInterface
         if ($this->request->getHost() === 'plus.google.com') {
             return 'Google Plus';
         }
-        
+
         return parent::getProviderName();
     }
 }
