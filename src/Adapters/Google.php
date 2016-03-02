@@ -65,6 +65,10 @@ class Google extends Webpage implements AdapterInterface
      */
     public function getImagesUrls()
     {
+        if ($this->request->getHost() === 'plus.google.com') {
+            return parent::getImagesUrls();
+        }
+
         return [];
     }
 
