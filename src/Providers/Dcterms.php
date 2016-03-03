@@ -51,7 +51,7 @@ class Dcterms extends Provider implements ProviderInterface
      */
     public function getAuthorName()
     {
-        if ($this->bag->get('creator'))
+        if (!empty($this->bag->get('creator')))
             return $this->bag->get('creator');
         return $this->bag->get('author');    
     }
