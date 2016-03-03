@@ -46,6 +46,7 @@ abstract class Adapter
 
     protected $imageClass = 'Embed\\ImageInfo\\Curl';
     protected $imageConfig;
+    protected $imageRequests = [];
 
     protected $config = [
         'minImageWidth' => 16,
@@ -112,6 +113,14 @@ abstract class Adapter
     public function getRequest()
     {
         return $this->request;
+    }
+
+    /**
+     * Returns all images Requests
+     */
+    public function getImagesRequests()
+    {
+        return $this->imageRequests;
     }
 
     /**
@@ -303,7 +312,9 @@ abstract class Adapter
      */
     public function getProviderIcons()
     {
-        return call_user_func("{$this->imageClass}::getImagesInfo", $this->getProviderIconsUrls(), $this->imageConfig);
+        $fn = "{$this->imageClass}::getImagesInfo";
+
+        return $fn($this->getProviderIconsUrls(), $this->imageConfig, $this->imageRequests);
     }
 
     /**
@@ -369,7 +380,9 @@ abstract class Adapter
      */
     public function getImages()
     {
-        return call_user_func("{$this->imageClass}::getImagesInfo", $this->getImagesUrls(), $this->imageConfig);
+        $fn = "{$this->imageClass}::getImagesInfo";
+
+        return $fn($this->getImagesUrls(), $this->imageConfig, $this->imageRequests);
     }
 
     /**

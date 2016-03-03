@@ -163,6 +163,31 @@ class Request extends Url
     }
 
     /**
+     * Get all headers
+     *
+     * @return array
+     */
+    public function getHeaders()
+    {
+        return $this->getResolver()->getHeaders();
+    }
+
+    /**
+     * Get a header
+     * 
+     * @param string $name
+     *
+     * @return string|null
+     */
+    public function getHeader($name)
+    {
+        $headers = $this->getHeaders();
+        $name = strtolower($name);
+
+        return isset($headers[$name]) ? implode(',', $headers[$name]) : null;
+    }
+
+    /**
      * Get the content-type of the url.
      *
      * @return string|null The content-type header or null

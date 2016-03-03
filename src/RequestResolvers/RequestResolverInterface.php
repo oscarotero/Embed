@@ -44,16 +44,23 @@ interface RequestResolverInterface
     public function getContent();
 
     /**
-     * Return the final url (after all possible redirects).
+     * Returns the final url (after all possible redirects).
      *
      * @return string The final url
      */
     public function getUrl();
 
     /**
-     * Return the http request info (for debug purposes).
+     * Returns the http request info (for debug purposes).
      *
      * @return array
      */
     public function getRequestInfo();
+
+    /**
+     * Returns the http headers.
+     *
+     * @return array
+     */
+    public function getHeaders();
 }

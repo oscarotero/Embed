@@ -64,6 +64,17 @@ function printArray($array)
     }
 }
 
+function printHeaders($array)
+{
+    $headers = [];
+
+    foreach ($array as $name => $values) {
+        $headers[$name] = implode(', ', $values);
+    }
+
+    printArray($headers);
+}
+
 function printCode($code, $asHtml = true)
 {
     if ($asHtml) {
@@ -211,6 +222,21 @@ $adapterData = [
                     <tr>
                         <th><?php echo $name; ?></th>
                         <td><?php printAny($value); ?></td>
+                    </tr>
+                    <?php endforeach ?>
+                    <tr>
+                        <th>headers</th>
+                        <td><?php printHeaders($info->getRequest()->getHeaders()); ?></td>
+                    </tr>
+                </table>
+
+                <h2>Http request images headers</h2>
+
+                <table>
+                    <?php foreach ($info->getImagesRequests() as $url => $request): ?>
+                    <tr>
+                        <th><?php echo $request->getUrl(); ?></th>
+                        <td><?php printHeaders($request->getHeaders()); ?></td>
                     </tr>
                     <?php endforeach ?>
                 </table>

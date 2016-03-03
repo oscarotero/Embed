@@ -74,6 +74,16 @@ class Guzzle5 implements RequestResolverInterface
     /**
      * {@inheritdoc}
      */
+    public function getHeaders()
+    {
+        $response = $this->getResponse();
+
+        return $response->getHeaders();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getError()
     {
         return $this->error;

@@ -12,8 +12,23 @@ interface ImageInfoInterface
      *
      * @param array      $urls
      * @param null|array $config
+     * @param array      &$connections
      *
      * @return array
      */
-    public static function getImagesInfo(array $urls, array $config = null);
+    public static function getImagesInfo(array $urls, array $config = null, array &$connections = []);
+
+    /**
+     * Returns the headers
+     * 
+     * @return array
+     */
+    public function getHeaders();
+
+    /**
+     * Returns the url
+     * 
+     * @return string
+     */
+    public function getUrl();
 }

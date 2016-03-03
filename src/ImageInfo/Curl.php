@@ -18,10 +18,12 @@ class Curl implements ImageInfoInterface
     ];
 
     protected $connection;
+    protected $url;
     protected $finfo;
     protected $mime;
     protected $info;
     protected $content = '';
+    protected $headers = [];
     protected $config = [
         CURLOPT_MAXREDIRS => 20,
         CURLOPT_CONNECTTIMEOUT => 10,
@@ -37,14 +39,13 @@ class Curl implements ImageInfoInterface
     /**
      * {@inheritdoc}
      */
-    public static function getImagesInfo(array $images, array $config = null)
+    public static function getImagesInfo(array $images, array $config = null, array &$connections = [])
     {
         if (empty($images)) {
             return [];
         }
 
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $connections = [];
         $curl = curl_multi_init();
         $result = [];
 
@@ -104,6 +105,7 @@ class Curl implements ImageInfoInterface
     public function __construct($url, $finfo, array $config = null)
     {
         $this->finfo = $finfo;
+        $this->url = $url;
         $this->connection = curl_init();
 
         if ($config) {
@@ -114,6 +116,7 @@ class Curl implements ImageInfoInterface
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_URL => $url,
+            CURLOPT_HEADERFUNCTION => [$this, 'headerCallback'],
             CURLOPT_WRITEFUNCTION => [$this, 'writeCallback'],
         ] + $this->config);
     }
@@ -136,6 +139,47 @@ class Curl implements ImageInfoInterface
     public function getInfo()
     {
         return $this->info;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHeaders()
+    {
+        return $this->headers;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Callback used to save the headers
+     * 
+     * @param resource $connection
+     * @param string $string
+     * 
+     * @return int
+     */
+    public function headerCallback($connection, $string)
+    {
+        if (strpos($string, ':')) {
+            list($name, $value) = array_map('trim', explode(':', $string, 2));
+
+            $name = strtolower($name);
+
+            if (!isset($this->headers[$name])) {
+                $this->headers[$name] = [];
+            }
+
+            $this->headers[$name][] = $value;
+        }
+
+        return strlen($string);
     }
 
     /**
