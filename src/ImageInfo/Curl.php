@@ -39,9 +39,9 @@ class Curl implements ImageInfoInterface
     /**
      * {@inheritdoc}
      */
-    public static function getImagesInfo(array $images, array $config = null, array &$connections = [])
+    public static function getImagesInfo(array $urls, array $config = null, array &$connections = [])
     {
-        if (empty($images)) {
+        if (empty($urls)) {
             return [];
         }
 
@@ -49,16 +49,16 @@ class Curl implements ImageInfoInterface
         $curl = curl_multi_init();
         $result = [];
 
-        foreach ($images as $k => $image) {
-            if (strpos($image['value'], 'data:') === 0) {
-                if ($info = static::getEmbeddedImageInfo($image['value'])) {
-                    $result[$k] = array_merge($image, $info);
+        foreach ($urls as $k => $url) {
+            if (strpos($url['value'], 'data:') === 0) {
+                if ($info = static::getEmbeddedImageInfo($url['value'])) {
+                    $result[$k] = array_merge($url, $info);
                 }
 
                 continue;
             }
 
-            $connections[$k] = new static($image['value'], $finfo, $config);
+            $connections[$k] = new static($url['value'], $finfo, $config);
 
             curl_multi_add_handle($curl, $connections[$k]->getConnection());
         }
@@ -82,7 +82,7 @@ class Curl implements ImageInfoInterface
                 curl_multi_remove_handle($curl, $connection->getConnection());
 
                 if (($info = $connection->getInfo())) {
-                    $result[$k] = array_merge($images[$k], $info);
+                    $result[$k] = array_merge($urls[$k], $info);
                 }
             }
         }

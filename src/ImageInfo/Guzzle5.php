@@ -14,6 +14,8 @@ class Guzzle5 implements ImageInfoInterface
 {
     use UtilsTrait;
 
+    protected $response;
+
     protected static $config = [
         'verify' => false,
         'timeout' => 10,
@@ -64,7 +66,7 @@ class Guzzle5 implements ImageInfoInterface
             $connections[$k] = $connection;
 
             if (($info = $connection->getInfo())) {
-                $result[$k] = array_merge($images[$k], $urls[$k]);
+                $result[$k] = array_merge($urls[$k], $info);
             }
         }
 
@@ -73,7 +75,7 @@ class Guzzle5 implements ImageInfoInterface
         return $result;
     }
 
-    public function __contruct(Response $response)
+    public function __construct(Response $response)
     {
         $this->response = $response;
     }

@@ -116,7 +116,7 @@ abstract class Adapter
     }
 
     /**
-     * Returns all images Requests
+     * {@inheritdoc}
      */
     public function getImagesRequests()
     {
