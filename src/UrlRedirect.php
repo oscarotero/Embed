@@ -11,6 +11,7 @@ class UrlRedirect
         'google' => 'https?://www.google.com/url*',
         'googleTranslator' => 'https?://translate.google.com/translate*',
         'hashBang' => '*#!*',
+        'spotify' => 'https://play.spotify.com/*',
     ];
 
     /**
@@ -79,5 +80,17 @@ class UrlRedirect
         }
 
         return $url->getUrl();
+    }
+
+    /**
+     * Redirect the player of spotify.
+     *
+     * @param Url $url
+     *
+     * @return string
+     */
+    protected static function spotify(Url $url)
+    {
+        return $url->withHost('open.spotify.com')->getUrl();
     }
 }
