@@ -69,21 +69,9 @@ class Html extends Provider implements ProviderInterface
      */
     public function getTags()
     {
-        if (!$this->bag->has('keywords')) {
-            return [];
-        }
+        $keywords = $this->bag->get('keywords').','.$this->bag->get('news_keywords');
 
-        $keywords = $this->bag->get('keywords');
-
-        //some sites, contains the keywords separated by commas
-        if (strpos($keywords, ',')) {
-            $keywords = explode(',', $keywords);
-        //and others by spaces (ex: youtube)
-        } else {
-            $keywords = explode(' ', $keywords);
-        }
-
-        return array_filter(array_map('trim', $keywords));
+        return array_filter(array_map('trim', explode(',', $keywords)));
     }
 
     /**
