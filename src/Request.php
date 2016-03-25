@@ -82,6 +82,16 @@ class Request extends Url
     }
 
     /**
+     * Returns the starting url
+     * 
+     * @return Url
+     */
+    public function getStartingUrl()
+    {
+        return $this->startingUrl;
+    }
+
+    /**
      * Creates and returns an Url clone.
      * 
      * @param string|null $url
