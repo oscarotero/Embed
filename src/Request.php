@@ -82,7 +82,7 @@ class Request extends Url
     }
 
     /**
-     * Returns the starting url
+     * Returns the starting url.
      * 
      * @return Url
      */

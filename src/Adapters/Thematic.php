@@ -3,11 +3,10 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Providers;
 use Embed\Utils;
 
 /**
- * Adapter to provide information from thematic
+ * Adapter to provide information from thematic.
  */
 class Thematic extends Webpage implements AdapterInterface
 {
