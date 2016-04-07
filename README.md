@@ -63,15 +63,16 @@ $info->width; //The width of the embed code
 $info->height; //The height of the embed code
 $info->aspectRatio; //The aspect ratio (width/height)
 
-$info->authorName; //The (video/article/image/whatever) author 
+$info->authorName; //The resource author 
 $info->authorUrl; //The author url
 
-$info->providerName; //The provider name of the page (youtube, twitter, instagram, etc)
+$info->providerName; //The provider name of the page (Youtube, Twitter, Instagram, etc)
 $info->providerUrl; //The provider url
 $info->providerIcons; //All provider icons found in the page
 $info->providerIcon; //The icon choosen as main icon
 
-$info->publishedDate; //The (video/article/image/whatever) published date
+$info->publishedDate; //The published date of the resource
+$info->license; //The license url of the resource
 ```
 
 ## Customization
