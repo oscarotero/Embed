@@ -470,4 +470,12 @@ abstract class Adapter
     {
         return Utils::getFirstValue(Utils::getData($this->providers, 'publishedTime'));
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLicense()
+    {
+        return Utils::getFirstValue(Utils::getData($this->providers, 'license', $this->request));
+    }
 }

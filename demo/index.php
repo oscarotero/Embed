@@ -103,6 +103,7 @@ $providerData = [
     'providerName' => 'printText',
     'providerUrl' => 'printUrl',
     'publishedTime' => 'printText',
+    'license' => 'printUrl',
 ];
 
 $adapterData = [
@@ -127,6 +128,7 @@ $adapterData = [
     'providerName' => 'printText',
     'providerUrl' => 'printUrl',
     'publishedTime' => 'printText',
+    'license' => 'printUrl',
 ];
 ?>
 

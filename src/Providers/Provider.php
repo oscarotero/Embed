@@ -141,4 +141,11 @@ abstract class Provider
     public function getPublishedTime()
     {
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLicense()
+    {
+    }
 }

@@ -209,6 +209,14 @@ class OEmbed extends Provider implements ProviderInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getLicense()
+    {
+        return $this->bag->get('license_url');
+    }
+
+    /**
      * Extract oembed information from the <link rel="alternate"> elements
      * Note: Some sites use <meta rel="alternate"> instead.
      *

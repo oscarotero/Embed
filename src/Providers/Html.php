@@ -174,6 +174,14 @@ class Html extends Provider implements ProviderInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getLicense()
+    {
+        return $this->bag->get('copyright');
+    }
+
+    /**
      * Extract information from the <link> elements.
      *
      * @param \DOMDocument $html
