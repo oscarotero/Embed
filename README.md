@@ -129,6 +129,7 @@ Used to get data from oembed api if it's available. It accepts two options:
 Used to get data directly from the html code of the page:
 
 * maxImages (int): Max number of images fetched from the html code (searching for the `<img>` elements). By default is -1 (no limit). Use 0 to no get images.
+* externalImages (bool|array): By default is false, this means that images located in other domains are not allowed. You can set true (allow all) or provide an array of url patterns.
 
 #### facebook
 
