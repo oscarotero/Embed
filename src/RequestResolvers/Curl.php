@@ -171,6 +171,10 @@ class Curl implements RequestResolverInterface
 
         curl_close($connection);
 
+        if (is_file(self::$tmpCookies)) {
+            unlink(self::$tmpCookies);
+        }
+
         if (($content_type = $this->getResult('content_type'))) {
             if (strpos($content_type, ';') !== false) {
                 list($mimeType, $charset) = explode(';', $content_type);
