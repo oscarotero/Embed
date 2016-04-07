@@ -34,21 +34,6 @@ class SoundcloudTest extends TestCaseBase
     public function testThree()
     {
         $this->assertEmbed(
-            'https://soundcloud.com/calumfoad/sets/flaws-ep-stream',
-            [
-                'title' => 'Flaws EP by Calum Foad',
-                'description' => '20 year old singer/songwriter from Reading.',
-                'type' => 'rich',
-                'code' => '<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F46025307&show_artwork=true"></iframe>',
-                'providerName' => 'SoundCloud',
-                'providerUrl' => 'https://soundcloud.com',
-            ]
-        );
-    }
-
-    public function testFour()
-    {
-        $this->assertEmbed(
             'https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup',
             [
                 'title' => 'LOWE CT Cape Times - World Cup by iDidTht.com',

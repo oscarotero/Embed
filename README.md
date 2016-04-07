@@ -23,18 +23,27 @@ If you need PHP 5.3 support, use the 1.x version (but not maintained anymore)
 
 http://oscarotero.com/embed2/demo
 
-If you like this project, consider to contribute:
+## Installation
 
-[![Support via Gittip](https://img.shields.io/gratipay/oscarotero.svg)](https://www.gratipay.com/oscarotero/)
+This package is installable and autoloadable via Composer as [embed/embed](https://packagist.org/packages/embed/embed).
+
+```
+$ composer require embed/embed
+```
+
+If you don't use composer, you have to download the package and include the autoloader:
+
+```php
+include('Embed/src/autoloader.php');
+```
 
 ## Usage
 
 ```php
-//Load library (if you don't have composer or any psr-4 compatible loader):
-include('src/autoloader.php');
+use Embed\Embed;
 
 //Load any url:
-$info = Embed\Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
+$info = Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
 
 //Get content info
 
@@ -104,7 +113,7 @@ $config = [
 
 ### The providers
 
-The providers get the data from different sources. Each source has it's own provider. For example, there is a provider for open graph, other for twitter cards, for oembed, html, etc. The providers that receive options are:
+The providers get the data from different sources. Each source has it's own provider. For example, there is a provider for opengraph, other for twitter cards, for oembed, html, etc. The providers that receive options are:
 
 #### oembed
 
@@ -228,10 +237,12 @@ $config = [
 [You can see here](https://github.com/oscarotero/Embed/tree/master/src/ImageInfo) the ImageInfo implementations included.
 
 
-### Configuration example
+### Full configuration example
 
 
 ```php
+use Embed\Embed;
+
 $config = [
     'adapter' => [
         'config' => [
@@ -266,11 +277,14 @@ $config = [
         'class' => 'App\\MyImageInfoClass'
     ]
 ];
+
+//To use it:
+$info = Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', $config);
 ```
 
 ### Access to more data
 
-As said before, the adapter get the data from all providers and choose the best values. But you can get the data directly from the providers, useful if you want to get the specific value returned by any provider.
+As said before, the adapter get the data from all providers and choose the best values. But you can get the data returned by a specific provider:
 
 ```php
 use Embed\Embed;
