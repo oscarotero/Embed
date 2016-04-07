@@ -301,3 +301,26 @@ echo $oembed->getTitle();
 //Get any value returned by oembed api
 echo $oembed->bag->get('author_name');
 ```
+
+In versions >= 2.7, you can access also to the data returned by the requests:
+
+```php
+use Embed\Embed;
+
+//Get the info
+$info = Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
+
+//Get the request instance
+$request = $info->getRequest();
+
+//Get the info returned by curl
+$request->getRequestInfo();
+
+//Get all http headers
+$request->getHeaders();
+
+//Get all images requests
+foreach ($info->getImagesRequests() as $url => $request) {
+    $request->getHeaders();
+}
+```
