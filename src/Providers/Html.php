@@ -4,6 +4,7 @@ namespace Embed\Providers;
 
 use Embed\Bag;
 use Embed\Utils;
+use Embed\Url;
 
 /**
  * Generic html provider.
@@ -14,6 +15,7 @@ class Html extends Provider implements ProviderInterface
 {
     protected $config = [
         'maxImages' => -1,
+        'externalImages' => false
     ];
 
     /**
@@ -271,28 +273,30 @@ class Html extends Provider implements ProviderInterface
      */
     protected function extractImages(\DOMElement $html)
     {
-        $domain = $this->request->getDomain();
-
         foreach ($html->getElementsByTagName('img') as $img) {
             if ($img->hasAttribute('src')) {
                 $src = $this->request->createUrl($img->getAttribute('src'));
 
                 //Avoid external images
-                if ($src->getContent() === null && $src->getDomain() !== $domain) {
+                if (!$this->imageIsValid($src)) {
                     continue;
                 }
 
                 $parent = $img->parentNode;
 
+                //The image is in a link
                 while ($parent && isset($parent->tagName)) {
                     if ($parent->tagName === 'a') {
+                        //The link is external
                         if ($parent->hasAttribute('href')) {
                             $href = $this->request->createUrl($parent->getAttribute('href'));
 
-                            if ($href->getDomain() !== $domain) {
+                            if (!$this->imageIsValid($href)) {
                                 continue 2;
                             }
                         }
+
+                        //The link has rel=nofollow
                         if ($parent->hasAttribute('rel') && (string) $parent->getAttribute('rel') === 'nofollow') {
                             continue 2;
                         }
@@ -306,6 +310,23 @@ class Html extends Provider implements ProviderInterface
                 $this->bag->add('images', $src->getUrl());
             }
         }
+    }
+
+    /**
+     * Check whether a image url is valid or not
+     * 
+     * @param Url $url
+     * 
+     * return bool
+     */
+    protected function imageIsValid(Url $url)
+    {
+        //base64 or same domain
+        if ($url->getContent() !== null || $url->getDomain() === $this->request->getDomain()) {
+            return true;
+        }
+
+        return is_bool($this->config['externalImages']) ? $this->config['externalImages'] : $url->match($this->config['externalImages']);
     }
 
     /**
