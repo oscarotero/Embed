@@ -12,31 +12,29 @@ class ImageInfoTest extends TestCaseBase
 
     public function testCurl()
     {
-        $info = Embed\ImageInfo\Curl::getImagesInfo([[
-            'value' => self::TEST_IMAGE_URL,
-        ]]);
+        $info = Embed\ImageInfo\Curl::getImagesInfo([
+            ['value' => self::TEST_IMAGE_URL],
+        ]);
 
-        $this->assertEquals($info[0], [
+        $this->assertEquals($info[0]->getInfo(), [
             'width' => self::TEST_IMAGE_WIDTH,
             'height' => self::TEST_IMAGE_HEIGHT,
             'size' => self::TEST_IMAGE_SIZE,
             'mime' => self::TEST_IMAGE_MIME,
-            'value' => self::TEST_IMAGE_URL,
         ]);
     }
 
     public function testGuzzle()
     {
-        $info = Embed\ImageInfo\Guzzle5::getImagesInfo([[
-            'value' => self::TEST_IMAGE_URL,
-        ]]);
+        $info = Embed\ImageInfo\Guzzle5::getImagesInfo([
+            ['value' => self::TEST_IMAGE_URL],
+        ]);
 
-        $this->assertEquals($info[0], [
+        $this->assertEquals($info[0]->getInfo(), [
             'width' => self::TEST_IMAGE_WIDTH,
             'height' => self::TEST_IMAGE_HEIGHT,
             'size' => self::TEST_IMAGE_SIZE,
             'mime' => self::TEST_IMAGE_MIME,
-            'value' => self::TEST_IMAGE_URL,
         ]);
     }
 
@@ -48,23 +46,6 @@ class ImageInfoTest extends TestCaseBase
                     'minImageWidth' => 0,
                     'minImageHeight' => 0,
                 ],
-            ],
-        ]);
-
-        $this->assertEquals($info->image, self::TEST_IMAGE_BASE64_IMAGE);
-    }
-
-    public function testBase64ImagesGuzzle()
-    {
-        $info = Embed\Embed::create(self::TEST_IMAGE_BASE64_URL, [
-            'adapter' => [
-                'config' => [
-                    'minImageWidth' => 0,
-                    'minImageHeight' => 0,
-                ],
-            ],
-            'image' => [
-                'class' => 'Embed\ImageInfo\Guzzle5',
             ],
         ]);
 
