@@ -173,7 +173,7 @@ class Request extends Url
     }
 
     /**
-     * Get all headers
+     * Get all headers.
      *
      * @return array
      */
@@ -183,7 +183,7 @@ class Request extends Url
     }
 
     /**
-     * Get a header
+     * Get a header.
      * 
      * @param string $name
      *

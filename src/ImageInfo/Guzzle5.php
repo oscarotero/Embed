@@ -10,10 +10,8 @@ use GuzzleHttp\Message\Response;
 /**
  * Class to retrieve the size and mimetype of images using Guzzle5.
  */
-class Guzzle5 implements ImageInfoInterface
+class Guzzle5 implements ImageInfoInterface, ImagesInfoInterface
 {
-    use UtilsTrait;
-
     protected $response;
 
     protected static $config = [
@@ -32,21 +30,20 @@ class Guzzle5 implements ImageInfoInterface
     /**
      * {@inheritdoc}
      */
-    public static function getImagesInfo(array $urls, array $config = null, array &$connections = [])
+    public static function getImagesInfo(array $urls, array $config = null)
     {
         $client = isset($config['client']) ? $config['client'] : new Client([
             'defaults' => static::$config,
         ]);
 
+        $requests = [];
         $result = [];
 
         // Build parallel requests
         $requests = [];
         foreach ($urls as $k => $url) {
             if (strpos($url['value'], 'data:') === 0) {
-                if ($info = static::getEmbeddedImageInfo($url['value'])) {
-                    $result[$k] = array_merge($url, $info);
-                }
+                $result[$k] = new EmbeddedImage($url['value']);
                 continue;
             }
 
@@ -62,15 +59,8 @@ class Guzzle5 implements ImageInfoInterface
                 continue;
             }
 
-            $connection = new static($response);
-            $connections[$k] = $connection;
-
-            if (($info = $connection->getInfo())) {
-                $result[$k] = array_merge($urls[$k], $info);
-            }
+            $result[$k] = new static($response);
         }
-
-        ksort($result, SORT_NUMERIC);
 
         return $result;
     }
@@ -96,6 +86,9 @@ class Guzzle5 implements ImageInfoInterface
         $this->response->getEffectiveUrl();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getInfo()
     {
         if (($size = getimagesizefromstring($this->response->getBody())) !== false) {
@@ -106,5 +99,7 @@ class Guzzle5 implements ImageInfoInterface
                 'mime' => $size['mime'],
             ];
         }
+
+        return false;
     }
 }

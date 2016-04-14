@@ -15,7 +15,7 @@ class Html extends Provider implements ProviderInterface
 {
     protected $config = [
         'maxImages' => -1,
-        'externalImages' => false
+        'externalImages' => false,
     ];
 
     /**
@@ -313,7 +313,7 @@ class Html extends Provider implements ProviderInterface
     }
 
     /**
-     * Check whether a image url is valid or not
+     * Check whether a image url is valid or not.
      * 
      * @param Url $url
      * 

@@ -35,7 +35,7 @@ interface AdapterInterface extends DataInterface
     public function getRequest();
 
     /**
-     * Returns all images Requests
+     * Returns all images Requests.
      * 
      * @return array
      */

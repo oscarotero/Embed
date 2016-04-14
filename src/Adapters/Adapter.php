@@ -312,7 +312,7 @@ abstract class Adapter
      */
     public function getProviderIcons()
     {
-        return call_user_func("{$this->imageClass}::getImagesInfo", $this->getProviderIconsUrls(), $this->imageConfig, $this->imageRequests);
+        return static::imagesInfo($this->getProviderIconsUrls());
     }
 
     /**
@@ -378,7 +378,7 @@ abstract class Adapter
      */
     public function getImages()
     {
-        return call_user_func("{$this->imageClass}::getImagesInfo", $this->getImagesUrls(), $this->imageConfig, $this->imageRequests);
+        return static::imagesInfo($this->getImagesUrls());
     }
 
     /**
@@ -473,5 +473,32 @@ abstract class Adapter
     public function getLicense()
     {
         return Utils::getFirstValue(Utils::getData($this->providers, 'license', $this->request));
+    }
+
+    /**
+     * Get images info.
+     * 
+     * @param array $urls
+     * 
+     * @return array
+     */
+    protected function imagesInfo($urls)
+    {
+        $requests = call_user_func("{$this->imageClass}::getImagesInfo", $urls, $this->imageConfig);
+        array_replace($this->imageRequests, $requests);
+
+        $result = [];
+
+        foreach ($urls as $url => $value) {
+            $info = isset($requests[$url]) ? $requests[$url]->getInfo() : false;
+
+            if ($info === false) {
+                continue;
+            }
+
+            $result[$url] = array_replace($value, $info);
+        }
+
+        return $result;
     }
 }

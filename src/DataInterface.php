@@ -124,7 +124,7 @@ interface DataInterface
     public function getPublishedTime();
 
     /**
-     * Gets the license info
+     * Gets the license info.
      *
      * @return string|null
      */

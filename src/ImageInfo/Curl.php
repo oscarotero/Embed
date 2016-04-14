@@ -5,10 +5,8 @@ namespace Embed\ImageInfo;
 /**
  * Class to retrieve the size and mimetype of images using curl.
  */
-class Curl implements ImageInfoInterface
+class Curl implements ImageInfoInterface, ImagesInfoInterface
 {
-    use UtilsTrait;
-
     protected static $mimetypes = [
         'image/jpeg',
         'image/png',
@@ -39,7 +37,7 @@ class Curl implements ImageInfoInterface
     /**
      * {@inheritdoc}
      */
-    public static function getImagesInfo(array $urls, array $config = null, array &$connections = [])
+    public static function getImagesInfo(array $urls, array $config = null)
     {
         if (empty($urls)) {
             return [];
@@ -48,13 +46,11 @@ class Curl implements ImageInfoInterface
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $curl = curl_multi_init();
         $result = [];
+        $connections = [];
 
         foreach ($urls as $k => $url) {
             if (strpos($url['value'], 'data:') === 0) {
-                if ($info = static::getEmbeddedImageInfo($url['value'])) {
-                    $result[$k] = array_merge($url, $info);
-                }
-
+                $result[$k] = new EmbeddedImage($url['value']);
                 continue;
             }
 
@@ -80,17 +76,12 @@ class Curl implements ImageInfoInterface
 
             foreach ($connections as $k => $connection) {
                 curl_multi_remove_handle($curl, $connection->getConnection());
-
-                if (($info = $connection->getInfo())) {
-                    $result[$k] = array_merge($urls[$k], $info);
-                }
+                $result[$k] = $connection;
             }
         }
 
         finfo_close($finfo);
         curl_multi_close($curl);
-
-        ksort($result, SORT_NUMERIC);
 
         return $result;
     }
@@ -132,13 +123,11 @@ class Curl implements ImageInfoInterface
     }
 
     /**
-     * Get the image info with the format [$width, $height, $mimetype].
-     *
-     * @return null|array
+     * {@inheritdoc}
      */
     public function getInfo()
     {
-        return $this->info;
+        return $this->info ?: false;
     }
 
     /**
@@ -158,10 +147,10 @@ class Curl implements ImageInfoInterface
     }
 
     /**
-     * Callback used to save the headers
+     * Callback used to save the headers.
      * 
      * @param resource $connection
-     * @param string $string
+     * @param string   $string
      * 
      * @return int
      */
