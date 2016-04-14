@@ -312,9 +312,7 @@ abstract class Adapter
      */
     public function getProviderIcons()
     {
-        $fn = "{$this->imageClass}::getImagesInfo";
-
-        return $fn($this->getProviderIconsUrls(), $this->imageConfig, $this->imageRequests);
+        return call_user_func("{$this->imageClass}::getImagesInfo", $this->getProviderIconsUrls(), $this->imageConfig, $this->imageRequests);
     }
 
     /**
@@ -380,9 +378,7 @@ abstract class Adapter
      */
     public function getImages()
     {
-        $fn = "{$this->imageClass}::getImagesInfo";
-
-        return $fn($this->getImagesUrls(), $this->imageConfig, $this->imageRequests);
+        return call_user_func("{$this->imageClass}::getImagesInfo", $this->getImagesUrls(), $this->imageConfig, $this->imageRequests);
     }
 
     /**
