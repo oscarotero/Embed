@@ -419,6 +419,10 @@ class Url
             $url .= $this->info['host'];
         }
 
+        if (isset($this->info['port'])) {
+            $url .= ':' . $this->info['port'];
+        }
+
         $url .= $this->getPath();
 
         if (!empty($this->info['query'])) {
