@@ -39,4 +39,17 @@ class GoogleTest extends TestCaseBase
             ]
         );
     }
+
+    public function testCalendar()
+    {
+        $this->assertEmbed(
+            'https://calendar.google.com/calendar/embed?src=spain__es%40holiday.calendar.google.com&ctz=Europe/Madrid',
+            [
+                'title' => 'Festivos en España',
+                'type' => 'rich',
+                'code' => '<iframe src="https://calendar.google.com/calendar/embed?src=spain__es%40holiday.calendar.google.com&amp;ctz=Europe%2FMadrid" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:600px;height:400px;"></iframe>',
+                'providerName' => 'google',
+            ]
+        );
+    }
 }
