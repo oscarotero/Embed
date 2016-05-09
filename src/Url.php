@@ -416,9 +416,9 @@ class Url
         }
 
         $user = isset($this->info['user']) ? $this->info['user'] : '';
-        $pass = isset($this->info['pass']) ? ':' . $this->info['pass']  : '';
+        $pass = isset($this->info['pass']) ? ':'.$this->info['pass']  : '';
         if ($user || $pass) {
-            $url .= $user . $pass . '@';
+            $url .= $user.$pass.'@';
         }
 
         if (isset($this->info['host'])) {
@@ -426,7 +426,7 @@ class Url
         }
 
         if (isset($this->info['port'])) {
-            $url .= ':' . $this->info['port'];
+            $url .= ':'.$this->info['port'];
         }
 
         $url .= $this->getPath();
