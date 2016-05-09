@@ -7,7 +7,7 @@ class ImagesBlacklistTest extends TestCaseBase
         $this->assertEmbed(
             'https://github.com/oscarotero/Embed',
             [
-                'image' => 'https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif',
+                'image' => 'https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif',
             ], [
                 'adapter' => [
                     'config' => [
@@ -25,7 +25,7 @@ class ImagesBlacklistTest extends TestCaseBase
         $this->assertEmbed(
             'https://github.com/oscarotero/Embed',
             [
-                'image' => 'https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif',
+                'image' => 'https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif',
             ], [
                 'adapter' => [
                     'config' => [
