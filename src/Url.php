@@ -415,8 +415,18 @@ class Url
             $url .= $this->info['scheme'].'://';
         }
 
+        $user = isset($this->info['user']) ? $this->info['user'] : '';
+        $pass = isset($this->info['pass']) ? ':' . $this->info['pass']  : '';
+        if ($user || $pass) {
+            $url .= $user . $pass . '@';
+        }
+
         if (isset($this->info['host'])) {
             $url .= $this->info['host'];
+        }
+
+        if (isset($this->info['port'])) {
+            $url .= ':' . $this->info['port'];
         }
 
         $url .= $this->getPath();
