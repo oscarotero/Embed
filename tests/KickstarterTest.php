@@ -10,7 +10,7 @@ class KickstarterTest extends TestCaseBase
                 'title' => 'Good Seed Craft Veggie Burgers',
                 'description' => 'Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends & sprouted superfood ingredients.',
                 'width' => 480,
-                'height' => 360,
+                'height' => 270,
                 'authorName' => 'Oliver Ponce and Erin Shotwell',
                 'providerName' => 'Kickstarter',
             ]

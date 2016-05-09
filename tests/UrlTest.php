@@ -15,6 +15,9 @@ class UrlTest extends TestCaseBase
             ['https://animoto.com/oembeds/create.xml?automated=true&options=start_hq', 'https://animoto.com/oembeds/create.xml?automated=true&options=start_hq'],
             ['http://static2.politico.com/dims4/default/28fb355/2147483647/resize/1160x%3E/quality/90/?url=http%3A%2F%2Fs3-origin-images.politico.com%2F2013%2F12%2F18%2F131218_george_w_bush_barack_obama_ap_60', 'http://static2.politico.com/dims4/default/28fb355/2147483647/resize/1160x%3E/quality/90/?url=http%3A%2F%2Fs3-origin-images.politico.com%2F2013%2F12%2F18%2F131218_george_w_bush_barack_obama_ap_60'],
             ['https://plus.google.com/+carlsenverlag/posts/2hibgWrmhp1', 'https://plus.google.com/+carlsenverlag/posts/2hibgWrmhp1'],
+            ['http://test.drupal.dd:8083/tests/localport.html', 'http://test.drupal.dd:8083/tests/localport.html'],
+            ['http://testuser@test.drupal.dd:8083/tests/identified.html', 'http://testuser@test.drupal.dd:8083/tests/identified.html'],
+            ['http://testuser:testpass@test.drupal.dd:8083/tests/authenticated.html', 'http://testuser:testpass@test.drupal.dd:8083/tests/authenticated.html'],
         ];
     }
 

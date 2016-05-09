@@ -9,13 +9,6 @@ class RedirectionsTest extends TestCaseBase
         $this->assertString($info1->url, $info2->url);
     }
 
-    public function testRdio()
-    {
-        $info1 = Embed\Embed::create('http://rd.io/x/Q1IjXC8s');
-        $info2 = Embed\Embed::create('https://www.rdio.com/artist/Soundgarden/album/Superunknown/?utm_campaign=share&utm_medium=Album&utm_source=13&utm_content=224371');
-        $this->assertString($info1->url, $info2->url);
-    }
-
     public function testTwitter()
     {
         $info1 = Embed\Embed::create('https://twitter.com/#!/twitter/status/99530515043983360');
