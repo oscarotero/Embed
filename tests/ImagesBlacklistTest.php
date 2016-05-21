@@ -5,14 +5,14 @@ class ImagesBlacklistTest extends TestCaseBase
     public function testPlainText()
     {
         $this->assertEmbed(
-            'https://github.com/oscarotero/Embed',
+            'http://alistapart.com/article/the-rich-typefaces-get-richer',
             [
-                'image' => 'https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif',
+                'image' => 'http://alistapart.com/d/_made/pix/authors/photos/shoaf-headshot_120_120_c1.jpg',
             ], [
                 'adapter' => [
                     'config' => [
                         'imagesBlacklist' => [
-                            'https://avatars1.githubusercontent.com/u/377873?v=3&s=400',
+                            'http://alistapart.com/components/assets/img/ala-logo-big.png',
                         ],
                     ],
                 ],
@@ -23,14 +23,14 @@ class ImagesBlacklistTest extends TestCaseBase
     public function testPlainUrlMatch()
     {
         $this->assertEmbed(
-            'https://github.com/oscarotero/Embed',
+            'http://alistapart.com/article/the-rich-typefaces-get-richer',
             [
-                'image' => 'https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif',
+                'image' => 'http://alistapart.com/d/_made/pix/authors/photos/shoaf-headshot_120_120_c1.jpg',
             ], [
                 'adapter' => [
                     'config' => [
                         'imagesBlacklist' => [
-                            '*.githubusercontent.com*',
+                            '*-logo-*',
                         ],
                     ],
                 ],
@@ -41,14 +41,14 @@ class ImagesBlacklistTest extends TestCaseBase
     public function testAuthorizedImage()
     {
         $this->assertEmbed(
-            'https://github.com/oscarotero/Embed',
+            'http://alistapart.com/article/the-rich-typefaces-get-richer',
             [
-                'image' => 'https://avatars1.githubusercontent.com/u/377873?v=3&s=400',
+                'image' => 'http://alistapart.com/components/assets/img/ala-logo-big.png',
             ], [
                 'adapter' => [
                     'config' => [
                         'imagesBlacklist' => [
-                            '*/octocat-spinner-*',
+                            '*/photos/*',
                         ],
                     ],
                 ],
