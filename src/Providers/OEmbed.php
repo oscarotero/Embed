@@ -49,7 +49,13 @@ class OEmbed extends Provider implements ProviderInterface
         if (($endPointRequest->getExtension() === 'xml') || ($endPointRequest->getQueryParameter('format') === 'xml')) {
             if ($parameters = $endPointRequest->getXmlContent()) {
                 foreach ($parameters as $element) {
-                    $this->bag->set($element->getName(), (string) $element);
+                    $content = trim((string) $element);
+
+                    if (stripos($content, '<![CDATA[') === 0) {
+                        $content = substr($content, 9, -3);
+                    }
+
+                    $this->bag->set($element->getName(), $content);
                 }
             }
         // extract from json
