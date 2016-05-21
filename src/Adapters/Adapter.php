@@ -223,17 +223,13 @@ abstract class Adapter
         $choosen = null;
 
         foreach (Utils::getData($this->providers, 'code') as $code) {
-            // <object> and <embed> codes have less priority
+            // <object> and <embed> codes (flash) have less priority
             if (strpos($code['value'], '</object>') !== false || strpos($code['value'], '</embed>') !== false) {
                 if (empty($choosen)) {
                     $choosen = $code;
                 }
 
                 continue;
-            }
-
-            if (strpos($code['value'], '</iframe>') !== false) {
-                $code['value'] = preg_replace('|^.*(<iframe.*</iframe>).*$|Us', '$1', $code['value']);
             }
 
             $choosen = $code;
