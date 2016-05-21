@@ -148,4 +148,12 @@ abstract class Provider
     public function getLicense()
     {
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLinkedData()
+    {
+        return [];
+    }
 }

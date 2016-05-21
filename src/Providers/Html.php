@@ -184,6 +184,36 @@ class Html extends Provider implements ProviderInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getLinkedData()
+    {
+        if (!($html = $this->request->getHtmlContent())) {
+            return false;
+        }
+
+        $data = [];
+
+        foreach ($html->getElementsByTagName('script') as $script) {
+            if ($script->hasAttribute('type') && strtolower($script->getAttribute('type')) === 'application/ld+json') {
+                $value = trim($script->nodeValue);
+
+                if (empty($value)) {
+                    continue;
+                }
+
+                try {
+                    $data[] = json_decode($value);
+                } catch (\Exception $exception) {
+                    continue;
+                }
+            }
+        }
+
+        return $data;
+    }
+
+    /**
      * Extract information from the <link> elements.
      *
      * @param \DOMDocument $html

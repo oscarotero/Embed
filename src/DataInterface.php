@@ -129,4 +129,11 @@ interface DataInterface
      * @return string|null
      */
     public function getLicense();
+
+    /**
+     * Returns all linked data found.
+     *
+     * @return array
+     */
+    public function getLinkedData();
 }

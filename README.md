@@ -73,6 +73,7 @@ $info->providerIcon; //The icon choosen as main icon
 
 $info->publishedDate; //The published date of the resource
 $info->license; //The license url of the resource
+$info->linkedData; //The linked-data info (http://json-ld.org/)
 ```
 
 ## Customization

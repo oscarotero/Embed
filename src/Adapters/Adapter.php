@@ -476,6 +476,19 @@ abstract class Adapter
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getLinkedData()
+    {
+        $data = [];
+        foreach ($this->providers as $provider) {
+            $data = array_merge($data, $provider->getLinkedData());
+        }
+        
+        return $data;
+    }
+
+    /**
      * Get images info.
      * 
      * @param array $urls

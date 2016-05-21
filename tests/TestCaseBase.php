@@ -61,6 +61,10 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
                     $this->assertSame($value, $i->$name);
                     break;
 
+                case 'linkedData':
+                    $this->assertEquals($value, $i->$name);
+                    break;
+
                 default:
                     throw new InvalidArgumentException("No valid {$name} assertion");
             }
