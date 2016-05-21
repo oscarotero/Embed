@@ -188,11 +188,11 @@ class Html extends Provider implements ProviderInterface
      */
     public function getLinkedData()
     {
-        if (!($html = $this->request->getHtmlContent())) {
-            return false;
-        }
-
         $data = [];
+ 
+        if (!($html = $this->request->getHtmlContent())) {
+            return $data;
+        }
 
         foreach ($html->getElementsByTagName('script') as $script) {
             if ($script->hasAttribute('type') && strtolower($script->getAttribute('type')) === 'application/ld+json') {
