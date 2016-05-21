@@ -49,6 +49,7 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
                 case 'providerName':
                 case 'providerUrl':
                 case 'providerIcon':
+                case 'license':
                     $this->assertString($value, $i->$name);
                     break;
 
