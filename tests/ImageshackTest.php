@@ -1,22 +1,7 @@
 <?php
 
-class YFrogTest extends TestCaseBase
+class ImageshackTest extends TestCaseBase
 {
-    //yfrog seems shutdown
-    public function noTestOne()
-    {
-        $this->assertEmbed(
-            'http://a.yfrog.com/img593/8436/snso.jpg',
-            [
-                'title' => 'http://a.yfrog.com/img593/8436/snso.jpg',
-                'imageWidth' => 4928,
-                'imageHeight' => 3264,
-                'type' => 'photo',
-                'providerName' => 'yFrog',
-            ]
-        );
-    }
-
     public function testImageShack()
     {
         $this->assertEmbed(
