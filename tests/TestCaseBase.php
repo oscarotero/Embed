@@ -43,7 +43,6 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
                 case 'image':
                 case 'imageWidth':
                 case 'imageHeight':
-                case 'code':
                 case 'authorName':
                 case 'authorUrl':
                 case 'providerName':
@@ -51,6 +50,14 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
                 case 'providerIcon':
                 case 'license':
                     $this->assertString($value, $i->$name);
+                    break;
+
+                case 'code':
+                    if ($value === true) {
+                        $this->assertNotEmpty($value);
+                    } else {
+                        $this->assertString($value, $i->$name);
+                    }
                     break;
 
                 case 'width':
