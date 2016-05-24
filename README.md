@@ -326,6 +326,6 @@ foreach ($info->getImagesRequests() as $url => $request) {
 
 If this library is useful for you, consider to donate to the author.
 
-[Buy me a beer](https://www.paypal.me/oscarotero)
+[Buy me a beer :beer:](https://www.paypal.me/oscarotero)
 
 Thanks in advance!
