@@ -321,3 +321,11 @@ foreach ($info->getImagesRequests() as $url => $request) {
     $request->getHeaders();
 }
 ```
+
+## Donations
+
+If this library is useful for you, consider to donate to the author.
+
+[Buy me a beer](https://www.paypal.me/oscarotero)
+
+Thanks in advance!
