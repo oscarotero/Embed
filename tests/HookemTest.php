@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @link https://github.com/oscarotero/Embed/issues/145
+ */
+class HookemTest extends TestCaseBase
+{
+    public function testOne()
+    {
+        $this->assertEmbed(
+            'http://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/',
+            [
+                'title' => 'Texas shortstop Joe Baker was arrested for public intoxication',
+                'image' => 'http://www.hookem.com/wp-content/uploads/2016/04/SSS-TexasBaseball-12.jpg',
+            ]
+        );
+    }
+}
