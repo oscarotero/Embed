@@ -183,7 +183,7 @@ class OEmbed extends Provider implements ProviderInterface
             $images[] = $this->bag->get('url');
         }
 
-        foreach ([ 'image', 'thumbnail', 'thumbnail_url' ] as $type) {
+        foreach (['image', 'thumbnail', 'thumbnail_url'] as $type) {
             if ($this->bag->has($type)) {
                 $ret = $this->bag->get($type);
                 if (is_array($ret)) {

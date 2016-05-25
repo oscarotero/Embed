@@ -480,7 +480,7 @@ abstract class Adapter
         foreach ($this->providers as $provider) {
             $data = array_merge($data, $provider->getLinkedData());
         }
-        
+
         return $data;
     }
 

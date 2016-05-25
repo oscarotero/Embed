@@ -8,7 +8,7 @@ class AbancaTest extends TestCaseBase
             'https://www.abanca.com/gl',
             [
                 'linkedData' => [
-                    (object)[
+                    (object) [
                         '@context' => 'http://schema.org',
                         '@type' => 'Organization',
                         'name' => 'ABANCA',
@@ -21,14 +21,14 @@ class AbancaTest extends TestCaseBase
                             'https://www.flickr.com/photos/125188945@N05/',
                         ],
                         'contactPoint' => [
-                            (object)[
+                            (object) [
                                 '@type' => 'ContactPoint',
                                 'telephone' => '+34-981 910 522',
                                 'contactType' => 'customer service',
-                            ]
+                            ],
                         ],
-                    ]
-                ]
+                    ],
+                ],
             ]
         );
     }

@@ -189,7 +189,7 @@ class Html extends Provider implements ProviderInterface
     public function getLinkedData()
     {
         $data = [];
- 
+
         if (!($html = $this->request->getHtmlContent())) {
             return $data;
         }
