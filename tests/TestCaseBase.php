@@ -96,7 +96,7 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
 
         $class = 'Embed\\Providers\\OEmbed\\'.$className;
 
-        if (class_exists($class)) {
+        if (class_exists($class) && !$class::embedInDomIsBroken()) {
             $body = $request->getContent();
 
             $this->assertFalse(strpos($body, '/json+oembed'), 'Autodiscovered json OEmbed');

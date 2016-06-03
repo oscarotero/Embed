@@ -27,4 +27,17 @@ class FacebookTest extends TestCaseBase
             ]
         );
     }
+
+    public function testVideo()
+    {
+        $this->assertEmbed(
+            'https://www.facebook.com/acolono/videos/10154107990797381/',
+            [
+                'title' => 'Acolono - Eindrücke vom gestrigen Drupal Austria Meetup... | Facebook',
+                'width' => 500,
+                'code' => true,
+                'type' => 'video',
+            ]
+        );
+    }
 }
