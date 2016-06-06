@@ -19,6 +19,7 @@ class Google extends Webpage implements AdapterInterface
         return $request->isValid() && $request->match([
             'https://maps.google.*',
             'https://www.google.*/maps*',
+            'https://calendar.google.com/calendar/*',
             'https://drive.google.com/file/*/view',
             'https://plus.google.com/*/posts/*',
         ]);
@@ -47,6 +48,10 @@ class Google extends Webpage implements AdapterInterface
         if ($this->request->getHost() === 'plus.google.com') {
             return '<script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script>'
                 .'<div class="g-post" data-href="'.$this->request->getUrl().'"></div>';
+        }
+
+        if ($this->request->getHost() === 'calendar.google.com') {
+            return Utils::iframe($this->request->getUrl());
         }
 
         if (($google = $this->getProvider('google'))) {
