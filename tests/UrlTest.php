@@ -18,6 +18,7 @@ class UrlTest extends TestCaseBase
             ['http://test.drupal.dd:8083/tests/localport.html', 'http://test.drupal.dd:8083/tests/localport.html'],
             ['http://testuser@test.drupal.dd:8083/tests/identified.html', 'http://testuser@test.drupal.dd:8083/tests/identified.html'],
             ['http://testuser:testpass@test.drupal.dd:8083/tests/authenticated.html', 'http://testuser:testpass@test.drupal.dd:8083/tests/authenticated.html'],
+            ['http://testuser:testpass@test.drupal.dd:8083/tests/authenticated.html', 'http://testuser:testpass@test.drupal.dd:8083/tests/authenticated.html'],
         ];
     }
 
@@ -54,17 +55,22 @@ class UrlTest extends TestCaseBase
         $url = new Embed\Url('http://www.domain.com');
 
         $this->assertSame('domain', $url->getDomain());
-        $this->assertSame('domain.com', $url->getDomain(1));
+        $this->assertSame('domain.com', $url->getDomain(true));
 
         $url = new Embed\Url('http://www.domain.co.uk');
 
         $this->assertSame('domain', $url->getDomain());
-        $this->assertSame('domain.co.uk', $url->getDomain(1));
+        $this->assertSame('domain.co.uk', $url->getDomain(true));
 
         $url = new Embed\Url('http://www.domain.com.au');
 
         $this->assertSame('domain', $url->getDomain());
-        $this->assertSame('domain.com.au', $url->getDomain(1));
+        $this->assertSame('domain.com.au', $url->getDomain(true));
+
+        $url = new Embed\Url('http://www.redrooster.org.uk');
+
+        $this->assertSame('redrooster', $url->getDomain());
+        $this->assertSame('redrooster.org.uk', $url->getDomain(true));
     }
 
     public function testPathsWithDots()

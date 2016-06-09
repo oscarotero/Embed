@@ -181,11 +181,13 @@ class Url
                 return $first_level ? ($host[1].'.'.$host[0]) : $host[1];
 
             default:
+                $subdomains = ['co', 'com', 'org'];
+
                 if ($first_level) {
-                    return ($host[1] === 'co' || $host[1] === 'com') ? ($host[2].'.'.$host[1].'.'.$host[0]) : ($host[1].'.'.$host[0]);
+                    return in_array($host[1], $subdomains, true) ? ($host[2].'.'.$host[1].'.'.$host[0]) : ($host[1].'.'.$host[0]);
                 }
 
-                return ($host[1] === 'co' || $host[1] === 'com') ? $host[2] : $host[1];
+                return in_array($host[1], $subdomains, true) ? $host[2] : $host[1];
         }
     }
 
