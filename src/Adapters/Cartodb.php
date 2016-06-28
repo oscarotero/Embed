@@ -29,7 +29,7 @@ class Cartodb extends Webpage implements AdapterInterface
         $this->height = 520;
 
         $url = $this->request->createUrl()->withDirectoryPosition(2, 'embed_map')->getUrl();
-        
+
         return Utils::iframe($url, '100%', $this->height);
     }
 }
