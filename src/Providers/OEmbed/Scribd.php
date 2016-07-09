@@ -17,8 +17,21 @@ class Scribd extends OEmbedImplementation
     /**
      * {@inheritdoc}
      */
+    public static function getParams(Url $url)
+    {
+        return [
+            'url' => $url->createUrl()->withDirectoryPosition(0, 'doc')->getUrl(),
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public static function getPatterns()
     {
-        return ['https?://www.scribd.com/doc/*'];
+        return [
+            'https?://www.scribd.com/doc/*',
+            'https?://www.scribd.com/document/*',
+        ];
     }
 }
