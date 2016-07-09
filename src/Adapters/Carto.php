@@ -8,7 +8,7 @@ use Embed\Utils;
 /**
  * Adapter to get the embed code from cartodb.
  */
-class Cartodb extends Webpage implements AdapterInterface
+class Carto extends Webpage implements AdapterInterface
 {
     /**
      * {@inheritdoc}
@@ -16,7 +16,7 @@ class Cartodb extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->isValid() && $request->match([
-            'https://*.cartodb.com/viz/*/public_map',
+            'https://*.carto.com/viz/*/public_map',
         ]);
     }
 
