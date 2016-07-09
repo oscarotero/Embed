@@ -103,13 +103,19 @@ class Curl implements ImageInfoInterface, ImagesInfoInterface
             $this->config = array_replace($this->config, $config);
         }
 
-        curl_setopt_array($this->connection, [
+        $options = [
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_URL => $url,
             CURLOPT_HEADERFUNCTION => [$this, 'headerCallback'],
             CURLOPT_WRITEFUNCTION => [$this, 'writeCallback'],
-        ] + $this->config);
+        ] + $this->config;
+
+        if (ini_get('open_basedir') || filter_var(ini_get('safe_mode'), FILTER_VALIDATE_BOOLEAN)) {
+            $options[CURLOPT_FOLLOWLOCATION] = false;
+        }
+
+        curl_setopt_array($this->connection, $options);
     }
 
     /**
@@ -148,10 +154,10 @@ class Curl implements ImageInfoInterface, ImagesInfoInterface
 
     /**
      * Callback used to save the headers.
-     * 
+     *
      * @param resource $connection
      * @param string   $string
-     * 
+     *
      * @return int
      */
     public function headerCallback($connection, $string)
