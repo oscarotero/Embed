@@ -89,33 +89,37 @@ class OpenGraph extends Provider implements ProviderInterface
      */
     public function getCode()
     {
-        if ($this->bag->has('video')) {
-            $video = $this->bag->get('video');
+        $names = ['video:secure_url', 'video:url', 'video'];
 
-            if (!($videoPath = parse_url($video, PHP_URL_PATH)) || !($type = pathinfo($videoPath, PATHINFO_EXTENSION))) {
-                $type = $this->bag->get('video:type');
-            }
+        foreach ($names as $name) {
+            if ($this->bag->has($name)) {
+                $video = $this->bag->get($name);
 
-            switch ($type) {
-                case 'swf':
-                case 'application/x-shockwave-flash':
-                    return Utils::flash($video, $this->getWidth(), $this->getHeight());
+                if (!($videoPath = parse_url($video, PHP_URL_PATH)) || !($type = pathinfo($videoPath, PATHINFO_EXTENSION))) {
+                    $type = $this->bag->get('video:type');
+                }
 
-                case 'mp4':
-                case 'ogg':
-                case 'ogv':
-                case 'webm':
-                case 'application/mp4':
-                case 'video/mp4':
-                case 'video/ogg':
-                case 'video/ogv':
-                case 'video/webm':
-                    $images = $this->getImagesUrls();
+                switch ($type) {
+                    case 'swf':
+                    case 'application/x-shockwave-flash':
+                        return Utils::flash($video, $this->getWidth(), $this->getHeight());
 
-                    return Utils::videoHtml(current($images), $video, $this->getWidth(), $this->getHeight());
+                    case 'mp4':
+                    case 'ogg':
+                    case 'ogv':
+                    case 'webm':
+                    case 'application/mp4':
+                    case 'video/mp4':
+                    case 'video/ogg':
+                    case 'video/ogv':
+                    case 'video/webm':
+                        $images = $this->getImagesUrls();
 
-                case 'text/html':
-                    return Utils::iframe($video, $this->getWidth(), $this->getHeight());
+                        return Utils::videoHtml(current($images), $video, $this->getWidth(), $this->getHeight());
+
+                    case 'text/html':
+                        return Utils::iframe($video, $this->getWidth(), $this->getHeight());
+                }
             }
         }
     }
