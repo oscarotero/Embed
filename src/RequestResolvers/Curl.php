@@ -150,7 +150,7 @@ class Curl implements RequestResolverInterface
 
         $connection = curl_init();
 
-        curl_setopt_array($connection, [
+        $options = [
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_URL => $this->url,
@@ -158,7 +158,13 @@ class Curl implements RequestResolverInterface
             CURLOPT_COOKIEFILE => self::$tmpCookies,
             CURLOPT_HEADERFUNCTION => [$this, 'headerCallback'],
             CURLOPT_WRITEFUNCTION => [$this, 'writeCallback'],
-        ] + $this->config);
+        ] + $this->config;
+
+        if (ini_get('open_basedir') || filter_var(ini_get('safe_mode'), FILTER_VALIDATE_BOOLEAN)) {
+            $options[CURLOPT_FOLLOWLOCATION] = false;
+        }
+
+        curl_setopt_array($connection, $options);
 
         $result = curl_exec($connection);
 
