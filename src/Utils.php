@@ -337,6 +337,20 @@ class Utils
     }
 
     /**
+     * Creates an <script> element.
+     *
+     * @param string $src    The src attribute
+     *
+     * @return string
+     */
+    public static function script($src)
+    {
+        return self::element('script', [
+            'src' => $src,
+        ]).'</script>';
+    }
+
+    /**
      * Creates an <iframe> element with a google viewer.
      *
      * @param string $src The file loaded by the viewer (pdf, doc, etc)
