@@ -90,7 +90,7 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
         $className = $request->getClassNameForDomain();
 
         //exceptions
-        if (in_array($className, ['Wordpress', 'Youtube'])) {
+        if (in_array($className, ['Wordpress', 'Youtube', 'Jsbin'])) {
             return;
         }
 
