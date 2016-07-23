@@ -221,13 +221,20 @@ class Url
     {
         $clone = clone $this;
 
-        if ($key === count($clone->info['path'])) {
-            $clone->info['file'] = $value;
+        $pos = $clone->info['path'];
+        $hasFile = isset($clone->info['file']);
 
-            return $clone;
+        if ($hasFile) {
+            $pos[] = $clone->info['file'];
         }
 
-        $clone->info['path'][$key] = $value;
+        $pos[$key] = $value;
+
+        if ($hasFile) {
+            $clone->info['file'] = array_pop($pos);
+        }
+
+        $clone->info['path'] = $pos;
 
         return $clone;
     }
