@@ -143,6 +143,14 @@ class OpenGraph extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
+    public function getAuthorName()
+    {
+        return $this->bag->get('author');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getProviderName()
     {
         return $this->bag->get('site_name');
