@@ -14,6 +14,8 @@ function get($name, $default = '')
         if (!filter_var($_GET['url'], FILTER_VALIDATE_URL)) {
             return 'http://doNotTryToXSS.invalid';
         }
+
+        return urldecode($_GET['url']);
     }
 
     return $_GET[$name];
