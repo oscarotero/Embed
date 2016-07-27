@@ -11,7 +11,7 @@ class IdeoneTest extends TestCaseBase
                 'type' => 'rich',
                 'providerName' => 'Ideone.com',
                 'providerUrl' => 'http://ideone.com',
-                'code' => '<script src="http://ideone.com/e.js/Whjntg"></script>'
+                'code' => '<script src="http://ideone.com/e.js/Whjntg"></script>',
             ]
         );
     }

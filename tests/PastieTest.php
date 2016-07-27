@@ -11,7 +11,7 @@ class PastieTest extends TestCaseBase
                 'type' => 'rich',
                 'providerName' => 'pastie',
                 'providerUrl' => 'http://pastie.org',
-                'code' => '<script src="http://pastie.org/10916298.js"></script>'
+                'code' => '<script src="http://pastie.org/10916298.js"></script>',
             ]
         );
     }

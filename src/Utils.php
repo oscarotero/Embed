@@ -339,7 +339,7 @@ class Utils
     /**
      * Creates an <script> element.
      *
-     * @param string $src    The src attribute
+     * @param string $src The src attribute
      *
      * @return string
      */

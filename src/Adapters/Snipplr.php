@@ -3,7 +3,6 @@
 namespace Embed\Adapters;
 
 use Embed\Request;
-use Embed\Utils;
 
 /**
  * Adapter to generate embed code from snipplr.com.
