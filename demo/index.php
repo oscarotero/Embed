@@ -4,22 +4,33 @@ ini_set('display_startup_errors', '1');
 
 include '../src/autoloader.php';
 
-function get($name, $default = '')
+function getUrl()
 {
-    if (!isset($_GET[$name])) {
-        return $default;
+    if (!isset($_GET['url'])) {
+        return '';
     }
 
-    if ($name === 'url' && !filter_var($_GET['url'], FILTER_VALIDATE_URL)) {
+    $url = $_GET['url'];
+
+    //fix for unescaped urls
+    foreach ($_GET as $name => $value) {
+        if ($name === 'url') {
+            continue;
+        }
+
+        $url .= "&{$name}={$value}";
+    }
+
+    if (!filter_var($url, FILTER_VALIDATE_URL)) {
         return 'http://doNotTryToXSS.invalid';
     }
 
-    return $_GET[$name];
+    return $url;
 }
 
-function getEscaped($name, $default = '')
+function getEscapedUrl()
 {
-    return htmlspecialchars(get($name, $default), ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars(getUrl(), ENT_QUOTES, 'UTF-8');
 }
 
 function printAny($text)
@@ -146,7 +157,7 @@ $adapterData = [
             <fieldset class="main">
                 <label>
                     <span>Url to test:</span>
-                    <input type="url" name="url" autofocus placeholder="http://" value="<?php echo getEscaped('url'); ?>">
+                    <input type="url" name="url" autofocus placeholder="http://" value="<?php echo getEscapedUrl(); ?>">
                 </label>
             </fieldset>
 
@@ -155,17 +166,17 @@ $adapterData = [
                 &nbsp;&nbsp;&nbsp;
                 <a href="https://github.com/oscarotero/Embed/">Get the source code from Github</a>
                 &nbsp;&nbsp; - &nbsp;&nbsp;
-                <a href="javascript:(function(){window.open('http://oscarotero.com/embed2/demo/index.php?url='+encodeURIComponent(document.location))})();">or the bookmarklet</a>
+                <a href="javascript:(function(){window.open('http://oscarotero.com/embed2/demo/index.php?url='+document.location)})();">or the bookmarklet</a>
             </fieldset>
         </form>
 
-        <?php if (get('url')): ?>
+        <?php if (getUrl()): ?>
         <section>
             <h1>Result:</h1>
 
             <?php
             try {
-                $info = Embed\Embed::create(get('url'));
+                $info = Embed\Embed::create(getUrl());
             } catch (Exception $exception) {
                 echo '<p>'.$exception->getMessage().'</p>';
                 echo '</section>';
