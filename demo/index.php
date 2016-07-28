@@ -10,14 +10,8 @@ function get($name, $default = '')
         return $default;
     }
 
-    if ($name === 'url') {
-        $url = urldecode($_GET['url']);
-
-        if (!filter_var($url, FILTER_VALIDATE_URL)) {
-            return 'http://doNotTryToXSS.invalid';
-        }
-
-        return $url;
+    if ($name === 'url' && !filter_var($_GET['url'], FILTER_VALIDATE_URL)) {
+        return 'http://doNotTryToXSS.invalid';
     }
 
     return $_GET[$name];
