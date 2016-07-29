@@ -110,6 +110,14 @@ class Html extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
+    public function getAuthorName()
+    {
+        return $this->bag->get('author') ?: $this->bag->get('contributors');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getProviderIconsUrls()
     {
         return (array) $this->bag->get('icons') ?: [];
