@@ -129,7 +129,11 @@ class OpenGraph extends Provider implements ProviderInterface
      */
     public function getUrl()
     {
-        return $this->bag->get('url');
+        $url = $this->bag->get('url');
+
+        if ($url !== $this->request->getAbsolute('/')) {
+            return $url;
+        }
     }
 
     /**
