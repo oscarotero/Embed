@@ -6,6 +6,7 @@
 	<testsuites>
 		<testsuite name="All tests">
 			<directory>./tests/</directory>
+			<exclude>./tests/disabled/</exclude>
 		</testsuite>
 	</testsuites>
 </phpunit>

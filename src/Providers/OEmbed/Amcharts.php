@@ -21,4 +21,12 @@ class Amcharts extends OEmbedImplementation
     {
         return ['https?://live.amcharts.com/*'];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function embedInDomIsBroken()
+    {
+        return true;
+    }
 }
