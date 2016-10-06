@@ -137,7 +137,7 @@ class Curl implements RequestResolverInterface
         $this->isBinary = null;
 
         if (!self::$tmpCookies) {
-            self::$tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
+            self::$tmpCookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.'.uniqid());
 
             if (is_file(self::$tmpCookies)) {
                 if (!is_writable(self::$tmpCookies)) {
