@@ -142,7 +142,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getWidth()
     {
-        return (integer) $this->bag->get('video_width') ?: null;
+        return (int) $this->bag->get('video_width') ?: null;
     }
 
     /**
@@ -150,7 +150,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getHeight()
     {
-        return (integer) $this->bag->get('video_height') ?: null;
+        return (int) $this->bag->get('video_height') ?: null;
     }
 
     /**
@@ -352,9 +352,9 @@ class Html extends Provider implements ProviderInterface
 
     /**
      * Check whether a image url is valid or not.
-     * 
+     *
      * @param Url $url
-     * 
+     *
      * return bool
      */
     protected function imageIsValid(Url $url)

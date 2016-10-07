@@ -23,7 +23,8 @@
     },
     "require-dev": {
         "guzzlehttp/guzzle": "5.x",
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "friendsofphp/php-cs-fixer": "^1.12"
     },
     "suggest": {
         "guzzlehttp/guzzle@5.x": "To use Guzzle5 request resolver"

@@ -486,9 +486,9 @@ abstract class Adapter
 
     /**
      * Get images info.
-     * 
+     *
      * @param array $urls
-     * 
+     *
      * @return array
      */
     protected function imagesInfo($urls)

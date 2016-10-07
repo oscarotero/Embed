@@ -83,7 +83,7 @@ class Request extends Url
 
     /**
      * Returns the starting url.
-     * 
+     *
      * @return Url
      */
     public function getStartingUrl()
@@ -93,7 +93,7 @@ class Request extends Url
 
     /**
      * Creates and returns an Url clone.
-     * 
+     *
      * @param string|null $url
      *
      * @return Url
@@ -137,7 +137,7 @@ class Request extends Url
 
     /**
      * Return ClassName for domain.
-     * 
+     *
      * Domains started with numbers will get N prepended to their class name.
      *
      * @return string
@@ -184,7 +184,7 @@ class Request extends Url
 
     /**
      * Get a header.
-     * 
+     *
      * @param string $name
      *
      * @return string|null

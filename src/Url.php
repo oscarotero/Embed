@@ -212,7 +212,7 @@ class Url
     /**
      * Returns a clone with other directory in a specific position.
      *
-     * @param int|null $key   The position of the subdirectory (0 based index).
+     * @param int|null $key   The position of the subdirectory (0 based index)
      * @param string   $value The new value
      *
      * @return Url
@@ -427,7 +427,7 @@ class Url
         }
 
         $user = isset($this->info['user']) ? $this->info['user'] : '';
-        $pass = isset($this->info['pass']) ? ':'.$this->info['pass']  : '';
+        $pass = isset($this->info['pass']) ? ':'.$this->info['pass'] : '';
         if ($user || $pass) {
             $url .= $user.$pass.'@';
         }
