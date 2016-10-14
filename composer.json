@@ -19,7 +19,8 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "guzzlehttp/guzzle": "5.x",
