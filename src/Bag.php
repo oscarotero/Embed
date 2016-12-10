@@ -7,13 +7,23 @@ namespace Embed;
  */
 class Bag
 {
-    protected $parameters = [];
+    private $parameters;
+
+    /**
+     * Set the initial parameters
+     *
+     * @param array $parameters
+     */
+    public function __construct(array $parameters = [])
+    {
+        $this->parameters = $parameters;
+    }
 
     /**
      * Save a value.
      *
-     * @param string|array $name  Name of the value
-     * @param mixed        $value The value to save
+     * @param string|array $name
+     * @param mixed        $value
      */
     public function set($name, $value = null)
     {
@@ -27,8 +37,8 @@ class Bag
     /**
      * Adds a subvalue.
      *
-     * @param string $name  Name of the value
-     * @param mixed  $value The value to add
+     * @param string $name
+     * @param mixed  $value
      */
     public function add($name, $value = null)
     {
@@ -46,11 +56,12 @@ class Bag
     /**
      * Get a value.
      *
-     * @param string $name Value name
+     * @param string $name
+     * @param mixed $default
      *
      * @return string|null
      */
-    public function get($name)
+    public function get($name, $default = null)
     {
         if (strpos($name, '[') !== false) {
             $names = explode('[', str_replace(']', '', $name));
@@ -59,7 +70,7 @@ class Bag
 
             foreach ($names as $key) {
                 if (!isset($item[$key])) {
-                    return;
+                    return $default;
                 }
 
                 $item = $item[$key];
@@ -68,7 +79,7 @@ class Bag
             return $item;
         }
 
-        return isset($this->parameters[$name]) ? $this->parameters[$name] : null;
+        return isset($this->parameters[$name]) ? $this->parameters[$name] : $default;
     }
 
     /**
@@ -84,9 +95,9 @@ class Bag
     /**
      * Check if a value exists.
      *
-     * @param string $name Value name
+     * @param string $name
      *
-     * @return bool True if exists, false if not
+     * @return bool
      */
     public function has($name)
     {

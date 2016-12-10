@@ -2,8 +2,9 @@
 
 namespace Embed\Providers;
 
-use Embed\Request;
+use Embed\Adapters\AdapterInterface;
 use Embed\DataInterface;
+use Embed\Bag;
 
 /**
  * Interface used by all providers.
@@ -11,15 +12,16 @@ use Embed\DataInterface;
 interface ProviderInterface extends DataInterface
 {
     /**
-     * Init the provider.
+     * Constructor.
      *
-     * @param Request $request
-     * @param array   $config
+     * @param AdapterInterface $adapter
      */
-    public function init(Request $request, array $config = null);
+    public function __construct(AdapterInterface $adapter);
 
     /**
-     * Run the provider.
+     * Returns the bag containing all data
+     *
+     * @return Bag
      */
-    public function run();
+    public function getBag();
 }

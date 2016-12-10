@@ -2,7 +2,7 @@
 
 namespace Embed\Providers;
 
-use Embed\Request;
+use Embed\Adapters\AdapterInterface;
 use Embed\Bag;
 
 /**
@@ -10,22 +10,24 @@ use Embed\Bag;
  */
 abstract class Provider
 {
-    public $bag;
-
-    protected $request;
-    protected $config = [];
+    protected $bag;
+    protected $adapter;
 
     /**
      * {@inheritdoc}
      */
-    public function init(Request $request, array $config = null)
+    public function __construct(AdapterInterface $adapter)
     {
         $this->bag = new Bag();
-        $this->request = $request;
+        $this->adapter = $adapter;
+    }
 
-        if ($config) {
-            $this->config = array_replace($this->config, $config);
-        }
+    /**
+     * {@inheritdoc}
+     */
+    public function getBag()
+    {
+        return $bag;
     }
 
     /**
@@ -59,8 +61,9 @@ abstract class Provider
     /**
      * {@inheritdoc}
      */
-    public function getSource()
+    public function getFeeds()
     {
+        return [];
     }
 
     /**

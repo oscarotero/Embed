@@ -2,11 +2,12 @@
 
 namespace Embed\Adapters;
 
-use Embed\Url;
 use Embed\Utils;
-use Embed\Request;
+use Embed\Http\Url;
+use Embed\Http\Request;
 use Embed\Providers\ProviderInterface;
 use Embed\GetTrait;
+use Embed\Bag;
 
 /**
  * Base class extended by all adapters.
@@ -16,6 +17,7 @@ use Embed\GetTrait;
  * @property null|string  $url
  * @property null|string  $type
  * @property array        $tags
+ * @property array        $feeds
  * @property array        $images
  * @property null|string  $image
  * @property null|int     $imageWidth
@@ -36,76 +38,19 @@ abstract class Adapter
 {
     use GetTrait;
 
-    /**
-     * @var Request
-     */
+    protected $config;
     protected $request;
-
     protected $providers = [];
-    protected $providersConfig;
 
-    protected $imageClass = 'Embed\\ImageInfo\\Curl';
-    protected $imageConfig;
-    protected $imageRequests = [];
-
-    protected $config = [
-        'minImageWidth' => 16,
-        'minImageHeight' => 16,
-        'imagesBlacklist' => null,
-        'getBiggerImage' => false,
-        'getBiggerIcon' => false,
-    ];
 
     /**
      * {@inheritdoc}
      */
-    public function __construct(Request $request, array $config = null)
+    public function __construct(Request $request, array $config = [])
     {
         $this->request = $request;
-
-        if (isset($config['adapter']['config'])) {
-            $this->config = array_replace($this->config, $config['adapter']['config']);
-        }
-
-        if (isset($config['providers'])) {
-            $this->providersConfig = $config['providers'];
-        }
-
-        if (isset($config['image']['class'])) {
-            $this->imageClass = $config['image']['class'];
-        }
-
-        if (isset($config['image']['config'])) {
-            $this->imageConfig = $config['image']['config'];
-        }
-
-        $this->init();
+        $this->config = new Bag($config);
     }
-
-    /**
-     * Init the adapter.
-     */
-    protected function init()
-    {
-        $this->run();
-
-        //if the canonical url is different, repeat the proccess
-        $canonical = $this->getUrl();
-
-        if ($this->request->getUrl() !== $canonical) {
-            $request = $this->request->withUrl($canonical);
-
-            if ($request->isValid()) {
-                $this->request = $request;
-                $this->run();
-            }
-        }
-    }
-
-    /**
-     * Run the adapter.
-     */
-    abstract protected function run();
 
     /**
      * {@inheritdoc}
@@ -118,39 +63,31 @@ abstract class Adapter
     /**
      * {@inheritdoc}
      */
+    public function getResponse()
+    {
+        return $this->request->getResponse();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getImagesRequests()
     {
         return $this->imageRequests;
     }
 
     /**
-     * Adds a new provider.
-     *
-     * @param string            $name
-     * @param ProviderInterface $provider
-     */
-    protected function addProvider($name, ProviderInterface $provider)
-    {
-        $config = isset($this->providersConfig[$name]) ? $this->providersConfig[$name] : null;
-
-        $provider->init($this->request, $config);
-        $provider->run();
-
-        $this->providers[$name] = $provider;
-    }
-
-    /**
      * {@inheritdoc}
      */
-    public function getProvider($name)
-    {
-        return isset($this->providers[$name]) ? $this->providers[$name] : null;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getAllProviders()
+    public function getProviders()
     {
         return $this->providers;
     }
@@ -160,7 +97,16 @@ abstract class Adapter
      */
     public function getTitle()
     {
-        return html_entity_decode(Utils::getFirstValue(Utils::getData($this->providers, 'title')) ?: $this->request->getUrl());
+        foreach ($this->providers as $provider) {
+            $title = $provider->getTitle();
+
+            if (!empty($title)) {
+                return html_entity_decode($title);
+            }
+        }
+
+        //If there's no title, returns the url instead
+        return $this->url;
     }
 
     /**
@@ -168,7 +114,13 @@ abstract class Adapter
      */
     public function getDescription()
     {
-        return html_entity_decode(Utils::getFirstValue(Utils::getData($this->providers, 'description')));
+        foreach ($this->providers as $provider) {
+            $description = $provider->getDescription();
+
+            if (!empty($description)) {
+                return html_entity_decode($description);
+            }
+        }
     }
 
     /**
@@ -178,23 +130,36 @@ abstract class Adapter
     {
         $code = $this->code;
 
-        if (strpos($code, '</video>')) {
-            return 'video';
-        }
-
-        if (($type = Utils::getMostPopularValue(Utils::getData($this->providers, 'type'))) && ($type !== 'link')) {
-            return $type;
-        }
-
         if (empty($code)) {
             return 'link';
         }
 
-        if (strpos($code, '</iframe>') || strpos($code, '</object>') || strpos($code, '</embed>') || strpos($code, '</script>')) {
-            return 'rich';
+        if (strpos($code, '</video>')) {
+            return 'video';
         }
 
-        return 'link';
+        //Get the most repeated type
+        $types = [];
+
+        foreach ($this->providers as $provider) {
+            $type = $provider->getType();
+
+            if (!empty($type)) {
+                if (!isset($types[$type])) {
+                    $types[$type] = 0;
+                }
+
+                ++$types[$type];
+            }
+        }
+
+        if (!empty($types)) {
+            sort($types, SORT_NUMERIC);
+
+            return key($types);
+        }
+
+        return 'rich';
     }
 
     /**
@@ -202,14 +167,26 @@ abstract class Adapter
      */
     public function getTags()
     {
-        return Utils::getAllValues(Utils::getData($this->providers, 'tags'));
+        $tags = [];
+
+        foreach ($this->providers as $provider) {
+            foreach ($provider->getTags() as $tag) {
+                if (!in_array($tag, $tags)) {
+                    $tags[] = $tag;
+                }
+            }
+        }
+
+        return $tags;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getSource()
+    public function getFeeds()
     {
+        throw new \Exception("Non esta feito");
+        
         return Utils::getFirstValue(Utils::getData($this->providers, 'source', $this->request));
     }
 
@@ -218,45 +195,47 @@ abstract class Adapter
      */
     public function getCode()
     {
+        //Width and height deppends to the code
         $this->width = null;
         $this->height = null;
-        $choosen = null;
 
-        foreach (Utils::getData($this->providers, 'code') as $code) {
-            // <object> and <embed> codes (flash) have less priority
-            if (strpos($code['value'], '</object>') !== false || strpos($code['value'], '</embed>') !== false) {
-                if (empty($choosen)) {
-                    $choosen = $code;
-                }
+        $codes = [];
 
-                continue;
+        foreach ($this->providers as $provider) {
+            $code = $provider->getCode();
+
+            if (!empty($code)) {
+                $codes[] = [
+                    'code' => $code,
+                    'width' => $provider->getWidth(),
+                    'height' => $provider->getHeight(),
+                ];
             }
-
-            $choosen = $code;
-            break;
         }
 
-        if ($choosen) {
-            //get the width/height
-            foreach ($choosen['providers'] as $provider) {
-                $this->width = $this->providers[$provider]->getWidth();
-                $this->height = $this->providers[$provider]->getHeight();
+        if (empty($codes)) {
+            return;
+        }
 
-                if (is_numeric($this->width)) {
-                    $this->width = (int) $this->width;
-                }
-
-                if (is_numeric($this->height)) {
-                    $this->height = (int) $this->height;
-                }
-
-                if (!empty($this->width) || !empty($this->height)) {
-                    break;
-                }
+        //Sort the codes to give more priority to html5 than flash
+        usort($codes, function ($a, $b) {
+            if (strpos($a['code'], '</object>') === false && strpos($a['code'], '</embed>') === false) {
+                return -1;
             }
 
-            return $choosen['value'];
-        }
+            if (strpos($b['code'], '</object>') === false && strpos($b['code'], '</embed>') === false) {
+                return 1;
+            }
+
+            return 0;
+        });
+
+        $code = current($codes);
+
+        $this->width = is_numeric($code['width']) ? (int) $code['width'] : $code['width'];
+        $this->height = is_numeric($code['height']) ? (int) $code['height'] : $code['height'];
+
+        return $code['code'];
     }
 
     /**
@@ -264,7 +243,15 @@ abstract class Adapter
      */
     public function getUrl()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'url', $this->request)) ?: $this->request->getUrl();
+        foreach ($this->providers as $provider) {
+            $url = $provider->getUrl();
+
+            if (!empty($url)) {
+                return $this->getResponse()->getUri()->getAbsolute($url);
+            }
+        }
+
+        return (string) $this->getResponse()->getUri();
     }
 
     /**
@@ -272,7 +259,13 @@ abstract class Adapter
      */
     public function getAuthorName()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'authorName'));
+        foreach ($this->providers as $provider) {
+            $authorName = $provider->getAuthorName();
+
+            if (!empty($authorName)) {
+                return $authorName;
+            }
+        }
     }
 
     /**
@@ -280,7 +273,13 @@ abstract class Adapter
      */
     public function getAuthorUrl()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'authorUrl', $this->request));
+        foreach ($this->providers as $provider) {
+            $authorUrl = $provider->getAuthorUrl();
+
+            if (!empty($authorUrl)) {
+                return $this->getResponse()->getUri()->getAbsolute($authorUrl);
+            }
+        }
     }
 
     /**
@@ -288,6 +287,7 @@ abstract class Adapter
      */
     public function getProviderIconsUrls()
     {
+        throw new \Exception("Non esta feito");
         $icons = Utils::getData($this->providers, 'providerIconsUrls', $this->request);
 
         Utils::unshiftValue($icons, [
@@ -308,6 +308,7 @@ abstract class Adapter
      */
     public function getProviderIcons()
     {
+        throw new \Exception("Non esta feito");
         return static::imagesInfo($this->getProviderIconsUrls());
     }
 
@@ -316,6 +317,7 @@ abstract class Adapter
      */
     public function getProviderIcon()
     {
+        throw new \Exception("Non esta feito");
         if ($this->config['getBiggerIcon']) {
             return Utils::getBiggerValue($this->providerIcons);
         }
@@ -328,7 +330,15 @@ abstract class Adapter
      */
     public function getProviderName()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'providerName')) ?: $this->request->getDomain();
+        foreach ($this->providers as $provider) {
+            $providerName = $provider->getProviderName();
+
+            if (!empty($providerName)) {
+                return $providerName;
+            }
+        }
+
+        return $this->getResponse()->getUri()->getDomain();
     }
 
     /**
@@ -336,7 +346,17 @@ abstract class Adapter
      */
     public function getProviderUrl()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'providerUrl', $this->request)) ?: ($this->request->getScheme().'://'.$this->request->getDomain(true));
+        $uri = $this->getResponse()->getUri();
+
+        foreach ($this->providers as $provider) {
+            $providerUrl = $provider->getProviderUrl();
+
+            if (!empty($providerUrl)) {
+                return $uri->getAbsolute($providerUrl);
+            }
+        }
+
+        return $uri->getScheme().'://'.$uri->getDomain(true);
     }
 
     /**
@@ -344,6 +364,7 @@ abstract class Adapter
      */
     public function getImagesUrls()
     {
+        throw new \Exception("Non esta feito");
         $imagesUrls = Utils::getData($this->providers, 'imagesUrls', $this->request);
 
         $blacklist = $this->config['imagesBlacklist'];
@@ -374,6 +395,7 @@ abstract class Adapter
      */
     public function getImages()
     {
+        throw new \Exception("Non esta feito");
         return static::imagesInfo($this->getImagesUrls());
     }
 
@@ -382,6 +404,7 @@ abstract class Adapter
      */
     public function getImage()
     {
+        throw new \Exception("Non esta feito");
         if ($this->config['getBiggerImage']) {
             $allImages = $this->images;
 
@@ -410,6 +433,7 @@ abstract class Adapter
      */
     public function getImageWidth()
     {
+        throw new \Exception("Non esta feito");
         if (($image = Utils::searchValue($this->images, $this->image)) !== false) {
             return $image['width'];
         }
@@ -420,6 +444,7 @@ abstract class Adapter
      */
     public function getImageHeight()
     {
+        throw new \Exception("Non esta feito");
         if (($image = Utils::searchValue($this->images, $this->image)) !== false) {
             return $image['height'];
         }
@@ -430,7 +455,7 @@ abstract class Adapter
      */
     public function getWidth()
     {
-        $this->__get('code');
+        $this->code = $this->getCode();
 
         return $this->width;
     }
@@ -440,7 +465,7 @@ abstract class Adapter
      */
     public function getHeight()
     {
-        $this->__get('code');
+        $this->code = $this->getCode();
 
         return $this->height;
     }
@@ -460,7 +485,13 @@ abstract class Adapter
      */
     public function getPublishedTime()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'publishedTime'));
+        foreach ($this->providers as $provider) {
+            $publishedTime = $provider->getPublishedTime();
+
+            if (!empty($publishedTime)) {
+                return $publishedTime;
+            }
+        }
     }
 
     /**
@@ -468,7 +499,13 @@ abstract class Adapter
      */
     public function getLicense()
     {
-        return Utils::getFirstValue(Utils::getData($this->providers, 'license', $this->request));
+        foreach ($this->providers as $provider) {
+            $license = $provider->getLicense();
+
+            if (!empty($license)) {
+                return $license;
+            }
+        }
     }
 
     /**
@@ -477,6 +514,7 @@ abstract class Adapter
     public function getLinkedData()
     {
         $data = [];
+
         foreach ($this->providers as $provider) {
             $data = array_merge($data, $provider->getLinkedData());
         }

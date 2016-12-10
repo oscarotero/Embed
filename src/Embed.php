@@ -4,7 +4,7 @@ namespace Embed;
 
 use Embed\Adapters\AdapterInterface;
 
-class Embed
+abstract class Embed
 {
     /**
      * Gets the info from an url.
@@ -52,34 +52,6 @@ class Embed
         }
 
         throw new Exceptions\InvalidUrlException(sprintf("The url '%s' returns the following error: %s", $request->getUrl(), $error));
-    }
-
-    /**
-     * Gets the info from a source (list of urls).
-     *
-     * @param string|Request $request The url or a request with the source url
-     * @param null|array     $config  Options passed to the adapter
-     *
-     * @return false|Sources\SourceInterface
-     */
-    public static function createSource($request, array $config = null)
-    {
-        $request = self::getRequest($request, $config);
-
-        if (!$request->isValid()) {
-            return false;
-        }
-
-        //If is a xml feed (rss/atom)
-        if (Sources\Feed::check($request)) {
-            $sources = new Sources\Feed($request);
-
-            if ($sources->isValid()) {
-                return $sources;
-            }
-        }
-
-        return false;
     }
 
     /**
@@ -131,5 +103,25 @@ class Embed
         }
 
         return $request;
+    }
+
+    /**
+     * Process the adapter.
+     */
+    public function process()
+    {
+        $this->run();
+
+        //if the canonical url is different, repeat the proccess
+        $canonical = $this->getUrl();
+
+        if ($this->request->getUrl() !== $canonical) {
+            $request = $this->request->withUrl($canonical);
+
+            if ($request->isValid()) {
+                $this->request = $request;
+                $this->run();
+            }
+        }
     }
 }

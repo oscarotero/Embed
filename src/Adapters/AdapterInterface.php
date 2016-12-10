@@ -2,8 +2,10 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Request;
+use Embed\Http\Response;
 use Embed\DataInterface;
+use Embed\Badge;
 
 /**
  * Interface used by all adapters.
@@ -35,6 +37,20 @@ interface AdapterInterface extends DataInterface
     public function getRequest();
 
     /**
+     * Returns the main response instance.
+     *
+     * @return Response
+     */
+    public function getResponse();
+
+    /**
+     * Returns config container.
+     *
+     * @return Badge
+     */
+    public function getConfig();
+
+    /**
      * Returns all images Requests.
      *
      * @return array
@@ -42,20 +58,11 @@ interface AdapterInterface extends DataInterface
     public function getImagesRequests();
 
     /**
-     * Returns a provider.
-     *
-     * @param string $name
-     *
-     * @return null|ProviderInterface
-     */
-    public function getProvider($name);
-
-    /**
      * Get all providers.
      *
      * @return array
      */
-    public function getAllProviders();
+    public function getProviders();
 
     /**
      * Gets all icon provider urls found

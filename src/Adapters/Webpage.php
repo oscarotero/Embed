@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Request;
 use Embed\Providers;
 
 /**
@@ -21,13 +21,17 @@ class Webpage extends Adapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    protected function run()
+    public function __construct(Request $request, array $config = [])
     {
-        $this->addProvider('oembed', new Providers\OEmbed());
-        $this->addProvider('opengraph', new Providers\OpenGraph());
-        $this->addProvider('twittercards', new Providers\TwitterCards());
-        $this->addProvider('dcterms', new Providers\Dcterms());
-        $this->addProvider('sailthru', new Providers\Sailthru());
-        $this->addProvider('html', new Providers\Html());
+        parent::__construct($request, $config);
+
+        $this->providers = [
+            'oembed' => new Providers\OEmbed($this),
+            'opengraph' => new Providers\OpenGraph($this),
+            'twittercards' => new Providers\TwitterCards($this),
+            'dcterms' => new Providers\Dcterms($this),
+            'sailthru' => new Providers\Sailthru($this),
+            'html' => new Providers\Html($this),
+        ];
     }
 }

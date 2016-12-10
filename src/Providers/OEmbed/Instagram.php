@@ -2,34 +2,27 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Url;
+use Embed\Http\Uri;
 
-class Instagram extends OEmbedImplementation
+class Instagram extends EndPoint implements EndpointInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function getEndPoint(Url $url)
-    {
-        return 'http://api.instagram.com/oembed';
-    }
+    protected static $pattern = [
+        'https?://instagram.com/p/*',
+        'https?://www.instagram.com/p/*',
+    ];
+    protected static $endpoint = 'http://api.instagram.com/oembed';
 
     /**
      * {@inheritdoc}
      */
-    public static function getPatterns()
+    public function getEndPoint()
     {
-        return [
-            'https?://instagram.com/p/*',
-            'https?://www.instagram.com/p/*',
-        ];
-    }
+        $uri = $this->response->getUri()->withScheme('http');
 
-    /**
-     * {@inheritdoc}
-     */
-    public static function getParams(Url $url)
-    {
-        return ['url' => $url->withScheme('http')->getUrl()];
+        return (new Uri(static::$endpoint))
+                ->withQueryParameters([
+                    'url' => (string) $uri,
+                    'format' => 'json',
+                ]);
     }
 }

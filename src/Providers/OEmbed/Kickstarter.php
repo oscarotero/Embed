@@ -2,23 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Url;
-
-class Kickstarter extends OEmbedImplementation
+class Kickstarter extends EndPoint implements EndpointInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function getEndPoint(Url $url)
-    {
-        return 'http://www.kickstarter.com/services/oembed';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getPatterns()
-    {
-        return ['https?://www.kickstarter.com/*'];
-    }
+    protected static $pattern = 'https?://www.kickstarter.com/*';
+    protected static $endpoint = 'http://www.kickstarter.com/services/oembed';
 }

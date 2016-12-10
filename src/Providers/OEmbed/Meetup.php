@@ -2,23 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Url;
-
-class Meetup extends OEmbedImplementation
+class Meetup extends EndPoint implements EndpointInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function getEndPoint(Url $url)
-    {
-        return 'http://api.meetup.com/oembed';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getPatterns()
-    {
-        return ['http://www.meetup.com/*'];
-    }
+    protected static $pattern = 'http://www.meetup.com/*';
+    protected static $endpoint = 'http://api.meetup.com/oembed';
 }

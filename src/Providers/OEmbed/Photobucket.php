@@ -2,23 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Url;
-
-class Photobucket extends OEmbedImplementation
+class Photobucket extends EndPoint implements EndpointInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function getEndPoint(Url $url)
-    {
-        return 'http://s51.photobucket.com/oembed/';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getPatterns()
-    {
-        return ['http://*.photobucket.com/*'];
-    }
+    protected static $pattern = 'http://*.photobucket.com/*';
+    protected static $endpoint = 'http://s51.photobucket.com/oembed/';
 }

@@ -2,6 +2,7 @@
 
 namespace Embed\Providers;
 
+use Embed\Adapters\AdapterInterface;
 use Embed\Utils;
 
 /**
@@ -14,17 +15,26 @@ class Dcterms extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(AdapterInterface $adapter)
     {
-        if (!($html = $this->request->getHtmlContent())) {
+        parent::__construct($adapter);
+
+        if (!($html = $adapter->getResponse()->getHtmlContent())) {
             return false;
         }
 
-        foreach (Utils::getMetas($html) as $meta) {
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            $name = trim(strtolower($meta->getAttribute('name')));
+            $value = $meta->getAttribute('content');
+
+            if (empty($name) || empty($value)) {
+                continue;
+            }
+
             foreach (['dc.', 'dc:', 'dcterms:'] as $prefix) {
-                if (stripos($meta[0], $prefix) === 0) {
-                    $key = substr($meta[0], strlen($prefix));
-                    $this->bag->set($key, $meta[1]);
+                if (stripos($name, $prefix) === 0) {
+                    $name = substr($name, strlen($prefix));
+                    $this->bag->set($name, $value);
                 }
             }
         }

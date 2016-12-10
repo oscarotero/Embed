@@ -2,36 +2,27 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Url;
+use Embed\Http\Uri;
 
-class Scribd extends OEmbedImplementation
+class Scribd extends EndPoint implements EndpointInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function getEndPoint(Url $url)
-    {
-        return 'http://www.scribd.com/services/oembed';
-    }
+    protected static $pattern = [
+        'https?://www.scribd.com/doc/*',
+        'https?://www.scribd.com/document/*',
+    ];
+    protected static $endpoint = 'http://www.scribd.com/services/oembed';
 
     /**
      * {@inheritdoc}
      */
-    public static function getParams(Url $url)
+    public function getEndPoint()
     {
-        return [
-            'url' => $url->createUrl()->withDirectoryPosition(0, 'doc')->getUrl(),
-        ];
-    }
+        $uri = $this->response->getUri()->withDirectoryPosition(0, 'doc');
 
-    /**
-     * {@inheritdoc}
-     */
-    public static function getPatterns()
-    {
-        return [
-            'https?://www.scribd.com/doc/*',
-            'https?://www.scribd.com/document/*',
-        ];
+        return (new Uri(static::$endpoint))
+                ->withQueryParameters([
+                    'url' => (string) $uri,
+                    'format' => 'json',
+                ]);
     }
 }

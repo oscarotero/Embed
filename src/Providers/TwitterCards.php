@@ -2,6 +2,7 @@
 
 namespace Embed\Providers;
 
+use Embed\Adapters\AdapterInterface;
 use Embed\Utils;
 
 /**
@@ -14,14 +15,21 @@ class TwitterCards extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(AdapterInterface $adapter)
     {
-        if (!($html = $this->request->getHtmlContent())) {
+        parent::__construct($adapter);
+        
+        if (!($html = $adapter->getResponse()->getHtmlContent())) {
             return false;
         }
 
-        foreach (Utils::getMetas($html) as $meta) {
-            list($name, $value) = $meta;
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            $name = trim(strtolower($meta->getAttribute('name')));
+            $value = $meta->getAttribute('content');
+
+            if (empty($name) || empty($value)) {
+                continue;
+            }
 
             if (strpos($name, 'twitter:') === 0) {
                 $name = substr($name, 8);
