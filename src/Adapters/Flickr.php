@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Request;
 use Embed\Utils;
 
 /**
@@ -15,7 +15,7 @@ class Flickr extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->getResponse()->getUri()->match([
+        return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
             'https://www.flickr.com/photos/*',
         ]);
     }

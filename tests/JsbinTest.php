@@ -1,6 +1,6 @@
 <?php
-
-class JsbinTest extends TestCaseBase
+namespace Embed\Tests;
+class JsbinTest extends AbstractTestCase
 {
     public function testOne()
     {

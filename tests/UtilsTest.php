@@ -1,8 +1,8 @@
 <?php
-
+namespace Embed\Tests;
 use Embed\Utils;
 
-class UtilsTest extends TestCaseBase
+class UtilsTest extends AbstractTestCase
 {
     public function testSortByProvider()
     {

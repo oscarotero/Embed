@@ -1,6 +1,6 @@
 <?php
-
-class ImgurTest extends TestCaseBase
+namespace Embed\Tests;
+class ImgurTest extends AbstractTestCase
 {
     public function testOne()
     {

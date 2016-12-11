@@ -139,7 +139,7 @@ class OpenGraph extends Provider implements ProviderInterface
     {
         $url = $this->bag->get('url');
 
-        if ($url !== $this->request->getAbsolute('/')) {
+        if ($url !== $this->adapter->getResponse()->getUri()->getAbsolute('/')) {
             return $url;
         }
     }

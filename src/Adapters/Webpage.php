@@ -15,7 +15,7 @@ class Webpage extends Adapter implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid();
+        return $request->getResponse()->isValid();
     }
 
     /**

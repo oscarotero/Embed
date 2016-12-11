@@ -1,6 +1,6 @@
 <?php
-
-class PastieTest extends TestCaseBase
+namespace Embed\Tests;
+class PastieTest extends AbstractTestCase
 {
     public function testOne()
     {

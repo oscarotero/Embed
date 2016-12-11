@@ -1,6 +1,6 @@
 <?php
-
-class HtmlProviderTest extends TestCaseBase
+namespace Embed\Tests;
+class HtmlProviderTest extends AbstractTestCase
 {
     public function testAllowExternalImages()
     {

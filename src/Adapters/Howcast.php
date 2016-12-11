@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Request;
 
 /**
  * Adapter to get the embed code from howcast.com.
@@ -14,7 +14,7 @@ class Howcast extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->getResponse()->getUri()->match([
+        return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
             'https?://www.howcast.com/videos/*',
         ]);
     }

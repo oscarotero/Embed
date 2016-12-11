@@ -1,6 +1,6 @@
 <?php
-
-class N23hqTest extends TestCaseBase
+namespace Embed\Tests;
+class N23hqTest extends AbstractTestCase
 {
     public function testOne()
     {

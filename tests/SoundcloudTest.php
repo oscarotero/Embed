@@ -1,6 +1,6 @@
 <?php
-
-class SoundcloudTest extends TestCaseBase
+namespace Embed\Tests;
+class SoundcloudTest extends AbstractTestCase
 {
     public function testOne()
     {

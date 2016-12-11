@@ -1,6 +1,6 @@
 <?php
-
-class KatchmeTest extends TestCaseBase
+namespace Embed\Tests;
+class KatchmeTest extends AbstractTestCase
 {
     public function testOne()
     {

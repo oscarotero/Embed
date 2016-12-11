@@ -1,6 +1,6 @@
 <?php
-
-class WikipediaTest extends TestCaseBase
+namespace Embed\Tests;
+class WikipediaTest extends AbstractTestCase
 {
     public function testOne()
     {

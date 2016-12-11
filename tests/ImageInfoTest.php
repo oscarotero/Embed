@@ -1,6 +1,6 @@
 <?php
-
-class ImageInfoTest extends TestCaseBase
+namespace Embed\Tests;
+class ImageInfoTest extends AbstractTestCase
 {
     const TEST_IMAGE_URL = 'http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg';
     const TEST_IMAGE_WIDTH = 600;

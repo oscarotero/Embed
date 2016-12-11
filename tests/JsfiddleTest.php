@@ -1,6 +1,6 @@
 <?php
-
-class JsfiddleTest extends TestCaseBase
+namespace Embed\Tests;
+class JsfiddleTest extends AbstractTestCase
 {
     public function testOne()
     {

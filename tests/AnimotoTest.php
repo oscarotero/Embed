@@ -1,17 +1,16 @@
 <?php
-
-class AnimotoTest extends TestCaseBase
+namespace Embed\Tests;
+class AnimotoTest extends AbstractTestCase
 {
     public function testOne()
     {
         $this->assertEmbed(
-            'https://animoto.com/play/JzwsBn5FRVxS0qoqcBP5zA',
+            'https://animoto.com/play/GjsJ1gu0WDRfr4pGw12xZQ',
             [
-                'title' => 'Juno Groove',
+                'title' => 'taco bell',
                 'width' => 640,
                 'height' => 360,
                 'type' => 'video',
-                'authorName' => 'Chris Korhonen',
                 'providerName' => 'Animoto',
             ]
         );

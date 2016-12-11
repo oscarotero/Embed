@@ -1,6 +1,6 @@
 <?php
-
-class GithubTest extends TestCaseBase
+namespace Embed\Tests;
+class GithubTest extends AbstractTestCase
 {
     public function testGist()
     {

@@ -1,6 +1,6 @@
 <?php
-
-class UrlTest extends TestCaseBase
+namespace Embed\Tests;
+class UrlTest extends AbstractTestCase
 {
     public function urlsParserProvider()
     {

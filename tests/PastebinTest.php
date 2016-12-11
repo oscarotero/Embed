@@ -1,6 +1,6 @@
 <?php
-
-class PastebinTest extends TestCaseBase
+namespace Embed\Tests;
+class PastebinTest extends AbstractTestCase
 {
     public function testOne()
     {

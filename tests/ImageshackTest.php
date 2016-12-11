@@ -1,6 +1,6 @@
 <?php
-
-class ImageshackTest extends TestCaseBase
+namespace Embed\Tests;
+class ImageshackTest extends AbstractTestCase
 {
     public function testImageShack()
     {

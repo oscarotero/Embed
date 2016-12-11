@@ -1,6 +1,6 @@
 <?php
-
-class SpreakerTest extends TestCaseBase
+namespace Embed\Tests;
+class SpreakerTest extends AbstractTestCase
 {
     public function testOne()
     {

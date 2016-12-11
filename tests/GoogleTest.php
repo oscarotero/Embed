@@ -1,6 +1,6 @@
 <?php
-
-class GoogleTest extends TestCaseBase
+namespace Embed\Tests;
+class GoogleTest extends AbstractTestCase
 {
     public function testMap()
     {

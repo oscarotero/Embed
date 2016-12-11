@@ -83,7 +83,7 @@ abstract class AbstractResponse
      */
     public function isValid(array $codes = null)
     {
-        if ($validCodes === null) {
+        if ($codes === null) {
             return $this->statusCode === 200;
         }
 

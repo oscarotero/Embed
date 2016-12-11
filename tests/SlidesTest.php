@@ -1,6 +1,6 @@
 <?php
-
-class SlidesTest extends TestCaseBase
+namespace Embed\Tests;
+class SlidesTest extends AbstractTestCase
 {
     public function testOne()
     {

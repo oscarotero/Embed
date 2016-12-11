@@ -1,6 +1,6 @@
 <?php
-
-class DevianArtTest extends TestCaseBase
+namespace Embed\Tests;
+class DevianArtTest extends AbstractTestCase
 {
     public function testOne()
     {
@@ -11,7 +11,7 @@ class DevianArtTest extends TestCaseBase
                 'description' => 'Face Book llOnline Store ll Tumblr ll Help support me on Patreon and get special perks<3llArtstation I used to watch pokemon when I was younger, and it was  the one...',
                 'imageWidth' => 695,
                 'imageHeight' => 900,
-                'type' => 'photo',
+                'type' => 'link',
             ]
         );
     }
@@ -25,7 +25,7 @@ class DevianArtTest extends TestCaseBase
                 'description' => '$randomduck for president, 2012. There may or may not be some irony surrounding this image.',
                 'imageWidth' => 448,
                 'imageHeight' => 672,
-                'type' => 'photo',
+                'type' => 'link',
                 'authorName' => 'Pachunka',
             ]
         );

@@ -17,7 +17,7 @@ class Wikipedia extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->getResponse()->getUri()->match([
+        return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
             'https?://*.wikipedia.org/wiki/*',
         ]);
     }

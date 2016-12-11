@@ -3,7 +3,7 @@
 namespace Embed\Adapters;
 
 use Embed\Utils;
-use Embed\Request;
+use Embed\Http\Request;
 
 /**
  * Adapter to get the embed code from line.do.
@@ -15,7 +15,7 @@ class Line extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->getResponse()->getUri()->match([
+        return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
             'https://line.do/*',
         ]);
     }

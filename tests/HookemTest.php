@@ -1,9 +1,9 @@
 <?php
-
+namespace Embed\Tests;
 /**
  * @link https://github.com/oscarotero/Embed/issues/145
  */
-class HookemTest extends TestCaseBase
+class HookemTest extends AbstractTestCase
 {
     public function testOne()
     {

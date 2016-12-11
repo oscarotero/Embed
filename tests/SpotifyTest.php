@@ -1,6 +1,6 @@
 <?php
-
-class SpotifyTest extends TestCaseBase
+namespace Embed\Tests;
+class SpotifyTest extends AbstractTestCase
 {
     public function testPlay()
     {

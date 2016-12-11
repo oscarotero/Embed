@@ -1,6 +1,6 @@
 <?php
-
-class InstagramTest extends TestCaseBase
+namespace Embed\Tests;
+class InstagramTest extends AbstractTestCase
 {
     public function testHttp()
     {

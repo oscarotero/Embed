@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Request;
 
 /**
  * Adapter to generate embed code from SassMeister.
@@ -14,7 +14,7 @@ class Sassmeister extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->getResponse()->getUri()->match([
+        return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
             'http://sassmeister.com/gist/*',
         ]);
     }

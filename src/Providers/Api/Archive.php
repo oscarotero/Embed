@@ -19,7 +19,7 @@ class Archive extends Provider implements ProviderInterface
     {
         parent::__construct($adapter);
 
-        $endpoint = $adapter->getResponse->getUri()->withQueryParameter('output', 'json');
+        $endPoint = $adapter->getResponse()->getUri()->withQueryParameter('output', 'json');
         $request = $adapter->createRequest($endPoint);
 
         if (($json = $request->getResponse()->getJsonContent())) {

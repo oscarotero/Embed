@@ -2,7 +2,13 @@
     "name": "embed/embed",
     "type": "library",
     "description": "PHP library to retrieve page info using oembed, opengraph, etc",
-    "keywords": ["oembed", "opengraph", "twitter cards", "embed", "embedly"],
+    "keywords": [
+        "oembed",
+        "opengraph",
+        "twitter cards",
+        "embed",
+        "embedly"
+    ],
     "homepage": "https://github.com/oscarotero/Embed",
     "license": "MIT",
     "authors": [
@@ -23,16 +29,25 @@
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "guzzlehttp/guzzle": "5.x",
         "phpunit/phpunit": "*",
-        "friendsofphp/php-cs-fixer": "^1.12"
-    },
-    "suggest": {
-        "guzzlehttp/guzzle@5.x": "To use Guzzle5 request resolver"
+        "friendsofphp/php-cs-fixer": "^1.12",
+        "squizlabs/php_codesniffer": "^2.7"
     },
     "autoload": {
         "psr-4": {
             "Embed\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Embed\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpunit",
+            "phpcs"
+        ],
+        "cs-fix": "php-cs-fixer fix . --fixers=-psr0"
     }
 }

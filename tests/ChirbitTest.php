@@ -1,6 +1,6 @@
 <?php
-
-class ChirbitTest extends TestCaseBase
+namespace Embed\Tests;
+class ChirbitTest extends AbstractTestCase
 {
     public function testOne()
     {
@@ -10,7 +10,7 @@ class ChirbitTest extends TestCaseBase
                 'title' => 'Encana conference call',
                 'width' => 380,
                 'height' => 120,
-                'type' => 'video',
+                'type' => 'rich',
                 'providerName' => 'chirbit',
             ]
         );

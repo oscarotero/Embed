@@ -1,6 +1,6 @@
 <?php
-
-class ThematicTest extends TestCaseBase
+namespace Embed\Tests;
+class ThematicTest extends AbstractTestCase
 {
     public function testOne()
     {

@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Request;
 use Embed\Utils;
 use Embed\Providers;
 
@@ -41,7 +41,7 @@ class File extends Adapter implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && isset(self::$contentTypes[$request->getContentType()]);
+        return $request->getResponse()->isValid() && isset(self::$contentTypes[$request->getResponse()->getContentType()]);
     }
 
     /**
@@ -61,7 +61,7 @@ class File extends Adapter implements AdapterInterface
      */
     public function getType()
     {
-        return self::$contentTypes[$this->request->getMimeType()][0];
+        return self::$contentTypes[$this->getResponse()->getContentType()][0];
     }
 
     /**
@@ -91,12 +91,7 @@ class File extends Adapter implements AdapterInterface
     public function getImagesUrls()
     {
         if ($this->type === 'photo') {
-            return [
-                [
-                    'value' => $this->url,
-                    'providers' => ['adapter'],
-                ],
-            ];
+            return [$this->url];
         }
 
         return [];

@@ -1,6 +1,6 @@
 <?php
-
-class DailyMotionTest extends TestCaseBase
+namespace Embed\Tests;
+class DailyMotionTest extends AbstractTestCase
 {
     public function testOne()
     {

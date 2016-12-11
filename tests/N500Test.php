@@ -1,6 +1,6 @@
 <?php
-
-class N500Test extends TestCaseBase
+namespace Embed\Tests;
+class N500Test extends AbstractTestCase
 {
     public function testPhoto()
     {

@@ -23,7 +23,7 @@ class DOM implements EndpointInterface
      */
     public static function create(AdapterInterface $adapter)
     {
-        return static($adapter->getResponse());
+        return new static($adapter->getResponse());
     }
 
     /**

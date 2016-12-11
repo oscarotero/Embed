@@ -4,7 +4,7 @@ namespace Embed\Providers\OEmbed;
 
 use Embed\Http\Uri;
 
-class Flickr extends EndPoint implements EndpointInterface
+class Facebook extends EndPoint implements EndpointInterface
 {
     protected static $pattern = 'https://www.facebook.com/*';
 
@@ -20,7 +20,7 @@ class Flickr extends EndPoint implements EndpointInterface
         }
 
         return $endPoint->withQueryParameters([
-            'url' => (string) $uri,
+            'url' => (string) $this->response->getUri(),
             'format' => 'json',
         ]);
     }

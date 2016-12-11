@@ -1,6 +1,6 @@
 <?php
-
-class WordPressTest extends TestCaseBase
+namespace Embed\Tests;
+class WordPressTest extends AbstractTestCase
 {
     public function testOne()
     {

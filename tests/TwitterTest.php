@@ -1,6 +1,6 @@
 <?php
-
-class TwitterTest extends TestCaseBase
+namespace Embed\Tests;
+class TwitterTest extends AbstractTestCase
 {
     public function testNormal()
     {

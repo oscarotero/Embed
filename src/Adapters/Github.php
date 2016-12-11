@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Request;
 use Embed\Providers\Api;
 
 /**
@@ -15,7 +15,7 @@ class Github extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->getResponse()->getUri()->match([
+        return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
             'https://gist.github.com/*/*',
             'https://github.com/*',
         ]);

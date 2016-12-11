@@ -1,6 +1,6 @@
 <?php
-
-class RedirectionsTest extends TestCaseBase
+namespace Embed\Tests;
+class RedirectionsTest extends AbstractTestCase
 {
     public function testGoogleTranslate()
     {

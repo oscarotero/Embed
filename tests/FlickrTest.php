@@ -1,6 +1,6 @@
 <?php
-
-class FlickrTest extends TestCaseBase
+namespace Embed\Tests;
+class FlickrTest extends AbstractTestCase
 {
     public function testSets()
     {

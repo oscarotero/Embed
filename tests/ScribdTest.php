@@ -1,6 +1,6 @@
 <?php
-
-class ScribdTest extends TestCaseBase
+namespace Embed\Tests;
+class ScribdTest extends AbstractTestCase
 {
     public function testOne()
     {

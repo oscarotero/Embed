@@ -174,9 +174,10 @@ abstract class Adapter
             }
         }
 
-        if (!empty($types)) {
-            sort($types, SORT_NUMERIC);
+        unset($types['link']);
 
+        if (!empty($types)) {
+            asort($types, SORT_NUMERIC);
             return key($types);
         }
 

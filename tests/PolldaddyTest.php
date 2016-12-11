@@ -1,6 +1,6 @@
 <?php
-
-class PolldaddyTest extends TestCaseBase
+namespace Embed\Tests;
+class PolldaddyTest extends AbstractTestCase
 {
     public function testOne()
     {
