@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 /**
  * @link https://github.com/oscarotero/Embed/issues/145
  */

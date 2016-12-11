@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class LineTest extends AbstractTestCase
 {
     public function testOne()

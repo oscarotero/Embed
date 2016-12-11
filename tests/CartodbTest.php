@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class CartodbTest extends AbstractTestCase
 {
     public function testOne()

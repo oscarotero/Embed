@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class ChirbitTest extends AbstractTestCase
 {
     public function testOne()

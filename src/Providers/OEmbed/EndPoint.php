@@ -7,7 +7,7 @@ use Embed\Http\Response;
 use Embed\Http\Uri;
 
 /**
- * Abstract class extended by other classes
+ * Abstract class extended by other classes.
  */
 abstract class EndPoint
 {
@@ -28,7 +28,7 @@ abstract class EndPoint
     }
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param Response $response
      */

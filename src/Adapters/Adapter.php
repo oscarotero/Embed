@@ -2,10 +2,8 @@
 
 namespace Embed\Adapters;
 
-use Embed\Utils;
 use Embed\Http\Uri;
 use Embed\Http\Request;
-use Embed\Providers\ProviderInterface;
 use Embed\Bag;
 
 /**
@@ -178,6 +176,7 @@ abstract class Adapter
 
         if (!empty($types)) {
             asort($types, SORT_NUMERIC);
+
             return key($types);
         }
 
@@ -218,7 +217,7 @@ abstract class Adapter
                 }
             }
         }
-        
+
         return $feeds;
     }
 
@@ -474,7 +473,6 @@ abstract class Adapter
                 return ($a['size'] > $b['size']) ? -1 : 1;
             });
         }
-
 
         reset($images);
         $image = current($images);

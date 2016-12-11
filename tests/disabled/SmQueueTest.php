@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 /**
  * This is to test responses html that need to be trimmed before load in the DOMElement.
  */

@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class TwitterTest extends AbstractTestCase
 {
     public function testNormal()

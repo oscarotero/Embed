@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 use Embed\Http\Uri;
 
 class UrlTest extends AbstractTestCase

@@ -15,7 +15,7 @@ class DOM implements EndPointInterface
     protected $response;
 
     /**
-     * Create a instance of a OEmbedEndPoint
+     * Create a instance of a OEmbedEndPoint.
      *
      * @param AdapterInterface $adapter
      *
@@ -27,7 +27,7 @@ class DOM implements EndPointInterface
     }
 
     /**
-     * Construct
+     * Construct.
      *
      * @param Response $response
      */
@@ -37,7 +37,7 @@ class DOM implements EndPointInterface
     }
 
     /**
-     * Returns the oembed endPoint
+     * Returns the oembed endPoint.
      *
      * @return Uri|null
      */

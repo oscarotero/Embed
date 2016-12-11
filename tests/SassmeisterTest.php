@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class SassmeisterTest extends AbstractTestCase
 {
     public function testGist()

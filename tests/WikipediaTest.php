@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class WikipediaTest extends AbstractTestCase
 {
     public function testOne()

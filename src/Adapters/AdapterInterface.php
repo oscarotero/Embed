@@ -6,7 +6,6 @@ use Embed\Http\Uri;
 use Embed\Http\Request;
 use Embed\Http\Response;
 use Embed\DataInterface;
-use Embed\Badge;
 
 /**
  * Interface used by all adapters.
@@ -57,7 +56,7 @@ interface AdapterInterface extends DataInterface
      * Get a config value.
      *
      * @param string $name
-     * @param mixed $default
+     * @param mixed  $default
      *
      * @return string|null
      */

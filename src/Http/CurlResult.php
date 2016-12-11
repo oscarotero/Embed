@@ -2,8 +2,6 @@
 
 namespace Embed\Http;
 
-use Embed\Exceptions\EmbedException;
-
 /**
  * Class to dispatch urls using curl and get the result.
  */
@@ -16,7 +14,7 @@ class CurlResult
     protected $data;
 
     /**
-     * Creates a new response
+     * Creates a new response.
      *
      * @param resource $connection The curl resource
      */
@@ -30,7 +28,7 @@ class CurlResult
     }
 
     /**
-     * Returns the response result
+     * Returns the response result.
      */
     public function getResult()
     {
@@ -47,7 +45,7 @@ class CurlResult
     }
 
     /**
-     * Returns the connection
+     * Returns the connection.
      *
      * @return resource
      */
@@ -57,7 +55,7 @@ class CurlResult
     }
 
     /**
-     * Callback used on receive a header
+     * Callback used on receive a header.
      *
      * @param callable $callback
      */
@@ -67,7 +65,7 @@ class CurlResult
     }
 
     /**
-     * Callback used on receive a body string portion
+     * Callback used on receive a body string portion.
      *
      * @param callable $callback
      */
@@ -77,7 +75,7 @@ class CurlResult
     }
 
     /**
-     * Callback used to collect the headers
+     * Callback used to collect the headers.
      *
      * @param resource $connection
      * @param string   $string
@@ -89,7 +87,7 @@ class CurlResult
         if (!strpos($string, ':')) {
             return strlen($string);
         }
-        
+
         list($name, $value) = array_map('trim', explode(':', $string, 2));
 
         $name = strtolower($name);
@@ -108,7 +106,7 @@ class CurlResult
     }
 
     /**
-     * Callback used to get the body content
+     * Callback used to get the body content.
      *
      * @param resource $connection
      * @param string   $string
@@ -125,6 +123,7 @@ class CurlResult
 
         //Cancel
         $this->body = null;
+
         return -1;
     }
 }

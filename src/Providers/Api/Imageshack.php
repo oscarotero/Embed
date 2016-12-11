@@ -2,8 +2,6 @@
 
 namespace Embed\Providers\Api;
 
-use Embed\Http\Uri;
-use Embed\Http\Request;
 use Embed\Adapters\AdapterInterface;
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;

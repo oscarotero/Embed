@@ -23,7 +23,7 @@ class Embedly implements EndPointInterface
     }
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param Response $response
      * @param string   $key

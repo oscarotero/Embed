@@ -21,7 +21,7 @@ class Deviantart extends EndPoint implements EndPointInterface
                 ->withQueryParameters([
                     'url' => (string) $this->response->getUri(),
                     'format' => 'json',
-                    'for' => 'embed'
+                    'for' => 'embed',
                 ]);
     }
 }

@@ -3,10 +3,8 @@
 namespace Embed\Providers;
 
 use Embed\Adapters\AdapterInterface;
-use Embed\Http\Request;
 use Embed\Http\Response;
 use Embed\Http\Uri;
-use Embed\Utils;
 
 /**
  * Generic oembed provider.
@@ -207,7 +205,7 @@ class OEmbed extends Provider implements ProviderInterface
 
         //Search in the DOM
         $endPoint = OEmbed\DOM::create($this->adapter);
-        
+
         if ($endPoint && ($uri = $endPoint->getEndPoint())) {
             return $uri;
         }
@@ -228,7 +226,7 @@ class OEmbed extends Provider implements ProviderInterface
     }
 
     /**
-     * Save the oembed data in the bag
+     * Save the oembed data in the bag.
      *
      * @param Response $response
      */

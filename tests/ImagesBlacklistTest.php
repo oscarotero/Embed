@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class ImagesBlacklistTest extends AbstractTestCase
 {
     public function testPlainText()

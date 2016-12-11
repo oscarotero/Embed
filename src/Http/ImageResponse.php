@@ -2,11 +2,7 @@
 
 namespace Embed\Http;
 
-use Embed\Exceptions\EmbedException;
-use Embed\Http\Uri;
-use Exception;
-use DOMDocument;
-use SimpleXMLElement;
+
 
 /**
  * Class to consume http responses.
@@ -16,7 +12,7 @@ class ImageResponse extends AbstractResponse
     protected $size;
 
     /**
-     * Create a ImageResponse using a bas64 url
+     * Create a ImageResponse using a bas64 url.
      *
      * @param Uri $uri
      *
@@ -31,7 +27,7 @@ class ImageResponse extends AbstractResponse
         }
 
         if (($info = getimagesizefromstring(base64_decode(substr($pieces[1], 7)))) !== false) {
-            return new ImageResponse(
+            return new self(
                 $uri,
                 200,
                 $info['mime'],

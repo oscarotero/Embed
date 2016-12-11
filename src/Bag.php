@@ -10,7 +10,7 @@ class Bag
     private $parameters;
 
     /**
-     * Set the initial parameters
+     * Set the initial parameters.
      *
      * @param array $parameters
      */
@@ -57,7 +57,7 @@ class Bag
      * Get a value.
      *
      * @param string $name
-     * @param mixed $default
+     * @param mixed  $default
      *
      * @return string|null
      */

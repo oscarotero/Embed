@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class MeetUpTest extends AbstractTestCase
 {
     public function testOne()

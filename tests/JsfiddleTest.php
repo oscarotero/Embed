@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class JsfiddleTest extends AbstractTestCase
 {
     public function testOne()

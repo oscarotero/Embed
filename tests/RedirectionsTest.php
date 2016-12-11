@@ -1,7 +1,9 @@
 <?php
+
 namespace Embed\Tests;
 
 use Embed\Embed;
+
 class RedirectionsTest extends AbstractTestCase
 {
     public function testGoogleTranslate()

@@ -48,7 +48,7 @@ class Uri
     }
 
     /**
-     * Remove the built url on clone
+     * Remove the built url on clone.
      */
     public function __clone()
     {
@@ -110,7 +110,7 @@ class Uri
      */
     public function createAbsolute($uri)
     {
-        return Uri::create($this->getAbsolute($uri));
+        return self::create($this->getAbsolute($uri));
     }
 
     /**

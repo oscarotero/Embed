@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class AnimotoTest extends AbstractTestCase
 {
     public function testOne()

@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class N23hqTest extends AbstractTestCase
 {
     public function testOne()

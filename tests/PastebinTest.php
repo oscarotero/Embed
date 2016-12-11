@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class PastebinTest extends AbstractTestCase
 {
     public function testOne()

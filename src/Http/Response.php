@@ -2,7 +2,6 @@
 
 namespace Embed\Http;
 
-use Embed\Exceptions\EmbedException;
 use Exception;
 use DOMDocument;
 use SimpleXMLElement;
@@ -115,10 +114,10 @@ class Response extends AbstractResponse
     }
 
     /**
-     * Set the response content
+     * Set the response content.
      *
      * @param string $content
-     */ 
+     */
     private function setContent($content)
     {
         $this->content = $content;

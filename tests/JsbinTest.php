@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class JsbinTest extends AbstractTestCase
 {
     public function testOne()

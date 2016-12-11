@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class DevianArtTest extends AbstractTestCase
 {
     public function testOne()

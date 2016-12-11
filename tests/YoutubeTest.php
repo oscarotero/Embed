@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class YoutubeTest extends AbstractTestCase
 {
     public function testOne()

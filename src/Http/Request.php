@@ -12,9 +12,9 @@ class Request
     private $dispatcher;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @param Uri|string $uri
+     * @param Uri|string               $uri
      * @param DispatcherInterface|null $dispatcher
      */
     public function __construct($uri, DispatcherInterface $dispatcher = null)
@@ -28,7 +28,7 @@ class Request
     }
 
     /**
-     * Returns the request's uri
+     * Returns the request's uri.
      *
      * @return Uri
      */
@@ -38,7 +38,7 @@ class Request
     }
 
     /**
-     * Returns the dispatcher
+     * Returns the dispatcher.
      *
      * @return DispatcherInterface
      */
@@ -48,7 +48,7 @@ class Request
     }
 
     /**
-     * Returns the request's response
+     * Returns the request's response.
      *
      * @return Response
      */
@@ -62,7 +62,7 @@ class Request
     }
 
     /**
-     * Set a new response
+     * Set a new response.
      *
      * @param Response $response
      */

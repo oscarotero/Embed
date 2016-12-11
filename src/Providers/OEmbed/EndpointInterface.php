@@ -11,7 +11,7 @@ use Embed\Http\Uri;
 interface EndPointInterface
 {
     /**
-     * Check the response and create new instance
+     * Check the response and create new instance.
      *
      * @param AdapterInterface $adapter
      *
@@ -20,7 +20,7 @@ interface EndPointInterface
     public static function create(AdapterInterface $adapter);
 
     /**
-     * Returns the oembed endPoint
+     * Returns the oembed endPoint.
      *
      * @return Uri|null
      */

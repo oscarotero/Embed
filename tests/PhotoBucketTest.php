@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class PhotoBucketTest extends AbstractTestCase
 {
     public function testOne()

@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class BandcampTest extends AbstractTestCase
 {
     public function testOne()

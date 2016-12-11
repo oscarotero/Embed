@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class AbancaTest extends AbstractTestCase
 {
     public function testOne()

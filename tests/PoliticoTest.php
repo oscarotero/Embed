@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class PoliticoTest extends AbstractTestCase
 {
     public function testOne()

@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class FileTest extends AbstractTestCase
 {
     public function testJpg()

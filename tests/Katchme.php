@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class KatchmeTest extends AbstractTestCase
 {
     public function testOne()

@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class Lavozdegalicia extends AbstractTestCase
 {
     public function testOne()

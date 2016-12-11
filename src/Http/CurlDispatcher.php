@@ -22,7 +22,7 @@ class CurlDispatcher implements DispatcherInterface
     ];
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param array $config
      */
@@ -46,7 +46,7 @@ class CurlDispatcher implements DispatcherInterface
     }
 
     /**
-     * Remove the cookies file on destruct the instance
+     * Remove the cookies file on destruct the instance.
      */
     public function __destruct()
     {

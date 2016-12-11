@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class ImgurTest extends AbstractTestCase
 {
     public function testOne()

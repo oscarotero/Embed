@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class ArchiveTest extends AbstractTestCase
 {
     public function testOne()

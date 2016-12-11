@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class AmchartsTest extends AbstractTestCase
 {
     public function testOne()

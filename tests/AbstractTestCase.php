@@ -1,9 +1,9 @@
 <?php
+
 namespace Embed\Tests;
 
 use PHPUnit_Framework_TestCase;
 use Embed\Embed;
-use Embed\Http\Request;
 use Embed\Http\Response;
 use Embed\Adapters\AdapterInterface;
 

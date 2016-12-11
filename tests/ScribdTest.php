@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class ScribdTest extends AbstractTestCase
 {
     public function testOne()

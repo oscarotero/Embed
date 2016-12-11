@@ -18,7 +18,7 @@ class TwitterCards extends Provider implements ProviderInterface
     public function __construct(AdapterInterface $adapter)
     {
         parent::__construct($adapter);
-        
+
         if (!($html = $adapter->getResponse()->getHtmlContent())) {
             return false;
         }

@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class SnipplrTest extends AbstractTestCase
 {
     public function testOne()

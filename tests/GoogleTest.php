@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class GoogleTest extends AbstractTestCase
 {
     public function testMap()

@@ -19,7 +19,7 @@ interface ProviderInterface extends DataInterface
     public function __construct(AdapterInterface $adapter);
 
     /**
-     * Returns the bag containing all data
+     * Returns the bag containing all data.
      *
      * @return Bag
      */

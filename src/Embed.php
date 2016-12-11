@@ -12,7 +12,7 @@ abstract class Embed
      * Gets the info from an url.
      *
      * @param string|Uri|Request $request
-     * @param array          $config
+     * @param array              $config
      *
      * @throws Exceptions\InvalidUrlException If the urls is not valid
      * @throws \InvalidArgumentException      If any config argument is not valid

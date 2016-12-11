@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class BambuserTest extends AbstractTestCase
 {
     public function testOne()

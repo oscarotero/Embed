@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class FlickrTest extends AbstractTestCase
 {
     public function testSets()

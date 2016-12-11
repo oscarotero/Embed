@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 use Embed\Utils;
 
 class UtilsTest extends AbstractTestCase

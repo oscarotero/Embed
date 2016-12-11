@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class ViddlerTest extends AbstractTestCase
 {
     public function testOne()

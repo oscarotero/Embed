@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class InstagramTest extends AbstractTestCase
 {
     public function testHttp()

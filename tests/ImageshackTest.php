@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 class ImageshackTest extends AbstractTestCase
 {
     public function testImageShack()

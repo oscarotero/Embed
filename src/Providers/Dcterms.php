@@ -3,7 +3,6 @@
 namespace Embed\Providers;
 
 use Embed\Adapters\AdapterInterface;
-use Embed\Utils;
 
 /**
  * Generic Dublin Core provider.

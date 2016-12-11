@@ -1,5 +1,7 @@
 <?php
+
 namespace Embed\Tests;
+
 use Embed\Http\CurlDispatcher;
 use Embed\Http\Uri;
 use Embed\Embed;
@@ -11,11 +13,11 @@ class ImageInfoTest extends AbstractTestCase
         $dispatcher = new CurlDispatcher();
 
         $result = $dispatcher->dispatchImages([
-            Uri::create('http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg')
+            Uri::create('http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg'),
         ]);
 
         $this->assertCount(1, $result);
-        
+
         $img = $result[0];
 
         $this->assertEquals(600, $img->getWidth());
@@ -28,7 +30,7 @@ class ImageInfoTest extends AbstractTestCase
         $dispatcher = new CurlDispatcher();
 
         $result = $dispatcher->dispatchImages([
-            Uri::create('http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg')
+            Uri::create('http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg'),
         ]);
 
         $info = Embed::create('http://www.websiteoptimization.com/speed/tweak/inline-images/folder-test.html');
