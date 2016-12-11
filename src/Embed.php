@@ -28,9 +28,8 @@ abstract class Embed
         $info = self::process($request, $config);
 
         //if the canonical url is different, repeat the process
-        if ((string) $request->getUri() !== $info->url) {
+        if ((string) $request->getResponse()->getUri() !== $info->url) {
             $request = new Request($info->url, $request->getDispatcher());
-
             return self::process($request, $config);
         }
 
@@ -64,6 +63,6 @@ abstract class Embed
             return new Adapters\Webpage($request, $config);
         }
 
-        throw new Exceptions\InvalidUrlException(sprintf("Invalid url '%s'", (string) $request->getUri()));
+        throw new Exceptions\InvalidUrlException(sprintf("Invalid url '%s' (status code: )", (string) $request->getUri(), $request->getResponse()->getStatusCode()));
     }
 }

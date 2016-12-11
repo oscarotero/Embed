@@ -7,8 +7,8 @@ use Embed\Http\Uri;
 class Scribd extends EndPoint implements EndPointInterface
 {
     protected static $pattern = [
-        'https?://www.scribd.com/doc/*',
-        'https?://www.scribd.com/document/*',
+        'www.scribd.com/doc/*',
+        'www.scribd.com/document/*',
     ];
     protected static $endPoint = 'http://www.scribd.com/services/oembed';
 

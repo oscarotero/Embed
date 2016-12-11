@@ -6,7 +6,7 @@ use Embed\Http\Uri;
 
 class Jsbin extends EndPoint implements EndPointInterface
 {
-    protected static $pattern = 'http?://output.jsbin.com/*';
+    protected static $pattern = 'output.jsbin.com/*';
     protected static $endPoint = 'http://jsbin.com/oembed';
 
     /**

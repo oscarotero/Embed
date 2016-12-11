@@ -16,7 +16,7 @@ class Cadenaser extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
-            'https?://play.cadenaser.com/audio/*',
+            'play.cadenaser.com/audio/*',
         ]);
     }
 

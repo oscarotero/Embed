@@ -16,7 +16,7 @@ class N500px extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
-            'https?://500px.com/photo/*',
+            '500px.com/photo/*',
         ]);
     }
 

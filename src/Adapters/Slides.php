@@ -16,7 +16,7 @@ class Slides extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
-            'https?://slides.com/*',
+            'slides.com/*',
         ]);
     }
 

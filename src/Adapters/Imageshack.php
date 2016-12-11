@@ -16,7 +16,7 @@ class Imageshack extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
-            'https?://imageshack.com/i/*',
+            'imageshack.com/i/*',
         ]);
     }
 

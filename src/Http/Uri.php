@@ -68,7 +68,9 @@ class Uri
             $patterns = [$patterns];
         }
 
-        $uri = (string) $this;
+        //Remove scheme and query
+        $uri = preg_replace('|(\?.*)?$|', '', (string) $this);
+        $uri = preg_replace('|^(\w+://)|', '', $uri);
 
         foreach ($patterns as $pattern) {
             $pattern = str_replace(['\\*', '\\?'], ['.+', '?'], preg_quote($pattern, '|'));

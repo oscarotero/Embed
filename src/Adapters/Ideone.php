@@ -16,7 +16,7 @@ class Ideone extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
-            'https?://ideone.com/*',
+            'ideone.com/*',
         ]);
     }
 

@@ -116,7 +116,7 @@ abstract class Adapter
      */
     public function getTitle()
     {
-        foreach ($this->providers as $provider) {
+        foreach ($this->providers as $k => $provider) {
             $title = $provider->getTitle();
 
             if (!empty($title)) {

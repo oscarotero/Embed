@@ -16,8 +16,8 @@ class Github extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
-            'https://gist.github.com/*/*',
-            'https://github.com/*',
+            'gist.github.com/*/*',
+            'github.com/*',
         ]);
     }
 

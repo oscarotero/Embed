@@ -15,7 +15,7 @@ class Lavozdegalicia extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
-            'http://www.lavozdegalicia.es/*',
+            'www.lavozdegalicia.es/*',
         ]);
     }
 

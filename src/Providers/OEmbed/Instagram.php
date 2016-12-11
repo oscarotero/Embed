@@ -7,8 +7,8 @@ use Embed\Http\Uri;
 class Instagram extends EndPoint implements EndPointInterface
 {
     protected static $pattern = [
-        'https?://instagram.com/p/*',
-        'https?://www.instagram.com/p/*',
+        'instagram.com/p/*',
+        'www.instagram.com/p/*',
     ];
     protected static $endPoint = 'http://api.instagram.com/oembed';
 

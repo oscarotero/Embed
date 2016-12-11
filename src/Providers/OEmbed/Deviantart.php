@@ -7,8 +7,8 @@ use Embed\Http\Uri;
 class Deviantart extends EndPoint implements EndPointInterface
 {
     protected static $pattern = [
-        'http://*.deviantart.com/art/*',
-        'http://www.deviantart.com/#/d*',
+        '*.deviantart.com/art/*',
+        'www.deviantart.com/#/d*',
     ];
     protected static $endPoint = 'http://backend.deviantart.com/oembed';
 

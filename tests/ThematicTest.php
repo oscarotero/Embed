@@ -10,10 +10,10 @@ class ThematicTest extends AbstractTestCase
             'http://www.thematic.co/stories/9m3-the-road-to-aberdeen',
             [
                 'title' => 'the Road to Aberdeen',
-                'width' => 600,
-                'height' => 300,
-                'type' => 'rich',
-                'code' => '<iframe src="http://www.thematic.co/embed/9m3-the-road-to-aberdeen" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:600px;height:300px;"></iframe>',
+                'width' => 400,
+                'height' => 200,
+                'type' => 'photo',
+                'code' => '<iframe width="400" height="200" src="http://www.thematic.co/embed/9m3-the-road-to-aberdeen" allowtransparency="true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
             ]
         );
     }

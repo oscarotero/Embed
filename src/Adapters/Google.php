@@ -17,11 +17,11 @@ class Google extends Webpage implements AdapterInterface
     public static function check(Request $request)
     {
         return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
-            'https://maps.google.*',
-            'https://www.google.*/maps*',
-            'https://calendar.google.com/calendar/*',
-            'https://drive.google.com/file/*/view',
-            'https://plus.google.com/*/posts/*',
+            'maps.google.*',
+            'www.google.*/maps*',
+            'calendar.google.com/calendar/*',
+            'drive.google.com/file/*/view',
+            'plus.google.com/*/posts/*',
         ]);
     }
 
