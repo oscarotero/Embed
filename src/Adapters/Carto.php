@@ -15,7 +15,7 @@ class Carto extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https://*.carto.com/viz/*/public_map',
         ]);
     }
@@ -28,7 +28,7 @@ class Carto extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = 520;
 
-        $url = $this->request->createUrl()->withDirectoryPosition(2, 'embed_map')->getUrl();
+        $url = $this->getResponse()->getUri()->withDirectoryPosition(2, 'embed_map');
 
         return Utils::iframe($url, '100%', $this->height);
     }

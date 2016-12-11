@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Request;
 use Embed\Providers\Api;
 
 /**
@@ -15,7 +15,7 @@ class Soundcloud extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid([200, 503]) && $request->match([
+        return $request->isValid([200, 503]) && $request->getResponse()->getUri()->match([
             'https?://soundcloud.com/*',
             'https?://m.soundcloud.com/*',
         ]);
@@ -24,18 +24,10 @@ class Soundcloud extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    protected function run()
+    public function __construct(Request $request, array $config = [])
     {
-        $this->addProvider('soundcloud', new Api\Soundcloud());
+        parent::__construct($request, $config);
 
-        parent::run();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getType()
-    {
-        return $this->code ? 'rich' : 'link';
+        $this->providers['soundcloud'] = new Api\Soundcloud($this);
     }
 }

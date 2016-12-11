@@ -3,7 +3,7 @@
 namespace Embed\Adapters;
 
 use Embed\Utils;
-use Embed\Request;
+use Embed\Http\Request;
 
 /**
  * Adapter to get the embed code from spreaker.com.
@@ -15,7 +15,7 @@ class Spreaker extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'http?://www.spreaker.com/*',
         ]);
     }
@@ -25,19 +25,21 @@ class Spreaker extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $dom = $this->request->getHtmlContent();
+        $dom = $this->getResponse()->getHtmlContent();
 
         foreach ($dom->getElementsByTagName('a') as $a) {
             if ($a->hasAttribute('data-episode_id')) {
                 $id = (int) $a->getAttribute('data-episode_id');
 
                 if ($id) {
-                    return Utils::iframe($this->request->createUrl()
+                    $uri = $this->getResponse()->getUri()
                         ->withPath('embed/player/standard')
                         ->withQueryParameters([
                             'autoplay' => 'false',
                             'episode_id' => $id,
-                        ]), $this->width, $this->height, 'min-width:400px;border:none;overflow:hidden;');
+                        ]);
+
+                    return Utils::iframe($uri, $this->width, $this->height, 'min-width:400px;border:none;overflow:hidden;');
                 }
 
                 break;

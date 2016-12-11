@@ -15,7 +15,7 @@ class Imageshack extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https?://imageshack.com/i/*',
         ]);
     }
@@ -23,10 +23,10 @@ class Imageshack extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    protected function run()
+    public function __construct(Request $request, array $config = [])
     {
-        $this->addProvider('imageshack', new Api\Imageshack());
+        parent::__construct($request, $config);
 
-        parent::run();
+        $this->providers['imageshack'] = new Api\Imageshack($this);
     }
 }

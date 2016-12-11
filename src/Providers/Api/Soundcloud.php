@@ -2,6 +2,9 @@
 
 namespace Embed\Providers\Api;
 
+use Embed\Http\Uri;
+use Embed\Http\Request;
+use Embed\Adapters\AdapterInterface;
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
 
@@ -10,22 +13,25 @@ use Embed\Providers\ProviderInterface;
  */
 class Soundcloud extends Provider implements ProviderInterface
 {
-    protected $config = [
-        'key' => null,
-    ];
-
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(AdapterInterface $adapter)
     {
-        if (!empty($this->config['key'])) {
-            $api = $this->request
-                ->withUrl('http://api.soundcloud.com/resolve.json')
-                ->withQueryParameter('client_id', $this->config['key'])
-                ->withQueryParameter('url', $this->request->getUrl());
+        parent::__construct($adapter);
 
-            if ($json = $api->getJsonContent()) {
+        $key = $adapter->getConfig('soundcloud[key]');
+
+        if (!empty($key)) {
+            $endPoint = (new Uri('http://api.soundcloud.com/resolve.json'))
+                ->withQueryParameters([
+                    'client_id' => $key,
+                    'url' => (string) $adapter->getResponse->getUri(),
+                ]);
+
+            $request = $adapter->createRequest($endPoint);
+
+            if ($json = $request->getResponse()->getJsonContent()) {
                 $this->bag->set($json);
             }
         }

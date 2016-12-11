@@ -2,6 +2,7 @@
 
 namespace Embed\Providers\Api;
 
+use Embed\Adapters\AdapterInterface;
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
 
@@ -13,13 +14,15 @@ class Wikipedia extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(AdapterInterface $adapter)
     {
-        $titles = $this->request->getDirectoryPosition(1);
+        parent::__construct($adapter);
+
+        $titles = $adapter->getResponse()->getDirectoryPosition(1);
 
         if (!empty($titles)) {
             //extract images
-            $api = $this->request
+            $endPoint = $adapter->getResponse()->getUri()
                 ->withPath('/w/api.php')
                 ->withQueryParameters([
                     'action' => 'query',
@@ -29,16 +32,20 @@ class Wikipedia extends Provider implements ProviderInterface
                     'prop' => 'images',
                 ]);
 
-            if (($json = $api->getJsonContent())) {
+            $request = $adapter->createRequest($endPoint);
+
+            if (($json = $request->getResponse()->getJsonContent())) {
                 $this->bag->set('images', $json);
             }
 
             //extract content
-            $api = $api
+            $endPoint = $endPoint
                 ->withQueryParameter('prop', 'extracts')
                 ->withQueryParameter('exchars', 1500);
 
-            if (($json = $api->getJsonContent())) {
+            $request = $adapter->createRequest($endPoint);
+
+            if (($json = $request->getResponse()->getJsonContent())) {
                 $this->bag->set('extracts', $json);
             }
         }
@@ -101,7 +108,7 @@ class Wikipedia extends Provider implements ProviderInterface
 
             //Get image urls
             if ($imgs) {
-                $json = $this->request
+                $endPoint = $this->adapter->getResponse()->getUri()
                     ->withPath('/w/api.php')
                     ->withQueryParameters([
                         'action' => 'query',
@@ -110,8 +117,10 @@ class Wikipedia extends Provider implements ProviderInterface
                         'format' => 'json',
                         'continue' => '',
                         'titles' => implode('|', $imgs),
-                    ])
-                    ->getJsonContent();
+                    ]);
+
+                $request = $this->adapter->createRequest($endPoint);
+                $json = $request->getResponse()->getJsonContent();
 
                 if (isset($json['query']['pages'])) {
                     foreach ($json['query']['pages'] as $page) {

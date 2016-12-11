@@ -15,7 +15,7 @@ class N500px extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https?://500px.com/photo/*',
         ]);
     }
@@ -25,8 +25,10 @@ class N500px extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        if (is_numeric($this->request->getDirectoryPosition(1))) {
-            return Utils::iframe($this->request->createUrl()->withDirectoryPosition(2, 'embed.html'), $this->width, $this->height);
+        $uri = $this->getResponse()->getUri();
+
+        if (is_numeric($uri->getDirectoryPosition(1))) {
+            return Utils::iframe($uri->withDirectoryPosition(2, 'embed.html'), $this->width, $this->height);
         }
     }
 
@@ -35,7 +37,7 @@ class N500px extends Webpage implements AdapterInterface
      */
     public function getWidth()
     {
-        if (is_numeric($this->request->getDirectoryPosition(1))) {
+        if (is_numeric($this->getResponse()->getUri()->getDirectoryPosition(1))) {
             return $this->imageWidth;
         }
     }
@@ -45,7 +47,7 @@ class N500px extends Webpage implements AdapterInterface
      */
     public function getHeight()
     {
-        if (is_numeric($this->request->getDirectoryPosition(1))) {
+        if (is_numeric($this->getResponse()->getUri()->getDirectoryPosition(1))) {
             return $this->imageHeight;
         }
     }

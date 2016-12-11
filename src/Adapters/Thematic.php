@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Request;
 use Embed\Utils;
 
 /**
@@ -15,7 +15,7 @@ class Thematic extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https?://www.thematic.co/stories/*',
         ]);
     }
@@ -25,7 +25,7 @@ class Thematic extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        return Utils::iframe($this->request->getStartingUrl()->withDirectoryPosition(0, 'embed'), $this->width, $this->height);
+        return Utils::iframe($this->getRequest->getUri()->withDirectoryPosition(0, 'embed'), $this->width, $this->height);
     }
 
     /**

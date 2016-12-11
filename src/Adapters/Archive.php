@@ -16,7 +16,7 @@ class Archive extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https?://archive.org/details/*',
         ]);
     }
@@ -24,11 +24,11 @@ class Archive extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    protected function run()
+    public function __construct(Request $request, array $config = [])
     {
-        $this->addProvider('archive', new Api\Archive());
+        parent::__construct($request, $config);
 
-        parent::run();
+        $this->providers['archive'] = new Api\Archive($this);
     }
 
     /**
@@ -36,7 +36,7 @@ class Archive extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        return Utils::iframe(str_replace('/details/', '/embed/', $this->getUrl()), $this->getWidth(), $this->getHeight());
+        return Utils::iframe(str_replace('/details/', '/embed/', $this->url), $this->width, $this->height);
     }
 
     /**

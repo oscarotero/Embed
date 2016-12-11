@@ -14,7 +14,7 @@ class Lavozdegalicia extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'http://www.lavozdegalicia.es/*',
         ]);
     }
@@ -22,10 +22,10 @@ class Lavozdegalicia extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    protected function init()
+    public function __construct(Request $request, array $config = [])
     {
-        $this->request = $this->request->withQueryParameter('piano_d', '1');
+        parent::__construct($request, $config);
 
-        $this->run();
+        $this->createRequest($this->getRequest()->getUri()->withQueryParameter('piano_d', '1'));
     }
 }

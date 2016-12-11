@@ -2,9 +2,10 @@
 
 namespace Embed\Providers\Api;
 
-use Embed\Utils;
+use Embed\Adapters\AdapterInterface;
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
+use Embed\Utils;
 
 /**
  * Provider to use the API of google.
@@ -19,9 +20,11 @@ class GoogleMaps extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(AdapterInterface $adapter)
     {
-        $mode = $this->request->getDirectoryPosition(1);
+        parent::__construct($adapter);
+
+        $mode = $adapter->getResponse()->getUri()->getDirectoryPosition(1);
 
         switch ($mode) {
             case 'place':
@@ -37,12 +40,14 @@ class GoogleMaps extends Provider implements ProviderInterface
      */
     public function getTitle()
     {
+        $uri = $adapter->getResponse()->getUri();
+
         if ($this->mode === 'place') {
-            return $this->request->getDirectoryPosition(2);
+            return $uri->getDirectoryPosition(2);
         }
 
         if ($this->mode === 'dir') {
-            return $this->request->getDirectoryPosition(2).' / '.$this->request->getDirectoryPosition(3);
+            return $uri->getDirectoryPosition(2).' / '.$uri->getDirectoryPosition(3);
         }
     }
 
@@ -51,28 +56,31 @@ class GoogleMaps extends Provider implements ProviderInterface
      */
     public function getCode()
     {
-        if (empty($this->config['key'])) {
+        $uri = $this->adapter->getResponse()->getUri();
+        $key = $this->adapter->getConfig('google[key]');
+
+        if (empty($key)) {
             return;
         }
 
         switch ($this->mode) {
             case 'place':
             case 'search':
-                return Utils::iframe($this->request->createUrl()
+                return Utils::iframe($uri
                     ->withPath('maps/embed/v1/'.$this->mode)
                     ->withQueryParameters([
-                        'q' => $this->request->getDirectoryPosition(2),
-                        'key' => $this->config['key'],
+                        'q' => $uri->getDirectoryPosition(2),
+                        'key' => $key,
                     ])
                 );
 
             case 'dir':
-                return Utils::iframe($this->request->createUrl()
+                return Utils::iframe($uri
                     ->withPath('maps/embed/v1/directions')
                     ->withQueryParameters([
-                        'origin' => $this->request->getDirectoryPosition(2),
-                        'destination' => $this->request->getDirectoryPosition(3),
-                        'key' => $this->config['key'],
+                        'origin' => $uri->getDirectoryPosition(2),
+                        'destination' => $uri->getDirectoryPosition(3),
+                        'key' => $key,
                     ])
                 );
         }

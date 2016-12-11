@@ -15,7 +15,7 @@ class Flickr extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https://www.flickr.com/photos/*',
         ]);
     }
@@ -28,7 +28,7 @@ class Flickr extends Webpage implements AdapterInterface
         $code = parent::getCode();
 
         if (empty($code)) {
-            $code = Utils::iframe($this->request->createUrl()->withAddedPath('player'), $this->width, $this->height);
+            $code = Utils::iframe($this->getResponse()->getUri()->withAddedPath('player'), $this->width, $this->height);
         }
 
         return $code;

@@ -15,7 +15,7 @@ class Mit extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'http://video.mit.edu/watch/*',
         ]);
     }
@@ -25,8 +25,7 @@ class Mit extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $url = $this->getUrl();
-        $url = preg_replace('|(/watch/[\w-]+)-([\d]+)|', '/embed/$2', $url);
+        $url = preg_replace('|(/watch/[\w-]+)-([\d]+)|', '/embed/$2', $this->url);
 
         return Utils::iframe($url, $this->width, $this->height);
     }

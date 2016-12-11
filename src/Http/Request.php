@@ -55,9 +55,19 @@ class Request
     public function getResponse()
     {
         if ($this->response === null) {
-            $this->response = $this->dispatcher->dispatch($this);
+            $this->response = $this->dispatcher->dispatch($this->getUri());
         }
 
         return $this->response;
+    }
+
+    /**
+     * Set a new response
+     *
+     * @param Response $response
+     */
+    public function setResponse(Response $response)
+    {
+        $this->response = $response;
     }
 }

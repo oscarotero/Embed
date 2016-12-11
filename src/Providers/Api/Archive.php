@@ -2,6 +2,8 @@
 
 namespace Embed\Providers\Api;
 
+use Embed\Http\Request;
+use Embed\Adapters\AdapterInterface;
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
 
@@ -13,11 +15,14 @@ class Archive extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(AdapterInterface $adapter)
     {
-        $api = $this->request->withQueryParameter('output', 'json');
+        parent::__construct($adapter);
 
-        if (($json = $api->getJsonContent())) {
+        $endpoint = $adapter->getResponse->getUri()->withQueryParameter('output', 'json');
+        $request = $adapter->createRequest($endPoint);
+
+        if (($json = $request->getResponse()->getJsonContent())) {
             $this->bag->set($json);
         }
     }

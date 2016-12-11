@@ -14,7 +14,7 @@ class Sassmeister extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'http://sassmeister.com/gist/*',
         ]);
     }
@@ -26,7 +26,7 @@ class Sassmeister extends Webpage implements AdapterInterface
     {
         $this->width = null;
         $this->height = 480;
-        $id = $this->request->getDirectoryPosition(1);
+        $id = $this->getResponse()->getUri()->getDirectoryPosition(1);
 
         return "<p class=\"sassmeister\" data-gist-id=\"{$id}\" data-height=\"480\" data-theme=\"tomorrow\">".
                "<a href=\"http://sassmeister.com/gist/{$id}\">Play with this gist on SassMeister.</a>".

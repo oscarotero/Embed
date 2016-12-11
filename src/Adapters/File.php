@@ -41,15 +41,19 @@ class File extends Adapter implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && isset(self::$contentTypes[$request->getMimeType()]);
+        return $request->isValid() && isset(self::$contentTypes[$request->getContentType()]);
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function run()
+    public function __construct(Request $request, array $config = [])
     {
-        $this->addProvider('oembed', new Providers\OEmbed());
+        parent::__construct($request, $config);
+
+        $this->providers = [
+            'oembed' => new Providers\OEmbed($this),
+        ];
     }
 
     /**
@@ -69,7 +73,7 @@ class File extends Adapter implements AdapterInterface
             return $code;
         }
 
-        switch (self::$contentTypes[$this->request->getMimeType()][1]) {
+        switch (self::$contentTypes[$this->getResponse()->getContentType()][1]) {
             case 'videoHtml':
                 return Utils::videoHtml($this->image, $this->url, $this->imageWidth, $this->imageHeight);
 

@@ -16,7 +16,7 @@ class Google extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https://maps.google.*',
             'https://www.google.*/maps*',
             'https://calendar.google.com/calendar/*',
@@ -28,13 +28,13 @@ class Google extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    protected function run()
+    public function __construct(Request $request, array $config = [])
     {
-        if ($this->request->match('*/maps/*')) {
-            $this->addProvider('google', new Api\GoogleMaps());
-        }
+        parent::__construct($request, $config);
 
-        parent::run();
+        if ($this->getResponse()->getUri()->match('*/maps/*')) {
+            $this->providers['google'] = new Api\GoogleMaps($this);
+        }
     }
 
     /**
@@ -45,24 +45,24 @@ class Google extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = null;
 
-        if ($this->request->getHost() === 'plus.google.com') {
+        $uri = $this->getResponse()->getUri();
+
+        if ($uri->getHost() === 'plus.google.com') {
             return '<script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script>'
-                .'<div class="g-post" data-href="'.$this->request->getUrl().'"></div>';
+                .'<div class="g-post" data-href="'.$uri.'"></div>';
         }
 
-        if ($this->request->getHost() === 'calendar.google.com') {
-            return Utils::iframe($this->request->getUrl());
+        if ($uri->getHost() === 'calendar.google.com') {
+            return Utils::iframe($uri);
         }
 
         if (($google = $this->getProvider('google'))) {
             return $google->getCode();
         }
 
-        $url = $this->request->createUrl()
+        return Utils::iframe($uri
             ->withDirectoryPosition(3, 'preview')
-            ->withQueryParameters([]);
-
-        return Utils::iframe($url);
+            ->withQueryParameters([]));
     }
 
     /**
@@ -70,7 +70,7 @@ class Google extends Webpage implements AdapterInterface
      */
     public function getImagesUrls()
     {
-        if ($this->request->getHost() === 'plus.google.com') {
+        if ($this->getResponse->getUri()->getHost() === 'plus.google.com') {
             return parent::getImagesUrls();
         }
 
@@ -82,7 +82,7 @@ class Google extends Webpage implements AdapterInterface
      */
     public function getProviderName()
     {
-        if ($this->request->getHost() === 'plus.google.com') {
+        if ($this->getResponse()->getUri()->getHost() === 'plus.google.com') {
             return 'Google Plus';
         }
 

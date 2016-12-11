@@ -14,7 +14,7 @@ class Howcast extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https?://www.howcast.com/videos/*',
         ]);
     }
@@ -27,7 +27,7 @@ class Howcast extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = null;
 
-        $dom = $this->request->getHtmlContent();
+        $dom = $this->getResponse()->getHtmlContent();
         $modal = $dom->getElementById('embedModal');
 
         if ($modal) {

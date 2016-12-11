@@ -2,6 +2,7 @@
 
 namespace Embed\Adapters;
 
+use Embed\Http\Uri;
 use Embed\Http\Request;
 use Embed\Http\Response;
 use Embed\DataInterface;
@@ -37,6 +38,15 @@ interface AdapterInterface extends DataInterface
     public function getRequest();
 
     /**
+     * Creates a sub-request instance.
+     *
+     * @param Uri $uri
+     *
+     * @return Request
+     */
+    public function createRequest(Uri $uri);
+
+    /**
      * Returns the main response instance.
      *
      * @return Response
@@ -44,11 +54,14 @@ interface AdapterInterface extends DataInterface
     public function getResponse();
 
     /**
-     * Returns config container.
+     * Get a config value.
      *
-     * @return Badge
+     * @param string $name
+     * @param mixed $default
+     *
+     * @return string|null
      */
-    public function getConfig();
+    public function getConfig($name, $default = null);
 
     /**
      * Returns all images Requests.

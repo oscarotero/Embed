@@ -3,26 +3,25 @@
 namespace Embed\Http;
 
 /**
- * Interface used to create http responses with requests.
+ * Interface used to create http responses.
  */
 interface DispatcherInterface
 {
     /**
-     * Execute a request.
+     * Dispatch an uri.
      *
-     * @param Request $request
+     * @param Uri $uri
      *
      * @return Response
      */
-    public function dispatch(Request $request);
+    public function dispatch(Uri $uri);
 
     /**
-     * Resolve multiple requests at once.
+     * Resolve multiple image uris at once.
      *
-     * @param string[] $urls   The request's urls
-     * @param array    $config The request's configuration
+     * @param Uri[] $uris
      *
-     * @return static[]
+     * @return ImageResponse[]
      */
-    //public static function dispatchMultiple(array $urls, array $config);
+    public function dispatchImages(array $uris);
 }

@@ -3,7 +3,7 @@
 namespace Embed\Adapters;
 
 use Embed\Utils;
-use Embed\Request;
+use Embed\Http\Request;
 
 /**
  * Adapter to get the embed code from slides.com.
@@ -15,7 +15,7 @@ class Slides extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https?://slides.com/*',
         ]);
     }
@@ -25,7 +25,7 @@ class Slides extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        return Utils::iframe($this->request->getUrl().'/embed', $this->width, $this->height);
+        return Utils::iframe($this->getResponse()->getUri().'/embed', $this->width, $this->height);
     }
 
     /**

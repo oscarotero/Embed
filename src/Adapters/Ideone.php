@@ -15,7 +15,7 @@ class Ideone extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https?://ideone.com/*',
         ]);
     }
@@ -28,8 +28,9 @@ class Ideone extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = null;
 
-        $path = '/e.js'.$this->request->getPath();
+        $uri = $this->getResponse()->getUri();
+        $path = '/e.js'.$uri->getPath();
 
-        return Utils::script($this->request->createUrl($path)->getUrl());
+        return Utils::script($uri->create($path));
     }
 }

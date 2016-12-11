@@ -3,10 +3,9 @@
 namespace Embed\Adapters;
 
 use Embed\Utils;
-use Embed\Http\Url;
+use Embed\Http\Uri;
 use Embed\Http\Request;
 use Embed\Providers\ProviderInterface;
-use Embed\GetTrait;
 use Embed\Bag;
 
 /**
@@ -36,12 +35,9 @@ use Embed\Bag;
  */
 abstract class Adapter
 {
-    use GetTrait;
-
     protected $config;
     protected $request;
     protected $providers = [];
-
 
     /**
      * {@inheritdoc}
@@ -50,6 +46,23 @@ abstract class Adapter
     {
         $this->request = $request;
         $this->config = new Bag($config);
+    }
+
+    /**
+     * Magic method to execute methods on get paramaters
+     * For example, $source->sourceUrl executes $source->getSourceUrl().
+     *
+     * @param string $name The property name
+     *
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        $method = 'get'.$name;
+
+        if (method_exists($this, $method)) {
+            return $this->$name = $this->$method();
+        }
     }
 
     /**
@@ -63,6 +76,14 @@ abstract class Adapter
     /**
      * {@inheritdoc}
      */
+    public function createRequest(Uri $uri)
+    {
+        return new Request($uri, $this->request->getDispatcher());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getResponse()
     {
         return $this->request->getResponse();
@@ -71,9 +92,9 @@ abstract class Adapter
     /**
      * {@inheritdoc}
      */
-    public function getConfig()
+    public function getConfig($name, $default = null)
     {
-        return $this->config;
+        return $this->config->get($name, $default);
     }
 
     /**
@@ -185,9 +206,19 @@ abstract class Adapter
      */
     public function getFeeds()
     {
-        throw new \Exception("Non esta feito");
+        $feeds = [];
+
+        foreach ($this->providers as $provider) {
+            foreach ($provider->getFeeds() as $feed) {
+                $feed = $this->getResponse()->getUri()->getAbsolute($feed);
+
+                if (!in_array($feed, $feeds)) {
+                    $feeds[] = $feed;
+                }
+            }
+        }
         
-        return Utils::getFirstValue(Utils::getData($this->providers, 'source', $this->request));
+        return $feeds;
     }
 
     /**
@@ -287,20 +318,23 @@ abstract class Adapter
      */
     public function getProviderIconsUrls()
     {
-        throw new \Exception("Non esta feito");
-        $icons = Utils::getData($this->providers, 'providerIconsUrls', $this->request);
+        $uri = $this->getResponse()->getUri();
+        $urls = [
+            $uri->getAbsolute('/favicon.ico'),
+            $uri->getAbsolute('/favicon.png'),
+        ];
 
-        Utils::unshiftValue($icons, [
-            'value' => $this->request->getAbsolute('/favicon.ico'),
-            'providers' => ['adapter'],
-        ]);
+        foreach ($this->providers as $provider) {
+            foreach ($provider->getProviderIconsUrls() as $url) {
+                $url = $uri->getAbsolute($url);
 
-        Utils::unshiftValue($icons, [
-            'value' => $this->request->getAbsolute('/favicon.png'),
-            'providers' => ['adapter'],
-        ]);
+                if (!in_array($url, $urls, true)) {
+                    $urls[] = $url;
+                }
+            }
+        }
 
-        return $icons;
+        return $urls;
     }
 
     /**
@@ -308,8 +342,7 @@ abstract class Adapter
      */
     public function getProviderIcons()
     {
-        throw new \Exception("Non esta feito");
-        return static::imagesInfo($this->getProviderIconsUrls());
+        return $this->dispatchImagesInfo($this->providerIconsUrls);
     }
 
     /**
@@ -317,12 +350,24 @@ abstract class Adapter
      */
     public function getProviderIcon()
     {
-        throw new \Exception("Non esta feito");
-        if ($this->config['getBiggerIcon']) {
-            return Utils::getBiggerValue($this->providerIcons);
+        $icons = $this->providerIcons;
+
+        if (empty($icons)) {
+            return;
         }
 
-        return Utils::getFirstValue($this->providerIcons);
+        usort($icons, function ($a, $b) {
+            if ($a['size'] === $b['size']) {
+                return 0;
+            }
+
+            return ($a['size'] > $b['size']) ? -1 : 1;
+        });
+
+        reset($icons);
+        $icon = current($icons);
+
+        return $icon['url'];
     }
 
     /**
@@ -364,30 +409,30 @@ abstract class Adapter
      */
     public function getImagesUrls()
     {
-        throw new \Exception("Non esta feito");
-        $imagesUrls = Utils::getData($this->providers, 'imagesUrls', $this->request);
+        $uri = $this->getResponse()->getUri();
+        $urls = [];
 
-        $blacklist = $this->config['imagesBlacklist'];
-        $hasBlacklist = is_array($blacklist) && count($blacklist) > 0;
+        foreach ($this->providers as $provider) {
+            foreach ($provider->getImagesUrls() as $url) {
+                $url = $uri->getAbsolute($url);
 
-        $imagesUrls = array_filter($imagesUrls, function ($imageUrl) use ($blacklist, $hasBlacklist) {
-            // Clean empty urls
-            if (empty($imageUrl['value'])) {
-                return false;
+                if (!in_array($url, $urls, true)) {
+                    $urls[] = $url;
+                }
             }
+        }
 
-            // Remove image url if on blacklist
-            if ($hasBlacklist) {
-                $url = new Url($imageUrl['value']);
+        $blacklist = $this->getConfig('imagesBlacklist');
 
-                return !$url->match($blacklist) && !in_array($imageUrl['value'], $blacklist, true);
-            }
+        if (!empty($blacklist)) {
+            $urls = array_filter($urls, function ($url) use ($blacklist) {
+                $uri = new Uri($url);
 
-            return true;
-        });
+                return !$uri->match($blacklist);
+            });
+        }
 
-        // Use array_values to reset keys after filter
-        return array_values($imagesUrls);
+        return array_values($urls);
     }
 
     /**
@@ -395,8 +440,7 @@ abstract class Adapter
      */
     public function getImages()
     {
-        throw new \Exception("Non esta feito");
-        return static::imagesInfo($this->getImagesUrls());
+        return $this->dispatchImagesInfo($this->imagesUrls);
     }
 
     /**
@@ -404,28 +448,40 @@ abstract class Adapter
      */
     public function getImage()
     {
-        throw new \Exception("Non esta feito");
-        if ($this->config['getBiggerImage']) {
-            $allImages = $this->images;
+        $this->imageWidth = null;
+        $this->imageHeight = null;
 
-            if (empty($allImages)) {
-                return;
-            }
+        $images = $this->images;
+        $bigger = $this->getConfig('getBiggerImage');
+        $minWidth = $this->getConfig('minImageWidth', 0);
+        $minHeight = $this->getConfig('minImageHeight', 0);
 
-            $allImages = [$allImages];
-        } else {
-            $allImages = Utils::sortByProviders($this->images);
+        $images = array_filter($images, function ($image) use ($minWidth, $minHeight) {
+            return $image['width'] >= $minWidth && $image['height'] >= $minHeight;
+        });
+
+        if (empty($images)) {
+            return;
         }
 
-        foreach ($allImages as $images) {
-            if (($key = Utils::getBiggerValue($images, true)) !== null) {
-                $image = $images[$key];
-
-                if (($image['width'] >= $this->config['minImageWidth']) && ($image['height'] >= $this->config['minImageHeight'])) {
-                    return $image['value'];
+        if ($bigger) {
+            usort($images, function ($a, $b) {
+                if ($a['size'] === $b['size']) {
+                    return 0;
                 }
-            }
+
+                return ($a['size'] > $b['size']) ? -1 : 1;
+            });
         }
+
+
+        reset($images);
+        $image = current($images);
+
+        $this->imageWidth = $image['width'];
+        $this->imageHeight = $image['height'];
+
+        return $image['url'];
     }
 
     /**
@@ -433,10 +489,9 @@ abstract class Adapter
      */
     public function getImageWidth()
     {
-        throw new \Exception("Non esta feito");
-        if (($image = Utils::searchValue($this->images, $this->image)) !== false) {
-            return $image['width'];
-        }
+        $this->image = $this->getImage();
+
+        return $this->imageWidth;
     }
 
     /**
@@ -444,10 +499,9 @@ abstract class Adapter
      */
     public function getImageHeight()
     {
-        throw new \Exception("Non esta feito");
-        if (($image = Utils::searchValue($this->images, $this->image)) !== false) {
-            return $image['height'];
-        }
+        $this->image = $this->getImage();
+
+        return $this->imageHeight;
     }
 
     /**
@@ -529,23 +583,29 @@ abstract class Adapter
      *
      * @return array
      */
-    protected function imagesInfo($urls)
+    private function dispatchImagesInfo($urls)
     {
-        $requests = call_user_func("{$this->imageClass}::getImagesInfo", $urls, $this->imageConfig);
-        array_replace($this->imageRequests, $requests);
-
-        $result = [];
-
-        foreach ($urls as $url => $value) {
-            $info = isset($requests[$url]) ? $requests[$url]->getInfo() : false;
-
-            if ($info === false) {
-                continue;
-            }
-
-            $result[$url] = array_replace($value, $info);
+        if (empty($urls)) {
+            return [];
         }
 
-        return $result;
+        $requests = [];
+
+        foreach ($urls as $uri) {
+            $requests[] = new Uri($uri);
+        }
+
+        return array_map(
+            function ($response) {
+                return [
+                    'url' => (string) $response->getUri(),
+                    'width' => $response->getWidth(),
+                    'height' => $response->getHeight(),
+                    'size' => $response->getWidth() * $response->getHeight(),
+                    'mime' => $response->getContentType(),
+                ];
+            },
+            $this->getRequest()->getDispatcher()->dispatchImages($requests)
+        );
     }
 }

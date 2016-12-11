@@ -15,7 +15,7 @@ class Line extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             'https://line.do/*',
         ]);
     }
@@ -25,9 +25,10 @@ class Line extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $id = $this->request->getDirectoryPosition(2);
+        $uri = $this->getResponse()->getUri();
+        $id = $uri->getDirectoryPosition(2);
 
-        return Utils::iframe($this->request->createUrl()->withPath("embed/{$id}/vertical"), $this->width, $this->height, 'border:1px solid #e7e7e7;');
+        return Utils::iframe($uri->withPath("embed/{$id}/vertical"), $this->width, $this->height, 'border:1px solid #e7e7e7;');
     }
 
     /**

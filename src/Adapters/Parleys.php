@@ -14,7 +14,7 @@ class Parleys extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid() && $request->match([
+        return $request->isValid() && $request->getResponse()->getUri()->match([
             '*://www.parleys.com/play/*',
         ]);
     }
@@ -24,7 +24,7 @@ class Parleys extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $id = $this->request->getDirectoryPosition(1);
+        $id = $this->getResponse()->getUri()->getDirectoryPosition(1);
 
         return '<div data-parleys-presentation="'.$id.'" style="width:'.$this->width.';height:'.$this->height.'px"><script type = "text/javascript" src="//parleys.com/js/parleys-share.js"></script></div>';
     }

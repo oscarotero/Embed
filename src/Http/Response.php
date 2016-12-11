@@ -10,26 +10,17 @@ use SimpleXMLElement;
 /**
  * Class to consume http responses.
  */
-class Response
+class Response extends AbstractResponse
 {
-    protected $uri;
     protected $content;
-    protected $statusCode;
-    protected $contentType;
-    protected $headers;
     protected $xmlContent;
     protected $jsonContent;
     protected $htmlContent;
 
     public function __construct(Uri $uri, $statusCode, $contentType, $content, array $headers)
     {
-        $this->uri = $uri;
-        $this->statusCode = $statusCode;
-        $this->contentType = $contentType;
-        $this->content = $content;
-        $this->headers = $headers;
-
-        $this->prepareContent();
+        parent::__construct($uri, $statusCode, $contentType, $headers);
+        $this->setContent($content);
     }
 
     /**
@@ -40,76 +31,6 @@ class Response
     public function getContent()
     {
         return $this->content;
-    }
-
-    /**
-     * Get the http code of the response, for example: 200.
-     *
-     * @return int
-     */
-    public function getStatusCode()
-    {
-        return $this->statusCode;
-    }
-
-    /**
-     * Get the content-type of the response, for example: text/html.
-     *
-     * @return string|null
-     */
-    public function getContentType()
-    {
-        return $this->contentType;
-    }
-
-    /**
-     * Returns the final uri.
-     *
-     * @return Uri
-     */
-    public function getUri()
-    {
-        return $this->uri;
-    }
-
-    /**
-     * Returns the http headers.
-     *
-     * @return array
-     */
-    public function getHeaders()
-    {
-        return $this->headers;
-    }
-
-    /**
-     * Get a header.
-     *
-     * @param string $name
-     *
-     * @return string|null
-     */
-    public function getHeader($name)
-    {
-        $name = strtolower($name);
-
-        return isset($this->headers[$name]) ? implode(',', $this->headers[$name]) : null;
-    }
-
-    /**
-     * Check if the response is valid or not.
-     *
-     * @param array $codes
-     *
-     * @return bool
-     */
-    public function isValid(array $codes = null)
-    {
-        if ($validCodes === null) {
-            return $this->statusCode === 200;
-        }
-
-        return in_array($this->statusCode, $codes);
     }
 
     /**
@@ -193,8 +114,15 @@ class Response
         return $this->xmlContent;
     }
 
-    private function prepareContent()
+    /**
+     * Set the response content
+     *
+     * @param string $content
+     */ 
+    private function setContent($content)
     {
+        $this->content = $content;
+
         if (empty($this->contentType)) {
             return;
         }
@@ -208,8 +136,8 @@ class Response
             //Convert the content to UTF-8
             $charset = substr(strtoupper(strstr($charset, '=')), 1);
 
-            if (!empty($charset) && !empty($this->content) && ($charset !== 'UTF-8')) {
-                $this->content = mb_convert_encoding($this->content, 'UTF-8', $charset);
+            if (!empty($charset) && !empty($content) && ($charset !== 'UTF-8')) {
+                $this->content = mb_convert_encoding($content, 'UTF-8', $charset);
             }
         }
     }

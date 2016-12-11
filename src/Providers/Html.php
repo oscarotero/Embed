@@ -125,7 +125,7 @@ class Html extends Provider implements ProviderInterface
     public function getImagesUrls()
     {
         $images = (array) $this->bag->get('images');
-        $maxImages = $this->adapter->getConfig()->get('html[maxImages]', -1);
+        $maxImages = $this->adapter->getConfig('html[maxImages]', -1);
 
         if ($maxImages > -1) {
             return array_slice($images, 0, $maxImages);
@@ -309,7 +309,7 @@ class Html extends Provider implements ProviderInterface
      */
     private function extractImages(DOMDocument $html)
     {
-        if ($this->adapter->getConfig()->get('html[maxImages]') === 0) {
+        if ($this->adapter->getConfig('html[maxImages]') === 0) {
             return;
         }
 
@@ -321,7 +321,7 @@ class Html extends Provider implements ProviderInterface
         }
 
         $uri = $this->adapter->getResponse()->getUri();
-        $externalImages = $this->adapter->getConfig()->get('html[externalImages]');
+        $externalImages = $this->adapter->getConfig('html[externalImages]');
 
         foreach ($main->getElementsByTagName('img') as $img) {
             if (!$img->hasAttribute('src')) {

@@ -7,12 +7,13 @@ use Embed\Exceptions\EmbedException;
 /**
  * Class to dispatch urls using curl and get the result.
  */
-class Curl
+class CurlResult
 {
     protected $body;
     protected $headers = [];
     protected $onHeader;
     protected $onBody;
+    protected $data;
 
     /**
      * Creates a new response
@@ -22,20 +23,17 @@ class Curl
     public function __construct($connection)
     {
         $this->connection = $connection;
+        $this->data = (object) [];
 
         curl_setopt($this->connection, CURLOPT_HEADERFUNCTION, [$this, 'headerCallback']);
         curl_setopt($this->connection, CURLOPT_WRITEFUNCTION, [$this, 'writeCallback']);
     }
 
     /**
-     * Prepares the response result
+     * Returns the response result
      */
-    public function __invoke()
+    public function getResult()
     {
-        if (curl_exec($this->connection) === false) {
-            throw new EmbedException('Error %s: %s', curl_errno($this->connection), curl_error($this->connection));
-        }
-
         $result = curl_getinfo($this->connection);
 
         return [
@@ -44,7 +42,18 @@ class Curl
             'contentType' => isset($result['content_type']) ? $result['content_type'] : null,
             'content' => $this->body,
             'headers' => $this->headers,
+            'data' => $this->data,
         ];
+    }
+
+    /**
+     * Returns the connection
+     *
+     * @return resource
+     */
+    public function getConnection()
+    {
+        return $this->connection;
     }
 
     /**
@@ -75,7 +84,7 @@ class Curl
      *
      * @return int
      */
-    private function headerCallback($connection, $string)
+    public function headerCallback($connection, $string)
     {
         if (!strpos($string, ':')) {
             return strlen($string);
@@ -91,11 +100,11 @@ class Curl
 
         $this->headers[$name][] = $value;
 
-        if ($this->onHeader === null || call_user_func($this->onHeader, $name, $value)) {
+        if ($this->onHeader === null || call_user_func($this->onHeader, $name, $value, $this->data) !== false) {
             return strlen($string);
         }
 
-        return 0;
+        return -1;
     }
 
     /**
@@ -106,14 +115,16 @@ class Curl
      *
      * @return int
      */
-    private function writeCallback($connection, $string)
+    public function writeCallback($connection, $string)
     {
-        if ($this->onBody === null || call_user_func($this->onBody, $string)) {
-            $this->body .= $string;
+        $this->body .= $string;
 
+        if ($this->onBody === null || call_user_func($this->onBody, $this->body, $this->data) !== false) {
             return strlen($string);
         }
 
-        return 0;
+        //Cancel
+        $this->body = null;
+        return -1;
     }
 }
