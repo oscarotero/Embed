@@ -28,7 +28,7 @@ class Archive extends Webpage implements AdapterInterface
     {
         parent::__construct($request, $config);
 
-        $this->providers['archive'] = new Api\Archive($this);
+        $this->providers = ['archive' => new Api\Archive($this)] + $this->providers;
     }
 
     /**

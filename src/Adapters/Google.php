@@ -33,7 +33,7 @@ class Google extends Webpage implements AdapterInterface
         parent::__construct($request, $config);
 
         if ($this->getResponse()->getUri()->match('*/maps/*')) {
-            $this->providers['google'] = new Api\GoogleMaps($this);
+            $this->providers = ['google' => new Api\GoogleMaps($this)] + $this->providers;
         }
     }
 

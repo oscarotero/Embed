@@ -28,6 +28,6 @@ class Soundcloud extends Webpage implements AdapterInterface
     {
         parent::__construct($request, $config);
 
-        $this->providers['soundcloud'] = new Api\Soundcloud($this);
+        $this->providers = ['soundcloud' => new Api\Soundcloud($this)] + $this->providers;
     }
 }

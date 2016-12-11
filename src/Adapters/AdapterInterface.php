@@ -27,7 +27,7 @@ interface AdapterInterface extends DataInterface
      * @param Request    $request
      * @param null|array $config
      */
-    public function __construct(Request $request, array $config = null);
+    public function __construct(Request $request, array $config = []);
 
     /**
      * Returns the request instance.

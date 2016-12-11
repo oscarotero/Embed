@@ -25,7 +25,7 @@ class Slides extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        return Utils::iframe($this->getResponse()->getUri().'/embed', $this->width, $this->height);
+        return Utils::iframe($this->getResponse()->getUri()->withAddedPath('embed'), $this->width, $this->height);
     }
 
     /**

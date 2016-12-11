@@ -27,6 +27,6 @@ class Imageshack extends Webpage implements AdapterInterface
     {
         parent::__construct($request, $config);
 
-        $this->providers['imageshack'] = new Api\Imageshack($this);
+        $this->providers = ['imageshack' => new Api\Imageshack($this)] + $this->providers;
     }
 }

@@ -30,6 +30,6 @@ class Pastie extends Webpage implements AdapterInterface
 
         $path = '/'.$this->getResponse()->getUri()->getDirectoryPosition(1).'.js';
 
-        return Utils::script($this->getResponse()->getUri()->create($path));
+        return Utils::script($this->getResponse()->getUri()->createAbsolute($path));
     }
 }

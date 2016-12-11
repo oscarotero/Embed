@@ -29,7 +29,7 @@ class Wikipedia extends Webpage implements AdapterInterface
     {
         parent::__construct($request, $config);
 
-        $this->providers['wikipedia'] = new Api\Wikipedia($this);
+        $this->providers = ['wikipedia' => new Api\Wikipedia($this)] + $this->providers;
     }
 
     /**

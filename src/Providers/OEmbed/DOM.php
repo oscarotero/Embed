@@ -46,7 +46,7 @@ class DOM implements EndPointInterface
         $html = $this->response->getHtmlContent();
 
         if ($html && ($uri = self::getEndPointFromDom($html))) {
-            return $this->response->getUri()->create($uri);
+            return $this->response->getUri()->createAbsolute($uri);
         }
     }
 

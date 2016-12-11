@@ -13,12 +13,6 @@ use Embed\Http\Uri;
  */
 class OEmbed extends Provider implements ProviderInterface
 {
-    protected $config = [
-        'parameters' => [],
-        'embedlyKey' => null,
-        'iframelyKey' => null,
-    ];
-
     /**
      * {@inheritdoc}
      */
@@ -194,12 +188,13 @@ class OEmbed extends Provider implements ProviderInterface
     {
         //Search using the domain
         $class = 'Embed\\Providers\\OEmbed\\'.$this->adapter->getResponse()->getUri()->getClassNameForDomain();
+        $extraParameters = $this->adapter->getConfig('oembed[parameters]', []);
 
         if (class_exists($class)) {
             $endPoint = $class::create($this->adapter);
 
             if ($endPoint && ($uri = $endPoint->getEndPoint())) {
-                return $uri;
+                return $uri->withAddedQueryParameters($extraParameters);
             }
         }
 
@@ -207,21 +202,21 @@ class OEmbed extends Provider implements ProviderInterface
         $endPoint = OEmbed\DOM::create($this->adapter);
 
         if ($endPoint && ($uri = $endPoint->getEndPoint())) {
-            return $uri;
+            return $uri->withAddedQueryParameters($extraParameters);
         }
 
         //Try with embedly
         $endPoint = OEmbed\Embedly::create($this->adapter);
 
         if ($endPoint && ($uri = $endPoint->getEndPoint())) {
-            return $uri;
+            return $uri->withAddedQueryParameters($extraParameters);
         }
 
         //Try with iframely
         $endPoint = OEmbed\Iframely::create($this->adapter);
 
         if ($endPoint && ($uri = $endPoint->getEndPoint())) {
-            return $uri;
+            return $uri->withAddedQueryParameters($extraParameters);
         }
     }
 

@@ -16,6 +16,7 @@ class Sassmeister extends Webpage implements AdapterInterface
     {
         return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
             'http://sassmeister.com/gist/*',
+            'http://www.sassmeister.com/gist/*',
         ]);
     }
 
