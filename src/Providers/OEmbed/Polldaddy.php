@@ -2,8 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-class Polldaddy extends EndPoint implements EndpointInterface
+class Polldaddy extends EndPoint implements EndPointInterface
 {
     protected static $pattern = 'https?://polldaddy.com/poll/*';
-    protected static $endpoint = 'http://polldaddy.com/oembed';
+    protected static $endPoint = 'http://polldaddy.com/oembed';
 }

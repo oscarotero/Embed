@@ -2,8 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-class Bambuser extends EndPoint implements EndpointInterface
+class Bambuser extends EndPoint implements EndPointInterface
 {
     protected static $pattern = 'http?://bambuser.com/v/*';
-    protected static $endpoint = 'https://api.bambuser.com/oembed.json';
+    protected static $endPoint = 'https://api.bambuser.com/oembed.json';
 }

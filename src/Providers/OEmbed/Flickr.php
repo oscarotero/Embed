@@ -2,8 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-class Flickr extends EndPoint implements EndpointInterface
+class Flickr extends EndPoint implements EndPointInterface
 {
     protected static $pattern = 'https://www.flickr.com/*';
-    protected static $endpoint = 'http://flickr.com/services/oembed';
+    protected static $endPoint = 'http://flickr.com/services/oembed';
 }

@@ -2,8 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-class WordPress extends EndPoint implements EndpointInterface
+class WordPress extends EndPoint implements EndPointInterface
 {
     protected static $pattern = 'https?://wordpress.tv/*';
-    protected static $endpoint = 'https://wordpress.tv/oembed';
+    protected static $endPoint = 'https://wordpress.tv/oembed';
 }

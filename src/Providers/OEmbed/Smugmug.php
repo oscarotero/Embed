@@ -2,8 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-class Smugmug extends EndPoint implements EndpointInterface
+class Smugmug extends EndPoint implements EndPointInterface
 {
     protected static $pattern = 'http://www.smugmug.com/*';
-    protected static $endpoint = 'http://api.smugmug.com/services/oembed/';
+    protected static $endPoint = 'http://api.smugmug.com/services/oembed/';
 }

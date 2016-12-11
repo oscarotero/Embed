@@ -8,14 +8,14 @@ use Embed\Http\Uri;
 use DOMDocument;
 
 /**
- * Class to detect the oembed endpoint.
+ * Class to detect the oembed endPoint.
  */
-class DOM implements EndpointInterface
+class DOM implements EndPointInterface
 {
     protected $response;
 
     /**
-     * Create a instance of a OEmbedEndpoint
+     * Create a instance of a OEmbedEndPoint
      *
      * @param AdapterInterface $adapter
      *
@@ -37,7 +37,7 @@ class DOM implements EndpointInterface
     }
 
     /**
-     * Returns the oembed endpoint
+     * Returns the oembed endPoint
      *
      * @return Uri|null
      */

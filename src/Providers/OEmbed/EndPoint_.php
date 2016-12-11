@@ -9,11 +9,11 @@ use Embed\Http\Uri;
 /**
  * Abstract class extended by other classes
  */
-abstract class Endpoint
+abstract class EndPoint
 {
     protected $response;
     protected static $pattern;
-    protected static $endpoint;
+    protected static $endPoint;
 
     /**
      * {@inheritdoc}
@@ -42,7 +42,7 @@ abstract class Endpoint
      */
     public function getEndPoint()
     {
-        return (new Uri(static::$endpoint))
+        return (new Uri(static::$endPoint))
                 ->withQueryParameters([
                     'url' => (string) $this->response->getUri(),
                     'format' => 'json',

@@ -5,7 +5,7 @@ namespace Embed\Providers\OEmbed;
 use Embed\Adapters\AdapterInterface;
 use Embed\Url;
 
-class Iframely implements EndpointInterface
+class Iframely implements EndPointInterface
 {
     private $response;
     private $key;

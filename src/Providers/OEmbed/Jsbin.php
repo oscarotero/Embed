@@ -4,10 +4,10 @@ namespace Embed\Providers\OEmbed;
 
 use Embed\Http\Uri;
 
-class Jsbin extends EndPoint implements EndpointInterface
+class Jsbin extends EndPoint implements EndPointInterface
 {
     protected static $pattern = 'http?://output.jsbin.com/*';
-    protected static $endpoint = 'http://jsbin.com/oembed';
+    protected static $endPoint = 'http://jsbin.com/oembed';
 
     /**
      * {@inheritdoc}
@@ -16,7 +16,7 @@ class Jsbin extends EndPoint implements EndpointInterface
     {
         $uri = $this->response->getUri()->withDirectoryPosition(2, 'embed');
 
-        return (new Uri(static::$endpoint))
+        return (new Uri(static::$endPoint))
                 ->withQueryParameters([
                     'url' => (string) $uri,
                     'format' => 'json',

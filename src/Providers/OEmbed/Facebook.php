@@ -4,7 +4,7 @@ namespace Embed\Providers\OEmbed;
 
 use Embed\Http\Uri;
 
-class Facebook extends EndPoint implements EndpointInterface
+class Facebook extends EndPoint implements EndPointInterface
 {
     protected static $pattern = 'https://www.facebook.com/*';
 

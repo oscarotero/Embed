@@ -2,8 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-class Meetup extends EndPoint implements EndpointInterface
+class Meetup extends EndPoint implements EndPointInterface
 {
     protected static $pattern = 'http://www.meetup.com/*';
-    protected static $endpoint = 'http://api.meetup.com/oembed';
+    protected static $endPoint = 'http://api.meetup.com/oembed';
 }

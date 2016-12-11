@@ -28,7 +28,7 @@ class OEmbed extends Provider implements ProviderInterface
     {
         parent::__construct($adapter);
 
-        $endPoint = $this->getEndpoint();
+        $endPoint = $this->getEndPoint();
 
         if ($endPoint) {
             $request = $adapter->createRequest($endPoint);
@@ -200,7 +200,7 @@ class OEmbed extends Provider implements ProviderInterface
         if (class_exists($class)) {
             $endPoint = $class::create($this->adapter);
 
-            if ($endPoint && ($uri = $endPoint->getEndpoint())) {
+            if ($endPoint && ($uri = $endPoint->getEndPoint())) {
                 return $uri;
             }
         }
@@ -208,21 +208,21 @@ class OEmbed extends Provider implements ProviderInterface
         //Search in the DOM
         $endPoint = OEmbed\DOM::create($this->adapter);
         
-        if ($endPoint && ($uri = $endPoint->getEndpoint())) {
+        if ($endPoint && ($uri = $endPoint->getEndPoint())) {
             return $uri;
         }
 
         //Try with embedly
         $endPoint = OEmbed\Embedly::create($this->adapter);
 
-        if ($endPoint && ($uri = $endPoint->getEndpoint())) {
+        if ($endPoint && ($uri = $endPoint->getEndPoint())) {
             return $uri;
         }
 
         //Try with iframely
         $endPoint = OEmbed\Iframely::create($this->adapter);
 
-        if ($endPoint && ($uri = $endPoint->getEndpoint())) {
+        if ($endPoint && ($uri = $endPoint->getEndPoint())) {
             return $uri;
         }
     }

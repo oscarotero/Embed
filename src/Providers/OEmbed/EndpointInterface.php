@@ -6,21 +6,21 @@ use Embed\Adapters\AdapterInterface;
 use Embed\Http\Uri;
 
 /**
- * Interface for all oembed endpoint.
+ * Interface for all oembed endPoint.
  */
-interface EndpointInterface
+interface EndPointInterface
 {
     /**
      * Check the response and create new instance
      *
      * @param AdapterInterface $adapter
      *
-     * @return OEmbedEndpointInterface|null
+     * @return OEmbedEndPointInterface|null
      */
     public static function create(AdapterInterface $adapter);
 
     /**
-     * Returns the oembed endpoint
+     * Returns the oembed endPoint
      *
      * @return Uri|null
      */
