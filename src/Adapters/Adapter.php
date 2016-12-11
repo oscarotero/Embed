@@ -274,7 +274,7 @@ abstract class Adapter
      */
     public function getUrl()
     {
-        foreach ($this->providers as $provider) {
+        foreach ($this->providers as $k => $provider) {
             $url = $provider->getUrl();
 
             if (!empty($url)) {
@@ -453,8 +453,8 @@ abstract class Adapter
 
         $images = $this->images;
         $bigger = $this->getConfig('getBiggerImage');
-        $minWidth = $this->getConfig('minImageWidth', 0);
-        $minHeight = $this->getConfig('minImageHeight', 0);
+        $minWidth = $this->getConfig('minImageWidth', 1);
+        $minHeight = $this->getConfig('minImageHeight', 1);
 
         $images = array_filter($images, function ($image) use ($minWidth, $minHeight) {
             return $image['width'] >= $minWidth && $image['height'] >= $minHeight;

@@ -11,12 +11,8 @@ class ImagesBlacklistTest extends AbstractTestCase
             [
                 'image' => 'http://alistapart.com/d/_made/pix/authors/photos/shoaf-headshot_120_120_c1.jpg',
             ], [
-                'adapter' => [
-                    'config' => [
-                        'imagesBlacklist' => [
-                            'http://alistapart.com/components/assets/img/ala-logo-big.png',
-                        ],
-                    ],
+                'imagesBlacklist' => [
+                    'http://alistapart.com/components/assets/img/ala-logo-big.png',
                 ],
             ]
         );
@@ -29,12 +25,8 @@ class ImagesBlacklistTest extends AbstractTestCase
             [
                 'image' => 'http://alistapart.com/d/_made/pix/authors/photos/shoaf-headshot_120_120_c1.jpg',
             ], [
-                'adapter' => [
-                    'config' => [
-                        'imagesBlacklist' => [
-                            '*-logo-*',
-                        ],
-                    ],
+                'imagesBlacklist' => [
+                    '*-logo-*',
                 ],
             ]
         );
@@ -47,12 +39,8 @@ class ImagesBlacklistTest extends AbstractTestCase
             [
                 'image' => 'http://alistapart.com/components/assets/img/ala-logo-big.png',
             ], [
-                'adapter' => [
-                    'config' => [
-                        'imagesBlacklist' => [
-                            '*/photos/*',
-                        ],
-                    ],
+                'imagesBlacklist' => [
+                    '*/photos/*',
                 ],
             ]
         );

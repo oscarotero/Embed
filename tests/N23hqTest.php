@@ -13,7 +13,7 @@ class N23hqTest extends AbstractTestCase
                 'image' => 'http://www.23hq.com/16171062/16600737_ac392e8a4d667e4726fbafc8a21728d5_large.jpg',
                 'imageWidth' => 756,
                 'imageHeight' => 567,
-                'type' => 'photo',
+                'type' => 'link',
                 'authorName' => 'Zzleeper',
                 'providerName' => '23',
             ]

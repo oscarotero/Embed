@@ -40,7 +40,7 @@ class GoogleMaps extends Provider implements ProviderInterface
      */
     public function getTitle()
     {
-        $uri = $adapter->getResponse()->getUri();
+        $uri = $this->adapter->getResponse()->getUri();
 
         if ($this->mode === 'place') {
             return $uri->getDirectoryPosition(2);

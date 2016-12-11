@@ -18,7 +18,7 @@ class Gist extends Provider implements ProviderInterface
     {
         parent::__construct($adapter);
 
-        $endPoint = $adapter->getResponse->getUri()->withExtension('json');
+        $endPoint = $adapter->getResponse()->getUri()->withExtension('json');
         $request = $adapter->createRequest($endPoint);
 
         if (($json = $request->getResponse()->getJsonContent())) {

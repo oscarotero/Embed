@@ -46,7 +46,13 @@ class DOM implements EndPointInterface
         $html = $this->response->getHtmlContent();
 
         if ($html && ($uri = self::getEndPointFromDom($html))) {
-            return $this->response->getUri()->createAbsolute($uri);
+            $endPoint = $this->response->getUri()->createAbsolute($uri);
+
+            if ($endPoint->getExtension() !== 'xml' && !$endPoint->hasQueryParameter('format')) {
+                return $endPoint->withQueryParameter('format', 'json');
+            }
+
+            return $endPoint;
         }
     }
 

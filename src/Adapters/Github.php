@@ -28,7 +28,7 @@ class Github extends Webpage implements AdapterInterface
     {
         parent::__construct($request, $config);
 
-        if ($this->getResponse()->getUri()->match('gist.github.com')) {
+        if ($this->getResponse()->getUri()->getHost() === 'gist.github.com') {
             $this->providers = ['gist' => new Api\Gist($this)] + $this->providers;
         }
     }

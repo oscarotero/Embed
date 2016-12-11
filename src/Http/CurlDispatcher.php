@@ -120,12 +120,12 @@ class CurlDispatcher implements DispatcherInterface
         $responses = [];
         $connections = [];
 
-        foreach ($uris as $uri) {
+        foreach ($uris as $k => $uri) {
             if ($uri->getScheme() === 'data') {
                 $response = ImageResponse::createFromBase64($uri);
 
                 if ($response) {
-                    $responses[] = $response;
+                    $responses[$k] = $response;
                 }
 
                 continue;
@@ -157,7 +157,7 @@ class CurlDispatcher implements DispatcherInterface
                 }
             });
 
-            $connections[] = $curl;
+            $connections[$k] = $curl;
         }
 
         if ($connections) {
@@ -175,12 +175,12 @@ class CurlDispatcher implements DispatcherInterface
                 } while ($return === CURLM_CALL_MULTI_PERFORM);
             }
 
-            foreach ($connections as $connection) {
+            foreach ($connections as $k => $connection) {
                 curl_multi_remove_handle($curl_multi, $connection->getConnection());
                 $result = $connection->getResult();
 
                 if (!empty($result['data']->mime)) {
-                    $responses[] = new ImageResponse(
+                    $responses[$k] = new ImageResponse(
                         $result['uri'],
                         $result['statusCode'],
                         $result['contentType'],
@@ -194,6 +194,7 @@ class CurlDispatcher implements DispatcherInterface
         finfo_close($finfo);
         curl_multi_close($curl_multi);
 
-        return $responses;
+        ksort($responses, SORT_NUMERIC);
+        return array_values($responses);
     }
 }
