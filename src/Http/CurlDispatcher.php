@@ -83,7 +83,7 @@ class CurlDispatcher implements DispatcherInterface
         });
 
         if (curl_exec($connection) === false) {
-            throw new EmbedException('Error %s: %s', curl_errno($connection), curl_error($connection));
+            throw new EmbedException(sprintf('Error %s: %s', curl_errno($connection), curl_error($connection)));
         }
 
         $result = $curl->getResult();
@@ -91,7 +91,7 @@ class CurlDispatcher implements DispatcherInterface
         curl_close($connection);
 
         return new Response(
-            new Uri($result['uri']),
+            $result['uri'],
             $result['statusCode'],
             $result['contentType'],
             $result['content'],
@@ -181,7 +181,7 @@ class CurlDispatcher implements DispatcherInterface
 
                 if (!empty($result['data']->mime)) {
                     $responses[] = new ImageResponse(
-                        new Uri($result['uri']),
+                        $result['uri'],
                         $result['statusCode'],
                         $result['contentType'],
                         [$result['data']->width, $result['data']->height],

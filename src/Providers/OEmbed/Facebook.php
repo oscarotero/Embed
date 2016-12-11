@@ -14,9 +14,9 @@ class Facebook extends EndPoint implements EndPointInterface
     public function getEndPoint()
     {
         if ($this->response->getUri()->match(['*/videos/*', '/video.php'])) {
-            $endPoint = new Uri('https://www.facebook.com/plugins/video/oembed.json');
+            $endPoint = Uri::create('https://www.facebook.com/plugins/video/oembed.json');
         } else {
-            $endPoint = new Uri('https://www.facebook.com/plugins/post/oembed.json');
+            $endPoint = Uri::create('https://www.facebook.com/plugins/post/oembed.json');
         }
 
         return $endPoint->withQueryParameters([

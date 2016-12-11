@@ -15,7 +15,7 @@ class Soundcloud extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->isValid([200, 503]) && $request->getResponse()->getUri()->match([
+        return $request->getResponse()->isValid([200, 503]) && $request->getResponse()->getUri()->match([
             'https?://soundcloud.com/*',
             'https?://m.soundcloud.com/*',
         ]);

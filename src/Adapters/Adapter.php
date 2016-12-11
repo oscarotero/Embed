@@ -76,7 +76,7 @@ abstract class Adapter
     /**
      * {@inheritdoc}
      */
-    public function createRequest(Uri $uri)
+    public function createRequest($uri)
     {
         return new Request($uri, $this->request->getDispatcher());
     }
@@ -427,7 +427,7 @@ abstract class Adapter
 
         if (!empty($blacklist)) {
             $urls = array_filter($urls, function ($url) use ($blacklist) {
-                $uri = new Uri($url);
+                $uri = Uri::create($url);
 
                 return !$uri->match($blacklist);
             });
@@ -593,7 +593,7 @@ abstract class Adapter
         $requests = [];
 
         foreach ($urls as $uri) {
-            $requests[] = new Uri($uri);
+            $requests[] = Uri::create($uri);
         }
 
         return array_map(

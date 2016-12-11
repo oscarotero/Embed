@@ -12,11 +12,23 @@ class Uri
     private static $public_suffix_list;
 
     /**
+     * Create a new Uri instance.
+     *
+     * @param string $uri
+     *
+     * @return Uri
+     */
+    public static function create($uri)
+    {
+        return Redirects::resolve(new static($uri));
+    }
+
+    /**
      * Constructor. Sets the uri.
      *
      * @param string $uri
      */
-    public function __construct($uri)
+    private function __construct($uri)
     {
         $this->parseUri($uri);
     }
@@ -96,9 +108,9 @@ class Uri
      *
      * @return Uri
      */
-    public function create($uri)
+    public function createAbsolute($uri)
     {
-        return new Uri($this->getAbsolute($uri));
+        return Uri::create($this->getAbsolute($uri));
     }
 
     /**

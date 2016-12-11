@@ -12,8 +12,12 @@ abstract class AbstractResponse
     protected $contentType;
     protected $headers;
 
-    public function __construct(Uri $uri, $statusCode, $contentType, array $headers)
+    public function __construct($uri, $statusCode, $contentType, array $headers)
     {
+        if (!($uri instanceof Uri)) {
+            $uri = Uri::create($uri);
+        }
+
         $this->uri = $uri;
         $this->statusCode = $statusCode;
         $this->contentType = $contentType;

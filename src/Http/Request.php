@@ -20,7 +20,7 @@ class Request
     public function __construct($uri, DispatcherInterface $dispatcher = null)
     {
         if (!($uri instanceof Uri)) {
-            $uri = new Uri($uri);
+            $uri = Uri::create($uri);
         }
 
         $this->uri = $uri;

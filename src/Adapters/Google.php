@@ -56,8 +56,8 @@ class Google extends Webpage implements AdapterInterface
             return Utils::iframe($uri);
         }
 
-        if (($google = $this->getProvider('google'))) {
-            return $google->getCode();
+        if (isset($this->providers['google'])) {
+            return $this->providers['google']->getCode();
         }
 
         return Utils::iframe($uri

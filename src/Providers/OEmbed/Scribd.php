@@ -19,7 +19,7 @@ class Scribd extends EndPoint implements EndPointInterface
     {
         $uri = $this->response->getUri()->withDirectoryPosition(0, 'doc');
 
-        return (new Uri(static::$endPoint))
+        return Uri::create(static::$endPoint)
                 ->withQueryParameters([
                     'url' => (string) $uri,
                     'format' => 'json',

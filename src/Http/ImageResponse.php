@@ -41,7 +41,7 @@ class ImageResponse extends AbstractResponse
         }
     }
 
-    public function __construct(Uri $uri, $statusCode, $contentType, $size, array $headers)
+    public function __construct($uri, $statusCode, $contentType, $size, array $headers)
     {
         parent::__construct($uri, $statusCode, $contentType, $headers);
         $this->size = $size;

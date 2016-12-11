@@ -21,7 +21,7 @@ class Imageshack extends Provider implements ProviderInterface
         parent::__construct($adapter);
 
         $id = $adapter->getResponse()->getUri()->getDirectoryPosition(1);
-        $request = $adapter->createRequest(new Uri('https://api.imageshack.com/v2/images/'.$id));
+        $request = $adapter->createRequest('https://api.imageshack.com/v2/images/'.$id);
 
         if (($json = $request->getResponse()->getJsonContent()) && !empty($json['result'])) {
             $this->bag->set($json['result']);

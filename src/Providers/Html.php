@@ -328,7 +328,7 @@ class Html extends Provider implements ProviderInterface
                 continue;
             }
 
-            $src = $uri->create($img->getAttribute('src'));
+            $src = $uri->createAbsolute($img->getAttribute('src'));
 
             //Avoid external images
             if (!self::imageIsValid($src, $uri, $externalImages)) {
@@ -342,7 +342,7 @@ class Html extends Provider implements ProviderInterface
                 if ($parent->tagName === 'a') {
                     //The link is external
                     if ($parent->hasAttribute('href')) {
-                        $href = $uri->create($parent->getAttribute('href'));
+                        $href = $uri->createAbsolute($parent->getAttribute('href'));
 
                         if (!self::imageIsValid($href, $uri, $externalImages)) {
                             continue 2;

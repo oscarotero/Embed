@@ -11,8 +11,8 @@ abstract class Embed
     /**
      * Gets the info from an url.
      *
-     * @param string|Request $request The url or a request with the url
-     * @param array          $config  Options passed to the adapter
+     * @param string|Uri|Request $request
+     * @param array          $config
      *
      * @throws Exceptions\InvalidUrlException If the urls is not valid
      * @throws \InvalidArgumentException      If any config argument is not valid
@@ -22,7 +22,7 @@ abstract class Embed
     public static function create($request, array $config = [])
     {
         if (!($request instanceof Request)) {
-            $request = new Request(new Uri($request));
+            $request = new Request($request);
         }
 
         //If is a file use File Adapter

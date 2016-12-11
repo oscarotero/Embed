@@ -23,7 +23,7 @@ class Soundcloud extends Provider implements ProviderInterface
         $key = $adapter->getConfig('soundcloud[key]');
 
         if (!empty($key)) {
-            $endPoint = (new Uri('http://api.soundcloud.com/resolve.json'))
+            $endPoint = Uri::create('http://api.soundcloud.com/resolve.json')
                 ->withQueryParameters([
                     'client_id' => $key,
                     'url' => (string) $adapter->getResponse->getUri(),

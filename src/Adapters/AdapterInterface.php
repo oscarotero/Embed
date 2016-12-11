@@ -40,11 +40,11 @@ interface AdapterInterface extends DataInterface
     /**
      * Creates a sub-request instance.
      *
-     * @param Uri $uri
+     * @param Uri|string $uri
      *
      * @return Request
      */
-    public function createRequest(Uri $uri);
+    public function createRequest($uri);
 
     /**
      * Returns the main response instance.

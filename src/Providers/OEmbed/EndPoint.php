@@ -42,7 +42,7 @@ abstract class EndPoint
      */
     public function getEndPoint()
     {
-        return (new Uri(static::$endPoint))
+        return Uri::create(static::$endPoint)
                 ->withQueryParameters([
                     'url' => (string) $this->response->getUri(),
                     'format' => 'json',

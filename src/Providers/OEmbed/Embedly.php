@@ -39,7 +39,7 @@ class Embedly implements EndPointInterface
      */
     public function getEndPoint()
     {
-        return (new Uri('http://api.embed.ly/1/oembed'))
+        return Uri::create('http://api.embed.ly/1/oembed')
                 ->withQueryParameters([
                     'url' => (string) $this->response->getUri(),
                     'format' => 'json',

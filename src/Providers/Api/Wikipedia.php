@@ -18,7 +18,7 @@ class Wikipedia extends Provider implements ProviderInterface
     {
         parent::__construct($adapter);
 
-        $titles = $adapter->getResponse()->getDirectoryPosition(1);
+        $titles = $adapter->getResponse()->getUri()->getDirectoryPosition(1);
 
         if (!empty($titles)) {
             //extract images

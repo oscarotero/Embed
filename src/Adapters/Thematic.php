@@ -25,7 +25,7 @@ class Thematic extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        return Utils::iframe($this->getRequest->getUri()->withDirectoryPosition(0, 'embed'), $this->width, $this->height);
+        return Utils::iframe($this->getResponse()->getUri()->withDirectoryPosition(0, 'embed'), $this->width, $this->height);
     }
 
     /**
