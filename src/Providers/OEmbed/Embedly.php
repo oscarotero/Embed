@@ -18,7 +18,7 @@ class Embedly implements EndPointInterface
         $key = $adapter->getConfig('oembed[embedlyKey]');
 
         if (!empty($key)) {
-            return new static($response, $key);
+            return new static($adapter->getResponse(), $key);
         }
     }
 

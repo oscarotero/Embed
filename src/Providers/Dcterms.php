@@ -19,7 +19,7 @@ class Dcterms extends Provider implements ProviderInterface
         parent::__construct($adapter);
 
         if (!($html = $adapter->getResponse()->getHtmlContent())) {
-            return false;
+            return;
         }
 
         foreach ($html->getElementsByTagName('meta') as $meta) {

@@ -195,6 +195,7 @@ class CurlDispatcher implements DispatcherInterface
         curl_multi_close($curl_multi);
 
         ksort($responses, SORT_NUMERIC);
+
         return array_values($responses);
     }
 }

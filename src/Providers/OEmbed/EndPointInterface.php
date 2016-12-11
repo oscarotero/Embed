@@ -15,7 +15,7 @@ interface EndPointInterface
      *
      * @param AdapterInterface $adapter
      *
-     * @return OEmbedEndPointInterface|null
+     * @return EndPointInterface|null
      */
     public static function create(AdapterInterface $adapter);
 

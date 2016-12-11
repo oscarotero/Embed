@@ -23,9 +23,9 @@ abstract class Redirects
      */
     public static function resolve(Uri $uri)
     {
-        foreach (static::$patterns as $method => $pattern) {
+        foreach (self::$patterns as $method => $pattern) {
             if ($uri->match($pattern)) {
-                return static::$method($uri);
+                return self::$method($uri);
             }
         }
 
@@ -39,7 +39,7 @@ abstract class Redirects
      *
      * @return Uri
      */
-    protected static function google(Uri $uri)
+    private static function google(Uri $uri)
     {
         if (($value = $uri->getQueryParameter('url'))) {
             return Uri::create($value);
@@ -55,7 +55,7 @@ abstract class Redirects
      *
      * @return Uri
      */
-    protected static function googleTranslator(Uri $uri)
+    private static function googleTranslator(Uri $uri)
     {
         if (($value = $uri->getQueryParameter('u'))) {
             return Uri::create($value);
@@ -71,7 +71,7 @@ abstract class Redirects
      *
      * @return Uri
      */
-    protected static function hashBang(Uri $uri)
+    private static function hashBang(Uri $uri)
     {
         if (($path = preg_replace('|^(/?!)|', '', $uri->getFragment()))) {
             return $uri->withPath($uri->getPath().$path);
@@ -87,7 +87,7 @@ abstract class Redirects
      *
      * @return Uri
      */
-    protected static function spotify(Uri $uri)
+    private static function spotify(Uri $uri)
     {
         return $uri->withHost('open.spotify.com');
     }

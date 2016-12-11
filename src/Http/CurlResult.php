@@ -7,6 +7,7 @@ namespace Embed\Http;
  */
 class CurlResult
 {
+    protected $connection;
     protected $body;
     protected $headers = [];
     protected $onHeader;

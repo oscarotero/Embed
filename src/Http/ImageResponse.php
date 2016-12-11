@@ -2,8 +2,6 @@
 
 namespace Embed\Http;
 
-
-
 /**
  * Class to consume http responses.
  */

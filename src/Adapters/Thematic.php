@@ -3,7 +3,6 @@
 namespace Embed\Adapters;
 
 use Embed\Http\Request;
-use Embed\Utils;
 
 /**
  * Adapter to provide information from thematic.

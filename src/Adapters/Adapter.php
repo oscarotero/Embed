@@ -16,6 +16,7 @@ use Embed\Bag;
  * @property array        $tags
  * @property array        $feeds
  * @property array        $images
+ * @property array        $imagesUrls
  * @property null|string  $image
  * @property null|int     $imageWidth
  * @property null|int     $imageHeight
@@ -26,6 +27,7 @@ use Embed\Bag;
  * @property null|string  $authorName
  * @property null|string  $authorUrl
  * @property array        $providerIcons
+ * @property array        $providerIconsUrls
  * @property null|string  $providerIcon
  * @property null|string  $providerName
  * @property null|string  $providerUrl
@@ -93,14 +95,6 @@ abstract class Adapter
     public function getConfig($name, $default = null)
     {
         return $this->config->get($name, $default);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getImagesRequests()
-    {
-        return $this->imageRequests;
     }
 
     /**
@@ -452,7 +446,7 @@ abstract class Adapter
         $this->imageHeight = null;
 
         $images = $this->images;
-        $bigger = $this->getConfig('getBiggerImage');
+        $bigger = (bool) $this->getConfig('getBiggerImage');
         $minWidth = $this->getConfig('minImageWidth', 1);
         $minHeight = $this->getConfig('minImageHeight', 1);
 

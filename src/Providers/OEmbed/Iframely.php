@@ -18,7 +18,7 @@ class Iframely implements EndPointInterface
         $key = $adapter->getConfig('oembed[iframelyKey]');
 
         if (!empty($key)) {
-            return new static($response, $key);
+            return new static($adapter->getResponse(), $key);
         }
     }
 

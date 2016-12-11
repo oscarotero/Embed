@@ -27,7 +27,7 @@ abstract class Provider
      */
     public function getBag()
     {
-        return $bag;
+        return $this->bag;
     }
 
     /**

@@ -30,6 +30,7 @@ abstract class Embed
         //if the canonical url is different, repeat the process
         if ((string) $request->getResponse()->getUri() !== $info->url) {
             $request = new Request($info->url, $request->getDispatcher());
+
             return self::process($request, $config);
         }
 
@@ -37,7 +38,7 @@ abstract class Embed
     }
 
     /**
-     * Process the request
+     * Process the request.
      *
      * @param Request $request
      * @param array   $config
