@@ -2,6 +2,7 @@
 
 namespace Embed\Providers;
 
+use Embed\Embed;
 use Embed\Adapters\AdapterInterface;
 use Embed\Http\Response;
 use Embed\Http\Uri;
@@ -23,6 +24,7 @@ class OEmbed extends Provider implements ProviderInterface
         $endPoint = $this->getEndPoint();
 
         if ($endPoint) {
+            Embed::log('info', 'Oembed endpoint', ['url' => $endPoint]);
             $request = $adapter->createRequest($endPoint);
             $this->extractOembed($request->getResponse());
         }
@@ -239,11 +241,15 @@ class OEmbed extends Provider implements ProviderInterface
 
                     $this->bag->set($element->getName(), $content);
                 }
+            } else {
+                Embed::log('error', 'Oembed endpoint fail', ['url' => $response->getUri(), 'response' => $xml]);
             }
         // extract from json
         } else {
             if (($json = $response->getJsonContent()) && empty($json['Error'])) {
                 $this->bag->set($json);
+            } else {
+                Embed::log('error', 'Oembed endpoint fail', ['url' => $response->getUri(), 'response' => $json]);
             }
         }
     }

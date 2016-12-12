@@ -13,3 +13,4 @@ before_install:
 
 script:
   - composer test
+  - cat tests.log

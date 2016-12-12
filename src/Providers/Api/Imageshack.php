@@ -2,6 +2,7 @@
 
 namespace Embed\Providers\Api;
 
+use Embed\Embed;
 use Embed\Adapters\AdapterInterface;
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
@@ -23,6 +24,8 @@ class Imageshack extends Provider implements ProviderInterface
 
         if (($json = $request->getResponse()->getJsonContent()) && !empty($json['result'])) {
             $this->bag->set($json['result']);
+        } else {
+            Embed::log('error', 'Imageshack endpoint fail', ['url' => $endPoint, 'response' => $json]);
         }
     }
 

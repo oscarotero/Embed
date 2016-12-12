@@ -1,3 +1,4 @@
 # COMPOSER
 vendor
 composer.lock
+tests.log

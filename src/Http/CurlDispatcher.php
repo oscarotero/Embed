@@ -2,6 +2,7 @@
 
 namespace Embed\Http;
 
+use Embed\Embed;
 use Embed\Exceptions\EmbedException;
 
 /**
@@ -62,28 +63,26 @@ class CurlDispatcher implements DispatcherInterface
      */
     public function dispatch(Uri $uri)
     {
+        Embed::log('info', 'Page request', ['uri' => $uri]);
+
         $connection = curl_init((string) $uri);
         curl_setopt_array($connection, $this->config);
 
         $curl = new CurlResult($connection);
 
         //Get only text responses
-        $isText = true;
-
-        $curl->onHeader(function ($name, $value) use (&$isText) {
+        $curl->onHeader(function ($name, $value, $data) {
             if ($name === 'content-type') {
-                if (!preg_match('/(text|html|json)/', strtolower($value))) {
-                    $isText = false;
-                }
+                $data->isBinary = !preg_match('/(text|html|json)/', strtolower($value));
             }
         });
 
-        $curl->onBody(function () use ($isText) {
-            return $isText;
+        $curl->onBody(function ($string, $data) {
+            return !$data->isBinary;
         });
 
-        if (curl_exec($connection) === false) {
-            throw new EmbedException(sprintf('Error %s: %s', curl_errno($connection), curl_error($connection)));
+        if (curl_exec($connection) === false && curl_errno($connection) !== 23) {
+            throw new EmbedException(sprintf('Error with the url %s (%s: %s)', (string) $uri, curl_errno($connection), curl_error($connection)));
         }
 
         $result = $curl->getResult();
@@ -130,6 +129,8 @@ class CurlDispatcher implements DispatcherInterface
 
                 continue;
             }
+
+            Embed::log('info', 'Image request', ['uri' => $uri]);
 
             $connection = curl_init((string) $uri);
 

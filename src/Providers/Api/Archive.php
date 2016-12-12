@@ -2,6 +2,7 @@
 
 namespace Embed\Providers\Api;
 
+use Embed\Embed;
 use Embed\Adapters\AdapterInterface;
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
@@ -23,6 +24,8 @@ class Archive extends Provider implements ProviderInterface
 
         if (($json = $request->getResponse()->getJsonContent())) {
             $this->bag->set($json);
+        } else {
+            Embed::log('error', 'Archive.org endpoint fail', ['url' => $endPoint, 'response' => $json]);
         }
     }
 

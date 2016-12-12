@@ -2,6 +2,7 @@
 
 namespace Embed\Providers\Api;
 
+use Embed\Embed;
 use Embed\Adapters\AdapterInterface;
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
@@ -36,6 +37,8 @@ class Wikipedia extends Provider implements ProviderInterface
 
             if (($json = $request->getResponse()->getJsonContent())) {
                 $this->bag->set('images', $json);
+            } else {
+                Embed::log('error', 'Wikipedia images endpoint fail', ['url' => $endPoint, 'response' => $json]);
             }
 
             //extract content
@@ -47,6 +50,8 @@ class Wikipedia extends Provider implements ProviderInterface
 
             if (($json = $request->getResponse()->getJsonContent())) {
                 $this->bag->set('extracts', $json);
+            } else {
+                Embed::log('error', 'Wikipedia extracts endpoint fail', ['url' => $endPoint, 'response' => $json]);
             }
         }
     }

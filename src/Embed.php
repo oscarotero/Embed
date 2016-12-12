@@ -5,17 +5,47 @@ namespace Embed;
 use Embed\Adapters\AdapterInterface;
 use Embed\Http\Uri;
 use Embed\Http\Request;
+use Psr\Log\LoggerInterface;
 
 abstract class Embed
 {
+    private static $logger;
+
+    /**
+     * Define a logger used to debug.
+     *
+     * @param LoggerInterface $logger
+     */
+    public static function setLogger(LoggerInterface $logger = null)
+    {
+        self::$logger = $logger;
+    }
+
+    /**
+     * Saves a message in the logger
+     *
+     * @param mixed $level
+     * @param string $message
+     * @param array $context
+     */
+    public static function log($level, $message, array $context = [])
+    {
+        if (self::$logger !== null) {
+            foreach ($context as &$value) {
+                if (is_object($value)) {
+                    $value = (string) $value;
+                }
+            }
+
+            self::$logger->log($level, $message, $context);
+        }
+    }
+
     /**
      * Gets the info from an url.
      *
      * @param string|Uri|Request $request
      * @param array              $config
-     *
-     * @throws Exceptions\InvalidUrlException If the urls is not valid
-     * @throws \InvalidArgumentException      If any config argument is not valid
      *
      * @return AdapterInterface
      */
@@ -24,6 +54,8 @@ abstract class Embed
         if (!($request instanceof Request)) {
             $request = new Request($request);
         }
+
+        self::log('debug', 'Start', ['url' => $request->getUri(), 'config' => $config]);
 
         $info = self::process($request, $config);
 
@@ -43,12 +75,15 @@ abstract class Embed
      * @param Request $request
      * @param array   $config
      *
+     * @throws Exceptions\InvalidUrlException If the urls is not valid
+     *
      * @return AdapterInterface
      */
     private static function process(Request $request, array $config)
     {
         //If is a file use File Adapter
         if (Adapters\File::check($request)) {
+            self::log('debug', 'Adapter: '.File::class, ['url' => $request->getUri()]);
             return new Adapters\File($request, $config);
         }
 
@@ -56,11 +91,13 @@ abstract class Embed
         $adapter = 'Embed\\Adapters\\'.$request->getResponse()->getUri()->getClassNameForDomain();
 
         if (class_exists($adapter) && $adapter::check($request)) {
+            self::log('debug', 'Adapter: '.$adapter, ['url' => $request->getUri()]);
             return new $adapter($request, $config);
         }
 
         //Use the default webpage adapter
         if (Adapters\Webpage::check($request)) {
+            self::log('debug', 'Adapter: '.Webpage::class, ['url' => $request->getUri()]);
             return new Adapters\Webpage($request, $config);
         }
 
