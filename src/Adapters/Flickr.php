@@ -28,34 +28,13 @@ class Flickr extends Webpage implements AdapterInterface
         $code = parent::getCode();
 
         if (empty($code)) {
+            $this->width = 640;
+            $this->height = 425;
+
             $code = Utils::iframe($this->getResponse()->getUri()->withAddedPath('player'), $this->width, $this->height);
         }
 
         return $code;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getWidth()
-    {
-        if (!parent::getCode()) {
-            return 640;
-        }
-
-        return parent::getWidth();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getHeight()
-    {
-        if (!parent::getCode()) {
-            return 425;
-        }
-
-        return parent::getHeight();
     }
 
     /**

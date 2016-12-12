@@ -26,7 +26,7 @@ class Soundcloud extends Provider implements ProviderInterface
             $endPoint = Uri::create('http://api.soundcloud.com/resolve.json')
                 ->withQueryParameters([
                     'client_id' => $key,
-                    'url' => (string) $adapter->getResponse->getUri(),
+                    'url' => (string) $adapter->getResponse()->getUri(),
                 ]);
 
             $request = $adapter->createRequest($endPoint);
@@ -72,7 +72,7 @@ class Soundcloud extends Provider implements ProviderInterface
     {
         $images = [];
 
-        if (!$this->bag->get('artwork_url') && ($img = $this->bag->get('user[avatar_url]'))) {
+        if (empty($this->bag->get('artwork_url')) && ($img = $this->bag->get('user[avatar_url]'))) {
             $images[] = str_replace('-large.jpg', '-t500x500.jpg', $img);
         }
 

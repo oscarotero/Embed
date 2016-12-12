@@ -63,7 +63,7 @@ class Wikipedia extends Provider implements ProviderInterface
     {
         $pages = $this->bag->get('extracts[query][pages]');
 
-        if ($pages) {
+        if (!empty($pages)) {
             $page = current($pages);
 
             return strip_tags($page['title']);
@@ -77,7 +77,7 @@ class Wikipedia extends Provider implements ProviderInterface
     {
         $pages = $this->bag->get('extracts[query][pages]');
 
-        if ($pages) {
+        if (!empty($pages)) {
             $page = current($pages);
 
             return isset($page['extract']) ? strip_tags($page['extract']) : null;
@@ -93,7 +93,7 @@ class Wikipedia extends Provider implements ProviderInterface
 
         $pages = $this->bag->get('images[query][pages]');
 
-        if ($pages) {
+        if (!empty($pages)) {
             $page = current($pages);
 
             $imgs = [];
@@ -112,7 +112,7 @@ class Wikipedia extends Provider implements ProviderInterface
             }
 
             //Get image urls
-            if ($imgs) {
+            if (!empty($imgs)) {
                 $endPoint = $this->adapter->getResponse()->getUri()
                     ->withPath('/w/api.php')
                     ->withQueryParameters([

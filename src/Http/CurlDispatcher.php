@@ -161,7 +161,7 @@ class CurlDispatcher implements DispatcherInterface
             $connections[$k] = $curl;
         }
 
-        if ($connections) {
+        if (!empty($connections)) {
             do {
                 $return = curl_multi_exec($curl_multi, $active);
             } while ($return === CURLM_CALL_MULTI_PERFORM);

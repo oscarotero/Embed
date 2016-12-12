@@ -367,7 +367,7 @@ class Html extends Provider implements ProviderInterface
     /**
      * Check whether a image url is valid or not.
      *
-     * @param Uri   $url
+     * @param Uri   $uri
      * @param Uri   $baseUri
      * @param mixed $externalImages
      *

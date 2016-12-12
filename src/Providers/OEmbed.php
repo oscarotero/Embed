@@ -190,7 +190,7 @@ class OEmbed extends Provider implements ProviderInterface
     {
         //Search using the domain
         $class = 'Embed\\Providers\\OEmbed\\'.$this->adapter->getResponse()->getUri()->getClassNameForDomain();
-        $extraParameters = $this->adapter->getConfig('oembed[parameters]', []);
+        $extraParameters = (array) $this->adapter->getConfig('oembed[parameters]');
 
         if (class_exists($class)) {
             $endPoint = $class::create($this->adapter);
