@@ -103,7 +103,7 @@ $providerData = [
     'tags' => 'printArray',
     'imagesUrls' => 'printArray',
     'code' => 'printCode',
-    'source' => 'printUrl',
+    'feeds' => 'printArray',
     'width' => 'printText',
     'height' => 'printText',
     'authorName' => 'printText',
@@ -126,7 +126,7 @@ $adapterData = [
     'imageHeight' => 'printText',
     'images' => 'printArray',
     'code' => 'printCode',
-    'source' => 'printUrl',
+    'feeds' => 'printArray',
     'width' => 'printText',
     'height' => 'printText',
     'aspectRatio' => 'printText',
@@ -149,7 +149,9 @@ $adapterData = [
 
         <title>Embed tests</title>
 
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <style type="text/css">
+            <?= file_get_contents(__DIR__.'/styles.css') ?>
+        </style>
     </head>
 
     <body>
@@ -200,7 +202,7 @@ $adapterData = [
             </div>
 
             <div id="advanced-data">
-                <?php foreach ($info->getAllProviders() as $providerName => $provider): ?>
+                <?php foreach ($info->getProviders() as $providerName => $provider): ?>
                 <h2><?php echo $providerName; ?> provider</h2>
 
                 <table>
@@ -213,7 +215,7 @@ $adapterData = [
 
                     <tr>
                         <th>All data collected</th>
-                        <td><?php printArray($provider->bag->getAll()); ?></td>
+                        <td><?php printArray($provider->getBag()->getAll()); ?></td>
                     </tr>
 
                     <?php if (isset($provider->api)): ?>
@@ -226,6 +228,7 @@ $adapterData = [
                 </table>
                 <?php endforeach ?>
 
+                <?php /*
                 <h2>Http request info</h2>
 
                 <table>
@@ -251,11 +254,12 @@ $adapterData = [
                     </tr>
                     <?php endforeach ?>
                 </table>
+                */ ?>
 
                 <h2>Content</h2>
 
                 <pre>
-                    <?php printText($info->getRequest()->getContent()); ?>
+                    <?php printText($info->getResponse()->getContent()); ?>
                 </pre>
             </div>
         </section>

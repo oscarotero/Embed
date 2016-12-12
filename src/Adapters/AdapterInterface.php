@@ -63,13 +63,6 @@ interface AdapterInterface extends DataInterface
     public function getConfig($name, $default = null);
 
     /**
-     * Returns all images Requests.
-     *
-     * @return array
-     */
-    public function getImagesRequests();
-
-    /**
      * Get all providers.
      *
      * @return array
