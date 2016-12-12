@@ -22,11 +22,11 @@ abstract class Embed
     }
 
     /**
-     * Saves a message in the logger
+     * Saves a message in the logger.
      *
-     * @param mixed $level
+     * @param mixed  $level
      * @param string $message
-     * @param array $context
+     * @param array  $context
      */
     public static function log($level, $message, array $context = [])
     {
@@ -85,6 +85,7 @@ abstract class Embed
         //If is a file use File Adapter
         if (Adapters\File::check($request)) {
             self::log('debug', 'Adapter: '.File::class, ['url' => $request->getUri()]);
+
             return new Adapters\File($request, $config);
         }
 
@@ -93,12 +94,14 @@ abstract class Embed
 
         if (class_exists($adapter) && $adapter::check($request)) {
             self::log('debug', 'Adapter: '.$adapter, ['url' => $request->getUri()]);
+
             return new $adapter($request, $config);
         }
 
         //Use the default webpage adapter
         if (Adapters\Webpage::check($request)) {
             self::log('debug', 'Adapter: '.Webpage::class, ['url' => $request->getUri()]);
+
             return new Adapters\Webpage($request, $config);
         }
 

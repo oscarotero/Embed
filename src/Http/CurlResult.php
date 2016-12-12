@@ -2,8 +2,6 @@
 
 namespace Embed\Http;
 
-use Embed\Embed;
-
 /**
  * Class to dispatch urls using curl and get the result.
  */

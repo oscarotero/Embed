@@ -110,7 +110,7 @@ abstract class Adapter
      */
     public function getTitle()
     {
-        foreach ($this->providers as $k => $provider) {
+        foreach ($this->providers as $provider) {
             $title = $provider->getTitle();
 
             if (!empty($title)) {
@@ -268,7 +268,7 @@ abstract class Adapter
      */
     public function getUrl()
     {
-        foreach ($this->providers as $k => $provider) {
+        foreach ($this->providers as $provider) {
             $url = $provider->getUrl();
 
             if (!empty($url)) {
