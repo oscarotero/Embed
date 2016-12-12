@@ -9,7 +9,7 @@ abstract class Redirects
 {
     private static $patterns = [
         'google' => 'www.google.com/url*',
-        'googleTranslator' => 'translate.google.com/translate*',
+        'googleTranslator' => 'translate.google.com/translate',
         'hashBang' => '*#!*',
         'spotify' => 'play.spotify.com/*',
     ];
