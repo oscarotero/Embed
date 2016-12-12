@@ -12,7 +12,7 @@ class ImagesBlacklistTest extends AbstractTestCase
                 'image' => 'http://alistapart.com/d/_made/pix/authors/photos/shoaf-headshot_120_120_c1.jpg',
             ], [
                 'imagesBlacklist' => [
-                    'http://alistapart.com/components/assets/img/ala-logo-big.png',
+                    'alistapart.com/components/assets/img/ala-logo-big.png',
                 ],
             ]
         );

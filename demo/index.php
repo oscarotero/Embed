@@ -2,7 +2,7 @@
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 
-include '../src/autoloader.php';
+include __DIR__.'/../src/autoloader.php';
 
 function getUrl()
 {

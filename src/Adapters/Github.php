@@ -52,7 +52,7 @@ class Github extends Webpage implements AdapterInterface
 
         $uri = $this->getResponse()->getUri();
 
-        if ($uri->match('https://github.com/*/*/blob/*')) {
+        if ($uri->match('github.com/*/*/blob/*')) {
             $username = $uri->getDirectoryPosition(0);
             $repo = $uri->getDirectoryPosition(1);
             $ref = $uri->getDirectoryPosition(3);

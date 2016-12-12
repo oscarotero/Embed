@@ -8,10 +8,10 @@ namespace Embed\Http;
 abstract class Redirects
 {
     private static $patterns = [
-        'google' => 'https?://www.google.com/url*',
-        'googleTranslator' => 'https?://translate.google.com/translate*',
+        'google' => 'www.google.com/url*',
+        'googleTranslator' => 'translate.google.com/translate*',
         'hashBang' => '*#!*',
-        'spotify' => 'https://play.spotify.com/*',
+        'spotify' => 'play.spotify.com/*',
     ];
 
     /**

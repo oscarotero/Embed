@@ -13,7 +13,7 @@ class ImageshackTest extends AbstractTestCase
                 'image' => 'http://imagizer.imageshack.us/scaled/medium/540/KQQN7U.jpg',
                 'imageWidth' => 236,
                 'imageHeight' => 354,
-                'type' => 'photo',
+                'type' => 'link',
                 'providerName' => 'ImageShack',
                 'authorName' => 'ToddGilbert',
             ]
