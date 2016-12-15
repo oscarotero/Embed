@@ -44,7 +44,7 @@ class Gist extends Provider implements ProviderInterface
      */
     public function getCode()
     {
-        if (($code = $this->bag->get('div')) && ($stylesheet = $this->bag->get('stylesheet'))) {
+        if (($code = $this->bag->get('div')) && ($stylesheet = $this->normalizeUrl($this->bag->get('stylesheet')))) {
             return  '<link href="'.$stylesheet.'" rel="stylesheet">'.$code;
         }
     }

@@ -96,10 +96,10 @@ class OEmbed extends Provider implements ProviderInterface
     public function getUrl()
     {
         if ($this->getType() === 'photo') {
-            return $this->bag->get('web_page');
+            return $this->normalizeUrl($this->bag->get('web_page'));
         }
 
-        return $this->bag->get('url') ?: $this->bag->get('web_page');
+        return $this->normalizeUrl($this->bag->get('url') ?: $this->bag->get('web_page'));
     }
 
     /**
@@ -115,7 +115,7 @@ class OEmbed extends Provider implements ProviderInterface
      */
     public function getAuthorUrl()
     {
-        return $this->bag->get('author_url');
+        return $this->normalizeUrl($this->bag->get('author_url'));
     }
 
     /**
@@ -131,7 +131,7 @@ class OEmbed extends Provider implements ProviderInterface
      */
     public function getProviderUrl()
     {
-        return $this->bag->get('provider_url');
+        return $this->normalizeUrl($this->bag->get('provider_url'));
     }
 
     /**
@@ -148,6 +148,7 @@ class OEmbed extends Provider implements ProviderInterface
         foreach (['image', 'thumbnail', 'thumbnail_url'] as $type) {
             if ($this->bag->has($type)) {
                 $ret = $this->bag->get($type);
+
                 if (is_array($ret)) {
                     $images = array_merge($images, $ret);
                 } else {
@@ -156,7 +157,7 @@ class OEmbed extends Provider implements ProviderInterface
             }
         }
 
-        return $images;
+        return $this->normalizeUrls($images);
     }
 
     /**

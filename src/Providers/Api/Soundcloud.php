@@ -62,7 +62,7 @@ class Soundcloud extends Provider implements ProviderInterface
      */
     public function getUrl()
     {
-        return $this->bag->get('permalink_url');
+        return $this->normalizeUrl($this->bag->get('permalink_url'));
     }
 
     /**
@@ -76,7 +76,7 @@ class Soundcloud extends Provider implements ProviderInterface
             $images[] = str_replace('-large.jpg', '-t500x500.jpg', $img);
         }
 
-        return $images;
+        return $this->normalizeUrls($images);
     }
 
     /**
@@ -92,6 +92,6 @@ class Soundcloud extends Provider implements ProviderInterface
      */
     public function getAuthorUrl()
     {
-        return $this->bag->get('user[permalink_url]');
+        return $this->normalizeUrl($this->bag->get('user[permalink_url]'));
     }
 }

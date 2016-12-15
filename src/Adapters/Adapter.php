@@ -113,8 +113,8 @@ abstract class Adapter
         foreach ($this->providers as $provider) {
             $title = $provider->getTitle();
 
-            if (!empty($title)) {
-                return html_entity_decode($title);
+            if ($title !== null) {
+                return $title;
             }
         }
 
@@ -130,8 +130,8 @@ abstract class Adapter
         foreach ($this->providers as $provider) {
             $description = $provider->getDescription();
 
-            if (!empty($description)) {
-                return html_entity_decode($description);
+            if ($description !== null) {
+                return $description;
             }
         }
     }
@@ -157,7 +157,7 @@ abstract class Adapter
         foreach ($this->providers as $provider) {
             $type = $provider->getType();
 
-            if (!empty($type)) {
+            if ($type !== null) {
                 if (!isset($types[$type])) {
                     $types[$type] = 0;
                 }
@@ -204,8 +204,6 @@ abstract class Adapter
 
         foreach ($this->providers as $provider) {
             foreach ($provider->getFeeds() as $feed) {
-                $feed = $this->getResponse()->getUri()->getAbsolute($feed);
-
                 if (!in_array($feed, $feeds)) {
                     $feeds[] = $feed;
                 }
@@ -271,8 +269,8 @@ abstract class Adapter
         foreach ($this->providers as $provider) {
             $url = $provider->getUrl();
 
-            if (!empty($url)) {
-                return $this->getResponse()->getUri()->getAbsolute($url);
+            if ($url !== null) {
+                return $url;
             }
         }
 
@@ -287,7 +285,7 @@ abstract class Adapter
         foreach ($this->providers as $provider) {
             $authorName = $provider->getAuthorName();
 
-            if (!empty($authorName)) {
+            if ($authorName !== null) {
                 return $authorName;
             }
         }
@@ -301,8 +299,8 @@ abstract class Adapter
         foreach ($this->providers as $provider) {
             $authorUrl = $provider->getAuthorUrl();
 
-            if (!empty($authorUrl)) {
-                return $this->getResponse()->getUri()->getAbsolute($authorUrl);
+            if ($authorUrl !== null) {
+                return $authorUrl;
             }
         }
     }
@@ -312,16 +310,13 @@ abstract class Adapter
      */
     public function getProviderIconsUrls()
     {
-        $uri = $this->getResponse()->getUri();
         $urls = [
-            $uri->getAbsolute('/favicon.ico'),
-            $uri->getAbsolute('/favicon.png'),
+            $this->getResponse()->getUri()->getAbsolute('/favicon.ico'),
+            $this->getResponse()->getUri()->getAbsolute('/favicon.png'),
         ];
 
         foreach ($this->providers as $provider) {
             foreach ($provider->getProviderIconsUrls() as $url) {
-                $url = $uri->getAbsolute($url);
-
                 if (!in_array($url, $urls, true)) {
                     $urls[] = $url;
                 }
@@ -385,16 +380,13 @@ abstract class Adapter
      */
     public function getProviderUrl()
     {
-        $uri = $this->getResponse()->getUri();
-
         foreach ($this->providers as $provider) {
-            $providerUrl = $provider->getProviderUrl();
-
-            if (!empty($providerUrl)) {
-                return $uri->getAbsolute($providerUrl);
+            if (($url = $provider->getProviderUrl()) !== null) {
+                return $url;
             }
         }
 
+        $uri = $this->getResponse()->getUri();
         return $uri->getScheme().'://'.$uri->getDomain(true);
     }
 
@@ -403,13 +395,10 @@ abstract class Adapter
      */
     public function getImagesUrls()
     {
-        $uri = $this->getResponse()->getUri();
         $urls = [];
 
         foreach ($this->providers as $provider) {
             foreach ($provider->getImagesUrls() as $url) {
-                $url = $uri->getAbsolute($url);
-
                 if (!in_array($url, $urls, true)) {
                     $urls[] = $url;
                 }
@@ -535,7 +524,7 @@ abstract class Adapter
         foreach ($this->providers as $provider) {
             $publishedTime = $provider->getPublishedTime();
 
-            if (!empty($publishedTime)) {
+            if ($publishedTime !== null) {
                 return $publishedTime;
             }
         }
@@ -549,7 +538,7 @@ abstract class Adapter
         foreach ($this->providers as $provider) {
             $license = $provider->getLicense();
 
-            if (!empty($license)) {
+            if ($license !== null) {
                 return $license;
             }
         }
@@ -563,7 +552,9 @@ abstract class Adapter
         $data = [];
 
         foreach ($this->providers as $provider) {
-            $data = array_merge($data, $provider->getLinkedData());
+            foreach ($provider->getLinkedData() as $value) {
+                $data[] = $value;
+            }
         }
 
         return $data;

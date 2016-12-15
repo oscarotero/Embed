@@ -75,7 +75,7 @@ class Archive extends Provider implements ProviderInterface
      */
     public function getUrl()
     {
-        return $this->bag->get('url');
+        return $this->normalizeUrl($this->bag->has('url'));
     }
 
     /**
@@ -97,6 +97,6 @@ class Archive extends Provider implements ProviderInterface
             $images[] = $url;
         }
 
-        return $images;
+        return $this->normalizeUrl($images);
     }
 }

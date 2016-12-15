@@ -75,11 +75,9 @@ class Html extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function getSource()
+    public function getFeeds()
     {
-        $feeds = $this->bag->get('feeds');
-
-        return isset($feeds[0]) ? $feeds[0] : null;
+        return $this->normalizeUrls($this->bag->get('feeds'));
     }
 
     /**
@@ -87,10 +85,12 @@ class Html extends Provider implements ProviderInterface
      */
     public function getCode()
     {
-        if ($this->bag->has('video_src')) {
+        $src = $this->normalizeUrl($this->bag->get('video_src'));
+
+        if ($src !== null) {
             switch ($this->bag->get('video_type')) {
                 case 'application/x-shockwave-flash':
-                    return Utils::flash($this->bag->get('video_src'), $this->getWidth(), $this->getHeight());
+                    return Utils::flash($src, $this->getWidth(), $this->getHeight());
             }
         }
     }
@@ -100,7 +100,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getUrl()
     {
-        return $this->bag->get('canonical');
+        return $this->normalizeUrl($this->bag->get('canonical'));
     }
 
     /**
@@ -116,7 +116,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getProviderIconsUrls()
     {
-        return (array) $this->bag->get('icons') ?: [];
+        return $this->normalizeUrls($this->bag->get('icons'));
     }
 
     /**
@@ -124,11 +124,14 @@ class Html extends Provider implements ProviderInterface
      */
     public function getImagesUrls()
     {
-        $images = (array) $this->bag->get('images');
-        $maxImages = $this->adapter->getConfig('html[maxImages]', -1);
+        $images = $this->normalizeUrls($this->bag->get('images'));
 
-        if ($maxImages > -1) {
-            return array_slice($images, 0, $maxImages);
+        if (!empty($images)) {
+            $maxImages = $this->adapter->getConfig('html[maxImages]', -1);
+
+            if ($maxImages > -1) {
+                return array_slice($images, 0, $maxImages);
+            }
         }
 
         return $images;
@@ -139,7 +142,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getWidth()
     {
-        return (int) $this->bag->get('video_width') ?: null;
+        return ((int) $this->bag->get('video_width')) ?: null;
     }
 
     /**
@@ -147,7 +150,7 @@ class Html extends Provider implements ProviderInterface
      */
     public function getHeight()
     {
-        return (int) $this->bag->get('video_height') ?: null;
+        return ((int) $this->bag->get('video_height')) ?: null;
     }
 
     /**

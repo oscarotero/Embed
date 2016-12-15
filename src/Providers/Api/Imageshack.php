@@ -103,6 +103,6 @@ class Imageshack extends Provider implements ProviderInterface
      */
     public function getImagesUrls()
     {
-        return (array) $this->bag->get('direct_link');
+        return $this->normalizeUrls($this->bag->get('direct_link'));
     }
 }

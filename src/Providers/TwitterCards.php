@@ -87,8 +87,10 @@ class TwitterCards extends Provider implements ProviderInterface
      */
     public function getCode()
     {
-        if ($this->bag->has('player')) {
-            return Utils::iframe($this->bag->get('player'), $this->getWidth(), $this->getHeight());
+        $src = $this->normalizeUrl($this->bag->has('player'));
+
+        if ($src !== false) {
+            return Utils::iframe($src, $this->getWidth(), $this->getHeight());
         }
     }
 
@@ -97,7 +99,7 @@ class TwitterCards extends Provider implements ProviderInterface
      */
     public function getUrl()
     {
-        return $this->bag->get('url');
+        return $this->normalizeUrl($this->bag->get('url'));
     }
 
     /**
@@ -113,7 +115,7 @@ class TwitterCards extends Provider implements ProviderInterface
      */
     public function getImagesUrls()
     {
-        return (array) $this->bag->get('images') ?: [];
+        return $this->normalizeUrls($this->bag->get('images'));
     }
 
     /**

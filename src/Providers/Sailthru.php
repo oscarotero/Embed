@@ -49,7 +49,7 @@ class Sailthru extends Provider implements ProviderInterface
             }
         }
 
-        return $images;
+        return $this->normalizeUrls($images);
     }
 
     /**

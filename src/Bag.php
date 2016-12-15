@@ -27,10 +27,15 @@ class Bag
      */
     public function set($name, $value = null)
     {
-        if (is_array($name)) {
-            $this->parameters = array_replace($this->parameters, $name);
-        } else {
-            $this->parameters[trim(strtolower($name))] = is_string($value) ? trim($value) : $value;
+        if (!is_array($name)) {
+            $name = [$name => $value];
+        }
+
+        foreach ($name as $name => $value) {
+            $name = self::normalizeName($name);
+            $value = self::normalizeValue($value);
+
+            $this->parameters[$name] = $value;
         }
     }
 
@@ -42,7 +47,8 @@ class Bag
      */
     public function add($name, $value = null)
     {
-        $name = trim($name);
+        $name = self::normalizeName($name);
+        $value = self::normalizeValue($value);
 
         if (!isset($this->parameters[$name])) {
             $this->parameters[$name] = [];
@@ -63,6 +69,8 @@ class Bag
      */
     public function get($name, $default = null)
     {
+        $name = self::normalizeName($name);
+
         if (strpos($name, '[') !== false) {
             $names = explode('[', str_replace(']', '', $name));
             $key = array_shift($names);
@@ -93,7 +101,7 @@ class Bag
     }
 
     /**
-     * Check if a value exists.
+     * Check if a value exists and is not empty.
      *
      * @param string $name
      *
@@ -101,6 +109,8 @@ class Bag
      */
     public function has($name)
     {
+        $name = self::normalizeName($name);
+
         if (strpos($name, '[') !== false) {
             $names = explode('[', str_replace(']', '', $name));
             $key = array_shift($names);
@@ -114,9 +124,40 @@ class Bag
                 $item = $item[$key];
             }
 
-            return isset($item);
+            return isset($item) && strlen($item) > 0;
         }
 
-        return isset($this->parameters[$name]);
+        return isset($this->parameters[$name]) && strlen($this->parameters[$name]) > 0;
+    }
+
+    /**
+     * Normalize a variable name.
+     *
+     * @param string $string
+     *
+     * @return string
+     */
+    private static function normalizeName($name)
+    {
+        return strtolower(trim($name));
+    }
+
+    /**
+     * Normalize a value.
+     * If it's a string, removes spaces and html entities
+     *
+     * @param mixed $string
+     *
+     * @return mixed
+     */
+    private static function normalizeValue($value)
+    {
+        if (is_string($value)) {
+            $value = html_entity_decode(trim($value));
+
+            return ($value === '') ? null : $value;
+        }
+
+        return $value;
     }
 }

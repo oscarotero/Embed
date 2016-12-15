@@ -159,4 +159,36 @@ abstract class Provider
     {
         return [];
     }
+
+    /**
+     * Returns the urls as absolute
+     *
+     * @param mixed $uris
+     *
+     * @return array
+     */
+    protected function normalizeUrls($uris)
+    {
+        if (!is_array($uris)) {
+            return [];
+        }
+
+        return array_map([$this, 'normalizeUrl'], array_filter($uris));
+    }
+
+    /**
+     * Returns the url as absolute
+     *
+     * @param string|null $uri
+     *
+     * @return string|null
+     */
+    protected function normalizeUrl($uri)
+    {
+        if (empty($uri)) {
+            return;
+        }
+
+        return $this->adapter->getResponse()->getUri()->getAbsolute($uri);
+    }
 }

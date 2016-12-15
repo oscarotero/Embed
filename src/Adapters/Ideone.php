@@ -31,6 +31,6 @@ class Ideone extends Webpage implements AdapterInterface
         $uri = $this->getResponse()->getUri();
         $path = '/e.js'.$uri->getPath();
 
-        return Utils::script($uri->createAbsolute($path));
+        return Utils::script($uri->getAbsolute($path));
     }
 }
