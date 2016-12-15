@@ -7,7 +7,7 @@ namespace Embed\Http;
  */
 class CurlResult
 {
-    protected $connection;
+    protected $resource;
     protected $body;
     protected $headers = [];
     protected $onHeader;
@@ -17,15 +17,15 @@ class CurlResult
     /**
      * Creates a new response.
      *
-     * @param resource $connection The curl resource
+     * @param resource $resource The curl resource
      */
-    public function __construct($connection)
+    public function __construct($resource)
     {
-        $this->connection = $connection;
+        $this->resource = $resource;
         $this->data = (object) [];
 
-        curl_setopt($this->connection, CURLOPT_HEADERFUNCTION, [$this, 'headerCallback']);
-        curl_setopt($this->connection, CURLOPT_WRITEFUNCTION, [$this, 'writeCallback']);
+        curl_setopt($this->resource, CURLOPT_HEADERFUNCTION, [$this, 'headerCallback']);
+        curl_setopt($this->resource, CURLOPT_WRITEFUNCTION, [$this, 'writeCallback']);
     }
 
     /**
@@ -33,7 +33,7 @@ class CurlResult
      */
     public function getResult()
     {
-        $result = curl_getinfo($this->connection);
+        $result = curl_getinfo($this->resource);
 
         return [
             'uri' => isset($result['url']) ? $result['url'] : null,
@@ -46,13 +46,13 @@ class CurlResult
     }
 
     /**
-     * Returns the connection.
+     * Returns the resource.
      *
      * @return resource
      */
-    public function getConnection()
+    public function getResource()
     {
-        return $this->connection;
+        return $this->resource;
     }
 
     /**
@@ -78,12 +78,12 @@ class CurlResult
     /**
      * Callback used to collect the headers.
      *
-     * @param resource $connection
+     * @param resource $resource
      * @param string   $string
      *
      * @return int
      */
-    public function headerCallback($connection, $string)
+    public function headerCallback($resource, $string)
     {
         if (!strpos($string, ':')) {
             return strlen($string);
@@ -109,12 +109,12 @@ class CurlResult
     /**
      * Callback used to get the body content.
      *
-     * @param resource $connection
+     * @param resource $resource
      * @param string   $string
      *
      * @return int
      */
-    public function writeCallback($connection, $string)
+    public function writeCallback($resource, $string)
     {
         $this->body .= $string;
 

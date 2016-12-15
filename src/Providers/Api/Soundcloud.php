@@ -33,8 +33,6 @@ class Soundcloud extends Provider implements ProviderInterface
 
             if ($json = $request->getResponse()->getJsonContent()) {
                 $this->bag->set($json);
-            } else {
-                Embed::log('error', 'Soundcloud endpoint fail', ['url' => $endPoint, 'response' => $json]);
             }
         } else {
             Embed::log('debug', 'No soundcloud API key configured');

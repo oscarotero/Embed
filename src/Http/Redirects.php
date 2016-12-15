@@ -2,6 +2,8 @@
 
 namespace Embed\Http;
 
+use Embed\Embed;
+
 /**
  * Class to resolve some specific redirections.
  */
@@ -25,7 +27,9 @@ abstract class Redirects
     {
         foreach (self::$patterns as $method => $pattern) {
             if ($uri->match($pattern)) {
-                return self::$method($uri);
+                $newUri = self::$method($uri);
+                Embed::log('debug', 'Redirect', ['uri' => $newUri]);
+                return $newUri; 
             }
         }
 

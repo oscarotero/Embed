@@ -55,12 +55,9 @@ abstract class Embed
             $request = new Request($request);
         }
 
-        self::log('debug', 'Start', ['url' => $request->getUri(), 'config' => $config]);
-
         $info = self::process($request, $config);
 
         //if the canonical url is different, repeat the process
-
         if (rtrim((string) $request->getResponse()->getUri(), '/') !== rtrim($info->url)) {
             $request = new Request($info->url, $request->getDispatcher());
 
@@ -84,8 +81,6 @@ abstract class Embed
     {
         //If is a file use File Adapter
         if (Adapters\File::check($request)) {
-            self::log('debug', 'Adapter: '.File::class, ['url' => $request->getUri()]);
-
             return new Adapters\File($request, $config);
         }
 
@@ -93,15 +88,11 @@ abstract class Embed
         $adapter = 'Embed\\Adapters\\'.$request->getResponse()->getUri()->getClassNameForDomain();
 
         if (class_exists($adapter) && $adapter::check($request)) {
-            self::log('debug', 'Adapter: '.$adapter, ['url' => $request->getUri()]);
-
             return new $adapter($request, $config);
         }
 
         //Use the default webpage adapter
         if (Adapters\Webpage::check($request)) {
-            self::log('debug', 'Adapter: '.Webpage::class, ['url' => $request->getUri()]);
-
             return new Adapters\Webpage($request, $config);
         }
 

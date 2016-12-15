@@ -63,7 +63,7 @@ class CurlDispatcher implements DispatcherInterface
      */
     public function dispatch(Uri $uri)
     {
-        Embed::log('info', 'Page request', ['uri' => $uri]);
+        Embed::log('info', 'Request', ['uri' => $uri]);
 
         $connection = curl_init((string) $uri);
         curl_setopt_array($connection, $this->config);
@@ -130,7 +130,7 @@ class CurlDispatcher implements DispatcherInterface
                 continue;
             }
 
-            Embed::log('info', 'Image request', ['uri' => $uri]);
+            Embed::log('info', 'Image', ['uri' => $uri]);
 
             $connection = curl_init((string) $uri);
 
@@ -177,7 +177,13 @@ class CurlDispatcher implements DispatcherInterface
             }
 
             foreach ($connections as $k => $connection) {
-                curl_multi_remove_handle($curl_multi, $connection->getConnection());
+                $resource = $connection->getResource();
+
+                if (curl_errno($resource)) {
+                    Embed::log('info', 'Image.error', ['message' => curl_error($resource)]);
+                }
+
+                curl_multi_remove_handle($curl_multi, $resource);
                 $result = $connection->getResult();
 
                 if (!empty($result['data']->mime)) {

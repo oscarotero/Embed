@@ -24,8 +24,6 @@ class Gist extends Provider implements ProviderInterface
 
         if (($json = $request->getResponse()->getJsonContent())) {
             $this->bag->set($json);
-        } else {
-            Embed::log('error', 'Gist endpoint fail', ['url' => $endPoint, 'response' => $json]);
         }
     }
 

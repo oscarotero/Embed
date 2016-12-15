@@ -4,6 +4,7 @@ namespace Embed\Providers;
 
 use Embed\Adapters\AdapterInterface;
 use Embed\Bag;
+use Embed\Embed;
 
 /**
  * Abstract class used by all providers.
@@ -20,6 +21,7 @@ abstract class Provider
     {
         $this->bag = new Bag();
         $this->adapter = $adapter;
+        Embed::log('debug', 'Provider', ['class' => get_class($this)]);
     }
 
     /**

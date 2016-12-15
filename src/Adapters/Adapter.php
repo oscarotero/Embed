@@ -5,6 +5,7 @@ namespace Embed\Adapters;
 use Embed\Http\Uri;
 use Embed\Http\Request;
 use Embed\Bag;
+use Embed\Embed;
 
 /**
  * Base class extended by all adapters.
@@ -46,6 +47,11 @@ abstract class Adapter
     {
         $this->request = $request;
         $this->config = new Bag($config);
+
+        Embed::log('debug', 'Start', [
+            'url' => $request->getUri(),
+            'adapter' => get_class($this)
+        ]);
     }
 
     /**

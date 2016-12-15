@@ -24,7 +24,6 @@ class OEmbed extends Provider implements ProviderInterface
         $endPoint = $this->getEndPoint();
 
         if ($endPoint) {
-            Embed::log('info', 'Oembed endpoint', ['url' => $endPoint]);
             $request = $adapter->createRequest($endPoint);
             $this->extractOembed($request->getResponse());
         }
