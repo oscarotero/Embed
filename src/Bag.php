@@ -124,7 +124,7 @@ class Bag
                 $item = $item[$key];
             }
 
-            return isset($item) && strlen($item) > 0;
+            return !empty($item);
         }
 
         return isset($this->parameters[$name]) && strlen($this->parameters[$name]) > 0;
@@ -133,7 +133,7 @@ class Bag
     /**
      * Normalize a variable name.
      *
-     * @param string $string
+     * @param string $name
      *
      * @return string
      */
@@ -146,7 +146,7 @@ class Bag
      * Normalize a value.
      * If it's a string, removes spaces and html entities
      *
-     * @param mixed $string
+     * @param mixed $value
      *
      * @return mixed
      */

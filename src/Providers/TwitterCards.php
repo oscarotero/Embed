@@ -87,7 +87,7 @@ class TwitterCards extends Provider implements ProviderInterface
      */
     public function getCode()
     {
-        $src = $this->normalizeUrl($this->bag->has('player'));
+        $src = $this->normalizeUrl($this->bag->get('player'));
 
         if ($src !== false) {
             return Utils::iframe($src, $this->getWidth(), $this->getHeight());
