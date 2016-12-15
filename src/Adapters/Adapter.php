@@ -387,6 +387,7 @@ abstract class Adapter
         }
 
         $uri = $this->getResponse()->getUri();
+
         return $uri->getScheme().'://'.$uri->getDomain(true);
     }
 

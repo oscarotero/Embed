@@ -144,7 +144,7 @@ class Bag
 
     /**
      * Normalize a value.
-     * If it's a string, removes spaces and html entities
+     * If it's a string, removes spaces and html entities.
      *
      * @param mixed $value
      *

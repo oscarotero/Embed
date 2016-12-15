@@ -161,7 +161,7 @@ abstract class Provider
     }
 
     /**
-     * Returns the urls as absolute
+     * Returns the urls as absolute.
      *
      * @param mixed $uris
      *
@@ -177,7 +177,7 @@ abstract class Provider
     }
 
     /**
-     * Returns the url as absolute
+     * Returns the url as absolute.
      *
      * @param string|null $uri
      *
