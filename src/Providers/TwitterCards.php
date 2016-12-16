@@ -89,7 +89,7 @@ class TwitterCards extends Provider implements ProviderInterface
     {
         $src = $this->normalizeUrl($this->bag->get('player'));
 
-        if ($src !== false) {
+        if ($src !== null) {
             return Utils::iframe($src, $this->getWidth(), $this->getHeight());
         }
     }

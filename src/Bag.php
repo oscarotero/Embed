@@ -127,7 +127,7 @@ class Bag
             return !empty($item);
         }
 
-        return isset($this->parameters[$name]) && strlen($this->parameters[$name]) > 0;
+        return !empty($this->parameters[$name]);
     }
 
     /**
@@ -155,7 +155,7 @@ class Bag
         if (is_string($value)) {
             $value = html_entity_decode(trim($value));
 
-            return ($value === '') ? null : $value;
+            return ($value === '') ? null : str_replace('&', '&amp;', $value);
         }
 
         return $value;

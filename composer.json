@@ -31,7 +31,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "friendsofphp/php-cs-fixer": "^1.12",
+        "friendsofphp/php-cs-fixer": "^2.0",
         "squizlabs/php_codesniffer": "^2.7",
         "monolog/monolog": "^1.22"
     },
@@ -50,6 +50,6 @@
             "phpunit",
             "phpcs"
         ],
-        "cs-fix": "php-cs-fixer fix . --fixers=-psr0"
+        "cs-fix": "php-cs-fixer fix ."
     }
 }

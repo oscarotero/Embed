@@ -29,7 +29,7 @@ abstract class Redirects
             if ($uri->match($pattern)) {
                 $newUri = self::$method($uri);
                 Embed::log('debug', 'Redirect', ['uri' => $newUri]);
-                return $newUri; 
+                return $newUri;
             }
         }
 
