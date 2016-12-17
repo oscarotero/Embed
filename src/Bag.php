@@ -103,6 +103,16 @@ class Bag
     }
 
     /**
+     * Return the raw stored values.
+     *
+     * @return array
+     */
+    public function getAll()
+    {
+        return $this->parameters;
+    }
+
+    /**
      * Check if a value exists and is not empty.
      *
      * @param string $name

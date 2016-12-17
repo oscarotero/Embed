@@ -168,15 +168,7 @@ abstract class Adapter
             }
         }
 
-        unset($types['link']);
-
-        if (!empty($types)) {
-            asort($types, SORT_NUMERIC);
-
-            return key($types);
-        }
-
-        return 'rich';
+        return self::getBigger($types) ?: 'rich';
     }
 
     /**
@@ -242,20 +234,17 @@ abstract class Adapter
             return;
         }
 
-        //Sort the codes to give more priority to html5 than flash
-        usort($codes, function ($a, $b) {
-            if (strpos($a['code'], '</object>') === false && strpos($a['code'], '</embed>') === false) {
-                return -1;
-            }
-
-            if (strpos($b['code'], '</object>') === false && strpos($b['code'], '</embed>') === false) {
-                return 1;
-            }
-
-            return 0;
+        //Use only html5 codes
+        $html5 = array_filter($codes, function ($code) {
+            return strpos($code['code'], '</object>') === false && strpos($code['code'], '</embed>') === false;
         });
 
-        $code = current($codes);
+        //If it's not html5 codes, returns flash
+        if (empty($html5)) {
+            $code = current($codes);
+        } else {
+            $code = current($html5);
+        }
 
         $this->width = is_numeric($code['width']) ? (int) $code['width'] : $code['width'];
         $this->height = is_numeric($code['height']) ? (int) $code['height'] : $code['height'];
@@ -347,18 +336,13 @@ abstract class Adapter
             return;
         }
 
-        usort($icons, function ($a, $b) {
-            if ($a['size'] === $b['size']) {
-                return 0;
-            }
+        $sizes = [];
 
-            return ($a['size'] > $b['size']) ? -1 : 1;
-        });
+        foreach ($icons as $icon) {
+            $sizes[$icon['url']] = $icon['size'];
+        }
 
-        reset($icons);
-        $icon = current($icons);
-
-        return $icon['url'];
+        return self::getBigger($sizes);
     }
 
     /**
@@ -451,17 +435,17 @@ abstract class Adapter
         }
 
         if ($bigger) {
-            usort($images, function ($a, $b) {
-                if ($a['size'] === $b['size']) {
-                    return 0;
-                }
+            $sizes = [];
 
-                return ($a['size'] > $b['size']) ? -1 : 1;
-            });
+            foreach ($images as $image) {
+                $sizes[$image['url']] = $image['size'];
+            }
+
+            $image = self::getBigger($sizes);
+        } else {
+            reset($images);
+            $image = current($images);
         }
-
-        reset($images);
-        $image = current($images);
 
         $this->imageWidth = $image['width'];
         $this->imageHeight = $image['height'];
@@ -596,5 +580,25 @@ abstract class Adapter
             },
             $this->getRequest()->getDispatcher()->dispatchImages($requests)
         );
+    }
+
+    /**
+     * Returns the key of the bigger value in an array
+     *
+     * @param array $values
+     *
+     * @return string|null
+     */
+    private static function getBigger(array $values)
+    {
+        $bigger = null;
+
+        foreach ($values as $value => $repeat) {
+            if ($bigger === null || $repeat > $values[$bigger]) {
+                $bigger = $value;
+            }
+        }
+
+        return $bigger;
     }
 }
