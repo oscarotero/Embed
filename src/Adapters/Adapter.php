@@ -47,11 +47,7 @@ abstract class Adapter
     {
         $this->request = $request;
         $this->config = new Bag($config);
-
-        Embed::log('debug', 'Start', [
-            'url' => $request->getUri(),
-            'adapter' => get_class($this)
-        ]);
+        Embed::log('debug', 'Adapter', ['class' => get_class($this)]);
     }
 
     /**

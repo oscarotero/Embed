@@ -1,4 +1,4 @@
 vendor
 composer.lock
-tests.log
+logs
 .php_cs.cache

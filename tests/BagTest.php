@@ -28,6 +28,6 @@ class BagTest extends AbstractTestCase
         $this->assertSame('Hello & world', $bag->get('code'));
         $this->assertSame('<h1> Hello &amp; world</h1>', $bag->get('code', true));
         $this->assertSame(['one', 'two'], $bag->get('array[subarray]'));
-        $this->assertSame('1879 1955', $bag->get('utf'));
+        $this->assertSame('1879 1955', $bag->get('utf'));
     }
 }

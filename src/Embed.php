@@ -58,7 +58,7 @@ abstract class Embed
         $info = self::process($request, $config);
 
         //if the canonical url is different, repeat the process
-        if (rtrim((string) $request->getResponse()->getUri(), '/') !== rtrim($info->url)) {
+        if (rtrim((string) $request->getResponse()->getUri(), '/') !== rtrim($info->url, '/')) {
             $request = new Request($info->url, $request->getDispatcher());
 
             return self::process($request, $config);
