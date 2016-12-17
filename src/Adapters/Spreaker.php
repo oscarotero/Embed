@@ -4,6 +4,7 @@ namespace Embed\Adapters;
 
 use Embed\Utils;
 use Embed\Http\Request;
+use Embed\Http\Uri;
 
 /**
  * Adapter to get the embed code from spreaker.com.
@@ -32,8 +33,7 @@ class Spreaker extends Webpage implements AdapterInterface
                 $id = (int) $a->getAttribute('data-episode_id');
 
                 if ($id) {
-                    $uri = $this->getResponse()->getUri()
-                        ->withPath('embed/player/standard')
+                    $uri = Uri::create('https://www.spreaker.com/embed/player/standard')
                         ->withQueryParameters([
                             'autoplay' => 'false',
                             'episode_id' => $id,

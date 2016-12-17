@@ -61,7 +61,7 @@ abstract class Embed
         $from = preg_replace('|^(\w+://)|', '', rtrim((string) $request->getResponse()->getUri(), '/'));
         $to = preg_replace('|^(\w+://)|', '', rtrim($info->url, '/'));
 
-        if ($from !== $to && !empty($info->code)) {
+        if ($from !== $to && empty($info->code)) {
             Embed::log('debug', 'Repeat', [
                 'from' => $from,
                 'to' => $to,
