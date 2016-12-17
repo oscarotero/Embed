@@ -12,7 +12,7 @@ class ChirbitTest extends AbstractTestCase
                 'title' => 'Encana conference call',
                 'width' => 380,
                 'height' => 120,
-                'type' => 'rich',
+                'type' => 'video',
                 'providerName' => 'chirbit',
             ]
         );
