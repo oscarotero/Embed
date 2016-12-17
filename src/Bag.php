@@ -146,7 +146,7 @@ class Bag
 
     /**
      * Normalize a value.
-     * If it's a string, removes spaces and html entities.
+     * If it's a string, removes spaces and normalize some utf-8 chars.
      *
      * @param mixed $value
      *
@@ -155,6 +155,7 @@ class Bag
     private static function normalizeValue($value)
     {
         if (is_string($value)) {
+            $value = str_ireplace(['&nbsp;', '&#160;'], ' ', $value);
             $value = trim($value);
 
             return ($value === '') ? null : $value;

@@ -58,10 +58,16 @@ abstract class Embed
         $info = self::process($request, $config);
 
         //if the canonical url is different, repeat the process
-        if (rtrim((string) $request->getResponse()->getUri(), '/') !== rtrim($info->url, '/')) {
-            $request = new Request($info->url, $request->getDispatcher());
+        $from = preg_replace('|^(\w+://)|', '', rtrim((string) $request->getResponse()->getUri(), '/'));
+        $to = preg_replace('|^(\w+://)|', '', rtrim($info->url, '/'));
 
-            return self::process($request, $config);
+        if ($from !== $to && !empty($info->code)) {
+            Embed::log('debug', 'Repeat', [
+                'from' => $from,
+                'to' => $to,
+            ]);
+
+            return self::process(new Request($info->url, $request->getDispatcher()), $config);
         }
 
         return $info;
