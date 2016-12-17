@@ -45,7 +45,7 @@ class Sailthru extends Provider implements ProviderInterface
 
         foreach ($this->bag->getKeys() as $name) {
             if (strpos($name, 'image') !== false) {
-                $images[] = $this->bag->get($value);
+                $images[] = $this->bag->get($name);
             }
         }
 
