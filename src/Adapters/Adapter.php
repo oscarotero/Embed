@@ -168,6 +168,9 @@ abstract class Adapter
             }
         }
 
+        //If it has code, it's not a link
+        unset($types['link']);
+
         return self::getBigger($types) ?: 'rich';
     }
 
