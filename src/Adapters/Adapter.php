@@ -514,7 +514,9 @@ abstract class Adapter
      */
     public function getAspectRatio()
     {
-        if ($this->width !== null && (strpos($this->width, '%') === false) && $this->height !== null && (strpos($this->height, '%') === false)) {
+        if ($this->width !== null
+         && (strpos($this->width, '%') === false)
+         && $this->height !== null && (strpos($this->height, '%') === false)) {
             return round(($this->height / $this->width) * 100, 3);
         }
     }

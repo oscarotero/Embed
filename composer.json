@@ -32,7 +32,6 @@
     "require-dev": {
         "phpunit/phpunit": "*",
         "friendsofphp/php-cs-fixer": "^2.0",
-        "squizlabs/php_codesniffer": "^2.7",
         "monolog/monolog": "^1.22"
     },
     "autoload": {
@@ -46,10 +45,7 @@
         }
     },
     "scripts": {
-        "test": [
-            "phpunit",
-            "phpcs"
-        ],
+        "test": "phpunit",
         "cs-fix": "php-cs-fixer fix ."
     }
 }

@@ -41,7 +41,9 @@ class File extends Adapter implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->getResponse()->isValid() && isset(self::$contentTypes[$request->getResponse()->getContentType()]);
+        $response = $request->getResponse();
+
+        return $response->isValid() && isset(self::$contentTypes[$response->getContentType()]);
     }
 
     /**

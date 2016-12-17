@@ -165,7 +165,7 @@ class Bag
     }
 
     /**
-     * Remove the html code and entities in a value 
+     * Remove the html code and entities in a value
      *
      * @param mixed $value
      *

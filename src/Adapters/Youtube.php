@@ -15,7 +15,9 @@ class Youtube extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->getResponse()->isValid([200, 429]) && $request->getResponse()->getUri()->match([
+        $response = $request->getResponse();
+
+        return $response->isValid([200, 429]) && $response->getUri()->match([
             '*.youtube.*',
         ]);
     }

@@ -73,8 +73,7 @@ class GoogleMaps extends Provider implements ProviderInterface
                     ->withQueryParameters([
                         'q' => $uri->getDirectoryPosition(2),
                         'key' => $key,
-                    ])
-                );
+                    ]));
 
             case 'dir':
                 return Utils::iframe($uri
@@ -83,8 +82,7 @@ class GoogleMaps extends Provider implements ProviderInterface
                         'origin' => $uri->getDirectoryPosition(2),
                         'destination' => $uri->getDirectoryPosition(3),
                         'key' => $key,
-                    ])
-                );
+                    ]));
         }
     }
 }

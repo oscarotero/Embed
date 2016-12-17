@@ -15,7 +15,9 @@ class Pastebin extends Webpage implements AdapterInterface
      */
     public static function check(Request $request)
     {
-        return $request->getResponse()->isValid() && $request->getResponse()->getUri()->match([
+        $response = $request->getResponse();
+
+        return $response->isValid() && $response->getUri()->match([
             'pastebin.com/*',
         ]);
     }
