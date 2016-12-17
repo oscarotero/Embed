@@ -412,7 +412,7 @@ abstract class Adapter
             }
         }
 
-        $blacklist = $this->getConfig('imagesBlacklist');
+        $blacklist = $this->getConfig('images_blacklist');
 
         if (!empty($blacklist)) {
             $urls = array_filter($urls, function ($url) use ($blacklist) {
@@ -442,9 +442,9 @@ abstract class Adapter
         $this->imageHeight = null;
 
         $images = $this->images;
-        $bigger = (bool) $this->getConfig('getBiggerImage');
-        $minWidth = $this->getConfig('minImageWidth', 1);
-        $minHeight = $this->getConfig('minImageHeight', 1);
+        $bigger = (bool) $this->getConfig('get_bigger_image');
+        $minWidth = $this->getConfig('min_image_width', 1);
+        $minHeight = $this->getConfig('min_image_height', 1);
 
         $images = array_filter($images, function ($image) use ($minWidth, $minHeight) {
             return $image['width'] >= $minWidth && $image['height'] >= $minHeight;

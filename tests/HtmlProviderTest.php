@@ -12,7 +12,7 @@ class HtmlProviderTest extends AbstractTestCase
                 'image' => 'https://i1.wp.com/farm2.staticflickr.com/1629/25975785880_114d1bce41_z.jpg?resize=625%2C416&ssl=1',
             ], [
                 'html' => [
-                    'externalImages' => true,
+                    'external_images' => true,
                 ],
             ]
         );
@@ -26,7 +26,7 @@ class HtmlProviderTest extends AbstractTestCase
                 'image' => '',
             ], [
                 'html' => [
-                    'externalImages' => false,
+                    'external_images' => false,
                 ],
             ]
         );
@@ -40,7 +40,7 @@ class HtmlProviderTest extends AbstractTestCase
                 'image' => 'https://i1.wp.com/farm2.staticflickr.com/1629/25975785880_114d1bce41_z.jpg?resize=625%2C416&ssl=1',
             ], [
                 'html' => [
-                    'externalImages' => [
+                    'external_images' => [
                         '*.staticflickr.com/*',
                         '*.flickr.com/*',
                     ],

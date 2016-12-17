@@ -25,7 +25,7 @@ class FlickrTest extends AbstractTestCase
             [
                 'imageWidth' => 2048,
                 'imageHeight' => 1454,
-                'code' => '<iframe src="https://www.flickr.com/photos/desescribir/player" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:600px;height:400px;"></iframe>',
+                'code' => '<iframe src="https://www.flickr.com/photos/desescribir/player" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:640px;height:425px;"></iframe>',
                 'type' => 'rich',
             ]
         );

@@ -86,7 +86,7 @@ class OEmbed extends Provider implements ProviderInterface
      */
     public function getCode()
     {
-        return $this->bag->get('html');
+        return $this->bag->get('html', true);
     }
 
     /**

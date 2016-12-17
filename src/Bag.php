@@ -7,7 +7,7 @@ namespace Embed;
  */
 class Bag
 {
-    private $parameters;
+    private $parameters = [];
 
     /**
      * Set the initial parameters.
@@ -16,7 +16,7 @@ class Bag
      */
     public function __construct(array $parameters = [])
     {
-        $this->parameters = $parameters;
+        $this->set($parameters);
     }
 
     /**
@@ -63,11 +63,11 @@ class Bag
      * Get a value.
      *
      * @param string $name
-     * @param mixed  $default
+     * @param bool   $isHtml
      *
      * @return string|null
      */
-    public function get($name, $default = null)
+    public function get($name, $isHtml = false)
     {
         $name = self::normalizeName($name);
 
@@ -78,26 +78,28 @@ class Bag
 
             foreach ($names as $key) {
                 if (!isset($item[$key])) {
-                    return $default;
+                    return;
                 }
 
                 $item = $item[$key];
             }
 
-            return $item;
+            return $isHtml ? $item : self::toPlainValue($item);
         }
 
-        return isset($this->parameters[$name]) ? $this->parameters[$name] : $default;
+        if (isset($this->parameters[$name])) {
+            return $isHtml ? $this->parameters[$name] : self::toPlainValue($this->parameters[$name]);
+        }
     }
 
     /**
-     * Return all stored values.
+     * Return all stored values keys.
      *
      * @return array
      */
-    public function getAll()
+    public function getKeys()
     {
-        return $this->parameters;
+        return array_keys($this->parameters);
     }
 
     /**
@@ -153,9 +155,29 @@ class Bag
     private static function normalizeValue($value)
     {
         if (is_string($value)) {
-            $value = html_entity_decode(trim($value));
+            $value = trim($value);
 
-            return ($value === '') ? null : str_replace('&', '&amp;', $value);
+            return ($value === '') ? null : $value;
+        }
+
+        return $value;
+    }
+
+    /**
+     * Remove the html code and entities in a value 
+     *
+     * @param mixed $value
+     *
+     * @return mixed
+     */
+    private static function toPlainValue($value)
+    {
+        if (is_string($value)) {
+            $value = strip_tags($value);
+            $value = html_entity_decode($value, ENT_QUOTES | ENT_XML1, 'UTF-8');
+            $value = trim($value);
+
+            return ($value === '') ? null : $value;
         }
 
         return $value;

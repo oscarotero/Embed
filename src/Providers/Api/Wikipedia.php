@@ -74,9 +74,7 @@ class Wikipedia extends Provider implements ProviderInterface
         $pages = $this->bag->get('extracts[query][pages]');
 
         if (!empty($pages)) {
-            $page = current($pages);
-
-            return isset($page['extract']) ? strip_tags($page['extract']) : null;
+            return $this->bag->get('extracts[query][pages]['.key($pages).'][extract]');
         }
     }
 
