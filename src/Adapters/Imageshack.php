@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 use Embed\Providers\Api;
 
 /**
@@ -13,20 +13,20 @@ class Imageshack extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https?://imageshack.com/i/*',
+        return $response->isValid() && $response->getUri()->match([
+            'imageshack.com/i/*',
         ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function run()
+    protected function init()
     {
-        $this->addProvider('imageshack', new Api\Imageshack());
+        parent::init();
 
-        parent::run();
+        $this->providers = ['imageshack' => new Api\Imageshack($this)] + $this->providers;
     }
 }

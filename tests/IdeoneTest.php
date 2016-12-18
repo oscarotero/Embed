@@ -1,6 +1,8 @@
 <?php
 
-class IdeoneTest extends TestCaseBase
+namespace Embed\Tests;
+
+class IdeoneTest extends AbstractTestCase
 {
     public function testOne()
     {

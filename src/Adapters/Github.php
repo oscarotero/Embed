@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 use Embed\Providers\Api;
 
 /**
@@ -13,24 +13,24 @@ class Github extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https://gist.github.com/*/*',
-            'https://github.com/*',
+        return $response->isValid() && $response->getUri()->match([
+            'gist.github.com/*/*',
+            'github.com/*',
         ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function run()
+    protected function init()
     {
-        if ($this->request->getHost() === 'gist.github.com') {
-            $this->addProvider('gist', new Api\Gist());
-        }
+        parent::init();
 
-        parent::run();
+        if ($this->getResponse()->getUri()->getHost() === 'gist.github.com') {
+            $this->providers = ['gist' => new Api\Gist($this)] + $this->providers;
+        }
     }
 
     /**
@@ -39,7 +39,7 @@ class Github extends Webpage implements AdapterInterface
     public function getUrl()
     {
         //Open graph returns as canonical url the main repo url, instead the file
-        return $this->request->getUrl();
+        return (string) $this->getResponse()->getUri();
     }
 
     /**
@@ -50,13 +50,15 @@ class Github extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = null;
 
-        if ($this->request->match('https://github.com/*/*/blob/*')) {
-            $username = $this->request->getDirectoryPosition(0);
-            $repo = $this->request->getDirectoryPosition(1);
-            $ref = $this->request->getDirectoryPosition(3);
-            $path_to_file = implode('/', $this->request->getSlicePath(4));
+        $uri = $this->getResponse()->getUri();
 
-            switch ($this->request->getExtension()) {
+        if ($uri->match('github.com/*/*/blob/*')) {
+            $username = $uri->getDirectoryPosition(0);
+            $repo = $uri->getDirectoryPosition(1);
+            $ref = $uri->getDirectoryPosition(3);
+            $path_to_file = implode('/', $uri->getSlicePath(4));
+
+            switch ($uri->getExtension()) {
                 case 'geojson':
                     //https://help.github.com/articles/mapping-geojson-files-on-github/#embedding-your-map-elsewhere
                     return "<script src=\"https://embed.githubusercontent.com/view/geojson/{$username}/{$repo}/{$ref}/{$path_to_file}\"></script>";

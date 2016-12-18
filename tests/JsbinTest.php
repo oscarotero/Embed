@@ -1,6 +1,8 @@
 <?php
 
-class JsbinTest extends TestCaseBase
+namespace Embed\Tests;
+
+class JsbinTest extends AbstractTestCase
 {
     public function testOne()
     {
@@ -11,7 +13,7 @@ class JsbinTest extends TestCaseBase
                 'type' => 'rich',
                 'providerName' => 'jsbin',
                 'providerUrl' => 'http://jsbin.com',
-                'code' => '<iframe src="http://jsbin.com/vonesu/10/embed" width="640" height="480" frameborder="0"></iframe>',
+                'code' => '<iframe src="http://output.jsbin.com/vonesu/10/embed" width="640" height="480" frameborder="0"></iframe>',
             ]
         );
     }

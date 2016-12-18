@@ -1,6 +1,8 @@
 <?php
 
-class AbancaTest extends TestCaseBase
+namespace Embed\Tests;
+
+class AbancaTest extends AbstractTestCase
 {
     public function testOne()
     {

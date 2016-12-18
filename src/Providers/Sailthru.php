@@ -2,7 +2,7 @@
 
 namespace Embed\Providers;
 
-use Embed\Utils;
+use Embed\Adapters\AdapterInterface;
 
 /**
  * Generic Salithru provider.
@@ -14,14 +14,21 @@ class Sailthru extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(AdapterInterface $adapter)
     {
-        if (!($html = $this->request->getHtmlContent())) {
-            return false;
+        parent::__construct($adapter);
+
+        if (!($html = $adapter->getResponse()->getHtmlContent())) {
+            return;
         }
 
-        foreach (Utils::getMetas($html) as $meta) {
-            list($name, $value) = $meta;
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            $name = trim(strtolower($meta->getAttribute('name')));
+            $value = $meta->getAttribute('content');
+
+            if (empty($name) || empty($value)) {
+                continue;
+            }
 
             if (strpos($name, 'sailthru.') === 0) {
                 $this->bag->set(substr($name, 9), $value);
@@ -36,13 +43,13 @@ class Sailthru extends Provider implements ProviderInterface
     {
         $images = [];
 
-        foreach ($this->bag->getAll() as $name => $value) {
+        foreach ($this->bag->getKeys() as $name) {
             if (strpos($name, 'image') !== false) {
-                $images[] = $value;
+                $images[] = $this->bag->get($name);
             }
         }
 
-        return $images;
+        return $this->normalizeUrls($images);
     }
 
     /**

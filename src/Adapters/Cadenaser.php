@@ -3,7 +3,7 @@
 namespace Embed\Adapters;
 
 use Embed\Utils;
-use Embed\Request;
+use Embed\Http\Response;
 
 /**
  * Adapter to get the embed code from play.cadenaser.com.
@@ -13,10 +13,10 @@ class Cadenaser extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https?://play.cadenaser.com/audio/*',
+        return $response->isValid() && $response->getUri()->match([
+            'play.cadenaser.com/audio/*',
         ]);
     }
 
@@ -25,10 +25,9 @@ class Cadenaser extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $url = $this->request->createUrl();
-        $url = $url->withPath('/widget/'.$url->getPath());
+        $uri = $this->getResponse()->getUri();
 
-        return Utils::iframe($url->getUrl(), $this->width, $this->height);
+        return Utils::iframe($uri->withPath('/widget/'.$uri->getPath()), $this->width, $this->height);
     }
 
     /**

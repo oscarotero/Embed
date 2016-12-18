@@ -2,8 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
-use Embed\Utils;
+use Embed\Http\Response;
 
 /**
  * Adapter to provide information from thematic.
@@ -13,10 +12,11 @@ class Thematic extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https?://www.thematic.co/stories/*',
+        return $response->isValid() && $response->getUri()->match([
+            'www.thematic.co/stories/*',
+            'www.thematic.co/album/*',
         ]);
     }
 
@@ -25,7 +25,22 @@ class Thematic extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        return Utils::iframe($this->request->getStartingUrl()->withDirectoryPosition(0, 'embed'), $this->width, $this->height);
+        $this->width = null;
+        $this->height = null;
+
+        $html = $this->getResponse()->getHtmlContent();
+
+        foreach ($html->getElementsByTagName('div') as $div) {
+            if ($div->hasAttribute('class') && $div->getAttribute('class') === 'code') {
+                $code = (string) $div->nodeValue;
+
+                preg_match('/width="(\d+)" height="(\d+)"/', $code, $matches);
+                $this->width = (int) $matches[1];
+                $this->height = (int) $matches[2];
+
+                return $code;
+            }
+        }
     }
 
     /**
@@ -33,7 +48,9 @@ class Thematic extends Webpage implements AdapterInterface
      */
     public function getWidth()
     {
-        return 600;
+        $this->code = $this->getCode();
+
+        return $this->width;
     }
 
     /**
@@ -41,6 +58,8 @@ class Thematic extends Webpage implements AdapterInterface
      */
     public function getHeight()
     {
-        return 300;
+        $this->code = $this->getCode();
+
+        return $this->height;
     }
 }

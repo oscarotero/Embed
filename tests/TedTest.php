@@ -1,6 +1,8 @@
 <?php
 
-class TedTest extends TestCaseBase
+namespace Embed\Tests;
+
+class TedTest extends AbstractTestCase
 {
     public function testOne()
     {

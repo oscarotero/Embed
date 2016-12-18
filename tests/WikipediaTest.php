@@ -1,6 +1,8 @@
 <?php
 
-class WikipediaTest extends TestCaseBase
+namespace Embed\Tests;
+
+class WikipediaTest extends AbstractTestCase
 {
     public function testOne()
     {
@@ -13,8 +15,8 @@ EOT;
             [
                 'title' => 'Albert Einstein',
                 'description' => $description,
-                'imageWidth' => 3875,
-                'imageHeight' => 5593,
+                'imageWidth' => 700,
+                'imageHeight' => 899,
                 'type' => 'link',
                 'providerName' => 'Wikipedia',
                 'providerUrl' => 'https://wikipedia.org',

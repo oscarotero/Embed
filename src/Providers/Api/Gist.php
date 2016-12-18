@@ -2,6 +2,7 @@
 
 namespace Embed\Providers\Api;
 
+use Embed\Adapters\AdapterInterface;
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
 
@@ -13,11 +14,14 @@ class Gist extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(AdapterInterface $adapter)
     {
-        $api = $this->request->withExtension('json');
+        parent::__construct($adapter);
 
-        if (($json = $api->getJsonContent())) {
+        $endPoint = $adapter->getResponse()->getUri()->withExtension('json');
+        $response = $adapter->getDispatcher()->dispatch($endPoint);
+
+        if (($json = $response->getJsonContent())) {
             $this->bag->set($json);
         }
     }
@@ -37,7 +41,7 @@ class Gist extends Provider implements ProviderInterface
      */
     public function getCode()
     {
-        if (($code = $this->bag->get('div')) && ($stylesheet = $this->bag->get('stylesheet'))) {
+        if (($code = $this->bag->get('div')) && ($stylesheet = $this->normalizeUrl($this->bag->get('stylesheet')))) {
             return  '<link href="'.$stylesheet.'" rel="stylesheet">'.$code;
         }
     }

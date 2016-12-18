@@ -3,133 +3,76 @@
 namespace Embed;
 
 use Embed\Adapters\AdapterInterface;
+use Embed\Http\Uri;
+use Embed\Http\DispatcherInterface;
+use Embed\Http\CurlDispatcher;
 
-class Embed
+abstract class Embed
 {
     /**
      * Gets the info from an url.
      *
-     * @param string|Request $request The url or a request with the url
-     * @param array          $config  Options passed to the adapter
-     *
-     * @throws Exceptions\InvalidUrlException If the urls is not valid
-     * @throws \InvalidArgumentException      If any config argument is not valid
+     * @param Uri|string $uri
+     * @param array              $config
+     * @param DispatcherInterface|null              $dispatcher
      *
      * @return AdapterInterface
      */
-    public static function create($request, array $config = array())
+    public static function create($uri, array $config = [], DispatcherInterface $dispatcher = null)
     {
-        $request = self::getRequest($request, isset($config['resolver']) ? $config['resolver'] : null);
-
-        //Use custom adapter
-        if (!empty($config['adapter']['class'])) {
-            if (($info = self::executeAdapter($config['adapter']['class'], $request, $config))) {
-                return $info;
-            }
+        if (!($uri instanceof Uri)) {
+            $uri = Uri::create($uri);
         }
 
+        if ($dispatcher === null) {
+            $dispatcher = new CurlDispatcher();
+        }
+
+        $info = self::process($uri, $config, $dispatcher);
+
+        //if the canonical url is different, repeat the process
+        $from = preg_replace('|^(\w+://)|', '', rtrim((string) $info->getResponse()->getUri(), '/'));
+        $to = preg_replace('|^(\w+://)|', '', rtrim($info->url, '/'));
+
+        if ($from !== $to && empty($info->code)) {
+            return self::process(Uri::create($info->url), $config, $dispatcher);
+        }
+
+        return $info;
+    }
+
+    /**
+     * Process the uri.
+     *
+     * @param Uri $uri
+     * @param array   $config
+     * @param DispatcherInterface   $dispatcher
+     *
+     * @throws Exceptions\InvalidUrlException If the urls is not valid
+     *
+     * @return AdapterInterface
+     */
+    private static function process(Uri $uri, array $config, DispatcherInterface $dispatcher)
+    {
+        $response = $dispatcher->dispatch($uri);
+
         //If is a file use File Adapter
-        if (($info = self::executeAdapter('Embed\Adapters\File', $request, $config))) {
-            return $info;
+        if (Adapters\File::check($response)) {
+            return new Adapters\File($response, $config, $dispatcher);
         }
 
         //Search the adapter using the domain
-        $adapter = 'Embed\\Adapters\\'.$request->getClassNameForDomain();
+        $adapter = 'Embed\\Adapters\\'.$response->getUri()->getClassNameForDomain();
 
-        if (class_exists($adapter) && ($info = self::executeAdapter($adapter, $request, $config))) {
-            return $info;
+        if (class_exists($adapter) && $adapter::check($response)) {
+            return new $adapter($response, $config, $dispatcher);
         }
 
-        //Use the standard webpage adapter
-        if (($info = self::executeAdapter('Embed\Adapters\Webpage', $request, $config))) {
-            return $info;
+        //Use the default webpage adapter
+        if (Adapters\Webpage::check($response)) {
+            return new Adapters\Webpage($response, $config, $dispatcher);
         }
 
-        $error = $request->getError();
-
-        if (empty($error)) {
-            throw new Exceptions\InvalidUrlException(sprintf("The url '%s' returns the http code %s", htmlentities($request->getUrl()), $request->getHttpCode()));
-        }
-
-        throw new Exceptions\InvalidUrlException(sprintf("The url '%s' returns the following error: %s", htmlentities($request->getUrl()), $error));
-    }
-
-    /**
-     * Gets the info from a source (list of urls).
-     *
-     * @param string|Request $request The url or a request with the source url
-     * @param null|array     $config  Options passed to the adapter
-     *
-     * @return false|Sources\SourceInterface
-     */
-    public static function createSource($request, array $config = null)
-    {
-        $request = self::getRequest($request, $config);
-
-        if (!$request->isValid()) {
-            return false;
-        }
-
-        //If is a xml feed (rss/atom)
-        if (Sources\Feed::check($request)) {
-            $sources = new Sources\Feed($request);
-
-            if ($sources->isValid()) {
-                return $sources;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Execute an adapter.
-     *
-     * @param string     $adapter Adapter class name
-     * @param Request    $request
-     * @param null|array $config
-     *
-     * @throws \InvalidArgumentException If the adapter class in not AdapterInterface
-     *
-     * @return false|AdapterInterface
-     */
-    private static function executeAdapter($adapter, Request $request, array $config = null)
-    {
-        if (!in_array('Embed\\Adapters\\AdapterInterface', class_implements($adapter))) {
-            throw new \InvalidArgumentException("The class '$adapter' must implements 'Embed\\Adapters\\AdapterInterface'");
-        }
-
-        if (call_user_func([$adapter, 'check'], $request)) {
-            return new $adapter($request, $config);
-        }
-
-        return false;
-    }
-
-    /**
-     * Init a request.
-     *
-     * @param string|Request $request The url or a request with the url
-     * @param null|array     $config  Options passed to the adapter
-     *
-     * @throws \InvalidArgumentException If the class in not Embed\Request instance
-     *
-     * @return Request
-     */
-    private static function getRequest($request, array $config = null)
-    {
-        if (is_string($request)) {
-            return new Request(
-                $request,
-                isset($config['class']) ? $config['class'] : null,
-                isset($config['config']) ? $config['config'] : []
-            );
-        }
-
-        if (!($request instanceof Request)) {
-            throw new \InvalidArgumentException('Embed::create only accepts instances of Embed\\Request or strings');
-        }
-
-        return $request;
+        throw new Exceptions\InvalidUrlException(sprintf("Invalid url '%s'", (string) $uri));
     }
 }

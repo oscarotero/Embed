@@ -1,6 +1,8 @@
 <?php
 
-class WiredTest extends TestCaseBase
+namespace Embed\Tests;
+
+class WiredTest extends AbstractTestCase
 {
     public function testOne()
     {

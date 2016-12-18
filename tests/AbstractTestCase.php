@@ -1,12 +1,16 @@
 <?php
 
+namespace Embed\Tests;
+
+use PHPUnit_Framework_TestCase;
+use Embed\Embed;
+use Embed\Adapters\AdapterInterface;
+use InvalidArgumentException;
+
 /**
  * Base class with custom utilities for testing.
  */
-use Embed\Embed;
-use Embed\Request;
-
-abstract class TestCaseBase extends PHPUnit_Framework_TestCase
+abstract class AbstractTestCase extends PHPUnit_Framework_TestCase
 {
     /**
      * Compare two string, replacing some conflicting characters
@@ -76,31 +80,6 @@ abstract class TestCaseBase extends PHPUnit_Framework_TestCase
                 default:
                     throw new InvalidArgumentException("No valid {$name} assertion");
             }
-        }
-
-        $this->assertOembedAutodiscover($i->getRequest());
-    }
-
-    /**
-     * This method allow to discover sites including the oembed endpoint in the code,
-     * to remove the custom Oembed provider if exists.
-     */
-    private function assertOembedAutodiscover(Request $request)
-    {
-        $className = $request->getClassNameForDomain();
-
-        //exceptions
-        if (in_array($className, ['Wordpress', 'Youtube', 'Jsbin'])) {
-            return;
-        }
-
-        $class = 'Embed\\Providers\\OEmbed\\'.$className;
-
-        if (class_exists($class) && !$class::embedInDomIsBroken()) {
-            $body = $request->getContent();
-
-            $this->assertFalse(strpos($body, '/json+oembed'), 'Autodiscovered json OEmbed');
-            $this->assertFalse(strpos($body, '/xml+oembed'), 'Autodiscovered xml OEmbed');
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Embed\Providers;
 
-use Embed\Request;
+use Embed\Adapters\AdapterInterface;
 use Embed\Bag;
 
 /**
@@ -10,22 +10,24 @@ use Embed\Bag;
  */
 abstract class Provider
 {
-    public $bag;
-
-    protected $request;
-    protected $config = [];
+    protected $bag;
+    protected $adapter;
 
     /**
      * {@inheritdoc}
      */
-    public function init(Request $request, array $config = null)
+    public function __construct(AdapterInterface $adapter)
     {
         $this->bag = new Bag();
-        $this->request = $request;
+        $this->adapter = $adapter;
+    }
 
-        if ($config) {
-            $this->config = array_replace($this->config, $config);
-        }
+    /**
+     * {@inheritdoc}
+     */
+    public function getBag()
+    {
+        return $this->bag;
     }
 
     /**
@@ -59,8 +61,9 @@ abstract class Provider
     /**
      * {@inheritdoc}
      */
-    public function getSource()
+    public function getFeeds()
     {
+        return [];
     }
 
     /**
@@ -155,5 +158,37 @@ abstract class Provider
     public function getLinkedData()
     {
         return [];
+    }
+
+    /**
+     * Returns the urls as absolute.
+     *
+     * @param mixed $uris
+     *
+     * @return array
+     */
+    protected function normalizeUrls($uris)
+    {
+        if (!is_array($uris)) {
+            return [];
+        }
+
+        return array_map([$this, 'normalizeUrl'], array_filter($uris));
+    }
+
+    /**
+     * Returns the url as absolute.
+     *
+     * @param string|null $uri
+     *
+     * @return string|null
+     */
+    protected function normalizeUrl($uri)
+    {
+        if (empty($uri)) {
+            return;
+        }
+
+        return $this->adapter->getResponse()->getUri()->getAbsolute($uri);
     }
 }

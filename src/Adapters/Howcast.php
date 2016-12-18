@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 
 /**
  * Adapter to get the embed code from howcast.com.
@@ -12,10 +12,10 @@ class Howcast extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https?://www.howcast.com/videos/*',
+        return $response->isValid() && $response->getUri()->match([
+            'www.howcast.com/videos/*',
         ]);
     }
 
@@ -27,7 +27,7 @@ class Howcast extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = null;
 
-        $dom = $this->request->getHtmlContent();
+        $dom = $this->getResponse()->getHtmlContent();
         $modal = $dom->getElementById('embedModal');
 
         if ($modal) {

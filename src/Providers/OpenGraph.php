@@ -2,6 +2,7 @@
 
 namespace Embed\Providers;
 
+use Embed\Adapters\AdapterInterface;
 use Embed\Utils;
 
 /**
@@ -14,14 +15,21 @@ class OpenGraph extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(AdapterInterface $adapter)
     {
-        if (!($html = $this->request->getHtmlContent())) {
-            return false;
+        parent::__construct($adapter);
+
+        if (!($html = $adapter->getResponse()->getHtmlContent())) {
+            return;
         }
 
-        foreach (Utils::getMetas($html) as $meta) {
-            list($name, $value) = $meta;
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            $name = trim(strtolower($meta->getAttribute('property')));
+            $value = $meta->getAttribute('content');
+
+            if (empty($name) || empty($value)) {
+                continue;
+            }
 
             if (strpos($name, 'og:article:') === 0) {
                 $name = substr($name, 11);
@@ -93,7 +101,7 @@ class OpenGraph extends Provider implements ProviderInterface
 
         foreach ($names as $name) {
             if ($this->bag->has($name)) {
-                $video = $this->bag->get($name);
+                $video = $this->normalizeUrl($this->bag->get($name));
 
                 if (!($videoPath = parse_url($video, PHP_URL_PATH)) || !($type = pathinfo($videoPath, PATHINFO_EXTENSION))) {
                     $type = $this->bag->get('video:type');
@@ -129,9 +137,9 @@ class OpenGraph extends Provider implements ProviderInterface
      */
     public function getUrl()
     {
-        $url = $this->bag->get('url');
+        $url = $this->normalizeUrl($this->bag->get('url'));
 
-        if ($url !== $this->request->getAbsolute('/')) {
+        if ($url !== $this->adapter->getResponse()->getUri()->getAbsolute('/')) {
             return $url;
         }
     }
@@ -165,7 +173,7 @@ class OpenGraph extends Provider implements ProviderInterface
      */
     public function getImagesUrls()
     {
-        return (array) $this->bag->get('images') ?: [];
+        return $this->normalizeUrls($this->bag->get('images'));
     }
 
     /**

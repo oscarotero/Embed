@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 use Embed\Utils;
 
 /**
@@ -13,10 +13,10 @@ class Mit extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'http://video.mit.edu/watch/*',
+        return $response->isValid() && $response->getUri()->match([
+            'video.mit.edu/watch/*',
         ]);
     }
 
@@ -25,8 +25,7 @@ class Mit extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $url = $this->getUrl();
-        $url = preg_replace('|(/watch/[\w-]+)-([\d]+)|', '/embed/$2', $url);
+        $url = preg_replace('|(/watch/[\w-]+)-([\d]+)|', '/embed/$2', $this->url);
 
         return Utils::iframe($url, $this->width, $this->height);
     }

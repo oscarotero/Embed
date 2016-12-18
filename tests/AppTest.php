@@ -1,6 +1,8 @@
 <?php
 
-class AppTest extends TestCaseBase
+namespace Embed\Tests;
+
+class AppTest extends AbstractTestCase
 {
     public function testOne()
     {

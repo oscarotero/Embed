@@ -1,6 +1,10 @@
 <?php
 
-class UrlTest extends TestCaseBase
+namespace Embed\Tests;
+
+use Embed\Http\Uri;
+
+class UrlTest extends AbstractTestCase
 {
     public function urlsParserProvider()
     {
@@ -27,14 +31,14 @@ class UrlTest extends TestCaseBase
      */
     public function testParser($url, $expected_url)
     {
-        $parsed_url = new Embed\Url($url);
+        $parsed_url = Uri::create($url);
 
-        $this->assertSame($expected_url, $parsed_url->getUrl());
+        $this->assertSame($expected_url, (string) $parsed_url);
     }
 
     public function testDirectoryPosition()
     {
-        $url = new Embed\Url('http://domain.com/first//second/third');
+        $url = Uri::create('http://domain.com/first//second/third');
 
         $this->assertSame('first', $url->getDirectoryPosition(0));
         $this->assertSame('second', $url->getDirectoryPosition(1));
@@ -47,27 +51,27 @@ class UrlTest extends TestCaseBase
         $this->assertSame('four', $url->getDirectoryPosition(2));
         $this->assertNull($url->getDirectoryPosition(3));
 
-        $this->assertSame('http://domain.com/one/second/four', $url->getUrl());
+        $this->assertSame('http://domain.com/one/second/four', (string) $url);
     }
 
     public function testDomain()
     {
-        $url = new Embed\Url('http://www.domain.com');
+        $url = Uri::create('http://www.domain.com');
 
         $this->assertSame('domain', $url->getDomain());
         $this->assertSame('domain.com', $url->getDomain(true));
 
-        $url = new Embed\Url('http://www.domain.co.uk');
+        $url = Uri::create('http://www.domain.co.uk');
 
         $this->assertSame('domain', $url->getDomain());
         $this->assertSame('domain.co.uk', $url->getDomain(true));
 
-        $url = new Embed\Url('http://www.domain.com.au');
+        $url = Uri::create('http://www.domain.com.au');
 
         $this->assertSame('domain', $url->getDomain());
         $this->assertSame('domain.com.au', $url->getDomain(true));
 
-        $url = new Embed\Url('http://www.redrooster.org.uk');
+        $url = Uri::create('http://www.redrooster.org.uk');
 
         $this->assertSame('redrooster', $url->getDomain());
         $this->assertSame('redrooster.org.uk', $url->getDomain(true));
@@ -75,7 +79,7 @@ class UrlTest extends TestCaseBase
 
     public function testPathsWithDots()
     {
-        $url = new Embed\Url('https://en.wikipedia.org/wiki/Supernatural_(U.S._TV_series)');
+        $url = Uri::create('https://en.wikipedia.org/wiki/Supernatural_(U.S._TV_series)');
         $this->assertNull($url->getExtension());
         $this->assertSame('/wiki/Supernatural_(U.S._TV_series)', $url->getPath());
         $this->assertSame('Supernatural_(U.S._TV_series)', $url->getDirectoryPosition(1));

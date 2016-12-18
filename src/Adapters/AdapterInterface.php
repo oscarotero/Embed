@@ -2,60 +2,87 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\DispatcherInterface;
+use Embed\Http\Response;
 use Embed\DataInterface;
 
 /**
  * Interface used by all adapters.
+ *
+ * @property null|string  $title
+ * @property null|string  $description
+ * @property null|string  $url
+ * @property null|string  $type
+ * @property array        $tags
+ * @property array        $feeds
+ * @property array        $images
+ * @property array        $imagesUrls
+ * @property null|string  $image
+ * @property null|int     $imageWidth
+ * @property null|int     $imageHeight
+ * @property null|string  $code
+ * @property null|int     $width
+ * @property null|int     $height
+ * @property null|float   $aspectRatio
+ * @property null|string  $authorName
+ * @property null|string  $authorUrl
+ * @property array        $providerIcons
+ * @property array        $providerIconsUrls
+ * @property null|string  $providerIcon
+ * @property null|string  $providerName
+ * @property null|string  $providerUrl
+ * @property null|string  $publishedTime
  */
 interface AdapterInterface extends DataInterface
 {
     /**
-     * Checks whether the request is valid to this Adapter.
+     * Checks whether the response is valid to this Adapter.
      *
-     * @param Request $request
+     * @param Response $response
      *
      * @return bool
      */
-    public static function check(Request $request);
+    public static function check(Response $response);
 
     /**
      * Constructor.
      *
-     * @param Request    $request
-     * @param null|array $config
+     * @param Response  $response
+     * @param array $config
+     * @param DispatcherInterface $dispatcher
      */
-    public function __construct(Request $request, array $config = null);
+    public function __construct(Response $response, array $config, DispatcherInterface $dispatcher);
 
     /**
-     * Returns the request instance.
+     * Returns the dispatcher used.
      *
-     * @return Request
+     * @return DispatcherInterface
      */
-    public function getRequest();
+    public function getDispatcher();
 
     /**
-     * Returns all images Requests.
+     * Returns the main response instance.
      *
-     * @return array
+     * @return Response
      */
-    public function getImagesRequests();
+    public function getResponse();
 
     /**
-     * Returns a provider.
+     * Get a config value.
      *
      * @param string $name
+     * @param mixed  $default
      *
-     * @return null|ProviderInterface
+     * @return string|null
      */
-    public function getProvider($name);
+    public function getConfig($name, $default = null);
 
     /**
      * Get all providers.
      *
      * @return array
      */
-    public function getAllProviders();
+    public function getProviders();
 
     /**
      * Gets all icon provider urls found

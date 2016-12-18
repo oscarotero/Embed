@@ -1,6 +1,8 @@
 <?php
 
-class FacebookTest extends TestCaseBase
+namespace Embed\Tests;
+
+class FacebookTest extends AbstractTestCase
 {
     public function testPermalink()
     {

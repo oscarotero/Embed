@@ -1,6 +1,8 @@
 <?php
 
-class ImageshackTest extends TestCaseBase
+namespace Embed\Tests;
+
+class ImageshackTest extends AbstractTestCase
 {
     public function testImageShack()
     {
@@ -8,10 +10,10 @@ class ImageshackTest extends TestCaseBase
             'https://imageshack.com/i/f0KQQN7Uj',
             [
                 'title' => '.',
-                'image' => 'http://imageshack.com/scaled/medium/540/KQQN7U.jpg',
+                'image' => 'http://imagizer.imageshack.us/scaled/medium/540/KQQN7U.jpg',
                 'imageWidth' => 236,
                 'imageHeight' => 354,
-                'type' => 'photo',
+                'type' => 'link',
                 'providerName' => 'ImageShack',
                 'authorName' => 'ToddGilbert',
             ]

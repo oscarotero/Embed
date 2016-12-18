@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 use Embed\Providers;
 
 /**
@@ -13,21 +13,23 @@ class Webpage extends Adapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid();
+        return $response->isValid();
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function run()
+    protected function init()
     {
-        $this->addProvider('oembed', new Providers\OEmbed());
-        $this->addProvider('opengraph', new Providers\OpenGraph());
-        $this->addProvider('twittercards', new Providers\TwitterCards());
-        $this->addProvider('dcterms', new Providers\Dcterms());
-        $this->addProvider('sailthru', new Providers\Sailthru());
-        $this->addProvider('html', new Providers\Html());
+        $this->providers = [
+            'oembed' => new Providers\OEmbed($this),
+            'opengraph' => new Providers\OpenGraph($this),
+            'twittercards' => new Providers\TwitterCards($this),
+            'dcterms' => new Providers\Dcterms($this),
+            'sailthru' => new Providers\Sailthru($this),
+            'html' => new Providers\Html($this),
+        ];
     }
 }

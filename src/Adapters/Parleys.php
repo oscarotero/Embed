@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 
 /**
  * Adapter to get more info from parleys.com.
@@ -12,10 +12,10 @@ class Parleys extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            '*://www.parleys.com/play/*',
+        return $response->isValid() && $response->getUri()->match([
+            'www.parleys.com/play/*',
         ]);
     }
 
@@ -24,7 +24,7 @@ class Parleys extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $id = $this->request->getDirectoryPosition(1);
+        $id = $this->getResponse()->getUri()->getDirectoryPosition(1);
 
         return '<div data-parleys-presentation="'.$id.'" style="width:'.$this->width.';height:'.$this->height.'px"><script type = "text/javascript" src="//parleys.com/js/parleys-share.js"></script></div>';
     }

@@ -2,37 +2,24 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Url;
+use Embed\Http\Uri;
 
-class Jsbin extends OEmbedImplementation
+class Jsbin extends EndPoint implements EndPointInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function getEndPoint(Url $url)
-    {
-        return 'http://jsbin.com/oembed';
-    }
+    protected static $pattern = 'output.jsbin.com/*';
+    protected static $endPoint = 'http://jsbin.com/oembed';
 
     /**
      * {@inheritdoc}
      */
-    public static function getParams(Url $url)
+    public function getEndPoint()
     {
-        return [
-            'url' => $url->createUrl()
-                ->withDirectoryPosition(2, 'embed')
-                ->getUrl(),
-        ];
-    }
+        $uri = $this->response->getUri()->withDirectoryPosition(2, 'embed');
 
-    /**
-     * {@inheritdoc}
-     */
-    public static function getPatterns()
-    {
-        return [
-            'http?://output.jsbin.com/*',
-        ];
+        return Uri::create(static::$endPoint)
+                ->withQueryParameters([
+                    'url' => (string) $uri,
+                    'format' => 'json',
+                ]);
     }
 }

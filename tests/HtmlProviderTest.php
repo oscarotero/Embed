@@ -1,18 +1,19 @@
 <?php
 
-class HtmlProviderTest extends TestCaseBase
+namespace Embed\Tests;
+
+class HtmlProviderTest extends AbstractTestCase
 {
     public function testAllowExternalImages()
     {
         $this->assertEmbed(
             'http://www.brothers-brick.com/2016/04/06/stunning-lego-darth-vader-mask-cleverly-hides-scenes-from-star-wars/',
             [
-                'image' => 'http://i0.wp.com/farm2.staticflickr.com/1458/25975786430_c69776287e_z.jpg?resize=625%2C495&ssl=1',
-            ], [
-                'providers' => [
-                    'html' => [
-                        'externalImages' => true,
-                    ],
+                'image' => 'https://i1.wp.com/farm2.staticflickr.com/1629/25975785880_114d1bce41_z.jpg?resize=625%2C416&ssl=1',
+            ],
+            [
+                'html' => [
+                    'external_images' => true,
                 ],
             ]
         );
@@ -24,11 +25,10 @@ class HtmlProviderTest extends TestCaseBase
             'http://www.brothers-brick.com/2016/04/06/stunning-lego-darth-vader-mask-cleverly-hides-scenes-from-star-wars/',
             [
                 'image' => '',
-            ], [
-                'providers' => [
-                    'html' => [
-                        'externalImages' => false,
-                    ],
+            ],
+            [
+                'html' => [
+                    'external_images' => false,
                 ],
             ]
         );
@@ -39,14 +39,13 @@ class HtmlProviderTest extends TestCaseBase
         $this->assertEmbed(
             'http://www.brothers-brick.com/2016/04/06/stunning-lego-darth-vader-mask-cleverly-hides-scenes-from-star-wars/',
             [
-                'image' => 'http://i0.wp.com/farm2.staticflickr.com/1458/25975786430_c69776287e_z.jpg?resize=625%2C495&ssl=1',
-            ], [
-                'providers' => [
-                    'html' => [
-                        'externalImages' => [
-                            '*.staticflickr.com/*',
-                            '*.flickr.com/*',
-                        ],
+                'image' => 'https://i1.wp.com/farm2.staticflickr.com/1629/25975785880_114d1bce41_z.jpg?resize=625%2C416&ssl=1',
+            ],
+            [
+                'html' => [
+                    'external_images' => [
+                        '*.staticflickr.com/*',
+                        '*.flickr.com/*',
                     ],
                 ],
             ]

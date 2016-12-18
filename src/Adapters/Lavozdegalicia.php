@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 
 /**
  * Adapter to provide all information from lavozdegalicia.es that needs a special query parameter to generate a session cookie.
@@ -12,10 +12,10 @@ class Lavozdegalicia extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'http://www.lavozdegalicia.es/*',
+        return $response->isValid() && $response->getUri()->match([
+            'www.lavozdegalicia.es/*',
         ]);
     }
 
@@ -24,8 +24,10 @@ class Lavozdegalicia extends Webpage implements AdapterInterface
      */
     protected function init()
     {
-        $this->request = $this->request->withQueryParameter('piano_d', '1');
+        parent::init();
 
-        $this->run();
+        $uri = $this->getResponse()->getStartingUri();
+
+        $this->response = $this->getDispatcher()->dispatch($uri->withQueryParameter('piano_d', '1'));
     }
 }

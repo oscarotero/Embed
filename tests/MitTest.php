@@ -1,6 +1,8 @@
 <?php
 
-class MitTest extends TestCaseBase
+namespace Embed\Tests;
+
+class MitTest extends AbstractTestCase
 {
     public function testOne()
     {

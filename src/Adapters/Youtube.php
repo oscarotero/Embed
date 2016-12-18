@@ -2,8 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
-use Embed\Providers;
+use Embed\Http\Response;
 
 /**
  * Adapter to provide information from youtube.
@@ -14,24 +13,10 @@ class Youtube extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid([200, 429]) && $request->match([
-            'https?://*.youtube.*',
+        return $response->isValid([200, 429]) && $response->getUri()->match([
+            '*.youtube.*',
         ]);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function run()
-    {
-        if ($this->request->getHttpCode() === 429) {
-            $this->addProvider('oembed', new Providers\OEmbed());
-
-            return;
-        }
-
-        parent::run();
     }
 }

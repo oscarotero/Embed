@@ -3,7 +3,7 @@
 namespace Embed\Adapters;
 
 use Embed\Utils;
-use Embed\Request;
+use Embed\Http\Response;
 
 /**
  * Adapter to get the embed code from line.do.
@@ -13,10 +13,10 @@ class Line extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https://line.do/*',
+        return $response->isValid() && $response->getUri()->match([
+            'line.do/*',
         ]);
     }
 
@@ -25,9 +25,10 @@ class Line extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $id = $this->request->getDirectoryPosition(2);
+        $uri = $this->getResponse()->getUri();
+        $id = $uri->getDirectoryPosition(2);
 
-        return Utils::iframe($this->request->createUrl()->withPath("embed/{$id}/vertical"), $this->width, $this->height, 'border:1px solid #e7e7e7;');
+        return Utils::iframe($uri->withPath("embed/{$id}/vertical"), $this->width, $this->height, 'border:1px solid #e7e7e7;');
     }
 
     /**

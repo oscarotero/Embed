@@ -2,6 +2,7 @@
 
 namespace Embed\Providers;
 
+use Embed\Adapters\AdapterInterface;
 use Embed\Utils;
 
 /**
@@ -14,14 +15,21 @@ class TwitterCards extends Provider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(AdapterInterface $adapter)
     {
-        if (!($html = $this->request->getHtmlContent())) {
-            return false;
+        parent::__construct($adapter);
+
+        if (!($html = $adapter->getResponse()->getHtmlContent())) {
+            return;
         }
 
-        foreach (Utils::getMetas($html) as $meta) {
-            list($name, $value) = $meta;
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            $name = trim(strtolower($meta->getAttribute('name')));
+            $value = $meta->getAttribute('content');
+
+            if (empty($name) || empty($value)) {
+                continue;
+            }
 
             if (strpos($name, 'twitter:') === 0) {
                 $name = substr($name, 8);
@@ -79,8 +87,10 @@ class TwitterCards extends Provider implements ProviderInterface
      */
     public function getCode()
     {
-        if ($this->bag->has('player')) {
-            return Utils::iframe($this->bag->get('player'), $this->getWidth(), $this->getHeight());
+        $src = $this->normalizeUrl($this->bag->get('player'));
+
+        if ($src !== null) {
+            return Utils::iframe($src, $this->getWidth(), $this->getHeight());
         }
     }
 
@@ -89,7 +99,7 @@ class TwitterCards extends Provider implements ProviderInterface
      */
     public function getUrl()
     {
-        return $this->bag->get('url');
+        return $this->normalizeUrl($this->bag->get('url'));
     }
 
     /**
@@ -105,7 +115,7 @@ class TwitterCards extends Provider implements ProviderInterface
      */
     public function getImagesUrls()
     {
-        return (array) $this->bag->get('images') ?: [];
+        return $this->normalizeUrls($this->bag->get('images'));
     }
 
     /**

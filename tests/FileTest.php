@@ -1,6 +1,8 @@
 <?php
 
-class FileTest extends TestCaseBase
+namespace Embed\Tests;
+
+class FileTest extends AbstractTestCase
 {
     public function testJpg()
     {

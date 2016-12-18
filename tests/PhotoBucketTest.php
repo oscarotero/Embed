@@ -1,6 +1,8 @@
 <?php
 
-class PhotoBucketTest extends TestCaseBase
+namespace Embed\Tests;
+
+class PhotoBucketTest extends AbstractTestCase
 {
     public function testOne()
     {
@@ -11,7 +13,7 @@ class PhotoBucketTest extends TestCaseBase
                 'description' => "I P uploaded this image to 'Album Deserts'.  See the album on Photobucket.",
                 'imageWidth' => 1600,
                 'imageHeight' => 1200,
-                'type' => 'photo',
+                'type' => 'link',
             ]
         );
     }

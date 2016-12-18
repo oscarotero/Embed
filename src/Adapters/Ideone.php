@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 use Embed\Utils;
 
 /**
@@ -13,10 +13,10 @@ class Ideone extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https?://ideone.com/*',
+        return $response->isValid() && $response->getUri()->match([
+            'ideone.com/*',
         ]);
     }
 
@@ -28,8 +28,9 @@ class Ideone extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = null;
 
-        $path = '/e.js'.$this->request->getPath();
+        $uri = $this->getResponse()->getUri();
+        $path = '/e.js'.$uri->getPath();
 
-        return Utils::script($this->request->createUrl($path)->getUrl());
+        return Utils::script($uri->getAbsolute($path));
     }
 }

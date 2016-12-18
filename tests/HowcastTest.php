@@ -1,6 +1,8 @@
 <?php
 
-class HowcastTest extends TestCaseBase
+namespace Embed\Tests;
+
+class HowcastTest extends AbstractTestCase
 {
     public function testOne()
     {
