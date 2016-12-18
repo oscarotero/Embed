@@ -9,9 +9,7 @@ use DOMDocument;
 use Exception;
 
 /**
- * Generic html provider.
- *
- * Load the html data of an url and store it
+ * Provider to get the data from the HTML code
  */
 class Html extends Provider implements ProviderInterface
 {

@@ -6,6 +6,7 @@ use Embed\Http\Uri;
 use Embed\Http\Response;
 use Embed\Http\ImageResponse;
 use Embed\Http\DispatcherInterface;
+use Embed\Providers\ProviderInterface;
 use Embed\Bag;
 
 /**
@@ -91,16 +92,11 @@ abstract class Adapter
      */
     public function getTitle()
     {
-        foreach ($this->providers as $provider) {
-            $title = $provider->getTitle();
+        $default = $this->url;
 
-            if ($title !== null) {
-                return $title;
-            }
-        }
-
-        //If there's no title, returns the url instead
-        return $this->url;
+        return $this->getFirstFromProviders(function ($provider) {
+            return $provider->getTitle();
+        }, $default);
     }
 
     /**
@@ -108,13 +104,9 @@ abstract class Adapter
      */
     public function getDescription()
     {
-        foreach ($this->providers as $provider) {
-            $description = $provider->getDescription();
-
-            if ($description !== null) {
-                return $description;
-            }
-        }
+        return $this->getFirstFromProviders(function ($provider) {
+            return $provider->getDescription();
+        });
     }
 
     /**
@@ -150,7 +142,7 @@ abstract class Adapter
         //If it has code, it's not a link
         unset($types['link']);
 
-        return self::getBigger($types) ?: 'rich';
+        return static::getBigger($types) ?: 'rich';
     }
 
     /**
@@ -158,17 +150,9 @@ abstract class Adapter
      */
     public function getTags()
     {
-        $tags = [];
-
-        foreach ($this->providers as $provider) {
-            foreach ($provider->getTags() as $tag) {
-                if (!in_array($tag, $tags)) {
-                    $tags[] = $tag;
-                }
-            }
-        }
-
-        return $tags;
+        return $this->getAllFromProviders(function ($provider) {
+            return $provider->getTags();
+        });
     }
 
     /**
@@ -176,17 +160,9 @@ abstract class Adapter
      */
     public function getFeeds()
     {
-        $feeds = [];
-
-        foreach ($this->providers as $provider) {
-            foreach ($provider->getFeeds() as $feed) {
-                if (!in_array($feed, $feeds)) {
-                    $feeds[] = $feed;
-                }
-            }
-        }
-
-        return $feeds;
+        return $this->getAllFromProviders(function ($provider) {
+            return $provider->getFeeds();
+        });
     }
 
     /**
@@ -239,15 +215,11 @@ abstract class Adapter
      */
     public function getUrl()
     {
-        foreach ($this->providers as $provider) {
-            $url = $provider->getUrl();
+        $default = (string) $this->getResponse()->getUri();
 
-            if ($url !== null) {
-                return $url;
-            }
-        }
-
-        return (string) $this->getResponse()->getUri();
+        return $this->getFirstFromProviders(function ($provider) {
+            return $provider->getUrl();
+        }, $default);
     }
 
     /**
@@ -255,13 +227,9 @@ abstract class Adapter
      */
     public function getAuthorName()
     {
-        foreach ($this->providers as $provider) {
-            $authorName = $provider->getAuthorName();
-
-            if ($authorName !== null) {
-                return $authorName;
-            }
-        }
+        return $this->getFirstFromProviders(function ($provider) {
+            return $provider->getAuthorName();
+        });
     }
 
     /**
@@ -269,13 +237,9 @@ abstract class Adapter
      */
     public function getAuthorUrl()
     {
-        foreach ($this->providers as $provider) {
-            $authorUrl = $provider->getAuthorUrl();
-
-            if ($authorUrl !== null) {
-                return $authorUrl;
-            }
-        }
+        return $this->getFirstFromProviders(function ($provider) {
+            return $provider->getAuthorUrl();
+        });
     }
 
     /**
@@ -324,7 +288,7 @@ abstract class Adapter
             $sizes[$icon['url']] = $icon['size'];
         }
 
-        return self::getBigger($sizes);
+        return static::getBigger($sizes);
     }
 
     /**
@@ -332,15 +296,11 @@ abstract class Adapter
      */
     public function getProviderName()
     {
-        foreach ($this->providers as $provider) {
-            $providerName = $provider->getProviderName();
+        $default = $this->getResponse()->getUri()->getDomain();
 
-            if (!empty($providerName)) {
-                return $providerName;
-            }
-        }
-
-        return $this->getResponse()->getUri()->getDomain();
+        return $this->getFirstFromProviders(function ($provider) {
+            return $provider->getProviderName();
+        }, $default);
     }
 
     /**
@@ -348,15 +308,12 @@ abstract class Adapter
      */
     public function getProviderUrl()
     {
-        foreach ($this->providers as $provider) {
-            if (($url = $provider->getProviderUrl()) !== null) {
-                return $url;
-            }
-        }
-
         $uri = $this->getResponse()->getUri();
+        $default = $uri->getScheme().'://'.$uri->getDomain(true);
 
-        return $uri->getScheme().'://'.$uri->getDomain(true);
+        return $this->getFirstFromProviders(function ($provider) {
+            return $provider->getProviderUrl();
+        }, $default);
     }
 
     /**
@@ -423,7 +380,7 @@ abstract class Adapter
                 $sizes[$image['url']] = $image['size'];
             }
 
-            $image = self::getBigger($sizes);
+            $image = static::getBigger($sizes);
         } else {
             reset($images);
             $image = current($images);
@@ -492,13 +449,9 @@ abstract class Adapter
      */
     public function getPublishedTime()
     {
-        foreach ($this->providers as $provider) {
-            $publishedTime = $provider->getPublishedTime();
-
-            if ($publishedTime !== null) {
-                return $publishedTime;
-            }
-        }
+        return $this->getFirstFromProviders(function ($provider) {
+            return $provider->getPublishedTime();
+        });
     }
 
     /**
@@ -506,13 +459,9 @@ abstract class Adapter
      */
     public function getLicense()
     {
-        foreach ($this->providers as $provider) {
-            $license = $provider->getLicense();
-
-            if ($license !== null) {
-                return $license;
-            }
-        }
+        return $this->getFirstFromProviders(function ($provider) {
+            return $provider->getLicense();
+        });
     }
 
     /**
@@ -520,15 +469,9 @@ abstract class Adapter
      */
     public function getLinkedData()
     {
-        $data = [];
-
-        foreach ($this->providers as $provider) {
-            foreach ($provider->getLinkedData() as $value) {
-                $data[] = $value;
-            }
-        }
-
-        return $data;
+        return $this->getAllFromProviders(function ($provider) {
+            return $provider->getLinkedData();
+        });
     }
 
     /**
@@ -571,7 +514,7 @@ abstract class Adapter
      *
      * @return string|null
      */
-    private static function getBigger(array $values)
+    protected static function getBigger(array $values)
     {
         $bigger = null;
 
@@ -582,5 +525,42 @@ abstract class Adapter
         }
 
         return $bigger;
+    }
+
+    /**
+     * Returns the first value of the providers
+     *
+     * @param callable $callable
+     *
+     * @return string|null
+     */
+    protected function getFirstFromProviders(callable $callable, $default = null)
+    {
+        $values = array_filter(array_map($callable, $this->providers));
+
+        return empty($values) ? $default : current($values);
+    }
+
+    /**
+     * Returns the all values from the providers
+     *
+     * @param callable $callable
+     *
+     * @return string|null
+     */
+    protected function getAllFromProviders(callable $callable)
+    {
+        $values = array_filter(array_map($callable, $this->providers));
+        $all = [];
+
+        foreach ($values as $value) {
+            foreach ($value as $v) {
+                if (!in_array($v, $all, true)) {
+                    $all[] = $v;
+                }
+            }
+        }
+
+        return $all;
     }
 }

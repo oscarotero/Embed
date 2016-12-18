@@ -5,9 +5,7 @@ namespace Embed\Providers;
 use Embed\Adapters\AdapterInterface;
 
 /**
- * Generic Salithru provider.
- *
- * Load the Salithru data of an url and store it
+ * Provider to get the data from the Sailthru data elements in the HTML
  */
 class Sailthru extends Provider implements ProviderInterface
 {

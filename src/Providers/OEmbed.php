@@ -7,9 +7,7 @@ use Embed\Http\Response;
 use Embed\Http\Uri;
 
 /**
- * Generic oembed provider.
- *
- * Load the oembed data of an url and store it
+ * Provider to get the data using the oEmbed API
  */
 class OEmbed extends Provider implements ProviderInterface
 {

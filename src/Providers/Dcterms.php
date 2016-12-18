@@ -5,9 +5,7 @@ namespace Embed\Providers;
 use Embed\Adapters\AdapterInterface;
 
 /**
- * Generic Dublin Core provider.
- *
- * Load the Dublin Core data of an url and store it
+ * Provider to get the data from the Dublin Core data elements in the HTML
  */
 class Dcterms extends Provider implements ProviderInterface
 {

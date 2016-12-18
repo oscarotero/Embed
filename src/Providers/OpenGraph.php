@@ -6,9 +6,7 @@ use Embed\Adapters\AdapterInterface;
 use Embed\Utils;
 
 /**
- * Generic opengraph provider.
- *
- * Load the opengraph data of an url and store it
+ * Provider to get the data from the Open Graph elements in the HTML
  */
 class OpenGraph extends Provider implements ProviderInterface
 {

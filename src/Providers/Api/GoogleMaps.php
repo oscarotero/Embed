@@ -8,7 +8,7 @@ use Embed\Providers\ProviderInterface;
 use Embed\Utils;
 
 /**
- * Provider to use the API of google.
+ * Provider to use the API of google.com
  */
 class GoogleMaps extends Provider implements ProviderInterface
 {
