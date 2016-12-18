@@ -3,7 +3,7 @@
 namespace Embed\Tests;
 
 use Embed\Http\CurlDispatcher;
-use Embed\Http\Uri;
+use Embed\Http\Url;
 use Embed\Embed;
 
 class ImageInfoTest extends AbstractTestCase
@@ -13,7 +13,7 @@ class ImageInfoTest extends AbstractTestCase
         $dispatcher = new CurlDispatcher();
 
         $result = $dispatcher->dispatchImages([
-            Uri::create('http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg'),
+            Url::create('http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg'),
         ]);
 
         $this->assertCount(1, $result);

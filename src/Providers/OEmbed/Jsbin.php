@@ -2,7 +2,7 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Http\Uri;
+use Embed\Http\Url;
 
 class Jsbin extends EndPoint implements EndPointInterface
 {
@@ -14,11 +14,11 @@ class Jsbin extends EndPoint implements EndPointInterface
      */
     public function getEndPoint()
     {
-        $uri = $this->response->getUri()->withDirectoryPosition(2, 'embed');
+        $url = $this->response->getUrl()->withDirectoryPosition(2, 'embed');
 
-        return Uri::create(static::$endPoint)
+        return Url::create(static::$endPoint)
                 ->withQueryParameters([
-                    'url' => (string) $uri,
+                    'url' => (string) $url,
                     'format' => 'json',
                 ]);
     }

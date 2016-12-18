@@ -2,9 +2,9 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 use Embed\Http\Response;
-use Embed\Http\Uri;
+use Embed\Http\Url;
 
 /**
  * Abstract class extended by other classes.
@@ -18,11 +18,11 @@ abstract class EndPoint
     /**
      * {@inheritdoc}
      */
-    public static function create(AdapterInterface $adapter)
+    public static function create(Adapter $adapter)
     {
         $response = $adapter->getResponse();
 
-        if ($response->getUri()->match(static::$pattern)) {
+        if ($response->getUrl()->match(static::$pattern)) {
             return new static($response);
         }
     }
@@ -42,9 +42,9 @@ abstract class EndPoint
      */
     public function getEndPoint()
     {
-        return Uri::create(static::$endPoint)
+        return Url::create(static::$endPoint)
                 ->withQueryParameters([
-                    'url' => (string) $this->response->getUri(),
+                    'url' => (string) $this->response->getUrl(),
                     'format' => 'json',
                 ]);
     }

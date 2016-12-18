@@ -2,23 +2,22 @@
 
 namespace Embed\Providers\Api;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 use Embed\Providers\Provider;
-use Embed\Providers\ProviderInterface;
 
 /**
  * Provider to use the API of archive.org.
  */
-class Archive extends Provider implements ProviderInterface
+class Archive extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(Adapter $adapter)
     {
         parent::__construct($adapter);
 
-        $endPoint = $adapter->getResponse()->getUri()->withQueryParameter('output', 'json');
+        $endPoint = $adapter->getResponse()->getUrl()->withQueryParameter('output', 'json');
         $response = $adapter->getDispatcher()->dispatch($endPoint);
 
         if (($json = $response->getJsonContent())) {

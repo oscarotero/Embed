@@ -4,7 +4,7 @@ namespace Embed\Tests;
 
 use PHPUnit_Framework_TestCase;
 use Embed\Embed;
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 use InvalidArgumentException;
 
 /**
@@ -27,11 +27,11 @@ abstract class AbstractTestCase extends PHPUnit_Framework_TestCase
     /**
      * Execute Embed with an url and returns the info.
      *
-     * @param string
-     *
-     * @return AdapterInterface
+     * @param string $url
+     * @param array $info
+     * @param array $config
      */
-    protected function assertEmbed($url, array $info, array $config = array())
+    protected function assertEmbed($url, array $info, array $config = [])
     {
         if (getenv('embed_resolver')) {
             $config['resolver'] = ['class' => 'Embed\\RequestResolvers\\'.getenv('embed_resolver')];

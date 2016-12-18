@@ -36,7 +36,7 @@ class CurlResult
         $result = curl_getinfo($this->resource);
 
         return [
-            'uri' => isset($result['url']) ? $result['url'] : null,
+            'url' => isset($result['url']) ? $result['url'] : null,
             'statusCode' => isset($result['http_code']) ? $result['http_code'] : null,
             'contentType' => isset($result['content_type']) ? $result['content_type'] : null,
             'content' => $this->body,

@@ -3,48 +3,48 @@
 namespace Embed\Http;
 
 /**
- * Class to split and manipulate uris.
+ * Class to split and manipulate urls.
  */
-class Uri
+class Url
 {
     private $info;
-    private $uri;
+    private $url;
     private static $public_suffix_list;
 
     /**
-     * Create a new Uri instance.
+     * Create a new Url instance.
      *
-     * @param string $uri
+     * @param string $url
      *
-     * @return Uri
+     * @return Url
      */
-    public static function create($uri)
+    public static function create($url)
     {
-        return Redirects::resolve(new static($uri));
+        return Redirects::resolve(new static($url));
     }
 
     /**
-     * Constructor. Sets the uri.
+     * Constructor. Sets the url.
      *
-     * @param string $uri
+     * @param string $url
      */
-    private function __construct($uri)
+    private function __construct($url)
     {
-        $this->parseUri($uri);
+        $this->parseUrl($url);
     }
 
     /**
-     * Returns the uri.
+     * Returns the url.
      *
      * @return string
      */
     public function __toString()
     {
-        if ($this->uri === null) {
-            return $this->uri = $this->buildUri();
+        if ($this->url === null) {
+            return $this->url = $this->buildUrl();
         }
 
-        return $this->uri;
+        return $this->url;
     }
 
     /**
@@ -52,11 +52,11 @@ class Uri
      */
     public function __clone()
     {
-        $this->uri = null;
+        $this->url = null;
     }
 
     /**
-     * Check if the uri match with a specific pattern. The patterns only accepts * and ?
+     * Check if the url match with a specific pattern. The patterns only accepts * and ?
      *
      * @param string|array $patterns The pattern or an array with various patterns
      *
@@ -69,13 +69,13 @@ class Uri
         }
 
         //Remove scheme and query
-        $uri = preg_replace('|(\?.*)?$|', '', (string) $this);
-        $uri = preg_replace('|^(\w+://)|', '', $uri);
+        $url = preg_replace('|(\?.*)?$|', '', (string) $this);
+        $url = preg_replace('|^(\w+://)|', '', $url);
 
         foreach ($patterns as $pattern) {
             $pattern = str_replace(['\\*', '\\?'], ['.+', '?'], preg_quote($pattern, '|'));
 
-            if (preg_match('|^'.$pattern.'$|i', $uri)) {
+            if (preg_match('|^'.$pattern.'$|i', $url)) {
                 return true;
             }
         }
@@ -84,7 +84,7 @@ class Uri
     }
 
     /**
-     * Return the content of the uri (for embedded images).
+     * Return the content of the url (for embedded images).
      *
      * @return string The content or null
      */
@@ -94,7 +94,7 @@ class Uri
     }
 
     /**
-     * Return the extension of the uri (html, php, jpg, etc).
+     * Return the extension of the url (html, php, jpg, etc).
      *
      * @return string The scheme or null
      */
@@ -104,15 +104,15 @@ class Uri
     }
 
     /**
-     * Returns a new instance with other relative uri.
+     * Returns a new instance with other relative url.
      *
-     * @param string $uri
+     * @param string $url
      *
-     * @return Uri
+     * @return Url
      */
-    public function createAbsolute($uri)
+    public function createAbsolute($url)
     {
-        return self::create($this->getAbsolute($uri));
+        return self::create($this->getAbsolute($url));
     }
 
     /**
@@ -120,7 +120,7 @@ class Uri
      *
      * @param string $extension
      *
-     * @return Uri
+     * @return Url
      */
     public function withExtension($extension)
     {
@@ -135,7 +135,7 @@ class Uri
     }
 
     /**
-     * Return the scheme of the uri (for example http, https, ftp, etc).
+     * Return the scheme of the url (for example http, https, ftp, etc).
      *
      * @return string The scheme or null
      */
@@ -149,7 +149,7 @@ class Uri
      *
      * @param string $scheme
      *
-     * @return Uri
+     * @return Url
      */
     public function withScheme($scheme)
     {
@@ -160,7 +160,7 @@ class Uri
     }
 
     /**
-     * Return the host of the uri (for example: google.com).
+     * Return the host of the url (for example: google.com).
      *
      * @return string The host or null
      */
@@ -174,7 +174,7 @@ class Uri
      *
      * @param string $host
      *
-     * @return Uri
+     * @return Url
      */
     public function withHost($host)
     {
@@ -185,7 +185,7 @@ class Uri
     }
 
     /**
-     * Return the domain of the uri (for example: google).
+     * Return the domain of the url (for example: google).
      *
      * @param bool $first_level True to return the first level domain (.com, .es, etc)
      *
@@ -221,7 +221,7 @@ class Uri
     }
 
     /**
-     * Return a specific directory position in the path of the uri.
+     * Return a specific directory position in the path of the url.
      *
      * @param int $position The position of the directory (0 based index)
      *
@@ -242,7 +242,7 @@ class Uri
      * @param int|null $key   The position of the subdirectory (0 based index)
      * @param string   $value The new value
      *
-     * @return Uri
+     * @return Url
      */
     public function withDirectoryPosition($key, $value)
     {
@@ -296,7 +296,7 @@ class Uri
     }
 
     /**
-     * Return the uri path.
+     * Return the url path.
      *
      * @return string
      */
@@ -320,7 +320,7 @@ class Uri
      *
      * @param string $path
      *
-     * @return Uri
+     * @return Url
      */
     public function withPath($path)
     {
@@ -336,7 +336,7 @@ class Uri
      *
      * @param string $path
      *
-     * @return Uri
+     * @return Url
      */
     public function withAddedPath($path)
     {
@@ -346,7 +346,7 @@ class Uri
     }
 
     /**
-     * Check if the uri has a query parameter.
+     * Check if the url has a query parameter.
      *
      * @param string $name
      *
@@ -385,7 +385,7 @@ class Uri
      * @param string $name  The parameter name
      * @param string $value The parameter value
      *
-     * @return Uri
+     * @return Url
      */
     public function withQueryParameter($name, $value)
     {
@@ -401,7 +401,7 @@ class Uri
      *
      * @param array $parameters
      *
-     * @return Uri
+     * @return Url
      */
     public function withAddedQueryParameters(array $parameters)
     {
@@ -417,7 +417,7 @@ class Uri
      *
      * @param array $parameters
      *
-     * @return Uri
+     * @return Url
      */
     public function withQueryParameters(array $parameters)
     {
@@ -429,7 +429,7 @@ class Uri
     }
 
     /**
-     * Return the uri fragment.
+     * Return the url fragment.
      *
      * @return string
      */
@@ -457,54 +457,54 @@ class Uri
     }
 
     /**
-     * Build the uri using the splitted data.
+     * Build the url using the splitted data.
      */
-    protected function buildUri()
+    protected function buildUrl()
     {
-        $uri = '';
+        $url = '';
 
         if (isset($this->info['content'])) {
             return 'data:'.$this->info['content'];
         }
 
         if (isset($this->info['scheme'])) {
-            $uri .= $this->info['scheme'].'://';
+            $url .= $this->info['scheme'].'://';
         }
 
         $user = isset($this->info['user']) ? $this->info['user'] : '';
         $pass = isset($this->info['pass']) ? ':'.$this->info['pass'] : '';
         if ($user || $pass) {
-            $uri .= $user.$pass.'@';
+            $url .= $user.$pass.'@';
         }
 
         if (isset($this->info['host'])) {
-            $uri .= $this->info['host'];
+            $url .= $this->info['host'];
         }
 
         if (isset($this->info['port'])) {
-            $uri .= ':'.$this->info['port'];
+            $url .= ':'.$this->info['port'];
         }
 
-        $uri .= $this->getPath();
+        $url .= $this->getPath();
 
         if (!empty($this->info['query'])) {
-            $uri .= '?'.http_build_query($this->info['query']);
+            $url .= '?'.http_build_query($this->info['query']);
         }
         if (isset($this->info['fragment'])) {
-            $uri .= '#'.$this->info['fragment'];
+            $url .= '#'.$this->info['fragment'];
         }
 
-        return $uri;
+        return $url;
     }
 
     /**
-     * Parse an uri and split into different pieces.
+     * Parse an url and split into different pieces.
      *
-     * @param string $uri The uri to parse
+     * @param string $url The url to parse
      */
-    protected function parseUri($uri)
+    protected function parseUrl($url)
     {
-        $this->info = parse_url($uri);
+        $this->info = parse_url($url);
 
         if (isset($this->info['path'])) {
             $this->setPath($this->info['path']);
@@ -536,39 +536,39 @@ class Uri
     }
 
     /**
-     * Return an absolute uri based in a relative.
+     * Return an absolute url based in a relative.
      *
      * @return string
      */
-    public function getAbsolute($uri)
+    public function getAbsolute($url)
     {
-        $uri = trim($uri);
+        $url = trim($url);
 
-        if (empty($uri)) {
+        if (empty($url)) {
             return '';
         }
 
-        if (strpos($uri, 'data:') === 0) {
-            return $uri;
+        if (strpos($url, 'data:') === 0) {
+            return $url;
         }
 
-        if (preg_match('|^\w+://|', $uri)) {
-            return $uri;
+        if (preg_match('|^\w+://|', $url)) {
+            return $url;
         }
 
-        if (strpos($uri, '://') === 0) {
-            return $this->getScheme().$uri;
+        if (strpos($url, '://') === 0) {
+            return $this->getScheme().$url;
         }
 
-        if (strpos($uri, '//') === 0) {
-            return $this->getScheme().":$uri";
+        if (strpos($url, '//') === 0) {
+            return $this->getScheme().":$url";
         }
 
-        if ($uri[0] === '/') {
-            return $this->getScheme().'://'.$this->getHost().$uri;
+        if ($url[0] === '/') {
+            return $this->getScheme().'://'.$this->getHost().$url;
         }
 
-        return $this->getScheme().'://'.$this->getHost().$this->getDirectories().$uri;
+        return $this->getScheme().'://'.$this->getHost().$this->getDirectories().$url;
     }
 
     /**

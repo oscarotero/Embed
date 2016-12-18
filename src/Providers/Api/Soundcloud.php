@@ -2,30 +2,29 @@
 
 namespace Embed\Providers\Api;
 
-use Embed\Http\Uri;
-use Embed\Adapters\AdapterInterface;
+use Embed\Http\Url;
+use Embed\Adapters\Adapter;
 use Embed\Providers\Provider;
-use Embed\Providers\ProviderInterface;
 
 /**
  * Provider to use the API of soundcloud.
  */
-class Soundcloud extends Provider implements ProviderInterface
+class Soundcloud extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(Adapter $adapter)
     {
         parent::__construct($adapter);
 
         $key = $adapter->getConfig('soundcloud[key]');
 
         if (!empty($key)) {
-            $endPoint = Uri::create('http://api.soundcloud.com/resolve.json')
+            $endPoint = Url::create('http://api.soundcloud.com/resolve.json')
                 ->withQueryParameters([
                     'client_id' => $key,
-                    'url' => (string) $adapter->getResponse()->getUri(),
+                    'url' => (string) $adapter->getResponse()->getUrl(),
                 ]);
 
             $response = $adapter->getDispatcher()->dispatch($endPoint);

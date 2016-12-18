@@ -7,14 +7,14 @@ use Embed\Http\Response;
 /**
  * Adapter to get the embed code from howcast.com.
  */
-class Howcast extends Webpage implements AdapterInterface
+class Howcast extends Webpage
 {
     /**
      * {@inheritdoc}
      */
     public static function check(Response $response)
     {
-        return $response->isValid() && $response->getUri()->match([
+        return $response->isValid() && $response->getUrl()->match([
             'www.howcast.com/videos/*',
         ]);
     }

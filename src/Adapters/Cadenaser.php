@@ -8,14 +8,14 @@ use Embed\Http\Response;
 /**
  * Adapter to get the embed code from play.cadenaser.com.
  */
-class Cadenaser extends Webpage implements AdapterInterface
+class Cadenaser extends Webpage
 {
     /**
      * {@inheritdoc}
      */
     public static function check(Response $response)
     {
-        return $response->isValid() && $response->getUri()->match([
+        return $response->isValid() && $response->getUrl()->match([
             'play.cadenaser.com/audio/*',
         ]);
     }
@@ -25,9 +25,9 @@ class Cadenaser extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        $uri = $this->getResponse()->getUri();
+        $url = $this->getResponse()->getUrl();
 
-        return Utils::iframe($uri->withPath('/widget/'.$uri->getPath()), $this->width, $this->height);
+        return Utils::iframe($url->withPath('/widget/'.$url->getPath()), $this->width, $this->height);
     }
 
     /**

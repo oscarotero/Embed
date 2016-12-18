@@ -8,14 +8,14 @@ use Embed\Providers\Api;
 /**
  * Adapter to provide information from wikipedia.
  */
-class Wikipedia extends Webpage implements AdapterInterface
+class Wikipedia extends Webpage
 {
     /**
      * {@inheritdoc}
      */
     public static function check(Response $response)
     {
-        return $response->isValid() && $response->getUri()->match([
+        return $response->isValid() && $response->getUrl()->match([
             '*.wikipedia.org/wiki/*',
         ]);
     }

@@ -2,19 +2,19 @@
 
 namespace Embed\Providers;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 use Embed\Http\Response;
-use Embed\Http\Uri;
+use Embed\Http\Url;
 
 /**
  * Provider to get the data using the oEmbed API
  */
-class OEmbed extends Provider implements ProviderInterface
+class OEmbed extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(Adapter $adapter)
     {
         parent::__construct($adapter);
 
@@ -180,41 +180,41 @@ class OEmbed extends Provider implements ProviderInterface
     }
 
     /**
-     * @return Uri|null
+     * @return Url|null
      */
     private function getEndPoint()
     {
         //Search using the domain
-        $class = 'Embed\\Providers\\OEmbed\\'.$this->adapter->getResponse()->getUri()->getClassNameForDomain();
+        $class = 'Embed\\Providers\\OEmbed\\'.$this->adapter->getResponse()->getUrl()->getClassNameForDomain();
         $extraParameters = (array) $this->adapter->getConfig('oembed[parameters]');
 
         if (class_exists($class)) {
             $endPoint = $class::create($this->adapter);
 
-            if ($endPoint && ($uri = $endPoint->getEndPoint())) {
-                return $uri->withAddedQueryParameters($extraParameters);
+            if ($endPoint && ($url = $endPoint->getEndPoint())) {
+                return $url->withAddedQueryParameters($extraParameters);
             }
         }
 
         //Search in the DOM
         $endPoint = OEmbed\DOM::create($this->adapter);
 
-        if ($endPoint && ($uri = $endPoint->getEndPoint())) {
-            return $uri->withAddedQueryParameters($extraParameters);
+        if ($endPoint && ($url = $endPoint->getEndPoint())) {
+            return $url->withAddedQueryParameters($extraParameters);
         }
 
         //Try with embedly
         $endPoint = OEmbed\Embedly::create($this->adapter);
 
-        if ($endPoint && ($uri = $endPoint->getEndPoint())) {
-            return $uri->withAddedQueryParameters($extraParameters);
+        if ($endPoint && ($url = $endPoint->getEndPoint())) {
+            return $url->withAddedQueryParameters($extraParameters);
         }
 
         //Try with iframely
         $endPoint = OEmbed\Iframely::create($this->adapter);
 
-        if ($endPoint && ($uri = $endPoint->getEndPoint())) {
-            return $uri->withAddedQueryParameters($extraParameters);
+        if ($endPoint && ($url = $endPoint->getEndPoint())) {
+            return $url->withAddedQueryParameters($extraParameters);
         }
     }
 
@@ -226,7 +226,7 @@ class OEmbed extends Provider implements ProviderInterface
     private function extractOembed(Response $response)
     {
         // extract from xml
-        if (($response->getUri()->getExtension() === 'xml') || ($response->getUri()->getQueryParameter('format') === 'xml')) {
+        if (($response->getUrl()->getExtension() === 'xml') || ($response->getUrl()->getQueryParameter('format') === 'xml')) {
             if ($xml = $response->getXmlContent()) {
                 foreach ($xml as $element) {
                     $content = trim((string) $element);

@@ -2,9 +2,9 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 use Embed\Http\Response;
-use Embed\Http\Uri;
+use Embed\Http\Url;
 use DOMDocument;
 
 /**
@@ -17,11 +17,11 @@ class DOM implements EndPointInterface
     /**
      * Create a instance of a OEmbedEndPoint.
      *
-     * @param AdapterInterface $adapter
+     * @param Adapter $adapter
      *
      * @return static
      */
-    public static function create(AdapterInterface $adapter)
+    public static function create(Adapter $adapter)
     {
         return new static($adapter->getResponse());
     }
@@ -39,14 +39,14 @@ class DOM implements EndPointInterface
     /**
      * Returns the oembed endPoint.
      *
-     * @return Uri|null
+     * @return Url|null
      */
     public function getEndPoint()
     {
         $html = $this->response->getHtmlContent();
 
-        if ($html && ($uri = self::getEndPointFromDom($html))) {
-            $endPoint = $this->response->getUri()->createAbsolute($uri);
+        if ($html && ($url = self::getEndPointFromDom($html))) {
+            $endPoint = $this->response->getUrl()->createAbsolute($url);
 
             if ($endPoint->getExtension() !== 'xml' && !$endPoint->hasQueryParameter('format')) {
                 return $endPoint->withQueryParameter('format', 'json');

@@ -2,18 +2,18 @@
 
 namespace Embed\Providers;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 use Embed\Utils;
 
 /**
  * Provider to get the data from the Open Graph elements in the HTML
  */
-class OpenGraph extends Provider implements ProviderInterface
+class OpenGraph extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(Adapter $adapter)
     {
         parent::__construct($adapter);
 
@@ -137,7 +137,7 @@ class OpenGraph extends Provider implements ProviderInterface
     {
         $url = $this->normalizeUrl($this->bag->get('url'));
 
-        if ($url !== $this->adapter->getResponse()->getUri()->getAbsolute('/')) {
+        if ($url !== $this->adapter->getResponse()->getUrl()->getAbsolute('/')) {
             return $url;
         }
     }

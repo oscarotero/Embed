@@ -2,7 +2,7 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Http\Uri;
+use Embed\Http\Url;
 
 class Instagram extends EndPoint implements EndPointInterface
 {
@@ -17,11 +17,11 @@ class Instagram extends EndPoint implements EndPointInterface
      */
     public function getEndPoint()
     {
-        $uri = $this->response->getUri()->withScheme('http');
+        $url = $this->response->getUrl()->withScheme('http');
 
-        return Uri::create(static::$endPoint)
+        return Url::create(static::$endPoint)
                 ->withQueryParameters([
-                    'url' => (string) $uri,
+                    'url' => (string) $url,
                     'format' => 'json',
                 ]);
     }

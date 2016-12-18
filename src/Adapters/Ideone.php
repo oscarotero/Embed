@@ -8,14 +8,14 @@ use Embed\Utils;
 /**
  * Adapter to generate embed code from ideone.com.
  */
-class Ideone extends Webpage implements AdapterInterface
+class Ideone extends Webpage
 {
     /**
      * {@inheritdoc}
      */
     public static function check(Response $response)
     {
-        return $response->isValid() && $response->getUri()->match([
+        return $response->isValid() && $response->getUrl()->match([
             'ideone.com/*',
         ]);
     }
@@ -28,9 +28,9 @@ class Ideone extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = null;
 
-        $uri = $this->getResponse()->getUri();
-        $path = '/e.js'.$uri->getPath();
+        $url = $this->getResponse()->getUrl();
+        $path = '/e.js'.$url->getPath();
 
-        return Utils::script($uri->getAbsolute($path));
+        return Utils::script($url->getAbsolute($path));
     }
 }

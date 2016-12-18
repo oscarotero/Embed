@@ -2,27 +2,26 @@
 
 namespace Embed\Providers\Api;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 use Embed\Providers\Provider;
-use Embed\Providers\ProviderInterface;
 
 /**
  * Provider to use the API of wikipedia.
  */
-class Wikipedia extends Provider implements ProviderInterface
+class Wikipedia extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(Adapter $adapter)
     {
         parent::__construct($adapter);
 
-        $titles = $adapter->getResponse()->getUri()->getDirectoryPosition(1);
+        $titles = $adapter->getResponse()->getUrl()->getDirectoryPosition(1);
 
         if (!empty($titles)) {
             //extract images
-            $endPoint = $adapter->getResponse()->getUri()
+            $endPoint = $adapter->getResponse()->getUrl()
                 ->withPath('/w/api.php')
                 ->withQueryParameters([
                     'action' => 'query',
@@ -106,7 +105,7 @@ class Wikipedia extends Provider implements ProviderInterface
 
             //Get image urls
             if (!empty($imgs)) {
-                $endPoint = $this->adapter->getResponse()->getUri()
+                $endPoint = $this->adapter->getResponse()->getUrl()
                     ->withPath('/w/api.php')
                     ->withQueryParameters([
                         'action' => 'query',

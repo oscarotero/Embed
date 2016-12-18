@@ -12,13 +12,13 @@ class ImageResponse extends AbstractResponse
     /**
      * Create a ImageResponse using a bas64 url.
      *
-     * @param Uri $uri
+     * @param Url $url
      *
      * @return static|null
      */
-    public static function createFromBase64(Uri $uri)
+    public static function createFromBase64(Url $url)
     {
-        $pieces = explode(';', $uri->getContent(), 2);
+        $pieces = explode(';', $url->getContent(), 2);
 
         if ((count($pieces) !== 2) || (strpos($pieces[0], 'image/') === false) || (strpos($pieces[1], 'base64,') !== 0)) {
             return false;
@@ -26,8 +26,8 @@ class ImageResponse extends AbstractResponse
 
         if (($info = getimagesizefromstring(base64_decode(substr($pieces[1], 7)))) !== false) {
             return new self(
-                $uri,
-                $uri,
+                $url,
+                $url,
                 200,
                 $info['mime'],
                 [$info[0], $info[1]],
@@ -36,9 +36,9 @@ class ImageResponse extends AbstractResponse
         }
     }
 
-    public function __construct(Uri $startingUri, Uri $uri, $statusCode, $contentType, $size, array $headers)
+    public function __construct(Url $startingUrl, Url $url, $statusCode, $contentType, $size, array $headers)
     {
-        parent::__construct($startingUri, $uri, $statusCode, $contentType, $headers);
+        parent::__construct($startingUrl, $url, $statusCode, $contentType, $headers);
         $this->size = $size;
     }
 

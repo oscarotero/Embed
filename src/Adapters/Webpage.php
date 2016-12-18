@@ -8,7 +8,7 @@ use Embed\Providers;
 /**
  * Adapter to provide all information from any webpage.
  */
-class Webpage extends Adapter implements AdapterInterface
+class Webpage extends Adapter
 {
     /**
      * {@inheritdoc}

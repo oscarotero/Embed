@@ -3,20 +3,20 @@
 namespace Embed\Providers;
 
 use Embed\Utils;
-use Embed\Adapters\AdapterInterface;
-use Embed\Http\Uri;
+use Embed\Adapters\Adapter;
+use Embed\Http\Url;
 use DOMDocument;
 use Exception;
 
 /**
  * Provider to get the data from the HTML code
  */
-class Html extends Provider implements ProviderInterface
+class Html extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(Adapter $adapter)
     {
         parent::__construct($adapter);
 
@@ -321,7 +321,7 @@ class Html extends Provider implements ProviderInterface
             return;
         }
 
-        $uri = $this->adapter->getResponse()->getUri();
+        $url = $this->adapter->getResponse()->getUrl();
         $externalImages = $this->adapter->getConfig('html[external_images]');
 
         foreach ($main->getElementsByTagName('img') as $img) {
@@ -329,10 +329,10 @@ class Html extends Provider implements ProviderInterface
                 continue;
             }
 
-            $src = $uri->createAbsolute($img->getAttribute('src'));
+            $src = $url->createAbsolute($img->getAttribute('src'));
 
             //Avoid external images
-            if (!self::imageIsValid($src, $uri, $externalImages)) {
+            if (!self::imageIsValid($src, $url, $externalImages)) {
                 continue;
             }
 
@@ -343,9 +343,9 @@ class Html extends Provider implements ProviderInterface
                 if ($parent->tagName === 'a') {
                     //The link is external
                     if ($parent->hasAttribute('href')) {
-                        $href = $uri->createAbsolute($parent->getAttribute('href'));
+                        $href = $url->createAbsolute($parent->getAttribute('href'));
 
-                        if (!self::imageIsValid($href, $uri, $externalImages)) {
+                        if (!self::imageIsValid($href, $url, $externalImages)) {
                             continue 2;
                         }
                     }
@@ -368,20 +368,20 @@ class Html extends Provider implements ProviderInterface
     /**
      * Check whether a image url is valid or not.
      *
-     * @param Uri   $uri
-     * @param Uri   $baseUri
+     * @param Url   $url
+     * @param Url   $baseUrl
      * @param mixed $externalImages
      *
      * @return bool
      */
-    private static function imageIsValid(Uri $uri, Uri $baseUri, $externalImages)
+    private static function imageIsValid(Url $url, Url $baseUrl, $externalImages)
     {
         //base64 or same domain
-        if ($uri->getContent() !== null || $uri->getDomain() === $baseUri->getDomain()) {
+        if ($url->getContent() !== null || $url->getDomain() === $baseUrl->getDomain()) {
             return true;
         }
 
-        return is_bool($externalImages) ? $externalImages : $uri->match($externalImages);
+        return is_bool($externalImages) ? $externalImages : $url->match($externalImages);
     }
 
     /**

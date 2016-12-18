@@ -2,28 +2,33 @@
 
 namespace Embed\Providers;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
+use Embed\DataInterface;
 use Embed\Bag;
 
 /**
  * Abstract class used by all providers.
  */
-abstract class Provider
+abstract class Provider implements DataInterface
 {
     protected $bag;
     protected $adapter;
 
     /**
-     * {@inheritdoc}
+     * Constructor.
+     *
+     * @param Adapter $adapter
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(Adapter $adapter)
     {
         $this->bag = new Bag();
         $this->adapter = $adapter;
     }
 
     /**
-     * {@inheritdoc}
+     * Returns the bag containing all data.
+     *
+     * @return Bag
      */
     public function getBag()
     {
@@ -163,32 +168,32 @@ abstract class Provider
     /**
      * Returns the urls as absolute.
      *
-     * @param mixed $uris
+     * @param mixed $urls
      *
      * @return array
      */
-    protected function normalizeUrls($uris)
+    protected function normalizeUrls($urls)
     {
-        if (!is_array($uris)) {
+        if (!is_array($urls)) {
             return [];
         }
 
-        return array_map([$this, 'normalizeUrl'], array_filter($uris));
+        return array_map([$this, 'normalizeUrl'], array_filter($urls));
     }
 
     /**
      * Returns the url as absolute.
      *
-     * @param string|null $uri
+     * @param string|null $url
      *
      * @return string|null
      */
-    protected function normalizeUrl($uri)
+    protected function normalizeUrl($url)
     {
-        if (empty($uri)) {
+        if (empty($url)) {
             return;
         }
 
-        return $this->adapter->getResponse()->getUri()->getAbsolute($uri);
+        return $this->adapter->getResponse()->getUrl()->getAbsolute($url);
     }
 }

@@ -4,19 +4,19 @@ namespace Embed\Adapters;
 
 use Embed\Utils;
 use Embed\Http\Response;
-use Embed\Http\Uri;
+use Embed\Http\Url;
 
 /**
  * Adapter to get the embed code from spreaker.com.
  */
-class Spreaker extends Webpage implements AdapterInterface
+class Spreaker extends Webpage
 {
     /**
      * {@inheritdoc}
      */
     public static function check(Response $response)
     {
-        return $response->isValid() && $response->getUri()->match([
+        return $response->isValid() && $response->getUrl()->match([
             'www.spreaker.com/*',
         ]);
     }
@@ -33,13 +33,13 @@ class Spreaker extends Webpage implements AdapterInterface
                 $id = (int) $a->getAttribute('data-episode_id');
 
                 if ($id) {
-                    $uri = Uri::create('https://www.spreaker.com/embed/player/standard')
+                    $url = Url::create('https://www.spreaker.com/embed/player/standard')
                         ->withQueryParameters([
                             'autoplay' => 'false',
                             'episode_id' => $id,
                         ]);
 
-                    return Utils::iframe($uri, $this->width, $this->height, 'min-width:400px;border:none;overflow:hidden;');
+                    return Utils::iframe($url, $this->width, $this->height, 'min-width:400px;border:none;overflow:hidden;');
                 }
 
                 break;

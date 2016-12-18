@@ -8,20 +8,20 @@ namespace Embed\Http;
 interface DispatcherInterface
 {
     /**
-     * Dispatch an uri.
+     * Dispatch an url.
      *
-     * @param Uri $uri
+     * @param Url $url
      *
      * @return Response
      */
-    public function dispatch(Uri $uri);
+    public function dispatch(Url $url);
 
     /**
-     * Resolve multiple image uris at once.
+     * Resolve multiple image urls at once.
      *
-     * @param Uri[] $uris
+     * @param Url[] $urls
      *
      * @return ImageResponse[]
      */
-    public function dispatchImages(array $uris);
+    public function dispatchImages(array $urls);
 }

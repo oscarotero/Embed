@@ -17,78 +17,78 @@ abstract class Redirects
     /**
      * Resolve the url redirection.
      *
-     * @param Uri $uri
+     * @param Url $url
      *
-     * @return Uri
+     * @return Url
      */
-    public static function resolve(Uri $uri)
+    public static function resolve(Url $url)
     {
         foreach (self::$patterns as $method => $pattern) {
-            if ($uri->match($pattern)) {
-                return self::$method($uri);
+            if ($url->match($pattern)) {
+                return self::$method($url);
             }
         }
 
-        return $uri;
+        return $url;
     }
 
     /**
      * Resolve a google redirection url.
      *
-     * @param Uri $uri
+     * @param Url $url
      *
-     * @return Uri
+     * @return Url
      */
-    public static function google(Uri $uri)
+    public static function google(Url $url)
     {
-        if (($value = $uri->getQueryParameter('url'))) {
-            return Uri::create($value);
+        if (($value = $url->getQueryParameter('url'))) {
+            return Url::create($value);
         }
 
-        return $uri;
+        return $url;
     }
 
     /**
      * Resolve a google translation url.
      *
-     * @param Uri $uri
+     * @param Url $url
      *
-     * @return Uri
+     * @return Url
      */
-    public static function googleTranslator(Uri $uri)
+    public static function googleTranslator(Url $url)
     {
-        if (($value = $uri->getQueryParameter('u'))) {
-            return Uri::create($value);
+        if (($value = $url->getQueryParameter('u'))) {
+            return Url::create($value);
         }
 
-        return $uri;
+        return $url;
     }
 
     /**
      * Resolve an url with hashbang.
      *
-     * @param Uri $uri
+     * @param Url $url
      *
-     * @return Uri
+     * @return Url
      */
-    public static function hashBang(Uri $uri)
+    public static function hashBang(Url $url)
     {
-        if (($path = preg_replace('|^(/?!)|', '', $uri->getFragment()))) {
-            return $uri->withPath($uri->getPath().$path);
+        if (($path = preg_replace('|^(/?!)|', '', $url->getFragment()))) {
+            return $url->withPath($url->getPath().$path);
         }
 
-        return $uri;
+        return $url;
     }
 
     /**
      * Redirect the player of spotify.
      *
-     * @param Uri $uri
+     * @param Url $url
      *
-     * @return Uri
+     * @return Url
      */
-    public static function spotify(Uri $uri)
+    public static function spotify(Url $url)
     {
-        return $uri->withHost('open.spotify.com');
+        return $url->withHost('open.spotify.com');
     }
 }

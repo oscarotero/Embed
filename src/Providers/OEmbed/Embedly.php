@@ -2,9 +2,9 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 use Embed\Http\Response;
-use Embed\Http\Uri;
+use Embed\Http\Url;
 
 class Embedly implements EndPointInterface
 {
@@ -14,7 +14,7 @@ class Embedly implements EndPointInterface
     /**
      * {@inheritdoc}
      */
-    public static function create(AdapterInterface $adapter)
+    public static function create(Adapter $adapter)
     {
         $key = $adapter->getConfig('oembed[embedly_key]');
 
@@ -40,9 +40,9 @@ class Embedly implements EndPointInterface
      */
     public function getEndPoint()
     {
-        return Uri::create('http://api.embed.ly/1/oembed')
+        return Url::create('http://api.embed.ly/1/oembed')
                 ->withQueryParameters([
-                    'url' => (string) $this->response->getUri(),
+                    'url' => (string) $this->response->getUrl(),
                     'format' => 'json',
                     'key' => $this->key,
                 ]);

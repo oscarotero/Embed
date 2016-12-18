@@ -9,7 +9,7 @@ use Embed\Providers;
 /**
  * Adapter to provide information from raw files.
  */
-class File extends Adapter implements AdapterInterface
+class File extends Adapter
 {
     private static $contentTypes = [
         'video/ogg' => ['video', 'videoHtml'],

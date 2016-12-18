@@ -2,18 +2,18 @@
 
 namespace Embed\Providers;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 use Embed\Utils;
 
 /**
  * Provider to get the data from the Twitter Cards elements in the HTML
  */
-class TwitterCards extends Provider implements ProviderInterface
+class TwitterCards extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(Adapter $adapter)
     {
         parent::__construct($adapter);
 

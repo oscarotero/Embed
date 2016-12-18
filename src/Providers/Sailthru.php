@@ -2,17 +2,17 @@
 
 namespace Embed\Providers;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 
 /**
  * Provider to get the data from the Sailthru data elements in the HTML
  */
-class Sailthru extends Provider implements ProviderInterface
+class Sailthru extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(Adapter $adapter)
     {
         parent::__construct($adapter);
 

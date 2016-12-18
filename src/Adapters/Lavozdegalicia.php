@@ -7,14 +7,14 @@ use Embed\Http\Response;
 /**
  * Adapter to provide all information from lavozdegalicia.es that needs a special query parameter to generate a session cookie.
  */
-class Lavozdegalicia extends Webpage implements AdapterInterface
+class Lavozdegalicia extends Webpage
 {
     /**
      * {@inheritdoc}
      */
     public static function check(Response $response)
     {
-        return $response->isValid() && $response->getUri()->match([
+        return $response->isValid() && $response->getUrl()->match([
             'www.lavozdegalicia.es/*',
         ]);
     }
@@ -26,8 +26,8 @@ class Lavozdegalicia extends Webpage implements AdapterInterface
     {
         parent::init();
 
-        $uri = $this->getResponse()->getStartingUri();
+        $url = $this->getResponse()->getStartingUrl();
 
-        $this->response = $this->getDispatcher()->dispatch($uri->withQueryParameter('piano_d', '1'));
+        $this->response = $this->getDispatcher()->dispatch($url->withQueryParameter('piano_d', '1'));
     }
 }

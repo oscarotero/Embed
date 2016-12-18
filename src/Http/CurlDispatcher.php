@@ -73,9 +73,9 @@ class CurlDispatcher implements DispatcherInterface
     /**
      * {@inheritdoc}
      */
-    public function dispatch(Uri $uri)
+    public function dispatch(Url $url)
     {
-        $connection = curl_init((string) $uri);
+        $connection = curl_init((string) $url);
         curl_setopt_array($connection, $this->config);
 
         $curl = new CurlResult($connection);
@@ -98,8 +98,8 @@ class CurlDispatcher implements DispatcherInterface
         curl_close($connection);
 
         return $this->responses[] = new Response(
-            $uri,
-            Uri::create($result['uri']),
+            $url,
+            Url::create($result['url']),
             $result['statusCode'],
             $result['contentType'],
             $result['content'],
@@ -110,9 +110,9 @@ class CurlDispatcher implements DispatcherInterface
     /**
      * {@inheritdoc}
      */
-    public function dispatchImages(array $uris)
+    public function dispatchImages(array $urls)
     {
-        if (empty($uris)) {
+        if (empty($urls)) {
             return [];
         }
 
@@ -128,9 +128,9 @@ class CurlDispatcher implements DispatcherInterface
         $responses = [];
         $connections = [];
 
-        foreach ($uris as $k => $uri) {
-            if ($uri->getScheme() === 'data') {
-                $response = ImageResponse::createFromBase64($uri);
+        foreach ($urls as $k => $url) {
+            if ($url->getScheme() === 'data') {
+                $response = ImageResponse::createFromBase64($url);
 
                 if ($response) {
                     $responses[$k] = $response;
@@ -139,7 +139,7 @@ class CurlDispatcher implements DispatcherInterface
                 continue;
             }
 
-            $connection = curl_init((string) $uri);
+            $connection = curl_init((string) $url);
 
             curl_setopt_array($connection, $this->config);
             curl_multi_add_handle($curl_multi, $connection);
@@ -191,8 +191,8 @@ class CurlDispatcher implements DispatcherInterface
 
                 if (!empty($result['data']->mime)) {
                     $responses[$k] = $this->responses[] = new ImageResponse(
-                        $uris[$k],
-                        Uri::create($result['uri']),
+                        $urls[$k],
+                        Url::create($result['url']),
                         $result['statusCode'],
                         $result['contentType'],
                         [$result['data']->width, $result['data']->height],

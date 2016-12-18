@@ -2,17 +2,42 @@
 
 namespace Embed\Adapters;
 
-use Embed\Http\Uri;
+use Embed\Http\Url;
 use Embed\Http\Response;
 use Embed\Http\ImageResponse;
 use Embed\Http\DispatcherInterface;
-use Embed\Providers\ProviderInterface;
+use Embed\DataInterface;
+use Embed\Providers\Provider;
 use Embed\Bag;
 
 /**
  * Base class extended by all adapters.
+ *
+ * @property null|string  $title
+ * @property null|string  $description
+ * @property null|string  $url
+ * @property null|string  $type
+ * @property array        $tags
+ * @property array        $feeds
+ * @property array        $images
+ * @property array        $imagesUrls
+ * @property null|string  $image
+ * @property null|int     $imageWidth
+ * @property null|int     $imageHeight
+ * @property null|string  $code
+ * @property null|int     $width
+ * @property null|int     $height
+ * @property null|float   $aspectRatio
+ * @property null|string  $authorName
+ * @property null|string  $authorUrl
+ * @property array        $providerIcons
+ * @property array        $providerIconsUrls
+ * @property null|string  $providerIcon
+ * @property null|string  $providerName
+ * @property null|string  $providerUrl
+ * @property null|string  $publishedTime
  */
-abstract class Adapter
+abstract class Adapter implements DataInterface
 {
     protected $config;
     protected $dispatcher;
@@ -20,7 +45,20 @@ abstract class Adapter
     protected $providers = [];
 
     /**
-     * {@inheritdoc}
+     * Checks whether the response is valid to this Adapter.
+     *
+     * @param Response $response
+     *
+     * @return bool
+     */
+    abstract public static function check(Response $response);
+
+    /**
+     * Constructor.
+     *
+     * @param Response  $response
+     * @param array $config
+     * @param DispatcherInterface $dispatcher
      */
     public function __construct(Response $response, array $config, DispatcherInterface $dispatcher)
     {
@@ -54,7 +92,9 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Returns the dispatcher used.
+     *
+     * @return DispatcherInterface
      */
     public function getDispatcher()
     {
@@ -62,7 +102,9 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Returns the main response instance.
+     *
+     * @return Response
      */
     public function getResponse()
     {
@@ -70,7 +112,12 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Get a config value.
+     *
+     * @param string $name
+     * @param mixed  $default
+     *
+     * @return string|null
      */
     public function getConfig($name, $default = null)
     {
@@ -80,7 +127,9 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Get all providers.
+     *
+     * @return array
      */
     public function getProviders()
     {
@@ -94,7 +143,7 @@ abstract class Adapter
     {
         $default = $this->url;
 
-        return $this->getFirstFromProviders(function ($provider) {
+        return $this->getFirstFromProviders(function (Provider $provider) {
             return $provider->getTitle();
         }, $default);
     }
@@ -104,7 +153,7 @@ abstract class Adapter
      */
     public function getDescription()
     {
-        return $this->getFirstFromProviders(function ($provider) {
+        return $this->getFirstFromProviders(function (Provider $provider) {
             return $provider->getDescription();
         });
     }
@@ -150,7 +199,7 @@ abstract class Adapter
      */
     public function getTags()
     {
-        return $this->getAllFromProviders(function ($provider) {
+        return $this->getAllFromProviders(function (Provider $provider) {
             return $provider->getTags();
         });
     }
@@ -160,7 +209,7 @@ abstract class Adapter
      */
     public function getFeeds()
     {
-        return $this->getAllFromProviders(function ($provider) {
+        return $this->getAllFromProviders(function (Provider $provider) {
             return $provider->getFeeds();
         });
     }
@@ -193,7 +242,7 @@ abstract class Adapter
         }
 
         //Use only html5 codes
-        $html5 = array_filter($codes, function ($code) {
+        $html5 = array_filter($codes, function (array $code) {
             return strpos($code['code'], '</object>') === false && strpos($code['code'], '</embed>') === false;
         });
 
@@ -215,9 +264,9 @@ abstract class Adapter
      */
     public function getUrl()
     {
-        $default = (string) $this->getResponse()->getUri();
+        $default = (string) $this->getResponse()->getUrl();
 
-        return $this->getFirstFromProviders(function ($provider) {
+        return $this->getFirstFromProviders(function (Provider $provider) {
             return $provider->getUrl();
         }, $default);
     }
@@ -227,7 +276,7 @@ abstract class Adapter
      */
     public function getAuthorName()
     {
-        return $this->getFirstFromProviders(function ($provider) {
+        return $this->getFirstFromProviders(function (Provider $provider) {
             return $provider->getAuthorName();
         });
     }
@@ -237,7 +286,7 @@ abstract class Adapter
      */
     public function getAuthorUrl()
     {
-        return $this->getFirstFromProviders(function ($provider) {
+        return $this->getFirstFromProviders(function (Provider $provider) {
             return $provider->getAuthorUrl();
         });
     }
@@ -248,8 +297,8 @@ abstract class Adapter
     public function getProviderIconsUrls()
     {
         $urls = [
-            $this->getResponse()->getUri()->getAbsolute('/favicon.ico'),
-            $this->getResponse()->getUri()->getAbsolute('/favicon.png'),
+            $this->getResponse()->getUrl()->getAbsolute('/favicon.ico'),
+            $this->getResponse()->getUrl()->getAbsolute('/favicon.png'),
         ];
 
         foreach ($this->providers as $provider) {
@@ -264,7 +313,10 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Gets all icon provider urls found
+     * It returns also the width, height and mime-type.
+     *
+     * @return array
      */
     public function getProviderIcons()
     {
@@ -272,7 +324,9 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Gets the best icon provider
+     *
+     * @return string|null
      */
     public function getProviderIcon()
     {
@@ -296,9 +350,9 @@ abstract class Adapter
      */
     public function getProviderName()
     {
-        $default = $this->getResponse()->getUri()->getDomain();
+        $default = $this->getResponse()->getUrl()->getDomain();
 
-        return $this->getFirstFromProviders(function ($provider) {
+        return $this->getFirstFromProviders(function (Provider $provider) {
             return $provider->getProviderName();
         }, $default);
     }
@@ -308,10 +362,10 @@ abstract class Adapter
      */
     public function getProviderUrl()
     {
-        $uri = $this->getResponse()->getUri();
-        $default = $uri->getScheme().'://'.$uri->getDomain(true);
+        $url = $this->getResponse()->getUrl();
+        $default = $url->getScheme().'://'.$url->getDomain(true);
 
-        return $this->getFirstFromProviders(function ($provider) {
+        return $this->getFirstFromProviders(function (Provider $provider) {
             return $provider->getProviderUrl();
         }, $default);
     }
@@ -321,23 +375,15 @@ abstract class Adapter
      */
     public function getImagesUrls()
     {
-        $urls = [];
-
-        foreach ($this->providers as $provider) {
-            foreach ($provider->getImagesUrls() as $url) {
-                if (!in_array($url, $urls, true)) {
-                    $urls[] = $url;
-                }
-            }
-        }
+        $urls = $this->getAllFromProviders(function (Provider $provider) {
+            return $provider->getImagesUrls();
+        });
 
         $blacklist = $this->getConfig('images_blacklist');
 
         if (!empty($blacklist)) {
             $urls = array_filter($urls, function ($url) use ($blacklist) {
-                $uri = Uri::create($url);
-
-                return !$uri->match($blacklist);
+                return !Url::create($url)->match($blacklist);
             });
         }
 
@@ -345,7 +391,10 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Gets all images found in the webpage
+     * It returns also the width, height and mime-type.
+     *
+     * @return array
      */
     public function getImages()
     {
@@ -353,7 +402,9 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Gets the best image
+     *
+     * @return string|null
      */
     public function getImage()
     {
@@ -393,7 +444,9 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Gets the image width.
+     *
+     * @return int|null
      */
     public function getImageWidth()
     {
@@ -403,7 +456,9 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Gets the image height.
+     *
+     * @return int|null
      */
     public function getImageHeight()
     {
@@ -433,7 +488,10 @@ abstract class Adapter
     }
 
     /**
-     * {@inheritdoc}
+     * Gets the aspect ratio of the embedded widget
+     * (useful to make it responsive).
+     *
+     * @return float|null
      */
     public function getAspectRatio()
     {
@@ -449,7 +507,7 @@ abstract class Adapter
      */
     public function getPublishedTime()
     {
-        return $this->getFirstFromProviders(function ($provider) {
+        return $this->getFirstFromProviders(function (Provider $provider) {
             return $provider->getPublishedTime();
         });
     }
@@ -459,7 +517,7 @@ abstract class Adapter
      */
     public function getLicense()
     {
-        return $this->getFirstFromProviders(function ($provider) {
+        return $this->getFirstFromProviders(function (Provider $provider) {
             return $provider->getLicense();
         });
     }
@@ -469,7 +527,7 @@ abstract class Adapter
      */
     public function getLinkedData()
     {
-        return $this->getAllFromProviders(function ($provider) {
+        return $this->getAllFromProviders(function (Provider $provider) {
             return $provider->getLinkedData();
         });
     }
@@ -489,14 +547,14 @@ abstract class Adapter
 
         $requests = [];
 
-        foreach ($urls as $uri) {
-            $requests[] = Uri::create($uri);
+        foreach ($urls as $url) {
+            $requests[] = Url::create($url);
         }
 
         return array_map(
             function (ImageResponse $response) {
                 return [
-                    'url' => (string) $response->getUri(),
+                    'url' => (string) $response->getUrl(),
                     'width' => $response->getWidth(),
                     'height' => $response->getHeight(),
                     'size' => $response->getWidth() * $response->getHeight(),

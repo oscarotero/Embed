@@ -8,14 +8,14 @@ use Embed\Utils;
 /**
  * Adapter to fix some issues from mit.edu (not complete yet).
  */
-class Mit extends Webpage implements AdapterInterface
+class Mit extends Webpage
 {
     /**
      * {@inheritdoc}
      */
     public static function check(Response $response)
     {
-        return $response->isValid() && $response->getUri()->match([
+        return $response->isValid() && $response->getUrl()->match([
             'video.mit.edu/watch/*',
         ]);
     }

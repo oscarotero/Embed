@@ -8,14 +8,14 @@ use Embed\Http\Response;
 /**
  * Adapter to get the embed code from slides.com.
  */
-class Slides extends Webpage implements AdapterInterface
+class Slides extends Webpage
 {
     /**
      * {@inheritdoc}
      */
     public static function check(Response $response)
     {
-        return $response->isValid() && $response->getUri()->match([
+        return $response->isValid() && $response->getUrl()->match([
             'slides.com/*',
         ]);
     }
@@ -25,7 +25,7 @@ class Slides extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        return Utils::iframe($this->getResponse()->getUri()->withAddedPath('embed'), $this->width, $this->height);
+        return Utils::iframe($this->getResponse()->getUrl()->withAddedPath('embed'), $this->width, $this->height);
     }
 
     /**

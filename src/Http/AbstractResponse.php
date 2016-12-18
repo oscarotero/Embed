@@ -7,29 +7,29 @@ namespace Embed\Http;
  */
 abstract class AbstractResponse
 {
-    protected $startingUri;
-    protected $uri;
+    protected $startingUrl;
+    protected $url;
     protected $statusCode;
     protected $contentType;
     protected $headers;
 
-    public function __construct(Uri $startingUri, Uri $uri, $statusCode, $contentType, array $headers)
+    public function __construct(Url $startingUrl, Url $url, $statusCode, $contentType, array $headers)
     {
-        $this->startingUri = $startingUri;
-        $this->uri = $uri;
+        $this->startingUrl = $startingUrl;
+        $this->url = $url;
         $this->statusCode = $statusCode;
         $this->contentType = $contentType;
         $this->headers = $headers;
     }
 
     /**
-     * Get the starting uri.
+     * Get the starting url.
      *
-     * @return Uri
+     * @return Url
      */
-    public function getStartingUri()
+    public function getStartingUrl()
     {
-        return $this->startingUri;
+        return $this->startingUrl;
     }
 
     /**
@@ -53,13 +53,13 @@ abstract class AbstractResponse
     }
 
     /**
-     * Returns the final uri.
+     * Returns the final url.
      *
-     * @return Uri
+     * @return Url
      */
-    public function getUri()
+    public function getUrl()
     {
-        return $this->uri;
+        return $this->url;
     }
 
     /**

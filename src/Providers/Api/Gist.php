@@ -2,23 +2,22 @@
 
 namespace Embed\Providers\Api;
 
-use Embed\Adapters\AdapterInterface;
+use Embed\Adapters\Adapter;
 use Embed\Providers\Provider;
-use Embed\Providers\ProviderInterface;
 
 /**
  * Provider to use the API of gist.github.com.
  */
-class Gist extends Provider implements ProviderInterface
+class Gist extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(Adapter $adapter)
     {
         parent::__construct($adapter);
 
-        $endPoint = $adapter->getResponse()->getUri()->withExtension('json');
+        $endPoint = $adapter->getResponse()->getUrl()->withExtension('json');
         $response = $adapter->getDispatcher()->dispatch($endPoint);
 
         if (($json = $response->getJsonContent())) {

@@ -7,14 +7,14 @@ use Embed\Http\Response;
 /**
  * Adapter to provide information from thematic.
  */
-class Thematic extends Webpage implements AdapterInterface
+class Thematic extends Webpage
 {
     /**
      * {@inheritdoc}
      */
     public static function check(Response $response)
     {
-        return $response->isValid() && $response->getUri()->match([
+        return $response->isValid() && $response->getUrl()->match([
             'www.thematic.co/stories/*',
             'www.thematic.co/album/*',
         ]);

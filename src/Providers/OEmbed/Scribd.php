@@ -2,7 +2,7 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Http\Uri;
+use Embed\Http\Url;
 
 class Scribd extends EndPoint implements EndPointInterface
 {
@@ -17,11 +17,11 @@ class Scribd extends EndPoint implements EndPointInterface
      */
     public function getEndPoint()
     {
-        $uri = $this->response->getUri()->withDirectoryPosition(0, 'doc');
+        $url = $this->response->getUrl()->withDirectoryPosition(0, 'doc');
 
-        return Uri::create(static::$endPoint)
+        return Url::create(static::$endPoint)
                 ->withQueryParameters([
-                    'url' => (string) $uri,
+                    'url' => (string) $url,
                     'format' => 'json',
                 ]);
     }
