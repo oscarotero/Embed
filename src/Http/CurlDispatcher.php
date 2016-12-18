@@ -2,7 +2,6 @@
 
 namespace Embed\Http;
 
-use Embed\Embed;
 use Embed\Exceptions\EmbedException;
 use stdClass;
 
@@ -88,7 +87,7 @@ class CurlDispatcher implements DispatcherInterface
             }
         });
 
-        $curl->onBody(function ($string, $data) {
+        $curl->onBody(function ($string, stdClass $data) {
             return !$data->isBinary;
         });
 

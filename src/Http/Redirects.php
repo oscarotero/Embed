@@ -2,8 +2,6 @@
 
 namespace Embed\Http;
 
-use Embed\Embed;
-
 /**
  * Class to resolve some specific redirections.
  */
@@ -41,7 +39,7 @@ abstract class Redirects
      *
      * @return Uri
      */
-    private static function google(Uri $uri)
+    public static function google(Uri $uri)
     {
         if (($value = $uri->getQueryParameter('url'))) {
             return Uri::create($value);
@@ -57,7 +55,7 @@ abstract class Redirects
      *
      * @return Uri
      */
-    private static function googleTranslator(Uri $uri)
+    public static function googleTranslator(Uri $uri)
     {
         if (($value = $uri->getQueryParameter('u'))) {
             return Uri::create($value);
@@ -73,7 +71,7 @@ abstract class Redirects
      *
      * @return Uri
      */
-    private static function hashBang(Uri $uri)
+    public static function hashBang(Uri $uri)
     {
         if (($path = preg_replace('|^(/?!)|', '', $uri->getFragment()))) {
             return $uri->withPath($uri->getPath().$path);
@@ -89,7 +87,7 @@ abstract class Redirects
      *
      * @return Uri
      */
-    private static function spotify(Uri $uri)
+    public static function spotify(Uri $uri)
     {
         return $uri->withHost('open.spotify.com');
     }

@@ -4,7 +4,6 @@ namespace Embed;
 
 use Embed\Adapters\AdapterInterface;
 use Embed\Http\Uri;
-use Embed\Http\Request;
 use Embed\Http\DispatcherInterface;
 use Embed\Http\CurlDispatcher;
 

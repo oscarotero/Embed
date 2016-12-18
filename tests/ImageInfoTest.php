@@ -27,8 +27,6 @@ class ImageInfoTest extends AbstractTestCase
 
     public function testBase64Images()
     {
-        $dispatcher = new CurlDispatcher();
-
         $info = Embed::create('http://www.websiteoptimization.com/speed/tweak/inline-images/folder-test.html');
 
         $this->assertEquals(

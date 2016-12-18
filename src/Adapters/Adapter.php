@@ -7,7 +7,6 @@ use Embed\Http\Response;
 use Embed\Http\ImageResponse;
 use Embed\Http\DispatcherInterface;
 use Embed\Bag;
-use Embed\Embed;
 
 /**
  * Base class extended by all adapters.

@@ -4,7 +4,6 @@ namespace Embed\Providers;
 
 use Embed\Adapters\AdapterInterface;
 use Embed\Bag;
-use Embed\Embed;
 
 /**
  * Abstract class used by all providers.

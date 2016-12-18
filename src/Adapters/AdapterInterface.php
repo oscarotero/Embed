@@ -2,7 +2,6 @@
 
 namespace Embed\Adapters;
 
-use Embed\Http\Uri;
 use Embed\Http\DispatcherInterface;
 use Embed\Http\Response;
 use Embed\DataInterface;
