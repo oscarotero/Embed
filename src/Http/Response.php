@@ -11,13 +11,15 @@ use SimpleXMLElement;
  */
 class Response extends AbstractResponse
 {
+    protected $startingUri;
     protected $content;
     protected $xmlContent;
     protected $jsonContent;
     protected $htmlContent;
 
-    public function __construct($uri, $statusCode, $contentType, $content, array $headers)
+    public function __construct(Uri $startingUri, $uri, $statusCode, $contentType, $content, array $headers)
     {
+        $this->startingUri = $startingUri;
         parent::__construct($uri, $statusCode, $contentType, $headers);
         $this->setContent($content);
     }
@@ -30,6 +32,16 @@ class Response extends AbstractResponse
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Get the starting uri.
+     *
+     * @return Uri
+     */
+    public function getStartingUri()
+    {
+        return $this->startingUri;
     }
 
     /**

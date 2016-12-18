@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Http\Request;
+use Embed\Http\Response;
 use Embed\Utils;
 use Embed\Providers\Api;
 
@@ -14,10 +14,8 @@ class Google extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        $response = $request->getResponse();
-
         return $response->isValid() && $response->getUri()->match([
             'maps.google.*',
             'www.google.*/maps*',
@@ -30,9 +28,9 @@ class Google extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function __construct(Request $request, array $config = [])
+    protected function init()
     {
-        parent::__construct($request, $config);
+        parent::init();
 
         if ($this->getResponse()->getUri()->match('*/maps/*')) {
             $this->providers = ['google' => new Api\GoogleMaps($this)] + $this->providers;

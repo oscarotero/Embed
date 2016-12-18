@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Http\Request;
+use Embed\Http\Response;
 
 /**
  * Adapter to provide information from youtube.
@@ -13,10 +13,8 @@ class Youtube extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        $response = $request->getResponse();
-
         return $response->isValid([200, 429]) && $response->getUri()->match([
             '*.youtube.*',
         ]);

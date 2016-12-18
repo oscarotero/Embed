@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Http\Request;
+use Embed\Http\Response;
 use Embed\Utils;
 use Embed\Providers;
 
@@ -39,20 +39,16 @@ class File extends Adapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        $response = $request->getResponse();
-
         return $response->isValid() && isset(self::$contentTypes[$response->getContentType()]);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function __construct(Request $request, array $config = [])
+    protected function init()
     {
-        parent::__construct($request, $config);
-
         $this->providers = [
             'oembed' => new Providers\OEmbed($this),
         ];

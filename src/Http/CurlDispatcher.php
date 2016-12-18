@@ -86,6 +86,7 @@ class CurlDispatcher implements DispatcherInterface
         curl_close($connection);
 
         return new Response(
+            $uri,
             $result['uri'],
             $result['statusCode'],
             $result['contentType'],

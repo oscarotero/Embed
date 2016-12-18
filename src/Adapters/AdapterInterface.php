@@ -3,7 +3,7 @@
 namespace Embed\Adapters;
 
 use Embed\Http\Uri;
-use Embed\Http\Request;
+use Embed\Http\DispatcherInterface;
 use Embed\Http\Response;
 use Embed\DataInterface;
 
@@ -13,37 +13,29 @@ use Embed\DataInterface;
 interface AdapterInterface extends DataInterface
 {
     /**
-     * Checks whether the request is valid to this Adapter.
+     * Checks whether the response is valid to this Adapter.
      *
-     * @param Request $request
+     * @param Response $response
      *
      * @return bool
      */
-    public static function check(Request $request);
+    public static function check(Response $response);
 
     /**
      * Constructor.
      *
-     * @param Request    $request
-     * @param null|array $config
+     * @param Response  $response
+     * @param array $config
+     * @param DispatcherInterface $dispatcher
      */
-    public function __construct(Request $request, array $config = []);
+    public function __construct(Response $response, array $config, DispatcherInterface $dispatcher);
 
     /**
-     * Returns the request instance.
+     * Returns the dispatcher used.
      *
-     * @return Request
+     * @return DispatcherInterface
      */
-    public function getRequest();
-
-    /**
-     * Creates a sub-request instance.
-     *
-     * @param Uri|string $uri
-     *
-     * @return Request
-     */
-    public function createRequest($uri);
+    public function getDispatcher();
 
     /**
      * Returns the main response instance.

@@ -20,9 +20,9 @@ class Archive extends Provider implements ProviderInterface
         parent::__construct($adapter);
 
         $endPoint = $adapter->getResponse()->getUri()->withQueryParameter('output', 'json');
-        $request = $adapter->createRequest($endPoint);
+        $response = $adapter->getDispatcher()->dispatch($endPoint);
 
-        if (($json = $request->getResponse()->getJsonContent())) {
+        if (($json = $response->getJsonContent())) {
             $this->bag->set($json);
         }
     }

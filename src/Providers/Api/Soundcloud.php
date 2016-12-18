@@ -29,9 +29,9 @@ class Soundcloud extends Provider implements ProviderInterface
                     'url' => (string) $adapter->getResponse()->getUri(),
                 ]);
 
-            $request = $adapter->createRequest($endPoint);
+            $response = $adapter->getDispatcher()->dispatch($endPoint);
 
-            if ($json = $request->getResponse()->getJsonContent()) {
+            if ($json = $response->getJsonContent()) {
                 $this->bag->set($json);
             }
         }

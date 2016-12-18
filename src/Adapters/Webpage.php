@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Http\Request;
+use Embed\Http\Response;
 use Embed\Providers;
 
 /**
@@ -13,18 +13,16 @@ class Webpage extends Adapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->getResponse()->isValid();
+        return $response->isValid();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function __construct(Request $request, array $config = [])
+    protected function init()
     {
-        parent::__construct($request, $config);
-
         $this->providers = [
             'oembed' => new Providers\OEmbed($this),
             'opengraph' => new Providers\OpenGraph($this),

@@ -3,7 +3,8 @@
 namespace Embed\Adapters;
 
 use Embed\Http\Uri;
-use Embed\Http\Request;
+use Embed\Http\Response;
+use Embed\Http\DispatcherInterface;
 use Embed\Bag;
 use Embed\Embed;
 
@@ -37,17 +38,26 @@ use Embed\Embed;
 abstract class Adapter
 {
     protected $config;
-    protected $request;
+    protected $dispatcher;
+    protected $response;
     protected $providers = [];
 
     /**
      * {@inheritdoc}
      */
-    public function __construct(Request $request, array $config = [])
+    public function __construct(Response $response, array $config, DispatcherInterface $dispatcher)
     {
-        $this->request = $request;
+        $this->response = $response;
         $this->config = new Bag($config);
+        $this->dispatcher = $dispatcher;
+
+        $this->init();
     }
+
+    /**
+     * Initialize the providers
+     */
+    abstract protected function init();
 
     /**
      * Magic method to execute methods on get paramaters
@@ -69,17 +79,9 @@ abstract class Adapter
     /**
      * {@inheritdoc}
      */
-    public function getRequest()
+    public function getDispatcher()
     {
-        return $this->request;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function createRequest($uri)
-    {
-        return new Request($uri, $this->request->getDispatcher());
+        return $this->dispatcher;
     }
 
     /**
@@ -87,7 +89,7 @@ abstract class Adapter
      */
     public function getResponse()
     {
-        return $this->request->getResponse();
+        return $this->response;
     }
 
     /**
@@ -95,7 +97,9 @@ abstract class Adapter
      */
     public function getConfig($name, $default = null)
     {
-        return $this->config->get($name, $default);
+        $value = $this->config->get($name);
+
+        return $value === null ? $default : $value;
     }
 
     /**
@@ -580,7 +584,7 @@ abstract class Adapter
                     'mime' => $response->getContentType(),
                 ];
             },
-            $this->getRequest()->getDispatcher()->dispatchImages($requests)
+            $this->getDispatcher()->dispatchImages($requests)
         );
     }
 

@@ -3,6 +3,7 @@
 namespace Embed\Providers\Api;
 
 use Embed\Embed;
+use Embed\Http\Uri;
 use Embed\Adapters\AdapterInterface;
 use Embed\Providers\Provider;
 use Embed\Providers\ProviderInterface;
@@ -20,10 +21,10 @@ class Imageshack extends Provider implements ProviderInterface
         parent::__construct($adapter);
 
         $id = $adapter->getResponse()->getUri()->getDirectoryPosition(1);
-        $endPoint = 'https://api.imageshack.com/v2/images/'.$id;
-        $request = $adapter->createRequest($endPoint);
+        $endPoint = Uri::create('https://api.imageshack.com/v2/images/'.$id);
+        $response = $adapter->getDispatcher()->dispatch($endPoint);
 
-        if (($json = $request->getResponse()->getJsonContent()) && !empty($json['result'])) {
+        if (($json = $response->getJsonContent()) && !empty($json['result'])) {
             $this->bag->set($json['result']);
         }
     }

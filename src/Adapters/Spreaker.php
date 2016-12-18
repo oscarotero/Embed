@@ -3,7 +3,7 @@
 namespace Embed\Adapters;
 
 use Embed\Utils;
-use Embed\Http\Request;
+use Embed\Http\Response;
 use Embed\Http\Uri;
 
 /**
@@ -14,10 +14,8 @@ class Spreaker extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        $response = $request->getResponse();
-
         return $response->isValid() && $response->getUri()->match([
             'www.spreaker.com/*',
         ]);

@@ -33,9 +33,9 @@ class Wikipedia extends Provider implements ProviderInterface
                     'prop' => 'images',
                 ]);
 
-            $request = $adapter->createRequest($endPoint);
+            $response = $adapter->getDispatcher()->dispatch($endPoint);
 
-            if (($json = $request->getResponse()->getJsonContent())) {
+            if (($json = $response->getJsonContent())) {
                 $this->bag->set('images', $json);
             }
 
@@ -44,9 +44,9 @@ class Wikipedia extends Provider implements ProviderInterface
                 ->withQueryParameter('prop', 'extracts')
                 ->withQueryParameter('exchars', 1500);
 
-            $request = $adapter->createRequest($endPoint);
+            $response = $adapter->getDispatcher()->dispatch($endPoint);
 
-            if (($json = $request->getResponse()->getJsonContent())) {
+            if (($json = $response->getJsonContent())) {
                 $this->bag->set('extracts', $json);
             }
         }
@@ -118,8 +118,8 @@ class Wikipedia extends Provider implements ProviderInterface
                         'titles' => implode('|', $imgs),
                     ]);
 
-                $request = $this->adapter->createRequest($endPoint);
-                $json = $request->getResponse()->getJsonContent();
+                $response = $this->adapter->getDispatcher()->dispatch($endPoint);
+                $json = $response->getJsonContent();
 
                 if (isset($json['query']['pages'])) {
                     foreach ($json['query']['pages'] as $page) {

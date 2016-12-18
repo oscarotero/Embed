@@ -2,7 +2,7 @@
 
 namespace Embed\Adapters;
 
-use Embed\Http\Request;
+use Embed\Http\Response;
 
 /**
  * Adapter to get more info from parleys.com.
@@ -12,10 +12,8 @@ class Parleys extends Webpage implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        $response = $request->getResponse();
-
         return $response->isValid() && $response->getUri()->match([
             'www.parleys.com/play/*',
         ]);

@@ -245,7 +245,7 @@ echo $oembed->getTitle();
 echo $oembed->bag->get('author_name');
 ```
 
-You can access also to the main request/response objects to inspect, for example, the headers returned:
+You can access also to the response object to inspect, for example, the headers returned:
 
 ```php
 use Embed\Embed;
