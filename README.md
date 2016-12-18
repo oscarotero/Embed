@@ -167,7 +167,7 @@ class MyDispatcher implements DispatcherInterface
     {
         $result = function_to_execute_request($uri);
 
-        return new Response($result['uri'], $result['status'], $result['type'], $result['content'], $result['headers']);
+        return new Response($uri, $result['uri'], $result['status'], $result['type'], $result['content'], $result['headers']);
     }
 
     public function dispatchImages(array $uris)
@@ -178,7 +178,7 @@ class MyDispatcher implements DispatcherInterface
             $result = function_to_get_image_size($uri);
 
             if ($result) {
-                $responses[] = new ImageResponse($result['uri'], $result['status'], $result['type'], $result['size'], $result['headers']);
+                $responses[] = new ImageResponse($uri, $result['uri'], $result['status'], $result['type'], $result['size'], $result['headers']);
             }
         }
 
@@ -224,7 +224,7 @@ $info = Embed::create($request);
 
 ### Accessing to more data
 
-The adapter get the data from all providers and choose the best values. But you can get all available values accessing directly to each provider:
+The adapter get the data from all providers and choose the best values. But you can get all available values accessing directly to each provider. There's also the possibility to inspect all http request executed for debug purposes:
 
 ```php
 use Embed\Embed;
@@ -243,24 +243,23 @@ echo $oembed->getTitle();
 
 //Get any value returned by the oembed api
 echo $oembed->bag->get('author_name');
-```
 
-You can access also to the response object to inspect, for example, the headers returned:
-
-```php
-use Embed\Embed;
-
-//Get the info
-$info = Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
-
-//Get the main response
+//Get the main response object
 $response = $info->getResponse();
 
-//Get a header
+//Get any http response header
 $lastModified = $response->getHeader('Last-Modifier');
 
 //Get the html body as DOMDocument
 $html = $response->getHtmlContent();
+
+//Get all http request executed (oembed endpoints, images, apis, etc...)
+$dispatcher = $adapter->getDispatcher();
+
+foreach ($dispatcher->getAllResponses() as $response) {
+    echo 'The request to '.$response->getStartingUrl();
+    echo ' is resolved to '.$response->getUrl();
+}
 ```
 
 ---

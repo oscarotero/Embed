@@ -27,6 +27,7 @@ class ImageResponse extends AbstractResponse
         if (($info = getimagesizefromstring(base64_decode(substr($pieces[1], 7)))) !== false) {
             return new self(
                 $uri,
+                $uri,
                 200,
                 $info['mime'],
                 [$info[0], $info[1]],
@@ -35,9 +36,9 @@ class ImageResponse extends AbstractResponse
         }
     }
 
-    public function __construct($uri, $statusCode, $contentType, $size, array $headers)
+    public function __construct(Uri $startingUri, Uri $uri, $statusCode, $contentType, $size, array $headers)
     {
-        parent::__construct($uri, $statusCode, $contentType, $headers);
+        parent::__construct($startingUri, $uri, $statusCode, $contentType, $headers);
         $this->size = $size;
     }
 

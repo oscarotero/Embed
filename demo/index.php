@@ -250,33 +250,18 @@ $adapterData = [
                 </table>
                 <?php endforeach ?>
 
-                <?php /*
-                <h2>Http request info</h2>
+                <h2>Http requests</h2>
 
                 <table>
-                    <?php foreach ($info->getRequest()->getRequestInfo() as $name => $value): ?>
+                    <?php foreach ($info->getDispatcher()->getAllResponses() as $response): ?>
                     <tr>
-                        <th><?php echo $name; ?></th>
-                        <td><?php printAny($value); ?></td>
+                        <th><?= $response->getUri() ?></th>
                     </tr>
-                    <?php endforeach ?>
                     <tr>
-                        <th>headers</th>
-                        <td><?php printHeaders($info->getRequest()->getHeaders()); ?></td>
-                    </tr>
-                </table>
-
-                <h2>Http request images headers</h2>
-
-                <table>
-                    <?php foreach ($info->getImagesRequests() as $url => $request): ?>
-                    <tr>
-                        <th><?php echo $request->getUrl(); ?></th>
-                        <td><?php printHeaders($request->getHeaders()); ?></td>
+                        <td><?php printHeaders($response->getHeaders()); ?></td>
                     </tr>
                     <?php endforeach ?>
                 </table>
-                */ ?>
 
                 <h2>Content</h2>
 
@@ -287,6 +272,5 @@ $adapterData = [
         </section>
 
         <?php endif; ?>
-
     </body>
 </html>

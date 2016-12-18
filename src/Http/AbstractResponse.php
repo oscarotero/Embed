@@ -7,21 +7,29 @@ namespace Embed\Http;
  */
 abstract class AbstractResponse
 {
+    protected $startingUri;
     protected $uri;
     protected $statusCode;
     protected $contentType;
     protected $headers;
 
-    public function __construct($uri, $statusCode, $contentType, array $headers)
+    public function __construct(Uri $startingUri, Uri $uri, $statusCode, $contentType, array $headers)
     {
-        if (!($uri instanceof Uri)) {
-            $uri = Uri::create($uri);
-        }
-
+        $this->startingUri = $startingUri;
         $this->uri = $uri;
         $this->statusCode = $statusCode;
         $this->contentType = $contentType;
         $this->headers = $headers;
+    }
+
+    /**
+     * Get the starting uri.
+     *
+     * @return Uri
+     */
+    public function getStartingUri()
+    {
+        return $this->startingUri;
     }
 
     /**

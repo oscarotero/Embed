@@ -10,6 +10,8 @@ use Embed\Exceptions\EmbedException;
  */
 class CurlDispatcher implements DispatcherInterface
 {
+    private $responses = [];
+
     private $config = [
         CURLOPT_MAXREDIRS => 20,
         CURLOPT_CONNECTTIMEOUT => 10,
@@ -44,6 +46,16 @@ class CurlDispatcher implements DispatcherInterface
 
         $this->config[CURLOPT_COOKIEJAR] = $cookies;
         $this->config[CURLOPT_COOKIEFILE] = $cookies;
+    }
+
+    /**
+     * Return all responses for debug purposes
+     *
+     * @return AbstractResponse[]
+     */
+    public function getAllResponses()
+    {
+        return $this->responses;
     }
 
     /**
@@ -85,9 +97,9 @@ class CurlDispatcher implements DispatcherInterface
 
         curl_close($connection);
 
-        return new Response(
+        return $this->responses[] = new Response(
             $uri,
-            $result['uri'],
+            Uri::create($result['uri']),
             $result['statusCode'],
             $result['contentType'],
             $result['content'],
@@ -178,8 +190,9 @@ class CurlDispatcher implements DispatcherInterface
                 $result = $connection->getResult();
 
                 if (!empty($result['data']->mime)) {
-                    $responses[$k] = new ImageResponse(
-                        $result['uri'],
+                    $responses[$k] = $this->responses[] = new ImageResponse(
+                        $uris[$k],
+                        Uri::create($result['uri']),
                         $result['statusCode'],
                         $result['contentType'],
                         [$result['data']->width, $result['data']->height],
