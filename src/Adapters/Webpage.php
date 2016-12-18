@@ -2,7 +2,6 @@
 
 namespace Embed\Adapters;
 
-use Embed\Http\Response;
 use Embed\Providers;
 
 /**
