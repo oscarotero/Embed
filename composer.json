@@ -26,13 +26,11 @@
     "require": {
         "php": "^5.5|^7.0",
         "ext-curl": "*",
-        "ext-mbstring": "*",
-        "psr/log": "^1.0"
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "friendsofphp/php-cs-fixer": "^2.0",
-        "monolog/monolog": "^1.22"
+        "friendsofphp/php-cs-fixer": "^2.0"
     },
     "autoload": {
         "psr-4": {

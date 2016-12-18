@@ -241,15 +241,11 @@ class OEmbed extends Provider implements ProviderInterface
 
                     $this->bag->set($element->getName(), $content);
                 }
-            } else {
-                Embed::log('error', 'Oembed endpoint fail', ['url' => $response->getUri(), 'response' => $xml]);
             }
         // extract from json
         } else {
             if (($json = $response->getJsonContent()) && empty($json['Error'])) {
                 $this->bag->set($json);
-            } else {
-                Embed::log('error', 'Oembed endpoint fail', ['url' => $response->getUri(), 'response' => $json]);
             }
         }
     }

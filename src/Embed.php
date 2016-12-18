@@ -5,42 +5,9 @@ namespace Embed;
 use Embed\Adapters\AdapterInterface;
 use Embed\Http\Uri;
 use Embed\Http\Request;
-use Psr\Log\LoggerInterface;
 
 abstract class Embed
 {
-    private static $logger;
-
-    /**
-     * Define a logger used to debug.
-     *
-     * @param LoggerInterface $logger
-     */
-    public static function setLogger(LoggerInterface $logger = null)
-    {
-        self::$logger = $logger;
-    }
-
-    /**
-     * Saves a message in the logger.
-     *
-     * @param mixed  $level
-     * @param string $message
-     * @param array  $context
-     */
-    public static function log($level, $message, array $context = [])
-    {
-        if (self::$logger !== null) {
-            foreach ($context as &$value) {
-                if (is_object($value)) {
-                    $value = (string) $value;
-                }
-            }
-
-            self::$logger->log($level, $message, $context);
-        }
-    }
-
     /**
      * Gets the info from an url.
      *
@@ -62,11 +29,6 @@ abstract class Embed
         $to = preg_replace('|^(\w+://)|', '', rtrim($info->url, '/'));
 
         if ($from !== $to && empty($info->code)) {
-            Embed::log('debug', 'Repeat', [
-                'from' => $from,
-                'to' => $to,
-            ]);
-
             return self::process(new Request($info->url, $request->getDispatcher()), $config);
         }
 
@@ -102,6 +64,8 @@ abstract class Embed
             return new Adapters\Webpage($request, $config);
         }
 
-        throw new Exceptions\InvalidUrlException(sprintf("Invalid url '%s' (status code: )", (string) $request->getUri(), $request->getResponse()->getStatusCode()));
+        var_dump($request->getResponse()->getStatusCode());
+
+        throw new Exceptions\InvalidUrlException(sprintf("Invalid url '%s'", (string) $request->getUri(), $request->getResponse()->getStatusCode()));
     }
 }

@@ -21,7 +21,6 @@ abstract class Provider
     {
         $this->bag = new Bag();
         $this->adapter = $adapter;
-        Embed::log('debug', 'Provider', ['class' => get_class($this)]);
     }
 
     /**

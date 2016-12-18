@@ -27,9 +27,7 @@ abstract class Redirects
     {
         foreach (self::$patterns as $method => $pattern) {
             if ($uri->match($pattern)) {
-                $newUri = self::$method($uri);
-                Embed::log('debug', 'Redirect', ['uri' => $newUri]);
-                return $newUri;
+                return self::$method($uri);
             }
         }
 

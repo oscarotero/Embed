@@ -2,7 +2,7 @@
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 
-include __DIR__.'/../src/autoloader.php';
+include __DIR__.'/../vendor/autoload.php';
 
 function getUrl()
 {
@@ -150,7 +150,29 @@ $adapterData = [
         <title>Embed tests</title>
 
         <style type="text/css">
-            <?= file_get_contents(__DIR__.'/styles.css') ?>
+            body { font-family: Helvetica, Arial, sans-serif; min-width: 650px; margin: 0; padding: 0;}
+            a { color: inherit; font-size: 0.9em; }
+            a:hover { text-decoration: none; }
+            img { display: block; margin-bottom: 0.5em; }
+            pre { overflow: auto; background: #EEE; padding: 1em; }
+
+            /* form */
+            form { background: #EEE; border-bottom: solid 1px #DDD; color: #666; padding: 3em 1.5em; }
+            fieldset { border: none; padding: 0; }
+            label { display: block; cursor: pointer; font-weight: bold; }
+            input[type="url"] { border: none; background: white; border-radius: 2px; box-sizing: border-box; width: 100%; margin: 5px 0; font-size: 1.3em; padding: 0.5em; color: #666; }
+            button { font-size: 1.6rem; font-weight: bold; font-family: Arial; background: yellowgreen; border: none; border-radius: 2px; padding: 0.2em 1em; cursor: pointer; margin-top: 5px; }
+            button:hover { background: black; color: white; }
+
+            /* result */
+            section { padding: 1.5em; }
+            section h1, section h2 { font-size: 2em; color: #666; letter-spacing: -0.02em; }
+            section h2 { margin-top: 3em; }
+            table { text-align: left; width: 100%; table-layout: fixed; }
+            th, td { vertical-align: top; padding: 0.5em 1em 0.5em 0; border-top: solid 1px #DDD; }
+            th { width: 200px; }
+            #advanced-data { display: none; }
+            .view-advanced-data { margin: 2em 0; text-align: center; }
         </style>
     </head>
 

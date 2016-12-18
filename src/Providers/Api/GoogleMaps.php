@@ -61,7 +61,6 @@ class GoogleMaps extends Provider implements ProviderInterface
         $key = $this->adapter->getConfig('google[key]');
 
         if (empty($key)) {
-            Embed::log('debug', 'No google API key configured');
             return;
         }
 

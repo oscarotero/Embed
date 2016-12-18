@@ -14,14 +14,16 @@ PHP library to get information from any web page (using oembed, opengraph, twitt
 
 Requirements:
 
-* PHP 5.4+
+* PHP 5.5+
 * Curl library installed
 
-If you need PHP 5.3 support, use the 1.x version (but not maintained anymore)
+> 
+* If you need PHP 5.3 support, use the 1.x version
+* If you need PHP 5.4 support, use the 2.x version
 
 ## Online demo
 
-http://oscarotero.com/embed2/demo
+http://oscarotero.com/embed3/demo
 
 ## Installation
 
@@ -29,12 +31,6 @@ This package is installable and autoloadable via Composer as [embed/embed](https
 
 ```
 $ composer require embed/embed
-```
-
-If you don't use composer, you have to download the package and include the autoloader:
-
-```php
-include('Embed/src/autoloader.php');
 ```
 
 ## Usage
@@ -74,67 +70,44 @@ $info->providerIcon; //The icon choosen as main icon
 $info->publishedDate; //The published date of the resource
 $info->license; //The license url of the resource
 $info->linkedData; //The linked-data info (http://json-ld.org/)
+$info->feeds; //The RSS/Atom feeds
 ```
-
-## Customization
-
-You can set some options using an array as second argument. In this array you can configure the adapters, providers, resolvers, etc.
 
 ### The adapter
 
 The adapter is the class that get all information of the page from the providers and choose the best result for each value. For example, a page can provide multiple titles from opengraph, twitter cards, oembed, the `<title>` html element, etc, so the adapter get all this titles and choose the best one.
 
-Embed has an generic adapter called "Webpage" to use in any web but has also some specific adapters for sites like archive.org, facebook, google, github, spotify, etc, that provides information using their own apis, or have any other special issue.
-
-You can configure these adapters and even create your own adapter, that must implement the `Embed\Adapters\AdapterInterface`.
-
+Embed has an generic adapter called "Webpage" to use with any web but has also some specific adapters for sites like archive.org, facebook, google, github, spotify, etc, that provides information using their own apis, or need to fix any specific issue.
 
 The available options for the adapters are:
 
-* minImageWidth (int): Minimal image width used to choose the main image
-* minImageHeight (int): Minimal image height used to choose the main image
-* imagesBlacklist (array): Images that you don't want to be used. Could be plain text or [Url](https://github.com/oscarotero/Embed/blob/master/src/Url.php) match pattern.
-* getBiggerImage (bool): Choose the bigger image as the main image (instead the first found, that usually is the most relevant).
-* getBiggerIcon (bool): The same than getBiggerImage but used to choose the main icon
-
-```php
-$config = [
-	'adapter' => [
-		'class' => 'MyCustomClass', //Your custom adapter
-
-		'config' => [
-			'minImageWidth' => 16,
-			'minImageHeight' => 16,
-			'imagesBlacklist' => null,
-			'getBiggerImage' => false,
-			'getBiggerIcon' => false,
-		]
-	]
-];
-```
+* min_image_width (int): Minimal image width used to choose the main image
+* min_image_height (int): Minimal image height used to choose the main image
+* images_blacklist (array): Images that you don't want to be used. Could be plain text or [Url](https://github.com/oscarotero/Embed/blob/master/src/Url.php) match pattern.
+* choose_bigger_image (bool): Choose the bigger image as the main image (instead the first found, that usually is the most relevant).
 
 ### The providers
 
-The providers get the data from different sources. Each source has it's own provider. For example, there is a provider for opengraph, other for twitter cards, for oembed, html, etc. The providers that receive options are:
+The providers get the data from different sources. Each source has it's own provider. For example, there is a provider for opengraph, other for twitter cards, for oembed, html, etc. Some providers can be configured and are the following:
 
 #### oembed
 
-Used to get data from oembed api if it's available. It accepts two options:
+Used to get data from oembed api if it's available:
 
 * parameters (array): Extra query parameters to send with the oembed request
-* embedlyKey (string): If it's defined, use embed.ly api as fallback oembed provider.
-* iframelyKey (string): If it's defined, use iframe.ly api as fallback oembed provider.
+* embedly_key (string): If it's defined, use embed.ly api as fallback oembed provider.
+* iframely_key (string): If it's defined, use iframe.ly api as fallback oembed provider.
 
 #### html
 
 Used to get data directly from the html code of the page:
 
-* maxImages (int): Max number of images fetched from the html code (searching for the `<img>` elements). By default is -1 (no limit). Use 0 to no get images.
-* externalImages (bool|array): By default is false, this means that images located in other domains are not allowed. You can set true (allow all) or provide an array of url patterns.
+* max_images (int): Max number of images fetched from the html code (searching for the `<img>` elements). By default is -1 (no limit). Use 0 to no get images.
+* external_images (bool|array): By default is false, this means that images located in other domains are not allowed. You can set true (allow all) or provide an array of url patterns.
 
 #### google
 
-This provider is used only for google maps, to generate the embed code [using the embed api](https://developers.google.com/maps/documentation/embed/)
+Used only for google maps to generate the embed code [using the embed api](https://developers.google.com/maps/documentation/embed/)
 
 * key (string): the key used
 
@@ -144,188 +117,152 @@ Used only for soundcloud pages, to get information using its api.
 
 * key (string): to get info from soundcloud API.
 
+### Example with all options:
 
-### The request resolver
-
-Embed uses the `Embed\RequestResolvers\Curl` class to resolve all requests using the curl library. You can set options to the curl request or use your custom resolver creating a class implementing the `Embed\RequestResolvers\RequestResolverInterface`.
-
-The resolver configuration is defined under the "resolver" key and it has two options:
-
-* class: Your custom class name if you want to use your own implementation
-* config: The options passed to the class. If you use the default curl class, the config are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
+The options are passed as the second argument as you can see in the following example:
 
 ```php
-// CURL
-$config = [
-    'resolver' => [
-        'class' => 'Embed\\RequestResolvers\\Curl', // The default resolver used
+$info = Embed::create($url, [
+    'min_image_width' => 100,
+    'min_image_height' => 100,
+    'images_blacklist' => 'example.com/*',
+    'choose_bigger_image' => true,
 
-        'config' => [
-            CURLOPT_MAXREDIRS => 20,
-            CURLOPT_CONNECTTIMEOUT => 10,
-            CURLOPT_TIMEOUT => 10,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
-            CURLOPT_ENCODING => '',
-            CURLOPT_AUTOREFERER => true,
-            CURLOPT_USERAGENT => 'Embed PHP Library',
-            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
-        ]
-    ]
-];
-
-// Guzzle (5.x)
-$config = [
-    'resolver' => [
-        'class' => 'Embed\\RequestResolvers\\Guzzle5', // Guzzle5 resolver used
-
-        'config' => [
-            // optional: if you need to use your custom Guzzle instance
-            'client' => $myGuzzleClient,
-        ]
-    ]
-];
-```
-
-[You can see here](https://github.com/oscarotero/Embed/tree/master/src/RequestResolvers) the RequestResolvers included.
-
-### Image info
-
-To check the images and get their mimetype and dimmensions, we have the class `Embed\ImageInfo\Curl`. This class uses curl to make request, get the first bytes to get the image type and dimmensions and close the connection. So the image wont be downloaded entirely, just until the downloaded data is enought to get this information.
-
-Like the resolver class, you can provide your own image class (it must implement the `Embed\ImageInfo\ImageInfoInterface`) and/or change the configuration. The available options are the same:
-
-* class: Your custom class name if you want to use your own implementation
-* config: The options passed to the class. If you use the default curl class, the config are the same than the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php)
-
-
-```php
-//CURL
-$config = [
-    'image' => [
-        'class' => 'Embed\\ImageInfo\\Curl', //The default imageInfo used
-
-        'config' => [
-            CURLOPT_MAXREDIRS => 20,
-            CURLOPT_CONNECTTIMEOUT => 10,
-            CURLOPT_TIMEOUT => 10,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
-            CURLOPT_ENCODING => '',
-            CURLOPT_AUTOREFERER => true,
-            CURLOPT_USERAGENT => 'Embed PHP Library',
-            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
-        ]
-    ]
-];
-
-// Guzzle (5.x)
-$config = [
-    'image' => [
-        'class' => 'Embed\\ImageInfo\\Guzzle5',
-
-        'config' => [
-            'client' => $myGuzzleClient,
-        ]
-    ]
-];
-```
-
-[You can see here](https://github.com/oscarotero/Embed/tree/master/src/ImageInfo) the ImageInfo implementations included.
-
-
-### Full configuration example
-
-
-```php
-use Embed\Embed;
-
-$config = [
-    'adapter' => [
-        'config' => [
-            'minImageWidth' => 16,
-            'minImageHeight' => 16,
-            'imagesBlacklist' => [
-                'http://example.com/full/path/to/image.jpg',
-                'http?://test.*/*.png/',
-                '*/bad_image.gif'
-            ]
-        ]
+    'html' => [
+        'max_images' => 10,
+        'external_images' => true
     ],
-    'providers' => [
-        'oembed' => [
-            'parameters' => [],
-            'embedlyKey' => null
-        ],
-        'html' => [
-            'maxImages' => 3
-        ],
-        'facebook' => [
-            'key' => 'our-access-token'
-        ]
+
+    'oembed' => [
+        'parameters' => [],
+        'embedly_key' => 'YOUR_KEY',
+        'iframely_key' => 'YOUR_KEY',
     ],
-    'resolver' => [
-        'config' => [
-            CURLOPT_USERAGENT => 'My spider',
-            CURLOPT_MAXREDIRS => 3
-        ]
-    ]
-    'image' => [
-        'class' => 'App\\MyImageInfoClass'
-    ]
-];
 
-//To use it:
-$info = Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE', $config);
+    'google' => [
+        'key' => 'YOUR_KEY',
+    ],
+
+    'soundcloud' => [
+        'key' => 'YOUR_KEY',
+    ],
+]);
 ```
 
-### Access to more data
+### Dispatcher
 
-As said before, the adapter get the data from all providers and choose the best values. But you can get the data returned by a specific provider:
+To dispatch the http request, Embed has the interface `Embed\Http\DispatcherInterface`. By default the curl library is used but you can create your own dispatcher to use any other library like [guzzle](https://github.com/guzzle/guzzle):
 
-```php
-use Embed\Embed;
-
-//Get the info
-$info = Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
-
-//Get the oembed provider
-$oembed = $info->getProvider('oembed');
-
-//Get the oembed title:
-echo $oembed->getTitle();
-
-//Get any value returned by oembed api
-echo $oembed->bag->get('author_name');
-```
-
-In versions >= 2.7, you can access also to the data returned by the requests:
+Create the dispatcher class:
 
 ```php
-use Embed\Embed;
+use Embed\Http\DispatcherInteface;
+use Embed\Http\Uri;
+use Embed\Http\Response;
+use Embed\Http\ImageResponse;
 
-//Get the info
-$info = Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
+class MyDispatcher implements DispatcherInterface
+{
+    public function dispatch(Uri $uri)
+    {
+        $result = function_to_execute_request($uri);
 
-//Get the request instance
-$request = $info->getRequest();
+        return new Response($result['uri'], $result['status'], $result['type'], $result['content'], $result['headers']);
+    }
 
-//Get the info returned by curl
-$request->getRequestInfo();
+    public function dispatchImages(array $uris)
+    {
+        $responses = [];
 
-//Get all http headers
-$request->getHeaders();
+        foreach ($uris as $uri) {
+            $result = function_to_get_image_size($uri);
 
-//Get all images requests
-foreach ($info->getImagesRequests() as $url => $request) {
-    $request->getHeaders();
+            if ($result) {
+                $responses[] = new ImageResponse($result['uri'], $result['status'], $result['type'], $result['size'], $result['headers']);
+            }
+        }
+
+        return $responses;
+    }
 }
 ```
 
-## Donations
+And to use it:
 
-If this library is useful for you, consider to donate to the author.
+```php
+use Embed\Embed;
+use Embed\Http\Request;
 
-[Buy me a beer :beer:](https://www.paypal.me/oscarotero)
+$request = new Request('http://example.com', new MyDispatcher());
 
-Thanks in advance!
+$info = Embed::create($request);
+```
+
+The default curl dispatcher accepts the same options that the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php). You can edit the default values:
+
+```php
+use Embed\Embed;
+use Embed\Http\Request;
+use Embed\Http\CurlDispatcher;
+
+$dispatcher = new CurlDispatcher([
+    CURLOPT_MAXREDIRS => 20,
+    CURLOPT_CONNECTTIMEOUT => 10,
+    CURLOPT_TIMEOUT => 10,
+    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_SSL_VERIFYHOST => false,
+    CURLOPT_ENCODING => '',
+    CURLOPT_AUTOREFERER => true,
+    CURLOPT_USERAGENT => 'Embed PHP Library',
+    CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+]);
+
+$request = new Request('http://example.com', $dispatcher);
+
+$info = Embed::create($request);
+```
+
+### Accessing to more data
+
+The adapter get the data from all providers and choose the best values. But you can get all available values accessing directly to each provider:
+
+```php
+use Embed\Embed;
+
+//Get the info
+$info = Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
+
+//Get all providers
+$providers = $info->getProviders();
+
+//Get the oembed provider
+$oembed = $providers['oembed'];
+
+//Get the oembed title value:
+echo $oembed->getTitle();
+
+//Get any value returned by the oembed api
+echo $oembed->bag->get('author_name');
+```
+
+You can access also to the main request/response objects to inspect, for example, the headers returned:
+
+```php
+use Embed\Embed;
+
+//Get the info
+$info = Embed::create('https://www.youtube.com/watch?v=PP1xn5wHtxE');
+
+//Get the main response
+$response = $info->getResponse();
+
+//Get a header
+$lastModified = $response->getHeader('Last-Modifier');
+
+//Get the html body as DOMDocument
+$html = $response->getHtmlContent();
+```
+
+---
+
+If this library is useful for you, say thanks [buying me a beer :beer:](https://www.paypal.me/oscarotero)!

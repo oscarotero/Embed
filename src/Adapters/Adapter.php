@@ -47,7 +47,6 @@ abstract class Adapter
     {
         $this->request = $request;
         $this->config = new Bag($config);
-        Embed::log('debug', 'Adapter', ['class' => get_class($this)]);
     }
 
     /**
@@ -425,7 +424,7 @@ abstract class Adapter
         $this->imageHeight = null;
 
         $images = $this->images;
-        $bigger = (bool) $this->getConfig('get_bigger_image');
+        $bigger = (bool) $this->getConfig('choose_bigger_image');
         $minWidth = $this->getConfig('min_image_width', 1);
         $minHeight = $this->getConfig('min_image_height', 1);
 

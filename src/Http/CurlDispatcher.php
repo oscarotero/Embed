@@ -18,6 +18,7 @@ class CurlDispatcher implements DispatcherInterface
         CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_ENCODING => '',
         CURLOPT_AUTOREFERER => true,
+        CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_USERAGENT => 'Embed PHP Library',
         CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
     ];
@@ -43,7 +44,6 @@ class CurlDispatcher implements DispatcherInterface
 
         $this->config[CURLOPT_COOKIEJAR] = $cookies;
         $this->config[CURLOPT_COOKIEFILE] = $cookies;
-        $this->config[CURLOPT_FOLLOWLOCATION] = !ini_get('open_basedir') && !filter_var(ini_get('safe_mode'), FILTER_VALIDATE_BOOLEAN);
     }
 
     /**
@@ -63,8 +63,6 @@ class CurlDispatcher implements DispatcherInterface
      */
     public function dispatch(Uri $uri)
     {
-        Embed::log('info', 'Request', ['uri' => $uri]);
-
         $connection = curl_init((string) $uri);
         curl_setopt_array($connection, $this->config);
 
@@ -81,9 +79,7 @@ class CurlDispatcher implements DispatcherInterface
             return !$data->isBinary;
         });
 
-        if (curl_exec($connection) === false && curl_errno($connection) !== 23) {
-            throw new EmbedException(sprintf('Error with the url %s (%s: %s)', (string) $uri, curl_errno($connection), curl_error($connection)));
-        }
+        curl_exec($connection);
 
         $result = $curl->getResult();
 
@@ -129,8 +125,6 @@ class CurlDispatcher implements DispatcherInterface
 
                 continue;
             }
-
-            Embed::log('info', 'Image', ['uri' => $uri]);
 
             $connection = curl_init((string) $uri);
 
@@ -178,10 +172,6 @@ class CurlDispatcher implements DispatcherInterface
 
             foreach ($connections as $k => $connection) {
                 $resource = $connection->getResource();
-
-                if (curl_errno($resource)) {
-                    Embed::log('info', 'Image.error', ['message' => curl_error($resource)]);
-                }
 
                 curl_multi_remove_handle($curl_multi, $resource);
                 $result = $connection->getResult();
