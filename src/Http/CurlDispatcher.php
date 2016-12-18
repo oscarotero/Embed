@@ -4,6 +4,7 @@ namespace Embed\Http;
 
 use Embed\Embed;
 use Embed\Exceptions\EmbedException;
+use stdClass;
 
 /**
  * Curl dispatcher.
@@ -146,7 +147,7 @@ class CurlDispatcher implements DispatcherInterface
 
             $curl = new CurlResult($connection);
 
-            $curl->onBody(function ($body, $data) use ($finfo, $mimetypes) {
+            $curl->onBody(function ($body, stdClass $data) use ($finfo, $mimetypes) {
                 if (empty($data->mime)) {
                     $data->mime = finfo_buffer($finfo, $body);
 

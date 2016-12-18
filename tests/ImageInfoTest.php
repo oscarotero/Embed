@@ -29,10 +29,6 @@ class ImageInfoTest extends AbstractTestCase
     {
         $dispatcher = new CurlDispatcher();
 
-        $result = $dispatcher->dispatchImages([
-            Uri::create('http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg'),
-        ]);
-
         $info = Embed::create('http://www.websiteoptimization.com/speed/tweak/inline-images/folder-test.html');
 
         $this->assertEquals(

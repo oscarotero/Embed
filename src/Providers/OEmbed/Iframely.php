@@ -4,7 +4,7 @@ namespace Embed\Providers\OEmbed;
 
 use Embed\Adapters\AdapterInterface;
 use Embed\Http\Response;
-use Embed\Url;
+use Embed\Http\Uri;
 
 class Iframely implements EndPointInterface
 {

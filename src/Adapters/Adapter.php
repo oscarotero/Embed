@@ -4,36 +4,13 @@ namespace Embed\Adapters;
 
 use Embed\Http\Uri;
 use Embed\Http\Response;
+use Embed\Http\ImageResponse;
 use Embed\Http\DispatcherInterface;
 use Embed\Bag;
 use Embed\Embed;
 
 /**
  * Base class extended by all adapters.
- *
- * @property null|string  $title
- * @property null|string  $description
- * @property null|string  $url
- * @property null|string  $type
- * @property array        $tags
- * @property array        $feeds
- * @property array        $images
- * @property array        $imagesUrls
- * @property null|string  $image
- * @property null|int     $imageWidth
- * @property null|int     $imageHeight
- * @property null|string  $code
- * @property null|int     $width
- * @property null|int     $height
- * @property null|float   $aspectRatio
- * @property null|string  $authorName
- * @property null|string  $authorUrl
- * @property array        $providerIcons
- * @property array        $providerIconsUrls
- * @property null|string  $providerIcon
- * @property null|string  $providerName
- * @property null|string  $providerUrl
- * @property null|string  $publishedTime
  */
 abstract class Adapter
 {
@@ -575,7 +552,7 @@ abstract class Adapter
         }
 
         return array_map(
-            function ($response) {
+            function (ImageResponse $response) {
                 return [
                     'url' => (string) $response->getUri(),
                     'width' => $response->getWidth(),
