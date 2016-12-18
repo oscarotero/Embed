@@ -51,7 +51,10 @@ abstract class Adapter implements DataInterface
      *
      * @return bool
      */
-    abstract public static function check(Response $response);
+    public static function check(Response $response)
+    {
+        return $response->isValid();
+    }
 
     /**
      * Constructor.

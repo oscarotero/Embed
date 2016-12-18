@@ -2,9 +2,8 @@
 
 namespace Embed\Tests;
 
-use PHPUnit_Framework_TestCase;
 use Embed\Embed;
-use Embed\Adapters\Adapter;
+use PHPUnit_Framework_TestCase;
 use InvalidArgumentException;
 
 /**

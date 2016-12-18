@@ -13,14 +13,6 @@ class Webpage extends Adapter
     /**
      * {@inheritdoc}
      */
-    public static function check(Response $response)
-    {
-        return $response->isValid();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     protected function init()
     {
         $this->providers = [
