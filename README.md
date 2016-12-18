@@ -73,7 +73,7 @@ $info->linkedData; //The linked-data info (http://json-ld.org/)
 $info->feeds; //The RSS/Atom feeds
 ```
 
-### The adapter
+## The adapter
 
 The adapter is the class that get all information of the page from the providers and choose the best result for each value. For example, a page can provide multiple titles from opengraph, twitter cards, oembed, the `<title>` html element, etc, so the adapter get all this titles and choose the best one.
 
@@ -81,43 +81,53 @@ Embed has an generic adapter called "Webpage" to use with any web but has also s
 
 The available options for the adapters are:
 
-* min_image_width (int): Minimal image width used to choose the main image
-* min_image_height (int): Minimal image height used to choose the main image
-* images_blacklist (array): Images that you don't want to be used. Could be plain text or [Url](https://github.com/oscarotero/Embed/blob/master/src/Url.php) match pattern.
-* choose_bigger_image (bool): Choose the bigger image as the main image (instead the first found, that usually is the most relevant).
+Name | Type | Description
+-----|------|------------
+`min_image_width` | `int` | Minimal image width used to choose the main image
+`min_image_height` | `int` | Minimal image height used to choose the main image
+`images_blacklist` | `string|array` | Images that you don't want to be used. Could be plain text or [Uri](https://github.com/oscarotero/Embed/blob/master/src/Uri.php) match pattern.
+`choose_bigger_image` | `bool` | Choose the bigger image as the main image (instead the first found, that usually is the most relevant).
 
-### The providers
+## The providers
 
 The providers get the data from different sources. Each source has it's own provider. For example, there is a provider for opengraph, other for twitter cards, for oembed, html, etc. Some providers can be configured and are the following:
 
-#### oembed
+### oembed
 
 Used to get data from oembed api if it's available:
 
-* parameters (array): Extra query parameters to send with the oembed request
-* embedly_key (string): If it's defined, use embed.ly api as fallback oembed provider.
-* iframely_key (string): If it's defined, use iframe.ly api as fallback oembed provider.
+Name | Type | Description
+-----|------|------------
+`parameters` | `array` | Extra query parameters to send with the oembed request
+`embedly_key` | `string` | If it's defined, use embed.ly api as fallback oembed provider.
+`iframely_key` | `string` | If it's defined, use iframe.ly api as fallback oembed provider.
 
-#### html
+### html
 
 Used to get data directly from the html code of the page:
 
-* max_images (int): Max number of images fetched from the html code (searching for the `<img>` elements). By default is -1 (no limit). Use 0 to no get images.
-* external_images (bool|array): By default is false, this means that images located in other domains are not allowed. You can set true (allow all) or provide an array of url patterns.
+Name | Type | Description
+-----|------|------------
+`max_images` | `int` | Max number of images fetched from the html code (searching for the `<img>` elements). By default is -1 (no limit). Use 0 to no get images.
+`external_images` | `bool|array` | By default is false, this means that images located in other domains are not allowed. You can set true (allow all) or provide an array of url patterns.
 
-#### google
+### google
 
-Used only for google maps to generate the embed code [using the embed api](https://developers.google.com/maps/documentation/embed/)
+Used only for google maps to generate the embed code.
 
-* key (string): the key used
+Name | Type | Description
+-----|------|------------
+`key` | `string` | The key used [for the embed api](https://developers.google.com/maps/documentation/embed/)
 
-#### soundcloud
+### soundcloud
 
 Used only for soundcloud pages, to get information using its api.
 
-* key (string): to get info from soundcloud API.
+Name | Type | Description
+-----|------|------------
+`key` | `string` | The key used to get info from soundcloud API.
 
-### Example with all options:
+## Example with all options:
 
 The options are passed as the second argument as you can see in the following example:
 
@@ -149,13 +159,12 @@ $info = Embed::create($url, [
 ]);
 ```
 
-### Dispatcher
+## The dispatcher
 
 To dispatch the http request, Embed has the interface `Embed\Http\DispatcherInterface`. By default the curl library is used but you can create your own dispatcher to use any other library like [guzzle](https://github.com/guzzle/guzzle):
 
-Create the dispatcher class:
-
 ```php
+use Embed\Embed;
 use Embed\Http\DispatcherInteface;
 use Embed\Http\Uri;
 use Embed\Http\Response;
@@ -185,24 +194,15 @@ class MyDispatcher implements DispatcherInterface
         return $responses;
     }
 }
-```
 
-And to use it:
-
-```php
-use Embed\Embed;
-use Embed\Http\Request;
-
-$request = new Request('http://example.com', new MyDispatcher());
-
-$info = Embed::create($request);
+//Use the dispatcher passing as third argument
+$info = Embed::create('http://example.com', [], new MyDispatcher());
 ```
 
 The default curl dispatcher accepts the same options that the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php). You can edit the default values:
 
 ```php
 use Embed\Embed;
-use Embed\Http\Request;
 use Embed\Http\CurlDispatcher;
 
 $dispatcher = new CurlDispatcher([
@@ -217,14 +217,12 @@ $dispatcher = new CurlDispatcher([
     CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
 ]);
 
-$request = new Request('http://example.com', $dispatcher);
-
-$info = Embed::create($request);
+$info = Embed::create('http://example.com', [], $dispatcher);
 ```
 
-### Accessing to more data
+## Accessing to advanced data
 
-The adapter get the data from all providers and choose the best values. But you can get all available values accessing directly to each provider. There's also the possibility to inspect all http request executed for debug purposes:
+The adapter get the data from all providers and choose the best values. But you can get all available values accessing directly to each provider. There's also the possibility to inspect all http requests executed for debug purposes:
 
 ```php
 use Embed\Embed;
