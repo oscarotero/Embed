@@ -32,10 +32,6 @@ abstract class AbstractTestCase extends PHPUnit_Framework_TestCase
      */
     protected function assertEmbed($url, array $info, array $config = [])
     {
-        if (getenv('embed_resolver')) {
-            $config['resolver'] = ['class' => 'Embed\\RequestResolvers\\'.getenv('embed_resolver')];
-        }
-
         $i = Embed::create($url, $config);
 
         foreach ($info as $name => $value) {
