@@ -161,33 +161,33 @@ $info = Embed::create($url, [
 
 ## The dispatcher
 
-To dispatch the http request, Embed has the interface `Embed\Http\DispatcherInterface`. By default the curl library is used but you can create your own dispatcher to use any other library like [guzzle](https://github.com/guzzle/guzzle):
+To dispatch the http request, Embed includes the interface `Embed\Http\DispatcherInterface`. By default the curl library is used but you can create your own dispatcher to use any other library like [guzzle](https://github.com/guzzle/guzzle):
 
 ```php
 use Embed\Embed;
 use Embed\Http\DispatcherInteface;
-use Embed\Http\Uri;
+use Embed\Http\Url;
 use Embed\Http\Response;
 use Embed\Http\ImageResponse;
 
 class MyDispatcher implements DispatcherInterface
 {
-    public function dispatch(Uri $uri)
+    public function dispatch(Url $url)
     {
-        $result = function_to_execute_request($uri);
+        $result = function_to_execute_request($url);
 
-        return new Response($uri, $result['uri'], $result['status'], $result['type'], $result['content'], $result['headers']);
+        return new Response($url, $result['url'], $result['status'], $result['type'], $result['content'], $result['headers']);
     }
 
-    public function dispatchImages(array $uris)
+    public function dispatchImages(array $urls)
     {
         $responses = [];
 
-        foreach ($uris as $uri) {
-            $result = function_to_get_image_size($uri);
+        foreach ($urls as $url) {
+            $result = function_to_get_image_size($url);
 
             if ($result) {
-                $responses[] = new ImageResponse($uri, $result['uri'], $result['status'], $result['type'], $result['size'], $result['headers']);
+                $responses[] = new ImageResponse($url, $result['url'], $result['status'], $result['type'], $result['size'], $result['headers']);
             }
         }
 
