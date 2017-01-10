@@ -438,7 +438,7 @@ abstract class Adapter implements DataInterface
 
             foreach ($images as $img) {
                 if ($biggest == $img['url']) {
-                    $image = $biggest;
+                    $image = $img;
                     break;
                 }
             }
