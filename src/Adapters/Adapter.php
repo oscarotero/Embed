@@ -430,11 +430,18 @@ abstract class Adapter implements DataInterface
         if ($bigger) {
             $sizes = [];
 
-            foreach ($images as $image) {
-                $sizes[$image['url']] = $image['size'];
+            foreach ($images as $img) {
+                $sizes[$img['url']] = $img['size'];
             }
 
-            $image = static::getBigger($sizes);
+            $biggest = static::getBigger($sizes);
+
+            foreach ($images as $img) {
+                if ($biggest == $img['url']) {
+                    $image = $biggest;
+                    break;
+                }
+            }
         } else {
             reset($images);
             $image = current($images);
