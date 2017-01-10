@@ -427,6 +427,9 @@ abstract class Adapter implements DataInterface
             return;
         }
 
+        reset($images);
+        $image = current($images);
+
         if ($bigger) {
             $sizes = [];
 
@@ -442,9 +445,6 @@ abstract class Adapter implements DataInterface
                     break;
                 }
             }
-        } else {
-            reset($images);
-            $image = current($images);
         }
 
         $this->imageWidth = $image['width'];
