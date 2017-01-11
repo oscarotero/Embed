@@ -52,6 +52,10 @@ abstract class AbstractTestCase extends PHPUnit_Framework_TestCase
                     $this->assertString($value, $i->$name);
                     break;
 
+                case 'images':
+                    $this->assertCount($value, $i->$name);
+                    break;
+
                 case 'code':
                     if ($value === true) {
                         $this->assertNotEmpty($value);

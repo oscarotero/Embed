@@ -4,6 +4,32 @@ ini_set('display_startup_errors', '1');
 
 include __DIR__.'/../vendor/autoload.php';
 
+$options = [
+    'min_image_width' => 100,
+    'min_image_height' => 100,
+    'images_blacklist' => null,
+    'choose_bigger_image' => true,
+
+    'html' => [
+        'max_images' => 10,
+        'external_images' => false
+    ],
+
+    'oembed' => [
+        'parameters' => [],
+        'embedly_key' => null,
+        'iframely_key' => null,
+    ],
+
+    'google' => [
+        'key' => null,
+    ],
+
+    'soundcloud' => [
+        'key' => null,
+    ],
+];
+
 function getUrl()
 {
     if (!isset($_GET['url'])) {
@@ -200,7 +226,7 @@ $adapterData = [
 
             <?php
             try {
-                $info = Embed\Embed::create(getUrl());
+                $info = Embed\Embed::create(getUrl(), $options);
             } catch (Exception $exception) {
                 echo '<p>'.$exception->getMessage().'</p>';
                 echo '</section>';
@@ -255,7 +281,7 @@ $adapterData = [
                 <table>
                     <?php foreach ($info->getDispatcher()->getAllResponses() as $response): ?>
                     <tr>
-                        <th><?= $response->getUri() ?></th>
+                        <th><?= $response->getUrl() ?></th>
                     </tr>
                     <tr>
                         <td><?php printHeaders($response->getHeaders()); ?></td>
