@@ -204,20 +204,9 @@ class Utils
             return $content;
         }
 
-        if (function_exists('iconv_set_encoding')) {
-            $prev = iconv_get_encoding('all');
-            iconv_set_encoding('php.input_encoding', $charset);
-            iconv_set_encoding('php.output_encoding', 'UTF-8');
-            ob_start('ob_iconv_handler');
-            echo $content;
-            $content = ob_get_clean();
-            iconv_set_encoding('php.input_encoding', $prev['input_encoding']);
-            iconv_set_encoding('php.output_encoding', $prev['output_encoding']);
+        $encodings = array_map('strtoupper', mb_list_encodings());
 
-            return $content;
-        }
-
-        if (function_exists('mb_convert_encoding')) {
+        if (in_array($charset, $encodings, true)) {
             return mb_convert_encoding($content, 'UTF-8', $charset);
         }
 
