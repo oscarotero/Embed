@@ -210,6 +210,10 @@ class Utils
             return mb_convert_encoding($content, 'UTF-8', $charset);
         }
 
+        if (function_exists('iconv')) {
+            return iconv($charset, 'UTF-8', $content);
+        }
+
         return $content;
     }
 }
