@@ -2,6 +2,7 @@
 
 namespace Embed\Http;
 
+use Embed\Utils;
 use Exception;
 use DOMDocument;
 use SimpleXMLElement;
@@ -131,13 +132,7 @@ class Response extends AbstractResponse
             list($mime, $charset) = array_map('trim', explode(';', $this->contentType));
 
             $this->contentType = $mime;
-
-            //Convert the content to UTF-8
-            $charset = substr(strtoupper(strstr($charset, '=')), 1);
-
-            if (!empty($charset) && !empty($content) && ($charset !== 'UTF-8')) {
-                $this->content = mb_convert_encoding($content, 'UTF-8', $charset);
-            }
+            $this->content = Utils::toUtf8($content, substr(strstr($charset, '='), 1));
         }
     }
 }

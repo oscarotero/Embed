@@ -187,4 +187,40 @@ class Utils
 
         return "$str>";
     }
+
+    /**
+     * Convert a string to utf-8.
+     *
+     * @param string $content  The content to convert
+     * @param string $charset The original charset
+     *
+     * @return string
+     */
+    public static function toUtf8($content, $charset)
+    {
+        $charset = strtoupper($charset);
+
+        if (empty($charset) || $charset === 'UTF-8') {
+            return $content;
+        }
+
+        if (function_exists('iconv_set_encoding')) {
+            $prev = iconv_get_encoding('all');
+            iconv_set_encoding('php.input_encoding', $charset);
+            iconv_set_encoding('php.output_encoding', 'UTF-8');
+            ob_start('ob_iconv_handler');
+            echo $content;
+            $content = ob_get_clean();
+            iconv_set_encoding('php.input_encoding', $prev['input_encoding']);
+            iconv_set_encoding('php.output_encoding', $prev['output_encoding']);
+
+            return $content;
+        }
+
+        if (function_exists('mb_convert_encoding')) {
+            return mb_convert_encoding($content, 'UTF-8', $charset);
+        }
+
+        return $content;
+    }
 }
