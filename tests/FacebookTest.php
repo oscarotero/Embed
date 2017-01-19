@@ -16,18 +16,6 @@ class FacebookTest extends AbstractTestCase
         );
     }
 
-    public function testCompanyPage()
-    {
-        $this->assertEmbed(
-            'https://www.facebook.com/TheIndependentOnline/posts/10153659888571636',
-            [
-                'width' => 552,
-                'code' => true,
-                'type' => 'rich',
-            ]
-        );
-    }
-
     public function testVideo()
     {
         $this->assertEmbed(
