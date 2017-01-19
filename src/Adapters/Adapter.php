@@ -78,7 +78,7 @@ abstract class Adapter implements DataInterface
     abstract protected function init();
 
     /**
-     * Magic method to execute methods on get paramaters
+     * Magic method to execute methods to return paramaters
      * For example, $source->sourceUrl executes $source->getSourceUrl().
      *
      * @param string $name The property name
@@ -92,6 +92,20 @@ abstract class Adapter implements DataInterface
         if (method_exists($this, $method)) {
             return $this->$name = $this->$method();
         }
+    }
+
+    /**
+     * Magic method to execute methods to check if parameters are empty
+     *
+     * @param string $name The property name
+     *
+     * @return bool
+     */
+    public function __isset($name)
+    {
+        $value = $this->$name;
+
+        return !empty($value);
     }
 
     /**

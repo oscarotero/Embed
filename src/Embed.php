@@ -30,7 +30,9 @@ abstract class Embed
 
         $info = self::process($url, $config, $dispatcher);
 
-        //if the canonical url is different, repeat the process
+        // Repeat the process if:
+        // - The canonical url is different
+        // - No embed code has found
         $from = preg_replace('|^(\w+://)|', '', rtrim((string) $info->getResponse()->getUrl(), '/'));
         $to = preg_replace('|^(\w+://)|', '', rtrim($info->url, '/'));
 
