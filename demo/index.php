@@ -224,17 +224,7 @@ $adapterData = [
         <section>
             <h1>Result:</h1>
 
-            <?php
-            try {
-                $info = Embed\Embed::create(getUrl(), $options);
-            } catch (Exception $exception) {
-                echo '<p>'.$exception->getMessage().'</p>';
-                echo '</section>';
-                echo '</body>';
-                echo '</html>';
-                die();
-            }
-            ?>
+            <?php $info = Embed\Embed::create(getUrl(), $options); ?>
 
             <table>
                 <?php foreach ($adapterData as $name => $fn): ?>
