@@ -111,6 +111,18 @@ class TwitterCards extends Provider
     /**
      * {@inheritdoc}
      */
+    public function getAuthorUrl()
+    {
+        $author = $this->getAuthorName();
+        
+        if (!empty($author)) {
+            return 'https://twitter.com/'.ltrim($author, '@');
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getImagesUrls()
     {
         return $this->normalizeUrls($this->bag->get('images'));

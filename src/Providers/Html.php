@@ -106,7 +106,7 @@ class Html extends Provider
      */
     public function getAuthorName()
     {
-        return $this->bag->get('author') ?: $this->bag->get('contributors');
+        return $this->bag->get('author') ?: $this->bag->get('article:author') ?: $this->bag->get('contributors');
     }
 
     /**
@@ -299,6 +299,10 @@ class Html extends Provider
 
             if ($meta->hasAttribute('http-equiv')) {
                 $this->bag->set($meta->getAttribute('http-equiv'), $value);
+            }
+
+            if ($meta->hasAttribute('property')) {
+                $this->bag->set($meta->getAttribute('property'), $value);
             }
         }
     }
