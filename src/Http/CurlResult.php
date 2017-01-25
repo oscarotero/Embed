@@ -39,6 +39,7 @@ class CurlResult
             'url' => isset($result['url']) ? $result['url'] : null,
             'statusCode' => isset($result['http_code']) ? $result['http_code'] : null,
             'contentType' => isset($result['content_type']) ? $result['content_type'] : null,
+            'info' => $result,
             'content' => $this->body,
             'headers' => $this->headers,
             'data' => $this->data,

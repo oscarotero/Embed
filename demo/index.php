@@ -224,7 +224,28 @@ $adapterData = [
         <section>
             <h1>Result:</h1>
 
-            <?php $info = Embed\Embed::create(getUrl(), $options); ?>
+            <?php
+            try {
+                $dispatcher = new Embed\Http\CurlDispatcher();
+                $info = Embed\Embed::create(getUrl(), $options, $dispatcher);
+            } catch (Exception $exception) {
+                echo '<table>';
+                foreach ($dispatcher->getAllResponses() as $response) {
+                    echo '<tr>';
+                    echo '<th>'.$response->getUrl().'</th>';
+                    echo '</tr><tr><td>';
+                    printHeaders($response->getHeaders());
+                    echo '</td><tr><td><pre>';
+                    printArray($response->getInfo());
+                    echo '</td><tr><td><pre>';
+                    printText($response->getContent());
+                    echo '</pre></td></tr>';
+                }
+                echo '</table>';
+
+                throw $exception;
+            }
+            ?>
 
             <table>
                 <?php foreach ($adapterData as $name => $fn): ?>

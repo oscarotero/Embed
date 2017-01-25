@@ -12,14 +12,16 @@ abstract class AbstractResponse
     protected $statusCode;
     protected $contentType;
     protected $headers;
+    protected $info;
 
-    public function __construct(Url $startingUrl, Url $url, $statusCode, $contentType, array $headers)
+    public function __construct(Url $startingUrl, Url $url, $statusCode, $contentType, array $headers, array $info)
     {
         $this->startingUrl = $startingUrl;
         $this->url = $url;
         $this->statusCode = $statusCode;
         $this->contentType = $contentType;
         $this->headers = $headers;
+        $this->info = $info;
     }
 
     /**
@@ -70,6 +72,16 @@ abstract class AbstractResponse
     public function getHeaders()
     {
         return $this->headers;
+    }
+
+    /**
+     * Returns extra http info.
+     *
+     * @return array
+     */
+    public function getInfo()
+    {
+        return $this->info;
     }
 
     /**

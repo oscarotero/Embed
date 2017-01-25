@@ -31,14 +31,15 @@ class ImageResponse extends AbstractResponse
                 200,
                 $info['mime'],
                 [$info[0], $info[1]],
+                [],
                 []
             );
         }
     }
 
-    public function __construct(Url $startingUrl, Url $url, $statusCode, $contentType, $size, array $headers)
+    public function __construct(Url $startingUrl, Url $url, $statusCode, $contentType, $size, array $headers, array $info)
     {
-        parent::__construct($startingUrl, $url, $statusCode, $contentType, $headers);
+        parent::__construct($startingUrl, $url, $statusCode, $contentType, $headers, $info);
         $this->size = $size;
     }
 
