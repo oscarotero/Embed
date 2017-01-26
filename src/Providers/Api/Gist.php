@@ -28,11 +28,35 @@ class Gist extends Provider
     /**
      * {@inheritdoc}
      */
+    public function getDescription()
+    {
+        return $this->bag->get('description');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getType()
     {
         if ($this->getCode() !== null) {
             return 'rich';
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAuthorName()
+    {
+        return $this->bag->get('owner');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getPublishedTime()
+    {
+        return $this->bag->get('created_at');
     }
 
     /**
