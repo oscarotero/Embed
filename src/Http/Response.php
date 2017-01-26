@@ -42,7 +42,7 @@ class Response extends AbstractResponse
     {
         if ($this->htmlContent === null) {
             try {
-                if (($content = $this->content) === '') {
+                if (empty($content = $this->content)) {
                     return $this->htmlContent = false;
                 }
 

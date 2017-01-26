@@ -21,7 +21,7 @@ class CurlDispatcher implements DispatcherInterface
         CURLOPT_ENCODING => '',
         CURLOPT_AUTOREFERER => true,
         CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_USERAGENT => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:50.0) Gecko/20100101 Firefox/50.0',
+        CURLOPT_USERAGENT => 'Mozilla/5.0',
         CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
     ];
 

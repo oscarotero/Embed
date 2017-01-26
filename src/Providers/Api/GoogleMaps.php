@@ -53,6 +53,14 @@ class GoogleMaps extends Provider
     /**
      * {@inheritdoc}
      */
+    public function getProviderName()
+    {
+        return 'Google Maps';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getCode()
     {
         $url = $this->adapter->getResponse()->getUrl();

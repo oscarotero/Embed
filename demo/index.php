@@ -292,7 +292,13 @@ $adapterData = [
                 <table>
                     <?php foreach ($info->getDispatcher()->getAllResponses() as $response): ?>
                     <tr>
-                        <th><?= $response->getUrl() ?></th>
+                        <th>
+                            <?php if ((string) $response->getStartingUrl() !== (string) $response->getUrl()): ?>
+                                <?= $response->getStartingUrl() ?> <code>=&gt;</code>
+                            <?php endif ?>
+
+                            <?= $response->getUrl() ?>
+                        </th>
                     </tr>
                     <tr>
                         <td><?php printHeaders($response->getHeaders()); ?></td>
