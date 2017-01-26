@@ -33,7 +33,7 @@ This package is installable and autoloadable via Composer as [embed/embed](https
 $ composer require embed/embed
 ```
 
-If you cannot (or don't want to) use composer, a [PSR-4](https://packagist.org/search/?tags=PSR-4) loader is needed.
+If you cannot (or don't want to) use composer, just include the [PSR-4 autoload.php file](src/autoloader.php) in your code.
 
 ## Usage
 
