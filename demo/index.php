@@ -47,10 +47,6 @@ function getUrl()
         $url .= "&{$name}={$value}";
     }
 
-    if (!filter_var($url, FILTER_VALIDATE_URL)) {
-        return 'http://doNotTryToXSS.invalid';
-    }
-
     return $url;
 }
 

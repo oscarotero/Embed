@@ -504,7 +504,7 @@ class Url
      */
     protected function parseUrl($url)
     {
-        $this->info = parse_url($url);
+        $this->info = self::parse($url);
 
         if (isset($this->info['path'])) {
             $this->setPath($this->info['path']);
@@ -610,12 +610,43 @@ class Url
         }
     }
 
-    private function getSuffixes()
+    private static function getSuffixes()
     {
         if (self::$public_suffix_list === null) {
             self::$public_suffix_list = include __DIR__.'/../resources/public_suffix_list.php';
         }
 
         return self::$public_suffix_list;
+    }
+
+    /**
+     * UTF-8 compatible parse_url
+     * http://php.net/manual/en/function.parse-url.php#114817
+     *
+     * @param string $url
+     *
+     * @return string
+     */
+    private static function parse($url)
+    {
+        $enc_url = preg_replace_callback(
+            '%[^:/@?&=#]+%usD',
+            function ($matches) {
+                return urlencode($matches[0]);
+            },
+            $url
+        );
+
+        $parts = parse_url($enc_url);
+
+        if ($parts === false) {
+            throw new \InvalidArgumentException('Malformed URL: ' . $url);
+        }
+
+        foreach($parts as $name => $value) {
+            $parts[$name] = urldecode($value);
+        }
+
+        return $parts;
     }
 }

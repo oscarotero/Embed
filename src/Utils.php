@@ -211,7 +211,7 @@ class Utils
         }
 
         if (function_exists('iconv')) {
-            return iconv($charset, 'UTF-8', $content);
+            return iconv($charset, 'UTF-8//TRANSLIT//IGNORE', $content);
         }
 
         return $content;
