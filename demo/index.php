@@ -8,7 +8,7 @@ $options = [
     'min_image_width' => 100,
     'min_image_height' => 100,
     'images_blacklist' => null,
-    'choose_bigger_image' => true,
+    'choose_bigger_image' => false,
 
     'html' => [
         'max_images' => 10,
