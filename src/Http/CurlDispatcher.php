@@ -21,7 +21,7 @@ class CurlDispatcher implements DispatcherInterface
         CURLOPT_ENCODING => '',
         CURLOPT_AUTOREFERER => true,
         CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_USERAGENT => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36',
+        CURLOPT_USERAGENT => 'Embed PHP library',
         CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
     ];
 
@@ -80,6 +80,10 @@ class CurlDispatcher implements DispatcherInterface
         $connection = curl_init((string) $url);
         curl_setopt_array($connection, $this->config);
         curl_setopt($connection, CURLOPT_HTTPHEADER, ['Accept: text/html']);
+
+        if (($useragent = UserAgent::resolve($url)) !== null) {
+            curl_setopt($connection, CURLOPT_USERAGENT, $useragent);
+        }
 
         $curl = new CurlResult($connection);
 

@@ -31,11 +31,11 @@ class FileTest extends AbstractTestCase
     public function testOgg()
     {
         $this->assertEmbed(
-            'https://upload.wikimedia.org/wikipedia/commons/b/b5/I-15bis.ogg',
+            'https://ia801006.us.archive.org/34/items/popeye_349/popeye.ogv',
             [
                 'type' => 'video',
-                'code' => '<video controls><source src="https://upload.wikimedia.org/wikipedia/commons/b/b5/I-15bis.ogg"></video>',
-                'providerUrl' => 'https://wikimedia.org',
+                'code' => '<video controls><source src="https://ia801006.us.archive.org/34/items/popeye_349/popeye.ogv"></video>',
+                'providerUrl' => 'https://archive.org',
             ]
         );
     }
