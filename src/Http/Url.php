@@ -592,10 +592,10 @@ class Url
             $path = substr($path, 0, -strlen($file));
 
             if (preg_match('/(.*)\.([\w]+)$/', $file, $match)) {
-                $this->info['file'] = $match[1];
+                $this->info['file'] = urldecode($match[1]);
                 $this->info['extension'] = $match[2];
             } else {
-                $this->info['file'] = $file;
+                $this->info['file'] = urldecode($file);
             }
         }
 
