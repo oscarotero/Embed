@@ -29,7 +29,7 @@
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "*",
+        "phpunit/phpunit": "^4.8|^5.7",
         "friendsofphp/php-cs-fixer": "^2.0"
     },
     "autoload": {
