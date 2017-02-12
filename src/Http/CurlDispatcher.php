@@ -77,13 +77,33 @@ class CurlDispatcher implements DispatcherInterface
      */
     public function dispatch(Url $url)
     {
-        $connection = curl_init((string) $url);
-        curl_setopt_array($connection, $this->config);
-        curl_setopt($connection, CURLOPT_HTTPHEADER, ['Accept: text/html']);
+        $options = $this->config;
+        $options[CURLOPT_HTTPHEADER] = ['Accept: text/html'];
 
-        if (($useragent = UserAgent::resolve($url)) !== null) {
-            curl_setopt($connection, CURLOPT_USERAGENT, $useragent);
+        $response = $this->exec($url, $options);
+
+        //Some sites returns 403 with the default user-agent
+        if ($response->getStatusCode() === 403) {
+            $options[CURLOPT_USERAGENT] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36';
+
+            return $this->exec($url, $options);
         }
+
+        return $response;
+    }
+
+    /**
+     * Execute a curl request
+     *
+     * @param Url   $url 
+     * @param array $options
+     *
+     * @return Response
+     */
+    protected function exec(Url $url, array $options)
+    {
+        $connection = curl_init((string) $url);
+        curl_setopt_array($connection, $options);
 
         $curl = new CurlResult($connection);
 
@@ -114,6 +134,7 @@ class CurlDispatcher implements DispatcherInterface
             $result['info']
         );
     }
+
 
     /**
      * {@inheritdoc}
