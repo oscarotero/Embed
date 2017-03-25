@@ -7,10 +7,10 @@ class FileTest extends AbstractTestCase
     public function testJpg()
     {
         $this->assertEmbed(
-            'http://melihasweettimes.files.wordpress.com/2011/11/dsc01636.jpg',
+            'https://www.dreamhost.com/blog/wp-content/uploads/2015/10/DHC_blog-image-01-300x300.jpg',
             [
-                'imageWidth' => 1200,
-                'imageHeight' => 1600,
+                'imageWidth' => 300,
+                'imageHeight' => 300,
                 'type' => 'photo',
             ]
         );

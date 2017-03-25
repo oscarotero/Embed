@@ -7,9 +7,9 @@ class ImagesBlacklistTest extends AbstractTestCase
     public function testPlainText()
     {
         $this->assertEmbed(
-            'http://alistapart.com/article/the-rich-typefaces-get-richer',
+            'https://alistapart.com/article/the-rich-typefaces-get-richer',
             [
-                'image' => 'http://alistapart.com/d/_made/pix/authors/photos/shoaf-headshot_120_120_c1.jpg',
+                'image' => 'https://alistapart.com/d/_made/pix/authors/photos/shoaf-headshot_120_120_c1.jpg',
             ],
             [
                 'images_blacklist' => [
@@ -37,9 +37,9 @@ class ImagesBlacklistTest extends AbstractTestCase
     public function testAuthorizedImage()
     {
         $this->assertEmbed(
-            'http://alistapart.com/article/the-rich-typefaces-get-richer',
+            'https://alistapart.com/article/the-rich-typefaces-get-richer',
             [
-                'image' => 'http://alistapart.com/components/assets/img/ala-logo-big.png',
+                'image' => 'https://alistapart.com/components/assets/img/ala-logo-big.png',
             ],
             [
                 'images_blacklist' => [
