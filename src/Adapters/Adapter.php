@@ -146,7 +146,7 @@ abstract class Adapter implements DataInterface
     /**
      * Get all providers.
      *
-     * @return array
+     * @return Provider[]
      */
     public function getProviders()
     {
