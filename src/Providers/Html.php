@@ -251,8 +251,11 @@ class Html extends Provider
 
                     case 'alternate':
                         switch ($link->getAttribute('type')) {
-                            case 'application/rss+xml':
                             case 'application/atom+xml':
+                            case 'application/rdf+xml':
+                            case 'application/rss+xml':
+                            case 'application/xml':
+                            case 'text/xml':
                                 $this->bag->add('feeds', $href);
                                 break;
                         }
