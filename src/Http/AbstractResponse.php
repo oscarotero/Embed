@@ -18,7 +18,7 @@ abstract class AbstractResponse
     {
         $this->startingUrl = $startingUrl;
         $this->url = $url;
-        $this->statusCode = $statusCode;
+        $this->statusCode = (int)$statusCode;
         $this->contentType = $contentType;
         $this->headers = $headers;
         $this->info = $info;
