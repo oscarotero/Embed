@@ -22,9 +22,9 @@ class ImagesBlacklistTest extends AbstractTestCase
     public function testPlainUrlMatch()
     {
         $this->assertEmbed(
-            'http://alistapart.com/article/the-rich-typefaces-get-richer',
+            'https://alistapart.com/article/the-rich-typefaces-get-richer',
             [
-                'image' => 'http://alistapart.com/d/_made/pix/authors/photos/shoaf-headshot_120_120_c1.jpg',
+                'image' => 'https://alistapart.com/d/_made/pix/authors/photos/shoaf-headshot_120_120_c1.jpg',
             ],
             [
                 'images_blacklist' => [

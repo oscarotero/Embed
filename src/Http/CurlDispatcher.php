@@ -16,7 +16,7 @@ class CurlDispatcher implements DispatcherInterface
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_CONNECTTIMEOUT => 10,
         CURLOPT_TIMEOUT => 10,
-        CURLOPT_SSL_VERIFYHOST => false,
+        CURLOPT_SSL_VERIFYHOST => 0,
         CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_ENCODING => '',
         CURLOPT_AUTOREFERER => true,
@@ -85,6 +85,16 @@ class CurlDispatcher implements DispatcherInterface
         //Some sites returns 403 with the default user-agent
         if ($response->getStatusCode() === 403) {
             $options[CURLOPT_USERAGENT] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36';
+
+            return $this->exec($url, $options);
+        }
+
+        //Other sites needs a certificate
+        if ($response->getStatusCode() === 0 && strpos($response->getError(), 'SSL') !== false) {
+            $options[CURLOPT_SSL_VERIFYHOST] = 2;
+            $options[CURLOPT_SSL_VERIFYPEER] = true;
+            //https://curl.haxx.se/docs/caextract.html
+            $options[CURLOPT_CAINFO] = __DIR__.'/../resources/cacert.pem';
 
             return $this->exec($url, $options);
         }

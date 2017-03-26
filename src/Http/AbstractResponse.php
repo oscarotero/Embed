@@ -85,6 +85,16 @@ abstract class AbstractResponse
     }
 
     /**
+     * Returns dispatch error.
+     *
+     * @return string|null
+     */
+    public function getError()
+    {
+        return empty($this->info['error']) ? null : $this->info['error'];
+    }
+
+    /**
      * Get a header.
      *
      * @param string $name

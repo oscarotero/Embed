@@ -35,6 +35,10 @@ class CurlResult
     {
         $result = curl_getinfo($this->resource);
 
+        if (curl_errno($this->resource)) {
+            $result['error'] = curl_error($this->resource);
+        }
+
         return [
             'url' => isset($result['url']) ? $result['url'] : null,
             'statusCode' => isset($result['http_code']) ? $result['http_code'] : null,

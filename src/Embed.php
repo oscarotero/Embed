@@ -75,7 +75,11 @@ abstract class Embed
             return new Adapters\Webpage($response, $config, $dispatcher);
         }
 
-        $exception = new Exceptions\InvalidUrlException(sprintf("Invalid url '%s' (Status code %s)", (string) $url, $response->getStatusCode()));
+        if ($response->getError() === null) {
+            $exception = new Exceptions\InvalidUrlException(sprintf("Invalid url '%s' (Status code %s)", (string) $url, $response->getStatusCode()));
+        } else {
+            $exception = new Exceptions\InvalidUrlException($response->getError());
+        }
 
         $exception->setResponse($response);
 
