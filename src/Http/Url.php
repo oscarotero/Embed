@@ -305,7 +305,7 @@ class Url
         $path = !empty($this->info['path']) ? '/'.implode('/', array_map('urlencode', $this->info['path'])).'/' : '/';
 
         if (isset($this->info['file'])) {
-            $path .= $this->info['file'];
+            $path .= urlencode($this->info['file']);
 
             if (isset($this->info['extension'])) {
                 $path .= '.'.$this->info['extension'];
