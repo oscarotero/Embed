@@ -82,7 +82,7 @@ class UrlTest extends AbstractTestCase
     {
         $url = Url::create('https://en.wikipedia.org/wiki/Supernatural_(U.S._TV_series)');
         $this->assertNull($url->getExtension());
-        $this->assertSame('/wiki/Supernatural_(U.S._TV_series)', $url->getPath());
+        $this->assertSame('/wiki/Supernatural_%28U.S._TV_series%29', $url->getPath());
         $this->assertSame('Supernatural_(U.S._TV_series)', $url->getDirectoryPosition(1));
     }
 }
