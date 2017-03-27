@@ -17,7 +17,18 @@ class Response extends AbstractResponse
     protected $jsonContent;
     protected $htmlContent;
 
-    public function __construct(Url $startingUrl, Url $url, $statusCode, $contentType, $content, array $headers, array $info)
+    /**
+	 * Response constructor.
+	 *
+	 * @param Url $startingUrl
+	 * @param Url $url
+	 * @param int $statusCode
+	 * @param string|null $contentType
+	 * @param string $content
+	 * @param array $headers
+	 * @param array $info
+	 */
+    public function __construct(Url $startingUrl, Url $url, $statusCode, $contentType, $content, array $headers, array $info = [])
     {
         parent::__construct($startingUrl, $url, $statusCode, $contentType, $headers, $info);
         $this->setContent($content);
