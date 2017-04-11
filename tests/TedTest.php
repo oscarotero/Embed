@@ -16,7 +16,7 @@ class TedTest extends AbstractTestCase
                 'code' => '<iframe src="https://embed.ted.com/talks/george_monbiot_for_more_wonder_rewild_the_world" width="560" height="315" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>',
                 'type' => 'video',
                 'authorName' => 'George Monbiot',
-                'authorUrl' => 'http://www.ted.com/speakers/george_monbiot',
+                'authorUrl' => 'https://www.ted.com/speakers/george_monbiot',
                 'providerName' => 'TED',
             ]
         );
