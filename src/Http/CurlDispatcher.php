@@ -3,6 +3,7 @@
 namespace Embed\Http;
 
 use Embed\Exceptions\EmbedException;
+use Composer\CaBundle\CaBundle;
 use stdClass;
 
 /**
@@ -93,8 +94,7 @@ class CurlDispatcher implements DispatcherInterface
         if ($response->getStatusCode() === 0 && strpos($response->getError(), 'SSL') !== false) {
             $options[CURLOPT_SSL_VERIFYHOST] = 2;
             $options[CURLOPT_SSL_VERIFYPEER] = true;
-            //https://curl.haxx.se/docs/caextract.html
-            $options[CURLOPT_CAINFO] = __DIR__.'/../resources/cacert.pem';
+            $options[CURLOPT_CAINFO] = CaBundle::getSystemCaRootBundlePath();
 
             return $this->exec($url, $options);
         }

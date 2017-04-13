@@ -29,20 +29,35 @@ class OpenGraph extends Provider
                 continue;
             }
 
-            if (strpos($name, 'og:article:') === 0) {
-                $name = substr($name, 11);
-            } elseif (strpos($name, 'og:') === 0) {
+            if (strpos($name, 'og:') === 0) {
                 $name = substr($name, 3);
-            } else {
+            } elseif (
+                    strpos($name, 'article:') !== 0
+                 && strpos($name, 'image:') !== 0
+                 && strpos($name, 'video:') !== 0
+                 && strpos($name, 'book:') !== 0
+                 && strpos($name, 'music:') !== 0
+                 && strpos($name, 'profile:') !== 0
+            ) {
                 continue;
             }
 
-            if ($name === 'image') {
-                $this->bag->add('images', $value);
-            } elseif (strpos($name, ':tag') !== false) {
-                $this->bag->add('tags', $value);
-            } else {
-                $this->bag->set($name, $value);
+
+            switch ($name) {
+                case 'image':
+                case 'image:url':
+                case 'image:secure_url':
+                    $this->bag->add('images', $value);
+                    break;
+
+                case 'article:tag':
+                case 'video:tag':
+                case 'book:tag':
+                    $this->bag->add('tags', $value);
+                    break;
+                
+                default:
+                    $this->bag->set($name, $value);
             }
         }
     }
@@ -155,7 +170,7 @@ class OpenGraph extends Provider
      */
     public function getAuthorName()
     {
-        return $this->bag->get('author');
+        return $this->bag->get('article:author') ?: $this->bag->get('book:author');
     }
 
     /**
@@ -195,6 +210,17 @@ class OpenGraph extends Provider
      */
     public function getPublishedTime()
     {
-        return $this->bag->get('published_time') ?: $this->bag->get('updated_time');
+        return $this->bag->get('article:published_time')
+            ?: $this->bag->get('article:modified_time')
+            ?: $this->bag->get('video:release_date')
+            ?: $this->bag->get('music:release_date');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProviderUrl()
+    {
+        return $this->bag->get('website');
     }
 }
