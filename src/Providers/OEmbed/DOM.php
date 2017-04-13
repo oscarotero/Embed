@@ -6,6 +6,7 @@ use Embed\Adapters\Adapter;
 use Embed\Http\Response;
 use Embed\Http\Url;
 use DOMDocument;
+use Exception;
 
 /**
  * Class to detect the oembed endPoint.
@@ -46,7 +47,11 @@ class DOM implements EndPointInterface
         $html = $this->response->getHtmlContent();
 
         if ($html && ($url = self::getEndPointFromDom($html))) {
-            $endPoint = $this->response->getUrl()->createAbsolute($url);
+            try {
+                $endPoint = $this->response->getUrl()->createAbsolute($url);
+            } catch (Exception $exception) {
+                return null;
+            }
 
             if ($endPoint->getExtension() !== 'xml' && !$endPoint->hasQueryParameter('format')) {
                 return $endPoint->withQueryParameter('format', 'json');

@@ -336,7 +336,11 @@ class Html extends Provider
                 continue;
             }
 
-            $src = $url->createAbsolute($img->getAttribute('src'));
+            try {
+                $src = $url->createAbsolute($img->getAttribute('src'));
+            } catch (Exception $exception) {
+                continue;
+            }
 
             //Avoid external images
             if (!self::imageIsValid($src, $url, $externalImages)) {
@@ -350,7 +354,11 @@ class Html extends Provider
                 if ($parent->tagName === 'a') {
                     //The link is external
                     if ($parent->hasAttribute('href')) {
-                        $href = $url->createAbsolute($parent->getAttribute('href'));
+                        try {
+                            $href = $url->createAbsolute($parent->getAttribute('href'));
+                        } catch (Exception $exception) {
+                            //silenced error
+                        }
 
                         if (!self::imageIsValid($href, $url, $externalImages)) {
                             continue 2;
