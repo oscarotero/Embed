@@ -25,6 +25,10 @@ class OpenGraph extends Provider
             $name = trim(strtolower($meta->getAttribute('property')));
             $value = $meta->getAttribute('content');
 
+            if (empty($name)) {
+                $name = trim(strtolower($meta->getAttribute('name')));
+            }
+
             if (empty($name) || empty($value)) {
                 continue;
             }
