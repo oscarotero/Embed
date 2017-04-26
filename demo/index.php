@@ -5,8 +5,8 @@ ini_set('display_startup_errors', '1');
 include __DIR__.'/../vendor/autoload.php';
 
 $options = [
-    'min_image_width' => 100,
-    'min_image_height' => 100,
+    'min_image_width' => 60,
+    'min_image_height' => 60,
     'images_blacklist' => null,
     'choose_bigger_image' => false,
 
