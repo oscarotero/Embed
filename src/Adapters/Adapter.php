@@ -276,6 +276,22 @@ abstract class Adapter implements DataInterface
         return $code['code'];
     }
 
+    public function getHtml()
+    {
+        $code = $this->code;
+
+        $errors = libxml_use_internal_errors(true);
+        $entities = libxml_disable_entity_loader(true);
+
+        $dom = new \DOMDocument();
+        $dom->loadHTML(trim($code));
+
+        libxml_use_internal_errors($errors);
+        libxml_disable_entity_loader($entities);
+
+        //var_dump($dom->documentElement);
+    }
+
     /**
      * {@inheritdoc}
      */
