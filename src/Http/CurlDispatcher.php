@@ -91,7 +91,11 @@ class CurlDispatcher implements DispatcherInterface
         }
 
         //Other sites needs a certificate
-        if ($response->getStatusCode() === 0 && strpos($response->getError(), 'SSL') !== false) {
+        if (
+            class_exists('Composer\\CaBundle\\CaBundle')
+         && $response->getStatusCode() === 0 
+         && strpos($response->getError(), 'SSL') !== false
+        ) {
             $options[CURLOPT_SSL_VERIFYHOST] = 2;
             $options[CURLOPT_SSL_VERIFYPEER] = true;
             $options[CURLOPT_CAINFO] = CaBundle::getSystemCaRootBundlePath();
