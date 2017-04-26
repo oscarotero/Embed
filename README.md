@@ -1,14 +1,14 @@
-# Embed
 
-[![Build Status](https://travis-ci.org/oscarotero/Embed.svg?branch=master)](https://travis-ci.org/oscarotero/Embed)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/Embed/badges/quality-score.png?s=79e37032db280b9795388124c030dcf4309343d1)](https://scrutinizer-ci.com/g/oscarotero/Embed/)
-[![Reference Status](https://www.versioneye.com/php/embed:embed/reference_badge.svg?style=flat)](https://www.versioneye.com/php/embed:embed/references)
-[![Latest Stable Version](https://poser.pugx.org/embed/embed/v/stable)](https://packagist.org/packages/embed/embed)
-[![Total Downloads](https://poser.pugx.org/embed/embed/downloads)](https://packagist.org/packages/embed/embed)
-[![Monthly Downloads](https://poser.pugx.org/embed/embed/d/monthly)](https://packagist.org/packages/embed/embed)
-[![License](https://poser.pugx.org/embed/embed/license)](https://packagist.org/packages/embed/embed)
+# Embed
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e/big.png)](https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e)
+[![Build Status][ico-travis]][link-travis]
+[![Quality Score][ico-scrutinizer]][link-scrutinizer]
+[![Reference Status][icon-references]][link-references]
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Total Downloads][ico-downloads]][link-packagist]
+[![Monthly Downloads][ico-m-downloads]][link-packagist]
+[![Software License][ico-license]](LICENSE)
+[![SensioLabs Insight][ico-sensiolabs]][link-sensiolabs]
 
 PHP library to get information from any web page (using oembed, opengraph, twitter-cards, scrapping the html, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc) and has adapters to some sites like (archive.org, github, facebook, etc).
 
@@ -265,3 +265,18 @@ foreach ($dispatcher->getAllResponses() as $response) {
 ---
 
 If this library is useful for you, say thanks [buying me a beer :beer:](https://www.paypal.me/oscarotero)!
+
+[ico-version]: https://poser.pugx.org/embed/embed/v/stable
+[ico-travis]: https://travis-ci.org/oscarotero/Embed.svg?branch=master
+[ico-license]: https://poser.pugx.org/embed/embed/license
+[ico-scrutinizer]: https://scrutinizer-ci.com/g/oscarotero/Embed/badges/quality-score.png?s=79e37032db280b9795388124c030dcf4309343d1
+[ico-sensiolabs]: https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e/big.png
+[ico-downloads]: https://poser.pugx.org/embed/embed/downloads
+[ico-m-downloads]: https://poser.pugx.org/embed/embed/d/monthly
+[ico-references]: https://www.versioneye.com/php/embed:embed/reference_badge.svg?style=flat
+
+[link-packagist]: https://packagist.org/packages/embed/embed
+[link-travis]: https://travis-ci.org/oscarotero/Embed
+[link-scrutinizer]: https://scrutinizer-ci.com/g/oscarotero/Embed/
+[link-sensiolabs]: https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e
+[link-references]: https://www.versioneye.com/php/embed:embed/references
