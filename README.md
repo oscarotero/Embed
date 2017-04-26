@@ -3,7 +3,7 @@
 
 [![Build Status][ico-travis]][link-travis]
 [![Quality Score][ico-scrutinizer]][link-scrutinizer]
-[![Reference Status][icon-references]][link-references]
+[![Reference Status][ico-references]][link-references]
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-packagist]
 [![Monthly Downloads][ico-m-downloads]][link-packagist]
