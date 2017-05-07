@@ -129,7 +129,7 @@ class CurlDispatcher implements DispatcherInterface
         });
 
         $curl->onBody(function ($string, stdClass $data) {
-            return !$data->isBinary;
+            return empty($data->isBinary);
         });
 
         curl_exec($connection);
