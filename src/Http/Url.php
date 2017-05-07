@@ -305,7 +305,7 @@ class Url
         $path = !empty($this->info['path']) ? '/'.implode('/', array_map('urlencode', $this->info['path'])).'/' : '/';
 
         if (isset($this->info['file'])) {
-            $path .= urlencode($this->info['file']);
+            $path .= self::urlEncode($this->info['file']);
 
             if (isset($this->info['extension'])) {
                 $path .= '.'.$this->info['extension'];
@@ -648,5 +648,10 @@ class Url
         }
 
         return $parts;
+    }
+
+    private static function urlEncode($path)
+    {
+        return str_replace(['%3A'], [':'], urlencode($path));
     }
 }
