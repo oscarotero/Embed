@@ -297,7 +297,10 @@ $adapterData = [
                         </th>
                     </tr>
                     <tr>
-                        <td><?php printHeaders($response->getHeaders()); ?></td>
+                        <td>
+                            <?php printHeaders($response->getHeaders()); ?>
+                            <?php printArray($response->getInfo()); ?>
+                        </td>
                     </tr>
                     <?php endforeach ?>
                 </table>
