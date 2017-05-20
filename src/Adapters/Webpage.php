@@ -17,6 +17,7 @@ class Webpage extends Adapter
         $this->providers = [
             'oembed' => new Providers\OEmbed($this),
             'opengraph' => new Providers\OpenGraph($this),
+            'linkpulse' => new Providers\Linkpulse($this),
             'twittercards' => new Providers\TwitterCards($this),
             'dcterms' => new Providers\Dcterms($this),
             'sailthru' => new Providers\Sailthru($this),
