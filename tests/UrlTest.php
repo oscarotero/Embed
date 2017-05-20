@@ -25,6 +25,7 @@ class UrlTest extends AbstractTestCase
             ['http://testuser:testpass@test.drupal.dd:8083/tests/authenticated.html', 'http://testuser:testpass@test.drupal.dd:8083/tests/authenticated.html'],
             ['http://www.innherred.no/kultur/2017/03/25/On-the-road-med-%C3%86-og-Hagen-14499028.ece', 'http://www.innherred.no/kultur/2017/03/25/On-the-road-med-%C3%86-og-Hagen-14499028.ece'],
             ['https://pbs.twimg.com/media/CvCZ90BXYAE5q80.png:large', 'https://pbs.twimg.com/media/CvCZ90BXYAE5q80.png:large'],
+            ['http://img.bibo.kz/?7142389.jpg', 'http://img.bibo.kz/?7142389.jpg'],
         ];
     }
 

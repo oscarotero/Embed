@@ -488,7 +488,7 @@ class Url
         $url .= $this->getPath();
 
         if (!empty($this->info['query'])) {
-            $url .= '?'.http_build_query($this->info['query']);
+            $url .= '?'.rtrim(http_build_query($this->info['query']), '=');
         }
         if (isset($this->info['fragment'])) {
             $url .= '#'.$this->info['fragment'];

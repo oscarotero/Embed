@@ -22,6 +22,7 @@ class File extends Adapter
         'audio/mpeg' => ['audio', 'audioHtml'],
         'audio/webm' => ['audio', 'audioHtml'],
         'image/jpeg' => ['photo', 'imageHtml'],
+        'image/jpg' => ['photo', 'imageHtml'],
         'image/gif' => ['photo', 'imageHtml'],
         'image/png' => ['photo', 'imageHtml'],
         'image/bmp' => ['photo', 'imageHtml'],
