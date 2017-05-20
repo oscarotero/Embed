@@ -260,26 +260,25 @@ $adapterData = [
                 <?php foreach ($info->getProviders() as $providerName => $provider): ?>
                 <h2><?php echo $providerName; ?> provider</h2>
 
+                <?php if (empty($provider->getBag()->getAll())): ?>
+                <p>No data collected</p>
+                <?php continue; ?>
+                <?php endif ?>
+
                 <table>
                     <?php foreach ($providerData as $name => $fn): ?>
+                    <?php if (!empty($provider->{'get'.$name}())): ?>
                     <tr>
                         <th><?php echo $providerName.'.'.$name; ?></th>
                         <td><?php $fn($provider->{'get'.$name}(), false); ?></td>
                     </tr>
+                    <?php endif ?>
                     <?php endforeach ?>
 
                     <tr>
                         <th>All data collected</th>
                         <td><?php printArray($provider->getBag()->getAll()); ?></td>
                     </tr>
-
-                    <?php if (isset($provider->api)): ?>
-                    <tr>
-                        <th>Data provider by the API</th>
-                        <td><?php printArray($provider->api->getAll()); ?></td>
-                    </tr>
-                    <?php endif ?>
-
                 </table>
                 <?php endforeach ?>
 
