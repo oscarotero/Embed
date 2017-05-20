@@ -11,7 +11,7 @@ class SpreakerTest extends AbstractTestCase
             [
                 'title' => 'Angel Clark: Ice Cream Toco\'s - Angel Clark Show',
                 'type' => 'rich',
-                'code' => '<iframe src="https://www.spreaker.com/embed/player/standard?autoplay=false&amp;episode_id=7657563" frameborder="0" allowTransparency="true" style="min-width:400px;border:none;overflow:hidden;width:100%;height:131px;"></iframe>',
+                'code' => '<iframe src="https://widget.spreaker.com/player?episode_id=7657563&amp;theme=light&amp;playlist=show&amp;cover_image_url=https%3A%2F%2Fd3wo5wojvuv7l.cloudfront.net%2Fimages.spreaker.com%2Foriginal%2F07176451fd3625d19c5e5d88d9f1bfbb.jpg" width="100%" height="500" frameborder="0"></iframe>',
                 'providerName' => 'Spreaker',
                 'providerUrl' => 'https://www.spreaker.com/',
             ]
