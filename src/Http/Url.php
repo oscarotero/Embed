@@ -643,7 +643,7 @@ class Url
             throw new \InvalidArgumentException('Malformed URL: ' . $url);
         }
 
-        foreach($parts as $name => $value) {
+        foreach ($parts as $name => $value) {
             $parts[$name] = urldecode($value);
         }
 

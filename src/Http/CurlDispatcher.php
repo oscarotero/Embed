@@ -93,7 +93,7 @@ class CurlDispatcher implements DispatcherInterface
         //Other sites needs a certificate
         if (
             class_exists('Composer\\CaBundle\\CaBundle')
-         && $response->getStatusCode() === 0 
+         && $response->getStatusCode() === 0
          && strpos($response->getError(), 'SSL') !== false
         ) {
             $options[CURLOPT_SSL_VERIFYHOST] = 2;
@@ -109,7 +109,7 @@ class CurlDispatcher implements DispatcherInterface
     /**
      * Execute a curl request
      *
-     * @param Url   $url 
+     * @param Url   $url
      * @param array $options
      *
      * @return Response

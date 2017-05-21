@@ -223,10 +223,10 @@ class Utils
 
     /**
      * Search and return the first element matching with a xpath
-     * 
+     *
      * @param DOMDocument $document
      * @param string      $query
-     * 
+     *
      * @return DOMElement|null
      */
     public static function xpathQuery(DOMDocument $document, $query)

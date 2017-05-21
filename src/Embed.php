@@ -84,6 +84,5 @@ abstract class Embed
         $exception->setResponse($response);
 
         throw $exception;
-        
     }
 }
