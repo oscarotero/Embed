@@ -3,6 +3,7 @@
 namespace Embed\Adapters;
 
 use Embed\Http\Response;
+use Embed\Utils;
 
 /**
  * Adapter to get the embed code from howcast.com.
@@ -28,12 +29,11 @@ class Howcast extends Webpage
         $this->height = null;
 
         $dom = $this->getResponse()->getHtmlContent();
-        $modal = $dom->getElementById('embedModal');
-
-        if ($modal) {
-            foreach ($dom->getElementsByTagName('textarea') as $textarea) {
-                return $textarea->nodeValue;
-            }
+        // #embedModal textarea
+        $textarea = Utils::xpathQuery($dom, "descendant-or-self::*[@id = 'embedModal']/descendant-or-self::*/textarea");
+        
+        if ($textarea) {
+            return $textarea->nodeValue;
         }
     }
 }
