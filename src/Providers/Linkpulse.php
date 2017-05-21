@@ -39,6 +39,8 @@ class Linkpulse extends Provider
             } elseif (strpos($name, 'lp.article:') !== 0) {
                 continue;
             }
+
+            $this->bag->set($name, $value);
         }
     }
 
