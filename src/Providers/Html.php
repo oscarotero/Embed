@@ -252,6 +252,7 @@ class Html extends Provider
                     case 'alternate':
                         switch ($link->getAttribute('type')) {
                             case 'application/atom+xml':
+                            case 'application/json':
                             case 'application/rdf+xml':
                             case 'application/rss+xml':
                             case 'application/xml':
