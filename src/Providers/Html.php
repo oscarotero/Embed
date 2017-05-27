@@ -358,7 +358,7 @@ class Html extends Provider
                         try {
                             $href = $url->createAbsolute($parent->getAttribute('href'));
                         } catch (Exception $exception) {
-                            //silenced error
+                            continue 2;
                         }
 
                         if (!self::imageIsValid($href, $url, $externalImages)) {
