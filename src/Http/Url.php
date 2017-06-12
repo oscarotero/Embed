@@ -68,9 +68,8 @@ class Url
             $patterns = [$patterns];
         }
 
-        //Remove scheme and query
-        $url = preg_replace('|(\?.*)?$|', '', (string) $this);
-        $url = preg_replace('|^(\w+://)|', '', $url);
+        //Remove scheme
+        $url = preg_replace('|^(\w+://)|', '', (string) $this);
 
         foreach ($patterns as $pattern) {
             $pattern = str_replace(['\\*', '\\?'], ['.+', '?'], preg_quote($pattern, '|'));
