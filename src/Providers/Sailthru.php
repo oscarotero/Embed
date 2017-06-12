@@ -2,26 +2,31 @@
 
 namespace Embed\Providers;
 
-use Embed\Utils;
+use Embed\Adapters\Adapter;
 
 /**
- * Generic Salithru provider.
- *
- * Load the Salithru data of an url and store it
+ * Provider to get the data from the Sailthru data elements in the HTML
  */
-class Sailthru extends Provider implements ProviderInterface
+class Sailthru extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(Adapter $adapter)
     {
-        if (!($html = $this->request->getHtmlContent())) {
-            return false;
+        parent::__construct($adapter);
+
+        if (!($html = $adapter->getResponse()->getHtmlContent())) {
+            return;
         }
 
-        foreach (Utils::getMetas($html) as $meta) {
-            list($name, $value) = $meta;
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            $name = trim(strtolower($meta->getAttribute('name')));
+            $value = $meta->getAttribute('content');
+
+            if (empty($name) || empty($value)) {
+                continue;
+            }
 
             if (strpos($name, 'sailthru.') === 0) {
                 $this->bag->set(substr($name, 9), $value);
@@ -36,13 +41,13 @@ class Sailthru extends Provider implements ProviderInterface
     {
         $images = [];
 
-        foreach ($this->bag->getAll() as $name => $value) {
+        foreach ($this->bag->getKeys() as $name) {
             if (strpos($name, 'image') !== false) {
-                $images[] = $value;
+                $images[] = $this->bag->get($name);
             }
         }
 
-        return $images;
+        return $this->normalizeUrls($images);
     }
 
     /**

@@ -2,29 +2,36 @@
 
 namespace Embed\Providers;
 
-use Embed\Utils;
+use Embed\Adapters\Adapter;
 
 /**
- * Generic Dublin Core provider.
- *
- * Load the Dublin Core data of an url and store it
+ * Provider to get the data from the Dublin Core data elements in the HTML
  */
-class Dcterms extends Provider implements ProviderInterface
+class Dcterms extends Provider
 {
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(Adapter $adapter)
     {
-        if (!($html = $this->request->getHtmlContent())) {
-            return false;
+        parent::__construct($adapter);
+
+        if (!($html = $adapter->getResponse()->getHtmlContent())) {
+            return;
         }
 
-        foreach (Utils::getMetas($html) as $meta) {
+        foreach ($html->getElementsByTagName('meta') as $meta) {
+            $name = trim(strtolower($meta->getAttribute('name')));
+            $value = $meta->getAttribute('content');
+
+            if (empty($name) || empty($value)) {
+                continue;
+            }
+
             foreach (['dc.', 'dc:', 'dcterms:'] as $prefix) {
-                if (stripos($meta[0], $prefix) === 0) {
-                    $key = substr($meta[0], strlen($prefix));
-                    $this->bag->set($key, $meta[1]);
+                if (stripos($name, $prefix) === 0) {
+                    $name = substr($name, strlen($prefix));
+                    $this->bag->set($name, $value);
                 }
             }
         }

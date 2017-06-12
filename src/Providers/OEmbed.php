@@ -2,69 +2,26 @@
 
 namespace Embed\Providers;
 
-use Embed\Request;
-use Embed\Utils;
+use Embed\Adapters\Adapter;
+use Embed\Http\Response;
+use Embed\Http\Url;
 
 /**
- * Generic oembed provider.
- *
- * Load the oembed data of an url and store it
+ * Provider to get the data using the oEmbed API
  */
-class OEmbed extends Provider implements ProviderInterface
+class OEmbed extends Provider
 {
-    protected $config = [
-        'parameters' => [],
-        'embedlyKey' => null,
-        'iframelyKey' => null,
-    ];
-
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function __construct(Adapter $adapter)
     {
-        $endPoint = null;
-        $params = $this->config['parameters'];
+        parent::__construct($adapter);
 
-        if (self::providerEmbedInDomIsBroken($this->request) || (!($html = $this->request->getHtmlContent()) || !($endPoint = self::getEndPointFromDom($html)))) {
-            if (($info = self::getEndPointFromRequest($this->request, $this->config))) {
-                $endPoint = $info['endPoint'];
-                $params += $info['params'];
-            }
-        }
+        $endPoint = $this->getEndPoint();
 
-        if (!$endPoint) {
-            return;
-        }
-
-        $endPointRequest = $this->request
-            ->withUrl($endPoint)
-            ->withAddedQueryParameters($params);
-
-        if (!$endPointRequest->hasQueryParameter('url')) {
-            $endPointRequest = $endPointRequest->withQueryParameter('url', $this->request->getUrl());
-        }
-
-        // extract from xml
-        if (($endPointRequest->getExtension() === 'xml') || ($endPointRequest->getQueryParameter('format') === 'xml')) {
-            if ($parameters = $endPointRequest->getXmlContent()) {
-                foreach ($parameters as $element) {
-                    $content = trim((string) $element);
-
-                    if (stripos($content, '<![CDATA[') === 0) {
-                        $content = substr($content, 9, -3);
-                    }
-
-                    $this->bag->set($element->getName(), $content);
-                }
-            }
-        // extract from json
-        } else {
-            $endPointRequest = $endPointRequest->withQueryParameter('format', 'json');
-
-            if (($parameters = $endPointRequest->getJsonContent()) && empty($parameters['Error'])) {
-                $this->bag->set($parameters);
-            }
+        if ($endPoint) {
+            $this->extractOembed($adapter->getDispatcher()->dispatch($endPoint));
         }
     }
 
@@ -125,7 +82,7 @@ class OEmbed extends Provider implements ProviderInterface
      */
     public function getCode()
     {
-        return $this->bag->get('html');
+        return $this->bag->get('html', true);
     }
 
     /**
@@ -134,10 +91,10 @@ class OEmbed extends Provider implements ProviderInterface
     public function getUrl()
     {
         if ($this->getType() === 'photo') {
-            return $this->bag->get('web_page');
+            return $this->normalizeUrl($this->bag->get('web_page'));
         }
 
-        return $this->bag->get('url') ?: $this->bag->get('web_page');
+        return $this->normalizeUrl($this->bag->get('url') ?: $this->bag->get('web_page'));
     }
 
     /**
@@ -153,7 +110,7 @@ class OEmbed extends Provider implements ProviderInterface
      */
     public function getAuthorUrl()
     {
-        return $this->bag->get('author_url');
+        return $this->normalizeUrl($this->bag->get('author_url'));
     }
 
     /**
@@ -169,7 +126,7 @@ class OEmbed extends Provider implements ProviderInterface
      */
     public function getProviderUrl()
     {
-        return $this->bag->get('provider_url');
+        return $this->normalizeUrl($this->bag->get('provider_url'));
     }
 
     /**
@@ -186,6 +143,7 @@ class OEmbed extends Provider implements ProviderInterface
         foreach (['image', 'thumbnail', 'thumbnail_url'] as $type) {
             if ($this->bag->has($type)) {
                 $ret = $this->bag->get($type);
+
                 if (is_array($ret)) {
                     $images = array_merge($images, $ret);
                 } else {
@@ -194,7 +152,7 @@ class OEmbed extends Provider implements ProviderInterface
             }
         }
 
-        return $images;
+        return $this->normalizeUrls($images);
     }
 
     /**
@@ -222,99 +180,69 @@ class OEmbed extends Provider implements ProviderInterface
     }
 
     /**
-     * Extract oembed information from the <link rel="alternate"> elements
-     * Note: Some sites use <meta rel="alternate"> instead.
-     *
-     * @param \DOMDocument $html
-     *
-     * @return string|null
+     * @return Url|null
      */
-    protected static function getEndPointFromDom(\DOMDocument $html)
+    private function getEndPoint()
     {
-        foreach (['link', 'meta'] as $tagName) {
-            foreach (Utils::getLinks($html, $tagName) as $link) {
-                list($rel, $href, $element) = $link;
+        //Search using the domain
+        $class = 'Embed\\Providers\\OEmbed\\'.$this->adapter->getResponse()->getUrl()->getClassNameForDomain();
+        $extraParameters = (array) $this->adapter->getConfig('oembed[parameters]');
 
-                if (empty($href)) {
-                    continue;
-                }
+        if (class_exists($class)) {
+            $endPoint = $class::create($this->adapter);
 
-                if ($rel === 'alternate') {
-                    switch (strtolower($element->getAttribute('type'))) {
-                        case 'application/json+oembed':
-                        case 'application/xml+oembed':
-                        case 'text/json+oembed':
-                        case 'text/xml+oembed':
-                            return $href;
-                    }
-                }
+            if ($endPoint && ($url = $endPoint->getEndPoint())) {
+                return $url->withAddedQueryParameters($extraParameters);
             }
         }
-    }
 
-    /**
-     * Returns the oembed link from the request.
-     *
-     * @param Request $request
-     * @param array   $config
-     *
-     * @return array|null
-     */
-    protected static function getEndPointFromRequest(Request $request, array $config)
-    {
-        //Search the oembed provider using the domain
-        $class = self::getClassFromRequest($request);
+        //Search in the DOM
+        $endPoint = OEmbed\DOM::create($this->adapter);
 
-        if (class_exists($class) && $request->match($class::getPatterns())) {
-            return [
-                'endPoint' => $class::getEndpoint($request),
-                'params' => $class::getParams($request),
-            ];
+        if ($endPoint && ($url = $endPoint->getEndPoint())) {
+            return $url->withAddedQueryParameters($extraParameters);
         }
 
-        //Search using embedly
-        if (!empty($config['embedlyKey']) && $request->match(OEmbed\Embedly::getPatterns())) {
-            return [
-                'endPoint' => OEmbed\Embedly::getEndpoint($request),
-                'params' => OEmbed\Embedly::getParams($request) + ['key' => $config['embedlyKey']],
-            ];
+        //Try with embedly
+        $endPoint = OEmbed\Embedly::create($this->adapter);
+
+        if ($endPoint && ($url = $endPoint->getEndPoint())) {
+            return $url->withAddedQueryParameters($extraParameters);
         }
 
-        //Search using iframely
-        if (!empty($config['iframelyKey']) && $request->match(OEmbed\Iframely::getPatterns())) {
-            return [
-                'endPoint' => OEmbed\Iframely::getEndpoint($request),
-                'params' => OEmbed\Iframely::getParams($request) + ['api_key' => $config['iframelyKey']],
-            ];
+        //Try with iframely
+        $endPoint = OEmbed\Iframely::create($this->adapter);
+
+        if ($endPoint && ($url = $endPoint->getEndPoint())) {
+            return $url->withAddedQueryParameters($extraParameters);
         }
     }
 
     /**
-     * Return the class name implementing an oEmbed provider.
+     * Save the oembed data in the bag.
      *
-     * @param Request $request
-     *
-     * @return string
+     * @param Response $response
      */
-    protected static function getClassFromRequest(Request $request)
+    private function extractOembed(Response $response)
     {
-        return 'Embed\\Providers\\OEmbed\\'.$request->getClassNameForDomain();
-    }
+        // extract from xml
+        if (($response->getUrl()->getExtension() === 'xml') || ($response->getUrl()->getQueryParameter('format') === 'xml')) {
+            if ($xml = $response->getXmlContent()) {
+                foreach ($xml as $element) {
+                    $content = trim((string) $element);
 
-    /**
-     * @param Request $request
-     *
-     * @return bool
-     */
-    protected static function providerEmbedInDomIsBroken(Request $request)
-    {
-        $class = self::getClassFromRequest($request);
+                    if (stripos($content, '<![CDATA[') === 0) {
+                        $content = substr($content, 9, -3);
+                    }
 
-        if (class_exists($class) && $request->match($class::getPatterns())) {
-            return $class::embedInDomIsBroken();
+                    $this->bag->set($element->getName(), $content);
+                }
+            }
+        // extract from json
+        } else {
+            if (($json = $response->getJsonContent()) && empty($json['Error'])) {
+                $this->bag->set($json);
+            }
         }
-
-        // Fall-through default in case this called for an invalid class
-        return false;
     }
 }

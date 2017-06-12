@@ -1,6 +1,8 @@
 <?php
 
-class KickstarterTest extends TestCaseBase
+namespace Embed\Tests;
+
+class KickstarterTest extends AbstractTestCase
 {
     public function testOne()
     {

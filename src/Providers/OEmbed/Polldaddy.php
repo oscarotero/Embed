@@ -2,23 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Url;
-
-class Polldaddy extends OEmbedImplementation
+class Polldaddy extends EndPoint implements EndPointInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function getEndPoint(Url $url)
-    {
-        return 'http://polldaddy.com/oembed';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getPatterns()
-    {
-        return ['https?://polldaddy.com/poll/*'];
-    }
+    protected static $pattern = 'polldaddy.com/poll/*';
+    protected static $endPoint = 'http://polldaddy.com/oembed';
 }

@@ -1,14 +1,16 @@
 <?php
 
-class FileTest extends TestCaseBase
+namespace Embed\Tests;
+
+class FileTest extends AbstractTestCase
 {
     public function testJpg()
     {
         $this->assertEmbed(
-            'http://melihasweettimes.files.wordpress.com/2011/11/dsc01636.jpg',
+            'https://www.dreamhost.com/blog/wp-content/uploads/2015/10/DHC_blog-image-01-300x300.jpg',
             [
-                'imageWidth' => 1200,
-                'imageHeight' => 1600,
+                'imageWidth' => 300,
+                'imageHeight' => 300,
                 'type' => 'photo',
             ]
         );
@@ -29,11 +31,11 @@ class FileTest extends TestCaseBase
     public function testOgg()
     {
         $this->assertEmbed(
-            'https://upload.wikimedia.org/wikipedia/commons/b/b5/I-15bis.ogg',
+            'https://ia801006.us.archive.org/34/items/popeye_349/popeye.ogv',
             [
                 'type' => 'video',
-                'code' => '<video controls><source src="https://upload.wikimedia.org/wikipedia/commons/b/b5/I-15bis.ogg"></video>',
-                'providerUrl' => 'https://wikimedia.org',
+                'code' => '<video controls><source src="https://ia801006.us.archive.org/34/items/popeye_349/popeye.ogv"></video>',
+                'providerUrl' => 'https://archive.org',
             ]
         );
     }

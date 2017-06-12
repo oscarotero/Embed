@@ -1,6 +1,8 @@
 <?php
 
-class UstreamTest extends TestCaseBase
+namespace Embed\Tests;
+
+class UstreamTest extends AbstractTestCase
 {
     public function testOne()
     {

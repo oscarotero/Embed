@@ -2,21 +2,21 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 use Embed\Utils;
 
 /**
  * Adapter get embed code from 500px.com.
  */
-class N500px extends Webpage implements AdapterInterface
+class N500px extends Webpage
 {
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https?://500px.com/photo/*',
+        return $response->isValid() && $response->getUrl()->match([
+            '500px.com/photo/*',
         ]);
     }
 
@@ -25,8 +25,10 @@ class N500px extends Webpage implements AdapterInterface
      */
     public function getCode()
     {
-        if (is_numeric($this->request->getDirectoryPosition(1))) {
-            return Utils::iframe($this->request->createUrl()->withDirectoryPosition(2, 'embed.html'), $this->width, $this->height);
+        $url = $this->getResponse()->getUrl();
+
+        if (is_numeric($url->getDirectoryPosition(1))) {
+            return Utils::iframe($url->withDirectoryPosition(2, 'embed.html'), $this->width, $this->height);
         }
     }
 
@@ -35,7 +37,7 @@ class N500px extends Webpage implements AdapterInterface
      */
     public function getWidth()
     {
-        if (is_numeric($this->request->getDirectoryPosition(1))) {
+        if (is_numeric($this->getResponse()->getUrl()->getDirectoryPosition(1))) {
             return $this->imageWidth;
         }
     }
@@ -45,7 +47,7 @@ class N500px extends Webpage implements AdapterInterface
      */
     public function getHeight()
     {
-        if (is_numeric($this->request->getDirectoryPosition(1))) {
+        if (is_numeric($this->getResponse()->getUrl()->getDirectoryPosition(1))) {
             return $this->imageHeight;
         }
     }

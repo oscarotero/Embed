@@ -2,21 +2,21 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 use Embed\Utils;
 
 /**
  * Adapter to get the embed code from cartodb.
  */
-class Carto extends Webpage implements AdapterInterface
+class Carto extends Webpage
 {
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https://*.carto.com/viz/*/public_map',
+        return $response->isValid() && $response->getUrl()->match([
+            '*.carto.com/viz/*/public_map',
         ]);
     }
 
@@ -28,7 +28,7 @@ class Carto extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = 520;
 
-        $url = $this->request->createUrl()->withDirectoryPosition(2, 'embed_map')->getUrl();
+        $url = $this->getResponse()->getUrl()->withDirectoryPosition(2, 'embed_map');
 
         return Utils::iframe($url, '100%', $this->height);
     }

@@ -2,20 +2,21 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
+use Embed\Utils;
 
 /**
  * Adapter to get the embed code from howcast.com.
  */
-class Howcast extends Webpage implements AdapterInterface
+class Howcast extends Webpage
 {
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https?://www.howcast.com/videos/*',
+        return $response->isValid() && $response->getUrl()->match([
+            'www.howcast.com/videos/*',
         ]);
     }
 
@@ -27,13 +28,12 @@ class Howcast extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = null;
 
-        $dom = $this->request->getHtmlContent();
-        $modal = $dom->getElementById('embedModal');
-
-        if ($modal) {
-            foreach ($dom->getElementsByTagName('textarea') as $textarea) {
-                return $textarea->nodeValue;
-            }
+        $dom = $this->getResponse()->getHtmlContent();
+        // #embedModal textarea
+        $textarea = Utils::xpathQuery($dom, "descendant-or-self::*[@id = 'embedModal']/descendant-or-self::*/textarea");
+        
+        if ($textarea) {
+            return $textarea->nodeValue;
         }
     }
 }

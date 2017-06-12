@@ -2,21 +2,21 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 use Embed\Utils;
 
 /**
  * Adapter to generate embed code from pastie.org.
  */
-class Pastie extends Webpage implements AdapterInterface
+class Pastie extends Webpage
 {
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'http://pastie.org/pastes/*',
+        return $response->isValid() && $response->getUrl()->match([
+            'pastie.org/pastes/*',
         ]);
     }
 
@@ -28,8 +28,8 @@ class Pastie extends Webpage implements AdapterInterface
         $this->width = null;
         $this->height = null;
 
-        $path = '/'.$this->request->getDirectoryPosition(1).'.js';
+        $path = '/'.$this->getResponse()->getUrl()->getDirectoryPosition(1).'.js';
 
-        return Utils::script($this->request->createUrl($path)->getUrl());
+        return Utils::script($this->getResponse()->getUrl()->getAbsolute($path));
     }
 }

@@ -2,7 +2,33 @@
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 
-include '../src/autoloader.php';
+include __DIR__.'/../vendor/autoload.php';
+
+$options = [
+    'min_image_width' => 60,
+    'min_image_height' => 60,
+    'images_blacklist' => null,
+    'choose_bigger_image' => false,
+
+    'html' => [
+        'max_images' => 10,
+        'external_images' => false
+    ],
+
+    'oembed' => [
+        'parameters' => [],
+        'embedly_key' => null,
+        'iframely_key' => null,
+    ],
+
+    'google' => [
+        'key' => null,
+    ],
+
+    'soundcloud' => [
+        'key' => null,
+    ],
+];
 
 function getUrl()
 {
@@ -19,10 +45,6 @@ function getUrl()
         }
 
         $url .= "&{$name}={$value}";
-    }
-
-    if (!filter_var($url, FILTER_VALIDATE_URL)) {
-        return 'http://doNotTryToXSS.invalid';
     }
 
     return $url;
@@ -103,7 +125,7 @@ $providerData = [
     'tags' => 'printArray',
     'imagesUrls' => 'printArray',
     'code' => 'printCode',
-    'source' => 'printUrl',
+    'feeds' => 'printArray',
     'width' => 'printText',
     'height' => 'printText',
     'authorName' => 'printText',
@@ -126,7 +148,7 @@ $adapterData = [
     'imageHeight' => 'printText',
     'images' => 'printArray',
     'code' => 'printCode',
-    'source' => 'printUrl',
+    'feeds' => 'printArray',
     'width' => 'printText',
     'height' => 'printText',
     'aspectRatio' => 'printText',
@@ -149,7 +171,31 @@ $adapterData = [
 
         <title>Embed tests</title>
 
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <style type="text/css">
+            body { font-family: Helvetica, Arial, sans-serif; min-width: 650px; margin: 0; padding: 0;}
+            a { color: inherit; font-size: 0.9em; }
+            a:hover { text-decoration: none; }
+            img { display: block; margin-bottom: 0.5em; }
+            pre { overflow: auto; background: #EEE; padding: 1em; }
+
+            /* form */
+            form { background: #EEE; border-bottom: solid 1px #DDD; color: #666; padding: 3em 1.5em; }
+            fieldset { border: none; padding: 0; }
+            label { display: block; cursor: pointer; font-weight: bold; }
+            input[type="url"] { border: none; background: white; border-radius: 2px; box-sizing: border-box; width: 100%; margin: 5px 0; font-size: 1.3em; padding: 0.5em; color: #666; }
+            button { font-size: 1.6rem; font-weight: bold; font-family: Arial; background: yellowgreen; border: none; border-radius: 2px; padding: 0.2em 1em; cursor: pointer; margin-top: 5px; }
+            button:hover { background: black; color: white; }
+
+            /* result */
+            section { padding: 1.5em; }
+            section h1, section h2 { font-size: 2em; color: #666; letter-spacing: -0.02em; }
+            section h2 { margin-top: 3em; }
+            table { text-align: left; width: 100%; table-layout: fixed; }
+            th, td { vertical-align: top; padding: 0.5em 1em 0.5em 0; border-top: solid 1px #DDD; }
+            th { width: 200px; }
+            #advanced-data { display: none; }
+            .view-advanced-data { margin: 2em 0; text-align: center; }
+        </style>
     </head>
 
     <body>
@@ -176,13 +222,24 @@ $adapterData = [
 
             <?php
             try {
-                $info = Embed\Embed::create(getUrl());
+                $dispatcher = new Embed\Http\CurlDispatcher();
+                $info = Embed\Embed::create(getUrl(), $options, $dispatcher);
             } catch (Exception $exception) {
-                echo '<p>'.$exception->getMessage().'</p>';
-                echo '</section>';
-                echo '</body>';
-                echo '</html>';
-                die();
+                echo '<table>';
+                foreach ($dispatcher->getAllResponses() as $response) {
+                    echo '<tr>';
+                    echo '<th>'.$response->getUrl().'</th>';
+                    echo '</tr><tr><td>';
+                    printHeaders($response->getHeaders());
+                    echo '</td><tr><td><pre>';
+                    printArray($response->getInfo());
+                    echo '</td><tr><td><pre>';
+                    printText($response->getContent());
+                    echo '</pre></td></tr>';
+                }
+                echo '</table>';
+
+                throw $exception;
             }
             ?>
 
@@ -200,54 +257,49 @@ $adapterData = [
             </div>
 
             <div id="advanced-data">
-                <?php foreach ($info->getAllProviders() as $providerName => $provider): ?>
+                <?php foreach ($info->getProviders() as $providerName => $provider): ?>
                 <h2><?php echo $providerName; ?> provider</h2>
+
+                <?php if (empty($provider->getBag()->getAll())): ?>
+                <p>No data collected</p>
+                <?php continue; ?>
+                <?php endif ?>
 
                 <table>
                     <?php foreach ($providerData as $name => $fn): ?>
+                    <?php if (!empty($provider->{'get'.$name}())): ?>
                     <tr>
                         <th><?php echo $providerName.'.'.$name; ?></th>
                         <td><?php $fn($provider->{'get'.$name}(), false); ?></td>
                     </tr>
+                    <?php endif ?>
                     <?php endforeach ?>
 
                     <tr>
                         <th>All data collected</th>
-                        <td><?php printArray($provider->bag->getAll()); ?></td>
+                        <td><?php printArray($provider->getBag()->getAll()); ?></td>
                     </tr>
-
-                    <?php if (isset($provider->api)): ?>
-                    <tr>
-                        <th>Data provider by the API</th>
-                        <td><?php printArray($provider->api->getAll()); ?></td>
-                    </tr>
-                    <?php endif ?>
-
                 </table>
                 <?php endforeach ?>
 
-                <h2>Http request info</h2>
+                <h2>Http requests</h2>
 
                 <table>
-                    <?php foreach ($info->getRequest()->getRequestInfo() as $name => $value): ?>
+                    <?php foreach ($info->getDispatcher()->getAllResponses() as $response): ?>
                     <tr>
-                        <th><?php echo $name; ?></th>
-                        <td><?php printAny($value); ?></td>
-                    </tr>
-                    <?php endforeach ?>
-                    <tr>
-                        <th>headers</th>
-                        <td><?php printHeaders($info->getRequest()->getHeaders()); ?></td>
-                    </tr>
-                </table>
+                        <th>
+                            <?php if ((string) $response->getStartingUrl() !== (string) $response->getUrl()): ?>
+                                <?= $response->getStartingUrl() ?> <code>=&gt;</code>
+                            <?php endif ?>
 
-                <h2>Http request images headers</h2>
-
-                <table>
-                    <?php foreach ($info->getImagesRequests() as $url => $request): ?>
+                            <?= $response->getUrl() ?>
+                        </th>
+                    </tr>
                     <tr>
-                        <th><?php echo $request->getUrl(); ?></th>
-                        <td><?php printHeaders($request->getHeaders()); ?></td>
+                        <td>
+                            <?php printHeaders($response->getHeaders()); ?>
+                            <?php printArray($response->getInfo()); ?>
+                        </td>
                     </tr>
                     <?php endforeach ?>
                 </table>
@@ -255,12 +307,11 @@ $adapterData = [
                 <h2>Content</h2>
 
                 <pre>
-                    <?php printText($info->getRequest()->getContent()); ?>
+                    <?php printText($info->getResponse()->getContent()); ?>
                 </pre>
             </div>
         </section>
 
         <?php endif; ?>
-
     </body>
 </html>

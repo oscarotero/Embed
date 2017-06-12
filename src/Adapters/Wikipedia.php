@@ -2,34 +2,32 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 use Embed\Providers\Api;
 
 /**
  * Adapter to provide information from wikipedia.
  */
-class Wikipedia extends Webpage implements AdapterInterface
+class Wikipedia extends Webpage
 {
-    public $api;
-
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https?://*.wikipedia.org/wiki/*',
+        return $response->isValid() && $response->getUrl()->match([
+            '*.wikipedia.org/wiki/*',
         ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function run()
+    protected function init()
     {
-        $this->addProvider('wikipedia', new Api\Wikipedia());
+        parent::init();
 
-        parent::run();
+        $this->providers = ['wikipedia' => new Api\Wikipedia($this)] + $this->providers;
     }
 
     /**

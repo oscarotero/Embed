@@ -2,26 +2,11 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Url;
-
-class Imgur extends OEmbedImplementation
+class Imgur extends EndPoint implements EndPointInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function getEndPoint(Url $url)
-    {
-        return 'http://api.imgur.com/oembed';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getPatterns()
-    {
-        return [
-            'http://imgur.com/*',
-            'http://i.imgur.com/*',
-        ];
-    }
+    protected static $pattern = [
+        'imgur.com/*',
+        'i.imgur.com/*',
+    ];
+    protected static $endPoint = 'http://api.imgur.com/oembed';
 }

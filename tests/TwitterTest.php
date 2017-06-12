@@ -1,6 +1,8 @@
 <?php
 
-class TwitterTest extends TestCaseBase
+namespace Embed\Tests;
+
+class TwitterTest extends AbstractTestCase
 {
     public function testNormal()
     {
@@ -18,12 +20,11 @@ class TwitterTest extends TestCaseBase
             'https://twitter.com/pepephone/status/436461658601713664',
             [
                 'code' => '<blockquote class="twitter-tweet"><p lang="es" dir="ltr">RT <a href="https://twitter.com/PabloHerreros">@PabloHerreros</a> Pepephone rompe la baraja - <a href="http://t.co/mFn7mcB1vy">http://t.co/mFn7mcB1vy</a></p>&mdash; Pepephone (@pepephone) <a href="https://twitter.com/pepephone/status/436461658601713664">February 20, 2014</a></blockquote>'."\n",
-            ], [
-                'providers' => [
-                    'oembed' => [
-                        'parameters' => [
-                            'omit_script' => true,
-                        ],
+            ],
+            [
+                'oembed' => [
+                    'parameters' => [
+                        'omit_script' => true,
                     ],
                 ],
             ]

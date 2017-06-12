@@ -2,23 +2,8 @@
 
 namespace Embed\Providers\OEmbed;
 
-use Embed\Url;
-
-class Ustream extends OEmbedImplementation
+class Ustream extends EndPoint implements EndPointInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function getEndPoint(Url $url)
-    {
-        return 'http://www.ustream.tv/oembed';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getPatterns()
-    {
-        return ['https?://www.ustream.tv/*'];
-    }
+    protected static $pattern = 'www.ustream.tv/*';
+    protected static $endPoint = 'http://www.ustream.tv/oembed';
 }

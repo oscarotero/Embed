@@ -1,6 +1,8 @@
 <?php
 
-class GoogleTest extends TestCaseBase
+namespace Embed\Tests;
+
+class GoogleTest extends AbstractTestCase
 {
     public function testMap()
     {
@@ -32,7 +34,7 @@ class GoogleTest extends TestCaseBase
         $this->assertEmbed(
             'https://plus.google.com/u/0/+StephanHovnanian/posts/6apV9FHgo4k',
             [
-                'title' => 'Grow your business through email marketing Learn more…',
+                'title' => 'Grow your business through email marketing Learn more here: http://bit.ly/Yr...',
                 'type' => 'rich',
                 'code' => '<script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script><div class="g-post" data-href="https://plus.google.com/+StephanHovnanian/posts/6apV9FHgo4k"></div>',
                 'providerName' => 'Google Plus',

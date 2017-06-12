@@ -2,30 +2,37 @@
 
 namespace Embed\Providers;
 
-use Embed\Request;
+use Embed\Adapters\Adapter;
+use Embed\DataInterface;
 use Embed\Bag;
 
 /**
  * Abstract class used by all providers.
  */
-abstract class Provider
+abstract class Provider implements DataInterface
 {
-    public $bag;
-
-    protected $request;
-    protected $config = [];
+    protected $bag;
+    protected $adapter;
 
     /**
-     * {@inheritdoc}
+     * Constructor.
+     *
+     * @param Adapter $adapter
      */
-    public function init(Request $request, array $config = null)
+    public function __construct(Adapter $adapter)
     {
         $this->bag = new Bag();
-        $this->request = $request;
+        $this->adapter = $adapter;
+    }
 
-        if ($config) {
-            $this->config = array_replace($this->config, $config);
-        }
+    /**
+     * Returns the bag containing all data.
+     *
+     * @return Bag
+     */
+    public function getBag()
+    {
+        return $this->bag;
     }
 
     /**
@@ -59,8 +66,9 @@ abstract class Provider
     /**
      * {@inheritdoc}
      */
-    public function getSource()
+    public function getFeeds()
     {
+        return [];
     }
 
     /**
@@ -155,5 +163,37 @@ abstract class Provider
     public function getLinkedData()
     {
         return [];
+    }
+
+    /**
+     * Returns the urls as absolute.
+     *
+     * @param mixed $urls
+     *
+     * @return array
+     */
+    protected function normalizeUrls($urls)
+    {
+        if (!is_array($urls)) {
+            return [];
+        }
+
+        return array_map([$this, 'normalizeUrl'], array_filter($urls));
+    }
+
+    /**
+     * Returns the url as absolute.
+     *
+     * @param string|null $url
+     *
+     * @return string|null
+     */
+    protected function normalizeUrl($url)
+    {
+        if (empty($url)) {
+            return;
+        }
+
+        return $this->adapter->getResponse()->getUrl()->getAbsolute($url);
     }
 }

@@ -1,23 +1,34 @@
 <?php
 
-namespace Embed;
+namespace Embed\Http;
 
 /**
- * Class to split and manipulate url data.
+ * Class to split and manipulate urls.
  */
 class Url
 {
-    protected $info;
-
-    public static $validate = false;
+    private $info;
+    private $url;
     private static $public_suffix_list;
+
+    /**
+     * Create a new Url instance.
+     *
+     * @param string $url
+     *
+     * @return Url
+     */
+    public static function create($url)
+    {
+        return Redirects::resolve(new static($url));
+    }
 
     /**
      * Constructor. Sets the url.
      *
-     * @param string $url The url value
+     * @param string $url
      */
-    public function __construct($url)
+    private function __construct($url)
     {
         $this->parseUrl($url);
     }
@@ -29,17 +40,19 @@ class Url
      */
     public function __toString()
     {
-        return $this->getUrl();
+        if ($this->url === null) {
+            return $this->url = $this->buildUrl();
+        }
+
+        return $this->url;
     }
 
     /**
-     * Return the url.
-     *
-     * @return string The current url
+     * Remove the built url on clone.
      */
-    public function getUrl()
+    public function __clone()
     {
-        return $this->buildUrl();
+        $this->url = null;
     }
 
     /**
@@ -47,7 +60,7 @@ class Url
      *
      * @param string|array $patterns The pattern or an array with various patterns
      *
-     * @return bool True if the url match, false if not
+     * @return bool
      */
     public function match($patterns)
     {
@@ -55,7 +68,9 @@ class Url
             $patterns = [$patterns];
         }
 
-        $url = $this->getUrl();
+        //Remove scheme and query
+        $url = preg_replace('|(\?.*)?$|', '', (string) $this);
+        $url = preg_replace('|^(\w+://)|', '', $url);
 
         foreach ($patterns as $pattern) {
             $pattern = str_replace(['\\*', '\\?'], ['.+', '?'], preg_quote($pattern, '|'));
@@ -86,6 +101,18 @@ class Url
     public function getExtension()
     {
         return isset($this->info['extension']) ? $this->info['extension'] : null;
+    }
+
+    /**
+     * Returns a new instance with other relative url.
+     *
+     * @param string $url
+     *
+     * @return Url
+     */
+    public function createAbsolute($url)
+    {
+        return self::create($this->getAbsolute($url));
     }
 
     /**
@@ -278,7 +305,7 @@ class Url
         $path = !empty($this->info['path']) ? '/'.implode('/', array_map('urlencode', $this->info['path'])).'/' : '/';
 
         if (isset($this->info['file'])) {
-            $path .= $this->info['file'];
+            $path .= self::urlEncode($this->info['file']);
 
             if (isset($this->info['extension'])) {
                 $path .= '.'.$this->info['extension'];
@@ -412,6 +439,24 @@ class Url
     }
 
     /**
+     * Return ClassName for domain.
+     *
+     * Domains started with numbers will get N prepended to their class name.
+     *
+     * @return string
+     */
+    public function getClassNameForDomain()
+    {
+        $className = str_replace(array('-', ' '), '', ucwords(strtolower($this->getDomain())));
+
+        if (is_numeric(mb_substr($className, 0, 1))) {
+            $className = 'N'.$className;
+        }
+
+        return $className;
+    }
+
+    /**
      * Build the url using the splitted data.
      */
     protected function buildUrl()
@@ -443,7 +488,7 @@ class Url
         $url .= $this->getPath();
 
         if (!empty($this->info['query'])) {
-            $url .= '?'.http_build_query($this->info['query']);
+            $url .= '?'.rtrim(http_build_query($this->info['query']), '=');
         }
         if (isset($this->info['fragment'])) {
             $url .= '#'.$this->info['fragment'];
@@ -459,13 +504,7 @@ class Url
      */
     protected function parseUrl($url)
     {
-        // do not validate urls because some real urls fails.
-        // Example: http://jouey-.deviantart.com/art/market-153836478 fails.
-        if (self::$validate && substr($url, 0, 5) !== 'data:' && !filter_var($url, FILTER_VALIDATE_URL)) {
-            throw new Exceptions\InvalidUrlException("The url '{$url}' is not valid");
-        }
-
-        $this->info = parse_url($url);
+        $this->info = self::parse($url);
 
         if (isset($this->info['path'])) {
             $this->setPath($this->info['path']);
@@ -499,7 +538,7 @@ class Url
     /**
      * Return an absolute url based in a relative.
      *
-     * @return string The absolute url
+     * @return string
      */
     public function getAbsolute($url)
     {
@@ -553,10 +592,10 @@ class Url
             $path = substr($path, 0, -strlen($file));
 
             if (preg_match('/(.*)\.([\w]+)$/', $file, $match)) {
-                $this->info['file'] = $match[1];
+                $this->info['file'] = urldecode($match[1]);
                 $this->info['extension'] = $match[2];
             } else {
-                $this->info['file'] = $file;
+                $this->info['file'] = urldecode($file);
             }
         }
 
@@ -571,12 +610,48 @@ class Url
         }
     }
 
-    private function getSuffixes()
+    private static function getSuffixes()
     {
         if (self::$public_suffix_list === null) {
-            self::$public_suffix_list = include __DIR__.'/resources/public_suffix_list.php';
+            self::$public_suffix_list = include __DIR__.'/../resources/public_suffix_list.php';
         }
 
         return self::$public_suffix_list;
+    }
+
+    /**
+     * UTF-8 compatible parse_url
+     * http://php.net/manual/en/function.parse-url.php#114817
+     *
+     * @param string $url
+     *
+     * @return string
+     */
+    private static function parse($url)
+    {
+        $enc_url = preg_replace_callback(
+            '%[^:/@?&=#]+%usD',
+            function ($matches) {
+                return urlencode($matches[0]);
+            },
+            $url
+        );
+
+        $parts = parse_url($enc_url);
+
+        if ($parts === false) {
+            throw new \InvalidArgumentException('Malformed URL: ' . $url);
+        }
+
+        foreach ($parts as $name => $value) {
+            $parts[$name] = urldecode($value);
+        }
+
+        return $parts;
+    }
+
+    private static function urlEncode($path)
+    {
+        return str_replace(['%3A'], [':'], urlencode($path));
     }
 }

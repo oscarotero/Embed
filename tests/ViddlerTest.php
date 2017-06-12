@@ -1,6 +1,8 @@
 <?php
 
-class ViddlerTest extends TestCaseBase
+namespace Embed\Tests;
+
+class ViddlerTest extends AbstractTestCase
 {
     public function testOne()
     {

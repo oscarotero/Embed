@@ -1,6 +1,8 @@
 <?php
 
-class SnipplrTest extends TestCaseBase
+namespace Embed\Tests;
+
+class SnipplrTest extends AbstractTestCase
 {
     public function testOne()
     {

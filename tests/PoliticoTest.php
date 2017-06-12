@@ -1,6 +1,8 @@
 <?php
 
-class PoliticoTest extends TestCaseBase
+namespace Embed\Tests;
+
+class PoliticoTest extends AbstractTestCase
 {
     public function testOne()
     {
@@ -12,7 +14,6 @@ class PoliticoTest extends TestCaseBase
                 'image' => 'http://s3-origin-images.politico.com/2013/12/18/131218_george_w_bush_barack_obama_ap_605.jpg',
                 'providerName' => 'POLITICO',
                 'providerUrl' => 'http://politico.com',
-                'providerIcon' => 'http://www.politico.com/favicon.ico',
             ]
         );
     }

@@ -2,21 +2,21 @@
 
 namespace Embed\Adapters;
 
-use Embed\Request;
+use Embed\Http\Response;
 use Embed\Utils;
 
 /**
  * Adapter provider more information from flickr.
  */
-class Flickr extends Webpage implements AdapterInterface
+class Flickr extends Webpage
 {
     /**
      * {@inheritdoc}
      */
-    public static function check(Request $request)
+    public static function check(Response $response)
     {
-        return $request->isValid() && $request->match([
-            'https://www.flickr.com/photos/*',
+        return $response->isValid() && $response->getUrl()->match([
+            'www.flickr.com/photos/*',
         ]);
     }
 
@@ -28,34 +28,13 @@ class Flickr extends Webpage implements AdapterInterface
         $code = parent::getCode();
 
         if (empty($code)) {
-            $code = Utils::iframe($this->request->createUrl()->withAddedPath('player'), $this->width, $this->height);
+            $this->width = 640;
+            $this->height = 425;
+
+            $code = Utils::iframe($this->getResponse()->getUrl()->withAddedPath('player'), $this->width, $this->height);
         }
 
         return $code;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getWidth()
-    {
-        if (!parent::getCode()) {
-            return 640;
-        }
-
-        return parent::getWidth();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getHeight()
-    {
-        if (!parent::getCode()) {
-            return 425;
-        }
-
-        return parent::getHeight();
     }
 
     /**

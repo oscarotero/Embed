@@ -1,6 +1,8 @@
 <?php
 
-class CollegehumorTest extends TestCaseBase
+namespace Embed\Tests;
+
+class CollegehumorTest extends AbstractTestCase
 {
     public function testOne()
     {

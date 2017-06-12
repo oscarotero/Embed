@@ -1,6 +1,8 @@
 <?php
 
-class PastebinTest extends TestCaseBase
+namespace Embed\Tests;
+
+class PastebinTest extends AbstractTestCase
 {
     public function testOne()
     {
@@ -10,7 +12,7 @@ class PastebinTest extends TestCaseBase
                 'title' => '[Bash] Pushing new git submodule to Heroku - Pastebin.com',
                 'type' => 'rich',
                 'providerName' => 'Pastebin',
-                'providerUrl' => 'http://pastebin.com',
+                'providerUrl' => 'https://pastebin.com',
             ]
         );
     }

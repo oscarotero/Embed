@@ -1,6 +1,8 @@
 <?php
 
-class CadenaserTest extends TestCaseBase
+namespace Embed\Tests;
+
+class CadenaserTest extends AbstractTestCase
 {
     public function testOne()
     {
