@@ -4,32 +4,12 @@ ini_set('display_startup_errors', '1');
 
 include __DIR__.'/../vendor/autoload.php';
 
-$options = [
-    'min_image_width' => 60,
-    'min_image_height' => 60,
-    'images_blacklist' => null,
-    'url_blacklist' => null,
-    'choose_bigger_image' => false,
-
-    'html' => [
-        'max_images' => 10,
-        'external_images' => false
-    ],
-
-    'oembed' => [
-        'parameters' => [],
-        'embedly_key' => null,
-        'iframely_key' => null,
-    ],
-
-    'google' => [
-        'key' => null,
-    ],
-
-    'soundcloud' => [
-        'key' => null,
-    ],
-];
+// Use default config as template
+$options = \Embed\Embed::$default_config;
+// Do some config modifications
+$options['min_image_width'] = 60;
+$options['min_image_height'] = 60;
+$options['html']['max_images'] = 10;
 
 function getUrl()
 {

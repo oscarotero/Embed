@@ -298,21 +298,18 @@ abstract class Adapter implements DataInterface
      */
     public function getUrl()
     {
-        $urls = $this->getAllFromProviders(function (Provider $provider) {
-            return [$provider->getUrl()];
-        });
-
+        $default = (string) $this->getResponse()->getUrl();
         $blacklist = $this->getConfig('url_blacklist');
-        if (!empty($blacklist)) {
-            $urls = array_filter($urls, function ($url) use ($blacklist) {
-                return !Url::create($url)->match($blacklist);
-            });
-        }
 
-        if (isset($urls[0])) {
-            return $urls[0];
-        }
-        return (string)$this->getResponse()->getUrl();
+        return $this->getFirstFromProviders(function (Provider $provider) use ($blacklist) {
+            $url = $provider->getUrl();
+            if (!empty($blacklist) &&
+                Url::create($url)->match($blacklist)
+            ) {
+                return false;
+            }
+            return $url;
+        }, $default);
     }
 
     /**

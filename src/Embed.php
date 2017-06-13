@@ -3,25 +3,65 @@
 namespace Embed;
 
 use Embed\Adapters\Adapter;
-use Embed\Http\Url;
-use Embed\Http\DispatcherInterface;
 use Embed\Http\CurlDispatcher;
+use Embed\Http\DispatcherInterface;
+use Embed\Http\Url;
 
 abstract class Embed
 {
     /**
+     * @var array
+     */
+    public static $default_config = [
+        'min_image_width' => 1,
+        'min_image_height' => 1,
+        'images_blacklist' => [],
+        'url_blacklist' => [
+            '*ns_campaign=*',
+            '*ns_source=*',
+            '*utm_campaign=*',
+            '*utm_medium=*',
+            '*utm_source=*',
+        ],
+        'choose_bigger_image' => false,
+
+        'html' => [
+            'max_images' => 0,
+            'external_images' => false
+        ],
+
+        'oembed' => [
+            'parameters' => [],
+            'embedly_key' => null,
+            'iframely_key' => null,
+        ],
+
+        'google' => [
+            'key' => null,
+        ],
+
+        'soundcloud' => [
+            'key' => null,
+        ],
+    ];
+
+    /**
      * Gets the info from an url.
      *
      * @param Url|string $url
-     * @param array              $config
-     * @param DispatcherInterface|null              $dispatcher
+     * @param array|null $config
+     * @param DispatcherInterface|null $dispatcher
      *
      * @return Adapter
      */
-    public static function create($url, array $config = [], DispatcherInterface $dispatcher = null)
+    public static function create($url, array $config = null, DispatcherInterface $dispatcher = null)
     {
         if (!($url instanceof Url)) {
             $url = Url::create($url);
+        }
+
+        if ($config === null) {
+            $dispatcher = self::$default_config;
         }
 
         if ($dispatcher === null) {
