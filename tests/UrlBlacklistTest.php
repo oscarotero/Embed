@@ -29,16 +29,11 @@ class UrlBlacklistTest extends AbstractTestCase
             ],
             [
                 'url_blacklist' => [
-                    '?ns_campaign=*',
-                    '?ns_source=*',
-                    '?utm_campaign=*',
-                    '?utm_medium=*',
-                    '?utm_source=*',
-                    '?*&ns_campaign=*',
-                    '?*&ns_source=*',
-                    '?*&utm_campaign=*',
-                    '?*&utm_medium=*',
-                    '?*&utm_source=*',
+                    '?&ns_campaign=*',
+                    '?&ns_source=*',
+                    '?&utm_campaign=*',
+                    '?&utm_medium=*',
+                    '?&utm_source=*',
                 ],
             ]
         );
