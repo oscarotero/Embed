@@ -127,6 +127,18 @@ class UrlTest extends AbstractTestCase
                 'http://vimeo.com/69912181?play=true',
                 '?*play=true',
                 true,
+            ],[
+                'http://vimeo.com/69912181?play=true&controls=false',
+                '?&play=true*',
+                true,
+            ],[
+                'http://vimeo.com/69912181?play=true&controls=false',
+                '?&controls=*',
+                true,
+            ],[
+                'http://vimeo.com/69912181?play=true&controls=false',
+                '?controls=*',
+                false,
             ]
         ];
     }

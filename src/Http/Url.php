@@ -78,7 +78,13 @@ class Url
             }
 
             $pattern = str_replace('\\*', '.*', preg_quote($pattern, '|'));
-            $url = strpos($pattern, '?') === false ? $short_url : $long_url;
+
+            if (strpos($pattern, '?') === false) {
+                $url = $short_url;
+            } else {
+                $pattern = str_replace('\\?&', '[\\?&]', $pattern);
+                $url = $long_url;
+            }
 
             if (preg_match('|^'.$pattern.'$|i', $url)) {
                 return true;
