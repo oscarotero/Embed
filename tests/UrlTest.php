@@ -87,4 +87,56 @@ class UrlTest extends AbstractTestCase
         $this->assertSame('/wiki/Supernatural_%28U.S._TV_series%29', $url->getPath());
         $this->assertSame('Supernatural_(U.S._TV_series)', $url->getDirectoryPosition(1));
     }
+
+    public function urlMatchProvider()
+    {
+        return [
+            [
+                'http://vimeo.com',
+                'vimeo.com/',
+                true,
+            ],[
+                'http://vimeo.com/69912181',
+                'vimeo.com/*',
+                true,
+            ],[
+                'http://vimeo.com/69912181?play=true',
+                'vimeo.com/*',
+                true,
+            ],[
+                'http://vimeo.com/69912181?play=true',
+                'vimeo.com/69912181',
+                true,
+            ],[
+                'http://vimeo.com/69912181?play=true',
+                'vimeo.com/69912181?*',
+                true,
+            ],[
+                'http://vimeo.com/69912181?play=true',
+                'vimeo.com/69912181?*true',
+                true,
+            ],[
+                'http://vimeo.com/69912181?play=true',
+                'vimeo.com/69912181?*false',
+                false,
+            ],[
+                'http://vimeo.com/69912181?play=true',
+                '?play=true',
+                true,
+            ],[
+                'http://vimeo.com/69912181?play=true',
+                '?*play=true',
+                true,
+            ]
+        ];
+    }
+
+    /**
+     * @dataProvider urlMatchProvider
+     */
+    public function testUrlMatch($url, $pattern, $expected)
+    {
+        $url = Url::create($url);
+        $this->assertSame($expected, $url->match($pattern));
+    }
 }

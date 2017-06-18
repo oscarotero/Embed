@@ -68,11 +68,17 @@ class Url
             $patterns = [$patterns];
         }
 
-        //Remove scheme
-        $url = preg_replace('|^(\w+://)|', '', (string) $this);
+        //Remove scheme and query
+        $long_url = preg_replace('|^(\w+://)|', '', (string) $this);
+        $short_url = preg_replace('|(\?.*)?$|', '', $long_url);
 
         foreach ($patterns as $pattern) {
-            $pattern = str_replace(['\\*', '\\?'], ['.+', '?'], preg_quote($pattern, '|'));
+            if ($pattern[0] === '?') { // ?hello=world => *?hello=world
+                $pattern = '*' . $pattern;
+            }
+
+            $pattern = str_replace('\\*', '.*', preg_quote($pattern, '|'));
+            $url = strpos($pattern, '?') === false ? $short_url : $long_url;
 
             if (preg_match('|^'.$pattern.'$|i', $url)) {
                 return true;
