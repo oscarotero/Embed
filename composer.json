@@ -44,7 +44,7 @@
         }
     },
     "scripts": {
-        "run-demo": "php -S localhost:8888 demo/index.php",
+        "demo": "php -S localhost:8888 demo/index.php",
         "test": "phpunit",
         "cs-fix": "php-cs-fixer fix ."
     }

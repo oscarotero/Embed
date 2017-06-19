@@ -9,7 +9,7 @@ class SoundcloudTest extends AbstractTestCase
         $this->assertEmbed(
             'https://soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy',
             [
-                'title' => "Lost You (feat. D'Angelo Lacy & Twin Shadow) by Zeds Dead",
+                'title' => "Lost You (feat. Twin Shadow & D'Angelo Lacy) by Zeds Dead",
                 'type' => 'rich',
                 'code' => '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F150745932&show_artwork=true"></iframe>',
                 'providerName' => 'SoundCloud',
