@@ -564,22 +564,22 @@ class Url
         }
 
         if (preg_match('|^\w+://|', $url)) {
-            return $url;
+            return self::validUrlOrEmpty($url);
         }
 
         if (strpos($url, '://') === 0) {
-            return $this->getScheme().$url;
+            return self::validUrlOrEmpty($this->getScheme().$url);
         }
 
         if (strpos($url, '//') === 0) {
-            return $this->getScheme().":$url";
+            return self::validUrlOrEmpty($this->getScheme().":$url");
         }
 
         if ($url[0] === '/') {
-            return $this->getScheme().'://'.$this->getHost().$url;
+            return self::validUrlOrEmpty($this->getScheme().'://'.$this->getHost().$url);
         }
 
-        return $this->getScheme().'://'.$this->getHost().$this->getDirectories().$url;
+        return self::validUrlOrEmpty($this->getScheme().'://'.$this->getHost().$this->getDirectories().$url);
     }
 
     /**
@@ -664,5 +664,10 @@ class Url
     private static function urlEncode($path)
     {
         return str_replace(['%3A'], [':'], urlencode($path));
+    }
+
+    private static function validUrlOrEmpty($url)
+    {
+        return parse_url($url) === false ? '' : $url;
     }
 }
