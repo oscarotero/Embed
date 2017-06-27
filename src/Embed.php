@@ -78,9 +78,11 @@ abstract class Embed
 
         if ($from !== $to && empty($info->code)) {
             
-            //except new result if valid
-            if($new_info = self::process(Url::create($info->url), $config, $dispatcher, TRUE)){
-                $info = $new_info;
+            //accept new result if valid
+            try {
+                return self::process(Url::create($info->url), $config, $dispatcher, TRUE);
+            } catch (\Exception $e) {
+                return $info;
             }
             
         }
