@@ -80,7 +80,7 @@ abstract class Embed
             
             //accept new result if valid
             try {
-                return self::process(Url::create($info->url), $config, $dispatcher, TRUE);
+                return self::process(Url::create($info->url), $config, $dispatcher);
             } catch (\Exception $e) {
                 return $info;
             }
@@ -101,7 +101,7 @@ abstract class Embed
      *
      * @return Adapter
      */
-    private static function process(Url $url, array $config, DispatcherInterface $dispatcher, $no_exception=FALSE)
+    private static function process(Url $url, array $config, DispatcherInterface $dispatcher)
     {
         $response = $dispatcher->dispatch($url);
 
@@ -120,11 +120,6 @@ abstract class Embed
         //Use the default webpage adapter
         if (Adapters\Webpage::check($response)) {
             return new Adapters\Webpage($response, $config, $dispatcher);
-        }
-        
-        //Return false instead of throwing exception for second tries
-        if($no_exception){
-            return false;
         }
         
         if ($response->getError() === null) {
