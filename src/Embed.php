@@ -77,7 +77,14 @@ abstract class Embed
         $to = preg_replace('|^(\w+://)|', '', rtrim($info->url, '/'));
 
         if ($from !== $to && empty($info->code)) {
-            return self::process(Url::create($info->url), $config, $dispatcher);
+            
+            //accept new result if valid
+            try {
+                return self::process(Url::create($info->url), $config, $dispatcher);
+            } catch (\Exception $e) {
+                return $info;
+            }
+            
         }
 
         return $info;
@@ -114,7 +121,7 @@ abstract class Embed
         if (Adapters\Webpage::check($response)) {
             return new Adapters\Webpage($response, $config, $dispatcher);
         }
-
+        
         if ($response->getError() === null) {
             $exception = new Exceptions\InvalidUrlException(sprintf("Invalid url '%s' (Status code %s)", (string) $url, $response->getStatusCode()));
         } else {
