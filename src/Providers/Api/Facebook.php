@@ -19,7 +19,7 @@ class Facebook extends Provider
         parent::__construct($adapter);
 
         if (($id = self::getId($adapter->getResponse()->getUrl()))) {
-            $key = $adapter->getConfig('facebook[key]') ?: '416936215002292|8umslFZSEDvzeVt4TDLHvIJqs_E';
+            $key = $adapter->getConfig('facebook[key]');
 
             if ($key) {
                 $endPoint = Url::create('https://graph.facebook.com/'.$id)
