@@ -130,6 +130,14 @@ Name | Type | Description
 -----|------|------------
 `key` | `string` | The key used to get info from soundcloud API.
 
+### facebook
+
+Used only for facebook events (not needed for posts, images, etc), to get information using its api.
+
+Name | Type | Description
+-----|------|------------
+`key` | `string` | The access token used to get info from facebook graph API.
+
 ## Example with all options:
 
 The options are passed as the second argument as you can see in the following example:
@@ -157,6 +165,10 @@ $info = Embed::create($url, [
     ],
 
     'soundcloud' => [
+        'key' => 'YOUR_KEY',
+    ],
+
+    'facebook' => [
         'key' => 'YOUR_KEY',
     ],
 ]);

@@ -84,7 +84,6 @@ abstract class Embed
             } catch (\Exception $e) {
                 return $info;
             }
-            
         }
 
         return $info;
