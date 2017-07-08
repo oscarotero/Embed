@@ -29,8 +29,8 @@ class Pastebin extends Webpage
         $this->height = null;
 
         $url = $this->getResponse()->getUrl();
-        $embed_url = 'http://pastebin.com/embed_iframe.php?i='.($url->getQueryParameter('i') ?: $url->getDirectoryPosition(0));
+        $path = '/embed_js' . $url->getPath();
 
-        return Utils::iframe($embed_url);
+        return Utils::script($this->getResponse()->getUrl()->getAbsolute($path));
     }
 }
