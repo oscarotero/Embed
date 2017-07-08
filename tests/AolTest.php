@@ -7,10 +7,10 @@ class AolTest extends AbstractTestCase
     public function testOne()
     {
         $this->assertEmbed(
-            'http://on.aol.com/video/whats-next-for-google-in-two-minutes-518288612',
+            'https://www.aol.com/video/view/pile-of-recovering-foster-kittens-is-purrfect/595fe75985eb42109b69bedb/',
             [
-                'title' => "What's Next for Google in Two Minutes",
-                'description' => "Wherein we smoosh Google's 2014 developer conference keynote from 2.5+ hours down to just under two minutes.",
+                'title' => 'Pile of Recovering Foster Kittens Is Purrfect',
+                'description' => "Holly Brookhouser has been fostering animals for two years. During that time, she’s been able to take care of 32 kittens. And, they just love being together!",
                 'type' => 'link',
                 'providerName' => 'AOL.com',
             ]

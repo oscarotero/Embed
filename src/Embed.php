@@ -26,7 +26,7 @@ abstract class Embed
         'choose_bigger_image' => false,
 
         'html' => [
-            'max_images' => 0,
+            'max_images' => -1,
             'external_images' => false
         ],
 
