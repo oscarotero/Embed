@@ -299,6 +299,11 @@ abstract class Adapter implements DataInterface
     public function getUrl()
     {
         $default = (string) $this->getResponse()->getUrl();
+
+        if (!$this->getConfig('follow_canonical')) {
+            return $default;
+        }
+
         $blacklist = $this->getConfig('url_blacklist');
 
         return $this->getFirstFromProviders(function (Provider $provider) use ($blacklist) {
