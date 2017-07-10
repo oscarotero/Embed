@@ -6,6 +6,25 @@ use Embed\Embed;
 
 class RedirectionsTest extends AbstractTestCase
 {
+    public function testGenericCanonical()
+    {
+        $config = Embed::$default_config;
+
+        $expected = 'https://www.dagbladet.no/emne/utenriks';
+        $unwanted = 'http://www.dagbladet.no';
+
+        // Do NOT follow canonical
+        $config['follow_canonical'] = false;
+        $info1 = Embed::create($expected, $config);
+        $this->assertString($expected, $info1->url);
+
+        // Follow canonical
+        // If this test fails, the unwanted canonical url has changed
+        $config['follow_canonical'] = true;
+        $info2 = Embed::create($expected, $config);
+        $this->assertString($unwanted, $info2->url);
+    }
+
     public function testGoogleTranslate()
     {
         $info1 = Embed::create('https://translate.google.com/translate?sl=de&tl=en&js=y&prev=_t&hl=en&ie=UTF-8&u=http%3A%2F%2Fwww.heise.de%2Fnewsticker%2Fmeldung%2FXKeyscore-Quellcode-Tor-Nutzer-werden-von-der-NSA-als-Extremisten-markiert-und-ueberwacht-2248328.html&edit-text=');

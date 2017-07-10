@@ -87,9 +87,10 @@ Name | Type | Description
 -----|------|------------
 `min_image_width` | `int` | Minimal image width used to choose the main image
 `min_image_height` | `int` | Minimal image height used to choose the main image
+`choose_bigger_image` | `bool` | Choose the bigger image as the main image (instead the first found, that usually is the most relevant).
 `images_blacklist` | `string`&#124;`array` | Images that you don't want to be used. Could be plain text or [Uri](https://github.com/oscarotero/Embed/blob/master/src/Http/Url.php) match pattern.
 `url_blacklist` | `string`&#124;`array` | URLs that you don't want to be used. Could be plain text or [Uri](https://github.com/oscarotero/Embed/blob/master/src/Http/Url.php) match pattern.
-`choose_bigger_image` | `bool` | Choose the bigger image as the main image (instead the first found, that usually is the most relevant).
+`follow_canonical` | `bool` | Whether to redirect to the canonical URL or not.
 
 ## The providers
 
@@ -146,8 +147,10 @@ The options are passed as the second argument as you can see in the following ex
 $info = Embed::create($url, [
     'min_image_width' => 100,
     'min_image_height' => 100,
-    'images_blacklist' => 'example.com/*',
     'choose_bigger_image' => true,
+    'images_blacklist' => 'example.com/*',
+    'url_blacklist' => 'example.com/*',
+    'follow_canonical' => true,
 
     'html' => [
         'max_images' => 10,
@@ -211,7 +214,7 @@ class MyDispatcher implements DispatcherInterface
 }
 
 //Use the dispatcher passing as third argument
-$info = Embed::create('http://example.com', [], new MyDispatcher());
+$info = Embed::create('http://example.com', null, new MyDispatcher());
 ```
 
 The default curl dispatcher accepts the same options that the [curl_setopt PHP function](http://php.net/manual/en/function.curl-setopt.php). You can edit the default values:
@@ -232,7 +235,7 @@ $dispatcher = new CurlDispatcher([
     CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
 ]);
 
-$info = Embed::create('http://example.com', [], $dispatcher);
+$info = Embed::create('http://example.com', null, $dispatcher);
 ```
 
 ## Accessing to advanced data
