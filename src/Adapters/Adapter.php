@@ -300,7 +300,7 @@ abstract class Adapter implements DataInterface
     {
         $default = (string) $this->getResponse()->getUrl();
 
-        if (!$this->getConfig('follow_canonical')) {
+        if ($this->getConfig('follow_canonical') === false) {
             return $default;
         }
 
