@@ -8,20 +8,16 @@ class RedirectionsTest extends AbstractTestCase
 {
     public function testGenericCanonical()
     {
-        $config = Embed::$default_config;
-
         $expected = 'https://www.dagbladet.no/emne/utenriks';
-        $unwanted = 'http://www.dagbladet.no';
+        $unwanted = 'http://www.dagbladet.no/';
 
         // Do NOT follow canonical
-        $config['follow_canonical'] = false;
-        $info1 = Embed::create($expected, $config);
+        $info1 = Embed::create($expected, ['follow_canonical' => false]);
         $this->assertString($expected, $info1->getResponse()->getUrl());
 
         // Follow canonical
         // If this test fails, the unwanted canonical url has changed
-        $config['follow_canonical'] = true;
-        $info2 = Embed::create($expected, $config);
+        $info2 = Embed::create($expected, ['follow_canonical' => true]);
         $this->assertString($unwanted, $info2->getResponse()->getUrl());
     }
 
