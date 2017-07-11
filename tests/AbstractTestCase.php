@@ -28,9 +28,9 @@ abstract class AbstractTestCase extends PHPUnit_Framework_TestCase
      *
      * @param string $url
      * @param array $info
-     * @param array $config
+     * @param array|null $config
      */
-    protected function assertEmbed($url, array $info, array $config = [])
+    protected function assertEmbed($url, array $info, array $config = null)
     {
         $i = Embed::create($url, $config);
 
