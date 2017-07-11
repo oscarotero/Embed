@@ -113,7 +113,7 @@ Used to get data directly from the html code of the page:
 Name | Type | Description
 -----|------|------------
 `max_images` | `int` | Max number of images fetched from the html code (searching for the `<img>` elements). By default is -1 (no limit). Use 0 to no get images.
-`external_images` | `bool|array` | By default is false, this means that images located in other domains are not allowed. You can set true (allow all) or provide an array of url patterns.
+`external_images` | `bool`&#124;`array` | By default is `false`, this means that images located in other domains are not allowed. You can set `true` (allow all) or provide an array of url patterns.
 
 ### google
 
