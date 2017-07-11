@@ -15,6 +15,7 @@ abstract class Embed
     public static $default_config = [
         'min_image_width' => 1,
         'min_image_height' => 1,
+        'choose_bigger_image' => false,
         'images_blacklist' => [],
         'url_blacklist' => [
             '?&ns_campaign=*',
@@ -23,7 +24,7 @@ abstract class Embed
             '?&utm_medium=*',
             '?&utm_source=*',
         ],
-        'choose_bigger_image' => false,
+        'follow_canonical' => true,
 
         'html' => [
             'max_images' => -1,
@@ -70,19 +71,20 @@ abstract class Embed
 
         $info = self::process($url, $config, $dispatcher);
 
-        // Repeat the process if:
-        // - The canonical url is different
-        // - No embed code has found
-        $from = preg_replace('|^(\w+://)|', '', rtrim((string) $info->getResponse()->getUrl(), '/'));
-        $to = preg_replace('|^(\w+://)|', '', rtrim($info->url, '/'));
+        if ($info->getConfig('follow_canonical') !== false) {
+            // Repeat the process if:
+            // - The canonical url is different
+            // - No embed code has found
+            $from = preg_replace('|^(\w+://)|', '', rtrim((string)$info->getResponse()->getUrl(), '/'));
+            $to = preg_replace('|^(\w+://)|', '', rtrim($info->url, '/'));
 
-        if ($from !== $to && empty($info->code)) {
-            
-            //accept new result if valid
-            try {
-                return self::process(Url::create($info->url), $config, $dispatcher);
-            } catch (\Exception $e) {
-                return $info;
+            if ($from !== $to && empty($info->code)) {
+                //accept new result if valid
+                try {
+                    return self::process(Url::create($info->url), $config, $dispatcher);
+                } catch (\Exception $e) {
+                    return $info;
+                }
             }
         }
 
