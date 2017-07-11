@@ -13,6 +13,7 @@ abstract class Embed
      * @var array
      */
     public static $default_config = [
+        'custom_adapters_namespace' => null,
         'min_image_width' => 1,
         'min_image_height' => 1,
         'choose_bigger_image' => false,
@@ -107,20 +108,24 @@ abstract class Embed
         $response = $dispatcher->dispatch($url);
 
         //If is a file use File Adapter
-        if (Adapters\File::check($response)) {
-            return new Adapters\File($response, $config, $dispatcher);
+        $adapter = self::getClass('File', $config);
+
+        if ($adapter::check($response)) {
+            return new $adapter($response, $config, $dispatcher);
         }
 
         //Search the adapter using the domain
-        $adapter = 'Embed\\Adapters\\'.$response->getUrl()->getClassNameForDomain();
+        $adapter = self::getClass($response->getUrl()->getClassNameForDomain(), $config);
 
         if (class_exists($adapter) && $adapter::check($response)) {
             return new $adapter($response, $config, $dispatcher);
         }
 
         //Use the default webpage adapter
-        if (Adapters\Webpage::check($response)) {
-            return new Adapters\Webpage($response, $config, $dispatcher);
+        $adapter = self::getClass('Webpage', $config);
+
+        if ($adapter::check($response)) {
+            return new $adapter($response, $config, $dispatcher);
         }
         
         if ($response->getError() === null) {
@@ -132,5 +137,26 @@ abstract class Embed
         $exception->setResponse($response);
 
         throw $exception;
+    }
+
+    /**
+     * Returns a class name using the custom_adapters_namespace
+     *
+     * @param string $name
+     * @param array $config
+     *
+     * @return  string
+     */
+    private static function getClass($name, array $config)
+    {
+        if (!empty($config['custom_adapters_namespace'])) {
+            $class = $config['custom_adapters_namespace'].$name;
+
+            if (class_exists($class)) {
+                return $class;
+            }
+        }
+
+        return 'Embed\\Adapters\\'.$name;
     }
 }
