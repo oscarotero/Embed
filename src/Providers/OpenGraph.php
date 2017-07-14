@@ -154,11 +154,7 @@ class OpenGraph extends Provider
      */
     public function getUrl()
     {
-        $url = $this->normalizeUrl($this->bag->get('url'));
-
-        if ($url !== $this->adapter->getResponse()->getUrl()->getAbsolute('/')) {
-            return $url;
-        }
+        return $this->normalizeUrl($this->bag->get('url'));
     }
 
     /**

@@ -301,13 +301,16 @@ abstract class Adapter implements DataInterface
         $default = (string) $this->getResponse()->getUrl();
         $blacklist = $this->getConfig('url_blacklist');
 
-        return $this->getFirstFromProviders(function (Provider $provider) use ($blacklist) {
+        //some sites returns the homepage as canonical
+        $homeUrl = $this->getResponse()->getUrl()->getAbsolute('/');
+
+        return $this->getFirstFromProviders(function (Provider $provider) use ($blacklist, $homeUrl) {
             $url = $provider->getUrl();
-            if (!empty($blacklist) &&
-                Url::create($url)->match($blacklist)
-            ) {
+
+            if ($homeUrl === $url || empty($blacklist) || !Url::create($url)->match($blacklist)) {
                 return false;
             }
+
             return $url;
         }, $default);
     }
