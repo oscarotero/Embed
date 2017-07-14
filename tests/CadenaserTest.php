@@ -9,7 +9,7 @@ class CadenaserTest extends AbstractTestCase
         $this->assertEmbed(
             'http://play.cadenaser.com/audio/001RD010000004275766/',
             [
-                'title' => "Debate electoral gallego, en 'Hoy por Hoy' | Cadena SER",
+                'title' => "Debate electoral gallego, en 'Hoy por Hoy' | Hoy por hoy | Audio | Cadena SER",
                 'width' => 620,
                 'height' => 100,
                 'type' => 'rich',
