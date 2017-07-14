@@ -152,10 +152,14 @@ abstract class Embed
     private static function getClass($name, array $config)
     {
         if (!empty($config['custom_adapters_namespace'])) {
-            $class = $config['custom_adapters_namespace'].$name;
+            $namespaces = (array) $config['custom_adapters_namespace'];
 
-            if (class_exists($class)) {
-                return $class;
+            foreach ($namespaces as $namespace) {
+                $class = $namespace.$name;
+
+                if (class_exists($class)) {
+                    return $class;
+                }
             }
         }
 
