@@ -4,6 +4,7 @@ namespace Embed;
 
 use DOMDocument;
 use DOMElement;
+use DOMNodeList;
 use DOMXPath;
 
 /**
@@ -226,16 +227,17 @@ class Utils
      *
      * @param DOMDocument $document
      * @param string      $query
+     * @param bool        $returnFirst
      *
-     * @return DOMElement|null
+     * @return DOMElement|DOMNodeList|null
      */
-    public static function xpathQuery(DOMDocument $document, $query)
+    public static function xpathQuery(DOMDocument $document, $query, $returnFirst = true)
     {
         $xpath = new DOMXPath($document);
         $entries = $xpath->query($query);
 
         if ($entries->length) {
-            return $entries->item(0);
+            return $returnFirst ? $entries->item(0) : $entries;
         }
     }
 }
