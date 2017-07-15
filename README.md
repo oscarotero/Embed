@@ -91,7 +91,7 @@ Name | Type | Description
 `images_blacklist` | `string`&#124;`array` | Images that you don't want to be used. Could be plain text or [Uri](https://github.com/oscarotero/Embed/blob/master/src/Http/Url.php) match pattern.
 `url_blacklist` | `string`&#124;`array` | URLs that you don't want to be used. Could be plain text or [Uri](https://github.com/oscarotero/Embed/blob/master/src/Http/Url.php) match pattern.
 `follow_canonical` | `bool` | Whether to redirect to the canonical URL or not.
-`custom_adapters_namespace` | `string` | A namespace used to load custom adapters. This allows to override the behaviour of existing adapters or add support for more sites.
+`custom_adapters_namespace` | `string`&#124;`array` | A namespace used to load custom adapters. This allows to override the behaviour of existing adapters or add support for more sites.
 
 ## The providers
 

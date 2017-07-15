@@ -64,6 +64,8 @@ abstract class Embed
 
         if ($config === null) {
             $config = self::$default_config;
+        } else {
+            $config += self::$default_config;
         }
 
         if ($dispatcher === null) {
