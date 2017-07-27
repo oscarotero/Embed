@@ -25,6 +25,9 @@ class GoogleMaps extends Provider
 
         $mode = $adapter->getResponse()->getUrl()->getDirectoryPosition(1);
 
+        // Default is view (if mode is not mentioned in the url)
+        $this->mode = 'view';
+
         switch ($mode) {
             case 'place':
             case 'dir':
@@ -32,6 +35,12 @@ class GoogleMaps extends Provider
                 $this->mode = $mode;
                 break;
         }
+
+        // check streetview mode
+        // simple check,- starts with @, ends with t
+         if ((substr($mode, 0, 1) === '@') &&  (substr($mode, -1) === 't')) {
+             $this->mode = 'streetview';
+         }
     }
 
     /**
@@ -48,6 +57,43 @@ class GoogleMaps extends Provider
         if ($this->mode === 'dir') {
             return $url->getDirectoryPosition(2).' / '.$url->getDirectoryPosition(3);
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getPosition()
+    {
+        $url = $this->adapter->getResponse()->getUrl();
+
+        // Set defaults
+        $position = [
+            'coordinates' => '',
+            'zoom' => '4',
+            'heading' => '0',
+            'pitch' => '0',
+            'fov' => '90'
+        ];
+
+        if ($this->mode === 'view') {
+            $pos = explode(",", $url->getDirectoryPosition(1));
+            $position['coordinates'] = str_replace('@','',$pos[0]).','.$pos[1];
+            $position['zoom'] = str_replace('z',"",$pos[2]);
+        }
+
+        if ($this->mode === 'streetview') {
+            $pos = explode(",", $url->getDirectoryPosition(1));
+            $position['coordinates'] = str_replace('@','',$pos[0]).','.$pos[1];
+            $position['zoom'] = str_replace('a','',$pos[2]); // seems not used by google (emulated by other params)
+            $position['heading'] = str_replace('h','',$pos[4]);
+            $position['fov'] = str_replace('y','',$pos[3]);
+            $pitch = str_replace('t','',$pos[5]); // t is pitch but in 180% format
+            if (is_numeric($pitch)) {
+                $position['pitch'] = floatval($pitch) - 90;
+            }
+        }
+
+        return $position;
     }
 
     /**
@@ -71,6 +117,28 @@ class GoogleMaps extends Provider
         }
 
         switch ($this->mode) {
+            case 'view':
+                $pos = $this->getPosition();
+                return Utils::iframe($url
+                    ->withPath('maps/embed/v1/'.$this->mode)
+                    ->withQueryParameters([
+                        'center' => $pos['coordinates'],
+                        'zoom' => $pos['zoom'],
+                        'key' => $key,
+                    ]));
+
+            case 'streetview':
+                $pos = $this->getPosition();
+                return Utils::iframe($url
+                    ->withPath('maps/embed/v1/'.$this->mode)
+                    ->withQueryParameters([
+                        'location' => $pos['coordinates'],
+                        'heading' => $pos['heading'],
+                        'pitch' =>  $pos['pitch'],
+                        'fov' =>  $pos['fov'],
+                        'key' => $key,
+                    ]));
+
             case 'place':
             case 'search':
                 return Utils::iframe($url
