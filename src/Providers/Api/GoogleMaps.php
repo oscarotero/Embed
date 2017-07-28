@@ -60,9 +60,11 @@ class GoogleMaps extends Provider
     }
 
     /**
-     * {@inheritdoc}
+     * Returns parsed position data from url.
+     *
+     * @return array
      */
-    public function getPosition()
+    private function getPosition()
     {
         $url = $this->adapter->getResponse()->getUrl();
 

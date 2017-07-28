@@ -116,16 +116,7 @@ class CurlDispatcher implements DispatcherInterface
      */
     protected function exec(Url $url, array $options)
     {
-        /*
-         * Not sure about this fix!
-         * The problem is that url to string produces encoded url params like this:
-         *  https://www.google.com/maps/%4070.8853928%2C-40.8414069%2C4z
-         * This url would fail.
-         * Instead this should be called:
-         * https://www.google.com/maps/@70.8853928,-40.8414069,4z
-         * */
-        // url could be encoded at this point, so decode it
-        $connection = curl_init(urldecode((string) $url));
+        $connection = curl_init((string) $url);
         curl_setopt_array($connection, $options);
 
         $curl = new CurlResult($connection);

@@ -313,7 +313,7 @@ class Url
      */
     public function getPath()
     {
-        $path = !empty($this->info['path']) ? '/'.implode('/', array_map('urlencode', $this->info['path'])).'/' : '/';
+        $path = !empty($this->info['path']) ? '/'.implode('/', array_map('self::urlEncode', $this->info['path'])).'/' : '/';
 
         if (isset($this->info['file'])) {
             $path .= self::urlEncode($this->info['file']);
@@ -663,7 +663,9 @@ class Url
 
     private static function urlEncode($path)
     {
-        return str_replace(['%3A'], [':'], urlencode($path));
+        // : - used for files
+        // @ and , - used for GoogleMaps adapter url (in view and streetview modes)
+        return str_replace(['%3A','%40','%2C'], [':','@',','], urlencode($path));
     }
 
     private static function validUrlOrEmpty($url)
