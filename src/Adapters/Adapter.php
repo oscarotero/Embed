@@ -280,7 +280,7 @@ abstract class Adapter implements DataInterface
 
     /**
      * Returns the code as DOMNodeList elements
-     * 
+     *
      * @return \DOMNodeList|null
      */
     public function getHtml()

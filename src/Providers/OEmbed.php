@@ -238,7 +238,7 @@ class OEmbed extends Provider
                     $this->bag->set($element->getName(), $content);
                 }
             }
-        // extract from json
+            // extract from json
         } else {
             if (($json = $response->getJsonContent()) && empty($json['Error'])) {
                 $this->bag->set($json);
