@@ -11,6 +11,13 @@ $options['min_image_width'] = 60;
 $options['min_image_height'] = 60;
 $options['html']['max_images'] = 10;
 
+//use env variables
+if (is_file(__DIR__.'/../env.php')) {
+    include __DIR__.'/../env.php';
+
+    $options['google']['key'] = getenv('GOOGLE_KEY');
+}
+
 function getUrl()
 {
     if (!isset($_GET['url'])) {
