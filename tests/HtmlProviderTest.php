@@ -9,7 +9,7 @@ class HtmlProviderTest extends AbstractTestCase
         $this->assertEmbed(
             'http://www.brothers-brick.com/2016/04/06/stunning-lego-darth-vader-mask-cleverly-hides-scenes-from-star-wars/',
             [
-                'images' => 9,
+                'images' => 7,
             ],
             [
                 'html' => [
