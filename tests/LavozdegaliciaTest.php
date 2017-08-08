@@ -12,7 +12,7 @@ class Lavozdegalicia extends AbstractTestCase
                 'title' => 'Deseñadores galegos organizan o seu primeiro encontro en Rianxo',
                 'type' => 'link',
                 'providerName' => 'La Voz de Galicia',
-                'providerUrl' => 'http://lavozdegalicia.es',
+                'providerUrl' => 'https://lavozdegalicia.es',
             ]
         );
     }
