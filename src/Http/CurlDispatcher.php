@@ -159,14 +159,6 @@ class CurlDispatcher implements DispatcherInterface
             return [];
         }
 
-        $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $mimetypes = [
-            'image/jpeg',
-            'image/png',
-            'image/gif',
-            'image/bmp',
-            'image/x-icon',
-        ];
         $curl_multi = curl_multi_init();
         $responses = [];
         $connections = [];
@@ -189,20 +181,11 @@ class CurlDispatcher implements DispatcherInterface
 
             $curl = new CurlResult($connection);
 
-            $curl->onBody(function ($body, stdClass $data) use ($finfo, $mimetypes) {
-                if (empty($data->mime)) {
-                    $data->mime = finfo_buffer($finfo, $body);
-
-                    if (!in_array($data->mime, $mimetypes, true)) {
-                        $data->mime = null;
-
-                        return false;
-                    }
-                }
-
+            $curl->onBody(function ($body, stdClass $data) {
                 if (($info = getimagesizefromstring($body))) {
                     $data->width = $info[0];
                     $data->height = $info[1];
+                    $data->mime = $info['mime'];
 
                     return false;
                 }
@@ -246,7 +229,6 @@ class CurlDispatcher implements DispatcherInterface
             }
         }
 
-        finfo_close($finfo);
         curl_multi_close($curl_multi);
 
         ksort($responses, SORT_NUMERIC);
