@@ -654,6 +654,10 @@ class Url
             throw new \InvalidArgumentException('Malformed URL: ' . $url);
         }
 
+        if (empty($parts['scheme']) || !in_array($parts['scheme'], ['http', 'https'])) {
+            throw new \InvalidArgumentException(sprintf('Invalid URL scheme: "%s"', $parts['scheme']));
+        }
+
         foreach ($parts as $name => $value) {
             $parts[$name] = urldecode($value);
         }
