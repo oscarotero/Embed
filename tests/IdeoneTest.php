@@ -12,8 +12,8 @@ class IdeoneTest extends AbstractTestCase
                 'title' => 'Ideone.com',
                 'type' => 'rich',
                 'providerName' => 'Ideone.com',
-                'providerUrl' => 'http://ideone.com',
-                'code' => '<script src="http://ideone.com/e.js/Whjntg"></script>',
+                'providerUrl' => 'https://ideone.com',
+                'code' => '<script src="https://ideone.com/e.js/Whjntg"></script>',
             ]
         );
     }

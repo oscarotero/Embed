@@ -12,7 +12,7 @@ class WordPressTest extends AbstractTestCase
                 'title' => 'Dave Ross: Optimize Image Files Like a Pro',
                 'imageWidth' => 400,
                 'imageHeight' => 224,
-                'providerUrl' => 'https://wordpress.tv',
+                'providerUrl' => 'httpss://wordpress.tv',
             ]
         );
     }

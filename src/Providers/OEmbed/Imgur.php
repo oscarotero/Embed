@@ -8,5 +8,5 @@ class Imgur extends EndPoint implements EndPointInterface
         'imgur.com/*',
         'i.imgur.com/*',
     ];
-    protected static $endPoint = 'http://api.imgur.com/oembed';
+    protected static $endPoint = 'https://api.imgur.com/oembed';
 }
