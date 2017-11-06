@@ -67,7 +67,11 @@ class Html extends Provider
     {
         $keywords = $this->bag->get('keywords').','.$this->bag->get('news_keywords');
 
-        return array_filter(array_map('trim', explode(',', $keywords)));
+        return array_filter(
+            array_map('trim', explode(',', $keywords)),
+            function ($value) {
+                return !empty($value) && substr($value, -3) !== '...';
+            });
     }
 
     /**
