@@ -17,6 +17,7 @@ class DailyMotionTest extends AbstractTestCase
                 'imageHeight' => 240,
                 'providerName' => 'Dailymotion',
                 'providerUrl' => 'http://www.dailymotion.com',
+                'code' => '<iframe frameborder="0" width="480" height="360" src="http://www.dailymotion.com/embed/video/xy0wd" allowfullscreen></iframe>'
             ]
         );
     }
