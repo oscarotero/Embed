@@ -182,7 +182,7 @@ class CurlDispatcher implements DispatcherInterface
             $curl = new CurlResult($connection);
 
             $curl->onBody(function ($body, stdClass $data) {
-                if (($info = getimagesizefromstring($body))) {
+                if (($info = @getimagesizefromstring($body))) {
                     $data->width = $info[0];
                     $data->height = $info[1];
                     $data->mime = $info['mime'];
