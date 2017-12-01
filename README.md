@@ -17,7 +17,7 @@ Requirements:
 * PHP 5.5+
 * Curl library installed
 
-> 
+>
 * If you need PHP 5.3 support, use the 1.x version
 * If you need PHP 5.4 support, use the 2.x version
 
@@ -61,7 +61,7 @@ $info->width; //The width of the embed code
 $info->height; //The height of the embed code
 $info->aspectRatio; //The aspect ratio (width/height)
 
-$info->authorName; //The resource author 
+$info->authorName; //The resource author
 $info->authorUrl; //The author url
 
 $info->providerName; //The provider name of the page (Youtube, Twitter, Instagram, etc)
@@ -139,6 +139,7 @@ Used only for facebook events (not needed for posts, images, etc), to get inform
 Name | Type | Description
 -----|------|------------
 `key` | `string` | The access token used to get info from facebook graph API.
+`fields` | `string` | Comma-separated list of fields to query. Please refer to [Facebook documentation](https://developers.facebook.com/docs/graph-api/reference/event) for the full list of available fields.
 
 ## Example with all options:
 
@@ -174,6 +175,7 @@ $info = Embed::create($url, [
 
     'facebook' => [
         'key' => 'YOUR_KEY',
+        'fields' => 'field1,field2,field3' // default : cover,description,end_time,id,name,owner,place,start_time,timezone
     ],
 ]);
 ```
