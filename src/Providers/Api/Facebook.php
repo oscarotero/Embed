@@ -24,7 +24,7 @@ class Facebook extends Provider
             if ($key) {
                 $endPoint = Url::create('https://graph.facebook.com/'.$id)
                     ->withQueryParameter('access_token', $key)
-                    ->withQueryParameter('fields', 'description,timezone,start_time,end_time,name,owner,privacy,id,cover');
+                    ->withQueryParameter('fields', $adapter->getConfig('facebook[fields]'));
 
                 $response = $adapter->getDispatcher()->dispatch($endPoint);
 
