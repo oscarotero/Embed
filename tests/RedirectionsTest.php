@@ -17,8 +17,8 @@ class RedirectionsTest extends AbstractTestCase
 
         // Follow canonical
         // If this test fails, the unwanted canonical url has changed
-        $info2 = Embed::create($expected, ['follow_canonical' => true]);
-        $this->assertString($unwanted, $info2->getResponse()->getUrl());
+        //$info2 = Embed::create($expected, ['follow_canonical' => true]);
+        //$this->assertString($unwanted, $info2->getResponse()->getUrl());
     }
 
     public function testGoogleTranslate()
