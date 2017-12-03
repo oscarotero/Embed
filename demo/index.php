@@ -17,6 +17,7 @@ if (is_file(__DIR__.'/../env.php')) {
     include __DIR__.'/../env.php';
 
     $options['google']['key'] = getenv('GOOGLE_KEY');
+    $options['facebook']['key'] = getenv('FACEBOOK_KEY');
 }
 
 function getUrl()

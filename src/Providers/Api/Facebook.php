@@ -18,19 +18,12 @@ class Facebook extends Provider
     {
         parent::__construct($adapter);
 
-        if (($id = self::getId($adapter->getResponse()->getUrl()))) {
-            $key = $adapter->getConfig('facebook[key]');
+        if (($endPoint = $this->getEndPoint())) {
+            echo $endPoint;
+            $response = $adapter->getDispatcher()->dispatch($endPoint);
 
-            if ($key) {
-                $endPoint = Url::create('https://graph.facebook.com/'.$id)
-                    ->withQueryParameter('access_token', $key)
-                    ->withQueryParameter('fields', $adapter->getConfig('facebook[fields]'));
-
-                $response = $adapter->getDispatcher()->dispatch($endPoint);
-
-                if ($json = $response->getJsonContent()) {
-                    $this->bag->set($json);
-                }
+            if ($json = $response->getJsonContent()) {
+                $this->bag->set($json);
             }
         }
     }
@@ -98,16 +91,39 @@ class Facebook extends Provider
     }
 
     /**
-     * Returns the id found in a facebook url.
-     *
-     * @param Url $url
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    private static function getId(Url $url)
+    public function getCode()
     {
+        return $this->bag->get('embed_html', true);
+    }
+
+    /**
+     * Returns the Graph API Endpoint
+     *
+     * @return Url|null
+     */
+    private function getEndPoint()
+    {
+        $url = $this->adapter->getResponse()->getUrl();
+        $key = $this->adapter->getConfig('facebook[key]');
+
+        if (empty($key)) {
+            return;
+        }
+
         if ($url->getDirectoryPosition(0) === 'events') {
-            return $url->getDirectoryPosition(1);
+            return  Url::create('https://graph.facebook.com/')
+                        ->withAddedPath($url->getDirectoryPosition(1))
+                        ->withQueryParameter('access_token', $key)
+                        ->withQueryParameter('fields', $this->adapter->getConfig('facebook[events_fields]'));
+        }
+
+        if ($url->getDirectoryPosition(1) === 'videos') {
+            return  Url::create('https://graph.facebook.com/')
+                        ->withAddedPath($url->getDirectoryPosition(2))
+                        ->withQueryParameter('access_token', $key)
+                        ->withQueryParameter('fields', $this->adapter->getConfig('facebook[videos_fields]'));
         }
     }
 }

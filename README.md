@@ -139,7 +139,8 @@ Used only for facebook events (not needed for posts, images, etc), to get inform
 Name | Type | Description
 -----|------|------------
 `key` | `string` | The access token used to get info from facebook graph API.
-`fields` | `string` | Comma-separated list of fields to query. Please refer to [Facebook documentation](https://developers.facebook.com/docs/graph-api/reference/event) for the full list of available fields.
+`events_fields` | `string` | Comma-separated list of fields to query for a facebook event. Please refer to [Facebook documentation](https://developers.facebook.com/docs/graph-api/reference/event) for the full list of available fields.
+`videos_fields` | `string` | Comma-separated list of fields to query for a facebook video. Please refer to [Facebook documentation](https://developers.facebook.com/docs/graph-api/reference/event) for the full list of available fields.
 
 ## Example with all options:
 

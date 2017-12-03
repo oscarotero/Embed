@@ -48,7 +48,8 @@ abstract class Embed
 
         'facebook' => [
             'key' => null,
-            'fields' => 'cover,description,end_time,id,name,owner,place,start_time,timezone'
+            'events_fields' => 'id,cover,description,end_time,name,owner,place,start_time,timezone',
+            'videos_fields' => 'id,description,embed_html',
         ]
     ];
 
