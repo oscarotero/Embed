@@ -669,7 +669,7 @@ class Url
     {
         // : - used for files
         // @ and , - used for GoogleMaps adapter url (in view and streetview modes)
-        return str_replace(['%3A','%40','%2C'], [':','@',','], urlencode($path));
+        return str_replace(['%3A','%40','%2C'], [':','@',','], rawurlencode($path));
     }
 
     private static function validUrlOrEmpty($url)
