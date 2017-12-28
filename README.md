@@ -69,7 +69,7 @@ $info->providerUrl; //The provider url
 $info->providerIcons; //All provider icons found in the page
 $info->providerIcon; //The icon choosen as main icon
 
-$info->publishedTime; //The published time of the resource
+$info->publishedDate; //The published date of the resource
 $info->license; //The license url of the resource
 $info->linkedData; //The linked-data info (http://json-ld.org/)
 $info->feeds; //The RSS/Atom feeds

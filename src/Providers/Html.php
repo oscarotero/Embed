@@ -171,7 +171,6 @@ class Html extends Provider
             'pub_date',
             'publication-date',
             'publish-date',
-            'bt:pubDate',
             'rc.datecreation',
             'timestamp',
             'article:modified_time',
