@@ -71,7 +71,8 @@ class Html extends Provider
             array_map('trim', explode(',', $keywords)),
             function ($value) {
                 return !empty($value) && substr($value, -3) !== '...';
-            });
+            }
+        );
     }
 
     /**
