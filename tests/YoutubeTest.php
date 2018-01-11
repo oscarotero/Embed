@@ -60,7 +60,7 @@ class YoutubeTest extends AbstractTestCase
                 'imageWidth' => 480,
                 'imageHeight' => 360,
                 'type' => 'video',
-                'code' => '<iframe width="480" height="270" src="https://www.youtube.com/embed/videoseries?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>',
+                'code' => '<iframe width="480" height="270" src="https://www.youtube.com/embed/videoseries?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>',
                 'authorName' => 'Scadrei5',
             ]
         );
