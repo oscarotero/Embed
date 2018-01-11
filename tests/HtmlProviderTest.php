@@ -4,6 +4,9 @@ namespace Embed\Tests;
 
 class HtmlProviderTest extends AbstractTestCase
 {
+    /**
+     * @group ignore
+     */
     public function testAllowExternalImages()
     {
         $this->assertEmbed(
@@ -25,11 +28,6 @@ class HtmlProviderTest extends AbstractTestCase
             'http://www.brothers-brick.com/2016/04/06/stunning-lego-darth-vader-mask-cleverly-hides-scenes-from-star-wars/',
             [
                 'images' => 2,
-            ],
-            [
-                'html' => [
-                    'external_images' => false,
-                ],
             ]
         );
     }

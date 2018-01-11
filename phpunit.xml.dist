@@ -12,7 +12,11 @@
 	<testsuites>
 		<testsuite name="All tests">
 			<directory>tests</directory>
-			<exclude>tests/disabled/</exclude>
 		</testsuite>
 	</testsuites>
+    <groups>
+        <exclude>
+            <group>ignore</group>
+        </exclude>
+    </groups>
 </phpunit>
