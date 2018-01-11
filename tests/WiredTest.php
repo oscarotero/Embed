@@ -4,6 +4,9 @@ namespace Embed\Tests;
 
 class WiredTest extends AbstractTestCase
 {
+    /**
+     * @group ignore
+     */
     public function testOne()
     {
         $this->assertEmbed(
