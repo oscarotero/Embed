@@ -14,7 +14,7 @@ class InfogramTest extends AbstractTestCase
                 'height' => 600,
                 'type' => 'rich',
                 'providerName' => 'Infogram',
-                'author_url' => 'https://infogram.com/sabjnewsroom01',
+                'authorUrl' => 'https://infogram.com/sabjnewsroom01',
             ]
         );
     }
