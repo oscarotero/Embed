@@ -7,6 +7,9 @@ namespace Embed\Tests;
  */
 class SmQueue extends AbstractTestCase
 {
+    /**
+     * @group ignore
+     */
     public function testOne()
     {
         $this->assertEmbed(
