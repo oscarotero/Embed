@@ -10,7 +10,7 @@ class MeetUpTest extends AbstractTestCase
             'https://www.meetup.com/SetPay-Talks/events/219650150/',
             [
                 'title' => 'Docker, from zero to hero with Carlos Sánchez',
-                'description' => "1/13, 6:00 PM: Inauguramos las charlas de SetPay con uno de los temas más de moda en 2014, Docker.Docker es una herramienta para que desarrolladores y administradores de sistemas construyan, despliegu",
+                'description' => "Tue, Jan 13, 2015, 6:00 PM: Inauguramos las charlas de SetPay con uno de los temas más de moda en 2014, Docker.Docker es una herramienta para que desarrolladores y administradores de sistemas construy",
                 'imageWidth' => 2400,
                 'imageHeight' => 1260,
                 'type' => 'rich',

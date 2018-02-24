@@ -14,7 +14,6 @@ class UstreamTest extends AbstractTestCase
                 'imageHeight' => 90,
                 'type' => 'video',
                 'authorName' => 'redsh0es',
-                'providerName' => 'Ustream',
                 'providerUrl' => 'http://www.ustream.tv/',
             ]
         );
