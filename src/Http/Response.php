@@ -70,7 +70,7 @@ class Response extends AbstractResponse
                         $content
                     );
                 } elseif (mb_detect_encoding($content, 'ISO-8859-1', true) === 'ISO-8859-1') {
-                    $content = iconv('iso-8859-1', 'utf-8', $content);
+                    $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'ISO-8859-1');
                     $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $content);
                 }
 
