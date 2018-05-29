@@ -13,15 +13,15 @@ class ImageInfoTest extends AbstractTestCase
         $dispatcher = new CurlDispatcher();
 
         $result = $dispatcher->dispatchImages([
-            Url::create('http://www.mixdecultura.ro/wp-content/uploads/2013/03/galicia-locuinte-celtice.jpg'),
+            Url::create('https://lightwitch.org/Media/Default/Pictures/server_station.jpg'),
         ]);
 
         $this->assertCount(1, $result);
 
         $img = $result[0];
 
-        $this->assertEquals(600, $img->getWidth());
-        $this->assertEquals(408, $img->getHeight());
+        $this->assertEquals(5504, $img->getWidth());
+        $this->assertEquals(3096, $img->getHeight());
         $this->assertEquals('image/jpeg', $img->getContentType());
     }
 

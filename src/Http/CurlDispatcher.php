@@ -12,6 +12,12 @@ use stdClass;
 class CurlDispatcher implements DispatcherInterface
 {
     private $responses = [];
+    private static $acceptHeaders = [
+        'jpg' => 'image/jpeg',
+        'jpeg' => 'image/jpeg',
+        'gif' => 'image/gif',
+        'png' => 'image/png',
+    ];
 
     private $config = [
         CURLOPT_MAXREDIRS => 10,
@@ -79,7 +85,14 @@ class CurlDispatcher implements DispatcherInterface
     public function dispatch(Url $url)
     {
         $options = $this->config;
-        $options[CURLOPT_HTTPHEADER] = ['Accept: text/html'];
+
+        $extension = $url->getExtension();
+
+        if (!empty($extension) && isset(self::$acceptHeaders[$extension])) {
+            $options[CURLOPT_HTTPHEADER] = ['Accept: '.self::$acceptHeaders[$extension]];
+        } else {
+            $options[CURLOPT_HTTPHEADER] = ['Accept: text/html'];
+        }
 
         $response = $this->exec($url, $options);
 
@@ -176,7 +189,10 @@ class CurlDispatcher implements DispatcherInterface
 
             $connection = curl_init((string) $url);
 
-            curl_setopt_array($connection, $this->config);
+            $options = $this->config;
+            $options[CURLOPT_HTTPHEADER] = ['Accept: image/*'];
+
+            curl_setopt_array($connection, $options);
             curl_multi_add_handle($curl_multi, $connection);
 
             $curl = new CurlResult($connection);
