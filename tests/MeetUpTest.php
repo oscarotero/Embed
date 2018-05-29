@@ -7,13 +7,13 @@ class MeetUpTest extends AbstractTestCase
     public function testOne()
     {
         $this->assertEmbed(
-            'https://www.meetup.com/SetPay-Talks/events/219650150/',
+            'https://www.meetup.com/es/GPUL-Labs/events/248885422/',
             [
-                'title' => 'Docker, from zero to hero with Carlos Sánchez',
-                'description' => "1/13, 6:00 PM: Inauguramos las charlas de SetPay con uno de los temas más de moda en 2014, Docker.Docker es una herramienta para que desarrolladores y administradores de sistemas construyan, despliegu",
-                'imageWidth' => 2400,
-                'imageHeight' => 1260,
-                'type' => 'rich',
+                'title' => 'Introducción a Flutter',
+                'description' => "jue., 24 may. 2018 19:00: Fernando Souto - MOBGENDesde que Google anunció en el MWC que Flutter entraba en oficialmente beta, el interés por esta plataforma se ha multiplicado.Flutter es un SDK en len",
+                'imageWidth' => 600,
+                'imageHeight' => 600,
+                'type' => 'link',
             ]
         );
     }

@@ -19,7 +19,6 @@ class Facebook extends Provider
         parent::__construct($adapter);
 
         if (($endPoint = $this->getEndPoint())) {
-            echo $endPoint;
             $response = $adapter->getDispatcher()->dispatch($endPoint);
 
             if ($json = $response->getJsonContent()) {

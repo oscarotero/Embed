@@ -13,7 +13,7 @@ class HookemTest extends AbstractTestCase
             'http://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/',
             [
                 'title' => 'Texas shortstop Joe Baker was arrested for public intoxication',
-                'image' => 'https://www.hookemplus.com/wp-content/uploads/2016/04/SSS-TexasBaseball-12.jpg',
+                'image' => 'https://www.hookem.com/wp-content/uploads/2016/04/SSS-TexasBaseball-12.jpg',
             ]
         );
     }

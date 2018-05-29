@@ -12,7 +12,7 @@ class AolTest extends AbstractTestCase
                 'title' => 'Pile of Recovering Foster Kittens Is Purrfect',
                 'description' => "Holly Brookhouser has been fostering animals for two years. During that time, she’s been able to take care of 32 kittens. And, they just love being together!",
                 'type' => 'link',
-                'providerName' => 'AOL.com',
+                'providerName' => 'aol',
             ]
         );
     }
