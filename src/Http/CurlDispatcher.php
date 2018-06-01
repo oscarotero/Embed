@@ -91,7 +91,7 @@ class CurlDispatcher implements DispatcherInterface
         if (!empty($extension) && isset(self::$acceptHeaders[$extension])) {
             $options[CURLOPT_HTTPHEADER] = ['Accept: '.self::$acceptHeaders[$extension]];
         } else {
-            $options[CURLOPT_HTTPHEADER] = ['Accept: text/html'];
+            $options[CURLOPT_HTTPHEADER] = ['Accept: */*'];
         }
 
         $response = $this->exec($url, $options);
