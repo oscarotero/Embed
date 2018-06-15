@@ -9,7 +9,7 @@ class SlidesTest extends AbstractTestCase
         $this->assertEmbed(
             'http://slides.com/alexwalker/responsive-svg/',
             [
-                'title' => 'responsive-svg by Alex Walker',
+                'title' => 'responsive-svg',
                 'type' => 'rich',
                 'code' => '<iframe src="http://slides.com/alexwalker/responsive-svg/embed" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:576px;height:420px;"></iframe>',
                 'width' => 576,
