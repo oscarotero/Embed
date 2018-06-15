@@ -12,7 +12,7 @@ class Infogram extends EndPoint implements EndPointInterface
     ];
     protected static $endPoint = 'https://infogr.am/oembed';
 
-        /**
+    /**
      * {@inheritdoc}
      */
     public function getEndPoint()
