@@ -17,7 +17,11 @@ class CurlDispatcher implements DispatcherInterface
         'jpeg' => 'image/jpeg',
         'gif' => 'image/gif',
         'png' => 'image/png',
+        'mp3' => 'audio/mpeg',
         'mp4' => 'video/mp4',
+        'ogg' => 'audio/ogg',
+        'ogv' => 'video/ogg',
+        'webm' => 'video/webm',
     ];
 
     private $config = [
