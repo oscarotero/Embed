@@ -12,6 +12,7 @@ abstract class Redirects
         'googleTranslator' => 'translate.google.com/translate',
         'hashBang' => '*#!*',
         'spotify' => 'play.spotify.com/*',
+        'tumblr' => 't.umblr.com/redirect',
     ];
 
     /**
@@ -90,5 +91,21 @@ abstract class Redirects
     public static function spotify(Url $url)
     {
         return $url->withHost('open.spotify.com');
+    }
+
+    /**
+     * Redirect the tumblr url
+     *
+     * @param Url $url
+     *
+     * @return Url
+     */
+    public static function tumblr(Url $url)
+    {
+        if (($value = $url->getQueryParameter('z'))) {
+            return Url::create($value);
+        }
+
+        return $url;
     }
 }
