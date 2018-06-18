@@ -29,7 +29,7 @@ class Iframely implements EndPointInterface
      * @param Response $response
      * @param string   $key
      */
-    private function __construct(Response $response, $key)
+    protected function __construct(Response $response, $key)
     {
         $this->response = $response;
         $this->key = $key;

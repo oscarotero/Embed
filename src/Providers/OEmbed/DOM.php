@@ -32,7 +32,7 @@ class DOM implements EndPointInterface
      *
      * @param Response $response
      */
-    public function __construct(Response $response)
+    protected function __construct(Response $response)
     {
         $this->response = $response;
     }

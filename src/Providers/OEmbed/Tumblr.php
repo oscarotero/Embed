@@ -20,19 +20,10 @@ class Tumblr extends EndPoint implements EndPointInterface
     public static function create(Adapter $adapter)
     {
         $response = $adapter->getResponse();
+
         if ($response->getStartingUrl()->match(static::$pattern)) {
             return new static($response);
         }
-    }
-
-    /**
-     * Constructor.
-     *
-     * @param Response $response
-     */
-    private function __construct(Response $response)
-    {
-        $this->response = $response;
     }
 
     /**

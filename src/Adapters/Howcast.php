@@ -28,7 +28,10 @@ class Howcast extends Webpage
         $this->width = null;
         $this->height = null;
 
-        $dom = $this->getResponse()->getHtmlContent();
+        if (!($dom = $this->getResponse()->getHtmlContent())) {
+            return;
+        }
+
         // #embedModal textarea
         $textarea = Utils::xpathQuery($dom, "descendant-or-self::*[@id = 'embedModal']/descendant-or-self::*/textarea");
         

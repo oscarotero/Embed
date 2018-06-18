@@ -32,7 +32,7 @@ abstract class EndPoint
      *
      * @param Response $response
      */
-    private function __construct(Response $response)
+    protected function __construct(Response $response)
     {
         $this->response = $response;
     }
