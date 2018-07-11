@@ -128,7 +128,7 @@ class Utils
      */
     public static function google($src)
     {
-        return self::iframe('http://docs.google.com/viewer?'.http_build_query([
+        return self::iframe('https://docs.google.com/viewer?'.http_build_query([
             'url' => $src,
             'embedded' => 'true',
         ]), 600, 600);

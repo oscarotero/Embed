@@ -22,7 +22,7 @@ class FileTest extends AbstractTestCase
             'https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf',
             [
                 'type' => 'rich',
-                'code' => '<iframe src="http://docs.google.com/viewer?url=https%3A%2F%2Fmozilla.github.io%2Fpdf.js%2Fweb%2Fcompressed.tracemonkey-pldi-09.pdf&amp;embedded=true" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:600px;height:600px;"></iframe>',
+                'code' => '<iframe src="https://docs.google.com/viewer?url=https%3A%2F%2Fmozilla.github.io%2Fpdf.js%2Fweb%2Fcompressed.tracemonkey-pldi-09.pdf&amp;embedded=true" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:600px;height:600px;"></iframe>',
                 'providerUrl' => 'https://mozilla.github.io',
             ]
         );
