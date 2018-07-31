@@ -69,6 +69,9 @@ class Response extends AbstractResponse
                         '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">',
                         $content
                     );
+                } elseif (mb_detect_encoding($content, 'SJIS', true) === 'SJIS') {
+                    $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'SJIS');
+                    $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=shift_jis">', $content);
                 } elseif (mb_detect_encoding($content, 'ISO-8859-1', true) === 'ISO-8859-1') {
                     $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'ISO-8859-1');
                     $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $content);
