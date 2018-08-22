@@ -24,7 +24,7 @@ class ImageResponse extends AbstractResponse
             return false;
         }
 
-        if (($info = getimagesizefromstring(base64_decode(substr($pieces[1], 7)))) !== false) {
+        if (($info = @getimagesizefromstring(base64_decode(substr($pieces[1], 7)))) !== false) {
             return new self(
                 $url,
                 $url,
