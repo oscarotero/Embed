@@ -151,4 +151,25 @@ class UrlTest extends AbstractTestCase
         $url = Url::create($url);
         $this->assertSame($expected, $url->match($pattern));
     }
+
+    public function urlAbsoluteProvider()
+    {
+        return [
+            ['other-path', 'http://example.com/other-path'],
+            ['//other.com/path', 'http://other.com/path'],
+            ['data:base64', 'data:base64'],
+            ['', ''],
+            ['mailto:hello@example.com', 'mailto:hello@example.com'],
+        ];
+    }
+
+    /**
+     * @dataProvider urlAbsoluteProvider
+     */
+    public function testAbsoluteUrl($added, $expected)
+    {
+        $url = Url::create('http://example.com/path');
+
+        $this->assertSame($expected, $url->getAbsolute($added));
+    }
 }

@@ -559,7 +559,7 @@ class Url
             return '';
         }
 
-        if (strpos($url, 'data:') === 0) {
+        if (preg_match('|^\w+:[^/]|', $url)) {
             return $url;
         }
 
