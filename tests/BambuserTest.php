@@ -9,14 +9,13 @@ class BambuserTest extends AbstractTestCase
         $this->assertEmbed(
             'https://bambuser.com/v/7088053',
             [
-                'title' => 'EASY LISTENING',
+                'title' => 'EASY LISTENING | WRNU | Bambuser',
                 'description' => 'Broadcast by WRNU on Bambuser.com',
                 'type' => 'video',
-                'code' => '<object id="bplayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="320" height="240"><embed allowfullscreen="true" allowscriptaccess="always" wmode="transparent" type="application/x-shockwave-flash" name="bplayer" src="https://static.bambuser.com/r/player.swf?context=oembed&amp;vid=7088053" width="320" height="240" /><param name="movie" value="https://static.bambuser.com/r/player.swf?context=oembed&amp;vid=7088053" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="wmode" value="transparent" /></object>',
+                'code' => '<object width="320" height="267" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0"><param name="movie" value="https://static.bambuser.com/r/player.swf?vid=7088053&amp;context=fb"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="https://static.bambuser.com/r/player.swf?vid=7088053&amp;context=fb" width="320" height="267" type="application/x-shockwave-flash" allowFullScreen="true" allowScriptAccess="always" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></embed></object>',
                 'width' => 320,
-                'height' => 240,
-                'authorName' => 'WRNU',
-                'providerName' => 'Bambuser.com',
+                'height' => 267,
+                'providerName' => 'Bambuser',
             ]
         );
     }

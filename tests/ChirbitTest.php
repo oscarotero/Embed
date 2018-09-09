@@ -9,11 +9,11 @@ class ChirbitTest extends AbstractTestCase
         $this->assertEmbed(
             'http://chirb.it/7A9L9B',
             [
-                'title' => 'Encana conference call',
-                'width' => 380,
+                'title' => 'Chirbit [nvanderklippe] Encana conference call',
+                'width' => 320,
                 'height' => 120,
                 'type' => 'video',
-                'providerName' => 'chirbit',
+                'providerName' => 'Chirbit',
             ]
         );
     }
