@@ -36,6 +36,9 @@ class CustomAdaptersNamespaceTest extends AbstractTestCase
         );
     }
 
+    /**
+     * @group ignore
+     */
     public function testTwo()
     {
         $this->assertEmbed(

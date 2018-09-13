@@ -27,7 +27,7 @@ class HtmlProviderTest extends AbstractTestCase
         $this->assertEmbed(
             'http://www.brothers-brick.com/2016/04/06/stunning-lego-darth-vader-mask-cleverly-hides-scenes-from-star-wars/',
             [
-                'images' => 2,
+                'images' => 1,
             ]
         );
     }
@@ -37,7 +37,7 @@ class HtmlProviderTest extends AbstractTestCase
         $this->assertEmbed(
             'http://www.brothers-brick.com/2016/04/06/stunning-lego-darth-vader-mask-cleverly-hides-scenes-from-star-wars/',
             [
-                'images' => 4,
+                'images' => 3,
             ],
             [
                 'html' => [

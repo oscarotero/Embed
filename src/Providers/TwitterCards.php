@@ -23,7 +23,7 @@ class TwitterCards extends Provider
 
         foreach ($html->getElementsByTagName('meta') as $meta) {
             $name = trim(strtolower($meta->getAttribute('name')));
-            $value = $meta->getAttribute('content');
+            $value = $meta->getAttribute('content') ?: $meta->getAttribute('value');
 
             if (empty($name) || empty($value)) {
                 continue;
@@ -69,12 +69,10 @@ class TwitterCards extends Provider
         }
 
         switch ($type) {
-            case 'video':
-            case 'photo':
-            case 'link':
-            case 'rich':
-                return $type;
-
+            case 'summary':
+            case 'summary_large_image':
+            case 'app':
+                return 'rich';
             case 'player':
                 return 'video';
         }
@@ -114,7 +112,7 @@ class TwitterCards extends Provider
     public function getAuthorUrl()
     {
         $author = $this->getAuthorName();
-        
+
         if (!empty($author)) {
             return 'https://twitter.com/'.ltrim($author, '@');
         }

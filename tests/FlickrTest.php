@@ -18,6 +18,9 @@ class FlickrTest extends AbstractTestCase
         );
     }
 
+    /**
+     * @group ignore
+     */
     public function testProfile()
     {
         $this->assertEmbed(

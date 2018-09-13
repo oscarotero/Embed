@@ -12,7 +12,7 @@ class UrlBlacklistTest extends AbstractTestCase
         $this->assertEmbed(
             'http://glomdalen.no/skarnes',
             [
-                'url' => 'http://www.glomdalen.no?ns_campaign=frontpage&ns_mchannel=recommend_button&ns_source=facebook&ns_linkname=facebook&ns_fee=0',
+                'url' => 'https://www.glomdalen.no?ns_campaign=frontpage&ns_mchannel=recommend_button&ns_source=facebook&ns_linkname=facebook&ns_fee=0',
             ],
             [
                 'url_blacklist' => null,
