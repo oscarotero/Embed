@@ -13,6 +13,7 @@ class File extends Adapter
 {
     private static $contentTypes = [
         'video/ogg' => ['video', 'videoHtml'],
+        'video/quicktime' => ['video', 'videoHtml'],
         'application/ogg' => ['video', 'videoHtml'],
         'video/ogv' => ['video', 'videoHtml'],
         'video/webm' => ['video', 'videoHtml'],
