@@ -82,6 +82,9 @@ class File extends Adapter
 
             case 'google':
                 return Utils::google($this->url);
+
+            case 'imageHtml':
+                return Utils::imageHtml($this->url, 'Remote file', $this->imageWidth, $this->imageHeight);
         }
     }
 
