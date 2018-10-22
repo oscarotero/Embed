@@ -11,7 +11,7 @@ class InfogramTest extends AbstractTestCase
             [
                 'title' => 'Frost Bank Advisors (online graphic)',
                 'width' => 550,
-                'height' => 589,
+                'height' => 600,
                 'type' => 'rich',
                 'providerName' => 'Infogram',
                 'authorUrl' => 'https://infogram.com/sabjnewsroom01',
