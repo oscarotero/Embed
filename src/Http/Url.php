@@ -540,10 +540,6 @@ class Url
         foreach ((array) $query as $key => $value) {
             $this->info['query'][hex2bin($key)] = $value;
         }
-
-        array_walk_recursive($this->info['query'], function (&$value) {
-            $value = urldecode($value);
-        });
     }
 
     /**
