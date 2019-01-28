@@ -10,7 +10,7 @@ class Instagram extends EndPoint implements EndPointInterface
         'instagram.com/p/*',
         'www.instagram.com/p/*',
     ];
-    protected static $endPoint = 'http://api.instagram.com/oembed';
+    protected static $endPoint = 'https://api.instagram.com/oembed';
 
     /**
      * {@inheritdoc}
