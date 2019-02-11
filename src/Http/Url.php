@@ -223,7 +223,7 @@ class Url
                 $tld = $host[1].'.'.$host[0];
                 $suffixes = self::getSuffixes();
 
-                if (in_array($tld, $suffixes, true)) {
+                if (in_array($tld, (array)$suffixes, true)) {
                     return $first_level ? $host[2].'.'.$tld : $host[2];
                 }
 
