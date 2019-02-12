@@ -9,7 +9,7 @@ class Url
 {
     private $info;
     private $url;
-    private static $public_suffix_list = [];
+    private static $public_suffix_list;
 
     /**
      * Create a new Url instance.
@@ -619,15 +619,9 @@ class Url
 
     private static function getSuffixes()
     {
-    	
-        if (count(self::$public_suffix_list) === 0) {
-        	$suffixes = @include __DIR__.'/../resources/public_suffix_list.php';
-
-        	if (is_array($suffixes)) {
-		        self::$public_suffix_list = $suffixes;
-	        }
-        }
-
+        if (self::$public_suffix_list === null) {
+            self::$public_suffix_list = (array) include __DIR__.'/../resources/public_suffix_list.php';
+    	}
         return self::$public_suffix_list;
     }
 
