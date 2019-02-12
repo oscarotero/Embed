@@ -13,7 +13,7 @@ class CadenaserTest extends AbstractTestCase
                 'width' => 620,
                 'height' => 100,
                 'type' => 'rich',
-                'code' => '<iframe src="http://play.cadenaser.com/widget/audio/001RD010000004275766/" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:620px;height:100px;"></iframe>',
+                'code' => '<iframe src="https://play.cadenaser.com/widget/audio/001RD010000004275766/" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:620px;height:100px;"></iframe>',
                 'providerName' => 'Cadena SER',
             ]
         );
