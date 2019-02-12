@@ -9,7 +9,7 @@ class Url
 {
     private $info;
     private $url;
-    private static $public_suffix_list;
+    private static $public_suffix_list = [];
 
     /**
      * Create a new Url instance.
@@ -223,7 +223,7 @@ class Url
                 $tld = $host[1].'.'.$host[0];
                 $suffixes = self::getSuffixes();
 
-                if (in_array($tld, (array)$suffixes, true)) {
+                if (in_array($tld, $suffixes, true)) {
                     return $first_level ? $host[2].'.'.$tld : $host[2];
                 }
 
@@ -619,8 +619,13 @@ class Url
 
     private static function getSuffixes()
     {
-        if (self::$public_suffix_list === null) {
-            self::$public_suffix_list = include __DIR__.'/../resources/public_suffix_list.php';
+    	
+        if (count(self::$public_suffix_list) === 0) {
+        	$suffixes = @include __DIR__.'/../resources/public_suffix_list.php';
+
+        	if (is_array($suffixes)) {
+		        self::$public_suffix_list = $suffixes;
+	        }
         }
 
         return self::$public_suffix_list;
