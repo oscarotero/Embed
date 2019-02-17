@@ -10,6 +10,7 @@ use Embed\Http\Response;
 use Embed\Http\Url;
 use Embed\Providers\Provider;
 use Embed\Utils;
+use Exception;
 
 /**
  * Base class extended by all adapters.
@@ -317,7 +318,11 @@ abstract class Adapter implements DataInterface
         return $this->getFirstFromProviders(function (Provider $provider) use ($blacklist, $homeUrl) {
             $url = $provider->getUrl();
 
-            if ($homeUrl === $url || (!empty($blacklist) && Url::create($url)->match($blacklist))) {
+            try {
+                if ($homeUrl === $url || (!empty($blacklist) && Url::create($url)->match($blacklist))) {
+                    return false;
+                }
+            } catch (Exception $error) {
                 return false;
             }
 
