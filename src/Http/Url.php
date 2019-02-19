@@ -621,7 +621,8 @@ class Url
     {
         if (self::$public_suffix_list === null) {
             self::$public_suffix_list = (@include __DIR__.'/../resources/public_suffix_list.php') ? [];
-    	}
+        }
+      
         return self::$public_suffix_list;
     }
 

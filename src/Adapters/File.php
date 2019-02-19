@@ -28,6 +28,7 @@ class File extends Adapter
         'image/png' => ['photo', 'imageHtml'],
         'image/bmp' => ['photo', 'imageHtml'],
         'image/ico' => ['photo', 'imageHtml'],
+        'image/webp' => ['photo', 'imageHtml'],
         'text/rtf' => ['rich', 'google'],
         'application/pdf' => ['rich', 'google'],
         'application/msword' => ['rich', 'google'],
