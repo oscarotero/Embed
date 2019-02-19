@@ -10,7 +10,7 @@ class ImageshackTest extends AbstractTestCase
             'https://imageshack.com/i/f0KQQN7Uj',
             [
                 'title' => '.',
-                'image' => 'http://imagizer.imageshack.us/scaled/medium/540/KQQN7U.jpg',
+                'image' => 'http://imagizer.imageshack.com/scaled/medium/540/KQQN7U.jpg',
                 'imageWidth' => 236,
                 'imageHeight' => 354,
                 'type' => 'link',

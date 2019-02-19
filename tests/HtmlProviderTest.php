@@ -37,7 +37,7 @@ class HtmlProviderTest extends AbstractTestCase
         $this->assertEmbed(
             'http://www.brothers-brick.com/2016/04/06/stunning-lego-darth-vader-mask-cleverly-hides-scenes-from-star-wars/',
             [
-                'images' => 3,
+                'images' => 1,
             ],
             [
                 'html' => [

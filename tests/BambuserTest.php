@@ -7,14 +7,14 @@ class BambuserTest extends AbstractTestCase
     public function testOne()
     {
         $this->assertEmbed(
-            'https://bambuser.com/v/7088053',
+            'https://bambuser.com',
             [
-                'title' => 'EASY LISTENING | WRNU | Bambuser',
-                'description' => 'Broadcast by WRNU on Bambuser.com',
-                'type' => 'video',
-                'code' => '<object width="320" height="267" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0"><param name="movie" value="https://static.bambuser.com/r/player.swf?vid=7088053&amp;context=fb"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="https://static.bambuser.com/r/player.swf?vid=7088053&amp;context=fb" width="320" height="267" type="application/x-shockwave-flash" allowFullScreen="true" allowScriptAccess="always" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></embed></object>',
-                'width' => 320,
-                'height' => 267,
+                'title' => 'Bambuser',
+                'description' => 'Bambuser is an end-to-end solution for live streaming. Effortlessly create engaging experiences in any app using our developer-friendly tools and fully managed live video platform.',
+                'type' => 'rich',
+                'code' => '<blockquote class="wp-embedded-content"><a href="https://bambuser.com/">Bambuser</a></blockquote> <script type=\'text/javascript\'> <!--//--><![CDATA[//><!-- !function(a,b){"use strict";function c(){if(!e){e=!0;var a,c,d,f,g=-1!==navigator.appVersion.indexOf("MSIE 10"),h=!!navigator.userAgent.match(/Trident.*rv:11\./),i=b.querySelectorAll("iframe.wp-embedded-content");for(c=0;c<i.length;c++){if(d=i[c],!d.getAttribute("data-secret"))f=Math.random().toString(36).substr(2,10),d.src+="#?secret="+f,d.setAttribute("data-secret",f);if(g||h)a=d.cloneNode(!0),a.removeAttribute("security"),d.parentNode.replaceChild(a,d)}}}var d=!1,e=!1;if(b.querySelector)if(a.addEventListener)d=!0;if(a.wp=a.wp||{},!a.wp.receiveEmbedMessage)if(a.wp.receiveEmbedMessage=function(c){var d=c.data;if(d)if(d.secret||d.message||d.value)if(!/[^a-zA-Z0-9]/.test(d.secret)){var e,f,g,h,i,j=b.querySelectorAll(\'iframe[data-secret="\'+d.secret+\'"]\'),k=b.querySelectorAll(\'blockquote[data-secret="\'+d.secret+\'"]\');for(e=0;e<k.length;e++)k[e].style.display="none";for(e=0;e<j.length;e++)if(f=j[e],c.source===f.contentWindow){if(f.removeAttribute("style"),"height"===d.message){if(g=parseInt(d.value,10),g>1e3)g=1e3;else if(~~g<200)g=200;f.height=g}if("link"===d.message)if(h=b.createElement("a"),i=b.createElement("a"),h.href=f.getAttribute("src"),i.href=d.value,i.host===h.host)if(b.activeElement===f)a.top.location.href=d.value}else;}},d)a.addEventListener("message",a.wp.receiveEmbedMessage,!1),b.addEventListener("DOMContentLoaded",c,!1),a.addEventListener("load",c,!1)}(window,document); //--><!]]> </script><iframe sandbox="allow-scripts" security="restricted" src="https://bambuser.com/embed" width="600" height="338" title="&#8220;Bambuser&#8221; &#8212; Bambuser" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" class="wp-embedded-content"></iframe>',
+                'width' => 600,
+                'height' => 338,
                 'providerName' => 'Bambuser',
             ]
         );

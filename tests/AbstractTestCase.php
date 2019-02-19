@@ -3,13 +3,13 @@
 namespace Embed\Tests;
 
 use Embed\Embed;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use InvalidArgumentException;
 
 /**
  * Base class with custom utilities for testing.
  */
-abstract class AbstractTestCase extends PHPUnit_Framework_TestCase
+abstract class AbstractTestCase extends TestCase
 {
     /**
      * Compare two string, replacing some conflicting characters
