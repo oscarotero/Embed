@@ -620,8 +620,9 @@ class Url
     private static function getSuffixes()
     {
         if (self::$public_suffix_list === null) {
-            self::$public_suffix_list = (array) include __DIR__.'/../resources/public_suffix_list.php';
+            self::$public_suffix_list = (@include __DIR__.'/../resources/public_suffix_list.php') ? [];
         }
+      
         return self::$public_suffix_list;
     }
 
