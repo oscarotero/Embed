@@ -5,7 +5,7 @@ namespace Embed\Tests;
 class YoutubeTest extends AbstractTestCase
 {
     
-    const $expectedVideo = [
+    const EXPECTED_VIDEO_INFO = [
         'title' => 'Noisy kittens waiting for dinner!',
         'imageWidth' => 480,
         'imageHeight' => 360,
@@ -50,7 +50,7 @@ class YoutubeTest extends AbstractTestCase
     {
         $this->assertEmbed(
             'http://www.youtube.com/watch?v=eiHXASgRTcA',
-            $expectedVideo
+            self::EXPECTED_VIDEO_INFO
         );
     }
     
@@ -58,7 +58,7 @@ class YoutubeTest extends AbstractTestCase
     {
         $this->assertEmbed(
             'http://www.youtu.be/eiHXASgRTcA',
-            $expectedVideo
+            self::EXPECTED_VIDEO_INFO
         );
     }
 
