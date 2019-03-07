@@ -5,7 +5,7 @@ namespace Embed\Tests;
 class YoutubeTest extends AbstractTestCase
 {
     
-    private $expectedVideoInfo = [
+    static private $expectedVideoInfo = [
         'title' => 'Noisy kittens waiting for dinner!',
         'imageWidth' => 480,
         'imageHeight' => 360,
