@@ -57,7 +57,7 @@ class YoutubeTest extends AbstractTestCase
     public function testShareUrl()
     {
         $this->assertEmbed(
-            'http://www.youtu.be/eiHXASgRTcA',
+            'http://youtu.be/eiHXASgRTcA',
             self::$expectedVideoInfo
         );
     }
