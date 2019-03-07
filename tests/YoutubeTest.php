@@ -4,50 +4,61 @@ namespace Embed\Tests;
 
 class YoutubeTest extends AbstractTestCase
 {
+    
+    static private $expectedVideoInfo = [
+        'title' => 'Noisy kittens waiting for dinner!',
+        'imageWidth' => 480,
+        'imageHeight' => 360,
+        'type' => 'video',
+        'authorName' => 'smshdchrb',
+        'authorUrl' => 'https://www.youtube.com/user/smshdchrb',
+        'providerName' => 'YouTube',
+        'providerUrl' => 'https://www.youtube.com/',
+        'tags' => [
+            'kittens',
+            'cats',
+            'hungry',
+            'cat',
+            'baby',
+            'eight',
+            'weeks',
+            'old',
+            'noisy',
+            'meow',
+            'funny',
+            'kitties',
+            'feline',
+            'dinner',
+            'excited',
+            'loud',
+            'cute',
+            'pet',
+            'food',
+            'time',
+            'felix',
+            'kitty',
+            'catz',
+            'lolcat',
+            'kitten',
+            'talking',
+            'adorable',
+            'climbing'
+        ],
+    ];
+    
     public function testOne()
     {
         $this->assertEmbed(
             'http://www.youtube.com/watch?v=eiHXASgRTcA',
-            [
-                'title' => 'Noisy kittens waiting for dinner!',
-                'imageWidth' => 480,
-                'imageHeight' => 360,
-                'type' => 'video',
-                'authorName' => 'smshdchrb',
-                'authorUrl' => 'https://www.youtube.com/user/smshdchrb',
-                'providerName' => 'YouTube',
-                'providerUrl' => 'https://www.youtube.com/',
-                'tags' => [
-                    'kittens',
-                    'cats',
-                    'hungry',
-                    'cat',
-                    'baby',
-                    'eight',
-                    'weeks',
-                    'old',
-                    'noisy',
-                    'meow',
-                    'funny',
-                    'kitties',
-                    'feline',
-                    'dinner',
-                    'excited',
-                    'loud',
-                    'cute',
-                    'pet',
-                    'food',
-                    'time',
-                    'felix',
-                    'kitty',
-                    'catz',
-                    'lolcat',
-                    'kitten',
-                    'talking',
-                    'adorable',
-                    'climbing'
-                ],
-            ]
+            self::$expectedVideoInfo
+        );
+    }
+    
+    public function testShareUrl()
+    {
+        $this->assertEmbed(
+            'http://youtu.be/eiHXASgRTcA',
+            self::$expectedVideoInfo
         );
     }
 
