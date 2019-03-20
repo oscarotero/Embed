@@ -36,7 +36,7 @@ class GoogleTest extends AbstractTestCase
             [
                 'title' => 'Grow your business through email marketing Learn more here: http://bit.ly/Yr...',
                 'type' => 'rich',
-                'code' => '<script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script><div class="g-post" data-href="https://plus.google.com/+StephanHovnanian/posts/6apV9FHgo4k"></div>',
+                'code' => '<script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script><div class="g-post" data-href="https://plus.google.com/%2BStephanHovnanian/posts/6apV9FHgo4k"></div>',
                 'providerName' => 'Google Plus',
             ]
         );

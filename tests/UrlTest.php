@@ -18,7 +18,7 @@ class UrlTest extends AbstractTestCase
             ['https://www.tumblr.com/oembed//1.0//', 'https://www.tumblr.com/oembed/1.0/'],
             ['https://animoto.com/oembeds/create.xml?automated=true&options=start_hq', 'https://animoto.com/oembeds/create.xml?automated=true&options=start_hq'],
             ['http://static2.politico.com/dims4/default/28fb355/2147483647/resize/1160x%3E/quality/90/?url=http%3A%2F%2Fs3-origin-images.politico.com%2F2013%2F12%2F18%2F131218_george_w_bush_barack_obama_ap_60', 'http://static2.politico.com/dims4/default/28fb355/2147483647/resize/1160x%3E/quality/90/?url=http%3A%2F%2Fs3-origin-images.politico.com%2F2013%2F12%2F18%2F131218_george_w_bush_barack_obama_ap_60'],
-            ['https://plus.google.com/+carlsenverlag/posts/2hibgWrmhp1', 'https://plus.google.com/+carlsenverlag/posts/2hibgWrmhp1'],
+            ['https://plus.google.com/+carlsenverlag/posts/2hibgWrmhp1', 'https://plus.google.com/%2Bcarlsenverlag/posts/2hibgWrmhp1'],
             ['http://test.drupal.dd:8083/tests/localport.html', 'http://test.drupal.dd:8083/tests/localport.html'],
             ['http://testuser@test.drupal.dd:8083/tests/identified.html', 'http://testuser@test.drupal.dd:8083/tests/identified.html'],
             ['http://testuser:testpass@test.drupal.dd:8083/tests/authenticated.html', 'http://testuser:testpass@test.drupal.dd:8083/tests/authenticated.html'],
@@ -27,6 +27,7 @@ class UrlTest extends AbstractTestCase
             ['https://pbs.twimg.com/media/CvCZ90BXYAE5q80.png:large', 'https://pbs.twimg.com/media/CvCZ90BXYAE5q80.png:large'],
             ['http://img.bibo.kz/?7142389.jpg', 'http://img.bibo.kz/?7142389.jpg'],
             ['https://twitter.com/search?q=google%2B&src=typd&lang=en', 'https://twitter.com/search?q=google%2B&src=typd&lang=en'],
+            ['https://www.catizz.com/medias/common/accessoires-chat-canva (1).jpg', 'https://www.catizz.com/medias/common/accessoires-chat-canva%20%281%29.jpg'],
         ];
     }
 

@@ -599,17 +599,17 @@ class Url
             $path = substr($path, 0, -strlen($file));
 
             if (preg_match('/(.*)\.([\w]+)$/', $file, $match)) {
-                $this->info['file'] = urldecode($match[1]);
+                $this->info['file'] = rawurldecode($match[1]);
                 $this->info['extension'] = $match[2];
             } else {
-                $this->info['file'] = urldecode($file);
+                $this->info['file'] = rawurldecode($file);
             }
         }
 
         $this->info['path'] = [];
 
         foreach (explode('/', $path) as $dir) {
-            $dir = urldecode($dir);
+            $dir = rawurldecode($dir);
 
             if ($dir !== '') {
                 $this->info['path'][] = $dir;
@@ -622,7 +622,7 @@ class Url
         if (self::$public_suffix_list === null) {
             self::$public_suffix_list = (@include __DIR__.'/../resources/public_suffix_list.php') ?: [];
         }
-      
+
         return self::$public_suffix_list;
     }
 
@@ -639,7 +639,7 @@ class Url
         $enc_url = preg_replace_callback(
             '%[^:/@?&=#]+%usD',
             function ($matches) {
-                return urlencode($matches[0]);
+                return rawurlencode($matches[0]);
             },
             $url
         );
@@ -655,9 +655,8 @@ class Url
         }
 
         foreach ($parts as $name => $value) {
-            $parts[$name] = urldecode($value);
+            $parts[$name] = rawurldecode($value);
         }
-
         return $parts;
     }
 
@@ -665,7 +664,7 @@ class Url
     {
         // : - used for files
         // @ and , - used for GoogleMaps adapter url (in view and streetview modes)
-        return str_replace(['%3A','%40','%2C'], [':','@',','], urlencode($path));
+        return str_replace(['%3A','%40','%2C'], [':','@',','], rawurlencode($path));
     }
 
     private static function validUrlOrEmpty($url)
