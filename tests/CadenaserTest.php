@@ -4,6 +4,9 @@ namespace Embed\Tests;
 
 class CadenaserTest extends AbstractTestCase
 {
+    /**
+     * @group ignore
+     */
     public function testOne()
     {
         $this->assertEmbed(

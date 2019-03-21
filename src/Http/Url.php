@@ -241,10 +241,10 @@ class Url
     public function getDirectoryPosition($position)
     {
         if ($position === count($this->info['path'])) {
-            return $this->info['file'];
+            return urldecode($this->info['file']);
         }
 
-        return isset($this->info['path'][$position]) ? $this->info['path'][$position] : null;
+        return isset($this->info['path'][$position]) ? urldecode($this->info['path'][$position]) : null;
     }
 
     /**
@@ -663,8 +663,8 @@ class Url
     private static function urlEncode($path)
     {
         // : - used for files
-        // @ and , - used for GoogleMaps adapter url (in view and streetview modes)
-        return str_replace(['%3A','%40','%2C'], [':','@',','], rawurlencode($path));
+        // @, + and , - used for GoogleMaps adapter url (in view and streetview modes)
+        return str_replace(['%3A','%40','%2C', '%2B'], [':','@',',', '+'], rawurlencode($path));
     }
 
     private static function validUrlOrEmpty($url)
