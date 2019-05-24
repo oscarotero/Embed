@@ -61,7 +61,8 @@ class Response extends AbstractResponse
                 $entities = libxml_disable_entity_loader(true);
 
                 $this->htmlContent = new DOMDocument();
-                if (stripos($content, '<meta charset=') === false) {
+
+                if (stripos($content, '<meta charset="utf') === false) {
                     $encodings = [
                         'ASCII'        => 'ascii',
                         'UTF-8'        => 'utf-8',
@@ -86,7 +87,7 @@ class Response extends AbstractResponse
                     ];
                     
                     $detected = mb_detect_encoding($content, implode(',', array_keys($encodings)), true);
-                    
+
                     if ($detected && !empty($encodings[$detected])) {
                         $content = mb_convert_encoding($content, 'HTML-ENTITIES', $detected);
                         $content = preg_replace(
