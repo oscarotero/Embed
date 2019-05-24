@@ -74,7 +74,7 @@ class Response extends AbstractResponse
                     $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=shift_jis">', $content);
                 } elseif (mb_detect_encoding($content, 'ISO-8859-1', true) === 'ISO-8859-1') {
                     $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'ISO-8859-1');
-                    $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">', $content);
+                    $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">', $content);
                 }
 
                 $this->htmlContent->loadHTML(trim($content));
