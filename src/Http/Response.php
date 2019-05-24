@@ -61,20 +61,40 @@ class Response extends AbstractResponse
                 $entities = libxml_disable_entity_loader(true);
 
                 $this->htmlContent = new DOMDocument();
-
-                if (mb_detect_encoding($content, 'UTF-8', true) === 'UTF-8') {
-                    $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8');
-                    $content = preg_replace(
-                        '/<head[^>]*>/',
-                        '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">',
-                        $content
-                    );
-                } elseif (mb_detect_encoding($content, 'SJIS', true) === 'SJIS') {
-                    $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'SJIS');
-                    $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=shift_jis">', $content);
-                } elseif (mb_detect_encoding($content, 'ISO-8859-1', true) === 'ISO-8859-1') {
-                    $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'ISO-8859-1');
-                    $content = preg_replace('/<head[^>]*>/', '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">', $content);
+                if (stripos($content, '<meta charset=') === false) {
+                    $encodings = [
+                        'ASCII'        => 'ascii',
+                        'UTF-8'        => 'utf-8',
+                        'SJIS'         => 'shift_jis',
+                        'Windows-1251' => 'windows-1251',
+                        'Windows-1252' => 'windows-1252',
+                        'Windows-1254' => 'windows-1254',
+                        'ISO-8859-16'  => 'iso-8859-16',
+                        'ISO-8859-15'  => 'iso-8859-15',
+                        'ISO-8859-14'  => 'iso-8859-14',
+                        'ISO-8859-13'  => 'iso-8859-13',
+                        'ISO-8859-10'  => 'iso-8859-10',
+                        'ISO-8859-9'   => 'iso-8859-9',
+                        'ISO-8859-8'   => 'iso-8859-8',
+                        'ISO-8859-7'   => 'iso-8859-7',
+                        'ISO-8859-6'   => 'iso-8859-6',
+                        'ISO-8859-5'   => 'iso-8859-5',
+                        'ISO-8859-4'   => 'iso-8859-4',
+                        'ISO-8859-3'   => 'iso-8859-3',
+                        'ISO-8859-2'   => 'iso-8859-2',
+                        'ISO-8859-1'   => 'iso-8859-1', 
+                    ];
+                    
+                    $detected = mb_detect_encoding($content, implode(',', array_keys($encodings)), true);
+                    
+                    if ($detected && !empty($encodings[$detected])) {
+                        $content = mb_convert_encoding($content, 'HTML-ENTITIES', $detected);
+                        $content = preg_replace(
+                            '/<head[^>]*>/',
+                            '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset='.$encodings[$detected].'">',
+                            $content
+                        );
+                    }
                 }
 
                 $this->htmlContent->loadHTML(trim($content));
