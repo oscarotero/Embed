@@ -9,7 +9,7 @@ class ImagesBlacklistTest extends AbstractTestCase
         $this->assertEmbed(
             'https://alistapart.com/article/the-rich-typefaces-get-richer',
             [
-                'image' => 'https://alistapart.com/d/misc-images/bigwreath.png',
+                'image' => 'https://alistapart.com/wp-content/uploads/2019/03/cropped-icon_navigation-laurel-512.jpg',
             ],
             [
                 'images_blacklist' => [
@@ -24,7 +24,7 @@ class ImagesBlacklistTest extends AbstractTestCase
         $this->assertEmbed(
             'https://alistapart.com/article/the-rich-typefaces-get-richer',
             [
-                'image' => 'https://alistapart.com/d/misc-images/bigwreath.png',
+                'image' => 'https://alistapart.com/wp-content/uploads/2019/03/cropped-icon_navigation-laurel-512.jpg',
             ],
             [
                 'images_blacklist' => [
@@ -39,7 +39,7 @@ class ImagesBlacklistTest extends AbstractTestCase
         $this->assertEmbed(
             'https://alistapart.com/article/the-rich-typefaces-get-richer',
             [
-                'image' => 'https://alistapart.com/d/misc-images/bigwreath.png',
+                'image' => 'https://alistapart.com/wp-content/uploads/2019/03/cropped-icon_navigation-laurel-512.jpg',
             ],
             [
                 'images_blacklist' => [

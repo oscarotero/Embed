@@ -7,7 +7,7 @@ class IdeoneTest extends AbstractTestCase
     public function testOne()
     {
         $this->assertEmbed(
-            'http://ideone.com/Whjntg',
+            'https://ideone.com/Whjntg',
             [
                 'title' => 'Ideone.com',
                 'type' => 'rich',

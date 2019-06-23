@@ -34,7 +34,7 @@ class FileTest extends AbstractTestCase
             'https://ia801006.us.archive.org/34/items/popeye_349/popeye.ogv',
             [
                 'type' => 'video',
-                'code' => '<video controls><source src="https://ia801006.us.archive.org/16/items/popeye_349/popeye.ogv"></video>',
+                'code' => '<video controls><source src="https://ia800901.us.archive.org/16/items/popeye_349/popeye.ogv"></video>',
                 'providerUrl' => 'https://archive.org',
             ]
         );
