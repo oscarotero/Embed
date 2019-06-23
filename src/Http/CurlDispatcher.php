@@ -48,7 +48,7 @@ class CurlDispatcher implements DispatcherInterface
         $this->config = $config + $this->config;
 
         if (!isset($this->config[CURLOPT_COOKIEJAR])) {
-            $cookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.'.uniqid());
+            $cookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies-'.uniqid().'.txt');
 
             if (is_file($cookies)) {
                 if (!is_writable($cookies)) {
