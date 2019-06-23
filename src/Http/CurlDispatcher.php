@@ -25,6 +25,7 @@ class CurlDispatcher implements DispatcherInterface
     ];
 
     private $config = [
+        CURLOPT_HTTPHEADER => [],
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_CONNECTTIMEOUT => 10,
         CURLOPT_TIMEOUT => 10,
@@ -94,9 +95,9 @@ class CurlDispatcher implements DispatcherInterface
         $extension = $url->getExtension();
 
         if (!empty($extension) && isset(self::$acceptHeaders[$extension])) {
-            $options[CURLOPT_HTTPHEADER] = ['Accept: '.self::$acceptHeaders[$extension]];
+            $options[CURLOPT_HTTPHEADER][] = 'Accept: '.self::$acceptHeaders[$extension];
         } else {
-            $options[CURLOPT_HTTPHEADER] = ['Accept: */*'];
+            $options[CURLOPT_HTTPHEADER][] = 'Accept: */*';
         }
 
         $response = $this->exec($url, $options);
