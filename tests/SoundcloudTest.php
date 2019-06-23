@@ -39,7 +39,7 @@ class SoundcloudTest extends AbstractTestCase
             'https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup',
             [
                 'title' => 'LOWE CT Cape Times - World Cup by iDidTht.com',
-                'description' => 'If you did it. Show it on ididtht.com',
+                'description' => 'iDidTht Promotes and Connects South Africa’s Advertising and Production Industry.',
                 'type' => 'rich',
                 'code' => '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&show_artwork=true"></iframe>',
                 'providerName' => 'SoundCloud',
