@@ -21,7 +21,6 @@ class Google extends Webpage
             'www.google.*/maps*',
             'calendar.google.com/calendar/*',
             'drive.google.com/file/*/view',
-            'plus.google.com/*/posts/*',
         ]);
     }
 
@@ -47,11 +46,6 @@ class Google extends Webpage
 
         $url = $this->getResponse()->getUrl();
 
-        if ($url->getHost() === 'plus.google.com') {
-            return '<script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script>'
-                .'<div class="g-post" data-href="'.$url.'"></div>';
-        }
-
         if ($url->getHost() === 'calendar.google.com') {
             return Utils::iframe($url);
         }
@@ -70,22 +64,6 @@ class Google extends Webpage
      */
     public function getImagesUrls()
     {
-        if ($this->getResponse()->getUrl()->getHost() === 'plus.google.com') {
-            return parent::getImagesUrls();
-        }
-
         return [];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getProviderName()
-    {
-        if ($this->getResponse()->getUrl()->getHost() === 'plus.google.com') {
-            return 'Google Plus';
-        }
-
-        return parent::getProviderName();
     }
 }
