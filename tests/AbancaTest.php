@@ -14,8 +14,8 @@ class AbancaTest extends AbstractTestCase
                         '@context' => 'http://schema.org',
                         '@type' => 'Organization',
                         'name' => 'ABANCA',
-                        'url' => 'https://www.abanca.com',
-                        'logo' => 'https://www.abanca.com/img/logo-social.jpg',
+                        'url' => '//www.abanca.com',
+                        'logo' => '//www.abanca.com/img/logo-social.jpg',
                         'sameAs' => [
                             'https://www.facebook.com/SomosABANCA',
                             'https://twitter.com/somosABANCA',

@@ -10,8 +10,7 @@ class WikipediaTest extends AbstractTestCase
             'https://en.wikipedia.org/wiki/Albert_Einstein',
             [
                 'title' => 'Albert Einstein',
-                'imageWidth' => 700,
-                'imageHeight' => 899,
+                'imageWidth' => 841,
                 'type' => 'link',
                 'providerName' => 'Wikipedia',
                 'providerUrl' => 'https://wikipedia.org',
