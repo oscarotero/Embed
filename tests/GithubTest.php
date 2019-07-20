@@ -10,8 +10,8 @@ class GithubTest extends AbstractTestCase
             'https://gist.github.com/oscarotero/7749998',
             [
                 'title' => 'Git-cheatsheet.sh',
-                'imageWidth' => 400,
-                'imageHeight' => 400,
+                'imageWidth' => 1280,
+                'imageHeight' => 640,
                 'type' => 'rich',
                 'providerName' => 'Gist',
             ]
