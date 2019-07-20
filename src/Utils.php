@@ -12,7 +12,7 @@ use DOMXPath;
  */
 class Utils
 {
-    const ENCODINGS = [
+    private static $encodings = [
         'ASCII'        => 'ascii',
         'UTF-8'        => 'utf-8',
         'SJIS'         => 'shift_jis',
@@ -296,13 +296,13 @@ class Utils
      */
     private static function normalize($string)
     {
-        $detected = mb_detect_encoding($string, implode(',', array_keys(self::ENCODINGS)), true);
+        $detected = mb_detect_encoding($string, implode(',', array_keys(self::$encodings)), true);
         
-        if ($detected && isset(self::ENCODINGS[$detected])) {
+        if ($detected && isset(self::$encodings[$detected])) {
             $string = mb_convert_encoding($string, 'HTML-ENTITIES', $detected);
             $string = preg_replace(
                 '/<head[^>]*>/',
-                '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset='.self::ENCODINGS[$detected].'">',
+                '<head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset='.self::$encodings[$detected].'">',
                 $string
             );
         }
