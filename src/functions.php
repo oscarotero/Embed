@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Embed;
 
@@ -32,4 +33,21 @@ function cropText(?string $text, int $maxLength = 400, int $offset = 0): ?string
     $end = mb_strrpos($text, ' ');
 
     return mb_substr($text, 0, $end).'...';
+}
+
+function html(string $tagName, array $attributes, string $content = null): string
+{
+    $html = "<{$tagName}";
+
+    foreach ($attributes as $name => $value) {
+        if ($value === null) {
+            continue;
+        } elseif ($value === true) {
+            $html .= " $name";
+        } elseif ($value !== false) {
+            $html .= ' '.$name.'="'.htmlspecialchars((string) $value).'"';
+        }
+    }
+
+    return "{$html}>{$content}</{$tagName}>";
 }

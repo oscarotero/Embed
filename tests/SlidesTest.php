@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Embed\Tests;
 
@@ -10,10 +11,8 @@ class SlidesTest extends AbstractTestCase
             'http://slides.com/alexwalker/responsive-svg/',
             [
                 'title' => 'responsive-svg',
-                'type' => 'rich',
-                'code' => '<iframe src="http://slides.com/alexwalker/responsive-svg/embed" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden;width:576px;height:420px;"></iframe>',
-                'width' => 576,
-                'height' => 420,
+                // 'type' => 'rich',
+                'code' => '<iframe src="http://slides.com/alexwalker/responsive-svg/embed" width="576" height="420" style="border:none" frameborder="0" allowTransparency="true"></iframe>',
                 'providerName' => 'Slides',
                 'providerUrl' => 'http://slides.com',
             ]

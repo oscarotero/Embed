@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Embed\Tests;
 
@@ -18,7 +19,13 @@ abstract class AbstractTestCase extends TestCase
         $extractor = self::$embed->get($url);
 
         foreach ($expected as $name => $value) {
-            $this->assertEquals($value, $extractor->$name);
+            switch ($name) {
+                case 'code':
+                    $this->assertEquals($value, (string) $extractor->$name);
+                break;
+                default:
+                    $this->assertEquals($value, $extractor->$name);
+            }
         }
     }
 }

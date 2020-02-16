@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Embed;
 
@@ -41,27 +42,27 @@ class Extractor
     private Document $document;
     private OEmbed $oembed;
 
-    private AuthorName $authorName;
-    private AuthorUrl $authorUrl;
-    private Cms $cms;
-    private Code $code;
-    private Description $description;
-    private Favicon $favicon;
-    private Feeds $feeds;
-    private Icon $icon;
-    private Image $image;
-    private Keywords $keywords;
-    private Language $language;
-    private Languages $languages;
-    private License $license;
-    private LinkedData $linkedData;
-    private ProviderName $providerName;
-    private ProviderUrl $providerUrl;
-    private PublishedTime $publishedTime;
-    private Redirect $redirect;
-    private Title $title;
-    private Type $type;
-    private Url $url;
+    protected AuthorName $authorName;
+    protected AuthorUrl $authorUrl;
+    protected Cms $cms;
+    protected Code $code;
+    protected Description $description;
+    protected Favicon $favicon;
+    protected Feeds $feeds;
+    protected Icon $icon;
+    protected Image $image;
+    protected Keywords $keywords;
+    protected Language $language;
+    protected Languages $languages;
+    protected License $license;
+    protected LinkedData $linkedData;
+    protected ProviderName $providerName;
+    protected ProviderUrl $providerUrl;
+    protected PublishedTime $publishedTime;
+    protected Redirect $redirect;
+    protected Title $title;
+    protected Type $type;
+    protected Url $url;
 
     public function __construct(RequestInterface $request, ResponseInterface $response, Crawler $crawler)
     {

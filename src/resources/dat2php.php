@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 $input = __DIR__.'/public_suffix_list.dat';
 $output = __DIR__.'/public_suffix_list.php';
@@ -9,7 +10,8 @@ $lines = array_filter($lines, function ($line) {
     return $line[0] !== '/';
 });
 
-$php = "<?php\n\nreturn ".var_export(array_values($lines), true).";\n";
+$php = "<?php
+declare(strict_types = 1);\n\nreturn ".var_export(array_values($lines), true).";\n";
 $php = str_replace('array (', 'array(', $php);
 
 file_put_contents($output, $php);

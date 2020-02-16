@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Embed;
 
@@ -6,6 +7,7 @@ use Embed\Http\Crawler;
 use Embed\Http\CurlDispatcher;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\UriFactoryInterface;
 use RuntimeException;
 
 class Embed
@@ -26,6 +28,14 @@ class Embed
         'Sunrise\Http\Message\ResponseFactory',
     ];
 
+    private const URI = [
+        'Laminas\Diactoros\UriFactory',
+        'GuzzleHttp\Psr7\HttpFactory',
+        'Slim\Psr7\Factory\UriFactory',
+        'Nyholm\Psr7\Factory\Psr17Factory',
+        'Sunrise\Http\Message\UriFactory',
+    ];
+
     private Crawler $crawler;
 
     public function __construct(Crawler $crawler = null)
@@ -41,8 +51,10 @@ class Embed
     private static function createCrawler(): Crawler
     {
         $client = new CurlDispatcher(self::detectResponseFactory());
+        $requestFactory = self::detectRequestFactory();
+        $uriFactory = self::detectUriFactory();
 
-        return new Crawler(self::detectRequestFactory(), $client);
+        return new Crawler($requestFactory, $uriFactory, $client);
     }
 
     private static function detectRequestFactory(): RequestFactoryInterface
@@ -65,5 +77,16 @@ class Embed
         }
 
         throw new RuntimeException('No ResponseFactoryInterface detected');
+    }
+
+    private static function detectUriFactory(): UriFactoryInterface
+    {
+        foreach (self::URI as $class) {
+            if (class_exists($class)) {
+                return new $class();
+            }
+        }
+
+        throw new RuntimeException('No UriFactoryInterface detected');
     }
 }
