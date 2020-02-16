@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Embed\Tests;
+namespace Embed\Tests\Pages;
 
 class GithubTest extends AbstractTestCase
 {
@@ -11,10 +11,11 @@ class GithubTest extends AbstractTestCase
             'https://gist.github.com/oscarotero/7749998',
             [
                 'title' => 'Git-cheatsheet.sh',
-                'imageWidth' => 1280,
-                'imageHeight' => 640,
-                'type' => 'rich',
                 'providerName' => 'Gist',
+                'publishedTime' => '2013-12-02T14:10:20.000Z',
+                'authorName' => 'oscarotero',
+                'authorUrl' => 'https://github.com/oscarotero',
+                'code' => true,
             ]
         );
     }
@@ -26,7 +27,6 @@ class GithubTest extends AbstractTestCase
             [
                 'title' => 'benbalter/dc-wifi-social',
                 'code' => '<script src="https://embed.githubusercontent.com/view/geojson/benbalter/dc-wifi-social/master/bars.geojson"></script>',
-                'type' => 'rich',
                 'providerName' => 'GitHub',
             ]
         );
@@ -39,7 +39,6 @@ class GithubTest extends AbstractTestCase
             [
                 'title' => 'skalnik/secret-bear-clip',
                 'code' => '<script src="https://embed.githubusercontent.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl"></script>',
-                'type' => 'rich',
                 'providerName' => 'GitHub',
             ]
         );

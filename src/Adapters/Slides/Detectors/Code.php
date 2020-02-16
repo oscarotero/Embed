@@ -3,10 +3,10 @@ declare(strict_types = 1);
 
 namespace Embed\Adapters\Slides\Detectors;
 
+use function Embed\cleanPath;
 use Embed\Detectors\Code as Detector;
 use Embed\EmbedCode;
 use function Embed\html;
-use function Embed\cleanPath;
 
 class Code extends Detector
 {

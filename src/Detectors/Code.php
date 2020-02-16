@@ -54,7 +54,6 @@ class Code extends Detector
             case 'swf':
             case 'application/x-shockwave-flash':
                 return null; //Ignore flash
-            
             case 'mp4':
             case 'ogg':
             case 'ogv':
@@ -70,7 +69,6 @@ class Code extends Detector
                     'height' => $height,
                 ]);
                 break;
-
             default:
                 $code = html('iframe', [
                     'src' => $url,

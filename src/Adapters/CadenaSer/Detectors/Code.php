@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Embed\Adapters\Flickr\Detectors;
+namespace Embed\Adapters\CadenaSer\Detectors;
 
 use function Embed\cleanPath;
 use Embed\Detectors\Code as Detector;
@@ -21,24 +21,21 @@ class Code extends Detector
     {
         $uri = $this->extractor->getUri();
 
-        if (!match('/photos/*', $uri->getPath())) {
+        if (!match('/audio/*', $uri->getPath())) {
             return null;
         }
 
-        $path = cleanPath($uri->getPath().'/player');
+        $path = cleanPath('/widget/', $uri->getPath());
         $src = $uri->withPath($path);
-        $width = 640;
-        $height = 425;
 
         $html = html('iframe', [
             'src' => $src,
-            'width' => $width,
-            'height' => $height,
-            'style' => 'border:none',
             'frameborder' => 0,
+            'width' => '100%',
+            'height' => '360',
             'allowTransparency' => 'true',
         ]);
 
-        return new EmbedCode($html, $width, $height);
+        return new EmbedCode($html, null, 360);
     }
 }

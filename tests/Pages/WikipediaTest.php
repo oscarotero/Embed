@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Embed\Tests;
+namespace Embed\Tests\Pages;
 
 class WikipediaTest extends AbstractTestCase
 {
@@ -11,10 +11,8 @@ class WikipediaTest extends AbstractTestCase
             'https://en.wikipedia.org/wiki/Albert_Einstein',
             [
                 'title' => 'Albert Einstein',
-                'imageWidth' => 841,
-                'type' => 'link',
                 'providerName' => 'Wikipedia',
-                'providerUrl' => 'https://wikipedia.org',
+                'providerUrl' => 'https://en.wikipedia.org',
             ]
         );
     }

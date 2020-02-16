@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Embed\Tests;
+namespace Embed\Tests\Pages;
 
 class IdeoneTest extends AbstractTestCase
 {

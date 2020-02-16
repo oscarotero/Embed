@@ -14,6 +14,13 @@ abstract class Adapters
         'pinterest.com' => Pinterest\Extractor::class,
         'flickr.com' => Flickr\Extractor::class,
         'snipplr.com' => Snipplr\Extractor::class,
+        'play.cadenaser.com' => CadenaSer\Extractor::class,
+        'ideone.com' => Ideone\Extractor::class,
+        'github.com' => Github\Extractor::class,
+        'gist.github.com' => Gist\Extractor::class,
+        'en.wikipedia.org' => Wikipedia\Extractor::class,
+        'es.wikipedia.org' => Wikipedia\Extractor::class,
+        'gl.wikipedia.org' => Wikipedia\Extractor::class,
     ];
 
     public static function getExtractorClass(UriInterface $uri): string

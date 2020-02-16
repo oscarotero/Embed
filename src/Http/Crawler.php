@@ -5,13 +5,13 @@ namespace Embed\Http;
 
 use Embed\Adapters\Adapters;
 use Embed\Extractor;
+use function Embed\resolveUri;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
-use function Embed\resolveUri;
 
 class Crawler
 {
@@ -20,7 +20,7 @@ class Crawler
     private ClientInterface $client;
 
     const DEFAULT_HEADERS = [
-        'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:73.0) Gecko/20100101 Firefox/73.0'
+        'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:73.0) Gecko/20100101 Firefox/73.0',
     ];
 
     public function __construct(RequestFactoryInterface $requestFactory, UriFactoryInterface $uriFactory, ClientInterface $client)

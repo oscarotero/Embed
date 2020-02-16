@@ -89,7 +89,7 @@ class QueryResult
             $attribute = $attributes->item($i);
 
             if ($attribute->name === $name) {
-                return clean($attribute->nodeValue, $minLength, $maxLength);
+                return self::clean($attribute->nodeValue, $minLength, $maxLength);
             }
         }
 

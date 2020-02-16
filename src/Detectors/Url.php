@@ -3,8 +3,6 @@ declare(strict_types = 1);
 
 namespace Embed\Detectors;
 
-use Psr\Http\Message\UriInterface;
-
 class Url extends Detector
 {
     public function detect(): string

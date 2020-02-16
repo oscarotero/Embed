@@ -6,7 +6,6 @@ namespace Embed\Adapters\Snipplr\Detectors;
 use Embed\Detectors\Code as Detector;
 use Embed\EmbedCode;
 use function Embed\html;
-use function Embed\cleanPath;
 use function Embed\match;
 
 class Code extends Detector
@@ -30,15 +29,15 @@ class Code extends Detector
         $html = [
             html('div', [
                 'id' => "snipplr_embed_{$id}",
-                'class' => 'snipplr_embed'
+                'class' => 'snipplr_embed',
             ], '<a target="blank" href="https://snipplr.com/view/'.$id.'">View this snippet</a> on Snipplr'),
             html('script', [
                 'type' => 'text/javascript',
-                'src' => 'https://snipplr.com/js/embed.js'
+                'src' => 'https://snipplr.com/js/embed.js',
             ]),
             html('script', [
                 'type' => 'text/javascript',
-                'src' => "https://snipplr.com/json/{$id}"
+                'src' => "https://snipplr.com/json/{$id}",
             ]),
         ];
 

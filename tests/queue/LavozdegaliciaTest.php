@@ -1,9 +1,9 @@
 <?php
 declare(strict_types = 1);
 
-namespace Embed\Tests;
+namespace Embed\Tests\Pages;
 
-class Lavozdegalicia extends AbstractTestCase
+class LavozdegaliciaTest extends AbstractTestCase
 {
     public function testOne()
     {
