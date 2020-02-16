@@ -239,7 +239,7 @@ $adapterData = [
                     <th><?php echo $name; ?></th>
                     <td><?php $fn($info->$name); ?></td>
                 </tr>
-                <?php endforeach ?>
+                <?php endforeach; ?>
             </table>
 
             <div class="view-advanced-data">
@@ -253,7 +253,7 @@ $adapterData = [
                 <?php if (empty($provider->getBag()->getAll())): ?>
                 <p>No data collected</p>
                 <?php continue; ?>
-                <?php endif ?>
+                <?php endif; ?>
 
                 <table>
                     <?php foreach ($providerData as $name => $fn): ?>
@@ -262,15 +262,15 @@ $adapterData = [
                         <th><?php echo $providerName.'.'.$name; ?></th>
                         <td><?php $fn($provider->{'get'.$name}(), false); ?></td>
                     </tr>
-                    <?php endif ?>
-                    <?php endforeach ?>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
 
                     <tr>
                         <th>All data collected</th>
                         <td><?php printArray($provider->getBag()->getAll()); ?></td>
                     </tr>
                 </table>
-                <?php endforeach ?>
+                <?php endforeach; ?>
 
                 <h2>Http requests</h2>
 
@@ -279,10 +279,10 @@ $adapterData = [
                     <tr>
                         <th>
                             <?php if ((string) $response->getStartingUrl() !== (string) $response->getUrl()): ?>
-                                <?= $response->getStartingUrl() ?> <code>=&gt;</code>
-                            <?php endif ?>
+                                <?= $response->getStartingUrl(); ?> <code>=&gt;</code>
+                            <?php endif; ?>
 
-                            <?= $response->getUrl() ?>
+                            <?= $response->getUrl(); ?>
                         </th>
                     </tr>
                     <tr>
@@ -291,7 +291,7 @@ $adapterData = [
                             <?php printArray($response->getInfo()); ?>
                         </td>
                     </tr>
-                    <?php endforeach ?>
+                    <?php endforeach; ?>
                 </table>
 
                 <h2>Content</h2>

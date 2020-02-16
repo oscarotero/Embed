@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
   0 => 'ac',
   1 => 'com.ac',
   2 => 'edu.ac',
@@ -7998,4 +7998,4 @@ return array(
   7994 => 'yolasite.com',
   7995 => 'za.net',
   7996 => 'za.org',
-);
+];

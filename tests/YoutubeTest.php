@@ -4,17 +4,14 @@ namespace Embed\Tests;
 
 class YoutubeTest extends AbstractTestCase
 {
-    
-    static private $expectedVideoInfo = [
+    private static $expectedVideoInfo = [
         'title' => 'Noisy kittens waiting for dinner!',
-        'imageWidth' => 480,
-        'imageHeight' => 360,
         'type' => 'video',
         'authorName' => 'smshdchrb',
         'authorUrl' => 'https://www.youtube.com/user/smshdchrb',
         'providerName' => 'YouTube',
         'providerUrl' => 'https://www.youtube.com/',
-        'tags' => [
+        'keywords' => [
             'kittens',
             'cats',
             'hungry',
@@ -42,10 +39,10 @@ class YoutubeTest extends AbstractTestCase
             'kitten',
             'talking',
             'adorable',
-            'climbing'
+            'climbing',
         ],
     ];
-    
+
     public function testOne()
     {
         $this->assertEmbed(
@@ -53,7 +50,7 @@ class YoutubeTest extends AbstractTestCase
             self::$expectedVideoInfo
         );
     }
-    
+
     public function testShareUrl()
     {
         $this->assertEmbed(
@@ -68,8 +65,6 @@ class YoutubeTest extends AbstractTestCase
             'https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST',
             [
                 'title' => 'De espaldas al patriarcado',
-                'imageWidth' => 480,
-                'imageHeight' => 360,
                 'type' => 'video',
                 'code' => '<iframe width="480" height="270" src="https://www.youtube.com/embed/videoseries?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                 'authorName' => 'Scadrei5',
