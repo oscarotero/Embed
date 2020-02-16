@@ -37,7 +37,8 @@
         "phpunit/phpunit": "^9.0",
         "friendsofphp/php-cs-fixer": "^2.0",
         "nyholm/psr7": "^1.2",
-        "oscarotero/php-cs-fixer-config": "^1.0"
+        "oscarotero/php-cs-fixer-config": "^1.0",
+        "symfony/var-exporter": "^5.0"
     },
     "autoload": {
         "psr-4": {
@@ -55,6 +56,10 @@
     "scripts": {
         "demo": "php -S localhost:8888 demo/index.php",
         "test": "phpunit",
-        "cs-fix": "php-cs-fixer fix"
+        "cs-fix": "php-cs-fixer fix",
+        "update-resources": [
+            "php scripts/update-oembed.php",
+            "php scripts/update-suffix.php"
+        ]
     }
 }

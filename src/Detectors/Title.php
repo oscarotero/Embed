@@ -11,8 +11,8 @@ class Title extends Detector
         $document = $this->extractor->getDocument();
 
         return $oembed->get('title')
-            ?: $document->select('.//meta', ['property' => 'og:title'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'twitter:title'])->attribute('content')
+            ?: $document->getMeta('og:title')
+            ?: $document->getMeta('twitter:title')
             ?: $document->select('.//head/title')->value();
     }
 }

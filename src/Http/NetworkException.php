@@ -13,6 +13,7 @@ final class NetworkException extends Exception implements NetworkExceptionInterf
 
     public function __construct(string $message, int $code, RequestInterface $request)
     {
+        parent::__construct($message, $code);
         $this->request = $request;
     }
 

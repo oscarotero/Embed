@@ -11,10 +11,10 @@ class Language extends Detector
 
         return $document->select('/html')->attribute('lang')
             ?: $document->select('/html')->attribute('xml:lang')
-            ?: $document->select('.//meta', ['name' => 'language'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'lang'])->attribute('content')
-            ?: $document->select('.//meta', ['property' => 'og:locale'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'dc:language'])->attribute('content')
+            ?: $document->getMeta('language')
+            ?: $document->getMeta('lang')
+            ?: $document->getMeta('og:locale')
+            ?: $document->getMeta('dc:language')
             ?: $document->select('.//meta', ['http-equiv' => 'content-language'])->attribute('content');
     }
 }

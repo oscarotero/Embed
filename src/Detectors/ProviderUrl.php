@@ -15,8 +15,8 @@ class ProviderUrl extends Detector
 
     private function fallback(): string
     {
-        $url = $this->extractor->url;
+        $uri = $this->extractor->getUri();
 
-        return sprintf('%s://%s', $url->getScheme(), $url->getHost());
+        return sprintf('%s://%s', $uri->getScheme(), $uri->getHost());
     }
 }

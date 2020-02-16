@@ -11,15 +11,15 @@ class Keywords extends Detector
         $document = $this->extractor->getDocument();
 
         $metas = [
-            ['name' => 'keywords'],
-            ['property' => 'og:video:tag'],
-            ['property' => 'og:article:tag'],
-            ['property' => 'og:video:tag'],
-            ['property' => 'og:book:tag'],
+            'keywords',
+            'og:video:tag',
+            'og:article:tag',
+            'og:video:tag',
+            'og:book:tag',
         ];
 
-        foreach ($metas as $attr) {
-            $value = $document->select('.//meta', $attr)->attributes('content');
+        foreach ($metas as $type) {
+            $value = $document->getMeta($type);
 
             if ($value) {
                 $tags = array_merge($tags, self::toArray($value));

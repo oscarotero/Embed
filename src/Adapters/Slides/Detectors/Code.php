@@ -6,6 +6,7 @@ namespace Embed\Adapters\Slides\Detectors;
 use Embed\Detectors\Code as Detector;
 use Embed\EmbedCode;
 use function Embed\html;
+use function Embed\cleanPath;
 
 class Code extends Detector
 {
@@ -17,11 +18,10 @@ class Code extends Detector
 
     private function fallback(): ?EmbedCode
     {
-        $url = $this->extractor->url;
+        $uri = $this->extractor->getUri();
 
-        $path = array_filter(explode('/', $url->getPath()));
-        $path = [...$path, 'embed'];
-        $src = $url->withPath(implode('/', $path));
+        $path = cleanPath($uri->getPath().'/embed');
+        $src = $uri->withPath($path);
         $width = 576;
         $height = 420;
 

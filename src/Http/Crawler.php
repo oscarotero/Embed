@@ -11,12 +11,17 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
+use function Embed\resolveUri;
 
 class Crawler
 {
     private RequestFactoryInterface $requestFactory;
     private UriFactoryInterface $uriFactory;
     private ClientInterface $client;
+
+    const DEFAULT_HEADERS = [
+        'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:73.0) Gecko/20100101 Firefox/73.0'
+    ];
 
     public function __construct(RequestFactoryInterface $requestFactory, UriFactoryInterface $uriFactory, ClientInterface $client)
     {
@@ -25,9 +30,15 @@ class Crawler
         $this->client = $client;
     }
 
-    public function createRequest(string $uri, array $headers = []): RequestInterface
+    public function createRequest(string $uri, array $headers = [], UriInterface $base = null): RequestInterface
     {
         $request = $this->requestFactory->createRequest('GET', $uri);
+
+        if ($base) {
+            $request = $request->withUri(resolveUri($base, $request->getUri()));
+        }
+
+        $headers = $headers + self::DEFAULT_HEADERS;
 
         foreach ($headers as $name => $value) {
             $request = $request->withHeader($name, $value);
@@ -36,9 +47,10 @@ class Crawler
         return $request;
     }
 
-    public function createUri(string $uri): UriInterface
+    public function createUri(string $uri, UriInterface $base = null): UriInterface
     {
-        return $this->uriFactory->createUri($uri);
+        $uri = $this->uriFactory->createUri($uri);
+        return $base ? resolveUri($base, $uri) : $uri;
     }
 
     public function sendRequest(RequestInterface $request): ResponseInterface
@@ -51,9 +63,16 @@ class Crawler
         $request = $this->createRequest($uri, $headers);
         $response = $this->client->sendRequest($request);
 
-        $url = $response->getHeaderLine('Content-Location') ?: (string) $request->getUri();
-        $class = Adapters::getExtractorClass($url) ?: Extractor::class;
+        $uri = $this->getLatestUri($response) ?: $request->getUri();
+        $class = Adapters::getExtractorClass($uri);
 
-        return new $class($request, $response, $this);
+        return new $class($uri, $request, $response, $this);
+    }
+
+    protected function getLatestUri(ResponseInterface $response): ?UriInterface
+    {
+        $location = $response->getHeaderLine('Content-Location');
+
+        return $location ? $this->createUri($location) : null;
     }
 }

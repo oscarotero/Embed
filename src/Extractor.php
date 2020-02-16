@@ -24,11 +24,11 @@ use Embed\Detectors\ProviderUrl;
 use Embed\Detectors\PublishedTime;
 use Embed\Detectors\Redirect;
 use Embed\Detectors\Title;
-use Embed\Detectors\Type;
 use Embed\Detectors\Url;
 use Embed\Http\Crawler;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\UriInterface;
 
 /**
  * Class to extract the info
@@ -37,6 +37,7 @@ class Extractor
 {
     private RequestInterface $request;
     private ResponseInterface $response;
+    private UriInterface $uri;
     private Crawler $crawler;
 
     private Document $document;
@@ -61,11 +62,11 @@ class Extractor
     protected PublishedTime $publishedTime;
     protected Redirect $redirect;
     protected Title $title;
-    protected Type $type;
     protected Url $url;
 
-    public function __construct(RequestInterface $request, ResponseInterface $response, Crawler $crawler)
+    public function __construct(UriInterface $uri, RequestInterface $request, ResponseInterface $response, Crawler $crawler)
     {
+        $this->uri = $uri;
         $this->request = $request;
         $this->response = $response;
         $this->crawler = $crawler;
@@ -92,7 +93,6 @@ class Extractor
         $this->publishedTime = new PublishedTime($this);
         $this->redirect = new Redirect($this);
         $this->title = new Title($this);
-        $this->type = new Type($this);
         $this->url = new Url($this);
     }
 
@@ -125,6 +125,11 @@ class Extractor
     public function getResponse(): ResponseInterface
     {
         return $this->response;
+    }
+
+    public function getUri(): UriInterface
+    {
+        return $this->uri;
     }
 
     public function getCrawler(): Crawler

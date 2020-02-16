@@ -15,8 +15,8 @@ class Document
 
     public static function create(string $html): Document
     {
-        $html = str_replace('<br>', "\n", $html);
-        $html = str_replace('<br />', "\n", $html);
+        $html = str_replace('<br>', "\n<br>", $html);
+        $html = str_replace('<br ', "\n <br ", $html);
 
         $document = !empty($html) ? Parser::parse($html) : new DOMDocument();
 
@@ -78,5 +78,17 @@ class Document
         }
 
         return QueryResult::create($this->xpath->query($query, $context));
+    }
+
+    public function getMeta(string $type): ?string
+    {
+        return $this->select('.//meta', ['name' => $type])->attribute('content')
+            ?: $this->select('.//meta', ['property' => $type])->attribute('content')
+            ?: $this->select('.//meta', ['itemprop' => $type])->attribute('content');
+    }
+
+    public function __toString(): string
+    {
+        return Parser::stringify($this->getDocument());
     }
 }

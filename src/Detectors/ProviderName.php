@@ -10,14 +10,16 @@ class ProviderName extends Detector
     public function detect(): string
     {
         $oembed = $this->extractor->getOEmbed();
+        $document = $this->extractor->getDocument();
 
         return $oembed->get('provider_name')
+            ?: $document->getMeta('og:site_name')
             ?: ucfirst($this->fallback());
     }
 
     private function fallback(): string
     {
-        $host = $this->extractor->url->getHost();
+        $host = $this->extractor->getUri()->getHost();
 
         $host = array_reverse(explode('.', $host));
 
@@ -41,7 +43,7 @@ class ProviderName extends Detector
     private static function getSuffixes(): array
     {
         if (!isset(self::$suffixes)) {
-            self::$suffixes = (@include __DIR__.'/../resources/public_suffix_list.php') ?: [];
+            self::$suffixes = require dirname(__DIR__).'/resources/suffix.php';
         }
 
         return self::$suffixes;

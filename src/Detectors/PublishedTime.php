@@ -7,19 +7,23 @@ class PublishedTime extends Detector
 {
     public function detect(): ?string
     {
+        $oembed = $this->extractor->getOEmbed();
         $document = $this->extractor->getDocument();
 
-        return $document->select('.//meta', ['name' => 'article:published_time'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'created'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'date'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'datepublished'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'newsrepublic:publish_date'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'pagerender'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'pub_date'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'publication-date'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'publish-date'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'rc.datecreation'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'timestamp'])->attribute('content')
-            ?: $document->select('.//meta', ['name' => 'article:modified_time'])->attribute('content');
+        return $oembed->get('pubdate')
+            ?: $document->getMeta('article:published_time')
+            ?: $document->getMeta('created')
+            ?: $document->getMeta('date')
+            ?: $document->getMeta('datepublished')
+            ?: $document->getMeta('music:release_date')
+            ?: $document->getMeta('video:release_date')
+            ?: $document->getMeta('newsrepublic:publish_date')
+            ?: $document->getMeta('pagerender')
+            ?: $document->getMeta('pub_date')
+            ?: $document->getMeta('publication-date')
+            ?: $document->getMeta('publish-date')
+            ?: $document->getMeta('rc.datecreation')
+            ?: $document->getMeta('timestamp')
+            ?: $document->getMeta('article:modified_time');
     }
 }

@@ -1,0 +1,20 @@
+<?php
+declare(strict_types = 1);
+
+namespace Embed\Tests\Pages;
+
+class SnipplrTest extends AbstractTestCase
+{
+    public function testOne()
+    {
+        $this->assertEmbed(
+            'http://snipplr.com/view/72914/better-html-5-basic-starter-template',
+            [
+                'title' => 'Better HTML 5 basic starter template - HTML Snipplr Social Repository',
+                'providerName' => 'Snipplr',
+                'providerUrl' => 'https://snipplr.com',
+                'code' => '<div id="snipplr_embed_72914" class="snipplr_embed"><a target="blank" href="https://snipplr.com/view/72914">View this snippet</a> on Snipplr</div><script type="text/javascript" src="https://snipplr.com/js/embed.js"></script><script type="text/javascript" src="https://snipplr.com/json/72914"></script>',
+            ]
+        );
+    }
+}

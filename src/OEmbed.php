@@ -20,8 +20,7 @@ class OEmbed
     public static function getProviders(): array
     {
         if (!is_array(self::$providers)) {
-            $providers = file_get_contents(__DIR__.'/resources/oembed_providers.json');
-            self::$providers = json_decode($providers, true);
+            self::$providers = require __DIR__.'/resources/oembed.php';
         }
 
         return self::$providers;
@@ -41,70 +40,27 @@ class OEmbed
         return $this->data;
     }
 
-    public function get(string $key): ?string
+    public function get(string $key, bool $allowHTML = false): ?string
+    {
+        $data = $this->all();
+        $value = $data[$key] ?? null;
+
+        if (is_array($value)) {
+            $value = array_shift($value);
+        }
+
+        return $value ? clean((string) $value, $allowHTML) : null;
+    }
+
+    public function getInt(string $key): ?int
     {
         $data = $this->all();
 
-        return $data[$key] ?? null;
-    }
-
-    private function detectEndpoint(): ?string
-    {
-        $document = $this->extractor->getDocument();
-
-        return $document->select('.//link', ['rel' => 'alternate', 'type' => 'application/json+oembed'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'alternate', 'type' => 'application/xml+oembed'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'alternate', 'type' => 'text/json+oembed'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'alternate', 'type' => 'text/xml+oembed'])->attribute('href')
-            ?: $this->detectFromProviders();
-    }
-
-    private function detectFromProviders(): ?string
-    {
-        $url = $this->extractor->getResponse()->getHeaderLine('Content-Location')
-            ?: (string) $this->extractor->getRequest()->getUri();
-
-        $endpoint = $this->searchEndpoint($url);
-
-        if (!$endpoint) {
-            return null;
-        }
-
-        return $endpoint.'?'.http_build_query(['url' => $url, 'format' => 'json']);
-    }
-
-    private function searchEndpoint(string $url): ?string
-    {
-        foreach (self::getProviders() as $provider) {
-            foreach ($provider['endpoints'] as $endpoint) {
-                if (strpos($url, $provider['provider_url']) === 0) {
-                    return $endpoint['url'];
-                }
-
-                if (isset($endpoint['schemes'])) {
-                    if (self::match($url, $endpoint['schemes'])) {
-                        return $endpoint['url'];
-                    }
-
-                    continue;
-                }
-            }
+        if (isset($data[$key])) {
+            return (int) $data[$key];
         }
 
         return null;
-    }
-
-    private static function match(string $url, array $schemes): bool
-    {
-        foreach ($schemes as $scheme) {
-            $pattern = str_replace('\\*', '.*', preg_quote($scheme, '|'));
-
-            if (preg_match("|^{$pattern}$|i", $url)) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     private function fetchData(): array
@@ -116,7 +72,7 @@ class OEmbed
         }
 
         $crawler = $this->extractor->getCrawler();
-        $request = $crawler->createRequest($endpoint);
+        $request = $crawler->createRequest($endpoint, [], $this->extractor->getUri());
         $response = $crawler->sendRequest($request);
 
         if (self::isXML($request->getUri())) {
@@ -124,6 +80,42 @@ class OEmbed
         }
 
         return self::extractJSON((string) $response->getBody());
+    }
+
+    private function detectEndpoint(): ?string
+    {
+        $document = $this->extractor->getDocument();
+
+        return $document->select('.//link', ['rel' => 'alternate', 'type' => 'application/json+oembed'])->attribute('href')
+            ?: $document->select('.//link', ['rel' => 'alternate', 'type' => 'application/xml+oembed'])->attribute('href')
+            ?: $document->select('.//link', ['rel' => 'alternate', 'type' => 'text/json+oembed'])->attribute('href')
+            ?: $document->select('.//link', ['rel' => 'alternate', 'type' => 'text/xml+oembed'])->attribute('href')
+            ?: $this->detectEndpointFromProviders();
+    }
+
+    private function detectEndpointFromProviders(): ?string
+    {
+        $url = (string) $this->extractor->getUri();
+        $endpoint = self::searchEndpoint(self::getProviders(), $url);
+
+        if (!$endpoint) {
+            return null;
+        }
+
+        return $endpoint.'?'.http_build_query(['url' => $url, 'format' => 'json']);
+    }
+
+    private static function searchEndpoint(array $providers, string $url): ?string
+    {
+        foreach ($providers as $endpoint => $patterns) {
+            foreach ($patterns as $pattern) {
+                if (preg_match($pattern, $url)) {
+                    return $endpoint;
+                }
+            }
+        }
+
+        return null;
     }
 
     private static function isXML(UriInterface $uri): bool
@@ -137,7 +129,7 @@ class OEmbed
         parse_str($uri->getQuery(), $params);
         $format = $params['format'] ?? null;
 
-        if (strtolower($format) === 'xml') {
+        if ($format && strtolower($format) === 'xml') {
             return true;
         }
 
