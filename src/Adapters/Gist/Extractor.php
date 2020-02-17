@@ -19,8 +19,8 @@ class Extractor extends Base
 
         $this->api = new Api($this);
 
-        $this->authorName = new Detectors\authorName($this);
-        $this->authorUrl = new Detectors\authorUrl($this);
+        $this->authorName = new Detectors\AuthorName($this);
+        $this->authorUrl = new Detectors\AuthorUrl($this);
         $this->publishedTime = new Detectors\PublishedTime($this);
         $this->code = new Detectors\Code($this);
     }
