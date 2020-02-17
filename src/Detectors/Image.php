@@ -13,7 +13,7 @@ class Image extends Detector
         return $oembed->url('image')
             ?: $oembed->url('thumbnail')
             ?: $oembed->url('thumbnail_url')
-            ?: $document->getMeta('og:image')
-            ?: $document->select('.//link', ['rel' => 'image_src'])->attribute('href');
+            ?: $document->meta('og:image')
+            ?: $document->link('image_src');
     }
 }

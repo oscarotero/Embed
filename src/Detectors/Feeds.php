@@ -20,7 +20,7 @@ class Feeds extends Detector
         $feeds = [];
 
         foreach (self::$types as $type) {
-            $href = $document->select('.//link', ['rel' => 'alternate', 'type' => $type])->attribute('href');
+            $href = $document->link('alternate', ['type' => $type]);
 
             if ($href) {
                 $feeds[] = $href;

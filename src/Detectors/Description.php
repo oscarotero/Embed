@@ -11,10 +11,10 @@ class Description extends Detector
         $document = $this->extractor->getDocument();
 
         return $oembed->str('description')
-            ?: $document->getMeta('og:description')
-            ?: $document->getMeta('og:description')
-            ?: $document->getMeta('twitter:description')
-            ?: $document->getMeta('twitter:description')
-            ?: $document->getMeta('description');
+            ?: $document->meta('og:description')
+            ?: $document->meta('og:description')
+            ?: $document->meta('twitter:description')
+            ?: $document->meta('twitter:description')
+            ?: $document->meta('description');
     }
 }

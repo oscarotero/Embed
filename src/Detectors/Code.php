@@ -35,20 +35,20 @@ class Code extends Detector
     {
         $document = $this->extractor->getDocument();
 
-        $url = $document->getMeta('og:video:secure_url')
-            ?: $document->getMeta('og:video:url')
-            ?: $document->getMeta('og:video');
+        $url = $document->meta('og:video:secure_url')
+            ?: $document->meta('og:video:url')
+            ?: $document->meta('og:video');
 
         if (!$url) {
             return null;
         }
 
         if (!($path = parse_url($url, PHP_URL_PATH)) || !($type = pathinfo($path, PATHINFO_EXTENSION))) {
-            $type = $document->getMeta('og:video_type');
+            $type = $document->meta('og:video_type');
         }
 
-        $width = $document->getMeta('twitter:player:width');
-        $height = $document->getMeta('twitter:player:height');
+        $width = $document->meta('twitter:player:width');
+        $height = $document->meta('twitter:player:height');
 
         switch ($type) {
             case 'swf':
@@ -90,14 +90,14 @@ class Code extends Detector
     {
         $document = $this->extractor->getDocument();
 
-        $url = $document->getMeta('twitter:player');
+        $url = $document->meta('twitter:player');
 
         if (!$url) {
             return null;
         }
 
-        $width = $document->getMeta('twitter:player:width');
-        $height = $document->getMeta('twitter:player:height');
+        $width = $document->meta('twitter:player:width');
+        $height = $document->meta('twitter:player:height');
 
         $code = html('iframe', [
             'src' => $url,

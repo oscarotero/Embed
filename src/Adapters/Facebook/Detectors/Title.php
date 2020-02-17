@@ -15,7 +15,7 @@ class Title extends Detector
         $document = $this->extractor->getDocument();
         $oembed = $this->extractor->getOEmbed();
 
-        return $oembed->get('title')
-            ?: $document->select('.//head/title')->value();
+        return $oembed->str('title')
+            ?: $document->select('.//head/title')->str();
     }
 }

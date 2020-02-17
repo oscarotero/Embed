@@ -864,6 +864,7 @@ return [
         '|^https?://.*\\.youtube\\.com/watch.*$|i',
         '|^https?://.*\\.youtube\\.com/v/.*$|i',
         '|^https?://youtu\\.be/.*$|i',
+        '|^https?://.*\\.youtube\\.com/playlist\\?.*$|i',
     ],
     'https://app.zingsoft.com/oembed' => [
         '|^https?://app\\.zingsoft\\.com/embed/.*$|i',

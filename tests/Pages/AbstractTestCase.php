@@ -27,6 +27,20 @@ abstract class AbstractTestCase extends TestCase
                         $this->assertSame(self::normalize($value), self::normalize((string) $extractor->$name));
                     }
                 break;
+                case 'oembed':
+                    if ($value === true) {
+                        $this->assertNotEmpty($extractor->getOEmbed()->all());
+                    } else {
+                        $this->assertEmpty($extractor->getOEmbed()->all());
+                    }
+                break;
+                case 'api':
+                    if ($value === true) {
+                        $this->assertNotEmpty($extractor->getApi()->all());
+                    } else {
+                        $this->assertEmpty($extractor->getApi()->all());
+                    }
+                break;
                 default:
                     $this->assertEquals($value, $extractor->$name);
             }

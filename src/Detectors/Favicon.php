@@ -9,8 +9,8 @@ class Favicon extends Detector
     {
         $document = $this->extractor->getDocument();
 
-        return $document->select('.//link', ['rel' => 'shortcut icon'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'icon'])->attribute('href')
-            ?: '/favicon.ico';
+        return $document->link('shortcut icon')
+            ?: $document->link('icon')
+            ?: $this->extractor->getUri()->withPath('/favicon.ico')->withQuery('');
     }
 }

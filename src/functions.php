@@ -14,31 +14,13 @@ function clean(string $value, bool $allowHTML = false): ?string
         return null;
     }
 
-    $value = html_entity_decode($value);
-
     if (!$allowHTML) {
+        $value = html_entity_decode($value);
         $value = strip_tags($value);
     }
 
     $value = trim(preg_replace('/\s+/u', ' ', $value));
     return $value === '' ? null : $value;
-}
-
-function cropText(?string $text, int $maxLength = 400, int $offset = 0): ?string
-{
-    if (empty($text)) {
-        return null;
-    }
-
-    $text = mb_substr($text, $offset, $maxLength);
-
-    if (mb_strlen($text) < $maxLength) {
-        return $text;
-    }
-
-    $end = mb_strrpos($text, ' ');
-
-    return mb_substr($text, 0, $end).'...';
 }
 
 function html(string $tagName, array $attributes, string $content = null): string

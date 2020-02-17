@@ -80,8 +80,9 @@ trait ApiTrait
             return null;
         }
 
-        $crawler = $this->extractor->getCrawler();
-        return (string) $crawler->createUri($url, $this->extractor->getUri());
+        $uri = $this->extractor->getCrawler()->createUri($url);
+
+        return (string) resolveUri($this->extractor->getUri(), $uri);
     }
 
     abstract protected function fetchData(): array;
@@ -89,7 +90,7 @@ trait ApiTrait
     private function fetchJSON(string $url): array
     {
         $crawler = $this->extractor->getCrawler();
-        $request = $crawler->createRequest($url);
+        $request = $crawler->createRequest('GET', $url);
         $response = $crawler->sendRequest($request);
 
         try {

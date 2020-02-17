@@ -13,7 +13,7 @@ class ProviderName extends Detector
         $document = $this->extractor->getDocument();
 
         return $oembed->str('provider_name')
-            ?: $document->getMeta('og:site_name')
+            ?: $document->meta('og:site_name')
             ?: ucfirst($this->fallback());
     }
 

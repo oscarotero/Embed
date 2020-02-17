@@ -8,7 +8,7 @@ use Embed\Extractor;
 abstract class Detector
 {
     protected Extractor $extractor;
-    private $cache;
+    private array $cache;
 
     public function __construct(Extractor $extractor)
     {
@@ -17,7 +17,7 @@ abstract class Detector
 
     public function get()
     {
-        if ($this->cache === null) {
+        if (!isset($this->cache)) {
             $this->cache = [
                 'cached' => true,
                 'value' => $this->detect(),

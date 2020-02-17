@@ -8,7 +8,7 @@ class Redirect extends Detector
     public function detect(): ?string
     {
         $document = $this->extractor->getDocument();
-        $value = $document->select('.//meta', ['http-equiv' => 'refresh'])->value();
+        $value = $document->select('.//meta', ['http-equiv' => 'refresh'])->str();
 
         return $value ? self::extract($value) : null;
     }

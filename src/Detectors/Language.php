@@ -9,12 +9,12 @@ class Language extends Detector
     {
         $document = $this->extractor->getDocument();
 
-        return $document->select('/html')->attribute('lang')
-            ?: $document->select('/html')->attribute('xml:lang')
-            ?: $document->getMeta('language')
-            ?: $document->getMeta('lang')
-            ?: $document->getMeta('og:locale')
-            ?: $document->getMeta('dc:language')
-            ?: $document->select('.//meta', ['http-equiv' => 'content-language'])->attribute('content');
+        return $document->select('/html')->str('lang')
+            ?: $document->select('/html')->str('xml:lang')
+            ?: $document->meta('language')
+            ?: $document->meta('lang')
+            ?: $document->meta('og:locale')
+            ?: $document->meta('dc:language')
+            ?: $document->select('.//meta', ['http-equiv' => 'content-language'])->str('content');
     }
 }

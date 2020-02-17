@@ -11,15 +11,15 @@ class Keywords extends Detector
         $document = $this->extractor->getDocument();
 
         $metas = [
-            'keywords',
-            'og:video:tag',
-            'og:article:tag',
-            'og:video:tag',
-            'og:book:tag',
+            ['name' => 'keywords'],
+            ['property' => 'og:video:tag'],
+            ['property' => 'og:article:tag'],
+            ['property' => 'og:video:tag'],
+            ['property' => 'og:book:tag'],
         ];
 
-        foreach ($metas as $type) {
-            $value = $document->getMeta($type);
+        foreach ($metas as $attr) {
+            $value = $document->select('.//meta', $attr)->strAll('content');
 
             if ($value) {
                 $tags = array_merge($tags, self::toArray($value));
@@ -34,15 +34,21 @@ class Keywords extends Detector
         return $tags;
     }
 
-    private static function toArray(string $keywords): array
+    private static function toArray(array $keywords): array
     {
-        $tags = explode(',', $keywords);
-        $tags = array_map('trim', $tags);
-        $tags = array_filter(
-            $tags,
-            fn ($value) => !empty($value) && substr($value, -3) !== '...'
-        );
+        $all = [];
 
-        return $tags;
+        foreach ($keywords as $keyword) {
+            $tags = explode(',', $keyword);
+            $tags = array_map('trim', $tags);
+            $tags = array_filter(
+                $tags,
+                fn ($value) => !empty($value) && substr($value, -3) !== '...'
+            );
+
+            $all = array_merge($all, $tags);
+        }
+
+        return $all;
     }
 }

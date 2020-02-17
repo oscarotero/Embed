@@ -71,9 +71,11 @@ class Extractor
         $this->response = $response;
         $this->crawler = $crawler;
 
-        $this->document = Document::create((string) $response->getBody());
+        //APIs
+        $this->document = new Document($this);
         $this->oembed = new OEmbed($this);
 
+        //Detectors
         $this->authorName = new AuthorName($this);
         $this->authorUrl = new AuthorUrl($this);
         $this->cms = new Cms($this);

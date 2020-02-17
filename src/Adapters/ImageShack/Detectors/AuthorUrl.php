@@ -10,7 +10,7 @@ class AuthorUrl extends Detector
     public function detect(): ?string
     {
         $api = $this->extractor->getApi();
-        $owner = $api->get('owner', 'username');
+        $owner = $api->str('owner', 'username');
 
         if ($owner) {
             return "https://imageshack.com/{$owner}";

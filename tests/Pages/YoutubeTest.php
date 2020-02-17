@@ -12,6 +12,12 @@ class YoutubeTest extends AbstractTestCase
         'providerName' => 'YouTube',
         'providerUrl' => 'https://www.youtube.com/',
         'keywords' => [
+            'vídeo',
+            'compartir',
+            'teléfono con cámara',
+            'teléfono con vídeo',
+            'gratuito',
+            'subida',
             'kittens',
             'cats',
             'hungry',

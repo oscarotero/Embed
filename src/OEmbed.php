@@ -13,11 +13,7 @@ class OEmbed
 
     private static $providers;
 
-    /**
-     * Json: https://oembed.com/providers.json
-     * Repo: https://github.com/iamcal/oembed
-     */
-    public static function getProviders(): array
+    private static function getProviders(): array
     {
         if (!is_array(self::$providers)) {
             self::$providers = require __DIR__.'/resources/oembed.php';
@@ -35,7 +31,7 @@ class OEmbed
         }
 
         $crawler = $this->extractor->getCrawler();
-        $request = $crawler->createRequest($endpoint, [], $this->extractor->getUri());
+        $request = $crawler->createRequest('GET', $endpoint);
         $response = $crawler->sendRequest($request);
 
         if (self::isXML($request->getUri())) {
@@ -49,10 +45,10 @@ class OEmbed
     {
         $document = $this->extractor->getDocument();
 
-        return $document->select('.//link', ['rel' => 'alternate', 'type' => 'application/json+oembed'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'alternate', 'type' => 'application/xml+oembed'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'alternate', 'type' => 'text/json+oembed'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'alternate', 'type' => 'text/xml+oembed'])->attribute('href')
+        return $document->link('alternate', ['type' => 'application/json+oembed'])
+            ?: $document->link('alternate', ['type' => 'text/json+oembed'])
+            ?: $document->link('alternate', ['type' => 'application/xml+oembed'])
+            ?: $document->link('alternate', ['type' => 'text/xml+oembed'])
             ?: $this->detectEndpointFromProviders();
     }
 

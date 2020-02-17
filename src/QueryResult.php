@@ -5,27 +5,20 @@ namespace Embed;
 
 use Closure;
 use DOMElement;
-use DOMNode;
 use DOMNodeList;
 
 class QueryResult
 {
-    private array $nodes;
+    private Extractor $extractor;
+    private array $nodes = [];
 
-    public static function create(DOMNodeList $result): self
+    public function __construct(DOMNodeList $result, Extractor $extractor)
     {
-        $nodes = [];
-
         foreach ($result as $node) {
-            $nodes[] = $node;
+            $this->nodes[] = $node;
         }
 
-        return new static(...$nodes);
-    }
-
-    public function __construct(DOMNode ...$nodes)
-    {
-        $this->nodes = $nodes;
+        $this->extractor = $extractor;
     }
 
     public function node(): ?DOMElement
@@ -45,12 +38,7 @@ class QueryResult
         return $this;
     }
 
-    public function minLength($minLength): self
-    {
-        return $this->filter(fn ($node) => mb_strlen(clean($node->nodeValue)) >= $minLength);
-    }
-
-    public function value(int $minLength = 1, int $maxLength = null): ?string
+    public function get(string $attribute = null)
     {
         $node = $this->node();
 
@@ -58,29 +46,54 @@ class QueryResult
             return null;
         }
 
-        return self::clean($node->nodeValue, $minLength, $maxLength);
+        return $attribute ? self::getAttribute($node, $attribute) : $node->nodeValue;
     }
 
-    public function attribute(string $name, int $minLength = 1, int $maxLength = null): ?string
-    {
-        $node = $this->node();
-
-        return $node ? $this->getAttribute($node, $name, $minLength, $maxLength) : null;
-    }
-
-    public function attributes(string $name, int $minLength = 1, int $maxLength = null): array
+    public function getAll(string $attribute = null): array
     {
         $nodes = $this->nodes();
 
         return array_filter(
             array_map(
-                fn ($node) => $this->getAttribute($node, $name, $minLength, $maxLength),
+                fn ($node) => $attribute ? self::getAttribute($node, $attribute) : $node->nodeValue,
                 $nodes
             )
         );
     }
 
-    private function getAttribute(DOMElement $node, string $name, int $minLength, ?int $maxLength): ?string
+    public function str(string $attribute = null): ?string
+    {
+        $value = $this->get($attribute);
+
+        return $value ? clean($value) : null;
+    }
+
+    public function strAll(string $attribute = null): array
+    {
+        return array_filter(array_map(fn ($value) => clean($value), $this->getAll($attribute)));
+    }
+
+    public function int(string $attribute = null): ?int
+    {
+        $value = $this->get($attribute);
+
+        return $value ? (int) $value : null;
+    }
+
+    public function url(string $attribute = null): ?string
+    {
+        $value = $this->get($attribute);
+
+        if (!$value) {
+            return null;
+        }
+
+        $uri = $this->extractor->getCrawler()->createUri($value);
+
+        return (string) resolveUri($this->extractor->getUri(), $uri);
+    }
+
+    private static function getAttribute(DOMElement $node, string $name): ?string
     {
         //Don't use $node->getAttribute() because it does not work with namespaces (ex: xml:lang)
         $attributes = $node->attributes;
@@ -89,25 +102,10 @@ class QueryResult
             $attribute = $attributes->item($i);
 
             if ($attribute->name === $name) {
-                return self::clean($attribute->nodeValue, $minLength, $maxLength);
+                return $attribute->nodeValue;
             }
         }
 
         return null;
-    }
-
-    private static function clean(string $value, int $minLength = 0, int $maxLength = null): ?string
-    {
-        $value = clean($value);
-
-        if ($value === null) {
-            return null;
-        }
-
-        if ($maxLength) {
-            return cropText($value, $maxLength);
-        }
-
-        return $value;
     }
 }

@@ -10,22 +10,19 @@ use HtmlParser\Parser;
 
 class Document
 {
+    private Extractor $extractor;
     private DOMDocument $document;
     private DOMXPath $xpath;
 
-    public static function create(string $html): Document
+    public function __construct(Extractor $extractor)
     {
+        $this->extractor = $extractor;
+
+        $html = (string) $extractor->getResponse()->getBody();
         $html = str_replace('<br>', "\n<br>", $html);
         $html = str_replace('<br ', "\n <br ", $html);
 
-        $document = !empty($html) ? Parser::parse($html) : new DOMDocument();
-
-        return new static($document);
-    }
-
-    private function __construct(DOMDocument $document)
-    {
-        $this->document = $document;
+        $this->document = !empty($html) ? Parser::parse($html) : new DOMDocument();
         $this->initXPath();
     }
 
@@ -77,14 +74,19 @@ class Document
             $query = self::buildQuery($query, $attributes);
         }
 
-        return QueryResult::create($this->xpath->query($query, $context));
+        return new QueryResult($this->xpath->query($query, $context), $this->extractor);
     }
 
-    public function getMeta(string $type): ?string
+    public function meta(string $type): ?string
     {
-        return $this->select('.//meta', ['name' => $type])->attribute('content')
-            ?: $this->select('.//meta', ['property' => $type])->attribute('content')
-            ?: $this->select('.//meta', ['itemprop' => $type])->attribute('content');
+        return $this->select('.//meta', ['name' => $type])->str('content')
+            ?: $this->select('.//meta', ['property' => $type])->str('content')
+            ?: $this->select('.//meta', ['itemprop' => $type])->str('content');
+    }
+
+    public function link(string $rel, array $extra = []): ?string
+    {
+        return $this->select('.//link', ['rel' => $rel] + $extra)->url('href');
     }
 
     public function __toString(): string

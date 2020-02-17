@@ -11,19 +11,19 @@ class PublishedTime extends Detector
         $document = $this->extractor->getDocument();
 
         return $oembed->str('pubdate')
-            ?: $document->getMeta('article:published_time')
-            ?: $document->getMeta('created')
-            ?: $document->getMeta('date')
-            ?: $document->getMeta('datepublished')
-            ?: $document->getMeta('music:release_date')
-            ?: $document->getMeta('video:release_date')
-            ?: $document->getMeta('newsrepublic:publish_date')
-            ?: $document->getMeta('pagerender')
-            ?: $document->getMeta('pub_date')
-            ?: $document->getMeta('publication-date')
-            ?: $document->getMeta('publish-date')
-            ?: $document->getMeta('rc.datecreation')
-            ?: $document->getMeta('timestamp')
-            ?: $document->getMeta('article:modified_time');
+            ?: $document->meta('article:published_time')
+            ?: $document->meta('created')
+            ?: $document->meta('date')
+            ?: $document->meta('datepublished')
+            ?: $document->meta('music:release_date')
+            ?: $document->meta('video:release_date')
+            ?: $document->meta('newsrepublic:publish_date')
+            ?: $document->meta('pagerender')
+            ?: $document->meta('pub_date')
+            ?: $document->meta('publication-date')
+            ?: $document->meta('publish-date')
+            ?: $document->meta('rc.datecreation')
+            ?: $document->meta('timestamp')
+            ?: $document->meta('article:modified_time');
     }
 }

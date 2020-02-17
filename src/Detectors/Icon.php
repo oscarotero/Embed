@@ -9,10 +9,10 @@ class Icon extends Detector
     {
         $document = $this->extractor->getDocument();
 
-        return $document->select('.//link', ['rel' => 'apple-touch-icon-precomposed'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'apple-touch-icon'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'icon', 'sizes' => '144x144'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'icon', 'sizes' => '96x96'])->attribute('href')
-            ?: $document->select('.//link', ['rel' => 'icon', 'sizes' => '48x48'])->attribute('href');
+        return $document->link('apple-touch-icon-precomposed')
+            ?: $document->link('apple-touch-icon')
+            ?: $document->link('icon', ['sizes' => '144x144'])
+            ?: $document->link('icon', ['sizes' => '96x96'])
+            ?: $document->link('icon', ['sizes' => '48x48']);
     }
 }

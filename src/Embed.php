@@ -37,24 +37,30 @@ class Embed
     ];
 
     private Crawler $crawler;
+    private ExtractorFactory $extractorFactory;
 
-    public function __construct(Crawler $crawler = null)
+    public function __construct(Crawler $crawler = null, ExtractorFactory $extractorFactory = null)
     {
         $this->crawler = $crawler ?: self::createCrawler();
+        $this->extractorFactory = $extractorFactory ?: new ExtractorFactory();
     }
 
-    public function get(string $url, array $headers = []): Extractor
+    public function get(string $url): Extractor
     {
-        return $this->crawler->extract($url, $headers);
+        $request = $this->crawler->createRequest('GET', $url);
+        $response = $this->crawler->sendRequest($request);
+        $uri = $this->crawler->getResponseUri($response) ?: $request->getUri();
+
+        return $this->extractorFactory->createExtractor($uri, $request, $response, $this->crawler);
     }
 
     private static function createCrawler(): Crawler
     {
-        $client = new CurlDispatcher(self::detectResponseFactory());
-        $requestFactory = self::detectRequestFactory();
-        $uriFactory = self::detectUriFactory();
-
-        return new Crawler($requestFactory, $uriFactory, $client);
+        return new Crawler(
+            self::detectRequestFactory(),
+            self::detectUriFactory(),
+            new CurlDispatcher(self::detectResponseFactory())
+        );
     }
 
     private static function detectRequestFactory(): RequestFactoryInterface

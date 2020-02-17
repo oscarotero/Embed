@@ -20,7 +20,7 @@ class Cms extends Detector
         }
 
         $document = $this->extractor->getDocument();
-        $generators = $document->select('.//meta', ['name' => 'generator'])->attributes('content');
+        $generators = $document->select('.//meta', ['name' => 'generator'])->strAll('content');
 
         foreach ($generators as $generator) {
             if ($cms = self::detectFromGenerator($generator)) {
