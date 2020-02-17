@@ -7,7 +7,6 @@ class YoutubeTest extends AbstractTestCase
 {
     private static $expectedVideoInfo = [
         'title' => 'Noisy kittens waiting for dinner!',
-        'type' => 'video',
         'authorName' => 'smshdchrb',
         'authorUrl' => 'https://www.youtube.com/user/smshdchrb',
         'providerName' => 'YouTube',
@@ -66,7 +65,6 @@ class YoutubeTest extends AbstractTestCase
             'https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST',
             [
                 'title' => 'De espaldas al patriarcado',
-                'type' => 'video',
                 'code' => '<iframe width="480" height="270" src="https://www.youtube.com/embed/videoseries?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                 'authorName' => 'Scadrei5',
             ]

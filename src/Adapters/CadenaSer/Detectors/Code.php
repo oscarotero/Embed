@@ -25,7 +25,7 @@ class Code extends Detector
             return null;
         }
 
-        $path = cleanPath('/widget/', $uri->getPath());
+        $path = cleanPath('/widget/'.$uri->getPath());
         $src = $uri->withPath($path);
 
         $html = html('iframe', [

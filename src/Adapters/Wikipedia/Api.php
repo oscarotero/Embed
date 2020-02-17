@@ -3,44 +3,13 @@ declare(strict_types = 1);
 
 namespace Embed\Adapters\Wikipedia;
 
-use function Embed\clean;
+use Embed\ApiTrait;
+use function Embed\getDirectory;
 use function Embed\match;
-use Exception;
 
 class Api
 {
-    private Extractor $extractor;
-    private array $data;
-
-    public function __construct(Extractor $extractor)
-    {
-        $this->extractor = $extractor;
-    }
-
-    public function all(): array
-    {
-        if (!isset($this->data)) {
-            $this->data = $this->fetchData();
-        }
-
-        return $this->data;
-    }
-
-    public function getPage(string $key, bool $allowHTML = false): ?string
-    {
-        $data = $this->all();
-
-        $pages = $data['query']['pages'] ?? null;
-
-        if (empty($pages)) {
-            return null;
-        }
-
-        $page = current($pages);
-        $value = $page[$key] ?? null;
-
-        return $value ? clean((string) $value, $allowHTML) : null;
-    }
+    use ApiTrait;
 
     private function fetchData(): array
     {
@@ -50,7 +19,7 @@ class Api
             return [];
         }
 
-        $titles = explode('/', $uri->getPath())[2];
+        $titles = getDirectory($uri->getPath(), 1);
 
         $endpoint = $uri
             ->withPath('/w/api.php')
@@ -63,14 +32,9 @@ class Api
                 'exchars' => 1000,
             ]));
 
-        $crawler = $this->extractor->getCrawler();
-        $request = $crawler->createRequest((string) $endpoint);
-        $response = $crawler->sendRequest($request);
+        $data = $this->fetchJSON((string) $endpoint);
+        $pages = $data['query']['pages'] ?? null;
 
-        try {
-            return json_decode((string) $response->getBody(), true) ?: [];
-        } catch (Exception $exception) {
-            return [];
-        }
+        return $pages ? current($pages) : null;
     }
 }

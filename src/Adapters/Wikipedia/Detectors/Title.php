@@ -11,7 +11,7 @@ class Title extends Detector
     {
         $api = $this->extractor->getApi();
 
-        return $api->getPage('title')
+        return $api->str('title')
             ?: parent::detect();
     }
 }

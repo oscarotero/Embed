@@ -11,7 +11,7 @@ class Description extends Detector
     {
         $api = $this->extractor->getApi();
 
-        return $api->getPage('extract')
+        return $api->str('extract')
             ?: parent::detect();
     }
 }

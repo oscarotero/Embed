@@ -9,6 +9,6 @@ class AuthorName extends Detector
     {
         $oembed = $this->extractor->getOEmbed();
 
-        return $oembed->get('author_name');
+        return $oembed->str('author_name');
     }
 }

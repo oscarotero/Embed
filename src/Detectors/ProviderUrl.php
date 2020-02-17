@@ -9,7 +9,7 @@ class ProviderUrl extends Detector
     {
         $oembed = $this->extractor->getOEmbed();
 
-        return $oembed->get('provider_url')
+        return $oembed->url('provider_url')
             ?: $this->fallback();
     }
 

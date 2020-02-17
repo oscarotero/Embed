@@ -9,6 +9,6 @@ class AuthorUrl extends Detector
     {
         $oembed = $this->extractor->getOEmbed();
 
-        return $oembed->get('author_url');
+        return $oembed->url('author_url');
     }
 }

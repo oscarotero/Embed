@@ -19,8 +19,8 @@ class Code extends Detector
     {
         $api = $this->extractor->getApi();
 
-        $code = $api->get('div', true);
-        $stylesheet = $api->get('stylesheet');
+        $code = $api->html('div');
+        $stylesheet = $api->str('stylesheet');
 
         if ($code && $stylesheet) {
             return new EmbedCode(

@@ -22,3 +22,4 @@ Full library refactoring.
 ### Removed
 - `type` value (is was very confusing)
 - `images` value
+- Support for files (pdf, jpg, video, etc).

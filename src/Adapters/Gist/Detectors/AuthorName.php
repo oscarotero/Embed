@@ -11,7 +11,7 @@ class AuthorName extends Detector
     {
         $api = $this->extractor->getApi();
 
-        return $api->get('owner')
+        return $api->str('owner')
             ?: parent::detect();
     }
 }

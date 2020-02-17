@@ -11,7 +11,6 @@ class ChirbitTest extends AbstractTestCase
             'http://chirb.it/7A9L9B',
             [
                 'title' => 'Encana conference call',
-                'type' => 'rich',
                 'providerName' => 'chirbit',
             ]
         );

@@ -21,6 +21,8 @@ class Crawler
 
     const DEFAULT_HEADERS = [
         'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:73.0) Gecko/20100101 Firefox/73.0',
+        'Accept' => 'text/html,*/*;q=0.8',
+        'Cache-Control' => 'max-age=0',
     ];
 
     public function __construct(RequestFactoryInterface $requestFactory, UriFactoryInterface $uriFactory, ClientInterface $client)

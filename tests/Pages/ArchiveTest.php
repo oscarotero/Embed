@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Embed\Tests;
+namespace Embed\Tests\Pages;
 
 class ArchiveTest extends AbstractTestCase
 {
@@ -10,10 +10,9 @@ class ArchiveTest extends AbstractTestCase
         $this->assertEmbed(
             'https://archive.org/details/dn2015-0220_vid',
             [
-                'width' => 640,
-                'height' => 480,
-                'type' => 'video',
+                'title' => 'Democracy Now! Friday, February 20, 2015',
                 'providerName' => 'Internet Archive',
+                'publishedTime' => '2015-02-20 00:00:00',
             ]
         );
     }
@@ -23,7 +22,7 @@ class ArchiveTest extends AbstractTestCase
         $this->assertEmbed(
             'https://archive.org/details/librivoxaudio',
             [
-                'type' => 'rich',
+                'title' => 'The LibriVox Free Audiobook Collection : Free Audio : Free Download, Borrow and Streaming : Internet Archive',
                 'providerName' => 'Internet Archive',
             ]
         );

@@ -34,21 +34,15 @@ class Keywords extends Detector
         return $tags;
     }
 
-    private static function toArray(array $keywords): array
+    private static function toArray(string $keywords): array
     {
-        $all = [];
+        $tags = explode(',', $keywords);
+        $tags = array_map('trim', $tags);
+        $tags = array_filter(
+            $tags,
+            fn ($value) => !empty($value) && substr($value, -3) !== '...'
+        );
 
-        foreach ($keywords as $keyword) {
-            $tags = explode(',', $keyword);
-            $tags = array_map('trim', $tags);
-            $tags = array_filter(
-                $tags,
-                fn ($value) => !empty($value) && substr($value, -3) !== '...'
-            );
-
-            $all = array_merge($all, $tags);
-        }
-
-        return $all;
+        return $tags;
     }
 }

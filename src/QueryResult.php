@@ -100,7 +100,7 @@ class QueryResult
     {
         $value = clean($value);
 
-        if (strlen($value) < $minLength) {
+        if ($value === null) {
             return null;
         }
 

@@ -11,7 +11,6 @@ class AnimotoTest extends AbstractTestCase
             'https://animoto.com/play/GjsJ1gu0WDRfr4pGw12xZQ',
             [
                 'title' => 'taco bell',
-                'type' => 'video',
                 'providerName' => 'Animoto',
             ]
         );

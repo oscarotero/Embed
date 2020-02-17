@@ -11,7 +11,6 @@ class AmchartsTest extends AbstractTestCase
             'http://live.amcharts.com/czNjJ',
             [
                 'title' => 'World Cup History',
-                'type' => 'rich',
                 'providerName' => 'amCharts',
             ]
         );

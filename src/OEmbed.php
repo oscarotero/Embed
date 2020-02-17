@@ -9,9 +9,9 @@ use SimpleXMLElement;
 
 class OEmbed
 {
+    use ApiTrait;
+
     private static $providers;
-    private Extractor $extractor;
-    private array $data;
 
     /**
      * Json: https://oembed.com/providers.json
@@ -26,44 +26,7 @@ class OEmbed
         return self::$providers;
     }
 
-    public function __construct(Extractor $extractor)
-    {
-        $this->extractor = $extractor;
-    }
-
-    public function all(): array
-    {
-        if (!isset($this->data)) {
-            $this->data = $this->fetchData();
-        }
-
-        return $this->data;
-    }
-
-    public function get(string $key, bool $allowHTML = false): ?string
-    {
-        $data = $this->all();
-        $value = $data[$key] ?? null;
-
-        if (is_array($value)) {
-            $value = array_shift($value);
-        }
-
-        return $value ? clean((string) $value, $allowHTML) : null;
-    }
-
-    public function getInt(string $key): ?int
-    {
-        $data = $this->all();
-
-        if (isset($data[$key])) {
-            return (int) $data[$key];
-        }
-
-        return null;
-    }
-
-    private function fetchData(): array
+    protected function fetchData(): array
     {
         $endpoint = $this->detectEndpoint();
 

@@ -11,7 +11,6 @@ class DevianArtTest extends AbstractTestCase
             'http://www.deviantart.com/art/Misty-510056679',
             [
                 'title' => 'Misty',
-                'type' => 'photo',
             ]
         );
     }
@@ -22,7 +21,6 @@ class DevianArtTest extends AbstractTestCase
             'http://pachunka.deviantart.com/art/Cope-145564099',
             [
                 'title' => 'Cope',
-                'type' => 'photo',
                 'authorName' => 'pachunka',
             ]
         );

@@ -18,7 +18,7 @@ class Code extends Detector
     private function detectFromEmbed(): ?EmbedCode
     {
         $oembed = $this->extractor->getOEmbed();
-        $html = $oembed->get('html', true);
+        $html = $oembed->html('html');
 
         if (!$html) {
             return null;
@@ -26,8 +26,8 @@ class Code extends Detector
 
         return new EmbedCode(
             $html,
-            $oembed->getInt('width'),
-            $oembed->getInt('height')
+            $oembed->int('width'),
+            $oembed->int('height')
         );
     }
 

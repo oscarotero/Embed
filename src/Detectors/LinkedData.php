@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Embed\Detectors;
 
+use Exception;
+
 class LinkedData extends Detector
 {
     public function detect(): ?array

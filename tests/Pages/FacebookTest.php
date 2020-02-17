@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Embed\Tests;
+namespace Embed\Tests\Pages;
 
 class FacebookTest extends AbstractTestCase
 {
@@ -10,9 +10,8 @@ class FacebookTest extends AbstractTestCase
         $this->assertEmbed(
             'https://www.facebook.com/permalink.php?story_fbid=827163017327807&id=149460691764713',
             [
-                'width' => 552,
+                'title' => 'Aquí vos deixamos unhas imaxes da nosa... - DAG, Asociación Galega de Deseño | Facebook',
                 'code' => true,
-                'type' => 'rich',
             ]
         );
     }
@@ -22,9 +21,8 @@ class FacebookTest extends AbstractTestCase
         $this->assertEmbed(
             'https://www.facebook.com/acolono/videos/10154107990797381/',
             [
-                'width' => 500,
+                'title' => 'Acolono GmbH - Eindrücke vom gestrigen Drupal Austria...',
                 'code' => true,
-                'type' => 'video',
             ]
         );
     }

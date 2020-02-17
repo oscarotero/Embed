@@ -10,7 +10,7 @@ class PublishedTime extends Detector
         $oembed = $this->extractor->getOEmbed();
         $document = $this->extractor->getDocument();
 
-        return $oembed->get('pubdate')
+        return $oembed->str('pubdate')
             ?: $document->getMeta('article:published_time')
             ?: $document->getMeta('created')
             ?: $document->getMeta('date')

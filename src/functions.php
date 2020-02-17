@@ -20,7 +20,8 @@ function clean(string $value, bool $allowHTML = false): ?string
         $value = strip_tags($value);
     }
 
-    return trim(preg_replace('/\s+/u', ' ', $value));
+    $value = trim(preg_replace('/\s+/u', ' ', $value));
+    return $value === '' ? null : $value;
 }
 
 function cropText(?string $text, int $maxLength = 400, int $offset = 0): ?string
@@ -134,4 +135,10 @@ function match(string $pattern, string $subject): bool
     $pattern = str_replace('\\*', '.*', preg_quote($pattern, '|'));
 
     return (bool) preg_match("|^{$pattern}$|i", $subject);
+}
+
+function getDirectory(string $path, int $position): ?string
+{
+    $dirs = explode('/', $path);
+    return $dirs[$position + 1] ?? null;
 }

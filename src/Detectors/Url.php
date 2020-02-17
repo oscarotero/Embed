@@ -9,8 +9,8 @@ class Url extends Detector
     {
         $oembed = $this->extractor->getOEmbed();
 
-        return $oembed->get('url')
-            ?: $oembed->get('web_page')
+        return $oembed->url('url')
+            ?: $oembed->url('web_page')
             ?: (string) $this->extractor->getUri();
     }
 }

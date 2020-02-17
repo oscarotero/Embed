@@ -11,7 +11,7 @@ class PublishedTime extends Detector
     {
         $api = $this->extractor->getApi();
 
-        return $api->get('created_at')
+        return $api->str('created_at')
             ?: parent::detect();
     }
 }

@@ -11,7 +11,6 @@ class UstreamTest extends AbstractTestCase
             'http://www.ustream.tv/channel/red-shoes-billiards-60803-camera-1',
             [
                 'title' => 'Red Shoes Billiards 1pkt,banks camera 1',
-                'type' => 'video',
                 'authorName' => 'redsh0es',
                 'providerUrl' => 'http://www.ustream.tv/',
             ]

@@ -21,6 +21,11 @@ abstract class Adapters
         'en.wikipedia.org' => Wikipedia\Extractor::class,
         'es.wikipedia.org' => Wikipedia\Extractor::class,
         'gl.wikipedia.org' => Wikipedia\Extractor::class,
+        'archive.org' => Archive\Extractor::class,
+        'sassmeister.com' => Sassmeister\Extractor::class,
+        'facebook.com' => Facebook\Extractor::class,
+        'imageshack.com' => ImageShack\Extractor::class,
+        'imagizer.imageshack.com' => ImageShack\Extractor::class,
     ];
 
     public static function getExtractorClass(UriInterface $uri): string
