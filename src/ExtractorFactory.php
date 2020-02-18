@@ -49,4 +49,9 @@ class ExtractorFactory
     {
         unset($this->adapters[$pattern]);
     }
+
+    public function setDefault(string $class): void
+    {
+        $this->default = $class;
+    }
 }
