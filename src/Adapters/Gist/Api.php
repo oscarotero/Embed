@@ -12,8 +12,8 @@ class Api
     protected function fetchData(): array
     {
         $uri = $this->extractor->getUri();
-        $endpoint = $uri->withPath($uri->getPath().'.json');
+        $this->endpoint = (string) $uri->withPath($uri->getPath().'.json');
 
-        return $this->fetchJSON((string) $endpoint);
+        return $this->fetchJSON($endpoint);
     }
 }

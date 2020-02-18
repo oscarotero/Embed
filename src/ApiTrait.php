@@ -9,10 +9,16 @@ trait ApiTrait
 {
     private Extractor $extractor;
     private array $data;
+    private ?string $endpoint;
 
     public function __construct(Extractor $extractor)
     {
         $this->extractor = $extractor;
+    }
+
+    public function getEndpoint(): ?string
+    {
+        return $this->endpoint;
     }
 
     public function all(): array

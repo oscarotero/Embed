@@ -21,7 +21,7 @@ class Api
 
         $titles = getDirectory($uri->getPath(), 1);
 
-        $endpoint = $uri
+        $this->endpoint = (string) $uri
             ->withPath('/w/api.php')
             ->withQuery(http_build_query([
                 'action' => 'query',
@@ -32,7 +32,7 @@ class Api
                 'exchars' => 1000,
             ]));
 
-        $data = $this->fetchJSON((string) $endpoint);
+        $data = $this->fetchJSON($this->endpoint);
         $pages = $data['query']['pages'] ?? null;
 
         return $pages ? current($pages) : null;

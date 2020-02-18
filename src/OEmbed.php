@@ -24,14 +24,14 @@ class OEmbed
 
     protected function fetchData(): array
     {
-        $endpoint = $this->detectEndpoint();
+        $this->endpoint = $this->detectEndpoint();
 
-        if (empty($endpoint)) {
+        if (empty($this->endpoint)) {
             return [];
         }
 
         $crawler = $this->extractor->getCrawler();
-        $request = $crawler->createRequest('GET', $endpoint);
+        $request = $crawler->createRequest('GET', $this->endpoint);
         $response = $crawler->sendRequest($request);
 
         if (self::isXML($request->getUri())) {

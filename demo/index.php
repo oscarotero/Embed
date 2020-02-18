@@ -4,29 +4,13 @@ ini_set('display_startup_errors', '1');
 
 include __DIR__.'/../vendor/autoload.php';
 
-// Use default config as template
-$options = \Embed\Embed::$default_config;
-// Do some config modifications
-$options['min_image_width'] = 60;
-$options['min_image_height'] = 60;
-$options['html']['max_images'] = 10;
-$options['html']['external_images'] = false;
-
-//use env variables
-if (is_file(__DIR__.'/../env.php')) {
-    include __DIR__.'/../env.php';
-
-    $options['google']['key'] = getenv('GOOGLE_KEY');
-    $options['facebook']['key'] = getenv('FACEBOOK_KEY');
-}
-
-function getUrl()
+function getUrl(): ?string
 {
-    if (!isset($_GET['url'])) {
-        return '';
-    }
+    $url = $_GET['url'] ?? null;
 
-    $url = $_GET['url'];
+    if (empty($url)) {
+        return null;
+    }
 
     //fix for unescaped urls
     foreach ($_GET as $name => $value) {
@@ -40,26 +24,29 @@ function getUrl()
     return $url;
 }
 
-function getEscapedUrl()
+function getEscapedUrl(): ?string
 {
-    return htmlspecialchars(getUrl(), ENT_QUOTES, 'UTF-8');
+    $url = getUrl();
+    return $url ? htmlspecialchars($url, ENT_QUOTES, 'UTF-8') : null;
 }
 
-function printAny($text)
+function printAny($text): void
 {
     if (is_array($text)) {
         printArray($text);
     } else {
-        printText($text);
+        printText((string) $text);
     }
 }
 
-function printText($text)
+function printText(?string $text): void
 {
-    echo htmlspecialchars($text, ENT_IGNORE);
+    if ($text) {
+        echo htmlspecialchars($text, ENT_IGNORE);
+    }
 }
 
-function printImage($image)
+function printImage(?string $image): void
 {
     if ($image) {
         echo <<<EOT
@@ -69,7 +56,7 @@ EOT;
     }
 }
 
-function printUrl($url)
+function printUrl(?string $url): void
 {
     if ($url) {
         echo <<<EOT
@@ -78,14 +65,14 @@ EOT;
     }
 }
 
-function printArray($array)
+function printArray(?array $array): void
 {
     if ($array) {
         echo '<pre>'.htmlspecialchars(print_r($array, true), ENT_IGNORE).'</pre>';
     }
 }
 
-function printHeaders($array)
+function printHeaders(array $array): void
 {
     $headers = [];
 
@@ -96,7 +83,7 @@ function printHeaders($array)
     printArray($headers);
 }
 
-function printCode($code, $asHtml = true)
+function printCode(?string $code, bool $asHtml = true): void
 {
     if ($asHtml) {
         echo $code;
@@ -107,49 +94,27 @@ function printCode($code, $asHtml = true)
     }
 }
 
-$providerData = [
+$detectors = [
     'title' => 'printText',
     'description' => 'printText',
     'url' => 'printUrl',
-    'type' => 'printText',
-    'tags' => 'printArray',
-    'imagesUrls' => 'printArray',
-    'code' => 'printCode',
-    'feeds' => 'printArray',
-    'width' => 'printText',
-    'height' => 'printText',
-    'authorName' => 'printText',
-    'authorUrl' => 'printUrl',
-    'providerIconsUrls' => 'printArray',
-    'providerName' => 'printText',
-    'providerUrl' => 'printUrl',
-    'publishedTime' => 'printText',
-    'license' => 'printUrl',
-];
-
-$adapterData = [
-    'title' => 'printText',
-    'description' => 'printText',
-    'url' => 'printUrl',
-    'type' => 'printText',
-    'tags' => 'printArray',
+    'keywords' => 'printArray',
     'image' => 'printImage',
-    'imageWidth' => 'printText',
-    'imageHeight' => 'printText',
-    'images' => 'printArray',
     'code' => 'printCode',
     'feeds' => 'printArray',
-    'width' => 'printText',
-    'height' => 'printText',
-    'aspectRatio' => 'printText',
     'authorName' => 'printText',
     'authorUrl' => 'printUrl',
-    'providerIcon' => 'printImage',
-    'providerIcons' => 'printArray',
+    'icon' => 'printImage',
+    'favicon' => 'printImage',
     'providerName' => 'printText',
     'providerUrl' => 'printUrl',
     'publishedTime' => 'printText',
     'license' => 'printUrl',
+    'cms' => 'printText',
+    'language' => 'printText',
+    'languages' => 'printArray',
+    'linkedData' => 'printArray',
+    'cms' => 'printText',
 ];
 ?>
 
@@ -162,7 +127,7 @@ $adapterData = [
         <title>Embed tests</title>
 
         <style type="text/css">
-            body { font-family: Helvetica, Arial, sans-serif; min-width: 650px; margin: 0; padding: 0;}
+            body { font-family: -apple-system, system-ui, sans-serif; min-width: 650px; margin: 0; padding: 0;}
             a { color: inherit; font-size: 0.9em; }
             a:hover { text-decoration: none; }
             img { display: block; margin-bottom: 0.5em; }
@@ -173,17 +138,24 @@ $adapterData = [
             fieldset { border: none; padding: 0; }
             label { display: block; cursor: pointer; font-weight: bold; }
             input[type="url"] { border: none; background: white; border-radius: 2px; box-sizing: border-box; width: 100%; margin: 5px 0; font-size: 1.3em; padding: 0.5em; color: #666; }
-            button { font-size: 1.6rem; font-weight: bold; font-family: Arial; background: yellowgreen; border: none; border-radius: 2px; padding: 0.2em 1em; cursor: pointer; margin-top: 5px; }
-            button:hover { background: black; color: white; }
+            button, summary { font-size: 1.6rem; font-weight: bold; font-family: Arial; background: yellowgreen; border: none; border-radius: 3px; padding: 0.3em 1em; cursor: pointer; margin-top: 5px; }
+            button:hover, summary:hover { background: black; color: white; }
+            details {
+                display: block;
+                margin: 2em 0;
+            }
+            summary {
+                width: max-content;
+                margin: auto;
+            }
 
             /* result */
-            section { padding: 1.5em; }
-            section h1, section h2 { font-size: 2em; color: #666; letter-spacing: -0.02em; }
-            section h2 { margin-top: 3em; }
+            main { padding: 1.5em; }
+            main h1, main h2 { font-size: 2em; color: #666; letter-spacing: -0.02em; }
+            main h2 { margin-top: 3em; }
             table { text-align: left; width: 100%; table-layout: fixed; }
             th, td { vertical-align: top; padding: 0.5em 1em 0.5em 0; border-top: solid 1px #DDD; }
             th { width: 200px; }
-            #advanced-data { display: none; }
             .view-advanced-data { margin: 2em 0; text-align: center; }
         </style>
     </head>
@@ -201,19 +173,17 @@ $adapterData = [
                 <button type="submit">Test</button>
                 &nbsp;&nbsp;&nbsp;
                 <a href="https://github.com/oscarotero/Embed/">Get the source code from Github</a>
-                &nbsp;&nbsp; - &nbsp;&nbsp;
-                <a href="javascript:(function(){window.open('http://oscarotero.com/embed3/demo/index.php?url='+document.location)})();">or the bookmarklet</a>
             </fieldset>
         </form>
 
         <?php if (getUrl()): ?>
-        <section>
+        <main>
             <h1>Result:</h1>
 
             <?php
             try {
-                $dispatcher = new Embed\Http\CurlDispatcher();
-                $info = Embed\Embed::create(getUrl(), $options, $dispatcher);
+                $embed = new Embed\Embed();
+                $info = $embed->get(getUrl());
             } catch (Exception $exception) {
                 echo '<table>';
                 foreach ($dispatcher->getAllResponses() as $response) {
@@ -234,7 +204,7 @@ $adapterData = [
             ?>
 
             <table>
-                <?php foreach ($adapterData as $name => $fn): ?>
+                <?php foreach ($detectors as $name => $fn): ?>
                 <tr>
                     <th><?php echo $name; ?></th>
                     <td><?php $fn($info->$name); ?></td>
@@ -242,66 +212,53 @@ $adapterData = [
                 <?php endforeach; ?>
             </table>
 
-            <div class="view-advanced-data">
-                <button onclick="document.getElementById('advanced-data').style.display = 'block'; this.style.display = 'none';">View all collected data</button>
-            </div>
+            <details id="details">
+                <summary>View all collected data</summary>
 
-            <div id="advanced-data">
-                <?php foreach ($info->getProviders() as $providerName => $provider): ?>
-                <h2><?php echo $providerName; ?> provider</h2>
+                <div id="advanced-data">
+                    <h2>OEmbed data</h2>
 
-                <?php if (empty($provider->getBag()->getAll())): ?>
-                <p>No data collected</p>
-                <?php continue; ?>
-                <?php endif; ?>
+                    <table>
+                        <tr>
+                            <th>Endpoint</th>
+                            <td><?php printUrl($info->getOEmbed()->getEndpoint()); ?></td>
+                        </tr>
 
-                <table>
-                    <?php foreach ($providerData as $name => $fn): ?>
-                    <?php if (!empty($provider->{'get'.$name}())): ?>
-                    <tr>
-                        <th><?php echo $providerName.'.'.$name; ?></th>
-                        <td><?php $fn($provider->{'get'.$name}(), false); ?></td>
-                    </tr>
+                        <tr>
+                            <th>All data collected</th>
+                            <td><?php printArray($info->getOEmbed()->all()); ?></td>
+                        </tr>
+                    </table>
+
+                    <?php if (method_exists($info, 'getApi')): ?>
+                    <h2>API data</h2>
+
+                    <table>
+                        <tr>
+                            <th>Endpoint</th>
+                            <td><?php printUrl($info->getApi()->getEndpoint()); ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>All data collected</th>
+                            <td><?php printArray($info->getApi()->all()); ?></td>
+                        </tr>
+                    </table>
                     <?php endif; ?>
-                    <?php endforeach; ?>
 
-                    <tr>
-                        <th>All data collected</th>
-                        <td><?php printArray($provider->getBag()->getAll()); ?></td>
-                    </tr>
-                </table>
-                <?php endforeach; ?>
+                    <h2>HTML content</h2>
 
-                <h2>Http requests</h2>
+                    <pre>
+                        <?php printText((string) $info->getResponse()->getBody()); ?>
+                    </pre>
+                </div>
+            </details>
+        </main>
 
-                <table>
-                    <?php foreach ($info->getDispatcher()->getAllResponses() as $response): ?>
-                    <tr>
-                        <th>
-                            <?php if ((string) $response->getStartingUrl() !== (string) $response->getUrl()): ?>
-                                <?= $response->getStartingUrl(); ?> <code>=&gt;</code>
-                            <?php endif; ?>
-
-                            <?= $response->getUrl(); ?>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php printHeaders($response->getHeaders()); ?>
-                            <?php printArray($response->getInfo()); ?>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </table>
-
-                <h2>Content</h2>
-
-                <pre>
-                    <?php printText($info->getResponse()->getContent()); ?>
-                </pre>
-            </div>
-        </section>
-
+        <script>
+            const details = document.getElementById('details');
+            details.addEventListener('toggle', () => details.scrollIntoView({ behavior: 'smooth' }))
+        </script>
         <?php endif; ?>
     </body>
 </html>

@@ -29,7 +29,8 @@ class Api
             return [];
         }
 
-        $data = $this->fetchJSON("https://api.imageshack.com/v2/images/{$id}");
+        $this->endpoint = "https://api.imageshack.com/v2/images/{$id}";
+        $data = $this->fetchJSON($this->endpoint);
         return $data['result'] ?? [];
     }
 }
