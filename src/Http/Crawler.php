@@ -15,12 +15,21 @@ class Crawler implements ClientInterface, RequestFactoryInterface, UriFactoryInt
     private RequestFactoryInterface $requestFactory;
     private UriFactoryInterface $uriFactory;
     private ClientInterface $client;
+    private array $defaultHeaders = [
+        'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:73.0) Gecko/20100101 Firefox/73.0',
+        'Cache-Control' => 'max-age=0',
+    ];
 
     public function __construct(RequestFactoryInterface $requestFactory, UriFactoryInterface $uriFactory, ClientInterface $client)
     {
         $this->requestFactory = $requestFactory;
         $this->uriFactory = $uriFactory;
         $this->client = $client;
+    }
+
+    public function addDefaultHeaders(array $headers): void
+    {
+        $this->defaultHeaders = $headers + $this->defaultHeaders;
     }
 
     /**
@@ -38,6 +47,12 @@ class Crawler implements ClientInterface, RequestFactoryInterface, UriFactoryInt
 
     public function sendRequest(RequestInterface $request): ResponseInterface
     {
+        foreach ($this->defaultHeaders as $name => $value) {
+            if (!$request->hasHeader($name)) {
+                $request = $request->withHeader($name, $value);
+            }
+        }
+
         return $this->client->sendRequest($request);
     }
 

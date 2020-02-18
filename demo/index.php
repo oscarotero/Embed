@@ -183,6 +183,10 @@ $detectors = [
             <?php
             try {
                 $embed = new Embed\Embed();
+                $embed->getCrawler()->addDefaultHeaders([
+                    'Accept-Language' => 'en-US,en;q=0.2',
+                    'Cache-Control' => 'max-age=0,no-cache',
+                ]);
                 $info = $embed->get(getUrl());
             } catch (Exception $exception) {
                 echo '<table>';

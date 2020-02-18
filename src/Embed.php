@@ -54,6 +54,16 @@ class Embed
         return $this->extractorFactory->createExtractor($uri, $request, $response, $this->crawler);
     }
 
+    public function getCrawler(): Crawler
+    {
+        return $this->crawler;
+    }
+
+    public function getExtractorFactory(): ExtractorFactory
+    {
+        return $this->extractorFactory;
+    }
+
     private static function createCrawler(): Crawler
     {
         return new Crawler(

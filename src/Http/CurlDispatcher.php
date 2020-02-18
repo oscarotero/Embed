@@ -96,30 +96,13 @@ final class CurlDispatcher implements ClientInterface
 
     private ResponseFactoryInterface $responseFactory;
 
-    private array $defaultHeaders = [
-        'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:73.0) Gecko/20100101 Firefox/73.0',
-        'Accept' => 'text/html,*/*;q=0.8',
-        'Cache-Control' => 'max-age=0',
-    ];
-
     public function __construct(ResponseFactoryInterface $responseFactory)
     {
         $this->responseFactory = $responseFactory;
     }
 
-    public function setDefaultHeaders(array $headers): void
-    {
-        $this->defaultHeaders = $headers + $this->defaultHeaders;
-    }
-
     public function sendRequest(RequestInterface $request): ResponseInterface
     {
-        foreach ($this->defaultHeaders as $name => $value) {
-            if (!$request->hasHeader($name)) {
-                $request = $request->withHeader($name, $value);
-            }
-        }
-
         $url = (string) $request->getUri();
         $curl = curl_init($url);
 

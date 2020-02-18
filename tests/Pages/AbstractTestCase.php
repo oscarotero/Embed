@@ -14,6 +14,10 @@ abstract class AbstractTestCase extends TestCase
     {
         if (!isset(self::$embed)) {
             self::$embed = new Embed();
+            self::$embed->getCrawler()->addDefaultHeaders([
+                'Accept-Language' => 'en-US,en;q=0.5',
+                'Cache-Control' => 'max-age=0,no-cache',
+            ]);
         }
 
         $extractor = self::$embed->get($url);

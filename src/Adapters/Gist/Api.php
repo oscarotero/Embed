@@ -14,6 +14,6 @@ class Api
         $uri = $this->extractor->getUri();
         $this->endpoint = (string) $uri->withPath($uri->getPath().'.json');
 
-        return $this->fetchJSON($endpoint);
+        return $this->fetchJSON($this->endpoint);
     }
 }
