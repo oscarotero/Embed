@@ -5,6 +5,7 @@ namespace Embed\Adapters\Archive\Detectors;
 
 use Embed\Detectors\Code as Detector;
 use Embed\EmbedCode;
+use function Embed\html;
 use function Embed\match;
 
 class Code extends Detector

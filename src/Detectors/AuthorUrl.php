@@ -9,6 +9,14 @@ class AuthorUrl extends Detector
     {
         $oembed = $this->extractor->getOEmbed();
 
-        return $oembed->url('author_url');
+        return $oembed->url('author_url')
+            ?: $this->detectFromTwitter();
+    }
+
+    private function detectFromTwitter(): ?string
+    {
+        $user = $this->extractor->getDocument()->meta('twitter:creator');
+
+        return $user ? sprintf('https://twitter.com/%s', ltrim($user, '@')) : null;
     }
 }

@@ -3,7 +3,9 @@ declare(strict_types = 1);
 
 namespace Embed;
 
-class EmbedCode
+use JsonSerializable;
+
+class EmbedCode implements JsonSerializable
 {
     public string $html;
     public ?int $width;
@@ -24,5 +26,14 @@ class EmbedCode
     public function __toString(): string
     {
         return $this->html;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'html' => $this->html,
+            'width' => $this->width,
+            'height' => $this->height,
+        ];
     }
 }

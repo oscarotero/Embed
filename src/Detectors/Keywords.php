@@ -16,6 +16,7 @@ class Keywords extends Detector
             ['property' => 'og:article:tag'],
             ['property' => 'og:video:tag'],
             ['property' => 'og:book:tag'],
+            ['property' => 'lp.article:section'],
         ];
 
         foreach ($metas as $attr) {

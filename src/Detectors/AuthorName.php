@@ -8,7 +8,13 @@ class AuthorName extends Detector
     public function detect(): ?string
     {
         $oembed = $this->extractor->getOEmbed();
+        $document = $this->extractor->getDocument();
 
-        return $oembed->str('author_name');
+        return $oembed->str('author_name')
+            ?: $document->meta('article:author')
+            ?: $document->meta('book:author')
+            ?: $document->meta('sailthru.author')
+            ?: $document->meta('lp.article:author')
+            ?: $document->meta('twitter:creator');
     }
 }

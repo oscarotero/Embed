@@ -8,8 +8,10 @@ class ProviderUrl extends Detector
     public function detect(): string
     {
         $oembed = $this->extractor->getOEmbed();
+        $document = $this->extractor->getDocument();
 
         return $oembed->url('provider_url')
+            ?: $document->meta('og:website')
             ?: $this->fallback();
     }
 

@@ -21,9 +21,12 @@ class PublishedTime extends Detector
             ?: $document->meta('pagerender')
             ?: $document->meta('pub_date')
             ?: $document->meta('publication-date')
+            ?: $document->meta('lp.article:published_time')
+            ?: $document->meta('lp.article:modified_time')
             ?: $document->meta('publish-date')
             ?: $document->meta('rc.datecreation')
             ?: $document->meta('timestamp')
+            ?: $document->meta('sailthru.date')
             ?: $document->meta('article:modified_time');
     }
 }

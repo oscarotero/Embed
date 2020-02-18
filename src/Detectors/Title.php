@@ -13,6 +13,7 @@ class Title extends Detector
         return $oembed->str('title')
             ?: $document->meta('og:title')
             ?: $document->meta('twitter:title')
+            ?: $document->meta('lp:title')
             ?: $document->select('.//head/title')->str();
     }
 }

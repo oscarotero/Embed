@@ -12,9 +12,8 @@ class Description extends Detector
 
         return $oembed->str('description')
             ?: $document->meta('og:description')
-            ?: $document->meta('og:description')
             ?: $document->meta('twitter:description')
-            ?: $document->meta('twitter:description')
+            ?: $document->meta('lp:description')
             ?: $document->meta('description');
     }
 }
