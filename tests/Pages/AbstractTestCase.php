@@ -24,13 +24,6 @@ abstract class AbstractTestCase extends TestCase
 
         foreach ($expected as $name => $value) {
             switch ($name) {
-                case 'code':
-                    if ($value === true) {
-                        $this->assertNotEmpty($extractor->$name);
-                    } else {
-                        $this->assertSame(self::normalize($value), self::normalize((string) $extractor->$name));
-                    }
-                break;
                 case 'oembed':
                     if ($value === true) {
                         $this->assertNotEmpty($extractor->getOEmbed()->all());
@@ -46,7 +39,13 @@ abstract class AbstractTestCase extends TestCase
                     }
                 break;
                 default:
-                    $this->assertEquals($value, $extractor->$name);
+                    if ($value === true) {
+                        $this->assertNotEmpty($extractor->$name);
+                    } elseif ($name === 'code') {
+                        $this->assertSame(self::normalize($value), self::normalize((string) $extractor->$name));
+                    } else {
+                        $this->assertEquals($value, $extractor->$name);
+                    }
             }
         }
     }

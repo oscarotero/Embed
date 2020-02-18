@@ -10,7 +10,7 @@ class PinterestTest extends AbstractTestCase
         $this->assertEmbed(
             'https://www.pinterest.com/pin/106890191127977979/',
             [
-                'title' => 'Pin by Leslie Carruthers on Icons | Jack nicholson, Famous men, Famous faces',
+                'title' => 'Pin by Leslie Carruthers on Icons | Jack nicholson, Famous faces, Famous men',
                 'code' => '<a data-pin-do="embedPin" href="https://www.pinterest.com/pin/106890191127977979/"></a><script async defer src="//assets.pinterest.com/js/pinit.js"></script>',
                 'providerName' => 'Pinterest',
             ]
