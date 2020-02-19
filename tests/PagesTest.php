@@ -24,46 +24,98 @@ class PagesTest extends PagesTestCase
         $this->assertEmbed('https://animoto.com/play/GjsJ1gu0WDRfr4pGw12xZQ');
         $this->assertEmbed('http://live.amcharts.com/czNjJ');
         $this->assertEmbed('https://www.aol.com/video/view/pile-of-recovering-foster-kittens-is-purrfect/595fe75985eb42109b69bedb/');
-        $this->assertEmbed('https://archive.org/details/dn2015-0220_vid');
-        $this->assertEmbed('https://archive.org/details/librivoxaudio');
         $this->assertEmbed('http://jeanjean.bandcamp.com/track/coquin-l-l-phant');
-        $this->assertEmbed('http://play.cadenaser.com/audio/001RD010000004275766/');
         $this->assertEmbed('http://chirb.it/7A9L9B');
         $this->assertEmbed('http://codepen.io/Zhouzi/pen/JoRazP');
         $this->assertEmbed('http://www.dailymotion.com/video/xy0wd');
         $this->assertEmbed('http://www.deviantart.com/art/Misty-510056679');
         $this->assertEmbed('http://pachunka.deviantart.com/art/Cope-145564099');
         $this->assertEmbed('http://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/');
-        $this->assertEmbed('https://ideone.com/Whjntg');
-        $this->assertEmbed('https://imageshack.com/i/ip7wO0v7j');
         $this->assertEmbed('http://i.imgur.com/X6rkCc5.jpg');
         $this->assertEmbed('https://infogr.am/7743c36a-f3ca-4465-9a80-a8abbd5d8dc4');
-        $this->assertEmbed('http://instagram.com/p/ySl7G9tO_q/');
         $this->assertEmbed('https://www.instagram.com/p/ySl7G9tO_q/');
         $this->assertEmbed('http://output.jsbin.com/vonesu/10');
         $this->assertEmbed('http://jsfiddle.net/zhm5rjnz/');
         $this->assertEmbed('https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers');
-        $this->assertEmbed('https://www.meetup.com/es/GPUL-Labs/events/248885422/');
         $this->assertEmbed('http://www.23hq.com/Zzleeper/photo/16600737');
         $this->assertEmbed('https://500px.com/photo/138251239/taganay-park-by-daniel-kordan');
         $this->assertEmbed('https://pastebin.com/d4biUtRm');
         $this->assertEmbed('http://media.photobucket.com/user/Ignwar/media/Album%20Deserts/MoonriseMonumentValleyUtah.jpg.html?filters[term]=sunsets&filters[primary]=images');
-        $this->assertEmbed('https://www.pinterest.com/pin/106890191127977979/');
         $this->assertEmbed('http://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314.html');
         $this->assertEmbed('http://polldaddy.com/poll/7012505/');
         $this->assertEmbed('https://www.reddit.com/r/investing/comments/7pfpeq/buffett_on_cyrptocurrencies_i_can_say_almost_with/');
-        $this->assertEmbed('http://sassmeister.com/gist/1122e441f0434ec6eb2a');
         $this->assertEmbed('http://www.scribd.com/doc/110799637/Synthesis-of-Knowledge-Effects-of-Fire-and-Thinning-Treatments-on-Understory-Vegetation-in-Dry-U-S-Forests');
-        $this->assertEmbed('http://slides.com/alexwalker/responsive-svg/');
-        $this->assertEmbed('http://snipplr.com/view/72914/better-html-5-basic-starter-template');
         $this->assertEmbed('http://www.spreaker.com/user/angelclark/angel-clark-ice-cream-tocos');
         $this->assertEmbed('http://www.ted.com/talks/george_monbiot_for_more_wonder_rewild_the_world?language=en#t-689901');
         $this->assertEmbed('http://he-who-photographs-rather-ok.tumblr.com/post/165326273724');
         $this->assertEmbed('http://www.ustream.tv/channel/red-shoes-billiards-60803-camera-1');
         $this->assertEmbed('http://www.viddler.com/v/bdce8c7');
-        $this->assertEmbed('https://vimeo.com/235352744');
-        $this->assertEmbed('https://en.wikipedia.org/wiki/Albert_Einstein');
         $this->assertEmbed('http://www.wired.com/?p=2064839');
+    }
+
+    public function testSnipplr()
+    {
+        $this->assertEmbed('http://snipplr.com/view/72914/better-html-5-basic-starter-template');
+    }
+
+    public function testSassmeister()
+    {
+        $this->assertEmbed('http://sassmeister.com/gist/1122e441f0434ec6eb2a');
+    }
+
+    public function testImageShack()
+    {
+        $this->assertEmbed('https://imageshack.com/i/ip7wO0v7j');
+    }
+
+    public function testIdeone()
+    {
+        $this->assertEmbed('https://ideone.com/Whjntg');
+    }
+
+    public function testCadenaSer()
+    {
+        $this->assertEmbed('http://play.cadenaser.com/audio/001RD010000004275766/');
+    }
+
+    public function testSlides()
+    {
+        $this->assertEmbed('http://slides.com/alexwalker/responsive-svg/');
+    }
+
+    public function testArchiveOrg()
+    {
+        $this->assertEmbed('https://archive.org/details/dn2015-0220_vid');
+        $this->assertEmbed('https://archive.org/details/librivoxaudio');
+    }
+
+    public function testInstagram()
+    {
+        $this->assertEmbed('http://instagram.com/p/ySl7G9tO_q/');
+    }
+
+    public function testMeetup()
+    {
+        $this->assertEmbed('https://www.meetup.com/es/GPUL-Labs/events/248885422/');
+    }
+
+    public function testPinterest()
+    {
+        $this->assertEmbed('https://www.pinterest.com/pin/106890191127977979/');
+    }
+
+    public function testWikipedia()
+    {
+        $this->assertEmbed('https://en.wikipedia.org/wiki/Albert_Einstein');
+    }
+
+    public function testVimeo()
+    {
+        $this->assertEmbed('https://vimeo.com/235352744');
+    }
+
+    public function testWordPress()
+    {
         $this->assertEmbed('http://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/');
     }
 
@@ -121,5 +173,6 @@ class PagesTest extends PagesTestCase
         $this->assertEmbed('http://www.youtube.com/watch?v=eiHXASgRTcA');
         $this->assertEmbed('http://youtu.be/eiHXASgRTcA');
         $this->assertEmbed('https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST');
+        $this->assertEmbed('https://www.youtube.com/channel/UCuZeHD5SGecQomz2pVDHGzg');
     }
 }

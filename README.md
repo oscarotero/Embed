@@ -167,12 +167,12 @@ Embed comes with a CURL client compatible with PSR-18 but you need to install a 
 use Embed\Embed;
 use Embed\Http\Crawler;
 
+$client = new CustomHttpClient();
 $requestFactory = new CustomRequestFactory();
 $uriFactory = new CustomUriFactory();
-$client = new CustomHttpClient();
 
 //The Crawler is responsible for perform http queries
-$crawler = new Crawler($requestFactory, $uriFactory, $client);
+$crawler = new Crawler($client, $requestFactory, $uriFactory);
 
 //Create an embed instance passing the Crawler
 $embed = new Embed($crawler);

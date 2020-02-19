@@ -96,9 +96,9 @@ final class CurlDispatcher implements ClientInterface
 
     private ResponseFactoryInterface $responseFactory;
 
-    public function __construct(ResponseFactoryInterface $responseFactory)
+    public function __construct(ResponseFactoryInterface $responseFactory = null)
     {
-        $this->responseFactory = $responseFactory;
+        $this->responseFactory = $responseFactory ?: FactoryDiscovery::getResponseFactory();
     }
 
     public function sendRequest(RequestInterface $request): ResponseInterface

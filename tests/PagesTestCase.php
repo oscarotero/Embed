@@ -7,7 +7,6 @@ use Embed\Embed;
 use Embed\Extractor;
 use Embed\Http\Crawler;
 use JsonSerializable;
-use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\UriInterface;
 use Symfony\Component\VarExporter\VarExporter;
@@ -48,13 +47,10 @@ abstract class PagesTestCase extends TestCase
             return self::$embed;
         }
 
-        $factory = new Psr17Factory();
-        $dispatcher = new FileDispatcher(__DIR__.'/cache', $factory);
+        $dispatcher = new FileDispatcher(__DIR__.'/cache');
         $dispatcher->setMode(self::CACHE);
 
-        $crawler = new Crawler($factory, $factory, $dispatcher);
-
-        return self::$embed = new Embed($crawler);
+        return self::$embed = new Embed(new Crawler($dispatcher));
     }
 
     protected function assertEmbed(string $url)

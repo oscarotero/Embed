@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace Embed\Tests;
 
 use Embed\Http\CurlDispatcher;
+use Embed\Http\FactoryDiscovery;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
@@ -21,10 +22,10 @@ final class FileDispatcher implements ClientInterface
     private ResponseFactoryInterface $responseFactory;
     private ClientInterface $client;
 
-    public function __construct(string $path, ResponseFactoryInterface $responseFactory, ClientInterface $client = null)
+    public function __construct(string $path, ResponseFactoryInterface $responseFactory = null, ClientInterface $client = null)
     {
         $this->path = $path;
-        $this->responseFactory = $responseFactory;
+        $this->responseFactory = $responseFactory ?: FactoryDiscovery::getResponseFactory();
         $this->client = $client ?: new CurlDispatcher($responseFactory);
     }
 
