@@ -3,13 +3,13 @@ declare(strict_types = 1);
 
 namespace Embed\Tests;
 
+use Brick\VarExporter\VarExporter;
 use Embed\Embed;
 use Embed\Extractor;
 use Embed\Http\Crawler;
 use JsonSerializable;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\UriInterface;
-use Symfony\Component\VarExporter\VarExporter;
 
 abstract class PagesTestCase extends TestCase
 {
@@ -48,7 +48,7 @@ abstract class PagesTestCase extends TestCase
         }
 
         $dispatcher = new FileClient(__DIR__.'/cache');
-        $dispatcher->setMode(self::CACHE);
+        $dispatcher->setMode(static::CACHE);
 
         return self::$embed = new Embed(new Crawler($dispatcher));
     }

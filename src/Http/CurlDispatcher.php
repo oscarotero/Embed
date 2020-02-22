@@ -107,16 +107,14 @@ final class CurlDispatcher
             $this->curl,
             CURLOPT_HEADERFUNCTION,
             function ($resource, $string) {
-                if (!strpos($string, ':')) {
-                    return strlen($string);
+                if (preg_match('/^([\w-]+):(.*)$/', $string, $matches)) {
+                    $name = strtolower($matches[1]);
+                    $value = trim($matches[2]);
+                    $this->headers[] = [$name, $value];
+                } elseif ($this->headers) {
+                    $key = array_key_last($this->headers);
+                    $this->headers[$key][1] .= ' '.trim($string);
                 }
-
-                list($name, $value) = array_map('trim', explode(':', $string, 2));
-
-                $name = strtolower($name);
-
-                $this->headers[$name] ??= [];
-                $this->headers[$name][] = $value;
 
                 return strlen($string);
             }
@@ -145,8 +143,9 @@ final class CurlDispatcher
 
         $response = $responseFactory->createResponse($info['http_code']);
 
-        foreach ($this->headers as $name => $values) {
-            $response = $response->withHeader($name, $values);
+        foreach ($this->headers as $header) {
+            list($name, $value) = $header;
+            $response = $response->withAddedHeader($name, $value);
         }
 
         if (!$response->hasHeader('Content-Location')) {

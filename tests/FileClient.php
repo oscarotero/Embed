@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace Embed\Tests;
 
+use Brick\VarExporter\VarExporter;
 use Embed\Http\CurlClient;
 use Embed\Http\FactoryDiscovery;
 use Psr\Http\Client\ClientInterface;
@@ -10,7 +11,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
-use Symfony\Component\VarExporter\VarExporter;
 
 /**
  * Decorator to cache requests into files

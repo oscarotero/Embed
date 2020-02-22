@@ -39,7 +39,7 @@
         "friendsofphp/php-cs-fixer": "^2.0",
         "nyholm/psr7": "^1.2",
         "oscarotero/php-cs-fixer-config": "^1.0",
-        "symfony/var-exporter": "^5.0"
+        "brick/varexporter": "^0.3.1"
     },
     "autoload": {
         "psr-4": {
