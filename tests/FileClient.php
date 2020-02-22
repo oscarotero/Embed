@@ -15,18 +15,18 @@ use Symfony\Component\VarExporter\VarExporter;
 /**
  * Decorator to cache requests into files
  */
-final class FileDispatcher implements ClientInterface
+final class FileClient implements ClientInterface
 {
     private int $mode = 0;
     private string $path;
     private ResponseFactoryInterface $responseFactory;
     private ClientInterface $client;
 
-    public function __construct(string $path, ResponseFactoryInterface $responseFactory = null, ClientInterface $client = null)
+    public function __construct(string $path)
     {
         $this->path = $path;
-        $this->responseFactory = $responseFactory ?: FactoryDiscovery::getResponseFactory();
-        $this->client = $client ?: new CurlClient($responseFactory);
+        $this->responseFactory = FactoryDiscovery::getResponseFactory();
+        $this->client = new CurlClient($this->responseFactory);
     }
 
     public function setMode(int $mode): void
@@ -36,7 +36,8 @@ final class FileDispatcher implements ClientInterface
 
     public function sendRequest(RequestInterface $request): ResponseInterface
     {
-        $filename = $this->path.'/'.self::getFilename($request->getUri());
+        $uri = $request->getUri();
+        $filename = $this->path.'/'.self::getFilename($uri);
 
         if ($this->mode === 0 && is_file($filename)) {
             $response = $this->readResponse($filename);
@@ -44,7 +45,7 @@ final class FileDispatcher implements ClientInterface
             $response = $this->client->sendRequest($request);
         }
 
-        if ($this->mode === 2) {
+        if ($this->mode === 2 || !is_file($filename)) {
             $this->saveResponse($response, $filename);
         }
 

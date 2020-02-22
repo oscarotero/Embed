@@ -47,7 +47,7 @@ abstract class PagesTestCase extends TestCase
             return self::$embed;
         }
 
-        $dispatcher = new FileDispatcher(__DIR__.'/cache');
+        $dispatcher = new FileClient(__DIR__.'/cache');
         $dispatcher->setMode(self::CACHE);
 
         return self::$embed = new Embed(new Crawler($dispatcher));
@@ -72,7 +72,7 @@ abstract class PagesTestCase extends TestCase
 
     private static function writeData(UriInterface $uri, array $data): void
     {
-        $filename = __DIR__.'/fixtures/'.FileDispatcher::getFileName($uri);
+        $filename = __DIR__.'/fixtures/'.FileClient::getFileName($uri);
 
         file_put_contents(
             $filename,
@@ -82,7 +82,7 @@ abstract class PagesTestCase extends TestCase
 
     private static function readData(UriInterface $uri): ?array
     {
-        $filename = __DIR__.'/fixtures/'.FileDispatcher::getFileName($uri);
+        $filename = __DIR__.'/fixtures/'.FileClient::getFileName($uri);
 
         if (is_file($filename)) {
             return require $filename;
