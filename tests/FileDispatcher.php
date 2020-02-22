@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Embed\Tests;
 
-use Embed\Http\CurlDispatcher;
+use Embed\Http\CurlClient;
 use Embed\Http\FactoryDiscovery;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
@@ -26,7 +26,7 @@ final class FileDispatcher implements ClientInterface
     {
         $this->path = $path;
         $this->responseFactory = $responseFactory ?: FactoryDiscovery::getResponseFactory();
-        $this->client = $client ?: new CurlDispatcher($responseFactory);
+        $this->client = $client ?: new CurlClient($responseFactory);
     }
 
     public function setMode(int $mode): void
