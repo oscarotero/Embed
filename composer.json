@@ -26,6 +26,7 @@
     "require": {
         "php": "^7.4",
         "ext-curl": "*",
+        "ext-dom": "*",
         "ext-mbstring": "*",
         "composer/ca-bundle": "^1.0",
         "oscarotero/html-parser": "^0.1.4",
