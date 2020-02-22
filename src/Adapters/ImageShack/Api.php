@@ -11,7 +11,7 @@ class Api
 {
     use ApiTrait;
 
-    private function fetchData(): array
+    protected function fetchData(): array
     {
         $uri = $this->extractor->getUri();
 

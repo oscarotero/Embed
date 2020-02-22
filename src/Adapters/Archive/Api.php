@@ -9,7 +9,7 @@ class Api
 {
     use ApiTrait;
 
-    private function fetchData(): array
+    protected function fetchData(): array
     {
         $this->endpoint = (string) $this->extractor->getUri()->withQuery('output=json');
 
