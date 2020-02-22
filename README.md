@@ -76,6 +76,25 @@ $info->linkedData; //The linked-data info (http://json-ld.org/)
 $info->feeds; //The RSS/Atom feeds
 ```
 
+## Parallel multiple requests
+
+```php
+use Embed\Embed;
+
+$embed = new Embed();
+
+//Load multiple urls asynchronously:
+$infos = $embed->getMulti(
+    'https://www.youtube.com/watch?v=PP1xn5wHtxE',
+    'https://twitter.com/carlosmeixidefl/status/1230894146220625933',
+    'https://en.wikipedia.org/wiki/Tordoia',
+);
+
+foreach ($infos as $info) {
+    echo $info->title;
+}
+```
+
 ## Document
 
 The document is the object that store the html code of the page. Like with oEmbed, you can use it to extract extra info:

@@ -5,10 +5,8 @@ namespace Embed;
 
 use Embed\Http\Crawler;
 use Embed\Http\CurlDispatcher;
-use Psr\Http\Message\RequestFactoryInterface;
-use Psr\Http\Message\ResponseFactoryInterface;
-use Psr\Http\Message\UriFactoryInterface;
-use RuntimeException;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 class Embed
 {
@@ -25,9 +23,29 @@ class Embed
     {
         $request = $this->crawler->createRequest('GET', $url);
         $response = $this->crawler->sendRequest($request);
-        $uri = $this->crawler->getResponseUri($response) ?: $request->getUri();
 
-        return $this->extractorFactory->createExtractor($uri, $request, $response, $this->crawler);
+        return $this->extract($request, $response);
+    }
+
+    /**
+     * @return Extractor[]
+     */
+    public function getMulti(string ...$urls): array
+    {
+        $requests = array_map(
+            fn ($url) => $this->crawler->createRequest('GET', $url),
+            $urls
+        );
+
+        $responses = CurlDispatcher::fetch(null, ...$requests);
+
+        $return = [];
+
+        foreach ($responses as $k => $response) {
+            $return[] = $this->extract($requests[$k], $responses[$k]);
+        }
+
+        return $return;
     }
 
     public function getCrawler(): Crawler
@@ -38,5 +56,12 @@ class Embed
     public function getExtractorFactory(): ExtractorFactory
     {
         return $this->extractorFactory;
+    }
+
+    private function extract(RequestInterface $request, ResponseInterface $response): Extractor
+    {
+        $uri = $this->crawler->getResponseUri($response) ?: $request->getUri();
+
+        return $this->extractorFactory->createExtractor($uri, $request, $response, $this->crawler);
     }
 }

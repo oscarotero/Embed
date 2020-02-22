@@ -22,7 +22,7 @@ class Crawler implements ClientInterface, RequestFactoryInterface, UriFactoryInt
 
     public function __construct(ClientInterface $client = null, RequestFactoryInterface $requestFactory = null, UriFactoryInterface $uriFactory = null)
     {
-        $this->client = $client ?: new CurlDispatcher();
+        $this->client = $client ?: new CurlClient();
         $this->requestFactory = $requestFactory ?: FactoryDiscovery::getRequestFactory();
         $this->uriFactory = $uriFactory ?: FactoryDiscovery::getUriFactory();
     }
@@ -37,7 +37,13 @@ class Crawler implements ClientInterface, RequestFactoryInterface, UriFactoryInt
      */
     public function createRequest(string $method, $uri): RequestInterface
     {
-        return $this->requestFactory->createRequest($method, $uri);
+        $request = $this->requestFactory->createRequest($method, $uri);
+
+        foreach ($this->defaultHeaders as $name => $value) {
+            $request = $request->withHeader($name, $value);
+        }
+
+        return $request;
     }
 
     public function createUri(string $uri = ''): UriInterface
@@ -47,12 +53,6 @@ class Crawler implements ClientInterface, RequestFactoryInterface, UriFactoryInt
 
     public function sendRequest(RequestInterface $request): ResponseInterface
     {
-        foreach ($this->defaultHeaders as $name => $value) {
-            if (!$request->hasHeader($name)) {
-                $request = $request->withHeader($name, $value);
-            }
-        }
-
         return $this->client->sendRequest($request);
     }
 

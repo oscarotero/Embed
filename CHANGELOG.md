@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 Full library refactoring.
 
 ### Added
+- Support for multiple parallel request with `curl_multi`
+- Support for PSR-7 Http Messages, PSR-17 Http Factories and PSR-18 Http Client
 - `cms` value
 - `language` to detect the page language
 - `languages` to detect urls to versions in different languages

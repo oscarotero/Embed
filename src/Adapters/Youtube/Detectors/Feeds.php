@@ -4,10 +4,8 @@ declare(strict_types = 1);
 namespace Embed\Adapters\Youtube\Detectors;
 
 use Embed\Detectors\Feeds as Detector;
-use Embed\EmbedCode;
-use function Embed\html;
-use function Embed\match;
 use function Embed\getDirectory;
+use function Embed\match;
 
 class Feeds extends Detector
 {
