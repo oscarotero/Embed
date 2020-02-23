@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<iframe src="https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers/widget/video.html" height="270.0" width="480" frameborder="0" scrolling="no"></iframe>',
         'width' => 480,
-        'height' => 270,
+        'height' => 270
     ],
     'description' => 'Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends & sprouted superfood ingredients.',
     'favicon' => 'https://www.kickstarter.com/favicon.ico',
@@ -25,5 +25,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Good Seed Craft Veggie Burgers',
-    'url' => 'https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers',
+    'url' => 'https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers'
 ];

@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<iframe width="480" height="270" src="https://www.youtube.com/embed/videoseries?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
         'width' => 480,
-        'height' => 270,
+        'height' => 270
     ],
     'description' => null,
     'favicon' => 'https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico',
@@ -25,5 +25,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'De espaldas al patriarcado',
-    'url' => 'https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST',
+    'url' => 'https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST'
 ];

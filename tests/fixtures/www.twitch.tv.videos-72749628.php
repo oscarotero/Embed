@@ -21,5 +21,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Twitch',
-    'url' => 'https://www.twitch.tv/videos/72749628',
+    'url' => 'https://www.twitch.tv/videos/72749628'
 ];

@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<a data-pin-do="embedPin" href="https://www.pinterest.com/pin/106890191127977979/"></a><script async defer src="//assets.pinterest.com/js/pinit.js"></script>',
         'width' => 236,
-        'height' => 442,
+        'height' => 442
     ],
     'description' => 'This Pin was discovered by Leslie Carruthers. Discover (and save!) your own Pins on Pinterest.',
     'favicon' => 'https://s.pinimg.com/webapp/style/images/favicon-fd1ea058.png',
@@ -48,7 +48,7 @@ return [
         'sk' => 'https://sk.pinterest.com/pin/106890191127977979/',
         'tr' => 'https://tr.pinterest.com/pin/106890191127977979/',
         'en-ZA' => 'https://za.pinterest.com/pin/106890191127977979/',
-        'en' => 'https://www.pinterest.com/pin/106890191127977979/',
+        'en' => 'https://www.pinterest.com/pin/106890191127977979/'
     ],
     'license' => null,
     'linkedData' => null,
@@ -57,5 +57,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Pin di Leslie Carruthers su Icons | Jack nicholson, Stelle di hollywood, Personaggi',
-    'url' => 'https://www.pinterest.com/pin/106890191127977979/',
+    'url' => 'https://www.pinterest.com/pin/106890191127977979/'
 ];

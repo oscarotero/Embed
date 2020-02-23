@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<iframe width="459" height="344" src="https://www.youtube.com/embed/eiHXASgRTcA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
         'width' => 459,
-        'height' => 344,
+        'height' => 344
     ],
     'description' => '7 week old fostered kittens waiting on their dinner being prepared. They had been ill with cat flu and were just starting to get their appetite back. Because...',
     'favicon' => 'https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico',
@@ -49,7 +49,7 @@ return [
         'kitten',
         'talking',
         'adorable',
-        'climbing',
+        'climbing'
     ],
     'language' => 'es-ES',
     'languages' => [],
@@ -60,5 +60,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Noisy kittens waiting for dinner!',
-    'url' => 'https://www.youtube.com/watch?v=eiHXASgRTcA&feature=youtu.be',
+    'url' => 'https://www.youtube.com/watch?v=eiHXASgRTcA&feature=youtu.be'
 ];

@@ -8,12 +8,12 @@ return [
     'code' => [
         'html' => '<script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/7012505.js"></script><noscript><iframe src="https://poll.fm/7012505/embed" frameborder="0" class="cs-iframe-embed"></iframe></noscript>',
         'width' => null,
-        'height' => null,
+        'height' => null
     ],
     'description' => 'Poll Answers: Option #1, Option #2,',
     'favicon' => 'https://app.crowdsignal.com/images/favicon.png',
     'feeds' => [
-        'https://poll.fm/7012505/feed',
+        'https://poll.fm/7012505/feed'
     ],
     'icon' => null,
     'image' => 'https://app.crowdsignal.com/images/twitter-card.png',
@@ -27,5 +27,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Which design do you prefer?',
-    'url' => 'https://poll.fm/7012505',
+    'url' => 'https://poll.fm/7012505'
 ];

@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<iframe src="https://play.cadenaser.com/widget/audio/001RD010000004275766/" frameborder="0" width="100%" height="360" allowTransparency="true"></iframe>',
         'width' => null,
-        'height' => 360,
+        'height' => 360
     ],
     'description' => 'Ana Pontón, candidata del BNG; Xoaquín Fernández Leiceaga, candidato del PSdG-PSOE; Luis Villares, candidato de En Marea, y Pedro Puy, candidato del PP por A Coruña y coordinador del programa electoral de Alberto Núñez Feijoo debaten en Hoy por Hoy',
     'favicon' => 'https://play.cadenaser.com/bundles/playserweb/img/favicon.ico?v3.3',
@@ -28,23 +28,23 @@ return [
                 'position' => 1,
                 'item' => [
                     '@id' => 'https://play.cadenaser.com/',
-                    'name' => 'PlaySER',
-                ],
+                    'name' => 'PlaySER'
+                ]
             ],
             [
                 '@type' => 'ListItem',
                 'position' => 2,
                 'item' => [
                     '@id' => 'https://play.cadenaser.com/programa/hoy_por_hoy/',
-                    'name' => 'Hoy por Hoy',
-                ],
-            ],
-        ],
+                    'name' => 'Hoy por Hoy'
+                ]
+            ]
+        ]
     ],
     'providerName' => 'Cadena SER',
     'providerUrl' => 'https://play.cadenaser.com',
     'publishedTime' => '2016-09-16',
     'redirect' => null,
     'title' => 'Debate electoral gallego, en \'Hoy por Hoy\' | Hoy por Hoy | Audio | Cadena SER',
-    'url' => 'https://play.cadenaser.com/audio/001RD010000004275766/',
+    'url' => 'https://play.cadenaser.com/audio/001RD010000004275766/'
 ];

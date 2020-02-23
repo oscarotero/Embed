@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<iframe src="https://widget.spreaker.com/player?episode_key=BbMeV2n1A4r3--7657563&amp;theme=light&amp;playlist=false&amp;cover_image_url=https%3A%2F%2Fd3wo5wojvuv7l.cloudfront.net%2Fimages.spreaker.com%2Foriginal%2F07176451fd3625d19c5e5d88d9f1bfbb.jpg" width="640" height="480" frameborder="0"></iframe>',
         'width' => 640,
-        'height' => 480,
+        'height' => 480
     ],
     'description' => 'Listen in to popular podcasts and radio shows from around the world or start your own with Spreaker!',
     'favicon' => 'https://d1sojsgu0jwtb7.cloudfront.net/images/favicons/favicon.ico',
@@ -25,5 +25,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Angel Clark: Ice Cream Toco\'s - Angel Clark Show',
-    'url' => 'https://www.spreaker.com/user/angelclark/angel-clark-ice-cream-tocos',
+    'url' => 'https://www.spreaker.com/user/angelclark/angel-clark-ice-cream-tocos'
 ];

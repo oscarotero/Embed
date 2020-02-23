@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<iframe width="600" height="400" src="//live.amcharts.com/czNjJ/embed/" frameborder="0" ></iframe>',
         'width' => 600,
-        'height' => 400,
+        'height' => 400
     ],
     'description' => 'Let\\\'s see how the history of the winner of 2014 World Cup - Germany - compares to the two runners-up: Argentina and The Netherlands.',
     'favicon' => 'https://live.amcharts.com/static/img/page/favicon.png',
@@ -25,5 +25,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'World Cup History',
-    'url' => 'https://live.amcharts.com/czNjJ/',
+    'url' => 'https://live.amcharts.com/czNjJ/'
 ];

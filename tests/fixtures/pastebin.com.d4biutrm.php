@@ -21,5 +21,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => '[Bash] Pushing new git submodule to Heroku - Pastebin.com',
-    'url' => 'https://pastebin.com/d4biUtRm',
+    'url' => 'https://pastebin.com/d4biUtRm'
 ];

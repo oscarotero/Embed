@@ -18,7 +18,7 @@ return [
         'tumbler',
         'tumblr',
         'tlog',
-        'microblog',
+        'microblog'
     ],
     'language' => 'en-US',
     'languages' => [],
@@ -29,5 +29,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Tumblr',
-    'url' => 'https://www.tumblr.com/privacy/consent?redirect=http%3A%2F%2Fhe-who-photographs-rather-ok.tumblr.com%2Fpost%2F165326273724',
+    'url' => 'https://www.tumblr.com/privacy/consent?redirect=http%3A%2F%2Fhe-who-photographs-rather-ok.tumblr.com%2Fpost%2F165326273724'
 ];

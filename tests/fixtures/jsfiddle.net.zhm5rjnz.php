@@ -19,7 +19,7 @@ return [
         'html',
         'css',
         'coffeescript',
-        'scss online editor',
+        'scss online editor'
     ],
     'language' => null,
     'languages' => [],
@@ -30,5 +30,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Edit fiddle - JSFiddle - Code Playground',
-    'url' => 'http://jsfiddle.net/zhm5rjnz/',
+    'url' => 'http://jsfiddle.net/zhm5rjnz/'
 ];

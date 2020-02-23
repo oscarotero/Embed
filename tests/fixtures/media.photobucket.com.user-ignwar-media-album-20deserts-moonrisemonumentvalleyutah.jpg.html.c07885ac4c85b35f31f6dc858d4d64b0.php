@@ -17,7 +17,7 @@ return [
         'image hosting',
         'video hosting',
         'photo image hosting site',
-        'video hosting site',
+        'video hosting site'
     ],
     'language' => null,
     'languages' => [],
@@ -36,13 +36,13 @@ return [
             'https://www.facebook.com/photobucket/',
             'https://twitter.com/photobucket',
             'https://www.instagram.com/photobucket/',
-            'https://www.pinterest.com/photobucket/',
-        ],
+            'https://www.pinterest.com/photobucket/'
+        ]
     ],
     'providerName' => 'Photobucket',
     'providerUrl' => 'https://s65.photobucket.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Deserts',
-    'url' => 'https://s65.photobucket.com/user/Ignwar/media/Album%2520Deserts/MoonriseMonumentValleyUtah.jpg.html?filters=Array',
+    'url' => 'https://s65.photobucket.com/user/Ignwar/media/Album%2520Deserts/MoonriseMonumentValleyUtah.jpg.html?filters=Array'
 ];

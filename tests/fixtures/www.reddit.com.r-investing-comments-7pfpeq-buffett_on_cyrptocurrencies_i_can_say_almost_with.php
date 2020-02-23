@@ -8,9 +8,9 @@ return [
     'code' => [
         'html' => '<blockquote class="reddit-card" > <a href="https://www.reddit.com/r/investing/comments/7pfpeq/buffett_on_cyrptocurrencies_i_can_say_almost_with/?ref_source=embed&amp;ref=share">Buffett on cyrptocurrencies: \'I can say almost with certainty that they will come to a bad ending\'</a> from <a href="https://www.reddit.com/r/investing/">investing</a> </blockquote> <script async src="https://embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>',
         'width' => null,
-        'height' => null,
+        'height' => null
     ],
-    'description' => '1,934 votes and 1,279 comments so far on Reddit',
+    'description' => '1,931 votes and 1,279 comments so far on Reddit',
     'favicon' => 'https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png',
     'feeds' => [],
     'icon' => 'https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png',
@@ -25,5 +25,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Buffett on cyrptocurrencies: \'I can say almost with certainty that they will come to a bad ending\'',
-    'url' => 'https://www.reddit.com/r/investing/comments/7pfpeq/buffett_on_cyrptocurrencies_i_can_say_almost_with/',
+    'url' => 'https://www.reddit.com/r/investing/comments/7pfpeq/buffett_on_cyrptocurrencies_i_can_say_almost_with/'
 ];

@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<script src="https://ideone.com/e.js/Whjntg"></script>',
         'width' => null,
-        'height' => null,
+        'height' => null
     ],
     'description' => 'Ideone is something more than a pastebin; it\'s an online compiler and debugging tool which allows to compile and run code online in more than 40 programming languages.',
     'favicon' => 'https://stx1.ideone.com/gfx2/img/favicon.png',
@@ -31,7 +31,7 @@ return [
         'execute code',
         'c++',
         'java',
-        'python',
+        'python'
     ],
     'language' => 'en',
     'languages' => [],
@@ -42,5 +42,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Ideone.com',
-    'url' => 'https://ideone.com/Whjntg',
+    'url' => 'https://ideone.com/Whjntg'
 ];

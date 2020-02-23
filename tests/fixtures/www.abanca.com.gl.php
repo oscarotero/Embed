@@ -19,12 +19,12 @@ return [
         'servizos bancarios',
         'servizos financeios',
         'produtos financeiros',
-        'produtos bancarios',
+        'produtos bancarios'
     ],
     'language' => 'gl',
     'languages' => [
         'es' => 'https://www.abanca.com/es/',
-        'gl' => 'https://www.abanca.com/gl/',
+        'gl' => 'https://www.abanca.com/gl/'
     ],
     'license' => null,
     'linkedData' => [
@@ -37,20 +37,20 @@ return [
             'https://www.facebook.com/SomosABANCA',
             'https://twitter.com/somosABANCA',
             'https://www.youtube.com/user/somosABANCAtv',
-            'https://www.flickr.com/photos/125188945@N05/',
+            'https://www.flickr.com/photos/125188945@N05/'
         ],
         'contactPoint' => [
             [
                 '@type' => 'ContactPoint',
                 'telephone' => '+34-981 910 522',
-                'contactType' => 'customer service',
-            ],
-        ],
+                'contactType' => 'customer service'
+            ]
+        ]
     ],
     'providerName' => 'Abanca',
     'providerUrl' => 'https://www.abanca.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'ABANCA banca online para particulares e empresas | ABANCA',
-    'url' => 'https://www.abanca.com/gl/',
+    'url' => 'https://www.abanca.com/gl/'
 ];

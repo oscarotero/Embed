@@ -8,4 +8,6 @@ return My\PhpCsFixerConfig::create()
             ->in(__DIR__.'/src')
             ->in(__DIR__.'/demo')
             ->in(__DIR__.'/tests')
+            ->exclude('cache')
+            ->exclude('fixtures')
     );

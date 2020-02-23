@@ -8,12 +8,12 @@ return [
     'code' => [
         'html' => '<a data-flickr-embed="true" href="https://www.flickr.com/photos/desescribir/sets/72157650686499888" title="Günther Förg. Verfolgen Malerei / Fundación Luís Seoane by desescribir, on Flickr"><img src="https://live.staticflickr.com/8572/16055522574_ce77fde14e_b.jpg" width="1024" height="680" alt="Günther Förg. Verfolgen Malerei / Fundación Luís Seoane"></a><script async src="https://embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>',
         'width' => 1024,
-        'height' => 680,
+        'height' => 680
     ],
     'description' => '¡Explora este álbum de fotos de desescribir en Flickr!',
     'favicon' => 'https://combo.staticflickr.com/pw/favicon.ico',
     'feeds' => [
-        'https://www.flickr.com/services/feeds/photoset.gne?nsid=34912442@N03&set=72157650686499888&lang=es-us&format=atom',
+        'https://www.flickr.com/services/feeds/photoset.gne?nsid=34912442@N03&set=72157650686499888&lang=es-us&format=atom'
     ],
     'icon' => 'https://combo.staticflickr.com/pw/images/favicons/favicon-120.png',
     'image' => 'https://live.staticflickr.com/8572/16055522574_ce77fde14e_b.jpg',
@@ -30,14 +30,14 @@ return [
             'potentialAction' => [
                 '@type' => 'SearchAction',
                 'target' => 'https://www.flickr.com/search?text={search_term_string}&structured=yes',
-                'query-input' => 'required name=search_term_string',
-            ],
+                'query-input' => 'required name=search_term_string'
+            ]
         ],
         [
             '@context' => 'http://schema.org',
             '@type' => 'Organization',
             'url' => 'http://www.flickr.com',
-            'logo' => 'https://www.flickr.com/images/opensearch-flickr-logo.png',
+            'logo' => 'https://www.flickr.com/images/opensearch-flickr-logo.png'
         ],
         [
             '@context' => 'http://schema.org',
@@ -50,14 +50,14 @@ return [
                 'https://flickr.tumblr.com',
                 'https://twitter.com/flickr',
                 'https://plus.google.com/+flickr',
-                'https://www.pinterest.com/flickr',
-            ],
-        ],
+                'https://www.pinterest.com/flickr'
+            ]
+        ]
     ],
     'providerName' => 'Flickr',
     'providerUrl' => 'https://www.flickr.com/',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Günther Förg. Verfolgen Malerei / Fundación Luís Seoane',
-    'url' => 'https://www.flickr.com/photos/desescribir/sets/72157650686499888',
+    'url' => 'https://www.flickr.com/photos/desescribir/sets/72157650686499888'
 ];

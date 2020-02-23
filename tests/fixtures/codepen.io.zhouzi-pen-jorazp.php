@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<iframe id="cp_embed_JoRazP" src="https://codepen.io/Zhouzi/embed/preview/JoRazP?height=300&amp;slug-hash=JoRazP&amp;default-tabs=js,result&amp;host=https://codepen.io" title="TheaterJS" scrolling="no" frameborder="0" height="300" allowtransparency="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>',
         'width' => 800,
-        'height' => 300,
+        'height' => 300
     ],
     'description' => null,
     'favicon' => 'http://codepen.io/favicon.ico',
@@ -25,5 +25,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'TheaterJS',
-    'url' => 'http://codepen.io/Zhouzi/pen/JoRazP',
+    'url' => 'http://codepen.io/Zhouzi/pen/JoRazP'
 ];

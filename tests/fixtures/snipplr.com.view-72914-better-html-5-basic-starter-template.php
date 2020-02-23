@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<div id="snipplr_embed_72914" class="snipplr_embed"><a target="blank" href="https://snipplr.com/view/72914">View this snippet</a> on Snipplr</div><script type="text/javascript" src="https://snipplr.com/js/embed.js"></script><script type="text/javascript" src="https://snipplr.com/json/72914"></script>',
         'width' => null,
-        'height' => null,
+        'height' => null
     ],
     'description' => null,
     'favicon' => 'https://snipplr.com/favicon.ico?v2',
@@ -25,5 +25,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Better HTML 5 basic starter template - HTML Snipplr Social Repository',
-    'url' => 'https://snipplr.com/view/72914/better-html-5-basic-starter-template',
+    'url' => 'https://snipplr.com/view/72914/better-html-5-basic-starter-template'
 ];

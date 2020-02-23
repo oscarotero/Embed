@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<iframe src="http://output.jsbin.com/vonesu/10" width="320" height="240" frameborder="0"></iframe>',
         'width' => 320,
-        'height' => 240,
+        'height' => 240
     ],
     'description' => null,
     'favicon' => 'http://output.jsbin.com/favicon.ico',
@@ -25,5 +25,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'JS Bin',
-    'url' => 'http://output.jsbin.com/vonesu/10',
+    'url' => 'http://output.jsbin.com/vonesu/10'
 ];

@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<script type="text/javascript" src="https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314?_embed=true&amp;_format=js"></script>',
         'width' => null,
-        'height' => null,
+        'height' => null
     ],
     'description' => 'To veterans of the Bush White House, what Obama is going through is all too predictable.',
     'favicon' => 'https://static.politico.com/cf/05/ee684a274496b04fa20ba2978da1/politico.png',
@@ -20,7 +20,7 @@ return [
         'barack obama (11857)',
         'white house (2586)',
         'second term (10)',
-        'george w. bush (753)',
+        'george w. bush (753)'
     ],
     'language' => 'en',
     'languages' => [],
@@ -31,5 +31,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Obama 2nd term: Echoes of Bush',
-    'url' => 'https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314',
+    'url' => 'https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314'
 ];

@@ -9,7 +9,7 @@ return [
     'description' => null,
     'favicon' => 'https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico',
     'feeds' => [
-        'https://www.youtube.com/feeds/videos.xml?channel_id=UCuZeHD5SGecQomz2pVDHGzg',
+        'https://www.youtube.com/feeds/videos.xml?channel_id=UCuZeHD5SGecQomz2pVDHGzg'
     ],
     'icon' => 'https://s.ytimg.com/yts/img/favicon_144-vfliLAfaB.png',
     'image' => null,
@@ -23,5 +23,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'YouTube',
-    'url' => 'https://www.youtube.com/channel/UCuZeHD5SGecQomz2pVDHGzg',
+    'url' => 'https://www.youtube.com/channel/UCuZeHD5SGecQomz2pVDHGzg'
 ];

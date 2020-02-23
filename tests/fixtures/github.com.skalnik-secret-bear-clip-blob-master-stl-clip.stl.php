@@ -8,12 +8,12 @@ return [
     'code' => [
         'html' => '<script src="https://embed.githubusercontent.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl"></script>',
         'width' => null,
-        'height' => null,
+        'height' => null
     ],
     'description' => 'A clip to hold the Gooseneck Hue HD cameras to the Replicator 2 - skalnik/secret-bear-clip',
     'favicon' => 'https://github.githubassets.com/favicon.ico',
     'feeds' => [
-        'https://github.com/skalnik/secret-bear-clip/commits/master.atom',
+        'https://github.com/skalnik/secret-bear-clip/commits/master.atom'
     ],
     'icon' => null,
     'image' => 'https://avatars3.githubusercontent.com/u/2546?s=400&v=4',
@@ -27,5 +27,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'skalnik/secret-bear-clip',
-    'url' => 'https://github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl',
+    'url' => 'https://github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl'
 ];

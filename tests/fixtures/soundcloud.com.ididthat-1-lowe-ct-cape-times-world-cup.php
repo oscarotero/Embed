@@ -8,7 +8,7 @@ return [
     'code' => [
         'html' => '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&show_artwork=true"></iframe>',
         'width' => 100,
-        'height' => 400,
+        'height' => 400
     ],
     'description' => 'iDidTht Promotes and Connects South Africa’s Advertising and Production Industry.',
     'favicon' => 'https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2cadd14bdb.ico',
@@ -23,7 +23,7 @@ return [
         'audio',
         'tracks',
         'music',
-        'soundcloud',
+        'soundcloud'
     ],
     'language' => 'en',
     'languages' => [],
@@ -34,5 +34,5 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'LOWE CT Cape Times - World Cup by iDidTht.com',
-    'url' => 'https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup',
+    'url' => 'https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup'
 ];

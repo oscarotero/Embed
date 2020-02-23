@@ -21,5 +21,5 @@ return [
     'publishedTime' => '1435616016',
     'redirect' => null,
     'title' => 'Kisses',
-    'url' => 'http://imagizer.imageshack.com/img673/0/7wO0v7.jpg',
+    'url' => 'http://imagizer.imageshack.com/img673/0/7wO0v7.jpg'
 ];
