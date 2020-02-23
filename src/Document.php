@@ -13,6 +13,7 @@ class Document
     private Extractor $extractor;
     private DOMDocument $document;
     private DOMXPath $xpath;
+    private array $metas;
 
     public function __construct(Extractor $extractor)
     {
@@ -77,11 +78,38 @@ class Document
         return new QueryResult($this->xpath->query($query, $context), $this->extractor);
     }
 
-    public function meta(string $type): ?string
+    public function meta(string ...$types): ?string
     {
-        return $this->select('.//meta', ['name' => $type])->str('content')
-            ?: $this->select('.//meta', ['property' => $type])->str('content')
-            ?: $this->select('.//meta', ['itemprop' => $type])->str('content');
+        $metas = $this->getMetas();
+
+        foreach ($types as $type) {
+            $values = $metas[$type] ?? null;
+            $value = !empty($values[0]) ? clean($values[0]) : null;
+
+            if ($value) {
+                return $value;
+            }
+        }
+
+        return null;
+    }
+
+    public function metas(string ...$types): array
+    {
+        $metas = $this->getMetas();
+
+        foreach ($types as $type) {
+            $values = $metas[$type] ?? [];
+
+            return array_values(
+                array_filter(
+                    array_map(
+                        fn ($value) => clean($value),
+                        $values
+                    )
+                )
+            );
+        }
     }
 
     public function link(string $rel, array $extra = []): ?string
@@ -92,5 +120,27 @@ class Document
     public function __toString(): string
     {
         return Parser::stringify($this->getDocument());
+    }
+
+    private function getMetas(): array
+    {
+        if (isset($this->metas)) {
+            return $this->metas;
+        }
+
+        $this->metas = [];
+
+        foreach ($this->select('.//meta')->nodes() as $node) {
+            $type = $node->getAttribute('name') ?: $node->getAttribute('property') ?: $node->getAttribute('itemprop');
+            $value = $node->getAttribute('content');
+
+            if (!empty($value) && !empty($type)) {
+                $type = strtolower($type);
+                $this->metas[$type] ??= [];
+                $this->metas[$type][] = $value;
+            }
+        }
+
+        return $this->metas;
     }
 }

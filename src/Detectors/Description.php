@@ -12,10 +12,7 @@ class Description extends Detector
         $ld = $this->extractor->getLinkedData();
 
         return $oembed->str('description')
-            ?: $document->meta('og:description')
-            ?: $document->meta('twitter:description')
-            ?: $document->meta('lp:description')
-            ?: $document->meta('description')
+            ?: $document->meta('og:description', 'twitter:description', 'lp:description', 'description')
             ?: $ld->str('description');
     }
 }

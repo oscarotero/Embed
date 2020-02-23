@@ -35,9 +35,7 @@ class Code extends Detector
     {
         $document = $this->extractor->getDocument();
 
-        $url = $document->meta('og:video:secure_url')
-            ?: $document->meta('og:video:url')
-            ?: $document->meta('og:video');
+        $url = $document->meta('og:video:secure_url', 'og:video:url', 'og:video');
 
         if (!$url) {
             return null;

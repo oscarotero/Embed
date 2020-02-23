@@ -11,16 +11,16 @@ class Keywords extends Detector
         $document = $this->extractor->getDocument();
 
         $metas = [
-            ['name' => 'keywords'],
-            ['property' => 'og:video:tag'],
-            ['property' => 'og:article:tag'],
-            ['property' => 'og:video:tag'],
-            ['property' => 'og:book:tag'],
-            ['property' => 'lp.article:section'],
+            'keywords',
+            'og:video:tag',
+            'og:article:tag',
+            'og:video:tag',
+            'og:book:tag',
+            'lp.article:section',
         ];
 
-        foreach ($metas as $attr) {
-            $value = $document->select('.//meta', $attr)->strAll('content');
+        foreach ($metas as $type) {
+            $value = $document->metas($type);
 
             if ($value) {
                 $tags = array_merge($tags, self::toArray($value));

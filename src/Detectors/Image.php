@@ -14,12 +14,7 @@ class Image extends Detector
         return $oembed->url('image')
             ?: $oembed->url('thumbnail')
             ?: $oembed->url('thumbnail_url')
-            ?: $document->meta('og:image')
-            ?: $document->meta('og:image:url')
-            ?: $document->meta('og:image:secure_url')
-            ?: $document->meta('twitter:image')
-            ?: $document->meta('twitter:image:src')
-            ?: $document->meta('lp:image')
+            ?: $document->meta('og:image', 'og:image:url', 'og:image:secure_url', 'twitter:image', 'twitter:image:src', 'lp:image')
             ?: $document->link('image_src')
             ?: $ld->url('image', 'url');
     }

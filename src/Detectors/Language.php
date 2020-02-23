@@ -12,10 +12,7 @@ class Language extends Detector
 
         return $document->select('/html')->str('lang')
             ?: $document->select('/html')->str('xml:lang')
-            ?: $document->meta('language')
-            ?: $document->meta('lang')
-            ?: $document->meta('og:locale')
-            ?: $document->meta('dc:language')
+            ?: $document->meta('language', 'lang', 'og:locale', 'dc:language')
             ?: $document->select('.//meta', ['http-equiv' => 'content-language'])->str('content')
             ?: $ld->str('inLanguage');
     }

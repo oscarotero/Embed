@@ -11,10 +11,12 @@ class AuthorName extends Detector
         $document = $this->extractor->getDocument();
 
         return $oembed->str('author_name')
-            ?: $document->meta('article:author')
-            ?: $document->meta('book:author')
-            ?: $document->meta('sailthru.author')
-            ?: $document->meta('lp.article:author')
-            ?: $document->meta('twitter:creator');
+            ?: $document->meta(
+                'article:author',
+                'book:author',
+                'sailthru.author',
+                'lp.article:author',
+                'twitter:creator'
+            );
     }
 }
