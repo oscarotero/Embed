@@ -15,10 +15,18 @@ return [
     'feeds' => [],
     'icon' => null,
     'image' => 'https://scontent.fmad8-1.fna.fbcdn.net/v/t15.5256-10/p200x200/12672727_10154107996122381_1769309167_n.jpg?_nc_cat=110&_nc_ohc=-ypCdcegXeIAX_drahS&_nc_ht=scontent.fmad8-1.fna&_nc_tp=6&oh=6d88240d74206491a05217403a352bbc&oe=5EFDE912',
-    'keywords' => [],
+    'keywords' => [
+        'acolono gmbh'
+    ],
     'language' => 'es',
     'languages' => [],
     'license' => null,
+    'providerName' => 'Facebook',
+    'providerUrl' => 'https://www.facebook.com/',
+    'publishedTime' => null,
+    'redirect' => null,
+    'title' => 'Acolono GmbH - Eindrücke vom gestrigen Drupal Austria...',
+    'url' => 'https://www.facebook.com/acolono/videos/10154107990797381/',
     'linkedData' => [
         '@context' => 'https://schema.org',
         '@type' => 'VideoObject',
@@ -70,10 +78,18 @@ return [
         'about' => 'Eindrücke vom gestrigen Drupal Austria Meetup bei uns im Büro :) Wir haben die beste Community!',
         'transcript' => null
     ],
-    'providerName' => 'Facebook',
-    'providerUrl' => 'https://www.facebook.com/',
-    'publishedTime' => null,
-    'redirect' => null,
-    'title' => 'Acolono GmbH - Eindrücke vom gestrigen Drupal Austria...',
-    'url' => 'https://www.facebook.com/acolono/videos/10154107990797381/'
+    'oEmbed' => [
+        'author_name' => 'Acolono GmbH',
+        'author_url' => 'https://www.facebook.com/acolono/',
+        'provider_url' => 'https://www.facebook.com',
+        'provider_name' => 'Facebook',
+        'success' => true,
+        'height' => null,
+        'html' => '<div id="fb-root"></div>
+<script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&amp;version=v6.0"></script><div class="fb-post" data-href="https://www.facebook.com/acolono/videos/10154107990797381/" data-width="552"><blockquote cite="https://www.facebook.com/acolono/videos/10154107990797381/" class="fb-xfbml-parse-ignore"><p>Eindrücke vom gestrigen Drupal Austria Meetup bei uns im Büro :) Wir haben die beste Community!</p>Publicada por <a href="https://www.facebook.com/acolono/">Acolono GmbH</a> en&nbsp;<a href="https://www.facebook.com/acolono/videos/10154107990797381/">Jueves, 12 de mayo de 2016</a></blockquote></div>',
+        'type' => 'rich',
+        'version' => '1.0',
+        'url' => 'https://www.facebook.com/acolono/videos/10154107990797381/',
+        'width' => 552
+    ]
 ];

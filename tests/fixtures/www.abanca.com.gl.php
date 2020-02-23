@@ -27,6 +27,12 @@ return [
         'gl' => 'https://www.abanca.com/gl/'
     ],
     'license' => null,
+    'providerName' => 'Abanca',
+    'providerUrl' => 'https://www.abanca.com',
+    'publishedTime' => null,
+    'redirect' => null,
+    'title' => 'ABANCA banca online para particulares e empresas | ABANCA',
+    'url' => 'https://www.abanca.com/gl/',
     'linkedData' => [
         '@context' => 'http://schema.org',
         '@type' => 'Organization',
@@ -47,10 +53,5 @@ return [
             ]
         ]
     ],
-    'providerName' => 'Abanca',
-    'providerUrl' => 'https://www.abanca.com',
-    'publishedTime' => null,
-    'redirect' => null,
-    'title' => 'ABANCA banca online para particulares e empresas | ABANCA',
-    'url' => 'https://www.abanca.com/gl/'
+    'oEmbed' => []
 ];

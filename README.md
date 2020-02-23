@@ -72,7 +72,6 @@ $info->favicon; //The favicon of the site (an .ico file or a png with up to 32x3
 
 $info->publishedTime; //The published time of the resource
 $info->license; //The license url of the resource
-$info->linkedData; //The linked-data info (http://json-ld.org/)
 $info->feeds; //The RSS/Atom feeds
 ```
 
@@ -150,6 +149,22 @@ $oembed->str('title'); //Return the value as string (remove html tags)
 $oembed->html('html'); //Return the value as html
 $oembed->int('width'); //Return the value as integer
 $oembed->url('url'); //Return the value as full url (converts relative urls to absolutes)
+```
+
+## LinkedData
+
+Other API used to extract info is [JsonLD](https://www.w3.org/TR/json-ld/).
+
+```php
+//Get the linkedData object
+$ld = $info->getLinkedData();
+
+$ld->all(); //Return all data
+$ld->get('name'); //Return a key value
+$ld->str('name'); //Return the value as string (remove html tags)
+$ld->html('description'); //Return the value as html
+$ld->int('width'); //Return the value as integer
+$ld->url('url'); //Return the value as full url (converts relative urls to absolutes)
 ```
 
 ## Other APIs

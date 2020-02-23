@@ -21,11 +21,13 @@ return [
     'language' => 'en',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Internet Archive',
     'providerUrl' => 'https://archive.org',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'The LibriVox Free Audiobook Collection : Free Audio : Free Download, Borrow and Streaming : Internet Archive',
-    'url' => 'https://archive.org/details/librivoxaudio'
+    'url' => 'https://archive.org/details/librivoxaudio',
+    'linkedData' => [],
+    'oEmbed' => [],
+    'api' => []
 ];

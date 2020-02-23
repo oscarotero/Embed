@@ -15,11 +15,12 @@ return [
     'language' => null,
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Hookem',
     'providerUrl' => 'https://www.hookem.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Error Loading Site | 502 Bad Gateway',
-    'url' => 'https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/'
+    'url' => 'https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

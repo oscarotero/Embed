@@ -3,11 +3,11 @@ declare(strict_types = 1);
 
 namespace Embed\Adapters\Archive;
 
-use Embed\ApiTrait;
+use Embed\HttpApiTrait;
 
 class Api
 {
-    use ApiTrait;
+    use HttpApiTrait;
 
     protected function fetchData(): array
     {

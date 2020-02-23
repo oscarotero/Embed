@@ -15,11 +15,12 @@ return [
     'language' => 'en',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Aol',
     'providerUrl' => 'https://www.aol.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Pile of Recovering Foster Kittens Is Purrfect',
-    'url' => 'https://www.aol.com/video/view/pile-of-recovering-foster-kittens-is-purrfect/595fe75985eb42109b69bedb/'
+    'url' => 'https://www.aol.com/video/view/pile-of-recovering-foster-kittens-is-purrfect/595fe75985eb42109b69bedb/',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

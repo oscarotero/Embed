@@ -15,11 +15,12 @@ return [
     'language' => 'es',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Tordoya',
     'providerUrl' => 'https://www.google.es',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Tordoya',
-    'url' => 'https://www.google.es/maps/place/Tordoia,+A+Coru%C3%B1a/@43.0871207,-8.5710004,12z/data=!3m1!4b1!4m2!3m1!1s0xd2ef4006f1ef489:0x404f58273ca55a0'
+    'url' => 'https://www.google.es/maps/place/Tordoia,+A+Coru%C3%B1a/@43.0871207,-8.5710004,12z/data=!3m1!4b1!4m2!3m1!1s0xd2ef4006f1ef489:0x404f58273ca55a0',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

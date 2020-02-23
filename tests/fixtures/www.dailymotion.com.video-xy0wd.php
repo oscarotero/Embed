@@ -19,11 +19,27 @@ return [
     'language' => 'en',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Dailymotion',
     'providerUrl' => 'https://www.dailymotion.com/',
     'publishedTime' => '2007-01-08T11:41:29+01:00',
     'redirect' => null,
     'title' => 'Chats paresseux',
-    'url' => 'https://www.dailymotion.com/video/xy0wd'
+    'url' => 'https://www.dailymotion.com/video/xy0wd',
+    'linkedData' => [],
+    'oEmbed' => [
+        'type' => 'video',
+        'version' => '1.0',
+        'provider_name' => 'Dailymotion',
+        'provider_url' => 'https://www.dailymotion.com',
+        'title' => 'Chats paresseux',
+        'description' => '',
+        'author_name' => 'jeanbamin',
+        'author_url' => 'https://www.dailymotion.com/jeanbamin',
+        'width' => 480,
+        'height' => 360,
+        'html' => '<iframe frameborder="0" width="480" height="360" src="https://www.dailymotion.com/embed/video/xy0wd" allowfullscreen allow="autoplay"></iframe>',
+        'thumbnail_url' => 'https://s1.dmcdn.net/v/63aD1UKS2knKaXxs/x240',
+        'thumbnail_width' => 320,
+        'thumbnail_height' => 240
+    ]
 ];

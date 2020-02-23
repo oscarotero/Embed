@@ -18,7 +18,6 @@ use Embed\Detectors\Keywords;
 use Embed\Detectors\Language;
 use Embed\Detectors\Languages;
 use Embed\Detectors\License;
-use Embed\Detectors\LinkedData;
 use Embed\Detectors\ProviderName;
 use Embed\Detectors\ProviderUrl;
 use Embed\Detectors\PublishedTime;
@@ -42,6 +41,7 @@ class Extractor
 
     private Document $document;
     private OEmbed $oembed;
+    private LinkedData $linkedData;
 
     protected AuthorName $authorName;
     protected AuthorUrl $authorUrl;
@@ -56,7 +56,6 @@ class Extractor
     protected Language $language;
     protected Languages $languages;
     protected License $license;
-    protected LinkedData $linkedData;
     protected ProviderName $providerName;
     protected ProviderUrl $providerUrl;
     protected PublishedTime $publishedTime;
@@ -74,6 +73,7 @@ class Extractor
         //APIs
         $this->document = new Document($this);
         $this->oembed = new OEmbed($this);
+        $this->linkedData = new LinkedData($this);
 
         //Detectors
         $this->authorName = new AuthorName($this);
@@ -89,7 +89,6 @@ class Extractor
         $this->language = new Language($this);
         $this->languages = new Languages($this);
         $this->license = new License($this);
-        $this->linkedData = new LinkedData($this);
         $this->providerName = new ProviderName($this);
         $this->providerUrl = new ProviderUrl($this);
         $this->publishedTime = new PublishedTime($this);
@@ -117,6 +116,11 @@ class Extractor
     public function getOEmbed(): OEmbed
     {
         return $this->oembed;
+    }
+
+    public function getLinkedData(): LinkedData
+    {
+        return $this->linkedData;
     }
 
     public function getRequest(): RequestInterface

@@ -30,7 +30,6 @@ abstract class PagesTestCase extends TestCase
         'language',
         'languages',
         'license',
-        'linkedData',
         'providerName',
         'providerUrl',
         'publishedTime',
@@ -103,6 +102,13 @@ abstract class PagesTestCase extends TestCase
             }
 
             $data[$name] = $value;
+        }
+
+        $data['linkedData'] = $extractor->getLinkedData()->all();
+        $data['oEmbed'] = $extractor->getOEmbed()->all();
+
+        if (method_exists($extractor, 'getApi')) {
+            $data['api'] = $extractor->getApi()->all();
         }
 
         return $data;

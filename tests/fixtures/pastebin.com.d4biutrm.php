@@ -15,11 +15,12 @@ return [
     'language' => null,
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Pastebin',
     'providerUrl' => 'https://pastebin.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => '[Bash] Pushing new git submodule to Heroku - Pastebin.com',
-    'url' => 'https://pastebin.com/d4biUtRm'
+    'url' => 'https://pastebin.com/d4biUtRm',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

@@ -15,11 +15,12 @@ return [
     'language' => null,
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Twitch',
     'providerUrl' => 'https://www.twitch.tv',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Twitch',
-    'url' => 'https://www.twitch.tv/videos/72749628'
+    'url' => 'https://www.twitch.tv/videos/72749628',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

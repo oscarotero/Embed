@@ -28,11 +28,25 @@ return [
     'language' => 'en',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'SoundCloud',
     'providerUrl' => 'https://soundcloud.com/',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'LOWE CT Cape Times - World Cup by iDidTht.com',
-    'url' => 'https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup'
+    'url' => 'https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup',
+    'linkedData' => [],
+    'oEmbed' => [
+        'version' => 1.0,
+        'type' => 'rich',
+        'provider_name' => 'SoundCloud',
+        'provider_url' => 'https://soundcloud.com',
+        'height' => 400,
+        'width' => '100%',
+        'title' => 'LOWE CT Cape Times - World Cup by iDidTht.com',
+        'description' => '',
+        'thumbnail_url' => 'https://soundcloud.com/images/fb_placeholder.png',
+        'html' => '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&show_artwork=true"></iframe>',
+        'author_name' => 'iDidTht.com',
+        'author_url' => 'https://soundcloud.com/ididthat-1'
+    ]
 ];

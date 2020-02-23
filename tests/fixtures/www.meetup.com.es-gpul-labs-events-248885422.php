@@ -49,6 +49,12 @@ return [
         'x-default' => 'https://www.meetup.com/GPUL-Labs/events/248885422/'
     ],
     'license' => null,
+    'providerName' => 'Meetup',
+    'providerUrl' => 'https://www.meetup.com',
+    'publishedTime' => null,
+    'redirect' => null,
+    'title' => 'Introducción a Flutter',
+    'url' => 'https://www.meetup.com/es/GPUL-Labs/events/248885422/',
     'linkedData' => [
         '@context' => 'http://schema.org',
         '@type' => 'Event',
@@ -89,10 +95,5 @@ Si estás interesado en saber más y aprender sobre Flutter apúntate. Haremos u
             'url' => 'https://www.meetup.com/es/GPUL-Labs/'
         ]
     ],
-    'providerName' => 'Meetup',
-    'providerUrl' => 'https://www.meetup.com',
-    'publishedTime' => null,
-    'redirect' => null,
-    'title' => 'Introducción a Flutter',
-    'url' => 'https://www.meetup.com/es/GPUL-Labs/events/248885422/'
+    'oEmbed' => []
 ];

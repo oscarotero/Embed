@@ -22,11 +22,25 @@ return [
         'en' => 'https://www.facebook.com/149460691764713/posts/aqu%C3%AD-vos-deixamos-unhas-imaxes-da-nosa-visita-do-pasado-s%C3%A1bado-%C3%A1-guarda-moi-agra/827163017327807/'
     ],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Facebook',
     'providerUrl' => 'https://www.facebook.com/',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Aquí vos deixamos unhas imaxes da nosa... - DAG, Asociación Galega de Deseño | Facebook',
-    'url' => 'https://www.facebook.com/asociaciondag/posts/827163017327807'
+    'url' => 'https://www.facebook.com/asociaciondag/posts/827163017327807',
+    'linkedData' => [],
+    'oEmbed' => [
+        'author_name' => 'DAG, Asociación Galega de Deseño',
+        'author_url' => 'https://www.facebook.com/asociaciondag/',
+        'provider_url' => 'https://www.facebook.com',
+        'provider_name' => 'Facebook',
+        'success' => true,
+        'height' => null,
+        'html' => '<div id="fb-root"></div>
+<script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&amp;version=v6.0"></script><div class="fb-post" data-href="https://www.facebook.com/asociaciondag/posts/827163017327807" data-width="552"><blockquote cite="https://www.facebook.com/asociaciondag/posts/827163017327807" class="fb-xfbml-parse-ignore"><p>Aquí vos deixamos unhas imaxes da nosa visita do pasado sábado á Guarda. Moi agradecidos á Asociación Naturalista do Baixo Miño www.anabam.org e a Malde Arqueoloxía</p>Publicada por <a href="https://www.facebook.com/asociaciondag/">DAG, Asociación Galega de Deseño</a> en&nbsp;<a href="https://www.facebook.com/asociaciondag/posts/827163017327807">Martes, 21 de octubre de 2014</a></blockquote></div>',
+        'type' => 'rich',
+        'version' => '1.0',
+        'url' => 'https://www.facebook.com/asociaciondag/posts/827163017327807',
+        'width' => 552
+    ]
 ];

@@ -9,7 +9,7 @@ use SimpleXMLElement;
 
 class OEmbed
 {
-    use ApiTrait;
+    use HttpApiTrait;
 
     private static $providers;
 

@@ -27,6 +27,12 @@ class Keywords extends Detector
             }
         }
 
+        $value = $this->extractor->getLinkedData()->str('keywords');
+
+        if ($value) {
+            $tags = array_merge($tags, self::toArray([$value]));
+        }
+
         $tags = array_map('mb_strtolower', $tags);
         $tags = array_unique($tags);
         $tags = array_filter($tags);

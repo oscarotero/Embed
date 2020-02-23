@@ -68,11 +68,26 @@ return [
         'zh-Hant' => 'https://twitter.com/pepephone/status/436461658601713664?lang=zh-Hant'
     ],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Twitter',
     'providerUrl' => 'https://twitter.com/',
     'publishedTime' => null,
     'redirect' => null,
     'title' => null,
-    'url' => 'https://twitter.com/pepephone/status/436461658601713664'
+    'url' => 'https://twitter.com/pepephone/status/436461658601713664',
+    'linkedData' => [],
+    'oEmbed' => [
+        'url' => 'https://twitter.com/pepephone/status/436461658601713664',
+        'author_name' => 'Pepephone',
+        'author_url' => 'https://twitter.com/pepephone',
+        'html' => '<blockquote class="twitter-tweet"><p lang="es" dir="ltr">RT <a href="https://twitter.com/PabloHerreros?ref_src=twsrc%5Etfw">@PabloHerreros</a> Pepephone rompe la baraja - <a href="http://t.co/mFn7mcB1vy">http://t.co/mFn7mcB1vy</a></p>&mdash; Pepephone (@pepephone) <a href="https://twitter.com/pepephone/status/436461658601713664?ref_src=twsrc%5Etfw">February 20, 2014</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+',
+        'width' => 550,
+        'height' => null,
+        'type' => 'rich',
+        'cache_age' => '3153600000',
+        'provider_name' => 'Twitter',
+        'provider_url' => 'https://twitter.com',
+        'version' => '1.0'
+    ]
 ];

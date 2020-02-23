@@ -21,6 +21,12 @@ return [
     'language' => 'es-us',
     'languages' => [],
     'license' => null,
+    'providerName' => 'Flickr',
+    'providerUrl' => 'https://www.flickr.com',
+    'publishedTime' => null,
+    'redirect' => null,
+    'title' => 'desescribir',
+    'url' => 'https://www.flickr.com/photos/desescribir',
     'linkedData' => [
         [
             '@context' => 'http://schema.org',
@@ -54,10 +60,5 @@ return [
             ]
         ]
     ],
-    'providerName' => 'Flickr',
-    'providerUrl' => 'https://www.flickr.com',
-    'publishedTime' => null,
-    'redirect' => null,
-    'title' => 'desescribir',
-    'url' => 'https://www.flickr.com/photos/desescribir'
+    'oEmbed' => []
 ];

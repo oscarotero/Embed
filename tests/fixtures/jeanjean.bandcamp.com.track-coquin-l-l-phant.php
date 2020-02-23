@@ -19,11 +19,12 @@ return [
     'language' => null,
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Jean Jean',
     'providerUrl' => 'https://jeanjean.bandcamp.com',
     'publishedTime' => '20130914',
     'redirect' => null,
     'title' => 'Coquin L\'éléphant, by Jean Jean',
-    'url' => 'https://jeanjean.bandcamp.com/track/coquin-l-l-phant'
+    'url' => 'https://jeanjean.bandcamp.com/track/coquin-l-l-phant',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

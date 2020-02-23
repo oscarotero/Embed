@@ -19,11 +19,12 @@ return [
     'language' => 'en',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Snipplr',
     'providerUrl' => 'https://snipplr.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Better HTML 5 basic starter template - HTML Snipplr Social Repository',
-    'url' => 'https://snipplr.com/view/72914/better-html-5-basic-starter-template'
+    'url' => 'https://snipplr.com/view/72914/better-html-5-basic-starter-template',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

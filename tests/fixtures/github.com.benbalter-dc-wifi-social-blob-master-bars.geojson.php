@@ -21,11 +21,12 @@ return [
     'language' => 'en',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'GitHub',
     'providerUrl' => 'https://github.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'benbalter/dc-wifi-social',
-    'url' => 'https://github.com/benbalter/dc-wifi-social/blob/master/bars.geojson'
+    'url' => 'https://github.com/benbalter/dc-wifi-social/blob/master/bars.geojson',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

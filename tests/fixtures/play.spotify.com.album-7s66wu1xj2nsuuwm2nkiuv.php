@@ -19,6 +19,12 @@ return [
     'language' => 'en',
     'languages' => [],
     'license' => null,
+    'providerName' => 'Spotify',
+    'providerUrl' => 'https://www.spotify.com/',
+    'publishedTime' => null,
+    'redirect' => null,
+    'title' => 'A Cantar con Xabarin (Vol. I & II)',
+    'url' => 'https://open.spotify.com/album/7s66wU1XJ2NsUuWM2NKiUV',
     'linkedData' => [
         '@context' => 'http://schema.googleapis.com/',
         '@type' => 'MusicAlbum',
@@ -49,10 +55,17 @@ return [
             ]
         ]
     ],
-    'providerName' => 'Spotify',
-    'providerUrl' => 'https://www.spotify.com/',
-    'publishedTime' => null,
-    'redirect' => null,
-    'title' => 'A Cantar con Xabarin (Vol. I & II)',
-    'url' => 'https://open.spotify.com/album/7s66wU1XJ2NsUuWM2NKiUV'
+    'oEmbed' => [
+        'html' => '<iframe width="300" height="380" allowtransparency="true" frameborder="0" allow="encrypted-media" title="Spotify Embed: A Cantar con Xabarin (Vol. I &amp; II)" src="https://open.spotify.com/embed/album/7s66wU1XJ2NsUuWM2NKiUV"></iframe>',
+        'width' => 300,
+        'height' => 380,
+        'version' => '1.0',
+        'provider_name' => 'Spotify',
+        'provider_url' => 'https://www.spotify.com',
+        'type' => 'rich',
+        'title' => 'A Cantar con Xabarin (Vol. I & II)',
+        'thumbnail_url' => 'https://i.scdn.co/image/ab67616d00001e02022aca057f08a1d40c1f0733',
+        'thumbnail_width' => 300,
+        'thumbnail_height' => 300
+    ]
 ];

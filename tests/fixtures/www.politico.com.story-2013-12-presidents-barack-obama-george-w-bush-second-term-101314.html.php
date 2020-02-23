@@ -25,11 +25,16 @@ return [
     'language' => 'en',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'POLITICO',
     'providerUrl' => 'https://www.politico.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Obama 2nd term: Echoes of Bush',
-    'url' => 'https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314'
+    'url' => 'https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314',
+    'linkedData' => [],
+    'oEmbed' => [
+        'version' => '1.0',
+        'type' => 'rich',
+        'html' => '<script type="text/javascript" src="https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314?_embed=true&amp;_format=js"></script>'
+    ]
 ];

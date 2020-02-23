@@ -17,11 +17,12 @@ return [
     'language' => 'es-ES',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Youtube',
     'providerUrl' => 'https://www.youtube.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'YouTube',
-    'url' => 'https://www.youtube.com/channel/UCuZeHD5SGecQomz2pVDHGzg'
+    'url' => 'https://www.youtube.com/channel/UCuZeHD5SGecQomz2pVDHGzg',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

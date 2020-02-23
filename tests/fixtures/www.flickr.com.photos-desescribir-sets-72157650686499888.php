@@ -21,6 +21,12 @@ return [
     'language' => 'es-us',
     'languages' => [],
     'license' => 'https://creativecommons.org/licenses/by-nc-nd/2.0/',
+    'providerName' => 'Flickr',
+    'providerUrl' => 'https://www.flickr.com/',
+    'publishedTime' => null,
+    'redirect' => null,
+    'title' => 'Günther Förg. Verfolgen Malerei / Fundación Luís Seoane',
+    'url' => 'https://www.flickr.com/photos/desescribir/sets/72157650686499888',
     'linkedData' => [
         [
             '@context' => 'http://schema.org',
@@ -54,10 +60,24 @@ return [
             ]
         ]
     ],
-    'providerName' => 'Flickr',
-    'providerUrl' => 'https://www.flickr.com/',
-    'publishedTime' => null,
-    'redirect' => null,
-    'title' => 'Günther Förg. Verfolgen Malerei / Fundación Luís Seoane',
-    'url' => 'https://www.flickr.com/photos/desescribir/sets/72157650686499888'
+    'oEmbed' => [
+        'type' => 'rich',
+        'flickr_type' => 'album',
+        'title' => 'Günther Förg. Verfolgen Malerei / Fundación Luís Seoane',
+        'author_name' => 'desescribir',
+        'author_url' => 'https://www.flickr.com/photos/desescribir/',
+        'width' => 1024,
+        'height' => 680,
+        'web_page' => 'https://www.flickr.com/photos/desescribir/sets/72157650686499888',
+        'thumbnail_url' => 'https://live.staticflickr.com/8572/16055522574_ce77fde14e_b.jpg',
+        'thumbnail_width' => 1024,
+        'thumbnail_height' => 680,
+        'web_page_short_url' => 'https://flic.kr/s/aHsk8hUbqq',
+        'license_url' => 'https://creativecommons.org/licenses/by-nc-nd/2.0/',
+        'html' => '<a data-flickr-embed="true" href="https://www.flickr.com/photos/desescribir/sets/72157650686499888" title="Günther Förg. Verfolgen Malerei / Fundación Luís Seoane by desescribir, on Flickr"><img src="https://live.staticflickr.com/8572/16055522574_ce77fde14e_b.jpg" width="1024" height="680" alt="Günther Förg. Verfolgen Malerei / Fundación Luís Seoane"></a><script async src="https://embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>',
+        'version' => '1.0',
+        'cache_age' => 3600,
+        'provider_name' => 'Flickr',
+        'provider_url' => 'https://www.flickr.com/'
+    ]
 ];

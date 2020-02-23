@@ -24,11 +24,12 @@ return [
     'language' => null,
     'languages' => [],
     'license' => 'share alike',
-    'linkedData' => null,
     'providerName' => 'Jsfiddle',
     'providerUrl' => 'http://jsfiddle.net',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Edit fiddle - JSFiddle - Code Playground',
-    'url' => 'http://jsfiddle.net/zhm5rjnz/'
+    'url' => 'http://jsfiddle.net/zhm5rjnz/',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

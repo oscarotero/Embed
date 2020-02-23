@@ -3,13 +3,13 @@ declare(strict_types = 1);
 
 namespace Embed\Adapters\ImageShack;
 
-use Embed\ApiTrait;
 use function Embed\getDirectory;
+use Embed\HttpApiTrait;
 use function Embed\match;
 
 class Api
 {
-    use ApiTrait;
+    use HttpApiTrait;
 
     protected function fetchData(): array
     {

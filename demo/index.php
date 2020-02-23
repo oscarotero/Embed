@@ -113,7 +113,6 @@ $detectors = [
     'cms' => 'printText',
     'language' => 'printText',
     'languages' => 'printArray',
-    'linkedData' => 'printArray',
     'cms' => 'printText',
 ];
 ?>
@@ -231,6 +230,15 @@ $detectors = [
                         <tr>
                             <th>All data collected</th>
                             <td><?php printArray($info->getOEmbed()->all()); ?></td>
+                        </tr>
+                    </table>
+
+                    <h2>Linked data</h2>
+
+                    <table>
+                        <tr>
+                            <th>All data collected</th>
+                            <td><?php printArray($info->getLinkedData()->all()); ?></td>
                         </tr>
                     </table>
 

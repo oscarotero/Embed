@@ -21,11 +21,12 @@ return [
     'language' => 'en',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'GitHub',
     'providerUrl' => 'https://github.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'skalnik/secret-bear-clip',
-    'url' => 'https://github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl'
+    'url' => 'https://github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

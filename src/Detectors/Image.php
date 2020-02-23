@@ -9,6 +9,7 @@ class Image extends Detector
     {
         $oembed = $this->extractor->getOEmbed();
         $document = $this->extractor->getDocument();
+        $ld = $this->extractor->getLinkedData();
 
         return $oembed->url('image')
             ?: $oembed->url('thumbnail')
@@ -19,6 +20,7 @@ class Image extends Detector
             ?: $document->meta('twitter:image')
             ?: $document->meta('twitter:image:src')
             ?: $document->meta('lp:image')
-            ?: $document->link('image_src');
+            ?: $document->link('image_src')
+            ?: $ld->url('image', 'url');
     }
 }

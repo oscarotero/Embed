@@ -36,11 +36,12 @@ return [
     'language' => 'en',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Ideone.com',
     'providerUrl' => 'https://ideone.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Ideone.com',
-    'url' => 'https://ideone.com/Whjntg'
+    'url' => 'https://ideone.com/Whjntg',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

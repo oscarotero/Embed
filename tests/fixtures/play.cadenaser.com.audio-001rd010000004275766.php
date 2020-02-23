@@ -19,6 +19,12 @@ return [
     'language' => 'es',
     'languages' => [],
     'license' => null,
+    'providerName' => 'Cadena SER',
+    'providerUrl' => 'https://play.cadenaser.com',
+    'publishedTime' => '2016-09-16',
+    'redirect' => null,
+    'title' => 'Debate electoral gallego, en \'Hoy por Hoy\' | Hoy por Hoy | Audio | Cadena SER',
+    'url' => 'https://play.cadenaser.com/audio/001RD010000004275766/',
     'linkedData' => [
         '@context' => 'https://schema.org',
         '@type' => 'BreadcrumbList',
@@ -41,10 +47,5 @@ return [
             ]
         ]
     ],
-    'providerName' => 'Cadena SER',
-    'providerUrl' => 'https://play.cadenaser.com',
-    'publishedTime' => '2016-09-16',
-    'redirect' => null,
-    'title' => 'Debate electoral gallego, en \'Hoy por Hoy\' | Hoy por Hoy | Audio | Cadena SER',
-    'url' => 'https://play.cadenaser.com/audio/001RD010000004275766/'
+    'oEmbed' => []
 ];

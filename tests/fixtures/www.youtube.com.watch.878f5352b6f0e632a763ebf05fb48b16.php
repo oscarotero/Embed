@@ -54,11 +54,26 @@ return [
     'language' => 'es-ES',
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'YouTube',
     'providerUrl' => 'https://www.youtube.com/',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Noisy kittens waiting for dinner!',
-    'url' => 'https://www.youtube.com/watch?v=eiHXASgRTcA'
+    'url' => 'https://www.youtube.com/watch?v=eiHXASgRTcA',
+    'linkedData' => [],
+    'oEmbed' => [
+        'height' => 344,
+        'type' => 'video',
+        'thumbnail_url' => 'https://i.ytimg.com/vi/eiHXASgRTcA/hqdefault.jpg',
+        'title' => 'Noisy kittens waiting for dinner!',
+        'thumbnail_width' => 480,
+        'author_url' => 'https://www.youtube.com/user/smshdchrb',
+        'author_name' => 'smshdchrb',
+        'version' => '1.0',
+        'provider_name' => 'YouTube',
+        'html' => '<iframe width="459" height="344" src="https://www.youtube.com/embed/eiHXASgRTcA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        'provider_url' => 'https://www.youtube.com/',
+        'thumbnail_height' => 360,
+        'width' => 459
+    ]
 ];

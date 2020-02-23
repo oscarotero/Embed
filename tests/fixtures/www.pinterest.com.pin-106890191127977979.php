@@ -51,11 +51,12 @@ return [
         'en' => 'https://www.pinterest.com/pin/106890191127977979/'
     ],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Pinterest',
     'providerUrl' => 'https://www.pinterest.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Pin di Leslie Carruthers su Icons | Jack nicholson, Stelle di hollywood, Personaggi',
-    'url' => 'https://www.pinterest.com/pin/106890191127977979/'
+    'url' => 'https://www.pinterest.com/pin/106890191127977979/',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

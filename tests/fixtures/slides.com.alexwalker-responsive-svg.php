@@ -19,11 +19,12 @@ return [
     'language' => null,
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Slides',
     'providerUrl' => 'http://slides.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'responsive-svg',
-    'url' => 'http://slides.com/alexwalker/responsive-svg/'
+    'url' => 'http://slides.com/alexwalker/responsive-svg/',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

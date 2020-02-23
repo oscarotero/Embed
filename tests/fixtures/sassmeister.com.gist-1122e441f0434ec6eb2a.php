@@ -19,11 +19,12 @@ return [
     'language' => null,
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Sassmeister',
     'providerUrl' => 'https://www.sassmeister.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'SassMeister | The Sass Playground!',
-    'url' => 'https://www.sassmeister.com/gist/1122e441f0434ec6eb2a'
+    'url' => 'https://www.sassmeister.com/gist/1122e441f0434ec6eb2a',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

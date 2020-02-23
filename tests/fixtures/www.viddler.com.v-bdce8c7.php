@@ -25,11 +25,12 @@ return [
     'language' => null,
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Viddler',
     'providerUrl' => 'https://www.viddler.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Viddler Platform Overview',
-    'url' => 'https://www.viddler.com/v/bdce8c7'
+    'url' => 'https://www.viddler.com/v/bdce8c7',
+    'linkedData' => [],
+    'oEmbed' => []
 ];

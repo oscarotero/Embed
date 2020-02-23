@@ -15,11 +15,12 @@ return [
     'language' => null,
     'languages' => [],
     'license' => null,
-    'linkedData' => null,
     'providerName' => 'Google Docs',
     'providerUrl' => 'https://drive.google.com',
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Entrevista_Rianxo_RadioFusion_150724.mp3',
-    'url' => 'https://drive.google.com/file/d/0B2rwN8wAbVSWbmFJdUdnV2VSTTg/view'
+    'url' => 'https://drive.google.com/file/d/0B2rwN8wAbVSWbmFJdUdnV2VSTTg/view',
+    'linkedData' => [],
+    'oEmbed' => []
 ];
