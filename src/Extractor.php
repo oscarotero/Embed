@@ -43,6 +43,8 @@ class Extractor
     private OEmbed $oembed;
     private LinkedData $linkedData;
 
+    private array $customDetectors = [];
+
     protected AuthorName $authorName;
     protected AuthorUrl $authorUrl;
     protected Cms $cms;
@@ -99,13 +101,18 @@ class Extractor
 
     public function __get(string $name)
     {
-        $detector = $this->$name ?? null;
+        $detector = $this->customDetectors[$name] ?? $this->$name ?? null;
 
         if (!$detector || !($detector instanceof Detector)) {
             throw new DomainException(sprintf('Invalid key "%s". No detector found for this value', $name));
         }
 
         return $detector->get();
+    }
+
+    public function addDetector(string $name, Detector $detector): void
+    {
+        $this->customDetectors[$name] = $detector;
     }
 
     public function getDocument(): Document

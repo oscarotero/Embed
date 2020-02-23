@@ -30,6 +30,7 @@ class ExtractorFactory
         'imagizer.imageshack.com' => Adapters\ImageShack\Extractor::class,
         'youtube.com' => Adapters\Youtube\Extractor::class,
     ];
+    private array $customDetectors = [];
 
     public function createExtractor(UriInterface $uri, RequestInterface $request, ResponseInterface $response, Crawler $crawler): Extractor
     {
@@ -38,12 +39,23 @@ class ExtractorFactory
 
         $class = $this->adapters[$host] ?? $this->default;
 
-        return new $class($uri, $request, $response, $crawler);
+        $extractor = new $class($uri, $request, $response, $crawler);
+
+        foreach ($this->customDetectors as $name => $detector) {
+            $extractor->addDetector($name, new $detector($extractor));
+        }
+
+        return $extractor;
     }
 
     public function addAdapter(string $pattern, string $class): void
     {
         $this->adapters[$pattern] = $class;
+    }
+
+    public function addDetector(string $name, string $class): void
+    {
+        $this->customDetectors[$name] = $class;
     }
 
     public function removeAdapter(string $pattern): void

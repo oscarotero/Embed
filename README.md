@@ -250,6 +250,34 @@ $factory->removeAdapter('pinterest.com');
 $factory->setDefault(CustomExtractor::class);
 ```
 
+### Detectors
+
+Embed comes with several predefined detectors, but you may want to change or add more. Just create a class extending `Embed\Detectors\Detector` class and register it in the extractor factory. For example:
+
+```php
+use Embed\Embed;
+use Embed\Detectors\Detector;
+
+class Robots extends Detector
+{
+    public function detect(): ?string
+    {
+        $response = $this->extractor->getResponse();
+        $document = $this->extractor->getDocument();
+
+        return $response->getHeaderLine('x-robots-tag'),
+            ?: $document->meta('robots');
+    }
+}
+
+//Register the detector
+$embed = new Embed();
+$embed->getExtractorFactory()->addDetector('robots', Robots::class);
+
+//Use it
+$info = $embed->get('http://example.com');
+$robots = $info->robots;
+```
 ---
 
 If this library is useful for you, say thanks [buying me a beer :beer:](https://www.paypal.me/oscarotero)!
