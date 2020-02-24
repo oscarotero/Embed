@@ -58,10 +58,19 @@ class Embed
         return $this->extractorFactory;
     }
 
-    private function extract(RequestInterface $request, ResponseInterface $response): Extractor
+    private function extract(RequestInterface $request, ResponseInterface $response, bool $redirect = true): Extractor
     {
         $uri = $this->crawler->getResponseUri($response) ?: $request->getUri();
 
-        return $this->extractorFactory->createExtractor($uri, $request, $response, $this->crawler);
+        $extractor = $this->extractorFactory->createExtractor($uri, $request, $response, $this->crawler);
+
+        if (!$extractor->redirect) {
+            return $extractor;
+        }
+
+        $request = $this->crawler->createRequest('GET', $extractor->redirect);
+        $response = $this->crawler->sendRequest($request);
+
+        return $this->extract($request, $response, false);
     }
 }
