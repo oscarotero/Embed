@@ -3,9 +3,11 @@ declare(strict_types = 1);
 
 namespace Embed\Detectors;
 
+use Psr\Http\Message\UriInterface;
+
 class ProviderUrl extends Detector
 {
-    public function detect(): string
+    public function detect(): UriInterface
     {
         $oembed = $this->extractor->getOEmbed();
         $document = $this->extractor->getDocument();
@@ -15,10 +17,8 @@ class ProviderUrl extends Detector
             ?: $this->fallback();
     }
 
-    private function fallback(): string
+    private function fallback(): UriInterface
     {
-        $uri = $this->extractor->getUri();
-
-        return sprintf('%s://%s', $uri->getScheme(), $uri->getHost());
+        return $this->extractor->getUri()->withPath('')->withQuery('')->withFragment('');
     }
 }

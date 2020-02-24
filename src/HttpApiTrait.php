@@ -4,22 +4,23 @@ declare(strict_types = 1);
 namespace Embed;
 
 use Exception;
+use Psr\Http\Message\UriInterface;
 
 trait HttpApiTrait
 {
     use ApiTrait;
 
-    private ?string $endpoint;
+    private ?UriInterface $endpoint;
 
-    public function getEndpoint(): ?string
+    public function getEndpoint(): ?UriInterface
     {
         return $this->endpoint;
     }
 
-    private function fetchJSON(string $url): array
+    private function fetchJSON(UriInterface $uri): array
     {
         $crawler = $this->extractor->getCrawler();
-        $request = $crawler->createRequest('GET', $url);
+        $request = $crawler->createRequest('GET', $uri);
         $response = $crawler->sendRequest($request);
 
         try {

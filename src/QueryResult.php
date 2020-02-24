@@ -6,6 +6,7 @@ namespace Embed;
 use Closure;
 use DOMElement;
 use DOMNodeList;
+use Psr\Http\Message\UriInterface;
 
 class QueryResult
 {
@@ -80,7 +81,7 @@ class QueryResult
         return $value ? (int) $value : null;
     }
 
-    public function url(string $attribute = null): ?string
+    public function url(string $attribute = null): ?UriInterface
     {
         $value = $this->get($attribute);
 
@@ -88,9 +89,7 @@ class QueryResult
             return null;
         }
 
-        $uri = $this->extractor->getCrawler()->createUri($value);
-
-        return (string) resolveUri($this->extractor->getUri(), $uri);
+        return $this->extractor->resolveUri($value);
     }
 
     private static function getAttribute(DOMElement $node, string $name): ?string

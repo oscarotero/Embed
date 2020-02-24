@@ -7,6 +7,7 @@ use DOMDocument;
 use DOMNode;
 use DOMXPath;
 use HtmlParser\Parser;
+use Psr\Http\Message\UriInterface;
 
 class Document
 {
@@ -94,6 +95,17 @@ class Document
         return null;
     }
 
+    public function metaUrl(string ...$types): ?UriInterface
+    {
+        $value = $this->meta(...$types);
+
+        if (!$value) {
+            return null;
+        }
+
+        return $this->extractor->resolveUri($value);
+    }
+
     public function metas(string ...$types): array
     {
         $metas = $this->getMetas();
@@ -112,7 +124,7 @@ class Document
         }
     }
 
-    public function link(string $rel, array $extra = []): ?string
+    public function link(string $rel, array $extra = []): ?UriInterface
     {
         return $this->select('.//link', ['rel' => $rel] + $extra)->url('href');
     }

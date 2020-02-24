@@ -3,9 +3,11 @@ declare(strict_types = 1);
 
 namespace Embed\Detectors;
 
+use Psr\Http\Message\UriInterface;
+
 class AuthorUrl extends Detector
 {
-    public function detect(): ?string
+    public function detect(): ?UriInterface
     {
         $oembed = $this->extractor->getOEmbed();
 
@@ -13,10 +15,12 @@ class AuthorUrl extends Detector
             ?: $this->detectFromTwitter();
     }
 
-    private function detectFromTwitter(): ?string
+    private function detectFromTwitter(): ?UriINterface
     {
         $user = $this->extractor->getDocument()->meta('twitter:creator');
 
-        return $user ? sprintf('https://twitter.com/%s', ltrim($user, '@')) : null;
+        return $user
+            ? $this->extractor->getCrawler()->createUri(sprintf('https://twitter.com/%s', ltrim($user, '@')))
+            : null;
     }
 }

@@ -21,7 +21,7 @@ class Api
 
         $titles = getDirectory($uri->getPath(), 1);
 
-        $this->endpoint = (string) $uri
+        $this->endpoint = $uri
             ->withPath('/w/api.php')
             ->withQuery(http_build_query([
                 'action' => 'query',

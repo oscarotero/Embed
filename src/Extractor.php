@@ -25,6 +25,7 @@ use Embed\Detectors\Redirect;
 use Embed\Detectors\Title;
 use Embed\Detectors\Url;
 use Embed\Http\Crawler;
+use InvalidArgumentException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
@@ -143,6 +144,22 @@ class Extractor
     public function getUri(): UriInterface
     {
         return $this->uri;
+    }
+
+    /**
+     * @param UriInterface|string $uri
+     */
+    public function resolveUri($uri): UriInterface
+    {
+        if (is_string($uri)) {
+            $uri = $this->crawler->createUri($uri);
+        }
+
+        if (!($uri instanceof UriInterface)) {
+            throw new InvalidArgumentException('Uri must be a string or an instance of UriInterface');
+        }
+
+        return resolveUri($this->uri, $uri);
     }
 
     public function getCrawler(): Crawler

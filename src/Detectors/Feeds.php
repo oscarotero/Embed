@@ -14,6 +14,9 @@ class Feeds extends Detector
         'text/xml',
     ];
 
+    /**
+     * @return \Psr\Http\Message\UriInterface[]
+     */
     public function detect(): array
     {
         $document = $this->extractor->getDocument();

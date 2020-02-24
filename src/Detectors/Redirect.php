@@ -3,20 +3,22 @@ declare(strict_types = 1);
 
 namespace Embed\Detectors;
 
+use Psr\Http\Message\UriInterface;
+
 class Redirect extends Detector
 {
-    public function detect(): ?string
+    public function detect(): ?UriInterface
     {
         $document = $this->extractor->getDocument();
         $value = $document->select('.//meta', ['http-equiv' => 'refresh'])->str();
 
-        return $value ? self::extract($value) : null;
+        return $value ? $this->extract($value) : null;
     }
 
-    private static function extract(string $value): ?string
+    private function extract(string $value): ?UriInterface
     {
         if (preg_match('/url=(.+)$/i', $value, $match)) {
-            return $match[1] ?? null;
+            return $this->extractor->resolveUri($match[1]);
         }
 
         return null;

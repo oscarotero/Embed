@@ -101,6 +101,10 @@ abstract class PagesTestCase extends TestCase
                 $value = $value->jsonSerialize();
             }
 
+            if ($value instanceof UriInterface) {
+                $value = (string) $value;
+            }
+
             $data[$name] = $value;
         }
 

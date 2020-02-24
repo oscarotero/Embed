@@ -12,8 +12,7 @@ class Cms extends Detector
 
     public function detect(): ?string
     {
-        $host = parse_url($this->extractor->url, PHP_URL_HOST);
-        $cms = self::detectFromHost($host);
+        $cms = self::detectFromHost($this->extractor->url->getHost());
 
         if ($cms) {
             return $cms;

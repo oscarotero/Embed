@@ -29,7 +29,7 @@ class Api
             return [];
         }
 
-        $this->endpoint = "https://api.imageshack.com/v2/images/{$id}";
+        $this->endpoint = $this->extractor->getCrawler()->createUri("https://api.imageshack.com/v2/images/{$id}");
         $data = $this->fetchJSON($this->endpoint);
         return $data['result'] ?? [];
     }

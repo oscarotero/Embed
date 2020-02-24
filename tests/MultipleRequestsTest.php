@@ -18,8 +18,8 @@ class MultipleRequestsTest extends TestCase
         );
 
         $this->assertCount(3, $infos);
-        $this->assertSame('https://oscarotero.com/', $infos[0]->url);
-        $this->assertSame('https://github.com/oscarotero', $infos[1]->url);
-        $this->assertSame('https://twitter.com/misteroom', $infos[2]->url);
+        $this->assertEquals('https://oscarotero.com/', $infos[0]->url);
+        $this->assertEquals('https://github.com/oscarotero', $infos[1]->url);
+        $this->assertEquals('https://twitter.com/misteroom', $infos[2]->url);
     }
 }

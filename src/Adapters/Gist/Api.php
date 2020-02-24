@@ -12,7 +12,7 @@ class Api
     protected function fetchData(): array
     {
         $uri = $this->extractor->getUri();
-        $this->endpoint = (string) $uri->withPath($uri->getPath().'.json');
+        $this->endpoint = $uri->withPath($uri->getPath().'.json');
 
         return $this->fetchJSON($this->endpoint);
     }

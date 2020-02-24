@@ -3,22 +3,16 @@ declare(strict_types = 1);
 
 namespace Embed;
 
-use Exception;
+use Psr\Http\Message\UriInterface;
 
 trait ApiTrait
 {
     private Extractor $extractor;
     private array $data;
-    private ?string $endpoint;
 
     public function __construct(Extractor $extractor)
     {
         $this->extractor = $extractor;
-    }
-
-    public function getEndpoint(): ?string
-    {
-        return $this->endpoint;
     }
 
     public function all(): array
@@ -78,7 +72,7 @@ trait ApiTrait
         return $value ? (int) $value : null;
     }
 
-    public function url(string ...$keys): ?string
+    public function url(string ...$keys): ?UriInterface
     {
         $url = $this->str(...$keys);
 
@@ -86,23 +80,8 @@ trait ApiTrait
             return null;
         }
 
-        $uri = $this->extractor->getCrawler()->createUri($url);
-
-        return (string) resolveUri($this->extractor->getUri(), $uri);
+        return $this->extractor->resolveUri($url);
     }
 
     abstract protected function fetchData(): array;
-
-    private function fetchJSON(string $url): array
-    {
-        $crawler = $this->extractor->getCrawler();
-        $request = $crawler->createRequest('GET', $url);
-        $response = $crawler->sendRequest($request);
-
-        try {
-            return json_decode((string) $response->getBody(), true) ?: [];
-        } catch (Exception $exception) {
-            return [];
-        }
-    }
 }

@@ -41,7 +41,7 @@ class OEmbed
         return self::extractJSON((string) $response->getBody());
     }
 
-    private function detectEndpoint(): ?string
+    private function detectEndpoint(): ?UriInterface
     {
         $document = $this->extractor->getDocument();
 
@@ -52,7 +52,7 @@ class OEmbed
             ?: $this->detectEndpointFromProviders();
     }
 
-    private function detectEndpointFromProviders(): ?string
+    private function detectEndpointFromProviders(): ?UriInterface
     {
         $url = (string) $this->extractor->getUri();
         $endpoint = self::searchEndpoint(self::getProviders(), $url);
@@ -61,7 +61,9 @@ class OEmbed
             return null;
         }
 
-        return $endpoint.'?'.http_build_query(['url' => $url, 'format' => 'json']);
+        return $this->extractor->getCrawler()
+            ->createUri($endpoint)
+            ->withQuery(http_build_query(['url' => $url, 'format' => 'json']));
     }
 
     private static function searchEndpoint(array $providers, string $url): ?string

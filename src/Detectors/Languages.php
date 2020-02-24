@@ -3,16 +3,14 @@ declare(strict_types = 1);
 
 namespace Embed\Detectors;
 
-use function Embed\resolveUri;
-
 class Languages extends Detector
 {
+    /**
+     * @return \Psr\Http\Message\UriInterface[]
+     */
     public function detect(): array
     {
         $document = $this->extractor->getDocument();
-        $crawler = $this->extractor->getCrawler();
-        $uri = $this->extractor->getUri();
-
         $languages = [];
 
         foreach ($document->select('.//link[@hreflang]')->nodes() as $node) {
@@ -23,7 +21,7 @@ class Languages extends Detector
                 continue;
             }
 
-            $languages[$language] = (string) resolveUri($uri, $crawler->createUri($href));
+            $languages[$language] = $this->extractor->resolveUri($href);
         }
 
         return $languages;

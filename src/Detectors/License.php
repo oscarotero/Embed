@@ -10,7 +10,7 @@ class License extends Detector
         $oembed = $this->extractor->getOEmbed();
         $document = $this->extractor->getDocument();
 
-        return $oembed->url('license_url')
+        return $oembed->str('license_url')
             ?: $document->meta('copyright');
     }
 }

@@ -3,9 +3,11 @@ declare(strict_types = 1);
 
 namespace Embed\Detectors;
 
+use Psr\Http\Message\UriInterface;
+
 class Icon extends Detector
 {
-    public function detect(): ?string
+    public function detect(): ?UriInterface
     {
         $document = $this->extractor->getDocument();
 
