@@ -8,11 +8,11 @@ class Description extends Detector
     public function detect(): ?string
     {
         $oembed = $this->extractor->getOEmbed();
-        $document = $this->extractor->getDocument();
+        $metas = $this->extractor->getMetas();
         $ld = $this->extractor->getLinkedData();
 
         return $oembed->str('description')
-            ?: $document->meta('og:description', 'twitter:description', 'lp:description', 'description')
+            ?: $metas->str('og:description', 'twitter:description', 'lp:description', 'description')
             ?: $ld->str('description');
     }
 }

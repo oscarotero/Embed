@@ -10,10 +10,10 @@ class ProviderUrl extends Detector
     public function detect(): UriInterface
     {
         $oembed = $this->extractor->getOEmbed();
-        $document = $this->extractor->getDocument();
+        $metas = $this->extractor->getMetas();
 
         return $oembed->url('provider_url')
-            ?: $document->meta('og:website')
+            ?: $metas->url('og:website')
             ?: $this->fallback();
     }
 

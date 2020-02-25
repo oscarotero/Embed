@@ -21,7 +21,7 @@ return [
     'license' => null,
     'providerName' => 'Cadena SER',
     'providerUrl' => 'https://play.cadenaser.com',
-    'publishedTime' => '2016-09-16',
+    'publishedTime' => '2016-09-16 00:00:00',
     'redirect' => null,
     'title' => 'Debate electoral gallego, en \'Hoy por Hoy\' | Hoy por Hoy | Audio | Cadena SER',
     'url' => 'https://play.cadenaser.com/audio/001RD010000004275766/',

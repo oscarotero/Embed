@@ -17,10 +17,13 @@ class AuthorUrl extends Detector
 
     private function detectFromTwitter(): ?UriINterface
     {
-        $user = $this->extractor->getDocument()->meta('twitter:creator');
+        $metas = $this->extractor->getMetas();
+        $crawler = $this->extractor->getCrawler();
+
+        $user = $metas->str('twitter:creator');
 
         return $user
-            ? $this->extractor->getCrawler()->createUri(sprintf('https://twitter.com/%s', ltrim($user, '@')))
+            ? $crawler->createUri(sprintf('https://twitter.com/%s', ltrim($user, '@')))
             : null;
     }
 }

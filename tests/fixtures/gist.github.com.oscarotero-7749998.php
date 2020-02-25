@@ -23,7 +23,7 @@ return [
     'license' => null,
     'providerName' => 'Gist',
     'providerUrl' => 'https://gist.github.com',
-    'publishedTime' => '2013-12-02T14:10:20.000Z',
+    'publishedTime' => '2013-12-02 14:10:20',
     'redirect' => null,
     'title' => 'Git-cheatsheet.sh',
     'url' => 'https://gist.github.com/oscarotero/7749998',

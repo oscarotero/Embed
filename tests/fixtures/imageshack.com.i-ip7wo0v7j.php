@@ -17,7 +17,7 @@ return [
     'license' => null,
     'providerName' => 'ImageShack',
     'providerUrl' => 'http://imagizer.imageshack.com',
-    'publishedTime' => '1435616016',
+    'publishedTime' => '2015-06-29 22:13:36',
     'redirect' => null,
     'title' => 'Kisses',
     'url' => 'http://imagizer.imageshack.com/img673/0/7wO0v7.jpg',

@@ -43,6 +43,7 @@ class Extractor
     private Document $document;
     private OEmbed $oembed;
     private LinkedData $linkedData;
+    private Metas $metas;
 
     private array $customDetectors = [];
 
@@ -77,6 +78,7 @@ class Extractor
         $this->document = new Document($this);
         $this->oembed = new OEmbed($this);
         $this->linkedData = new LinkedData($this);
+        $this->metas = new Metas($this);
 
         //Detectors
         $this->authorName = new AuthorName($this);
@@ -129,6 +131,11 @@ class Extractor
     public function getLinkedData(): LinkedData
     {
         return $this->linkedData;
+    }
+
+    public function getMetas(): Metas
+    {
+        return $this->metas;
     }
 
     public function getRequest(): RequestInterface

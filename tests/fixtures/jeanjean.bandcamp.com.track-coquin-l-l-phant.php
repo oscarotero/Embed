@@ -21,7 +21,7 @@ return [
     'license' => null,
     'providerName' => 'Jean Jean',
     'providerUrl' => 'https://jeanjean.bandcamp.com',
-    'publishedTime' => '20130914',
+    'publishedTime' => '2013-09-14 00:00:00',
     'redirect' => null,
     'title' => 'Coquin L\'éléphant, by Jean Jean',
     'url' => 'https://jeanjean.bandcamp.com/track/coquin-l-l-phant',

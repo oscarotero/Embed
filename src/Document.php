@@ -14,7 +14,6 @@ class Document
     private Extractor $extractor;
     private DOMDocument $document;
     private DOMXPath $xpath;
-    private array $metas;
 
     public function __construct(Extractor $extractor)
     {
@@ -132,27 +131,5 @@ class Document
     public function __toString(): string
     {
         return Parser::stringify($this->getDocument());
-    }
-
-    private function getMetas(): array
-    {
-        if (isset($this->metas)) {
-            return $this->metas;
-        }
-
-        $this->metas = [];
-
-        foreach ($this->select('.//meta')->nodes() as $node) {
-            $type = $node->getAttribute('name') ?: $node->getAttribute('property') ?: $node->getAttribute('itemprop');
-            $value = $node->getAttribute('content');
-
-            if (!empty($value) && !empty($type)) {
-                $type = strtolower($type);
-                $this->metas[$type] ??= [];
-                $this->metas[$type][] = $value;
-            }
-        }
-
-        return $this->metas;
     }
 }

@@ -10,10 +10,10 @@ class ProviderName extends Detector
     public function detect(): string
     {
         $oembed = $this->extractor->getOEmbed();
-        $document = $this->extractor->getDocument();
+        $metas = $this->extractor->getMetas();
 
         return $oembed->str('provider_name')
-            ?: $document->meta('og:site_name')
+            ?: $metas->str('og:site_name')
             ?: ucfirst($this->fallback());
     }
 

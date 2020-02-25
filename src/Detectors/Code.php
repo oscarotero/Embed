@@ -33,20 +33,20 @@ class Code extends Detector
 
     private function detectFromOpenGraph(): ?EmbedCode
     {
-        $document = $this->extractor->getDocument();
+        $metas = $this->extractor->getMetas();
 
-        $url = $document->meta('og:video:secure_url', 'og:video:url', 'og:video');
+        $url = $metas->url('og:video:secure_url', 'og:video:url', 'og:video');
 
         if (!$url) {
             return null;
         }
 
-        if (!($path = parse_url($url, PHP_URL_PATH)) || !($type = pathinfo($path, PATHINFO_EXTENSION))) {
-            $type = $document->meta('og:video_type');
+        if (!($type = pathinfo($url->getPath(), PATHINFO_EXTENSION))) {
+            $type = $metas->str('og:video_type');
         }
 
-        $width = $document->meta('twitter:player:width');
-        $height = $document->meta('twitter:player:height');
+        $width = $metas->int('twitter:player:width');
+        $height = $metas->int('twitter:player:height');
 
         switch ($type) {
             case 'swf':
@@ -77,25 +77,21 @@ class Code extends Detector
                 ]);
         }
 
-        return new EmbedCode(
-            $code,
-            $width ? (int) $width : null,
-            $height ? (int) $height : null
-        );
+        return new EmbedCode($code, $width, $height);
     }
 
     private function detectFromTwitter(): ?EmbedCode
     {
-        $document = $this->extractor->getDocument();
+        $metas = $this->extractor->getMetas();
 
-        $url = $document->meta('twitter:player');
+        $url = $metas->url('twitter:player');
 
         if (!$url) {
             return null;
         }
 
-        $width = $document->meta('twitter:player:width');
-        $height = $document->meta('twitter:player:height');
+        $width = $metas->int('twitter:player:width');
+        $height = $metas->int('twitter:player:height');
 
         $code = html('iframe', [
             'src' => $url,
@@ -105,10 +101,6 @@ class Code extends Detector
             'allowTransparency' => 'true',
         ]);
 
-        return new EmbedCode(
-            $code,
-            $width ? (int) $width : null,
-            $height ? (int) $height : null
-        );
+        return new EmbedCode($code, $width, $height);
     }
 }

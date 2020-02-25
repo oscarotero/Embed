@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace Embed;
 
+use Datetime;
 use Psr\Http\Message\UriInterface;
 
 trait ApiTrait
@@ -50,6 +51,12 @@ trait ApiTrait
         return $value ? clean((string) $value) : null;
     }
 
+    public function strAll(string ...$keys): array
+    {
+        $all = (array) $this->get(...$keys);
+        return array_filter(array_map(fn ($value) => clean($value), $all));
+    }
+
     public function html(string ...$keys): ?string
     {
         $value = $this->get(...$keys);
@@ -76,11 +83,19 @@ trait ApiTrait
     {
         $url = $this->str(...$keys);
 
-        if (!$url) {
-            return null;
+        return $url ? $this->extractor->resolveUri($url) : null;
+    }
+
+    public function time(string ...$keys): ?Datetime
+    {
+        $time = $this->str(...$keys);
+        $datetime = $time ? date_create($time) : null;
+
+        if (!$datetime && ctype_digit($time)) {
+            $datetime = date_create_from_format('U', $time);
         }
 
-        return $this->extractor->resolveUri($url);
+        return ($datetime && $datetime->getTimestamp() > 0) ? $datetime : null;
     }
 
     abstract protected function fetchData(): array;

@@ -23,7 +23,7 @@ return [
     'license' => null,
     'providerName' => 'WordPress.tv',
     'providerUrl' => 'http://wordpress.tv/',
-    'publishedTime' => '2013-09-06T10:43:21+00:00',
+    'publishedTime' => '2013-09-06 10:43:21',
     'redirect' => null,
     'title' => 'Dave Ross: Optimize Image Files Like a Pro',
     'url' => 'https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/',

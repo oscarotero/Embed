@@ -11,12 +11,13 @@ class Image extends Detector
     {
         $oembed = $this->extractor->getOEmbed();
         $document = $this->extractor->getDocument();
+        $metas = $this->extractor->getMetas();
         $ld = $this->extractor->getLinkedData();
 
         return $oembed->url('image')
             ?: $oembed->url('thumbnail')
             ?: $oembed->url('thumbnail_url')
-            ?: $document->metaUrl('og:image', 'og:image:url', 'og:image:secure_url', 'twitter:image', 'twitter:image:src', 'lp:image')
+            ?: $metas->url('og:image', 'og:image:url', 'og:image:secure_url', 'twitter:image', 'twitter:image:src', 'lp:image')
             ?: $document->link('image_src')
             ?: $ld->url('image', 'url');
     }

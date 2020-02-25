@@ -3,16 +3,18 @@ declare(strict_types = 1);
 
 namespace Embed\Detectors;
 
+use Datetime;
+
 class PublishedTime extends Detector
 {
-    public function detect(): ?string
+    public function detect(): ?Datetime
     {
         $oembed = $this->extractor->getOEmbed();
-        $document = $this->extractor->getDocument();
+        $metas = $this->extractor->getMetas();
         $ld = $this->extractor->getLinkedData();
 
-        return $oembed->str('pubdate')
-            ?: $document->meta(
+        return $oembed->time('pubdate')
+            ?: $metas->time(
                 'article:published_time',
                 'created',
                 'date',
@@ -21,9 +23,9 @@ class PublishedTime extends Detector
                 'video:release_date',
                 'newsrepublic:publish_date'
             )
-            ?: $ld->str('pagePublished')
+            ?: $ld->time('pagePublished')
             ?: $this->detectFromPath()
-            ?: $document->meta(
+            ?: $metas->time(
                 'pagerender',
                 'pub_date',
                 'publication-date',
@@ -41,13 +43,12 @@ class PublishedTime extends Detector
      * Some sites using WordPress have the published time in the url
      * For example: mysite.com/2020/05/19/post-title
      */
-    private function detectFromPath(): ?string
+    private function detectFromPath(): ?Datetime
     {
         $path = $this->extractor->getUri()->getPath();
 
         if (preg_match('#/(19|20)\d{2}/[0-1]?\d/[0-3]?\d/#', $path, $matches)) {
-            $date = date_create_from_format('/Y/m/d/', $matches[0]) ?: null;
-            return $date ? $date->format('Y/m/d') : null;
+            return date_create_from_format('/Y/m/d/', $matches[0]) ?: null;
         }
 
         return null;

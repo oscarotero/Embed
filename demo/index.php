@@ -233,6 +233,15 @@ $detectors = [
                         </tr>
                     </table>
 
+                    <h2>Meta data</h2>
+
+                    <table>
+                        <tr>
+                            <th>All data collected</th>
+                            <td><?php printArray($info->getMetas()->all()); ?></td>
+                        </tr>
+                    </table>
+
                     <h2>Linked data</h2>
 
                     <table>

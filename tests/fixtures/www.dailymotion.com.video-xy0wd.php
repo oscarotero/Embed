@@ -21,7 +21,7 @@ return [
     'license' => null,
     'providerName' => 'Dailymotion',
     'providerUrl' => 'https://www.dailymotion.com/',
-    'publishedTime' => '2007-01-08T11:41:29+01:00',
+    'publishedTime' => '2007-01-08 11:41:29',
     'redirect' => null,
     'title' => 'Chats paresseux',
     'url' => 'https://www.dailymotion.com/video/xy0wd',

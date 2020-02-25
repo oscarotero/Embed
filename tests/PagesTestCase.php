@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace Embed\Tests;
 
 use Brick\VarExporter\VarExporter;
+use Datetime;
 use Embed\Embed;
 use Embed\Extractor;
 use Embed\Http\Crawler;
@@ -65,7 +66,7 @@ abstract class PagesTestCase extends TestCase
             self::writeData($uri, $data);
             echo PHP_EOL."Save fixture: {$url}";
         } else {
-            $this->assertEquals($expected, $data);
+            $this->assertEquals($expected, $data, $url);
         }
     }
 
@@ -95,17 +96,7 @@ abstract class PagesTestCase extends TestCase
         $data = [];
 
         foreach (self::DETECTORS as $name) {
-            $value = $extractor->$name;
-
-            if ($value instanceof JsonSerializable) {
-                $value = $value->jsonSerialize();
-            }
-
-            if ($value instanceof UriInterface) {
-                $value = (string) $value;
-            }
-
-            $data[$name] = $value;
+            $data[$name] = self::convert($extractor->$name);
         }
 
         $data['linkedData'] = $extractor->getLinkedData()->all();
@@ -116,5 +107,30 @@ abstract class PagesTestCase extends TestCase
         }
 
         return $data;
+    }
+
+    private static function convert($value)
+    {
+        if (!$value) {
+            return $value;
+        }
+
+        if ($value instanceof JsonSerializable) {
+            return $value->jsonSerialize();
+        }
+
+        if ($value instanceof UriInterface) {
+            return (string) $value;
+        }
+
+        if ($value instanceof Datetime) {
+            return $value->format('Y-m-d H:i:s');
+        }
+
+        if (is_array($value)) {
+            return array_map(__METHOD__, $value);
+        }
+
+        return $value;
     }
 }

@@ -5,12 +5,13 @@ namespace Embed\Detectors;
 
 class Keywords extends Detector
 {
-    public function detect(): ?array
+    public function detect(): array
     {
         $tags = [];
-        $document = $this->extractor->getDocument();
+        $metas = $this->extractor->getMetas();
+        $ld = $this->extractor->getLinkedData();
 
-        $metas = [
+        $types = [
             'keywords',
             'og:video:tag',
             'og:article:tag',
@@ -19,15 +20,15 @@ class Keywords extends Detector
             'lp.article:section',
         ];
 
-        foreach ($metas as $type) {
-            $value = $document->metas($type);
+        foreach ($types as $type) {
+            $value = $metas->strAll($type);
 
             if ($value) {
                 $tags = array_merge($tags, self::toArray($value));
             }
         }
 
-        $value = $this->extractor->getLinkedData()->str('keywords');
+        $value = $ld->str('keywords');
 
         if ($value) {
             $tags = array_merge($tags, self::toArray([$value]));

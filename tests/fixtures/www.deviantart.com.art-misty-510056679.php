@@ -17,7 +17,7 @@ return [
     'license' => null,
     'providerName' => 'DeviantArt',
     'providerUrl' => 'https://www.deviantart.com/',
-    'publishedTime' => '2015-01-27T16:55:07-08:00',
+    'publishedTime' => '2015-01-27 16:55:07',
     'redirect' => null,
     'title' => 'Misty',
     'url' => 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9ad8fbc8-aee8-4e92-a04b-6abf7a036a51/d8foa93-8e1fade9-1853-4644-af82-2ec21590bf94.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzlhZDhmYmM4LWFlZTgtNGU5Mi1hMDRiLTZhYmY3YTAzNmE1MVwvZDhmb2E5My04ZTFmYWRlOS0xODUzLTQ2NDQtYWY4Mi0yZWMyMTU5MGJmOTQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._JiXuDZWqsoAgateXxPBaC3_EPfHdri7pJCeKFhXnjA',

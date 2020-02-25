@@ -25,7 +25,7 @@ return [
     'license' => null,
     'providerName' => 'WIRED',
     'providerUrl' => 'https://www.wired.com/',
-    'publishedTime' => '2016-07-29T07:00:38+00:00',
+    'publishedTime' => '2016-07-29 07:00:38',
     'redirect' => null,
     'title' => 'Review: Yi 4K Action Camera',
     'url' => 'https://www.wired.com/?p=2064839',
