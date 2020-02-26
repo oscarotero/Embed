@@ -45,6 +45,7 @@ class Extractor
     private LinkedData $linkedData;
     private Metas $metas;
 
+    private array $settings = [];
     private array $customDetectors = [];
 
     protected AuthorName $authorName;
@@ -116,6 +117,21 @@ class Extractor
     public function addDetector(string $name, Detector $detector): void
     {
         $this->customDetectors[$name] = $detector;
+    }
+
+    public function setSettings(array $settings): void
+    {
+        $this->settings = $settings;
+    }
+
+    public function getSettings(): array
+    {
+        return $this->settings;
+    }
+
+    public function getSetting(string $key): ?string
+    {
+        return $this->settings[$key] ?? null;
     }
 
     public function getDocument(): Document
