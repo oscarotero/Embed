@@ -78,51 +78,9 @@ class Document
         return new QueryResult($this->xpath->query($query, $context), $this->extractor);
     }
 
-    public function meta(string ...$types): ?string
-    {
-        $metas = $this->getMetas();
-
-        foreach ($types as $type) {
-            $values = $metas[$type] ?? null;
-            $value = !empty($values[0]) ? clean($values[0]) : null;
-
-            if ($value) {
-                return $value;
-            }
-        }
-
-        return null;
-    }
-
-    public function metaUrl(string ...$types): ?UriInterface
-    {
-        $value = $this->meta(...$types);
-
-        if (!$value) {
-            return null;
-        }
-
-        return $this->extractor->resolveUri($value);
-    }
-
-    public function metas(string ...$types): array
-    {
-        $metas = $this->getMetas();
-
-        foreach ($types as $type) {
-            $values = $metas[$type] ?? [];
-
-            return array_values(
-                array_filter(
-                    array_map(
-                        fn ($value) => clean($value),
-                        $values
-                    )
-                )
-            );
-        }
-    }
-
+    /**
+     * Shortcut to select a <link> element and return the href
+     */
     public function link(string $rel, array $extra = []): ?UriInterface
     {
         return $this->select('.//link', ['rel' => $rel] + $extra)->url('href');
