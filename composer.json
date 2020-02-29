@@ -24,20 +24,31 @@
         "issues": "https://github.com/oscarotero/Embed/issues"
     },
     "require": {
-        "php": "^5.6|^7.0",
+        "php": "^7.4",
         "ext-curl": "*",
         "ext-dom": "*",
         "ext-mbstring": "*",
-        "composer/ca-bundle": "^1.0"
+        "composer/ca-bundle": "^1.0",
+        "oscarotero/html-parser": "^0.1.4",
+        "psr/http-message": "^1.0",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "ml/json-ld": "^1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8|^5.7",
-        "friendsofphp/php-cs-fixer": "^2.0"
+        "phpunit/phpunit": "^9.0",
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "nyholm/psr7": "^1.2",
+        "oscarotero/php-cs-fixer-config": "^1.0",
+        "brick/varexporter": "^0.3.1"
     },
     "autoload": {
         "psr-4": {
             "Embed\\": "src"
-        }
+        },
+        "files": [
+            "src/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -47,6 +58,10 @@
     "scripts": {
         "demo": "php -S localhost:8888 demo/index.php",
         "test": "phpunit",
-        "cs-fix": "php-cs-fixer fix ."
+        "cs-fix": "php-cs-fixer fix",
+        "update-resources": [
+            "php scripts/update-oembed.php",
+            "php scripts/update-suffix.php"
+        ]
     }
 }
