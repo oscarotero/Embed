@@ -14,14 +14,17 @@ Full library refactoring.
 - `cms` value
 - `language` to detect the page language
 - `languages` to detect urls to versions in different languages
+- `favicon` to detect small favicons (16 or 32px)
+- `icon` to detect big icons (from 48px)
 
 ### Changed
-- Changed the providers approach by independent detectors.
+- Changed providers (oEmbed, Html, OpenGraph etc) by independent detectors (title, url, language etc).
 - The `tags` value is renamed to `keywords`
 - Use Psr standards instead custom interfaces.
-- `providerImage` is renamed to `favicon` (small icons) and `icon` (big icons)
 
 ### Removed
+- Support for PHP<7.4
 - `type` value (is was very confusing)
 - `images` value
+- `providerImage` (use `favicon` or `icon` instead)
 - Support for files (pdf, jpg, video, etc).

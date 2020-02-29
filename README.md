@@ -20,11 +20,11 @@ Requirements:
 >
 * If you need PHP 5.3 support, use the 1.x version
 * If you need PHP 5.4 support, use the 2.x version
-* If you need PHP 5.5 support, use the 3.x version
+* If you need PHP 5.5-7.3 support, use the 3.x version
 
 ## Online demo
 
-http://oscarotero.com/embed3/demo
+http://oscarotero.com/embed/demo
 
 ## Installation
 
@@ -96,13 +96,12 @@ foreach ($infos as $info) {
 
 ## Document
 
-The document is the object that store the html code of the page. Like with oEmbed, you can use it to extract extra info:
+The document is the object that store the html code of the page. You can use it to extract extra info from the html code:
 
 ```php
 //Get the document object
 $document = $info->getDocument();
 
-$document->meta('twitter:image'); //Returns the content of a <meta>
 $document->link('image_src'); //Returns the href of a <link>
 $document->getDocument(); //Returns the DOMDocument instance
 $html = (string) $document; //Returns the html code
@@ -119,25 +118,41 @@ $result = $document->select('.//a');
 //Filter the results
 $result->filter(fn ($node) => $node->getAttribute('href'));
 
-$result->str('id'); //Return the id of the first result as string
-$result->str(); //Return the content of the first result
+$id = $result->str('id'); //Return the id of the first result as string
+$text = $result->str(); //Return the content of the first result
 
-$result->strAll('id'); //Return an array with the ids of all results as string
-$result->strAll(); //Return an array with the content of all results as string
+$ids = $result->strAll('id'); //Return an array with the ids of all results as string
+$texts = $result->strAll(); //Return an array with the content of all results as string
 
-$result->int('tabindex'); //Return the tabindex attribute of the first result as integer
-$result->int(); //Return the content of the first result as integer
+$tabindex = $result->int('tabindex'); //Return the tabindex attribute of the first result as integer
+$number = $result->int(); //Return the content of the first result as integer
 
-$result->url('href'); //Return the href attribute of the first result as url (converts relative urls to absolutes)
-$result->url(); //Return the content of the first result as url
+$href = $result->url('href'); //Return the href attribute of the first result as url (converts relative urls to absolutes)
+$url = $result->url(); //Return the content of the first result as url
 
-$result->node(); //Return the first node found (DOMElement)
-$result->nodes(); //Return all nodes found
+$node = $result->node(); //Return the first node found (DOMElement)
+$nodes = $result->nodes(); //Return all nodes found
+```
+
+## Metas
+
+For convenience, the object `Metas` stores the value of all `<meta>` elements located in the html, so you can get the values easier. The key of every meta is get from the `name`, `property` or `itemprop` attributes and the value is get from `content`.
+
+```php
+//Get the Metas object
+$metas = $info->getMetas();
+
+$metas->all(); //Return all values
+$metas->get('og:title'); //Return a key value
+$metas->str('og:title'); //Return the value as string (remove html tags)
+$metas->html('og:description'); //Return the value as html
+$metas->int('og:video:width'); //Return the value as integer
+$metas->url('og:url'); //Return the value as full url (converts relative urls to absolutes)
 ```
 
 ## OEmbed
 
-In addition to the html, this library uses [oEmbed](https://oembed.com/) endpoints to get additional data. You can get this data as following:
+In addition to the html and metas, this library uses [oEmbed](https://oembed.com/) endpoints to get additional data. You can get this data as following:
 
 ```php
 //Get the oEmbed object
@@ -153,7 +168,7 @@ $oembed->url('url'); //Return the value as full url (converts relative urls to a
 
 ## LinkedData
 
-Other API used to extract info is [JsonLD](https://www.w3.org/TR/json-ld/).
+Another API available by default, used to extract info using the [JsonLD](https://www.w3.org/TR/json-ld/) schema.
 
 ```php
 //Get the linkedData object
@@ -263,10 +278,10 @@ class Robots extends Detector
     public function detect(): ?string
     {
         $response = $this->extractor->getResponse();
-        $document = $this->extractor->getDocument();
+        $metas = $this->extractor->getMetas();
 
         return $response->getHeaderLine('x-robots-tag'),
-            ?: $document->meta('robots');
+            ?: $metas->str('robots');
     }
 }
 
@@ -278,6 +293,23 @@ $embed->getExtractorFactory()->addDetector('robots', Robots::class);
 $info = $embed->get('http://example.com');
 $robots = $info->robots;
 ```
+
+### Settings
+
+If you need to pass settings to your detectors, you can use the `setSettings` method:
+
+```php
+//Create the extractor
+$info = $embed->get($url);
+
+//Pass settings for example.com site
+if ($info->getUri()->getHost() === 'example.com') {
+    $info->setSettings(['example_api_key' => 'xxx']);
+}
+```
+
+Note: The built-in detectors does not require settings. This feature is only for convenience if you create a specific detector that requires settings.
+
 ---
 
 If this library is useful for you, say thanks [buying me a beer :beer:](https://www.paypal.me/oscarotero)!
@@ -289,10 +321,8 @@ If this library is useful for you, say thanks [buying me a beer :beer:](https://
 [ico-sensiolabs]: https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e/big.png
 [ico-downloads]: https://poser.pugx.org/embed/embed/downloads
 [ico-m-downloads]: https://poser.pugx.org/embed/embed/d/monthly
-[ico-references]: https://www.versioneye.com/php/embed:embed/reference_badge.svg?style=flat
 
 [link-packagist]: https://packagist.org/packages/embed/embed
 [link-travis]: https://travis-ci.org/oscarotero/Embed
 [link-scrutinizer]: https://scrutinizer-ci.com/g/oscarotero/Embed/
 [link-sensiolabs]: https://insight.sensiolabs.com/projects/f0beab9f-fe41-47db-8806-373f80c50f9e
-[link-references]: https://www.versioneye.com/php/embed:embed/references
