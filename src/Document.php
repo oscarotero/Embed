@@ -21,7 +21,7 @@ class Document
 
         $html = (string) $extractor->getResponse()->getBody();
         $html = str_replace('<br>', "\n<br>", $html);
-        $html = str_replace('<br ', "\n <br ", $html);
+        $html = str_replace('<br ', "\n<br ", $html);
 
         $this->document = !empty($html) ? Parser::parse($html) : new DOMDocument();
         $this->initXPath();
