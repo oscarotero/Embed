@@ -21,6 +21,7 @@ Full library refactoring.
 - Changed providers (oEmbed, Html, OpenGraph etc) by independent detectors (title, url, language etc).
 - The `tags` value is renamed to `keywords`
 - Use Psr standards instead custom interfaces.
+- Improved tests using cached responses.
 
 ### Removed
 - Support for PHP<7.4

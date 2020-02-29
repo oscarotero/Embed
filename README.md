@@ -3,12 +3,13 @@
 
 [![Build Status][ico-travis]][link-travis]
 [![Quality Score][ico-scrutinizer]][link-scrutinizer]
-[![Reference Status][ico-references]][link-references]
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-packagist]
 [![Monthly Downloads][ico-m-downloads]][link-packagist]
 [![Software License][ico-license]](LICENSE)
 [![SensioLabs Insight][ico-sensiolabs]][link-sensiolabs]
+
+> Note: If you're using version 3, use `v3.x` branch
 
 PHP library to get information from any web page (using oembed, opengraph, twitter-cards, scrapping the html, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc) and has adapters to some sites like (archive.org, github, facebook, etc).
 
