@@ -17,11 +17,11 @@ Requirements:
 
 * PHP 7.4+
 * Curl library installed
+* PSR-7 implementation. By default [these popular libraries](https://github.com/middlewares/awesome-psr15-middlewares#psr-7-implementations) are detected automatically
 
->
-* If you need PHP 5.3 support, use the 1.x version
-* If you need PHP 5.4 support, use the 2.x version
-* If you need PHP 5.5-7.3 support, use the 3.x version
+> * If you need PHP 5.3 support, use the 1.x version
+> * If you need PHP 5.4 support, use the 2.x version
+> * If you need PHP 5.5-7.3 support, use the 3.x version
 
 ## Online demo
 
