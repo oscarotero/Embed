@@ -16,7 +16,7 @@ final class CurlDispatcher
     private RequestInterface $request;
     private $curl;
     private array $headers = [];
-    private bool $multi = false;
+    private $body;
     private ?int $error = null;
 
     /**
@@ -28,7 +28,7 @@ final class CurlDispatcher
 
         if (count($requests) === 1) {
             $connection = new static($requests[0]);
-            return [$connection($responseFactory)];
+            return [$connection->exec($responseFactory)];
         }
 
         //Init connections
@@ -37,7 +37,6 @@ final class CurlDispatcher
 
         foreach ($requests as $request) {
             $connection = new static($request);
-            $connection->multi = true;
             curl_multi_add_handle($multi, $connection->curl);
 
             $connections[] = $connection;
@@ -72,7 +71,7 @@ final class CurlDispatcher
         curl_multi_close($multi);
 
         return array_map(
-            fn ($connection) => $connection($responseFactory),
+            fn ($connection) => $connection->exec($responseFactory),
             $connections
         );
     }
@@ -101,33 +100,14 @@ final class CurlDispatcher
             CURLOPT_USERAGENT => $request->getHeaderLine('User-Agent'),
             CURLOPT_COOKIEJAR => $cookies,
             CURLOPT_COOKIEFILE => $cookies,
+            CURLOPT_HEADERFUNCTION => [$this, 'writeHeader'],
+            CURLOPT_WRITEFUNCTION => [$this, 'writeBody'],
         ]);
-
-        curl_setopt(
-            $this->curl,
-            CURLOPT_HEADERFUNCTION,
-            function ($resource, $string) {
-                if (preg_match('/^([\w-]+):(.*)$/', $string, $matches)) {
-                    $name = strtolower($matches[1]);
-                    $value = trim($matches[2]);
-                    $this->headers[] = [$name, $value];
-                } elseif ($this->headers) {
-                    $key = array_key_last($this->headers);
-                    $this->headers[$key][1] .= ' '.trim($string);
-                }
-
-                return strlen($string);
-            }
-        );
     }
 
-    public function __invoke(ResponseFactoryInterface $responseFactory): ResponseInterface
+    private function exec(ResponseFactoryInterface $responseFactory): ResponseInterface
     {
-        if ($this->multi) {
-            $body = curl_multi_getcontent($this->curl);
-        } else {
-            $body = curl_exec($this->curl);
-        }
+        curl_exec($this->curl);
 
         $info = curl_getinfo($this->curl);
 
@@ -148,11 +128,14 @@ final class CurlDispatcher
             $response = $response->withAddedHeader($name, $value);
         }
 
-        if (!$response->hasHeader('Content-Location')) {
-            $response = $response->withHeader('Content-Location', $info['url']);
-        }
+        $response = $response
+            ->withAddedHeader('Content-Location', $info['url'])
+            ->withAddedHeader('X-Request-Time', sprintf('%.3f ms', $info['total_time']));
 
-        $response->getBody()->write($body);
+        if ($this->body) {
+            //5Mb max
+            $response->getBody()->write(stream_get_contents($this->body, 5000000, 0));
+        }
 
         return $response;
     }
@@ -176,5 +159,28 @@ final class CurlDispatcher
         }
 
         return $headers;
+    }
+
+    private function writeHeader($curl, $string): int
+    {
+        if (preg_match('/^([\w-]+):(.*)$/', $string, $matches)) {
+            $name = strtolower($matches[1]);
+            $value = trim($matches[2]);
+            $this->headers[] = [$name, $value];
+        } elseif ($this->headers) {
+            $key = array_key_last($this->headers);
+            $this->headers[$key][1] .= ' '.trim($string);
+        }
+
+        return strlen($string);
+    }
+
+    private function writeBody($curl, $string): int
+    {
+        if (!$this->body) {
+            $this->body = fopen('php://temp', 'w+');
+        }
+
+        return fwrite($this->body, $string);
     }
 }
