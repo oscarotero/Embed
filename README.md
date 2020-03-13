@@ -9,7 +9,7 @@
 [![Software License][ico-license]](LICENSE)
 [![SensioLabs Insight][ico-sensiolabs]][link-sensiolabs]
 
-> Note: If you're using version 3, use `v3.x` branch
+> Note: If you're using version 3, use [`v3.x` branch](https://github.com/oscarotero/Embed/tree/v3.x)
 
 PHP library to get information from any web page (using oembed, opengraph, twitter-cards, scrapping the html, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc) and has adapters to some sites like (archive.org, github, facebook, etc).
 
@@ -21,7 +21,7 @@ Requirements:
 
 > * If you need PHP 5.3 support, use the 1.x version
 > * If you need PHP 5.4 support, use the 2.x version
-> * If you need PHP 5.5-7.3 support, use the 3.x version
+> * If you need PHP 5.5-7.3 support, [use the 3.x version](https://github.com/oscarotero/Embed/tree/v3.x)
 
 ## Online demo
 
