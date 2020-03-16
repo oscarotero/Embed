@@ -46,6 +46,13 @@ function printText(?string $text): void
     }
 }
 
+function printDatetime(?DateTimeInterface $date): void
+{
+    if ($date) {
+        echo $date->format('Y-m-d H:i:s');
+    }
+}
+
 function printImage(?string $image): void
 {
     if ($image) {
@@ -108,7 +115,7 @@ $detectors = [
     'favicon' => 'printImage',
     'providerName' => 'printText',
     'providerUrl' => 'printUrl',
-    'publishedTime' => 'printText',
+    'publishedTime' => 'printDatetime',
     'license' => 'printUrl',
     'cms' => 'printText',
     'language' => 'printText',
