@@ -14,16 +14,27 @@ use Psr\Http\Message\ResponseInterface;
 final class CurlClient implements ClientInterface
 {
     private ResponseFactoryInterface $responseFactory;
+    private array $settings = [];
 
     public function __construct(ResponseFactoryInterface $responseFactory = null)
     {
         $this->responseFactory = $responseFactory ?: FactoryDiscovery::getResponseFactory();
     }
 
+    public function setSettings(array $settings): void
+    {
+        $this->settings = $settings + $this->settings;
+    }
+
     public function sendRequest(RequestInterface $request): ResponseInterface
     {
-        $responses = CurlDispatcher::fetch($this->responseFactory, $request);
+        $responses = CurlDispatcher::fetch($this->settings, $this->responseFactory, $request);
 
         return $responses[0];
+    }
+
+    public function sendRequests(RequestInterface ...$request): array
+    {
+        return CurlDispatcher::fetch($this->settings, $this->responseFactory, ...$request);
     }
 }

@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.1.0 - Unreleased
+### Added
+- Ability to send settings to `CurlClient`. Added the `cookies_path` setting to customize the file used for cookies. #345
+
 ## 4.0.0 - 2020-03-13
 Full library refactoring.
 

@@ -22,12 +22,10 @@ final class CurlDispatcher
     /**
      * @return ResponseInterface[]
      */
-    public static function fetch(?ResponseFactoryInterface $responseFactory, RequestInterface ...$requests): array
+    public static function fetch(array $settings, ResponseFactoryInterface $responseFactory, RequestInterface ...$requests): array
     {
-        $responseFactory = $responseFactory ?: FactoryDiscovery::getResponseFactory();
-
         if (count($requests) === 1) {
-            $connection = new static($requests[0]);
+            $connection = new static($settings, $requests[0]);
             return [$connection->exec($responseFactory)];
         }
 
@@ -36,7 +34,7 @@ final class CurlDispatcher
         $connections = [];
 
         foreach ($requests as $request) {
-            $connection = new static($request);
+            $connection = new static($settings, $request);
             curl_multi_add_handle($multi, $connection->curl);
 
             $connections[] = $connection;
@@ -76,12 +74,12 @@ final class CurlDispatcher
         );
     }
 
-    private function __construct(RequestInterface $request)
+    private function __construct(array $settings, RequestInterface $request)
     {
         $this->request = $request;
         $this->curl = curl_init((string) $request->getUri());
 
-        $cookies = str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
+        $cookies = $settings['cookies_path'] ?? str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
 
         curl_setopt_array($this->curl, [
             CURLOPT_HTTPHEADER => $this->getRequestHeaders(),

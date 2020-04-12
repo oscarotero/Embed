@@ -297,6 +297,19 @@ $robots = $info->robots;
 
 ### Settings
 
+If you need to pass settings to the CurlClient to perform http queries:
+
+```php
+use Embed\Embed;
+use Embed\Http\Crawler;
+use Embed\Http\CurlClient;
+
+$client = new CurlClient();
+$client->setSettings(['cookies_path' => $cookies_path]);
+
+$embed = new Embed(new Crawler($client));
+```
+
 If you need to pass settings to your detectors, you can use the `setSettings` method:
 
 ```php

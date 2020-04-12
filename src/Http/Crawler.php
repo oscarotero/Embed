@@ -56,6 +56,18 @@ class Crawler implements ClientInterface, RequestFactoryInterface, UriFactoryInt
         return $this->client->sendRequest($request);
     }
 
+    public function sendRequests(RequestInterface ...$requests): array
+    {
+        if ($this->client instanceof CurlClient) {
+            return $this->client->sendRequests(...$requests);
+        }
+
+        return array_map(
+            fn ($request) => $this->client->sendRequest($request),
+            $requests
+        );
+    }
+
     public function getResponseUri(ResponseInterface $response): ?UriInterface
     {
         $location = $response->getHeaderLine('Content-Location');

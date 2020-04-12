@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace Embed;
 
 use Embed\Http\Crawler;
-use Embed\Http\CurlDispatcher;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -37,7 +36,7 @@ class Embed
             $urls
         );
 
-        $responses = CurlDispatcher::fetch(null, ...$requests);
+        $responses = $this->crawler->sendRequests(...$requests);
 
         $return = [];
 
