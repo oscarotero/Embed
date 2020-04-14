@@ -28,10 +28,10 @@ class Keywords extends Detector
             }
         }
 
-        $value = $ld->str('keywords');
+        $value = $ld->strAll('keywords');
 
         if ($value) {
-            $tags = array_merge($tags, self::toArray([$value]));
+            $tags = array_merge($tags, self::toArray($value));
         }
 
         $tags = array_map('mb_strtolower', $tags);

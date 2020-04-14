@@ -15,7 +15,7 @@ class LinkedData
 
     private ?DocumentInterface $document;
 
-    private function get(string ...$keys): ?string
+    private function get(string ...$keys)
     {
         $graph = $this->getGraph();
 
@@ -59,7 +59,7 @@ class LinkedData
         }
     }
 
-    private static function getValue(Node $node, string ...$keys): ?string
+    private static function getValue(Node $node, string ...$keys)
     {
         foreach ($keys as $key) {
             $node = $node->getProperty("http://schema.org/{$key}");
@@ -69,10 +69,26 @@ class LinkedData
             }
         }
 
-        if ($node instanceof Node) {
-            return $node->getId();
+        return self::detectValue($node);
+    }
+
+    private static function detectValue($value)
+    {
+        if (is_array($value)) {
+            return array_map(
+                fn ($val) => self::detectValue($val),
+                array_values($value)
+            );
         }
 
-        return $node->getValue();
+        if (is_scalar($value)) {
+            return $value;
+        }
+
+        if ($value instanceof Node) {
+            return $value->getId();
+        }
+
+        return $value->getValue();
     }
 }
