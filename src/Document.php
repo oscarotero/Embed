@@ -8,9 +8,12 @@ use DOMNode;
 use DOMXPath;
 use HtmlParser\Parser;
 use Psr\Http\Message\UriInterface;
+use RuntimeException;
+use Symfony\Component\CssSelector\CssSelectorConverter;
 
 class Document
 {
+    private static CssSelectorConverter $cssConverter;
     private Extractor $extractor;
     private DOMDocument $document;
     private DOMXPath $xpath;
@@ -69,11 +72,21 @@ class Document
     /**
      * Select a element in the dom
      */
-    public function select(string $query, array $attributes = null, DOMNode $context = null): ?QueryResult
+    public function select(string $query, array $attributes = null, DOMNode $context = null): QueryResult
     {
         if (!empty($attributes)) {
             $query = self::buildQuery($query, $attributes);
         }
+
+        return new QueryResult($this->xpath->query($query, $context), $this->extractor);
+    }
+
+    /**
+     * Select a element in the dom using a css selector
+     */
+    public function selectCss(string $query, DOMNode $context = null): QueryResult
+    {
+        $query = self::cssToXpath($query);
 
         return new QueryResult($this->xpath->query($query, $context), $this->extractor);
     }
@@ -89,5 +102,18 @@ class Document
     public function __toString(): string
     {
         return Parser::stringify($this->getDocument());
+    }
+
+    private static function cssToXpath(string $selector): string
+    {
+        if (!isset(self::$cssConverter)) {
+            if (!class_exists(CssSelectorConverter::class)) {
+                throw new RuntimeException('You need to install "symfony/css-selector" to use css selectors');
+            }
+
+            self::$cssConverter = new CssSelectorConverter();
+        }
+
+        return self::$cssConverter->toXpath($selector);
     }
 }
