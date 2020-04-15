@@ -176,7 +176,7 @@ class Extractor
     {
         if (is_string($uri)) {
             if (!isHttp($uri)) {
-                throw new InvalidArgumentException('Uri string must use http or https scheme');
+                throw new InvalidArgumentException(sprintf('Uri string must use http or https scheme (%s)', $uri));
             }
 
             $uri = $this->crawler->createUri($uri);
