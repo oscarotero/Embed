@@ -61,6 +61,11 @@ function resolveUri(UriInterface $base, UriInterface $uri): UriInterface
         ->withFragment('');
 }
 
+function isHttp(string $uri): bool
+{
+    return (bool) preg_match('#^(https?:|\.|/)#', $src);
+}
+
 function resolvePath(string $base, string $path): string
 {
     if ($path === '') {

@@ -175,6 +175,10 @@ class Extractor
     public function resolveUri($uri): UriInterface
     {
         if (is_string($uri)) {
+            if (!isHttp($uri)) {
+                throw new InvalidArgumentException('Uri string must use http or https scheme');
+            }
+
             $uri = $this->crawler->createUri($uri);
         }
 
