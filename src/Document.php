@@ -50,6 +50,11 @@ class Document
         }
     }
 
+    public function removeCss(string $query): void
+    {
+        $this->remove(self::cssToXpath($query));
+    }
+
     public function getDocument(): DOMDocument
     {
         return $this->document;
@@ -86,9 +91,7 @@ class Document
      */
     public function selectCss(string $query, DOMNode $context = null): QueryResult
     {
-        $query = self::cssToXpath($query);
-
-        return new QueryResult($this->xpath->query($query, $context), $this->extractor);
+        return $this->select(self::cssToXpath($query), null, $context);
     }
 
     /**

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Ability to send settings to `CurlClient`. Added the `cookies_path` setting to customize the file used for cookies. #345
 - `Document::selectCss()` function to select elements using css selectors instead xpath (it requires symfony/css-selector)
+- `Document::removeCss()` function to remove elements using css selectors instead xpath (it requires symfony/css-selector)
 
 ## 4.0.0 - 2020-03-13
 Full library refactoring.
