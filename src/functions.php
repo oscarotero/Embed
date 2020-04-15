@@ -63,7 +63,7 @@ function resolveUri(UriInterface $base, UriInterface $uri): UriInterface
 
 function isHttp(string $uri): bool
 {
-    return (bool) preg_match('#^(https?:|\.|/)#', $src);
+    return (bool) preg_match('#^(https?:|\.|/)#', $uri);
 }
 
 function resolvePath(string $base, string $path): string
