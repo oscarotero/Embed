@@ -63,7 +63,7 @@ function resolveUri(UriInterface $base, UriInterface $uri): UriInterface
 
 function isHttp(string $uri): bool
 {
-    if (preg_match('/^(w+):/', $uri, $matches)) {
+    if (preg_match('/^(\w+):/', $uri, $matches)) {
         return in_array(strtolower($matches[1]), ['http', 'https']);
     }
 
