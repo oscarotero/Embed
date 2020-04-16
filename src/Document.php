@@ -45,7 +45,9 @@ class Document
 
     public function remove(string $query): void
     {
-        foreach ($this->select($query)->nodes() as $node) {
+        $nodes = iterator_to_array($this->xpath->query($query), false);
+
+        foreach ($nodes as $node) {
             $node->parentNode->removeChild($node);
         }
     }
