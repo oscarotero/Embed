@@ -129,7 +129,7 @@ class Extractor
         return $this->settings;
     }
 
-    public function getSetting(string $key): ?string
+    public function getSetting(string $key)
     {
         return $this->settings[$key] ?? null;
     }

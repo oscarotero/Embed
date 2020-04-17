@@ -22,6 +22,13 @@ class OEmbed
         return self::$providers;
     }
 
+    public function getOembedQueryParameters(string $url): array
+    {
+        $queryParameters = ['url' => $url, 'format' => 'json'];
+
+        return array_merge($queryParameters, $this->extractor->getSetting('oembed:query_parameters') ?? []);
+    }
+
     protected function fetchData(): array
     {
         $this->endpoint = $this->detectEndpoint();
@@ -63,7 +70,7 @@ class OEmbed
 
         return $this->extractor->getCrawler()
             ->createUri($endpoint)
-            ->withQuery(http_build_query(['url' => $url, 'format' => 'json']));
+            ->withQuery(http_build_query($this->getOembedQueryParameters($url)));
     }
 
     private static function searchEndpoint(array $providers, string $url): ?string
