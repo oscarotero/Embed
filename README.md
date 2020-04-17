@@ -167,6 +167,17 @@ $oembed->int('width'); //Return the value as integer
 $oembed->url('url'); //Return the value as full url (converts relative urls to absolutes)
 ```
 
+Additional oEmbed parameters (like instagrams `hidecaption`) can also be provided:
+```php
+$embed = new Embed();
+
+$result = $embed->get('https://www.instagram.com/p/B_C0wheCa4V/');
+$result->setSettings([
+    'oembed:query_parameters' => ['hidecaption' => true]
+]);
+$oembed = $info->getOEmbed();
+```
+
 ## LinkedData
 
 Another API available by default, used to extract info using the [JsonLD](https://www.w3.org/TR/json-ld/) schema.
@@ -247,7 +258,7 @@ The `Extractor` class has many `Detectors`. Each detector is responsible to dete
 
 So, an adapter is basically an extractor created specifically for a site. It can contains also custom detectors or apis. If you see the `src/Adapters` folder you can see all adapters.
 
-If you create an adapter, you need also register to Embed, so it knows in which website needs to use. To do that, there's the `ExtractorFactory` object, that is responsible for instantiate the right extractor for each site. 
+If you create an adapter, you need also register to Embed, so it knows in which website needs to use. To do that, there's the `ExtractorFactory` object, that is responsible for instantiate the right extractor for each site.
 
 ```php
 use Embed\Embed;
