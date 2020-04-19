@@ -15,10 +15,7 @@ class QueryResult
 
     public function __construct(DOMNodeList $result, Extractor $extractor)
     {
-        foreach ($result as $node) {
-            $this->nodes[] = $node;
-        }
-
+        $this->nodes = iterator_to_array($result, false);
         $this->extractor = $extractor;
     }
 
