@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.1.1] - 2020-04-24
+### Added
+- Updated oembed endpoints from `oembed.com`
+- Add support for tiktok.com
+
 ## [4.1.0] - 2020-04-19
 ### Added
 - Ability to send settings to `CurlClient`. Added the `cookies_path` setting to customize the file used for cookies. [#345]
@@ -40,4 +45,5 @@ Full library refactoring.
 [#345]: https://github.com/oscarotero/Embed/issues/345
 [#346]: https://github.com/oscarotero/Embed/issues/346
 
+[4.1.1]: https://github.com/oscarotero/Embed/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/oscarotero/Embed/compare/v4.0.0...v4.1.0

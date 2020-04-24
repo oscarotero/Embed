@@ -168,6 +168,11 @@ class PagesTest extends PagesTestCase
         $this->assertEmbed('https://twitter.com/pepephone/status/436461658601713664');
     }
 
+    public function testTikTok()
+    {
+        $this->assertEmbed('https://www.tiktok.com/@a3noticias/video/6806030056956251397');
+    }
+
     public function testYoutube()
     {
         $this->assertEmbed('http://www.youtube.com/watch?v=eiHXASgRTcA');

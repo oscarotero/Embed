@@ -898,4 +898,7 @@ return [
         '|^https?://imgur\\.com/.*$|i',
         '|^https?://i\\.imgur\\.com/.*$|i',
     ],
+    'https://www.tiktok.com/oembed' => [
+        '|^https?://.*\\.tiktok\\.com/.*$|i',
+    ],
 ];
