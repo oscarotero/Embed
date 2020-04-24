@@ -427,6 +427,14 @@ return [
     'https://me.me/oembed' => [
         '|^https?://me\\.me/i/.*$|i',
     ],
+    'https://*.medialab.(co|app)/api/oembed/' => [
+        '|^https?://.*\\.medialab\\.app/share/watch/.*$|i',
+        '|^https?://.*\\.medialab\\.co/share/watch/.*$|i',
+        '|^https?://.*\\.medialab\\.app/share/social/.*$|i',
+        '|^https?://.*\\.medialab\\.co/share/social/.*$|i',
+        '|^https?://.*\\.medialab\\.app/share/embed/.*$|i',
+        '|^https?://.*\\.medialab\\.co/share/embed/.*$|i',
+    ],
     'https://medienarchiv.zhdk.ch/oembed.json' => [
         '|^https?://medienarchiv\\.zhdk\\.ch/entries/.*$|i',
     ],
@@ -810,6 +818,9 @@ return [
         '|^https?://vimeo\\.com/ondemand/.*/.*$|i',
         '|^https?://player\\.vimeo\\.com/video/.*$|i',
     ],
+    'https://www.viously.com/oembed' => [
+        '|^https?://www\\.viously\\.com/.*/.*$|i',
+    ],
     'http://viziosphere.com/services/oembed/' => [
         '|^https?://viziosphere\\.com/3dphoto.*$|i',
     ],
@@ -872,6 +883,9 @@ return [
     ],
     'https://api.znipe.tv/v3/oembed/' => [
         '|^https?://.*\\.znipe\\.tv/.*$|i',
+    ],
+    'https://srv2.zoomable.ca/oembed' => [
+        '|^https?://srv2\\.zoomable\\.ca/viewer\\.php.*$|i',
     ],
     'http://jsbin.com/oembed' => [
         '|^https?://output\\.jsbin\\.com/.*$|i',

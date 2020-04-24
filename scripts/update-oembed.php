@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 require dirname(__DIR__).'/vendor/autoload.php';
 
-use Symfony\Component\VarExporter\VarExporter;
+use Brick\VarExporter\VarExporter;
 
 //Fetch endpoint from https://oembed.com
 $providers = json_decode(file_get_contents('https://oembed.com/providers.json'));
