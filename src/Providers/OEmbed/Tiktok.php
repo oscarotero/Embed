@@ -4,7 +4,7 @@ namespace Embed\Providers\OEmbed;
 
 use Embed\Http\Url;
 
-class TikTok extends EndPoint implements EndPointInterface
+class Tiktok extends EndPoint implements EndPointInterface
 {
     protected static $pattern = [
     	'*.tiktok.com/*'
