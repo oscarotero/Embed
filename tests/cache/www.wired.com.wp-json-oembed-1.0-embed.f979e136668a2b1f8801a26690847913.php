@@ -31,13 +31,13 @@ return [
             'none'
         ],
         'date' => [
-            'Sun, 23 Feb 2020 00:01:44 GMT'
+            'Wed, 20 May 2020 17:53:49 GMT'
         ],
         'via' => [
             '1.1 varnish'
         ],
         'age' => [
-            '0'
+            '268'
         ],
         'cache-control' => [
             'no-cache'
@@ -55,8 +55,8 @@ return [
             'false'
         ],
         'set-cookie' => [
-            'CN_xid=09038237-c252-440c-aee2-b0b1ef1f2b67; Expires=Fri, 21 Aug 2020 00:01:44 GMT; path=/;',
-            'verso_bucket=148; Expires=Mon, 22 Feb 2021 00:01:44 GMT; path=/;'
+            'CN_xid=0d0739c1-f1c1-43a2-9786-d826aff50e7b; Expires=Mon, 16 Nov 2020 17:53:49 GMT; path=/;',
+            'verso_bucket=248; Expires=Thu, 20 May 2021 17:53:49 GMT; path=/;'
         ],
         'content-security-policy' => [
             'default-src https: data: \'unsafe-inline\' \'unsafe-eval\'; child-src https: data: blob:; connect-src https: data: blob: wss://*.hotjar.com; font-src https: data:; img-src https: blob: data:; media-src blob: data: https:; object-src https:; script-src https: data: blob: \'unsafe-inline\' \'unsafe-eval\'; style-src https: \'unsafe-inline\'; block-all-mixed-content; upgrade-insecure-requests; report-uri https://capture.condenastdigital.com/csp/wired'
@@ -65,16 +65,19 @@ return [
             'max-age=31536000; preload'
         ],
         'x-served-by' => [
-            'cache-mad22029-MAD'
+            'cache-mad22046-MAD'
         ],
         'x-cache' => [
-            'MISS'
+            'HIT'
         ],
         'x-cache-hits' => [
-            '0'
+            '1'
         ],
         'x-timer' => [
-            'S1582416104.238982,VS0,VE486'
+            'S1589997229.055380,VS0,VE1'
+        ],
+        'x-ua-device' => [
+            'desktop'
         ],
         'vary' => [
             'accept-payment, accept-encoding, Verso'
@@ -84,6 +87,9 @@ return [
         ],
         'Content-Location' => [
             'https://www.wired.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.wired.com%2F2016%2F07%2Freview-yi-4k-action-camera%2F'
+        ],
+        'X-Request-Time' => [
+            '0.126 ms'
         ]
     ],
     'statusCode' => 200,

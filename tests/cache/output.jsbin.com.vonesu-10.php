@@ -7,7 +7,7 @@ return [
             'nginx'
         ],
         'date' => [
-            'Sun, 23 Feb 2020 00:01:15 GMT'
+            'Wed, 20 May 2020 17:53:27 GMT'
         ],
         'content-type' => [
             'text/html; charset=utf-8'
@@ -17,11 +17,6 @@ return [
         ],
         'connection' => [
             'keep-alive'
-        ],
-        'set-cookie' => [
-            'jsbin=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
-            'session=eyJ2ZXJzaW9uIjoiNC4xLjciLCJjc3JmU2VjcmV0IjoiT18xd0dJdE1aMWhfM3g5LWdSa21GTVJkIn0=; path=/; expires=Mon, 22 Feb 2021 00:01:15 GMT; domain=.jsbin.com; httponly',
-            'session.sig=1fxnpjfT83Bqc461syMnPJiUKvc; path=/; expires=Mon, 22 Feb 2021 00:01:15 GMT; domain=.jsbin.com; httponly'
         ],
         'x-robots-tag' => [
             'nofollow'
@@ -40,6 +35,9 @@ return [
         ],
         'Content-Location' => [
             'http://output.jsbin.com/vonesu/10'
+        ],
+        'X-Request-Time' => [
+            '0.265 ms'
         ]
     ],
     'statusCode' => 200,

@@ -14,16 +14,15 @@ return [
             'keep-alive'
         ],
         'date' => [
-            'Sun, 23 Feb 2020 00:01:34 GMT',
-            'Sun, 23 Feb 2020 00:01:34 GMT'
+            'Wed, 20 May 2020 17:53:42 GMT',
+            'Wed, 20 May 2020 17:53:42 GMT'
         ],
         'server' => [
             'Spreaker Proxy Cache',
             'Spreaker Proxy Cache'
         ],
         'set-cookie' => [
-            'spreaker=88cbbec63ea8217056867e72a30cbce2; path=/; domain=.spreaker.com; secure; HttpOnly',
-            'spreaker=72777608cdef835ead686c7df65fe96b; path=/; domain=.spreaker.com; secure; HttpOnly'
+            'spreaker=ea6e22def418ca98898ecb8060d1d6cc; path=/; domain=.spreaker.com; secure; HttpOnly'
         ],
         'expires' => [
             'Thu, 19 Nov 1981 08:52:00 GMT',
@@ -45,16 +44,16 @@ return [
             'Error from cloudfront'
         ],
         'via' => [
-            '1.1 4a41a68aa92d1d4a548f11fe8c9bc79e.cloudfront.net (CloudFront)',
-            '1.1 29b34f193afe01cd793196cb75713c44.cloudfront.net (CloudFront)'
+            '1.1 4ebc80fbe8c95fbda707a7dd4b84a6b9.cloudfront.net (CloudFront)',
+            '1.1 3e206dcbbb3d5f0cbfa80cebfd0de62d.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
             'MAD51-C1',
             'MAD51-C1'
         ],
         'x-amz-cf-id' => [
-            'LeP-aStbCV3tJQFqmXN5VLgGmUphQROgXmLBOjtG_ZxT3DZIV9p5ug==  HTTP/2 404',
-            'XEGfRFdH0OUv7527I6E2GKtc4HrzGjerTEKK8UIjn1IVuEQz4OfRYA=='
+            'U-Q_ooPp6t4uKnE9uC-Ic1KGCMUYp0Ifp5DT6FPQKFfat0p3ZKKM0w==  HTTP/2 404',
+            '1hZfuEluUieJcj0ybNFS7FptennWpyJg3ER3NHI1HrvRsTCZ5MZyWA=='
         ],
         'vary' => [
             'Accept-Encoding'
@@ -67,6 +66,9 @@ return [
         ],
         'Content-Location' => [
             'https://www.spreaker.com/user/angelclark/angel-clark-ice-cream-tocos'
+        ],
+        'X-Request-Time' => [
+            '0.255 ms'
         ]
     ],
     'statusCode' => 404,
@@ -142,10 +144,10 @@ if (!/IEMobile/.test(navigator.userAgent)) { window.location = "https:\\/\\/www.
     
 <meta name="twitter:site" content="@spreaker"/>
 <meta name="twitter:app:id:iphone" content="388449677"/>
-<meta name="twitter:app:name:iphone" content="Spreaker Podcast Radio"/>
+<meta name="twitter:app:name:iphone" content="Spreaker Podcast Player"/>
 <meta name="twitter:app:id:ipad" content="388449677"/>
-<meta name="twitter:app:name:ipad" content="Spreaker Podcast Radio"/>
-<meta name="twitter:app:name:googleplay" content="Spreaker Podcast Radio"/>
+<meta name="twitter:app:name:ipad" content="Spreaker Podcast Player"/>
+<meta name="twitter:app:name:googleplay" content="Spreaker Podcast Player"/>
 <meta name="twitter:app:id:googleplay" content="com.spreaker.android"/>
     
     <meta name="theme-color" content="#212322" />
@@ -163,9 +165,9 @@ if (!/IEMobile/.test(navigator.userAgent)) { window.location = "https:\\/\\/www.
 
 <!-- iPhone Non Retina -->
 <link rel="apple-touch-icon-precomposed" href="https://d1sojsgu0jwtb7.cloudfront.net/images/favicons/apple_touch_57.png" />
-    <link rel="stylesheet" type="text/css" media="screen" href="https://d1sojsgu0jwtb7.cloudfront.net/css/8b5dacdaee103003f38387b8adb37881/frontend.min.gz.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="https://d1sojsgu0jwtb7.cloudfront.net/css/8b5dacdaee103003f38387b8adb37881/removed_content.min.gz.css" />
-    <script type="text/javascript" src="https://d1sojsgu0jwtb7.cloudfront.net/js-pack/base-frontend.en_US.bbded895b3eb2f5c8b04af94a4e68dd6.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://d1sojsgu0jwtb7.cloudfront.net/css/9e093c39da4754c1b67a4e1cab473fee/frontend.min.gz.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="https://d1sojsgu0jwtb7.cloudfront.net/css/9e093c39da4754c1b67a4e1cab473fee/removed_content.min.gz.css" />
+    <script type="text/javascript" src="https://d1sojsgu0jwtb7.cloudfront.net/js-pack/base-frontend.en_US.a4a167df607c9cfced50a0339d1d4e7a.js"></script>
 
     
 <script type="text/javascript">
@@ -176,15 +178,15 @@ if (!/IEMobile/.test(navigator.userAgent)) { window.location = "https:\\/\\/www.
         USER_COUNTRY_EUROPEAN_UNION:    true,
         DOMAIN:                         "spreaker.com",
         API_URL:                        "https:\\/\\/api.spreaker.com",
-        API_RECEIVER_URL:               "https:\\/\\/api.spreaker.com\\/receiver.html?v=69345ea2417bb8907b374ea985437a04",
+        API_RECEIVER_URL:               "https:\\/\\/api.spreaker.com\\/receiver.html?v=de22c7688a78339b3c3f39ad22d022d6",
         API_CULTURE:                    "en_US",
         SITE_URL:                       "https:\\/\\/www.spreaker.com",
         WIDGET_URL:                     "https:\\/\\/widget.spreaker.com",
         VALIDATION_URL:                 "\\/ajax\\/validate\\/form",
         SEARCH_URL:                     "https:\\/\\/search.spreaker.com",
-        SEARCH_RECEIVER_URL:            "https:\\/\\/search.spreaker.com\\/receiver.html?v=69345ea2417bb8907b374ea985437a04",
+        SEARCH_RECEIVER_URL:            "https:\\/\\/search.spreaker.com\\/receiver.html?v=de22c7688a78339b3c3f39ad22d022d6",
         REDIRECT_URL:                   "\\/explore",
-        AJAX_VERSION:                   "69345ea2417bb8907b374ea985437a04",
+        AJAX_VERSION:                   "de22c7688a78339b3c3f39ad22d022d6",
         AUTH_URL:                       "\\/connect",
         OAUTH_TOKEN:                    null,
         PUSHER_ENABLED:                 true,
@@ -193,7 +195,7 @@ if (!/IEMobile/.test(navigator.userAgent)) { window.location = "https:\\/\\/www.
         STRIPE_STORE_PUBLISHABLE_KEY:   "pk_live_sbI2q15f2zAg8Rfqiw8xmh9q",
         IMAGES_BASE_PATH:               "\\/\\/d1sojsgu0jwtb7.cloudfront.net\\/images",
         PLAYER:                         {"station_url":null,"playlist_url":null,"autoplay":false,"referrer":"www.spreaker.com","auth_token_v2":null},
-        CONNECT:                        {"fb_app_id":215002133707,"tw_connect_url":"https:\\/\\/www.spreaker.com\\/twitter\\/connect","go_connect_url":"https:\\/\\/www.spreaker.com\\/google\\/connect","sc_connect_url":"https:\\/\\/www.spreaker.com\\/soundcloud\\/connect","tb_connect_url":"https:\\/\\/www.spreaker.com\\/tumblr\\/connect","yt_connect_url":"https:\\/\\/www.spreaker.com\\/youtube\\/connect"}    });
+        CONNECT:                        {"fb_app_id":215002133707,"tw_connect_url":"https:\\/\\/www.spreaker.com\\/twitter\\/connect","go_connect_url":"https:\\/\\/www.spreaker.com\\/google\\/connect","sc_connect_url":"https:\\/\\/www.spreaker.com\\/soundcloud\\/connect","tb_connect_url":"https:\\/\\/www.spreaker.com\\/tumblr\\/connect","yt_connect_url":"https:\\/\\/www.spreaker.com\\/youtube\\/connect","ap_connect_url":"https:\\/\\/www.spreaker.com\\/apple\\/connect"}    });
 
     // Modules configuration
     SP.Config.addModuleConfig(\'ajax\', {"modules":{"page_header":{"persistent":true},"page_header_search":{"persistent":true},"compatibility":{"persistent":true},"ajax":{"persistent":true},"auth":{"persistent":true},"embed":{"persistent":true},"pusher":{"persistent":true},"follow":{"persistent":true},"like":{"persistent":true},"ban":{"persistent":true},"culture":{"persistent":true},"flash_message":{"persistent":true},"cohort_events":{"persistent":true},"facebook_invite":{"persistent":true},"facebook_share":{"persistent":true},"notifications":{"persistent":true},"player_ui":{"persistent":true},"player_buttons":{"persistent":true},"mobile_ios":{"persistent":true},"performance_tracking":{"persistent":true},"staff_metadata":{"persistent":true}},"history_url":"https:\\/\\/www.spreaker.com\\/history.html","push_state":true});
@@ -287,9 +289,9 @@ if (!/IEMobile/.test(navigator.userAgent)) { window.location = "https:\\/\\/www.
     <script type="text/javascript">
         (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
         ;r.type="text/javascript"
-        ;r.integrity="sha384-rSEVPt+HsYVwBs0EY4dB3fOcSZOW9cbAQV2CqsLFDjNbdiNyoXcGruquK0IyWxAZ"
+        ;r.integrity="sha384-1Uab0ISe8Eql+1G2WVmlyKxlDhpsXnPVpvGHmUJQkag+IATRq3Da7OF5ql8TfpZ4"
         ;r.crossOrigin="anonymous";r.async=true
-        ;r.src="https://cdn.amplitude.com/libs/amplitude-5.7.0-min.gz.js"
+        ;r.src="https://cdn.amplitude.com/libs/amplitude-5.9.0-min.gz.js"
         ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
         console.log("[Amplitude] Error: could not load SDK")}}
         ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
@@ -319,9 +321,12 @@ if (!/IEMobile/.test(navigator.userAgent)) { window.location = "https:\\/\\/www.
     </script>
     <!-- End Amplitude Analytics -->
 
+
     <link type="application/opensearchdescription+xml" rel="search" href="https://www.spreaker.com/open_search.xml" />
 </head>
-<body>
+
+
+<body  >
 
 
 
@@ -421,7 +426,7 @@ if (!/IEMobile/.test(navigator.userAgent)) { window.location = "https:\\/\\/www.
                                                 <li><a class="ft_links_item" title="Start Your Podcast" onclick="SP.Ajax.onClick(this, arguments);" ontouchstart="SP.Ajax.onTouchStart(this, arguments);" href="/create-a-podcast?utm_source=footer&amp;utm_medium=link&amp;utm_campaign=make-a-podcast-free">Make a Podcast Free</a></li>
                         <li><a class="ft_links_item" title="Get Analytics on Your Audience" onclick="SP.Ajax.onClick(this, arguments);" ontouchstart="SP.Ajax.onTouchStart(this, arguments);" href="/analytics-for-podcasts">Get Analytics on Your Audience</a></li>
                         <li><a class="ft_links_item" title="A Complete Podcasting Solution" onclick="SP.Ajax.onClick(this, arguments);" ontouchstart="SP.Ajax.onTouchStart(this, arguments);" href="/podcasting-solution">How We\'re Different</a></li>
-                        <li><a class="ft_links_item" rel="nofollow" title="Help Center" onclick="SP.Ajax.onClick(this, arguments);" ontouchstart="SP.Ajax.onTouchStart(this, arguments);" href="/help">Help Center</a></li>
+                        <li><a class="ft_links_item" target="_blank" title="Help Center" rel="noopener" href="https://help.spreaker.com">Help Center</a></li>
                     </ul>
                 </div>
 
@@ -437,7 +442,7 @@ if (!/IEMobile/.test(navigator.userAgent)) { window.location = "https:\\/\\/www.
 
                         <h5 class="ft_links_subtitle">For Listeners:</h5>
                         <ul class="ft_links_items">
-                            <li><a class="ft_links_item" rel="nofollow" title="Spreaker Podcast Radio for Mobile" onclick="SP.Ajax.onClick(this, arguments);" ontouchstart="SP.Ajax.onTouchStart(this, arguments);" href="/download?ref=footer&amp;scroll=apps_radio_mobile">Spreaker Podcast Radio for Mobile</a></li>
+                            <li><a class="ft_links_item" rel="nofollow" title="Spreaker Podcast Player for Mobile" onclick="SP.Ajax.onClick(this, arguments);" ontouchstart="SP.Ajax.onTouchStart(this, arguments);" href="/download?ref=footer&amp;scroll=apps_radio_mobile">Spreaker Podcast Player for Mobile</a></li>
                         </ul>
                                     </div>
 
@@ -510,10 +515,8 @@ if (!/IEMobile/.test(navigator.userAgent)) { window.location = "https:\\/\\/www.
 
 <!-- Player -->
 <div id="pl_player"></div>
-
-
 <!-- Help -->
-    <a id="ly_help_container" onclick="SP.Ajax.onClick(this, arguments);" ontouchstart="SP.Ajax.onTouchStart(this, arguments);" href="/help"><span id="ly_help_text">Help</span></a>
+    <a id="ly_help_container" rel="noopener" target="_blank" href="https://help.spreaker.com"><span id="ly_help_text">Help</span></a>
 
 <!-- Tracking on body -->
 
@@ -591,7 +594,10 @@ if (!/IEMobile/.test(navigator.userAgent)) { window.location = "https:\\/\\/www.
 
     SP.Config.setModuleConfig(\'notifications\', {
         notifications: []    });
+
 </script>
+
+
 
 
 <!-- Preload templates -->
@@ -619,6 +625,7 @@ fbq(\'track\', \'PageView\');</script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=618731118326781&ev=PageView&noscript=1"
 /></noscript>
+
 
 </body>
 </html>

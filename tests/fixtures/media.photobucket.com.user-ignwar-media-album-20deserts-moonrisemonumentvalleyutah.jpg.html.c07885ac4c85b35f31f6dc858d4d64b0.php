@@ -33,16 +33,16 @@ return [
         '@id' => 'https://www.photobucket.com/#organization',
         '@type' => 'Organization',
         'name' => 'Photobucket',
-        'url' => 'https://www.photobucket.com/',
+        'url' => 'https://photobucket.com/',
         'logo' => 'http://photobucket.com/uploads/images/logo.jpg',
         'sameAs' => [
             'https://www.wikidata.org/wiki/Q840895',
             'https://en.wikipedia.org/wiki/Photobucket',
-            'https://www.linkedin.com/company/photobucket/',
-            'https://www.facebook.com/photobucket/',
+            'https://linkedin.com/company/photobucket/',
+            'https://facebook.com/photobucket/',
             'https://twitter.com/photobucket',
-            'https://www.instagram.com/photobucket/',
-            'https://www.pinterest.com/photobucket/'
+            'https://instagram.com/photobucket/',
+            'https://pinterest.com/photobucket/'
         ]
     ],
     'oEmbed' => []

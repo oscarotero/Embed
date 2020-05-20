@@ -7,7 +7,7 @@ return [
             'nginx'
         ],
         'date' => [
-            'Sun, 23 Feb 2020 00:01:16 GMT'
+            'Wed, 20 May 2020 17:53:28 GMT'
         ],
         'content-type' => [
             'text/html; charset=utf-8'
@@ -40,20 +40,20 @@ return [
             'strict-origin-when-cross-origin'
         ],
         'etag' => [
-            'W/"3e52147ab76b5c24f93e286a96ac97bf"'
+            'W/"1966253c3958fc4b219dda21f7e8ffd2"'
         ],
         'cache-control' => [
             'max-age=0, private, must-revalidate'
         ],
         'set-cookie' => [
-            'csrftoken=OkgX8%2FAF%2FqUAO6fiHFaDqVhvmFi7BYMNOBMw2aZfBK4DQKAvffsAqbiRWJjc75A6qnxOCSbI43AGvq1i2ke%2BKw%3D%3D; path=/',
-            '_jsfiddle_session=c1NWS25ZVGRpNFhZbjlRZHB6RTFFS2xvWkpjb29QbW5WeFFiTlVMK2NURlFPVmZPaEhuMVo2elFZZktlUzFGSHllY29nUUMyd0p6djQvcWNIMHhMSGVTakZnR1FhWjU5TGdqNEtPZkg5TkJiY3hSTGF3SFJiR0pHcVVwYno2cGNnajVFeFJ4bjlYNzhFTzUzdnNFanJ3PT0tLUFmVENYbkFxMTRFY2RsenMzMEJ2Nmc9PQ%3D%3D--522668cd9209e238ed6b2e8cb7a772b36babd0c8; path=/; HttpOnly'
+            'csrftoken=IWzseyDo2QrSyV8OjV6IOHBXo1HwKxlsTf0R8%2BD8TNElRUraJP1oIWU%2FbW1yx7WuQEH3OiSCLTMkFpWw5AY2TA%3D%3D; path=/',
+            '_jsfiddle_session=%2B2ZStZxP030CQ1ylIZqG4yAMXiaHh4FN3gfjPuPAO3za0ZP7DIWv2Jd8YofvsS6kKOQ2%2F0aHBNkBfjlrL16JNnb%2FUS4AJAeRIyLfqNz8brka7yulpsZ8Sf0OKlv6YeoU7oBkJ%2Bg%2FC5vvXpmVozskro8apVLk87vX15v%2BVDK2k8EjLsCTlca6umSjcn%2BCB0bOmAvGM1669HOZwbqi8MrFLdYKXSmsUebm5XBW8jlRS1t1aHlNl%2FyOBNDEVWtYaK%2Bo2u1rGmqd98kzokjCtHDbt5oxe1PeojCETA%3D%3D--0ta7Uet%2B%2B8laDDde--Jekb8cS%2FPeaN22mQqd66Jw%3D%3D; path=/; HttpOnly'
         ],
         'x-request-id' => [
-            '0575e9d5-9ea6-4dcf-93b1-c56fd2a5e5f1'
+            '0361f7bc-ff71-431d-b207-794a9583e785'
         ],
         'x-runtime' => [
-            '0.023855'
+            '0.028976'
         ],
         'vary' => [
             'Origin'
@@ -63,6 +63,9 @@ return [
         ],
         'Content-Location' => [
             'http://jsfiddle.net/zhm5rjnz/'
+        ],
+        'X-Request-Time' => [
+            '0.690 ms'
         ]
     ],
     'statusCode' => 200,
@@ -82,7 +85,7 @@ return [
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0084ff">
+    <meta name="theme-color" content="#2E71FF">
 
     <script>
       var EditorConfig = {
@@ -91,28 +94,22 @@ return [
           favorite:         "/_make_favourite/",
           media:            "/mooshellmedia/",
           addResource:      "/_add_external_resource/",
-          render:           "//fiddle.jshell.net/zhm5rjnz/show/",
+          render:           "//fiddle.jshell.net/zhm5rjnz/show/?editor_console=",
           saveSettings:     "/_editor_options/",
-          fork:             "/_save/?is_forking",
+          fork:             "/_fork/",
           save:             "/_save/",
           loadDependencies: "/_get_dependencies/{lib_id}/",
-          // exampleURL:    "//jsfiddle.net/zhm5rjnz/",
+          showProfile:      "/_show_profile/"
         },
-        values: {
+        value: {
           html: "",
-          js:   "var processForm = function (data) {\\n    if (data.error) {\\n        console.log(\\\'got error\\\');\\n    }\\n\\n    console.log(\\\'got data\\\');\\n};\\n\\n$.ajax({\\n    url: url\\n})\\n.success(function (data) {\\n        processForm(data);\\n})\\n.fail(function (response, error, status) {\\n    var errorMessage;\\n\\n    try {\\n        errorMessage = JSON.parse(response.responseText);\\n    } catch (e) {\\n        errorMessage = response.responseText;\\n    }\\n\\n    if (typeof errorMessage === \\\'object\\\') {\\n        processForm(errorMessage);\\n    } else {\\n        throw new Error(errorMessage);\\n    }\\n});",
+          js:   "var processForm = function (data) {\\n    if (data.error) {\\n        console.log(\\\'got error\\\');\\n    }\\n\\n    console.log(\\\'got data\\\');\\n};\\n\\n\\$.ajax({\\n    url: url\\n})\\n.success(function (data) {\\n        processForm(data);\\n})\\n.fail(function (response, error, status) {\\n    var errorMessage;\\n\\n    try {\\n        errorMessage = JSON.parse(response.responseText);\\n    } catch (e) {\\n        errorMessage = response.responseText;\\n    }\\n\\n    if (typeof errorMessage === \\\'object\\\') {\\n        processForm(errorMessage);\\n    } else {\\n        throw new Error(errorMessage);\\n    }\\n});",
           css:  ""
         },
         fiddle: {
           id:   "222985940",
           slug: "zhm5rjnz",
-          boilerplate: false,
-          // TODO: Missing
-          // {% if preload_resources %}
-          //   resources: {{ preload_resources|safe }}
-          // {% else %}
-          //   resources: []
-          // {% endif %}
+          boilerplate: false
         },
         panels: {
           html: "html",
@@ -175,57 +172,24 @@ return [
           foldGutter:        true,
           reduceHelloBar:    false,
           codeHints:         false,
+          editorConsole:     true
         }
     </script>
 
-    <style id=\'skeleton-theme-inline\'>*,body,button,html,input,select,textarea{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}a{color:#39464e;text-decoration:none}a:hover{text-decoration:underline}input,select,textarea{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}select{cursor:pointer}blockquote,body,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}abbr,acronym{border:0}::-webkit-input-placeholder{color:#62666b}:-moz-placeholder,::-moz-placeholder{color:#62666b}:-ms-input-placeholder{color:#62666b}.icon{stroke:inherit}a:active,a:focus,button::-moz-focus-inner,button:focus,input[type=button]::-moz-focus-inner,input[type=file]>input[type=button]::-moz-focus-inner,input[type=reset]::-moz-focus-inner,input[type=submit]::-moz-focus-inner,select::-moz-focus-inner{outline:none!important}select:-moz-focusring{color:transparent;text-shadow:0 0 0 #000}.checkboxCont{cursor:pointer}.checkboxCont .checkbox{position:relative;background:rgba(0,0,0,.1);display:inline-block;vertical-align:middle;border-radius:14px;width:24px;height:14px;margin-right:5px;top:-2px;transition:all .15s}.checkboxCont .checkbox:after{content:"";border-radius:12px;position:absolute;top:1px;left:1px;width:12px;height:12px;background:#fff;display:block;transition:left .15s;box-shadow:0 2px 4px 0 rgba(0,0,0,.2),0 0 1px 0 rgba(0,0,0,.21)}.checkboxCont input[type=checkbox]{display:none}.checkboxCont input[type=checkbox]:checked+.checkbox{background:#0084ff}.checkboxCont input[type=checkbox]:checked+.checkbox:after{left:11px}.checkboxCont input[type=checkbox]:disabled+.checkbox{background:rgba(0,0,0,.1)}.checkboxCont input[type=checkbox]:disabled+.checkbox:after{opacity:.5}.checkboxCont small{color:rgba(0,0,0,.3);font-size:inherit}.proBadgeSelf{display:none}.proBadge .proBadgeSelf{display:inline-block;background:#f5ac24;color:#1d2127;padding:0 3px;height:13px;border-radius:2px;line-height:13px;font-size:9px;font-weight:bold;overflow:hidden;position:relative;bottom:-2px;left:3px;text-transform:uppercase}.proBadge .proBadgeSelf:hover{text-decoration:none;background:#f8c86d}#sidebar .proBadgeSelf{color:#1d2127}.groupsList{overflow:auto;max-height:150px;margin-top:10px}.groupsList .privateGroup{height:10px;display:inline-block;padding:2px;border-radius:2px;background:inherit;vertical-align:bottom}.groupsList .privateGroup g{stroke:#8e9194}.groupsList li{margin-bottom:5px}.groupsList li input,.groupsList li span{display:inline-block}.groupsList li span{color:inherit;max-width:140px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;vertical-align:bottom;margin-left:5px}.groupsList label{font-size:13px;cursor:pointer}a{outline:none}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";background:#21262d;padding:0;margin:0;font-size:14px;color:#39464e}#progressbar{height:3px;position:absolute;top:60px;left:0;right:0;z-index:110;pointer-events:none}header{height:60px;background:#1d2127;box-shadow:0 0 5px rgba(29,33,39,0);z-index:100;width:100vw}header .title{position:absolute;top:-9000em}header h1{position:absolute;top:14px;left:10px;z-index:800;transition:all .15s}header h1 a{display:block}header h1 svg{transition:all .15s;position:relative;height:33px;width:46px;stroke:#0084ff}#app-updates{float:left;position:relative;width:20px}#app-updates .bodyCont{opacity:1;transition:all .1s;transform:translateY(0);margin-left:10px;overflow:hidden;height:60px;width:300px}#app-updates .body{color:#fbfbfb;transition:all .1s;background:transparent;padding:14px;border-radius:3px;line-height:1.45em;font-size:13px;position:relative;top:6px;width:300px}#app-updates strong{font-weight:700}#app-updates h3{text-overflow:ellipsis;width:100%;white-space:nowrap;overflow:hidden}#app-updates p{margin-top:10px}#app-updates p a{font-weight:700}#app-updates .updateActions,#app-updates p{pointer-events:none;opacity:0}#app-updates .updateActions{margin-top:12px;text-align:right}#app-updates .updateActions a{color:#8e9194;font-size:12px;padding:3px 6px;border:1px solid transparent;border-radius:4px}#app-updates .updateActions a:hover{border:1px solid hsla(210,3%,57%,.2);text-decoration:none}#app-updates .badge{background:#64b448;color:#fff;font-size:11px;padding:3px 6px;border-radius:3px;margin-right:5px;font-weight:400}#app-updates.hidden .bodyCont,#app-updates:hover .bodyCont{overflow:visible}#app-updates.hidden .body,#app-updates:hover .body{background:#fff;color:#21262d;box-shadow:0 0 1px rgba(57,70,78,.15),0 20px 55px -8px rgba(57,70,78,.25)}#app-updates.hidden h3,#app-updates:hover h3{text-overflow:inherit;white-space:normal;overflow:auto;font-weight:700}#app-updates.hidden .updateActions,#app-updates.hidden p,#app-updates:hover .updateActions,#app-updates:hover p{pointer-events:auto;opacity:1}#app-updates.hidden{transform:translateY(20px)}#app-updates-highlighter,#app-updates.hidden,#app-updates.hidden .updateActions,#app-updates.hidden p{pointer-events:none;opacity:0}#app-updates-highlighter{position:absolute;border:3px solid #64b448;border-radius:5px;transition:all .1s;transform:scale(1.05);z-index:1000}#app-updates-highlighter.show{opacity:1;transform:scale(1)}#layout-container{position:relative;display:grid;grid-template-columns:210px 1fr;grid-template-areas:"sidebar content"}#show-result{height:100vh}#content{grid-area:content;position:relative}#content #toggle-sidebar{position:absolute;left:-10px;top:calc(100vh - 110px);width:15px;height:40px;background:#1d2127;border:1px solid #2e333a;z-index:100;border-radius:2px;display:flex;justify-content:center}#content #toggle-sidebar svg{height:inherit;width:inherit}#content #toggle-sidebar g{stroke:#64676c}#content #toggle-sidebar:hover{border:1px solid #0084ff}#content #toggle-sidebar:hover g{stroke:#e9e9ea}#content #toggle-sidebar:hover:after{content:attr(data-title);display:block;background:#0084ff;color:#fff;border-radius:3px;padding:4px 8px;position:absolute;top:calc(50% - 11px);left:22px;z-index:20;white-space:nowrap}#sidebar{grid-area:sidebar;padding:0;margin:0;font-size:12px;border-right:1px solid #2e333a;background:#21262d;display:flex;flex-direction:column;color:#cfd0d2;box-shadow:0 0 0 rgba(0,0,0,.5);position:relative}#sidebar #s-cont{flex-grow:1;opacity:0;pointer-events:none}#sidebar .userSidebar .userProfile{display:grid;font-size:14px;grid-template-columns:40px 1fr;grid-column-gap:12px}#sidebar .userSidebar .userProfile .profileDetails{display:flex;flex-direction:column;justify-content:center}#sidebar .userSidebar .userProfile .avatar{position:relative}#sidebar .userSidebar .userProfile a{color:#fbfbfb;display:block;font-weight:700}#sidebar .userSidebar .userProfile img{overflow:hidden;border-radius:4px;box-shadow:0 0 0 1px #1d2127,0 0 0 3px #e9e9ea;position:relative;top:1px;left:1px}#sidebar .userSidebar .userProfile .company{font-weight:400;margin-top:4px;color:#8e9194;font-size:12px}#sidebar .userSidebar .userDetails{clear:both;padding-top:6px;color:#fbfbfb}#sidebar .userSidebar .userDetails a{color:#fbfbfb}#sidebar .userSidebar .userDetails li{margin-top:3px}#sidebar .userSidebar.proProfile .userProfile img,#sidebar .userSidebar.teamProfile .userProfile img{box-shadow:0 0 0 1px #1d2127,0 0 0 3px #f5ac24}#sidebar .userSidebar.proProfile .avatar:after,#sidebar .userSidebar.teamProfile .avatar:after{content:"PRO";display:inline-block;background:#f5ac24;color:#1d2127;padding:0 2px;height:13px;border-radius:2px;line-height:13px;font-size:9px;font-weight:bold;overflow:hidden;position:absolute;top:31px;right:-4px;pointer-events:none}#sidebar .userSidebar.teamProfile .userProfile img{box-shadow:0 0 0 1px #1d2127,0 0 0 3px #ff79b5}#sidebar .userSidebar.teamProfile .avatar:after{content:"TEAM";background:#ff79b5}#sidebar .userSidebar.segment{margin:0 20px}#sidebar .userSidebar.body{position:relative;top:4px}#actions{height:60px;font-size:13px;position:relative;z-index:300;margin-left:70px;opacity:0;pointer-events:none;display:grid;grid-template-columns:auto auto}#actions svg{position:relative;height:16px;left:-1px}#actions svg.rightIcon{margin-right:0;margin-left:6px}#actions .actionCont{display:flex}#actions .right{justify-content:flex-end;padding-right:10px}#actions .actionItem{position:relative;margin-right:1px}#actions .actionItem.visible{display:block}#actions .actionItem.hidden{display:none}#actions .actionItem .aiButton,#actions .actionItem .aiButton span,#actions .dropdown .actionItem a.aiButton{height:60px}#actions .actionItem a.aiButton{display:flex;outline:none;text-decoration:none;padding:0 7px;align-items:center;justify-content:center;color:#fbfbfb}#actions .actionItem a.aiButton.selected,#actions .actionItem a.aiButton:hover{box-shadow:inset 0 -1px 0 #0084ff}#actions .actionItem a.aiButton.applyDraft{color:#f36e65}#actions .actionItem a.aiButton.disabled{opacity:.3;pointer-events:none}#actions img{overflow:hidden;border-radius:3px;box-shadow:0 0 0 1px #1d2127,0 0 0 2px #e9e9ea}#actions img.proProfile{box-shadow:0 0 0 1px #1d2127,0 0 0 2px #f5ac24}#actions img.teamProfile{box-shadow:0 0 0 1px #1d2127,0 0 0 2px #ff79b5}#actions .actionItem a.aiButton span{font-size:.9em}#actions .noIcon a.aiButton span{padding:0 0 0 6px;margin-right:0}#actions .actionItem #mobile.aiButton span{margin-right:0}#actions .actionItem a.aiButton span.selected{color:#555;background:#fff}#actions .dropdown .dropdownCont li{line-height:26px}.dropdownCont{position:absolute;z-index:9000;opacity:1;transform:translateY(0);transition:opacity .12s,transform .12s;will-change:opacity,transform}.dropdownCont .dcWrapper{background-color:#fff;width:300px;padding:15px;margin:0;font-size:13px;box-shadow:0 0 1px rgba(57,70,78,.15),0 20px 55px -8px rgba(57,70,78,.25);border-radius:5px;max-height:calc(100vh - 100px);overflow:auto}.dropdownCont .dcWrapper.menu{width:200px;padding:12px 0}.dropdownCont .dcWrapper.menu li{line-height:22px;padding:0 15px 6px}.dropdownCont .dcWrapper.menu li a{color:#39464e;position:relative}.dropdownCont .dcWrapper.menu li.other{border-top:1px solid #ebeef0;padding:6px 15px 0}.dropdownCont .dcWrapper.menu li.other+.other{border-top:none}.dropdownCont .dcWrapper.menu li.other a{color:#abb9c2}.dropdownCont .dcWrapper:before{top:-11px;border-bottom:10px solid rgba(57,70,78,.15)}.dropdownCont .dcWrapper:after,.dropdownCont .dcWrapper:before{display:block;position:absolute;right:20px;vertical-align:middle;content:"";border-left:8px solid transparent;border-right:8px solid transparent;border-style:none double solid;width:0;height:0}.dropdownCont .dcWrapper:after{top:-10px;border-bottom:10px solid #fff}.dropdownCont.center .dcWrapper:after,.dropdownCont.center .dcWrapper:before{left:50%;margin-left:-4px}.dropdownCont.hidden{opacity:0;transform:translateY(10px);pointer-events:none}.twitterCont{padding:10px;display:block;border-top:1px solid #2e333a}#sidebar #keep-us-running{width:300px;color:#fff;padding:10px 15px;position:absolute;bottom:-100px;left:10px;cursor:pointer;pointer-events:none;opacity:0;transition:all .3s;border-radius:5px;background:#1d2127;z-index:5}#sidebar #keep-us-running.color_1{border:3px solid #0084ff}#sidebar #keep-us-running.color_2{border:3px solid #9f78d7}#sidebar #keep-us-running.color_3{border:3px solid #deae51}#sidebar #keep-us-running.color_4{border:3px solid #64b448}#sidebar #keep-us-running.color_5{border:3px solid #de7373}#sidebar #keep-us-running p{font-size:13px;line-height:17px;margin:4px 0}#sidebar #keep-us-running.show{pointer-events:auto;opacity:1;bottom:10px}#sidebar #carbonads{text-align:center}#sidebar #carbonads .carbon-text{clear:both;display:block;padding:10px 0 0;color:#cfd0d2;font-size:12px;line-height:1.5em}#sidebar #carbonads .carbon-poweredby{display:block;color:#8e9194;font-size:.9em;padding:10px 0 0}#hello-bar{max-height:0;background:#0084ff;transition:max-height .15s;overflow:hidden;position:relative;will-change:height;pointer-events:auto;z-index:120}#hello-bar .hbBody{box-sizing:border-box;height:100%;padding:20px 0 20px 150px;color:#fbfbfb;display:grid;grid-template-columns:minmax(200px,1.5fr) minmax(200px,1fr) minmax(200px,1fr);grid-gap:10px}#hello-bar .closeHb{position:absolute;top:65px;left:15px;font-size:13px}#hello-bar .closeHb svg{height:16px;vertical-align:middle}#hello-bar a{color:#fbfbfb}#hello-bar h3{font-weight:600;margin-bottom:15px}#hello-bar li{font-size:13px;line-height:1.42em}#hello-bar .upgradeToPro{display:flex;width:80%;padding:10px 9px;border-radius:5px;transition:all .15s;background:#f6b53c;color:#21262d;box-shadow:0 4px 4px rgba(0,0,0,.1),0 0 1px rgba(0,0,0,.5);margin-top:20px;justify-content:center;align-items:center;flex-direction:column}#hello-bar .upgradeToPro svg{stroke:#21262d;height:20px;margin-right:7px;display:none}#hello-bar .upgradeToPro strong{font-weight:600}#hello-bar .upgradeToPro em{font-size:11px;display:block;margin-top:6px;color:rgba(33,38,45,.8)}#hello-bar .upgradeToPro:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 6px 6px -2px rgba(0,0,0,.2),0 0 1px rgba(0,0,0,.5)}#hello-bar .upgradeToPro:hover strong{text-decoration:underline}#hello-bar .articles li{list-style:disc;margin-left:14px}#hello-bar .articles li span{color:hsla(0,0%,100%,.45);font-size:12px;margin-left:4px}#hello-bar .articles li:last-child{margin-top:10px;font-weight:600;list-style:none;margin-left:0}#hello-bar ul.boilerplates li{margin:0 10px 10px 0;display:inline-flex}#hello-bar ul.boilerplates a{display:block;padding:7px 9px;border-radius:4px;transition:all .15s;background:#fff;color:#21262d;box-shadow:0 4px 4px rgba(0,0,0,.1)}#hello-bar ul.boilerplates a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 6px 6px -2px rgba(0,0,0,.2)}#hello-bar ul.boilerplates a span{background:#64b448;color:#fff;font-size:11px;padding:3px 6px;border-radius:3px;margin-left:5px;font-weight:400}#hello-bar .bpAction{display:block;clear:both;padding-top:5px;font-size:13px}#hello-bar .bpAction svg{width:13px;margin-right:2px}#hello-bar .bpAction.hidden{display:none}body.fullyLoaded #actions,body.fullyLoaded #sidebar #s-cont{opacity:1;pointer-events:auto}body.fullyLoaded #loader{display:none}body.fullyLoaded #loader .loader,body.fullyLoaded #loader .shadow{animation:none}body.noSupport #no-support{display:block}body.noSupport #loader{display:none}body.noSupport #loader .loader,body.noSupport #loader .shadow{animation:none}body.hiddenSidebar #layout-container{grid-template-columns:0 1fr}body.hiddenSidebar #sidebar{display:none}body.hiddenSidebar #content #toggle-sidebar{left:0}body.hiddenSidebar #content #toggle-sidebar svg{transform:rotate(180deg)}.windowSettings{pointer-events:none;opacity:0;will-change:opacity,transform}#loader,#no-support{position:absolute;top:calc(50vh - 30px);left:calc(50% - 60px)}#loader .loader,#no-support .loader{width:120px;height:120px;z-index:100;animation:jump .8s ease-in infinite}#loader .loader path,#no-support .loader path{stroke:#fff}#loader .loader .cloud,#no-support .loader .cloud{fill:#0084ff}#loader .shadow,#no-support .shadow{position:absolute;z-index:-1;top:80px;left:0;display:block;border-radius:100%;height:20px;width:120px;background:#000;opacity:.3;animation:scale-shadow .8s ease-in infinite}@keyframes jump{0%{transform:translateY(0) scale(1.15,.8)}20%{transform:translateY(-35px) scaleY(1.1)}50%{transform:translateY(-50px) scale(1)}80%{transform:translateY(-35px) scale(1)}to{transform:translateY(0) scale(1.15,.8)}}@keyframes scale-shadow{0%{opacity:.3;transform:scale(1)}50%{opacity:.2;transform:scale(.5)}to{opacity:.3;transform:scale(1)}}#no-support{position:absolute;top:calc(50vh - 30px);left:calc(50% - 60px);display:none;color:#fff;text-align:center;font-size:18px}#flash-messages{position:absolute;top:20px;left:0;right:0;z-index:100;display:flex;justify-content:center;transition:all .2s}#flash-messages.hidden{pointer-events:none;opacity:0;transform:translateY(-10px) scale(.95)}#flash-messages li{box-shadow:0 10px 10px rgba(0,0,0,.05);padding:0 30px;height:60px;display:flex;color:#cfd0d2;border-radius:100px;font-weight:500;cursor:pointer;align-items:center;background:#303742}#flash-messages svg{height:30px;margin-right:20px}#flash-messages .success svg{stroke:#64b448}#flash-messages .error svg{stroke:#f36e65}</style>
+    <style id=\'skeleton-theme-inline\'>*,body,button,html,input,select,textarea{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}a{color:#39464e;text-decoration:none}a:hover{text-decoration:underline}input,select,textarea{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}select{cursor:pointer}blockquote,body,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}abbr,acronym{border:0}::-webkit-input-placeholder{color:#616367}:-moz-placeholder,::-moz-placeholder{color:#616367}:-ms-input-placeholder{color:#616367}.icon{stroke:inherit}a:active,a:focus,button::-moz-focus-inner,button:focus,input[type=button]::-moz-focus-inner,input[type=file]>input[type=button]::-moz-focus-inner,input[type=reset]::-moz-focus-inner,input[type=submit]::-moz-focus-inner,select::-moz-focus-inner{outline:none!important}select:-moz-focusring{color:transparent;text-shadow:0 0 0 #000}.checkboxCont{cursor:pointer}.checkboxCont .checkbox{position:relative;background:rgba(0,0,0,.1);display:inline-block;vertical-align:middle;border-radius:14px;width:24px;height:14px;margin-right:5px;top:-2px;transition:all .15s}.checkboxCont .checkbox:after{content:"";border-radius:12px;position:absolute;top:1px;left:1px;width:12px;height:12px;background:#fff;display:block;transition:left .15s;box-shadow:0 2px 4px 0 rgba(0,0,0,.2),0 0 1px 0 rgba(0,0,0,.21)}.checkboxCont input[type=checkbox]{display:none}.checkboxCont input[type=checkbox]:checked+.checkbox{background:#2e71ff}.checkboxCont input[type=checkbox]:checked+.checkbox:after{left:11px}.checkboxCont input[type=checkbox]:disabled+.checkbox{background:rgba(0,0,0,.1)}.checkboxCont input[type=checkbox]:disabled+.checkbox:after{opacity:.5}.checkboxCont small{color:rgba(0,0,0,.3);font-size:inherit}.proBadgeSelf{display:none}.proBadge .proBadgeSelf{display:inline-block;background:#f3ca63;color:#1a1d21;padding:0 3px;height:13px;border-radius:2px;line-height:13px;font-size:9px;font-weight:bold;overflow:hidden;position:relative;bottom:-2px;left:3px;text-transform:uppercase}.proBadge .proBadgeSelf:hover{text-decoration:none;background:#f8e2aa}#sidebar .proBadgeSelf{color:#1a1d21}.groupsList{overflow:auto;max-height:150px;margin-top:10px}.groupsList .privateGroup{height:10px;display:inline-block;padding:2px;border-radius:2px;background:inherit;vertical-align:bottom}.groupsList .privateGroup g{stroke:#8d8f91}.groupsList li{margin-bottom:5px}.groupsList li input,.groupsList li span{display:inline-block}.groupsList li span{color:inherit;max-width:140px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;vertical-align:bottom;margin-left:5px}.groupsList label{font-size:13px;cursor:pointer}a{outline:none}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";background:#1f2227;padding:0;margin:0;font-size:14px;color:#39464e}#progressbar{height:3px;position:absolute;top:60px;left:0;right:0;z-index:110;pointer-events:none}header{height:60px;background:#1a1d21;box-shadow:0 0 5px rgba(26,29,33,0);z-index:100;width:100vw}header .title{position:absolute;top:-9000em}header h1{position:absolute;top:14px;left:10px;z-index:800;transition:all .15s}header h1 a{display:block}header h1 svg{transition:all .15s;position:relative;height:33px;width:46px;stroke:#2e71ff}#app-updates{float:left;position:relative;width:20px}#app-updates .bodyCont{opacity:1;transition:all .1s;transform:translateY(0);margin-left:10px;overflow:hidden;height:60px;width:300px}#app-updates .body{color:#fbfbfb;transition:all .1s;background:transparent;padding:14px;border-radius:3px;line-height:1.45em;font-size:13px;position:relative;top:6px;width:300px}#app-updates strong{font-weight:700}#app-updates h3{text-overflow:ellipsis;width:100%;white-space:nowrap;overflow:hidden}#app-updates p{margin-top:10px}#app-updates p a{font-weight:700}#app-updates .updateActions,#app-updates p{pointer-events:none;opacity:0}#app-updates .updateActions{margin-top:12px;text-align:right}#app-updates .updateActions a{color:#8d8f91;font-size:12px;padding:3px 6px;border:1px solid transparent;border-radius:4px}#app-updates .updateActions a:hover{border:1px solid hsla(210,2%,56%,.2);text-decoration:none}#app-updates .badge{background:#26aa5a;color:#fff;font-size:11px;padding:3px 6px;border-radius:3px;margin-right:5px;font-weight:400}#app-updates.hidden .bodyCont,#app-updates:hover .bodyCont{overflow:visible}#app-updates.hidden .body,#app-updates:hover .body{background:#fff;color:#39464e;box-shadow:0 0 1px rgba(57,70,78,.15),0 20px 55px -8px rgba(57,70,78,.25)}#app-updates.hidden h3,#app-updates:hover h3{text-overflow:inherit;white-space:normal;overflow:auto;font-weight:700}#app-updates.hidden .updateActions,#app-updates.hidden p,#app-updates:hover .updateActions,#app-updates:hover p{pointer-events:auto;opacity:1}#app-updates.hidden{transform:translateY(20px)}#app-updates-highlighter,#app-updates.hidden,#app-updates.hidden .updateActions,#app-updates.hidden p{pointer-events:none;opacity:0}#app-updates-highlighter{position:absolute;border:3px solid #26aa5a;border-radius:5px;transition:all .1s;transform:scale(1.05);z-index:1000}#app-updates-highlighter.show{opacity:1;transform:scale(1)}#layout-container{position:relative;display:grid;grid-template-columns:210px 1fr;grid-template-areas:"sidebar content"}#show-result{height:100vh}#content{grid-area:content;position:relative}#content #toggle-sidebar{position:absolute;left:-10px;top:calc(100vh - 110px);width:15px;height:40px;background:#1a1d21;border:1px solid #2c2f34;z-index:100;border-radius:2px;display:flex;justify-content:center}#content #toggle-sidebar svg{height:inherit;width:inherit}#content #toggle-sidebar g{stroke:#626468}#content #toggle-sidebar:hover{border:1px solid #2e71ff}#content #toggle-sidebar:hover g{stroke:#e9e9e9}#content #toggle-sidebar:hover:after{content:attr(data-title);display:block;background:#2e71ff;color:#fff;border-radius:3px;padding:4px 8px;position:absolute;top:calc(50% - 11px);left:22px;z-index:20;white-space:nowrap}#sidebar{grid-area:sidebar;padding:0;margin:0;font-size:12px;border-right:1px solid #2c2f34;background:#1f2227;display:flex;flex-direction:column;color:#cfd0d1;box-shadow:0 0 0 rgba(0,0,0,.5);position:relative}#sidebar #s-cont{flex-grow:1;opacity:0;pointer-events:none}#sidebar #profile-segment{padding:20px 10px;border-bottom:1px solid #2c2f34}#sidebar #profile-segment.hidden{display:none}#sidebar .userSidebar .userProfile{display:grid;font-size:14px;grid-template-columns:45px 1fr;grid-column-gap:12px}#sidebar .userSidebar .userProfile .profileDetails{display:flex;flex-direction:column;justify-content:center}#sidebar .userSidebar .userProfile .avatar{position:relative}#sidebar .userSidebar .userProfile a{color:#fbfbfb;display:block;font-weight:700}#sidebar .userSidebar .userProfile img{overflow:hidden;border-radius:4px;box-shadow:0 0 0 1px #1a1d21,0 0 0 3px #e9e9e9;position:relative;top:1px;left:1px}#sidebar .userSidebar .userProfile .company{font-weight:400;margin-top:4px;color:#8d8f91;font-size:12px;margin-bottom:10px}#sidebar .userSidebar .userProfile .socialInfo{display:flex;column-gap:4px}#sidebar .userSidebar .userProfile .socialInfo li:not(.more){display:block}#sidebar .userSidebar .userProfile .socialInfo li:not(.more).hidden{display:none}#sidebar .userSidebar .userProfile .socialInfo:hover li.hidden{display:block}#sidebar .userSidebar .userProfile .socialInfo:hover li.more{display:none}#sidebar .userSidebar .userProfile .socialInfo svg{height:13px;width:17px;opacity:.4}#sidebar .userSidebar .userProfile .socialInfo a{display:block;border-radius:3px}#sidebar .userSidebar .userProfile .socialInfo a:hover svg{opacity:1}#sidebar .userSidebar .userDetails{clear:both;padding-top:6px;color:#fbfbfb}#sidebar .userSidebar .userDetails a{color:#fbfbfb}#sidebar .userSidebar .userDetails li{margin-top:3px}#sidebar .userSidebar.proProfile .userProfile img,#sidebar .userSidebar.teamProfile .userProfile img{box-shadow:0 0 0 1px #1a1d21,0 0 0 3px #f3ca63}#sidebar .userSidebar.proProfile .avatar:after,#sidebar .userSidebar.teamProfile .avatar:after{content:"Supporter";display:inline-block;background:#f3ca63;color:#1a1d21;padding:0 2px;height:13px;border-radius:2px;line-height:13px;font-size:9px;font-weight:bold;overflow:hidden;position:absolute;top:37px;left:-2px;width:47px;pointer-events:none;text-align:center}#sidebar .userSidebar.teamProfile .userProfile img{box-shadow:0 0 0 1px #1a1d21,0 0 0 3px #fa777c}#sidebar .userSidebar.teamProfile .avatar:after{content:"TEAM";background:#fa777c}#sidebar .userSidebar.segment{margin:0 20px}#sidebar .userSidebar.body{position:relative;top:4px}#actions{height:60px;font-size:13px;position:relative;z-index:300;margin-left:70px;opacity:0;pointer-events:none;display:grid;grid-template-columns:auto auto}#actions svg{position:relative;height:16px;left:-1px}#actions svg.rightIcon{margin-right:0;margin-left:6px}#actions .actionCont{display:flex}#actions .right{justify-content:flex-end;padding-right:10px}#actions .actionItem{position:relative;margin-right:1px}#actions .actionItem.visible{display:block}#actions .actionItem.hidden{display:none}#actions .actionItem .aiButton,#actions .actionItem .aiButton span,#actions .dropdown .actionItem a.aiButton{height:60px}#actions .actionItem a.aiButton{display:flex;outline:none;text-decoration:none;padding:0 7px;align-items:center;justify-content:center;color:#fbfbfb;position:relative}#actions .actionItem a.aiButton:after{content:"";display:block;width:100%;background:#2e71ff;height:3px;bottom:-1px;left:0;position:absolute;pointer-events:none;border-radius:3px;opacity:0;transition:all .15s;transform:scale(.95)}#actions .actionItem a.aiButton.selected:after,#actions .actionItem a.aiButton:hover:after{opacity:1;transform:scale(1)}#actions .actionItem a.aiButton.disabled{opacity:.3;pointer-events:none}#actions img{overflow:hidden;border-radius:3px;box-shadow:0 0 0 1px #1a1d21,0 0 0 2px #e9e9e9}#actions img.proProfile{box-shadow:0 0 0 1px #1a1d21,0 0 0 2px #f3ca63}#actions img.teamProfile{box-shadow:0 0 0 1px #1a1d21,0 0 0 2px #fa777c}#actions .actionItem a.aiButton span{font-size:.9em}#actions .noIcon a.aiButton span{padding:0 0 0 6px;margin-right:0}#actions .actionItem #mobile.aiButton span{margin-right:0}#actions .actionItem a.aiButton span.selected{color:#555;background:#fff}#actions .dropdown .dropdownCont li{line-height:26px}.dropdownCont{position:absolute;z-index:9000;opacity:1;transform:translateY(0);transition:opacity .12s,transform .12s;will-change:opacity,transform}.dropdownCont .dcWrapper{background-color:#fff;width:300px;padding:15px;margin:0;font-size:13px;box-shadow:0 0 1px rgba(57,70,78,.15),0 20px 55px -8px rgba(57,70,78,.25);border-radius:5px;max-height:calc(100vh - 100px);overflow:auto}.dropdownCont .dcWrapper.menu{width:200px;padding:12px 0}.dropdownCont .dcWrapper.menu li{line-height:22px;padding:0 15px 6px}.dropdownCont .dcWrapper.menu li a{color:#39464e;position:relative}.dropdownCont .dcWrapper.menu li.other{border-top:1px solid #e9e9e9;padding:6px 15px 0}.dropdownCont .dcWrapper.menu li.other+.other{border-top:none}.dropdownCont .dcWrapper.menu li.other a{color:#8d8f91}.dropdownCont .dcWrapper:before{top:-11px;border-bottom:10px solid rgba(57,70,78,.15)}.dropdownCont .dcWrapper:after,.dropdownCont .dcWrapper:before{display:block;position:absolute;right:20px;vertical-align:middle;content:"";border-left:8px solid transparent;border-right:8px solid transparent;border-style:none double solid;width:0;height:0}.dropdownCont .dcWrapper:after{top:-10px;border-bottom:10px solid #fff}.dropdownCont.center .dcWrapper:after,.dropdownCont.center .dcWrapper:before{left:50%;margin-left:-4px}.dropdownCont.hidden{opacity:0;transform:translateY(10px);pointer-events:none}.twitterCont{padding:10px;display:block;border-top:1px solid #2c2f34}#sidebar #support-jsfiddle{color:#fff;padding:15px;background:#1a1d21;border-top:3px solid #f3ca63;line-height:18px;position:absolute;bottom:-20px;left:0;right:0;opacity:0;pointer-events:none;transition:all .15s}#sidebar #support-jsfiddle p{font-size:13px;line-height:17px;margin:4px 0;color:#cfd0d1}#sidebar #support-jsfiddle h3{font-size:13px}#sidebar #support-jsfiddle a{background:#f3ca63;padding:6px 12px;display:inline-block;color:#1a1d21;font-weight:600;border-radius:3px;margin-top:10px}#sidebar #support-jsfiddle.show{bottom:0;left:0;right:0;opacity:1;pointer-events:auto}#sidebar #carbonads{text-align:center}#sidebar #carbonads .carbon-text{clear:both;display:block;padding:10px 0 0;color:#cfd0d1;font-size:12px;line-height:1.5em}#sidebar #carbonads .carbon-poweredby{display:block;color:#8d8f91;font-size:.9em;padding:10px 0 0}#hello-bar{max-height:0;background:#2e71ff;transition:max-height .15s;overflow:hidden;position:relative;will-change:height;pointer-events:auto;z-index:120}#hello-bar .hbBody{box-sizing:border-box;height:100%;padding:20px 0 20px 150px;color:#fbfbfb;display:grid;grid-template-columns:minmax(200px,1.5fr) minmax(200px,1fr) minmax(200px,1fr);grid-gap:10px}#hello-bar .closeHb{position:absolute;top:65px;left:15px;font-size:13px}#hello-bar .closeHb svg{height:16px;vertical-align:middle}#hello-bar a{color:#fbfbfb}#hello-bar h3{font-weight:600;margin-bottom:15px}#hello-bar li{font-size:13px;line-height:1.42em}#hello-bar .upgradeToPro{display:flex;width:90%;padding:10px 9px;border-radius:5px;transition:all .15s;background:#f3ca63;color:#39464e;box-shadow:0 4px 4px rgba(0,0,0,.1),0 0 1px rgba(0,0,0,.5);margin-top:20px;justify-content:center;align-items:center;flex-direction:column}#hello-bar .upgradeToPro svg{stroke:#39464e;height:20px;margin-right:7px;display:none}#hello-bar .upgradeToPro strong{font-size:13px;font-weight:600;text-align:center}#hello-bar .upgradeToPro em{font-size:11px;display:block;margin-top:6px;color:rgba(57,70,78,.8)}#hello-bar .upgradeToPro:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 6px 6px -2px rgba(0,0,0,.2),0 0 1px rgba(0,0,0,.5)}#hello-bar .upgradeToPro:hover strong{text-decoration:underline}#hello-bar .articles li{list-style:disc;margin-left:14px}#hello-bar .articles li span{color:hsla(0,0%,100%,.45);font-size:12px;margin-left:4px}#hello-bar .articles li:last-child{margin-top:10px;font-weight:600;list-style:none;margin-left:0}#hello-bar ul.boilerplates li{margin:0 10px 10px 0;display:inline-flex}#hello-bar ul.boilerplates a{display:block;padding:7px 9px;border-radius:4px;transition:all .15s;background:#fff;color:#39464e;box-shadow:0 4px 4px rgba(0,0,0,.1)}#hello-bar ul.boilerplates a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 6px 6px -2px rgba(0,0,0,.2)}#hello-bar ul.boilerplates a span{background:#70d18c;color:#fff;font-size:11px;padding:3px 6px;border-radius:3px;margin-left:5px;font-weight:400}#hello-bar .bpAction{display:block;clear:both;padding-top:5px;font-size:13px}#hello-bar .bpAction svg{width:13px;margin-right:2px}#hello-bar .bpAction.hidden{display:none}body.fullyLoaded #actions,body.fullyLoaded #sidebar #s-cont{opacity:1;pointer-events:auto}body.fullyLoaded #loader{display:none}body.fullyLoaded #loader .loader,body.fullyLoaded #loader .shadow{animation:none}body.noSupport #no-support{display:block}body.noSupport #loader{display:none}body.noSupport #loader .loader,body.noSupport #loader .shadow{animation:none}body.hiddenSidebar #layout-container{grid-template-columns:0 1fr}body.hiddenSidebar #sidebar{display:none}body.hiddenSidebar #content #toggle-sidebar{left:0}body.hiddenSidebar #content #toggle-sidebar svg{transform:rotate(180deg)}.windowSettings{pointer-events:none;opacity:0;will-change:opacity,transform}#loader,#no-support{position:absolute;top:calc(50vh - 30px);left:calc(50% - 60px)}#loader .loader,#no-support .loader{width:120px;height:120px;z-index:100;animation:jump .8s ease-in infinite}#loader .loader path,#no-support .loader path{stroke:#fff}#loader .loader .cloud,#no-support .loader .cloud{fill:#2e71ff}#loader .shadow,#no-support .shadow{position:absolute;z-index:-1;top:80px;left:0;display:block;border-radius:100%;height:20px;width:120px;background:#000;opacity:.3;animation:scale-shadow .8s ease-in infinite}@keyframes jump{0%{transform:translateY(0) scale(1.15,.8)}20%{transform:translateY(-35px) scaleY(1.1)}50%{transform:translateY(-50px) scale(1)}80%{transform:translateY(-35px) scale(1)}to{transform:translateY(0) scale(1.15,.8)}}@keyframes scale-shadow{0%{opacity:.3;transform:scale(1)}50%{opacity:.2;transform:scale(.5)}to{opacity:.3;transform:scale(1)}}#no-support{position:absolute;top:calc(50vh - 30px);left:calc(50% - 60px);display:none;color:#fff;text-align:center;font-size:18px}#flash-messages{position:absolute;top:20px;left:0;right:0;z-index:100;display:flex;justify-content:center;opacity:1;transition:all .2s;will-change:opacity,transform}#flash-messages.hidden{pointer-events:none;opacity:0;transform:translateY(-10px) scale(.95)}#flash-messages li{box-shadow:0 10px 10px rgba(0,0,0,.05);padding:0 30px;height:60px;display:flex;color:#cfd0d1;border-radius:100px;font-weight:500;cursor:pointer;align-items:center;background:#2f333b}#flash-messages.draft li{cursor:default}#flash-messages .flashActions{margin-left:10px}#flash-messages .flashActions a{padding:8px 10px;background:#1f2227;border-radius:4px;margin-left:5px;color:#8d8f91;font-size:12px}#flash-messages .flashActions a:hover{color:#fbfbfb}#flash-messages svg{height:30px;margin-right:20px}#flash-messages .success svg{stroke:#70d18c}#flash-messages .error svg{stroke:#ff4d4d}#flash-messages .warning svg{stroke:#f3ca63}</style>
 
-    <!-- <link id="skeleton-theme" rel="stylesheet" type="text/css" href="/css/dist-skeleton-dark.css?7382cf1806ed845e069761a6f35cc37de0745663"> -->
+    <!-- <link id="skeleton-theme" rel="stylesheet" type="text/css" href="/css/dist-skeleton-dark.css?54d2506e57ddb1244f0ae5f87ebde5395fc29782"> -->
 
     <!-- 
-      <link rel="stylesheet" type="text/css" href="/css/light.css?7382cf1806ed845e069761a6f35cc37de0745663">
+      <link rel="stylesheet" type="text/css" href="/css/light.css?54d2506e57ddb1244f0ae5f87ebde5395fc29782">
      -->
-
-      <!-- <script>
-    (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');
-
-    var GA_LOCAL_STORAGE_KEY = \'ga:clientId\';
-    if (window.localStorage) {
-      ga(\'create\', \'UA-366077-13\', {
-        \'storage\': \'none\',
-        \'clientId\': localStorage.getItem(GA_LOCAL_STORAGE_KEY)
-      });
-      ga(function(tracker) {
-        localStorage.setItem(GA_LOCAL_STORAGE_KEY, tracker.get(\'clientId\'));
-      });
-      ga(\'send\', \'pageview\', \'/[fiddle]/\'); // where `url_structure` is for example `/[user]/[fiddle]/[revision]/embedded/js,css/`
-    }
-  </script> -->
-
-  <!-- Fathom - simple website analytics -->
-  <script>
-  (function(f, a, t, h, o, m){
-  	a[h]=a[h]||function(){
-  		(a[h].q=a[h].q||[]).push(arguments)
-  	};
-  	o=f.createElement(\'script\'),
-  	m=f.getElementsByTagName(\'script\')[0];
-  	o.async=1; o.src=t; o.id=\'fathom-script\';
-  	m.parentNode.insertBefore(o,m)
-  })(document, window, \'//jsfiddle.usesfathom.com/tracker.js\', \'fathom\');
-  fathom(\'trackPageview\');
-  </script>
-  <!-- / Fathom -->
 
 
     <link rel="icon" href="/img/favicon.png">
 
     <title>Edit fiddle - JSFiddle - Code Playground</title>
   </head>
-  <body data-skeleton-url="/css/dist-skeleton-dark.css?7382cf1806ed845e069761a6f35cc37de0745663">
+  <body data-skeleton-url="/css/dist-skeleton-dark.css?54d2506e57ddb1244f0ae5f87ebde5395fc29782">
     <div id="hello-bar">
   <a class="closeHb" href="#">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>Close
@@ -268,11 +232,11 @@ return [
         <li>📙 <a href="https://docs.jsfiddle.net" target="_blank" rel="noopener">Docs</a></li>
         <li>🎛 <a href="http://status.jsfiddle.net" target="_blank" rel="noopener">Service status</a></li>
       </ul>
-        <a class="upgradeToPro" href="/pro" target="_blank">
+        <a class="upgradeToPro" href="/extra/" target="_blank">
           <svg version="1.1" viewBox="0 0 24 24">
             <path d="M12,2l3.09,6.26l6.91,1.01l-5,4.87l1.18,6.88l-6.18,-3.25l-6.18,3.25l1.18,-6.88l-5,-4.87l6.91,-1.01l3.09,-6.26Z" stroke-linecap="round" stroke-width="1.8" fill="none" stroke-linejoin="round"></path>
           </svg>
-          <strong>Upgrade to PRO</strong>
+          <strong>Support JSFiddle and get extra features</strong>
           <em>Groups, Private fiddles, Ad-free &amp; more</em>
         </a>
     </section>
@@ -297,9 +261,8 @@ return [
 
     <!-- <h1>Test your JavaScript, CSS, HTML or CoffeeScript online with JSFiddle code editor.</h1> -->
     <!-- <h2>online javascript editor, testing javascript online, online ide, online code editor, html, css, coffeescript, scss online editor</h2> -->
-    <form method="post" id="show-result" target="result" action="http://fiddle.jshell.net/_display/">
-      <input type="hidden" name="csrfmiddlewaretoken" value="OkgX8/AF/qUAO6fiHFaDqVhvmFi7BYMNOBMw2aZfBK4DQKAvffsAqbiRWJjc75A6qnxOCSbI43AGvq1i2ke+Kw==" />
-<input type="hidden" name="authenticity_token" value="OkgX8/AF/qUAO6fiHFaDqVhvmFi7BYMNOBMw2aZfBK4DQKAvffsAqbiRWJjc75A6qnxOCSbI43AGvq1i2ke+Kw==" />
+    <form method="post" id="show-result" target="result" action="http://fiddle.jshell.net/_display/" autocomplete="off">
+      <input type="hidden" name="authenticity_token" value="IWzseyDo2QrSyV8OjV6IOHBXo1HwKxlsTf0R8+D8TNElRUraJP1oIWU/bW1yx7WuQEH3OiSCLTMkFpWw5AY2TA==" />
 
       <header>
         <h1>
@@ -307,7 +270,7 @@ return [
           <div class="changelog-badge">
             <a title="JSFiddle" href="/">
               <svg width="46px" height="33px" viewBox="0 0 46 33">
-                <g class="asd" stroke-width="1.6" fill="none" fill-rule="evenodd">
+                <g stroke-width="1.8" fill="none" fill-rule="evenodd">
                   <path d="M23.4888889,20.543316 C21.4404656,18.4187374 19.0750303,15.6666667 16.4832014,15.6666667 C13.8721947,15.6666667 11.7555556,17.6366138 11.7555556,20.0666667 C11.7555556,22.4967196 13.8721947,24.4666667 16.4832014,24.4666667 C18.8347252,24.4666667 19.9845474,23.0125628 20.6429148,22.312473" id="Oval-1" stroke-linecap="round"></path>
                   <path d="M22.5111111,19.5900174 C24.5595344,21.7145959 26.9249697,24.4666667 29.5167986,24.4666667 C32.1278053,24.4666667 34.2444444,22.4967196 34.2444444,20.0666667 C34.2444444,17.6366138 32.1278053,15.6666667 29.5167986,15.6666667 C27.1652748,15.6666667 26.0154526,17.1207706 25.3570852,17.8208603" id="Oval-1-Copy" stroke-linecap="round"></path>
                   <path d="M45,22.7331459 C45,19.1499462 42.7950446,16.079593 39.6628004,14.7835315 C39.6774469,14.5246474 39.7003932,14.2674038 39.7003932,14.0035978 C39.7003932,6.82243304 33.8412885,1 26.611593,1 C21.3985635,1 16.9102123,4.03409627 14.8051788,8.41527616 C13.7828502,7.62878013 12.503719,7.15547161 11.1134367,7.15547161 C7.77825654,7.15547161 5.07450503,9.84159999 5.07450503,13.1544315 C5.07450503,13.7760488 5.16938207,14.3779791 5.3477444,14.9418479 C2.74863428,16.4787471 1,19.2867709 1,22.5105187 C1,27.3287502 4.89630545,31.2367856 9.72803666,31.31094 L36.3341301,31.3109406 C41.1201312,31.3406346 45,27.4870665 45,22.7331459 L45,22.7331459 Z" stroke-linejoin="round"></path>
@@ -360,28 +323,46 @@ return [
 <script>
   var updates = [
     {
+      id: 23,
+      badge: "Update",
+      title: "Evaluate code into the console",
+      body:  "Custom Console beta is getting more stable and feature-rich. Just added the ability to evaluate code in the console.",
+      highlight: {
+        target: "#console"
+      }
+    },
+    {
+      id: 22,
+      badge: "New",
+      title: "Console in the editor",
+      body:  "Introducing the first beta of the editor console - it\'s going to show you logs, warnings, errors without the need of opening full devtools.<br><br> Console is avaialble for all users during beta, after that it\'ll be available for JSFiddle supporters.",
+      highlight: {
+        target: "*[data-popover-trigger=\'editor-settings\']"
+      }
+    },
+    {
+      id: 21,
+      badge: "New",
+      title: "More user\'s social links (Dev.to, SO...)",
+      body:  "You can add more of your social links `Settings / Social Media`, for Dev.to, Stack Overflow and Medium. These will be displayed on the profile section in Editor\'s sidebar and your public profile.",
+    },
+    {
+      id: 20,
+      badge: "Update",
+      title: "Refactored Unsaved Drafts feature",
+      body:  "Unsaved drafts feature is completely rewritten with 100% fewer bugs and 10x more maintainable codebase – as the author of the previous one, I had hard times figuring out what it does 🥴",
+    },
+    {
+      id: 19,
+      badge: "Update",
+      title: "Load Mode is retired",
+      body:  "Load-modes such as: domready, onload, bottom Body, bottom Head have been retired. Very little users used them, and caused confusion to new devs. All fiddles will now run in a single, safe load mode.",
+    },
+    {
       id: 18,
       badge: "New",
       title: "PRO features",
-      body:  "PRO account introduces Private fiddles, Groups and private groups (with global default privacy), no ads, Console (soon). <a href=\'/pro\' target=\'_new\'>Upgrade to PRO</a>",
-    },
-    {
-      id: 17,
-      badge: "Update",
-      title: "Tidy action per panel",
-      body:  "Tidying action is now a part of the code panel (right top, after hovering the panel) instead of being a global action tidying all three panels at once.",
-    },
-    {
-      id: 16,
-      badge: "Update",
-      title: "Persistent editor settings + dark UI",
-      body:  "Editor settings are now stored as a part of your profile, so they\'re stay the same across different browsers. Anonymous\' users settings will persist only for a browser session. The light theme has been retired since it was used by a low percentage of the userbase.",
-    },
-    {
-      id: 15,
-      badge: "New",
-      title: "Interface in different languages",
-      body:  "JSFiddle now speaks English, Polish, Japanese and Hindi! We\'ll be adding more languages soon.",
+      body:  "PRO account introduces Private fiddles, Groups and private groups (with global default privacy), no ads, Console (soon). <a href=\'/extra/\' target=\'_new\'>Upgrade to PRO</a>",
     }
   ]
 
@@ -493,10 +474,6 @@ return [
   </nav>
 
   <ul class="actionCont dropdown right">
-  <li class="actionItem hidden draftTriggerCont">
-    <a class="aiButton dropdownTrigger applyDraft" href="#" data-popover-trigger="draft">Unsaved draft</a>
-  </li> <!-- /actionItem -->
-
   <li class="actionItem">
     <a class="aiButton dropdownTrigger" href="#" title="Editor settings" data-popover-trigger="editor-settings">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
@@ -508,18 +485,6 @@ return [
 
 
 </ul>
-
-<div class="dropdownCont hidden" data-popover-ref="draft" data-popover-position="left">
-  <div class="dcWrapper diffCont">
-    <h4>Diff between the <strong>saved</strong> and <strong>locally drafted</strong> fiddle:</h4>
-    <div class="diffPanels">
-      <div class="diffWrap" id="diff-html"></div>
-      <div class="diffWrap" id="diff-js"></div>
-      <div class="diffWrap" id="diff-css"></div>
-    </div> <!-- /diffCont -->
-    <p><a class="apply" href="#" id="apply-draft">Apply local draft version</a> or <a href="#" id="discard-draft">discard it</a></p>
-  </div> <!-- /dcWrapper -->
-</div> <!-- /dropdownCont -->
 
 <div class="dropdownCont hidden" data-popover-ref="editor-settings" data-popover-position="left">
   <div class="dcWrapper editorSettings">
@@ -560,6 +525,24 @@ return [
           Tabs (rows)
         </label>
       </div>
+
+      <h3>Console</h3>
+      <div class="fieldsCont">
+        <p class="proBadge">
+          <label class="checkboxCont ">
+            <input type="checkbox" name="editorConsole">
+            <span class="checkbox"></span>
+            Console in the editor <small>(beta)</small>
+          </label>
+        </p>
+        <p>
+          <label class="checkboxCont">
+            <input type="checkbox" name="clearConsole">
+            <span class="checkbox"></span>
+            Clear console on run
+          </label>
+        </p>
+      </div> <!-- /fieldsCont -->
 
       <h3>General</h3>
       <div class="fieldsCont">
@@ -672,13 +655,6 @@ return [
             <input type="checkbox" name="autoCloseBrackets" checked>
             <span class="checkbox"></span>
             Auto-close brackets
-          </label>
-        </p>
-        <p>
-          <label class="checkboxCont">
-            <input type="checkbox" name="clearConsole">
-            <span class="checkbox"></span>
-            Clear console on run
           </label>
         </p>
         <p>
@@ -813,7 +789,9 @@ return [
         <main id="layout-container">
           <div id="sidebar">
             <section id="s-cont">
-              
+              <div id="profile-segment" class="hidden">
+                
+              </div>
               <div class="sidebarItem">
   <h3 class="toggler" title="Posted on 04 12 2014">
     Fiddle meta
@@ -831,7 +809,7 @@ return [
         <input type="checkbox" name="is_private" value="1"  disabled>
         <span class="checkbox"></span>
         Private fiddle
-        <a class="proBadgeSelf" href="/pro" target="_blank">Pro</a>
+        <a class="proBadgeSelf" href="/extra/" target="_blank">Extra</a>
       </label>
     </p>
   </div> <!-- /body -->
@@ -839,7 +817,7 @@ return [
 
               <div class="sidebarItem">
   <h3 class="toggler proBadge">
-    Groups <a class="proBadgeSelf" href="/pro" target="_blank">Pro</a>
+    Groups <a class="proBadgeSelf" href="/extra/" target="_blank">Extra</a>
   </h3>
   <div class="body">
     <ul class="groupsList toggleGroupPrivacy">
@@ -850,7 +828,8 @@ return [
   </div> <!-- /body -->
 </div> <!-- /sidebarItem -->
 
-<script src="/js/Groups.js?7382cf1806ed845e069761a6f35cc37de0745663"></script>
+<script src="/js/Groups.js?54d2506e57ddb1244f0ae5f87ebde5395fc29782"></script>
+
               <script type="text/javascript">
   var resources = []
 </script>
@@ -866,10 +845,12 @@ return [
     </ul>
 
     <div id="external-resources-form">
-      <input id="external_resource" type="text" name="q" value="" placeholder="JavaScript/CSS URL">
-      <a id="add_external_resource" class="submit" href="#" title="Add resource">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-      </a>
+      <p>
+        <input id="external_resource" type="text" name="q" value="" placeholder="JavaScript/CSS URL">
+        <a id="add_external_resource" class="submit" href="#" title="Add resource">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        </a>
+      </p>
     </div>
     <input type="hidden" value="" id="external_resources_id" name="add_external_resources">
 
@@ -948,10 +929,10 @@ return [
     <script async type="text/javascript" src="//crbcdn.jsfiddle.net/carbon.js?serve=CKYIEKQ7&placement=jsfiddlenet&amp;cd=crbsrv.jsfiddle.net" id="_carbonads_js"></script>
 </div>
 
-<div id="keep-us-running">
-  <p>Help keep us running.</p>
-  <p>If you don\'t mind tech-related ads (no tracking or remarketing), and want to keep us running, whitelist JSFiddle in your blocker.</p>
-  <p>Thank you! ✌🏻🐞❤️</p>
+<div id="support-jsfiddle">
+  <h3>Support the development of JSFiddle and get extra features ✌🏻</h3>
+  <!-- <p>We\'ll always be free, but for our loyal users we also have some additional stuff:</p> -->
+  <a href="/extra/">Become a supporter</a>
 </div>
 
               </section>
@@ -1021,6 +1002,8 @@ return [
 <div class="panelExtrasChoice">
   <div class="selectCont">
     <select name="js_lib" id="js_lib">
+        <optgroup label="Alpine.js">
+          <option value="409" >Alpine.js 2.1.2</option>
         <optgroup label="AngularJS">
           <option value="137" >AngularJS 1.1.1</option>
           <option value="180" >AngularJS 1.2.1</option>
@@ -1205,19 +1188,6 @@ return [
   </ul>
 </div>
 
-<h3>Load type</h3>
-<div class="selectCont">
-  <select name="js_wrap" id="id_js_wrap">
-      <option value="l" selected>On Load</option>
-      <option value="d" >On DOM Ready</option>
-      <option value="h" >No wrap - bottom of &lt;head&gt;</option>
-      <option value="b" >No wrap - bottom of &lt;body&gt;</option>
-  </select>
-  <label>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
-  </label>
-</div>
-
 <h3>Framework &lt;script&gt; attribute</h3>
 <p class="libraryTagAttributes">
   <label>
@@ -1257,6 +1227,17 @@ return [
           </div> <!-- #content -->
 
           
+          <ul id="flash-messages" class="draft hidden">
+  <li class="warning">
+    <?xml version="1.0" encoding="UTF-8"?><svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke-linecap="round" stroke-width="2" fill="none" stroke-linejoin="round"><polyline points="23,4 23,10 17,10"></polyline><path d="M20.49 15l8.16053e-09-2.30983e-08c-1.65578 4.68667-6.79735 7.1437-11.484 5.48792 -4.68667-1.65578-7.1437-6.79735-5.48792-11.484 1.65578-4.68667 6.79735-7.1437 11.484-5.48792 1.26714.447675 2.41794 1.17344 3.36792 2.12402l4.63 4.36"></path></g></svg>
+    This fiddle has previously unsaved changes.
+    <span class="flashActions">
+      <a id="apply-draft" href="#">Apply changes</a>
+      <a id="discard-draft" href="#">Discard</a>
+    </span>
+  </li>
+</ul>
+
         </main> <!-- #layout-container -->
 
       <div id="loader">
@@ -1285,8 +1266,6 @@ return [
     <script>
       window.addEventListener("DOMContentLoaded", function(){
         var loadEditor = function(){
-          var csrfToken = Cookie.read("csrftoken")
-
           Layout.skin = "light"
 
           $extend(Layout, new Events())
@@ -1303,9 +1282,9 @@ return [
           document.body.classList.add("fullyLoaded")
         }
 
-        var themeHref = "/css/dist-editor-dark.css?7382cf1806ed845e069761a6f35cc37de0745663"
+        var themeHref = "/css/dist-editor-dark.css?54d2506e57ddb1244f0ae5f87ebde5395fc29782"
         var script = document.createElement("script")
-        script.src = "/js/_dist-editor.js?7382cf1806ed845e069761a6f35cc37de0745663"
+        script.src = "/js/_dist-editor.js?54d2506e57ddb1244f0ae5f87ebde5395fc29782"
 
         var styleEditor    = document.createElement("link")
         styleEditor.rel    = "stylesheet"
@@ -1331,6 +1310,14 @@ return [
     </script>
 
     
+
+      <script src="//cdn.usefathom.com/script.js" site="UFKSJF" honor-dnt="true" auto="false"></script>
+  <script>
+    fathom.trackPageview({
+      url: "/[fiddle]/"
+    })
+  </script>
+
   </body>
 </html>
 '

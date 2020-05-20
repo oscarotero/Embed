@@ -3,6 +3,12 @@ declare(strict_types = 1);
 
 return [
     'headers' => [
+        'connection' => [
+            'keep-alive'
+        ],
+        'content-length' => [
+            '508'
+        ],
         'server' => [
             'nginx'
         ],
@@ -25,13 +31,13 @@ return [
             'max-age=60'
         ],
         'expires' => [
-            'Sat, 22 Feb 2020 23:48:08 GMT'
+            'Wed, 20 May 2020 17:55:14 GMT'
         ],
         'last-modified' => [
-            'Sat, 22 Feb 2020 22:51:13 GMT'
+            'Wed, 20 May 2020 15:34:45 GMT'
         ],
         'etag' => [
-            '"58d1fdb3cc1df11ca369d13ad9bc8163d962d6b3"'
+            '"4ab47f1c1898e33bfd6a24bea5d5504f8243e4a9"'
         ],
         'x-ua-compatible' => [
             'IE=edge'
@@ -55,23 +61,17 @@ return [
             '1.1 varnish',
             '1.1 varnish'
         ],
-        'content-length' => [
-            '508'
-        ],
         'accept-ranges' => [
             'bytes'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:47:08 GMT'
+            'Wed, 20 May 2020 17:54:14 GMT'
         ],
         'age' => [
             '0'
         ],
-        'connection' => [
-            'keep-alive'
-        ],
         'x-served-by' => [
-            'cache-bwi5129-BWI, cache-mad22044-MAD'
+            'cache-bwi5134-BWI, cache-mad22037-MAD'
         ],
         'x-cache' => [
             'MISS, MISS'
@@ -80,13 +80,16 @@ return [
             '0, 0'
         ],
         'x-timer' => [
-            'S1582415228.961000,VS0,VE117'
+            'S1589997255.810872,VS0,VE121'
         ],
         'vary' => [
             'User-Agent,Accept-Encoding'
         ],
         'Content-Location' => [
             'https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F235352744'
+        ],
+        'X-Request-Time' => [
+            '0.279 ms'
         ]
     ],
     'statusCode' => 200,

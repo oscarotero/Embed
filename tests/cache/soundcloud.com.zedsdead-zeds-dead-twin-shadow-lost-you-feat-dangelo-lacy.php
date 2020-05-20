@@ -12,6 +12,10 @@ return [
         'connection' => [
             'keep-alive'
         ],
+        'set-cookie' => [
+            'sc_anonymous_id=489808-615005-184726-353352; path=/; expires=Sat, 18 May 2030 17:54:26 GMT; domain=.soundcloud.com',
+            'sc_anonymous_id=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=.soundcloud.com'
+        ],
         'x-pants' => [
             'distant-towel'
         ],
@@ -25,10 +29,10 @@ return [
             'SAMEORIGIN'
         ],
         'server-timing' => [
-            'rollouts; dur=3.867335; desc="api-v2/rollouts", geoip; dur=0.976347; desc="geoip/geoip", experiments; dur=3.915545; desc="api-v2/experiments", resolve; dur=112.086176; desc="api-v2/resolve", privacySettings; dur=3.963865; desc="api-v2/privacySettings", geoip; dur=1.122598; desc="geoip/geoip", user; dur=37.043566; desc="api-v2/user", trackComments; dur=87.310552; desc="api-v2/trackComments"'
+            'rollouts; dur=3.236976; desc="api-v2/rollouts", resolve; dur=100.414287; desc="api-v2/resolve", privacySettings; dur=3.679374; desc="api-v2/privacySettings", geoip; dur=1.440814; desc="geoip/geoip", user; dur=23.14264; desc="api-v2/user", trackComments; dur=83.386496; desc="api-v2/trackComments"'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:47:16 GMT'
+            'Wed, 20 May 2020 17:54:26 GMT'
         ],
         'strict-transport-security' => [
             'max-age=63072000'
@@ -43,16 +47,19 @@ return [
             'Miss from cloudfront'
         ],
         'via' => [
-            '1.1 f4aa73a94067eadbec8e3dbb21c8d196.cloudfront.net (CloudFront)'
+            '1.1 412e8539000b66b7a10080baff1d5411.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
             'MAD51-C1'
         ],
         'x-amz-cf-id' => [
-            'j6ZqFa8z1ThZtrUmPpYwJLDq_SynuUj6OEPBaa62F3_xirozHKkK5w=='
+            'DirI68XOZqprRu1ggtW0GE1xE7QQqMhmTdR1mGSuYFa33TPNBBVsWg=='
         ],
         'Content-Location' => [
             'https://soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy'
+        ],
+        'X-Request-Time' => [
+            '0.422 ms'
         ]
     ],
     'statusCode' => 200,
@@ -120,7 +127,7 @@ www.twitter.com/whoszed
 www.instagram.com/zedsdeadofficial
 
 Twin Shadow
-www.facebook.com/twnshdw"><meta property="twitter:player" content="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F150745932&amp;auto_play=false&amp;show_artwork=true&amp;visual=true&amp;origin=twitter"><meta property="twitter:player:height" content="400"><meta property="twitter:player:width" content="435"><meta property="twitter:image" content="https://i1.sndcdn.com/artworks-01UkaDup3FaN-0-t500x500.jpg"><meta property="twitter:card" content="player"><meta property="twitter:app:url:googleplay" content="soundcloud://sounds:150745932"><meta property="twitter:app:url:iphone" content="soundcloud://sounds:150745932"><meta property="twitter:app:url:ipad" content="soundcloud://sounds:150745932"><meta property="al:ios:app_name" content="SoundCloud"><meta property="al:ios:app_store_id" content="336353151"><meta property="al:android:app_name" content="SoundCloud"><meta property="al:android:package" content="com.soundcloud.android"><meta property="og:type" content="music.song"><meta property="og:url" content="https://soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy"><meta property="og:title" content="Lost You (feat. Twin Shadow &amp; D&#39;Angelo Lacy)"><meta property="og:image" content="https://i1.sndcdn.com/artworks-01UkaDup3FaN-0-t500x500.jpg"><meta property="og:image:width" content="500"><meta property="og:image:height" content="500"><meta property="og:description" content="MUSIC VIDEO : https://www.youtube.com/watch?v=VJm7IPrBmLY
+www.facebook.com/twnshdw"><meta property="twitter:player" content="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F150745932&amp;auto_play=false&amp;show_artwork=true&amp;visual=true&amp;origin=twitter"><meta property="twitter:player:height" content="400"><meta property="twitter:player:width" content="435"><meta property="twitter:image" content="https://i1.sndcdn.com/artworks-JGcGO59zieR7-0-t500x500.jpg"><meta property="twitter:card" content="player"><meta property="twitter:app:url:googleplay" content="soundcloud://sounds:150745932"><meta property="twitter:app:url:iphone" content="soundcloud://sounds:150745932"><meta property="twitter:app:url:ipad" content="soundcloud://sounds:150745932"><meta property="al:ios:app_name" content="SoundCloud"><meta property="al:ios:app_store_id" content="336353151"><meta property="al:android:app_name" content="SoundCloud"><meta property="al:android:package" content="com.soundcloud.android"><meta property="og:type" content="music.song"><meta property="og:url" content="https://soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy"><meta property="og:title" content="Lost You (feat. Twin Shadow &amp; D&#39;Angelo Lacy)"><meta property="og:image" content="https://i1.sndcdn.com/artworks-JGcGO59zieR7-0-t500x500.jpg"><meta property="og:image:width" content="500"><meta property="og:image:height" content="500"><meta property="og:description" content="MUSIC VIDEO : https://www.youtube.com/watch?v=VJm7IPrBmLY
 
 Zeds Dead
 www.facebook.com/zedsdead
@@ -128,7 +135,7 @@ www.twitter.com/whoszed
 www.instagram.com/zedsdeadofficial
 
 Twin Shadow
-www.facebook.com/twnshdw"><meta property="al:web:should_fallback" content="false"><meta property="al:ios:url" content="soundcloud://sounds:150745932"><meta property="al:android:url" content="soundcloud://sounds:150745932"><meta property="soundcloud:user" content="https://soundcloud.com/zedsdead"><meta property="soundcloud:play_count" content="9822734"><meta property="soundcloud:download_count" content="0"><meta property="soundcloud:comments_count" content="2783"><meta property="soundcloud:like_count" content="148082">
+www.facebook.com/twnshdw"><meta property="al:web:should_fallback" content="false"><meta property="al:ios:url" content="soundcloud://sounds:150745932"><meta property="al:android:url" content="soundcloud://sounds:150745932"><meta property="soundcloud:user" content="https://soundcloud.com/zedsdead"><meta property="soundcloud:play_count" content="9847421"><meta property="soundcloud:download_count" content="0"><meta property="soundcloud:comments_count" content="2780"><meta property="soundcloud:like_count" content="148109">
   <link rel="canonical" href="https://soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy"><link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy"><link rel="alternate" type="text/xml+oembed" href="https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Fzedsdead%2Fzeds-dead-twin-shadow-lost-you-feat-dangelo-lacy&amp;format=xml"><link rel="alternate" type="text/json+oembed" href="https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Fzedsdead%2Fzeds-dead-twin-shadow-lost-you-feat-dangelo-lacy&amp;format=json"><link rel="author" href="/zedsdead"><link rel="alternate" href="android-app://com.soundcloud.android/soundcloud/sounds:150745932"><link rel="alternate" href="ios-app://336353151/soundcloud/sounds:150745932">
 
   <meta name="application-name" content="SoundCloud">
@@ -149,7 +156,7 @@ www.facebook.com/twnshdw"><meta property="al:web:should_fallback" content="fals
   <link rel="stylesheet" href="https://style.sndcdn.com/css/interstate-a86f07cf94ae5a496b24.css">
 
   
-  <link rel="stylesheet" href="https://a-v2.sndcdn.com/assets/css/app-e6a4ca6dd73e4e13bb25.css">
+  <link rel="stylesheet" href="https://a-v2.sndcdn.com/assets/css/app-e5928cd1c66edb871398.css">
   <link rel="stylesheet" href="https://a-v2.sndcdn.com/assets/css/i18n-locale-switcher-fc0b88a1f0db4efc1131.css">
   
 </head>
@@ -289,16 +296,16 @@ www.facebook.com/twnshdw"><meta property="al:web:should_fallback" content="fals
         <meta itemprop="duration" content="PT00H00M30S" />
         <meta itemprop="genre" content="Dance/House" />
 
-        <meta itemprop="interactionCount" content="UserLikes:148082" />
+        <meta itemprop="interactionCount" content="UserLikes:148109" />
         <meta itemprop="interactionCount" content="UserDownloads:0" />
-        <meta itemprop="interactionCount" content="UserComments:2783" />
+        <meta itemprop="interactionCount" content="UserComments:2780" />
 
       <div itemscope itemprop="audio" itemtype="http://schema.org/AudioObject"><meta itemprop="embedUrl" content="https://w.soundcloud.com/player/?url&#x3D;https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F150745932&amp;auto_play&#x3D;false&amp;show_artwork&#x3D;true&amp;visual&#x3D;true&amp;origin&#x3D;schema.org" /><meta itemprop="height" content="400px" /></div>
       <div itemscope itemprop="byArtist" itemtype="http://schema.org/MusicGroup"><meta itemprop="name" content="Zeds Dead" /><meta itemprop="url" content="/zedsdead" /></div>
       <div itemscope itemprop="provider" itemtype="http://schema.org/Organization"><meta itemprop="name" content="SoundCloud" /><meta itemprop="image" content="http://developers.soundcloud.com/assets/logo_white-8bf7615eb575eeb114fc65323068e1e4.png" /></div>
   </header>
   <p>
-    <img src="https://i1.sndcdn.com/artworks-01UkaDup3FaN-0-t500x500.jpg" width="500" height="500" alt="Lost You (feat. Twin Shadow &amp; D&#x27;Angelo Lacy)" itemprop="image">
+    <img src="https://i1.sndcdn.com/artworks-JGcGO59zieR7-0-t500x500.jpg" width="500" height="500" alt="Lost You (feat. Twin Shadow &amp; D&#x27;Angelo Lacy)" itemprop="image">
     MUSIC VIDEO : https://www.youtube.com/watch?v&#x3D;VJm7IPrBmLY
 
 Zeds Dead
@@ -371,7 +378,7 @@ www.instagram.com/thetwinshadow
       <h2>Comment by <a href="/nathaniel-wilson-166515776">NATHANIEL WILSON</a></h2>
       <p>@rikm11: wat u talkin bout , make at least some sense here</p>
       <time pubdate>2017-12-17T00:45:59Z</time>
-      <h2>Comment by <a href="/rikm11">Thicc Ricc</a></h2>
+      <h2>Comment by <a href="/thiccyriccy">Thicc Ricc</a></h2>
       <p>@nathaniel-wilson-166515776: if i dont read this how am i supposed to know to do all this random shit lmfao</p>
       <time pubdate>2017-11-12T19:55:23Z</time>
       <h2>Comment by <a href="/user-674135807">wiseoldchild</a></h2>
@@ -480,7 +487,7 @@ www.instagram.com/thetwinshadow
     
   </div>
 
-  <script src="https://a-v2.sndcdn.com/assets/15-3b885f99-3.js" crossorigin></script>
+  <script src="https://a-v2.sndcdn.com/assets/15-2c9b93e1-3.js" crossorigin></script>
 
   
   
@@ -491,20 +498,20 @@ www.instagram.com/thetwinshadow
   
 
   
-    <script type="text/javascript">window.__sc_version = "1582295611";</script>
+    <script type="text/javascript">window.__sc_version = "1589986714";</script>
     
 
   
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/49-9ed01c76-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/1-95276dc7-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/2-d9602e09-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/3-2b059d37-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/0-063f8795-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/48-c9b6f63b-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/50-2f356e64-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/0-7e0bf13a-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/1-3738c176-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/2-4dbd49f7-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/49-6045817b-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/48-d2483d0e-3.js"></script>
     
 
 
-  <script>!function(e,n){if(e=e.bind(null,n),"function"==typeof window.webpackJsonp)window.webpackJsonp([],{0:e});else{var t=n.reduce(function(e,n){return e.concat(n.chunks)},[]).filter(function(e,n,t){return t.indexOf(e)===n}),c="__sc_data_rehydration_module__",o={};o[c]=e,(window.webpackJsonp=window.webpackJsonp||[]).push([[],o,[[c].concat(t)]])}}(function(e,n,t,c){function o(e){return i.every(function(n){return n in e.prototype})}function r(e){var n=o(e);return n?function(n){var t,c=a;n.lastFetchTime&&(c=n.lastFetchTime,delete n.lastFetchTime),t=new e(n,{parse:!0,__hydrate:!0}),t.lastFetchTime=c,t.release()}:e}var a=Date.now(),i=["resource_type","get","set","addSubmodel","release"];e.forEach(function(e){try{var n=r(c(e.id));e.data.forEach(function(e){n(e)})}catch(t){}})},[{"id":206,"chunks":[48],"data":[{"allows_messages_from_unfollowed_users":false,"analytics_opt_in":true,"communications_opt_in":true,"targeted_advertising_opt_in":false,"legislation":[]}]},{"id":1067,"chunks":[48],"data":[{"country_code":"ES","country_name":"Spain","region":"58","city":"Orense","postal_code":"32001","latitude":42.331298828125,"longitude":-7.862701416015625}]},{"id":974,"chunks":[0],"data":[{}]},{"id":977,"chunks":[0],"data":[{"v2_oscp_german_tax_fields_support":true,"v2_use_new_connect":true,"v2_show_distribute_button":true,"v2_hq_file_storage_release":true,"student-sale-fall2019":true}]},{"id":33,"chunks":[48],"data":[{"avatar_url":"https://i1.sndcdn.com/avatars-000000711562-05gs87-large.jpg","city":"Toronto","comments_count":6,"country_code":"CA","created_at":"2009-10-09T20:16:57Z","creator_subscriptions":[{"product":{"id":"creator-pro-unlimited"}}],"creator_subscription":{"product":{"id":"creator-pro-unlimited"}},"description":"","followers_count":6019730,"followings_count":188,"first_name":"Zeds","full_name":"Zeds Dead","groups_count":0,"id":305413,"kind":"user","last_modified":"2020-02-21T16:56:28Z","last_name":"Dead","likes_count":76,"playlist_likes_count":3,"permalink":"zedsdead","permalink_url":"https://soundcloud.com/zedsdead","playlist_count":79,"reposts_count":null,"track_count":214,"uri":"https://api.soundcloud.com/users/305413","urn":"soundcloud:users:305413","username":"Zeds Dead","verified":false,"visuals":{"urn":"soundcloud:users:305413","enabled":true,"visuals":[{"urn":"soundcloud:visuals:16203468","entry_time":0,"visual_url":"https://i1.sndcdn.com/visuals-000000305413-xl4OCr-original.jpg"}]},"url":"/zedsdead"}]},{"id":17,"chunks":[48],"data":[{"comment_count":2783,"full_duration":218403,"downloadable":false,"created_at":"2014-05-22T14:21:43Z","description":"MUSIC VIDEO : https://www.youtube.com/watch?v=VJm7IPrBmLY\\r\\n\\r\\nZeds Dead\\r\\nwww.facebook.com/zedsdead\\r\\nwww.twitter.com/whoszed\\r\\nwww.instagram.com/zedsdeadofficial\\r\\n\\r\\nTwin Shadow\\r\\nwww.facebook.com/twnshdw\\r\\nwww.twitter.com/twinshadow\\r\\nwww.instagram.com/thetwinshadow\\r\\n\\r\\n","media":{"transcodings":[{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:150745932/95905e92-c74a-4585-b56e-d004781fd2fd/preview/hls","preset":"mp3_0_0","duration":30000,"snipped":true,"format":{"protocol":"hls","mime_type":"audio/mpeg"},"quality":"sq"},{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:150745932/95905e92-c74a-4585-b56e-d004781fd2fd/preview/progressive","preset":"mp3_0_0","duration":30000,"snipped":true,"format":{"protocol":"progressive","mime_type":"audio/mpeg"},"quality":"sq"}]},"title":"Lost You (feat. Twin Shadow \\u0026 D\'Angelo Lacy)","publisher_metadata":{"urn":"soundcloud:tracks:150745932","explicit":false,"contains_music":true,"p_line_for_display":"℗ 2014 (P) 2014 Zeds Dead Inc. under exclusive license to Ultra Records, LLC","artist":"Zeds Dead feat. Twin Shadow \\u0026 D\'Angelo Lacy","isrc":"USZ4V1400044","id":150745932,"album_title":"Lost You","upc_or_ean":"886444716994","p_line":"2014 (P) 2014 Zeds Dead Inc. under exclusive license to Ultra Records, LLC","release_title":"Lost You (feat. Twin Shadow \\u0026 D\'Angelo Lacy)"},"duration":30000,"has_downloads_left":true,"artwork_url":"https://i1.sndcdn.com/artworks-01UkaDup3FaN-0-large.jpg","public":true,"streamable":true,"tag_list":"","download_url":null,"genre":"Dance/House","id":150745932,"reposts_count":38606,"state":"finished","label_name":"Epic Amsterdam","last_modified":"2020-02-18T14:49:04Z","commentable":true,"policy":"SNIP","visuals":null,"kind":"track","purchase_url":"http://smarturl.it/SomewhereElseEP","sharing":"public","uri":"https://api.soundcloud.com/tracks/150745932","secret_token":null,"download_count":0,"likes_count":148082,"urn":"soundcloud:tracks:150745932","license":"all-rights-reserved","purchase_title":"Buy on iTunes","display_date":"2014-06-27T00:00:00Z","embeddable_by":"all","release_date":"2014-06-27T00:00:00Z","user_id":305413,"monetization_model":"SUB_HIGH_TIER","waveform_url":"https://wave.sndcdn.com/oRSelsoX31lv_m.json","permalink":"zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy","permalink_url":"https://soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000000711562-05gs87-large.jpg","city":"Toronto","comments_count":6,"country_code":"CA","created_at":"2009-10-09T20:16:57Z","creator_subscriptions":[{"product":{"id":"creator-pro-unlimited"}}],"creator_subscription":{"product":{"id":"creator-pro-unlimited"}},"description":"","followers_count":6019730,"followings_count":188,"first_name":"Zeds","full_name":"Zeds Dead","groups_count":0,"id":305413,"kind":"user","last_modified":"2020-02-21T16:56:28Z","last_name":"Dead","likes_count":76,"playlist_likes_count":3,"permalink":"zedsdead","permalink_url":"https://soundcloud.com/zedsdead","playlist_count":79,"reposts_count":null,"track_count":214,"uri":"https://api.soundcloud.com/users/305413","urn":"soundcloud:users:305413","username":"Zeds Dead","verified":false,"visuals":{"urn":"soundcloud:users:305413","enabled":true,"visuals":[{"urn":"soundcloud:visuals:16203468","entry_time":0,"visual_url":"https://i1.sndcdn.com/visuals-000000305413-xl4OCr-original.jpg"}]}},"playback_count":9822734}]}]);</script>
+  <script>!function(e,n){if(e=e.bind(null,n),"function"==typeof window.webpackJsonp)window.webpackJsonp([],{0:e});else{var t=n.reduce(function(e,n){return e.concat(n.chunks)},[]).filter(function(e,n,t){return t.indexOf(e)===n}),c="__sc_data_rehydration_module__",o={};o[c]=e,(window.webpackJsonp=window.webpackJsonp||[]).push([[],o,[[c].concat(t)]])}}(function(e,n,t,c){function o(e){return i.every(function(n){return n in e.prototype})}function r(e){var n=o(e);return n?function(n){var t,c=a;n.lastFetchTime&&(c=n.lastFetchTime,delete n.lastFetchTime),t=new e(n,{parse:!0,__hydrate:!0}),t.lastFetchTime=c,t.release()}:e}var a=Date.now(),i=["resource_type","get","set","addSubmodel","release"];e.forEach(function(e){try{var n=r(c(e.id));e.data.forEach(function(e){n(e)})}catch(t){}})},[{"id":241,"chunks":[48],"data":[{"allows_messages_from_unfollowed_users":false,"analytics_opt_in":true,"communications_opt_in":true,"targeted_advertising_opt_in":false,"legislation":[]}]},{"id":1026,"chunks":[48],"data":[{"country_code":"ES","country_name":"Spain","region":"58","city":"A Coruña","postal_code":"15007","latitude":43.3656005859375,"longitude":-8.404296875}]},{"id":924,"chunks":[49],"data":[{}]},{"id":927,"chunks":[49],"data":[{"v2_oscp_german_tax_fields_support":true,"v2_use_new_connect":true,"v2_hq_file_storage_release":true,"v2_direct_support_link":true,"v2_distro_2_phase_1_announcement":true,"v2_distro_2_phase_2_freeze_submissions":true,"v2_distro_2_phase_4_post_migration":true,"v2_enable_siwa":true}]},{"id":32,"chunks":[48],"data":[{"avatar_url":"https://i1.sndcdn.com/avatars-000000711562-05gs87-large.jpg","city":"Toronto","comments_count":6,"country_code":"CA","created_at":"2009-10-09T20:16:57Z","creator_subscriptions":[{"product":{"id":"creator-pro-unlimited"}}],"creator_subscription":{"product":{"id":"creator-pro-unlimited"}},"description":"","followers_count":6018612,"followings_count":190,"first_name":"Zeds","full_name":"Zeds Dead","groups_count":0,"id":305413,"kind":"user","last_modified":"2020-03-26T18:48:32Z","last_name":"Dead","likes_count":76,"playlist_likes_count":3,"permalink":"zedsdead","permalink_url":"https://soundcloud.com/zedsdead","playlist_count":81,"reposts_count":null,"track_count":215,"uri":"https://api.soundcloud.com/users/305413","urn":"soundcloud:users:305413","username":"Zeds Dead","verified":false,"visuals":{"urn":"soundcloud:users:305413","enabled":true,"visuals":[{"urn":"soundcloud:visuals:16203468","entry_time":0,"visual_url":"https://i1.sndcdn.com/visuals-000000305413-xl4OCr-original.jpg"}],"tracking":null},"url":"/zedsdead"}]},{"id":18,"chunks":[48],"data":[{"comment_count":2780,"full_duration":218403,"downloadable":false,"created_at":"2014-05-22T14:21:43Z","description":"MUSIC VIDEO : https://www.youtube.com/watch?v=VJm7IPrBmLY\\r\\n\\r\\nZeds Dead\\r\\nwww.facebook.com/zedsdead\\r\\nwww.twitter.com/whoszed\\r\\nwww.instagram.com/zedsdeadofficial\\r\\n\\r\\nTwin Shadow\\r\\nwww.facebook.com/twnshdw\\r\\nwww.twitter.com/twinshadow\\r\\nwww.instagram.com/thetwinshadow\\r\\n\\r\\n","media":{"transcodings":[{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:150745932/95905e92-c74a-4585-b56e-d004781fd2fd/preview/hls","preset":"mp3_0_0","duration":30000,"snipped":true,"format":{"protocol":"hls","mime_type":"audio/mpeg"},"quality":"sq"},{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:150745932/95905e92-c74a-4585-b56e-d004781fd2fd/preview/progressive","preset":"mp3_0_0","duration":30000,"snipped":true,"format":{"protocol":"progressive","mime_type":"audio/mpeg"},"quality":"sq"}]},"title":"Lost You (feat. Twin Shadow \\u0026 D\'Angelo Lacy)","publisher_metadata":{"urn":"soundcloud:tracks:150745932","explicit":false,"contains_music":true,"p_line_for_display":"℗ 2014 (P) 2014 Zeds Dead Inc. under exclusive license to Ultra Records, LLC","artist":"Zeds Dead feat. Twin Shadow \\u0026 D\'Angelo Lacy","isrc":"USZ4V1400044","id":150745932,"album_title":"Lost You","upc_or_ean":"886444716994","p_line":"2014 (P) 2014 Zeds Dead Inc. under exclusive license to Ultra Records, LLC","release_title":"Lost You (feat. Twin Shadow \\u0026 D\'Angelo Lacy)"},"duration":30000,"has_downloads_left":true,"artwork_url":"https://i1.sndcdn.com/artworks-JGcGO59zieR7-0-large.jpg","public":true,"streamable":true,"tag_list":"","genre":"Dance/House","id":150745932,"reposts_count":38571,"state":"finished","label_name":"Epic Amsterdam","last_modified":"2020-05-20T10:09:28Z","commentable":true,"policy":"SNIP","visuals":null,"kind":"track","purchase_url":"http://smarturl.it/SomewhereElseEP","sharing":"public","uri":"https://api.soundcloud.com/tracks/150745932","secret_token":null,"download_count":0,"likes_count":148109,"urn":"soundcloud:tracks:150745932","license":"all-rights-reserved","purchase_title":"Buy on iTunes","display_date":"2014-06-27T00:00:00Z","embeddable_by":"all","release_date":"2014-06-27T00:00:00Z","user_id":305413,"monetization_model":"SUB_HIGH_TIER","waveform_url":"https://wave.sndcdn.com/oRSelsoX31lv_m.json","permalink":"zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy","permalink_url":"https://soundcloud.com/zedsdead/zeds-dead-twin-shadow-lost-you-feat-dangelo-lacy","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000000711562-05gs87-large.jpg","city":"Toronto","comments_count":6,"country_code":"CA","created_at":"2009-10-09T20:16:57Z","creator_subscriptions":[{"product":{"id":"creator-pro-unlimited"}}],"creator_subscription":{"product":{"id":"creator-pro-unlimited"}},"description":"","followers_count":6018612,"followings_count":190,"first_name":"Zeds","full_name":"Zeds Dead","groups_count":0,"id":305413,"kind":"user","last_modified":"2020-03-26T18:48:32Z","last_name":"Dead","likes_count":76,"playlist_likes_count":3,"permalink":"zedsdead","permalink_url":"https://soundcloud.com/zedsdead","playlist_count":81,"reposts_count":null,"track_count":215,"uri":"https://api.soundcloud.com/users/305413","urn":"soundcloud:users:305413","username":"Zeds Dead","verified":false,"visuals":{"urn":"soundcloud:users:305413","enabled":true,"visuals":[{"urn":"soundcloud:visuals:16203468","entry_time":0,"visual_url":"https://i1.sndcdn.com/visuals-000000305413-xl4OCr-original.jpg"}],"tracking":null}},"playback_count":9847421}]}]);</script>
 
 </body>
 </html>

@@ -7,7 +7,7 @@ return [
             'nginx/1.10.1'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:46:56 GMT'
+            'Wed, 20 May 2020 17:54:04 GMT'
         ],
         'content-type' => [
             'text/html; charset=utf-8'
@@ -31,22 +31,25 @@ return [
             'deflate'
         ],
         'etag' => [
-            'W/"2cb5ffabd629aa1c813b0315fe4304ca"'
+            'W/"448305229014d50b0fc0a3f1445ff360"'
         ],
         'cache-control' => [
             'max-age=0, private, must-revalidate'
         ],
         'set-cookie' => [
-            '_slides_app_session=cE9wak5IRFl1VzRWU1B1SGdaNmtsUDVkTUZGREJjNE9td3JIM0JkOENjR1pTeFNCbW9YTXVVRlpqbnpPU3Y1c3lJdWl2SVhwSVYyUlhIQWRTSzVMNWtSaVdFNUVsc2ovUDlYbGkxbVlqa0RaNWRGbGk3T0ZXeWdEUTRya0ZYYVVDcGtIeDdIN0pZbDNMeDR6eUsxODE1eGEzaER1Y3hwRldaSlk2clZhbzBZWDd2YXl6Uzd5N1RCYTIrcGM2R1BHWktWWitaaTdualhnb3RzSnRidnl0NHdnOTExUEk3akNUeks0cVlnNlJCZ2lIeTc3eTJaeVhZM3J1d1Fub0JWSE5NMVJ2V0hoRjhpZWxoSjBzVHlxSFNMeGJqdmpwcTNIWmNzdE9haytoQkdUQThtNW5TSnB2czNaWG83RmlPVHUtLWd0anpoSFFXM0J5M3B0b2p1YldqcEE9PQ%3D%3D--162b80bcd8cf6303fac3ff9d12536ecb41997bae; domain=.slides.com; path=/; HttpOnly'
+            '_slides_app_session=S1k1YnVNRE42b0k0aFhhZWM1aTBFNG9KbVlyMURSSVdYNnA0RmV1eWFqN0pNQlVMWUpZa01zOGtSbjJQa3JvUndDZm5NZ21RUlZNT2R3MXNycHhJczk0NU9pWkh6cDJMK0VZci83VWJtYnJNcStRWi9JWHN3RzNleU9KWlVkVHRVZGMwcndBd2FndzB3cWNvdmxPanhJNDRFczRtTm1idkM2cG1welpOalJzait0NWJudHlhblZLOUxTUjVkM3huaDBjMVE0SS9UUHdVWlhITWtLNCtCL2lqcCtIdTBEanJtMU8wMzdiNDNJVjNoTUdkMm5ZN2tTakV3M1F4ZzJWeWdkdzNoWG9lVUNRNHZUaWMvOTZHcEh3bEhBWUZIdzJCOC91Z1dnVjJTK2tmeXU2aXkrOUFKT1ZjblRFNVdUNkEtLUMwZERKd3h0R0tpMXQ1bzRVZFovRGc9PQ%3D%3D--413be77cbca1b64a356f90d126468aca0485a6a4; domain=.slides.com; path=/; HttpOnly'
         ],
         'x-request-id' => [
-            'c2c6d36e-b7b5-4ee3-a1f0-38c792a9f5b5'
+            '7f2550f6-e8a8-4856-ac73-731c5f88c50e'
         ],
         'x-runtime' => [
-            '0.048691'
+            '0.046187'
         ],
         'Content-Location' => [
             'http://slides.com/alexwalker/responsive-svg/'
+        ],
+        'X-Request-Time' => [
+            '0.411 ms'
         ]
     ],
     'statusCode' => 200,
@@ -74,18 +77,18 @@ return [
 
     <link rel="manifest" href="/manifest.json">
 
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,600,700&subset=latin,cyrillic-ext,greek-ext,greek,latin-ext,cyrillic" rel="stylesheet" type="text/css" data-application-font="opensans">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" type="text/css" data-application-font="inter">
 
     <link rel="stylesheet" media="all" href="//assets.slid.es/assets/slides/slides-bdecdb9d1bd594d8363319a2c80bb2b1bbc1c0b419e73fcf547354738a67ce6d.css" />
-    <link rel="stylesheet" media="all" href="//assets.slid.es/assets/application-cddbedc7d530c1e32de3d9c0ce40f9438e29d774527c0a9260aa9c45340936de.css" />
-    	<link rel="stylesheet" media="all" href="//assets.slid.es/assets/deck-v2-861703998e56dd3a9f81f6fc6bc347cb93eb0426686a85f26dd3faa7298fbd95.css" />
+    <link rel="stylesheet" media="all" href="//assets.slid.es/assets/application-aa16fd4d47e083f4815de074e0db26cfd99a185f00010966bb83f0910b7e58e7.css" />
+    	<link rel="stylesheet" media="all" href="//assets.slid.es/assets/deck-v2-2ae831cb5405f1b2c2e29716e1c126a248fb0db670076b932720a540c7a9b239.css" />
 
 
 
 <style id="user-css-output" type="text/css"></style>
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="hSrulytHgr/GTkIQ/0AM10ErL0w4oytGFM0uhTemtODDjY9xvjPOUTFaDcWD5tAHDADtL4iXl6nN+bMoItDqjw==" />
+<meta name="csrf-token" content="wvpsSAOICXKxYPEjj/LWeVQtz1n1ho1a1XXrZP2LUD8h4JsPkW2FkdvvhRlMRf+q4dcnijB4esxoEeiec/tolQ==" />
     <script type="text/javascript">
   if( navigator.doNotTrack !== \'1\' && !/dnt=1/.test( window.location.search ) ) {
     (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
@@ -807,7 +810,7 @@ Helpers</h1>
 					</li>
 					<li data-tooltip="Views" data-tooltip-delay="500">
 						<span class="icon i-eye"></span>
-						<span class="value">9,171</span>
+						<span class="value">9,347</span>
 					</li>
 				</ul>
 			</div>
@@ -840,7 +843,7 @@ Helpers</h1>
 		<ul class="carousel">
 			<li class="deck-thumbnail">
   <a class="deck-link" href="/alexwalker/deck-5"></a>
-  <div class="deck-image" style="background-image: url(https://s3.amazonaws.com/media-p.slid.es/thumbnails/9d13ae1926a027a81751c390850944d4/thumb.jpg?1217098687)"></div>
+  <img class="deck-image" src="https://s3.amazonaws.com/media-p.slid.es/thumbnails/9d13ae1926a027a81751c390850944d4/thumb.jpg?1217098687" loading="lazy" />
   <footer class="deck-details">
     <div class="top">
       <div class="title">deck</div>
@@ -858,7 +861,7 @@ Helpers</h1>
 </li>
 <li class="deck-thumbnail">
   <a class="deck-link" href="/alexwalker/deck-4"></a>
-  <div class="deck-image" style="background-image: url(https://s3.amazonaws.com/media-p.slid.es/thumbnails/0c1d240d1f3ddcd05d192c6a167d3a60/thumb.jpg)"></div>
+  <img class="deck-image" src="https://s3.amazonaws.com/media-p.slid.es/thumbnails/0c1d240d1f3ddcd05d192c6a167d3a60/thumb.jpg" loading="lazy" />
   <footer class="deck-details">
     <div class="top">
       <div class="title">deck</div>
@@ -869,14 +872,14 @@ Helpers</h1>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>592<span class="icon i-eye"></span></div>
+        <div>625<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
 </li>
 <li class="deck-thumbnail">
   <a class="deck-link" href="/alexwalker/the-rules-for-stock-imagery"></a>
-  <div class="deck-image" style="background-image: url(https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/b83c71/decks.jpg)"></div>
+  <img class="deck-image" src="https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/b83c71/decks.jpg" loading="lazy" />
   <footer class="deck-details">
     <div class="top">
       <div class="title">The 15-minute Stock Imagery Survival Guide</div>
@@ -887,14 +890,14 @@ Helpers</h1>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>859<span class="icon i-eye"></span></div>
+        <div>901<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
 </li>
 <li class="deck-thumbnail">
   <a class="deck-link" href="/alexwalker/css-3d"></a>
-  <div class="deck-image" style="background-image: url(https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/3a407b/decks.jpg)"></div>
+  <img class="deck-image" src="https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/3a407b/decks.jpg" loading="lazy" />
   <footer class="deck-details">
     <div class="top">
       <div class="title">CSS 3D</div>
@@ -905,7 +908,7 @@ Helpers</h1>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>821<span class="icon i-eye"></span></div>
+        <div>859<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
@@ -971,12 +974,13 @@ UserVoice.push([\'set\', {
 }]);
 
 </script>
+
     
 <script>
-	var SLConfig = {"deck":{"id":216172,"slug":"responsive-svg","title":"responsive-svg","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2014-08-28T04:43:38.820Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg","view_count":9171,"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"fade","transition":"default","theme_id":null,"theme_font":"josefine","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":35,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":null,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":null},"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
+	var SLConfig = {"deck":{"id":216172,"slug":"responsive-svg","title":"responsive-svg","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2014-08-28T04:43:38.820Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg","view_count":9347,"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"fade","transition":"default","theme_id":null,"theme_font":"josefine","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":35,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":null,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":null},"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
 </script>
-    <script src="//assets.slid.es/assets/application-42e6facf78fdf9ba79467bbc049229363c4e9ecb6bdbcda92705a156868dbec2.js" defer="defer"></script>
-    	<script src="//assets.slid.es/assets/deck-7305ff38e57f9e78fa3219a7cce741373cda9013525e579945fb13c1074b69e5.js" defer="defer"></script>
+    <script src="//assets.slid.es/assets/application-4b64b4543736c64f90e09eb6e4e15f75e4e08717e631be3ef0a827a933d79449.js" defer="defer"></script>
+    	<script src="//assets.slid.es/assets/deck-ee07a80fcebe1a99d2bfbfbd071bd97e534411f0dacc825971e3e628eb2f5e16.js" defer="defer"></script>
 	
 
 

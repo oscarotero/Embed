@@ -4,13 +4,40 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Sun, 23 Feb 2020 00:01:14 GMT'
+            'Wed, 20 May 2020 17:53:25 GMT'
         ],
         'content-type' => [
             'application/json; charset=utf-8'
         ],
-        'content-length' => [
-            '594'
+        'server' => [
+            'nginx'
+        ],
+        'vary' => [
+            'Accept-Encoding'
+        ],
+        'x-dns-prefetch-control' => [
+            'off'
+        ],
+        'strict-transport-security' => [
+            'max-age=31536000; includeSubDomains; preload'
+        ],
+        'x-download-options' => [
+            'noopen'
+        ],
+        'x-content-type-options' => [
+            'nosniff'
+        ],
+        'referrer-policy' => [
+            'no-referrer'
+        ],
+        'x-xss-protection' => [
+            '1; mode=block'
+        ],
+        'x-frame-options' => [
+            'SAMEORIGIN'
+        ],
+        'etag' => [
+            'W/"3f8-DfH5kwRceUdfGVZv3R5A4eXvn54"'
         ],
         'access-control-allow-origin' => [
             '*'
@@ -18,38 +45,11 @@ return [
         'content-encoding' => [
             'gzip'
         ],
-        'etag' => [
-            'W/"3f8-DfH5kwRceUdfGVZv3R5A4eXvn54"'
-        ],
-        'referrer-policy' => [
-            'no-referrer'
-        ],
-        'server' => [
-            'nginx'
-        ],
-        'strict-transport-security' => [
-            'max-age=31536000; includeSubDomains; preload'
-        ],
-        'vary' => [
-            'Accept-Encoding'
-        ],
-        'x-content-type-options' => [
-            'nosniff'
-        ],
-        'x-dns-prefetch-control' => [
-            'off'
-        ],
-        'x-download-options' => [
-            'noopen'
-        ],
-        'x-frame-options' => [
-            'SAMEORIGIN'
-        ],
-        'x-xss-protection' => [
-            '1; mode=block'
-        ],
         'Content-Location' => [
             'https://infogram.com/oembed/?url=https%3A%2F%2Finfogram.com%2Ffrost-bank-advisors-online-graphic-1g8e205xdj03pod'
+        ],
+        'X-Request-Time' => [
+            '0.247 ms'
         ]
     ],
     'statusCode' => 200,

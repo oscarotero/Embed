@@ -10,7 +10,7 @@ return [
         'width' => 236,
         'height' => 442
     ],
-    'description' => 'This Pin was discovered by Leslie Carruthers. Discover (and save!) your own Pins on Pinterest.',
+    'description' => '30-dic-2012 - Questo Pin è stato scoperto da Leslie Carruthers. Scopri (e salva) i tuoi Pin su Pinterest.',
     'favicon' => 'https://s.pinimg.com/webapp/style/images/favicon-fd1ea058.png',
     'feeds' => [],
     'icon' => 'https://s.pinimg.com/webapp/style/images/logo_trans_144x144-642179a1.png',

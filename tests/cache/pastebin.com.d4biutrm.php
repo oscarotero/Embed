@@ -4,13 +4,10 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Sun, 23 Feb 2020 00:01:22 GMT'
+            'Wed, 20 May 2020 17:53:31 GMT'
         ],
         'content-type' => [
             'text/html; charset=utf-8'
-        ],
-        'set-cookie' => [
-            '__cfduid=d15a9b99db6777e8598966c48729a43fa1582416082; expires=Tue, 24-Mar-20 00:01:22 GMT; path=/; domain=.pastebin.com; HttpOnly; SameSite=Lax'
         ],
         'x-frame-options' => [
             'SAMEORIGIN'
@@ -37,10 +34,16 @@ return [
             'cloudflare'
         ],
         'cf-ray' => [
-            '5694ecc1a8b5ff2c-MAD'
+            '5967eaeced82d671-MAD'
+        ],
+        'cf-request-id' => [
+            '02d4d128110000d67141203200000001'
         ],
         'Content-Location' => [
             'https://pastebin.com/d4biUtRm'
+        ],
+        'X-Request-Time' => [
+            '0.433 ms'
         ]
     ],
     'statusCode' => 200,
@@ -48,14 +51,24 @@ return [
     'body' => '<!DOCTYPE HTML>
 	<head>
     	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-58643-34"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag(\'js\', new Date());
+    <!--OLD CODE<script async src="https://www.googletagmanager.com/gtag/js?id=UA-58643-34"></script>-->
 
-  gtag(\'config\', \'UA-58643-34\');
-</script>
+    <!--OLD CODE<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag(\'js\', new Date());
+
+      gtag(\'config\', \'UA-58643-34\');
+    </script>-->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':
+                new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=
+            \'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,\'script\',\'dataLayer\',\'GTM-5VVPHVN\');</script>
+    <!-- End Google Tag Manager -->
+
     
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -65,7 +78,7 @@ return [
 		<script src="/js/pastebin.min.v3.js"></script>
             
             
-		<link href="/i/pastebin.min.v9.css?1575389335" rel="stylesheet" type="text/css" />
+		<link href="/i/pastebin.min.v9.css?1588178291" rel="stylesheet" type="text/css" />
 		<!--[if lt IE 10]>
 			<link href="/i/pastebin.ie8.css" rel="stylesheet" type="text/css" />
 		<![endif]-->
@@ -86,21 +99,20 @@ return [
 			if (top != self)
 				top.location.href = location.href;
 		</script>
-        <!--script for Valueimpression  -->
-        <script type="text/javascript" src="//services.vlitag.com/adv1/?q=3e5fa0617bf760cc31e1ac77c303927c" defer="" async=""></script><script> var vitag = vitag || {};</script>
-	</head>
+
+                                <!--<script type="text/javascript" src="https://cdn.bidder.dev/clients/StreamAMP/pastebin/sa-script.js"></script>-->
+            </head>
 	<body>
+
+            <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VVPHVN"
+                          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    
 	<div id="main_frame">
 		<div id="jq-dropdown-1" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-scroll">
 			<ul class="jq-dropdown-menu">
 				
-				<li class="lih_640">
-					<form class="search_form_li" name="search_form_li" method="get" action="/search" id="cse-search-box-li">
-						<input class="search_input_li" type="text" name="q" size="5" value="" placeholder="search..." />
-					</form>
-
-				</li>
-				<li class="lih_div"></li>
 				<li onclick="location.href=\'/signup\'" class="dd_su">Sign Up</li>
 				<li onclick="location.href=\'/login\'" class="dd_lo">Login</li>
 				<li class="lih_div"></li>
@@ -121,11 +133,13 @@ return [
                         <a href="/faq" class="mmh">FAQ</a>
                         <a href="https://deals.pastebin.com" target="_blank" class="mmh">DEALS</a>
                     </div>
+                    <!--
                     <div id="header_search">
                         <form class="search_form" name="search_form" method="get" action="/search" id="cse-search-box">
                             <input class="search_input" type="text" name="q" size="5" value="" placeholder="Search..." />
                         </form>
                     </div>
+                    -->
                     <div id="header_new_paste" class="new_paste_button" onclick="location.href=\'/\'">paste</div>
                     
 			<div class="header_sign">
@@ -142,10 +156,11 @@ return [
 	<div class="content_right_menu">
 									<div class="content_right_title"><a href="/archive">Public Pastes</a></div>
 									<div id="menu_2">
-										<ul class="right_menu"><li><a href="/xYSLtPwr">Untitled</a><span>9 sec ago</span></li><li><a href="/rKERKd58">Untitled</a><span>18 sec ago</span></li><li><a href="/i0nSihkf">WHAT</a><span>JavaScript | 26 sec ago</span></li><li><a href="/F6ADj6Yj">NETANALYZER.2020-0...</a><span>JSON | 30 sec ago</span></li><li><a href="/hLMerHYT">OpenEuCalendar</a><span>44 sec ago</span></li><li><a href="/Er4uBMDm">Untitled</a><span>48 sec ago</span></li><li><a href="/PcqkmDFq">Untitled</a><span>1 min ago</span></li><li><a href="/LM42tgiS">Untitled</a><span>1 min ago</span></li></ul></div></div>	<div id="abrpm2"></div>
-	<div style="padding: 0; width:160px;margin: 10px 0;clear:left;">
-<ins class="675bfda0" data-key="29d5bc270b3c2684fd3d158f6ceb857c"></ins>
-<script async defer src="https://aj2073.online/9ed1ba93.js"></script>
+										<ul class="right_menu"><li><a href="/iJ9xDe7E">Proiect v 1.2</a><span>C | 5 min ago</span></li><li><a href="/fgeBpdbc">Untitled</a><span>Bash | 16 min ago</span></li><li><a href="/H8kqfnHG">dll spero</a><span>Lua | 51 min ago</span></li><li><a href="/0TwFQE33">mcserver.sh</a><span>Bash | 1 hour ago</span></li><li><a href="/MjXRrzbr">Initial 5 problems</a><span>Python | 1 hour ago</span></li><li><a href="/trhUm2JR">2099seamen</a><span>PHP | 1 hour ago</span></li><li><a href="/b47iVTUi">getRegValue.bat</a><span>Batch | 1 hour ago</span></li><li><a href="/G9Qz0JkS">Untitled</a><span>MIX Assembler | 1 hour ago</span></li></ul></div></div>	<div id="abrpm2"></div>
+	<div style="padding: 0; width:160px;margin: 10px 0;clear:left;text-align: center;">
+<!-- admitad.banner: wl0kd3m3oae2e25fcd889b7920dcf6 G2A Many GEOs -->
+<a target="_blank" rel="nofollow" href="https://ad.admitad.com/g/wl0kd3m3oae2e25fcd889b7920dcf6/?i=4"><img width="120" height="600" border="0" src="https://ad.admitad.com/b/wl0kd3m3oae2e25fcd889b7920dcf6/" alt="G2A Many GEOs"/></a>
+<!-- /admitad.banner -->
 </div>
 <div id="steadfast" title="Pastebin is proudly hosted by Steadfast.net" onclick="location.href=\'http://steadfast.net/?utm_source=pastebin.com&amp;utm_medium=referral&amp;utm_content=hosting_by_banner&amp;utm_campaign=referral_20140118_x_x_pastebin_partner&amp;source=referral_20140118_x_x_pastebin_partner\'"></div>
 	</div>
@@ -165,15 +180,16 @@ return [
 			<div class="paste_box_line2">
 				<img src="/i/t.gif" class="img_line t_us" alt="" style="margin-left:0"> <a href="/u/wecsam">wecsam</a>  <a href="/message_compose?to=wecsam"><img src="/i/t.gif" class="i_pm" title="Send a private message to: wecsam" alt="" /></a>
 				<img src="/i/t.gif" class="img_line t_da" alt=""> <span title="Friday 5th of July 2013 01:57:35 AM CDT">Jul 5th, 2013</span>
-				<img src="/i/t.gif" class="img_line t_vi" alt="" title="Unique visits to this paste"> 108
+				<img src="/i/t.gif" class="img_line t_vi" alt="" title="Unique visits to this paste"> 111
 				<img src="/i/t.gif" class="img_line t_ex" alt="" title="When this paste gets automatically deleted"> Never
 			</div>
 		</div>
 	</div>
-	<div class="banner_728">
-<ins class="675bfda0" data-key="26941916746eb874a2159e7dc0a54739"></ins>
-<script async defer src="https://aj2073.online/9ed1ba93.js"></script>
-</div>
+	
+			<div class="banner_728">
+				<a href="https://prf.hn/click/camref:1100l9ztp" target="_blank"><img src="adserver/i/glasswire_728x90.gif" width="728" height="90" border="0" alt="" /></a>
+			</div>
+			<div class="layout_clear"></div>
 			<div class="content_text no_padding">
 				<div id="notice" style="margin: 0 0 10px 0">
 					<b>Not a member of Pastebin yet?</b> <a href="/signup"><b><u>Sign Up</u></b></a>, it unlocks many cool features!
@@ -220,10 +236,7 @@ return [
 </ol></div>
 			</div>
 		</div>
-	</div><div class="banner_728" style="min-height:0">
-<ins class="675bfda0" data-key="88faa010aecb2dd3439d1bd27584bf19"></ins>
-<script async defer src="https://aj2073.online/9ed1ba93.js"></script>
-</div>
+	</div>
 	<div class="content_title no_border">RAW Paste Data<div id="bsa-footer"></div></div>
 	<div class="textarea_border" style="margin-bottom:0">
 		<textarea id="paste_code" class="paste_code" name="paste_code" onkeydown="return catchTab(this,event)">$ git push heroku
@@ -255,10 +268,7 @@ Total 26 (delta 7), reused 0 (delta 0)
 
 To git@heroku.com:project-drillwriter.git
    e734d16..f3c4a09  master -&gt; master</textarea>
-	</div><div id="abrpm3"></div><div style="margin: 10px 0 0 0; clear:left;">
-<ins class="675bfda0" data-key="02bf0377a2e2879c1fbbf23b9841aa10"></ins>
-<script async defer src="https://aj2073.online/9ed1ba93.js"></script>
-</div>
+	</div><div id="abrpm3"></div>
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$(".close1").click(function(){return $("#float-box-1").hide(),createCookie("l2c_1",!0,90),!1});
@@ -303,9 +313,9 @@ To git@heroku.com:project-drillwriter.git
 				<a href="/archive">archive</a> &nbsp;/&nbsp; 
 				<a href="/faq">faq</a> &nbsp;/&nbsp; 
 				<a href="/tools">tools</a> &nbsp;/&nbsp; 
-				<a href="/night_mode">night mode</a> &nbsp;/&nbsp; 
-				<a href="/api">api</a> &nbsp;/&nbsp; 
-				<a href="/doc_scraping_api">scraping api</a>		
+				<a href="/night_mode">night mode</a> &nbsp;/&nbsp;
+                <a href="/api">api</a>&nbsp;/&nbsp;
+                <a href="/doc_scraping_api">scraping api</a>
 
 				<br />
 				<a href="/doc_privacy_statement">privacy statement</a> &nbsp;/&nbsp; 
@@ -318,7 +328,7 @@ To git@heroku.com:project-drillwriter.git
 				<span class="h_800">
 					By using Pastebin.com you agree to our <a href="/doc_cookies_policy">cookies policy</a> to enhance your experience.
 					<br />
-					Site design &amp; logo &copy; 2020 Pastebin; user contributions (pastes) licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="nofollow">cc by-sa 3.0</a> -- <a href="https://favpng.com" title="Free Transparent PNG Images" target="_blank">FavPNG</a> --
+					Site design &amp; logo &copy; 2020 Pastebin; user contributions (pastes) licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="nofollow">cc by-sa 3.0</a>
 				</span>
 				<a href="http://steadfast.net/services/dedicated-servers.php?utm_source=pastebin.com&amp;utm_medium=referral&amp;utm_content=footer_link_dedicated_server_hosting_by&amp;utm_campaign=referral_20140118_x_x_pastebin_partner&amp;source=referral_20140118_x_x_pastebin_partner" rel="nofollow" target="_blank">Dedicated Server Hosting</a> by <a href="http://steadfast.net/?utm_source=pastebin.com&amp;utm_medium=referral&amp;utm_content=footer_link_steadfast&amp;utm_campaign=referral_20140118_x_x_pastebin_partner&amp;source=referral_20140118_x_x_pastebin_partner" rel="nofollow" target="_blank">Steadfast</a>
 			</div>

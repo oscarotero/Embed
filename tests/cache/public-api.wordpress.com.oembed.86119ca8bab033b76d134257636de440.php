@@ -7,7 +7,7 @@ return [
             'nginx'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:47:08 GMT'
+            'Wed, 20 May 2020 17:54:15 GMT'
         ],
         'content-type' => [
             'application/json; charset=UTF-8'
@@ -29,6 +29,9 @@ return [
         ],
         'Content-Location' => [
             'https://public-api.wordpress.com/oembed/?format=json&url=https%3A%2F%2Fwordpress.tv%2F2013%2F09%2F06%2Fdave-ross-optimize-image-files-like-a-pro%2F&for=wpcom-auto-discovery'
+        ],
+        'X-Request-Time' => [
+            '0.261 ms'
         ]
     ],
     'statusCode' => 200,

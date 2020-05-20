@@ -9,14 +9,14 @@ return [
         ],
         'content-length' => [
             '0',
-            '114548'
+            '114791'
         ],
         'location' => [
             'https://play.cadenaser.com/audio/001RD010000004275766/'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:46:50 GMT',
-            'Sat, 22 Feb 2020 23:46:56 GMT'
+            'Wed, 20 May 2020 17:53:55 GMT',
+            'Wed, 20 May 2020 17:54:03 GMT'
         ],
         'connection' => [
             'keep-alive  HTTP/2 200'
@@ -25,7 +25,7 @@ return [
             'public'
         ],
         'expires' => [
-            'Sat, 22 Feb 2020 23:51:56 GMT'
+            'Wed, 20 May 2020 17:59:03 GMT'
         ],
         'access-control-allow-origin' => [
             '*'
@@ -43,10 +43,13 @@ return [
             'bytes'
         ],
         'x-varnish' => [
-            '351999933'
+            '297310759'
         ],
         'Content-Location' => [
             'https://play.cadenaser.com/audio/001RD010000004275766/'
+        ],
+        'X-Request-Time' => [
+            '7.867 ms'
         ]
     ],
     'statusCode' => 200,
@@ -227,6 +230,9 @@ return [
         
 
     
+    <script>mm_youbora = true;</script>
+    <script src="//playser.player-top.prisasd.com/psdmedia/media/top/youbora/prisa-adapter-js/dist/sp.min.js"></script>
+    
             <script src="//playser.player-top.prisasd.com/psdmedia/media/simple/js/SimpleMediaPlayer.min.js"></script>
         <script src="//assets.adobedtm.com/577c3689ea990d22d8d98c00c4aa568bec64a426/satelliteLib-fb2e2a793dcfc2101758e38b035acde4539c384d.js"></script>
     
@@ -386,6 +392,7 @@ return [
     </script>
     <script async src="//static.chartbeat.com/js/chartbeat_mab.js"></script>    
     <body onload="if (typeof getMarcado == \'function\') { getMarcado(); }">
+        <script src="//ep00.epimg.net/js/prisa/user.js?i=5"></script>
         <script src="https://ep00.epimg.net/js/comun/avisopcdidomi.js"></script>
         <script src="https://sdk.privacy-center.org/loader.js"></script>
         <script src="//cadenaser00.epimg.net/js/pbs/slot_cs.min.js"></script>
@@ -11943,22 +11950,22 @@ return [
             <ol class="listado">
     
 	                <li class="btnlistener">
-                <a href="/audio/1582352103_8620/" class="programa" title="Las noticias de la SER, 07:00 (22/02/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1582352103_8620" onclick="return false;">
-                    Las noticias de la SER, 07:00 (22/02/2020)
+                <a href="/audio/1589984104_8972/" class="programa" title="Las noticias de la SER, 16:00 (20/05/2020)"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589984104_8972" onclick="return false;">
+                    Las noticias de la SER, 16:00 (20/05/2020)
                 </a>
                 <span class="info">
                     <span class="horario">
                                                                                                    
                                                            
                               
-                                                00:05:27 | Boletines
+                                                00:05:02 | Boletines
                     </span>
                 </span>
 
                 <div class="btn">
                     <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1582352103_8620">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589984104_8972">
                             Escuchar
                         </a>
                     </span>
@@ -11966,22 +11973,22 @@ return [
                 </div>
             </li>
                     <li class="btnlistener">
-                <a href="/audio/1582359096_9084/" class="programa" title="Las noticias de la SER, 09:00 (22/02/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1582359096_9084" onclick="return false;">
-                    Las noticias de la SER, 09:00 (22/02/2020)
+                <a href="/audio/1589987403_3530/" class="programa" title="Las noticias de la SER, 17:00 (20/05/2020)"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589987403_3530" onclick="return false;">
+                    Las noticias de la SER, 17:00 (20/05/2020)
                 </a>
                 <span class="info">
                     <span class="horario">
                                                                                                    
                                                            
                               
-                                                00:01:12 | Boletines
+                                                00:04:41 | Boletines
                     </span>
                 </span>
 
                 <div class="btn">
                     <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1582359096_9084">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589987403_3530">
                             Escuchar
                         </a>
                     </span>
@@ -11989,137 +11996,22 @@ return [
                 </div>
             </li>
                     <li class="btnlistener">
-                <a href="/audio/1582370999_189050/" class="programa" title="La Reunión de Sánchez y Torra a examen cómico"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1582370999_189050" onclick="return false;">
-                    La Reunión de Sánchez y Torra a examen cómico
-                </a>
-                <span class="info">
-                    <span class="horario">
-                                                                                                   
-                                                             
-                              
-                                                00:23:40 | Cómicos | A vivir que son dos días
-                    </span>
-                </span>
-
-                <div class="btn">
-                    <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1582370999_189050">
-                            Escuchar
-                        </a>
-                    </span>
-                    <span class="icon-equalizer"></span>
-                </div>
-            </li>
-                    <li class="btnlistener">
-                <a href="/audio/001RD010000005878598/" class="programa" title="SER Historia: El Mago de la Guerra (09/02/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005878598" onclick="return false;">
-                    SER Historia: El Mago de la Guerra (09/02/2020)
-                </a>
-                <span class="info">
-                    <span class="horario">
-                                                                                                     
-                                                           
-                              
-                                                09-02-2020 03:00:29 | 01:31:00 | SER Historia
-                    </span>
-                </span>
-
-                <div class="btn">
-                    <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005878598">
-                            Escuchar
-                        </a>
-                    </span>
-                    <span class="icon-equalizer"></span>
-                </div>
-            </li>
-                    <li class="btnlistener">
-                <a href="/audio/001RD010000005888589/" class="programa" title="SER Historia: Especial Torrelavega (16/02/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005888589" onclick="return false;">
-                    SER Historia: Especial Torrelavega (16/02/2020)
-                </a>
-                <span class="info">
-                    <span class="horario">
-                                                                                                     
-                                                           
-                              
-                                                16-02-2020 03:02:27 | 01:30:37 | SER Historia
-                    </span>
-                </span>
-
-                <div class="btn">
-                    <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005888589">
-                            Escuchar
-                        </a>
-                    </span>
-                    <span class="icon-equalizer"></span>
-                </div>
-            </li>
-                    <li class="btnlistener">
-                <a href="/audio/001RD010000005892945/" class="programa" title="Play Basket: Especial Copa del Rey (17/02/20)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005892945" onclick="return false;">
-                    Play Basket: Especial Copa del Rey (17/02/20)
-                </a>
-                <span class="info">
-                    <span class="horario">
-                                                                                                     
-                                                           
-                              
-                                                17-02-2020 19:35:12 | 00:58:27 | Play Basket
-                    </span>
-                </span>
-
-                <div class="btn">
-                    <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005892945">
-                            Escuchar
-                        </a>
-                    </span>
-                    <span class="icon-equalizer"></span>
-                </div>
-            </li>
-                    <li class="btnlistener">
-                <a href="/audio/001RD010000005891514/" class="programa" title="Los Toros: Vuelve Capea (16/02/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005891514" onclick="return false;">
-                    Los Toros: Vuelve Capea (16/02/2020)
-                </a>
-                <span class="info">
-                    <span class="horario">
-                                                                                                     
-                                                           
-                              
-                                                17-02-2020 01:14:19 | 01:20:52 | Los Toros
-                    </span>
-                </span>
-
-                <div class="btn">
-                    <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005891514">
-                            Escuchar
-                        </a>
-                    </span>
-                    <span class="icon-equalizer"></span>
-                </div>
-            </li>
-                    <li class="btnlistener">
-                <a href="/audio/1582250528974/" class="programa" title="Manu Carreño: &quot;Algunos están talando poco a poco la directiva del Barça&quot;"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1582250528974" onclick="return false;">
-                    Manu Carreño: &quot;Algunos están talando poco a poco la directiva del Barça&quot;
+                <a href="/audio/1589992067229/" class="programa" title="Existe una razón geopolítica secreta en el uso del azafrán en la cocina"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589992067229" onclick="return false;">
+                    Existe una razón geopolítica secreta en el uso del azafrán en la cocina
                 </a>
                 <span class="info">
                     <span class="horario">
                                                                                                      
                                                              
                               
-                                                21-02-2020 03:04:09 | 01:08:01 | El Sanedrín | El Larguero
+                                                20-05-2020 18:30:11 | 00:47:41 | Todo por la radio | La Ventana
                     </span>
                 </span>
 
                 <div class="btn">
                     <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1582250528974">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589992067229">
                             Escuchar
                         </a>
                     </span>
@@ -12127,22 +12019,22 @@ return [
                 </div>
             </li>
                     <li class="btnlistener">
-                <a href="/audio/001RD010000005889484/" class="programa" title="La Hora Extra: La búsqueda de interlocutor que nunca termina (16/02/20)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005889484" onclick="return false;">
-                    La Hora Extra: La búsqueda de interlocutor que nunca termina (16/02/20)
+                <a href="/audio/1589992265356/" class="programa" title="Prefiero darle la vuelta a la tortilla con argumentos en vez de con un plato"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589992265356" onclick="return false;">
+                    Prefiero darle la vuelta a la tortilla con argumentos en vez de con un plato
                 </a>
                 <span class="info">
                     <span class="horario">
                                                                                                      
-                                                           
+                                                             
                               
-                                                16-02-2020 08:02:22 | 00:30:31 | La Hora Extra
+                                                20-05-2020 18:32:11 | 00:05:42 | Especialistas Secundarios | La Ventana
                     </span>
                 </span>
 
                 <div class="btn">
                     <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005889484">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589992265356">
                             Escuchar
                         </a>
                     </span>
@@ -12150,22 +12042,137 @@ return [
                 </div>
             </li>
                     <li class="btnlistener">
-                <a href="/audio/001RD010000005889578/" class="programa" title="SER Aventureros: Jaime Aleko (15/02/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005889578" onclick="return false;">
-                    SER Aventureros: Jaime Aleko (15/02/2020)
+                <a href="/audio/1589576968029/" class="programa" title="Las Noches de Ortega: El virus fue creado (15/05/2020)"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589576968029" onclick="return false;">
+                    Las Noches de Ortega: El virus fue creado (15/05/2020)
                 </a>
                 <span class="info">
                     <span class="horario">
                                                                                                      
                                                            
                               
-                                                15-02-2020 07:02:36 | 00:56:30 | SER Aventureros
+                                                15-05-2020 23:12:10 | 00:27:19 | Las Noches de Ortega
                     </span>
                 </span>
 
                 <div class="btn">
                     <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005889578">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589576968029">
+                            Escuchar
+                        </a>
+                    </span>
+                    <span class="icon-equalizer"></span>
+                </div>
+            </li>
+                    <li class="btnlistener">
+                <a href="/audio/1589711320_204939/" class="programa" title="&#039;La gente que era feliz con el consumismo, se refugia ahora en los milagros&#039;"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589711320_204939" onclick="return false;">
+                    &#039;La gente que era feliz con el consumismo, se refugia ahora en los milagros&#039;
+                </a>
+                <span class="info">
+                    <span class="horario">
+                                                                                                   
+                                                             
+                              
+                                                00:02:06 | La píldora de Martí | A vivir que son dos días
+                    </span>
+                </span>
+
+                <div class="btn">
+                    <span class="txt">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589711320_204939">
+                            Escuchar
+                        </a>
+                    </span>
+                    <span class="icon-equalizer"></span>
+                </div>
+            </li>
+                    <li class="btnlistener">
+                <a href="/audio/001RD010000005992458/" class="programa" title="Punto de Fuga (16/05/2020): &quot;¿Dónde están los músicos callejeros?&quot;"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005992458" onclick="return false;">
+                    Punto de Fuga (16/05/2020): &quot;¿Dónde están los músicos callejeros?&quot;
+                </a>
+                <span class="info">
+                    <span class="horario">
+                                                                                                     
+                                                           
+                              
+                                                16-05-2020 06:00:59 | 00:56:47 | Punto de Fuga
+                    </span>
+                </span>
+
+                <div class="btn">
+                    <span class="txt">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005992458">
+                            Escuchar
+                        </a>
+                    </span>
+                    <span class="icon-equalizer"></span>
+                </div>
+            </li>
+                    <li class="btnlistener">
+                <a href="/audio/1589456354983/" class="programa" title="La Vida Moderna | Peazo rata"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589456354983" onclick="return false;">
+                    La Vida Moderna | Peazo rata
+                </a>
+                <span class="info">
+                    <span class="horario">
+                                                                                                     
+                                                           
+                              
+                                                14-05-2020 13:40:11 | 00:41:47 | La vida moderna
+                    </span>
+                </span>
+
+                <div class="btn">
+                    <span class="txt">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589456354983">
+                            Escuchar
+                        </a>
+                    </span>
+                    <span class="icon-equalizer"></span>
+                </div>
+            </li>
+                    <li class="btnlistener">
+                <a href="/audio/001RD010000005992032/" class="programa" title="La Hora Extra: ¿Sabrán los robots que también van a morir y que solo la bondad tiene sentido?  (17/ 05/20)"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005992032" onclick="return false;">
+                    La Hora Extra: ¿Sabrán los robots que también van a morir y que solo la bondad tiene sentido?  (17/ 05/20)
+                </a>
+                <span class="info">
+                    <span class="horario">
+                                                                                                     
+                                                           
+                              
+                                                17-05-2020 08:01:01 | 00:31:33 | La Hora Extra
+                    </span>
+                </span>
+
+                <div class="btn">
+                    <span class="txt">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000005992032">
+                            Escuchar
+                        </a>
+                    </span>
+                    <span class="icon-equalizer"></span>
+                </div>
+            </li>
+                    <li class="btnlistener">
+                <a href="/audio/1589631840753/" class="programa" title="Nadie Sabe Nada: Nadie Sale Nada, ¡A JARE MEEEC! (16/05/2020)"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589631840753" onclick="return false;">
+                    Nadie Sabe Nada: Nadie Sale Nada, ¡A JARE MEEEC! (16/05/2020)
+                </a>
+                <span class="info">
+                    <span class="horario">
+                                                                                                     
+                                                           
+                              
+                                                16-05-2020 14:26:11 | 00:26:49 | Nadie Sabe Nada
+                    </span>
+                </span>
+
+                <div class="btn">
+                    <span class="txt">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1589631840753">
                             Escuchar
                         </a>
                     </span>
@@ -12227,43 +12234,43 @@ return [
 <div id="ser">
 <ol>
 <li>
-<a href="https://cadenaser.com/programa/2020/02/22/el_larguero/1582328013_013404.html?int=PLAYSER_lomasleidoSER" title="Álvaro Benito, sobre la renovación de Sergio Ramos: &quot;Su único punto flaco puede ser él mismo&quot;" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/02/22/el_larguero/1582328013_013404_1582328274_miniatura_normal.jpg" alt="Álvaro Benito, sobre la renovación de Sergio Ramos: &quot;Su único punto flaco puede ser él mismo&quot;" />
+<a href="https://cadenaser.com/ser/2020/05/19/deportes/1589912479_606307.html?int=PLAYSER_lomasleidoSER" title="&quot;Acabará en el Real Madrid&quot;: Antonio Romero desvela el crack mundial que ve cerca del Bernabéu" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/05/19/deportes/1589912479_606307_1589915557_miniatura_normal.jpg" alt="&quot;Acabará en el Real Madrid&quot;: Antonio Romero desvela el crack mundial que ve cerca del Bernabéu" />
 </a>
 <h4>
-<a href="https://cadenaser.com/programa/2020/02/22/el_larguero/1582328013_013404.html?int=PLAYSER_lomasleidoSER" title="Álvaro Benito, sobre la renovación de Sergio Ramos: &quot;Su único punto flaco puede ser él mismo&quot;" target="_blank">Álvaro Benito, sobre la renovación de Sergio Ramos: &quot;Su único punto flaco puede ser él mismo&quot;</a>
+<a href="https://cadenaser.com/ser/2020/05/19/deportes/1589912479_606307.html?int=PLAYSER_lomasleidoSER" title="&quot;Acabará en el Real Madrid&quot;: Antonio Romero desvela el crack mundial que ve cerca del Bernabéu" target="_blank">&quot;Acabará en el Real Madrid&quot;: Antonio Romero desvela el crack mundial que ve cerca del Bernabéu</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/programa/2020/02/20/la_ventana/1582210823_657086.html?int=PLAYSER_lomasleidoSER" title="El podcast que conecta Sevilla y Chicago" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/02/20/la_ventana/1582210823_657086_1582212007_miniatura_normal.jpg" alt="El podcast que conecta Sevilla y Chicago" />
+<a href="https://cadenaser.com/emisora/2020/05/19/ser_malaga/1589903904_815270.html?int=PLAYSER_lomasleidoSER" title="El emotivo reencuentro entre una burra y su dueño tras el confinamiento" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/05/19/ser_malaga/1589903904_815270_1589904230_miniatura_normal.jpg" alt="El emotivo reencuentro entre una burra y su dueño tras el confinamiento" />
 </a>
 <h4>
-<a href="https://cadenaser.com/programa/2020/02/20/la_ventana/1582210823_657086.html?int=PLAYSER_lomasleidoSER" title="El podcast que conecta Sevilla y Chicago" target="_blank">El podcast que conecta Sevilla y Chicago</a>
+<a href="https://cadenaser.com/emisora/2020/05/19/ser_malaga/1589903904_815270.html?int=PLAYSER_lomasleidoSER" title="El emotivo reencuentro entre una burra y su dueño tras el confinamiento" target="_blank">El emotivo reencuentro entre una burra y su dueño tras el confinamiento</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/ser/2020/02/22/sociedad/1582361045_897953.html?int=PLAYSER_lomasleidoSER" title="Puertas abiertas de los colegios, ¿en qué debes fijarte a la hora de elegir centro?" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/02/20/sociedad/1582191281_762225_1582285677_miniatura_normal.jpg" alt="Puertas abiertas de los colegios, ¿en qué debes fijarte a la hora de elegir centro?" />
+<a href="https://cadenaser.com/programa/2020/05/20/hoy_por_hoy/1589952642_624833.html?int=PLAYSER_lomasleidoSER" title="Así regula el BOE cómo, cuándo y dónde tienes que usar la mascarilla" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/05/20/hoy_por_hoy/1589952642_624833_1589952950_miniatura_normal.jpg" alt="Así regula el BOE cómo, cuándo y dónde tienes que usar la mascarilla" />
 </a>
 <h4>
-<a href="https://cadenaser.com/ser/2020/02/22/sociedad/1582361045_897953.html?int=PLAYSER_lomasleidoSER" title="Puertas abiertas de los colegios, ¿en qué debes fijarte a la hora de elegir centro?" target="_blank">Puertas abiertas de los colegios, ¿en qué debes fijarte a la hora de elegir centro?</a>
+<a href="https://cadenaser.com/programa/2020/05/20/hoy_por_hoy/1589952642_624833.html?int=PLAYSER_lomasleidoSER" title="Así regula el BOE cómo, cuándo y dónde tienes que usar la mascarilla" target="_blank">Así regula el BOE cómo, cuándo y dónde tienes que usar la mascarilla</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/ser/2020/02/22/deportes/1582368581_998200.html?int=PLAYSER_lomasleidoSER" title="El Barcelona se olvida de la crisis con una manita" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/02/22/deportes/1582368581_998200_1582391058_miniatura_normal.jpg" alt="El Barcelona se olvida de la crisis con una manita" />
+<a href="https://cadenaser.com/ser/2020/05/20/sociedad/1589964055_245277.html?int=PLAYSER_lomasleidoSER" title="Cuándo puedo cambiar de provincia, viajar por España o ir a mi segunda residencia" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/05/20/sociedad/1589964055_245277_1589964310_miniatura_normal.jpg" alt="Cuándo puedo cambiar de provincia, viajar por España o ir a mi segunda residencia" />
 </a>
 <h4>
-<a href="https://cadenaser.com/ser/2020/02/22/deportes/1582368581_998200.html?int=PLAYSER_lomasleidoSER" title="El Barcelona se olvida de la crisis con una manita" target="_blank">El Barcelona se olvida de la crisis con una manita</a>
+<a href="https://cadenaser.com/ser/2020/05/20/sociedad/1589964055_245277.html?int=PLAYSER_lomasleidoSER" title="Cuándo puedo cambiar de provincia, viajar por España o ir a mi segunda residencia" target="_blank">Cuándo puedo cambiar de provincia, viajar por España o ir a mi segunda residencia</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/ser/2020/02/20/internacional/1582196435_924616.html?int=PLAYSER_lomasleidoSER" title="Una niña graba a su tío abusando de ella para tener pruebas del delito" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/02/20/internacional/1582196435_924616_1582196635_miniatura_normal.jpg" alt="Una niña graba a su tío abusando de ella para tener pruebas del delito" />
+<a href="https://cadenaser.com/ser/2020/05/19/politica/1589890733_053460.html?int=PLAYSER_lomasleidoSER" title="Casado dice que la prórroga del estado de alarma está vinculada con &quot;sacar de la cárcel a terroristas de ETA&quot;" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/05/19/politica/1589890733_053460_1589891441_miniatura_normal.jpg" alt="Casado dice que la prórroga del estado de alarma está vinculada con &quot;sacar de la cárcel a terroristas de ETA&quot;" />
 </a>
 <h4>
-<a href="https://cadenaser.com/ser/2020/02/20/internacional/1582196435_924616.html?int=PLAYSER_lomasleidoSER" title="Una niña graba a su tío abusando de ella para tener pruebas del delito" target="_blank">Una niña graba a su tío abusando de ella para tener pruebas del delito</a>
+<a href="https://cadenaser.com/ser/2020/05/19/politica/1589890733_053460.html?int=PLAYSER_lomasleidoSER" title="Casado dice que la prórroga del estado de alarma está vinculada con &quot;sacar de la cárcel a terroristas de ETA&quot;" target="_blank">Casado dice que la prórroga del estado de alarma está vinculada con &quot;sacar de la cárcel a terroristas de ETA&quot;</a>
 </h4>
 </li>
 </ol>
@@ -12271,43 +12278,43 @@ return [
 <div id="twitter">
 <ol>
 <li>
-<a href="https://cadenaser.com/programa/2020/02/20/la_ventana/1582219268_418980.html?int=PLAYSER_lomasleidoSER" title="¿Pervivirá Miguel Hernández o Martínez Almeida?" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/02/20/la_ventana/1582219268_418980_1582219470_miniatura_normal.jpg" alt="¿Pervivirá Miguel Hernández o Martínez Almeida?" />
+<a href="https://cadenaser.com/emisora/2020/05/19/radio_madrid/1589885262_734901.html?int=PLAYSER_lomasleidoSER" title="Ayuso excluye al Colegio de Médicos en su reunión sobre la desescalada" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/05/19/radio_madrid/1589885262_734901_1589895218_miniatura_normal.jpg" alt="Ayuso excluye al Colegio de Médicos en su reunión sobre la desescalada" />
 </a>
 <h4>
-<a href="https://cadenaser.com/programa/2020/02/20/la_ventana/1582219268_418980.html?int=PLAYSER_lomasleidoSER" title="¿Pervivirá Miguel Hernández o Martínez Almeida?" target="_blank">¿Pervivirá Miguel Hernández o Martínez Almeida?</a>
+<a href="https://cadenaser.com/emisora/2020/05/19/radio_madrid/1589885262_734901.html?int=PLAYSER_lomasleidoSER" title="Ayuso excluye al Colegio de Médicos en su reunión sobre la desescalada" target="_blank">Ayuso excluye al Colegio de Médicos en su reunión sobre la desescalada</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/ser/2020/02/21/internacional/1582298580_298337.html?int=PLAYSER_lomasleidoSER" title="Italia confirma 16 casos de coronavirus, pone en cuarentena a 250 personas y aísla varias poblaciones" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/02/21/internacional/1582298580_298337_1582311905_miniatura_normal.jpg" alt="Italia confirma 16 casos de coronavirus, pone en cuarentena a 250 personas y aísla varias poblaciones" />
+<a href="https://cadenaser.com/ser/2020/05/19/tribunales/1589901628_830641.html?int=PLAYSER_lomasleidoSER" title="Sancionados los policías autores del escrache en el domicilio de Pablo Iglesias e Irene Montero" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/05/19/tribunales/1589901628_830641_1589903345_miniatura_normal.jpg" alt="Sancionados los policías autores del escrache en el domicilio de Pablo Iglesias e Irene Montero" />
 </a>
 <h4>
-<a href="https://cadenaser.com/ser/2020/02/21/internacional/1582298580_298337.html?int=PLAYSER_lomasleidoSER" title="Italia confirma 16 casos de coronavirus, pone en cuarentena a 250 personas y aísla varias poblaciones" target="_blank">Italia confirma 16 casos de coronavirus, pone en cuarentena a 250 personas y aísla varias poblaciones</a>
+<a href="https://cadenaser.com/ser/2020/05/19/tribunales/1589901628_830641.html?int=PLAYSER_lomasleidoSER" title="Sancionados los policías autores del escrache en el domicilio de Pablo Iglesias e Irene Montero" target="_blank">Sancionados los policías autores del escrache en el domicilio de Pablo Iglesias e Irene Montero</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/emisora/2020/02/20/ser_madrid_sur/1582200428_842346.html?int=PLAYSER_lomasleidoSER" title="Buscan a una menor de 14 años desaparecida en Fuenlabrada" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/02/20/ser_madrid_sur/1582200428_842346_1582200548_miniatura_normal.jpg" alt="Buscan a una menor de 14 años desaparecida en Fuenlabrada" />
+<a href="https://cadenaser.com/emisora/2020/05/19/radio_madrid/1589884909_468102.html?int=PLAYSER_lomasleidoSER" title="Ayuso excluye al Colegio de Médicos en su reunión sobre la desescalada" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/05/19/radio_madrid/1589884909_468102_1589885070_miniatura_normal.jpg" alt="Ayuso excluye al Colegio de Médicos en su reunión sobre la desescalada" />
 </a>
 <h4>
-<a href="https://cadenaser.com/emisora/2020/02/20/ser_madrid_sur/1582200428_842346.html?int=PLAYSER_lomasleidoSER" title="Buscan a una menor de 14 años desaparecida en Fuenlabrada" target="_blank">Buscan a una menor de 14 años desaparecida en Fuenlabrada</a>
+<a href="https://cadenaser.com/emisora/2020/05/19/radio_madrid/1589884909_468102.html?int=PLAYSER_lomasleidoSER" title="Ayuso excluye al Colegio de Médicos en su reunión sobre la desescalada" target="_blank">Ayuso excluye al Colegio de Médicos en su reunión sobre la desescalada</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/ser/2020/02/22/ciencia/1582365844_317123.html?int=PLAYSER_lomasleidoSER" title="Pedro Duque responde con un vídeo explicativo a una pregunta científica de &#039;La Resistencia&#039;" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/02/22/ciencia/1582365844_317123_1582366218_miniatura_normal.jpg" alt="Pedro Duque responde con un vídeo explicativo a una pregunta científica de &#039;La Resistencia&#039;" />
+<a href="https://cadenaser.com/ser/2020/05/20/tribunales/1589972555_313332.html?int=PLAYSER_lomasleidoSER" title="El Supremo avala la limitación de movimientos del estado de alarma: prevalece el &quot;derecho a la vida&quot;" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/05/20/tribunales/1589972555_313332_1589973720_miniatura_normal.jpg" alt="El Supremo avala la limitación de movimientos del estado de alarma: prevalece el &quot;derecho a la vida&quot;" />
 </a>
 <h4>
-<a href="https://cadenaser.com/ser/2020/02/22/ciencia/1582365844_317123.html?int=PLAYSER_lomasleidoSER" title="Pedro Duque responde con un vídeo explicativo a una pregunta científica de &#039;La Resistencia&#039;" target="_blank">Pedro Duque responde con un vídeo explicativo a una pregunta científica de &#039;La Resistencia&#039;</a>
+<a href="https://cadenaser.com/ser/2020/05/20/tribunales/1589972555_313332.html?int=PLAYSER_lomasleidoSER" title="El Supremo avala la limitación de movimientos del estado de alarma: prevalece el &quot;derecho a la vida&quot;" target="_blank">El Supremo avala la limitación de movimientos del estado de alarma: prevalece el &quot;derecho a la vida&quot;</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/ser/2020/02/22/deportes/1582381079_605368.html?int=PLAYSER_lomasleidoSER" title="Detenido un aficionado del Espanyol por gritos racistas contra Adama Traoré" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/02/22/deportes/1582381079_605368_1582381182_miniatura_normal.jpg" alt="Detenido un aficionado del Espanyol por gritos racistas contra Adama Traoré" />
+<a href="https://cadenaser.com/emisora/2020/05/19/radio_valencia/1589907552_408506.html?int=PLAYSER_lomasleidoSER" title="La Comunitat Valenciana no pedirá pasar a la fase 2 la semana que viene por &quot;prudencia&quot;" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/05/19/radio_valencia/1589907552_408506_1589907751_miniatura_normal.jpg" alt="La Comunitat Valenciana no pedirá pasar a la fase 2 la semana que viene por &quot;prudencia&quot;" />
 </a>
 <h4>
-<a href="https://cadenaser.com/ser/2020/02/22/deportes/1582381079_605368.html?int=PLAYSER_lomasleidoSER" title="Detenido un aficionado del Espanyol por gritos racistas contra Adama Traoré" target="_blank">Detenido un aficionado del Espanyol por gritos racistas contra Adama Traoré</a>
+<a href="https://cadenaser.com/emisora/2020/05/19/radio_valencia/1589907552_408506.html?int=PLAYSER_lomasleidoSER" title="La Comunitat Valenciana no pedirá pasar a la fase 2 la semana que viene por &quot;prudencia&quot;" target="_blank">La Comunitat Valenciana no pedirá pasar a la fase 2 la semana que viene por &quot;prudencia&quot;</a>
 </h4>
 </li>
 </ol>

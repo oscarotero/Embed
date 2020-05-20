@@ -4,8 +4,8 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Sat, 22 Feb 2020 23:46:43 GMT',
-            'Sat, 22 Feb 2020 23:46:44 GMT'
+            'Wed, 20 May 2020 17:53:49 GMT',
+            'Wed, 20 May 2020 17:53:50 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -29,8 +29,15 @@ return [
             'cloudflare'
         ],
         'cf-ray' => [
-            '5694d74d7f1ed689-MAD  HTTP/2 200',
-            '5694d7502d6ed671-MAD'
+            '5967eb5a9ad7ff5c-MAD',
+            '5967eb5cb8f4d655-MAD'
+        ],
+        'alt-svc' => [
+            'h2=":443"; ma=60'
+        ],
+        'cf-request-id' => [
+            '02d4d16ca10000ff5cb50e0200000001  HTTP/2 200',
+            '02d4d16def0000d6557f220200000001'
         ],
         'x-powered-by' => [
             'PHP/7.3.12'
@@ -39,7 +46,7 @@ return [
             'max-age=0, must-revalidate, private'
         ],
         'expires' => [
-            'Sat, 22 Feb 2020 23:46:44 GMT'
+            'Wed, 20 May 2020 17:53:50 GMT'
         ],
         'strict-transport-security' => [
             'max-age=63072000; includeSubDomains; preload'
@@ -55,6 +62,9 @@ return [
         ],
         'Content-Location' => [
             'https://snipplr.com/view/72914/better-html-5-basic-starter-template'
+        ],
+        'X-Request-Time' => [
+            '1.125 ms'
         ]
     ],
     'statusCode' => 200,
@@ -64,14 +74,14 @@ return [
 <head>
 <meta charset="UTF-8" />
 <title>Better HTML 5 basic starter template - HTML Snipplr Social Repository</title>
-<link rel="stylesheet" type="text/css" href="/css/main.css?v2" />
-<link rel="stylesheet" type="text/css" href="/css/snipplr2.css?v2" />
-<link rel="stylesheet" type="text/css" href="/css/gigs.css?v2" media="screen" />
-<link rel="stylesheet" href="/css/chosen.css?v2" />
-<link rel="stylesheet" href="/css/view.css?v2" />
-<link rel="shortcut icon" href="/favicon.ico?v2" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.min.css?v2" />
+<link rel="stylesheet" type="text/css" href="/css/main.css?v3" />
+<link rel="stylesheet" type="text/css" href="/css/snipplr2.css?v3" />
+<link rel="stylesheet" type="text/css" href="/css/gigs.css?v3" media="screen" />
+<link rel="stylesheet" href="/css/chosen.css?v3" />
+<link rel="stylesheet" href="/css/view.css?v3" />
+<link rel="shortcut icon" href="/favicon.ico?v3" />
+<link rel="stylesheet" href="/fontawesome-free-5.12.1-web/css/all.css?v3">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.min.css?v3" />
 </head>
 <body id="snippets">
 <div id="header">
@@ -159,61 +169,62 @@ at 11/15/13 10:22pm</a>
 </div> <div class="s-div-container">
 <h1>Statistics</h1>
 <hr>
-<p><i class="fa fa-eye"></i> Viewed 348 times</p>
+<div><i class="fa fa-eye"></i> Viewed 625 times</div>
+<div><i class="fa fa-star"></i> Favorited by 8 user(s)</div>
 </div> <div class="s-div-container">
 <h1>Related snippets</h1>
 <hr>
 <div class="related-snippet-container">
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 16 times">16</div>
+<div class="col-2 snippet-view-count" title="Viewed 82 times">82</div>
 <div class="col-10">
 <a href="/view/17816/htmlcss-template--html-4-transitional">HTML/CSS Template - HTML 4 Transitional</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 11 times">11</div>
+<div class="col-2 snippet-view-count" title="Viewed 98 times">98</div>
 <div class="col-10">
 <a href="/view/21910/xhtml-10-transitional-template--basic">XHTML 1.0 Transitional Template -- BASIC</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 18 times">18</div>
+<div class="col-2 snippet-view-count" title="Viewed 75 times">75</div>
 <div class="col-10">
 <a href="/view/25002/html-5-template">HTML 5 Template</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 21 times">21</div>
+<div class="col-2 snippet-view-count" title="Viewed 101 times">101</div>
 <div class="col-10">
 <a href="/view/51878/html5-basic-page-template">HTML5 Basic Page Template</a>
 </div>
 </div>
-<div class="row related-snippet-row">
- <div class="col-2 snippet-view-count" title="Viewed 27 times">27</div>
+ <div class="row related-snippet-row">
+<div class="col-2 snippet-view-count" title="Viewed 105 times">105</div>
 <div class="col-10">
 <a href="/view/53258/html5-blank-template--jquery">HTML5 Blank Template + jQuery</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 16 times">16</div>
+<div class="col-2 snippet-view-count" title="Viewed 103 times">103</div>
 <div class="col-10">
 <a href="/view/67701/blank-html-template-with-hosted-src-viewport--respondjs">Blank HTML template with hosted src, viewport &amp; respond.js</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 15 times">15</div>
+<div class="col-2 snippet-view-count" title="Viewed 92 times">92</div>
 <div class="col-10">
 <a href="/view/71788/basic-html5-template">Basic HTML5 Template</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 36 times">36</div>
+<div class="col-2 snippet-view-count" title="Viewed 131 times">131</div>
 <div class="col-10">
 <a href="/view/72752/html5-basic-template-w-comments">HTML5 Basic Template (w/ Comments)</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 26 times">26</div>
+<div class="col-2 snippet-view-count" title="Viewed 115 times">115</div>
 <div class="col-10">
 <a href="/view/100819/html-starter-template">HTML Starter Template</a>
 </div>
@@ -228,15 +239,14 @@ at 11/15/13 10:22pm</a>
 <div>
 <div class="rgt"> / Published in: <a href="/all?language=html">HTML</a>
 </div>
-<div class="savebtn" onclick="if (!window.__cfRLUnblockHandlers) return false; loadFolderList(72914);" data-snippet="72914" data-cf-modified-d842419050e92c28e4c87d5c-="">
-<img src="/img/icon_sav.png?v2" /></div>
+<div class="savebtn" onclick="if (!window.__cfRLUnblockHandlers) return false; loadFolderList(72914);" data-snippet="72914" data-cf-modified-88d99fdf78da82cc41028b21-="">
+<img src="/img/icon_sav.png?v3" /></div>
 <div id="folder-menu" style="z-index: 10;">
-<div id="indicator"><img src="/img/loader.gif?v2" /></div>
+<b>Save to your folder(s)</b>
+<div id="indicator"><img src="/img/loader.gif?v3" /></div>
 <div id="folder-error"></div>
 <div id="folder-msg"></div>
-<div id="folder-html">
-<img src="/img/loader.gif?v2" />
-</div>
+<div id="folder-html"></div>
 <form id="folder-add">
 <input type="text" id="folder-name" />
 <input type="submit" value="Add" />
@@ -251,7 +261,7 @@ at 11/15/13 10:22pm</a>
 <div class="sourcenav">
 <span class="rgt">
 <a href="javascript:expand()" id="toggleexpand">Expand</a> |
-<a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; $(\'#embed_div\').toggle();$(\'#embed_code\').focus();$(\'#embed_code\').select();return false;" data-cf-modified-d842419050e92c28e4c87d5c-="">Embed</a> | <a rel="nofollow" href="/view/72914?codeview=">Plain Text</a></span>
+<a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; $(\'#embed_div\').toggle();$(\'#embed_code\').focus();$(\'#embed_code\').select();return false;" data-cf-modified-88d99fdf78da82cc41028b21-="">Embed</a> | <a rel="nofollow" href="/view/72914?codeview=">Plain Text</a></span>
 <br />
 </div>
 <div id="innersource" class="nowrap">
@@ -260,8 +270,8 @@ at 11/15/13 10:22pm</a>
     &lt;a href=&quot;https://snipplr.com/view/72914&quot;&gt;Code snippet
         - Better HTML 5 basic starter template &lt;/a&gt; on Snipplr
 &lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://snipplr.com/js/embed.js?v2&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://snipplr.com/json/72914&quot;&gt;&lt;/script&gt;" onclick="if (!window.__cfRLUnblockHandlers) return false; this.select();" size="35" data-cf-modified-d842419050e92c28e4c87d5c-="" />
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://snipplr.com/js/embed.js?v3&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://snipplr.com/json/72914&quot;&gt;&lt;/script&gt;" onclick="if (!window.__cfRLUnblockHandlers) return false; this.select();" size="35" data-cf-modified-88d99fdf78da82cc41028b21-="" />
 <br />
 <em>Copy this code and paste it in your HTML</em>
 </div>
@@ -271,17 +281,17 @@ at 11/15/13 10:22pm</a>
 <p>URL: <a href=\'http://www.barattalo.it\' target="_blank" class="external_link" rel=\'external nofollow\'>http://www.barattalo.it</a></p>
 <p>
 <span class="rgt" id="spam">
-<a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; alert(\'You must be logged in to report a snippet.\');" title="Use this to report spam" data-cf-modified-d842419050e92c28e4c87d5c-="">Report this snippet</a>
+<a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; alert(\'You must be logged in to report a snippet.\');" title="Use this to report spam" data-cf-modified-88d99fdf78da82cc41028b21-="">Report this snippet</a>
 </span>
 <span class="rgt"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="snipplr">Tweet</a></span>
 <span class="rgt"><div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=216635682829155&autoLogAppEvents=1" type="d842419050e92c28e4c87d5c-text/javascript"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=216635682829155&autoLogAppEvents=1" type="88d99fdf78da82cc41028b21-text/javascript"></script>
 <div class="fb-like rgt" data-href="/view/72914/better-html-5-basic-starter-template" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div></span>
 <br>
 </p>
 <h2>Comments</h2>
 <a href=\'/rss/comments/72914\'>
-<img src="/images/rss.png?v2" alt="RSS Icon" title="RSS Feed for Comments" />
+<img src="/images/rss.png?v3" alt="RSS Icon" title="RSS Feed for Comments" />
 Subscribe to comments
 </a>
 <hr />
@@ -289,7 +299,7 @@ Subscribe to comments
 </dl>
 <div id="snippetcomment">
 <p>
-<label for="comment">Comment:</label>
+ <label for="comment">Comment:</label>
 </p>
 <p>
 <textarea name="comment" id="comment" rows="8" cols="40" class="inactive"></textarea>
@@ -353,7 +363,7 @@ Subscribe to comments
 <li><a href="/all?language=make">Makefile</a></li>
 <li><a href="/all?language=matlab">MatLab</a></li>
 <li><a href="/all?language=maxscript">Maxscript</a></li>
-<li><a href="/all?language=mel">Mel</a></li>
+ <li><a href="/all?language=mel">Mel</a></li>
 <li><a href="/all?language=mxml">MXML</a></li>
 <li><a href="/all?language=mysql">MySQL</a></li>
 <li><a href="/all?language=newtonscript">NewtonScript</a></li>
@@ -400,7 +410,7 @@ Subscribe to comments
 </ul>
 <br /><br />
 </div>
-<script type="d842419050e92c28e4c87d5c-text/javascript">
+<script type="88d99fdf78da82cc41028b21-text/javascript">
 
     var _gaq = _gaq || [];
     _gaq.push([\'_setAccount\', \'UA-157360646-1\']);
@@ -416,12 +426,12 @@ Subscribe to comments
     })();
 
 </script>
-<script type="d842419050e92c28e4c87d5c-text/javascript" src="https://platform.twitter.com/widgets.js"></script>
-<script type="d842419050e92c28e4c87d5c-text/javascript" src="/js/jscharts.js?v2" charset="utf-8"></script>
-<script type="d842419050e92c28e4c87d5c-text/javascript" src="//www.google.com/recaptcha/api.js?hl=en"></script>
-<script type="d842419050e92c28e4c87d5c-text/javascript" src="/js/jquery-3.4.1.min.js?v2"></script>
-<script type="d842419050e92c28e4c87d5c-text/javascript" src="/js/chosen.jquery.js?v2"></script>
-<script type="d842419050e92c28e4c87d5c-text/javascript">
+<script type="88d99fdf78da82cc41028b21-text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+<script type="88d99fdf78da82cc41028b21-text/javascript" src="/js/jscharts.js?v3" charset="utf-8"></script>
+<script type="88d99fdf78da82cc41028b21-text/javascript" src="//www.google.com/recaptcha/api.js?hl=en"></script>
+<script type="88d99fdf78da82cc41028b21-text/javascript" src="/js/jquery-3.4.1.min.js?v3"></script>
+<script type="88d99fdf78da82cc41028b21-text/javascript" src="/js/chosen.jquery.js?v3"></script>
+<script type="88d99fdf78da82cc41028b21-text/javascript">
 
         /**
          *
@@ -449,15 +459,15 @@ Subscribe to comments
 
         function fav(id) {
             const startSelector = $("#star_" + id);
-            if (startSelector.attr(\'src\').includes("/img/icon_fav_on.jpg?v2") > 0) {
+            if (startSelector.attr(\'src\').includes("/img/icon_fav_on.jpg?v3") > 0) {
                 sendAjaxRequest(\'json\', \'POST\', \'/ajax/remove-favorite/varSnippetId\'.replace(\'varSnippetId\', id), {})
                     .done(data => {
-                        startSelector.attr(\'src\', "/img/icon_fav_off.jpg?v2");
+                        startSelector.attr(\'src\', "/img/icon_fav_off.jpg?v3");
                     });
             } else {
                 sendAjaxRequest(\'json\', \'POST\', \'/ajax/add-favorite/varSnippetId\'.replace(\'varSnippetId\', id), {})
                     .done(data => {
-                        startSelector.attr(\'src\', "/img/icon_fav_on.jpg?v2");
+                        startSelector.attr(\'src\', "/img/icon_fav_on.jpg?v3");
                     });
             }
             return false;
@@ -468,27 +478,30 @@ Subscribe to comments
         function loadFolderList(snippetId) {
             selectedSnippet = snippetId;
             $(\'#folder-html\').html("");
+            $(\'#folder-menu\').show(\'fast\');
+            $(\'#indicator\').show();
             sendAjaxRequest(\'json\', \'GET\', \'/folder-snippet-list/varSnippet\'.replace(\'varSnippet\', snippetId), {})
                 .done(item => {
+                    $(\'#indicator\').hide();
                     let html = \'<ul class="folder-list">\';
                     Object.entries(item.list).forEach(([key, value]) => {
                         html += "<li><label><input type=\'checkbox\' class=\'folder-item\' value=\'" + key + "\' " + (value.checked ? \'checked\' : \'\') + "> " + value.name + "</label></li>";
                     });
                     html += \'</ul>\';
                     $(\'#folder-html\').html(html);
-                    $(\'#folder-menu\').show(\'fast\');
+
                     $(\'.folder-item:checkbox\').change(function () {
                         const act = ($(this).is(\':checked\')) ? "/ajax/add-folder-snippet/varSnippet/varFolder" : "/ajax/remove-folder-snippet/varSnippet/varFolder";
                         const url = act.replace(\'varSnippet\', snippetId).replace("varFolder", $(this).val());
                         sendAjaxRequest(\'json\', \'POST\', url, {})
                             .done(data => {
-                            const folderMsgSelector = $(\'#folder-msg\');
-                            if ($(this).is(\':checked\')) {
-                                folderMsgSelector.html(\'Snippet added to folder\');
-                            } else {
-                                folderMsgSelector.html(\'Snippet removed from folder\');
-                            }
-                        });
+                                const folderMsgSelector = $(\'#folder-msg\');
+                                if ($(this).is(\':checked\')) {
+                                    folderMsgSelector.html(\'Snippet added to folder\');
+                                } else {
+                                    folderMsgSelector.html(\'Snippet removed from folder\');
+                                }
+                            });
                     });
                 });
         }
@@ -497,16 +510,24 @@ Subscribe to comments
             $(\'#folder-menu\').hide(\'fast\');
         });
         $(\'#folder-add\').submit(function () {
-            let name = $.trim($(\'#folder-name\').val());
+            const folderNameSelector = $(\'#folder-name\');
+            let name = $.trim(folderNameSelector.val());
+            $(\'#folder-error\').text("");
             sendAjaxRequest(\'json\', \'POST\', \'/add-folder\', {\'name\': name})
                 .done(item => {
-                    loadFolderList(selectedSnippet);
+                    if(item.status === "SUCCESS") {
+                        folderNameSelector.val("");
+                        loadFolderList(selectedSnippet);
+                    }else{
+                        $(\'#folder-error\').text(item.errors.join(\', \'));
+                    }
+
                 });
             return false;
         });
 
     </script>
-<script type="d842419050e92c28e4c87d5c-text/javascript">
+<script type="88d99fdf78da82cc41028b21-text/javascript">
                                 $(function () {
             loadAllComments();
         });
@@ -537,7 +558,7 @@ Subscribe to comments
                     commentText += \'<dt><span class="smaller">Posted By: <a href="\' + path.replace(\'varUserName\', item.username) + \'">\' + item.username + \'</a> on \' + item.datePosted;
                                         commentText += \'</span></dt>\';
 
-                                        commentText += \'<dd>\' + item.comment + \'</dd>\';
+                                                                                commentText += \'<dd>\' + item.comment + \'</dd>\';
                     commentContentList.push(commentText);
                 });
                 $(\'#commentList\').html(commentContentList.join(\'\'));
@@ -603,7 +624,7 @@ Subscribe to comments
         }
 
     </script>
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="d842419050e92c28e4c87d5c-|49" defer=""></script></body>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="88d99fdf78da82cc41028b21-|49" defer=""></script></body>
 </html>
 '
 ];

@@ -11,7 +11,7 @@ return [
         'height' => null
     ],
     'description' => null,
-    'favicon' => 'https://snipplr.com/favicon.ico?v2',
+    'favicon' => 'https://snipplr.com/favicon.ico?v3',
     'feeds' => [],
     'icon' => null,
     'image' => null,

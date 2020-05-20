@@ -11,7 +11,7 @@ return [
         'height' => null
     ],
     'description' => 'A collaborative list of DC locations that serve up both Internet and Alcohol - benbalter/dc-wifi-social',
-    'favicon' => 'https://github.githubassets.com/favicon.ico',
+    'favicon' => 'https://github.githubassets.com/favicons/favicon.svg',
     'feeds' => [
         'https://github.com/benbalter/dc-wifi-social/commits/master.atom'
     ],

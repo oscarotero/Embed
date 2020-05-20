@@ -316,7 +316,10 @@ use Embed\Http\Crawler;
 use Embed\Http\CurlClient;
 
 $client = new CurlClient();
-$client->setSettings(['cookies_path' => $cookies_path]);
+$client->setSettings([
+    'cookies_path' => $cookies_path,
+    'ignored_errors' => [18]
+]);
 
 $embed = new Embed(new Crawler($client));
 ```

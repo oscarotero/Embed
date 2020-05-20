@@ -31,10 +31,10 @@ return [
             'Date'
         ],
         'etag' => [
-            '"3837c0df94e24c93e1787b6776cd47b4"'
+            '"70f2e6fb017446050780256c8fc4213d"'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:47:18 GMT'
+            'Wed, 20 May 2020 17:54:28 GMT'
         ],
         'x-frame-options' => [
             'SAMEORIGIN'
@@ -52,19 +52,22 @@ return [
             'Miss from cloudfront'
         ],
         'via' => [
-            '1.1 8fe33d67287131bcace48d75970a4ae5.cloudfront.net (CloudFront)'
+            '1.1 d7f531af10bfff5400817f213f0b7761.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
             'MAD51-C1'
         ],
         'x-amz-cf-id' => [
-            '_0O5sSETn62Pt4Fhs15Ss8pTBsvaRnWZMu0O1_kS12Wn1QrV5_lv7Q=='
+            'vYhJkvgvXGd_WECJSusc02QaR5ZG_k_MjYP5utARMlkt6_RCp72jbw=='
         ],
         'Content-Location' => [
             'https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Fididthat-1%2Flowe-ct-cape-times-world-cup&format=json'
+        ],
+        'X-Request-Time' => [
+            '0.166 ms'
         ]
     ],
     'statusCode' => 200,
     'reasonPhrase' => 'OK',
-    'body' => '{"version":1.0,"type":"rich","provider_name":"SoundCloud","provider_url":"https://soundcloud.com","height":400,"width":"100%","title":"LOWE CT Cape Times - World Cup by iDidTht.com","description":"","thumbnail_url":"https://soundcloud.com/images/fb_placeholder.png","html":"\\u003Ciframe width=\\"100%\\" height=\\"400\\" scrolling=\\"no\\" frameborder=\\"no\\" src=\\"https://w.soundcloud.com/player/?visual=true\\u0026url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624\\u0026show_artwork=true\\"\\u003E\\u003C/iframe\\u003E","author_name":"iDidTht.com","author_url":"https://soundcloud.com/ididthat-1"}'
+    'body' => '{"version":1.0,"type":"rich","provider_name":"SoundCloud","provider_url":"https://soundcloud.com","height":400,"width":"100%","title":"LOWE CT Cape Times - World Cup by IDIDTHAT.co","description":"","thumbnail_url":"https://soundcloud.com/images/fb_placeholder.png","html":"\\u003Ciframe width=\\"100%\\" height=\\"400\\" scrolling=\\"no\\" frameborder=\\"no\\" src=\\"https://w.soundcloud.com/player/?visual=true\\u0026url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624\\u0026show_artwork=true\\"\\u003E\\u003C/iframe\\u003E","author_name":"IDIDTHAT.co","author_url":"https://soundcloud.com/ididthat-1"}'
 ];

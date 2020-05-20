@@ -18,6 +18,7 @@ final class CurlDispatcher
     private array $headers = [];
     private $body;
     private ?int $error = null;
+    private array $settings;
 
     /**
      * @return ResponseInterface[]
@@ -78,6 +79,7 @@ final class CurlDispatcher
     {
         $this->request = $request;
         $this->curl = curl_init((string) $request->getUri());
+        $this->settings = $settings;
 
         $cookies = $settings['cookies_path'] ?? str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
 
@@ -140,6 +142,12 @@ final class CurlDispatcher
 
     private function error(string $message, int $code)
     {
+        $ignored = $this->settings['ignored_errors'] ?? null;
+
+        if ($ignored === true || (is_array($ignored) && in_array($code, $ignored))) {
+            return;
+        }
+
         throw new NetworkException($message, $code, $this->request);
     }
 

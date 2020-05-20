@@ -11,7 +11,7 @@ return [
         'height' => null
     ],
     'description' => 'A clip to hold the Gooseneck Hue HD cameras to the Replicator 2 - skalnik/secret-bear-clip',
-    'favicon' => 'https://github.githubassets.com/favicon.ico',
+    'favicon' => 'https://github.githubassets.com/favicons/favicon.svg',
     'feeds' => [
         'https://github.com/skalnik/secret-bear-clip/commits/master.atom'
     ],

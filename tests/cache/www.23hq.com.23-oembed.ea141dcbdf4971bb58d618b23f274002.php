@@ -7,7 +7,7 @@ return [
             'nginx'
         ],
         'date' => [
-            'Sun, 23 Feb 2020 00:01:20 GMT'
+            'Wed, 20 May 2020 17:53:31 GMT'
         ],
         'content-type' => [
             'application/json'
@@ -19,7 +19,7 @@ return [
             'keep-alive'
         ],
         'expires' => [
-            'Sun, 23 Feb 2020 00:01:20 GMT'
+            'Wed, 20 May 2020 17:53:31 GMT'
         ],
         'pragma' => [
             'no-cache'
@@ -32,6 +32,9 @@ return [
         ],
         'Content-Location' => [
             'http://www.23hq.com/23/oembed?format=json&url=http://www.23hq.com%2fZzleeper%2fphoto%2f16600737'
+        ],
+        'X-Request-Time' => [
+            '0.169 ms'
         ]
     ],
     'statusCode' => 200,

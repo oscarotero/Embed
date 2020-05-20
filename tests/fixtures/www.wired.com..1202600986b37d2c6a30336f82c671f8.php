@@ -17,9 +17,7 @@ return [
     ],
     'icon' => 'https://www.wired.com/wp-content/themes/Phoenix/assets/images/apple-touch-icon.png',
     'image' => 'https://www.wired.com/wp-content/uploads/2016/07/Yi-4KHP.jpg',
-    'keywords' => [
-        '4k'
-    ],
+    'keywords' => [],
     'language' => 'en-US',
     'languages' => [],
     'license' => null,

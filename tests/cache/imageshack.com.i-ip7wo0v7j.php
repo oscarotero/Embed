@@ -9,9 +9,9 @@ return [
             'nginx/1.2.8'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:46:46 GMT',
-            'Sat, 22 Feb 2020 23:46:47 GMT',
-            'Sat, 22 Feb 2020 23:46:47 GMT'
+            'Wed, 20 May 2020 17:53:52 GMT',
+            'Wed, 20 May 2020 17:53:52 GMT',
+            'Wed, 20 May 2020 17:53:53 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -43,23 +43,23 @@ return [
             'bytes'
         ],
         'x-varnish' => [
-            '1785352242 1779108265',
-            '901548006 880040370'
+            '413271415 413264907',
+            '1020430155 1006183496'
         ],
         'age' => [
-            '503186',
-            '1453519'
+            '422',
+            '885026'
         ],
         'via' => [
             '1.1 varnish',
             '1.1 varnish'
         ],
         'x-varnish-hits' => [
-            '3',
-            '30'
+            '2',
+            '12'
         ],
         'x-varnish-ip' => [
-            '208.94.3.32',
+            '208.94.3.35',
             '38.99.77.71'
         ],
         'x-varnish-port' => [
@@ -83,7 +83,7 @@ return [
             '54800'
         ],
         'x-origin-fetch-time' => [
-            '375'
+            '46'
         ],
         'x-original-resolution' => [
             '500x500'
@@ -115,7 +115,7 @@ return [
             '0'
         ],
         'expires' => [
-            'Mon, 23 Mar 2020 23:46:47 GMT'
+            'Fri, 19 Jun 2020 17:53:53 GMT'
         ],
         'cache-control' => [
             'max-age=2592000',
@@ -126,6 +126,9 @@ return [
         ],
         'Content-Location' => [
             'http://imagizer.imageshack.com/img673/0/7wO0v7.jpg'
+        ],
+        'X-Request-Time' => [
+            '2.109 ms'
         ]
     ],
     'statusCode' => 200,

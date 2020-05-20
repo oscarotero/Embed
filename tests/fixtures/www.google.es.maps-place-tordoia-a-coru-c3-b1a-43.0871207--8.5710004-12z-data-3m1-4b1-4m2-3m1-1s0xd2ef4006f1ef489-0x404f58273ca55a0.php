@@ -10,7 +10,7 @@ return [
     'favicon' => 'https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico',
     'feeds' => [],
     'icon' => null,
-    'image' => 'https://lh5.googleusercontent.com/p/AF1QipOoDbUJIFKk2_r3ZdY2t-ABejsrH_eNgGGQU1qL=w256-h256-k-no-p',
+    'image' => 'https://lh5.googleusercontent.com/p/AF1QipNMwDCjHy2MlxLMGJ_Aa8Fp2ct_zvTgpS4JJvKO=w256-h256-k-no-p',
     'keywords' => [],
     'language' => 'es',
     'languages' => [],

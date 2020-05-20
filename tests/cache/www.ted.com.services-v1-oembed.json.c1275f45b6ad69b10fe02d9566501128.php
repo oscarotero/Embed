@@ -18,6 +18,15 @@ return [
         'x-content-type-options' => [
             'nosniff'
         ],
+        'x-download-options' => [
+            'noopen'
+        ],
+        'x-permitted-cross-domain-policies' => [
+            'none'
+        ],
+        'referrer-policy' => [
+            'strict-origin-when-cross-origin'
+        ],
         'access-control-allow-origin' => [
             '*'
         ],
@@ -28,7 +37,7 @@ return [
             'W/"6d457f3377ab40b03a74cf804a1a69db"'
         ],
         'strict-transport-security' => [
-            'max-age=15552000; includeSubDomains'
+            'max-age=31536000; includeSubDomains'
         ],
         'content-encoding' => [
             'gzip'
@@ -37,22 +46,22 @@ return [
             'bytes'
         ],
         'date' => [
-            'Sun, 23 Feb 2020 00:01:35 GMT'
+            'Wed, 20 May 2020 17:53:43 GMT'
         ],
         'via' => [
             '1.1 varnish'
         ],
         'age' => [
-            '0'
+            '272'
         ],
         'x-served-by' => [
-            'e11, cache-iad2136-IAD, cache-mad22043-MAD'
+            'e12, cache-bwi5148-BWI, cache-mad22051-MAD'
         ],
         'x-cache' => [
-            'MISS, MISS'
+            'MISS, HIT'
         ],
         'x-cache-hits' => [
-            '0, 0'
+            '0, 1'
         ],
         'vary' => [
             'Accept-Encoding'
@@ -62,6 +71,9 @@ return [
         ],
         'Content-Location' => [
             'https://www.ted.com/services/v1/oembed.json?url=https%3A%2F%2Fwww.ted.com%2Ftalks%2Fgeorge_monbiot_for_more_wonder_rewild_the_world'
+        ],
+        'X-Request-Time' => [
+            '0.099 ms'
         ]
     ],
     'statusCode' => 200,

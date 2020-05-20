@@ -51,7 +51,324 @@ return [
             'expectsAcceptanceOf' => [
                 '@type' => 'Offer',
                 'category' => 'free',
-                'eligibleRegion' => []
+                'eligibleRegion' => [
+                    [
+                        '@type' => 'Country',
+                        'name' => 'AD'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'AE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'AR'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'AT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'AU'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BG'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BH'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BO'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BR'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'CA'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'CH'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'CL'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'CO'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'CR'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'CY'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'CZ'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'DE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'DK'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'DO'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'DZ'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'EC'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'EE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'EG'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'ES'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'FI'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'FR'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GB'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GR'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'HK'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'HN'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'HU'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'ID'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'IE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'IL'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'IN'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'IS'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'IT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'JO'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'JP'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'KW'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'LB'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'LI'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'LT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'LU'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'LV'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MA'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MC'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MX'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MY'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'NI'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'NL'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'NO'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'NZ'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'OM'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'PA'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'PE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'PH'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'PL'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'PS'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'PT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'PY'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'QA'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'RO'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SA'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SG'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SK'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SV'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'TH'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'TN'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'TR'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'TW'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'US'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'UY'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'VN'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'ZA'
+                    ]
+                ]
             ]
         ]
     ],

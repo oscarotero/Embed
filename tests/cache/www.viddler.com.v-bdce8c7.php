@@ -8,8 +8,8 @@ return [
             'nginx'
         ],
         'date' => [
-            'Sun, 23 Feb 2020 00:01:41 GMT',
-            'Sun, 23 Feb 2020 00:01:41 GMT'
+            'Wed, 20 May 2020 17:53:47 GMT',
+            'Wed, 20 May 2020 17:53:48 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -41,29 +41,32 @@ return [
             'nosniff'
         ],
         'set-cookie' => [
-            'JSESSIONID=97B3A51E0D1D514111439CEEC8948AF6.viddler-api_d; domain=.viddler.com; path=/',
-            '_vlrb_session=WDBDQ3piMVNyWkd4ajl2bERTQjdac1hrdWJhTThKTjZMTmNwNTJ3YmFpMnEvTU5WOWFJY0ZISVdzc3ZxNU5pV1ZFcmJLUTZKUmxvTk9jOUU4ckhBeTRQblg3R0RmSGJJUDFveHhaMkMvNmxjTmVtQmRTZzBDb3JQRVpDSDVQSDRlUGIxbkJNVVlWMHAwWEk0Y1BSZXQ5ZytxczBPVWVwWWZrQXhKUVNUV2c2b0dUU2cvdG83MFNFbXMvaktObEp4LS1rYXpjdFdNb1Fvb2pQSDV0MDNrQTR3PT0%3D--d563a132c66c30018755f07286967c4e49d83fbd; path=/; HttpOnly'
+            'JSESSIONID=E72B13619EF90386FF505739238A4029.viddler-api_g; domain=.viddler.com; path=/',
+            '_vlrb_session=cmQvbUNZeVdyWFlRaHJ2S2ZsOGowNThINjFiZk91STExb2JLS3BOYkxNeWZqZEg4QkpwRlU3Tm55Z1BCZWNTNXVyUHk4R082WEl5c0lSNTZlaWkvUmVVdVRGRTMxYUZYeUM1UWU3OTFZTHVOakJLKzZLWmxaOWJ1RTdYcXZyeVFVL3crTWdYdWpKcW1IMkVtVlVTUEkxQ1pNa3AzUm5mTEpnYTZjOGFhVW9SSm9tVDJzS2s1eVdLNHZ4QUIxMzZqLS05SUYyMHdyUldITzZUMmVybjBtME53PT0%3D--64e5014057122cd615acd7d0092f02a21510d2a0; path=/; HttpOnly'
         ],
         'etag' => [
-            'W/"8ff6e9ac70e76a75de02076eb2c51271"'
+            'W/"03f87c68bdfa0fdec4d2487b36d8c1cf"'
         ],
         'cache-control' => [
             'max-age=0, private, must-revalidate'
         ],
         'x-request-id' => [
-            'fb0ee21f-f6a7-4003-bdef-3700ac4f7544'
+            '2088e1fb-3163-464c-9dcf-8a205a29ea6f'
         ],
         'x-runtime' => [
-            '0.063497'
+            '0.075211'
         ],
         'x-node' => [
-            'rails3'
+            'rails2'
         ],
         'content-encoding' => [
             'gzip'
         ],
         'Content-Location' => [
             'https://www.viddler.com/v/bdce8c7'
+        ],
+        'X-Request-Time' => [
+            '0.974 ms'
         ]
     ],
     'statusCode' => 200,
@@ -82,7 +85,7 @@ return [
   <meta name="keywords" content="Viddler, Video Sharing, Business Video Hosting" />
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="WPQgJ2rc7Vq/x1OkkG7bwtj3Um3vrQ20h56n0M5O9cQP6mSvpA224JvkEufvxFc/DiF2S67o7sAPncGTHmZ+Jw==" />
+<meta name="csrf-token" content="A/uktwubez1ZleWMIN+uBextov93D4+32UwVJjDVrtVTMeNg3GYeQgs3eoPGWduL51BIACepAh4TUbI8hplQZw==" />
 
   <link rel="shortcut icon" href="//static1.cdn-ec.viddler.com/rails/assets/layout/favicon-a9c9c887d52b5d9a765dd3468a2285b8.png" />
 
@@ -175,8 +178,8 @@ window.gon={};
 
     <p id="single-stats">
       <span>Uploaded on Jan 19, 2012 /</span>
-      <span><b>167616 </b> views /</span>
-      <span><b>989778 </b> impressions /</span>
+      <span><b>167625 </b> views /</span>
+      <span><b>992758 </b> impressions /</span>
     <span><b><span class="comment-count">0 </span></b> comments</span>
     </p>
 

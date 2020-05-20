@@ -19,28 +19,19 @@ return [
             'default-src \'self\' https:; base-uri \'self\'; block-all-mixed-content; child-src \'self\' https: blob:; connect-src \'self\' wss: https: blob:; font-src \'self\' data: https:; form-action \'self\' forms.hsforms.com www.facebook.com; frame-ancestors \'self\' app.optimizely.com *.eventbrite.com video214.com animoto.com; img-src \'self\' data: https: blob: android-webview-video-poster:; manifest-src \'self\'; media-src \'self\' https: data: blob:; object-src \'self\' www.paypalobjects.com d150hyw1dtprld.cloudfront.net; prefetch-src \'self\' https:; script-src \'self\' https: data: \'unsafe-inline\' \'unsafe-eval\'; style-src \'self\' https: \'unsafe-inline\'; upgrade-insecure-requests; worker-src \'self\' blob:; report-uri https://sentry.io/api/1401029/security/?sentry_key=b94ac67e5c014425a0fe8cb868528601'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:46:42 GMT'
+            'Wed, 20 May 2020 17:53:08 GMT'
         ],
         'expires' => [
             'Fri, 01 Jan 1990 00:00:00 GMT'
         ],
         'last-modified' => [
-            'Sat, 22 Feb 2020 23:46:42 GMT'
+            'Wed, 20 May 2020 17:53:08 GMT'
         ],
         'pragma' => [
             'no-cache'
         ],
         'referrer-policy' => [
             'origin-when-cross-origin'
-        ],
-        'set-cookie' => [
-            '__ld_hash_key=3%2BDIMhOr%2Fahu%2F1NIK3OvikZpwKG%2BP3Ry5UD6lQKq%2F50%3D; path=/; secure; SameSite=Lax',
-            'uuid=3f12289be16006c1618e3595266fe5bc; domain=.animoto.com; path=/; expires=Fri, 22 Feb 2030 23:46:42 -0000; secure; HttpOnly; SameSite=Lax',
-            'consent=needed; path=/; secure; SameSite=Lax',
-            'sysfig=%7B%22user%22%3A%22visitor%22%7D; path=/; secure; SameSite=Lax',
-            '_animoto.com_session=BAh7CUkiD3Nlc3Npb25faWQGOgZFVEkiJWJmOGFmNzFkMGI4ZjM3NTY3ZmRlMWY5OTJkMGYxYTZlBjsAVEkiDnVzZXJfcGxhbgY7AEZJIgx2aXNpdG9yBjsAVEkiEWNvdW50cnlfY29kZQY7AEZJIgdFUwY7AFRJIhBfY3NyZl90b2tlbgY7AEZJIjFKZVVuUGVWRmJLRXlXTkxlOTRPNkp4SjNDb0RaaDFVK0kxYTZ3dE90dEtVPQY7AEY%3D--4cd0a0424d23fe3e961cbd3dcb5452530ffa5040; path=/; secure; HttpOnly; SameSite=Lax',
-            'countryCode=ES; Path=/',
-            'consent=needed; Path=/'
         ],
         'strict-transport-security' => [
             'max-age=2592000'
@@ -58,7 +49,7 @@ return [
             'web2-http.production.svc.cluster.local:8000/*'
         ],
         'x-envoy-upstream-service-time' => [
-            '285'
+            '209'
         ],
         'x-frame-options' => [
             'ALLOW-FROM https://app.optimizely.com'
@@ -67,10 +58,10 @@ return [
             'none'
         ],
         'x-request-id' => [
-            '71a1b304b73cab0c06e7af9cbb535475'
+            '5371a69ff160a1578d4712eed0aa2abc'
         ],
         'x-runtime' => [
-            '0.283707'
+            '0.207890'
         ],
         'x-served-by' => [
             'nginx-ingress-controller-68b4bf9c-fhz7r'
@@ -78,20 +69,26 @@ return [
         'x-xss-protection' => [
             '1; mode=block'
         ],
+        'set-cookie' => [
+            'countryCode=ES; Path=/'
+        ],
         'x-cache' => [
             'Miss from cloudfront'
         ],
         'via' => [
-            '1.1 5c24e13f00e6f8c5afb53f2e8ee02df2.cloudfront.net (CloudFront)'
+            '1.1 b797234d27f385a39f8a380c54637a5b.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
             'MAD51-C1'
         ],
         'x-amz-cf-id' => [
-            '8t00r6jcrtAaZ6F_kcprgbIhRguBODY7BaaTk5b8f8KRCfhk64l5mw=='
+            '9c-KXlVWNRwto4D21g_9hMWJNrU1f-Tk3jvRomTm1YnR-alrESF4dA=='
         ],
         'Content-Location' => [
             'https://animoto.com/play/GjsJ1gu0WDRfr4pGw12xZQ'
+        ],
+        'X-Request-Time' => [
+            '0.428 ms'
         ]
     ],
     'statusCode' => 200,
@@ -103,7 +100,7 @@ return [
 <!--[if gt IE 8]><!--> <html class="no-js "> <!--<![endif]-->
   <head  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# video: http://ogp.me/ns/video#">
     <link rel="preload" href="https://cdn.optimizely.com/js/42806793.js" as="script">
-  <link rel="preload" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/chimera-254eb9c0b9.css" as="style">
+  <link rel="preload" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/chimera-10d0ace63b.css" as="style">
   <link rel="preload" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/icons-e2a0d0ca19.css" as="style">
   <link rel="preload" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/marketing-33288a1c07.css" as="style">
   <link rel="preload" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/webfont-e33486f62a.css" as="style">
@@ -341,9 +338,6 @@ var AS_HEADERS = {
     if (false) {
       optimizelyUserAttributes.new_user_first_session_create_redirect = true;
     }
-    if (false) {
-      optimizelyUserAttributes.new_user_first_session_templates_with_replaceable_assets_test = true;
-    }
   }
 
   if (optimizelySettings.user.is_first_purchase) {
@@ -367,13 +361,13 @@ var AS_HEADERS = {
       <meta name="robots" content="noindex, follow" />
       <meta name="description" content="Animoto&#39;s video maker turns your photos and video clips into professional videos in minutes. Fast and shockingly simple - we make video creation easy." />
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Animoto - taco bell</title>
-        <link rel="stylesheet" media="screen" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/chimera-254eb9c0b9.css" />
+      <title>taco bell - Animoto</title>
+        <link rel="stylesheet" media="screen" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/chimera-10d0ace63b.css" />
         <link rel="stylesheet" media="screen" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/icons-e2a0d0ca19.css" />
         <link rel="stylesheet" media="screen" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/marketing-33288a1c07.css" />
         <link rel="stylesheet" media="screen" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/webfont-e33486f62a.css" />
 
-      <link rel="stylesheet" media="screen" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/play-28685d34c3.css" />
+      <link rel="stylesheet" media="screen" href="https://d14pr3cu5atb0x.cloudfront.net/pkg/css/play-516bffb6f6.css" />
         <link rel="alternate" type="text/xml+oembed" title="Animoto Video: taco bell" href="https://animoto.com/oembeds/create.xml?automated=true&amp;options=start_hq&amp;url=https%3A%2F%2Fanimoto.com%2Fplay%2FGjsJ1gu0WDRfr4pGw12xZQ" />
   <link rel="alternate" type="application/json+oembed" title="Animoto Video: taco bell" href="https://animoto.com/oembeds/create.json?automated=true&amp;options=start_hq&amp;url=https%3A%2F%2Fanimoto.com%2Fplay%2FGjsJ1gu0WDRfr4pGw12xZQ" />
 
@@ -404,7 +398,7 @@ var AS_HEADERS = {
 <meta name="twitter:title" content="taco bell">
 <meta name="twitter:url" content="https://animoto.com/play/GjsJ1gu0WDRfr4pGw12xZQ">
 
-  <meta name="twitter:player" content="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&amp;e=1582415202&amp;f=GjsJ1gu0WDRfr4pGw12xZQ&amp;d=0&amp;m=b&amp;r=360p&amp;i=m&amp;asset_domain=s3-p.animoto.com&amp;animoto_domain=animoto.com&amp;options=">
+  <meta name="twitter:player" content="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&amp;e=1589997188&amp;f=GjsJ1gu0WDRfr4pGw12xZQ&amp;d=0&amp;m=p&amp;r=360p&amp;i=m&amp;asset_domain=s3-p.animoto.com&amp;animoto_domain=animoto.com&amp;options=">
   <meta name="twitter:player:width" content="640">
   <meta name="twitter:player:height" content="360">
 
@@ -414,14 +408,14 @@ var AS_HEADERS = {
 
         <link href="https://animoto.com/play/GjsJ1gu0WDRfr4pGw12xZQ" rel="canonical" />
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="d6SZoGgt6tK3Tir12mjRFm3cTMzIn1+/0xhINBZx60JSQb6djWiGc4UW+Cst62sxf6tGTBEYCoHwTvL2xdxf5w==" />
+<meta name="csrf-token" content="aWuBWt0tUnPEnDNQnPrOLlo5jYqJrtEHAIkSKGFmTYGzeJxUDkN1BCuGCfDVOYvcFcBj5Xt7f5bYmF6/yJ4/SA==" />
     <script>
 //<![CDATA[
-var AUTH_TOKEN = "DIbI+Rm/s95KUl48PHruT11Cc7GlHv5fv0Cc4KooJzIpY+/E/Prff3gKjOLL+VRoTzV5MXyZq2GcFiYieYWTlw==";
+var AUTH_TOKEN = "Y29TPc3D9xyN7zxRSvhtkZDrrA6lmY/9b4j9Pb/Q+Gq5fE4zHq3Qa2L1BvEDOyhj3xJCYVdMIWy3mbGqFiiKow==";
 //]]>
 </script>
     <script src="https://cdn.optimizely.com/js/42806793.js"></script>
-    <meta content="{&quot;emailTemplate&quot;:false,&quot;email_shares&quot;:true,&quot;facebook-export&quot;:true,&quot;google_tag_manager&quot;:true,&quot;hubspot-export&quot;:true,&quot;linkedin-export&quot;:false,&quot;optimizely&quot;:true,&quot;smugmug-export&quot;:true,&quot;snowplow_service_worker&quot;:false,&quot;twitter-export&quot;:true,&quot;vimeo-export&quot;:true,&quot;vzaar-export&quot;:true,&quot;wistia-export&quot;:true,&quot;youtube-export&quot;:true}" id="ld-bootstrap">
+    <meta content="{&quot;builder-v2&quot;:false,&quot;emailTemplate&quot;:false,&quot;email_shares&quot;:true,&quot;facebook-export&quot;:true,&quot;google_tag_manager&quot;:true,&quot;hubspot-export&quot;:true,&quot;linkedin-export&quot;:false,&quot;optimizely&quot;:true,&quot;smugmug-export&quot;:true,&quot;twitter-export&quot;:true,&quot;vimeo-export&quot;:true,&quot;vzaar-export&quot;:true,&quot;wistia-export&quot;:true,&quot;youtube-export&quot;:true}" id="ld-bootstrap">
   </head>
   <body class="page fb-no-session play-page white-background" id="video-player-page">
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-RZK8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -529,8 +523,10 @@ var AUTH_TOKEN = "DIbI+Rm/s95KUl48PHruT11Cc7GlHv5fv0Cc4KooJzIpY+/E/Prff3gKjOLL+V
         </div>
       </div>
       <div class="row">
-        <div class="s-header-ribbon col-sm-12 col-md-8 col-lg-9 margin-bottom-2 center-when-small">
+        <div class="s-header-ribbon col-sm-12 margin-bottom-2 center-when-small col-md-8 col-lg-9">
           <h1 id="js-project-title-header" title="taco bell" data-title="taco bell" itemprop="name" class="no-padding-top no-margin-bottom h2 text-overflow-ellipsis pp-project-title">taco bell</h1>
+        </div>
+        <div class="col-sm-12  margin-bottom-4 center-when-small text-right js-disabled-tooltip col-md-4 col-lg-3">
         </div>
       </div>
       <div class="js-tabs-container col-sm-12 col-md-12"></div>
@@ -546,32 +542,45 @@ var AUTH_TOKEN = "DIbI+Rm/s95KUl48PHruT11Cc7GlHv5fv0Cc4KooJzIpY+/E/Prff3gKjOLL+V
         <div class="footer">
     <div class="container">
       <div class="row">
-        <ul class="f-list grey-links col-md-2">
-          <li class="label body-text margin-bottom-1">Support</li>
-          <li class="margin-bottom-1"><a href="https://help.animoto.com">Help</a></li>
-          <li class="hide-when-sm margin-bottom-1"><a href="/affiliates">Affiliates</a></li>
-          <li class="margin-bottom-1"><a href="/legal/terms">Terms of Use</a></li>
-          <li class="margin-bottom-1"><a href="/legal/privacy_policy">Privacy Policy</a></li>
+        <ul class="f-list grey-links col-md-2 margin-bottom-3">
+          <li class="label body-text margin-bottom-1">Uses</li>
+          <li class="margin-bottom-1"><a href="/business">Marketing video</a></li>
+          <li class="margin-bottom-1"><a href="/make/video-ads">Video ad</a></li>
+          <li class="margin-bottom-1"><a href="/make/tutorial-videos">How-to video</a></li>
+          <li class="margin-bottom-1"><a href="/make/slideshow-video">Slideshow video</a></li>
+          <li class="margin-bottom-1"><a href="/social-media">Social media</a></li>
+          <li class="margin-bottom-1"><a href="/business/promo-video">Promo video</a></li>
+          <li class="margin-bottom-1"><a href="/make/happy-birthday-videos">Birthday video</a></li>
         </ul>
-        <ul class="f-list grey-links col-md-2 hide-when-sm">
+        <ul class="f-list grey-links col-md-2 margin-bottom-3">
           <li class="label body-text margin-bottom-1">Animoto For</li>
-          <li class="margin-bottom-1"><a href="/personal">Family</a></li>
           <li class="margin-bottom-1"><a href="/business">Business</a></li>
-          <li class="margin-bottom-1"><a href="/business/photography">Photographers</a></li>
-          <li class="margin-bottom-1"><a href="/business/education">Education</a></li>
-          <li class="margin-bottom-1"><a href="/business/real-estate-videos">Real Estate</a></li>
+          <li class="margin-bottom-1"><a href="/business/photography">Photography</a></li>
+          <li class="margin-bottom-1"><a href="/business/real-estate-videos">Real estate</a></li>
+          <li class="margin-bottom-1"><a href="/business/non-profit">Non-profit</a></li>
+          <li class="margin-bottom-1"><a href="/business/education/classroom">Education</a></li>
+          <li class="margin-bottom-1"><a href="/business/ecommerce-video-marketing">Ecommerce</a></li>
+          <li class="margin-bottom-1"><a href="/business/fitness">Fitness</a></li>
         </ul>
-        <ul class="f-list grey-links col-md-2">
-          <li class="label body-text margin-bottom-1">Download</li>
-          <li class="margin-bottom-1"><a href="https://itunes.apple.com/app/apple-store/id1309697613?pt=224896&amp;ct=Footer_ipad&amp;mt=8">iPad</a></li>
-          <li class="margin-bottom-1"><a href="https://itunes.apple.com/app/apple-store/id1309697613?pt=224896&amp;ct=Footer_ios&amp;mt=8">iOS</a></li>
+        <ul class="f-list grey-links col-md-2 margin-bottom-3">
+          <li class="label body-text margin-bottom-1">Features</li>
+          <li class="margin-bottom-1"><a href="/features/photo-video-maker">Photo video maker</a></li>
+          <li class="margin-bottom-1"><a href="/features/add-music-to-video">Music library</a></li>
+          <li class="margin-bottom-1"><a href="/apps/online-video-maker">Online video editor</a></li>
+          <li class="margin-bottom-1"><a href="/builder/templates/all">Templates</a></li>
+          <li class="margin-bottom-1"><a href="/features/crop-and-trim-video">Video trimming</a></li>
+          <li class="margin-bottom-1"><a href="/features/video-maker-with-stock-library">Stock library</a></li>
+          <li class="margin-bottom-1"><a href="</apps/mobile/ios>">iOS</a></li>
         </ul>
-        <ul class="f-list grey-links col-md-2">
-          <li class="label body-text margin-bottom-1">About</li>
-          <li class="margin-bottom-1"><a href="/about">Our Story</a></li>
-          <li class="margin-bottom-1"><a href="/press">Press</a></li>
-          <li class="margin-bottom-1"><a href="/about">Jobs</a></li>
+        <ul class="f-list grey-links col-md-2 margin-bottom-3">
+          <li class="label body-text margin-bottom-1">Company</li>
+          <li class="margin-bottom-1"><a href="https://help.animoto.com/hc/en-us">Support</a></li>
           <li class="margin-bottom-1"><a href="/blog">Blog</a></li>
+          <li class="margin-bottom-1"><a href="/careers">Careers</a></li>
+          <li class="margin-bottom-1"><a href="/press">Press</a></li>
+          <li class="margin-bottom-1"><a href="/affiliates">Affiliates</a></li>
+          <li class="margin-bottom-1"><a href="/legal/privacy_policy">Privacy policy</a></li>
+          <li class="margin-bottom-1"><a href="/legal/terms">Terms of use</a></li>
         </ul>
         <ul class="f-list col-md-4">
           <li class="label body-text margin-bottom-1">Connect</li>
@@ -605,11 +614,11 @@ var AUTH_TOKEN = "DIbI+Rm/s95KUl48PHruT11Cc7GlHv5fv0Cc4KooJzIpY+/E/Prff3gKjOLL+V
     
     <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/modernizr-9b073aa6db.js" crossorigin="anonymous"></script>
       <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/vendor-638ea576b1.js" crossorigin="anonymous"></script>
-    <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/core-5a93b9c1d6.js" crossorigin="anonymous"></script>
-    <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/util-56f1096905.js" crossorigin="anonymous"></script>
+    <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/core-411f6a479a.js" crossorigin="anonymous"></script>
+    <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/util-ad4dc0b5cd.js" crossorigin="anonymous"></script>
     <script>
   var ravenOptions = {
-    release : \'d7d5dabeb7b883b16e8f7719a444d9a04dd49ecb\',
+    release : \'a41654b5da4c032a89cb4a355c9e837707c2637e\',
 
     whitelistUrls : [\'animoto.com\',\'d14pr3cu5atb0x.cloudfront.net\',\'d2r6q1p754p9pi.cloudfront.net\',\'d2yc83ilop69kq.cloudfront.net\',\'d150hyw1dtprld.cloudfront.net\'],
 
@@ -700,20 +709,25 @@ var AUTH_TOKEN = "DIbI+Rm/s95KUl48PHruT11Cc7GlHv5fv0Cc4KooJzIpY+/E/Prff3gKjOLL+V
 
     <script>
   var user = {
-    key : \'3+DIMhOr/ahu/1NIK3OvikZpwKG+P3Ry5UD6lQKq/50=\'
+    key            : \'D58Jcx6tewSF+7O5PKdUut1wWB2h8gZThDUcsh4Od2A=\',
+    custom : {
+      browserName    : \'Firefox\',
+      browserVersion : 73
+    }
   };
   window.ldclient = LDClient.initialize(\'59f205faa3862f0accd10655\', user, {
-    bootstrap : {"aa-test-2019":"variation","add-block-version-2":true,"b2-beta-1":"builder2","b2-highres-preview":false,"builder-engine-debug":false,"builder-engine-version":"engine_master_482_d04a25d","builder-v2-themes":false,"days-remaining-on-my-videos":false,"dropbox_retrievals":true,"emailTemplate":false,"email_shares":true,"engine-verbose":false,"facebook-export":true,"facebook_retrievals":true,"fit-frame-variation":true,"flickr_retrievals":true,"getty_stock":true,"goals-ab-test":"default","google-sign-in":true,"google-auth-ab-test":"default","google-auth-desktop-ab-test":"default","google-auth-reg":false,"google_tag_manager":true,"homepage-test":true,"hubspot-export":true,"image-burst-mobile":false,"image-burst-variations":true,"instagram_retrievals":true,"shot-builder-web-v2":true,"instant-preview-web":false,"internal-only-storyboards":false,"international-price-testing":34,"lightroom_retrievals":true,"linkedin-export":false,"mobile-image-burst-variants":{"variants":[1]},"mobile-square":false,"mute_videos":false,"optimizely":true,"over-time-blocks":true,"phase-3-ab-test":"variation","pref-takeover":false,"preferences-api":false,"rebranded-pricing":false,"sentry":60,"showBuilderMobileProjects":false,"site-announcements":"default","smugmug-export":true,"smugmug_retrievals":true,"snowplow_service_worker":false,"tos-version":"1.3","twitter-export":true,"uppy-uploader":false,"user-tracking":true,"vimeo-export":true,"vzaar-export":true,"wistia-export":true,"youtube-export":true,"$flagsState":{"aa-test-2019":{"version":3,"variation":1},"add-block-version-2":{"version":15,"variation":0},"b2-beta-1":{"version":2,"variation":2},"b2-highres-preview":{"version":2,"variation":1},"builder-engine-debug":{"version":5,"variation":1},"builder-engine-version":{"version":144,"variation":20},"builder-v2-themes":{"version":5,"variation":1},"days-remaining-on-my-videos":{"version":2,"variation":1},"dropbox_retrievals":{"version":7,"variation":0},"emailTemplate":{"version":2,"variation":1},"email_shares":{"version":11,"variation":0},"engine-verbose":{"version":2,"variation":1},"facebook-export":{"version":11,"variation":0},"facebook_retrievals":{"version":10,"variation":0},"fit-frame-variation":{"version":11,"variation":0},"flickr_retrievals":{"version":11,"variation":0},"getty_stock":{"version":9,"variation":0},"goals-ab-test":{"version":13,"variation":2},"google-sign-in":{"version":28,"variation":0},"google-auth-ab-test":{"version":7,"variation":2},"google-auth-desktop-ab-test":{"version":16,"variation":2},"google-auth-reg":{"version":11,"variation":1},"google_tag_manager":{"version":7,"variation":0},"homepage-test":{"version":9,"variation":0},"hubspot-export":{"version":7,"variation":0},"image-burst-mobile":{"version":21,"variation":1},"image-burst-variations":{"version":9,"variation":0},"instagram_retrievals":{"version":7,"variation":0},"shot-builder-web-v2":{"version":20,"variation":0},"instant-preview-web":{"version":21,"variation":1},"internal-only-storyboards":{"version":20,"variation":1},"international-price-testing":{"version":41,"variation":0},"lightroom_retrievals":{"version":7,"variation":0},"linkedin-export":{"version":11,"variation":1},"mobile-image-burst-variants":{"version":9,"variation":0},"mobile-square":{"version":6,"variation":1},"mute_videos":{"version":2,"variation":1},"optimizely":{"version":7,"variation":0},"over-time-blocks":{"version":13,"variation":0},"phase-3-ab-test":{"version":47,"variation":0},"pref-takeover":{"version":9,"variation":1},"preferences-api":{"version":2,"variation":1},"rebranded-pricing":{"version":13,"variation":1},"sentry":{"version":25,"variation":3},"showBuilderMobileProjects":{"version":2,"variation":1},"site-announcements":{"version":41,"variation":1},"smugmug-export":{"version":21,"variation":0},"smugmug_retrievals":{"version":19,"variation":0},"snowplow_service_worker":{"version":20,"variation":1},"tos-version":{"version":13,"variation":0},"twitter-export":{"version":7,"variation":0},"uppy-uploader":{"version":8,"variation":1},"user-tracking":{"version":4,"variation":0},"vimeo-export":{"version":7,"variation":0},"vzaar-export":{"version":7,"variation":0},"wistia-export":{"version":7,"variation":0},"youtube-export":{"version":7,"variation":0}},"$valid":true},
+    bootstrap : {"a-3-dynamic-block-preview":false,"a-3-medium-engine-renders":false,"a-3-song-trimming":true,"a3-existing-user-onboarding":true,"a3-new-user-onboarding":false,"a3-song-search":true,"a3ABBeta":"default","aa-test-2019":"variation","apple-sign-in":true,"b2-highres-preview":false,"builder-2-migration-flows":false,"builder-engine-debug":false,"builder-v2":false,"builder-engine-version":"production","builder-project-version":"1.0.0","builder-v2-themes":false,"days-remaining-on-my-videos":false,"dropbox_retrievals":true,"emailTemplate":false,"email_shares":true,"engine-verbose":false,"facebook-export":true,"facebook_retrievals":true,"fit-frame-variation":true,"flickr_retrievals":true,"rebranded-pricing":true,"free-plus-two":true,"free-plus-two-test":"variation","getty_stock":true,"google-sign-in":true,"google-auth-ab-test":"default","google-auth-desktop-ab-test":"default","google-auth-reg":false,"google_tag_manager":true,"homepage-test":true,"hubspot-export":true,"image-burst-variations":true,"instagram_retrievals":true,"shot-builder-web-v2":true,"instant-preview-web":false,"internal-only-storyboards":false,"international-price-testing":34,"lightroom_retrievals":true,"linkedin-export":false,"mobile-image-burst-variants":{"variants":[1]},"mobile-square":false,"mute_videos":false,"one-field-per-step-signup":"default","optimizely":true,"over-time-blocks":true,"phase-3-ab-test":"variation","play-page-share-test":"original","pref-takeover":false,"preferences-api":false,"rebranded-signup":"variation","sentry":60,"showBuilderMobileProjects":false,"site-announcements":"default","smugmug-export":true,"smugmug_retrievals":false,"tos-version":"1.3","twitter-export":true,"uppy-uploader":false,"user-tracking":true,"vimeo-export":true,"vzaar-export":true,"wistia-export":true,"youtube-export":true}
   });
 </script>
+
     
-      <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/play_page-a87f8c3848.js" crossorigin="anonymous" defer="defer"></script>
-  <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/shares-1141a4e460.js" crossorigin="anonymous" defer="defer"></script>
+      <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/play_page-22a6ee1fd0.js" crossorigin="anonymous" defer="defer"></script>
+  <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/shares-5220943f87.js" crossorigin="anonymous" defer="defer"></script>
   <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/download_upres-febab70eb1.js" crossorigin="anonymous" defer="defer"></script>
   <script src="//d150hyw1dtprld.cloudfront.net/player/2154e3173a59b5188e2201903324e9867b6cf194/player-bundle.js" crossorigin="anonymous"></script>
 
     <script src="https://d14pr3cu5atb0x.cloudfront.net/bundles/react/manifest-10d693d5.js" crossorigin="anonymous" defer="defer"></script>
-  <script src="https://d14pr3cu5atb0x.cloudfront.net/bundles/react/base-a6ff640c.js" crossorigin="anonymous" defer="defer"></script>
+  <script src="https://d14pr3cu5atb0x.cloudfront.net/bundles/react/base-75f9b9b2.js" crossorigin="anonymous" defer="defer"></script>
   <script src="https://d14pr3cu5atb0x.cloudfront.net/bundles/react/vendor-978bc76c.js" crossorigin="anonymous" defer="defer"></script>
   <script src="https://d14pr3cu5atb0x.cloudfront.net/bundles/react/polyfill-527f4994.js" crossorigin="anonymous" defer="defer"></script>
 
@@ -802,11 +816,11 @@ var PlayerEvents = {
     var url = \'//d2jy3ctxtc2iu2.cloudfront.net/trail.gif\';
     url += "?s="  + "player" + // scope
             "&e="  + event + // event
-            "&sid=" + "8a2b0b5cd2573f28e1994a3d22f40af6" + // request/session id
+            "&sid=" + "811fda48de32c993461c8cb0c33e30d1" + // request/session id
             "&src=" + "play-page" + // source
             "&own=" + "false" + // is this event for the render owner
             "&pt=" + playerType + //player type
-            "&bi=" + "3f12289be16006c1618e3595266fe5bc" + // browser id
+            "&bi=" + "14fddb584882b23d1d99b2bf4dab49c8" + // browser id
             "&vi=" + "" + // vanity id
             "&ri=" + "GjsJ1gu0WDRfr4pGw12xZQ" + // render id
             "&rl=" + "0" + // render length
@@ -817,7 +831,7 @@ var PlayerEvents = {
             "&us=" + "" + // user sub
             "&oi=" + "psigundc" + // owner id
             "&oc=" + "1396617565" + // owner created at
-            "&os=" + "lite_v2" + // owner sub
+            "&os=" + "freemium_v1" + // owner sub
             "&stn=" + "party" + // style name
             "&r="  + "" + // http referer
             "&ep="  + encodeURIComponent(window.location) + // http referer
@@ -832,13 +846,14 @@ var PlayerEvents = {
   }
 };
 
-var renderData                     = {"creator_client":"web","title":"taco bell","description":"","producer":null,"style":"party","event_time":"2014-04-17T13:35:29Z","favorite":false,"length":30.03,"video_formats":[{"resolution":"360p","framerate":15,"format":"h264","created_at":"2014-04-17T13:31:56Z","purpose":"final","size":3706334,"height":360,"width":640,"links":{"file":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/360p.mp4"}}],"links":{"self":"https:\\/\\/animoto.com\\/appservice\\/videos\\/GjsJ1gu0WDRfr4pGw12xZQ","current_render":"https:\\/\\/animoto.com\\/appservice\\/videos\\/GjsJ1gu0WDRfr4pGw12xZQ","export_jobs":"https:\\/\\/animoto.com\\/appservice\\/jobs\\/exporting?video_url=https%3A%2F%2Fanimoto.com%2Fappservice%2Fvideos%2FGjsJ1gu0WDRfr4pGw12xZQ","play_page":"https:\\/\\/animoto.com\\/play\\/GjsJ1gu0WDRfr4pGw12xZQ","thumbnail_image":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_224x126.jpg","covers":{"126p":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_224x126.jpg","224x126":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_224x126.jpg","240p":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_432x240.jpg","360p":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_648x360.jpg","432x240":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_432x240.jpg","640x360":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_648x360.jpg","648x360":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_648x360.jpg","1080p":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_1920x1080.jpg","1920x1080":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_1920x1080.jpg"},"cover_image":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_1920x1080.jpg","user":"https:\\/\\/animoto.com\\/appservice\\/users\\/10288572","project":"https:\\/\\/animoto.com\\/appservice\\/projects\\/32bti9fZwtzJye2TkO2kmQ"},"sharing":{},"forced_watermark":false,"project_type":"video_slideshow","jobs":[{"state":"completed","resolution":"360p","format":"h264","framerate":15,"height":360,"width":640,"length":30.03,"purpose":"final","links":{"self":"https:\\/\\/animoto.com\\/appservice\\/jobs\\/rendering\\/GjsJ1gu0WDRfr4pGw12xZQ-98004986","project":"https:\\/\\/animoto.com\\/appservice\\/projects\\/32bti9fZwtzJye2TkO2kmQ","video":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/360p.mp4"}}],"deprecated":false},
-    ownerData                      = {"entitlements":["favorite_songs","getty_stock","maker","no_watermark","share","special_blocks","unbranded_video"],"facebook_profile":null},
+var renderData                     = {"creator_client":"web","title":"taco bell","description":"","producer":null,"style":"party","event_time":"2014-04-17T13:35:29Z","favorite":false,"length":30.03,"video_formats":[{"resolution":"360p","framerate":15,"format":"h264","created_at":"2014-04-17T13:31:56Z","purpose":"final","size":3706334,"height":360,"width":640,"links":{"file":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/360p.mp4"}}],"links":{"self":"https:\\/\\/animoto.com\\/appservice\\/videos\\/GjsJ1gu0WDRfr4pGw12xZQ","current_render":"https:\\/\\/animoto.com\\/appservice\\/videos\\/GjsJ1gu0WDRfr4pGw12xZQ","export_jobs":"https:\\/\\/animoto.com\\/appservice\\/jobs\\/exporting?video_url=https%3A%2F%2Fanimoto.com%2Fappservice%2Fvideos%2FGjsJ1gu0WDRfr4pGw12xZQ","play_page":"https:\\/\\/animoto.com\\/play\\/GjsJ1gu0WDRfr4pGw12xZQ","thumbnail_image":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_224x126.jpg","covers":{"126p":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_224x126.jpg","224x126":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_224x126.jpg","240p":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_432x240.jpg","360p":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_648x360.jpg","432x240":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_432x240.jpg","640x360":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_648x360.jpg","648x360":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_648x360.jpg","1080p":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_1920x1080.jpg","1920x1080":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_1920x1080.jpg"},"cover_image":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/cover_1920x1080.jpg","user":"https:\\/\\/animoto.com\\/appservice\\/users\\/10288572","project":"https:\\/\\/animoto.com\\/appservice\\/projects\\/32bti9fZwtzJye2TkO2kmQ"},"sharing":{},"forced_watermark":false,"project_type":"video_slideshow","project_version":null,"jobs":[{"state":"completed","resolution":"360p","format":"h264","framerate":15,"height":360,"width":640,"length":30.03,"purpose":"final","links":{"self":"https:\\/\\/animoto.com\\/appservice\\/jobs\\/rendering\\/GjsJ1gu0WDRfr4pGw12xZQ-98004986","project":"https:\\/\\/animoto.com\\/appservice\\/projects\\/32bti9fZwtzJye2TkO2kmQ","video":"https:\\/\\/d2m23yiuv18ohn.cloudfront.net\\/Video\\/GjsJ1gu0WDRfr4pGw12xZQ\\/360p.mp4"}}],"deprecated":false},
+    ownerData                      = {"entitlements":["builder","configure_comments","configure_sharing","download_videos","favorite_songs","getty_stock","hide_logo","hide_share_links","iso_r480p","mp4_r480p","mp4_r720p","plus_themes","pro_project_title","producer_name","recent_songs","referrals","render_stats","share","share_notification","special_blocks","maker","no_watermark"],"facebook_profile":null},
     isLoggedIn                     = false,
     isOwner                        = false,
     isFBUser                       = false,
     App                            = null,
     tags                           = [],
+    inPlayPageShareTestVariation   = false,
     videoSettings,
 
 
@@ -875,7 +890,7 @@ var renderData                     = {"creator_client":"web","title":"taco bell"
     responsive            : true,
     gaCampaign            : null,
     qosReporting          : true,
-    flashVideoUrl         : "https://d150hyw1dtprld.cloudfront.net/swf/w.swf?w=swf/production/vp1&amp;e=1582415202&amp;f=GjsJ1gu0WDRfr4pGw12xZQ&amp;d=0&amp;m=b&amp;r=360p&amp;i=m&amp;asset_domain=s3-p.animoto.com&amp;animoto_domain=animoto.com&amp;options=".replace(/amp;/g, \'\')
+    flashVideoUrl         : "https://d150hyw1dtprld.cloudfront.net/swf/w.swf?w=swf/production/vp1&amp;e=1589997188&amp;f=GjsJ1gu0WDRfr4pGw12xZQ&amp;d=0&amp;m=p&amp;r=360p&amp;i=m&amp;asset_domain=s3-p.animoto.com&amp;animoto_domain=animoto.com&amp;options=".replace(/amp;/g, \'\')
   };
 
   _.extend(renderData, {\'playConfig\' : {"id":565733,"okey":"GjsJ1gu0WDRfr4pGw12xZQ","sharing":true,"commenting":true,"created_at":"2014-04-17T13:37:20.000Z","updated_at":"2014-04-17T13:37:20.000Z","start_resolution":""}, \'call_to_action\': {"display":false,"title":"","url":""}});
@@ -891,7 +906,7 @@ var renderData                     = {"creator_client":"web","title":"taco bell"
       pricing_post_purchase : "/pricing?post_purchase_path=https%3A%2F%2Fanimoto.com%2Fplay%2FGjsJ1gu0WDRfr4pGw12xZQ",
       google_play           : "https://play.google.com/store/apps/details?id=com.animoto.android.videoslideshow&amp;hl=en",
       app_store             : "https://itunes.apple.com/app/apple-store/id1309697613",
-      reactShareScript      : "https://d14pr3cu5atb0x.cloudfront.net/bundles/react/reactShareOptions-57f0e796.js",
+      reactShareScript      : "https://d14pr3cu5atb0x.cloudfront.net/bundles/react/reactShareOptions-f5ede43f.js",
       purchase              : \'/account/purchase/professional\'
     });
 
@@ -923,7 +938,7 @@ var renderData                     = {"creator_client":"web","title":"taco bell"
       analytics            : false,
       producerName         : "Bailey Duhaime",
       displayDate          : "April 17, 2014",
-      viewCount            : "1506 Page Views"
+      viewCount            : "1579 Page Views"
     });
 
     var params = $.deparam.querystring();
@@ -947,16 +962,6 @@ var renderData                     = {"creator_client":"web","title":"taco bell"
 
 
     </script>
-
-      <script>
-  if (\'serviceWorker\' in navigator) {
-    navigator.serviceWorker.getRegistration(\'/\').then(function(registration) {
-      if (registration) {
-        registration.unregister();
-      }
-    });
-  }
-  </script>
 
     <script src="https://d14pr3cu5atb0x.cloudfront.net/pkg/js/set_user_local_storage-45402a54a1.js" crossorigin="anonymous"></script>
   </body>

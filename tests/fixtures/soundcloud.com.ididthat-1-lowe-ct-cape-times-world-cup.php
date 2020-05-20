@@ -2,7 +2,7 @@
 declare(strict_types = 1);
 
 return [
-    'authorName' => 'iDidTht.com',
+    'authorName' => 'IDIDTHAT.co',
     'authorUrl' => 'https://soundcloud.com/ididthat-1',
     'cms' => null,
     'code' => [
@@ -10,7 +10,7 @@ return [
         'width' => 100,
         'height' => 400
     ],
-    'description' => 'iDidTht Promotes and Connects South Africa’s Advertising and Production Industry.',
+    'description' => 'IDIDTHAT.co Promotes and Connects South Africa’s Advertising and Production Industry.',
     'favicon' => 'https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2cadd14bdb.ico',
     'feeds' => [],
     'icon' => 'https://a-v2.sndcdn.com/assets/images/sc-icons/ios-a62dfc8fe7.png',
@@ -32,7 +32,7 @@ return [
     'providerUrl' => 'https://soundcloud.com/',
     'publishedTime' => null,
     'redirect' => null,
-    'title' => 'LOWE CT Cape Times - World Cup by iDidTht.com',
+    'title' => 'LOWE CT Cape Times - World Cup by IDIDTHAT.co',
     'url' => 'https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup',
     'linkedData' => [],
     'oEmbed' => [
@@ -42,11 +42,11 @@ return [
         'provider_url' => 'https://soundcloud.com',
         'height' => 400,
         'width' => '100%',
-        'title' => 'LOWE CT Cape Times - World Cup by iDidTht.com',
+        'title' => 'LOWE CT Cape Times - World Cup by IDIDTHAT.co',
         'description' => '',
         'thumbnail_url' => 'https://soundcloud.com/images/fb_placeholder.png',
         'html' => '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&show_artwork=true"></iframe>',
-        'author_name' => 'iDidTht.com',
+        'author_name' => 'IDIDTHAT.co',
         'author_url' => 'https://soundcloud.com/ididthat-1'
     ]
 ];

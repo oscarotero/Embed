@@ -7,7 +7,7 @@ return [
             'nginx/1.16.1 (Ubuntu)'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:46:57 GMT'
+            'Wed, 20 May 2020 17:54:05 GMT'
         ],
         'content-type' => [
             'text/html; charset=UTF-8'
@@ -26,6 +26,9 @@ return [
         ],
         'Content-Location' => [
             'https://archive.org/details/dn2015-0220_vid'
+        ],
+        'X-Request-Time' => [
+            '1.114 ms'
         ]
     ],
     'statusCode' => 200,
@@ -43,36 +46,56 @@ return [
         <meta name="google-site-verification" content="Q2YSouphkkgHkFNP7FgAkc4TmBs1Gmag3uGNndb53B8" />
     <meta name="google-site-verification" content="bpjKvUvsX0lxfmjg19TLblckWkDpnptZEYsBntApxUk" />
 
-    <script>window.archive_setup=[]</script>
+    <script>
+/* @licstart  The following is the entire license notice for the
+ * JavaScript code in this page.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in this page.
+ */
+</script>
+        <script>window.archive_setup=[]</script>
     <meta charset="UTF-8">
     <script src="//archive.org/includes/jquery-1.10.2.min.js?v1.10.2" type="text/javascript"></script>
-            <script src="//archive.org/includes/analytics.js?v=24ef0ed0" type="text/javascript"></script>
-
+            <script src="//archive.org/includes/analytics.js?v=d47441b0" type="text/javascript"></script>
     <script>
       \'use strict\';
       if (\'archive_analytics\' in window) {
                   archive_analytics.service = "ao_2";
         
-        archive_analytics.send_pageview_on_load({
-                      mediaType: "movies",
-                  });
+        archive_analytics.send_pageview_on_load({"mediaType":"movies","primaryCollection":"democracy_now_vid"});
 
         archive_analytics.process_url_events(window.location);
       }
     </script>
         <script src="//archive.org/includes/build/npm/jquery-ui.min.js?v1.12.1" type="text/javascript"></script>
     <script src="//archive.org/includes/bootstrap.min.js?v3.0.0" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/clipboard/dist/clipboard.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/@babel/polyfill/dist/polyfill.min.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/ie-dom-node-remove-polyfill.min.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/polyfill.min.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/@webcomponents/webcomponentsjs/webcomponents-bundle.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/more-facets.min.js?v=24ef0ed0" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/clipboard/dist/clipboard.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/@babel/polyfill/dist/polyfill.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/ie-dom-node-remove-polyfill.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/polyfill.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/@webcomponents/webcomponentsjs/webcomponents-bundle.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/more-facets.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/radio-player-controller.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/mobile-top-nav.min.js?v=d47441b0" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/react/umd/react.production.min.js?v16.7.0" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/react-dom/umd/react-dom.production.min.js?v16.7.0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/play8.min.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/playset.min.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/areact.min.js?v=24ef0ed0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/play8.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/playset.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/areact.min.js?v=d47441b0" type="text/javascript"></script>
 <meta name="description" content="Democracy Now! television program for Friday, February 20, 2015 Headlines for February 20, 2015 An Unsolved Case of Racial Terror: FBI Probes 1946..."/>
                       <meta property="og:title" content="Democracy Now! Friday, February 20, 2015 : Free Download, Borrow, and Streaming : Internet Archive">
                       <meta property="og:description" content="Democracy Now! television program for Friday, February 20, 2015 Headlines for February 20, 2015 An Unsolved Case of Racial Terror: FBI Probes 1946...">
@@ -102,7 +125,7 @@ return [
                           <meta property="braintree_token" content="production_w3jccm3z_pqd7hz44swp6zvvw">
                       <meta property="environment" content="production">
                       <meta property="venmo_id" content="2878003111190856236">
-            <link href="//archive.org/includes/build/css/archive.min.css?v=24ef0ed0" rel="stylesheet" type="text/css"/>
+            <link href="//archive.org/includes/build/css/archive.min.css?v=d47441b0" rel="stylesheet" type="text/css"/>
     <link rel="SHORTCUT ICON" href="https://archive.org/images/glogo.jpg"/>
       </head>
   <body class="navia ia-module tiles responsive">
@@ -116,10 +139,15 @@ return [
                     <div class="ia-banners">
               <div class="ia-banner hidden" data-campaign="ia_user_1">
         <p>This banner text <i>can</i> have <b>markup</b>.</p>
-        <a href="#" data-action="ia-banner-close"></a>
+        <form class="banner-close" action="" method="get" data-action="ia-banner-close">
+          <fieldset>
+            <button type="submit"></button>
+          </fieldset>
+        </form>
       </div>
           </div>
-            
+                            
+                <topnav-element config=\'{"baseUrl":"archive.org","catUrl":"https:\\/\\/catalogd.archive.org","waybackUrl":"web.archive.org","screenName":false,"username":"","eventCategory":"MobileTopNav","waybackPagesArchived":"431 billion","isAdmin":0,"identifier":"dn2015-0220_vid","uploader":false,"biblio":false,"hiddenSearchOptions":["RADIO"]}\'></topnav-element>
         <div id="navwrap1" class="">
           <div id="navwrap2">
             <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -127,7 +155,7 @@ return [
 
               <ul class="nav navbar-nav navbar-main">
                 <li class="pull-left">
-                  <a title="Home" class="navia-link home" href="/" target="_top">
+                  <a title="Home" class="navia-link home" href="https://archive.org" target="_top">
                     <span class="iconochive-logo"></span>
                     <div class="archive-wordmark">
                       <img src="https://archive.org/images/wordmark-narrow-spacing.svg" alt="Internet Archive Logo">
@@ -276,7 +304,7 @@ return [
         >Advanced Search</a>
           </div>
     
-                              <input class="js-tvsearch" type="hidden" value=\'{"ands":[],"minday":"06/04/2009","maxday":"02/22/2020"}\'/>
+                              <input class="js-tvsearch" type="hidden" value=\'{"ands":[],"minday":"06/04/2009","maxday":"05/20/2020"}\'/>
     
                         <input type="submit" value="Search"/>
                       </form>
@@ -289,10 +317,34 @@ return [
                   ><span class="iconochive-upload"  aria-hidden="true"></span><span class="sr-only">upload</span><span class="hidden-xs-span hidden-sm-span">UPLOAD</span></a>
                 </li>
 
-                <li class="nav-right-tool pull-right leftmost">
-                                      <a class="nav-user" href="https://archive.org/account/login" style="padding-right:0" _target="top"
-                      data-event-click-tracking="TopNav|LoginIcon"
-                      ><span class="iconochive-person"  aria-hidden="true"></span><span class="sr-only">person</span><span class="hidden-xs-span hidden-sm-span">SIGN IN</span></a>
+                <li class="nav-right-tool pull-right leftmost dropdown-ia">
+                                      <div class="nav-user dropdown-ia">
+                      <span class="ghost80 person-icon"
+                        id="guest-menu"
+                        data-handler="dropdown"
+                        ><span class="iconochive-person"  aria-hidden="true"></span><span class="sr-only">person</span>                      </span>
+                      <ul class="dropdown-menu guest mydrop" role="menu" aria-labelledby="guest">
+                        <li><a
+                          href="https://archive.org/account/signup"
+                          data-event-click-tracking="TopNav|AvatarMenu-Signup"
+                          >Sign up for free</a></li>
+                        <li><a
+                          href="https://archive.org/account/login"
+                          data-event-click-tracking="TopNav|AvatarMenu-Login"
+                          >Log in</a></li>
+                      </ul>
+                      <a href="https://archive.org/account/signup"
+                        class="nav-user-link hidden-xs-span hidden-sm-span"
+                        _target="top"
+                        data-event-click-tracking="TopNav|SignupIcon"
+                      ><span>SIGN UP</span></a>
+                      <span class="hidden-xs-span hidden-sm-span pipe-separate">|</span>
+                      <a href="https://archive.org/account/login"
+                        class="nav-user-link hidden-xs-span hidden-sm-span"
+                        _target="top"
+                        data-event-click-tracking="TopNav|LoginIcon"
+                      ><span>LOG IN</span></a>
+                    </div>
                                   </li>
 
                               </ul>
@@ -314,7 +366,7 @@ return [
                                                                 <div class="row toprow web" style="max-width:1000px;margin:auto;display:block;">
                     <div class="col-xs-12">
                       <div class="wayback-txt">
-                        Search the history of over 411 billion                        <a style="display:inline"
+                        Search the history of over 431 billion                        <a style="display:inline"
                           data-event-click-tracking="TopNav|WaybackMachineStatsLink"
                           href="https://blog.archive.org/2016/10/23/defining-web-pages-web-sites-and-web-captures/"
                           >web pages</a> on the Internet.
@@ -365,17 +417,17 @@ return [
                                         <center class="items_list">
               <div class="items_list_img">
                 <a
-                  href="https://archive.org/details/inlibrary?sort=-publicdate"
-                  style="background-image: url(\'https://archive.org/images/book-lend.png\');"
+                  href="https://archive.org/details/nationalemergencylibrary"
+                  style="background-image: url(\'https://archive.org/images/national-emergency-library-logo-padded.png\');"
                   aria-hidden="true"
-                  data-event-click-tracking="TopNav|CircleWidget-BooksToBorrow"
+                  data-event-click-tracking="TopNav|CircleWidget-NationalEmergencyBrLibrary"
                   ></a>
               </div>
               <a
                 class="stealth boxy-label"
-                data-event-click-tracking="TopNav|CircleWidget-BooksToBorrow"
-                href="https://archive.org/details/inlibrary?sort=-publicdate"
-                >Books to Borrow</a>
+                data-event-click-tracking="TopNav|CircleWidget-NationalEmergencyBrLibrary"
+                href="https://archive.org/details/nationalemergencylibrary"
+                >National Emergency<br>Library</a>
             </center>
                                     </div><!--/.widgets-->
 
@@ -409,7 +461,7 @@ return [
                                               </div><!--/.col-sm-2-->
                                                                 <div class="col-sm-2 col-xs-7">
                                                   <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/booksbylanguage" title="Books by Language" data-event-click-tracking="TopNav|TopLink-BooksByLanguage">Books by Language</a>                                                          <a href="https://archive.org/details/additional_collections" title="Additional Collections" data-event-click-tracking="TopNav|TopLink-AdditionalCollections">Additional Collections</a>                                                      </div>
+                                                                                  </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -466,7 +518,7 @@ return [
                                               </div><!--/.col-sm-2-->
                                                                 <div class="col-sm-2 col-xs-7">
                                                   <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/spiritualityandreligion" title="Spirituality &amp; Religion" data-event-click-tracking="TopNav|TopLink-SpiritualityReligion">Spirituality & Religion</a>                                                          <a href="https://archive.org/details/sports" title="Sports Videos" data-event-click-tracking="TopNav|TopLink-SportsVideos">Sports Videos</a>                                                          <a href="https://archive.org/details/television" title="Television" data-event-click-tracking="TopNav|TopLink-Television">Television</a>                                                          <a href="https://archive.org/details/gamevideos" title="Videogame Videos" data-event-click-tracking="TopNav|TopLink-VideogameVideos">Videogame Videos</a>                                                          <a href="https://archive.org/details/vlogs" title="Vlogs" data-event-click-tracking="TopNav|TopLink-Vlogs">Vlogs</a>                                                          <a href="https://archive.org/details/youth_media" title="Youth Media" data-event-click-tracking="TopNav|TopLink-YouthMedia">Youth Media</a>                                                          <a href="https://archive.org/details/opensource_movies" title="Community Video" data-event-click-tracking="TopNav|TopLink-CommunityVideo">Community Video</a>                                                      </div>
+                                                                                      <a href="https://archive.org/details/spiritualityandreligion" title="Spirituality &amp; Religion" data-event-click-tracking="TopNav|TopLink-SpiritualityReligion">Spirituality & Religion</a>                                                          <a href="https://archive.org/details/sports" title="Sports Videos" data-event-click-tracking="TopNav|TopLink-SportsVideos">Sports Videos</a>                                                          <a href="https://archive.org/details/television" title="Television" data-event-click-tracking="TopNav|TopLink-Television">Television</a>                                                          <a href="https://archive.org/details/gamevideos" title="Videogame Videos" data-event-click-tracking="TopNav|TopLink-VideogameVideos">Videogame Videos</a>                                                          <a href="https://archive.org/details/vlogs" title="Vlogs" data-event-click-tracking="TopNav|TopLink-Vlogs">Vlogs</a>                                                          <a href="https://archive.org/details/youth_media" title="Youth Media" data-event-click-tracking="TopNav|TopLink-YouthMedia">Youth Media</a>                                                      </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -504,7 +556,7 @@ return [
                                                                 <div class="col-sm-2 col-xs-7 col-sm-push-2">
                                                   <div class="linx ">
                                                           <h5>Top</h5>
-                                                                                      <a href="https://archive.org/details/audio_bookspoetry" title="Audio Books &amp; Poetry" data-event-click-tracking="TopNav|TopLink-AudioBooksPoetry">Audio Books & Poetry</a>                                                          <a href="https://archive.org/details/opensource_audio" title="Community Audio" data-event-click-tracking="TopNav|TopLink-CommunityAudio">Community Audio</a>                                                          <a href="https://archive.org/details/audio_tech" title="Computers &amp; Technology" data-event-click-tracking="TopNav|TopLink-ComputersTechnology">Computers & Technology</a>                                                          <a href="https://archive.org/details/audio_music" title="Music, Arts &amp; Culture" data-event-click-tracking="TopNav|TopLink-MusicArtsCulture">Music, Arts & Culture</a>                                                          <a href="https://archive.org/details/audio_news" title="News &amp; Public Affairs" data-event-click-tracking="TopNav|TopLink-NewsPublicAffairs">News & Public Affairs</a>                                                          <a href="https://archive.org/details/audio_foreign" title="Non-English Audio" data-event-click-tracking="TopNav|TopLink-NonEnglishAudio">Non-English Audio</a>                                                          <a href="https://archive.org/details/audio_religion" title="Spirituality &amp; Religion" data-event-click-tracking="TopNav|TopLink-SpiritualityReligion">Spirituality & Religion</a>                                                      </div>
+                                                                                      <a href="https://archive.org/details/audio_bookspoetry" title="Audio Books &amp; Poetry" data-event-click-tracking="TopNav|TopLink-AudioBooksPoetry">Audio Books & Poetry</a>                                                          <a href="https://archive.org/details/opensource_audio" title="Community Audio" data-event-click-tracking="TopNav|TopLink-CommunityAudio">Community Audio</a>                                                          <a href="https://archive.org/details/audio_tech" title="Computers, Technology and Science" data-event-click-tracking="TopNav|TopLink-ComputersTechnologyAndScience">Computers, Technology and Science</a>                                                          <a href="https://archive.org/details/audio_music" title="Music, Arts &amp; Culture" data-event-click-tracking="TopNav|TopLink-MusicArtsCulture">Music, Arts & Culture</a>                                                          <a href="https://archive.org/details/audio_news" title="News &amp; Public Affairs" data-event-click-tracking="TopNav|TopLink-NewsPublicAffairs">News & Public Affairs</a>                                                          <a href="https://archive.org/details/audio_foreign" title="Non-English Audio" data-event-click-tracking="TopNav|TopLink-NonEnglishAudio">Non-English Audio</a>                                                          <a href="https://archive.org/details/audio_religion" title="Spirituality &amp; Religion" data-event-click-tracking="TopNav|TopLink-SpiritualityReligion">Spirituality & Religion</a>                                                      </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -523,7 +575,7 @@ return [
                                               </div><!--/.col-sm-2-->
                                                                 <div class="col-sm-2 col-xs-7">
                                                   <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/podcasts" title="Podcasts" data-event-click-tracking="TopNav|TopLink-Podcasts">Podcasts</a>                                                      </div>
+                                                                                      <a href="https://archive.org/details/podcast_neues-von-der-a31_1404422420" title="Neues von der A31" data-event-click-tracking="TopNav|TopLink-NeuesVonDerA31">Neues von der A31</a>                                                          <a href="https://archive.org/details/podcast_hallo-norge_1436886844" title="Hallo Norge" data-event-click-tracking="TopNav|TopLink-HalloNorge">Hallo Norge</a>                                                          <a href="https://archive.org/details/podcast_biscoitocast_701646901" title="BiscoitoCast" data-event-click-tracking="TopNav|TopLink-BiscoitoCast">BiscoitoCast</a>                                                          <a href="https://archive.org/details/podcast_r1918_1331405080" title="R1918" data-event-click-tracking="TopNav|TopLink-R1918">R1918</a>                                                          <a href="https://archive.org/details/podcast_holiday-force_298302697" title="Holiday Force" data-event-click-tracking="TopNav|TopLink-HolidayForce">Holiday Force</a>                                                          <a href="https://archive.org/details/podcast_40-years-punk-milton-keyne_1107397818" title="40 years of punk: Milton Keynes" data-event-click-tracking="TopNav|TopLink-40YearsOfPunkMiltonKeynes">40 years of punk: Milton Keynes</a>                                                          <a href="https://archive.org/details/podcast_mundane-movie-trailers_1217867537" title="Mundane Movie Trailers" data-event-click-tracking="TopNav|TopLink-MundaneMovieTrailers">Mundane Movie Trailers</a>                                                      </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -561,7 +613,7 @@ return [
                                                                 <div class="col-sm-2 col-xs-7 col-sm-push-2">
                                                   <div class="linx ">
                                                           <h5>Top</h5>
-                                                                                      <a href="https://archive.org/details/kodi_archive" title="Kodi Archive and Support File" data-event-click-tracking="TopNav|TopLink-KodiArchiveAndSupportFile">Kodi Archive and Support File</a>                                                          <a href="https://archive.org/details/open_source_software" title="Community Software" data-event-click-tracking="TopNav|TopLink-CommunitySoftware">Community Software</a>                                                          <a href="https://archive.org/details/vintagesoftware" title="Vintage Software" data-event-click-tracking="TopNav|TopLink-VintageSoftware">Vintage Software</a>                                                          <a href="https://archive.org/details/apkarchive" title="APK" data-event-click-tracking="TopNav|TopLink-APK">APK</a>                                                          <a href="https://archive.org/details/softwarelibrary_msdos" title="MS-DOS" data-event-click-tracking="TopNav|TopLink-MSDOS">MS-DOS</a>                                                          <a href="https://archive.org/details/cd-roms" title="CD-ROM Software" data-event-click-tracking="TopNav|TopLink-CDROMSoftware">CD-ROM Software</a>                                                          <a href="https://archive.org/details/cdromsoftware" title="CD-ROM Software Library" data-event-click-tracking="TopNav|TopLink-CDROMSoftwareLibrary">CD-ROM Software Library</a>                                                      </div>
+                                                                                      <a href="https://archive.org/details/kodi_archive" title="Kodi Archive and Support File" data-event-click-tracking="TopNav|TopLink-KodiArchiveAndSupportFile">Kodi Archive and Support File</a>                                                          <a href="https://archive.org/details/vintagesoftware" title="Vintage Software" data-event-click-tracking="TopNav|TopLink-VintageSoftware">Vintage Software</a>                                                          <a href="https://archive.org/details/apkarchive" title="APK" data-event-click-tracking="TopNav|TopLink-APK">APK</a>                                                          <a href="https://archive.org/details/open_source_software" title="Community Software" data-event-click-tracking="TopNav|TopLink-CommunitySoftware">Community Software</a>                                                          <a href="https://archive.org/details/softwarelibrary_msdos" title="MS-DOS" data-event-click-tracking="TopNav|TopLink-MSDOS">MS-DOS</a>                                                          <a href="https://archive.org/details/cd-roms" title="CD-ROM Software" data-event-click-tracking="TopNav|TopLink-CDROMSoftware">CD-ROM Software</a>                                                          <a href="https://archive.org/details/cdromsoftware" title="CD-ROM Software Library" data-event-click-tracking="TopNav|TopLink-CDROMSoftwareLibrary">CD-ROM Software Library</a>                                                      </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -580,7 +632,7 @@ return [
                                               </div><!--/.col-sm-2-->
                                                                 <div class="col-sm-2 col-xs-7">
                                                   <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/softwaresites" title="Software Sites" data-event-click-tracking="TopNav|TopLink-SoftwareSites">Software Sites</a>                                                          <a href="https://archive.org/details/tucows" title="Tucows Software Library" data-event-click-tracking="TopNav|TopLink-TucowsSoftwareLibrary">Tucows Software Library</a>                                                          <a href="https://archive.org/details/cdbbsarchive" title="Shareware CD-ROMs" data-event-click-tracking="TopNav|TopLink-SharewareCDROMs">Shareware CD-ROMs</a>                                                          <a href="https://archive.org/details/cdromimages" title="CD-ROM Images" data-event-click-tracking="TopNav|TopLink-CDROMImages">CD-ROM Images</a>                                                          <a href="https://archive.org/details/softwarecapsules" title="Software Capsules Compilation" data-event-click-tracking="TopNav|TopLink-SoftwareCapsulesCompilation">Software Capsules Compilation</a>                                                          <a href="https://archive.org/details/softwarelibrary_zx_spectrum" title="ZX Spectrum" data-event-click-tracking="TopNav|TopLink-ZXSpectrum">ZX Spectrum</a>                                                          <a href="https://archive.org/details/doom-cds" title="DOOM Level CD" data-event-click-tracking="TopNav|TopLink-DOOMLevelCD">DOOM Level CD</a>                                                      </div>
+                                                                                      <a href="https://archive.org/details/softwaresites" title="Software Sites" data-event-click-tracking="TopNav|TopLink-SoftwareSites">Software Sites</a>                                                          <a href="https://archive.org/details/tucows" title="Tucows Software Library" data-event-click-tracking="TopNav|TopLink-TucowsSoftwareLibrary">Tucows Software Library</a>                                                          <a href="https://archive.org/details/softwarecapsules" title="Software Capsules Compilation" data-event-click-tracking="TopNav|TopLink-SoftwareCapsulesCompilation">Software Capsules Compilation</a>                                                          <a href="https://archive.org/details/cdbbsarchive" title="Shareware CD-ROMs" data-event-click-tracking="TopNav|TopLink-SharewareCDROMs">Shareware CD-ROMs</a>                                                          <a href="https://archive.org/details/cdromimages" title="CD-ROM Images" data-event-click-tracking="TopNav|TopLink-CDROMImages">CD-ROM Images</a>                                                          <a href="https://archive.org/details/softwarelibrary_zx_spectrum" title="ZX Spectrum" data-event-click-tracking="TopNav|TopLink-ZXSpectrum">ZX Spectrum</a>                                                          <a href="https://archive.org/details/doom-cds" title="DOOM Level CD" data-event-click-tracking="TopNav|TopLink-DOOMLevelCD">DOOM Level CD</a>                                                      </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -645,9 +697,9 @@ return [
                   </div><!--/.row-->
                                           </div><!--/#nav-tophat-->
     
-          </div><!--#navwrap1-->
-        </div><!--#navwrap2-->
-
+          </div><!--#navwrap2-->
+        </div><!--#navwrap1-->
+        
         <!-- Begin page content -->
         <main id="maincontent">
           <div class="container container-ia">
@@ -743,9 +795,6 @@ return [
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://archive.org/details/dn2015-0220_vid" target="_blank">
         <div class="sharee iconochive-facebook" data-toggle="tooltip" data-placement="bottom" title="Share to Facebook"></div>
       </a>
-      <a href="https://plus.google.com/share?url=https://archive.org/details/dn2015-0220_vid" target="_blank">
-        <div class="sharee iconochive-googleplus" data-toggle="tooltip" data-placement="bottom" title="Share to Google+"></div>
-      </a>
       <a href="http://www.reddit.com/submit?url=https://archive.org/details/dn2015-0220_vid&amp;title=Democracy+Now%21+Friday%2C+February+20%2C+2015+%3A+Free+Download%2C+Borrow%2C+and+Streaming+%3A+Internet+Archive" target="_blank">
         <div class="sharee iconochive-reddit" data-toggle="tooltip" data-placement="bottom" title="Share to Reddit"></div>
       </a>
@@ -811,29 +860,41 @@ return [
   <div class="container container-ia">
       <div class="relative-row row">
     <div class="thats-right col-sm-4 col-sm-push-8">
-      <div class="action-buttons topinblock">
-        <div class="topinblock">
-          <a class="favorite-button button "
-            href="/bookmarks.php?add_bookmark=1&amp;mediatype=movies&amp;identifier=dn2015-0220_vid&amp;title=Democracy+Now%21+Friday%2C+February+20%2C+2015"
-            onclick="return AJS.toggle_list_status(this)"
-            data-target="#favorite-modal"
-            data-id="dn2015-0220_vid"
-            data-fav-collection="fav-"
-            data-placement="bottom"
-            data-favorite="/bookmarks.php?add_bookmark=1&amp;mediatype=movies&amp;identifier=dn2015-0220_vid&amp;title=Democracy+Now%21+Friday%2C+February+20%2C+2015"
-            data-toggle="tooltip"
-            data-container="body"            data-original-title="Favorite"
-            aria-haspopup="true"
-            rel="nofollow">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>          </a>
-                  </div><div class="topinblock">
-          <button id="share-button" class="button" type="button" aria-haspopup="true"
-            onclick="return AJS.modal_go(this,{ignore_lnk:1,shown:AJS.embed_codes_adjust})"
-            data-target="#cher-modal" data-toggle="tooltip" data-container="body"
-            data-placement="bottom" title="Share this item">
-            <span class="iconochive-share"  aria-hidden="true"></span><span class="sr-only">share</span>          </button>
-        </div><div id="flag-button-container" class="topinblock" data-toggle="tooltip" data-placement="bottom"
-         data-container="body" title="Flag this item">
+                <section class="action-buttons-section">
+                <div class=\'topinblock favorite-btn\'>
+        <button
+          class=\'button js-manage-toggle_list_status \'
+          type=\'button\'
+          data-href=\'/bookmarks.php?add_bookmark=1&amp;mediatype=movies&amp;identifier=dn2015-0220_vid&amp;title=Democracy+Now%21+Friday%2C+February+20%2C+2015\'
+          data-target=\'#favorite-modal\'
+          data-id=\'dn2015-0220_vid\'
+          data-fav-collection=\'fav-\'
+          data-toggle=\'tooltip\'
+          data-container=\'body\'
+          data-placement=\'bottom\'
+          data-original-title=\'Favorite\'
+          aria-haspopup=\'true\'>
+          <span class="iconochive-No_Favorite"  aria-hidden="true"></span><span class="sr-only">No_Favorite</span>        </button>
+      </div>
+          <div class=\'topinblock share-button\'>
+        <button id=\'share-button\'
+          class=\'button\'
+          type=\'button\'
+          onclick=\'return AJS.modal_go(this, {ignore_lnk:1, shown:AJS.embed_codes_adjust})\'
+          data-target=\'#cher-modal\'
+          data-toggle=\'tooltip\'
+          data-container=\'body\'
+          data-placement=\'bottom\'
+          data-original-title=\'Share this item\'
+          aria-haspopup=\'true\'>
+          <span class="iconochive-share"  aria-hidden="true"></span><span class="sr-only">share</span>        </button>
+      </div>
+    <div id="flag-button-container"
+      class="topinblock flag-button"
+      data-toggle="tooltip"
+      data-placement="bottom"
+      data-container="body"
+      title="Flag this item">
             <div class="dropup">
         <button id="flag-button" class=" button" type="button"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -852,7 +913,7 @@ return [
                       </ul>
         </div> <!-- /#flag-popover -->
       </div> <!--/.dropdown -->
-              </div>      </div><!--/.action-buttons-->
+              </div>        </section>
     </div><!--/.thats-right-->
     <div class="thats-left item-details-metadata col-sm-8 col-sm-pull-4">
       <h1 style="font-size:30px; margin-bottom:0;">
@@ -1035,14 +1096,14 @@ return [
         <span
           class="item-stats-summary__count"
                       itemprop="userInteractionCount"
-                  >119</span>
+                  >123</span>
 
         Views      </p>
 
       
           </section>
     
-                  <section class="boxy item-download-options">
+                      <section class="boxy item-download-options">
       <div class="download-button" role="heading" aria-level="5">
         DOWNLOAD OPTIONS
       </div>
@@ -1177,7 +1238,7 @@ return [
     </div><!--/.row-->
       </div><!--//.container-ia-->
   <div id="also-found" class="container container-ia width-max"
-    data-identifier="dn2015-0220_vid" data-host-name="www27.us.archive.org">
+    data-identifier="dn2015-0220_vid" data-host-name="www15.us.archive.org">
     <div class="row">
       <div class="col-xs-12 tilebars">
                 <h5 class=\'small-label\'>SIMILAR ITEMS (based on metadata)</h5>
@@ -1214,41 +1275,41 @@ return [
     
     
     <!-- Timing ...
-     rendered on: www27.us.archive.org
+     rendered on: www15.us.archive.org
  seconds diff sec               message   stack(file:line:function)
 =========================================================
   0.0000   0.0000         petabox start   var/cache/petabox/petabox/www/sf/details.php:1:require
                                              |common/ia:66:require_once
-                                             |setup.php:388:log
-  0.0092   0.0092      redis_read start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |setup.php:386:log
+  0.0114   0.0114      redis_read start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:183:getItem
                                              |common/Item.inc:77:parseMetadata
                                              |Item.inc:132:get_obj
-                                             |Metadata.inc:531:_get_obj
-                                             |Metadata.inc:561:run_pipeline
-                                             |Metadata.inc:1476:read
+                                             |Metadata.inc:537:_get_obj
+                                             |Metadata.inc:567:run_pipeline
+                                             |Metadata.inc:1432:read
                                              |Metadata/AdapterPipeline.inc:259:_read
                                              |AdapterPipeline.inc:292:pipeline
                                              |AdapterPipeline.inc:377:fetch
                                              |AdapterPipeline.inc:608:fetch
                                              |RecordServer.inc:144:execute
                                              |RecordServer/FetchRecordOp.inc:52:log
-  0.0112   0.0020     redis_read finish   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+  0.0167   0.0052     redis_read finish   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:183:getItem
                                              |common/Item.inc:77:parseMetadata
                                              |Item.inc:132:get_obj
-                                             |Metadata.inc:531:_get_obj
-                                             |Metadata.inc:561:run_pipeline
-                                             |Metadata.inc:1476:read
+                                             |Metadata.inc:537:_get_obj
+                                             |Metadata.inc:567:run_pipeline
+                                             |Metadata.inc:1432:read
                                              |Metadata/AdapterPipeline.inc:259:_read
                                              |AdapterPipeline.inc:292:pipeline
                                              |AdapterPipeline.inc:377:fetch
                                              |AdapterPipeline.inc:608:fetch
                                              |RecordServer.inc:144:execute
                                              |RecordServer/FetchRecordOp.inc:58:log
-  0.0243   0.0131                render   var/cache/petabox/petabox/www/sf/details.php:82:log
-  0.0245   0.0003      start db connect   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4776:setupAndActionsFlags
+  0.0350   0.0183                render   var/cache/petabox/petabox/www/sf/details.php:82:log
+  0.0354   0.0004      start db connect   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4803:setupAndActionsFlags
                                              |DetailsFlags.inc:22:getFlags
                                              |DetailsFlags.inc:116:__callStatic
                                              |ValidateArgs.inc:63:counts_by_flag_VALIDATED
@@ -1257,14 +1318,14 @@ return [
                                              |SimpleLists.inc:22:get_records
                                              |SimpleLists/Storage.inc:27:q
                                              |DB.inc:381:execute
-                                             |DB.inc:1056:query
+                                             |DB.inc:1054:query
                                              |DB.inc:136:query0
                                              |DB.inc:165:ping
-                                             |DB.inc:756:connect
+                                             |DB.inc:754:connect
                                              |DB.inc:105:conn
-                                             |DB.inc:858:log
-  0.0336   0.0091                got db   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4776:setupAndActionsFlags
+                                             |DB.inc:856:log
+  0.0780   0.0426                got db   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4803:setupAndActionsFlags
                                              |DetailsFlags.inc:22:getFlags
                                              |DetailsFlags.inc:116:__callStatic
                                              |ValidateArgs.inc:63:counts_by_flag_VALIDATED
@@ -1273,31 +1334,31 @@ return [
                                              |SimpleLists.inc:22:get_records
                                              |SimpleLists/Storage.inc:27:q
                                              |DB.inc:381:execute
-                                             |DB.inc:1056:query
+                                             |DB.inc:1054:query
                                              |DB.inc:136:query0
                                              |DB.inc:165:ping
-                                             |DB.inc:756:connect
+                                             |DB.inc:754:connect
                                              |DB.inc:105:conn
-                                             |DB.inc:905:log
-  0.0468   0.0132   begin session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4782:nav
-                                             |Details.inc:4597:head
-                                             |Nav.inc:119:__construct
-                                             |Nav.inc:187:session_start
+                                             |DB.inc:903:log
+  0.0823   0.0043   begin session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4809:nav
+                                             |Details.inc:4621:head
+                                             |Nav.inc:120:__construct
+                                             |Nav.inc:190:session_start
                                              |Cookies.inc:56:log
-  0.0471   0.0003    done session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4782:nav
-                                             |Details.inc:4597:head
-                                             |Nav.inc:119:__construct
-                                             |Nav.inc:187:session_start
+  0.0825   0.0001    done session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4809:nav
+                                             |Details.inc:4621:head
+                                             |Nav.inc:120:__construct
+                                             |Nav.inc:190:session_start
                                              |Cookies.inc:62:log
-  0.0511   0.0040          header drawn   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4782:nav
-                                             |Details.inc:4601:log
-  0.0852   0.0341              bug dump   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4837:footer
-                                             |setup.php:157:footer
-                                             |Nav.inc:1506:dump
+  0.1332   0.0507          header drawn   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4809:nav
+                                             |Details.inc:4625:log
+  0.1777   0.0445              bug dump   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4864:footer
+                                             |setup.php:155:footer
+                                             |Nav.inc:1571:dump
                                              |Bug.inc:102:log
     -->
     <script type="text/javascript">
@@ -1305,8 +1366,8 @@ if (window.archive_analytics) {
   var vs = window.archive_analytics.get_data_packets();
   for (var i in vs) {
     vs[i][\'cache_bust\']=Math.random();
-    vs[i][\'server_ms\']=85;
-    vs[i][\'server_name\']="www27.us.archive.org";
+    vs[i][\'server_ms\']=177;
+    vs[i][\'server_name\']="www15.us.archive.org";
       }
 
   if ($(".more_search").size()>0) {

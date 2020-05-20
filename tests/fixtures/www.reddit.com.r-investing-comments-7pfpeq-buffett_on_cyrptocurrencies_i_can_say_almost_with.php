@@ -10,7 +10,7 @@ return [
         'width' => null,
         'height' => null
     ],
-    'description' => '1,931 votes and 1,279 comments so far on Reddit',
+    'description' => '1,935 votes and 1,277 comments so far on Reddit',
     'favicon' => 'https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png',
     'feeds' => [],
     'icon' => 'https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png',

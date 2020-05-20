@@ -11,9 +11,9 @@ return [
         'height' => 344
     ],
     'description' => '7 week old fostered kittens waiting on their dinner being prepared. They had been ill with cat flu and were just starting to get their appetite back. Because...',
-    'favicon' => 'https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico',
+    'favicon' => 'https://www.youtube.com/s/desktop/3d592bbd/htdocs-ytimg-desktop-kevlar-production/img/favicon.ico',
     'feeds' => [],
-    'icon' => 'https://s.ytimg.com/yts/img/favicon_144-vfliLAfaB.png',
+    'icon' => 'https://www.youtube.com/s/desktop/3d592bbd/htdocs-ytimg-desktop-kevlar-production/img/favicon_144.png',
     'image' => 'https://i.ytimg.com/vi/eiHXASgRTcA/hqdefault.jpg',
     'keywords' => [
         'vídeo',
@@ -62,18 +62,18 @@ return [
     'url' => 'https://www.youtube.com/watch?v=eiHXASgRTcA&feature=youtu.be',
     'linkedData' => [],
     'oEmbed' => [
-        'height' => 344,
-        'type' => 'video',
-        'thumbnail_url' => 'https://i.ytimg.com/vi/eiHXASgRTcA/hqdefault.jpg',
-        'title' => 'Noisy kittens waiting for dinner!',
-        'thumbnail_width' => 480,
-        'author_url' => 'https://www.youtube.com/user/smshdchrb',
         'author_name' => 'smshdchrb',
-        'version' => '1.0',
-        'provider_name' => 'YouTube',
-        'html' => '<iframe width="459" height="344" src="https://www.youtube.com/embed/eiHXASgRTcA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        'thumbnail_url' => 'https://i.ytimg.com/vi/eiHXASgRTcA/hqdefault.jpg',
         'provider_url' => 'https://www.youtube.com/',
+        'type' => 'video',
+        'provider_name' => 'YouTube',
+        'version' => '1.0',
+        'author_url' => 'https://www.youtube.com/user/smshdchrb',
+        'thumbnail_width' => 480,
         'thumbnail_height' => 360,
-        'width' => 459
+        'html' => '<iframe width="459" height="344" src="https://www.youtube.com/embed/eiHXASgRTcA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        'height' => 344,
+        'width' => 459,
+        'title' => 'Noisy kittens waiting for dinner!'
     ]
 ];

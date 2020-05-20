@@ -3,6 +3,55 @@ declare(strict_types = 1);
 
 return [
     'headers' => [
+        'retry-after' => [
+            '0'
+        ],
+        'location' => [
+            'https://i.imgur.com/X6rkCc5.jpg'
+        ],
+        'content-length' => [
+            '0',
+            '565369'
+        ],
+        'accept-ranges' => [
+            'bytes',
+            'bytes'
+        ],
+        'date' => [
+            'Wed, 20 May 2020 17:53:24 GMT',
+            'Wed, 20 May 2020 17:53:24 GMT'
+        ],
+        'connection' => [
+            'close'
+        ],
+        'x-served-by' => [
+            'cache-mad22049-MAD',
+            'cache-bwi5138-BWI, cache-mad22021-MAD'
+        ],
+        'x-cache' => [
+            'HIT',
+            'HIT, HIT'
+        ],
+        'x-cache-hits' => [
+            '0',
+            '1, 1'
+        ],
+        'x-timer' => [
+            'S1589997205.560909,VS0,VE1',
+            'S1589997205.693681,VS0,VE3'
+        ],
+        'access-control-allow-methods' => [
+            'GET, OPTIONS',
+            'GET, OPTIONS'
+        ],
+        'access-control-allow-origin' => [
+            '*',
+            '*'
+        ],
+        'server' => [
+            'cat factory 1.0  HTTP/2 200',
+            'cat factory 1.0'
+        ],
         'last-modified' => [
             'Wed, 21 Jan 2015 15:15:05 GMT'
         ],
@@ -18,44 +67,17 @@ return [
         'cache-control' => [
             'public, max-age=31536000'
         ],
-        'content-length' => [
-            '565369'
-        ],
-        'accept-ranges' => [
-            'bytes'
-        ],
-        'date' => [
-            'Sun, 23 Feb 2020 00:01:13 GMT'
-        ],
         'age' => [
-            '1596732'
+            '1985902'
         ],
-        'connection' => [
-            'keep-alive'
-        ],
-        'x-served-by' => [
-            'cache-bwi5121-BWI, cache-mad22043-MAD'
-        ],
-        'x-cache' => [
-            'MISS, HIT'
-        ],
-        'x-cache-hits' => [
-            '0, 1'
-        ],
-        'x-timer' => [
-            'S1582416073.272713,VS0,VE3'
-        ],
-        'access-control-allow-methods' => [
-            'GET, OPTIONS'
-        ],
-        'access-control-allow-origin' => [
-            '*'
-        ],
-        'server' => [
-            'cat factory 1.0'
+        'x-content-type-options' => [
+            'nosniff'
         ],
         'Content-Location' => [
-            'http://i.imgur.com/X6rkCc5.jpg'
+            'https://i.imgur.com/X6rkCc5.jpg'
+        ],
+        'X-Request-Time' => [
+            '0.348 ms'
         ]
     ],
     'statusCode' => 200,

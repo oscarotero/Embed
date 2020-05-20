@@ -11,7 +11,7 @@ return [
         'height' => 500
     ],
     'description' => null,
-    'favicon' => 'http://i.imgur.com/favicon.ico',
+    'favicon' => 'https://i.imgur.com/favicon.ico',
     'feeds' => [],
     'icon' => null,
     'image' => null,
@@ -24,7 +24,7 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => null,
-    'url' => 'http://i.imgur.com/X6rkCc5.jpg',
+    'url' => 'https://i.imgur.com/X6rkCc5.jpg',
     'linkedData' => [],
     'oEmbed' => [
         'version' => '1.0',

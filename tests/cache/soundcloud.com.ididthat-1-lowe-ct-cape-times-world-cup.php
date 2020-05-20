@@ -12,6 +12,10 @@ return [
         'connection' => [
             'keep-alive'
         ],
+        'set-cookie' => [
+            'sc_anonymous_id=227070-81505-682805-919144; path=/; expires=Sat, 18 May 2030 17:54:27 GMT; domain=.soundcloud.com',
+            'sc_anonymous_id=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=.soundcloud.com'
+        ],
         'x-pants' => [
             'distant-towel'
         ],
@@ -25,10 +29,10 @@ return [
             'SAMEORIGIN'
         ],
         'server-timing' => [
-            'rollouts; dur=4.345684; desc="api-v2/rollouts", geoip; dur=1.493702; desc="geoip/geoip", experiments; dur=4.734559; desc="api-v2/experiments", resolve; dur=105.909763; desc="api-v2/resolve", privacySettings; dur=4.783457; desc="api-v2/privacySettings", geoip; dur=1.834179; desc="geoip/geoip", user; dur=40.271522; desc="api-v2/user", trackComments; dur=9.001662; desc="api-v2/trackComments"'
+            'rollouts; dur=3.864292; desc="api-v2/rollouts", resolve; dur=84.66786; desc="api-v2/resolve", privacySettings; dur=3.941392; desc="api-v2/privacySettings", geoip; dur=1.511763; desc="geoip/geoip", user; dur=23.36863; desc="api-v2/user", trackComments; dur=28.14129; desc="api-v2/trackComments"'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:47:17 GMT'
+            'Wed, 20 May 2020 17:54:27 GMT'
         ],
         'strict-transport-security' => [
             'max-age=63072000'
@@ -43,16 +47,19 @@ return [
             'Miss from cloudfront'
         ],
         'via' => [
-            '1.1 d9741afebe6a2e65a8e9d2b1a18fe962.cloudfront.net (CloudFront)'
+            '1.1 e05f0ff5c1cc82faec67b7a1bf62aedb.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
             'MAD51-C1'
         ],
         'x-amz-cf-id' => [
-            'e2rJBXhSpxQ30lTH6s3UEIiW0zWXy-sBeBGgr3x-AjWYuczvaQF2jQ=='
+            'lc5_hz1-LLf6GqGvVR_e5yk30kRkvInCvh5BPm-zri1PPmrT7HsYIg=='
         ],
         'Content-Location' => [
             'https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup'
+        ],
+        'X-Request-Time' => [
+            '0.262 ms'
         ]
     ],
     'statusCode' => 200,
@@ -84,7 +91,7 @@ return [
   <link rel="dns-prefetch" href="//va.sndcdn.com">
   <link rel="dns-prefetch" href="//pixel.quantserve.com">
 
-  <title>LOWE CT Cape Times - World Cup by iDidTht.com | I Did Tht Com | Free Listening on SoundCloud</title>
+  <title>LOWE CT Cape Times - World Cup by IDIDTHAT.co | IDIDTHAT Co | Free Listening on SoundCloud</title>
 
   <meta content="record, sounds, share, sound, audio, tracks, music, soundcloud" name="keywords">
   <meta name="referrer" content="origin">
@@ -112,7 +119,7 @@ return [
   <meta content="com.soundcloud.android" property="twitter:app:id:googleplay">
   <link href="/sc-opensearch.xml" rel="search" title="SoundCloud search" type="application/opensearchdescription+xml">
 
-  <meta name="description" content="Stream LOWE CT Cape Times - World Cup by iDidTht.com from desktop or your mobile device"><meta property="twitter:app:name:iphone" content="SoundCloud"><meta property="twitter:app:id:iphone" content="336353151"><meta property="twitter:app:name:ipad" content="SoundCloud"><meta property="twitter:app:id:ipad" content="336353151"><meta property="twitter:app:name:googleplay" content="SoundCloud"><meta property="twitter:app:id:googleplay" content="com.soundcloud.android"><meta property="twitter:title" content="LOWE CT Cape Times - World Cup"><meta property="twitter:description" content="iDidTht Promotes and Connects South Africa’s Advertising and Production Industry."><meta property="twitter:player" content="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&amp;auto_play=false&amp;show_artwork=true&amp;visual=true&amp;origin=twitter"><meta property="twitter:player:height" content="400"><meta property="twitter:player:width" content="435"><meta property="twitter:image" content="https://i1.sndcdn.com/avatars-000183507205-eq7m69-t500x500.jpg"><meta property="twitter:card" content="player"><meta property="twitter:app:url:googleplay" content="soundcloud://sounds:191904624"><meta property="twitter:app:url:iphone" content="soundcloud://sounds:191904624"><meta property="twitter:app:url:ipad" content="soundcloud://sounds:191904624"><meta property="al:ios:app_name" content="SoundCloud"><meta property="al:ios:app_store_id" content="336353151"><meta property="al:android:app_name" content="SoundCloud"><meta property="al:android:package" content="com.soundcloud.android"><meta property="og:type" content="music.song"><meta property="og:url" content="https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup"><meta property="og:title" content="LOWE CT Cape Times - World Cup"><meta property="og:image" content="https://i1.sndcdn.com/avatars-000183507205-eq7m69-t500x500.jpg"><meta property="og:image:width" content="500"><meta property="og:image:height" content="500"><meta property="og:description" content="iDidTht Promotes and Connects South Africa’s Advertising and Production Industry."><meta property="al:web:should_fallback" content="false"><meta property="al:ios:url" content="soundcloud://sounds:191904624"><meta property="al:android:url" content="soundcloud://sounds:191904624"><meta property="soundcloud:user" content="https://soundcloud.com/ididthat-1"><meta property="soundcloud:play_count" content="31"><meta property="soundcloud:download_count" content="0"><meta property="soundcloud:comments_count" content="0"><meta property="soundcloud:like_count" content="0">
+  <meta name="description" content="Stream LOWE CT Cape Times - World Cup by IDIDTHAT.co from desktop or your mobile device"><meta property="twitter:app:name:iphone" content="SoundCloud"><meta property="twitter:app:id:iphone" content="336353151"><meta property="twitter:app:name:ipad" content="SoundCloud"><meta property="twitter:app:id:ipad" content="336353151"><meta property="twitter:app:name:googleplay" content="SoundCloud"><meta property="twitter:app:id:googleplay" content="com.soundcloud.android"><meta property="twitter:title" content="LOWE CT Cape Times - World Cup"><meta property="twitter:description" content="IDIDTHAT.co Promotes and Connects South Africa’s Advertising and Production Industry."><meta property="twitter:player" content="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&amp;auto_play=false&amp;show_artwork=true&amp;visual=true&amp;origin=twitter"><meta property="twitter:player:height" content="400"><meta property="twitter:player:width" content="435"><meta property="twitter:image" content="https://i1.sndcdn.com/avatars-WICzOfU1vKRGZe3W-TE63Ww-t500x500.jpg"><meta property="twitter:card" content="player"><meta property="twitter:app:url:googleplay" content="soundcloud://sounds:191904624"><meta property="twitter:app:url:iphone" content="soundcloud://sounds:191904624"><meta property="twitter:app:url:ipad" content="soundcloud://sounds:191904624"><meta property="al:ios:app_name" content="SoundCloud"><meta property="al:ios:app_store_id" content="336353151"><meta property="al:android:app_name" content="SoundCloud"><meta property="al:android:package" content="com.soundcloud.android"><meta property="og:type" content="music.song"><meta property="og:url" content="https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup"><meta property="og:title" content="LOWE CT Cape Times - World Cup"><meta property="og:image" content="https://i1.sndcdn.com/avatars-WICzOfU1vKRGZe3W-TE63Ww-t500x500.jpg"><meta property="og:image:width" content="500"><meta property="og:image:height" content="500"><meta property="og:description" content="IDIDTHAT.co Promotes and Connects South Africa’s Advertising and Production Industry."><meta property="al:web:should_fallback" content="false"><meta property="al:ios:url" content="soundcloud://sounds:191904624"><meta property="al:android:url" content="soundcloud://sounds:191904624"><meta property="soundcloud:user" content="https://soundcloud.com/ididthat-1"><meta property="soundcloud:play_count" content="31"><meta property="soundcloud:download_count" content="0"><meta property="soundcloud:comments_count" content="0"><meta property="soundcloud:like_count" content="0">
   <link rel="canonical" href="https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup"><link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup"><link rel="alternate" type="text/xml+oembed" href="https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Fididthat-1%2Flowe-ct-cape-times-world-cup&amp;format=xml"><link rel="alternate" type="text/json+oembed" href="https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Fididthat-1%2Flowe-ct-cape-times-world-cup&amp;format=json"><link rel="author" href="/ididthat-1"><link rel="alternate" href="android-app://com.soundcloud.android/soundcloud/sounds:191904624"><link rel="alternate" href="ios-app://336353151/soundcloud/sounds:191904624">
 
   <meta name="application-name" content="SoundCloud">
@@ -133,7 +140,7 @@ return [
   <link rel="stylesheet" href="https://style.sndcdn.com/css/interstate-a86f07cf94ae5a496b24.css">
 
   
-  <link rel="stylesheet" href="https://a-v2.sndcdn.com/assets/css/app-e6a4ca6dd73e4e13bb25.css">
+  <link rel="stylesheet" href="https://a-v2.sndcdn.com/assets/css/app-e5928cd1c66edb871398.css">
   <link rel="stylesheet" href="https://a-v2.sndcdn.com/assets/css/i18n-locale-switcher-fc0b88a1f0db4efc1131.css">
   
 </head>
@@ -267,7 +274,7 @@ return [
     <noscript><article itemscope itemtype="http://schema.org/MusicRecording">
   <header>
     <h1 itemprop="name"><a itemprop="url" href="/ididthat-1/lowe-ct-cape-times-world-cup">LOWE CT Cape Times - World Cup</a>
-    by <a href="/ididthat-1">iDidTht.com</a></h1>
+    by <a href="/ididthat-1">IDIDTHAT.co</a></h1>
     published on <time pubdate>2015-02-19T09:11:40Z</time>
 
         <meta itemprop="duration" content="PT00H00M30S" />
@@ -278,11 +285,11 @@ return [
         <meta itemprop="interactionCount" content="UserComments:0" />
 
       <div itemscope itemprop="audio" itemtype="http://schema.org/AudioObject"><meta itemprop="embedUrl" content="https://w.soundcloud.com/player/?url&#x3D;https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&amp;auto_play&#x3D;false&amp;show_artwork&#x3D;true&amp;visual&#x3D;true&amp;origin&#x3D;schema.org" /><meta itemprop="height" content="400px" /></div>
-      <div itemscope itemprop="byArtist" itemtype="http://schema.org/MusicGroup"><meta itemprop="name" content="iDidTht.com" /><meta itemprop="url" content="/ididthat-1" /></div>
+      <div itemscope itemprop="byArtist" itemtype="http://schema.org/MusicGroup"><meta itemprop="name" content="IDIDTHAT.co" /><meta itemprop="url" content="/ididthat-1" /></div>
       <div itemscope itemprop="provider" itemtype="http://schema.org/Organization"><meta itemprop="name" content="SoundCloud" /><meta itemprop="image" content="http://developers.soundcloud.com/assets/logo_white-8bf7615eb575eeb114fc65323068e1e4.png" /></div>
   </header>
   <p>
-    <img src="https://i1.sndcdn.com/avatars-000183507205-eq7m69-t500x500.jpg" width="500" height="500" alt="LOWE CT Cape Times - World Cup" itemprop="image">
+    <img src="https://i1.sndcdn.com/avatars-WICzOfU1vKRGZe3W-TE63Ww-t500x500.jpg" width="500" height="500" alt="LOWE CT Cape Times - World Cup" itemprop="image">
     
     <meta itemprop="description" content="" />
   </p>
@@ -347,7 +354,7 @@ return [
     
   </div>
 
-  <script src="https://a-v2.sndcdn.com/assets/15-3b885f99-3.js" crossorigin></script>
+  <script src="https://a-v2.sndcdn.com/assets/15-2c9b93e1-3.js" crossorigin></script>
 
   
   
@@ -358,20 +365,20 @@ return [
   
 
   
-    <script type="text/javascript">window.__sc_version = "1582295611";</script>
+    <script type="text/javascript">window.__sc_version = "1589986714";</script>
     
 
   
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/49-9ed01c76-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/1-95276dc7-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/2-d9602e09-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/3-2b059d37-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/0-063f8795-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/48-c9b6f63b-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/50-2f356e64-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/0-7e0bf13a-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/1-3738c176-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/2-4dbd49f7-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/49-6045817b-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/48-d2483d0e-3.js"></script>
     
 
 
-  <script>!function(e,n){if(e=e.bind(null,n),"function"==typeof window.webpackJsonp)window.webpackJsonp([],{0:e});else{var t=n.reduce(function(e,n){return e.concat(n.chunks)},[]).filter(function(e,n,t){return t.indexOf(e)===n}),c="__sc_data_rehydration_module__",o={};o[c]=e,(window.webpackJsonp=window.webpackJsonp||[]).push([[],o,[[c].concat(t)]])}}(function(e,n,t,c){function o(e){return i.every(function(n){return n in e.prototype})}function r(e){var n=o(e);return n?function(n){var t,c=a;n.lastFetchTime&&(c=n.lastFetchTime,delete n.lastFetchTime),t=new e(n,{parse:!0,__hydrate:!0}),t.lastFetchTime=c,t.release()}:e}var a=Date.now(),i=["resource_type","get","set","addSubmodel","release"];e.forEach(function(e){try{var n=r(c(e.id));e.data.forEach(function(e){n(e)})}catch(t){}})},[{"id":206,"chunks":[48],"data":[{"allows_messages_from_unfollowed_users":false,"analytics_opt_in":true,"communications_opt_in":true,"targeted_advertising_opt_in":false,"legislation":[]}]},{"id":1067,"chunks":[48],"data":[{"country_code":"ES","country_name":"Spain","region":"58","city":"Orense","postal_code":"32001","latitude":42.331298828125,"longitude":-7.862701416015625}]},{"id":974,"chunks":[0],"data":[{}]},{"id":977,"chunks":[0],"data":[{"v2_oscp_german_tax_fields_support":true,"v2_use_new_connect":true,"v2_show_distribute_button":true,"v2_hq_file_storage_release":true,"student-sale-fall2019":true}]},{"id":33,"chunks":[48],"data":[{"avatar_url":"https://i1.sndcdn.com/avatars-000183507205-eq7m69-large.jpg","city":null,"comments_count":0,"country_code":"ZA","created_at":"2015-01-07T10:29:03Z","creator_subscriptions":[{"product":{"id":"creator-pro-unlimited"}}],"creator_subscription":{"product":{"id":"creator-pro-unlimited"}},"description":"iDidTht Promotes and Connects South Africa’s Advertising and Production Industry.","followers_count":22,"followings_count":0,"first_name":"","full_name":"","groups_count":0,"id":131764083,"kind":"user","last_modified":"2019-05-21T09:02:05Z","last_name":"","likes_count":0,"playlist_likes_count":0,"permalink":"ididthat-1","permalink_url":"https://soundcloud.com/ididthat-1","playlist_count":13,"reposts_count":null,"track_count":188,"uri":"https://api.soundcloud.com/users/131764083","urn":"soundcloud:users:131764083","username":"iDidTht.com","verified":false,"visuals":null,"url":"/ididthat-1"}]},{"id":17,"chunks":[48],"data":[{"comment_count":0,"full_duration":30095,"downloadable":false,"created_at":"2015-02-19T09:11:40Z","description":"","media":{"transcodings":[{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:191904624/7f053e5d-9fd6-42d2-96e9-99da53650e28/stream/hls","preset":"mp3_0_0","duration":30095,"snipped":false,"format":{"protocol":"hls","mime_type":"audio/mpeg"},"quality":"sq"},{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:191904624/7f053e5d-9fd6-42d2-96e9-99da53650e28/stream/progressive","preset":"mp3_0_0","duration":30095,"snipped":false,"format":{"protocol":"progressive","mime_type":"audio/mpeg"},"quality":"sq"}]},"title":"LOWE CT Cape Times - World Cup","publisher_metadata":null,"duration":30095,"has_downloads_left":true,"artwork_url":null,"public":true,"streamable":true,"tag_list":"CT Cape Times World Cup","download_url":null,"genre":"LOWE","id":191904624,"reposts_count":0,"state":"finished","label_name":null,"last_modified":"2019-04-17T09:27:08Z","commentable":true,"policy":"ALLOW","visuals":null,"kind":"track","purchase_url":null,"sharing":"public","uri":"https://api.soundcloud.com/tracks/191904624","secret_token":null,"download_count":0,"likes_count":0,"urn":"soundcloud:tracks:191904624","license":"all-rights-reserved","purchase_title":null,"display_date":"2015-02-19T09:11:40Z","embeddable_by":"all","release_date":null,"user_id":131764083,"monetization_model":"NOT_APPLICABLE","waveform_url":"https://wave.sndcdn.com/8xhWpepUoQiA_m.json","permalink":"lowe-ct-cape-times-world-cup","permalink_url":"https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000183507205-eq7m69-large.jpg","city":null,"comments_count":0,"country_code":"ZA","created_at":"2015-01-07T10:29:03Z","creator_subscriptions":[{"product":{"id":"creator-pro-unlimited"}}],"creator_subscription":{"product":{"id":"creator-pro-unlimited"}},"description":"iDidTht Promotes and Connects South Africa’s Advertising and Production Industry.","followers_count":22,"followings_count":0,"first_name":"","full_name":"","groups_count":0,"id":131764083,"kind":"user","last_modified":"2019-05-21T09:02:05Z","last_name":"","likes_count":0,"playlist_likes_count":0,"permalink":"ididthat-1","permalink_url":"https://soundcloud.com/ididthat-1","playlist_count":13,"reposts_count":null,"track_count":188,"uri":"https://api.soundcloud.com/users/131764083","urn":"soundcloud:users:131764083","username":"iDidTht.com","verified":false,"visuals":null},"playback_count":31}]}]);</script>
+  <script>!function(e,n){if(e=e.bind(null,n),"function"==typeof window.webpackJsonp)window.webpackJsonp([],{0:e});else{var t=n.reduce(function(e,n){return e.concat(n.chunks)},[]).filter(function(e,n,t){return t.indexOf(e)===n}),c="__sc_data_rehydration_module__",o={};o[c]=e,(window.webpackJsonp=window.webpackJsonp||[]).push([[],o,[[c].concat(t)]])}}(function(e,n,t,c){function o(e){return i.every(function(n){return n in e.prototype})}function r(e){var n=o(e);return n?function(n){var t,c=a;n.lastFetchTime&&(c=n.lastFetchTime,delete n.lastFetchTime),t=new e(n,{parse:!0,__hydrate:!0}),t.lastFetchTime=c,t.release()}:e}var a=Date.now(),i=["resource_type","get","set","addSubmodel","release"];e.forEach(function(e){try{var n=r(c(e.id));e.data.forEach(function(e){n(e)})}catch(t){}})},[{"id":241,"chunks":[48],"data":[{"allows_messages_from_unfollowed_users":false,"analytics_opt_in":true,"communications_opt_in":true,"targeted_advertising_opt_in":false,"legislation":[]}]},{"id":1026,"chunks":[48],"data":[{"country_code":"ES","country_name":"Spain","region":"58","city":"A Coruña","postal_code":"15007","latitude":43.3656005859375,"longitude":-8.404296875}]},{"id":924,"chunks":[49],"data":[{}]},{"id":927,"chunks":[49],"data":[{"v2_test_feature_toggle":true,"v2_oscp_german_tax_fields_support":true,"v2_use_new_connect":true,"v2_hq_file_storage_release":true,"v2_direct_support_link":true,"v2_distro_2_phase_1_announcement":true,"v2_distro_2_phase_2_freeze_submissions":true,"v2_distro_2_phase_4_post_migration":true,"v2_enable_siwa":true}]},{"id":32,"chunks":[48],"data":[{"avatar_url":"https://i1.sndcdn.com/avatars-WICzOfU1vKRGZe3W-TE63Ww-large.jpg","city":null,"comments_count":0,"country_code":"ZA","created_at":"2015-01-07T10:29:03Z","creator_subscriptions":[{"product":{"id":"creator-pro-unlimited"}}],"creator_subscription":{"product":{"id":"creator-pro-unlimited"}},"description":"IDIDTHAT.co Promotes and Connects South Africa’s Advertising and Production Industry.","followers_count":22,"followings_count":0,"first_name":"","full_name":"","groups_count":0,"id":131764083,"kind":"user","last_modified":"2020-04-17T13:27:48Z","last_name":"","likes_count":0,"playlist_likes_count":0,"permalink":"ididthat-1","permalink_url":"https://soundcloud.com/ididthat-1","playlist_count":13,"reposts_count":null,"track_count":192,"uri":"https://api.soundcloud.com/users/131764083","urn":"soundcloud:users:131764083","username":"IDIDTHAT.co","verified":false,"visuals":null,"url":"/ididthat-1"}]},{"id":18,"chunks":[48],"data":[{"comment_count":0,"full_duration":30095,"downloadable":false,"created_at":"2015-02-19T09:11:40Z","description":"","media":{"transcodings":[{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:191904624/7f053e5d-9fd6-42d2-96e9-99da53650e28/stream/hls","preset":"mp3_0_0","duration":30095,"snipped":false,"format":{"protocol":"hls","mime_type":"audio/mpeg"},"quality":"sq"},{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:191904624/7f053e5d-9fd6-42d2-96e9-99da53650e28/stream/progressive","preset":"mp3_0_0","duration":30095,"snipped":false,"format":{"protocol":"progressive","mime_type":"audio/mpeg"},"quality":"sq"}]},"title":"LOWE CT Cape Times - World Cup","publisher_metadata":null,"duration":30095,"has_downloads_left":true,"artwork_url":null,"public":true,"streamable":true,"tag_list":"CT Cape Times World Cup","genre":"LOWE","id":191904624,"reposts_count":0,"state":"finished","label_name":null,"last_modified":"2019-04-17T09:27:08Z","commentable":true,"policy":"ALLOW","visuals":null,"kind":"track","purchase_url":null,"sharing":"public","uri":"https://api.soundcloud.com/tracks/191904624","secret_token":null,"download_count":0,"likes_count":0,"urn":"soundcloud:tracks:191904624","license":"all-rights-reserved","purchase_title":null,"display_date":"2015-02-19T09:11:40Z","embeddable_by":"all","release_date":null,"user_id":131764083,"monetization_model":"NOT_APPLICABLE","waveform_url":"https://wave.sndcdn.com/8xhWpepUoQiA_m.json","permalink":"lowe-ct-cape-times-world-cup","permalink_url":"https://soundcloud.com/ididthat-1/lowe-ct-cape-times-world-cup","user":{"avatar_url":"https://i1.sndcdn.com/avatars-WICzOfU1vKRGZe3W-TE63Ww-large.jpg","city":null,"comments_count":0,"country_code":"ZA","created_at":"2015-01-07T10:29:03Z","creator_subscriptions":[{"product":{"id":"creator-pro-unlimited"}}],"creator_subscription":{"product":{"id":"creator-pro-unlimited"}},"description":"IDIDTHAT.co Promotes and Connects South Africa’s Advertising and Production Industry.","followers_count":22,"followings_count":0,"first_name":"","full_name":"","groups_count":0,"id":131764083,"kind":"user","last_modified":"2020-04-17T13:27:48Z","last_name":"","likes_count":0,"playlist_likes_count":0,"permalink":"ididthat-1","permalink_url":"https://soundcloud.com/ididthat-1","playlist_count":13,"reposts_count":null,"track_count":192,"uri":"https://api.soundcloud.com/users/131764083","urn":"soundcloud:users:131764083","username":"IDIDTHAT.co","verified":false,"visuals":null},"playback_count":31}]}]);</script>
 
 </body>
 </html>

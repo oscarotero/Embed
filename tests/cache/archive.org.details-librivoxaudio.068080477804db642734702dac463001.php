@@ -7,7 +7,7 @@ return [
             'nginx/1.16.1 (Ubuntu)'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:47:01 GMT'
+            'Wed, 20 May 2020 17:54:08 GMT'
         ],
         'content-type' => [
             'text/html; charset=utf-8'
@@ -19,7 +19,7 @@ return [
             'keep-alive'
         ],
         'set-cookie' => [
-            'collections=librivoxaudio; expires=Thu, 20-Aug-2020 23:47:01 GMT; Max-Age=15552000; path=/; domain=.archive.org'
+            'collections=librivoxaudio; expires=Mon, 16-Nov-2020 17:54:08 GMT; Max-Age=15552000; path=/; domain=.archive.org'
         ],
         'strict-transport-security' => [
             'max-age=15724800'
@@ -29,6 +29,9 @@ return [
         ],
         'Content-Location' => [
             'https://archive.org/details/librivoxaudio?output=json'
+        ],
+        'X-Request-Time' => [
+            '1.223 ms'
         ]
     ],
     'statusCode' => 200,
@@ -46,39 +49,59 @@ return [
         <meta name="google-site-verification" content="Q2YSouphkkgHkFNP7FgAkc4TmBs1Gmag3uGNndb53B8" />
     <meta name="google-site-verification" content="bpjKvUvsX0lxfmjg19TLblckWkDpnptZEYsBntApxUk" />
 
-    <script>window.archive_setup=[]</script>
+    <script>
+/* @licstart  The following is the entire license notice for the
+ * JavaScript code in this page.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in this page.
+ */
+</script>
+        <script>window.archive_setup=[]</script>
     <meta charset="UTF-8">
     <script src="//archive.org/includes/jquery-1.10.2.min.js?v1.10.2" type="text/javascript"></script>
-            <script src="//archive.org/includes/analytics.js?v=24ef0ed0" type="text/javascript"></script>
-
+            <script src="//archive.org/includes/analytics.js?v=d47441b0" type="text/javascript"></script>
     <script>
       \'use strict\';
       if (\'archive_analytics\' in window) {
                   archive_analytics.service = "ao_2";
         
-        archive_analytics.send_pageview_on_load({
-                      mediaType: "collection",
-                  });
+        archive_analytics.send_pageview_on_load({"mediaType":"collection"});
 
         archive_analytics.process_url_events(window.location);
       }
     </script>
         <script src="//archive.org/includes/build/npm/jquery-ui.min.js?v1.12.1" type="text/javascript"></script>
     <script src="//archive.org/includes/bootstrap.min.js?v3.0.0" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/clipboard/dist/clipboard.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/@babel/polyfill/dist/polyfill.min.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/ie-dom-node-remove-polyfill.min.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/polyfill.min.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/@webcomponents/webcomponentsjs/webcomponents-bundle.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/more-facets.min.js?v=24ef0ed0" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/clipboard/dist/clipboard.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/@babel/polyfill/dist/polyfill.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/ie-dom-node-remove-polyfill.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/polyfill.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/@webcomponents/webcomponentsjs/webcomponents-bundle.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/more-facets.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/radio-player-controller.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/mobile-top-nav.min.js?v=d47441b0" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/flot/jquery.flot.js?v1.1" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/flot/jquery.flot.time.js?v1.1" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/flot/jquery.flot.stack.js?v1.1" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/react/umd/react.production.min.js?v16.7.0" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/react-dom/umd/react-dom.production.min.js?v16.7.0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/archive.min.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/playset.min.js?v=24ef0ed0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/areact.min.js?v=24ef0ed0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/archive.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/playset.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/areact.min.js?v=d47441b0" type="text/javascript"></script>
 
 <meta name="DESCRIPTION" content="LibriVox - founded in 2005 - is a community of volunteers from all over the world who record public domain texts: poetry, short stories, whole books, even dramatic works, in many different languages. All LibriVox recordings are in the public domain in the USA and available as free downloads on..."/>
 
@@ -86,7 +109,7 @@ return [
                       <meta property="braintree_token" content="production_w3jccm3z_pqd7hz44swp6zvvw">
                       <meta property="environment" content="production">
                       <meta property="venmo_id" content="2878003111190856236">
-            <link href="//archive.org/includes/build/css/archive.min.css?v=24ef0ed0" rel="stylesheet" type="text/css"/>
+            <link href="//archive.org/includes/build/css/archive.min.css?v=d47441b0" rel="stylesheet" type="text/css"/>
     <link rel="SHORTCUT ICON" href="https://archive.org/images/glogo.jpg"/>
       </head>
   <body class="navia ia-module lists showdetails">
@@ -98,10 +121,15 @@ return [
                     <div class="ia-banners">
               <div class="ia-banner hidden" data-campaign="ia_user_1">
         <p>This banner text <i>can</i> have <b>markup</b>.</p>
-        <a href="#" data-action="ia-banner-close"></a>
+        <form class="banner-close" action="" method="get" data-action="ia-banner-close">
+          <fieldset>
+            <button type="submit"></button>
+          </fieldset>
+        </form>
       </div>
           </div>
-            
+                            
+                <topnav-element config=\'{"baseUrl":"archive.org","catUrl":"https:\\/\\/catalogd.archive.org","waybackUrl":"web.archive.org","screenName":false,"username":"","eventCategory":"MobileTopNav","waybackPagesArchived":"431 billion","isAdmin":0,"identifier":"librivoxaudio","uploader":false,"biblio":false,"hiddenSearchOptions":["RADIO"]}\'></topnav-element>
         <div id="navwrap1" class="">
           <div id="navwrap2">
             <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -109,7 +137,7 @@ return [
 
               <ul class="nav navbar-nav navbar-main">
                 <li class="pull-left">
-                  <a title="Home" class="navia-link home" href="/" target="_top">
+                  <a title="Home" class="navia-link home" href="https://archive.org" target="_top">
                     <span class="iconochive-logo"></span>
                     <div class="archive-wordmark">
                       <img src="https://archive.org/images/wordmark-narrow-spacing.svg" alt="Internet Archive Logo">
@@ -258,7 +286,7 @@ return [
         >Advanced Search</a>
           </div>
     
-                              <input class="js-tvsearch" type="hidden" value=\'{"ands":[],"minday":"06/04/2009","maxday":"02/22/2020"}\'/>
+                              <input class="js-tvsearch" type="hidden" value=\'{"ands":[],"minday":"06/04/2009","maxday":"05/20/2020"}\'/>
     
                         <input type="submit" value="Search"/>
                       </form>
@@ -271,10 +299,34 @@ return [
                   ><span class="iconochive-upload"  aria-hidden="true"></span><span class="sr-only">upload</span><span class="hidden-xs-span hidden-sm-span">UPLOAD</span></a>
                 </li>
 
-                <li class="nav-right-tool pull-right leftmost">
-                                      <a class="nav-user" href="https://archive.org/account/login" style="padding-right:0" _target="top"
-                      data-event-click-tracking="TopNav|LoginIcon"
-                      ><span class="iconochive-person"  aria-hidden="true"></span><span class="sr-only">person</span><span class="hidden-xs-span hidden-sm-span">SIGN IN</span></a>
+                <li class="nav-right-tool pull-right leftmost dropdown-ia">
+                                      <div class="nav-user dropdown-ia">
+                      <span class="ghost80 person-icon"
+                        id="guest-menu"
+                        data-handler="dropdown"
+                        ><span class="iconochive-person"  aria-hidden="true"></span><span class="sr-only">person</span>                      </span>
+                      <ul class="dropdown-menu guest mydrop" role="menu" aria-labelledby="guest">
+                        <li><a
+                          href="https://archive.org/account/signup"
+                          data-event-click-tracking="TopNav|AvatarMenu-Signup"
+                          >Sign up for free</a></li>
+                        <li><a
+                          href="https://archive.org/account/login"
+                          data-event-click-tracking="TopNav|AvatarMenu-Login"
+                          >Log in</a></li>
+                      </ul>
+                      <a href="https://archive.org/account/signup"
+                        class="nav-user-link hidden-xs-span hidden-sm-span"
+                        _target="top"
+                        data-event-click-tracking="TopNav|SignupIcon"
+                      ><span>SIGN UP</span></a>
+                      <span class="hidden-xs-span hidden-sm-span pipe-separate">|</span>
+                      <a href="https://archive.org/account/login"
+                        class="nav-user-link hidden-xs-span hidden-sm-span"
+                        _target="top"
+                        data-event-click-tracking="TopNav|LoginIcon"
+                      ><span>LOG IN</span></a>
+                    </div>
                                   </li>
 
                               </ul>
@@ -296,7 +348,7 @@ return [
                                                                 <div class="row toprow web" style="max-width:1000px;margin:auto;display:block;">
                     <div class="col-xs-12">
                       <div class="wayback-txt">
-                        Search the history of over 411 billion                        <a style="display:inline"
+                        Search the history of over 431 billion                        <a style="display:inline"
                           data-event-click-tracking="TopNav|WaybackMachineStatsLink"
                           href="https://blog.archive.org/2016/10/23/defining-web-pages-web-sites-and-web-captures/"
                           >web pages</a> on the Internet.
@@ -347,17 +399,17 @@ return [
                                         <center class="items_list">
               <div class="items_list_img">
                 <a
-                  href="https://archive.org/details/inlibrary?sort=-publicdate"
-                  style="background-image: url(\'https://archive.org/images/book-lend.png\');"
+                  href="https://archive.org/details/nationalemergencylibrary"
+                  style="background-image: url(\'https://archive.org/images/national-emergency-library-logo-padded.png\');"
                   aria-hidden="true"
-                  data-event-click-tracking="TopNav|CircleWidget-BooksToBorrow"
+                  data-event-click-tracking="TopNav|CircleWidget-NationalEmergencyBrLibrary"
                   ></a>
               </div>
               <a
                 class="stealth boxy-label"
-                data-event-click-tracking="TopNav|CircleWidget-BooksToBorrow"
-                href="https://archive.org/details/inlibrary?sort=-publicdate"
-                >Books to Borrow</a>
+                data-event-click-tracking="TopNav|CircleWidget-NationalEmergencyBrLibrary"
+                href="https://archive.org/details/nationalemergencylibrary"
+                >National Emergency<br>Library</a>
             </center>
                                     </div><!--/.widgets-->
 
@@ -391,7 +443,7 @@ return [
                                               </div><!--/.col-sm-2-->
                                                                 <div class="col-sm-2 col-xs-7">
                                                   <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/booksbylanguage" title="Books by Language" data-event-click-tracking="TopNav|TopLink-BooksByLanguage">Books by Language</a>                                                          <a href="https://archive.org/details/additional_collections" title="Additional Collections" data-event-click-tracking="TopNav|TopLink-AdditionalCollections">Additional Collections</a>                                                      </div>
+                                                                                  </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -448,7 +500,7 @@ return [
                                               </div><!--/.col-sm-2-->
                                                                 <div class="col-sm-2 col-xs-7">
                                                   <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/spiritualityandreligion" title="Spirituality &amp; Religion" data-event-click-tracking="TopNav|TopLink-SpiritualityReligion">Spirituality & Religion</a>                                                          <a href="https://archive.org/details/sports" title="Sports Videos" data-event-click-tracking="TopNav|TopLink-SportsVideos">Sports Videos</a>                                                          <a href="https://archive.org/details/television" title="Television" data-event-click-tracking="TopNav|TopLink-Television">Television</a>                                                          <a href="https://archive.org/details/gamevideos" title="Videogame Videos" data-event-click-tracking="TopNav|TopLink-VideogameVideos">Videogame Videos</a>                                                          <a href="https://archive.org/details/vlogs" title="Vlogs" data-event-click-tracking="TopNav|TopLink-Vlogs">Vlogs</a>                                                          <a href="https://archive.org/details/youth_media" title="Youth Media" data-event-click-tracking="TopNav|TopLink-YouthMedia">Youth Media</a>                                                          <a href="https://archive.org/details/opensource_movies" title="Community Video" data-event-click-tracking="TopNav|TopLink-CommunityVideo">Community Video</a>                                                      </div>
+                                                                                      <a href="https://archive.org/details/spiritualityandreligion" title="Spirituality &amp; Religion" data-event-click-tracking="TopNav|TopLink-SpiritualityReligion">Spirituality & Religion</a>                                                          <a href="https://archive.org/details/sports" title="Sports Videos" data-event-click-tracking="TopNav|TopLink-SportsVideos">Sports Videos</a>                                                          <a href="https://archive.org/details/television" title="Television" data-event-click-tracking="TopNav|TopLink-Television">Television</a>                                                          <a href="https://archive.org/details/gamevideos" title="Videogame Videos" data-event-click-tracking="TopNav|TopLink-VideogameVideos">Videogame Videos</a>                                                          <a href="https://archive.org/details/vlogs" title="Vlogs" data-event-click-tracking="TopNav|TopLink-Vlogs">Vlogs</a>                                                          <a href="https://archive.org/details/youth_media" title="Youth Media" data-event-click-tracking="TopNav|TopLink-YouthMedia">Youth Media</a>                                                      </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -486,7 +538,7 @@ return [
                                                                 <div class="col-sm-2 col-xs-7 col-sm-push-2">
                                                   <div class="linx ">
                                                           <h5>Top</h5>
-                                                                                      <a href="https://archive.org/details/audio_bookspoetry" title="Audio Books &amp; Poetry" data-event-click-tracking="TopNav|TopLink-AudioBooksPoetry">Audio Books & Poetry</a>                                                          <a href="https://archive.org/details/opensource_audio" title="Community Audio" data-event-click-tracking="TopNav|TopLink-CommunityAudio">Community Audio</a>                                                          <a href="https://archive.org/details/audio_tech" title="Computers &amp; Technology" data-event-click-tracking="TopNav|TopLink-ComputersTechnology">Computers & Technology</a>                                                          <a href="https://archive.org/details/audio_music" title="Music, Arts &amp; Culture" data-event-click-tracking="TopNav|TopLink-MusicArtsCulture">Music, Arts & Culture</a>                                                          <a href="https://archive.org/details/audio_news" title="News &amp; Public Affairs" data-event-click-tracking="TopNav|TopLink-NewsPublicAffairs">News & Public Affairs</a>                                                          <a href="https://archive.org/details/audio_foreign" title="Non-English Audio" data-event-click-tracking="TopNav|TopLink-NonEnglishAudio">Non-English Audio</a>                                                          <a href="https://archive.org/details/audio_religion" title="Spirituality &amp; Religion" data-event-click-tracking="TopNav|TopLink-SpiritualityReligion">Spirituality & Religion</a>                                                      </div>
+                                                                                      <a href="https://archive.org/details/audio_bookspoetry" title="Audio Books &amp; Poetry" data-event-click-tracking="TopNav|TopLink-AudioBooksPoetry">Audio Books & Poetry</a>                                                          <a href="https://archive.org/details/opensource_audio" title="Community Audio" data-event-click-tracking="TopNav|TopLink-CommunityAudio">Community Audio</a>                                                          <a href="https://archive.org/details/audio_tech" title="Computers, Technology and Science" data-event-click-tracking="TopNav|TopLink-ComputersTechnologyAndScience">Computers, Technology and Science</a>                                                          <a href="https://archive.org/details/audio_music" title="Music, Arts &amp; Culture" data-event-click-tracking="TopNav|TopLink-MusicArtsCulture">Music, Arts & Culture</a>                                                          <a href="https://archive.org/details/audio_news" title="News &amp; Public Affairs" data-event-click-tracking="TopNav|TopLink-NewsPublicAffairs">News & Public Affairs</a>                                                          <a href="https://archive.org/details/audio_foreign" title="Non-English Audio" data-event-click-tracking="TopNav|TopLink-NonEnglishAudio">Non-English Audio</a>                                                          <a href="https://archive.org/details/audio_religion" title="Spirituality &amp; Religion" data-event-click-tracking="TopNav|TopLink-SpiritualityReligion">Spirituality & Religion</a>                                                      </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -505,7 +557,7 @@ return [
                                               </div><!--/.col-sm-2-->
                                                                 <div class="col-sm-2 col-xs-7">
                                                   <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/podcasts" title="Podcasts" data-event-click-tracking="TopNav|TopLink-Podcasts">Podcasts</a>                                                      </div>
+                                                                                      <a href="https://archive.org/details/podcast_neues-von-der-a31_1404422420" title="Neues von der A31" data-event-click-tracking="TopNav|TopLink-NeuesVonDerA31">Neues von der A31</a>                                                          <a href="https://archive.org/details/podcast_hallo-norge_1436886844" title="Hallo Norge" data-event-click-tracking="TopNav|TopLink-HalloNorge">Hallo Norge</a>                                                          <a href="https://archive.org/details/podcast_biscoitocast_701646901" title="BiscoitoCast" data-event-click-tracking="TopNav|TopLink-BiscoitoCast">BiscoitoCast</a>                                                          <a href="https://archive.org/details/podcast_r1918_1331405080" title="R1918" data-event-click-tracking="TopNav|TopLink-R1918">R1918</a>                                                          <a href="https://archive.org/details/podcast_holiday-force_298302697" title="Holiday Force" data-event-click-tracking="TopNav|TopLink-HolidayForce">Holiday Force</a>                                                          <a href="https://archive.org/details/podcast_40-years-punk-milton-keyne_1107397818" title="40 years of punk: Milton Keynes" data-event-click-tracking="TopNav|TopLink-40YearsOfPunkMiltonKeynes">40 years of punk: Milton Keynes</a>                                                          <a href="https://archive.org/details/podcast_mundane-movie-trailers_1217867537" title="Mundane Movie Trailers" data-event-click-tracking="TopNav|TopLink-MundaneMovieTrailers">Mundane Movie Trailers</a>                                                      </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -543,7 +595,7 @@ return [
                                                                 <div class="col-sm-2 col-xs-7 col-sm-push-2">
                                                   <div class="linx ">
                                                           <h5>Top</h5>
-                                                                                      <a href="https://archive.org/details/kodi_archive" title="Kodi Archive and Support File" data-event-click-tracking="TopNav|TopLink-KodiArchiveAndSupportFile">Kodi Archive and Support File</a>                                                          <a href="https://archive.org/details/open_source_software" title="Community Software" data-event-click-tracking="TopNav|TopLink-CommunitySoftware">Community Software</a>                                                          <a href="https://archive.org/details/vintagesoftware" title="Vintage Software" data-event-click-tracking="TopNav|TopLink-VintageSoftware">Vintage Software</a>                                                          <a href="https://archive.org/details/apkarchive" title="APK" data-event-click-tracking="TopNav|TopLink-APK">APK</a>                                                          <a href="https://archive.org/details/softwarelibrary_msdos" title="MS-DOS" data-event-click-tracking="TopNav|TopLink-MSDOS">MS-DOS</a>                                                          <a href="https://archive.org/details/cd-roms" title="CD-ROM Software" data-event-click-tracking="TopNav|TopLink-CDROMSoftware">CD-ROM Software</a>                                                          <a href="https://archive.org/details/cdromsoftware" title="CD-ROM Software Library" data-event-click-tracking="TopNav|TopLink-CDROMSoftwareLibrary">CD-ROM Software Library</a>                                                      </div>
+                                                                                      <a href="https://archive.org/details/kodi_archive" title="Kodi Archive and Support File" data-event-click-tracking="TopNav|TopLink-KodiArchiveAndSupportFile">Kodi Archive and Support File</a>                                                          <a href="https://archive.org/details/vintagesoftware" title="Vintage Software" data-event-click-tracking="TopNav|TopLink-VintageSoftware">Vintage Software</a>                                                          <a href="https://archive.org/details/apkarchive" title="APK" data-event-click-tracking="TopNav|TopLink-APK">APK</a>                                                          <a href="https://archive.org/details/open_source_software" title="Community Software" data-event-click-tracking="TopNav|TopLink-CommunitySoftware">Community Software</a>                                                          <a href="https://archive.org/details/softwarelibrary_msdos" title="MS-DOS" data-event-click-tracking="TopNav|TopLink-MSDOS">MS-DOS</a>                                                          <a href="https://archive.org/details/cd-roms" title="CD-ROM Software" data-event-click-tracking="TopNav|TopLink-CDROMSoftware">CD-ROM Software</a>                                                          <a href="https://archive.org/details/cdromsoftware" title="CD-ROM Software Library" data-event-click-tracking="TopNav|TopLink-CDROMSoftwareLibrary">CD-ROM Software Library</a>                                                      </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -562,7 +614,7 @@ return [
                                               </div><!--/.col-sm-2-->
                                                                 <div class="col-sm-2 col-xs-7">
                                                   <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/softwaresites" title="Software Sites" data-event-click-tracking="TopNav|TopLink-SoftwareSites">Software Sites</a>                                                          <a href="https://archive.org/details/tucows" title="Tucows Software Library" data-event-click-tracking="TopNav|TopLink-TucowsSoftwareLibrary">Tucows Software Library</a>                                                          <a href="https://archive.org/details/cdbbsarchive" title="Shareware CD-ROMs" data-event-click-tracking="TopNav|TopLink-SharewareCDROMs">Shareware CD-ROMs</a>                                                          <a href="https://archive.org/details/cdromimages" title="CD-ROM Images" data-event-click-tracking="TopNav|TopLink-CDROMImages">CD-ROM Images</a>                                                          <a href="https://archive.org/details/softwarecapsules" title="Software Capsules Compilation" data-event-click-tracking="TopNav|TopLink-SoftwareCapsulesCompilation">Software Capsules Compilation</a>                                                          <a href="https://archive.org/details/softwarelibrary_zx_spectrum" title="ZX Spectrum" data-event-click-tracking="TopNav|TopLink-ZXSpectrum">ZX Spectrum</a>                                                          <a href="https://archive.org/details/doom-cds" title="DOOM Level CD" data-event-click-tracking="TopNav|TopLink-DOOMLevelCD">DOOM Level CD</a>                                                      </div>
+                                                                                      <a href="https://archive.org/details/softwaresites" title="Software Sites" data-event-click-tracking="TopNav|TopLink-SoftwareSites">Software Sites</a>                                                          <a href="https://archive.org/details/tucows" title="Tucows Software Library" data-event-click-tracking="TopNav|TopLink-TucowsSoftwareLibrary">Tucows Software Library</a>                                                          <a href="https://archive.org/details/softwarecapsules" title="Software Capsules Compilation" data-event-click-tracking="TopNav|TopLink-SoftwareCapsulesCompilation">Software Capsules Compilation</a>                                                          <a href="https://archive.org/details/cdbbsarchive" title="Shareware CD-ROMs" data-event-click-tracking="TopNav|TopLink-SharewareCDROMs">Shareware CD-ROMs</a>                                                          <a href="https://archive.org/details/cdromimages" title="CD-ROM Images" data-event-click-tracking="TopNav|TopLink-CDROMImages">CD-ROM Images</a>                                                          <a href="https://archive.org/details/softwarelibrary_zx_spectrum" title="ZX Spectrum" data-event-click-tracking="TopNav|TopLink-ZXSpectrum">ZX Spectrum</a>                                                          <a href="https://archive.org/details/doom-cds" title="DOOM Level CD" data-event-click-tracking="TopNav|TopLink-DOOMLevelCD">DOOM Level CD</a>                                                      </div>
 
                           
                                               </div><!--/.col-sm-2-->
@@ -627,9 +679,9 @@ return [
                   </div><!--/.row-->
                                           </div><!--/#nav-tophat-->
     
-          </div><!--#navwrap1-->
-        </div><!--#navwrap2-->
-
+          </div><!--#navwrap2-->
+        </div><!--#navwrap1-->
+        
         <!-- Begin page content -->
         <main id="maincontent">
           <div class="container container-ia">
@@ -640,59 +692,39 @@ return [
   <div class="container">
     <div class="row">
       <div class="col-xs-11 col-sm-10 welcome-left">
-                  <div id="file-dropper-wrap">
-            <div id="file-dropper"> </div>
-            <img id="file-dropper-img" class="img-responsive"
-                 style="max-width:350px; margin:0 10px 5px 0;" src="https://ia600300.us.archive.org/30/items/librivoxaudio/LibriVox-logotext.png">
-          </div>
-                <h1>The LibriVox Free Audiobook Collection</h1>
-                  <h4></h4>
-                <div id="descript" style="max-height:43px;cursor:pointer;"
-         onclick="event && event.target && event.target.nodeName.toLowerCase()!=\'a\' && $(\'#tabby-about-finder\').click()"
-        >
+              <div class="collection-header">
+        <div class="collection-brand">
+                      <div id="file-dropper-wrap">
+              <div id="file-dropper"> </div>
+              <img id="file-dropper-img" class="img-responsive" src="https://ia600300.us.archive.org/30/items/librivoxaudio/LibriVox-logotext.png" alt="">
+            </div>
+                    <div class="collection-titles">
+            <h1>The LibriVox Free Audiobook Collection</h1>
+                      </div>
+        </div>
+        <div class="collection-summary">
           <p>LibriVox - founded in 2005 - is a community of volunteers from all over the world who record public domain texts: poetry, short stories, whole books, even dramatic works, in many different languages. 
 
 All LibriVox recordings are in the public domain in the USA and available as free downloads on the internet. If you are not in the USA, please check your country\'s copyright law before downloading.
 
-<p>Please visit the <a href="http://librivox.org" rel="nofollow">LibriVox website</a> where you can <a href="http://librivox.org/search">search</a> for books that interest you. You can search or browse by title, author, genre, language or reader (and, though not yet fully developed, by keyword), and you can look for all solo recordings by a particular reader, or their contributions to group recordings.
-
-<p>Our goal is to make all public domain books, in any language, available as free audiobooks. Would you like to help us to reach our goal? We always welcome new readers, prooflisteners, cover artists, or simply suggestions for books to read.
-
-<p>If you would appreciate suggestions for books to listen to, check out our monthly feature <em>the staff picks</em> where on the first day of each month, 10 books from the catalog are highlighted. You can find the list for this and the previous months on our <a href=https://librivox.org/category/monthly-picks/>blog</a>. 
-
-<p>For more information, or to volunteer, please visit <a href="http://librivox.org" rel="nofollow">LibriVox.org</a>.
-
-<br><br>
-<center><form style="margin:0;padding:0;" action="/searchresults.php" id="searchform" method="post">
-  <b>Search Librivox on Internet Archive:</b>
-  <input size="25" name="search" value="" style="font-size: 8pt"/>
-  <input style="vertical-align:bottom; text-align:center; width:21px; height:21px; border:0px" name="gobutton" type="image" id="gobutton" value="Find" src="/images/go-button-gateway.gif"/>
-  <input type="hidden" name="collection" value="librivoxaudio"/>
-  <input type="hidden" name="limit" value="100"/>
-  <input type="hidden" name="start" value="0"/>
-  <input type="hidden" name="searchAll" value="yes"/>
-  <input type="hidden" name="submit" value="this was submitted"/>
-</form></center>
-<br>                  </div>
-        <div id="descript-more"><a href="#" onclick="$(\'#tabby-about-finder\').click();return false">MORE</a></div>
-      </div><!--/.col-xs-11-->
+</p>        </div>
+      </div>
+          </div><!--/.col-xs-11-->
       <div class="col-xs-1 col-sm-2 welcome-right">
-        <a class="stealth"
-          href="#"
+        <button class="action-button stealth"
           onclick="return AJS.modal_go(this,{ignore_lnk:1,shown:AJS.embed_codes_adjust})"
           data-target="#cher-modal"><span class="iconochive-share"  aria-hidden="true"></span><span class="sr-only">share</span>          <span class="hidden-xs-span"> Share</span>
-        </a><br/>
+        </button><br/>
 
-        <a class="favorite-button stealth "
-          href="/bookmarks.php?add_bookmark=1&amp;mediatype=collection&amp;identifier=librivoxaudio&amp;title=The+LibriVox+Free+Audiobook+Collection"
+        <button
+          class="action-button stealth js-manage-toggle_list_status"
+          data-href="/bookmarks.php?add_bookmark=1&amp;mediatype=collection&amp;identifier=librivoxaudio&amp;title=The+LibriVox+Free+Audiobook+Collection"
           data-target="#favorite-modal"
-          onclick="return AJS.toggle_list_status(this)"
           data-id="librivoxaudio"
           data-fav-collection="fav-"
-          data-favorite="/bookmarks.php?add_bookmark=1&amp;mediatype=collection&amp;identifier=librivoxaudio&amp;title=The+LibriVox+Free+Audiobook+Collection"
           rel="nofollow">
           <span class="iconochive-No_Favorite"  aria-hidden="true"></span><span class="sr-only">No_Favorite</span>          <span class="hidden-xs-span">Favorite</span>
-        </a><br/>
+        </button><br/>
 
                   <a class="stealth topinblock ghost80" href="/services/collection-rss.php?collection=librivoxaudio">
             <span class="iconochive-rss"  aria-hidden="true"></span><span class="sr-only">rss</span>            <span class="hidden-xs-span">RSS</span>
@@ -766,9 +798,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://archive.org/details/librivoxaudio" target="_blank">
         <div class="sharee iconochive-facebook" data-toggle="tooltip" data-placement="bottom" title="Share to Facebook"></div>
       </a>
-      <a href="https://plus.google.com/share?url=https://archive.org/details/librivoxaudio" target="_blank">
-        <div class="sharee iconochive-googleplus" data-toggle="tooltip" data-placement="bottom" title="Share to Google+"></div>
-      </a>
       <a href="http://www.reddit.com/submit?url=https://archive.org/details/librivoxaudio&amp;title=The+LibriVox+Free+Audiobook+Collection" target="_blank">
         <div class="sharee iconochive-reddit" data-toggle="tooltip" data-placement="bottom" title="Share to Reddit"></div>
       </a>
@@ -801,7 +830,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
           <span class="label-with-border">Filters</span>
         </button>
         <div class="results_count">
-          13,701          <div class="topinblock micro-label" style="padding-top:2px">
+          13,999          <div class="topinblock micro-label" style="padding-top:2px">
             RESULTS          </div>
         </div>
         <div class="sortbar-rule"></div>
@@ -819,7 +848,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
         class="form-control input-sm searchlist"
         name="and[]"
         placeholder="Search this Collection"
-        required
         type="search"
                   value=""
                 aria-label="Enter search terms. Filters available below."
@@ -869,336 +897,88 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       <div class="facets_collapser collapse">
         <h5><button data-toggle=\'collapse\' data-target=\'.facet_mediatype\' aria-expanded=\'false\' role=\'button\' aria-controls=\'facet_mediatype\' class=\'collapsed\'>Media Type</button><span class=\'hidden-xs\'>Media Type</span></h5>    <div class="facet_mediatype collapse" >
       <div class="fatable facet-mediatype">
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=mediatype%3A%22audio%22\'"/>
-                          </div>
-            <div class="facell">
-                                            13,699                          </div>
-                          <span class="facell">
-                audio              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=mediatype%3A%22image%22\'"/>
-                          </div>
-            <div class="facell">
-                                            2                          </div>
-                          <span class="facell">
-                images              </span>
-                      </label>
+                          <div class="loader-lines">
+            <!-- visual placeholder until XHR later replaces with real data -->
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+          </div>
                       </div>
     </div>
     <h5><button data-toggle=\'collapse\' data-target=\'.facet_year\' aria-expanded=\'false\' role=\'button\' aria-controls=\'facet_year\' class=\'collapsed\'>Year</button><span class=\'hidden-xs\'>Year</span></h5>    <div class="facet_year collapse" >
       <div class="fatable facet-year">
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=year%3A%222020%22\'"/>
-                          </div>
-            <div class="facell">
-                                            164                          </div>
-                          <span class="facell">
-                2020              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=year%3A%222019%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1,052                          </div>
-                          <span class="facell">
-                2019              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=year%3A%222018%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1,040                          </div>
-                          <span class="facell">
-                2018              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=year%3A%222017%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1,032                          </div>
-                          <span class="facell">
-                2017              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=year%3A%222016%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1,050                          </div>
-                          <span class="facell">
-                2016              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=year%3A%222015%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1,033                          </div>
-                          <span class="facell">
-                2015              </span>
-                      </label>
-                                </div>
-      <a href="/details/librivoxaudio&morf=year" rel="nofollow" class="js-more-facets-click">More <span class="iconochive-right-solid"  aria-hidden="true"></span><span class="sr-only">right-solid</span></a>
-      <div>
-                  </div>
+                          <div class="loader-lines">
+            <!-- visual placeholder until XHR later replaces with real data -->
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+          </div>
+                      </div>
     </div>
     <h5><button data-toggle=\'collapse\' data-target=\'.facet_subject\' aria-expanded=\'false\' role=\'button\' aria-controls=\'facet_subject\' class=\'collapsed\'>Topics &amp; Subjects</button><span class=\'hidden-xs\'>Topics &amp; Subjects</span><a href="/details/librivoxaudio&morf=-subject" class="js-more-facets-click" data-switchtoalpha="-subject"><img class="filter-" data-toggle="tooltip" title="Show sorted alphabetically" src="/images/filter-count.png"></a></h5>    <div class="facet_subject collapse" >
       <div class="fatable facet-subject">
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=subject%3A%22librivox%22\'"/>
-                          </div>
-            <div class="facell">
-                                            11,765                          </div>
-                          <span class="facell">
-                librivox              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=subject%3A%22audiobooks%22\'"/>
-                          </div>
-            <div class="facell">
-                                            7,342                          </div>
-                          <span class="facell">
-                audiobooks              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=subject%3A%22audiobook%22\'"/>
-                          </div>
-            <div class="facell">
-                                            4,924                          </div>
-                          <span class="facell">
-                audiobook              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=subject%3A%22literature%22\'"/>
-                          </div>
-            <div class="facell">
-                                            2,877                          </div>
-                          <span class="facell">
-                literature              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=subject%3A%22poetry%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1,676                          </div>
-                          <span class="facell">
-                poetry              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=subject%3A%22fiction%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1,379                          </div>
-                          <span class="facell">
-                fiction              </span>
-                      </label>
-                                </div>
-      <a href="/details/librivoxaudio&morf=subject" rel="nofollow" class="js-more-facets-click">More <span class="iconochive-right-solid"  aria-hidden="true"></span><span class="sr-only">right-solid</span></a>
-      <div>
-                  </div>
+                          <div class="loader-lines">
+            <!-- visual placeholder until XHR later replaces with real data -->
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+          </div>
+                      </div>
     </div>
     <h5><button data-toggle=\'collapse\' data-target=\'.facet_collection\' aria-expanded=\'false\' role=\'button\' aria-controls=\'facet_collection\' class=\'collapsed\'>Collection</button><span class=\'hidden-xs\'>Collection</span></h5>    <div class="facet_collection collapse" >
       <div class="fatable facet-collection">
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=collection%3A%22librivoxaudio%22\'"/>
-                          </div>
-            <div class="facell">
-                                            13,701                          </div>
-                          <span class="facell">
-                <a href=\'/details/librivoxaudio\' class=\'collection-facet\' data-event-click-tracking=\'Facets|FacetCollectionLink\'>The LibriVox Free Audiobook Collection</a>              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=collection%3A%22fav-dahszil%22\'"/>
-                          </div>
-            <div class="facell">
-                                            777                          </div>
-                          <span class="facell">
-                <a href=\'/details/fav-dahszil\' class=\'collection-facet\' data-event-click-tracking=\'Facets|FacetCollectionLink\'>dahszil Favorites</a>              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=collection%3A%22fav-gaboora%22\'"/>
-                          </div>
-            <div class="facell">
-                                            625                          </div>
-                          <span class="facell">
-                <a href=\'/details/fav-gaboora\' class=\'collection-facet\' data-event-click-tracking=\'Facets|FacetCollectionLink\'>gaboora Favorites</a>              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=collection%3A%22fav-kiriftw%22\'"/>
-                          </div>
-            <div class="facell">
-                                            452                          </div>
-                          <span class="facell">
-                <a href=\'/details/fav-kiriftw\' class=\'collection-facet\' data-event-click-tracking=\'Facets|FacetCollectionLink\'>kiriftw Favorites</a>              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=collection%3A%22fav-bouncetiger%22\'"/>
-                          </div>
-            <div class="facell">
-                                            431                          </div>
-                          <span class="facell">
-                <a href=\'/details/fav-bouncetiger\' class=\'collection-facet\' data-event-click-tracking=\'Facets|FacetCollectionLink\'>bouncetiger Favorites</a>              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=collection%3A%22fav-elaine_milewsky%22\'"/>
-                          </div>
-            <div class="facell">
-                                            377                          </div>
-                          <span class="facell">
-                <a href=\'/details/fav-elaine_milewsky\' class=\'collection-facet\' data-event-click-tracking=\'Facets|FacetCollectionLink\'>Elaine Milewsky Favorites</a>              </span>
-                      </label>
-                                </div>
-      <a href="/details/librivoxaudio&morf=collection" rel="nofollow" class="js-more-facets-click">More <span class="iconochive-right-solid"  aria-hidden="true"></span><span class="sr-only">right-solid</span></a>
-      <div>
-                  </div>
+                          <div class="loader-lines">
+            <!-- visual placeholder until XHR later replaces with real data -->
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+          </div>
+                      </div>
     </div>
     <h5><button data-toggle=\'collapse\' data-target=\'.facet_creator\' aria-expanded=\'false\' role=\'button\' aria-controls=\'facet_creator\' class=\'collapsed\'>Creator</button><span class=\'hidden-xs\'>Creator</span><a href="/details/librivoxaudio&morf=-creator" class="js-more-facets-click" data-switchtoalpha="-creator"><img class="filter-" data-toggle="tooltip" title="Show sorted alphabetically" src="/images/filter-count.png"></a></h5>    <div class="facet_creator collapse" >
       <div class="fatable facet-creator">
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=creator%3A%22various%22\'"/>
-                          </div>
-            <div class="facell">
-                                            980                          </div>
-                          <span class="facell">
-                various              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=creator%3A%22charles+dickens%22\'"/>
-                          </div>
-            <div class="facell">
-                                            126                          </div>
-                          <span class="facell">
-                charles dickens              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=creator%3A%22william+shakespeare%22\'"/>
-                          </div>
-            <div class="facell">
-                                            105                          </div>
-                          <span class="facell">
-                william shakespeare              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=creator%3A%22anonymous%22\'"/>
-                          </div>
-            <div class="facell">
-                                            94                          </div>
-                          <span class="facell">
-                anonymous              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=creator%3A%22mark+twain%22\'"/>
-                          </div>
-            <div class="facell">
-                                            85                          </div>
-                          <span class="facell">
-                mark twain              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=creator%3A%22l.+frank+baum%22\'"/>
-                          </div>
-            <div class="facell">
-                                            65                          </div>
-                          <span class="facell">
-                l. frank baum              </span>
-                      </label>
-                                </div>
-      <a href="/details/librivoxaudio&morf=creator" rel="nofollow" class="js-more-facets-click">More <span class="iconochive-right-solid"  aria-hidden="true"></span><span class="sr-only">right-solid</span></a>
-      <div>
-                  </div>
+                          <div class="loader-lines">
+            <!-- visual placeholder until XHR later replaces with real data -->
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+          </div>
+                      </div>
     </div>
     <h5><button data-toggle=\'collapse\' data-target=\'.facet_languageSorter\' aria-expanded=\'false\' role=\'button\' aria-controls=\'facet_languageSorter\' class=\'collapsed\'>Language</button><span class=\'hidden-xs\'>Language</span></h5>    <div class="facet_languageSorter collapse" >
       <div class="fatable facet-languageSorter">
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=languageSorter%3A%22English%22\'"/>
-                          </div>
-            <div class="facell">
-                                            69                          </div>
-                          <span class="facell">
-                English              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=languageSorter%3A%22German%22\'"/>
-                          </div>
-            <div class="facell">
-                                            2                          </div>
-                          <span class="facell">
-                German              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=languageSorter%3A%22Ancient+Greek%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1                          </div>
-                          <span class="facell">
-                Ancient Greek              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=languageSorter%3A%22Chinese%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1                          </div>
-                          <span class="facell">
-                Chinese              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=languageSorter%3A%22Dutch%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1                          </div>
-                          <span class="facell">
-                Dutch              </span>
-                      </label>
-                            <label class="farow">
-            <div class="facell">
-                              <input type="checkbox"   onclick="window.location=\'/details/librivoxaudio?and[]=languageSorter%3A%22French%22\'"/>
-                          </div>
-            <div class="facell">
-                                            1                          </div>
-                          <span class="facell">
-                French              </span>
-                      </label>
-                                </div>
-      <a href="/details/librivoxaudio&morf=languageSorter" rel="nofollow" class="js-more-facets-click">More <span class="iconochive-right-solid"  aria-hidden="true"></span><span class="sr-only">right-solid</span></a>
-      <div>
-                  </div>
+                          <div class="loader-lines">
+            <!-- visual placeholder until XHR later replaces with real data -->
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+          </div>
+                      </div>
     </div>
           </div>
 
         </div><!--/.columns-facets-->
+    
 
-    <div class="columns-items more-pages">
+    <div class="columns-items more-pages      js-facets-xhr">
       <div class="co-top-row">
                 <div class="sortbar">
           <a href="#" class="focus-on-child-only pull-right" onclick="return AJS.tiles_toggle(this,\'collection\')">
@@ -1270,8 +1050,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">9.6<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">9.6M</nobr>
+                  <nobr class="hidden-xs">10.1<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">10M</nobr>
               </div>
 
 
@@ -1312,7 +1092,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>9.6<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>10.1<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -1347,8 +1127,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">8.5<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">8.5M</nobr>
+                  <nobr class="hidden-xs">10<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">10.0M</nobr>
               </div>
 
 
@@ -1389,11 +1169,11 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>8.5<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>10<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            114          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            138          </h6>
 
                       <h6 class="stat">
               <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              3            </h6>
@@ -1424,8 +1204,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">8.2<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">8.2M</nobr>
+                  <nobr class="hidden-xs">9.7<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">9.7M</nobr>
               </div>
 
 
@@ -1466,11 +1246,11 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>8.2<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>9.7<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            442          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            553          </h6>
 
                       <h6 class="stat">
               <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              16            </h6>
@@ -1501,8 +1281,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">8<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">8.0M</nobr>
+                  <nobr class="hidden-xs">9<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">9.0M</nobr>
               </div>
 
 
@@ -1528,8 +1308,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
             </a>
           </div>
                 <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Sep 18, 2019</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">09/19</nobr>
+          <nobr class="hidden-xs">Apr 13, 2020</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">04/20</nobr>
         </div>
         <div class="by C C4">
                                                 <span class="hidden-lists">by</span>
@@ -1543,11 +1323,11 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>8<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>9<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            185          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            210          </h6>
 
                       <h6 class="stat">
               <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              22            </h6>
@@ -1559,7 +1339,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>LibriVox recording of The Adventures of Tom Sawyer by Mark Twain. Read by John Greenman. The Adventures of Tom Sawyer (published 1876) is a very well-known and popular story concerning American youth. Mark Twain\'s lively tale of the scrapes and adventures of boyhood is set in St. Petersburg, Missouri, where Tom Sawyer and his friend Huckleberry Finn have the kinds of adventures many boys can imagine: racing bugs during class, impressing girls, with fights and stunts in the schoolyard, getting...</span><br/>          <span alt="4.86 out of 5 stars" title="4.86 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 22 reviews )<br/>          Topics: librivox, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+          <span>LibriVox recording of The Adventures of Tom Sawyer by Mark Twain. Read by John Greenman. The Adventures of Tom Sawyer (published 1876) is a very well-known and popular story concerning American youth. Mark Twain\'s lively tale of the scrapes and adventures of boyhood is set in St. Petersburg, Missouri, where Tom Sawyer and his friend Huckleberry Finn have the kinds of adventures many boys can imagine: racing bugs during class, impressing girls, with fights and stunts in the schoolyard, getting...</span><br/>          <span alt="4.91 out of 5 stars" title="4.91 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 22 reviews )<br/>          Topics: librivox, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -1578,8 +1358,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">7.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">7.4M</nobr>
+                  <nobr class="hidden-xs">8.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">8.5M</nobr>
               </div>
 
 
@@ -1620,14 +1400,14 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>7.4<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>8.5<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            243          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            267          </h6>
 
                       <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              24            </h6>
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              23            </h6>
                                   </div><!--/.statbar-->
 
           </div><!--/.item-ia-->
@@ -1636,7 +1416,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>Librivox recording of the Adventures of Sherlock Holmes. The Adventures of Sherlock Holmes is a collection of twelve stories by Arthur Conan Doyle, featuring his famous detective. They were originally published in the Strand Magazine from July 1891 to June 1892. The title character was named after famous American poet Oliver Wendell Holmes, Sr. (Summary from Wikipedia) For further information, including links to online text, reader information, RSS feeds, CD cover,m4b or other formats (if...</span><br/>          <span alt="3.33 out of 5 stars" title="3.33 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 24 reviews )<br/>          Topics: librivox, audiobook, literature, Holmes, adventure, Doyle<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+          <span>Librivox recording of the Adventures of Sherlock Holmes. The Adventures of Sherlock Holmes is a collection of twelve stories by Arthur Conan Doyle, featuring his famous detective. They were originally published in the Strand Magazine from July 1891 to June 1892. The title character was named after famous American poet Oliver Wendell Holmes, Sr. (Summary from Wikipedia) For further information, including links to online text, reader information, RSS feeds, CD cover,m4b or other formats (if...</span><br/>          <span alt="3.24 out of 5 stars" title="3.24 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 23 reviews )<br/>          Topics: librivox, audiobook, literature, Holmes, adventure, Doyle<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -1655,8 +1435,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">6.6<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">6.6M</nobr>
+                  <nobr class="hidden-xs">7.1<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">7.1M</nobr>
               </div>
 
 
@@ -1697,11 +1477,11 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>6.6<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>7.1<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            267          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            300          </h6>
 
                       <h6 class="stat">
               <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              24            </h6>
@@ -1714,6 +1494,83 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       <div class="C1"></div>
               <div class="C234">
           <span>Librivox recording of Moby Dick, or the Whale, by Herman Melville. Read by Stewart Wills Few things, even in literature, can really be said to be unique -- but Moby Dick is truly unlike anything written before or since. The novel is nominally about the obsessive hunt by the crazed Captain Ahab of the book\'s eponymous white whale. But interspersed in that story are digressions, paradoxes, philosophical riffs on whaling and life, and a display of techniques so advanced for its time that some have...</span><br/>          <span alt="4.75 out of 5 stars" title="4.75 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 24 reviews )<br/>          Topics: librivox, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="huck_finn_librivox"
+      data-mediatype="audio"
+       data-year="2006">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">6.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">6.5M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/huck_finn_librivox" title="Adventures of Huckleberry Finn" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/huck_finn_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Adventures of Huckleberry Finn              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Apr 30, 2020</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">04/20</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Mark Twain">Mark Twain</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>6.5<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            128          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              13            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>Librivox recording of Adventures of Huckleberry Finn , by Mark Twain. Read by Annie Coleman . Adventures of Huckleberry Finn (1884) by Mark Twain is one of the truly great American novels, beloved by children, adults, and literary critics alike. The book tells the story of &quot;Huck&quot; Finn (first introduced as Tom Sawyer\'s sidekick in The Adventures of Tom Sawyer ), his friend Jim, and their journey down the Mississippi River on a raft. Both are on the run, Huck from his drunk and abusive...</span><br/>          <span alt="4.69 out of 5 stars" title="4.69 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 13 reviews )<br/>          Topics: librivox, audiobook, literature, twain, huckleberry, finn<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -1732,8 +1589,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">6.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">6.3M</nobr>
+                  <nobr class="hidden-xs">6.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">6.5M</nobr>
               </div>
 
 
@@ -1759,8 +1616,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
             </a>
           </div>
                 <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Feb 16, 2020</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">02/20</nobr>
+          <nobr class="hidden-xs">-</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
         </div>
         <div class="by C C4">
                                                                 </div><!--/.C4-->
@@ -1771,14 +1628,14 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-image"  aria-hidden="true"></span><span class="sr-only">image</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>6.3<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>6.5<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            8          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            9          </h6>
 
                       <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              1            </h6>
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
                                   </div><!--/.statbar-->
 
           </div><!--/.item-ia-->
@@ -1787,7 +1644,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>images used for items in collection</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 1 reviews )<br/>          Topic: librivox<br/>                            </div>
+          <span>images used for items in collection</span><br/>                    Topic: librivox<br/>                            </div>
             <div class="C5"></div>
     </div>
 
@@ -1806,8 +1663,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">6.1<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">6.1M</nobr>
+                  <nobr class="hidden-xs">6.3<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">6.3M</nobr>
               </div>
 
 
@@ -1848,7 +1705,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>6.1<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>6.3<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -1870,83 +1727,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="huck_finn_librivox"
-      data-mediatype="audio"
-       data-year="2006">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">6<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">6.0M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/huck_finn_librivox" title="Adventures of Huckleberry Finn" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/huck_finn_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Adventures of Huckleberry Finn              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Aug 31, 2019</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">08/19</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Mark Twain">Mark Twain</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>6<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            111          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              12            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>Librivox recording of Adventures of Huckleberry Finn , by Mark Twain. Read by Annie Coleman . Adventures of Huckleberry Finn (1884) by Mark Twain is one of the truly great American novels, beloved by children, adults, and literary critics alike. The book tells the story of &quot;Huck&quot; Finn (first introduced as Tom Sawyer\'s sidekick in The Adventures of Tom Sawyer ), his friend Jim, and their journey down the Mississippi River on a raft. Both are on the run, Huck from his drunk and abusive...</span><br/>          <span alt="4.67 out of 5 stars" title="4.67 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 12 reviews )<br/>          Topics: librivox, audiobook, literature, twain, huckleberry, finn<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
     <div class="item-ia" data-id="lady_jane_1707_thumbs13"
       data-mediatype="audio"
        data-year="2017">
@@ -1960,8 +1740,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">5.7<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">5.7M</nobr>
+                  <nobr class="hidden-xs">6.2<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">6.2M</nobr>
               </div>
 
 
@@ -2002,7 +1782,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>5.7<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>6.2<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -2037,8 +1817,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">5.7<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">5.7M</nobr>
+                  <nobr class="hidden-xs">6.1<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">6.1M</nobr>
               </div>
 
 
@@ -2064,8 +1844,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
             </a>
           </div>
                 <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Aug 20, 2011</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">08/11</nobr>
+          <nobr class="hidden-xs">May 3, 2020</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">05/20</nobr>
         </div>
         <div class="by C C4">
                                                 <span class="hidden-lists">by</span>
@@ -2079,14 +1859,14 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>5.7<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>6.1<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            104          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            140          </h6>
 
                       <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              3            </h6>
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              5            </h6>
                                   </div><!--/.statbar-->
 
           </div><!--/.item-ia-->
@@ -2095,84 +1875,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>Librivox recording of Pride and Prejudice , by Jane Austen. For more information on our readers, see our catalog page: http://librivox.org/pride-and-prejudice-by-jane-austen/ Pride and Prejudice is the most famous of Jane Austen\'s novels, and its opening is one of the most famous lines in English literature - &quot;It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.&quot; Its manuscript was first written between 1796 and 1797,...</span><br/>          <span alt="4.67 out of 5 stars" title="4.67 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 3 reviews )<br/>          Topics: librivox, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="pride_prejudice_krs_librivox"
-      data-mediatype="audio"
-       data-year="2007">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">5.1<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">5.1M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/pride_prejudice_krs_librivox" title="Pride and Prejudice (version 3)" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/pride_prejudice_krs_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Pride and Prejudice (version 3)              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Mar 31, 2017</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">03/17</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Jane Austen">Jane Austen</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>5.1<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            125          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              16            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of Pride and Prejudice by Jane Austen. Read by Karen Savage. Pride and Prejudice is the most famous of Jane Austen’s novels, and its opening is one of the most famous lines in English literature - “It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.” Its manuscript was first written between 1796 and 1797, and was initially called First Impressions, but was never published under that title. Following...</span><br/>          <span alt="4.20 out of 5 stars" title="4.20 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 16 reviews )<br/>          Topics: librivox, literature, audiobook, austen, romance, humour<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+          <span>Librivox recording of Pride and Prejudice , by Jane Austen. For more information on our readers, see our catalog page: http://librivox.org/pride-and-prejudice-by-jane-austen/ Pride and Prejudice is the most famous of Jane Austen\'s novels, and its opening is one of the most famous lines in English literature - &quot;It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.&quot; Its manuscript was first written between 1796 and 1797,...</span><br/>          <span alt="4.80 out of 5 stars" title="4.80 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 5 reviews )<br/>          Topics: librivox, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -2191,8 +1894,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">5.1<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">5.1M</nobr>
+                  <nobr class="hidden-xs">5.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">5.5M</nobr>
               </div>
 
 
@@ -2233,11 +1936,11 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>5.1<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>5.5<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            9          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            15          </h6>
 
                       <h6 class="stat">
               <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
@@ -2250,6 +1953,83 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       <div class="C1"></div>
               <div class="C234">
           <span>A thirtyfifth collection of CD cover art, created by volunteers for some of our LibriVox Audio Books.  We\'ll add more covers as our volunteers create them, so please check back. Each cover can be downloaded as a .pdf to print out and insert into a jewel case, or as a 300x300px .jpg for your iTunes Album Art. This is just one of many LibriVox cover art pages. You\'ll find a complete list on our top page .</span><br/>                    Topics: librivox, audiobooks, cd covers, audiobook, cover art, album art<br/>                            </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="pride_prejudice_krs_librivox"
+      data-mediatype="audio"
+       data-year="2007">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">5.3<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">5.3M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/pride_prejudice_krs_librivox" title="Pride and Prejudice (version 3)" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/pride_prejudice_krs_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Pride and Prejudice (version 3)              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Mar 31, 2017</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">03/17</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Jane Austen">Jane Austen</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>5.3<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            134          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              16            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox recording of Pride and Prejudice by Jane Austen. Read by Karen Savage. Pride and Prejudice is the most famous of Jane Austen’s novels, and its opening is one of the most famous lines in English literature - “It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.” Its manuscript was first written between 1796 and 1797, and was initially called First Impressions, but was never published under that title. Following...</span><br/>          <span alt="4.20 out of 5 stars" title="4.20 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 16 reviews )<br/>          Topics: librivox, literature, audiobook, austen, romance, humour<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -2268,8 +2048,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">4.8<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">4.8M</nobr>
+                  <nobr class="hidden-xs">5.1<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">5.1M</nobr>
               </div>
 
 
@@ -2310,11 +2090,11 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>4.8<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>5.1<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            190          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            214          </h6>
 
                       <h6 class="stat">
               <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              17            </h6>
@@ -2345,8 +2125,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">4.5<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">4.5M</nobr>
+                  <nobr class="hidden-xs">4.6<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">4.6M</nobr>
               </div>
 
 
@@ -2387,7 +2167,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>4.5<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>4.6<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -2422,8 +2202,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">4.0M</nobr>
+                  <nobr class="hidden-xs">4.3<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">4.3M</nobr>
               </div>
 
 
@@ -2464,7 +2244,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>4<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>4.3<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -2499,8 +2279,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.9<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.9M</nobr>
+                  <nobr class="hidden-xs">4.1<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">4.1M</nobr>
               </div>
 
 
@@ -2541,7 +2321,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.9<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>4.1<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -2576,8 +2356,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.8<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.8M</nobr>
+                  <nobr class="hidden-xs">4<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">4.0M</nobr>
               </div>
 
 
@@ -2618,7 +2398,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.8<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>4<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -2640,9 +2420,9 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="huckleberry_mfs_librivox"
+    <div class="item-ia" data-id="adventures_sherlockholmes_1007_librivox"
       data-mediatype="audio"
-       data-year="2007">
+       data-year="2010">
 
             <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
         <div class="item-parent">
@@ -2653,8 +2433,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.4M</nobr>
+                  <nobr class="hidden-xs">3.8<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">3.8M</nobr>
               </div>
 
 
@@ -2667,26 +2447,26 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                                         C C2
             "
           >
-            <a href="/details/huckleberry_mfs_librivox" title="Adventures of Huckleberry Finn (version 02)" data-event-click-tracking="GenericNonCollection|ItemTile">
+            <a href="/details/adventures_sherlockholmes_1007_librivox" title="The Adventures of Sherlock Holmes" data-event-click-tracking="GenericNonCollection|ItemTile">
                               <div class="tile-img">
                   <img class="item-img "
-                    source="/services/img/huckleberry_mfs_librivox" style="height:180px">
+                    source="/services/img/adventures_sherlockholmes_1007_librivox" style="height:180px">
                 </div><!--/.tile-img-->
               
               
               
               <div class="ttl">
-                Adventures of Huckleberry Finn (version 02)              </div>
+                The Adventures of Sherlock Holmes              </div>
             </a>
           </div>
                 <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Sep 27, 2016</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">09/16</nobr>
+          <nobr class="hidden-xs">Mar 29, 2020</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">03/20</nobr>
         </div>
         <div class="by C C4">
                                                 <span class="hidden-lists">by</span>
               <span class="byv"
-                    title="Mark Twain">Mark Twain</span>
+                    title="Sir Arthur Conan Doyle">Sir Arthur Conan Doyle</span>
                                           </div><!--/.C4-->
       </div><!--/.C234-->
 
@@ -2695,14 +2475,14 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.4<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.8<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            48          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            107          </h6>
 
                       <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              7            </h6>
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              5            </h6>
                                   </div><!--/.statbar-->
 
           </div><!--/.item-ia-->
@@ -2711,7 +2491,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>LibriVox recording of The Adventures of Huckleberry Finn (version 02). Read by Mark F. Smith. In The Adventures of Huckleberry Finn, Mark Twain creates an entertaining adventure of Middle America in the 1800\'s - afloat on a raft on the Mississippi River. Huck escapes his civilized life when he arranges his own &quot;murder&quot; and turns back into the backwoods, downriver yokel he started as, and in the process springing a slave, Jim, from bondage. Huck and Jim experience life as a series of...</span><br/>          <span alt="4.33 out of 5 stars" title="4.33 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 7 reviews )<br/>          Topics: librivox, literature, audiobooks, twain, adventure, satire, finn, humor<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+          <span>LibriVox recording of The Adventures of Sherlock Holmes, by Sir Arthur Conan Doyle. Read by Mark F. Smith. Dr. Watson chronicles here some of the more interesting detective cases that he and his good friend, Mr. Sherlock Holmes, have encountered during their association. We see the cases unfold as he does, scratch our heads as does he while the evidence is collected, and then marvel at the impeccable observations, remarkable insight, and doggedness which Holmes displays as he teases apart the...</span><br/>          <span alt="4.80 out of 5 stars" title="4.80 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 5 reviews )<br/>          Topics: librivox, audiobook, doyle, mystery, sherlock holmes, literature, adventure<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -2730,8 +2510,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.3M</nobr>
+                  <nobr class="hidden-xs">3.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">3.5M</nobr>
               </div>
 
 
@@ -2772,7 +2552,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.3<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.5<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -2794,9 +2574,9 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="andersens_fairytales_librivox"
+    <div class="item-ia" data-id="huckleberry_mfs_librivox"
       data-mediatype="audio"
-       data-year="2006">
+       data-year="2007">
 
             <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
         <div class="item-parent">
@@ -2807,8 +2587,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.3M</nobr>
+                  <nobr class="hidden-xs">3.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">3.5M</nobr>
               </div>
 
 
@@ -2821,26 +2601,26 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                                         C C2
             "
           >
-            <a href="/details/andersens_fairytales_librivox" title="Andersen\'s Fairy Tales" data-event-click-tracking="GenericNonCollection|ItemTile">
+            <a href="/details/huckleberry_mfs_librivox" title="Adventures of Huckleberry Finn (version 02)" data-event-click-tracking="GenericNonCollection|ItemTile">
                               <div class="tile-img">
                   <img class="item-img "
-                    source="/services/img/andersens_fairytales_librivox" style="height:180px">
+                    source="/services/img/huckleberry_mfs_librivox" style="height:180px">
                 </div><!--/.tile-img-->
               
               
               
               <div class="ttl">
-                Andersen\'s Fairy Tales              </div>
+                Adventures of Huckleberry Finn (version 02)              </div>
             </a>
           </div>
                 <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">-</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
+          <nobr class="hidden-xs">Sep 27, 2016</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">09/16</nobr>
         </div>
         <div class="by C C4">
                                                 <span class="hidden-lists">by</span>
               <span class="byv"
-                    title="Hans Christian Andersen">Hans Christian Andersen</span>
+                    title="Mark Twain">Mark Twain</span>
                                           </div><!--/.C4-->
       </div><!--/.C234-->
 
@@ -2849,14 +2629,14 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.3<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.5<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            66          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            48          </h6>
 
                       <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              7            </h6>
                                   </div><!--/.statbar-->
 
           </div><!--/.item-ia-->
@@ -2865,84 +2645,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>LibriVox recording of Andersen\'s Fairy Tales, by Hans Christian Andersen. A collection of eighteen fairy tales – some popular, some lesser known – by famous Danish author H.C. Andersen. (Summary by Gesine) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for this recording. For more free audio books or to become a volunteer reader, visit LibriVox.org . M4B audiobook of...</span><br/>                    Topics: librivox, literature, audiobook, fiction, fairy tales<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="adventures_sherlockholmes_1007_librivox"
-      data-mediatype="audio"
-       data-year="2010">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.3M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/adventures_sherlockholmes_1007_librivox" title="The Adventures of Sherlock Holmes" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/adventures_sherlockholmes_1007_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                The Adventures of Sherlock Holmes              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Apr 12, 2017</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">04/17</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Sir Arthur Conan Doyle">Sir Arthur Conan Doyle</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.3<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            93          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              4            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of The Adventures of Sherlock Holmes, by Sir Arthur Conan Doyle. Read by Mark F. Smith. Dr. Watson chronicles here some of the more interesting detective cases that he and his good friend, Mr. Sherlock Holmes, have encountered during their association. We see the cases unfold as he does, scratch our heads as does he while the evidence is collected, and then marvel at the impeccable observations, remarkable insight, and doggedness which Holmes displays as he teases apart the...</span><br/>          <span alt="4.75 out of 5 stars" title="4.75 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 4 reviews )<br/>          Topics: librivox, audiobook, doyle, mystery, sherlock holmes, literature, adventure<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+          <span>LibriVox recording of The Adventures of Huckleberry Finn (version 02). Read by Mark F. Smith. In The Adventures of Huckleberry Finn, Mark Twain creates an entertaining adventure of Middle America in the 1800\'s - afloat on a raft on the Mississippi River. Huck escapes his civilized life when he arranges his own &quot;murder&quot; and turns back into the backwoods, downriver yokel he started as, and in the process springing a slave, Jim, from bondage. Huck and Jim experience life as a series of...</span><br/>          <span alt="4.33 out of 5 stars" title="4.33 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 7 reviews )<br/>          Topics: librivox, literature, audiobooks, twain, adventure, satire, finn, humor<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -2961,8 +2664,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.3M</nobr>
+                  <nobr class="hidden-xs">3.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">3.5M</nobr>
               </div>
 
 
@@ -3003,7 +2706,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.3<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.5<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -3025,7 +2728,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="uncle_toms_cabin_librivox"
+    <div class="item-ia" data-id="andersens_fairytales_librivox"
       data-mediatype="audio"
        data-year="2006">
 
@@ -3038,8 +2741,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.2<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.2M</nobr>
+                  <nobr class="hidden-xs">3.4<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">3.4M</nobr>
               </div>
 
 
@@ -3052,170 +2755,16 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                                         C C2
             "
           >
-            <a href="/details/uncle_toms_cabin_librivox" title="Uncle Tom\'s Cabin" data-event-click-tracking="GenericNonCollection|ItemTile">
+            <a href="/details/andersens_fairytales_librivox" title="Andersen\'s Fairy Tales" data-event-click-tracking="GenericNonCollection|ItemTile">
                               <div class="tile-img">
                   <img class="item-img "
-                    source="/services/img/uncle_toms_cabin_librivox" style="height:180px">
+                    source="/services/img/andersens_fairytales_librivox" style="height:180px">
                 </div><!--/.tile-img-->
               
               
               
               <div class="ttl">
-                Uncle Tom\'s Cabin              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Apr 1, 2019</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">04/19</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Harriet Beecher Stowe">Harriet Beecher Stowe</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.2<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            122          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              13            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>Librivox recording of Uncle Tom\'s Cabin by Harriet Beecher Stowe. Read by John Greenman. Among the most &quot;banned&quot; books in the United States, Uncle Tom’s Cabin; or, Life Among the Lowly is a novel by American author Harriet Beecher Stowe which treats slavery as a central theme. Stowe was a Connecticut-born teacher at the Hartford Female Academy and an active abolitionist. The novel is believed to have had a profound effect on the North’s view of slavery. In fact, when he met...</span><br/>          <span alt="4.92 out of 5 stars" title="4.92 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 13 reviews )<br/>          Topics: librivox, audiobook, literature, stowe, uncle tom<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="tale_two_cities_librivox"
-      data-mediatype="audio"
-       data-year="2006">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.2<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.2M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/tale_two_cities_librivox" title="A Tale of Two Cities" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/tale_two_cities_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                A Tale of Two Cities              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Oct 3, 2015</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">10/15</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Charles Dickens">Charles Dickens</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.2<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            117          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              5            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of A Tale of Two Cities, by Charles Dickens. A Tale of Two Cities (1859) is a historical novel by Charles Dickens; it is moreover a moral novel strongly concerned with themes of guilt, shame, redemption and patriotism. The plot centers on the years leading up to French Revolution and culminates in the Jacobin Reign of Terror. It tells the story of two men, Charles Darnay and Sydney Carton, who look very alike but are entirely different in character. (Summary from wikipedia)...</span><br/>          <span alt="3.50 out of 5 stars" title="3.50 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 5 reviews )<br/>          Topics: librivox, audiobook, literature, dickens<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="thumb06"
-      data-mediatype="audio"
-       data-year="2015">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudiocovers">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudiocovers\')"></div>
-          <div class="item-parent-ttl">Librivoxaudio Covers</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.1<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.1M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/thumb06" title="Thumbs 06" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/thumb06" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Thumbs 06              </div>
+                Andersen\'s Fairy Tales              </div>
             </a>
           </div>
                 <div class="hidden-tiles pubdate C C3">
@@ -3225,7 +2774,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
         <div class="by C C4">
                                                 <span class="hidden-lists">by</span>
               <span class="byv"
-                    title="LV covermakers">LV covermakers</span>
+                    title="Hans Christian Andersen">Hans Christian Andersen</span>
                                           </div><!--/.C4-->
       </div><!--/.C234-->
 
@@ -3234,11 +2783,11 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.1<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.4<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            1          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            66          </h6>
 
                       <h6 class="stat">
               <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
@@ -3250,7 +2799,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>Thumb images for LibriVox Projects</span><br/>                    Topic: cover images<br/>                            </div>
+          <span>LibriVox recording of Andersen\'s Fairy Tales, by Hans Christian Andersen. A collection of eighteen fairy tales – some popular, some lesser known – by famous Danish author H.C. Andersen. (Summary by Gesine) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for this recording. For more free audio books or to become a volunteer reader, visit LibriVox.org . M4B audiobook of...</span><br/>                    Topics: librivox, literature, audiobook, fiction, fairy tales<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -3269,8 +2818,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">3.1<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">3.1M</nobr>
+                  <nobr class="hidden-xs">3.4<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">3.4M</nobr>
               </div>
 
 
@@ -3311,7 +2860,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.1<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.4<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -3333,6 +2882,237 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
+    <div class="item-ia" data-id="uncle_toms_cabin_librivox"
+      data-mediatype="audio"
+       data-year="2006">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">3.4<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">3.4M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/uncle_toms_cabin_librivox" title="Uncle Tom\'s Cabin" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/uncle_toms_cabin_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Uncle Tom\'s Cabin              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Apr 1, 2019</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">04/19</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Harriet Beecher Stowe">Harriet Beecher Stowe</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.4<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            122          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              13            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>Librivox recording of Uncle Tom\'s Cabin by Harriet Beecher Stowe. Read by John Greenman. Among the most &quot;banned&quot; books in the United States, Uncle Tom’s Cabin; or, Life Among the Lowly is a novel by American author Harriet Beecher Stowe which treats slavery as a central theme. Stowe was a Connecticut-born teacher at the Hartford Female Academy and an active abolitionist. The novel is believed to have had a profound effect on the North’s view of slavery. In fact, when he met...</span><br/>          <span alt="4.92 out of 5 stars" title="4.92 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 13 reviews )<br/>          Topics: librivox, audiobook, literature, stowe, uncle tom<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="tale_two_cities_librivox"
+      data-mediatype="audio"
+       data-year="2006">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">3.3<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">3.3M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/tale_two_cities_librivox" title="A Tale of Two Cities" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/tale_two_cities_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                A Tale of Two Cities              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Oct 3, 2015</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">10/15</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Charles Dickens">Charles Dickens</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.3<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            117          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              5            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox recording of A Tale of Two Cities, by Charles Dickens. A Tale of Two Cities (1859) is a historical novel by Charles Dickens; it is moreover a moral novel strongly concerned with themes of guilt, shame, redemption and patriotism. The plot centers on the years leading up to French Revolution and culminates in the Jacobin Reign of Terror. It tells the story of two men, Charles Darnay and Sydney Carton, who look very alike but are entirely different in character. (Summary from wikipedia)...</span><br/>          <span alt="3.50 out of 5 stars" title="3.50 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 5 reviews )<br/>          Topics: librivox, audiobook, literature, dickens<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="thumb06"
+      data-mediatype="audio"
+       data-year="2015">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudiocovers">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudiocovers\')"></div>
+          <div class="item-parent-ttl">Librivoxaudio Covers</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">3.2<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">3.2M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/thumb06" title="Thumbs 06" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/thumb06" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Thumbs 06              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">-</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="LV covermakers">LV covermakers</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>3.2<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            1          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>Thumb images for LibriVox Projects</span><br/>                    Topic: cover images<br/>                            </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
     <div class="item-ia" data-id="librivoxcdcoverart34"
       data-mediatype="audio"
       >
@@ -3346,8 +3126,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.8<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.8M</nobr>
+                  <nobr class="hidden-xs">2.9<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.9M</nobr>
               </div>
 
 
@@ -3385,7 +3165,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.8<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.9<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -3420,8 +3200,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.7<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.7M</nobr>
+                  <nobr class="hidden-xs">2.9<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.9M</nobr>
               </div>
 
 
@@ -3462,7 +3242,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.7<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.9<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -3497,8 +3277,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.7<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.7M</nobr>
+                  <nobr class="hidden-xs">2.9<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.9M</nobr>
               </div>
 
 
@@ -3539,7 +3319,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.7<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.9<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -3561,160 +3341,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="swiss_family_robinson_librivox"
-      data-mediatype="audio"
-       data-year="2006">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.7<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.7M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/swiss_family_robinson_librivox" title="The Swiss Family Robinson" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/swiss_family_robinson_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                The Swiss Family Robinson              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Jan 6, 2013</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">01/13</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Johann David Wyss">Johann David Wyss</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.7<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            59          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              3            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>Librivox recording of The Swiss Family Robinson by Johann David Wyss. Read by Mark F. Smith. The Swiss Family Robinson has delighted generations of readers with its exciting tale of a family which, though shipwrecked, displays “the right stuff” and builds a charming colony that later, they do not want to leave. Cut off from the comforts and companionship of other humans, they use a familiarity with natural history and biology to find the resources and build the tools to construct a canoe,...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 3 reviews )<br/>          Topics: librivox, swiss family robinson, wyss, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="great_expectations_mfs_0812_librivox"
-      data-mediatype="audio"
-       data-year="2008">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.6<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.6M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/great_expectations_mfs_0812_librivox" title="Great Expectations" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/great_expectations_mfs_0812_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Great Expectations              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Sep 21, 2016</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">09/16</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Charles Dickens">Charles Dickens</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.6<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            99          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              7            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>This is a LibriVox recording of Great Expectations, read by Mark F. Smith. This classic tale tells of an orphan, Pip, who through a series of strange circumstances first finds a trade as a blacksmith\'s apprentice and then learns that he has &quot;great expectations&quot; of a future inheritance from an anonymous benefactor. He soon learns to live the profligate life of a gentleman as he gradually sheds his associations with the gentle souls of his past, Joe (the blacksmith) and Biddy (a...</span><br/>          <span alt="4.71 out of 5 stars" title="4.71 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 7 reviews )<br/>          Topics: Audiobook, LibriVox, Fiction, England<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
     <div class="item-ia" data-id="secret_garden_librivox"
       data-mediatype="audio"
        data-year="2006">
@@ -3728,8 +3354,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.6<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.6M</nobr>
+                  <nobr class="hidden-xs">2.9<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.9M</nobr>
               </div>
 
 
@@ -3770,7 +3396,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.6<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.9<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -3805,8 +3431,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.6<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.6M</nobr>
+                  <nobr class="hidden-xs">2.9<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.9M</nobr>
               </div>
 
 
@@ -3847,7 +3473,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.6<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.9<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -3869,6 +3495,83 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
+    <div class="item-ia" data-id="swiss_family_robinson_librivox"
+      data-mediatype="audio"
+       data-year="2006">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">2.8<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.8M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/swiss_family_robinson_librivox" title="The Swiss Family Robinson" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/swiss_family_robinson_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                The Swiss Family Robinson              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Jan 6, 2013</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">01/13</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Johann David Wyss">Johann David Wyss</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.8<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            59          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              3            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>Librivox recording of The Swiss Family Robinson by Johann David Wyss. Read by Mark F. Smith. The Swiss Family Robinson has delighted generations of readers with its exciting tale of a family which, though shipwrecked, displays “the right stuff” and builds a charming colony that later, they do not want to leave. Cut off from the comforts and companionship of other humans, they use a familiarity with natural history and biology to find the resources and build the tools to construct a canoe,...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 3 reviews )<br/>          Topics: librivox, swiss family robinson, wyss, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
     <div class="item-ia" data-id="odyssey_butler_librivox"
       data-mediatype="audio"
        data-year="2007">
@@ -3882,8 +3585,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.6<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.6M</nobr>
+                  <nobr class="hidden-xs">2.8<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.8M</nobr>
               </div>
 
 
@@ -3924,7 +3627,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.6<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.8<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -3946,6 +3649,160 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
+    <div class="item-ia" data-id="prideandprejudice_1005_librivox"
+      data-mediatype="audio"
+       data-year="2010">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">2.8<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.8M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/prideandprejudice_1005_librivox" title="Pride and Prejudice (version 4)" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/prideandprejudice_1005_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Pride and Prejudice (version 4)              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Apr 14, 2020</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">04/20</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Jane Austen">Jane Austen</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.8<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            47          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              6            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox recording of Pride and Prejudice , by Jane Austen. Read by Elizabeth Klett. Pride and Prejudice is Jane Austen\'s classic comic romance, in which the five Bennett sisters try to find that most elusive creature: a single man in possession of a large fortune. Sparks fly when sweet, pretty Jane meets their new neighbor, Mr. Bingley, but her sister Elizabeth is most offended by his haughty friend, Mr. Darcy. This is Austen at the height of her powers: the ironic narration, hilariously drawn...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 6 reviews )<br/>          Topics: librivox, audio, austen, pride, prejudice, literature, romance<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="great_expectations_mfs_0812_librivox"
+      data-mediatype="audio"
+       data-year="2008">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">2.7<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.7M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/great_expectations_mfs_0812_librivox" title="Great Expectations" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/great_expectations_mfs_0812_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Great Expectations              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Sep 21, 2016</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">09/16</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Charles Dickens">Charles Dickens</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.7<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            99          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              7            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>This is a LibriVox recording of Great Expectations, read by Mark F. Smith. This classic tale tells of an orphan, Pip, who through a series of strange circumstances first finds a trade as a blacksmith\'s apprentice and then learns that he has &quot;great expectations&quot; of a future inheritance from an anonymous benefactor. He soon learns to live the profligate life of a gentleman as he gradually sheds his associations with the gentle souls of his past, Joe (the blacksmith) and Biddy (a...</span><br/>          <span alt="4.71 out of 5 stars" title="4.71 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 7 reviews )<br/>          Topics: Audiobook, LibriVox, Fiction, England<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
     <div class="item-ia" data-id="jane_eyre_ver03_0809_librivox"
       data-mediatype="audio"
        data-year="2008">
@@ -3959,8 +3816,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.4M</nobr>
+                  <nobr class="hidden-xs">2.6<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.6M</nobr>
               </div>
 
 
@@ -4001,7 +3858,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.4<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.6<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -4036,8 +3893,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.4M</nobr>
+                  <nobr class="hidden-xs">2.6<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.6M</nobr>
               </div>
 
 
@@ -4078,7 +3935,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.4<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.6<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -4113,8 +3970,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.3M</nobr>
+                  <nobr class="hidden-xs">2.6<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.6M</nobr>
               </div>
 
 
@@ -4155,7 +4012,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.3<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.6<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -4177,83 +4034,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="walden_librivox"
-      data-mediatype="audio"
-       data-year="2006">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.3M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/walden_librivox" title="Walden" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/walden_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Walden              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Jun 28, 2015</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">06/15</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Henry David Thoreau">Henry David Thoreau</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.3<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            162          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              11            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>Librivox recording of Walden by Henry David Thoreau Read by Gord Mackenzie. Walden by Henry David Thoreau is one of the best-known non-fiction books written by an American. Published in 1854, it details Thoreau’s life for two years, two months, and two days around the shores of Walden Pond. Walden is neither a novel nor a true autobiography, but a social critique of the Western World, with each chapter heralding some aspect of humanity that needed to be either renounced or praised. Along with...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 11 reviews )<br/>          Topics: librivox, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
     <div class="item-ia" data-id="memoirs_holmes_0709_librivox"
       data-mediatype="audio"
        data-year="2007">
@@ -4267,8 +4047,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.3M</nobr>
+                  <nobr class="hidden-xs">2.6<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.6M</nobr>
               </div>
 
 
@@ -4309,7 +4089,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.3<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.6<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -4331,9 +4111,9 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="prideandprejudice_1005_librivox"
+    <div class="item-ia" data-id="walden_librivox"
       data-mediatype="audio"
-       data-year="2010">
+       data-year="2006">
 
             <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
         <div class="item-parent">
@@ -4344,8 +4124,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.3M</nobr>
+                  <nobr class="hidden-xs">2.4<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.4M</nobr>
               </div>
 
 
@@ -4358,26 +4138,26 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                                         C C2
             "
           >
-            <a href="/details/prideandprejudice_1005_librivox" title="Pride and Prejudice (version 4)" data-event-click-tracking="GenericNonCollection|ItemTile">
+            <a href="/details/walden_librivox" title="Walden" data-event-click-tracking="GenericNonCollection|ItemTile">
                               <div class="tile-img">
                   <img class="item-img "
-                    source="/services/img/prideandprejudice_1005_librivox" style="height:180px">
+                    source="/services/img/walden_librivox" style="height:180px">
                 </div><!--/.tile-img-->
               
               
               
               <div class="ttl">
-                Pride and Prejudice (version 4)              </div>
+                Walden              </div>
             </a>
           </div>
                 <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Feb 23, 2016</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">02/16</nobr>
+          <nobr class="hidden-xs">Jun 28, 2015</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">06/15</nobr>
         </div>
         <div class="by C C4">
                                                 <span class="hidden-lists">by</span>
               <span class="byv"
-                    title="Jane Austen">Jane Austen</span>
+                    title="Henry David Thoreau">Henry David Thoreau</span>
                                           </div><!--/.C4-->
       </div><!--/.C234-->
 
@@ -4386,14 +4166,14 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.3<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.4<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            44          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            162          </h6>
 
                       <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              4            </h6>
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              11            </h6>
                                   </div><!--/.statbar-->
 
           </div><!--/.item-ia-->
@@ -4402,7 +4182,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>LibriVox recording of Pride and Prejudice , by Jane Austen. Read by Elizabeth Klett. Pride and Prejudice is Jane Austen\'s classic comic romance, in which the five Bennett sisters try to find that most elusive creature: a single man in possession of a large fortune. Sparks fly when sweet, pretty Jane meets their new neighbor, Mr. Bingley, but her sister Elizabeth is most offended by his haughty friend, Mr. Darcy. This is Austen at the height of her powers: the ironic narration, hilariously drawn...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 4 reviews )<br/>          Topics: librivox, audio, austen, pride, prejudice, literature, romance<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+          <span>Librivox recording of Walden by Henry David Thoreau Read by Gord Mackenzie. Walden by Henry David Thoreau is one of the best-known non-fiction books written by an American. Published in 1854, it details Thoreau’s life for two years, two months, and two days around the shores of Walden Pond. Walden is neither a novel nor a true autobiography, but a social critique of the Western World, with each chapter heralding some aspect of humanity that needed to be either renounced or praised. Along with...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 11 reviews )<br/>          Topics: librivox, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -4421,8 +4201,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.3M</nobr>
+                  <nobr class="hidden-xs">2.4<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.4M</nobr>
               </div>
 
 
@@ -4463,7 +4243,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.3<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.4<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -4485,314 +4265,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="anne_greengables_librivox"
-      data-mediatype="audio"
-       data-year="2007">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.2<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.2M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/anne_greengables_librivox" title="Anne of Green Gables (version 3)" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/anne_greengables_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Anne of Green Gables (version 3)              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Mar 26, 2016</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">03/16</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Lucy Maud Montgomery">Lucy Maud Montgomery</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.2<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            55          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              5            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of Anne of Green Gables by Lucy Maud Montgomery. Read by Karen Savage. The timeless story of the young orphan girl sent by accident to a brother and sister who had wanted a boy, Anne, with her vivid imagination and sensitive spirit, has enchanted readers for generations. (Summary by Karen Savage) Other books in this series by this reader: Anne of Avonlea Anne of the Island Anne\'s House of Dreams Rainbow Valley Rilla of Ingleside For further information, including links to...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 5 reviews )<br/>          Topics: librivox, audiobook, anne, green gables, fiction<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="english_fairy_tales_joy_librivox"
-      data-mediatype="audio"
-       data-year="2007">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.2<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.2M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/english_fairy_tales_joy_librivox" title="English Fairy Tales" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/english_fairy_tales_joy_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                English Fairy Tales              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">-</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Joseph Jacobs">Joseph Jacobs</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.2<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            46          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of English Fairy Tales, collected by Joseph Jacobs. Read by Joy Chan. A collection of traditional English fairy tales. (description by Joy Chan) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for this recording. Download M4B (117MB)</span><br/>                    Topics: librivox, audiobook, literature, jacobs, children, fairy tales, england<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="anne_of_green_gables_librivox"
-      data-mediatype="audio"
-       data-year="2006">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.2<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.2M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/anne_of_green_gables_librivox" title="Anne of Green Gables" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/anne_of_green_gables_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Anne of Green Gables              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Aug 23, 2010</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">08/10</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Lucy Maud Montgomery">Lucy Maud Montgomery</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.2<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            49          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              1            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>Librivox recording of Anne of Green Gables by Lucy Maud Montgomery. Lucy Maud Montgomery\'s classic children\'s novel, Anne of Green Gables tells the story of a red headed orphan girl with a personality you can\'t help but love. Despite her &quot;tragical&quot; past, Anne\'s optimism and imagination have helped her to always see the best in things. Anne\'s life changes considerably when she is accidentally adopted by the Cuthberts, a brother and sister who thought they were getting a boy to help out...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 1 reviews )<br/>          Topics: librivox, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="beowulf_te_librivox"
-      data-mediatype="audio"
-       data-year="2013">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.2<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.2M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/beowulf_te_librivox" title="Beowulf" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/beowulf_te_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Beowulf              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">-</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Unknown">Unknown</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.2<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            29          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of Beowulf by an unknown author (translated by Francis Barton Gummere). Read in English by Tad E. Beowulf was composed by an anonymous Anglo-Saxon poet. Francis Barton Gummere translates this beautiful poem. Beowulf is an epic poem. The main character, Beowulf, proves himself a hero as he battles against supernatural demons and beasts. (Summary by Tad E.) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if...</span><br/>                    Topics: librivox, audiobooks, poetry, poem, epic poetry, Anglo-saxon<br/>                            </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
     <div class="item-ia" data-id="adventures_sherlock_holmes_rg_librivox"
       data-mediatype="audio"
        data-year="2010">
@@ -4806,8 +4278,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.1<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.1M</nobr>
+                  <nobr class="hidden-xs">2.4<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.4M</nobr>
               </div>
 
 
@@ -4848,7 +4320,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.1<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.4<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -4870,7 +4342,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="wizard_of_oz"
+    <div class="item-ia" data-id="english_fairy_tales_joy_librivox"
       data-mediatype="audio"
        data-year="2007">
 
@@ -4883,8 +4355,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.1<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.1M</nobr>
+                  <nobr class="hidden-xs">2.4<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.4M</nobr>
               </div>
 
 
@@ -4897,26 +4369,26 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                                         C C2
             "
           >
-            <a href="/details/wizard_of_oz" title="The Wonderful Wizard of Oz" data-event-click-tracking="GenericNonCollection|ItemTile">
+            <a href="/details/english_fairy_tales_joy_librivox" title="English Fairy Tales" data-event-click-tracking="GenericNonCollection|ItemTile">
                               <div class="tile-img">
                   <img class="item-img "
-                    source="/services/img/wizard_of_oz" style="height:180px">
+                    source="/services/img/english_fairy_tales_joy_librivox" style="height:180px">
                 </div><!--/.tile-img-->
               
               
               
               <div class="ttl">
-                The Wonderful Wizard of Oz              </div>
+                English Fairy Tales              </div>
             </a>
           </div>
                 <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Sep 7, 2015</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">09/15</nobr>
+          <nobr class="hidden-xs">-</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
         </div>
         <div class="by C C4">
                                                 <span class="hidden-lists">by</span>
               <span class="byv"
-                    title="L. Frank Baum">L. Frank Baum</span>
+                    title="Joseph Jacobs">Joseph Jacobs</span>
                                           </div><!--/.C4-->
       </div><!--/.C234-->
 
@@ -4925,14 +4397,14 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.1<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.4<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            72          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            46          </h6>
 
                       <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              2            </h6>
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
                                   </div><!--/.statbar-->
 
           </div><!--/.item-ia-->
@@ -4941,7 +4413,84 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>Librivox recording of The Wonderful Wizard of Oz. The timeless story of the Wizard Of Oz. Follow Dorothy as she leaves Kansas for Oz on a cyclone. She meets many strange, and wonderful people and creatures along the way. Enjoy it again with your children and family. Summary by J. Hall For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for this recording. For more free...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 2 reviews )<br/>          Topics: librivox, audiobook, literature, children, Oz, Dorothy<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+          <span>LibriVox recording of English Fairy Tales, collected by Joseph Jacobs. Read by Joy Chan. A collection of traditional English fairy tales. (description by Joy Chan) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for this recording. Download M4B (117MB)</span><br/>                    Topics: librivox, audiobook, literature, jacobs, children, fairy tales, england<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="anne_greengables_librivox"
+      data-mediatype="audio"
+       data-year="2007">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">2.4<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.4M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/anne_greengables_librivox" title="Anne of Green Gables (version 3)" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/anne_greengables_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Anne of Green Gables (version 3)              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">May 12, 2020</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">05/20</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Lucy Maud Montgomery">Lucy Maud Montgomery</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.4<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            69          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              5            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox recording of Anne of Green Gables by Lucy Maud Montgomery. Read by Karen Savage. The timeless story of the young orphan girl sent by accident to a brother and sister who had wanted a boy, Anne, with her vivid imagination and sensitive spirit, has enchanted readers for generations. (Summary by Karen Savage) Other books in this series by this reader: Anne of Avonlea Anne of the Island Anne\'s House of Dreams Rainbow Valley Rilla of Ingleside For further information, including links to...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 5 reviews )<br/>          Topics: librivox, audiobook, anne, green gables, fiction<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -4960,8 +4509,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2.1<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.1M</nobr>
+                  <nobr class="hidden-xs">2.3<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.3M</nobr>
               </div>
 
 
@@ -5002,7 +4551,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.1<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.3<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -5024,6 +4573,237 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
+    <div class="item-ia" data-id="anne_of_green_gables_librivox"
+      data-mediatype="audio"
+       data-year="2006">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">2.3<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.3M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/anne_of_green_gables_librivox" title="Anne of Green Gables" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/anne_of_green_gables_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Anne of Green Gables              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Aug 23, 2010</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">08/10</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Lucy Maud Montgomery">Lucy Maud Montgomery</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.3<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            49          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              1            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>Librivox recording of Anne of Green Gables by Lucy Maud Montgomery. Lucy Maud Montgomery\'s classic children\'s novel, Anne of Green Gables tells the story of a red headed orphan girl with a personality you can\'t help but love. Despite her &quot;tragical&quot; past, Anne\'s optimism and imagination have helped her to always see the best in things. Anne\'s life changes considerably when she is accidentally adopted by the Cuthberts, a brother and sister who thought they were getting a boy to help out...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 1 reviews )<br/>          Topics: librivox, audiobook, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="beowulf_te_librivox"
+      data-mediatype="audio"
+       data-year="2013">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">2.3<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.3M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/beowulf_te_librivox" title="Beowulf" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/beowulf_te_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Beowulf              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">-</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Unknown">Unknown</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.3<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            29          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox recording of Beowulf by an unknown author (translated by Francis Barton Gummere). Read in English by Tad E. Beowulf was composed by an anonymous Anglo-Saxon poet. Francis Barton Gummere translates this beautiful poem. Beowulf is an epic poem. The main character, Beowulf, proves himself a hero as he battles against supernatural demons and beasts. (Summary by Tad E.) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if...</span><br/>                    Topics: librivox, audiobooks, poetry, poem, epic poetry, Anglo-saxon<br/>                            </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="wizard_of_oz"
+      data-mediatype="audio"
+       data-year="2007">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">2.2<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.2M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/wizard_of_oz" title="The Wonderful Wizard of Oz" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/wizard_of_oz" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                The Wonderful Wizard of Oz              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Sep 7, 2015</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">09/15</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="L. Frank Baum">L. Frank Baum</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.2<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            72          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              2            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>Librivox recording of The Wonderful Wizard of Oz. The timeless story of the Wizard Of Oz. Follow Dorothy as she leaves Kansas for Oz on a cyclone. She meets many strange, and wonderful people and creatures along the way. Enjoy it again with your children and family. Summary by J. Hall For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for this recording. For more free...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 2 reviews )<br/>          Topics: librivox, audiobook, literature, children, Oz, Dorothy<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
     <div class="item-ia" data-id="jane_eyre_librivox"
       data-mediatype="audio"
        data-year="2007">
@@ -5037,8 +4817,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.0M</nobr>
+                  <nobr class="hidden-xs">2.1<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.1M</nobr>
               </div>
 
 
@@ -5079,7 +4859,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.1<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -5114,8 +4894,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">2<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">2.0M</nobr>
+                  <nobr class="hidden-xs">2.1<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.1M</nobr>
               </div>
 
 
@@ -5156,7 +4936,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2.1<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -5191,8 +4971,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.9<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.9M</nobr>
+                  <nobr class="hidden-xs">2<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.0M</nobr>
               </div>
 
 
@@ -5233,7 +5013,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.9<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -5268,8 +5048,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.8<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.8M</nobr>
+                  <nobr class="hidden-xs">2<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.0M</nobr>
               </div>
 
 
@@ -5310,7 +5090,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.8<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -5332,83 +5112,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="dracula_1006_librivox"
-      data-mediatype="audio"
-       data-year="2010">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.8<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.8M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/dracula_1006_librivox" title="Dracula (version 2)" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/dracula_1006_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Dracula (version 2)              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Jan 30, 2016</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">01/16</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Bram Stoker">Bram Stoker</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.8<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            46          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              7            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of Bram Stoker\'s Dracula . Bram Stoker did not invent the vampire story, but he popularized it with his classic 1897 novel. In form Dracula is an epistolary novel, told through a series of journal entries, letters, newspaper articles, and telegrams. It begins with lawyer Jonathan Harker\'s perilous journey to Castle Dracula in Transylvania, and chronicles the vampire\'s invasion of England, where he preys upon the lovely Lucy Westenra and Harker\'s fiancee, Mina. Harker and Mina...</span><br/>          <span alt="4.71 out of 5 stars" title="4.71 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 7 reviews )<br/>          Topics: librivox, audio, dracula, drama, vampire<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
     <div class="item-ia" data-id="romeo_and_juliet_librivox"
       data-mediatype="audio"
        data-year="2006">
@@ -5422,8 +5125,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.8<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.8M</nobr>
+                  <nobr class="hidden-xs">2<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">2.0M</nobr>
               </div>
 
 
@@ -5464,11 +5167,11 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.8<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>2<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            42          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            46          </h6>
 
                       <h6 class="stat">
               <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
@@ -5499,8 +5202,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.7<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.7M</nobr>
+                  <nobr class="hidden-xs">1.9<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.9M</nobr>
               </div>
 
 
@@ -5526,8 +5229,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
             </a>
           </div>
                 <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Jan 5, 2017</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">01/17</nobr>
+          <nobr class="hidden-xs">Apr 21, 2020</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">04/20</nobr>
         </div>
         <div class="by C C4">
                                                 <span class="hidden-lists">by</span>
@@ -5541,14 +5244,14 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.7<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.9<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            120          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            141          </h6>
 
                       <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              10            </h6>
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              11            </h6>
                                   </div><!--/.statbar-->
 
           </div><!--/.item-ia-->
@@ -5557,7 +5260,84 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>LibriVox\'s public domain recording of H.G. Well\'s The Invisible Man . The Invisible Man (1897) is one of the most famous science fiction novels of all time. Written by H.G. Wells (1866-1946), it tells the story of a scientist who discovers the secret of invisibility and uses it on himself. The story begins as the Invisible Man, with a bandaged face and a heavy coat and gloves, takes a train to lodge in a country inn whilst he tries to discover the antidote and make himself visible again. The...</span><br/>          <span alt="4.70 out of 5 stars" title="4.70 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 10 reviews )<br/>          Topics: librivox, audiobook, literature, science fiction<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+          <span>LibriVox\'s public domain recording of H.G. Well\'s The Invisible Man . The Invisible Man (1897) is one of the most famous science fiction novels of all time. Written by H.G. Wells (1866-1946), it tells the story of a scientist who discovers the secret of invisibility and uses it on himself. The story begins as the Invisible Man, with a bandaged face and a heavy coat and gloves, takes a train to lodge in a country inn whilst he tries to discover the antidote and make himself visible again. The...</span><br/>          <span alt="4.73 out of 5 stars" title="4.73 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 11 reviews )<br/>          Topics: librivox, audiobook, literature, science fiction<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="dracula_1006_librivox"
+      data-mediatype="audio"
+       data-year="2010">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">1.9<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.9M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/dracula_1006_librivox" title="Dracula (version 2)" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/dracula_1006_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Dracula (version 2)              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Jan 30, 2016</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">01/16</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Bram Stoker">Bram Stoker</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.9<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            46          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              7            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox recording of Bram Stoker\'s Dracula . Bram Stoker did not invent the vampire story, but he popularized it with his classic 1897 novel. In form Dracula is an epistolary novel, told through a series of journal entries, letters, newspaper articles, and telegrams. It begins with lawyer Jonathan Harker\'s perilous journey to Castle Dracula in Transylvania, and chronicles the vampire\'s invasion of England, where he preys upon the lovely Lucy Westenra and Harker\'s fiancee, Mina. Harker and Mina...</span><br/>          <span alt="4.71 out of 5 stars" title="4.71 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 7 reviews )<br/>          Topics: librivox, audio, dracula, drama, vampire<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -5576,8 +5356,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.7<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.7M</nobr>
+                  <nobr class="hidden-xs">1.8<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.8M</nobr>
               </div>
 
 
@@ -5618,7 +5398,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.7<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.8<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -5640,160 +5420,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="ghost_stories_001_librivox"
-      data-mediatype="audio"
-       data-year="2006">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.7<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.7M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/ghost_stories_001_librivox" title="Ghost Story Collection 001" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/ghost_stories_001_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Ghost Story Collection 001              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">-</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Various">Various</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.7<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            81          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox public domain Ghost Story Collection, Vol. 001. A collection of ten pieces, read by various readers, about the unreal edges of this world in legend and story; tales of love, death and beyond. If just one story prickles the hair on the back of your neck, or prickles your eyelids with the touch of tears, we will have succeeded. For more information or to volunteer, please visit librivox.org . Download M4B (93mb)</span><br/>                    Topics: librivox, audiobooks, ghost stories, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="railway_children_librivox"
-      data-mediatype="audio"
-       data-year="2006">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.7<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.7M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/railway_children_librivox" title="Railway Children" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/railway_children_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Railway Children              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Mar 28, 2019</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">03/19</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="E. Nesbit">E. Nesbit</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.7<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            50          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              8            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>Librivox recording of Railway Children by E. Nesbit. Read by Karen Savage Edith Nesbit\'s classic story, in which three children, pulled suddenly from their comfortable suburban life, move to the country with their mother, where they come to know and love the ways of the railways. (Summary by Karen Savage) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for this recording. For...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 8 reviews )<br/>          Topics: librivox, audiobook, literature, children, trains<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
     <div class="item-ia" data-id="bleak_house_cl_librivox"
       data-mediatype="audio"
        data-year="2008">
@@ -5807,8 +5433,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.6<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.6M</nobr>
+                  <nobr class="hidden-xs">1.8<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.8M</nobr>
               </div>
 
 
@@ -5849,7 +5475,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.6<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.8<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -5871,6 +5497,237 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
+    <div class="item-ia" data-id="railway_children_librivox"
+      data-mediatype="audio"
+       data-year="2006">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">1.8<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.8M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/railway_children_librivox" title="Railway Children" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/railway_children_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Railway Children              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Mar 28, 2019</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">03/19</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="E. Nesbit">E. Nesbit</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.8<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            50          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              8            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>Librivox recording of Railway Children by E. Nesbit. Read by Karen Savage Edith Nesbit\'s classic story, in which three children, pulled suddenly from their comfortable suburban life, move to the country with their mother, where they come to know and love the ways of the railways. (Summary by Karen Savage) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for this recording. For...</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 8 reviews )<br/>          Topics: librivox, audiobook, literature, children, trains<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="ghost_stories_001_librivox"
+      data-mediatype="audio"
+       data-year="2006">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">1.8<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.8M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/ghost_stories_001_librivox" title="Ghost Story Collection 001" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/ghost_stories_001_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Ghost Story Collection 001              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">-</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Various">Various</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.8<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            81          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox public domain Ghost Story Collection, Vol. 001. A collection of ten pieces, read by various readers, about the unreal edges of this world in legend and story; tales of love, death and beyond. If just one story prickles the hair on the back of your neck, or prickles your eyelids with the touch of tears, we will have succeeded. For more information or to volunteer, please visit librivox.org . Download M4B (93mb)</span><br/>                    Topics: librivox, audiobooks, ghost stories, literature<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="anthem_librivox"
+      data-mediatype="audio"
+       data-year="2007">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">1.7<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.7M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/anthem_librivox" title="Anthem" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/anthem_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Anthem              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Jun 6, 2019</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">06/19</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Ayn Rand">Ayn Rand</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.7<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            31          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              5            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox\'s Anthem by Ayn Rand. Read by Chere Theriot. Anthem is a dystopic science fiction story taking place at some unspecified future date. Mankind has entered another dark age as a result of what Rand saw as the weaknesses of socialistic thinking and economics. Technological advancement is now carefully planned (when it is allowed to occur, if at all) and the concept of individuality has been eliminated (for example, the word &quot;I&quot; has disappeared from the language). As is common in...</span><br/>          <span alt="4.20 out of 5 stars" title="4.20 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 5 reviews )<br/>          Topics: librivox, audiobooks, literature, philosophy, science fiction<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
     <div class="item-ia" data-id="beowulf"
       data-mediatype="audio"
        data-year="2006">
@@ -5884,8 +5741,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.6<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.6M</nobr>
+                  <nobr class="hidden-xs">1.7<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.7M</nobr>
               </div>
 
 
@@ -5926,7 +5783,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.6<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.7<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -5961,8 +5818,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.6<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.6M</nobr>
+                  <nobr class="hidden-xs">1.7<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.7M</nobr>
               </div>
 
 
@@ -6003,11 +5860,11 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.6<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.7<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            99          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            129          </h6>
 
                       <h6 class="stat">
               <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              2            </h6>
@@ -6038,8 +5895,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
+                  <nobr class="hidden-xs">1.6<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.6M</nobr>
               </div>
 
 
@@ -6080,7 +5937,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.6<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -6102,9 +5959,9 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="les_mis_vol01_0810_librivox"
+    <div class="item-ia" data-id="letters_brides_0709_librivox"
       data-mediatype="audio"
-       data-year="2008">
+       data-year="2007">
 
             <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
         <div class="item-parent">
@@ -6115,8 +5972,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
+                  <nobr class="hidden-xs">1.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.5M</nobr>
               </div>
 
 
@@ -6129,26 +5986,26 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                                         C C2
             "
           >
-            <a href="/details/les_mis_vol01_0810_librivox" title="Les Misérables, Vol. 1" data-event-click-tracking="GenericNonCollection|ItemTile">
+            <a href="/details/letters_brides_0709_librivox" title="Letters of Two Brides" data-event-click-tracking="GenericNonCollection|ItemTile">
                               <div class="tile-img">
                   <img class="item-img "
-                    source="/services/img/les_mis_vol01_0810_librivox" style="height:180px">
+                    source="/services/img/letters_brides_0709_librivox" style="height:180px">
                 </div><!--/.tile-img-->
               
               
               
               <div class="ttl">
-                Les Misérables, Vol. 1              </div>
+                Letters of Two Brides              </div>
             </a>
           </div>
                 <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Oct 5, 2013</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">10/13</nobr>
+          <nobr class="hidden-xs">-</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
         </div>
         <div class="by C C4">
                                                 <span class="hidden-lists">by</span>
               <span class="byv"
-                    title="Victor Hugo">Victor Hugo</span>
+                    title="Honore de Balzac">Honore de Balzac</span>
                                           </div><!--/.C4-->
       </div><!--/.C234-->
 
@@ -6157,14 +6014,14 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.5<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            42          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            7          </h6>
 
                       <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              4            </h6>
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
                                   </div><!--/.statbar-->
 
           </div><!--/.item-ia-->
@@ -6173,7 +6030,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
     <div class="details-ia hidden-tiles">
       <div class="C1"></div>
               <div class="C234">
-          <span>LibriVox recording of Les Misérables, Vol. 1, by Victor Hugo. Read by LibriVox volunteers. An ex-convict breaks parole and starts a new life as a righteous man, but is pursued by a police inspector. Along the way, the ex-convict joins a revolution, adopts a daughter, and beats people up. Hooray. (Summary by smileyman457) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for...</span><br/>          <span alt="2.50 out of 5 stars" title="2.50 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 4 reviews )<br/>          Topics: librivox, audiobook, steal, romance, ex-convict, French Revolution<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+          <span>LibriVox recording of Letters of Two Brides, by Honore de Balzac. Letters of Two Brides is an epistolary novel. The two brides are Louise de Chaulieu (Madame Gaston) and Renée de Maucombe (Madame l\'Estorade). The women became friends during their education at a convent and upon leaving began a life-long correspondence. For a 17 year period, they exchange letters describing their lives. Michelle Crandall reads Renee\'s letters, and Kara Shallenberg reads Louise\'s. Letters from the men in their...</span><br/>                    Topics: librivox, literature, audiobooks, epistolary, letters, balzac<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -6192,8 +6049,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
+                  <nobr class="hidden-xs">1.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.5M</nobr>
               </div>
 
 
@@ -6234,7 +6091,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.5<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -6256,83 +6113,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
-    <div class="item-ia" data-id="mysterious_island_ms_librivox"
-      data-mediatype="audio"
-       data-year="2007">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/mysterious_island_ms_librivox" title="The Mysterious Island" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/mysterious_island_ms_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                The Mysterious Island              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Nov 27, 2019</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">11/19</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Jules Verne">Jules Verne</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            67          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              8            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of The Mysterious Island, by Jules Verne. Read by Mark F. Smith. A story of castaways, similar to Robinson Crusoe and The Swiss Family Robinson, this book details the escape from Civil War-era Richmond, Virginia, of five Northern men who dared to go aloft in a balloon in the midst of a hurricane. Deposited on a lonely island in the Pacific, they make do with Yankee ingenuity where Chance has left them nothing. Only later do they find they have a hidden benefactor: Captain...</span><br/>          <span alt="4.67 out of 5 stars" title="4.67 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 8 reviews )<br/>          Topics: LibriVox, literature, audiobook, verne, sci-fi, adventure<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
     <div class="item-ia" data-id="secret_garden_version2_librivox"
       data-mediatype="audio"
        data-year="2009">
@@ -6346,8 +6126,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
+                  <nobr class="hidden-xs">1.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.5M</nobr>
               </div>
 
 
@@ -6388,7 +6168,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.5<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -6410,6 +6190,237 @@ All LibriVox recordings are in the public domain in the USA and available as fre
 
     
 
+    <div class="item-ia" data-id="penguin_island_ms_librivox"
+      data-mediatype="audio"
+       data-year="2007">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">1.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.5M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/penguin_island_ms_librivox" title="Penguin Island" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/penguin_island_ms_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Penguin Island              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Aug 3, 2016</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">08/16</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Anatole France">Anatole France</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.5<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            12          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              1            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox recording of Penguin Island, by Anatole France. Read by Michael Sirois. This novel (original French title -- L\'Île des Pingouins) is a satire on human nature. The first publication was in 1908. These penguins are mistaken for humans by the 97-year-old priest, Father Mael, because of his bad eyesight. He baptizes them, and once baptized, they have no choice but to become human. They take on human traits (build civilizations, go to war, etc.). The book is very funny and powerful....</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 1 reviews )<br/>          Topics: LibriVox, literature, audiobook, satire<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="alexander_great_ld_librivox"
+      data-mediatype="audio"
+       data-year="2007">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">1.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.5M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/alexander_great_ld_librivox" title="Alexander the Great" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/alexander_great_ld_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Alexander the Great              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">May 12, 2015</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">05/15</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Jacob Abbott">Jacob Abbott</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.5<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            42          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              4            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>Alexander the Great was one of the most successful military commanders in history, and was undefeated in battle. By the time of his death, he had conquered most of the world known to the ancient Greeks. Alexander the Great is one of many biographies aimed at young people written by Jacob Abbott and his brother. The biographies are written in such a way that makes them appealing and easily accessible to everyone. - Written by Wikipedia and Lizzie Driver For further information, including links...</span><br/>          <span alt="4.25 out of 5 stars" title="4.25 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 4 reviews )<br/>          Topics: librivox, literature, audiobook, History, biography, alexander<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="les_mis_vol01_0810_librivox"
+      data-mediatype="audio"
+       data-year="2008">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">1.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.5M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/les_mis_vol01_0810_librivox" title="Les Misérables, Vol. 1" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/les_mis_vol01_0810_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Les Misérables, Vol. 1              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Oct 5, 2013</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">10/13</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Victor Hugo">Victor Hugo</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.5<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            42          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              4            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox recording of Les Misérables, Vol. 1, by Victor Hugo. Read by LibriVox volunteers. An ex-convict breaks parole and starts a new life as a righteous man, but is pursued by a police inspector. Along the way, the ex-convict joins a revolution, adopts a daughter, and beats people up. Hooray. (Summary by smileyman457) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for...</span><br/>          <span alt="2.50 out of 5 stars" title="2.50 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 4 reviews )<br/>          Topics: librivox, audiobook, steal, romance, ex-convict, French Revolution<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
     <div class="item-ia" data-id="call_of_the_wild"
       data-mediatype="audio"
        data-year="2005">
@@ -6423,8 +6434,8 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       
 
       <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
+                  <nobr class="hidden-xs">1.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.5M</nobr>
               </div>
 
 
@@ -6465,7 +6476,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                                 <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
 
                   <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.5<small>M</small></nobr>
           </h6>
         
                   <h6 class="stat">
@@ -6482,6 +6493,237 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       <div class="C1"></div>
               <div class="C234">
           <span>LibriVox recording of Call of the Wild, by Jack London. In this novel (often mistakenly classified a children’s book) the main protagonist Buck, a St. Bernard/Collie mix, is abducted and sold to a trainer of sled dogs in Alaska. He adapts to the brutal conditions and is finally acquired by a loving man. When this new owner is killed, Buck follows the ‘call of the wild’ and joins a pack of wolves. (Summary written by Gesine) For further information, including links to online text, reader...</span><br/>          <span alt="4.57 out of 5 stars" title="4.57 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 8 reviews )<br/>          Topics: literature, audiobook, librivox<br/>          Source: http://www.gutenberg.org/etext/215<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="mysterious_island_ms_librivox"
+      data-mediatype="audio"
+       data-year="2007">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">1.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.5M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/mysterious_island_ms_librivox" title="The Mysterious Island" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/mysterious_island_ms_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                The Mysterious Island              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Nov 27, 2019</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">11/19</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Jules Verne">Jules Verne</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.5<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            67          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              8            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox recording of The Mysterious Island, by Jules Verne. Read by Mark F. Smith. A story of castaways, similar to Robinson Crusoe and The Swiss Family Robinson, this book details the escape from Civil War-era Richmond, Virginia, of five Northern men who dared to go aloft in a balloon in the midst of a hurricane. Deposited on a lonely island in the Pacific, they make do with Yankee ingenuity where Chance has left them nothing. Only later do they find they have a hidden benefactor: Captain...</span><br/>          <span alt="4.67 out of 5 stars" title="4.67 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 8 reviews )<br/>          Topics: LibriVox, literature, audiobook, verne, sci-fi, adventure<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="2br0wb_bigtripupyonder_pc_librivox"
+      data-mediatype="audio"
+       data-year="2012">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">1.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.5M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/2br0wb_bigtripupyonder_pc_librivox" title="2 B R 0 2 B & The Big Trip Up Yonder" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/2br0wb_bigtripupyonder_pc_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                2 B R 0 2 B & The Big Trip Up Yonder              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">-</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Kurt Vonnegut, Jr.">Kurt Vonnegut, Jr.</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.5<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            26          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>LibriVox recording of 2 B R 0 2 B &amp; The Big Trip Up Yonder, by Kurt Vonnegut, Jr. Read by Phil Chenevert These two stories by Kurt Vonnegut were written almost a decade apart but they are definitely connected. The Big Trip Up Yonder, published in Galaxy Science Fiction January 1954 is a comical yet scary description of what over population was going to do to society after aging was conquered and a simple daily dose of &quot;anti-gerosone&quot; would keep you forever the same age. Would...</span><br/>                    Topics: sf, SCIENCE FICTION, vonnegut, 2br02b, overpopulation, short story, fiction, future, librivox,...<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
+            <div class="C5"></div>
+    </div>
+
+    
+
+    <div class="item-ia" data-id="don_quijote_vol1_0706_librivox"
+      data-mediatype="audio"
+       data-year="2007">
+
+            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
+        <div class="item-parent">
+          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
+          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
+        </div><!--/.item-parent-->
+      </a>
+      
+
+      <div class="hidden-tiles views C C1">
+                  <nobr class="hidden-xs">1.5<small>M</small></nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">1.5M</nobr>
+              </div>
+
+
+
+      
+      <div class="C234">
+                  <div
+            class="
+              item-ttl
+                                                        C C2
+            "
+          >
+            <a href="/details/don_quijote_vol1_0706_librivox" title="Don Quijote, Volume 1" data-event-click-tracking="GenericNonCollection|ItemTile">
+                              <div class="tile-img">
+                  <img class="item-img "
+                    source="/services/img/don_quijote_vol1_0706_librivox" style="height:180px">
+                </div><!--/.tile-img-->
+              
+              
+              
+              <div class="ttl">
+                Don Quijote, Volume 1              </div>
+            </a>
+          </div>
+                <div class="hidden-tiles pubdate C C3">
+          <nobr class="hidden-xs">Jan 18, 2013</nobr>
+          <nobr class="hidden-sm hidden-md hidden-lg">01/13</nobr>
+        </div>
+        <div class="by C C4">
+                                                <span class="hidden-lists">by</span>
+              <span class="byv"
+                    title="Miguel de Cervantes Saavedra">Miguel de Cervantes Saavedra</span>
+                                          </div><!--/.C4-->
+      </div><!--/.C234-->
+
+      <div class="statbar ">
+        <div class="mt-icon C C5">
+                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
+
+                  <h6 class="stat ">
+            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.5<small>M</small></nobr>
+          </h6>
+        
+                  <h6 class="stat">
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            23          </h6>
+
+                      <h6 class="stat">
+              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              1            </h6>
+                                  </div><!--/.statbar-->
+
+          </div><!--/.item-ia-->
+
+
+    <div class="details-ia hidden-tiles">
+      <div class="C1"></div>
+              <div class="C234">
+          <span>Don Quijote de la Mancha (ortografía y título original —1605—, El ingenioso hidalgo Don Quixote de la Mancha ) es una de las obras cumbre de la literatura española y la literatura universal, el libro más traducido después de la Biblia, escrito por Miguel de Cervantes. La novela consta de dos partes: la primera, El ingenioso hidalgo don Quijote de la Mancha , fue publicada en 1605; la segunda, El ingenioso caballero don Quijote de la Mancha , en 1615. La primera parte se imprimió en...</span><br/>          <span alt="0.00 out of 5 stars" title="0.00 out of 5 stars"></span> ( 1 reviews )<br/>          Topics: librivox, literature, audiobook, adventure, spanish<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -6546,7 +6788,7 @@ All LibriVox recordings are in the public domain in the USA and available as fre
           </h6>
         
                   <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            76          </h6>
+            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            79          </h6>
 
                       <h6 class="stat">
               <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              3            </h6>
@@ -6559,468 +6801,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
       <div class="C1"></div>
               <div class="C234">
           <span>LibriVox recording of Fanny Hill, Memoirs of a Woman of Pleasure by John Cleland. Fanny Hill: Memoirs of a Woman of Pleasure (1749) was the first widely-read English novel in the genre &quot;Erotica.&quot; It was written by John Cleland as he was serving hard time at a debtor\'s prison in London. Over the centuries, the novel has been repeatedly banned by authorities, assuring its preeminent role in the history of the ongoing struggle against censorship of free expression. Until Fanny Hill ,...</span><br/>          <span alt="4.50 out of 5 stars" title="4.50 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 3 reviews )<br/>          Topics: librivox, literature, audiobook, erotica, banned books<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="alexander_great_ld_librivox"
-      data-mediatype="audio"
-       data-year="2007">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/alexander_great_ld_librivox" title="Alexander the Great" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/alexander_great_ld_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Alexander the Great              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">May 12, 2015</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">05/15</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Jacob Abbott">Jacob Abbott</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            42          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              4            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>Alexander the Great was one of the most successful military commanders in history, and was undefeated in battle. By the time of his death, he had conquered most of the world known to the ancient Greeks. Alexander the Great is one of many biographies aimed at young people written by Jacob Abbott and his brother. The biographies are written in such a way that makes them appealing and easily accessible to everyone. - Written by Wikipedia and Lizzie Driver For further information, including links...</span><br/>          <span alt="4.25 out of 5 stars" title="4.25 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 4 reviews )<br/>          Topics: librivox, literature, audiobook, History, biography, alexander<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="letters_brides_0709_librivox"
-      data-mediatype="audio"
-       data-year="2007">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/letters_brides_0709_librivox" title="Letters of Two Brides" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/letters_brides_0709_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Letters of Two Brides              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">-</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Honore de Balzac">Honore de Balzac</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            7          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of Letters of Two Brides, by Honore de Balzac. Letters of Two Brides is an epistolary novel. The two brides are Louise de Chaulieu (Madame Gaston) and Renée de Maucombe (Madame l\'Estorade). The women became friends during their education at a convent and upon leaving began a life-long correspondence. For a 17 year period, they exchange letters describing their lives. Michelle Crandall reads Renee\'s letters, and Kara Shallenberg reads Louise\'s. Letters from the men in their...</span><br/>                    Topics: librivox, literature, audiobooks, epistolary, letters, balzac<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="penguin_island_ms_librivox"
-      data-mediatype="audio"
-       data-year="2007">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/penguin_island_ms_librivox" title="Penguin Island" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/penguin_island_ms_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Penguin Island              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Aug 3, 2016</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">08/16</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Anatole France">Anatole France</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            12          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              1            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of Penguin Island, by Anatole France. Read by Michael Sirois. This novel (original French title -- L\'Île des Pingouins) is a satire on human nature. The first publication was in 1908. These penguins are mistaken for humans by the 97-year-old priest, Father Mael, because of his bad eyesight. He baptizes them, and once baptized, they have no choice but to become human. They take on human traits (build civilizations, go to war, etc.). The book is very funny and powerful....</span><br/>          <span alt="5.00 out of 5 stars" title="5.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 1 reviews )<br/>          Topics: LibriVox, literature, audiobook, satire<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="don_quijote_vol1_0706_librivox"
-      data-mediatype="audio"
-       data-year="2007">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/don_quijote_vol1_0706_librivox" title="Don Quijote, Volume 1" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/don_quijote_vol1_0706_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Don Quijote, Volume 1              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Jan 18, 2013</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">01/13</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Miguel de Cervantes Saavedra">Miguel de Cervantes Saavedra</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            23          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              1            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>Don Quijote de la Mancha (ortografía y título original —1605—, El ingenioso hidalgo Don Quixote de la Mancha ) es una de las obras cumbre de la literatura española y la literatura universal, el libro más traducido después de la Biblia, escrito por Miguel de Cervantes. La novela consta de dos partes: la primera, El ingenioso hidalgo don Quijote de la Mancha , fue publicada en 1605; la segunda, El ingenioso caballero don Quijote de la Mancha , en 1615. La primera parte se imprimió en...</span><br/>          <span alt="0.00 out of 5 stars" title="0.00 out of 5 stars"></span> ( 1 reviews )<br/>          Topics: librivox, literature, audiobook, adventure, spanish<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="treasureisland_librivox"
-      data-mediatype="audio"
-       data-year="2005">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.4<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.4M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/treasureisland_librivox" title="Treasure Island" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/treasureisland_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                Treasure Island              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">Jun 17, 2013</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">06/13</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Robert Louis Stevenson">Robert Louis Stevenson</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.4<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            33          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              5            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>Librivox recording of Treasure Island, by Robert Louis Stevenson. Read by: Chapters 1-2: Squiddhartha Chapters 3-4: Gord Chapters 5-6: Kara Chapters 7-8: Literate Loser Chapters 9-10: Ivan Chapters 11-12: Podchef Chapters 13-14: Squiddhartha Chapters 15-16: Hugh Chapters 17-18: Vee Chapters 19-20: mjd-s Chapters 21-22: Kristen Chapters 23-24: Podchef Chapters 25-26: Gord Chapters 27-28: Alex Foster Chapters 29-30: dandyrandy Chapters 31-32: Jean O\'Sullivan Chapters 33-34: dandyrandy For further...</span><br/>          <span alt="4.00 out of 5 stars" title="4.00 out of 5 stars"><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span><span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span></span> ( 5 reviews )<br/>          Topics: literature, audiobook, children, librivox<br/>          Source: gutenberg e-text #120<br/>                  </div>
-            <div class="C5"></div>
-    </div>
-
-    
-
-    <div class="item-ia" data-id="art_war_ps_librivox"
-      data-mediatype="audio"
-       data-year="2007">
-
-            <a class="stealth" tabindex="-1" href="/details/librivoxaudio">
-        <div class="item-parent">
-          <div class="item-parent-img" style="background-image: url(\'/services/img/librivoxaudio\')"></div>
-          <div class="item-parent-ttl">The LibriVox Free Audiobook Collection</div>
-        </div><!--/.item-parent-->
-      </a>
-      
-
-      <div class="hidden-tiles views C C1">
-                  <nobr class="hidden-xs">1.3<small>M</small></nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">1.3M</nobr>
-              </div>
-
-
-
-      
-      <div class="C234">
-                  <div
-            class="
-              item-ttl
-                                                        C C2
-            "
-          >
-            <a href="/details/art_war_ps_librivox" title="The Art of War" data-event-click-tracking="GenericNonCollection|ItemTile">
-                              <div class="tile-img">
-                  <img class="item-img "
-                    source="/services/img/art_war_ps_librivox" style="height:180px">
-                </div><!--/.tile-img-->
-              
-              
-              
-              <div class="ttl">
-                The Art of War              </div>
-            </a>
-          </div>
-                <div class="hidden-tiles pubdate C C3">
-          <nobr class="hidden-xs">-</nobr>
-          <nobr class="hidden-sm hidden-md hidden-lg">-</nobr>
-        </div>
-        <div class="by C C4">
-                                                <span class="hidden-lists">by</span>
-              <span class="byv"
-                    title="Sun Tzu">Sun Tzu</span>
-                                          </div><!--/.C4-->
-      </div><!--/.C234-->
-
-      <div class="statbar ">
-        <div class="mt-icon C C5">
-                                <span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span>                  </div>
-
-                  <h6 class="stat ">
-            <span class="iconochive-eye"  aria-hidden="true"></span><span class="sr-only">eye</span>            <nobr>1.3<small>M</small></nobr>
-          </h6>
-        
-                  <h6 class="stat">
-            <span class="iconochive-favorite"  aria-hidden="true"></span><span class="sr-only">favorite</span>            46          </h6>
-
-                      <h6 class="stat">
-              <span class="iconochive-comment"  aria-hidden="true"></span><span class="sr-only">comment</span>              0            </h6>
-                                  </div><!--/.statbar-->
-
-          </div><!--/.item-ia-->
-
-
-    <div class="details-ia hidden-tiles">
-      <div class="C1"></div>
-              <div class="C234">
-          <span>LibriVox recording of The Art of War, by Sun Tzu (translated by Lionel Giles). Read by Paul Sze. The Art of War is a Chinese military treatise written during the 6th century BC by Sun Tzu. Composed of 13 chapters, each of which is devoted to one aspect of warfare, it has long been praised as the definitive work on military strategies and tactics of its time. (From Wikipedia.) For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if...</span><br/>                    Topics: librivox, audiobook, art war, sun tzu, sunzi, military strategy, Lionel Giles<br/>          Source: Librivox recording of a public-domain text<br/>                  </div>
             <div class="C5"></div>
     </div>
 
@@ -7067,7 +6847,6 @@ All LibriVox recordings are in the public domain in the USA and available as fre
   archive_setup.push(function() {
     
     
-    AJS.descript();
     AJS.addNotes(\'\');
 
     $(window).on(\'resize  orientationchange\', function(evt) {
@@ -7130,7 +6909,64 @@ All LibriVox recordings are in the public domain in the USA and available as fre
                     <br class="clearfix" clear="all"/>
         </div>
 
-        
+        <!-- Metadata -->
+        <div class="about-box item-details-metadata">
+          <h4>Collection Info</h4>
+          
+        <div class="metadata-expandable-list row" role="list">
+                  <dl class="metadata-definition">
+          <dt>Addeddate</dt>
+    <dd
+      class=""
+          >2006-03-07 20:43:07</dd>
+        </dl>
+                      <dl class="metadata-definition">
+          <dt>Collection</dt>
+    <dd
+      class=""
+          >audio_bookspoetry<br>audio</dd>
+        </dl>
+                      <dl class="metadata-definition">
+          <dt>Identifier</dt>
+    <dd
+      class=""
+          >librivoxaudio</dd>
+        </dl>
+                      <dl class="metadata-definition">
+          <dt>Mediatype</dt>
+    <dd
+      class=""
+          >collection</dd>
+        </dl>
+                      <dl class="metadata-definition">
+          <dt>Nav_order</dt>
+    <dd
+      class=""
+          >10</dd>
+        </dl>
+                      <dl class="metadata-definition">
+          <dt>Num_top_ba</dt>
+    <dd
+      class=""
+          >20</dd>
+        </dl>
+                      <dl class="metadata-definition">
+          <dt>Publicdate</dt>
+    <dd
+      class=""
+          >2006-03-07 12:43:43</dd>
+        </dl>
+                      <dl class="metadata-definition">
+          <dt>Title</dt>
+    <dd
+      class=""
+          >The LibriVox Free Audiobook Collection</dd>
+        </dl>
+          
+          </div>
+
+            </div>
+
       </div><!--/.col-sm-7-->
       <div class="col-sm-5" style="margin-bottom:50px;">
         <div class="about-box" style="background-color:rgb(251,242,221); margin-bottom:0;">
@@ -7226,20 +7062,20 @@ All LibriVox recordings are in the public domain in the USA and available as fre
               About the New Statistics
             </a>
           </div>
-          <p>Total Views 1,236,903,468</p>
+          <p>Total Views 1,314,216,615</p>
           <div id="grafs_views_api" class="grafs-content" data-id="librivoxaudio"></div>
           <div id="cviews_legend" class="grafs-legend"> </div>
         </div>
 
         <div class="grafs about-box">
         <div>DISCONTINUED VIEWS</div>
-          <p class="grafs-deprecated">Total Views 1,234,687,226</p>
+          <p class="grafs-deprecated">Total Views 1,312,515,872</p>
           <div id="grafs1" class="grafs-content" data-id="librivoxaudio"></div>
         </div>
 
         <div class="grafs about-box">
           <div>ITEMS</div>
-          <p>Total Items 13,699</p>
+          <p>Total Items 13,999</p>
           <div id="grafs2" class="grafs-content" data-id="librivoxaudio"></div>
         </div>
 
@@ -9205,55 +9041,55 @@ archive_setup.push(function() {
     
     
     <!-- Timing ...
-     rendered on: www27.us.archive.org
+     rendered on: www15.us.archive.org
  seconds diff sec               message   stack(file:line:function)
 =========================================================
   0.0000   0.0000         petabox start   var/cache/petabox/petabox/www/sf/details.php:1:require
                                              |common/ia:66:require_once
-                                             |setup.php:388:log
-  0.0096   0.0096      redis_read start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |setup.php:386:log
+  0.0057   0.0057      redis_read start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:183:getItem
                                              |common/Item.inc:77:parseMetadata
                                              |Item.inc:132:get_obj
-                                             |Metadata.inc:531:_get_obj
-                                             |Metadata.inc:561:run_pipeline
-                                             |Metadata.inc:1476:read
+                                             |Metadata.inc:537:_get_obj
+                                             |Metadata.inc:567:run_pipeline
+                                             |Metadata.inc:1432:read
                                              |Metadata/AdapterPipeline.inc:259:_read
                                              |AdapterPipeline.inc:292:pipeline
                                              |AdapterPipeline.inc:377:fetch
                                              |AdapterPipeline.inc:608:fetch
                                              |RecordServer.inc:144:execute
                                              |RecordServer/FetchRecordOp.inc:52:log
-  0.0114   0.0019     redis_read finish   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+  0.0077   0.0020     redis_read finish   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:183:getItem
                                              |common/Item.inc:77:parseMetadata
                                              |Item.inc:132:get_obj
-                                             |Metadata.inc:531:_get_obj
-                                             |Metadata.inc:561:run_pipeline
-                                             |Metadata.inc:1476:read
+                                             |Metadata.inc:537:_get_obj
+                                             |Metadata.inc:567:run_pipeline
+                                             |Metadata.inc:1432:read
                                              |Metadata/AdapterPipeline.inc:259:_read
                                              |AdapterPipeline.inc:292:pipeline
                                              |AdapterPipeline.inc:377:fetch
                                              |AdapterPipeline.inc:608:fetch
                                              |RecordServer.inc:144:execute
                                              |RecordServer/FetchRecordOp.inc:58:log
-  0.0287   0.0173   begin session_start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+  0.0157   0.0081   begin session_start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:197:include
-                                             |collection.php:212:head
-                                             |common/Nav.inc:119:__construct
-                                             |Nav.inc:187:session_start
+                                             |collection.php:222:head
+                                             |common/Nav.inc:120:__construct
+                                             |Nav.inc:190:session_start
                                              |Cookies.inc:56:log
-  0.0289   0.0001    done session_start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+  0.0158   0.0001    done session_start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:197:include
-                                             |collection.php:212:head
-                                             |common/Nav.inc:119:__construct
-                                             |Nav.inc:187:session_start
+                                             |collection.php:222:head
+                                             |common/Nav.inc:120:__construct
+                                             |Nav.inc:190:session_start
                                              |Cookies.inc:62:log
-  0.0470   0.0181              bug dump   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+  0.0890   0.0732              bug dump   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:197:include
-                                             |collection.php:267:footer
-                                             |common/setup.php:157:footer
-                                             |Nav.inc:1506:dump
+                                             |collection.php:277:footer
+                                             |common/setup.php:155:footer
+                                             |Nav.inc:1571:dump
                                              |Bug.inc:102:log
     -->
     <script type="text/javascript">
@@ -9261,8 +9097,8 @@ if (window.archive_analytics) {
   var vs = window.archive_analytics.get_data_packets();
   for (var i in vs) {
     vs[i][\'cache_bust\']=Math.random();
-    vs[i][\'server_ms\']=46;
-    vs[i][\'server_name\']="www27.us.archive.org";
+    vs[i][\'server_ms\']=88;
+    vs[i][\'server_name\']="www15.us.archive.org";
       }
 
   if ($(".more_search").size()>0) {

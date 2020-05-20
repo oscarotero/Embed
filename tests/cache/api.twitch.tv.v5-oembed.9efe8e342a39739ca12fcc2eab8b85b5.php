@@ -19,10 +19,10 @@ return [
             'https://www.twitch.tv'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:47:19 GMT'
+            'Wed, 20 May 2020 17:54:30 GMT'
         ],
         'x-served-by' => [
-            'cache-sea4427-SEA, cache-mad22034-MAD'
+            'cache-sea4440-SEA, cache-mad22044-MAD'
         ],
         'x-cache' => [
             'MISS, MISS'
@@ -31,7 +31,7 @@ return [
             '0, 0'
         ],
         'x-timer' => [
-            'S1582415239.125127,VS0,VS0,VE190'
+            'S1589997270.146397,VS0,VS0,VE223'
         ],
         'vary' => [
             'Accept-Encoding'
@@ -41,6 +41,9 @@ return [
         ],
         'Content-Location' => [
             'https://api.twitch.tv/v5/oembed?url=https%3A%2F%2Fwww.twitch.tv%2Fvideos%2F72749628&format=json'
+        ],
+        'X-Request-Time' => [
+            '0.315 ms'
         ]
     ],
     'statusCode' => 204,

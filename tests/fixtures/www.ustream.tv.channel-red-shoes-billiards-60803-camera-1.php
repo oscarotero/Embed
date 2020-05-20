@@ -6,7 +6,7 @@ return [
     'authorUrl' => 'http://www.ustream.tv/',
     'cms' => null,
     'code' => [
-        'html' => '<iframe width="480" height="302" src="http://www.ustream.tv/embed/11958409" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe><br /><a href="http://www.ustream.tv/" title="Stream live video with Ustream" style="padding: 2px 0px 4px; width: 400px; background: #ffffff; display: block; color: #000000; font-weight: normal; font-size: 10px; text-decoration: underline; text-align: left;" target="_blank">Stream Live Video</a>',
+        'html' => '<iframe width="480" height="302" src="http://www.ustream.tv/embed/11958409" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe><br /><a href="http://www.ustream.tv/" title="Streaming media platform by Ustream" style="padding: 2px 0px 4px; width: 400px; background: #ffffff; display: block; color: #000000; font-weight: normal; font-size: 10px; text-decoration: underline; text-align: left;" target="_blank">Streaming Media Platform</a>',
         'width' => 400,
         'height' => 320
     ],
@@ -28,7 +28,7 @@ return [
     'linkedData' => [],
     'oEmbed' => [
         'provider_url' => 'http://www.ustream.tv/',
-        'html' => '<iframe width="480" height="302" src="http://www.ustream.tv/embed/11958409" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe><br /><a href="http://www.ustream.tv/" title="Stream live video with Ustream" style="padding: 2px 0px 4px; width: 400px; background: #ffffff; display: block; color: #000000; font-weight: normal; font-size: 10px; text-decoration: underline; text-align: left;" target="_blank">Stream Live Video</a>',
+        'html' => '<iframe width="480" height="302" src="http://www.ustream.tv/embed/11958409" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe><br /><a href="http://www.ustream.tv/" title="Streaming media platform by Ustream" style="padding: 2px 0px 4px; width: 400px; background: #ffffff; display: block; color: #000000; font-weight: normal; font-size: 10px; text-decoration: underline; text-align: left;" target="_blank">Streaming Media Platform</a>',
         'title' => 'Red Shoes Billiards 1pkt,banks camera 1',
         'author_name' => 'redsh0es',
         'height' => 320,

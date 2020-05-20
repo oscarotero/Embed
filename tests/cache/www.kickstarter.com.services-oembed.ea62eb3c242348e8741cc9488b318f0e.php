@@ -22,8 +22,8 @@ return [
             'bytes'
         ],
         'date' => [
-            'Sun, 23 Feb 2020 00:01:19 GMT',
-            'Sun, 23 Feb 2020 00:01:19 GMT'
+            'Wed, 20 May 2020 17:53:30 GMT',
+            'Wed, 20 May 2020 17:53:30 GMT'
         ],
         'via' => [
             '1.1 varnish',
@@ -33,8 +33,8 @@ return [
             'close'
         ],
         'x-served-by' => [
-            'cache-mad22025-MAD',
-            'cache-mad22025-MAD'
+            'cache-mad22046-MAD',
+            'cache-mad22041-MAD'
         ],
         'x-cache' => [
             'HIT',
@@ -45,8 +45,8 @@ return [
             '0'
         ],
         'x-timer' => [
-            'S1582416079.416168,VS0,VE0',
-            'S1582416080.521352,VS0,VE130'
+            'S1589997210.295021,VS0,VE0',
+            'S1589997210.410924,VS0,VE153'
         ],
         'strict-transport-security' => [
             'max-age=31557600  HTTP/2 200',
@@ -64,9 +64,6 @@ return [
         'x-content-type-options' => [
             'nosniff'
         ],
-        'heartbleed' => [
-            'NO; see http://heartbleedheader.com'
-        ],
         'etag' => [
             'W/"cb87bfa1ab31345a3bd3cc59c4d218e8"'
         ],
@@ -74,10 +71,10 @@ return [
             'max-age=0, private, must-revalidate'
         ],
         'x-request-id' => [
-            '4bf64dfe-f7cc-4afa-ba32-aa9fe1af1b6f'
+            'f4905a4c-337b-487a-939c-54ac78cd07e7'
         ],
         'x-runtime' => [
-            '0.037007'
+            '0.052027'
         ],
         'content-encoding' => [
             'gzip'
@@ -88,6 +85,9 @@ return [
         ],
         'Content-Location' => [
             'https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1452363698%2Fgood-seed-craft-veggie-burgers&format=json'
+        ],
+        'X-Request-Time' => [
+            '0.318 ms'
         ]
     ],
     'statusCode' => 200,

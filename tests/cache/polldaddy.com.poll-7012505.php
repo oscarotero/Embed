@@ -9,9 +9,9 @@ return [
             'nginx'
         ],
         'date' => [
-            'Sun, 23 Feb 2020 00:01:28 GMT',
-            'Sun, 23 Feb 2020 00:01:29 GMT',
-            'Sun, 23 Feb 2020 00:01:30 GMT'
+            'Wed, 20 May 2020 17:53:37 GMT',
+            'Wed, 20 May 2020 17:53:37 GMT',
+            'Wed, 20 May 2020 17:53:38 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -35,7 +35,7 @@ return [
             'en'
         ],
         'set-cookie' => [
-            'PD_REQ_AUTH=0ca11380bcd6c56899cb682cb206b4c6; expires=Sun, 23-Feb-2020 00:06:30 GMT; Max-Age=300; path=/; domain=.poll.fm; HttpOnly'
+            'PD_REQ_AUTH=ddb27249a4e41b795a2d584f1473079f; path=/; domain=.poll.fm; secure; SameSite=None; expires=Wed, 20 May 2020 17:58:38 GMT;HttpOnly'
         ],
         'strict-transport-security' => [
             'max-age=31536000'
@@ -45,6 +45,9 @@ return [
         ],
         'Content-Location' => [
             'https://poll.fm/7012505'
+        ],
+        'X-Request-Time' => [
+            '1.947 ms'
         ]
     ],
     'statusCode' => 200,
@@ -72,7 +75,7 @@ return [
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 
 	  
-<link rel="stylesheet" href="https://poll.fm/css/production/styles.css?m=1582132862" type="text/css" media="all"/>
+<link rel="stylesheet" href="https://poll.fm/css/production/styles.css?m=1589573937" type="text/css" media="all"/>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/jquery/jquery.js"></script>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/validate.js"></script>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/community.js"></script>
@@ -99,7 +102,550 @@ return [
     
 <script type="text/javascript" src="https://stats.wp.com/w.js" async defer></script>
 
-<meta name="google-site-verification" content="Vb-nO0TU1JmhUxrqIO0VI06y5UbGraDa62wy5BgLrg0" />
+<meta name="google-site-verification" content="Vb-nO0TU1JmhUxrqIO0VI06y5UbGraDa62wy5BgLrg0" /><style>/* line 4, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
+.pds-box
+{
+	font-family:Helvetica, Arial, sans-serif;
+	background:#fff;
+	border:1px solid #ccc;
+	width:630px;
+	font-size:12px;
+	text-align:left;
+	color:#4e4e4e;
+	-webkit-border-radius:12px;
+	-moz-border-radius:12px;
+	border-radius:12px;
+}
+
+/* line 14, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box a
+{
+	outline:none;
+}
+
+/* line 18, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-clear
+{
+	display:block;
+	clear:both;
+}
+
+/* line 23, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-box-outer
+{
+	padding:12px;
+}
+
+/* line 27, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-question-top
+{
+	font-size:16px;
+	line-height:120%;
+	color:#333;
+	font-weight:bold;
+	padding:5px 0 15px;
+	position:relative;
+}
+
+/* line 36, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer
+{
+	padding:10px 0;
+	border-top:1px solid #e8e8e8;
+	border-bottom:1px solid #e8e8e8;
+}
+
+/* line 42, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer label
+{
+	color:#333;
+	font-size:13px;
+	line-height:150%;
+	position:relative;
+}
+
+/* line 49, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer-group
+{
+	padding:8px 0;
+	line-height:0;
+}
+
+/* line 54, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer-row
+{
+	display:flex;
+	flex-direction:row;
+}
+
+/* line 59, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer-group br
+{
+	display:none;
+}
+
+/* line 63, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer-input
+{
+	display:block;
+	width:25px;
+}
+
+/* line 68, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-input-label
+{
+	display:block;
+	cursor:pointer;
+}
+
+/* line 73, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer-other
+{
+	padding:0 0 0 10px;
+}
+
+/* line 77, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-textfield
+{
+	background:#FFF;
+	border:1px solid #d1d1d1;
+	font-size:12px;
+	padding:2px;
+	width:150px;
+}
+
+/* line 85, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer-other br
+{
+	display:none;
+}
+
+/* line 89, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-other-label
+{
+	display:block;
+	float:left;
+	cursor:pointer;
+}
+
+/* line 95, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-feedback-group
+{
+	display:block;
+	padding:8px 0;
+}
+
+/* line 100, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-feedback-label
+{
+	display:block;
+	padding:0 0 5px;
+}
+
+/* line 105, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-feedback-result
+{
+	float:right;
+}
+
+/* line 109, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer-text
+{
+	float:left;
+}
+
+/* line 113, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-feedback-per
+{
+	font-weight:bold;
+}
+
+/* line 117, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-feedback-votes
+{
+	font-weight:normal;
+}
+
+/* line 121, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer-feedback
+{
+	background-color:#f1f1f1;
+	border:1px solid #d1d1d1;
+	position:relative;
+}
+
+/* line 127, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-answer-feedback-bar
+{
+	font-size:2px;
+	background:#3478e3;
+	height:18px;
+}
+
+/* line 133, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-vote
+{
+	padding:10px 0;
+}
+
+/* line 144, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-vote-button
+{
+	color:#464646;
+	padding:3px 25px;
+	white-space:nowrap;
+	background:#f2f2f2 url(\'https://polldaddy.com/images/white-grad.png\') repeat-x scroll left top;
+	-webkit-border-radius:11px;
+	-moz-border-radius:11px;
+	border-radius:11px;
+	border:1px solid #999;
+	cursor:pointer;
+	font-size:12px;
+	font-family:\'Lucida Grande\', Verdana, Arial;
+	text-decoration:none;
+	line-height:25px;
+	font-weight:bold;
+	white-space:nowrap;
+}
+
+/* line 162, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-vote-button:hover
+{
+	border:1px solid #333;
+}
+
+/* line 166, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-vote-button-load
+{
+	color:#464646;
+	padding:3px 25px;
+	white-space:nowrap;
+	-webkit-border-radius:11px;
+	-moz-border-radius:11px;
+	border-radius:11px;
+	border:1px solid #999;
+	cursor:pointer;
+	font-size:12px;
+	font-family:\'Lucida Grande\', Verdana, Arial;
+	text-decoration:none;
+	line-height:25px;
+	font-weight:bold;
+	white-space:nowrap;
+	background:#eee url(\'https://polldaddy.com/polls/vote-loader-eeeeee.gif\') no-repeat scroll 50% 50%;
+}
+
+/* line 184, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-vote-button-load span
+{
+	visibility:hidden;
+}
+
+/* line 188, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-links
+{
+	padding:10px 0 0;
+	display:block;
+	text-align:center;
+}
+
+/* line 194, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-links-back
+{
+	padding:10px 0 0;
+	display:block;
+	text-align:center;
+}
+
+/* line 200, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-links a
+{
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:12px;
+	color:#4e4e4e;
+	text-decoration:none;
+	padding:0 4px;
+	line-height:24px;
+	display:inline-block;
+	font-weight:bold;
+}
+
+/* line 211, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-links-back a
+{
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:12px;
+	color:#4e4e4e;
+	text-decoration:none;
+	padding:0 4px;
+	line-height:24px;
+	display:inline-block;
+	font-weight:bold;
+}
+
+/* line 222, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-links a:hover
+{
+	text-decoration:underline;
+}
+
+/* line 226, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-links-back a:hover
+{
+	text-decoration:underline;
+}
+
+/* line 230, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-comments span
+{
+	font-weight:normal;
+}
+
+/* line 234, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-total-votes
+{
+	padding:10px 0 0;
+	position:relative;
+}
+
+/* line 239, ../../../../../stylesheets/partials/poll-style/_base.scss */
+.pds-box .pds-total-votes span
+{
+	font-weight:bold;
+}
+
+/* line 7, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
+.pds-box .pds-question-top
+{
+	font-size:18px;
+}
+
+/* line 11, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
+.pds-box .poll__question-media
+{
+	display:inline-block;
+	max-width:376px;
+	max-height:225.6px;
+	overflow:hidden;
+	padding-top:16px;
+	margin-bottom:8px;
+}
+
+/* line 8, ../../../../../stylesheets/partials/_mixins.scss */
+.pds-box .poll__question-media::after
+{
+	content:\'\';
+	display:block;
+	clear:both;
+}
+
+/* line 13, ../../../../../stylesheets/partials/_mixins.scss */
+.pds-box .poll__question-media audio,.pds-box .poll__question-media span
+{
+	vertical-align:top;
+	max-width:376px;
+}
+
+/* line 18, ../../../../../stylesheets/partials/_mixins.scss */
+.pds-box .poll__question-media iframe
+{
+	max-width:376px;
+	max-height:225.6px;
+}
+
+/* line 23, ../../../../../stylesheets/partials/_mixins.scss */
+.pds-box .poll__question-media div
+{
+	background-size:cover;
+	display:inline-block;
+	width:376px;
+	height:225.6px;
+	position:relative;
+	overflow:hidden;
+}
+
+/* line 32, ../../../../../stylesheets/partials/_mixins.scss */
+.pds-box .poll__question-media div img
+{
+	position:absolute;
+	max-width:unset;
+	vertical-align:top;
+}
+
+/* line 19, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
+.pds-box .poll__answer-media-public
+{
+	display:inline-block;
+	max-width:150px;
+	max-height:90px;
+	overflow:hidden;
+	margin-top:16px;
+	margin-bottom:8px;
+}
+
+/* line 8, ../../../../../stylesheets/partials/_mixins.scss */
+.pds-box .poll__answer-media-public::after
+{
+	content:\'\';
+	display:block;
+	clear:both;
+}
+
+/* line 13, ../../../../../stylesheets/partials/_mixins.scss */
+.pds-box .poll__answer-media-public audio,.pds-box .poll__answer-media-public span
+{
+	vertical-align:top;
+	max-width:150px;
+}
+
+/* line 18, ../../../../../stylesheets/partials/_mixins.scss */
+.pds-box .poll__answer-media-public iframe
+{
+	max-width:150px;
+	max-height:90px;
+}
+
+/* line 23, ../../../../../stylesheets/partials/_mixins.scss */
+.pds-box .poll__answer-media-public div
+{
+	background-size:cover;
+	display:inline-block;
+	width:150px;
+	height:90px;
+	position:relative;
+	overflow:hidden;
+}
+
+/* line 32, ../../../../../stylesheets/partials/_mixins.scss */
+.pds-box .poll__answer-media-public div img
+{
+	position:absolute;
+	max-width:unset;
+	vertical-align:top;
+}
+
+@media only screen and (max-width: 650px) {
+	/* line 27, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
+	.pds-box
+	{
+		width:300px;
+	}
+	
+	/* line 30, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
+	.pds-box .poll__question-media
+	{
+		display:inline-block;
+		max-width:276px;
+		max-height:165.6px;
+		overflow:hidden;
+		padding-top:16px;
+		margin-bottom:8px;
+	}
+	
+	/* line 8, ../../../../../stylesheets/partials/_mixins.scss */
+	.pds-box .poll__question-media::after
+	{
+		content:\'\';
+		display:block;
+		clear:both;
+	}
+	
+	/* line 13, ../../../../../stylesheets/partials/_mixins.scss */
+	.pds-box .poll__question-media audio,.pds-box .poll__question-media span
+	{
+		vertical-align:top;
+		max-width:276px;
+	}
+	
+	/* line 18, ../../../../../stylesheets/partials/_mixins.scss */
+	.pds-box .poll__question-media iframe
+	{
+		max-width:276px;
+		max-height:165.6px;
+	}
+	
+	/* line 23, ../../../../../stylesheets/partials/_mixins.scss */
+	.pds-box .poll__question-media div
+	{
+		background-size:cover;
+		display:inline-block;
+		width:276px;
+		height:165.6px;
+		position:relative;
+		overflow:hidden;
+	}
+	
+	/* line 32, ../../../../../stylesheets/partials/_mixins.scss */
+	.pds-box .poll__question-media div img
+	{
+		position:absolute;
+		max-width:unset;
+		vertical-align:top;
+	}
+	
+	/* line 38, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
+	.pds-box .poll__answer-media-public
+	{
+		display:inline-block;
+		max-width:150px;
+		max-height:90px;
+		overflow:hidden;
+		margin-top:16px;
+		margin-bottom:8px;
+	}
+	
+	/* line 8, ../../../../../stylesheets/partials/_mixins.scss */
+	.pds-box .poll__answer-media-public::after
+	{
+		content:\'\';
+		display:block;
+		clear:both;
+	}
+	
+	/* line 13, ../../../../../stylesheets/partials/_mixins.scss */
+	.pds-box .poll__answer-media-public audio,.pds-box .poll__answer-media-public span
+	{
+		vertical-align:top;
+		max-width:150px;
+	}
+	
+	/* line 18, ../../../../../stylesheets/partials/_mixins.scss */
+	.pds-box .poll__answer-media-public iframe
+	{
+		max-width:150px;
+		max-height:90px;
+	}
+	
+	/* line 23, ../../../../../stylesheets/partials/_mixins.scss */
+	.pds-box .poll__answer-media-public div
+	{
+		background-size:cover;
+		display:inline-block;
+		width:150px;
+		height:90px;
+		position:relative;
+		overflow:hidden;
+	}
+	
+	/* line 32, ../../../../../stylesheets/partials/_mixins.scss */
+	.pds-box .poll__answer-media-public div img
+	{
+		position:absolute;
+		max-width:unset;
+		vertical-align:top;
+	}
+	
+	/* line 45, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
+	.pds-input-label
+	{
+		width:250px;
+	}
+	
+	/* line 49, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
+	.pds-textfield
+	{
+		width:50px;
+	}
+}</style>
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@Crowdsignalcom" />
@@ -125,12 +671,11 @@ return [
 	<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 </head>
 
-<body data-ajax-nonce="40052f445a" class="shadow logged-out cs-poll">
+<body data-ajax-nonce="64533c9cb7" class="shadow logged-out cs-poll">
 	<div class="cs-site-content">
 			<div id="page">
-			
+						
 			<div id="stage">
-
  <script type="text/javascript">
 
 	last_comment_hover = null;
@@ -139,95 +684,90 @@ return [
 	
 </script>
 <div id="stage-inner">
-
 	<div class="grid">
-
 		<div class="grid-center">
+						<!-- lots of divs for style compatibility... -->
+			<div id="poll">
+			<div class="PDS_Poll">
+			<div class="css-box pds-box">
+			<div class="css-box-outer pds-box-outer">
+			<div class="css-box-inner pds-box-inner">
+			<div class="css-box-top pds-box-top">
 			<form method="get" name="formPoll" action="">
-
-	
-	<div class="poll">
-		
-
-		<h1 style="">
-			Which design do you prefer?		</h1>
-
-		<fieldset>
-	<legend>Poll choices</legend>
-	<ul class="answers">
-					<li>
-									<div class="poll__answer-media-public">
-								<div>
-			<img style="top: -3.1045751633987%; left: 0; max-width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/1199f5f94bc504baa495739602f7c683.jpg" />
-		</div>
-							</div>
-									<div class="poll__answer-choice">
-
-					<div class="checkbox">
-													<input type="radio" name="PDI_answer" id="PDI_answer31818288" value="31818288" />
-											</div>
-
-					<label for="PDI_answer31818288"  style="word-break:break-word;">
-						Option #1					</label>
-
+	<div class="css-question pds-question">
+		<div class="css-question-outer pds-question-outer">
+			<div class="css-question-inner pds-question-inner">
+				<div class="css-question-top pds-question-top" style="">
+					
+					<div>Which design do you prefer?</div>
 				</div>
-				<p class="clear"></p>
-
-
-			</li>
-						<li>
-									<div class="poll__answer-media-public">
-								<div>
-			<img style="top: -3.1045751633987%; left: 0; max-width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/c696ff7a8681f3da79c32bc2d1dcda05.jpg" />
+			</div>
 		</div>
-							</div>
-									<div class="poll__answer-choice">
-
-					<div class="checkbox">
-													<input type="radio" name="PDI_answer" id="PDI_answer31818289" value="31818289" />
-											</div>
-
-					<label for="PDI_answer31818289"  style="word-break:break-word;">
-						Option #2					</label>
-
-				</div>
-				<p class="clear"></p>
-
-
-			</li>
-				</ul>
-</fieldset>
 	</div>
 
+	<div class="css-answer pds-answer">
+	<span>
+					<div class="css-answer-group pds-answer-group">
 
-	<div style="width:100%;">
-		<div class="control">
-			<div class="l-link">
+									<div class="poll__answer-media-public">
+								<div>
+			<img style="top: -3.1045751633987%; left: 0; width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/c696ff7a8681f3da79c32bc2d1dcda05.jpg" />
+		</div>
+							</div>
+									<div class="css-answer-row pds-answer-row">
+					<span class="css-answer-input pds-answer-input">
+															<input type="radio" name="PDI_answer" id="PDI_answer31818289" value="31818289" />
+												</span>
+					<label for="PDI_answer31818289"  style="word-break:break-word;">
+						<span class="css-answer-span pds-answer-span">Option #2</span>
+					</label>
+					<span class="css-clear pds-clear"></span>
+				</div>
+			</div>
+						<div class="css-answer-group pds-answer-group">
+
+									<div class="poll__answer-media-public">
+								<div>
+			<img style="top: -3.1045751633987%; left: 0; width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/1199f5f94bc504baa495739602f7c683.jpg" />
+		</div>
+							</div>
+									<div class="css-answer-row pds-answer-row">
+					<span class="css-answer-input pds-answer-input">
+															<input type="radio" name="PDI_answer" id="PDI_answer31818288" value="31818288" />
+												</span>
+					<label for="PDI_answer31818288"  style="word-break:break-word;">
+						<span class="css-answer-span pds-answer-span">Option #1</span>
+					</label>
+					<span class="css-clear pds-clear"></span>
+				</div>
+			</div>
+				</span>
+</div>
+
+	
+		<div class="css-vote pds-vote">
+			<div class="css-votebutton-outer pds-votebutton-outer">
 				<a
 					href="vote"
 					style="cursor:pointer;"
-					data-vote="{&quot;id&quot;:7012505,&quot;o&quot;:&quot;0&quot;,&quot;b&quot;:&quot;1&quot;,&quot;m&quot;:&quot;0&quot;,&quot;at&quot;:&quot;10&quot;,&quot;t&quot;:140,&quot;v&quot;:0,&quot;e&quot;:7257600,&quot;n&quot;:&quot;52b44cfa786ae192561fba74f3012da4&quot;}"
-					class="btn btn-primary btn-large vote-button">
+					data-vote="{&quot;id&quot;:7012505,&quot;o&quot;:&quot;0&quot;,&quot;b&quot;:&quot;1&quot;,&quot;m&quot;:&quot;0&quot;,&quot;at&quot;:&quot;10&quot;,&quot;t&quot;:140,&quot;v&quot;:0,&quot;e&quot;:7257600,&quot;n&quot;:&quot;456082e562960b7c2611cdcd16343ce2&quot;}"
+					class="vote-button css-vote-button pds-vote-button">
 					Vote				</a>
-			</div>
-							<div class="r-link">
-					<a href="/7012505/results">View Results</a>
-				</div>
-						<p class="clear"></p>
+									<span class="css-links pds-links"><a href="/7012505/results" class="css-view-results pds-view-results">View Results</a>
+						<br>
+						<span class="css-clear pds-clear"></span>
+					</span>
+					<span class="css-clear pds-clear"></span>
+							</div>
 		</div>
-	</div>
-
-<input type=\'hidden\' name=\'pz\' value=\'315\'>
+			<input type=\'hidden\' name=\'pz\' value=\'662\'>
 
 </form>
 
-			
-			
 				<div class="poll-link">
 					See this poll on: <a rel="nofollow" target="_blank" href="https://poll.fm/7012505/embed">https://poll.fm/7012505/embed</a>
 									</div>
-			
-							<div class="cs-poll__comments">
+								<div class="cs-poll__comments">
 											<h5>27 Comments</h5>
 												<p class="clear"></p>
 						<ul class="comments">
@@ -704,7 +1244,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 	<form method="post" action="/comment" name="formcomment" id="formcomment">
 
 		<input type="hidden" name="poll_id" id="poll_id" value="7012505" />
-		<input type="hidden" name="nonce" value="53cf0cd886"/>
+		<input type="hidden" name="nonce" value="e990b7000a"/>
 
 		
 		<label for="cname">Your Name</label>
@@ -725,27 +1265,32 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 
 		<p class="count"><span id="charcount">0</span>/4000 chars</p>
 		<br/>
-		<a href="#" onclick="$(\'#formcomment\').submit(); return false;" class="btn btn-primary btn-large">Submit Comment</a>
+		<a href="#" onclick="$(\'#formcomment\').submit(); return false;" class="css-vote-button pds-vote-button">Submit Comment</a>
 	</form>
 </div>
 				</div>
-					</div>
-		<p class="clear"></p>
-	</div>
-
-		<div class="cs-promo-footer">
+			
+			</div> <!-- css-box-top pds-box-top -->
+			</div> <!-- css-box-inner pds-box-inner -->
+			</div> <!-- css-box-outer pds-box-outer -->
+			</div> <!-- css-box pds-box -->
+			
+						</div> <!-- PDS_Poll -->
+			</div> <!-- poll -->
+		</div>
+						<div class="cs-promo-footer">
 		<a href="https://crowdsignal.com?ref=survey-footer">
 			<img src="https://app.crowdsignal.com/images/svg/cs-logo-dots.svg" class="cs-promo-footer__dots-logo" alt="Crowdsignal logo" />
 		</a>
-		<br />
 		<div class="cs-promo-footer__footer" style="">
 			<a href="https://crowdsignal.com?ref=survey-footer" class="cs-promo-footer__footer-link" title="Create free online surveys today with Crowdsignal!">
 				Created at Crowdsignal.com			</a>
 		</div>
 	</div>
-	</div>
+				</div>
+</div>
 
-	<script type="text/javascript">
+<script type="text/javascript">
 	(function() {
 		jQuery( \'.dismiss\' ).click( function() {
 			$( this ).parent().remove();
@@ -806,7 +1351,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 		jQuery( \'a.del-embed-url\' ).click( function() {
 			var data = {};
 
-			data[\'_pd_nonce\'] = \'17302ded6c\';
+			data[\'_pd_nonce\'] = \'348ed3dced\';
 			data[\'id\']        = 7012505;
 
 			jQuery.post( \'\', data, function( response ) {
@@ -824,7 +1369,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 			var open = \'Open Poll\';
 			var close = \'Close Poll\';
 
-			data[\'_pd_nonce\'] = \'584593e3af\';
+			data[\'_pd_nonce\'] = \'a22cbda5a2\';
 			data[\'id\']        = 7012505;
 
 			jQuery.post( \'\', data, function( response ) {
@@ -857,9 +1402,6 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 	}
 	
 	
-	
-	
-
 	function comment_init() {
 	 	// Poll comment moderate click
 
@@ -894,7 +1436,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 		comment_init();
 	})();
 
-	</script>
+</script>
 
 
 <!-- close stage div -->

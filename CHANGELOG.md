@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.1.2] - Unreleased
+### Added
+- Added the `ignored_errors` settings to ignore some curls errors instead throw an exception [#355]
+
+### Fixed
+- Ignored linkedData errors [#356]
+
 ## [4.1.1] - 2020-04-24
 ### Added
 - Updated oembed endpoints from `oembed.com`
@@ -44,6 +51,9 @@ Full library refactoring.
 
 [#345]: https://github.com/oscarotero/Embed/issues/345
 [#346]: https://github.com/oscarotero/Embed/issues/346
+[#355]: https://github.com/oscarotero/Embed/issues/355
+[#356]: https://github.com/oscarotero/Embed/issues/356
 
+[4.1.2]: https://github.com/oscarotero/Embed/compare/v4.1.1...HEAD
 [4.1.1]: https://github.com/oscarotero/Embed/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/oscarotero/Embed/compare/v4.0.0...v4.1.0

@@ -4,10 +4,10 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'server' => [
-            'nginx/1.16.1'
+            'nginx/1.18.0'
         ],
         'date' => [
-            'Sun, 23 Feb 2020 00:00:45 GMT'
+            'Wed, 20 May 2020 17:53:14 GMT'
         ],
         'content-type' => [
             'application/json'
@@ -20,6 +20,9 @@ return [
         ],
         'Content-Location' => [
             'https://chirb.it/oembed.json?url=http://chirb.it/7A9L9B'
+        ],
+        'X-Request-Time' => [
+            '0.627 ms'
         ]
     ],
     'statusCode' => 200,

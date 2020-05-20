@@ -9,9 +9,9 @@ return [
             'envoy'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:47:18 GMT',
-            'Sat, 22 Feb 2020 23:47:18 GMT',
-            'Sat, 22 Feb 2020 23:47:18 GMT'
+            'Wed, 20 May 2020 17:54:29 GMT',
+            'Wed, 20 May 2020 17:54:29 GMT',
+            'Wed, 20 May 2020 17:54:29 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -21,11 +21,6 @@ return [
         'location' => [
             'https://open.spotify.com/oembed/?url=https%3A%2F%2Fopen.spotify.com%2Falbum%2F7s66wU1XJ2NsUuWM2NKiUV&format=json',
             'https://open.spotify.com/oembed?url=https%3A%2F%2Fopen.spotify.com%2Falbum%2F7s66wU1XJ2NsUuWM2NKiUV&format=json'
-        ],
-        'x-envoy-upstream-service-time' => [
-            '0',
-            '0',
-            '8'
         ],
         'strict-transport-security' => [
             'max-age=31536000',
@@ -58,10 +53,13 @@ return [
             'clear'
         ],
         'set-cookie' => [
-            'sp_t=bf75e550f35390073b66633e04cd1814; path=/; expires=Wed, 22 Apr 2020 23:47:18 GMT; domain=.spotify.com; secure'
+            'sp_t=0e16b4ccd8982188d1a3d6cba27ec7f3; path=/; expires=Sun, 19 Jul 2020 17:54:29 GMT; domain=.spotify.com; secure'
         ],
         'Content-Location' => [
             'https://open.spotify.com/oembed?url=https%3A%2F%2Fopen.spotify.com%2Falbum%2F7s66wU1XJ2NsUuWM2NKiUV&format=json'
+        ],
+        'X-Request-Time' => [
+            '0.247 ms'
         ]
     ],
     'statusCode' => 200,

@@ -6,7 +6,7 @@ return [
     'authorUrl' => null,
     'cms' => null,
     'code' => [
-        'html' => '<iframe id="vp1GjsJ1" title="Video Player" width="640" height="360" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1582415203&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=b&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq" allowfullscreen></iframe>',
+        'html' => '<iframe id="vp1GjsJ1" title="Video Player" width="640" height="360" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1589997189&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=p&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq" allowfullscreen></iframe>',
         'width' => 640,
         'height' => 360
     ],
@@ -43,7 +43,7 @@ return [
         'width' => 640,
         'height' => 360,
         'cache_age' => 604800,
-        'video_url' => 'https://d150hyw1dtprld.cloudfront.net/swf/w.swf?w=swf/production/vp1&e=1582415203&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=b&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq',
-        'html' => '<iframe id="vp1GjsJ1" title="Video Player" width="640" height="360" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1582415203&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=b&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq" allowfullscreen></iframe>'
+        'video_url' => 'https://d150hyw1dtprld.cloudfront.net/swf/w.swf?w=swf/production/vp1&e=1589997189&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=p&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq',
+        'html' => '<iframe id="vp1GjsJ1" title="Video Player" width="640" height="360" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1589997189&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=p&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq" allowfullscreen></iframe>'
     ]
 ];

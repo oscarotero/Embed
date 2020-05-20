@@ -4,14 +4,14 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'x-amz-id-2' => [
-            'Wa2H9YUbUh/W+0/l3GbBESsJDi1TpqtEY6Hf2l09Eataf0BYgES4Gr0XDDVixebiWNYUzbTyFaU='
+            'Ct4vrO2WTH8HLLFKjpTg4Ti3PzDVSFl8TsZ74iaJ4fg5S7vbbQ+CxZhSPDKZCzX8O33oad1P5yI='
         ],
         'x-amz-request-id' => [
-            'D98FC4E583E45121'
+            '82EC09225456F746'
         ],
         'date' => [
-            'Sat, 22 Feb 2020 23:46:46 GMT',
-            'Sat, 22 Feb 2020 23:46:45 GMT'
+            'Wed, 20 May 2020 17:53:51 GMT',
+            'Wed, 20 May 2020 17:53:51 GMT'
         ],
         'location' => [
             'https://www.sassmeister.com/gist/1122e441f0434ec6eb2a'
@@ -61,6 +61,9 @@ return [
         ],
         'Content-Location' => [
             'https://www.sassmeister.com/gist/1122e441f0434ec6eb2a'
+        ],
+        'X-Request-Time' => [
+            '1.290 ms'
         ]
     ],
     'statusCode' => 200,
