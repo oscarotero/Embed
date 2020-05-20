@@ -8,6 +8,7 @@ use ML\JsonLD\Document as LdDocument;
 use ML\JsonLD\DocumentInterface;
 use ML\JsonLD\GraphInterface;
 use ML\JsonLD\Node;
+use Throwable;
 
 class LinkedData
 {
@@ -37,7 +38,12 @@ class LinkedData
     private function getGraph(string $name = null): ?GraphInterface
     {
         if (!isset($this->document)) {
-            $this->document = LdDocument::load(json_encode($this->all()));
+            try {
+                $this->document = LdDocument::load(json_encode($this->all()));
+            } catch (Throwable $throwable) {
+                $this->document = LdDocument::load('{}');
+                return null;
+            }
         }
 
         return $this->document->getGraph();
