@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [4.1.2] - Unreleased
+## [4.2.0] - 2020-05-23
 ### Added
 - Added the `ignored_errors` settings to ignore some curls errors instead throw an exception [#355]
 - Support for Twitch embeds [#332]
@@ -56,6 +56,6 @@ Full library refactoring.
 [#355]: https://github.com/oscarotero/Embed/issues/355
 [#356]: https://github.com/oscarotero/Embed/issues/356
 
-[4.1.2]: https://github.com/oscarotero/Embed/compare/v4.1.1...HEAD
+[4.2.0]: https://github.com/oscarotero/Embed/compare/v4.1.1...v4.2.0
 [4.1.1]: https://github.com/oscarotero/Embed/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/oscarotero/Embed/compare/v4.0.0...v4.1.0
