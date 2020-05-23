@@ -6,7 +6,7 @@ return [
     'authorUrl' => null,
     'cms' => null,
     'code' => [
-        'html' => '<iframe src="https://player.twitch.tv/?autoplay=false&amp;video=v72749628" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>',
+        'html' => '<iframe src="https://player.twitch.tv/?autoplay=false&amp;channel=twit" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>',
         'width' => 620,
         'height' => 378
     ],
@@ -24,7 +24,7 @@ return [
     'publishedTime' => null,
     'redirect' => null,
     'title' => 'Twitch',
-    'url' => 'https://www.twitch.tv/videos/72749628',
+    'url' => 'https://www.twitch.tv/twit',
     'linkedData' => [],
     'oEmbed' => []
 ];

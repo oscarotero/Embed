@@ -161,6 +161,8 @@ class PagesTest extends PagesTestCase
     public function testTwitch()
     {
         $this->assertEmbed('https://www.twitch.tv/videos/72749628');
+        $this->assertEmbed('https://www.twitch.tv/videos/106400740');
+        $this->assertEmbed('https://www.twitch.tv/twit');
     }
 
     public function testTwitter()

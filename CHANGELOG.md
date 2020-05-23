@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [4.1.2] - Unreleased
 ### Added
 - Added the `ignored_errors` settings to ignore some curls errors instead throw an exception [#355]
+- Support for Twitch embeds [#332]
 
 ### Fixed
 - Ignored linkedData errors [#356]
@@ -49,6 +50,7 @@ Full library refactoring.
 - `providerImage` (use `favicon` or `icon` instead)
 - Support for files (pdf, jpg, video, etc).
 
+[#332]: https://github.com/oscarotero/Embed/issues/332
 [#345]: https://github.com/oscarotero/Embed/issues/345
 [#346]: https://github.com/oscarotero/Embed/issues/346
 [#355]: https://github.com/oscarotero/Embed/issues/355

@@ -62,18 +62,18 @@ return [
     'url' => 'https://www.youtube.com/watch?v=eiHXASgRTcA',
     'linkedData' => [],
     'oEmbed' => [
-        'html' => '<iframe width="459" height="344" src="https://www.youtube.com/embed/eiHXASgRTcA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        'type' => 'video',
-        'provider_url' => 'https://www.youtube.com/',
-        'thumbnail_height' => 360,
+        'author_name' => 'smshdchrb',
         'thumbnail_url' => 'https://i.ytimg.com/vi/eiHXASgRTcA/hqdefault.jpg',
-        'width' => 459,
+        'provider_url' => 'https://www.youtube.com/',
+        'type' => 'video',
         'provider_name' => 'YouTube',
+        'version' => '1.0',
         'author_url' => 'https://www.youtube.com/user/smshdchrb',
         'thumbnail_width' => 480,
-        'title' => 'Noisy kittens waiting for dinner!',
-        'version' => '1.0',
-        'author_name' => 'smshdchrb',
-        'height' => 344
+        'thumbnail_height' => 360,
+        'html' => '<iframe width="459" height="344" src="https://www.youtube.com/embed/eiHXASgRTcA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        'height' => 344,
+        'width' => 459,
+        'title' => 'Noisy kittens waiting for dinner!'
     ]
 ];

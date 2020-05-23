@@ -29,6 +29,7 @@ class ExtractorFactory
         'imageshack.com' => Adapters\ImageShack\Extractor::class,
         'imagizer.imageshack.com' => Adapters\ImageShack\Extractor::class,
         'youtube.com' => Adapters\Youtube\Extractor::class,
+        'twitch.tv' => Adapters\Twitch\Extractor::class,
     ];
     private array $customDetectors = [];
 
