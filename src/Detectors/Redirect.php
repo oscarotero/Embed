@@ -10,7 +10,7 @@ class Redirect extends Detector
     public function detect(): ?UriInterface
     {
         $document = $this->extractor->getDocument();
-        $value = $document->select('.//meta', ['http-equiv' => 'refresh'])->str();
+        $value = $document->select('.//meta', ['http-equiv' => 'refresh'])->str('content');
 
         return $value ? $this->extract($value) : null;
     }

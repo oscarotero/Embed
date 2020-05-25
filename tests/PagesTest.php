@@ -168,6 +168,7 @@ class PagesTest extends PagesTestCase
     public function testTwitter()
     {
         $this->assertEmbed('https://twitter.com/pepephone/status/436461658601713664');
+        $this->assertEmbed('https://t.co/4DK3Jc2BTt');
     }
 
     public function testTikTok()

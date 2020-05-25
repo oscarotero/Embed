@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.2.1] - 2020-05-25
+### Fixed
+- Redirect urls like `t.co`.
+
 ## [4.2.0] - 2020-05-23
 ### Added
 - Added the `ignored_errors` settings to ignore some curls errors instead throw an exception [#355]
@@ -56,6 +60,7 @@ Full library refactoring.
 [#355]: https://github.com/oscarotero/Embed/issues/355
 [#356]: https://github.com/oscarotero/Embed/issues/356
 
+[4.2.1]: https://github.com/oscarotero/Embed/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/oscarotero/Embed/compare/v4.1.1...v4.2.0
 [4.1.1]: https://github.com/oscarotero/Embed/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/oscarotero/Embed/compare/v4.0.0...v4.1.0
