@@ -62,6 +62,22 @@ class OEmbed
     private function detectEndpointFromProviders(): ?UriInterface
     {
         $url = (string) $this->extractor->getUri();
+
+        if ($endpoint = $this->detectEndpointFromUrl($url)) {
+            return $endpoint;
+        }
+
+        $initialUrl = (string) $this->extractor->getRequest()->getUri();
+
+        if ($initialUrl !== $url && ($endpoint = $this->detectEndpointFromUrl($initialUrl))) {
+            return $endpoint;
+        }
+
+        return null;
+    }
+
+    private function detectEndpointFromUrl(string $url): ?UriInterface
+    {
         $endpoint = self::searchEndpoint(self::getProviders(), $url);
 
         if (!$endpoint) {

@@ -63,7 +63,7 @@ class Embed
 
         $extractor = $this->extractorFactory->createExtractor($uri, $request, $response, $this->crawler);
 
-        if (!$redirect || !$extractor->redirect) {
+        if (!$redirect || !$this->mustRedirect($extractor)) {
             return $extractor;
         }
 
@@ -71,5 +71,14 @@ class Embed
         $response = $this->crawler->sendRequest($request);
 
         return $this->extract($request, $response, false);
+    }
+
+    private function mustRedirect(Extractor $extractor): bool
+    {
+        if (!empty($extractor->getOembed()->all())) {
+            return false;
+        }
+
+        return $extractor->redirect !== null;
     }
 }

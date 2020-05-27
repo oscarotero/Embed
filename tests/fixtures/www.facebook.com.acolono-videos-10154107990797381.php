@@ -22,7 +22,7 @@ return [
     'providerName' => 'Facebook',
     'providerUrl' => 'https://www.facebook.com/',
     'publishedTime' => null,
-    'redirect' => null,
+    'redirect' => 'https://www.facebook.com/acolono/videos/10154107990797381/?_fb_noscript=1',
     'title' => 'Acolono GmbH - Eindrücke vom gestrigen Drupal Austria...',
     'url' => 'https://www.facebook.com/acolono/videos/10154107990797381/',
     'linkedData' => [

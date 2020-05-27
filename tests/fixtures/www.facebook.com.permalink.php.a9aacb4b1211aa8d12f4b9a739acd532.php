@@ -25,7 +25,7 @@ return [
     'providerName' => 'Facebook',
     'providerUrl' => 'https://www.facebook.com/',
     'publishedTime' => null,
-    'redirect' => null,
+    'redirect' => 'https://www.facebook.com/permalink.php?story_fbid=827163017327807&id=149460691764713&_fb_noscript=1',
     'title' => 'Aquí vos deixamos unhas imaxes da nosa... - DAG, Asociación Galega de Deseño | Facebook',
     'url' => 'https://www.facebook.com/asociaciondag/posts/827163017327807',
     'linkedData' => [],
