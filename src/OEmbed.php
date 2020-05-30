@@ -43,10 +43,10 @@ class OEmbed
         $response = $crawler->sendRequest($request);
 
         if (self::isXML($request->getUri())) {
-            return self::extractXML((string) $response->getBody());
+            return $this->extractXML((string) $response->getBody());
         }
 
-        return self::extractJSON((string) $response->getBody());
+        return $this->extractJSON((string) $response->getBody());
     }
 
     private function detectEndpoint(): ?UriInterface
@@ -122,7 +122,7 @@ class OEmbed
         return false;
     }
 
-    private static function extractXML(string $xml): array
+    private function extractXML(string $xml): array
     {
         try {
             $data = [];
@@ -147,7 +147,7 @@ class OEmbed
         }
     }
 
-    private static function extractJSON(string $json): array
+    private function extractJSON(string $json): array
     {
         try {
             $data = json_decode($json, true);
