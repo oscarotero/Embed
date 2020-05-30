@@ -12,6 +12,7 @@ class OEmbed
     use HttpApiTrait;
 
     private static $providers;
+    private array $defaults = [];
 
     private static function getProviders(): array
     {
@@ -70,6 +71,7 @@ class OEmbed
         $initialUrl = (string) $this->extractor->getRequest()->getUri();
 
         if ($initialUrl !== $url && ($endpoint = $this->detectEndpointFromUrl($initialUrl))) {
+            $this->defaults['url'] = $initialUrl;
             return $endpoint;
         }
 
@@ -139,7 +141,7 @@ class OEmbed
                 $data[$name] = $value;
             }
 
-            return $data;
+            return $data ? ($data + $this->defaults) : [];
         } catch (Exception $exception) {
             return [];
         }
@@ -148,7 +150,9 @@ class OEmbed
     private static function extractJSON(string $json): array
     {
         try {
-            return json_decode($json, true) ?: [];
+            $data = json_decode($json, true);
+
+            return $data ? ($data + $this->defaults) : [];
         } catch (Exception $exception) {
             return [];
         }
