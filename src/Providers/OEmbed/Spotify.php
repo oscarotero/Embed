@@ -16,7 +16,7 @@ class Spotify extends EndPoint implements EndPointInterface
     {
         return Url::create(static::$endPoint)
                 ->withQueryParameters([
-                    'url' => (string) $this->response->getUrl()->withQueryParameters([]),
+                    'url' => (string) $this->getUrl()->withQueryParameters([]),
                     'format' => 'json'
                 ]);
     }

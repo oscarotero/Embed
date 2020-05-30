@@ -17,7 +17,7 @@ class Infogram extends EndPoint implements EndPointInterface
      */
     public function getEndPoint()
     {
-        $url = $this->response->getUrl()->withScheme('https');
+        $url = $this->getUrl()->withScheme('https');
 
         return Url::create(static::$endPoint)
                 ->withQueryParameters([

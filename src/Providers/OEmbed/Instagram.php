@@ -17,7 +17,7 @@ class Instagram extends EndPoint implements EndPointInterface
      */
     public function getEndPoint()
     {
-        $url = $this->response->getUrl()->withScheme('http');
+        $url = $this->getUrl()->withScheme('http');
 
         return Url::create(static::$endPoint)
                 ->withQueryParameters([

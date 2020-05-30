@@ -12,6 +12,7 @@ use Embed\Http\Url;
 abstract class EndPoint
 {
     protected $response;
+    protected $url;
     protected static $pattern;
     protected static $endPoint;
 
@@ -25,6 +26,10 @@ abstract class EndPoint
         if ($response->getUrl()->match(static::$pattern)) {
             return new static($response);
         }
+
+        if ($response->getStartingUrl()->match(static::$pattern)) {
+            return new static($response, $response->getStartingUrl());
+        }
     }
 
     /**
@@ -32,9 +37,10 @@ abstract class EndPoint
      *
      * @param Response $response
      */
-    protected function __construct(Response $response)
+    protected function __construct(Response $response, Url $url = null)
     {
         $this->response = $response;
+        $this->url = $url;
     }
 
     /**
@@ -44,8 +50,13 @@ abstract class EndPoint
     {
         return Url::create(static::$endPoint)
                 ->withQueryParameters([
-                    'url' => (string) $this->response->getUrl(),
+                    'url' => (string) $this->getUrl(),
                     'format' => 'json',
                 ]);
+    }
+
+    public function getUrl()
+    {
+        return $this->url ?: $this->response->getUrl();
     }
 }

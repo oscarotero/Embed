@@ -17,7 +17,7 @@ class Scribd extends EndPoint implements EndPointInterface
      */
     public function getEndPoint()
     {
-        $url = $this->response->getUrl()->withDirectoryPosition(0, 'doc');
+        $url = $this->getUrl()->withDirectoryPosition(0, 'doc');
 
         return Url::create(static::$endPoint)
                 ->withQueryParameters([

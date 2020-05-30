@@ -19,7 +19,7 @@ class Deviantart extends EndPoint implements EndPointInterface
     {
         return Url::create(static::$endPoint)
                 ->withQueryParameters([
-                    'url' => (string) $this->response->getUrl(),
+                    'url' => (string) $this->getUrl(),
                     'format' => 'json',
                     'for' => 'embed',
                 ]);

@@ -14,7 +14,7 @@ class Jsbin extends EndPoint implements EndPointInterface
      */
     public function getEndPoint()
     {
-        $url = $this->response->getUrl()->withDirectoryPosition(2, 'embed');
+        $url = $this->getUrl()->withDirectoryPosition(2, 'embed');
 
         return Url::create(static::$endPoint)
                 ->withQueryParameters([
