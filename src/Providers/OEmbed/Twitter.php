@@ -19,6 +19,7 @@ class Twitter extends OEmbedImplementation
      */
     public static function getPatterns()
     {
-      return ['https?://*.twitter.com/*'];
+      return ['https?://*.twitter.com/*', 'https?://twitter.com/*'];
     }
+
 }
