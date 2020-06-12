@@ -195,21 +195,10 @@ $detectors = [
                 ]);
                 $info = $embed->get(getUrl());
             } catch (Exception $exception) {
-                echo '<table>';
-                foreach ($dispatcher->getAllResponses() as $response) {
-                    echo '<tr>';
-                    echo '<th>'.$response->getUrl().'</th>';
-                    echo '</tr><tr><td>';
-                    printHeaders($response->getHeaders());
-                    echo '</td><tr><td><pre>';
-                    printArray($response->getInfo());
-                    echo '</td><tr><td><pre>';
-                    printText($response->getContent());
-                    echo '</pre></td></tr>';
-                }
-                echo '</table>';
-
-                throw $exception;
+                echo '<pre>';
+                echo $exception;
+                echo '</pre>';
+                die();
             }
             ?>
 
