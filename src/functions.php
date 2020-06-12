@@ -9,11 +9,6 @@ function clean(string $value, bool $allowHTML = false): ?string
 {
     $value = trim($value);
 
-    //Ignore empty texts or with no regular characters
-    if ($value === '' || !preg_match('/\w/', $value)) {
-        return null;
-    }
-
     if (!$allowHTML) {
         $value = html_entity_decode($value);
         $value = strip_tags($value);
