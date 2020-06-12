@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [4.2.3] - 2020-06-12
 ### Fixed
-- Suppport for other non-latin alphabets such Persian or Arabic.
+- Suppport for other non-latin alphabets such Persian or Arabic [#366]
 
 ## [4.2.2] - 2020-05-31
 ### Fixed
@@ -68,6 +68,7 @@ Full library refactoring.
 [#355]: https://github.com/oscarotero/Embed/issues/355
 [#356]: https://github.com/oscarotero/Embed/issues/356
 [#357]: https://github.com/oscarotero/Embed/issues/357
+[#366]: https://github.com/oscarotero/Embed/issues/366
 
 [4.2.3]: https://github.com/oscarotero/Embed/compare/v4.2.2...v4.2.3
 [4.2.2]: https://github.com/oscarotero/Embed/compare/v4.2.1...v4.2.2
