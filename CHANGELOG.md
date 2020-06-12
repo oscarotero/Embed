@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.2.3] - 2020-06-12
+### Fixed
+- Suppport for other non-latin alphabets such Persian or Arabic.
+
 ## [4.2.2] - 2020-05-31
 ### Fixed
 - Provided a fallback for oEmbed compatible sites like Instagram that redirects to login page [#357]
@@ -65,6 +69,7 @@ Full library refactoring.
 [#356]: https://github.com/oscarotero/Embed/issues/356
 [#357]: https://github.com/oscarotero/Embed/issues/357
 
+[4.2.3]: https://github.com/oscarotero/Embed/compare/v4.2.2...v4.2.3
 [4.2.2]: https://github.com/oscarotero/Embed/compare/v4.2.1...v4.2.2
 [4.2.1]: https://github.com/oscarotero/Embed/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/oscarotero/Embed/compare/v4.1.1...v4.2.0
