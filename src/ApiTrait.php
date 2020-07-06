@@ -5,6 +5,7 @@ namespace Embed;
 
 use Datetime;
 use Psr\Http\Message\UriInterface;
+use Throwable;
 
 trait ApiTrait
 {
@@ -83,7 +84,11 @@ trait ApiTrait
     {
         $url = $this->str(...$keys);
 
-        return $url ? $this->extractor->resolveUri($url) : null;
+        try {
+            return $url ? $this->extractor->resolveUri($url) : null;
+        } catch (Throwable $error) {
+            return null;
+        }
     }
 
     public function time(string ...$keys): ?Datetime

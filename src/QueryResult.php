@@ -7,6 +7,7 @@ use Closure;
 use DOMElement;
 use DOMNodeList;
 use Psr\Http\Message\UriInterface;
+use Throwable;
 
 class QueryResult
 {
@@ -86,7 +87,11 @@ class QueryResult
             return null;
         }
 
-        return $this->extractor->resolveUri($value);
+        try {
+            return $this->extractor->resolveUri($value);
+        } catch (Throwable $error) {
+            return null;
+        }
     }
 
     private static function getAttribute(DOMElement $node, string $name): ?string

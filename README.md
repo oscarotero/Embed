@@ -9,19 +9,19 @@
 [![Software License][ico-license]](LICENSE)
 [![SensioLabs Insight][ico-sensiolabs]][link-sensiolabs]
 
-> Note: If you're using version 3, use [`v3.x` branch](https://github.com/oscarotero/Embed/tree/v3.x)
-
 PHP library to get information from any web page (using oembed, opengraph, twitter-cards, scrapping the html, etc). It's compatible with any web service (youtube, vimeo, flickr, instagram, etc) and has adapters to some sites like (archive.org, github, facebook, etc).
 
 Requirements:
 
 * PHP 7.4+
 * Curl library installed
-* PSR-7 implementation. By default [these popular libraries](https://github.com/middlewares/awesome-psr15-middlewares#psr-7-implementations) are detected automatically
+* PSR-17 implementation. By default these libraries are detected automatically:
+  * [laminas/laminas-diactoros](https://github.com/laminas/laminas-diactoros)
+  * [guzzle/psr7](https://github.com/guzzle/psr7) (Only the unreleased version 2.x, installed as `dev-master`)
+  * [nyholm/psr7](https://github.com/Nyholm/psr7)
+  * [sunrise/http-message](https://github.com/sunrise-php/http-message)
 
-> * If you need PHP 5.3 support, use the 1.x version
-> * If you need PHP 5.4 support, use the 2.x version
-> * If you need PHP 5.5-7.3 support, [use the 3.x version](https://github.com/oscarotero/Embed/tree/v3.x)
+> If you need PHP 5.5-7.3 support, [use the 3.x version](https://github.com/oscarotero/Embed/tree/v3.x)
 
 ## Online demo
 
