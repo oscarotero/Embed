@@ -41,5 +41,7 @@ class Code extends Detector
                 //https://help.github.com/articles/3d-file-viewer/#embedding-your-model-elsewhere
                 return new EmbedCode(html('script', ['src' => "https://embed.githubusercontent.com/view/3d/{$username}/{$repo}/{$ref}/{$file}"]));
         }
+
+        return null;
     }
 }

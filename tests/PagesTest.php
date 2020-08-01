@@ -136,6 +136,7 @@ class PagesTest extends PagesTestCase
         $this->assertEmbed('https://gist.github.com/oscarotero/7749998');
         $this->assertEmbed('https://github.com/benbalter/dc-wifi-social/blob/master/bars.geojson');
         $this->assertEmbed('https://github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl');
+        $this->assertEmbed('https://github.com/oscarotero/Embed/blob/master/composer.json');
     }
 
     public function testGoogle()
