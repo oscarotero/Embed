@@ -77,7 +77,7 @@ trait ApiTrait
             $value = array_shift($value);
         }
 
-        return $value ? (int) $value : null;
+        return is_numeric($value) ? (int) $value : null;
     }
 
     public function url(string ...$keys): ?UriInterface
