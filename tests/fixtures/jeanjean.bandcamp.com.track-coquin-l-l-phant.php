@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<iframe src="https://bandcamp.com/EmbeddedPlayer/v=2/track=2592086951/size=large/tracklist=false/artwork=small/" frameborder="0" width="350" height="467" allowTransparency="true"></iframe>',
         'width' => 350,
-        'height' => 467
+        'height' => 467,
+        'ratio' => 133.429
     ],
     'description' => 'from the album Symmetry',
     'favicon' => 'https://f4.bcbits.com/img/a3289609405_3.jpg',

@@ -34,6 +34,7 @@ class EmbedCode implements JsonSerializable
             'html' => $this->html,
             'width' => $this->width,
             'height' => $this->height,
+            'ratio' => $this->ratio,
         ];
     }
 }

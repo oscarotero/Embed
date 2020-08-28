@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<iframe src="https://archive.org/embed/dn2015-0220_vid" width="640" height="480" style="border:none" frameborder="0" allowTransparency="true"></iframe>',
         'width' => 640,
-        'height' => 480
+        'height' => 480,
+        'ratio' => 75.0
     ],
     'description' => 'Democracy Now! television program for Friday, February 20, 2015 Headlines for February 20, 2015 An Unsolved Case of Racial Terror: FBI Probes 1946...',
     'favicon' => 'https://archive.org/images/glogo.jpg',
@@ -798,11 +799,11 @@ return [
             ]
         ],
         'misc' => [
-            'image' => 'https://ia802600.us.archive.org/20/items/dn2015-0220_vid/dn2015-0220.gif',
+            'image' => 'https://ia902600.us.archive.org/20/items/dn2015-0220_vid/dn2015-0220.gif',
             'collection-title' => 'Democracy Now!'
         ],
         'item' => [
-            'downloads' => 123,
+            'downloads' => 126,
             'month' => 1
         ]
     ]

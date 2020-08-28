@@ -37,8 +37,8 @@ return [
         'community' => [
             'statistics' => [
                 '_attributes' => [
-                    'views' => 2843,
-                    'favorites' => 6,
+                    'views' => 2944,
+                    'favorites' => 8,
                     'comments' => 5,
                     'downloads' => 62
                 ]

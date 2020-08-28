@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<iframe src="https://player.twitch.tv/?autoplay=false&amp;video=v72749628" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>',
         'width' => 620,
-        'height' => 378
+        'height' => 378,
+        'ratio' => 60.968
     ],
     'description' => 'Twitch is the world\'s leading video platform and community for gamers.',
     'favicon' => 'https://static.twitchcdn.net/assets/favicon-32-d6025c14e900565d6177.png',
@@ -26,5 +27,9 @@ return [
     'title' => 'Twitch',
     'url' => 'https://www.twitch.tv/videos/72749628',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [
+        'error' => 'Gone',
+        'status' => 410,
+        'message' => 'Endpoint deprecated'
+    ]
 ];

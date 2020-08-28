@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<iframe src="http://slides.com/alexwalker/responsive-svg/embed" width="576" height="420" style="border:none" frameborder="0" allowTransparency="true"></iframe>',
         'width' => 576,
-        'height' => 420
+        'height' => 420,
+        'ratio' => 72.917
     ],
     'description' => 'A presentation created with Slides.',
     'favicon' => 'http://slides.com/favicon.ico',
