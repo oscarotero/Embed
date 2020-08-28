@@ -7,7 +7,7 @@ return [
     'cms' => null,
     'code' => [
         'html' => '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F150745932&show_artwork=true"></iframe>',
-        'width' => 100,
+        'width' => null,
         'height' => 400
     ],
     'description' => 'MUSIC VIDEO : https://www.youtube.com/watch?v=VJm7IPrBmLY Zeds Dead www.facebook.com/zedsdead www.twitter.com/whoszed www.instagram.com/zedsdeadofficial Twin Shadow www.facebook.com/twnshdw www.twitter.com/twinshadow www.instagram.com/thetwinshadow',

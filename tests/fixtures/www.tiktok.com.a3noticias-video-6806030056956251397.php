@@ -7,8 +7,8 @@ return [
     'cms' => null,
     'code' => [
         'html' => '<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@a3noticias/video/6806030056956251397" data-video-id="6806030056956251397" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@a3noticias" href="https://www.tiktok.com/@a3noticias">@a3noticias</a> <p>Nuestro <a title="aplausosanitario" target="_blank" href="https://www.tiktok.com/tag/aplausosanitario">#AplausoSanitario</a> más sincero. Para todos. Y recuerda, <a title="quédateencasa" target="_blank" href="https://www.tiktok.com/tag/quédateencasa">#QuédateEnCasa</a></p> <a target="_blank" title="♬ Resistiré - Duo Dinamico" href="https://www.tiktok.com/music/Resistiré-250824169968246784">♬ Resistiré - Duo Dinamico</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>',
-        'width' => 100,
-        'height' => 100
+        'width' => null,
+        'height' => null
     ],
     'description' => 'Nuestro #AplausoSanitario más sincero. Para todos. Y recuerda, #QuédateEnCasa',
     'favicon' => 'https://s16.tiktokcdn.com/musical/resource/wap/static/image/logo_144c91a.png?v=2',
