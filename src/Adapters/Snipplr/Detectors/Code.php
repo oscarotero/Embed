@@ -20,7 +20,7 @@ class Code extends Detector
     {
         $uri = $this->extractor->getUri();
 
-        if (!match('/view/*', $uri->getPath())) {
+        if (!matchPattern('/view/*', $uri->getPath())) {
             return null;
         }
 

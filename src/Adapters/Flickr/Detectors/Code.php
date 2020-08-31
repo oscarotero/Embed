@@ -21,7 +21,7 @@ class Code extends Detector
     {
         $uri = $this->extractor->getUri();
 
-        if (!match('/photos/*', $uri->getPath())) {
+        if (!matchPattern('/photos/*', $uri->getPath())) {
             return null;
         }
 

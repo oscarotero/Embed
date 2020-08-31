@@ -15,10 +15,10 @@ class Api
     {
         $uri = $this->extractor->getUri();
 
-        if (!match('/i/*', $uri->getPath())) {
+        if (!matchPattern('/i/*', $uri->getPath())) {
             $uri = $this->extractor->getRequest()->getUri();
 
-            if (!match('/i/*', $uri->getPath())) {
+            if (!matchPattern('/i/*', $uri->getPath())) {
                 return [];
             }
         }

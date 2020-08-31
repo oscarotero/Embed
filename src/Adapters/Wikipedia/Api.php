@@ -15,7 +15,7 @@ class Api
     {
         $uri = $this->extractor->getUri();
 
-        if (!match('/wiki/*', $uri->getPath())) {
+        if (!matchPattern('/wiki/*', $uri->getPath())) {
             return [];
         }
 

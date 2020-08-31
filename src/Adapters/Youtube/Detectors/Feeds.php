@@ -23,7 +23,7 @@ class Feeds extends Detector
     {
         $uri = $this->extractor->getUri();
 
-        if (!match('/channel/*', $uri->getPath())) {
+        if (!matchPattern('/channel/*', $uri->getPath())) {
             return [];
         }
 

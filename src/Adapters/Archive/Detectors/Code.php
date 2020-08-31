@@ -15,7 +15,7 @@ class Code extends Detector
         $uri = $this->extractor->getUri();
         $path = $uri->getPath();
 
-        if (!match('/details/*', $path)) {
+        if (!matchPattern('/details/*', $path)) {
             return null;
         }
 

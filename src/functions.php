@@ -116,7 +116,7 @@ function cleanPath(string $path): string
     return $path;
 }
 
-function match(string $pattern, string $subject): bool
+function matchPattern(string $pattern, string $subject): bool
 {
     $pattern = str_replace('\\*', '.*', preg_quote($pattern, '|'));
 

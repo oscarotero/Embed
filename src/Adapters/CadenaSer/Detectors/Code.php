@@ -21,7 +21,7 @@ class Code extends Detector
     {
         $uri = $this->extractor->getUri();
 
-        if (!match('/audio/*', $uri->getPath())) {
+        if (!matchPattern('/audio/*', $uri->getPath())) {
             return null;
         }
 
