@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<iframe src="https://play.cadenaser.com/widget/audio/001RD010000004275766/" frameborder="0" width="100%" height="360" allowTransparency="true"></iframe>',
         'width' => null,
-        'height' => 360
+        'height' => 360,
+        'ratio' => null
     ],
     'description' => 'Ana Pontón, candidata del BNG; Xoaquín Fernández Leiceaga, candidato del PSdG-PSOE; Luis Villares, candidato de En Marea, y Pedro Puy, candidato del PP por A Coruña y coordinador del programa electoral de Alberto Núñez Feijoo debaten en Hoy por Hoy',
     'favicon' => 'https://play.cadenaser.com/bundles/playserweb/img/favicon.ico?v3.3',

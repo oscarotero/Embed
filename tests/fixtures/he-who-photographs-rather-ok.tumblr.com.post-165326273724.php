@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/3sZLmGKnNg-4n8G7mNtxOA/165326273724" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709" ><a href="https://he-who-photographs-rather-ok.tumblr.com/post/165326273724">https://he-who-photographs-rather-ok.tumblr.com/post/165326273724</a></div><script async src="https://assets.tumblr.com/post.js"></script>',
         'width' => 540,
-        'height' => null
+        'height' => null,
+        'ratio' => null
     ],
     'description' => 'Usually minimal editing. Also effort',
     'favicon' => 'https://66.media.tumblr.com/avatar_235be11f6ae4_128.pnj',

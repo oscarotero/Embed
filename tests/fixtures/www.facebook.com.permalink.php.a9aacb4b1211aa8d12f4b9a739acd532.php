@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<div id="fb-root"></div> <script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&amp;version=v7.0"></script><div class="fb-post" data-href="https://www.facebook.com/asociaciondag/posts/827163017327807" data-width="552"><blockquote cite="https://www.facebook.com/asociaciondag/posts/827163017327807" class="fb-xfbml-parse-ignore"><p>Aquí vos deixamos unhas imaxes da nosa visita do pasado sábado á Guarda. Moi agradecidos á Asociación Naturalista do Baixo Miño www.anabam.org e a Malde Arqueoloxía</p>Publicada por <a href="https://www.facebook.com/asociaciondag/">DAG, Asociación Galega de Deseño</a> en&nbsp;<a href="https://www.facebook.com/asociaciondag/posts/827163017327807">Martes, 21 de octubre de 2014</a></blockquote></div>',
         'width' => 552,
-        'height' => null
+        'height' => null,
+        'ratio' => null
     ],
     'description' => 'Aquí vos deixamos unhas imaxes da nosa visita do pasado sábado á Guarda. Moi agradecidos á Asociación Naturalista do Baixo Miño www.anabam.org e a Malde Arqueoloxía',
     'favicon' => 'https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico',

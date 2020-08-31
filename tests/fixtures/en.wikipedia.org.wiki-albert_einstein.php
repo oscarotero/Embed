@@ -6,9 +6,11 @@ return [
     'authorUrl' => null,
     'cms' => 'mediawiki',
     'code' => null,
-    'description' => 'Albert Einstein ( EYEN-styne; German: [ˈalbɛʁt ˈʔaɪnʃtaɪn] (listen); 14 March 1879 – 18 April 1955) was a German-born theoretical physicist who developed the theory of relativity, one of the two pillars of modern physics (alongside quantum mechanics). His work is also known for its influence on the philosophy of science. He is best known to the general public for his mass–energy equivalence formula E = mc2, which has been dubbed "the world\'s most famous equation". He received the 1921 Nobel Prize in Physics "for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect", a pivotal step in the development of quantum...',
+    'description' => 'Albert Einstein ( EYEN-styne; German: [ˈalbɛʁt ˈʔaɪnʃtaɪn] (listen); 14 March 1879 – 18 April 1955) was a German-born theoretical physicist who developed the theory of relativity, one of the two pillars of modern physics (alongside quantum mechanics). His work is also known for its influence on the philosophy of science. He is best known to the general public for his mass–energy equivalence formula E = m c ...',
     'favicon' => 'https://en.wikipedia.org/static/favicon/wikipedia.ico',
-    'feeds' => [],
+    'feeds' => [
+        'https://en.wikipedia.org/w/index.php?title=Special:RecentChanges&feed=atom'
+    ],
     'icon' => 'https://en.wikipedia.org/static/apple-touch/wikipedia.png',
     'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg/1200px-Einstein_1921_by_F_Schmutzer_-_restoration.jpg',
     'keywords' => [],
@@ -41,9 +43,9 @@ return [
             ]
         ],
         'datePublished' => '2001-11-05T18:26:16Z',
-        'dateModified' => '2020-08-26T00:39:53Z',
+        'dateModified' => '2020-05-17T12:50:11Z',
         'image' => 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg',
-        'headline' => 'German-born theoretical physicist; developer of the theory of relativity (1879-1955)'
+        'headline' => 'German-born physicist; developer of the theory of relativity'
     ],
     'oEmbed' => [],
     'api' => [
@@ -57,6 +59,15 @@ return [
 <p class="mw-empty-elt">
 </p>
 
-<p><b>Albert Einstein</b> (<span></span> <i title="English pronunciation respelling"><span>EYEN</span>-styne</i>; <small>German: </small><span title="Representation in the International Phonetic Alphabet (IPA)">[ˈalbɛʁt ˈʔaɪnʃtaɪn]</span> <span>(<span><span><span></span>listen</span></span>)</span>; 14 March 1879&#160;– 18 April 1955) was a German-born theoretical physicist who developed the theory of relativity, one of the two pillars of modern physics (alongside quantum mechanics). His work is also known for its influence on the philosophy of science. He is best known to the general public for his mass–energy equivalence formula <span><i>E</i> = <i>mc</i><sup>2</sup></span>, which has been dubbed "the world\'s most famous equation". He received the 1921 Nobel Prize in Physics "for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect", a pivotal step in the development of quantum</p>...'
+<p><b>Albert Einstein</b> (<span></span> <i title="English pronunciation respelling"><span>EYEN</span>-styne</i>; <small>German: </small><span title="Representation in the International Phonetic Alphabet (IPA)">[ˈalbɛʁt ˈʔaɪnʃtaɪn]</span> <span>(<span><span><span></span>listen</span></span>)</span>; 14 March 1879&#160;– 18 April 1955) was a German-born theoretical physicist who developed the theory of relativity, one of the two pillars of modern physics (alongside quantum mechanics). His work is also known for its influence on the philosophy of science. He is best known to the general public for his mass–energy equivalence formula <span><span><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\\displaystyle E=mc^{2}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>E</mi>
+        <mo>=</mo>
+        <mi>m</mi>
+        <msup>
+          <mi>c</mi>
+          </msup></mstyle></mrow></semantics></math></span></span></p>...'
     ]
 ];

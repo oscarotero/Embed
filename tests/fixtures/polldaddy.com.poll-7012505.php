@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/7012505.js"></script><noscript><iframe src="https://poll.fm/7012505/embed" frameborder="0" class="cs-iframe-embed"></iframe></noscript>',
         'width' => null,
-        'height' => null
+        'height' => null,
+        'ratio' => null
     ],
     'description' => 'Poll Answers: Option #1, Option #2,',
     'favicon' => 'https://app.crowdsignal.com/images/favicon.png',

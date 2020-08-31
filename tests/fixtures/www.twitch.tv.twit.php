@@ -27,9 +27,5 @@ return [
     'title' => 'Twitch',
     'url' => 'https://www.twitch.tv/twit',
     'linkedData' => [],
-    'oEmbed' => [
-        'error' => 'Gone',
-        'status' => 410,
-        'message' => 'Endpoint deprecated'
-    ]
+    'oEmbed' => []
 ];

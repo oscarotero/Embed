@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<iframe width="480" height="302" src="http://www.ustream.tv/embed/11958409" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe><br /><a href="http://www.ustream.tv/" title="Streaming media platform by Ustream" style="padding: 2px 0px 4px; width: 400px; background: #ffffff; display: block; color: #000000; font-weight: normal; font-size: 10px; text-decoration: underline; text-align: left;" target="_blank">Streaming Media Platform</a>',
         'width' => 400,
-        'height' => 320
+        'height' => 320,
+        'ratio' => 80.0
     ],
     'description' => 'Red Shoes Billiards 12009 S. Pulaski Road Alsip, Illinois 60803 708 388-3700 http://www.redshoesbilliards.com pool, billiards, 8 ball, 9 ball, 10 ball, straight pool, 14.1, banks, one pocket, APA, leagues, tournaments, 9 foot tables, bar tables, bar box, ACS,',
     'favicon' => 'http://static-cdn2.ustream.tv/favicon.ico',

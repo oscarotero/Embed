@@ -27,9 +27,5 @@ return [
     'title' => 'Twitch',
     'url' => 'https://www.twitch.tv/videos/106400740',
     'linkedData' => [],
-    'oEmbed' => [
-        'error' => 'Gone',
-        'status' => 410,
-        'message' => 'Endpoint deprecated'
-    ]
+    'oEmbed' => []
 ];

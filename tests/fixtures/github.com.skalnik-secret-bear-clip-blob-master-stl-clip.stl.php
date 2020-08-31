@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<script src="https://embed.githubusercontent.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl"></script>',
         'width' => null,
-        'height' => null
+        'height' => null,
+        'ratio' => null
     ],
     'description' => 'A clip to hold the Gooseneck Hue HD cameras to the Replicator 2 - skalnik/secret-bear-clip',
     'favicon' => 'https://github.githubassets.com/favicons/favicon.svg',

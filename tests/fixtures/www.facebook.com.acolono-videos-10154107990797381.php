@@ -8,14 +8,17 @@ return [
     'code' => [
         'html' => '<div id="fb-root"></div> <script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&amp;version=v7.0"></script><div class="fb-video" data-href="https://www.facebook.com/acolono/videos/10154107990797381/"><blockquote cite="https://www.facebook.com/acolono/videos/10154107990797381/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/acolono/videos/10154107990797381/"></a><p>Eindrücke vom gestrigen Drupal Austria Meetup bei uns im Büro :) Wir haben die beste Community!</p>Publicada por <a href="https://www.facebook.com/acolono/">Acolono GmbH</a> en Jueves, 12 de mayo de 2016</blockquote></div>',
         'width' => 500,
-        'height' => 901
+        'height' => 901,
+        'ratio' => 180.2
     ],
     'description' => 'Eindrücke vom gestrigen Drupal Austria Meetup bei uns im Büro :) Wir haben die beste Community!',
     'favicon' => 'https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico',
     'feeds' => [],
     'icon' => null,
     'image' => 'https://scontent.fmad7-1.fna.fbcdn.net/v/t15.5256-10/p200x200/12672727_10154107996122381_1769309167_n.jpg?_nc_cat=110&_nc_sid=ad6a45&_nc_ohc=CVJuF9EjLuUAX8MFHKB&_nc_ht=scontent.fmad7-1.fna&_nc_tp=6&oh=db9d509d4dae0c50e529b8e914e987b6&oe=5EE9E8EE',
-    'keywords' => [],
+    'keywords' => [
+        'acolono gmbh'
+    ],
     'language' => 'es',
     'languages' => [],
     'license' => null,

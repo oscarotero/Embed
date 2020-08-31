@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<script type="text/javascript" src="https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314?_embed=true&amp;_format=js"></script>',
         'width' => null,
-        'height' => null
+        'height' => null,
+        'ratio' => null
     ],
     'description' => 'To veterans of the Bush White House, what Obama is going through is all too predictable.',
     'favicon' => 'https://static.politico.com/cf/05/ee684a274496b04fa20ba2978da1/politico.png',

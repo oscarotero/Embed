@@ -2,8 +2,8 @@
 declare(strict_types = 1);
 
 return [
-    'authorName' => null,
-    'authorUrl' => null,
+    'authorName' => '@somosABANCA',
+    'authorUrl' => 'https://twitter.com/somosABANCA',
     'cms' => null,
     'code' => null,
     'description' => 'ABANCA, a banca para particulares e negocios. Conta online, conta nómina, conta joven, hipotecas, depósitos, fondos, seguros e moito máis. Banco ABANCA.',
@@ -23,8 +23,8 @@ return [
     ],
     'language' => 'gl',
     'languages' => [
-        'gl' => 'https://www.abanca.com/gl/',
-        'es' => 'https://www.abanca.com/es/'
+        'es' => 'https://www.abanca.com/es/',
+        'gl' => 'https://www.abanca.com/gl/'
     ],
     'license' => null,
     'providerName' => 'Abanca',
@@ -36,14 +36,19 @@ return [
     'linkedData' => [
         '@context' => 'http://schema.org',
         '@type' => 'Organization',
-        'name' => '',
-        'url' => '//www.abanca.com',
-        'logo' => '//www.abanca.com/img/logo-social.jpg',
-        'sameAs' => [],
+        'name' => 'ABANCA',
+        'url' => 'https://www.abanca.com/',
+        'logo' => 'https://www.abanca.com/img/logo-social.jpg',
+        'sameAs' => [
+            'https://www.facebook.com/SomosABANCA',
+            'https://twitter.com/somosABANCA',
+            'https://www.youtube.com/user/somosABANCAtv',
+            'https://www.flickr.com/photos/125188945@N05/'
+        ],
         'contactPoint' => [
             [
                 '@type' => 'ContactPoint',
-                'telephone' => '-',
+                'telephone' => '+34-981 910 522',
                 'contactType' => 'customer service'
             ]
         ]

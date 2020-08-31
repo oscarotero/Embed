@@ -799,11 +799,11 @@ return [
             ]
         ],
         'misc' => [
-            'image' => 'https://ia902600.us.archive.org/20/items/dn2015-0220_vid/dn2015-0220.gif',
+            'image' => 'https://ia802600.us.archive.org/20/items/dn2015-0220_vid/dn2015-0220.gif',
             'collection-title' => 'Democracy Now!'
         ],
         'item' => [
-            'downloads' => 126,
+            'downloads' => 123,
             'month' => 1
         ]
     ]

@@ -34,7 +34,7 @@ return [
         'description' => '',
         'tags' => [],
         'likes' => 0,
-        'liked' => false,
+        'liked' => true,
         'views' => 0,
         'moderated' => false,
         'adult_content' => false,

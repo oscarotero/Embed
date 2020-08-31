@@ -11,7 +11,7 @@ return [
         'height' => 380,
         'ratio' => 126.667
     ],
-    'description' => 'Various Artists · Compilation · 1996 · 44 songs.',
+    'description' => 'A Cantar con Xabarin (Vol. I & II), an album by Various Artists on Spotify',
     'favicon' => 'https://open.scdn.co/cdn/images/favicon32.a19b4f5b.png',
     'feeds' => [],
     'icon' => null,
@@ -21,8 +21,8 @@ return [
     'languages' => [],
     'license' => null,
     'providerName' => 'Spotify',
-    'providerUrl' => 'https://spotify.com/',
-    'publishedTime' => '1996-03-05 00:00:00',
+    'providerUrl' => 'https://www.spotify.com/',
+    'publishedTime' => null,
     'redirect' => null,
     'title' => 'A Cantar con Xabarin (Vol. I & II)',
     'url' => 'https://open.spotify.com/album/7s66wU1XJ2NsUuWM2NKiUV',
@@ -32,14 +32,14 @@ return [
         '@id' => 'https://open.spotify.com/album/7s66wU1XJ2NsUuWM2NKiUV',
         'url' => 'https://open.spotify.com/album/7s66wU1XJ2NsUuWM2NKiUV',
         'name' => 'A Cantar con Xabarin (Vol. I & II)',
-        'description' => 'Listen to A Cantar con Xabarin (Vol. I & II) on Spotify. Various Artists · Compilation · 1996 · 44 songs.',
+        'description' => '',
         'datePublished' => '1996-03-05',
         'potentialAction' => [
             '@type' => 'ListenAction',
             'target' => [
                 [
                     '@type' => 'EntryPoint',
-                    'urlTemplate' => 'https://open.spotify.com/album/7s66wU1XJ2NsUuWM2NKiUV?autoplay=true',
+                    'urlTemplate' => 'https://open.spotify.com/album/7s66wU1XJ2NsUuWM2NKiUV',
                     'actionPlatform' => [
                         'http://schema.org/DesktopWebPlatform',
                         'http://schema.org/IOSPlatform',
@@ -63,10 +63,6 @@ return [
                     ],
                     [
                         '@type' => 'Country',
-                        'name' => 'AL'
-                    ],
-                    [
-                        '@type' => 'Country',
                         'name' => 'AR'
                     ],
                     [
@@ -76,10 +72,6 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'AU'
-                    ],
-                    [
-                        '@type' => 'Country',
-                        'name' => 'BA'
                     ],
                     [
                         '@type' => 'Country',
@@ -100,10 +92,6 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'BR'
-                    ],
-                    [
-                        '@type' => 'Country',
-                        'name' => 'BY'
                     ],
                     [
                         '@type' => 'Country',
@@ -195,10 +183,6 @@ return [
                     ],
                     [
                         '@type' => 'Country',
-                        'name' => 'HR'
-                    ],
-                    [
-                        '@type' => 'Country',
                         'name' => 'HU'
                     ],
                     [
@@ -239,10 +223,6 @@ return [
                     ],
                     [
                         '@type' => 'Country',
-                        'name' => 'KZ'
-                    ],
-                    [
-                        '@type' => 'Country',
                         'name' => 'LB'
                     ],
                     [
@@ -268,18 +248,6 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'MC'
-                    ],
-                    [
-                        '@type' => 'Country',
-                        'name' => 'MD'
-                    ],
-                    [
-                        '@type' => 'Country',
-                        'name' => 'ME'
-                    ],
-                    [
-                        '@type' => 'Country',
-                        'name' => 'MK'
                     ],
                     [
                         '@type' => 'Country',
@@ -351,14 +319,6 @@ return [
                     ],
                     [
                         '@type' => 'Country',
-                        'name' => 'RS'
-                    ],
-                    [
-                        '@type' => 'Country',
-                        'name' => 'RU'
-                    ],
-                    [
-                        '@type' => 'Country',
                         'name' => 'SA'
                     ],
                     [
@@ -368,10 +328,6 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'SG'
-                    ],
-                    [
-                        '@type' => 'Country',
-                        'name' => 'SI'
                     ],
                     [
                         '@type' => 'Country',
@@ -399,10 +355,6 @@ return [
                     ],
                     [
                         '@type' => 'Country',
-                        'name' => 'UA'
-                    ],
-                    [
-                        '@type' => 'Country',
                         'name' => 'US'
                     ],
                     [
@@ -412,10 +364,6 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'VN'
-                    ],
-                    [
-                        '@type' => 'Country',
-                        'name' => 'XK'
                     ],
                     [
                         '@type' => 'Country',
@@ -431,7 +379,7 @@ return [
         'height' => 380,
         'version' => '1.0',
         'provider_name' => 'Spotify',
-        'provider_url' => 'https://spotify.com',
+        'provider_url' => 'https://www.spotify.com',
         'type' => 'rich',
         'title' => 'A Cantar con Xabarin (Vol. I & II)',
         'thumbnail_url' => 'https://i.scdn.co/image/ab67616d00001e02022aca057f08a1d40c1f0733',

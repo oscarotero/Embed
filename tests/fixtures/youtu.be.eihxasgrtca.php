@@ -12,11 +12,17 @@ return [
         'ratio' => 74.946
     ],
     'description' => '7 week old fostered kittens waiting on their dinner being prepared. They had been ill with cat flu and were just starting to get their appetite back. Because...',
-    'favicon' => 'https://www.youtube.com/s/desktop/24be5db0/img/favicon.ico',
+    'favicon' => 'https://www.youtube.com/s/desktop/3d592bbd/htdocs-ytimg-desktop-kevlar-production/img/favicon.ico',
     'feeds' => [],
-    'icon' => 'https://www.youtube.com/s/desktop/24be5db0/img/favicon_144.png',
+    'icon' => 'https://www.youtube.com/s/desktop/3d592bbd/htdocs-ytimg-desktop-kevlar-production/img/favicon_144.png',
     'image' => 'https://i.ytimg.com/vi/eiHXASgRTcA/hqdefault.jpg',
     'keywords' => [
+        'vídeo',
+        'compartir',
+        'teléfono con cámara',
+        'teléfono con vídeo',
+        'gratuito',
+        'subida',
         'kittens',
         'cats',
         'hungry',
@@ -51,37 +57,24 @@ return [
     'license' => null,
     'providerName' => 'YouTube',
     'providerUrl' => 'https://www.youtube.com/',
-    'publishedTime' => '2008-10-04 00:00:00',
+    'publishedTime' => null,
     'redirect' => null,
     'title' => 'Noisy kittens waiting for dinner!',
     'url' => 'https://www.youtube.com/watch?v=eiHXASgRTcA&feature=youtu.be',
-    'linkedData' => [
-        '@context' => 'http://schema.org',
-        '@type' => 'BreadcrumbList',
-        'itemListElement' => [
-            [
-                '@type' => 'ListItem',
-                'position' => 1,
-                'item' => [
-                    '@id' => 'http://www.youtube.com/user/smshdchrb',
-                    'name' => 'smshdchrb'
-                ]
-            ]
-        ]
-    ],
+    'linkedData' => [],
     'oEmbed' => [
-        'provider_name' => 'YouTube',
-        'thumbnail_height' => 360,
-        'type' => 'video',
-        'version' => '1.0',
-        'width' => 459,
-        'author_url' => 'https://www.youtube.com/user/smshdchrb',
         'author_name' => 'smshdchrb',
-        'height' => 344,
         'thumbnail_url' => 'https://i.ytimg.com/vi/eiHXASgRTcA/hqdefault.jpg',
-        'thumbnail_width' => 480,
         'provider_url' => 'https://www.youtube.com/',
-        'title' => 'Noisy kittens waiting for dinner!',
-        'html' => '<iframe width="459" height="344" src="https://www.youtube.com/embed/eiHXASgRTcA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        'type' => 'video',
+        'provider_name' => 'YouTube',
+        'version' => '1.0',
+        'author_url' => 'https://www.youtube.com/user/smshdchrb',
+        'thumbnail_width' => 480,
+        'thumbnail_height' => 360,
+        'html' => '<iframe width="459" height="344" src="https://www.youtube.com/embed/eiHXASgRTcA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        'height' => 344,
+        'width' => 459,
+        'title' => 'Noisy kittens waiting for dinner!'
     ]
 ];

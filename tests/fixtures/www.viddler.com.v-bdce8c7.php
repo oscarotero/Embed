@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<iframe src="https://www.viddler.com/embed/bdce8c7" frameborder="0" width="1280" height="720" allowTransparency="true"></iframe>',
         'width' => 1280,
-        'height' => 720
+        'height' => 720,
+        'ratio' => 56.25
     ],
     'description' => 'Viddler is a powerful and easy-to-use video platform that services both small and large companies. We give you the tools to connect with your audience in a unique way and we also help you leverage your videos so that you can make money.',
     'favicon' => 'https://static1.cdn-ec.viddler.com/rails/assets/layout/favicon-a9c9c887d52b5d9a765dd3468a2285b8.png',
