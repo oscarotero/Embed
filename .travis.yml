@@ -1,11 +1,15 @@
 language: php
 sudo: false
 
-php:
-  - 7.4
+matrix:
+  include:
+    - php: 7.4
+    - php: nightly
+      env:
+       - COMPOSER_ARG="--ignore-platform-reqs"
 
 before_install:
-  - composer install
+  - composer install $COMPOSER_ARG
 
 script:
   - composer test
