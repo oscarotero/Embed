@@ -184,4 +184,9 @@ class PagesTest extends PagesTestCase
         $this->assertEmbed('https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST');
         $this->assertEmbed('https://www.youtube.com/channel/UCuZeHD5SGecQomz2pVDHGzg');
     }
+
+    public function testBBCNews()
+    {
+        $this->assertEmbed('https://www.bbc.co.uk/news/uk-54222286');
+    }
 }
