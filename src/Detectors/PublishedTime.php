@@ -24,6 +24,7 @@ class PublishedTime extends Detector
                 'newsrepublic:publish_date'
             )
             ?: $ld->time('pagePublished')
+            ?: $ld->time('datePublished')
             ?: $this->detectFromPath()
             ?: $metas->time(
                 'pagerender',
