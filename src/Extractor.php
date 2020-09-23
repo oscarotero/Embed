@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace Embed;
 
+use DateTime;
 use DomainException;
 use Embed\Detectors\AuthorName;
 use Embed\Detectors\AuthorUrl;
@@ -32,6 +33,26 @@ use Psr\Http\Message\UriInterface;
 
 /**
  * Class to extract the info
+ *
+ * @property-read string|null          $authorName
+ * @property-read UriInterface|null    $authorUrl
+ * @property-read string|null          $cms
+ * @property-read EmbedCode|null       $code
+ * @property-read string|null          $description
+ * @property-read UriInterface         $favicon
+ * @property-read array|UriInterface[] $feeds
+ * @property-read UriInterface|null    $icon
+ * @property-read UriInterface|null    $image
+ * @property-read array|string[]       $keywords
+ * @property-read string|null          $language
+ * @property-read array|UriInterface[] $languages
+ * @property-read string|null          $license
+ * @property-read string               $providerName
+ * @property-read UriInterface         $providerUrl
+ * @property-read DateTime|null        $publishedTime
+ * @property-read UriInterface|null    $redirect
+ * @property-read string|null          $title
+ * @property-read UriInterface         $url
  */
 class Extractor
 {

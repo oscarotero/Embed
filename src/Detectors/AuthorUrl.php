@@ -15,7 +15,7 @@ class AuthorUrl extends Detector
             ?: $this->detectFromTwitter();
     }
 
-    private function detectFromTwitter(): ?UriINterface
+    private function detectFromTwitter(): ?UriInterface
     {
         $metas = $this->extractor->getMetas();
         $crawler = $this->extractor->getCrawler();
