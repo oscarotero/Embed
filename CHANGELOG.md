@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.2.7] - 2020-09-23
+### Added
+- New option `twitch:parent` to fix Twitch embed with iframes [#384]
+
+### Fixed
+- Added `datePublished` check to `PublishedTime` extractor [#385] [#386]
+- Added `@property-read` for IDE suppport [#387] [#388]
+
 ## [4.2.6] - 2020-08-28
 ### Fixed
 - Code width and height when the provided value is not numeric (ex: 100%) [#380]
@@ -84,7 +92,13 @@ Full library refactoring.
 [#366]: https://github.com/oscarotero/Embed/issues/366
 [#375]: https://github.com/oscarotero/Embed/issues/375
 [#380]: https://github.com/oscarotero/Embed/issues/380
+[#384]: https://github.com/oscarotero/Embed/issues/384
+[#385]: https://github.com/oscarotero/Embed/issues/385
+[#386]: https://github.com/oscarotero/Embed/issues/386
+[#387]: https://github.com/oscarotero/Embed/issues/387
+[#388]: https://github.com/oscarotero/Embed/issues/388
 
+[4.2.7]: https://github.com/oscarotero/Embed/compare/v4.2.6...v4.2.7
 [4.2.6]: https://github.com/oscarotero/Embed/compare/v4.2.5...v4.2.6
 [4.2.5]: https://github.com/oscarotero/Embed/compare/v4.2.4...v4.2.5
 [4.2.4]: https://github.com/oscarotero/Embed/compare/v4.2.3...v4.2.4
