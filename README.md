@@ -330,10 +330,10 @@ If you need to pass settings to your detectors, you can use the `setSettings` me
 //Create the extractor
 $info = $embed->get($url);
 
-//Pass settings for example.com site
-if ($info->getUri()->getHost() === 'example.com') {
-    $info->setSettings(['example_api_key' => 'xxx']);
-}
+$info->setSettings([
+    'oembed:query_parameters' => []  //Extra parameters send to oembed
+    'twitch:parent' => 'example.com' //Required to embed twitch videos as iframe
+]);
 ```
 
 Note: The built-in detectors does not require settings. This feature is only for convenience if you create a specific detector that requires settings.

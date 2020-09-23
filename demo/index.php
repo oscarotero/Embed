@@ -194,6 +194,9 @@ $detectors = [
                     'Cache-Control' => 'max-age=0,no-cache',
                 ]);
                 $info = $embed->get(getUrl());
+                $info->setSettings([
+                    'twitch:parent' => $_SERVER['SERVER_NAME'] === 'localhost' ? null : $_SERVER['SERVER_NAME']
+                ]);
             } catch (Exception $exception) {
                 echo '<pre>';
                 echo $exception;

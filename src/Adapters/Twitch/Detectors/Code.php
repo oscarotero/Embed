@@ -18,14 +18,19 @@ class Code extends Detector
     private function fallback(): ?EmbedCode
     {
         $path = $this->extractor->getUri()->getPath();
+        $parent = $this->extractor->getSetting('twitch:parent');
 
         if ($id = self::getVideoId($path)) {
-            $code = self::generateCode(['video' => "v{$id}"]);
+            $code = $parent 
+                ? self::generateIframeCode(['id' => $id, 'parent' => $parent]) 
+                : self::generateJsCode('video', $id);
             return new EmbedCode($code, 620, 378);
         }
 
         if ($id = self::getChannelId($path)) {
-            $code = self::generateCode(['channel' => $id]);
+            $code = $parent
+                ? self::generateIframeCode(['channel' => $id, 'parent' => $parent]) 
+                : self::generateJsCode('channel', $id);
             return new EmbedCode($code, 620, 378);
         }
 
@@ -50,7 +55,7 @@ class Code extends Detector
         return null;
     }
 
-    private static function generateCode(array $params): string
+    private static function generateIframeCode(array $params): string
     {
         $query = http_build_query(['autoplay' => 'false'] + $params);
 
@@ -62,5 +67,16 @@ class Code extends Detector
             'height' => 378,
             'width' => 620,
         ]);
+    }
+
+    private static function generateJsCode($key, $value)
+    {
+        return <<<HTML
+        <div id="twitch-embed"></div>
+        <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+        <script type="text/javascript">
+            new Twitch.Player("twitch-embed", { {$key}: "{$value}" });
+        </script>
+        HTML;
     }
 }
