@@ -10,7 +10,7 @@ return [
             'DMS/1.0.42'
         ],
         'x-dm-backnode' => [
-            'web-376.adm.dc3.dailymotion.com:80'
+            'web-527.adm.dc3.dailymotion.com:80'
         ],
         'vary' => [
             'X-DM-SSL,Accept-Encoding'
@@ -34,10 +34,10 @@ return [
             'max-age=31708800; includeSubDomains'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:16 GMT'
+            'Wed, 23 Sep 2020 21:46:04 GMT'
         ],
         'keep-alive' => [
-            'timeout=60, max=4996'
+            'timeout=60, max=4988'
         ],
         'x-dm-lb-ip' => [
             '195.8.215.136'
@@ -46,7 +46,7 @@ return [
             'lb-10'
         ],
         'x-dm-backnode-response-time' => [
-            '21'
+            '16'
         ],
         'connection' => [
             'Keep-Alive'
@@ -65,16 +65,16 @@ return [
             'max-age=0, report-uri="https://www.dailymotion.com/content_security_policy_report_uri"'
         ],
         'content-length' => [
-            '307'
+            '310'
         ],
         'Content-Location' => [
             'https://www.dailymotion.com/services/oembed?url=https%3A%2F%2Fwww.dailymotion.com%2Fvideo%2Fxy0wd&format=json'
         ],
         'X-Request-Time' => [
-            '0.196 ms'
+            '0.231 ms'
         ]
     ],
     'statusCode' => 200,
     'reasonPhrase' => 'OK',
-    'body' => '{"type":"video","version":"1.0","provider_name":"Dailymotion","provider_url":"https:\\/\\/www.dailymotion.com","title":"Chats paresseux","description":"","author_name":"jeanbamin","author_url":"https:\\/\\/www.dailymotion.com\\/jeanbamin","width":480,"height":360,"html":"<iframe frameborder=\\"0\\" width=\\"480\\" height=\\"360\\" src=\\"https:\\/\\/www.dailymotion.com\\/embed\\/video\\/xy0wd\\" allowfullscreen allow=\\"autoplay\\"><\\/iframe>","thumbnail_url":"https:\\/\\/s2.dmcdn.net\\/v\\/63aD1UnMrvamBfhN\\/x240","thumbnail_width":320,"thumbnail_height":240}'
+    'body' => '{"type":"video","version":"1.0","provider_name":"Dailymotion","provider_url":"https:\\/\\/www.dailymotion.com","title":"Chats paresseux","description":"","author_name":"jeanbamin","author_url":"https:\\/\\/www.dailymotion.com\\/jeanbamin","width":480,"height":360,"html":"<iframe frameborder=\\"0\\" width=\\"480\\" height=\\"360\\" src=\\"https:\\/\\/www.dailymotion.com\\/embed\\/video\\/xy0wd\\" allowfullscreen allow=\\"autoplay\\"><\\/iframe>","thumbnail_url":"https:\\/\\/s1.dmcdn.net\\/v\\/63aD1VQxgArJetGY\\/x240","thumbnail_width":320,"thumbnail_height":240}'
 ];

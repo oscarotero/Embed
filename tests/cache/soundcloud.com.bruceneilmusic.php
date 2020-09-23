@@ -12,10 +12,6 @@ return [
         'connection' => [
             'keep-alive'
         ],
-        'set-cookie' => [
-            'sc_anonymous_id=3355-880053-452614-68856; path=/; expires=Sat, 18 May 2030 17:54:27 GMT; domain=.soundcloud.com',
-            'sc_anonymous_id=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=.soundcloud.com'
-        ],
         'x-pants' => [
             'distant-towel'
         ],
@@ -29,13 +25,13 @@ return [
             'SAMEORIGIN'
         ],
         'server-timing' => [
-            'rollouts; dur=2.880423; desc="api-v2/rollouts", resolve; dur=63.419634; desc="api-v2/resolve", privacySettings; dur=3.352277; desc="api-v2/privacySettings", geoip; dur=1.548699; desc="geoip/geoip", userTracks; dur=40.965198; desc="api-v2/userTracks"'
+            'rollouts; dur=3.338054; desc="api-v2/rollouts", experiments; dur=4.193828; desc="api-v2/experiments", resolve; dur=61.584125; desc="api-v2/resolve", privacySettings; dur=4.408979; desc="api-v2/privacySettings", geoip; dur=1.379446; desc="geoip/geoip", userTracks; dur=68.686164; desc="api-v2/userTracks"'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:54:27 GMT'
+            'Wed, 23 Sep 2020 21:47:16 GMT'
         ],
         'strict-transport-security' => [
-            'max-age=63072000'
+            'max-age=604800; includeSubdomains'
         ],
         'content-encoding' => [
             'gzip'
@@ -47,19 +43,19 @@ return [
             'Miss from cloudfront'
         ],
         'via' => [
-            '1.1 cb73c89aea88aaa55481f7cc9396966f.cloudfront.net (CloudFront)'
+            '1.1 eb28dde7b66308b26496e3a543c93412.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
-            'MAD51-C1'
+            'MAD50-C1'
         ],
         'x-amz-cf-id' => [
-            'D0l1dUkremJqk76DKyO-Zz8wZj_c1rddXTLahWUNeH_IIGVXJ1nBmA=='
+            'XxmQPMgFp_m_6fnnCDY8SLmRXMWMLwDlfvxnINUYbXH0wbqJL_Y-_w=='
         ],
         'Content-Location' => [
             'https://soundcloud.com/bruceneilmusic'
         ],
         'X-Request-Time' => [
-            '0.245 ms'
+            '0.262 ms'
         ]
     ],
     'statusCode' => 200,
@@ -119,7 +115,7 @@ return [
   <meta content="com.soundcloud.android" property="twitter:app:id:googleplay">
   <link href="/sc-opensearch.xml" rel="search" title="SoundCloud search" type="application/opensearchdescription+xml">
 
-  <meta name="description" content="Bruce Neil from Wokingham is a singer/songwriter with a folk inspired sound, producing songs with heartfelt depth and lyrics that captivate the listener, taking them on an insightful and thought-provo. Reading. 16 Tracks. 755 Followers. Stream Tracks and Playlists from Bruce Neil on your desktop or mobile device."><meta property="twitter:app:name:iphone" content="SoundCloud"><meta property="twitter:app:id:iphone" content="336353151"><meta property="twitter:app:name:ipad" content="SoundCloud"><meta property="twitter:app:id:ipad" content="336353151"><meta property="twitter:app:name:googleplay" content="SoundCloud"><meta property="twitter:app:id:googleplay" content="com.soundcloud.android"><meta property="twitter:app:url:googleplay" content="soundcloud://users:6538603"><meta property="twitter:app:url:iphone" content="soundcloud://users:6538603"><meta property="twitter:app:url:ipad" content="soundcloud://users:6538603"><meta property="twitter:title" content="Bruce Neil"><meta property="twitter:image" content="https://i1.sndcdn.com/avatars-000137863509-h9h7dr-t500x500.jpg"><meta property="twitter:description" content="Bruce Neil from Wokingham is a singer/songwriter with a folk inspired sound, producing songs with heartfelt depth and lyrics that captivate the listener, taking them on an insightful and thought-provo"><meta property="twitter:card" content="summary"><meta property="twitter:player:height" content="450"><meta property="twitter:player:width" content="435"><meta property="twitter:player" content="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F6538603&amp;auto_play=false&amp;show_artwork=true&amp;visual=true&amp;origin=twitter"><meta property="al:ios:app_name" content="SoundCloud"><meta property="al:ios:app_store_id" content="336353151"><meta property="al:android:app_name" content="SoundCloud"><meta property="al:android:package" content="com.soundcloud.android"><meta property="og:type" content="music.musician"><meta property="og:url" content="https://soundcloud.com/bruceneilmusic"><meta property="og:title" content="Bruce Neil"><meta property="og:image" content="https://i1.sndcdn.com/avatars-000137863509-h9h7dr-t500x500.jpg"><meta property="og:image:width" content="500"><meta property="og:image:height" content="500"><meta property="og:description" content="Bruce Neil from Wokingham is a singer/songwriter with a folk inspired sound, producing songs with heartfelt depth and lyrics that captivate the listener, taking them on an insightful and thought-provo"><meta property="og:locality" content="Reading"><meta property="og:country-name"><meta property="al:ios:url" content="soundcloud://users:6538603"><meta property="al:android:url" content="soundcloud://users:6538603"><meta property="al:web:should_fallback" content="false"><meta property="soundcloud:sound_count" content="16"><meta property="soundcloud:follower_count" content="755">
+  <meta name="description" content="Bruce Neil from Wokingham is a singer/songwriter with a folk inspired sound, producing songs with heartfelt depth and lyrics that captivate the listener, taking them on an insightful and thought-provo. Reading. 16 Tracks. 753 Followers. Stream Tracks and Playlists from Bruce Neil on your desktop or mobile device."><meta property="twitter:app:name:iphone" content="SoundCloud"><meta property="twitter:app:id:iphone" content="336353151"><meta property="twitter:app:name:ipad" content="SoundCloud"><meta property="twitter:app:id:ipad" content="336353151"><meta property="twitter:app:name:googleplay" content="SoundCloud"><meta property="twitter:app:id:googleplay" content="com.soundcloud.android"><meta property="twitter:app:url:googleplay" content="soundcloud://users:6538603"><meta property="twitter:app:url:iphone" content="soundcloud://users:6538603"><meta property="twitter:app:url:ipad" content="soundcloud://users:6538603"><meta property="twitter:title" content="Bruce Neil"><meta property="twitter:image" content="https://i1.sndcdn.com/avatars-000137863509-h9h7dr-t500x500.jpg"><meta property="twitter:description" content="Bruce Neil from Wokingham is a singer/songwriter with a folk inspired sound, producing songs with heartfelt depth and lyrics that captivate the listener, taking them on an insightful and thought-provo"><meta property="twitter:card" content="player"><meta property="twitter:player:height" content="450"><meta property="twitter:player:width" content="435"><meta property="twitter:player" content="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F6538603&amp;auto_play=false&amp;show_artwork=true&amp;visual=true&amp;origin=twitter"><meta property="twitter:url" content="https://soundcloud.com/bruceneilmusic"><meta property="al:ios:app_name" content="SoundCloud"><meta property="al:ios:app_store_id" content="336353151"><meta property="al:android:app_name" content="SoundCloud"><meta property="al:android:package" content="com.soundcloud.android"><meta property="og:type" content="music.musician"><meta property="og:url" content="https://soundcloud.com/bruceneilmusic"><meta property="og:title" content="Bruce Neil"><meta property="og:image" content="https://i1.sndcdn.com/avatars-000137863509-h9h7dr-t500x500.jpg"><meta property="og:image:width" content="500"><meta property="og:image:height" content="500"><meta property="og:description" content="Bruce Neil from Wokingham is a singer/songwriter with a folk inspired sound, producing songs with heartfelt depth and lyrics that captivate the listener, taking them on an insightful and thought-provo"><meta property="og:locality" content="Reading"><meta property="og:country-name"><meta property="al:ios:url" content="soundcloud://users:6538603"><meta property="al:android:url" content="soundcloud://users:6538603"><meta property="al:web:should_fallback" content="false"><meta property="soundcloud:sound_count" content="16"><meta property="soundcloud:follower_count" content="753">
   <link rel="canonical" href="https://soundcloud.com/bruceneilmusic"><link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.soundcloud.com/bruceneilmusic"><link rel="alternate" type="text/xml+oembed" href="https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Fbruceneilmusic&amp;format=xml"><link rel="alternate" type="text/json+oembed" href="https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Fbruceneilmusic&amp;format=json"><link rel="alternate" href="android-app://com.soundcloud.android/soundcloud/users:6538603"><link rel="alternate" href="ios-app://336353151/soundcloud/users:6538603">
 
   <meta name="application-name" content="SoundCloud">
@@ -140,7 +136,7 @@ return [
   <link rel="stylesheet" href="https://style.sndcdn.com/css/interstate-a86f07cf94ae5a496b24.css">
 
   
-  <link rel="stylesheet" href="https://a-v2.sndcdn.com/assets/css/app-e5928cd1c66edb871398.css">
+  <link rel="stylesheet" href="https://a-v2.sndcdn.com/assets/css/app-5f290a4036607d3f66c0.css">
   <link rel="stylesheet" href="https://a-v2.sndcdn.com/assets/css/i18n-locale-switcher-fc0b88a1f0db4efc1131.css">
   
 </head>
@@ -1111,7 +1107,7 @@ return [
     
   </div>
 
-  <script src="https://a-v2.sndcdn.com/assets/44-e397404d-3.js" crossorigin></script>
+  <script src="https://a-v2.sndcdn.com/assets/42-fe458fcb-3.js" crossorigin></script>
 
   
   
@@ -1122,20 +1118,20 @@ return [
   
 
   
-    <script type="text/javascript">window.__sc_version = "1589986714";</script>
+    <script type="text/javascript">window.__sc_version = "1600870530";</script>
     
 
   
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/50-2f356e64-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/0-7e0bf13a-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/1-3738c176-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/2-4dbd49f7-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/49-6045817b-3.js"></script>
-    <script crossorigin src="https://a-v2.sndcdn.com/assets/48-d2483d0e-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/48-4032bff5-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/0-c60a1ac2-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/2-13cb07cf-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/1-8bb1343e-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/47-73513ad6-3.js"></script>
+    <script crossorigin src="https://a-v2.sndcdn.com/assets/46-bf6053d3-3.js"></script>
     
 
 
-  <script>!function(e,n){if(e=e.bind(null,n),"function"==typeof window.webpackJsonp)window.webpackJsonp([],{0:e});else{var t=n.reduce(function(e,n){return e.concat(n.chunks)},[]).filter(function(e,n,t){return t.indexOf(e)===n}),c="__sc_data_rehydration_module__",o={};o[c]=e,(window.webpackJsonp=window.webpackJsonp||[]).push([[],o,[[c].concat(t)]])}}(function(e,n,t,c){function o(e){return i.every(function(n){return n in e.prototype})}function r(e){var n=o(e);return n?function(n){var t,c=a;n.lastFetchTime&&(c=n.lastFetchTime,delete n.lastFetchTime),t=new e(n,{parse:!0,__hydrate:!0}),t.lastFetchTime=c,t.release()}:e}var a=Date.now(),i=["resource_type","get","set","addSubmodel","release"];e.forEach(function(e){try{var n=r(c(e.id));e.data.forEach(function(e){n(e)})}catch(t){}})},[{"id":241,"chunks":[48],"data":[{"allows_messages_from_unfollowed_users":false,"analytics_opt_in":true,"communications_opt_in":true,"targeted_advertising_opt_in":false,"legislation":[]}]},{"id":1026,"chunks":[48],"data":[{"country_code":"ES","country_name":"Spain","region":"58","city":"A Coruña","postal_code":"15007","latitude":43.3656005859375,"longitude":-8.404296875}]},{"id":924,"chunks":[49],"data":[{}]},{"id":927,"chunks":[49],"data":[{"v2_test_feature_toggle":true,"v2_oscp_german_tax_fields_support":true,"v2_use_new_connect":true,"v2_hq_file_storage_release":true,"v2_direct_support_link":true,"v2_distro_2_phase_1_announcement":true,"v2_distro_2_phase_2_freeze_submissions":true,"v2_distro_2_phase_4_post_migration":true,"v2_enable_siwa":true}]},{"id":32,"chunks":[48],"data":[{"avatar_url":"https://i1.sndcdn.com/avatars-000137863509-h9h7dr-large.jpg","city":"Reading","comments_count":57,"country_code":null,"created_at":"2011-08-09T12:23:23Z","creator_subscriptions":[{"product":{"id":"free"}}],"creator_subscription":{"product":{"id":"free"}},"description":"Bruce Neil from Wokingham is a singer/songwriter with a folk inspired sound, producing songs with heartfelt depth and lyrics that captivate the listener, taking them on an insightful and thought-provoking journey. As a winner of BBC Introducing, resulting in air play nationally, he has recently achieved widespread public attention following the video release of his percussive folk rendition of Guns N’ Roses track Paradise City. Not only did this go viral on social media, it was endorsed by the band themselves and has achieved recognition and air play from several US radio stations. He takes his musical inspiration and guitar-playing style from the likes of Passenger and Mick Flannery.","followers_count":755,"followings_count":1068,"first_name":"Bruce","full_name":"Bruce Neil","groups_count":0,"id":6538603,"kind":"user","last_modified":"2017-05-18T19:59:18Z","last_name":"Neil","likes_count":29,"playlist_likes_count":1,"permalink":"bruceneilmusic","permalink_url":"https://soundcloud.com/bruceneilmusic","playlist_count":0,"reposts_count":null,"track_count":16,"uri":"https://api.soundcloud.com/users/6538603","urn":"soundcloud:users:6538603","username":"Bruce Neil","verified":false,"visuals":{"urn":"soundcloud:users:6538603","enabled":true,"visuals":[{"urn":"soundcloud:visuals:6133958","entry_time":0,"visual_url":"https://i1.sndcdn.com/visuals-000006538603-laHwHB-original.jpg"}],"tracking":null},"url":"/bruceneilmusic"}]}]);</script>
+  <script>!function(e,n){if(e=e.bind(null,n),"function"==typeof window.webpackJsonp)window.webpackJsonp([],{0:e});else{var t=n.reduce(function(e,n){return e.concat(n.chunks)},[]).filter(function(e,n,t){return t.indexOf(e)===n}),c="__sc_data_rehydration_module__",o={};o[c]=e,(window.webpackJsonp=window.webpackJsonp||[]).push([[],o,[[c].concat(t)]])}}(function(e,n,t,c){function o(e){return i.every(function(n){return n in e.prototype})}function r(e){var n=o(e);return n?function(n){var t,c=a;n.lastFetchTime&&(c=n.lastFetchTime,delete n.lastFetchTime),t=new e(n,{parse:!0,__hydrate:!0}),t.lastFetchTime=c,t.release()}:e}var a=Date.now(),i=["resource_type","get","set","addSubmodel","release"];e.forEach(function(e){try{var n=r(c(e.id));e.data.forEach(function(e){n(e)})}catch(t){}})},[{"id":163,"chunks":[46],"data":[{"allows_messages_from_unfollowed_users":false,"analytics_opt_in":true,"communications_opt_in":true,"targeted_advertising_opt_in":false,"legislation":[]}]},{"id":1018,"chunks":[46],"data":[{"country_code":"ES","country_name":"Spain","region":"58","city":"Ribeira","postal_code":"32704","latitude":42.23829650878906,"longitude":-7.69970703125}]},{"id":926,"chunks":[47],"data":[{}]},{"id":890,"chunks":[47],"data":["988098-375158-232779-749835"]},{"id":929,"chunks":[47],"data":[{"v2_airbrake":true,"v2_test_feature_toggle":true,"v2_oscp_german_tax_fields_support":true,"v2_use_new_connect":true,"v2_hq_file_storage_release":true,"v2_direct_support_link":true,"v2_enable_sourcepoint":true,"v2_enable_sourcepoint_tcfv2":true,"v2_system_playlist_sharing":true,"v2_can_see_insights":true}]},{"id":29,"chunks":[46],"data":[{"avatar_url":"https://i1.sndcdn.com/avatars-000137863509-h9h7dr-large.jpg","city":"Reading","comments_count":57,"country_code":null,"created_at":"2011-08-09T12:23:23Z","creator_subscriptions":[{"product":{"id":"free"}}],"creator_subscription":{"product":{"id":"free"}},"description":"Bruce Neil from Wokingham is a singer/songwriter with a folk inspired sound, producing songs with heartfelt depth and lyrics that captivate the listener, taking them on an insightful and thought-provoking journey. As a winner of BBC Introducing, resulting in air play nationally, he has recently achieved widespread public attention following the video release of his percussive folk rendition of Guns N’ Roses track Paradise City. Not only did this go viral on social media, it was endorsed by the band themselves and has achieved recognition and air play from several US radio stations. He takes his musical inspiration and guitar-playing style from the likes of Passenger and Mick Flannery.","followers_count":753,"followings_count":1068,"first_name":"Bruce","full_name":"Bruce Neil","groups_count":0,"id":6538603,"kind":"user","last_modified":"2017-05-18T19:59:18Z","last_name":"Neil","likes_count":28,"playlist_likes_count":1,"permalink":"bruceneilmusic","permalink_url":"https://soundcloud.com/bruceneilmusic","playlist_count":0,"reposts_count":null,"track_count":16,"uri":"https://api.soundcloud.com/users/6538603","urn":"soundcloud:users:6538603","username":"Bruce Neil","verified":false,"visuals":{"urn":"soundcloud:users:6538603","enabled":true,"visuals":[{"urn":"soundcloud:visuals:6133958","entry_time":0,"visual_url":"https://i1.sndcdn.com/visuals-000006538603-laHwHB-original.jpg"}],"tracking":null},"badges":{"pro_unlimited":false,"verified":false},"url":"/bruceneilmusic"}]}]);</script>
 
 </body>
 </html>

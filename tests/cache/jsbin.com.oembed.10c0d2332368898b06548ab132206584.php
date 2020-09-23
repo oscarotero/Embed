@@ -7,7 +7,7 @@ return [
             'nginx'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:28 GMT'
+            'Wed, 23 Sep 2020 21:46:15 GMT'
         ],
         'content-type' => [
             'application/json; charset=utf-8'
@@ -34,7 +34,7 @@ return [
             'http://jsbin.com/oembed?url=http%3A%2F%2Foutput.jsbin.com%2Fvonesu%2F10&format=json'
         ],
         'X-Request-Time' => [
-            '0.253 ms'
+            '0.283 ms'
         ]
     ],
     'statusCode' => 200,

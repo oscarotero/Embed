@@ -31,13 +31,13 @@ return [
             'none'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:49 GMT'
+            'Wed, 23 Sep 2020 21:47:45 GMT'
         ],
         'via' => [
             '1.1 varnish'
         ],
         'age' => [
-            '268'
+            '0'
         ],
         'cache-control' => [
             'no-cache'
@@ -55,26 +55,26 @@ return [
             'false'
         ],
         'set-cookie' => [
-            'CN_xid=0d0739c1-f1c1-43a2-9786-d826aff50e7b; Expires=Mon, 16 Nov 2020 17:53:49 GMT; path=/;',
-            'verso_bucket=248; Expires=Thu, 20 May 2021 17:53:49 GMT; path=/;'
+            'CN_xid=59216703-56d6-4a4b-9f3d-102aa465618c; Expires=Mon, 22 Mar 2021 21:47:45 GMT; path=/;',
+            'verso_bucket=527; Expires=Thu, 23 Sep 2021 21:47:45 GMT; path=/;'
         ],
         'content-security-policy' => [
-            'default-src https: data: \'unsafe-inline\' \'unsafe-eval\'; child-src https: data: blob:; connect-src https: data: blob: wss://*.hotjar.com; font-src https: data:; img-src https: blob: data:; media-src blob: data: https:; object-src https:; script-src https: data: blob: \'unsafe-inline\' \'unsafe-eval\'; style-src https: \'unsafe-inline\'; block-all-mixed-content; upgrade-insecure-requests; report-uri https://capture.condenastdigital.com/csp/wired'
+            'default-src https: data: \'unsafe-inline\' \'unsafe-eval\'; child-src https: data: blob:; connect-src https: data: blob: wss://*.hotjar.com; font-src https: data:; img-src https: blob: data:; media-src blob: data: https:; object-src https:; script-src https: data: blob: \'unsafe-inline\' \'unsafe-eval\'; style-src https: \'unsafe-inline\'; block-all-mixed-content; upgrade-insecure-requests'
         ],
         'strict-transport-security' => [
             'max-age=31536000; preload'
         ],
         'x-served-by' => [
-            'cache-mad22046-MAD'
+            'cache-mad22069-MAD'
         ],
         'x-cache' => [
-            'HIT'
+            'MISS'
         ],
         'x-cache-hits' => [
-            '1'
+            '0'
         ],
         'x-timer' => [
-            'S1589997229.055380,VS0,VE1'
+            'S1600897665.381070,VS0,VE525'
         ],
         'x-ua-device' => [
             'desktop'
@@ -89,7 +89,7 @@ return [
             'https://www.wired.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.wired.com%2F2016%2F07%2Freview-yi-4k-action-camera%2F'
         ],
         'X-Request-Time' => [
-            '0.126 ms'
+            '0.619 ms'
         ]
     ],
     'statusCode' => 200,

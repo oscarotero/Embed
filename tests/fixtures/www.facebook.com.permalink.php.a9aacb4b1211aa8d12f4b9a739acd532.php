@@ -6,15 +6,16 @@ return [
     'authorUrl' => 'https://www.facebook.com/asociaciondag/',
     'cms' => null,
     'code' => [
-        'html' => '<div id="fb-root"></div> <script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&amp;version=v7.0"></script><div class="fb-post" data-href="https://www.facebook.com/asociaciondag/posts/827163017327807" data-width="552"><blockquote cite="https://www.facebook.com/asociaciondag/posts/827163017327807" class="fb-xfbml-parse-ignore"><p>Aquí vos deixamos unhas imaxes da nosa visita do pasado sábado á Guarda. Moi agradecidos á Asociación Naturalista do Baixo Miño www.anabam.org e a Malde Arqueoloxía</p>Publicada por <a href="https://www.facebook.com/asociaciondag/">DAG, Asociación Galega de Deseño</a> en&nbsp;<a href="https://www.facebook.com/asociaciondag/posts/827163017327807">Martes, 21 de octubre de 2014</a></blockquote></div>',
+        'html' => '<div id="fb-root"></div> <script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&amp;version=v8.0" nonce="M3M6L04j"></script><div class="fb-post" data-href="https://www.facebook.com/asociaciondag/posts/827163017327807" data-width="552"><blockquote cite="https://www.facebook.com/asociaciondag/posts/827163017327807" class="fb-xfbml-parse-ignore"><p>Aquí vos deixamos unhas imaxes da nosa visita do pasado sábado á Guarda. Moi agradecidos á Asociación Naturalista do Baixo Miño www.anabam.org e a Malde Arqueoloxía</p>Publicada por <a href="https://www.facebook.com/asociaciondag/">DAG, Asociación Galega de Deseño</a> en&nbsp;<a href="https://www.facebook.com/asociaciondag/posts/827163017327807">Martes, 21 de octubre de 2014</a></blockquote></div>',
         'width' => 552,
-        'height' => null
+        'height' => null,
+        'ratio' => null
     ],
     'description' => 'Aquí vos deixamos unhas imaxes da nosa visita do pasado sábado á Guarda. Moi agradecidos á Asociación Naturalista do Baixo Miño www.anabam.org e a Malde Arqueoloxía',
     'favicon' => 'https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico',
     'feeds' => [],
     'icon' => null,
-    'image' => 'https://scontent.fmad7-1.fna.fbcdn.net/v/t31.0-8/10704334_827161517327957_5105556928960502376_o.jpg?_nc_cat=111&_nc_sid=8024bb&_nc_ohc=EW5CY-12GSkAX-45-3W&_nc_ht=scontent.fmad7-1.fna&oh=3aedfcebfdb425d0c52969f3ea81a60c&oe=5EE92C23',
+    'image' => 'https://scontent.fmad7-1.fna.fbcdn.net/v/t31.0-8/10704334_827161517327957_5105556928960502376_o.jpg?_nc_cat=111&_nc_sid=8024bb&_nc_ohc=znMSHe-zAMcAX_ImWJW&_nc_ht=scontent.fmad7-1.fna&oh=3d087cd7446f3997ec5fb6ba37ac04e4&oe=5F933DA3',
     'keywords' => [],
     'language' => 'es',
     'languages' => [
@@ -37,7 +38,7 @@ return [
         'success' => true,
         'height' => null,
         'html' => '<div id="fb-root"></div>
-<script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&amp;version=v7.0"></script><div class="fb-post" data-href="https://www.facebook.com/asociaciondag/posts/827163017327807" data-width="552"><blockquote cite="https://www.facebook.com/asociaciondag/posts/827163017327807" class="fb-xfbml-parse-ignore"><p>Aquí vos deixamos unhas imaxes da nosa visita do pasado sábado á Guarda. Moi agradecidos á Asociación Naturalista do Baixo Miño www.anabam.org e a Malde Arqueoloxía</p>Publicada por <a href="https://www.facebook.com/asociaciondag/">DAG, Asociación Galega de Deseño</a> en&nbsp;<a href="https://www.facebook.com/asociaciondag/posts/827163017327807">Martes, 21 de octubre de 2014</a></blockquote></div>',
+<script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&amp;version=v8.0" nonce="M3M6L04j"></script><div class="fb-post" data-href="https://www.facebook.com/asociaciondag/posts/827163017327807" data-width="552"><blockquote cite="https://www.facebook.com/asociaciondag/posts/827163017327807" class="fb-xfbml-parse-ignore"><p>Aquí vos deixamos unhas imaxes da nosa visita do pasado sábado á Guarda. Moi agradecidos á Asociación Naturalista do Baixo Miño www.anabam.org e a Malde Arqueoloxía</p>Publicada por <a href="https://www.facebook.com/asociaciondag/">DAG, Asociación Galega de Deseño</a> en&nbsp;<a href="https://www.facebook.com/asociaciondag/posts/827163017327807">Martes, 21 de octubre de 2014</a></blockquote></div>',
         'type' => 'rich',
         'version' => '1.0',
         'url' => 'https://www.facebook.com/asociaciondag/posts/827163017327807',

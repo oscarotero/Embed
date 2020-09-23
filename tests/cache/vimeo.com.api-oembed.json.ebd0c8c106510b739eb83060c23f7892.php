@@ -31,13 +31,13 @@ return [
             'max-age=60'
         ],
         'expires' => [
-            'Wed, 20 May 2020 17:55:14 GMT'
+            'Wed, 23 Sep 2020 21:48:00 GMT'
         ],
         'last-modified' => [
-            'Wed, 20 May 2020 15:34:45 GMT'
+            'Wed, 23 Sep 2020 21:23:07 GMT'
         ],
         'etag' => [
-            '"4ab47f1c1898e33bfd6a24bea5d5504f8243e4a9"'
+            '"014301d18c68bbd6599869140324d45defc8118e"'
         ],
         'x-ua-compatible' => [
             'IE=edge'
@@ -51,11 +51,14 @@ return [
         'content-security-policy-report-only' => [
             'default-src https: data: blob: wss: \'unsafe-inline\' \'unsafe-eval\'; report-uri /_csp'
         ],
-        'content-encoding' => [
-            'gzip'
+        'x-bapp-server' => [
+            'api-v3403-ld8j9'
         ],
         'x-vimeo-dc' => [
             'ge'
+        ],
+        'content-encoding' => [
+            'gzip'
         ],
         'via' => [
             '1.1 varnish',
@@ -65,13 +68,13 @@ return [
             'bytes'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:54:14 GMT'
+            'Wed, 23 Sep 2020 21:47:00 GMT'
         ],
         'age' => [
             '0'
         ],
         'x-served-by' => [
-            'cache-bwi5134-BWI, cache-mad22037-MAD'
+            'cache-bwi5141-BWI, cache-mad22058-MAD'
         ],
         'x-cache' => [
             'MISS, MISS'
@@ -80,16 +83,16 @@ return [
             '0, 0'
         ],
         'x-timer' => [
-            'S1589997255.810872,VS0,VE121'
+            'S1600897621.704689,VS0,VE111'
         ],
         'vary' => [
-            'User-Agent,Accept-Encoding'
+            'User-Agent, Accept-Encoding'
         ],
         'Content-Location' => [
             'https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F235352744'
         ],
         'X-Request-Time' => [
-            '0.279 ms'
+            '0.200 ms'
         ]
     ],
     'statusCode' => 200,

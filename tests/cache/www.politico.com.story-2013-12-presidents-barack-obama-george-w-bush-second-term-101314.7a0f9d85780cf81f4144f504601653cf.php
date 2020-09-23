@@ -4,7 +4,7 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 20 May 2020 17:53:36 GMT'
+            'Wed, 23 Sep 2020 21:46:30 GMT'
         ],
         'content-type' => [
             'application/json+oembed;charset=UTF-8'
@@ -13,7 +13,7 @@ return [
             '214'
         ],
         'cf-ray' => [
-            '5967eb08d967ff68-MAD'
+            '5d77757139ff14f1-MAD'
         ],
         'accept-ranges' => [
             'bytes'
@@ -28,7 +28,7 @@ return [
             'stale-if-error=604800, max-age=120, s-maxage=604800'
         ],
         'via' => [
-            '1.1 politico.com, 1.1 varnish-v4'
+            '1.1 varnish (Varnish/6.3)'
         ],
         'cf-cache-status' => [
             'EXPIRED'
@@ -39,11 +39,14 @@ return [
         'cf-debug' => [
             'honored origin cache-control, appended max-age, appended s-maxage'
         ],
+        'cf-request-id' => [
+            '055e87bac2000014f171a87200000001'
+        ],
         'expect-ct' => [
             'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
         ],
         'x-varnish' => [
-            '457574326'
+            '352666925'
         ],
         'x-varnish-cache' => [
             'MISS'
@@ -54,14 +57,11 @@ return [
         'server' => [
             'cloudflare'
         ],
-        'cf-request-id' => [
-            '02d4d139830000ff68c0b7b200000001'
-        ],
         'Content-Location' => [
             'https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314?_embed=true&_format=oembed'
         ],
         'X-Request-Time' => [
-            '0.757 ms'
+            '0.627 ms'
         ]
     ],
     'statusCode' => 200,

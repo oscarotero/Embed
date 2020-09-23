@@ -4,7 +4,7 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 20 May 2020 17:53:11 GMT'
+            'Wed, 23 Sep 2020 21:45:58 GMT'
         ],
         'content-type' => [
             'application/json'
@@ -21,6 +21,9 @@ return [
         'cf-cache-status' => [
             'DYNAMIC'
         ],
+        'cf-request-id' => [
+            '055e873dfc0000c67fd4afe200000001'
+        ],
         'expect-ct' => [
             'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
         ],
@@ -28,19 +31,16 @@ return [
             'cloudflare'
         ],
         'cf-ray' => [
-            '5967ea698f5dd679-MAD'
+            '5d7774a99fcfc67f-MAD'
         ],
         'content-encoding' => [
             'br'
-        ],
-        'cf-request-id' => [
-            '02d4d0d5f30000d67991345200000001'
         ],
         'Content-Location' => [
             'https://live.amcharts.com/oembed/?url=%2F%2Flive.amcharts.com%2FczNjJ%2F&format=json'
         ],
         'X-Request-Time' => [
-            '0.478 ms'
+            '0.408 ms'
         ]
     ],
     'statusCode' => 200,

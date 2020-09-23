@@ -4,9 +4,9 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 20 May 2020 17:53:35 GMT',
-            'Wed, 20 May 2020 17:53:35 GMT',
-            'Wed, 20 May 2020 17:53:35 GMT'
+            'Wed, 23 Sep 2020 21:46:28 GMT',
+            'Wed, 23 Sep 2020 21:46:29 GMT',
+            'Wed, 23 Sep 2020 21:46:29 GMT'
         ],
         'transfer-encoding' => [
             'chunked'
@@ -20,11 +20,16 @@ return [
             'stale-if-error=604800, max-age=120, s-maxage=604800'
         ],
         'expires' => [
-            'Wed, 20 May 2020 18:53:35 GMT'
+            'Wed, 23 Sep 2020 22:46:28 GMT'
         ],
         'location' => [
             'https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314.html',
             'https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314'
+        ],
+        'cf-request-id' => [
+            '055e87b6570000ff3c10a4f200000001',
+            '055e87b6dc0000c6775d263200000001',
+            '055e87b87a0000c6775d281200000001'
         ],
         'vary' => [
             'Accept-Encoding',
@@ -33,18 +38,13 @@ return [
         ],
         'server' => [
             'cloudflare',
-            'cloudflare',
+            'cloudflare  HTTP/2 200',
             'cloudflare'
         ],
         'cf-ray' => [
-            '5967eb01d894ff10-MAD',
-            '5967eb026c2cff08-MAD',
-            '5967eb02bd1dff08-MAD'
-        ],
-        'cf-request-id' => [
-            '02d4d135260000ff1008339200000001  HTTP/2 301',
-            '02d4d1357f0000ff08123b5200000001  HTTP/2 200',
-            '02d4d135b10000ff08123b9200000001'
+            '5d77756a2e86ff3c-MAD  HTTP/2 301',
+            '5d77756affa7c677-MAD',
+            '5d77756d9bf9c677-MAD'
         ],
         'content-type' => [
             'text/html',
@@ -55,15 +55,15 @@ return [
             '*'
         ],
         'age' => [
-            '274',
-            '0'
+            '1937',
+            '1937'
         ],
         'via' => [
-            '1.1 politico.com, 1.1 varnish-v4',
-            '1.1 politico.com, 1.1 varnish-v4'
+            '1.1 varnish (Varnish/6.3)',
+            '1.1 varnish (Varnish/6.3)'
         ],
         'cf-cache-status' => [
-            'HIT',
+            'MISS',
             'EXPIRED'
         ],
         'access-control-allow-credentials' => [
@@ -79,12 +79,12 @@ return [
             'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
         ],
         'x-varnish' => [
-            '325059854',
-            '321261906'
+            '355413749 324072470',
+            '339374189 352020798'
         ],
         'x-varnish-cache' => [
-            'MISS',
-            'MISS'
+            'HIT',
+            'HIT'
         ],
         'content-encoding' => [
             'gzip'
@@ -93,7 +93,7 @@ return [
             'https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314'
         ],
         'X-Request-Time' => [
-            '0.982 ms'
+            '1.086 ms'
         ]
     ],
     'statusCode' => 200,
@@ -108,7 +108,8 @@ return [
 <head>
 <meta property="article:opinion" content="false" />
 <meta charset="utf-8" />
-<link rel="canonical" href="https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314"><style type="text/css" id="chartbeat-flicker-control-style">body { visibility: hidden !important; }</style><script type="text/javascript">
+<link rel="canonical" href="https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314">
+<style type="text/css" id="chartbeat-flicker-control-style">body { visibility: hidden !important; }</style><script type="text/javascript">
 (function() {
 var _sf_async_config = window._sf_async_config = (window._sf_async_config || {});
 _sf_async_config.uid = 33430;
@@ -122,7 +123,15 @@ window.setTimeout(function() {
 }, 1000);
 })();</script>
 <script src="//static.chartbeat.com/js/chartbeat_mab.js"></script>
-<link rel="stylesheet" type="text/css" href="https://static3.politico.com/resource/assets/css/style-core-story.min.0f9b3ab87590e9c0e2d0c76091e6e298.gz.css">
+
+
+<script src="https://cdn.cookielaw.org/opt-out/otCCPAiab.js" " type="text/javascript" charset="UTF-8" ccpa-opt-out-ids="C0004" ccpa-opt-out-geo="ca" ccpa-opt-out-lspa="true"></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="c3eecc09-e5d5-4a23-9b7c-e441668791b9"></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://static3.politico.com/resource/assets/css/style-core-story.min.c1cf50c47f3a7326b9978d97b9e06341.gz.css">
 <link rel="alternate" type="application/json+oembed" href="https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314?_embed=true&amp;_format=oembed">
 <title>Obama 2nd term: Echoes of Bush - POLITICO</title>
 <meta property="og:title" content="Obama 2nd term: Echoes of Bush">
@@ -141,10 +150,10 @@ window.setTimeout(function() {
 <meta property="twitter:creator" content="@politico">
 <meta property="og:fb_appid" content="114037015331397">
 <link rel="shortcut icon" type="image/x-icon" href="https://static.politico.com/cf/05/ee684a274496b04fa20ba2978da1/politico.png">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://static.politico.com/dims4/default/aae155b/2147483647/thumbnail/144x144/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fcf%2F05%2Fee684a274496b04fa20ba2978da1%2Fpolitico.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://static.politico.com/dims4/default/5f20ff0/2147483647/thumbnail/114x114/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fcf%2F05%2Fee684a274496b04fa20ba2978da1%2Fpolitico.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://static.politico.com/dims4/default/9f68bc0/2147483647/thumbnail/72x72/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fcf%2F05%2Fee684a274496b04fa20ba2978da1%2Fpolitico.png">
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://static.politico.com/dims4/default/219a706/2147483647/thumbnail/57x57/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fcf%2F05%2Fee684a274496b04fa20ba2978da1%2Fpolitico.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://static.politico.com/dims4/default/bd69088/2147483647/legacy_thumbnail/144x144/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fcf%2F05%2Fee684a274496b04fa20ba2978da1%2Fpolitico.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://static.politico.com/dims4/default/59ee5a3/2147483647/legacy_thumbnail/114x114/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fcf%2F05%2Fee684a274496b04fa20ba2978da1%2Fpolitico.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://static.politico.com/dims4/default/27ede68/2147483647/legacy_thumbnail/72x72/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fcf%2F05%2Fee684a274496b04fa20ba2978da1%2Fpolitico.png">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://static.politico.com/dims4/default/c73c7f7/2147483647/legacy_thumbnail/57x57/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fcf%2F05%2Fee684a274496b04fa20ba2978da1%2Fpolitico.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
@@ -164,7 +173,7 @@ window.setTimeout(function() {
 <meta theme-color="content">
 <meta property="og:site_name" content="POLITICO">
 <meta name="host" content="www.politico.com">
-<meta name="build" content="hotfix/2020-05-07-breaking-news-alert-prefix d9aad25 2020-05-07T21:01:28Z"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script type="text/javascript">window.jQuery || document.write(\'<script src="https://static3.politico.com/resource/js/website/shared/libraries/jquery-1.11.0.min.daf47dbdebc0881066106b1dda1c9db3.gz.js"><\\/script>\')</script><script type="text/javascript" src="https://static3.politico.com/resource/js/website/shared/libraries/modernizr-2.8.3.min.eb9167fd3c12f05553135ffda5fcd108.gz.js"></script><script type="text/javascript" src="https://static3.politico.com/resource/assets/js.min/preload.c4a0fa0e12f9277dfbe2982aa5bb508c.gz.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><script type="text/javascript">;(function() {
+<meta name="build" content="2020-09-22T16:42:49Z"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script type="text/javascript">window.jQuery || document.write(\'<script src="https://static3.politico.com/resource/js/website/shared/libraries/jquery-1.11.0.min.daf47dbdebc0881066106b1dda1c9db3.gz.js"><\\/script>\')</script><script type="text/javascript" src="https://static3.politico.com/resource/js/website/shared/libraries/modernizr-2.8.3.min.eb9167fd3c12f05553135ffda5fcd108.gz.js"></script><script type="text/javascript" src="https://static3.politico.com/resource/assets/js.min/preload.c4a0fa0e12f9277dfbe2982aa5bb508c.gz.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><script type="text/javascript">;(function() {
      document.cookie = "__adblocker=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
      var setNptTechAdblockerCookieError = function() {
            var d = new Date();
@@ -205,22 +214,6 @@ if (typeof(Storage) !== \'undefined\') {
 utag_data["us_id"] = localStorage.uId;
 }
  if (localStorage.uStatus !== undefined && localStorage.uStatus !== \'\') {
- if (localStorage.uStatus === "logged in"){ 
-var statusCookieFound = false;
-var nameEQ = "uStatus=";
-var ca = document.cookie.split(\';\');
-for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == \' \') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) == 0) {
-        statusCookieFound = true;
-    }
-}
-                    
-if (!statusCookieFound) {
-    localStorage.uStatus = \'logged out\';
-}
-}
 utag_data["us_st"] = localStorage.uStatus;} else {
 utag_data["us_st"] = "anonymous";
 }
@@ -240,7 +233,7 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <ul class="skip-nav__list">
 <li class="skip-nav__action">
 
-<button class="skip-nav__link" onclick="document.querySelector(\'#main\').focus()">Skip to Main Content</button>
+<button class="skip-nav__link" onclick="document.querySelector(\'#main\').focus()" tabindex="1">Skip to Main Content</button>
 </li>
 </ul>
 </div>
@@ -249,7 +242,7 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <div class="header__row header__main">
 <div class="header__branding" role="banner">
 <h1>
-<a href="https://www.politico.com/">
+<a href="https://www.politico.com/" tabindex="3">
 <b aria-hidden="true" class="bt-icon bt-icon--politico is-emphasized"></b>
 <b aria-hidden="true" class="bt-icon bt-icon--core-small"></b>
 <span class="icon-text">POLITICO</span>
@@ -258,7 +251,7 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 </div>
 <div class="header__content">
 <div class="header__left">
-<button aria-label="Master menu" aria-expanded="false" class="hamburger js-hamburger">
+<button aria-label="Master menu" aria-expanded="false" class="hamburger js-hamburger" tabindex="2">
 <span></span>
 </button>
 </div>
@@ -296,13 +289,13 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <h2 class="menu-toggle js-menu-toggle section-heading">SECTIONS</h2>
 <ul class="master-menu__list">
 <li class="master-menu__item">
-<a href="https://www.politico.com/agenda" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=1&amp;lcol=1">The Agenda</a></li>
+<a href="https://www.politico.com/congress" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=1&amp;lcol=1">Congress</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/magazine" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=2&amp;lcol=1">Magazine</a></li>
+<a href="https://www.politico.com/white-house" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=2&amp;lcol=1">White House</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/congress" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=3&amp;lcol=1">Congress</a></li>
+<a href="https://www.politico.com/magazine" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=3&amp;lcol=1">Magazine</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/white-house" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=4&amp;lcol=1">White House</a></li>
+<a href="https://www.politico.com/agenda" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=4&amp;lcol=1">The Agenda</a></li>
 <li class="master-menu__item">
 <a href="https://www.politico.com/video" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=5&amp;lcol=1">Video</a></li>
 <li class="master-menu__item">
@@ -318,17 +311,9 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <li class="master-menu__item">
 <a href="https://www.politico.com/2020-election/results/" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=2&amp;lcol=2">Election Results</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/2020-election/delegate-count-tracker-democratic-primary/" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=3&amp;lcol=2">Delegate Tracker</a></li>
+<a href="https://www.politico.com/2020-election/race-forecasts-and-predictions/" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=3&amp;lcol=2">Forecast</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/2020-election/race-forecasts-and-predictions/" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=4&amp;lcol=2">Forecast</a></li>
-<li class="master-menu__item">
-<a href="https://www.politico.com/2020-election/democratic-presidential-candidates/endorsements/" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=5&amp;lcol=2">Endorsements</a></li>
-<li class="master-menu__item">
-<a href="https://www.politico.com/2020-election/candidates-views-on-the-issues/" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=6&amp;lcol=2">Issues</a></li>
-<li class="master-menu__item">
-<a href="https://www.politico.com/2020-election/democratic-presidential-candidates/polls/" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=7&amp;lcol=2">Polls</a></li>
-<li class="master-menu__item">
-<a href="https://www.politico.com/2020-election/president/democratic-primary/candidates/fundraising-and-campaign-finance-tracker/" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=8&amp;lcol=2">Money</a></li>
+<a href="https://www.politico.com/2020-election/swing-states-2020-senate-races-to-watch-polls-map-and-list/" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=4&amp;lcol=2">Battleground States Tracker</a></li>
 </ul>
 </div>
 </div><div class="col is-menu">
@@ -340,9 +325,9 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <li class="master-menu__item">
 <a href="https://www.politico.com/newsletters/playbook-pm" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=2&amp;lcol=3">Playbook PM</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/newsletters/politico-nightly-coronavirus-special-edition" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=3&amp;lcol=3">POLITICO Nightly: Coronavirus Special Edition</a></li>
+<a href="https://www.politico.com/newsletters/politico-nightly-coronavirus-special-edition" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=3&amp;lcol=3">POLITICO Nightly</a></li>
 <li class="master-menu__item">
- <a href="https://www.politico.com/huddle/" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=4&amp;lcol=3">Huddle</a></li>
+<a href="https://www.politico.com/huddle/" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=4&amp;lcol=3">Huddle</a></li>
 <li class="master-menu__item">
 <a href="https://www.politico.com/newsletters" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=5&amp;lcol=3">All Newsletters</a></li>
 </ul>
@@ -351,11 +336,13 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <h2 class="menu-toggle js-menu-toggle section-heading">SERIES</h2>
 <ul class="master-menu__list">
 <li class="master-menu__item">
-<a href="https://www.politico.com/magazine/thedeciders" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=6&amp;lcol=3">The Deciders</a></li>
+<a href="https://www.politico.com/series/states/the-fifty" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=6&amp;lcol=3">The Fifty</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/magazine/what-works" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=7&amp;lcol=3">What Works</a></li>
+<a href="https://www.politico.com/vaccinerace" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=7&amp;lcol=3">The Vaccine Race</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/WomenRule" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=8&amp;lcol=3">Women Rule</a></li>
+<a href="https://www.politico.com/magazine/what-works" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=8&amp;lcol=3">What Works</a></li>
+<li class="master-menu__item">
+<a href="https://www.politico.com/WomenRule" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=9&amp;lcol=3">Women Rule</a></li>
 </ul>
 </div>
 </div><div class="col is-menu">
@@ -377,13 +364,13 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <ul class="master-menu__list">
 <li class="master-menu__item">
 <a href="https://www.politico.com/news/rich-lowry" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=5&amp;lcol=4">Rich Lowry</a></li>
- <li class="master-menu__item">
+<li class="master-menu__item">
 <a href="https://www.politico.com/news/fourth-estate" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=6&amp;lcol=4">Jack Shafer</a></li>
 <li class="master-menu__item">
 <a href="https://www.politico.com/news/matt-wuerker" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=7&amp;lcol=4">Matt Wuerker</a></li>
 <li class="master-menu__item">
 <a href="https://www.politico.com/tag/cartoon-carousel" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=8&amp;lcol=4">Cartoon Carousel</a></li>
-</ul>
+ </ul>
 </div>
 </div><div class="col is-menu">
 <div class="col is-menu">
@@ -412,11 +399,13 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <li class="master-menu__item">
 <a href="https://www.politico.com/tag/space" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=11&amp;lcol=5">Space</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/technology" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=12&amp;lcol=5">Technology</a></li>
+<a href="https://www.politico.com/news/sustainability" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=12&amp;lcol=5">Sustainability</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/trade" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=13&amp;lcol=5">Trade</a></li>
+<a href="https://www.politico.com/technology" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=13&amp;lcol=5">Technology</a></li>
 <li class="master-menu__item">
-<a href="https://www.politico.com/transportation" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=14&amp;lcol=5">Transportation</a></li>
+<a href="https://www.politico.com/trade" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=14&amp;lcol=5">Trade</a></li>
+<li class="master-menu__item">
+<a href="https://www.politico.com/transportation" tabindex="-1" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=15&amp;lcol=5">Transportation</a></li>
 </ul>
 </div>
 </div><div class="col is-menu">
@@ -443,7 +432,7 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 </div>
 </div></div><footer class="row menu-footer">
 <div class="menu-footer__follow">
-<h2 class="section-heading">Follow us</h2>
+ <h2 class="section-heading">Follow us</h2>
 <ul class="menu-footer__list menu-footer__list--follow">
 <li class="menu-footer__item">
 <a href="https://twitter.com/politico" tabindex="-1" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=1&amp;lcol=7">Twitter</a></li>
@@ -458,14 +447,14 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <li class="menu-footer__item">
 <a href="https://www.politico.com/settings" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=1&amp;lcol=8">My Account</a></li>
 <li class="menu-footer__item">
-<a href="https://login.politico.com/_login?base=https%3A%2F%2Fwww.politico.com&amp;redirect=%2F_login&amp;logout=%2F_logout&amp;lRedirect=true&amp;sRedirect=%2Fsettings&amp;js=false" style="display: none;" class="politico-auth auth-logged-out js-tealium-tracking" target="_top" data-login="https://login.politico.com/_login?base=https%3A%2F%2Fwww.politico.com&amp;redirect=/_login&amp;logout=/_logout&amp;lRedirect=true&amp;sRedirect=/settings" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=2&amp;lcol=8">Log In</a><a href="https://login.politico.com/_logout?base=https%3A%2F%2Fwww.politico.com&amp;redirect=%2F_logout&amp;js=false" style="display: none;" class="politico-auth auth-logged-in js-tealium-tracking" data-logout="https://login.politico.com/_logout?base=https%3A%2F%2Fwww.politico.com&amp;redirect=/_logout" target="_blank" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=2&amp;lcol=8">Log Out</a></li>
+<a href="https://www.politico.com//_login?base=https%3A%2F%2Fwww.politico.com&amp;redirect=%2F_login&amp;logout=%2F_logout&amp;lRedirect=true&amp;sRedirect=%2Fsettings&amp;js=false" style="display: none;" class="politico-auth auth-logged-out js-tealium-tracking" target="_top" data-login="https://www.politico.com//_login?base=https%3A%2F%2Fwww.politico.com&amp;redirect=/_login&amp;logout=/_logout&amp;lRedirect=true&amp;sRedirect=/settings" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=2&amp;lcol=8">Log In</a><a href="https://www.politico.com//_logout?base=https%3A%2F%2Fwww.politico.com&amp;redirect=%2F_logout&amp;js=false" style="display: none;" class="politico-auth auth-logged-in js-tealium-tracking" data-logout="https://www.politico.com//_logout?base=https%3A%2F%2Fwww.politico.com&amp;redirect=/_logout" target="_top" data-tracking="mpos=na&amp;mid=site_navigation&amp;lindex=2&amp;lcol=8">Log Out</a></li>
 </ul>
 </div>
 </footer>
 </div>
 </nav>
 </header>
-<script src="https://static3.politico.com/resource/assets/js.min/core-header.min.8bd88cf5dfb1addddd4ff2b7a84114b7.gz.js"></script>
+<script src="https://static3.politico.com/resource/assets/js.min/core-header.min.cadca770a9bccaf7762ad1fc71da7af7.gz.js"></script>
 <main class="super-duper" role="main" id="main">
 <div class="super  fixed-top">
 <div class="super-inner">
@@ -484,7 +473,7 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <article class="story-main-content ">
 <div class="content layout-story sticky-wrapper">
 <section class="content-groupset pos-alpha">
- <div class="content-group story-tools">
+<div class="content-group story-tools">
 <div class="tools-group">
 <div class="tools-item">
 <aside class="user-tools orient-vertical sticky-content">
@@ -503,18 +492,6 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 </li>
 </ul>
 <ul class="utility-tools tools-list">
-<li class="utility-email">
-<a href="/cdn-cgi/l/email-protection#615e150e5c47000c115a1214030b0402155c2e03000c0041530f05411504130c5b412402090e0412410e07412314120947000c115a030e05185c09151511125b4e4e1616164f110e0d081508020e4f020e0c4e12150e13184e535150524e50534e111304120805040f15124c03001300020a4c0e03000c004c06040e1306044c164c031412094c1204020e0f054c1504130c4c505150525055">
-<b aria-hidden="true" class="icon icon-mail"></b>
-<span class="icon-text">Email</span>
-</a>
-</li>
-<li class="utility-comment">
-<a href="#superComments" class="collapse-toggle jump-anchor">
-<b aria-hidden="true" class="icon icon-comment"></b>
-<span class="icon-text">Comment</span>
-</a>
-</li>
 <li class="utility-print"> <a href="#" onClick="window.print();return false;">
 <b aria-hidden="true" class="icon icon-print"></b>
 <span class="icon-text">Print</span>
@@ -644,12 +621,7 @@ By <a href="https://www.politico.com/staff/alex-isenstadt" rel="author" class="u
 </div>
 </div>
 </div>
-</aside><div class="story-supplement  ">
- <aside class="content-actions">
-<a class="button format-l bleed-full collapse-toggle jump-anchor" data-load-ad-slot="pol-06" id="showCommentsButton" role="button" href="#superComments">Show Comments</a>
-</aside>
-</div>
-<div class="shifty-wrapper empty-at-large empty-at-extra" data-set="shifty-story-interrupt">
+</aside><div class="shifty-wrapper empty-at-large empty-at-extra" data-set="shifty-story-interrupt">
 <div class="story-interrupt format-s pos-beta predetermined shifty-content is-masoned">
 <div id="pol-02-wrap" class="content-group ad " aria-label="Advertisement">
 <div class="ad-slot js-lazy-load  flex vertical " id="pol-02" aria-hidden="true">
@@ -670,13 +642,13 @@ Most Read</h2>
 </div>
 <div class="widget-content most-popular-tabbed-core">
 <div class="widget-prefix">
-<a href="https://www.politico.com/news/2020/05/19/michael-flynn-full-susan-rice-email-sent-on-trumps-inauguration-day-267998" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=Unknown&amp;lcol=Unknown"><img data-lazy-img="https://static.politico.com/dims4/default/e4d6a15/2147483647/thumbnail/266x150%5E/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F5a%2Fbb%2F932b64864fdbb45416e84c6c0706%2Fwr-susan-rice-773.jpg" width="266" height="150" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-size="promo_small_rectangle"></a></div>
+<a href="https://www.politico.com/news/2020/09/23/trump-biden-first-debate-420189" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=Unknown&amp;lcol=Unknown"><img data-lazy-img="https://static.politico.com/dims4/default/ed8fec5/2147483647/legacy_thumbnail/266x150%5E/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F67%2F1b%2F41e125de446d88c1170824ae7021%2F200922-trump-debate-ap-773.jpg" width="266" height="150" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-size="promo_small_rectangle"></a></div>
 <ol class="story-frag-list layout-linear ">
 <li>
 <article class="story-frag format-xxs">
 <div class="summary">
 <header>
-<h3><a href="https://www.politico.com/news/2020/05/19/michael-flynn-full-susan-rice-email-sent-on-trumps-inauguration-day-267998" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=2&amp;lcol=1">Trump administration declassifies full Susan Rice email sent on Inauguration Day </a></h3>
+<h3><a href="https://www.politico.com/news/2020/09/23/trump-biden-first-debate-420189" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=2&amp;lcol=1">Trump falls into the trap he set for Biden</a></h3>
 </header>
 </div>
 </article>
@@ -685,16 +657,7 @@ Most Read</h2>
 <article class="story-frag format-xxs">
 <div class="summary">
 <header>
-<h3><a href="https://www.politico.com/news/2020/05/19/mcconnell-judges-handling-flynn-case-268117" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=3&amp;lcol=1">McConnell challenges judge&rsquo;s handling of Flynn case</a></h3>
- </header>
-</div>
-</article>
-</li>
-<li>
-<article class="story-frag format-xxs">
-<div class="summary">
-<header>
-<h3><a href="https://www.politico.com/news/2020/05/19/nasa-human-spaceflight-director-ousted-268327" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=4&amp;lcol=1">&#39;We need answers&#39;: Departure of NASA&#39;s human spaceflight chief raises alarm</a></h3>
+<h3><a href="https://www.politico.com/news/magazine/2020/09/23/mcconnell-losing-side-of-history-420354" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=3&amp;lcol=1">McConnell Is on the Losing Side of History &mdash; And He Knows It</a></h3>
 </header>
 </div>
 </article>
@@ -703,7 +666,7 @@ Most Read</h2>
 <article class="story-frag format-xxs">
 <div class="summary">
 <header>
-<h3><a href="https://www.politico.com/news/2020/05/20/trump-threatens-federal-funding-for-michigan-mail-in-voting-270609" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=5&amp;lcol=1">Trump misstates Michigan mail-in ballot policy, threatens federal funding</a></h3>
+<h3><a href="https://www.politico.com/news/2020/09/23/cia-russia-intelligence-white-house-420351" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=4&amp;lcol=1">CIA clamps down on flow of Russia intelligence to White House</a></h3>
 </header>
 </div>
 </article>
@@ -712,7 +675,16 @@ Most Read</h2>
 <article class="story-frag format-xxs">
 <div class="summary">
 <header>
-<h3><a href="https://www.politico.com/news/2020/05/19/michael-flynn-lawyers-federal-judge-268280" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=6&amp;lcol=1">Michael Flynn&#39;s lawyers try an end run around federal judge</a></h3>
+<h3><a href="https://www.politico.com/news/2020/09/22/trump-barrett-lagoa-supreme-court-420045" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=5&amp;lcol=1">Trumpworld clashes over Barrett vs. Lagoa</a></h3>
+</header>
+</div>
+</article>
+</li>
+<li>
+<article class="story-frag format-xxs">
+<div class="summary">
+ <header>
+<h3><a href="https://www.politico.com/news/2020/09/23/trump-targets-cindy-mccain-420392" target="_top" class="js-tealium-tracking" data-tracking="mpos=right-rail&amp;mid=Tab&amp;lindex=6&amp;lcol=1">&lsquo;Cindy can have Sleepy Joe!&rsquo;: Trump targets McCain&rsquo;s widow after Biden endorsement</a></h3>
 </header>
 </div>
 </article>
@@ -730,28 +702,6 @@ Most Read</h2>
 </div>
 </div>
 </section>
-</div>
-<div class="super collapse-content quantity-high" id="superComments">
-<div class="super-inner">
-<div class="content layout-bi-unequal">
-<section class="content-groupset pos-alpha">
-<div id="fb-root"></div>
-<section class="content-group all-comments">
-<div class="comments-embed">
-<div class="fb-comments" data-href="https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314" data-numposts="5" data-colorscheme="light" data-width="100%"></div>
-</div>
-</section>
-</section>
-<section class="content-groupset pos-beta">
-<div class="content-group ad " aria-label="Advertisement">
-<div id="pol-06-wrap" class="content-group ad " aria-label="Advertisement">
-<div class="ad-slot js-lazy-load  flex vertical " id="pol-06" aria-hidden="true" data-ad-refresh="0">
-</div>
-</div>
-</div>
-</section>
-</div>
-</div>
 </div>
 <a class="continue-to-content" tabindex="0" role="link">Jump to sidebar section</a> <div class="super">
 <div class="super-inner">
@@ -812,13 +762,15 @@ Most Read</h2>
 <a href="https://www.politico.com/privacy-policy" target="_top" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_footer&amp;lindex=2&amp;lcol=2">Privacy Policy</a></li>
 <li>
 <a href="https://www.politico.com/do-not-sell" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_footer&amp;lindex=3&amp;lcol=2">Do not sell my info</a></li>
+<li>
+<a href="https://www.politico.com/privacy#california" target="_blank" class="js-tealium-tracking" data-tracking="mpos=na&amp;mid=site_footer&amp;lindex=4&amp;lcol=2">Notice to California Residents</a></li>
 </ul>
 </nav>
 <div class="footer__group footer__group--legal">
 <p class="footer__copyright"> &copy; 2020 POLITICO LLC</p>
 </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://static3.politico.com/resource/assets/js.min/scriptloader.3f87d6956b9017acc78e56f69b69f088.gz.js"></script><script>var scripts = [{\'inline\': function() { if (Modernizr.touch) { document.write(\'<script src="https://static3.politico.com/resource/js/website/shared/libraries/jquery-mobile-1.4.5.min.483cba40ca58d0ada0632d01953d42f4.gz.js"><\\/script>\'); } } },{\'src\': \'https://www.google.com/recaptcha/api.js?render=6LfS6L8UAAAAAAHCPhd7CF66ZbK8AyFfk3MslbKV\'},{\'src\': \'https://static3.politico.com/resource/js/website/shared/libraries/jquery.extra.fbf31263f39294c52d3a5cc6a2f6b309.gz.js\'},{\'src\': \'https://static3.politico.com/resource/js/website/shared/libraries/popup.26b0ff7e738340d74b9af4387fb60a39.gz.js\'},{\'src\': \'https://static3.politico.com/resource/js/website/shared/libraries/jquery-frame.6129c2d85f45109fa362482bbb37d1be.gz.js\'},{\'src\': \'https://static3.politico.com/resource/assets/js.min/main.35ab52d5473f860635ebc8aa67785ba3.gz.js\'},{\'src\': \'https://static3.politico.com/resource/assets/js.min/bsp.20960d0aa4e4fd2bd46601100a9eb8e1.gz.js\'},{\'src\': \'https://static3.politico.com/resource/assets/js.min/core-default18-delayed.min.dbab42915fbe144b5d7b19792cfa5c43.gz.js\'},{\'src\': \'//s7.addthis.com/js/300/addthis_widget.js#pubid=politico.com\'},{\'inline\': function() { buildSocial(); } },];POLITICO_Script_Loader.loadScriptsSync(scripts);</script><script type="text/javascript">$(document).ready(function(e) {
+<script type="text/javascript" src="https://static3.politico.com/resource/assets/js.min/scriptloader.3f87d6956b9017acc78e56f69b69f088.gz.js"></script><script>var scripts = [{\'inline\': function() { if (Modernizr.touch) { document.write(\'<script src="https://static3.politico.com/resource/js/website/shared/libraries/jquery-mobile-1.4.5.min.483cba40ca58d0ada0632d01953d42f4.gz.js"><\\/script>\'); } } },{\'src\': \'https://www.google.com/recaptcha/api.js?render=6LfS6L8UAAAAAAHCPhd7CF66ZbK8AyFfk3MslbKV\'},{\'src\': \'https://static3.politico.com/resource/js/website/shared/libraries/jquery.extra.fbf31263f39294c52d3a5cc6a2f6b309.gz.js\'},{\'src\': \'https://static3.politico.com/resource/js/website/shared/libraries/popup.26b0ff7e738340d74b9af4387fb60a39.gz.js\'},{\'src\': \'https://static3.politico.com/resource/js/website/shared/libraries/jquery-frame.6129c2d85f45109fa362482bbb37d1be.gz.js\'},{\'src\': \'https://static3.politico.com/resource/assets/js.min/main.6b941d7a928286da8fbee205a1e190c7.gz.js\'},{\'src\': \'https://static3.politico.com/resource/assets/js.min/bsp.20960d0aa4e4fd2bd46601100a9eb8e1.gz.js\'},{\'src\': \'https://static3.politico.com/resource/assets/js.min/core-default18-delayed.min.793859666147d5ac8dda733ace1d8844.gz.js\'},{\'src\': \'//s7.addthis.com/js/300/addthis_widget.js#pubid=politico.com\'},{\'inline\': function() { buildSocial(); } },];POLITICO_Script_Loader.loadScriptsSync(scripts);</script><script type="text/javascript">$(document).ready(function(e) {
     $(\'#pageProfileSettings\').find(\'[target="_changePassword"]\').attr(\'target\', \'_blank\');
 });</script></div>
 <div class="ad-slot js-lazy-load   " id="pol-oop" aria-hidden="true" data-ad-refresh="0">

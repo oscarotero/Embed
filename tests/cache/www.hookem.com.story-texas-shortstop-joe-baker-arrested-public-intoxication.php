@@ -5,18 +5,22 @@ return [
     'headers' => [
         'server' => [
             'nginx',
+            'nginx',
             'nginx'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:23 GMT',
-            'Wed, 20 May 2020 17:53:23 GMT'
+            'Wed, 23 Sep 2020 21:46:10 GMT',
+            'Wed, 23 Sep 2020 21:46:10 GMT',
+            'Wed, 23 Sep 2020 21:46:10 GMT'
         ],
         'content-type' => [
             'text/html',
+            'text/html; charset=UTF-8',
             'text/html; charset=UTF-8'
         ],
         'content-length' => [
-            '162'
+            '162',
+            '0'
         ],
         'connection' => [
             'keep-alive'
@@ -25,7 +29,34 @@ return [
             'timeout=20'
         ],
         'location' => [
-            'https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/  HTTP/2 200'
+            'https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/  HTTP/2 301',
+            'https://www.hookem.com/story/20160523/texas-shortstop-joe-baker-arrested-public-intoxication/'
+        ],
+        'expires' => [
+            'Wed, 23 Sep 2020 22:13:52 GMT'
+        ],
+        'x-redirect-by' => [
+            'Permalink Manager'
+        ],
+        'x-powered-by' => [
+            'WP Engine',
+            'WP Engine'
+        ],
+        'x-cacheable' => [
+            'non200',
+            'SHORT'
+        ],
+        'cache-control' => [
+            'max-age=600, must-revalidate',
+            'max-age=600, must-revalidate'
+        ],
+        'x-cache' => [
+            'HIT: 1',
+            'HIT: 1'
+        ],
+        'x-cache-group' => [
+            'normal  HTTP/2 200',
+            'normal'
         ],
         'vary' => [
             'Accept-Encoding',
@@ -36,29 +67,14 @@ return [
             '<https://www.hookem.com/wp-json/>; rel="https://api.w.org/"',
             '<https://www.hookem.com/?p=12322>; rel=shortlink'
         ],
-        'x-powered-by' => [
-            'WP Engine'
-        ],
-        'x-cacheable' => [
-            'SHORT'
-        ],
-        'cache-control' => [
-            'max-age=600, must-revalidate'
-        ],
-        'x-cache' => [
-            'HIT: 1'
-        ],
-        'x-cache-group' => [
-            'normal'
-        ],
         'content-encoding' => [
             'br'
         ],
         'Content-Location' => [
-            'https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/'
+            'https://www.hookem.com/story/20160523/texas-shortstop-joe-baker-arrested-public-intoxication/'
         ],
         'X-Request-Time' => [
-            '0.871 ms'
+            '1.047 ms'
         ]
     ],
     'statusCode' => 200,
@@ -134,13 +150,13 @@ return [
     
 <!-- This site is optimized with the Yoast SEO plugin v5.9.3 - https://yoast.com/wordpress/plugins/seo/ -->
 <meta name="news_keywords" content="sports, college sports" />
-<link rel="original-source" href="https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/" />
-<link rel="canonical" href="https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/" />
+<link rel="original-source" href="https://www.hookem.com/story/20160523/texas-shortstop-joe-baker-arrested-public-intoxication/" />
+<link rel="canonical" href="https://www.hookem.com/story/20160523/texas-shortstop-joe-baker-arrested-public-intoxication/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Texas shortstop Joe Baker was arrested for public intoxication | Hookem.com" />
 <meta property="og:description" content="Texas shortstop Joe Baker was arrested for public intoxication on May 12 after he admitted to UTPD to consuming three or four drinks earlier in the evening. According to the arrest affidavit, an officer found Baker sitting on the ground at the corner of San Jacinto and Martin Luther King Jr. boulevards next to a dried puddle of vomit. The &hellip;" />
-<meta property="og:url" content="https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/" />
+<meta property="og:url" content="https://www.hookem.com/story/20160523/texas-shortstop-joe-baker-arrested-public-intoxication/" />
 <meta property="og:site_name" content="Hookem.com" />
 <meta property="article:publisher" content="https://www.facebook.com/bevobeat" />
 <meta property="article:section" content="Texas Longhorns" />
@@ -156,14 +172,14 @@ return [
 <meta name="twitter:image" content="https://d4o3oxzf7m9sj.cloudfront.net/cEdmnEtW-Xi_ce7xi3agRmm5vts=/1800x1144/www.hookem.com/wp-content/uploads/2016/04/SSS-TexasBaseball-12.jpg" />
 <meta name="twitter:creator" content="@autulloaas" />
 <script type=\'application/ld+json\'>{"@context":"http:\\/\\/schema.org","@type":"WebSite","@id":"#website","url":"https:\\/\\/www.hookem.com\\/","name":"Hookem.com","potentialAction":{"@type":"SearchAction","target":"https:\\/\\/www.hookem.com\\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<script type=\'application/ld+json\'>{"@context":"http:\\/\\/schema.org","@type":"Organization","url":"https:\\/\\/www.hookem.com\\/story\\/texas-shortstop-joe-baker-arrested-public-intoxication\\/","sameAs":["https:\\/\\/www.facebook.com\\/bevobeat","https:\\/\\/instagram.com\\/bevobeat\\/","https:\\/\\/www.youtube.com\\/user\\/AmericanStatesman","https:\\/\\/twitter.com\\/bevobeat"],"@id":"#organization","name":"Hookem.com","logo":"https:\\/\\/www.hookem.com\\/wp-content\\/themes\\/hookem\\/images\\/hookem-logo.png"}</script>
+<script type=\'application/ld+json\'>{"@context":"http:\\/\\/schema.org","@type":"Organization","url":"https:\\/\\/www.hookem.com\\/story\\/20160523\\/texas-shortstop-joe-baker-arrested-public-intoxication\\/","sameAs":["https:\\/\\/www.facebook.com\\/bevobeat","https:\\/\\/instagram.com\\/bevobeat\\/","https:\\/\\/www.youtube.com\\/user\\/AmericanStatesman","https:\\/\\/twitter.com\\/bevobeat"],"@id":"#organization","name":"Hookem.com","logo":"https:\\/\\/www.hookem.com\\/wp-content\\/themes\\/hookem\\/images\\/hookem-logo.png"}</script>
 <!-- / Yoast SEO plugin. -->
 
 <link rel=\'dns-prefetch\' href=\'//fonts.googleapis.com\' />
 <link rel=\'dns-prefetch\' href=\'//s.w.org\' />
-<link rel=\'stylesheet\' id=\'wp-block-library-css\'  href=\'https://www.hookem.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.6\' type=\'text/css\' media=\'all\' />
+<link rel=\'stylesheet\' id=\'wp-block-library-css\'  href=\'https://www.hookem.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.7\' type=\'text/css\' media=\'all\' />
 <link rel=\'stylesheet\' id=\'wp-parsely-style-css\'  href=\'https://www.hookem.com/wp-content/plugins/wp-parsely/wp-parsely.css?ver=1576017905\' type=\'text/css\' media=\'all\' />
-<link rel=\'stylesheet\' id=\'google_fonts-css\'  href=\'https://fonts.googleapis.com/css?family=Ubuntu%3A300%2C400%2C500%2C700%2C300italic%2C500italic%7COswald%3A300%2C400%2C700&#038;ver=5.2.6\' type=\'text/css\' media=\'all\' />
+<link rel=\'stylesheet\' id=\'google_fonts-css\'  href=\'https://fonts.googleapis.com/css?family=Ubuntu%3A300%2C400%2C500%2C700%2C300italic%2C500italic%7COswald%3A300%2C400%2C700&#038;ver=5.2.7\' type=\'text/css\' media=\'all\' />
 <link rel=\'stylesheet\' id=\'tablepress-default-css\'  href=\'https://www.hookem.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.9.2\' type=\'text/css\' media=\'all\' />
 <link rel=\'stylesheet\' id=\'hookem_css-css\'  href=\'https://www.hookem.com/wp-content/themes/hookem/dist/styles/main.32c00d672bcb3d09.css\' type=\'text/css\' media=\'all\' />
 <script type=\'text/javascript\' src=\'https://www.hookem.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp\'></script>
@@ -172,13 +188,13 @@ return [
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.hookem.com/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.hookem.com/wp-includes/wlwmanifest.xml" /> 
 <link rel=\'shortlink\' href=\'https://www.hookem.com/?p=12322\' />
-<link rel="alternate" type="application/json+oembed" href="https://www.hookem.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://www.hookem.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&#038;format=xml" />
+<link rel="alternate" type="application/json+oembed" href="https://www.hookem.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.hookem.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&#038;format=xml" />
 
 <!-- BEGIN wp-parsely Plugin Version 1.13.0 -->
 <meta name="wp-parsely_version" id="wp-parsely_version" content="1.13.0"/>
 	<script type="application/ld+json">
-	{"@context":"http:\\/\\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"http:\\/\\/www.hookem.com\\/story\\/texas-shortstop-joe-baker-arrested-public-intoxication\\/"},"headline":"Texas shortstop Joe Baker was arrested for public intoxication","url":"http:\\/\\/www.hookem.com\\/story\\/texas-shortstop-joe-baker-arrested-public-intoxication\\/","thumbnailUrl":{},"image":{"@type":"ImageObject","url":{}},"dateCreated":"2016-05-23T21:23:35Z","datePublished":"2016-05-23T21:23:35Z","dateModified":"2016-05-23T21:23:35Z","articleSection":"Augie Garrido","author":[{"@type":"Person","name":"Ryan Autullo"}],"creator":["Ryan Autullo"],"keywords":[],"publisher":{"@type":"Organization","name":"Hookem.com","logo":{"@type":"ImageObject","url":"https:\\/\\/www.hookem.com\\/wp-content\\/themes\\/hookem\\/images\\/hookem-logo.png"}}}
+	{"@context":"http:\\/\\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"http:\\/\\/www.hookem.com\\/story\\/20160523\\/texas-shortstop-joe-baker-arrested-public-intoxication\\/"},"headline":"Texas shortstop Joe Baker was arrested for public intoxication","url":"http:\\/\\/www.hookem.com\\/story\\/20160523\\/texas-shortstop-joe-baker-arrested-public-intoxication\\/","thumbnailUrl":{},"image":{"@type":"ImageObject","url":{}},"dateCreated":"2016-05-23T21:23:35Z","datePublished":"2016-05-23T21:23:35Z","dateModified":"2016-05-23T21:23:35Z","articleSection":"Augie Garrido","author":[{"@type":"Person","name":"Ryan Autullo"}],"creator":["Ryan Autullo"],"keywords":[],"publisher":{"@type":"Organization","name":"Hookem.com","logo":{"@type":"ImageObject","url":"https:\\/\\/www.hookem.com\\/wp-content\\/themes\\/hookem\\/images\\/hookem-logo.png"}}}
 	</script>
 
 	<!-- END wp-parsely Plugin Version 1.13.0 -->
@@ -256,6 +272,12 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
       </div>
         <div class="social-links pull-right hidden-xs clearfix">
         <ul class="list-inline">
+                      <li class="next-game hidden-sm">
+                <span>Next game:</span>
+                <a href="https://www.hookem.com/games/20200908/2020-texas-longhorns-vs-texas-tech-red-raiders/">
+                  September 26, 2020 at Texas Tech
+                </a>
+            </li>
                     <li>
             <a href="/search" title="Search Hookem.com"><i class="share fa fa-search"></i></a>
           </li>
@@ -302,6 +324,7 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
                 <ul class="dropdown-menu">
                                       <li><a href="https://www.hookem.com/collection/the-dotted-line/">The Dotted Line</a></li>
                                       <li><a href="https://www.hookem.com/category/recruiting/">All recruiting</a></li>
+                                      <li><a href="https://www.hookem.com/category/class-of-2022/">Class of 2022</a></li>
                                       <li><a href="https://www.hookem.com/category/class-of-2021/">Class of 2021</a></li>
                                       <li><a href="https://www.hookem.com/category/class-of-2020/">Class of 2020</a></li>
                                       <li><a href="https://www.hookem.com/category/class-of-2019/">Class of 2019</a></li>
@@ -333,6 +356,7 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
                                       <div class="dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Games <i class="fa fa-caret-down"></i></a>
                 <ul class="dropdown-menu">
+                                      <li><a href="https://www.hookem.com/schedule/2020/">2020 schedule</a></li>
                                       <li><a href="https://www.hookem.com/schedule/2019/">2019 schedule</a></li>
                                       <li><a href="https://www.hookem.com/schedule/2018/">2018 schedule</a></li>
                                       <li><a href="https://www.hookem.com/schedule/2017/">2017 schedule</a></li>
@@ -366,8 +390,8 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
 
             <h4 class="news-banner-sponsor">Presented by &nbsp;<a href="https://www.heb.com/" target="_blank"><img class="img-repsonsive" src="https://www.hookem.com/wp-content/uploads/2018/08/HEB-logo-transparent-59x19.png" /></a></h4>
     
-  <h2>Longhorn confidential:</h2>
-  <a href="https://www.hookem.com/2020/05/18/longhorn-confidential-quartet-commitments-means-texas-class-2021/" target="_blank">    <p>What a quartet of commitments means for Texas’ Class of 2021 <i class="fa fa-caret-right"></i></p>
+  <h2>Longhorn Confidential:</h2>
+  <a href="https://www.hookem.com/texas-longhorns/20200923/longhorn-confidential-wednesday-sept-23/" target="_blank">    <p>Why does Texas have seven captains on its football team? <i class="fa fa-caret-right"></i></p>
   </a></div>  
   
 </div>
@@ -387,10 +411,10 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
 			<div class="share-buttons pull-right">
   <div class="clearfix">
     <p>Share this story:</p>
-    <a href="https://www.facebook.com/dialog/share?app_id=1658483297707131&amp;display=page&amp;href=https%3A%2F%2Fwww.hookem.com%2Fstory%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&amp;redirect_uri=https%3A%2F%2Fwww.hookem.com%2Fstory%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F" target="_blank" class="share-button-facebook social-action" data-network="facebook" data-action="share-btn" data-social-target="https&#x3A;&#x2F;&#x2F;www.hookem.com&#x2F;story&#x2F;texas-shortstop-joe-baker-arrested-public-intoxication&#x2F;"><i class="fa fa-facebook"></i></a>
-    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&amp;text=Texas+shortstop+Joe+Baker+was+arrested+for+public+intoxication&amp;via=bevobeat&amp;related=statesman%3Astatesmanu" target="_blank" class="share-button-twitter social-action" data-network="twitter" data-action="share-btn" data-social-target="https&#x3A;&#x2F;&#x2F;www.hookem.com&#x2F;story&#x2F;texas-shortstop-joe-baker-arrested-public-intoxication&#x2F;"><i class="fa fa-twitter"></i></a>
-    <a href="http://tumblr.com/widgets/share/tool?canonicalUrl=https%3A%2F%2Fwww.hookem.com%2Fstory%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F" target="_blank" class="share-button-tumblr social-action" data-network="tumblr" data-action="share-btn" data-social-target="https&#x3A;&#x2F;&#x2F;www.hookem.com&#x2F;story&#x2F;texas-shortstop-joe-baker-arrested-public-intoxication&#x2F;"><i class="fa fa-tumblr"></i></a>
-    <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&amp;title=Texas+shortstop+Joe+Baker+was+arrested+for+public+intoxication" target="_blank" class="share-button-reddit social-action" data-network="reddit" data-action="share-btn" data-social-target="https&#x3A;&#x2F;&#x2F;www.hookem.com&#x2F;story&#x2F;texas-shortstop-joe-baker-arrested-public-intoxication&#x2F;"><i class="fa fa-reddit"></i></a>
+    <a href="https://www.facebook.com/dialog/share?app_id=1658483297707131&amp;display=page&amp;href=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&amp;redirect_uri=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F" target="_blank" class="share-button-facebook social-action" data-network="facebook" data-action="share-btn" data-social-target="https&#x3A;&#x2F;&#x2F;www.hookem.com&#x2F;story&#x2F;20160523&#x2F;texas-shortstop-joe-baker-arrested-public-intoxication&#x2F;"><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&amp;text=Texas+shortstop+Joe+Baker+was+arrested+for+public+intoxication&amp;via=bevobeat&amp;related=statesman%3Astatesmanu" target="_blank" class="share-button-twitter social-action" data-network="twitter" data-action="share-btn" data-social-target="https&#x3A;&#x2F;&#x2F;www.hookem.com&#x2F;story&#x2F;20160523&#x2F;texas-shortstop-joe-baker-arrested-public-intoxication&#x2F;"><i class="fa fa-twitter"></i></a>
+    <a href="http://tumblr.com/widgets/share/tool?canonicalUrl=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F" target="_blank" class="share-button-tumblr social-action" data-network="tumblr" data-action="share-btn" data-social-target="https&#x3A;&#x2F;&#x2F;www.hookem.com&#x2F;story&#x2F;20160523&#x2F;texas-shortstop-joe-baker-arrested-public-intoxication&#x2F;"><i class="fa fa-tumblr"></i></a>
+    <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&amp;title=Texas+shortstop+Joe+Baker+was+arrested+for+public+intoxication" target="_blank" class="share-button-reddit social-action" data-network="reddit" data-action="share-btn" data-social-target="https&#x3A;&#x2F;&#x2F;www.hookem.com&#x2F;story&#x2F;20160523&#x2F;texas-shortstop-joe-baker-arrested-public-intoxication&#x2F;"><i class="fa fa-reddit"></i></a>
   </div>
 </div>
 
@@ -444,7 +468,7 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
 
 																								<div class="comments">
   <h3><i class="fa fa-comments"></i> Comments</h3>
-  <div class="fb-comments" data-url="https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/" data-numposts="3" data-width="100%" data-version="v2.9" data-href="https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/"></div>
+  <div class="fb-comments" data-url="https://www.hookem.com/story/20160523/texas-shortstop-joe-baker-arrested-public-intoxication/" data-numposts="3" data-width="100%" data-version="v2.9" data-href="https://www.hookem.com/story/20160523/texas-shortstop-joe-baker-arrested-public-intoxication/"></div>
 </div>
 
 					</div>
@@ -459,15 +483,15 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
     <a class="btn btn-menu-open hidden-xs share-bar-item share-bar-btn">
       <i class="fa fa-bars"></i> Menu
     </a>
-    <a class="share-bar-item share-bar-social share-bar-fb social-action hidden-xs" target="_blank" href="https://www.facebook.com/dialog/share?app_id=1658483297707131&amp;display=page&amp;href=https%3A%2F%2Fwww.hookem.com%2Fstory%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&amp;redirect_uri=https%3A%2F%2Fwww.hookem.com%2Fstory%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F" data-network="facebook" data-action="share-bar" data-social-target="https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/">
+    <a class="share-bar-item share-bar-social share-bar-fb social-action hidden-xs" target="_blank" href="https://www.facebook.com/dialog/share?app_id=1658483297707131&amp;display=page&amp;href=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&amp;redirect_uri=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F" data-network="facebook" data-action="share-bar" data-social-target="https://www.hookem.com/story/20160523/texas-shortstop-joe-baker-arrested-public-intoxication/">
       <i class="fa fa-facebook-square"></i> Share on Facebook</i>
     </a>
-    <a class="share-bar-item share-bar-social share-bar-tw social-action hidden-xs" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&amp;text=Texas+shortstop+Joe+Baker+was+arrested+for+public+intoxication&amp;via=bevobeat&amp;related=statesman%3Astatesmanu" data-network="twitter" data-action="share-bar" data-social-target="https://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/">
+    <a class="share-bar-item share-bar-social share-bar-tw social-action hidden-xs" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F&amp;text=Texas+shortstop+Joe+Baker+was+arrested+for+public+intoxication&amp;via=bevobeat&amp;related=statesman%3Astatesmanu" data-network="twitter" data-action="share-bar" data-social-target="https://www.hookem.com/story/20160523/texas-shortstop-joe-baker-arrested-public-intoxication/">
       <i class="fa fa-twitter"></i> Post to Twitter</i>
     </a>
     <div class="share-bar-item share-bar-text hidden-xs">
       Next<span class="hidden-sm"> story</span>:
-              <strong><a href="https://www.hookem.com/story/catching-break-texas-avoids-big-12-pitcher-year-tournament-opener/">Catching a break? Texas avoids Big 12 pitcher of the year in tournament opener <i class="fa fa-caret-right"></i></a></strong>
+              <strong><a href="https://www.hookem.com/story/20160524/catching-break-texas-avoids-big-12-pitcher-year-tournament-opener/">Catching a break? Texas avoids Big 12 pitcher of the year in tournament opener <i class="fa fa-caret-right"></i></a></strong>
           </div>
 
   </div>
@@ -486,7 +510,7 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
   </div>
 </div>
 			<div class="next-previous">
-      <a href="https://www.hookem.com/story/suit-seeks-testimony-ex-texas-coach-mack-brown-others/">
+      <a href="https://www.hookem.com/story/20160522/suit-seeks-testimony-ex-texas-coach-mack-brown-others/">
       <div class="np np-previous clearfix">
         <i class="fa fa-angle-left pull-left"></i>
         <p class="np-label">Previous story</p>
@@ -494,7 +518,7 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
       </div>
     </a>
   
-      <a href="https://www.hookem.com/story/catching-break-texas-avoids-big-12-pitcher-year-tournament-opener/">
+      <a href="https://www.hookem.com/story/20160524/catching-break-texas-avoids-big-12-pitcher-year-tournament-opener/">
       <div class="np np-next text-right clearfix">
         <i class="fa fa-angle-right pull-right"></i>
         <p class="np-label">Next story</p>
@@ -512,14 +536,14 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
       <div class="column-tease">
       <div class="clearfix">
         <div class="author-img pull-left">
-          <img src="https://d4o3oxzf7m9sj.cloudfront.net/k_CJUDyDL3FR14IBKShEDSbGHY4=/fit-in/120x120/www.hookem.com/wp-content/uploads/2015/08/cedric-golden1-e1440719381688.jpg" class="img-responsive avatar" />
+          <img src="https://d4o3oxzf7m9sj.cloudfront.net/1Osx7orgYdhzlgPT4_0tmZ0zW_U=/fit-in/120x120/www.hookem.com/wp-content/uploads/2015/08/Kirk-Bohls-square.jpg" class="img-responsive avatar" />
         </div>
         <span class="banner">Statesman Take</span>
-        <h4 class="author-name">Cedric Golden</h4>
+        <h4 class="author-name">Kirk Bohls</h4>
         <span class="author-underline">American-Statesman Staff</span>
       </div>
-      <h4 class="column-title"><a href="https://www.hookem.com/columns/pitches-olympics-2021-new-league-2020-cat-osterman/">Golden: Before she pitches in the Olympics in 2021, a new league in 2020 for Cat Osterman</a></h4>
-      <a class="read-more" href="https://www.hookem.com/columns/pitches-olympics-2021-new-league-2020-cat-osterman/">Read more <i class="fa fa-caret-right"></i></a>
+      <h4 class="column-title"><a href="https://www.hookem.com/columns/20200921/bohls-tom-herman-texas-wise-feed-hot-hand-running-game/">Bohls: Tom Herman, Texas are wise to feed the hot hand in the running game</a></h4>
+      <a class="read-more" href="https://www.hookem.com/columns/20200921/bohls-tom-herman-texas-wise-feed-hot-hand-running-game/">Read more <i class="fa fa-caret-right"></i></a>
     </div>
       <div class="column-tease">
       <div class="clearfix">
@@ -530,8 +554,8 @@ src="https://www.facebook.com/tr?id=1672325099726575&ev=PageView
         <h4 class="author-name">Kirk Bohls</h4>
         <span class="author-underline">American-Statesman Staff</span>
       </div>
-      <h4 class="column-title"><a href="https://www.hookem.com/columns/bohls-swear-god-former-texas-basketball-coach-leon-black-one-finer-persons-ever/">Bohls: Swear to God, former Texas basketball coach Leon Black is &#8216;one of the finer persons ever&#8217;</a></h4>
-      <a class="read-more" href="https://www.hookem.com/columns/bohls-swear-god-former-texas-basketball-coach-leon-black-one-finer-persons-ever/">Read more <i class="fa fa-caret-right"></i></a>
+      <h4 class="column-title"><a href="https://www.hookem.com/columns/20200920/bohls-another-top-25-vote-not-another-conference-yet/">Bohls: Another Top 25 vote, but not another conference yet</a></h4>
+      <a class="read-more" href="https://www.hookem.com/columns/20200920/bohls-another-top-25-vote-not-another-conference-yet/">Read more <i class="fa fa-caret-right"></i></a>
     </div>
   </div>
 
@@ -679,22 +703,22 @@ body .ost-widget a.ost-btn:hover {
 
 <div class="widget-contents">
       <div class="panel panel-story">
-              <img src="https://d4o3oxzf7m9sj.cloudfront.net/no9IMVT98CefEYVdcTc9hLkIOuk=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/04/King3.jpg" class="img-responsive" />
+              <img src="https://d4o3oxzf7m9sj.cloudfront.net/vRfx_E4jCmpg86RjJbBZRQWMkLk=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/09/Kerstetter1.jpg" class="img-responsive" />
             <div class="panel-body">
-        <p class="publish-time">May 20th, 2020</p>
-        <h2><a href="https://www.hookem.com/story/dotted-line-ranking-projecting-texas-six-offensive-commits-2021-recruiting-cycle/">The Dotted Line: Ranking, projecting Texas&#8217; six offensive commits in the 2021 recruiting cycle</a></h2>
+        <p class="publish-time">September 22nd, 2020</p>
+        <h2><a href="https://www.hookem.com/story/20200922/can-everything-derek-kerstetter-settling-new-role-texas-offensive-line/">&#8216;He can do everything&#8217;: Derek Kerstetter settling into a new role on Texas&#8217; offensive line</a></h2>
 
         <p class="byline">
-                      <span class="author-name">Mike Craven</span>
+                      <span class="author-name">Danny Davis</span>
                                           </p>
 
       </div>
     </div>
       <div class="panel panel-story">
-              <img src="https://d4o3oxzf7m9sj.cloudfront.net/5c7mhBNsaPbYWvDHV5--1Uy89jw=/fit-in/360x0/www.hookem.com/wp-content/uploads/2019/11/nrw-tx-ks-21.jpg" class="img-responsive" />
+              <img src="https://d4o3oxzf7m9sj.cloudfront.net/SR3i1Xwh7Em3m0GNXEa7ds-XVUQ=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/03/nrw-tx-kan-bball-20.jpg" class="img-responsive" />
             <div class="panel-body">
-        <p class="publish-time">May 19th, 2020</p>
-        <h2><a href="https://www.hookem.com/story/texas-athletics-issues-48-page-guide-rules-returning-work-amid-coronavirus-pandemic/">Texas athletics issues 48-page guide with rules on returning to work amid coronavirus pandemic</a></h2>
+        <p class="publish-time">September 23rd, 2020</p>
+        <h2><a href="https://www.hookem.com/story/20200923/texas-coach-shaka-smart-stays-house-promotes-cody-hatt-assistant-coach/">Texas coach Shaka Smart stays in-house, promotes Cody Hatt to assistant coach</a></h2>
 
         <p class="byline">
                       <span class="author-name">Brian Davis</span>
@@ -723,71 +747,45 @@ body .ost-widget a.ost-btn:hover {
 
   <h2 class="section-subhed">More on Hookem.com</h2>
 
-  <div id="card-stack" class="row grid" data-from="58041">
+  <div id="card-stack" class="row grid" data-from="59582">
     <div class="cards">
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
     
 <div class="panel panel-story">
-      <img src="https://d4o3oxzf7m9sj.cloudfront.net/no9IMVT98CefEYVdcTc9hLkIOuk=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/04/King3.jpg" class="img-responsive" />
+      <img src="https://d4o3oxzf7m9sj.cloudfront.net/SR3i1Xwh7Em3m0GNXEa7ds-XVUQ=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/03/nrw-tx-kan-bball-20.jpg" class="img-responsive" />
     <div class="panel-body">
-    <p class="publish-time">May 20th, 2020</p>
+    <p class="publish-time">September 23rd, 2020</p>
+          <h4 class="entry-overline">Men\'s Basketball</h4>
+        <h2><a href="https://www.hookem.com/story/20200923/texas-coach-shaka-smart-stays-house-promotes-cody-hatt-assistant-coach/">Texas coach Shaka Smart stays in-house, promotes Cody Hatt to assistant coach</a></h2>
+    <p class="byline">
+              <a href="https://www.hookem.com/author/bdavis">          <span class="author-name">Brian Davis</span>
+        </a>                    &nbsp;<span class="author-underline">American-Statesman Staff</span>    </p>
+  </div>
+</div>  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
+    
+<div class="panel panel-story">
+      <img src="https://d4o3oxzf7m9sj.cloudfront.net/XykYvhDySi5frNaAOxEp6sj5gH4=/fit-in/360x0/www.hookem.com/wp-content/uploads/2019/11/RBB-TX-Tech-21140.jpg" class="img-responsive" />
+    <div class="panel-body">
+    <p class="publish-time">September 23rd, 2020</p>
           <h4 class="entry-overline">Football</h4>
-        <h2><a href="https://www.hookem.com/story/dotted-line-ranking-projecting-texas-six-offensive-commits-2021-recruiting-cycle/">The Dotted Line: Ranking, projecting Texas&#8217; six offensive commits in the 2021 recruiting cycle</a></h2>
+        <h2><a href="https://www.hookem.com/story/20200923/texas-tech-wr-t-j-vasher-starts-solidly-seeks-big-senior-year/">Texas Tech WR T.J. Vasher starts solidly, seeks big senior year</a></h2>
+    <p class="byline">
+              <a href="https://www.hookem.com/author">          <span class="author-name">Don Williams / A-J Media</span>
+        </a>                        </p>
+  </div>
+</div>  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
+    
+<div class="panel panel-story">
+      <img src="https://d4o3oxzf7m9sj.cloudfront.net/YNdAFRFeGuOkI12w0FAAxgnMtOE=/fit-in/360x0/www.hookem.com/wp-content/uploads/2019/11/nrw-tx-isu-49.jpg" class="img-responsive" />
+    <div class="panel-body">
+    <p class="publish-time">September 23rd, 2020</p>
+          <h4 class="entry-overline">Football</h4>
+        <h2><a href="https://www.hookem.com/story/20200923/dotted-line-handful-2022-defensive-targets-texas-watching-closely/">The Dotted Line: A handful of 2022 defensive targets that Texas is watching closely</a></h2>
     <p class="byline">
               <a href="https://www.hookem.com/author/mcraven">          <span class="author-name">Mike Craven</span>
         </a>                    &nbsp;<span class="author-underline">Hookem.com staff</span>    </p>
-  </div>
-</div>  </div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
-    
-<div class="panel panel-story">
-      <img src="https://d4o3oxzf7m9sj.cloudfront.net/qSBOePEFgaooKC7yuBOYPd3Y6gk=/fit-in/360x0/www.hookem.com/wp-content/uploads/2019/11/sss-tx-ks-0218.jpg" class="img-responsive" />
-    <div class="panel-body">
-    <p class="publish-time">May 20th, 2020</p>
-          <h4 class="entry-overline">Football</h4>
-        <h2><a href="https://www.hookem.com/2020/05/20/austin-health-officials-skeptical-large-crowds-gathering-texas-football-2020/">Austin health officials skeptical of large crowds gathering for Texas football in 2020</a></h2>
-    <p class="byline">
-              <a href="https://www.hookem.com/author/bdavis">          <span class="author-name">Brian Davis</span>
-        </a>                    &nbsp;<span class="author-underline">American-Statesman Staff</span>    </p>
-  </div>
-</div>  </div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
-    
-<div class="panel panel-story">
-      <img src="https://d4o3oxzf7m9sj.cloudfront.net/3V2klQaqeKMooivvxTne1q1hb9Q=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/05/Sankey.jpg" class="img-responsive" />
-    <div class="panel-body">
-    <p class="publish-time">May 20th, 2020</p>
-          <h4 class="entry-overline">Football</h4>
-        <h2><a href="https://www.hookem.com/story/ap-power-five-conferences-spend-big-lobbying-congress-first-quarter-2020/">AP: Power Five conferences spend big on lobbying Congress in first quarter of 2020</a></h2>
-    <p class="byline">
-              <a href="https://www.hookem.com/author">          <span class="author-name">Ben Nuckols / The Associated Press</span>
-        </a>                        </p>
-  </div>
-</div>  </div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
-    
-<div class="panel panel-story">
-      <img src="https://d4o3oxzf7m9sj.cloudfront.net/FiXHk0zEuMltoJxIISSJAHP7dA8=/fit-in/360x0/www.hookem.com/wp-content/uploads/2019/09/LGC_UTvsOSC-11.jpg" class="img-responsive" />
-    <div class="panel-body">
-    <p class="publish-time">May 19th, 2020</p>
-          <h4 class="entry-overline">Football</h4>
-        <h2><a href="https://www.hookem.com/2020/05/19/20-texas-sports-earn-high-marks-ncaas-academic-progress-rates/">All 20 Texas sports earn high marks for NCAA’s Academic Progress Rates</a></h2>
-    <p class="byline">
-              <a href="https://www.hookem.com/author/bdavis">          <span class="author-name">Brian Davis</span>
-        </a>                    &nbsp;<span class="author-underline">American-Statesman Staff</span>    </p>
-  </div>
-</div>  </div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
-    
-<div class="panel panel-story">
-      <img src="https://d4o3oxzf7m9sj.cloudfront.net/8q-2XlI4CdDBNv6m6dvrV9fyp60=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/05/ncaa.jpg" class="img-responsive" />
-    <div class="panel-body">
-    <p class="publish-time">May 19th, 2020</p>
-          <h4 class="entry-overline">Football</h4>
-        <h2><a href="https://www.hookem.com/story/judges-ruling-stands-ncaa-cant-limit-athletes-benefits-tied-education/">Judge&#8217;s ruling stands: NCAA can&#8217;t limit athletes&#8217; benefits that are tied to education</a></h2>
-    <p class="byline">
-              <a href="https://www.hookem.com/author">          <span class="author-name">Steve Berkowitz / USA TODAY</span>
-        </a>                        </p>
   </div>
 </div>  </div>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
@@ -795,9 +793,61 @@ body .ost-widget a.ost-btn:hover {
 <div class="panel panel-story">
       <img src="https://d4o3oxzf7m9sj.cloudfront.net/5c7mhBNsaPbYWvDHV5--1Uy89jw=/fit-in/360x0/www.hookem.com/wp-content/uploads/2019/11/nrw-tx-ks-21.jpg" class="img-responsive" />
     <div class="panel-body">
-    <p class="publish-time">May 19th, 2020</p>
+    <p class="publish-time">September 23rd, 2020</p>
+          <h4 class="entry-overline">Texas Longhorns</h4>
+        <h2><a href="https://www.hookem.com/texas-longhorns/20200923/longhorn-confidential-wednesday-sept-23/">Longhorn Confidential: Wednesday, Sept. 23</a></h2>
+    <p class="byline">
+              <a href="https://www.hookem.com/author/ddavis">          <span class="author-name">Danny Davis</span>
+        </a>                    &nbsp;<span class="author-underline">American-Statesman Staff</span>    </p>
+  </div>
+</div>  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
+    
+<div class="panel panel-story">
+      <img src="https://d4o3oxzf7m9sj.cloudfront.net/vRfx_E4jCmpg86RjJbBZRQWMkLk=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/09/Kerstetter1.jpg" class="img-responsive" />
+    <div class="panel-body">
+    <p class="publish-time">September 22nd, 2020</p>
           <h4 class="entry-overline">Football</h4>
-        <h2><a href="https://www.hookem.com/story/texas-athletics-issues-48-page-guide-rules-returning-work-amid-coronavirus-pandemic/">Texas athletics issues 48-page guide with rules on returning to work amid coronavirus pandemic</a></h2>
+        <h2><a href="https://www.hookem.com/story/20200922/can-everything-derek-kerstetter-settling-new-role-texas-offensive-line/">&#8216;He can do everything&#8217;: Derek Kerstetter settling into a new role on Texas&#8217; offensive line</a></h2>
+    <p class="byline">
+              <a href="https://www.hookem.com/author/ddavis">          <span class="author-name">Danny Davis</span>
+        </a>                    &nbsp;<span class="author-underline">American-Statesman Staff</span>    </p>
+  </div>
+</div>  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
+    
+<div class="panel panel-story">
+      <img src="https://d4o3oxzf7m9sj.cloudfront.net/RJzns5qbfy6OH39xQ3Pg31B1cSQ=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/09/Houston-Baptist-Texas-Tech-Football-2.jpg" class="img-responsive" />
+    <div class="panel-body">
+    <p class="publish-time">September 22nd, 2020</p>
+          <h4 class="entry-overline">Football</h4>
+        <h2><a href="https://www.hookem.com/texas-longhorns/20200922/watch-brian-kirk-ced-discuss-texas-upcoming-trip-lubbock/">WATCH: Brian, Kirk and Ced discuss Texas&#8217; upcoming trip to Lubbock</a></h2>
+    <p class="byline">
+              <a href="https://www.hookem.com/author/cvasquez">          <span class="author-name">American-Statesman Staff</span>
+        </a>                        </p>
+  </div>
+</div>  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
+    
+<div class="panel panel-story">
+      <img src="https://d4o3oxzf7m9sj.cloudfront.net/dQWgIOIzjdd3RurlmfbQFcIz90I=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/05/JGZ_WHS_vs_DelValle_31.jpg" class="img-responsive" />
+    <div class="panel-body">
+    <p class="publish-time">September 22nd, 2020</p>
+          <h4 class="entry-overline">Football</h4>
+        <h2><a href="https://www.hookem.com/story/20200922/dotted-line-five-offensive-prospects-2022-class-texas-fans-know/">The Dotted Line: Five offensive prospects in the 2022 class Texas fans should know</a></h2>
+    <p class="byline">
+              <a href="https://www.hookem.com/author/mcraven">          <span class="author-name">Mike Craven</span>
+        </a>                    &nbsp;<span class="author-underline">Hookem.com staff</span>    </p>
+  </div>
+</div>  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
+    
+<div class="panel panel-story">
+      <img src="https://d4o3oxzf7m9sj.cloudfront.net/5c7mhBNsaPbYWvDHV5--1Uy89jw=/fit-in/360x0/www.hookem.com/wp-content/uploads/2019/11/nrw-tx-ks-21.jpg" class="img-responsive" />
+    <div class="panel-body">
+    <p class="publish-time">September 22nd, 2020</p>
+          <h4 class="entry-overline">Football</h4>
+        <h2><a href="https://www.hookem.com/texas-longhorns/20200922/texas-amy-folan-one-deloss-dodds-key-hires-named-central-michigan-athletic-director/">Texas’ Amy Folan, one of DeLoss Dodds’ key hires, named Central Michigan athletic director</a></h2>
     <p class="byline">
               <a href="https://www.hookem.com/author/bdavis">          <span class="author-name">Brian Davis</span>
         </a>                    &nbsp;<span class="author-underline">American-Statesman Staff</span>    </p>
@@ -806,24 +856,11 @@ body .ost-widget a.ost-btn:hover {
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
     
 <div class="panel panel-story">
-      <img src="https://d4o3oxzf7m9sj.cloudfront.net/JKrPI2H00ZTONoM_NlemEiOu56Q=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/02/nrw-best-preps-14.jpg" class="img-responsive" />
+      <img src="https://d4o3oxzf7m9sj.cloudfront.net/5c7mhBNsaPbYWvDHV5--1Uy89jw=/fit-in/360x0/www.hookem.com/wp-content/uploads/2019/11/nrw-tx-ks-21.jpg" class="img-responsive" />
     <div class="panel-body">
-    <p class="publish-time">May 19th, 2020</p>
-          <h4 class="entry-overline">Football</h4>
-        <h2><a href="https://www.hookem.com/story/dotted-line-five-2020-texas-signees-poised-immediate-playing-time-2020/">The Dotted Line: Five 2020 Texas signees poised for immediate playing time in 2020</a></h2>
-    <p class="byline">
-              <a href="https://www.hookem.com/author/mcraven">          <span class="author-name">Mike Craven</span>
-        </a>                    &nbsp;<span class="author-underline">Hookem.com staff</span>    </p>
-  </div>
-</div>  </div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
-    
-<div class="panel panel-story">
-      <img src="https://d4o3oxzf7m9sj.cloudfront.net/hirOs2OfQn6CnWe7Ez1TN8EPN_k=/fit-in/360x0/www.hookem.com/wp-content/uploads/2020/05/Jonathon-Brooks.jpg" class="img-responsive" />
-    <div class="panel-body">
-    <p class="publish-time">May 18th, 2020</p>
-          <h4 class="entry-overline">Football</h4>
-        <h2><a href="https://www.hookem.com/2020/05/18/longhorn-confidential-quartet-commitments-means-texas-class-2021/">Longhorn Confidential: What a quartet of commitments means for Texas&#8217; Class of 2021</a></h2>
+    <p class="publish-time">September 22nd, 2020</p>
+          <h4 class="entry-overline">Texas Longhorns</h4>
+        <h2><a href="https://www.hookem.com/texas-longhorns/20200922/longhorn-confidential-tuesday-sept-22/">Longhorn Confidential: Tuesday, Sept. 22</a></h2>
     <p class="byline">
               <a href="https://www.hookem.com/author/ddavis">          <span class="author-name">Danny Davis</span>
         </a>                    &nbsp;<span class="author-underline">American-Statesman Staff</span>    </p>
@@ -832,27 +869,17 @@ body .ost-widget a.ost-btn:hover {
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
     
 <div class="panel panel-story">
-      <img src="https://d4o3oxzf7m9sj.cloudfront.net/yektmPdv7WkjyFiH8QKX_yBQpV4=/fit-in/360x0/www.hookem.com/wp-content/uploads/2019/10/RRcoaches.jpg" class="img-responsive" />
+      <img src="https://d4o3oxzf7m9sj.cloudfront.net/4fChMwtYKPvrgXrpUgU7PMr3fOc=/fit-in/360x0/www.hookem.com/wp-content/uploads/2019/11/GRG-tech_20.jpg" class="img-responsive" />
     <div class="panel-body">
-    <p class="publish-time">May 18th, 2020</p>
+    <p class="publish-time">September 21st, 2020</p>
           <h4 class="entry-overline">Football</h4>
-        <h2><a href="https://www.hookem.com/story/dotted-line-flurry-commitments-shake-big-12-recruiting-rankings/">The Dotted Line: Flurry of commitments shake up Big 12 recruiting rankings</a></h2>
+        <h2><a href="https://www.hookem.com/story/20200921/texas-techs-leading-rusher-arrested-will-play-saturday-vs-texas/">Texas Tech&#8217;s leading rusher arrested, but will play Saturday vs. Texas</a></h2>
     <p class="byline">
-              <a href="https://www.hookem.com/author/mcraven">          <span class="author-name">Mike Craven</span>
-        </a>                    &nbsp;<span class="author-underline">Hookem.com staff</span>    </p>
-  </div>
-</div>  </div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
-    
-<div class="panel panel-story">
-      <img src="https://d4o3oxzf7m9sj.cloudfront.net/Pya13_lHPN1AUgjGOMYm5XE57k0=/fit-in/360x0/www.hookem.com/wp-content/uploads/2018/09/rbb-TX-MD-3849.jpg" class="img-responsive" />
-    <div class="panel-body">
-    <p class="publish-time">May 17th, 2020</p>
-          <h4 class="entry-overline">Football</h4>
-        <h2><a href="https://www.hookem.com/2020/05/17/texas-nfl-rookies-get-new-jersey-assignments/">Texas&#8217; NFL rookies get their new jersey assignments</a></h2>
-    <p class="byline">
-              <a href="https://www.hookem.com/author/ddavis">          <span class="author-name">Danny Davis</span>
-        </a>                    &nbsp;<span class="author-underline">American-Statesman Staff</span>    </p>
+              <a href="https://www.hookem.com/author">          <span class="author-name">Don Williams / A-J Media</span>
+        </a>                  
+and                      <a href="https://www.hookem.com/author">          <span class="author-name">Adam Young</span>
+        </a>                  
+                        </p>
   </div>
 </div>  </div>
     </div>
@@ -947,7 +974,7 @@ body .ost-widget a.ost-btn:hover {
 <!-- END Parse.ly Include: Standard -->
 <script type=\'text/javascript\' src=\'https://www.hookem.com/wp-content/plugins/responsify-wp/src/picturefill.3.0.1.min.js\'></script>
 <script type=\'text/javascript\' src=\'https://www.hookem.com/wp-content/themes/hookem/dist/scripts/main.c0b6a58b8480f9f0.js\'></script>
-<script type=\'text/javascript\' src=\'https://www.hookem.com/wp-includes/js/wp-embed.min.js?ver=5.2.6\'></script>
+<script type=\'text/javascript\' src=\'https://www.hookem.com/wp-includes/js/wp-embed.min.js?ver=5.2.7\'></script>
 
 					<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="https://loader-cdn.azureedge.net/prod/gatehouse/loader.min.js"></script>
@@ -1088,6 +1115,9 @@ MG2Loader.init({plugins:[{name:"FP",initOptions:{version:"1.0",environment:"prod
                           <li class="nav-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21560">
                 <a class="nav-link level-two" href="https://www.hookem.com/category/recruiting/">All recruiting <i class="fa fa-caret-right pull-right"></i></a>
               </li>
+                          <li class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-58168">
+                <a class="nav-link level-two" href="https://www.hookem.com/category/class-of-2022/">Class of 2022 <i class="fa fa-caret-right pull-right"></i></a>
+              </li>
                           <li class="nav-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-48727">
                 <a class="nav-link level-two" href="https://www.hookem.com/category/class-of-2021/">Class of 2021 <i class="fa fa-caret-right pull-right"></i></a>
               </li>
@@ -1149,6 +1179,9 @@ MG2Loader.init({plugins:[{name:"FP",initOptions:{version:"1.0",environment:"prod
           <li class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-2462 menu-item-has-children">
         <a class="nav-link level-one" href="#">Games <i class="fa fa-plus-square-o pull-right"></i></a>
                   <ul class="nav nav-pills nav-stacked nav-submenu">
+                          <li class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-59265">
+                <a class="nav-link level-two" href="https://www.hookem.com/schedule/2020/">2020 schedule <i class="fa fa-caret-right pull-right"></i></a>
+              </li>
                           <li class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-50959">
                 <a class="nav-link level-two" href="https://www.hookem.com/schedule/2019/">2019 schedule <i class="fa fa-caret-right pull-right"></i></a>
               </li>

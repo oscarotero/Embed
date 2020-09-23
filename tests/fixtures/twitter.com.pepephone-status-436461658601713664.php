@@ -8,17 +8,18 @@ return [
     'code' => [
         'html' => '<blockquote class="twitter-tweet"><p lang="es" dir="ltr">RT <a href="https://twitter.com/PabloHerreros?ref_src=twsrc%5Etfw">@PabloHerreros</a> Pepephone rompe la baraja - <a href="http://t.co/mFn7mcB1vy">http://t.co/mFn7mcB1vy</a></p>&mdash; Pepephone (@pepephone) <a href="https://twitter.com/pepephone/status/436461658601713664?ref_src=twsrc%5Etfw">February 20, 2014</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>',
         'width' => 550,
-        'height' => null
+        'height' => null,
+        'ratio' => null
     ],
     'description' => null,
     'favicon' => 'https://abs.twimg.com/favicons/twitter.ico',
     'feeds' => [],
-    'icon' => 'https://abs.twimg.com/responsive-web/web/icon-ios.8ea219d4.png',
+    'icon' => 'https://abs.twimg.com/responsive-web/client-web/icon-ios.8ea219d5.png',
     'image' => null,
     'keywords' => [],
     'language' => 'en',
     'languages' => [
-        'x-default' => 'https://twitter.com/pepephone/status/436461658601713664?lang=en',
+        'x-default' => 'https://twitter.com/pepephone/status/436461658601713664',
         'ar' => 'https://twitter.com/pepephone/status/436461658601713664?lang=ar',
         'bg' => 'https://twitter.com/pepephone/status/436461658601713664?lang=bg',
         'bn' => 'https://twitter.com/pepephone/status/436461658601713664?lang=bn',

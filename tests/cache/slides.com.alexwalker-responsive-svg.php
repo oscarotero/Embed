@@ -7,7 +7,7 @@ return [
             'nginx/1.10.1'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:54:04 GMT'
+            'Wed, 23 Sep 2020 21:46:50 GMT'
         ],
         'content-type' => [
             'text/html; charset=utf-8'
@@ -31,25 +31,25 @@ return [
             'deflate'
         ],
         'etag' => [
-            'W/"448305229014d50b0fc0a3f1445ff360"'
+            'W/"6955e91c1fa8b0f8ef4a241518a466c3"'
         ],
         'cache-control' => [
             'max-age=0, private, must-revalidate'
         ],
         'set-cookie' => [
-            '_slides_app_session=S1k1YnVNRE42b0k0aFhhZWM1aTBFNG9KbVlyMURSSVdYNnA0RmV1eWFqN0pNQlVMWUpZa01zOGtSbjJQa3JvUndDZm5NZ21RUlZNT2R3MXNycHhJczk0NU9pWkh6cDJMK0VZci83VWJtYnJNcStRWi9JWHN3RzNleU9KWlVkVHRVZGMwcndBd2FndzB3cWNvdmxPanhJNDRFczRtTm1idkM2cG1welpOalJzait0NWJudHlhblZLOUxTUjVkM3huaDBjMVE0SS9UUHdVWlhITWtLNCtCL2lqcCtIdTBEanJtMU8wMzdiNDNJVjNoTUdkMm5ZN2tTakV3M1F4ZzJWeWdkdzNoWG9lVUNRNHZUaWMvOTZHcEh3bEhBWUZIdzJCOC91Z1dnVjJTK2tmeXU2aXkrOUFKT1ZjblRFNVdUNkEtLUMwZERKd3h0R0tpMXQ1bzRVZFovRGc9PQ%3D%3D--413be77cbca1b64a356f90d126468aca0485a6a4; domain=.slides.com; path=/; HttpOnly'
+            '_slides_app_session=QkZBS2w1ZlpPU29nSUVzMlBPTXVyeG1zT2tPblhLcEMzems0SFlPUTFSYTdUK3ZRSE1sSE5zaEMxaWw2RzJMVUxLV0VGVFVFUHl2N1QrNEZtL1g4MTdvSkpsUHFPZytCdWZ6S1BQaG5uWWNCU3grREVsKysxTGxQRnc0RkFpeTdnMDVjQXhCMzhURjlWR0pqRTMyeWJrd28wcFRDREc1UDNMeVpOS3dqRlo1OWl2Q1dGeG5iUE8xOTArV2ZHRHpJMGpBYWZ6SEl0Rk5rQXhIVzdGWU1MV05pRGVBUWZPVEloMlQxOGpkM0pCNUV1WDU4VVF6NU5PaXFpNHh1ajRNbkZjYStINGR6Y3pLcWRuWVFvTk1sMGozYUgxeEU5K3ZjbVpiOFFobm95SXUxR1dyRGxONG0xNGRkT095RkdsTVotLUpyMVlOQ2cwME1YMnU5VUxWdE0vY2c9PQ%3D%3D--640544ab40b9755bce85bfebe764c04688c7e614; domain=.slides.com; path=/; HttpOnly'
         ],
         'x-request-id' => [
-            '7f2550f6-e8a8-4856-ac73-731c5f88c50e'
+            '93f21abb-97de-419d-befb-2526c2d7dcd3'
         ],
         'x-runtime' => [
-            '0.046187'
+            '0.156773'
         ],
         'Content-Location' => [
             'http://slides.com/alexwalker/responsive-svg/'
         ],
         'X-Request-Time' => [
-            '0.411 ms'
+            '0.520 ms'
         ]
     ],
     'statusCode' => 200,
@@ -79,16 +79,16 @@ return [
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" type="text/css" data-application-font="inter">
 
-    <link rel="stylesheet" media="all" href="//assets.slid.es/assets/slides/slides-bdecdb9d1bd594d8363319a2c80bb2b1bbc1c0b419e73fcf547354738a67ce6d.css" />
-    <link rel="stylesheet" media="all" href="//assets.slid.es/assets/application-aa16fd4d47e083f4815de074e0db26cfd99a185f00010966bb83f0910b7e58e7.css" />
-    	<link rel="stylesheet" media="all" href="//assets.slid.es/assets/deck-v2-2ae831cb5405f1b2c2e29716e1c126a248fb0db670076b932720a540c7a9b239.css" />
+    <link rel="stylesheet" media="all" href="//assets.slid.es/assets/slides/slides-5463dbbad1a68c6e9a85872698fd43e74078271bfd42f08aadf3e7324137e99c.css" />
+    <link rel="stylesheet" media="all" href="//assets.slid.es/assets/application-f44f19368e26ce7b142c85f91cbedc3ea7ec094e3c1fbd9398b82992c5c2004b.css" />
+    	<link rel="stylesheet" media="all" href="//assets.slid.es/assets/deck-v2-decc9fc7e7d11e7781743b9cbd47c0d6b223b3ba2ee96c784d0f1355d5e8b1d5.css" />
 
 
 
 <style id="user-css-output" type="text/css"></style>
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="wvpsSAOICXKxYPEjj/LWeVQtz1n1ho1a1XXrZP2LUD8h4JsPkW2FkdvvhRlMRf+q4dcnijB4esxoEeiec/tolQ==" />
+<meta name="csrf-token" content="uq6hYQdVINWZnC2Kucb2jy5JSdVJJVkz+IDXKyH1+zdtST4t4Cn8GlgYWKGAJdTAC/1Otl+tJ8vvCM6+KyyLpQ==" />
     <script type="text/javascript">
   if( navigator.doNotTrack !== \'1\' && !/dnt=1/.test( window.location.search ) ) {
     (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
@@ -810,7 +810,7 @@ Helpers</h1>
 					</li>
 					<li data-tooltip="Views" data-tooltip-delay="500">
 						<span class="icon i-eye"></span>
-						<span class="value">9,347</span>
+						<span class="value">9,631</span>
 					</li>
 				</ul>
 			</div>
@@ -872,7 +872,7 @@ Helpers</h1>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>625<span class="icon i-eye"></span></div>
+        <div>722<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
@@ -890,7 +890,7 @@ Helpers</h1>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>901<span class="icon i-eye"></span></div>
+        <div>997<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
@@ -908,7 +908,7 @@ Helpers</h1>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>859<span class="icon i-eye"></span></div>
+        <div>964<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
@@ -940,9 +940,9 @@ Helpers</h1>
     </div>
 
     <div class="link-group">
-      <h5>Follow</h5>
-      <a href="https://slides.com/news/" target="_blank">News</a>
-      <a href="http://blog.slides.com" target="_blank">Blog</a>
+      <h5>Updates</h5>
+      <a href="http://slides.com/changelog?root=true">Changelog</a>
+      <a href="https://slides.com/news">News</a>
       <a href="https://twitter.com/slides" target="_blank">Twitter</a>
       <a href="https://facebook.com/slidesapp" target="_blank">Facebook</a>
     </div>
@@ -950,7 +950,6 @@ Helpers</h1>
     <div class="link-group">
       <h5>Company</h5>
       <a href="http://slides.com/about?root=true">About Slides</a>
-      <a href="http://slides.com/changelog?root=true">Changelog</a>
       <a href="http://slides.com/security?root=true">Security</a>
       <a href="http://slides.com/partners?root=true">Partners</a>
     </div>
@@ -963,6 +962,15 @@ Helpers</h1>
 </footer>
 
     </div> <!--! end of #container -->
+    
+<script>
+	var SLConfig = {"deck":{"id":216172,"slug":"responsive-svg","title":"responsive-svg","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2014-08-28T04:43:38.820Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg","view_count":9631,"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","account_type":"default","team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"fade","transition":"default","theme_id":null,"theme_font":"josefine","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":35,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":null,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":null},"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","account_type":"default","team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
+</script>
+    <script src="//assets.slid.es/assets/application-06f73b4184927043d738bfa56cbd5513286d34ae33c2d63c685ca577a8f7bbc4.js" defer="defer"></script>
+    	<script src="//assets.slid.es/assets/deck-64ae628b82524293d5ddd125f34d5be25e5c6549517c3698a8da02fe24e10534.js" defer="defer"></script>
+	
+
+
     <script>
 UserVoice=window.UserVoice||[];(function(){var uv=document.createElement(\'script\');uv.type=\'text/javascript\';uv.async=true;uv.src=\'//widget.uservoice.com/f7sH7NavrjjvuGxByaw.js\';var s=document.getElementsByTagName(\'script\')[0];s.parentNode.insertBefore(uv,s)})();
 
@@ -974,15 +982,6 @@ UserVoice.push([\'set\', {
 }]);
 
 </script>
-
-    
-<script>
-	var SLConfig = {"deck":{"id":216172,"slug":"responsive-svg","title":"responsive-svg","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2014-08-28T04:43:38.820Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg","view_count":9347,"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"fade","transition":"default","theme_id":null,"theme_font":"josefine","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":35,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":null,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":null},"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
-</script>
-    <script src="//assets.slid.es/assets/application-4b64b4543736c64f90e09eb6e4e15f75e4e08717e631be3ef0a827a933d79449.js" defer="defer"></script>
-    	<script src="//assets.slid.es/assets/deck-ee07a80fcebe1a99d2bfbfbd071bd97e534411f0dacc825971e3e628eb2f5e16.js" defer="defer"></script>
-	
-
 
   </body>
 </html>

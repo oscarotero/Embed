@@ -4,7 +4,7 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 20 May 2020 17:53:25 GMT'
+            'Wed, 23 Sep 2020 21:46:13 GMT'
         ],
         'content-type' => [
             'application/json; charset=utf-8'
@@ -49,7 +49,7 @@ return [
             'https://infogram.com/oembed/?url=https%3A%2F%2Finfogram.com%2Ffrost-bank-advisors-online-graphic-1g8e205xdj03pod'
         ],
         'X-Request-Time' => [
-            '0.247 ms'
+            '0.248 ms'
         ]
     ],
     'statusCode' => 200,

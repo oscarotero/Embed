@@ -7,7 +7,7 @@ return [
             'nginx'
         ],
         'date' => [
-            'Fri, 28 Aug 2020 11:37:04 GMT'
+            'Wed, 23 Sep 2020 21:46:11 GMT'
         ],
         'content-type' => [
             'application/json; charset=UTF-8'
@@ -45,7 +45,7 @@ return [
             'max-age=600, must-revalidate'
         ],
         'x-cache' => [
-            'MISS'
+            'HIT: 1'
         ],
         'x-cache-group' => [
             'normal'
@@ -57,7 +57,7 @@ return [
             'https://www.hookem.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hookem.com%2Fstory%2F20160523%2Ftexas-shortstop-joe-baker-arrested-public-intoxication%2F'
         ],
         'X-Request-Time' => [
-            '0.722 ms'
+            '0.556 ms'
         ]
     ],
     'statusCode' => 200,

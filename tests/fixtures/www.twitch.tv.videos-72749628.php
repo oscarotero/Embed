@@ -6,7 +6,11 @@ return [
     'authorUrl' => null,
     'cms' => null,
     'code' => [
-        'html' => '<iframe src="https://player.twitch.tv/?autoplay=false&amp;video=v72749628" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>',
+        'html' => '<div id="twitch-embed"></div>
+<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+<script type="text/javascript">
+    new Twitch.Player("twitch-embed", { video: "72749628" });
+</script>',
         'width' => 620,
         'height' => 378,
         'ratio' => 60.968

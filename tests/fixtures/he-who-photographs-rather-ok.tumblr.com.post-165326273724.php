@@ -8,15 +8,16 @@ return [
     'code' => [
         'html' => '<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/3sZLmGKnNg-4n8G7mNtxOA/165326273724" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709" ><a href="https://he-who-photographs-rather-ok.tumblr.com/post/165326273724">https://he-who-photographs-rather-ok.tumblr.com/post/165326273724</a></div><script async src="https://assets.tumblr.com/post.js"></script>',
         'width' => 540,
-        'height' => null
+        'height' => null,
+        'ratio' => null
     ],
     'description' => 'Usually minimal editing. Also effort',
-    'favicon' => 'https://66.media.tumblr.com/avatar_235be11f6ae4_128.pnj',
+    'favicon' => 'https://64.media.tumblr.com/avatar_235be11f6ae4_128.pnj',
     'feeds' => [
         'https://he-who-photographs-rather-ok.tumblr.com/rss'
     ],
-    'icon' => 'https://66.media.tumblr.com/avatar_235be11f6ae4_128.pnj',
-    'image' => 'https://66.media.tumblr.com/0a0fac1ef8faa0c466d9224567af06aa/tumblr_ow8r0nMybA1spmyulo1_640.jpg',
+    'icon' => 'https://64.media.tumblr.com/avatar_235be11f6ae4_128.pnj',
+    'image' => 'https://64.media.tumblr.com/0a0fac1ef8faa0c466d9224567af06aa/tumblr_ow8r0nMybA1spmyulo1_640.jpg',
     'keywords' => [
         'panda',
         'aesthetic photography',
@@ -39,7 +40,7 @@ return [
         'mainEntityOfPage' => true,
         'datePublished' => '2017-09-14T10:20:35-04:00',
         'author' => 'he-who-photographs-rather-ok',
-        'image' => 'https://66.media.tumblr.com/0a0fac1ef8faa0c466d9224567af06aa/tumblr_ow8r0nMybA1spmyulo1_1280.jpg',
+        'image' => 'https://64.media.tumblr.com/0a0fac1ef8faa0c466d9224567af06aa/tumblr_ow8r0nMybA1spmyulo1_1280.jpg',
         '@context' => 'http://schema.org'
     ],
     'oEmbed' => [

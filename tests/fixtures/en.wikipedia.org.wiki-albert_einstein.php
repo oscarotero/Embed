@@ -17,7 +17,7 @@ return [
     'license' => null,
     'providerName' => 'Wikipedia',
     'providerUrl' => 'https://en.wikipedia.org',
-    'publishedTime' => null,
+    'publishedTime' => '2001-11-05 18:26:16',
     'redirect' => null,
     'title' => 'Albert Einstein',
     'url' => 'https://en.wikipedia.org/wiki/Albert_Einstein',
@@ -41,9 +41,9 @@ return [
             ]
         ],
         'datePublished' => '2001-11-05T18:26:16Z',
-        'dateModified' => '2020-08-26T00:39:53Z',
+        'dateModified' => '2020-09-23T11:00:56Z',
         'image' => 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg',
-        'headline' => 'German-born theoretical physicist; developer of the theory of relativity (1879-1955)'
+        'headline' => 'German-born theoretical physicist; developer of the theory of relativity (1879–1955)'
     ],
     'oEmbed' => [],
     'api' => [

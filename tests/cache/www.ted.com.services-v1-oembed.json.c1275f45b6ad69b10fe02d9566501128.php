@@ -46,22 +46,22 @@ return [
             'bytes'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:43 GMT'
+            'Wed, 23 Sep 2020 21:47:57 GMT'
         ],
         'via' => [
             '1.1 varnish'
         ],
         'age' => [
-            '272'
+            '0'
         ],
         'x-served-by' => [
-            'e12, cache-bwi5148-BWI, cache-mad22051-MAD'
+            'e12, cache-bwi5135-BWI, cache-mad22059-MAD'
         ],
         'x-cache' => [
-            'MISS, HIT'
+            'MISS, MISS'
         ],
         'x-cache-hits' => [
-            '0, 1'
+            '0, 0'
         ],
         'vary' => [
             'Accept-Encoding'
@@ -73,7 +73,7 @@ return [
             'https://www.ted.com/services/v1/oembed.json?url=https%3A%2F%2Fwww.ted.com%2Ftalks%2Fgeorge_monbiot_for_more_wonder_rewild_the_world'
         ],
         'X-Request-Time' => [
-            '0.099 ms'
+            '0.239 ms'
         ]
     ],
     'statusCode' => 200,

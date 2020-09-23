@@ -7,7 +7,7 @@ return [
             'nginx'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:27 GMT'
+            'Wed, 23 Sep 2020 21:46:14 GMT'
         ],
         'content-type' => [
             'text/html; charset=utf-8'
@@ -22,7 +22,7 @@ return [
             'nofollow'
         ],
         'etag' => [
-            'W/"f55-BbqmeRqMJiXWTsj728+2/2l03sM"'
+            'W/"f55-PKwmq6xazdo3/VfKriuW+axT/OA"'
         ],
         'vary' => [
             'Accept-Encoding'
@@ -37,7 +37,7 @@ return [
             'http://output.jsbin.com/vonesu/10'
         ],
         'X-Request-Time' => [
-            '0.265 ms'
+            '0.260 ms'
         ]
     ],
     'statusCode' => 200,
@@ -179,7 +179,7 @@ Search label
   </table>
   
   <p>Comment: Chrome and Safari (Mac) seem to be the only browsers that read placeholder text, so far. Safari seems to still read the placeholder text even when there is another value inside the text field.</p>
-<script src="http://static.jsbin.com/js/render/edit.js?4.1.7"></script>
+<script src="http://static.jsbin.com/js/render/edit.js?4.1.8"></script>
 <script>jsbinShowEdit && jsbinShowEdit({"static":"http://static.jsbin.com","root":"http://jsbin.com"});</script>
 <script>
 (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){

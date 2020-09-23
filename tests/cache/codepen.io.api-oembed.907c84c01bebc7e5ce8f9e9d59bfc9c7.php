@@ -4,49 +4,16 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 20 May 2020 17:53:15 GMT',
-            'Wed, 20 May 2020 17:53:15 GMT'
-        ],
-        'transfer-encoding' => [
-            'chunked'
-        ],
-        'connection' => [
-            'keep-alive'
-        ],
-        'cache-control' => [
-            'max-age=3600',
-            'max-age=0, private, must-revalidate'
-        ],
-        'expires' => [
-            'Wed, 20 May 2020 18:53:15 GMT'
-        ],
-        'location' => [
-            'https://codepen.io/api/oembed?url=https%3A%2F%2Fcodepen.io%2FZhouzi%2Fpen%2FJoRazP&format=json'
-        ],
-        'vary' => [
-            'Accept-Encoding'
-        ],
-        'server' => [
-            'cloudflare',
-            'cloudflare'
-        ],
-        'cf-ray' => [
-            '5967ea855c43d67d-MAD',
-            '5967ea85ee6dd66d-MAD'
-        ],
-        'alt-svc' => [
-            'h3-27=":443"; ma=86400, h3-25=":443"; ma=86400, h3-24=":443"; ma=86400, h3-23=":443"; ma=86400',
-            'h3-27=":443"; ma=86400, h3-25=":443"; ma=86400, h3-24=":443"; ma=86400, h3-23=":443"; ma=86400'
-        ],
-        'cf-request-id' => [
-            '02d4d0e7580000d67da3b2e200000001  HTTP/2 200',
-            '02d4d0e7b50000d66dd1acc200000001'
+            'Wed, 23 Sep 2020 21:46:03 GMT'
         ],
         'content-type' => [
             'application/json; charset=utf-8'
         ],
         'status' => [
             '200 OK'
+        ],
+        'cache-control' => [
+            'max-age=0, private, must-revalidate'
         ],
         'referrer-policy' => [
             'strict-origin-when-cross-origin'
@@ -58,7 +25,7 @@ return [
             '1; mode=block'
         ],
         'x-request-id' => [
-            '2bd4fdf3-bc74-453f-b4d3-1d008e76f2bd'
+            '56a8aa7d-b4a5-4663-830e-9a8b7bf04eb3'
         ],
         'x-download-options' => [
             'noopen'
@@ -67,37 +34,49 @@ return [
             'production'
         ],
         'etag' => [
-            'W/"2295fb10def003f13387b828b995d99e"'
+            'W/"e10bb6a71c502ffc6ae3e02c6993b236"'
         ],
         'x-frame-options' => [
             'ALLOWALL'
         ],
         'x-runtime' => [
-            '0.047397'
+            '0.017303'
         ],
         'x-content-type-options' => [
             'nosniff'
         ],
         'set-cookie' => [
-            'codepen_session=ZTFHY1M5MkFNSUJXMVp5VW1ZY3FyL2RXYWd5NXZYOWxCVVl0OVp5Z3B0d2JmNXhKcU5oU1lhU3Zmc2Y5MzNlaWpOMnJaSG14R1BIaE9JTFJKRXZ2RHRYdlB0SG9Oa0EyWHdxRUIrYkhLVlZqbEVPeDZnVjd2bjJRMWFKMy8zdDZRbFJpbWZzN2xZZ2sycktKY1hGcUtNUjdRYWRuOGxOV0ZCVDU3c01Eb2NpaXV4UWJZV0EwZ0R5WHdxeHZkNUJjdU5mRmtVWjBoMktyU1JCY2NTZ09aMnBpTG82SEVwZVJDb1lFdVRkYWgzYz0tLTc2eVMrLzBZaWxMYTZ1L3EvSEZQMUE9PQ%3D%3D--dce599c13b6bcf3944b8aa1c1ab27735b54f23af; path=/; expires=Fri, 19 Jun 2020 17:53:15 GMT; secure; HttpOnly'
+            'codepen_session=cFJpTkl6M0ZmZFRkOXJjTFN0TzRvUHBpTlF3dHM2VXBkZStJT1N6WXFLVi9qQ0pma2p1VkkyTzVVNC8xdkdPRmRPMlRiVzJneXhzQW5wSjBvd1g4WUc5YVdPTit3bUpnbkJkZkRXQko3VE9nOUxBTkQveDY2RzJHQzJTUEFISTVuSStENmRLdS8xU1YvTE9PcVR3SjdDR3JjSVQrOWxGTTdzankweTJ5bkUya0lROUV0NUo0cnlnZVFJRVMveHJtS3Rkbm0xVXh3TExCZzQyWVV3VzVuc01QTEhaVml4Q29pdW85andFSTE0bWpSbUxNeWFJSnhVdko1dzRzTHQ0TGYvbElFeHFWU2xLaXNMNStOSEZadnpUc1lWVURIejNKUlVrOVZnUHRqaHNuVGFRSDB6aWJzWXZlZno4ZW1HcmpOYlU3MU5DRlc5Qnk4emlmV0ZhbmNvWWVVYnlVa09HMXNtODJxZEpEcDhJPS0tSVVQZm9lUkJSYVVaTnRUYVFIWk5Ldz09--f331c2051463a30502ddb73e871287553fa24605; path=/; expires=Fri, 23 Oct 2020 21:46:03 GMT; secure; HttpOnly; SameSite=Lax'
         ],
         'x-powered-by' => [
-            'Phusion Passenger Enterprise 6.0.4'
+            'Phusion Passenger Enterprise'
         ],
         'cf-cache-status' => [
             'DYNAMIC'
         ],
+        'cf-request-id' => [
+            '055e8751a30000ff1c0285f200000001'
+        ],
         'expect-ct' => [
             'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
         ],
+        'server' => [
+            'cloudflare'
+        ],
+        'cf-ray' => [
+            '5d7774c90ff0ff1c-MAD'
+        ],
         'content-encoding' => [
             'br'
+        ],
+        'alt-svc' => [
+            'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'
         ],
         'Content-Location' => [
             'https://codepen.io/api/oembed?url=https%3A%2F%2Fcodepen.io%2FZhouzi%2Fpen%2FJoRazP&format=json'
         ],
         'X-Request-Time' => [
-            '0.529 ms'
+            '0.810 ms'
         ]
     ],
     'statusCode' => 200,
@@ -115,7 +94,7 @@ return [
   "width": "800",
   "thumbnail_width": "384",
   "thumbnail_height": "225",
-  "thumbnail_url": "https://assets.codepen.io/99102/internal/screenshots/pens/JoRazP.default.png?format=auto&amp;height=400&amp;quality=75&amp;version=1467971314&amp;width=700",
+  "thumbnail_url": "https://assets.codepen.io/99102/internal/screenshots/pens/JoRazP.default.png?fit=cover&amp;format=auto&amp;ha=true&amp;height=360&amp;quality=75&amp;v=2&amp;version=1467971314&amp;width=640",
   "html": "<iframe id=\\"cp_embed_JoRazP\\" src=\\"https://codepen.io/Zhouzi/embed/preview/JoRazP?height=300&amp;slug-hash=JoRazP&amp;default-tabs=js,result&amp;host=https://codepen.io\\" title=\\"TheaterJS\\" scrolling=\\"no\\" frameborder=\\"0\\" height=\\"300\\" allowtransparency=\\"true\\" class=\\"cp_embed_iframe\\" style=\\"width: 100%; overflow: hidden;\\"></iframe>"
 }
 '

@@ -10,13 +10,13 @@ return [
             'bytes'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:54:12 GMT'
+            'Wed, 23 Sep 2020 21:46:57 GMT'
         ],
         'via' => [
             '1.1 varnish'
         ],
         'x-served-by' => [
-            'cache-mad22046-MAD'
+            'cache-mad22037-MAD'
         ],
         'x-cache' => [
             'MISS'
@@ -25,7 +25,7 @@ return [
             '0'
         ],
         'x-timer' => [
-            'S1589997253.591124,VS0,VE106'
+            'S1600897618.797511,VS0,VE100'
         ],
         'vary' => [
             'User-Agent,Accept-Language'
@@ -37,7 +37,7 @@ return [
             'https://api.meetup.com/oembed?url=https%3A%2F%2Fwww.meetup.com%2Fes%2FGPUL-Labs%2Fevents%2F248885422%2F&format=json'
         ],
         'X-Request-Time' => [
-            '0.199 ms'
+            '0.196 ms'
         ]
     ],
     'statusCode' => 404,

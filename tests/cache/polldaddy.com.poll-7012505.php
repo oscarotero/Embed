@@ -9,9 +9,9 @@ return [
             'nginx'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:37 GMT',
-            'Wed, 20 May 2020 17:53:37 GMT',
-            'Wed, 20 May 2020 17:53:38 GMT'
+            'Wed, 23 Sep 2020 21:46:30 GMT',
+            'Wed, 23 Sep 2020 21:46:31 GMT',
+            'Wed, 23 Sep 2020 21:46:32 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -35,7 +35,7 @@ return [
             'en'
         ],
         'set-cookie' => [
-            'PD_REQ_AUTH=ddb27249a4e41b795a2d584f1473079f; path=/; domain=.poll.fm; secure; SameSite=None; expires=Wed, 20 May 2020 17:58:38 GMT;HttpOnly'
+            'PD_REQ_AUTH=668e39b0250ec10248ecdd26e6b41f5b; path=/; domain=.poll.fm; secure; SameSite=None; expires=Wed, 23 Sep 2020 21:51:32 GMT;HttpOnly'
         ],
         'strict-transport-security' => [
             'max-age=31536000'
@@ -47,7 +47,7 @@ return [
             'https://poll.fm/7012505'
         ],
         'X-Request-Time' => [
-            '1.947 ms'
+            '1.668 ms'
         ]
     ],
     'statusCode' => 200,
@@ -57,10 +57,9 @@ return [
 
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-	<link rel="shortcut icon" href="https://app.crowdsignal.com/images/favicon.png" type="image/vnd.microsoft.icon" />
+		<link rel="shortcut icon" href="https://app.crowdsignal.com/images/favicon.png" type="image/vnd.microsoft.icon" />
 	<link rel="icon" href="https://app.crowdsignal.com/images/favicon.png" type="image/vnd.microsoft.icon" />
-
+	
 
 	<title>
 	Which design do you prefer? (poll 7012505)	</title>
@@ -75,7 +74,7 @@ return [
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 
 	  
-<link rel="stylesheet" href="https://poll.fm/css/production/styles.css?m=1589573937" type="text/css" media="all"/>
+<link rel="stylesheet" href="https://poll.fm/css/production/styles.css?m=1600887438" type="text/css" media="all"/>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/jquery/jquery.js"></script>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/validate.js"></script>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/community.js"></script>
@@ -102,7 +101,8 @@ return [
     
 <script type="text/javascript" src="https://stats.wp.com/w.js" async defer></script>
 
-<meta name="google-site-verification" content="Vb-nO0TU1JmhUxrqIO0VI06y5UbGraDa62wy5BgLrg0" /><style>/* line 4, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
+<meta name="google-site-verification" content="Vb-nO0TU1JmhUxrqIO0VI06y5UbGraDa62wy5BgLrg0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=1"/><style>/* line 4, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
 .pds-box
 {
 	font-family:Helvetica, Arial, sans-serif;
@@ -671,7 +671,7 @@ return [
 	<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 </head>
 
-<body data-ajax-nonce="64533c9cb7" class="shadow logged-out cs-poll">
+<body data-ajax-nonce="8daa4ab78e" class="shadow logged-out cs-poll">
 	<div class="cs-site-content">
 			<div id="page">
 						
@@ -692,7 +692,7 @@ return [
 			<div class="css-box pds-box">
 			<div class="css-box-outer pds-box-outer">
 			<div class="css-box-inner pds-box-inner">
-			<div class="css-box-top pds-box-top">
+			<main class="css-box-top pds-box-top">
 			<form method="get" name="formPoll" action="">
 	<div class="css-question pds-question">
 		<div class="css-question-outer pds-question-outer">
@@ -711,23 +711,6 @@ return [
 
 									<div class="poll__answer-media-public">
 								<div>
-			<img style="top: -3.1045751633987%; left: 0; width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/c696ff7a8681f3da79c32bc2d1dcda05.jpg" />
-		</div>
-							</div>
-									<div class="css-answer-row pds-answer-row">
-					<span class="css-answer-input pds-answer-input">
-															<input type="radio" name="PDI_answer" id="PDI_answer31818289" value="31818289" />
-												</span>
-					<label for="PDI_answer31818289"  style="word-break:break-word;">
-						<span class="css-answer-span pds-answer-span">Option #2</span>
-					</label>
-					<span class="css-clear pds-clear"></span>
-				</div>
-			</div>
-						<div class="css-answer-group pds-answer-group">
-
-									<div class="poll__answer-media-public">
-								<div>
 			<img style="top: -3.1045751633987%; left: 0; width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/1199f5f94bc504baa495739602f7c683.jpg" />
 		</div>
 							</div>
@@ -741,6 +724,23 @@ return [
 					<span class="css-clear pds-clear"></span>
 				</div>
 			</div>
+						<div class="css-answer-group pds-answer-group">
+
+									<div class="poll__answer-media-public">
+								<div>
+			<img style="top: -3.1045751633987%; left: 0; width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/c696ff7a8681f3da79c32bc2d1dcda05.jpg" />
+		</div>
+							</div>
+									<div class="css-answer-row pds-answer-row">
+					<span class="css-answer-input pds-answer-input">
+															<input type="radio" name="PDI_answer" id="PDI_answer31818289" value="31818289" />
+												</span>
+					<label for="PDI_answer31818289"  style="word-break:break-word;">
+						<span class="css-answer-span pds-answer-span">Option #2</span>
+					</label>
+					<span class="css-clear pds-clear"></span>
+				</div>
+			</div>
 				</span>
 </div>
 
@@ -750,7 +750,7 @@ return [
 				<a
 					href="vote"
 					style="cursor:pointer;"
-					data-vote="{&quot;id&quot;:7012505,&quot;o&quot;:&quot;0&quot;,&quot;b&quot;:&quot;1&quot;,&quot;m&quot;:&quot;0&quot;,&quot;at&quot;:&quot;10&quot;,&quot;t&quot;:140,&quot;v&quot;:0,&quot;e&quot;:7257600,&quot;n&quot;:&quot;456082e562960b7c2611cdcd16343ce2&quot;}"
+					data-vote="{&quot;id&quot;:7012505,&quot;o&quot;:&quot;0&quot;,&quot;b&quot;:&quot;1&quot;,&quot;m&quot;:&quot;0&quot;,&quot;at&quot;:&quot;10&quot;,&quot;t&quot;:140,&quot;v&quot;:0,&quot;e&quot;:7257600,&quot;n&quot;:&quot;5826fdcf8058fa83fe4c1205a8905c8b&quot;}"
 					class="vote-button css-vote-button pds-vote-button">
 					Vote				</a>
 									<span class="css-links pds-links"><a href="/7012505/results" class="css-view-results pds-view-results">View Results</a>
@@ -760,7 +760,7 @@ return [
 					<span class="css-clear pds-clear"></span>
 							</div>
 		</div>
-			<input type=\'hidden\' name=\'pz\' value=\'662\'>
+			<input type=\'hidden\' name=\'pz\' value=\'592\'>
 
 </form>
 
@@ -1244,7 +1244,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 	<form method="post" action="/comment" name="formcomment" id="formcomment">
 
 		<input type="hidden" name="poll_id" id="poll_id" value="7012505" />
-		<input type="hidden" name="nonce" value="e990b7000a"/>
+		<input type="hidden" name="nonce" value="7707ad9715"/>
 
 		
 		<label for="cname">Your Name</label>
@@ -1270,7 +1270,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 </div>
 				</div>
 			
-			</div> <!-- css-box-top pds-box-top -->
+			</main> <!-- css-box-top pds-box-top -->
 			</div> <!-- css-box-inner pds-box-inner -->
 			</div> <!-- css-box-outer pds-box-outer -->
 			</div> <!-- css-box pds-box -->
@@ -1351,7 +1351,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 		jQuery( \'a.del-embed-url\' ).click( function() {
 			var data = {};
 
-			data[\'_pd_nonce\'] = \'348ed3dced\';
+			data[\'_pd_nonce\'] = \'5ecbdc66a4\';
 			data[\'id\']        = 7012505;
 
 			jQuery.post( \'\', data, function( response ) {
@@ -1369,7 +1369,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 			var open = \'Open Poll\';
 			var close = \'Close Poll\';
 
-			data[\'_pd_nonce\'] = \'a22cbda5a2\';
+			data[\'_pd_nonce\'] = \'42bc76ff88\';
 			data[\'id\']        = 7012505;
 
 			jQuery.post( \'\', data, function( response ) {

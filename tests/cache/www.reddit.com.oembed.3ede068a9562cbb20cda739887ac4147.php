@@ -28,22 +28,10 @@ return [
             'bytes'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:41 GMT'
+            'Wed, 23 Sep 2020 21:47:53 GMT'
         ],
         'via' => [
             '1.1 varnish'
-        ],
-        'x-served-by' => [
-            'cache-mad22029-MAD'
-        ],
-        'x-cache' => [
-            'MISS'
-        ],
-        'x-cache-hits' => [
-            '0'
-        ],
-        'x-timer' => [
-            'S1589997222.767937,VS0,VE203'
         ],
         'vary' => [
             'accept-encoding'
@@ -61,7 +49,7 @@ return [
             'https://www.reddit.com/oembed?url=https%3A%2F%2Fwww.reddit.com%2Fr%2Finvesting%2Fcomments%2F7pfpeq%2Fbuffett_on_cyrptocurrencies_i_can_say_almost_with%2F&format=json'
         ],
         'X-Request-Time' => [
-            '0.300 ms'
+            '0.201 ms'
         ]
     ],
     'statusCode' => 200,

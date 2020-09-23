@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => 'Images, even small ones, can be the biggest files that make up your site. Learn the tools, plugins, and theming techniques you’ll want to start using to shrink your page load times and save your mobile users a few bucks without sacrificing image quality. <a href="http://slides.davidmichaelross.com/image_optimization/#/" target="_blank">Presentation Slides &raquo;</a>',
         'width' => null,
-        'height' => null
+        'height' => null,
+        'ratio' => null
     ],
     'description' => 'Images, even small ones, can be the biggest files that make up your site. Learn the tools, plugins, and theming techniques you’ll want to start using to shrink your page load times and save your mo…',
     'favicon' => 'https://s0.wp.com/i/favicon.ico',

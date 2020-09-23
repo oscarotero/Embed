@@ -4,19 +4,19 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 20 May 2020 17:49:14 GMT'
+            'Wed, 23 Sep 2020 21:48:00 GMT'
         ],
         'server' => [
             'ustream/web'
         ],
         'expires' => [
-            'Wed, 20 May 2020 17:53:14 GMT'
+            'Wed, 23 Sep 2020 21:52:00 GMT'
         ],
         'cache-control' => [
             'public, max-age=240'
         ],
         'last-modified' => [
-            'Wed, 20 May 2020 17:49:14 GMT'
+            'Wed, 23 Sep 2020 21:48:00 GMT'
         ],
         'x-frame-options' => [
             'SAMEORIGIN'
@@ -31,7 +31,7 @@ return [
             'strict-origin-when-cross-origin'
         ],
         'x-framework-lang' => [
-            'en_US'
+            'es_ES'
         ],
         'x-ustream-content-id' => [
             '11958409'
@@ -46,23 +46,26 @@ return [
             'gzip'
         ],
         'x-rsrc' => [
-            'sjc03-ustream-web03'
+            'sjc04-ustream-web04'
         ],
         'content-length' => [
-            '10153'
+            '10052'
         ],
         'content-type' => [
             'text/html; charset=UTF-8'
         ],
         'x-backendorigin' => [
-            'www-web-bck/sjc03-ustream-web03',
-            'www.ustream.tv-bck/sjc03-web-cache07'
+            'www-web-bck/sjc04-ustream-web04',
+            'www.ustream.tv-bck/sjc03-web-cache08'
         ],
         'x-cache-lang' => [
-            ''
+            'es_ES'
+        ],
+        'x-country-code' => [
+            'ES'
         ],
         'x-remoteip' => [
-            '159.147.129.49'
+            '159.147.214.6'
         ],
         'x-mobile-vanity' => [
             ''
@@ -70,20 +73,14 @@ return [
         'x-feature-imgmedia' => [
             ''
         ],
-        'x-country-code' => [
-            ''
-        ],
         'x-ab-test1' => [
             '1'
         ],
         'x-ab-test2' => [
-            '1'
+            '0'
         ],
         'x-cache' => [
-            'HIT'
-        ],
-        'x-cache-hits' => [
-            '1'
+            'MISS'
         ],
         'accept-ranges' => [
             'bytes'
@@ -92,17 +89,23 @@ return [
             'http://www.ustream.tv/channel/red-shoes-billiards-60803-camera-1'
         ],
         'X-Request-Time' => [
-            '0.630 ms'
+            '2.414 ms'
         ]
     ],
     'statusCode' => 200,
     'reasonPhrase' => 'OK',
     'body' => '<!DOCTYPE html>
-<html lang="en" class="noJs" xmlns:og="http://ogp.me/ns#">
+<html lang="es" class="noJs" xmlns:og="http://ogp.me/ns#">
 	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# video: http://ogp.me/ns/fb/video#">
 		<title>Red Shoes Billiards 1pkt,banks camera 1</title>
 
 		
+		<link rel="preload" href="https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIFsdP3pBms.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIFsdP3pBms.woff2" as="font" type="font/woff2" crossorigin>
+
+		
+				
 	<link rel="shortcut icon" href="http://static-cdn2.ustream.tv/favicon.ico">
 	<link rel="apple-touch-icon" href="http://static-cdn2.ustream.tv/apple-touch-icon.png">
 
@@ -125,7 +128,7 @@ pool, billiards, 8 ball, 9 ball, 10 ball, straight pool, 14.1, banks, one pocket
 ">
 		<meta property="og:type" content="video.other">
 		<meta property="og:url" content="http://www.ustream.tv/channel/red-shoes-billiards-60803-camera-1">
-		<meta property="og:locale" content="en_US">
+		<meta property="og:locale" content="es_ES">
 		<meta property="og:site_name" content="IBM Watson Media">
 		<meta property="og:image" content="http://static-cdn2.ustream.tv/i/channel/picture/1/1/9/5/11958409/11958409,640x360,b:2.jpg">
 
@@ -153,32 +156,20 @@ pool, billiards, 8 ball, 9 ball, 10 ball, straight pool, 14.1, banks, one pocket
 
 		<link rel="canonical" href="http://www.ustream.tv/channel/red-shoes-billiards-60803-camera-1">
 
-		<script type="text/javascript">
-			if (!window.ustream) {
-				window.ustream = {};
-			}
-			window.ustream.timing = {};
-			window.ustream.timing.firstByte = (new Date()).getTime();
-
-			// define = function () {};
-		</script>
-
-		<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/ibm_fonts:15897929221.css" />
-<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/snorky_base:15897929221.css" />
-<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/snorky_adapter:15897929221.css" />
-<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/site_header:15897929221.css" />
-<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/footer:15897929221.css" />
-<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/ibm_branding:15897929221.css" />
-<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/viewingexperience:15897929221.css" />
-		<link rel="stylesheet" type="text/css" href="http://cdn1.ustream.tv/web-player/ustream-player/release-2.20.0/css/embed-site.css" />
-<link rel="stylesheet" type="text/css" href="http://cdn1.ustream.tv/web-player/ustream-player/release-2.20.0/css/ui.css" />
+		<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/ibm_fonts:15992217521.css" />
+<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/snorky_base:16007687791.css" />
+<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/snorky_adapter:15992217521.css" />
+<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/site_header:16007687791.css" />
+<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/footer:15992217521.css" />
+<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/ibm_branding:16007687791.css" />
+<link rel="stylesheet" type="text/css" href="http://static-cdn2.ustream.tv/packed/viewingexperience:16007687791.css" />
+		<link rel="stylesheet" type="text/css" href="http://cdn1.ustream.tv/web-player/ustream-player/release-2.26.0/css/embed-site.css" />
+<link rel="stylesheet" type="text/css" href="http://cdn1.ustream.tv/web-player/ustream-player/release-2.26.0/css/ui.css" />
+		<script type="text/javascript" src="http://static-cdn1.ustream.tv/static/js/fake-define:201205251501.js"></script>
 				<script type="text/javascript" id="UstreamExposedVariables">
 if (!window.ustream) ustream = {};
-if (typeof ustream.vars == \'undefined\') ustream.vars = {};ustream.vars.isLive=true;ustream.vars.locale="en_US";ustream.vars.planName="basic";ustream.vars.planSignupDate=null;ustream.vars.contentId=11958409;ustream.vars.contentType="channel";ustream.vars.channelId=11958409;ustream.vars.isSocialStreamEnabled=true;ustream.vars.playlistId=null;ustream.vars.userCountryCodeUrl="\\/ajax\\/util\\/country\\/get.json";ustream.vars.urls={"pages":{"channel":"\\/channel\\/xCHANNELURLx","video":"\\/recorded\\/xVIDEOIDx","highlight":"\\/recorded\\/xVIDEOIDx\\/highlight\\/xHIGHLIGHTIDx","playlist":"\\/playlist\\/xPLAYLISTIDx"},"ajaxContent":"https:\\/\\/www.ustream.tv\\/ajax\\/viewing-experience\\/xCONTENTTYPEx\\/xCONTENTIDx\\/content.json","video":"\\/ajax\\/viewing-experience\\/video\\/xVIDEOIDx.json","videos":"https:\\/\\/video.ibm.com\\/ajax\\/viewing-experience\\/xCHANNELIDx\\/xORDERx\\/xPAGEx\\/videos.json?searchText=xSEARCHTEXTx","header":{"channelSettings":"https:\\/\\/video.ibm.com\\/dashboard\\/manage-show\\/channel-page\\/xCIDx"},"playlist":{"playlists":"https:\\/\\/video.ibm.com\\/ajax\\/viewing-experience\\/xCHANNELIDx\\/xPAGEx\\/playlists.json","videos":"https:\\/\\/video.ibm.com\\/ajax\\/viewing-experience\\/xPLAYLISTIDx\\/videos.json"},"channelsFilter":"https:\\/\\/video.ibm.com\\/ajax\\/viewing-experience\\/xCHANNELIDx\\/channelsfilter.json"};ustream.vars.channelData={"id":"11958409","title":"Red Shoes Billiards 1pkt,banks camera 1","picture":{"144x144":"http:\\/\\/static-cdn2.ustream.tv\\/i\\/channel\\/picture\\/1\\/1\\/9\\/5\\/11958409\\/11958409,144x144,r:2.jpg","192x192":"http:\\/\\/static-cdn2.ustream.tv\\/i\\/channel\\/picture\\/1\\/1\\/9\\/5\\/11958409\\/11958409,192x192,r:2.jpg"},"description":"&lt;p&gt;Red Shoes Billiards \\n12009 S. Pulaski Road\\nAlsip, Illinois 60803\\n708 388-3700\\nhttp:\\/\\/www.redshoesbilliards.com\\npool, billiards, 8 ball, 9 ball, 10 ball, straight pool, 14.1, banks, one pocket, APA, leagues, tournaments, 9 foot tables, bar tables, bar box, ACS, &lt;\\/p&gt;","tags":[],"url":"red-shoes-billiards-60803-camera-1","status":"offair","last_broadcast_at":1421889275,"tinyurl":"https:\\/\\/www.ustream.tv\\/channel\\/red-shoes-billiards-60803-camera-1","stats":{"follower":0,"viewer_total":284593,"video":0},"thumbnail":{"live":"http:\\/\\/static-cdn2.ustream.tv\\/i\\/channel\\/picture\\/1\\/1\\/9\\/5\\/11958409\\/11958409,192x108,bf:2.jpg"},"autorecord":{"type":"private","days":null},"stream":{"hls":"http:\\/\\/iphone-streaming.ustream.tv\\/uhls\\/11958409\\/streams\\/live\\/iphone\\/playlist.m3u8"},"owner":{"id":"16602633","username":"redsh0es","picture":"http:\\/\\/static-cdn1.ustream.tv\\/images\\/defaults\\/user_48x48:3.png"},"locks":{}};ustream.vars.videoData=null;ustream.vars.displayShareButton=true;ustream.vars.player={"contentId":11958409,"contentType":"channel","channelId":11958409,"videoId":null,"ownerId":16602633,"width":"100%","height":"100%","includePassword":true,"isMuted":false,"liteMode":true,"autoPlay":true,"quality":null,"hideTitle":true,"userName":"","experiment":false,"sv":6,"siteMode":true,"viewingexperience":true,"wmode":"opaque","controls":true,"adFree":false};ustream.vars.cId=11958409;ustream.vars.adFree=false;ustream.vars.isVerizon=false;ustream.vars.isViewerRegistrationEnabled=false;ustream.vars.flagReasons=[{"id":1,"reason_unit_id":"www.inapp_reason.sexually_explicit","reason_default":"Sexually explicit","isChannel":true,"isVideo":true},{"id":2,"reason_unit_id":"www.inapp_reason.mature_content","reason_default":"Mature content","isChannel":true,"isVideo":true},{"id":3,"reason_unit_id":"www.inapp_reason.other_terms_of_use_violation_v2","reason_default":"Other terms of use violation","isChannel":true,"isVideo":true},{"id":4,"reason_unit_id":"www.inapp_reason.graphic_violence","reason_default":"Graphic violence","isChannel":true,"isVideo":true},{"id":5,"reason_unit_id":"www.inapp_reason.hate_speech","reason_default":"Hate speech","isChannel":true,"isVideo":true}];ustream.vars.flagUrl="https:\\/\\/video.ibm.com\\/ajax\\/user\\/flag\\/inapp.json";ustream.vars.ownerId=16602633;ustream.vars.hasSubscription=false;ustream.vars.isBetaChannel=false;ustream.vars.channelUrl="https:\\/\\/www.ustream.tv\\/channel\\/red-shoes-billiards-60803-camera-1";ustream.vars.uumfOffAirContentVideoIds=[];ustream.vars.branchName="release-2236";ustream.vars.hasRealSubscription=false;ustream.vars.playerOneLabels={"ui":{"audio":"Audio tracks","closedCaption":"Closed Caption","none":"None","generated":"Generated","copyEmbedCode":"Copy embed code","copyId":"Copy ID","copyLink":"Copy link","defaultView":"Default view","embed":"Embed","embedCode":"Embed this video in your site using the code below:","embedCopied":"Embed code copied to clipboard","exitFullscreen":"Exit full screen","facebook":"Facebook","fullscreen":"Full screen","disabledFullscreen":"Fullscreen is not supported","idCopied":"ID copied to clipboard!","linkVideo":"Link of this video:","millions":"M","popout":"Popout","quality":"Quality","qualityAuto":"Auto","troubleshoot":{"title":"Troubleshoot playback issue","description":"Select the issue you are experiencing and create an issue ID to report it to your support team.","options":{"default":"Select issue","audio_issues":"Audio issue","closed_captioning_issue":"Closed captioning issue","bad_image_quality":"Video quality is poor","buffer":"Video starts but stops unexpectedly","blackscreen":"Video starts but goes black after a while","does_not_start":"Video playback does not start","other":"Other","otherPlaceholder":"Describe the problem"},"errors":{"noIssueSelected":"Please select issue.","noDescription":"Please describe the problem."},"create":"Create Issue ID","thanksdialog":{"title":"Your issue ID","description":"Share this ID with your support team by following the process of reporting such issues in your organization."}},"share":"Share","theaterMode":"Theater mode","thousands":"K","twitter":"Twitter","twitterLive":"I\'m watching #BROADCASTER#\'s live broadcast. Come join me #LINK# !","twitterVideo":"Check out this video \\"#MEDIANAME#\\" on @Ustream #LINK# !","videoLinkCopied":"Video link copied to clipboard","watchingNums":"#current# watching now &#149; #all# total views","contextMenu":{"channelPage":"Channel page","debugOn":"Turn on debug","debugOff":"Turn off debug","changeProvider":"Change provider","stageVideoOn":"Turn on stagevideo","stageVideoOff":"Turn off stagevideo","infoOn":"Display stats","infoOff":"Hide stats","hideSpecialItems":"Hide special items","copycidvid":"Copy cid\\/vid","copyusername":"Copy username","debugConsoleOn":"Display debug console","debugConsoleOff":"Hide debug console"},"flag":{"tooltip":"Report","title":"Flag this content","text":"Please select your reason for flagging this video as inappropriate from the dropdown below. We promise to review each and every submission within 24-48 hours. <br\\/><br\\/> If you are a copyright owner, or are authorized to act on behalf of one or authorized to act under any exclusive right under copyright, please do not flag this content but instead report alleged copyright violations on our <a href=\\"\\/copyright-policy\\" target=\\"_blank\\">DMCA notice form<\\/a>","button":"Flag","cancel":"Cancel","defaultReason":"- Select the reason to report this video for -","success":"Thank you for notifying us."},"lockScreens":{"refererLock":{"maxViewers":"The size of the audience has been limited by the broadcaster and currently there are no open seats. Please check back again later.","pageLock":"This stream is currently unavailable on this domain at the broadcaster\'s request","blacklistLock":"Sorry! We cannot play this video due to content restrictions.","embedLimit":"The size of the audience has been limited by the broadcaster and currently there are no open seats. Please check back again later.","multilevelEmbed":"This EMBED can not work because it is embedded under an extra Iframe. You can still watch on USTREAM by clicking OK."},"hashLock":{"invalidHash":"The Video Player was not able to find valid authentication information. If the problem persist, please alert your tech support team."}},"poll":{"notification":{"title":"Take poll"},"success":"Thank you for taking our poll.","finished":"Sorry the poll ended."},"cookieOverlay":{"text":"By watching this video you agree IBM\'s use of cookies. This is used to remember your login details, optimize functionality, and deliver relevant marketing. <a href=\\"https:\\/\\/video.ibm.com\\" target=\\"_blank\\">Learn more and view cookie settings<\\/a>","buttonText":"Agree and watch"},"browserold":{"title":"Your browser is out of date.","link":"Update your browser","label":"to continue watching videos on this page."}}};ustream.vars.rslSwf="http:\\/\\/static-cdn1.ustream.tv\\/swf\\/live\\/viewer.rsl:701.swf?vrsl=c:701";ustream.vars.viewerSwf="http:\\/\\/static-cdn1.ustream.tv\\/swf\\/live\\/viewer:307.swf?vrsl=c:701&ulbr=100";ustream.vars.httpsViewerSwf="https:\\/\\/ustvstaticcdn1-a.akamaihd.net\\/swf\\/live\\/viewer:307.swf?vrsl=c:701&ulbr=100";ustream.vars.viewerQosSwf="http:\\/\\/static-cdn1.ustream.tv\\/swf\\/live\\/viewerqos:34.swf";ustream.vars.httpsViewerQosSwf="https:\\/\\/ustvstaticcdn1-a.akamaihd.net\\/swf\\/live\\/viewerqos:34.swf";ustream.vars.qosSwf="http:\\/\\/static-cdn1.ustream.tv\\/swf\\/live\\/viewer.qrsl:121.swf";ustream.vars.httpsQosSwf="https:\\/\\/ustvstaticcdn1-a.akamaihd.net\\/swf\\/live\\/viewer.qrsl:121.swf";ustream.vars.hashLockData=null;ustream.vars.isUUMF=false;ustream.vars.qos_player={"enabled":"1","percent":"100","cid":"","cidpercent":"100","exceptionCids":"13335102,18500911"};ustream.vars.mte_html_ui={"enabled":"1","percent":"100","exceptionCids":"20303980,20303982,20044086,20304086,20317970,21625933,19457401,19457405,19457242,19457406,19463639,14058735"};ustream.vars.mte_html_playback={"omegaEnabled":"1","forceCids":[0],"exceptionCids":[0]};ustream.vars.initialQuality=null;ustream.vars.forcedQuality=null;ustream.vars.mte_mobile_ecdn_enabled=false;ustream.vars.labelNotUUMF={"lead":"We\'re sorry but the format of this video is not supported anymore.","text":"You may contact the broadcaster, or continue watching the Channel by clicking ##here##."};ustream.vars.labelOffline={"lead":"This content is currently not online.","text":"is off-air"};ustream.vars.labelUnsupported={"text":"This video cannot be played in your browser."};ustream.vars.labelReflock={"lead":"Content unavailable","text":"This stream is currently unavailable on this domain at the broadcaster\'s request"};ustream.vars.labelIplock={"lead":"Content unavailable","text":"Sorry, we cannot play this video due to restrictions."};ustream.vars.labelGeolock={"lead":"Content unavailable","text":"This video is not available in your area."};ustream.vars.labelPasslock={"lead":"Password protected video","text":"Please enter password to watch","placeholder":"Channel password","submit":"Enter","enterPassLink":"Enter password to watch"};ustream.vars.labelViewerHourLock={"lead":"No more viewers allowed at this moment.","text":"The size of the audience has been limited by the broadcaster and currently there are no open seats. Please check back again later."};ustream.vars.labelUnAuth={"lead":"Content unavailable","text":"We\'re sorry, but you don\'t have access to this content.","private":"This video is private."};ustream.vars.labelNoTranscoded={"lead":"Content unavailable","text":"Sorry, but this video is not available on this device.","channel":"Sorry, but this channel either does not exist or is using a bad embed code.","video":"Sorry, but this video either does not exist or is using a bad embed code."};ustream.vars.labelNoFlash={"title":"Get the latest Flash player to view this content","button":"Get Flash player"};ustream.vars.labelDefaultReject={"lead":"Content unavailable","text":"The connection was rejected by the server."};ustream.vars.labelBanReject={"lead":"Content unavailable","text":"The content was removed for violation of the Terms of Service."};ustream.vars.rightBarTabs={"socialStream":{"isEnabled":false,"isDefault":false},"twitterStream":{"isEnabled":false,"isDefault":false},"chat":{"isEnabled":true,"isDefault":true},"videos":{"isEnabled":false,"isDefault":false},"qna":{"isEnabled":false,"isDefault":false}};ustream.vars.uucEnabled=true;ustream.vars.videosData={"videos":[],"paging":{"page_count":0,"item_count":0}};ustream.vars.featuredVideosData=[];ustream.vars.allVideosSectionShown=true;ustream.vars.pageId="ViewingExperience_Index";ustream.vars.pageUrl="\\/channel\\/red-shoes-billiards-60803-camera-1";ustream.vars.staticUrl="http:\\/\\/static-cdn1.ustream.tv\\/";ustream.vars.contentUrls={"user":"https:\\/\\/video.ibm.com\\/content\\/xTYPEx\\/xIDx\\/user.json"};ustream.vars.loggedIn=false;ustream.vars.loggedInUserId=0;ustream.vars.sessionId=false;ustream.vars.sessionTimeOut="900";ustream.vars.keepAliveUrl="https:\\/\\/video.ibm.com\\/ajax\\/channel\\/keepalive";ustream.vars.loginUrl="https:\\/\\/video.ibm.com\\/ajax\\/experience\\/login.json";ustream.vars.simpleSignupUrl="https:\\/\\/video.ibm.com\\/ajax\\/signup\\/save-experience.json";ustream.vars.signupRequiredAgreementsUrl="https:\\/\\/video.ibm.com\\/ajax\\/signup\\/required-agreements.json";ustream.vars.forgotPasswordOverlayUrl="https:\\/\\/video.ibm.com\\/ajax\\/forgot-username-overlay.json";ustream.vars.networkConnections={"ustream":{"connected":false,"urls":{"connect":"https:\\/\\/video.ibm.com\\/login?opener=xOPENERx","disconnect":null,"logout":"https:\\/\\/video.ibm.com\\/ajax\\/login\\/connect\\/logout.json"}}};ustream.vars.facebookAppId="123875465478";ustream.vars.ogUrl="http:\\/\\/www.ustream.tv\\/channel\\/red-shoes-billiards-60803-camera-1";
-</script>		<script type="text/javascript" src="http://static-cdn2.ustream.tv/packed/l10n/en_us/libs:15897936071.js"></script>
-<script type="text/javascript" src="http://static-cdn2.ustream.tv/packed/l10n/en_us/framework:15897936071.js"></script>
-<script type="text/javascript" src="http://static-cdn2.ustream.tv/packed/l10n/en_us/player_lib:15897936071.js"></script>
-
+if (typeof ustream.vars == \'undefined\') ustream.vars = {};ustream.vars.isLive=true;ustream.vars.locale="es_ES";ustream.vars.planName="basic";ustream.vars.planSignupDate=null;ustream.vars.contentId=11958409;ustream.vars.contentType="channel";ustream.vars.channelId=11958409;ustream.vars.isSocialStreamEnabled=true;ustream.vars.playlistId=null;ustream.vars.userCountryCodeUrl="\\/ajax\\/util\\/country\\/get.json";ustream.vars.urls={"pages":{"channel":"\\/channel\\/xCHANNELURLx","video":"\\/recorded\\/xVIDEOIDx","highlight":"\\/recorded\\/xVIDEOIDx\\/highlight\\/xHIGHLIGHTIDx","playlist":"\\/playlist\\/xPLAYLISTIDx"},"ajaxContent":"https:\\/\\/www.ustream.tv\\/ajax\\/viewing-experience\\/xCONTENTTYPEx\\/xCONTENTIDx\\/content.json","video":"\\/ajax\\/viewing-experience\\/video\\/xVIDEOIDx.json","videos":"https:\\/\\/video.ibm.com\\/ajax\\/viewing-experience\\/xCHANNELIDx\\/xORDERx\\/xPAGEx\\/videos.json?searchText=xSEARCHTEXTx","header":{"channelSettings":"https:\\/\\/video.ibm.com\\/dashboard\\/manage-show\\/channel-page\\/xCIDx"},"playlist":{"playlists":"https:\\/\\/video.ibm.com\\/ajax\\/viewing-experience\\/xCHANNELIDx\\/xPAGEx\\/playlists.json","videos":"https:\\/\\/video.ibm.com\\/ajax\\/viewing-experience\\/xPLAYLISTIDx\\/videos.json"},"channelsFilter":"https:\\/\\/video.ibm.com\\/ajax\\/viewing-experience\\/xCHANNELIDx\\/channelsfilter.json"};ustream.vars.channelData={"id":"11958409","title":"Red Shoes Billiards 1pkt,banks camera 1","picture":{"144x144":"http:\\/\\/static-cdn2.ustream.tv\\/i\\/channel\\/picture\\/1\\/1\\/9\\/5\\/11958409\\/11958409,144x144,r:2.jpg","192x192":"http:\\/\\/static-cdn2.ustream.tv\\/i\\/channel\\/picture\\/1\\/1\\/9\\/5\\/11958409\\/11958409,192x192,r:2.jpg"},"description":"&lt;p&gt;Red Shoes Billiards \\n12009 S. Pulaski Road\\nAlsip, Illinois 60803\\n708 388-3700\\nhttp:\\/\\/www.redshoesbilliards.com\\npool, billiards, 8 ball, 9 ball, 10 ball, straight pool, 14.1, banks, one pocket, APA, leagues, tournaments, 9 foot tables, bar tables, bar box, ACS, &lt;\\/p&gt;","tags":[],"url":"red-shoes-billiards-60803-camera-1","status":"offair","last_broadcast_at":1421889275,"tinyurl":"https:\\/\\/www.ustream.tv\\/channel\\/red-shoes-billiards-60803-camera-1","stats":{"follower":0,"viewer_total":284593,"video":0},"thumbnail":{"live":"http:\\/\\/static-cdn2.ustream.tv\\/i\\/channel\\/picture\\/1\\/1\\/9\\/5\\/11958409\\/11958409,192x108,bf:2.jpg"},"autorecord":{"type":"private","days":null},"stream":{"hls":"http:\\/\\/iphone-streaming.ustream.tv\\/uhls\\/11958409\\/streams\\/live\\/iphone\\/playlist.m3u8"},"owner":{"id":"16602633","username":"redsh0es","picture":"http:\\/\\/static-cdn1.ustream.tv\\/images\\/defaults\\/user_48x48:3.png"},"locks":{}};ustream.vars.videoData=null;ustream.vars.displayShareButton=true;ustream.vars.playerPublicPath="http:\\/\\/cdn1.ustream.tv\\/web-player\\/ustream-player\\/release-2.26.0";ustream.vars.player={"contentId":11958409,"contentType":"channel","channelId":11958409,"videoId":null,"ownerId":16602633,"width":"100%","height":"100%","includePassword":true,"isMuted":false,"liteMode":true,"autoPlay":true,"quality":null,"hideTitle":true,"userName":"","experiment":false,"sv":6,"siteMode":true,"viewingexperience":true,"wmode":"opaque","controls":true,"adFree":false};ustream.vars.cId=11958409;ustream.vars.adFree=false;ustream.vars.isVerizon=false;ustream.vars.isViewerRegistrationEnabled=false;ustream.vars.flagReasons=[{"id":1,"reason_unit_id":"www.inapp_reason.sexually_explicit","reason_default":"Sexually explicit","isChannel":true,"isVideo":true},{"id":2,"reason_unit_id":"www.inapp_reason.mature_content","reason_default":"Mature content","isChannel":true,"isVideo":true},{"id":3,"reason_unit_id":"www.inapp_reason.other_terms_of_use_violation_v2","reason_default":"Other terms of use violation","isChannel":true,"isVideo":true},{"id":4,"reason_unit_id":"www.inapp_reason.graphic_violence","reason_default":"Graphic violence","isChannel":true,"isVideo":true},{"id":5,"reason_unit_id":"www.inapp_reason.hate_speech","reason_default":"Hate speech","isChannel":true,"isVideo":true}];ustream.vars.flagUrl="https:\\/\\/video.ibm.com\\/ajax\\/user\\/flag\\/inapp.json";ustream.vars.ownerId=16602633;ustream.vars.hasSubscription=false;ustream.vars.isBetaChannel=false;ustream.vars.channelUrl="https:\\/\\/www.ustream.tv\\/channel\\/red-shoes-billiards-60803-camera-1";ustream.vars.uumfOffAirContentVideoIds=[];ustream.vars.branchName="release-2294";ustream.vars.hasRealSubscription=false;ustream.vars.playerOneLabels={"ui":{"audio":"Audio tracks","closedCaption":"Closed Caption","none":"None","generated":"Generated","copyEmbedCode":"Copy embed code","copyId":"Copy ID","copyLink":"Copy link","defaultView":"Default view","embed":"Embed","embedCode":"Embed this video in your site using the code below:","embedCopied":"Embed code copied to clipboard","exitFullscreen":"Exit full screen","facebook":"Facebook","fullscreen":"Full screen","disabledFullscreen":"Fullscreen is not supported","idCopied":"ID copied to clipboard!","linkVideo":"Link of this video:","millions":"M","popout":"Popout","quality":"Quality","qualityAuto":"Auto","troubleshoot":{"title":"Troubleshoot playback issue","description":"Select the issue you are experiencing and create an issue ID to report it to your support team.","options":{"default":"Select issue","audio_issues":"Audio issue","closed_captioning_issue":"Closed captioning issue","bad_image_quality":"Video quality is poor","buffer":"Video starts but stops unexpectedly","blackscreen":"Video starts but goes black after a while","does_not_start":"Video playback does not start","other":"Other","otherPlaceholder":"Describe the problem"},"errors":{"noIssueSelected":"Please select issue.","noDescription":"Please describe the problem."},"create":"Create Issue ID","thanksdialog":{"title":"Your issue ID","description":"Share this ID with your support team by following the process of reporting such issues in your organization."}},"share":"Share","theaterMode":"Theater mode","thousands":"K","twitter":"Twitter","twitterLive":"Estoy viendo el broadcast en vivo de #BROADCASTER#. \\u00a1M\\u00edralo conmigo #LINK# !","twitterVideo":"Check out this video \\"#MEDIANAME#\\" on @Ustream #LINK# !","videoLinkCopied":"Video link copied to clipboard","watchingNums":"#current# watching now &#149; #all# total views","contextMenu":{"channelPage":"Channel page","debugOn":"Turn on debug","debugOff":"Turn off debug","changeProvider":"Change provider","stageVideoOn":"Turn on stagevideo","stageVideoOff":"Turn off stagevideo","infoOn":"Display stats","infoOff":"Hide stats","hideSpecialItems":"Hide special items","copycidvid":"Copy cid\\/vid","copyusername":"Copy username","debugConsoleOn":"Display debug console","debugConsoleOff":"Hide debug console"},"flag":{"tooltip":"Report","title":"Flag this content","text":"Please select your reason for flagging this video as inappropriate from the dropdown below. We promise to review each and every submission within 24-48 hours. <br\\/><br\\/> If you are a copyright owner, or are authorized to act on behalf of one or authorized to act under any exclusive right under copyright, please do not flag this content but instead report alleged copyright violations on our <a href=\\"\\/copyright-policy\\" target=\\"_blank\\">DMCA notice form<\\/a>","button":"Flag","cancel":"Cancel","defaultReason":"- Select the reason to report this video for -","success":"Thank you for notifying us."},"lockScreens":{"refererLock":{"maxViewers":"The size of the audience has been limited by the broadcaster and currently there are no open seats. Please check back again later.","pageLock":"This stream is currently unavailable on this domain at the broadcaster\'s request","blacklistLock":"Sorry! We cannot play this video due to content restrictions.","embedLimit":"The size of the audience has been limited by the broadcaster and currently there are no open seats. Please check back again later.","multilevelEmbed":"This EMBED can not work because it is embedded under an extra Iframe. You can still watch on USTREAM by clicking OK."},"hashLock":{"invalidHash":"The Video Player was not able to find valid authentication information. If the problem persist, please alert your tech support team."}},"poll":{"notification":{"title":"Take poll"},"success":"Thank you for taking our poll.","finished":"Sorry the poll ended."},"browserold":{"title":"Your browser is out of date.","link":"Update your browser","label":"to continue watching videos on this page."}}};ustream.vars.hashLockData=null;ustream.vars.isUUMF=false;ustream.vars.qos_player={"enabled":"1","percent":"100","cid":"","cidpercent":"100","exceptionCids":"13335102,18500911"};ustream.vars.mte_html_ui={"enabled":"1","percent":"100","exceptionCids":"20303980,20303982,20044086,20304086,20317970,21625933,19457401,19457405,19457242,19457406,19463639,14058735"};ustream.vars.mte_html_playback={"omegaEnabled":"1","forceCids":[0],"exceptionCids":[0]};ustream.vars.initialQuality=null;ustream.vars.forcedQuality=null;ustream.vars.mte_mobile_ecdn_enabled=false;ustream.vars.labelNotUUMF={"lead":"We\'re sorry but the format of this video is not supported anymore.","text":"You may contact the broadcaster, or continue watching the Channel by clicking ##here##."};ustream.vars.labelOffline={"lead":"This content is currently not online.","text":"is off-air"};ustream.vars.labelUnsupported={"text":"This video cannot be played in your browser."};ustream.vars.labelReflock={"lead":"Content unavailable","text":"Lo sentimos, no podemos reproducir este video debido a restricciones de contenido."};ustream.vars.labelIplock={"lead":"Content unavailable","text":"Sorry, we cannot play this video due to restrictions."};ustream.vars.labelGeolock={"lead":"Content unavailable","text":"This video is not available in your area."};ustream.vars.labelPasslock={"lead":"Password protected video","text":"Please enter password to watch","placeholder":"Channel password","submit":"Enter","enterPassLink":"Enter password to watch"};ustream.vars.labelViewerHourLock={"lead":"No more viewers allowed at this moment.","text":"The size of the audience has been limited by the broadcaster and currently there are no open seats. Please check back again later."};ustream.vars.labelUnAuth={"lead":"Content unavailable","text":"We\'re sorry, but you don\'t have access to this content.","private":"This video is private."};ustream.vars.labelNoTranscoded={"lead":"Content unavailable","text":"Sorry, but this video is not available on this device.","channel":"Sorry, but this channel either does not exist or is using a bad embed code.","video":"Sorry, but this video either does not exist or is using a bad embed code."};ustream.vars.labelNoFlash={"title":"Get the latest Flash player to view this content","button":"Get Flash player"};ustream.vars.labelDefaultReject={"lead":"Content unavailable","text":"The connection was rejected by the server."};ustream.vars.labelBanReject={"lead":"Content unavailable","text":"The content was removed for violation of the Terms of Service."};ustream.vars.rightBarTabs={"socialStream":{"isEnabled":false,"isDefault":false},"twitterStream":{"isEnabled":false,"isDefault":false},"chat":{"isEnabled":true,"isDefault":true},"videos":{"isEnabled":false,"isDefault":false},"qna":{"isEnabled":false,"isDefault":false}};ustream.vars.videosData={"videos":[],"paging":{"page_count":0,"item_count":0}};ustream.vars.featuredVideosData=[];ustream.vars.allVideosSectionShown=true;ustream.vars.pageId="ViewingExperience_Index";ustream.vars.pageUrl="\\/channel\\/red-shoes-billiards-60803-camera-1";ustream.vars.staticUrl="http:\\/\\/static-cdn1.ustream.tv\\/";ustream.vars.contentUrls={"user":"https:\\/\\/video.ibm.com\\/content\\/xTYPEx\\/xIDx\\/user.json"};ustream.vars.loggedIn=false;ustream.vars.loggedInUserId=0;ustream.vars.sessionId=false;ustream.vars.sessionTimeOut="900";ustream.vars.keepAliveUrl="https:\\/\\/video.ibm.com\\/ajax\\/channel\\/keepalive";ustream.vars.loginUrl="https:\\/\\/video.ibm.com\\/ajax\\/experience\\/login.json";ustream.vars.simpleSignupUrl="https:\\/\\/video.ibm.com\\/ajax\\/signup\\/save-experience.json";ustream.vars.signupRequiredAgreementsUrl="https:\\/\\/video.ibm.com\\/ajax\\/signup\\/required-agreements.json";ustream.vars.forgotPasswordOverlayUrl="https:\\/\\/video.ibm.com\\/ajax\\/forgot-username-overlay.json";ustream.vars.networkConnections={"ustream":{"connected":false,"urls":{"connect":"https:\\/\\/video.ibm.com\\/login?opener=xOPENERx","disconnect":null,"logout":"https:\\/\\/video.ibm.com\\/ajax\\/login\\/connect\\/logout.json"}}};ustream.vars.facebookAppId="123875465478";ustream.vars.ogUrl="http:\\/\\/www.ustream.tv\\/channel\\/red-shoes-billiards-60803-camera-1";
+</script>		
 		
 					
 					<script>
@@ -237,13 +228,12 @@ if (typeof ustream.vars == \'undefined\') ustream.vars = {};ustream.vars.isLive=
 		
 		
 		
-		
 	</head>
 
 	<body id="ViewingExperience_Index"
 	      data-layout="default"
 	      class="v6
-						ibm-branding						lang-en-US			">
+						ibm-branding						lang-es-ES			">
 
 		
 				
@@ -302,19 +292,19 @@ if (typeof ustream.vars == \'undefined\') ustream.vars = {};ustream.vars.isLive=
 		
 <div class="player">
 	
-<div class="media" id="UstreamViewer">
-	<div id="PlayerOne" class="ui-hidden">
-		<div id="EmbedViewer" >
-			<div id="Loading" class="loading hidden"><div></div></div>
-			<div id="ViewerContainer" class="viewer"></div>
-			<div class="cover"></div>
+	<div class="media" id="UstreamViewer">
+		<div id="PlayerOne" class="ui-hidden">
+			<div id="EmbedViewer" >
+				<div id="Loading" class="loading hidden"><div></div></div>
+				<div id="ViewerContainer" class="viewer"></div>
+				<div class="cover"></div>
+			</div>
+			<div id="ComponentsContainer"></div>
+			<div id="ScreensContainer"></div>
+			<div id="OverlaysContainer"></div>
+			<span class="is-retina"></span>
 		</div>
-		<div id="ComponentsContainer"></div>
-		<div id="ScreensContainer"></div>
-		<div id="OverlaysContainer"></div>
-		<span class="is-retina"></span>
 	</div>
-</div>
 
 </div>
 
@@ -431,7 +421,7 @@ if (typeof ustream.vars == \'undefined\') ustream.vars = {};ustream.vars.isLive=
 	
             <div class="chat tab-content" data-tab-id="chat">
             <iframe
-                    src="https://video.ibm.com/chat/11958409?site-embed=1"
+                    src="https://video.ibm.com/chat/11958409"
                     width="100%"
                     height="100%"
                     frameborder="0"
@@ -808,7 +798,7 @@ pool, billiards, 8 ball, 9 ball, 10 ball, straight pool, 14.1, banks, one pocket
 					name="lang"
 					aria-label="Choose language">
 									<option value="en_US"
-						selected="selected">
+						>
 						English					</option>
 									<option value="ja_JP"
 						>
@@ -817,7 +807,7 @@ pool, billiards, 8 ball, 9 ball, 10 ball, straight pool, 14.1, banks, one pocket
 						>
 						한국어					</option>
 									<option value="es_ES"
-						>
+						selected="selected">
 						Español					</option>
 									<option value="fr_FR"
 						>
@@ -847,7 +837,7 @@ pool, billiards, 8 ball, 9 ball, 10 ball, straight pool, 14.1, banks, one pocket
 						>
 						中文 (繁體)					</option>
 							</select>
-			<span class="select">English</span>
+			<span class="select">Español</span>
 			<span class="glyphicon icon-down-2 pull-right"></span>
 		</div>
 									</form>
@@ -857,13 +847,10 @@ pool, billiards, 8 ball, 9 ball, 10 ball, straight pool, 14.1, banks, one pocket
 		</footer>
 
 				
-		<script type="text/javascript" src="http://cdn1.ustream.tv/web-player/ustream-player/release-2.20.0/js/ustream-player.min.js"></script>
-		<script type="text/javascript" src="http://static-cdn2.ustream.tv/packed/l10n/en_us/mvc:15897936071.js"></script>
-<script type="text/javascript" src="http://static-cdn2.ustream.tv/packed/l10n/en_us/campaign_tracking:15897936071.js"></script>
-<script type="text/javascript" src="http://static-cdn2.ustream.tv/packed/l10n/en_us/v6_common:15897936071.js"></script>
-<script type="text/javascript" src="http://static-cdn2.ustream.tv/packed/l10n/en_us/site_header:15897936071.js"></script>
-<script type="text/javascript" src="http://static-cdn2.ustream.tv/packed/l10n/en_us/viewingexperience:15897936071.js"></script>
-		
+		<script type="text/javascript" src="http://cdn1.ustream.tv/web-player/ustream-player/release-2.26.0/js/ustream-player.min.js"></script>
+				<script type="text/javascript">window.getWebpackBasePath=function () {return "http://static-cdn2.ustream.tv/packed/l10n/es_es/webpack/"}</script>
+<script type="text/javascript" src="http://static-cdn2.ustream.tv/packed/l10n/es_es/webpack/viewing_experience:16008560561.js"></script>
+
 				<script src="https://cdn.optimizely.com/js/2972860641.js"></script>
 		<!-- Hotjar Tracking Code for ibm.com -->
 		<script>
@@ -879,7 +866,9 @@ pool, billiards, 8 ball, 9 ball, 10 ball, straight pool, 14.1, banks, one pocket
 				a.appendChild(r);
 			})(window,document,\'https://static.hotjar.com/c/hotjar-\',\'.js?sv=\');
 		</script>
-			</body>
+				
+		
+	</body>
 </html>
 
 

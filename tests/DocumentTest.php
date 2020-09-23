@@ -44,7 +44,7 @@ class DocumentTest extends TestCase
         $extractor = self::getEmbed()->get('https://css-tricks.com/css-scrollbar-with-progress-meter/');
         $document = $extractor->getDocument();
 
-        $expected = 118;
+        $expected = 126;
 
         $this->assertCount($expected, $document->selectCss('[aria-hidden],[hidden],meta,style,canvas,svg,form,script,template,link,.hidden')->nodes());
         $this->assertCount($expected, $document->select('.//*[@aria-hidden]|.//*[@hidden]|.//meta|.//style|.//canvas|.//svg|.//form|.//script|.//template|.//link|.//*[contains(concat(" ",normalize-space(@class)," ")," hidden ")]')->nodes());

@@ -34,13 +34,13 @@ return [
             '"b79b1b0cb75e76bf920d33b32b3ed936"'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:54:27 GMT'
+            'Wed, 23 Sep 2020 21:47:16 GMT'
         ],
         'x-frame-options' => [
             'SAMEORIGIN'
         ],
         'strict-transport-security' => [
-            'max-age=63072000'
+            'max-age=604800; includeSubdomains'
         ],
         'content-encoding' => [
             'gzip'
@@ -52,19 +52,19 @@ return [
             'Miss from cloudfront'
         ],
         'via' => [
-            '1.1 9b51ea0192df87ecb2185cd2247e4a1b.cloudfront.net (CloudFront)'
+            '1.1 06bb36c6f8415e5c64e03df316bffb5b.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
-            'MAD51-C1'
+            'MAD50-C1'
         ],
         'x-amz-cf-id' => [
-            'pHFZt-B1nEhdbExebaZo7_oGfJ73_ZuxyYMm213VNYrudd-2khEv1w=='
+            'qNM3sU6piHMF8lkNy801Y7i5uj4V-eoD5EhKk2J053RxkOryKbvTRw=='
         ],
         'Content-Location' => [
             'https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Fbruceneilmusic&format=json'
         ],
         'X-Request-Time' => [
-            '0.165 ms'
+            '0.506 ms'
         ]
     ],
     'statusCode' => 200,

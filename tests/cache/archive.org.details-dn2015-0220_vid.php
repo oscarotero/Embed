@@ -7,7 +7,7 @@ return [
             'nginx/1.16.1 (Ubuntu)'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:54:05 GMT'
+            'Wed, 23 Sep 2020 21:46:51 GMT'
         ],
         'content-type' => [
             'text/html; charset=UTF-8'
@@ -28,7 +28,7 @@ return [
             'https://archive.org/details/dn2015-0220_vid'
         ],
         'X-Request-Time' => [
-            '1.114 ms'
+            '0.975 ms'
         ]
     ],
     'statusCode' => 200,
@@ -70,32 +70,23 @@ return [
         <script>window.archive_setup=[]</script>
     <meta charset="UTF-8">
     <script src="//archive.org/includes/jquery-1.10.2.min.js?v1.10.2" type="text/javascript"></script>
-            <script src="//archive.org/includes/analytics.js?v=d47441b0" type="text/javascript"></script>
-    <script>
-      \'use strict\';
-      if (\'archive_analytics\' in window) {
-                  archive_analytics.service = "ao_2";
-        
-        archive_analytics.send_pageview_on_load({"mediaType":"movies","primaryCollection":"democracy_now_vid"});
-
-        archive_analytics.process_url_events(window.location);
-      }
-    </script>
-        <script src="//archive.org/includes/build/npm/jquery-ui.min.js?v1.12.1" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/npm/jquery-ui.min.js?v1.12.1" type="text/javascript"></script>
     <script src="//archive.org/includes/bootstrap.min.js?v3.0.0" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/clipboard/dist/clipboard.js?v=d47441b0" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/@babel/polyfill/dist/polyfill.min.js?v=d47441b0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/ie-dom-node-remove-polyfill.min.js?v=d47441b0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/polyfill.min.js?v=d47441b0" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/@webcomponents/webcomponentsjs/webcomponents-bundle.js?v=d47441b0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/more-facets.min.js?v=d47441b0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/radio-player-controller.min.js?v=d47441b0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/mobile-top-nav.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/clipboard/dist/clipboard.js?v=02405d2f" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/@babel/polyfill/dist/polyfill.min.js?v=02405d2f" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/ie-dom-node-remove-polyfill.min.js?v=02405d2f" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/polyfill.min.js?v=02405d2f" type="text/javascript"></script>
+                      <meta property="mediatype" content="movies">
+                      <meta property="primary_collection" content="democracy_now_vid">
+            <script src="//archive.org/includes/analytics.js?v=02405d2f" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/@webcomponents/webcomponentsjs/webcomponents-bundle.js?v=02405d2f" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/more-facets.min.js?v=02405d2f" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/ia-topnav.min.js?v=02405d2f" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/react/umd/react.production.min.js?v16.7.0" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/react-dom/umd/react-dom.production.min.js?v16.7.0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/play8.min.js?v=d47441b0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/playset.min.js?v=d47441b0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/areact.min.js?v=d47441b0" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/play8.min.js?v=02405d2f" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/playset.min.js?v=02405d2f" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/areact.min.js?v=02405d2f" type="text/javascript"></script>
 <meta name="description" content="Democracy Now! television program for Friday, February 20, 2015 Headlines for February 20, 2015 An Unsolved Case of Racial Terror: FBI Probes 1946..."/>
                       <meta property="og:title" content="Democracy Now! Friday, February 20, 2015 : Free Download, Borrow, and Streaming : Internet Archive">
                       <meta property="og:description" content="Democracy Now! television program for Friday, February 20, 2015 Headlines for February 20, 2015 An Unsolved Case of Racial Terror: FBI Probes 1946...">
@@ -122,10 +113,7 @@ return [
 <link rel="canonical" href="https://archive.org/details/dn2015-0220_vid">
     <script type="application/ld+json">
       {"@context":"http:\\/\\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\\/\\/archive.org\\/details\\/movies","name":"Videos","image":"https:\\/\\/archive.org\\/services\\/img\\/movies"}}]}    </script>
-                          <meta property="braintree_token" content="production_w3jccm3z_pqd7hz44swp6zvvw">
-                      <meta property="environment" content="production">
-                      <meta property="venmo_id" content="2878003111190856236">
-            <link href="//archive.org/includes/build/css/archive.min.css?v=d47441b0" rel="stylesheet" type="text/css"/>
+        <link href="//archive.org/includes/build/css/archive.min.css?v=02405d2f" rel="stylesheet" type="text/css"/>
     <link rel="SHORTCUT ICON" href="https://archive.org/images/glogo.jpg"/>
       </head>
   <body class="navia ia-module tiles responsive">
@@ -137,8 +125,10 @@ return [
         itemtype="http://schema.org/VideoObject"
           >
                     <div class="ia-banners">
-              <div class="ia-banner hidden" data-campaign="ia_user_1">
-        <p>This banner text <i>can</i> have <b>markup</b>.</p>
+              <div 
+        class="ia-banner hidden new-lending-mechanism"
+        data-campaign="new-lending-mechanism">
+        <p><a href="http://blog.archive.org/2020/06/10/temporary-national-emergency-library-to-close-2-weeks-early-returning-to-traditional-controlled-digital-lending/" rel="nofollow">See what\'s new with book lending at the Internet Archive</a></p>
         <form class="banner-close" action="" method="get" data-action="ia-banner-close">
           <fieldset>
             <button type="submit"></button>
@@ -146,563 +136,1575 @@ return [
         </form>
       </div>
           </div>
-                            
-                <topnav-element config=\'{"baseUrl":"archive.org","catUrl":"https:\\/\\/catalogd.archive.org","waybackUrl":"web.archive.org","screenName":false,"username":"","eventCategory":"MobileTopNav","waybackPagesArchived":"431 billion","isAdmin":0,"identifier":"dn2015-0220_vid","uploader":false,"biblio":false,"hiddenSearchOptions":["RADIO"]}\'></topnav-element>
-        <div id="navwrap1" class="">
-          <div id="navwrap2">
-            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
-              <div id="nav-tophat-helper" class="hidden-xs"></div>
+                    
+        <div id="topnav">
+                              <ia-topnav config="eyJiYXNlSG9zdCI6ImFyY2hpdmUub3JnIiwic2NyZWVuTmFtZSI6ZmFsc2UsInVzZXJuYW1lIjoiIiwidXBsb2FkVVJMIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9jcmVhdGUiLCJldmVudENhdGVnb3J5IjoiVG9wTmF2Iiwid2F5YmFja1BhZ2VzQXJjaGl2ZWQiOiI0NzggYmlsbGlvbiIsImlzQWRtaW4iOjAsImhpZGVTZWFyY2giOmZhbHNlfQ==" menus="eyJhdWRpbyI6eyJoZWFkaW5nIjoiSW50ZXJuZXQgQXJjaGl2ZSBBdWRpbyIsImljb25MaW5rcyI6W3siaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvZXRyZWUiLCJ0aXRsZSI6IkxpdmUgTXVzaWMgQXJjaGl2ZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvZXRyZWUifSx7Imljb24iOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlcnZpY2VzXC9pbWdcL2xpYnJpdm94YXVkaW8iLCJ0aXRsZSI6IkxpYnJpdm94IEZyZWUgQXVkaW8iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2xpYnJpdm94YXVkaW8ifV0sImZlYXR1cmVkTGlua3MiOlt7InRpdGxlIjoiQWxsIGF1ZGlvIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpbyJ9LHsidGl0bGUiOiJUaGlzIEp1c3QgSW4iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlYXJjaC5waHA/cXVlcnk9bWVkaWF0eXBlOmF1ZGlvJnNvcnQ9LXB1YmxpY2RhdGUifSx7InRpdGxlIjoiR3JhdGVmdWwgRGVhZCIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvR3JhdGVmdWxEZWFkIn0seyJ0aXRsZSI6Ik5ldGxhYmVscyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvbmV0bGFiZWxzIn0seyJ0aXRsZSI6Ik9sZCBUaW1lIFJhZGlvIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9vbGR0aW1lcmFkaW8ifSx7InRpdGxlIjoiNzggUlBNcyBhbmQgQ3lsaW5kZXIgUmVjb3JkaW5ncyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvNzhycG0ifV0sImxpbmtzIjpbeyJ0aXRsZSI6IkF1ZGlvIEJvb2tzICYgUG9ldHJ5IiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpb19ib29rc3BvZXRyeSJ9LHsidGl0bGUiOiJDb21tdW5pdHkgQXVkaW8iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL29wZW5zb3VyY2VfYXVkaW8ifSx7InRpdGxlIjoiQ29tcHV0ZXJzLCBUZWNobm9sb2d5IGFuZCBTY2llbmNlIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpb190ZWNoIn0seyJ0aXRsZSI6Ik11c2ljLCBBcnRzICYgQ3VsdHVyZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvYXVkaW9fbXVzaWMifSx7InRpdGxlIjoiTmV3cyAmIFB1YmxpYyBBZmZhaXJzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpb19uZXdzIn0seyJ0aXRsZSI6Ik5vbi1FbmdsaXNoIEF1ZGlvIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpb19mb3JlaWduIn0seyJ0aXRsZSI6IlNwaXJpdHVhbGl0eSAmIFJlbGlnaW9uIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpb19yZWxpZ2lvbiJ9LHsidGl0bGUiOiJQb2RjYXN0cyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvcG9kY2FzdHMifV19LCJpbWFnZXMiOnsiaGVhZGluZyI6IkltYWdlcyIsImljb25MaW5rcyI6W3siaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvbWV0cm9wb2xpdGFubXVzZXVtb2ZhcnQtZ2FsbGVyeSIsInRpdGxlIjoiTWV0cm9wb2xpdGFuIE11c2V1bSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvbWV0cm9wb2xpdGFubXVzZXVtb2ZhcnQtZ2FsbGVyeSJ9LHsiaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvYnJvb2tseW5tdXNldW0iLCJ0aXRsZSI6IkJyb29rbHluIE11c2V1bSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvYnJvb2tseW5tdXNldW0ifV0sImZlYXR1cmVkTGlua3MiOlt7InRpdGxlIjoiQWxsIGltYWdlcyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvaW1hZ2UifSx7InRpdGxlIjoiVGhpcyBKdXN0IEluIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9zZWFyY2gucGhwP3F1ZXJ5PW1lZGlhdHlwZTppbWFnZSZzb3J0PS1wdWJsaWNkYXRlIn0seyJ0aXRsZSI6IkZsaWNrciBDb21tb25zIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9mbGlja3Jjb21tb25zIn0seyJ0aXRsZSI6Ik9jY3VweSBXYWxsIFN0cmVldCBGbGlja3IiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2ZsaWNrci1vd3MifSx7InRpdGxlIjoiQ292ZXIgQXJ0IiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9jb3ZlcmFydGFyY2hpdmUifSx7InRpdGxlIjoiVVNHUyBNYXBzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9tYXBzX3VzZ3MifV0sImxpbmtzIjpbeyJ0aXRsZSI6Ik5BU0EgSW1hZ2VzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9uYXNhIn0seyJ0aXRsZSI6IlNvbGFyIFN5c3RlbSBDb2xsZWN0aW9uIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9zb2xhcnN5c3RlbWNvbGxlY3Rpb24ifSx7InRpdGxlIjoiQW1lcyBSZXNlYXJjaCBDZW50ZXIiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2FtZXNyZXNlYXJjaGNlbnRlcmltYWdlbGlicmFyeSJ9XX0sIm1vcmUiOlt7InRpdGxlIjoiQWJvdXQiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2Fib3V0XC8ifSx7InRpdGxlIjoiQmxvZyIsInVybCI6Imh0dHBzOlwvXC9ibG9nLmFyY2hpdmUub3JnXC8ifSx7InRpdGxlIjoiUHJvamVjdHMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3Byb2plY3RzXC8ifSx7InRpdGxlIjoiSGVscCIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvYWJvdXRcL2ZhcXMucGhwIn0seyJ0aXRsZSI6IkRvbmF0ZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZG9uYXRlIn0seyJ0aXRsZSI6IkNvbnRhY3QiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2Fib3V0XC9jb250YWN0LnBocCJ9LHsidGl0bGUiOiJKb2JzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9hYm91dFwvam9icy5waHAifSx7InRpdGxlIjoiVm9sdW50ZWVyIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9hYm91dFwvdm9sdW50ZWVycG9zaXRpb25zLnBocCJ9LHsidGl0bGUiOiJQZW9wbGUiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2Fib3V0XC9iaW9zLnBocCJ9XSwic29mdHdhcmUiOnsiaGVhZGluZyI6IlNvZnR3YXJlIiwiaWNvbkxpbmtzIjpbeyJpY29uIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9zZXJ2aWNlc1wvaW1nXC9pbnRlcm5ldGFyY2FkZSIsInRpdGxlIjoiSW50ZXJuZXQgQXJjYWRlIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9pbnRlcm5ldGFyY2FkZSJ9LHsiaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvY29uc29sZWxpdmluZ3Jvb20iLCJ0aXRsZSI6IkNvbnNvbGUgTGl2aW5nIFJvb20iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2NvbnNvbGVsaXZpbmdyb29tIn1dLCJmZWF0dXJlZExpbmtzIjpbeyJ0aXRsZSI6IkFsbCBzb2Z0d2FyZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvc29mdHdhcmUifSx7InRpdGxlIjoiVGhpcyBKdXN0IEluIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9zZWFyY2gucGhwP3F1ZXJ5PW1lZGlhdHlwZTpzb2Z0d2FyZSZzb3J0PS1wdWJsaWNkYXRlIn0seyJ0aXRsZSI6Ik9sZCBTY2hvb2wgRW11bGF0aW9uIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC90b3NlYyJ9LHsidGl0bGUiOiJNUy1ET1MgR2FtZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3NvZnR3YXJlbGlicmFyeV9tc2Rvc19nYW1lcyJ9LHsidGl0bGUiOiJIaXN0b3JpY2FsIFNvZnR3YXJlIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9oaXN0b3JpY2Fsc29mdHdhcmUifSx7InRpdGxlIjoiQ2xhc3NpYyBQQyBHYW1lcyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvY2xhc3NpY3BjZ2FtZXMifSx7InRpdGxlIjoiU29mdHdhcmUgTGlicmFyeSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvc29mdHdhcmVsaWJyYXJ5In1dLCJsaW5rcyI6W3sidGl0bGUiOiJLb2RpIEFyY2hpdmUgYW5kIFN1cHBvcnQgRmlsZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wva29kaV9hcmNoaXZlIn0seyJ0aXRsZSI6IkNvbW11bml0eSBTb2Z0d2FyZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvb3Blbl9zb3VyY2Vfc29mdHdhcmUifSx7InRpdGxlIjoiVmludGFnZSBTb2Z0d2FyZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvdmludGFnZXNvZnR3YXJlIn0seyJ0aXRsZSI6IkFQSyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvYXBrYXJjaGl2ZSJ9LHsidGl0bGUiOiJNUy1ET1MiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3NvZnR3YXJlbGlicmFyeV9tc2RvcyJ9LHsidGl0bGUiOiJDRC1ST00gU29mdHdhcmUiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2NkLXJvbXMifSx7InRpdGxlIjoiQ0QtUk9NIFNvZnR3YXJlIExpYnJhcnkiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2Nkcm9tc29mdHdhcmUifSx7InRpdGxlIjoiU29mdHdhcmUgU2l0ZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3NvZnR3YXJlc2l0ZXMifSx7InRpdGxlIjoiVHVjb3dzIFNvZnR3YXJlIExpYnJhcnkiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3R1Y293cyJ9LHsidGl0bGUiOiJTaGFyZXdhcmUgQ0QtUk9NcyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvY2RiYnNhcmNoaXZlIn0seyJ0aXRsZSI6IlNvZnR3YXJlIENhcHN1bGVzIENvbXBpbGF0aW9uIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9zb2Z0d2FyZWNhcHN1bGVzIn0seyJ0aXRsZSI6IkNELVJPTSBJbWFnZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2Nkcm9taW1hZ2VzIn0seyJ0aXRsZSI6IlpYIFNwZWN0cnVtIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9zb2Z0d2FyZWxpYnJhcnlfenhfc3BlY3RydW0ifSx7InRpdGxlIjoiRE9PTSBMZXZlbCBDRCIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvZG9vbS1jZHMifV19LCJ0ZXh0cyI6eyJoZWFkaW5nIjoiQm9va3MiLCJpY29uTGlua3MiOlt7InRpdGxlIjoiQm9va3MgdG8gQm9ycm93IiwiaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvaW1hZ2VzXC9ib29rLWxlbmQucG5nIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9pbmxpYnJhcnkifSx7InRpdGxlIjoiT3BlbiBMaWJyYXJ5IiwiaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvaW1hZ2VzXC93aWRnZXRPTC5wbmciLCJ1cmwiOiJodHRwczpcL1wvb3BlbmxpYnJhcnkub3JnXC8ifV0sImZlYXR1cmVkTGlua3MiOlt7InRpdGxlIjoiQWxsIEJvb2tzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9ib29rcyJ9LHsidGl0bGUiOiJBbGwgVGV4dHMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3RleHRzIn0seyJ0aXRsZSI6IlRoaXMgSnVzdCBJbiIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VhcmNoLnBocD9xdWVyeT1tZWRpYXR5cGU6dGV4dHMmc29ydD0tcHVibGljZGF0ZSJ9LHsidGl0bGUiOiJTbWl0aHNvbmlhbiBMaWJyYXJpZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3NtaXRoc29uaWFuIn0seyJ0aXRsZSI6IkZFRExJTksgKFVTKSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvZmVkbGluayJ9LHsidGl0bGUiOiJHZW5lYWxvZ3kiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2dlbmVhbG9neSJ9LHsidGl0bGUiOiJMaW5jb2xuIENvbGxlY3Rpb24iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2xpbmNvbG5jb2xsZWN0aW9uIn1dLCJsaW5rcyI6W3sidGl0bGUiOiJBbWVyaWNhbiBMaWJyYXJpZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2FtZXJpY2FuYSJ9LHsidGl0bGUiOiJDYW5hZGlhbiBMaWJyYXJpZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3Rvcm9udG8ifSx7InRpdGxlIjoiVW5pdmVyc2FsIExpYnJhcnkiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3VuaXZlcnNhbGxpYnJhcnkifSx7InRpdGxlIjoiQ29tbXVuaXR5IFRleHRzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9vcGVuc291cmNlIn0seyJ0aXRsZSI6IlByb2plY3QgR3V0ZW5iZXJnIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9ndXRlbmJlcmcifSx7InRpdGxlIjoiQmlvZGl2ZXJzaXR5IEhlcml0YWdlIExpYnJhcnkiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2Jpb2RpdmVyc2l0eSJ9LHsidGl0bGUiOiJDaGlsZHJlbidzIExpYnJhcnkiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2lhY2wifSx7InRpdGxlIjoiQm9va3MgYnkgTGFuZ3VhZ2UiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2Jvb2tzYnlsYW5ndWFnZSJ9LHsidGl0bGUiOiJBZGRpdGlvbmFsIENvbGxlY3Rpb25zIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hZGRpdGlvbmFsX2NvbGxlY3Rpb25zIn1dfSwid2ViIjp7Im1vYmlsZUFwcHNMaW5rcyI6W3sidXJsIjoiaHR0cHM6XC9cL2FwcHMuYXBwbGUuY29tXC91c1wvYXBwXC93YXliYWNrLW1hY2hpbmVcL2lkMTIwMTg4ODMxMyIsInRpdGxlIjoiV2F5YmFjayBNYWNoaW5lIChpT1MpIiwiZXh0ZXJuYWwiOnRydWV9LHsidXJsIjoiaHR0cHM6XC9cL3BsYXkuZ29vZ2xlLmNvbVwvc3RvcmVcL2FwcHNcL2RldGFpbHM/aWQ9Y29tLmFyY2hpdmUud2F5YmFja21hY2hpbmUmaGw9ZW5fVVMiLCJ0aXRsZSI6IldheWJhY2sgTWFjaGluZSAoQW5kcm9pZCkiLCJleHRlcm5hbCI6dHJ1ZX1dLCJicm93c2VyRXh0ZW5zaW9uc0xpbmtzIjpbeyJ1cmwiOiJodHRwczpcL1wvYWRkb25zLm1vemlsbGEub3JnXC9lbi1VU1wvZmlyZWZveFwvYWRkb25cL3dheWJhY2stbWFjaGluZV9uZXdcLyIsInRpdGxlIjoiRmlyZWZveCIsImV4dGVybmFsIjp0cnVlfSx7InVybCI6Imh0dHBzOlwvXC9hcHBzLmFwcGxlLmNvbVwvdXNcL2FwcFwvd2F5YmFjay1tYWNoaW5lXC9pZDE0NzI0MzI0MjI/bXQ9MTIiLCJ0aXRsZSI6IlNhZmFyaSIsImV4dGVybmFsIjp0cnVlfV0sImFyY2hpdmVJdExpbmtzIjpbeyJ1cmwiOiJodHRwczpcL1wvd3d3LmFyY2hpdmUtaXQub3JnXC9leHBsb3JlIiwidGl0bGUiOiJFeHBsb3JlIHRoZSBDb2xsZWN0aW9ucyJ9LHsidXJsIjoiaHR0cHM6XC9cL3d3dy5hcmNoaXZlLWl0Lm9yZ1wvYmxvZ1wvbGVhcm4tbW9yZVwvIiwidGl0bGUiOiJMZWFybiBNb3JlIn0seyJ1cmwiOiJodHRwczpcL1wvd3d3LmFyY2hpdmUtaXQub3JnXC9jb250YWN0LXVzIiwidGl0bGUiOiJCdWlsZCBDb2xsZWN0aW9ucyJ9XX0sInZpZGVvIjp7ImhlYWRpbmciOiJWaWRlbyIsImljb25MaW5rcyI6W3siaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvdHYiLCJ0aXRsZSI6IlRWIE5ld3MiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3R2In0seyJpY29uIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9zZXJ2aWNlc1wvaW1nXC85MTEiLCJ0aXRsZSI6IlVuZGVyc3RhbmRpbmcgOVwvMTEiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcLzkxMSJ9XSwiZmVhdHVyZWRMaW5rcyI6W3sidGl0bGUiOiJBbGwgdmlkZW8iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL21vdmllcyJ9LHsidGl0bGUiOiJUaGlzIEp1c3QgSW4iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlYXJjaC5waHA/cXVlcnk9bWVkaWF0eXBlOm1vdmllcyZzb3J0PS1wdWJsaWNkYXRlIn0seyJ0aXRsZSI6IlByZWxpbmdlciBBcmNoaXZlcyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvcHJlbGluZ2VyIn0seyJ0aXRsZSI6IkRlbW9jcmFjeSBOb3chIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9kZW1vY3JhY3lfbm93X3ZpZCJ9LHsidGl0bGUiOiJPY2N1cHkgV2FsbCBTdHJlZXQiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL29jY3VweXdhbGxzdHJlZXQifSx7InRpdGxlIjoiVFYgTlNBIENsaXAgTGlicmFyeSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvbnNhIn1dLCJsaW5rcyI6W3sidGl0bGUiOiJBbmltYXRpb24gJiBDYXJ0b29ucyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvYW5pbWF0aW9uYW5kY2FydG9vbnMifSx7InRpdGxlIjoiQXJ0cyAmIE11c2ljIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hcnRzYW5kbXVzaWN2aWRlb3MifSx7InRpdGxlIjoiQ29tcHV0ZXJzICYgVGVjaG5vbG9neSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvY29tcHV0ZXJzYW5kdGVjaHZpZGVvcyJ9LHsidGl0bGUiOiJDdWx0dXJhbCAmIEFjYWRlbWljIEZpbG1zIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9jdWx0dXJhbGFuZGFjYWRlbWljZmlsbXMifSx7InRpdGxlIjoiRXBoZW1lcmFsIEZpbG1zIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9lcGhlbWVyYSJ9LHsidGl0bGUiOiJNb3ZpZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL21vdmllc2FuZGZpbG1zIn0seyJ0aXRsZSI6Ik5ld3MgJiBQdWJsaWMgQWZmYWlycyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvbmV3c2FuZHB1YmxpY2FmZmFpcnMifSx7InRpdGxlIjoiU3Bpcml0dWFsaXR5ICYgUmVsaWdpb24iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3NwaXJpdHVhbGl0eWFuZHJlbGlnaW9uIn0seyJ0aXRsZSI6IlNwb3J0cyBWaWRlb3MiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3Nwb3J0cyJ9LHsidGl0bGUiOiJUZWxldmlzaW9uIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC90ZWxldmlzaW9uIn0seyJ0aXRsZSI6IlZpZGVvZ2FtZSBWaWRlb3MiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2dhbWV2aWRlb3MifSx7InRpdGxlIjoiVmxvZ3MiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3Zsb2dzIn0seyJ0aXRsZSI6IllvdXRoIE1lZGlhIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC95b3V0aF9tZWRpYSJ9XX0sInVzZXIiOltdLCJzaWduZWRPdXQiOlt7InVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvYWNjb3VudFwvc2lnbnVwIiwidGl0bGUiOiJTaWduIHVwIGZvciBmcmVlIiwiYW5hbHl0aWNzRXZlbnQiOiJBdmF0YXJNZW51LVNpZ251cCJ9LHsidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9hY2NvdW50XC9sb2dpbiIsInRpdGxlIjoiTG9nIGluIiwiYW5hbHl0aWNzRXZlbnQiOiJBdmF0YXJNZW51LUxvZ2luIn1dfQ==">
+                                      <noscript class=\'static-content\'>      <style scope="icon-hamburger-1">.icon-hamburger-1 svg.icon-hamburger {
+        display: block;
+      }
 
-              <ul class="nav navbar-nav navbar-main">
-                <li class="pull-left">
-                  <a title="Home" class="navia-link home" href="https://archive.org" target="_top">
-                    <span class="iconochive-logo"></span>
-                    <div class="archive-wordmark">
-                      <img src="https://archive.org/images/wordmark-narrow-spacing.svg" alt="Internet Archive Logo">
-                    </div>
-                  </a>
-                </li>
-                                                                      <li class="dropdown dropdown-ia pull-left">
-                    <a title="Web" class="navia-link web"
-                      data-top-kind="web"
-                      href="https://archive.org/web/"
-                      target="_top"><span class="iconochive-web" aria-hidden="true"></span><span>web</span></a>
-                  </li>
-                                                                      <li class="dropdown dropdown-ia pull-left">
-                    <a title="Texts" class="navia-link texts"
-                      data-top-kind="texts"
-                      href="https://archive.org/details/texts"
-                      target="_top"><span class="iconochive-texts" aria-hidden="true"></span><span>books</span></a>
-                  </li>
-                                                                      <li class="dropdown dropdown-ia pull-left">
-                    <a title="Video" class="navia-link movies"
-                      data-top-kind="movies"
-                      href="https://archive.org/details/movies"
-                      target="_top"><span class="iconochive-movies" aria-hidden="true"></span><span>video</span></a>
-                  </li>
-                                                                      <li class="dropdown dropdown-ia pull-left">
-                    <a title="Audio" class="navia-link audio"
-                      data-top-kind="audio"
-                      href="https://archive.org/details/audio"
-                      target="_top"><span class="iconochive-audio" aria-hidden="true"></span><span>audio</span></a>
-                  </li>
-                                                                      <li class="dropdown dropdown-ia pull-left">
-                    <a title="Software" class="navia-link software"
-                      data-top-kind="software"
-                      href="https://archive.org/details/software"
-                      target="_top"><span class="iconochive-software" aria-hidden="true"></span><span>software</span></a>
-                  </li>
-                                                                      <li class="dropdown dropdown-ia pull-left rightmost">
-                    <a title="Image" class="navia-link image"
-                      data-top-kind="image"
-                      href="https://archive.org/details/image"
-                      target="_top"><span class="iconochive-image" aria-hidden="true"></span><span>images</span></a>
-                  </li>
-                
-                <li class="nav-right-tool nav-hamburger pull-right hidden-sm hidden-md hidden-lg">
-                  <div class="container-fluid">
-                    <div class="navbar-header">
-                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                              data-target="#nav-hamburger-menu" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
-                      <div class="navbar-collapse collapse" id="nav-hamburger-menu" aria-expanded="false">
-                            <ul id="" class="nav navbar-nav">
-            <li><a target="_top" data-event-click-tracking="TopNav|AboutLink" href="https://archive.org/about/">ABOUT</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|ContactLink" href="https://archive.org/about/contact.php">CONTACT</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|BlogLink" href="//blog.archive.org">BLOG</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|ProjectsLink" href="https://archive.org/projects">PROJECTS</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|HelpLink" href="https://archive.org/about/faqs.php">HELP</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|DonateLink" href="https://archive.org/donate">DONATE <span class="iconochive-heart"></span></a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|JobsLink" href="https://archive.org/about/jobs.php">JOBS</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|VolunteerLink" href="https://archive.org/about/volunteerpositions.php">VOLUNTEER</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|PeopleLink" href="https://archive.org/about/bios.php">PEOPLE</a></li>
-          </ul>
-                          </div><!-- /.navbar-collapse -->
-                    </div>
-                  </div><!-- /.container-fluid -->
-                </li>
+      .icon-hamburger-1 .fill-color.icon-hamburger {
+        fill: #fff;
+      }</style><!-- Shady DOM styles for login-button --><style scope="login-button-1">.login-button-1 .dropdown-toggle.login-button {
+        display: block;
+          height: 4rem;
+          font-size: 1.6rem;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #ccc;
+          cursor: pointer;
+      }
 
-                                  <li class="nav-right-tool pull-right" id="nav-search" >
-                    <a class="nav-search-button" href="https://archive.org/search.php"
-                      onclick="$(this).parents(\'#nav-search\').find(\'form\').submit(); return false"
-                      aria-hidden="true"
-                    ><span class="iconochive-search"  aria-hidden="true"></span><span class="sr-only">search</span></a>
-                    <div class="searchbar">
-                      <form
-                        class="search-form js-search-form"
-                        method="get"
-                        role="search"
-                        action="https://archive.org/searchresults.php"
-                        target="_top"
-                        data-event-form-tracking="TopNav|SearchForm"
-                        data-wayback-machine-search-url="https://web.archive.org/web/*/"
-                      >
-                        <input
-                          id="search-bar-2"
-                          class="js-search-bar"
-                          data-autocomplete-format="right"
-                          placeholder="Search"
-                          type="text"
-                          name="search"
-                          value=""
-                          aria-controls="navbar_search_options"
-                          aria-label="Search the Archive. Filters and Advanced Search available below."
-                        />
+      .login-button-1 .dropdown-toggle.login-button .fill-color.login-button {
+        fill: #999;
+      }
 
-                              <div
-              id="navbar_search_options"
-            class="search-options js-search-options"
-      aria-expanded="false"
-      aria-label="Search Options"
-      data-keep-open-when-changed="false"
-    >
-      <div class="pre-search-options"></div>
-      <fieldset>
-                      <label>
-      <input
-        type="radio"
-        name="sin"
-        value=""
-                  checked
-                      >
-      <span>Search metadata</span>
-    </label>
-                          <label>
-      <input
-        type="radio"
-        name="sin"
-        value="TXT"
-                      >
-      <span>Search text contents</span>
-    </label>
-                          <label>
-      <input
-        type="radio"
-        name="sin"
-        value="TV"
-                      >
-      <span>Search TV news captions</span>
-    </label>
-                          <label>
-      <input
-        type="radio"
-        name="sin"
-        value="WEB"
-                      >
-      <span>Search archived web sites</span>
-    </label>
-                  </fieldset>
+      .login-button-1 .dropdown-toggle.login-button:active .fill-color.login-button,.login-button-1 .dropdown-toggle.login-button:focus .fill-color.login-button,.login-button-1 .dropdown-toggle.login-button:hover .fill-color.login-button {
+        fill: #fff;
+      }
 
-              <a
-          href="https://archive.org/advancedsearch.php"
-          class="search-options__advanced-search-link"
-          onclick="return AJS.advanced_search(this)"
-        >Advanced Search</a>
+      .login-button-1 .active.login-button {
+        border-radius: 1rem 1rem 0 0;
+          background: #333;
+      }
+
+      .login-button-1 .active.login-button .fill-color.login-button {
+        fill: #fff;
+      }
+
+      .login-button-1 span.login-button {
+        display: none;
+          font-size: 1.4rem;
+          text-transform: uppercase;
+          color: #999;
+      }
+
+      .login-button-1 span.login-button a.login-button {
+        color: inherit;
+          text-decoration: none;
+      }
+
+      .login-button-1 a.login-button:hover,.login-button-1 a.login-button:active,.login-button-1 a.login-button:focus {
+        color: #fff;
+      }
+
+      @media (min-width: 890px) {
+      .login-button-1 .logged-out-toolbar.login-button {
+        transform: translateY(-.5rem);
+      }
+
+      .login-button-1 .active.login-button {
+        background: transparent;
+      }
+
+      .login-button-1 .dropdown-toggle.login-button {
+        display: inline-block;
+            vertical-align: middle;
+      }
+
+      .login-button-1 span.login-button {
+        display: inline;
+            vertical-align: middle;
+      }
+
+      }</style><!-- Shady DOM styles for nav-search --><style scope="nav-search-1">.nav-search-1 input.nav-search:focus {
+        outline: none;
+      }
+
+      .nav-search-1 button.nav-search {
+        background: none;
+          color: inherit;
+          border: none;
+          font: inherit;
+          cursor: pointer;
+      }
+
+      .nav-search-1 button.nav-search:focus {
+        outline: none;
+      }
+
+      .nav-search-1 .search.nav-search {
+        padding-top: 0;
+          margin-right: .5rem;
+      }
+
+      .nav-search-1 .search.nav-search svg.nav-search {
+        position: relative;
+          top: -5px;
+          right: -3px;
+          fill:;
+      }
+
+      .nav-search-1 .search-activated.nav-search {
+        display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          position: absolute;
+          top: 0;
+          right: 5rem;
+          bottom: 0;
+          left: 5rem;
+          z-index: 3;
+          padding: 0.5rem 0.2rem;
+          border-radius: 1rem 1rem 0 0;
+          background: #333;
+      }
+
+      .nav-search-1 .search-inactive.nav-search {
+        display: none;
+      }
+
+      .nav-search-1 .search-activated.nav-search .highlight.nav-search,.nav-search-1 .search-activated.nav-search .search.nav-search {
+        background: #fff;
+          border-radius: 0.5rem;
+      }
+
+      .nav-search-1 .search-activated.nav-search .highlight.nav-search {
+        display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          width: 100%;
+          margin: 0 .5rem;
+      }
+
+      .nav-search-1 .search-activated.nav-search .search.nav-search {
+        height: 100%;
+          padding: 0;
+          margin-right: 0;
+          -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center;
+      }
+
+      .nav-search-1 .search-activated.nav-search .search-field.nav-search {
+        width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+          padding-left: 1rem;
+          border-radius: 0.5rem;
+          border: none;
+          font-size: 1.6rem;
+          text-align: center;
+      }
+
+      .nav-search-1 .search-activated.nav-search .search-field.nav-search:focus {
+        outline: none;
+      }
+
+      @keyframes fade-in-nav-search-1 {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+
+      }
+
+      .nav-search-1 .fade-in.nav-search {
+        animation: fade-in-nav-search-1 .2s forwards;
+      }
+
+      @media (min-width: 890px) {
+      .nav-search-1 .search.nav-search svg.nav-search {
+        display: inline;
+            width: 28px;
+            height: 28px;
+            vertical-align: -14px;
+      }
+
+      .nav-search-1 .search.nav-search path.nav-search {
+        fill: #333;
+      }
+
+      .nav-search-1 .search-inactive.nav-search,.nav-search-1 .search-activated.nav-search {
+        display: block;
+            position: static;
+            padding: 1.2rem .2rem;
+            background: transparent;
+      }
+
+      .nav-search-1 .search-activated.nav-search .highlight.nav-search {
+        width: 13rem;
+            height: 2.8rem;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+      }
+
+      .nav-search-1 .search-activated.nav-search .search-field.nav-search {
+        width: calc(100% - 28px);
+            height: 100%;
+            padding-left: 0;
+            font-size: 1.4rem;
+            text-align: left;
+      }
+
+      .nav-search-1 .search-activated.nav-search .search.nav-search svg.nav-search {
+        width: 28px;
+            height: 28px;
+      }
+
+      }</style><!-- Shady DOM styles for media-button --><style scope="media-button-1">.media-button-1 a.media-button {
+        display: inline-block;
+          text-decoration: none;
+      }
+
+      .media-button-1 .menu-item.media-button {
+        display: inline-flex;
+          width: 100%;
+          padding: 0;
+          font-size: 1.6rem;
+          text-align: left;
+          background: transparent;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+      }
+
+      .media-button-1 .menu-item.media-button:focus {
+        outline: none;
+      }
+
+      .media-button-1 .label.media-button {
+        display: inline-block;
+          padding: 0;
+          font-weight: 400;
+          color: #fff;
+          text-align: left;
+          vertical-align: middle;
+      }
+
+      .media-button-1 .menu-item.media-button > .icon.media-button {
+        display: inline-flex;
+          width: 42px;
+          height: 42px;
+          vertical-align: middle;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+      }
+
+      .media-button-1 .menu-item.selected.media-button .icon.media-button {
+        background-color: #333;
+          border-radius: 1rem 0 0 1rem;
+      }
+
+      .media-button-1 .icon.media-button .fill-color.media-button {
+        fill: #999;
+      }
+
+      .media-button-1 .icon.active.media-button .fill-color.media-button {
+        fill: #fff;
+      }
+
+      .media-button-1 .donate.media-button .fill-color.media-button {
+        fill: #f00;
+      }
+
+      @media (min-width: 890px) {
+      .media-button-1 .menu-item.media-button {
+        width: auto;
+            height: 5rem;
+            color: #999;
+      }
+
+      .media-button-1 .menu-item.media-button:hover,.media-button-1 .menu-item.media-button:active,.media-button-1 .menu-item.media-button:focus {
+        color: #fff;
+      }
+
+      .media-button-1 .menu-item.media-button:hover .fill-color.media-button,.media-button-1 .menu-item.media-button:active .fill-color.media-button,.media-button-1 .menu-item.media-button:focus .fill-color.media-button {
+        fill: #fff;
+      }
+
+      .media-button-1 .label.media-button {
+        display: none;
+      }
+
+      .media-button-1 .label.media-button,.media-button-1 .web.media-button:after {
+        padding-right: 1rem;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            color: inherit;
+      }
+
+      .media-button-1 .web.media-button:after {
+        display: none;
+            content: "web";
+      }
+
+      .media-button-1 .donate.media-button,.media-button-1 .more.media-button {
+        display: none;
+      }
+
+      .media-button-1 .menu-item.selected.media-button {
+        background: #474747;
+      }
+
+      .media-button-1 .menu-item.selected.media-button .label.media-button,.media-button-1 .menu-item.selected.web.media-button:after {
+        color: #fff;
+      }
+
+      .media-button-1 .menu-item.selected.media-button .icon.media-button {
+        background: transparent;
+      }
+
+      .media-button-1 .web.selected.media-button .fill-color.media-button {
+        fill: #ffcd27;
+      }
+
+      .media-button-1 .texts.selected.media-button .fill-color.media-button {
+        fill: #faab3c;
+      }
+
+      .media-button-1 .video.selected.media-button .fill-color.media-button {
+        fill: #f1644b;
+      }
+
+      .media-button-1 .audio.selected.media-button .fill-color.media-button {
+        fill: #00adef;
+      }
+
+      .media-button-1 .software.selected.media-button .fill-color.media-button {
+        fill: #9ecc4f;
+      }
+
+      .media-button-1 .images.selected.media-button .fill-color.media-button {
+        fill: #aa99c9;
+      }
+
+      }
+
+      @media (min-width: 1300px) {
+      .media-button-1 .label.media-button,.media-button-1 .web.media-button:after {
+        display: inline;
+      }
+
+      .media-button-1 .web.media-button .label.media-button {
+        display: none;
+      }
+
+      }</style><!-- Shady DOM styles for media-menu --><style scope="media-menu-1">.media-menu-1 {
+        outline: none;
+      }
+
+      .media-menu-1 .media-menu.media-menu {
+        position: absolute;
+          z-index: -1;
+          top: -100vh;
+          width: 100%;
+          background-color: #222;
+          margin: 0;
+          overflow: hidden;
+      }
+
+      .media-menu-1 .media-menu.tx-slide.media-menu {
+        transition-property: top;
+          transition-duration: 0.2s;
+          transition-timing-function: ease;
+      }
+
+      .media-menu-1 .media-menu.tx-slide.open.media-menu {
+        top: 100%;
+      }
+
+      .media-menu-1 .media-menu.tx-slide.closed.media-menu {
+        top: -100vh;
+      }
+
+      .media-menu-1 .media-menu.tx-slide.closed.media-menu {
+        transition-duration: 0.2s;
+      }
+
+      .media-menu-1 .menu-group.media-menu {
+        position: relative;
+          line-height: normal;
+      }
+
+      @media (min-width: 890px) {
+      .media-menu-1 .media-menu.media-menu {
+        display: inline-block;
+            position: static;
+            width: auto;
+            height: 5rem;
+      }
+
+      .media-menu-1 .media-menu.tx-slide.media-menu {
+        transition-property: none;
+      }
+
+      .media-menu-1 .media-menu.tx-slide.open.media-menu,.media-menu-1 .media-menu.tx-slide.closed.media-menu {
+        top: 0;
+      }
+
+      .media-menu-1 .menu-group.media-menu {
+        font-size: 0;
+      }
+
+      }</style><!-- Shady DOM styles for primary-nav --><style scope="primary-nav-1">.primary-nav-1 button.primary-nav:focus,.primary-nav-1 a.primary-nav:focus,.primary-nav-1 input.primary-nav:focus {
+        outline: none;
+      }
+
+      .primary-nav-1 nav.primary-nav {
+        position: relative;
+          display: -ms-grid;
+          display: grid;
+          height: 4rem;
+          grid-template-areas: "hamburger empty search user";
+          -ms-grid-columns: 4rem minmax(1rem, 100%) 4.3rem 5rem;
+          grid-template-columns: 4rem auto 4.3rem 5rem;
+          -ms-grid-rows: 100%;
+          grid-template-rows: 100%;
+          background: #222;
+          border-bottom: 1px solid #333;
+      }
+
+      .primary-nav-1 button.primary-nav {
+        background: none;
+          color: inherit;
+          border: none;
+          font: inherit;
+          cursor: pointer;
+      }
+
+      .primary-nav-1 .link-home.primary-nav {
+        position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: 2;
+          text-decoration: none;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+      }
+
+      .primary-nav-1 media-menu.primary-nav {
+        grid-column-start: hamburger-start;
+          grid-column-end: user-end;
+      }
+
+      .primary-nav-1 .ia-logo.primary-nav {
+        display: block;
+      }
+
+      .primary-nav-1 .ia-wordmark.primary-nav {
+        display: none;
+      }
+
+      .primary-nav-1 .hamburger.primary-nav {
+        -ms-grid-row: 1;
+          -ms-grid-column: 1;
+          grid-area: hamburger;
+          padding: 0;
+      }
+
+      .primary-nav-1 .search-trigger.primary-nav {
+        -ms-grid-row: 1;
+          -ms-grid-column: 3;
+          grid-area: search;
+          position: relative;
+          padding: 0;
+          z-index: 1;
+          width: 100%;
+          text-align: right;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+      }
+
+      .primary-nav-1 .search-trigger.primary-nav .fill-color.primary-nav {
+        fill: #999;
+      }
+
+      .primary-nav-1 .search-activated.primary-nav {
+        position: relative;
+          z-index: 3;
+      }
+
+      .primary-nav-1 .upload.primary-nav {
+        display: none;
+      }
+
+      .primary-nav-1 .upload.primary-nav span.primary-nav {
+        display: none;
+      }
+
+      .primary-nav-1 .user-info.primary-nav {
+        -ms-grid-row: 1;
+          -ms-grid-column: 4;
+          grid-area: user;
+          -ms-grid-row-align: stretch;
+          align-self: stretch;
+          -ms-grid-column-align: end;
+          justify-self: end;
+      }
+
+      .primary-nav-1 .username.primary-nav {
+        display: none;
+          font-size: 1.3rem;
+          vertical-align: middle;
+          text-transform: uppercase;
+      }
+
+      .primary-nav-1 .user-menu.primary-nav {
+        height: 100%;
+          padding: .5rem 1rem;
+          color: #999;
+      }
+
+      .primary-nav-1 .user-menu.primary-nav:hover {
+        color: #fff;
+      }
+
+      .primary-nav-1 .user-menu.active.primary-nav {
+        border-radius: 1rem 1rem 0 0;
+          background: #333;
+      }
+
+      .primary-nav-1 .user-menu.primary-nav img.primary-nav {
+        display: block;
+          width: 30px;
+          height: 30px;
+      }
+
+      @media (min-width: 890px) {
+      .primary-nav-1 {
+        ;
+      }
+
+      .primary-nav-1 nav.primary-nav {
+        display: block;
+            z-index: 2;
+            height: 5rem;
+            padding-right: 1.5rem;
+      }
+
+      .primary-nav-1 .link-home.primary-nav {
+        position: static;
+            float: left;
+            margin-top: 1rem;
+            padding: 0 10px 0 13px;
+            -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+      }
+
+      .primary-nav-1 .ia-logo.primary-nav,.primary-nav-1 .ia-wordmark.primary-nav {
+        display: inline-block;
+            vertical-align: middle;
+      }
+
+      .primary-nav-1 .ia-wordmark.primary-nav {
+        margin-left: 1rem;
+      }
+
+      .primary-nav-1 .hamburger.primary-nav,.primary-nav-1 .search-trigger.primary-nav {
+        display: none;
+      }
+
+      .primary-nav-1 .user-info.primary-nav {
+        float: right;
+            padding-top: 1rem;
+      }
+
+      .primary-nav-1 .user-menu.primary-nav {
+        padding-top: 0;
+      }
+
+      .primary-nav-1 .user-menu.active.primary-nav {
+        background: transparent;
+      }
+
+      .primary-nav-1 .user-menu.primary-nav img.primary-nav {
+        display: inline-block;
+            vertical-align: middle;
+      }
+
+      .primary-nav-1 .upload.primary-nav {
+        display: block;
+            float: right;
+            margin-top: 1rem;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #999;
+      }
+
+      .primary-nav-1 .upload.primary-nav:active,.primary-nav-1 .upload.primary-nav:focus,.primary-nav-1 .upload.primary-nav:hover {
+        color: #fff;
+      }
+
+      .primary-nav-1 .upload.primary-nav svg.primary-nav {
+        width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            fill: #999;
+      }
+
+      .primary-nav-1 .upload.primary-nav:hover svg.primary-nav,.primary-nav-1 .upload.primary-nav:focus svg.primary-nav,.primary-nav-1 .upload.primary-nav:active svg.primary-nav {
+        fill: #fff;
+      }
+
+      .primary-nav-1 nav-search.primary-nav {
+        float: right;
+            margin-left: 1rem;
+      }
+
+      .primary-nav-1 login-button.primary-nav {
+        display: block;
+            margin-right: 1rem;
+      }
+
+      }
+
+      @media (min-width: 990px) {
+      .primary-nav-1 .username.primary-nav {
+        display: inline-block;
+      }
+
+      .primary-nav-1 .upload.primary-nav span.primary-nav {
+        display: inline;
+      }
+
+      }</style><!-- Shady DOM styles for user-menu --><!-- Shady DOM styles for search-menu --><style scope="search-menu-1">.search-menu-1 {
+        ;
+      }
+
+      .search-menu-1 button.search-menu:focus,.search-menu-1 input.search-menu:focus {
+        outline-color: #428bca;
+          outline-width: 0.16rem;
+          outline-style: auto;
+      }
+
+      .search-menu-1 .search-menu.search-menu {
+        position: absolute;
+          top: -800px;
+          right: 0;
+          left: 0;
+          z-index: 1;
+          padding: 0 4.5rem;
+          font-size: 1.6rem;
+          background-color: #333;
+      }
+
+      .search-menu-1 .tx-slide.search-menu {
+        overflow: hidden;
+          transition-property: top;
+          transition-duration: 0.2s;
+          transition-timing-function: ease;
+      }
+
+      .search-menu-1 .initial.search-menu,.search-menu-1 .closed.search-menu {
+        top: -800px;
+      }
+
+      .search-menu-1 .closed.search-menu {
+        transition-duration: 0.2s;
+      }
+
+      .search-menu-1 .open.search-menu {
+        top: 4rem;
+      }
+
+      .search-menu-1 label.search-menu,.search-menu-1 a.search-menu {
+        padding: 1rem;
+          display: block;
+      }
+
+      .search-menu-1 .advanced-search.search-menu {
+        text-decoration: none;
+          color: #428bca;
+      }
+
+      @media (min-width: 890px) {
+      .search-menu-1 .search-menu.search-menu {
+        overflow: visible;
+            top: -400px;
+            right: 2rem;
+            left: auto;
+            z-index: 5;
+            padding: 1rem 2rem;
+            transition: opacity .2s ease-in-out;
+            font-size: 1.4rem;
+            color: #333;
+            border-radius: 2px;
+            background: #fff;
+            box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .15);
+      }
+
+      .search-menu-1 .search-menu.search-menu:after {
+        position: absolute;
+            right: 7px;
+            top: -7px;
+            width: 12px;
+            height: 7px;
+            box-sizing: border-box;
+            color: #fff;
+            content: "";
+            border-bottom: 7px solid currentColor;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+      }
+
+      .search-menu-1 .initial.search-menu,.search-menu-1 .closed.search-menu {
+        opacity: 0;
+            transition-duration: .2s;
+      }
+
+      .search-menu-1 .open.search-menu {
+        top: 5.1rem;
+            opacity: 1;
+      }
+
+      .search-menu-1 label.search-menu {
+        padding: 0;
+      }
+
+      .search-menu-1 label.search-menu + label.search-menu {
+        padding-top: 7px;
+      }
+
+      .search-menu-1 a.search-menu {
+        padding: 1rem 0 0 0;
+      }
+
+      }</style><!-- Shady DOM styles for wayback-search --><!-- Shady DOM styles for more-slider --><!-- Shady DOM styles for media-subnav --><style scope="media-subnav-1">.media-subnav-1 a.media-subnav {
+        text-decoration: none;
+          color: #fff;
+      }
+
+      .media-subnav-1 img.media-subnav {
+        display: block;
+          width: 90px;
+          height: 90px;
+          margin: 0 auto 1rem auto;
+          border-radius: 45px;
+      }
+
+      .media-subnav-1 h3.media-subnav {
+        margin-top: 0;
+          font-size: 1.8rem;
+      }
+
+      .media-subnav-1 h4.media-subnav {
+        font-size: 1.6rem;
+      }
+
+      .media-subnav-1 ul.media-subnav {
+        padding: 0;
+          margin: 0;
+          list-style: none;
+      }
+
+      .media-subnav-1 li.media-subnav + li.media-subnav {
+        padding-top: 1.5rem;
+      }
+
+      .media-subnav-1 .icon-links.media-subnav {
+        display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: space-evenly;
+          -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+          text-align: center;
+      }
+
+      .media-subnav-1 .icon-links.media-subnav a.media-subnav {
+        display: inline-block;
+          width: 120px;
+          margin-bottom: 1.5rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-align: center;
+          text-overflow: ellipsis;
+      }
+
+      .media-subnav-1 .icon-links.media-subnav a.media-subnav + a.media-subnav {
+        margin-left: 2rem;
+      }
+
+      .media-subnav-1 .featured.media-subnav h4.media-subnav {
+        display: none;
+      }
+
+      @media (min-width: 890px) {
+      .media-subnav-1 {
+        display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 40% 20% 40%;
+            grid-template-columns: 40% 20% 40%;
+      }
+
+      .media-subnav-1 .wayback-search.media-subnav {
+        -ms-grid-column: 1;
+            -ms-grid-column-span: 3;
+            grid-column: 1 / 4;
+      }
+
+      .media-subnav-1 h3.media-subnav {
+        display: none;
+      }
+
+      .media-subnav-1 h4.media-subnav {
+        margin: 0 0 1rem 0;
+            font-weight: 100;
+      }
+
+      .media-subnav-1 ul.media-subnav {
+        font-size: 1.3rem;
+      }
+
+      .media-subnav-1 li.media-subnav {
+        padding-bottom: .5rem;
+      }
+
+      .media-subnav-1 li.media-subnav + li.media-subnav {
+        padding-top: 0;
+      }
+
+      .media-subnav-1 li.media-subnav a.media-subnav {
+        display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+      }
+
+      .media-subnav-1 .icon-links.media-subnav {
+        -ms-grid-column: 1;
+      }
+
+      .media-subnav-1 .icon-links.media-subnav a.media-subnav {
+        padding-top: 3.5rem;
+            max-width: 160px;
+      }
+
+      .media-subnav-1 .links.media-subnav {
+        padding: 0 1.5rem;
+      }
+
+      .media-subnav-1 .featured.media-subnav {
+        -ms-grid-column: 2;
+      }
+
+      .media-subnav-1 .featured.media-subnav h4.media-subnav {
+        display: block;
+      }
+
+      .media-subnav-1 .top.media-subnav {
+        -ms-grid-column: 3;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav {
+        display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 50% 3rem 50%;
+            grid-template-columns: 50% 50%;
+            -ms-grid-rows: (auto)[7];
+            grid-template-rows: repeat(7, auto);
+            grid-column-gap: 3rem;
+            grid-auto-flow: column;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(1) {
+        -ms-grid-row: 1;
+            -ms-grid-column: 1;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(2) {
+        -ms-grid-row: 2;
+            -ms-grid-column: 1;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(3) {
+        -ms-grid-row: 3;
+            -ms-grid-column: 1;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(4) {
+        -ms-grid-row: 4;
+            -ms-grid-column: 1;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(5) {
+        -ms-grid-row: 5;
+            -ms-grid-column: 1;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(6) {
+        -ms-grid-row: 6;
+            -ms-grid-column: 1;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(7) {
+        -ms-grid-row: 7;
+            -ms-grid-column: 1;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(8) {
+        -ms-grid-row: 1;
+            -ms-grid-column: 3;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(9) {
+        -ms-grid-row: 2;
+            -ms-grid-column: 3;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(10) {
+        -ms-grid-row: 3;
+            -ms-grid-column: 3;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(11) {
+        -ms-grid-row: 4;
+            -ms-grid-column: 3;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(12) {
+        -ms-grid-row: 5;
+            -ms-grid-column: 3;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(13) {
+        -ms-grid-row: 6;
+            -ms-grid-column: 3;
+      }
+
+      .media-subnav-1 .top.media-subnav ul.media-subnav > *.media-subnav:nth-child(14) {
+        -ms-grid-row: 7;
+            -ms-grid-column: 3;
+      }
+
+      }</style><!-- Shady DOM styles for media-slider --><style scope="media-slider-1">.media-slider-1 .overflow-clip.media-slider {
+        display: none;
+          position: absolute;
+          top: 4rem;
+          right: 0;
+          left: 4rem;
+          height: 368px;
+          overflow-x: hidden;
+      }
+
+      .media-slider-1 .information-menu.media-slider {
+        position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          padding: 0;
+          height: 368px;
+          overflow-x: hidden;
+          font-size: 1.4rem;
+          background: #333;
+      }
+
+      .media-slider-1 .open.media-slider {
+        display: block;
+      }
+
+      .media-slider-1 .info-box.media-slider {
+        padding: 1rem;
+      }
+
+      @media (min-width: 890px) {
+      .media-slider-1 .overflow-clip.media-slider {
+        display: block;
+            top: 0;
+            left: 0;
+            height: auto;
+            overflow-x: visible;
+            transform: translate(0, -100%);
+            transition: transform .2s ease;
+      }
+
+      .media-slider-1 .information-menu.media-slider {
+        left: 0;
+            z-index: 1;
+            height: auto;
+            min-height: 21rem;
+            background: #474747;
+            transform: translate(0, -100%);
+            transition: transform .2s ease;
+      }
+
+      .media-slider-1 .overflow-clip.open.media-slider {
+        transform: translate(0, 8rem);
+      }
+
+      .media-slider-1 .information-menu.open.media-slider {
+        transform: translate(0, 0);
+      }
+
+      .media-slider-1 .info-box.media-slider {
+        max-width: 1000px;
+            padding: 1.5rem 0;
+            margin: 0 auto;
+      }
+
+      }</style><!-- Shady DOM styles for desktop-subnav --><style scope="desktop-subnav-1">.desktop-subnav-1 ul.desktop-subnav {
+        position: relative;
+          z-index: 3;
+          padding: .8rem 0;
+          margin: 0;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          text-align: center;
+          background: #333;
+      }
+
+      .desktop-subnav-1 li.desktop-subnav {
+        display: inline-block;
+          padding: 0 15px;
+      }
+
+      .desktop-subnav-1 a.desktop-subnav {
+        text-decoration: none;
+          color: #aaa;
+      }
+
+      .desktop-subnav-1 a.desktop-subnav:hover,.desktop-subnav-1 a.desktop-subnav:active,.desktop-subnav-1 a.desktop-subnav:focus {
+        color: #fff;
+      }
+
+      .desktop-subnav-1 .donate.desktop-subnav svg.desktop-subnav {
+        width: 16px;
+          height: 16px;
+          vertical-align: -4px;
+          fill: #f00;
+      }</style><!-- Shady DOM styles for signed-out-dropdown --><style scope="signed-out-dropdown-1">.signed-out-dropdown-1 {
+        ;
+      }
+
+      .signed-out-dropdown-1 nav.signed-out-dropdown {
+        position: absolute;
+          top: -1500px;
+          right: 0;
+          z-index: 1;
+          overflow: hidden;
+          font-size: 1.6rem;
+          background-color: #333;
+          transition-property: top;
+          transition-duration: 0.2s;
+          transition-timing-function: ease;
+      }
+
+      .signed-out-dropdown-1 .initial.signed-out-dropdown,.signed-out-dropdown-1 .closed.signed-out-dropdown {
+        top: -1500px;
+      }
+
+      .signed-out-dropdown-1 .closed.signed-out-dropdown {
+        transition-duration: 0.5s;
+      }
+
+      .signed-out-dropdown-1 .open.signed-out-dropdown {
+        top: 4rem;
+          max-width: 100vw;
+          overflow: auto;
+      }
+
+      .signed-out-dropdown-1 h3.signed-out-dropdown {
+        padding: 0.6rem 2rem;
+          margin: 0;
+          font-size: inherit;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      }
+
+      .signed-out-dropdown-1 ul.signed-out-dropdown {
+        padding: 0.4rem 0 0.7rem 0;
+          margin: 0;
+          list-style: none;
+          
+          max-height: calc(100vh - 7.2rem + 1px);
+          overflow: auto;
+          box-sizing: border-box;
+      }
+
+      .signed-out-dropdown-1 .divider.signed-out-dropdown {
+        margin: .5rem 0;
+          border-bottom: 1px solid #666;
+      }
+
+      .signed-out-dropdown-1 a.signed-out-dropdown,.signed-out-dropdown-1 .info-item.signed-out-dropdown {
+        display: block;
+          color: #fff;
+          text-decoration: none;
+          padding: 1rem 2rem;
+      }
+
+      .signed-out-dropdown-1 .info-item.signed-out-dropdown {
+        font-size: .8em;
+          color: #999;
+      }
+
+      @media (min-width: 890px) {
+      .signed-out-dropdown-1 nav.signed-out-dropdown {
+        overflow: visible;
+            top: calc(100% + 7px);
+            left: auto;
+            z-index: 5;
+            transition: opacity .2s ease-in-out;
+            font-size: 1.4rem;
+            border-radius: 2px;
+            background: #fff;
+            box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .15);
+      }
+
+      .signed-out-dropdown-1 nav.signed-out-dropdown:after {
+        position: absolute;
+            right: 7px;
+            top: -7px;
+            width: 12px;
+            height: 7px;
+            box-sizing: border-box;
+            color: #fff;
+            content: "";
+            border-bottom: 7px solid currentColor;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+      }
+
+      .signed-out-dropdown-1 h3.signed-out-dropdown {
+        display: none;
+      }
+
+      .signed-out-dropdown-1 ul.signed-out-dropdown {
+        max-height: calc(100vh - 8.5rem + 1px);
+      }
+
+      .signed-out-dropdown-1 .divider.signed-out-dropdown {
+        border-bottom-color: #666;
+      }
+
+      .signed-out-dropdown-1 a.signed-out-dropdown {
+        padding: .5rem 2rem;
+            color: #333;
+            transition: background .1s ease-out, color .1s ease-out;
+      }
+
+      .signed-out-dropdown-1 .info-item.signed-out-dropdown {
+        padding: .5rem 2rem;
+            font-size: .8em;
+      }
+
+      .signed-out-dropdown-1 a.signed-out-dropdown:hover,.signed-out-dropdown-1 a.signed-out-dropdown:active,.signed-out-dropdown-1 a.signed-out-dropdown:focus {
+        color: #fff;
+            background: #428bca;
+      }
+
+      .signed-out-dropdown-1 .initial.signed-out-dropdown,.signed-out-dropdown-1 .closed.signed-out-dropdown {
+        opacity: 0;
+            transition-duration: .2s;
+      }
+
+      .signed-out-dropdown-1 .open.signed-out-dropdown {
+        top: 5.1rem;
+            opacity: 1;
+            overflow: visible;
+      }
+
+      }
+
+      @media (min-width: 890px) {
+      .signed-out-dropdown-1 .initial.signed-out-dropdown,.signed-out-dropdown-1 .closed.signed-out-dropdown,.signed-out-dropdown-1 .open.signed-out-dropdown {
+        right: 33.7rem;
+      }
+
+      .signed-out-dropdown-1 .search-hidden.initial.signed-out-dropdown,.signed-out-dropdown-1 .search-hidden.closed.signed-out-dropdown,.signed-out-dropdown-1 .search-hidden.open.signed-out-dropdown {
+        right: 18.3rem;
+      }
+
+      }
+
+      @media (min-width: 990px) {
+      .signed-out-dropdown-1 .initial.signed-out-dropdown,.signed-out-dropdown-1 .closed.signed-out-dropdown,.signed-out-dropdown-1 .open.signed-out-dropdown {
+        right: 39.7rem;
+      }
+
+      .signed-out-dropdown-1 .search-hidden.initial.signed-out-dropdown,.signed-out-dropdown-1 .search-hidden.closed.signed-out-dropdown,.signed-out-dropdown-1 .search-hidden.open.signed-out-dropdown {
+        right: 23.5rem;
+      }
+
+      }</style><!-- Shady DOM styles for ia-topnav --><style scope="ia-topnav-1">.ia-topnav-1 {
+        ;
+
+          color: #fff;
+          font-size: 2rem;
+          font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;
+      }
+
+      .ia-topnav-1 #close-layer.ia-topnav {
+        display: none;
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 0;
+      }
+
+      .ia-topnav-1 #close-layer.visible.ia-topnav {
+        display: block;
+      }
+
+      .ia-topnav-1 .topnav.ia-topnav {
+        position: relative;
+          z-index: 3;
+      }
+
+      @media (max-width: 889px) {
+      .ia-topnav-1 desktop-subnav.ia-topnav {
+        display: none;
+      }
+
+      }</style><style>body {transition: opacity ease-in 0.2s; } 
+      body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+      </style>
+          <div class="topnav style-scope ia-topnav">
+        <primary-nav class="style-scope ia-topnav x-scope primary-nav-1"><!---->
+      <nav class="style-scope primary-nav">
+        <a class="link-home style-scope primary-nav" href="https://archive.org" data-event-click-tracking="BetaTopNav|NavHome"><!---->
+  <svg class="ia-logo style-scope primary-nav" width="27" height="30" viewBox="0 0 27 30" xmlns="http://www.w3.org/2000/svg" aria-labelledby="logoTitleID logoDescID">
+    <title id="logoTitleID" class="style-scope primary-nav">Internet Archive logo</title>
+    <desc id="logoDescID" class="style-scope primary-nav">A line drawing of the Internet Archive headquarters building façade.</desc>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="style-scope primary-nav">
+      <mask id="mask-2" fill="white" class="style-scope primary-nav">
+        <path d="M26.6666667,28.6046512 L26.6666667,30 L0,30 L0.000283687943,28.6046512 L26.6666667,28.6046512 Z M25.6140351,26.5116279 L25.6140351,28.255814 L1.05263158,28.255814 L1.05263158,26.5116279 L25.6140351,26.5116279 Z M3.62469203,7.6744186 L3.91746909,7.82153285 L4.0639977,10.1739544 L4.21052632,13.9963932 L4.21052632,17.6725617 L4.0639977,22.255044 L4.03962296,25.3421929 L3.62469203,25.4651163 L2.16024641,25.4651163 L1.72094074,25.3421929 L1.55031755,22.255044 L1.40350877,17.6970339 L1.40350877,14.0211467 L1.55031755,10.1739544 L1.68423854,7.80887484 L1.98962322,7.6744186 L3.62469203,7.6744186 Z M24.6774869,7.6744186 L24.9706026,7.82153285 L25.1168803,10.1739544 L25.2631579,13.9963932 L25.2631579,17.6725617 L25.1168803,22.255044 L25.0927809,25.3421929 L24.6774869,25.4651163 L23.2130291,25.4651163 L22.7736357,25.3421929 L22.602418,22.255044 L22.4561404,17.6970339 L22.4561404,14.0211467 L22.602418,10.1739544 L22.7369262,7.80887484 L23.0420916,7.6744186 L24.6774869,7.6744186 Z M9.94042303,7.6744186 L10.2332293,7.82153285 L10.3797725,10.1739544 L10.5263158,13.9963932 L10.5263158,17.6725617 L10.3797725,22.255044 L10.3556756,25.3421929 L9.94042303,25.4651163 L8.47583122,25.4651163 L8.0362015,25.3421929 L7.86556129,22.255044 L7.71929825,17.6970339 L7.71929825,14.0211467 L7.86556129,10.1739544 L8.00005604,7.80887484 L8.30491081,7.6744186 L9.94042303,7.6744186 Z M18.0105985,7.6744186 L18.3034047,7.82153285 L18.449948,10.1739544 L18.5964912,13.9963932 L18.5964912,17.6725617 L18.449948,22.255044 L18.425851,25.3421929 L18.0105985,25.4651163 L16.5460067,25.4651163 L16.1066571,25.3421929 L15.9357367,22.255044 L15.7894737,17.6970339 L15.7894737,14.0211467 L15.9357367,10.1739544 L16.0702315,7.80887484 L16.3753664,7.6744186 L18.0105985,7.6744186 Z M25.6140351,4.53488372 L25.6140351,6.97674419 L1.05263158,6.97674419 L1.05263158,4.53488372 L25.6140351,4.53488372 Z M13.0806755,0 L25.9649123,2.93331338 L25.4484139,3.8372093 L0.771925248,3.8372093 L0,3.1041615 L13.0806755,0 Z" id="path-1" class="style-scope primary-nav"></path>
+      </mask>
+      <use fill="#FFFFFF" xlink:href="#path-1" class="style-scope primary-nav"></use>
+      <g mask="url(#mask-2)" fill="#FFFFFF" class="style-scope primary-nav">
+        <path d="M0,0 L26.6666667,0 L26.6666667,30 L0,30 L0,0 Z" id="swatch" class="style-scope primary-nav"></path>
+      </g>
+    </g>
+  </svg>
+<!---->
+  <svg class="ia-wordmark style-scope primary-nav" height="14" viewBox="0 0 183 14" width="183" xmlns="http://www.w3.org/2000/svg"><g fill="#fff" fill-rule="evenodd" class="style-scope primary-nav"><g transform="translate(107.24177)" class="style-scope primary-nav"><path d="m3.46567087 2.73592273c.09358964-.31350476.26547063-.95793121.26547063-1.08718317 0-.73655285-.57818604-.75488647-1.20271694-.86488814v-.40471447h2.93682509l3.81107838 12.38893815h-1.62387035l-1.17212033-3.82897484h-3.98340931l-1.17167038 3.82897484h-.96784292zm-.7032722 5.33783106h3.4520181l-1.78045302-5.37541496z" class="style-scope primary-nav"></path><path d="m13.7607138 2.88304997c0-1.82281935-.0319465-1.82281935-1.4843858-2.09919855v-.40471447h3.8425749c1.1721204 0 4.4050127 0 4.4050127 3.2954667 0 2.09828187-1.1554722 2.79816749-2.3896856 3.03696279l2.874282 6.05650866h-1.7957513l-2.7649442-5.72512863h-.9687428v5.72512863h-1.7183599zm1.7183599 3.29500836h.8909015c1.0146377 0 2.4364804-.33092169 2.4364804-2.39299467 0-1.98873853-.9687428-2.54103858-2.2812476-2.54103858-1.0461343 0-1.0461343.33138003-1.0461343 1.6573585z" class="style-scope primary-nav"></path><path d="m31.6158204 12.2524422c-.5304913.2768376-1.3903462.6998857-2.9989182.6998857-3.389925 0-4.6083902-2.4113283-4.6083902-6.55334954 0-3.35000921.8742533-6.07530059 4.3582178-6.07530059 1.3903462 0 2.4058839.27592086 3.1240044.55230005l.0940396 3.07500503h-.4530999c-.062543-.9395976-.921948-2.743625-2.6088113-2.743625-2.296096 0-2.6713545 2.88983555-2.6713545 5.19162051 0 2.90816916.8598549 5.52254214 3.0304147 5.52254214 1.4843858 0 2.2497511-.5523 2.7338976-.9386809z" class="style-scope primary-nav"></path><path d="m36.1784975 2.80971552c0-1.45568877-.0935896-1.62114962-1.5626771-1.80448573v-.40563116l3.2805871-.42258975v5.70633665h4.2484299v-5.50420858h1.7183599v12.38893815h-1.7183599v-6.01984144h-4.2484299v6.01984144h-1.71791z" class="style-scope primary-nav"></path><path d="m46.8631973 12.3083598c1.1086774 0 1.3273532-.2759209 1.3273532-1.711901v-7.91645358c0-1.43598014-.2186758-1.71144266-1.3273532-1.71144266v-.46109033h4.3735162v.46109033c-1.093829 0-1.3273532.27546252-1.3273532 1.71144266v7.91645358c0 1.4359801.2335242 1.711901 1.3273532 1.711901v.4597153h-4.3735162z" class="style-scope primary-nav"></path><path d="m56.1269544 2.73592273c-.4998947-1.67569211-.6407291-1.67569211-1.8902409-1.95207131v-.40471447h3.0304147l3.0614614 10.08806985h.0310465l2.9840699-10.08806985h1.0146377l-3.8106284 12.38893815h-1.3588497z" class="style-scope primary-nav"></path><path d="m68.8422796 2.88304997c0-1.82281935-.0467948-1.82281935-1.4839359-2.09919855v-.40471447h7.4826722l.0467949 2.7243747h-.4378016c0-1.47264736-.6555775-1.85948657-1.6868634-1.85948657h-1.2184652c-.7806636 0-.9835912.07333445-.9835912.95747287v3.66351396h1.8902409c1.0767309 0 1.1865187-.80942895 1.2805583-1.41672984h.4369017v3.86518369h-.4369017c0-.9941401-.3437619-1.58356571-1.2805583-1.58356571h-1.8902409v4.10535405c0 1.0308073.2029276 1.0679328.9835912 1.0679328h1.7345581c.8895516 0 1.311155-.3685056 1.4051946-1.8040274h.4378015l-.0476947 2.6689156h-6.2322605z" class="style-scope primary-nav"></path></g><g transform="translate(.24177 .277385)" class="style-scope primary-nav"><path d="m1.57302598 10.3699491v-8.03470531c0-1.45706379-.25962128-1.73802639-1.57302598-1.73802639v-.46659042h5.18252665v.46659042c-1.29540668 0-1.57302597.2809626-1.57302597 1.73802639v8.03470531c0 1.4575222.27761929 1.7366514 1.57302597 1.7366514v.4675071h-5.18252665v-.4675071c1.3134047 0 1.57302598-.2791292 1.57302598-1.7366514z" class="style-scope primary-nav"></path><path d="m10.0331719 2.39116131c0-1.73756805-.25872136-1.66240024-1.85064525-1.98003007v-.41113124h3.90556795l5.830455 10.1641543h.0368959v-10.1641543h1.1662709v12.5741076h-1.7773033l-6.1076243-10.63028642h-.0373459v10.63028642h-1.166271z" class="style-scope primary-nav"></path><path d="m25.9161467.87818h-1.2774087c-1.4618883 0-1.8875412.46704876-1.9991288 1.83198615h-.5178928l.0737919-2.71016615h9.4768516l.0742417 2.76562533h-.5183426c0-1.43873018-.5925845-1.88744533-2.0175768-1.88744533h-1.2580608v11.6959276h-2.0364747z" class="style-scope primary-nav"></path><path d="m36.505907 2.54103859c0-1.84986143-.0562438-1.84986143-1.7593054-2.12990735v-.41113124h8.8658192l.0557938 2.76562533h-.5183426c0-1.49510604-.777064-1.88744533-1.9982289-1.88744533h-1.4443403c-.9255476 0-1.1662709.07516781-1.1662709.97213976v3.71805646h2.2398522c1.2769587 0 1.4060944-.82272082 1.5176821-1.43964686h.5187926v3.92430959h-.5187926c0-1.00880698-.406755-1.60648273-1.5176821-1.60648273h-2.2398522v4.16631328c0 1.0463909.2407233 1.0830581 1.1662709 1.0830581h2.0544728c1.0555832 0 1.554578-.3735473 1.6652657-1.83061113h.5192426l-.0557938 2.70879113h-7.3845831z" class="style-scope primary-nav"></path><path d="m48.7037894 2.54103859c0-1.84986143-.0368959-1.84986143-1.7575055-2.12990735v-.41113124h4.5525963c1.3885464 0 5.2194226 0 5.2194226 3.34450912 0 2.13036568-1.3687486 2.8403348-2.8315368 3.08325515l3.4056733 6.14634333h-2.1287145l-3.2756376-5.81083823h-1.1478231v5.81083823h-2.0364747zm2.0364747 3.34405077h1.0555833c1.202267 0 2.8873305-.33550509 2.8873305-2.42782853 0-2.01898899-1.147823-2.57908083-2.7028509-2.57908083-1.2400629 0-1.2400629.33596344-1.2400629 1.68256722z" class="style-scope primary-nav"></path><path d="m62.1435345 2.39116131c0-1.73756805-.2596213-1.66240024-1.8510952-1.98003007v-.41113124h3.905118l5.830005 10.1641543h.0373458v-10.1641543h1.166271v12.5741076h-1.7764035l-6.1085242-10.63028642h-.0368959v10.63028642h-1.165821z" class="style-scope primary-nav"></path><path d="m75.9895846 2.54103859c0-1.84986143-.0553439-1.84986143-1.7584055-2.12990735v-.41113124h8.8658192l.0557938 2.76562533h-.5183426c0-1.49510604-.777964-1.88744533-1.9991289-1.88744533h-1.4438902c-.9250977 0-1.1658211.07516781-1.1658211.97213976v3.71805646h2.2394023c1.2774087 0 1.4060944-.82272082 1.5176821-1.43964686h.5187926v3.92430959h-.5187926c0-1.00880698-.406755-1.60648273-1.5176821-1.60648273h-2.2394023v4.16631328c0 1.0463909.2407234 1.0830581 1.1658211 1.0830581h2.0544727c1.0555832 0 1.5550279-.3735473 1.6661657-1.83061113h.5183426l-.0557938 2.70879113h-7.385033z" class="style-scope primary-nav"></path><path d="m90.2243917.87818h-1.2765088c-1.4623382 0-1.8879911.46704876-1.9995788 1.83198615h-.5178927l.0742418-2.71016615h9.4759517l.0742418 2.76562533h-.5178928c0-1.43873018-.5921344-1.88744533-2.0180267-1.88744533h-1.2585108v11.6959276h-2.0360247z" class="style-scope primary-nav"></path></g></g></svg>
+<!----></a>
+
+      <button class="search-trigger style-scope primary-nav" data-event-click-tracking="BetaTopNav|NavSearchOpen">
+
+  <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="searchTitleID searchDescID" class="style-scope primary-nav">
+    <title id="searchTitleID" class="style-scope primary-nav">Search icon</title>
+    <desc id="searchDescID" class="style-scope primary-nav">An illustration of a magnifying glass.</desc>
+    <path class="fill-color style-scope primary-nav" d="m32.4526364 29.8875889-8.1719472-7.9751279c1.1046135-1.4876138 1.7652549-3.3102407 1.7652549-5.2846451 0-.101185-.0142895-.1981539-.030573-.2944743.0166158-.0976175.0309053-.196208.0309053-.2990145 0-4.9814145-4.152935-9.0343271-9.2572866-9.0343271-.0907218 0-.1781206.01394537-.2655193.02594487-.0880633-.0119995-.1747974-.02594487-.2655193-.02594487-5.1046839 0-9.25761889 4.0529126-9.25761889 9.0343271 0 .1011849.01395722.1981539.03057294.2947985-.01694804.0976176-.03090525.1958838-.03090525.2986903 0 4.9814145 4.1526027 9.0346514 9.2572866 9.0346514.0907218 0 .1777882-.0139454.2658516-.0262692.0873987.0123238.1741328.0262692.265187.0262692 1.7306942 0 3.3467399-.4747911 4.7338208-1.2852439l8.2882574 8.0886366c.3652137.3564177.843082.53414 1.3212826.53414.4782007 0 .9567336-.1780467 1.3212827-.53414.7294304-.7118622.7294304-1.8660845-.0003323-2.5782711zm-15.9526364-7.8875889c-.0832667-.0118703-.1652765-.0253024-.2513711-.0253024-2.8781993 0-5.2197212-2.3278242-5.2197212-5.1891862 0-.0974612-.013197-.1908615-.0289077-.2836371.0160249-.0940251.0292219-.1889874.0292219-.2880105 0-2.861362 2.3418361-5.1891861 5.2200354-5.1891861.0854662 0 .1677902-.0131198.2510569-.0246777.0826383.0115579.1649623.0246777.2510569.0246777 2.8781993 0 5.2197212 2.3278241 5.2197212 5.1891861 0 .0974612.0135112.1908616.0289077.2839496-.0157107.0940251-.0295361.1886749-.0295361.287698 0 2.861362-2.3415219 5.1891862-5.2197212 5.1891862-.0860946 0-.1684187.0134321-.2507427.0253024z" fill-rule="evenodd"></path>
+  </svg>
+
+      </button>
+      <nav-search class="style-scope primary-nav x-scope nav-search-1"><!----><div class="search-activated fade-in search-inactive style-scope nav-search">
+      <form id="nav-search" class="highlight style-scope nav-search" method="get" action="https://archive.org/search.php" data-event-submit-tracking="BetaTopNav|NavSearchSubmit">
+        <input type="text" name="query" class="search-field style-scope nav-search" placeholder="Search" autocomplete="off">
+        <input type="hidden" name="sin" class="style-scope nav-search" value="">
+        <button type="submit" class="search style-scope nav-search" data-event-click-tracking="BetaTopNav|NavSearchClose">
+
+  <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="searchTitleID searchDescID" class="style-scope nav-search">
+    <title id="searchTitleID" class="style-scope nav-search">Search icon</title>
+    <desc id="searchDescID" class="style-scope nav-search">An illustration of a magnifying glass.</desc>
+    <path class="fill-color style-scope nav-search" d="m32.4526364 29.8875889-8.1719472-7.9751279c1.1046135-1.4876138 1.7652549-3.3102407 1.7652549-5.2846451 0-.101185-.0142895-.1981539-.030573-.2944743.0166158-.0976175.0309053-.196208.0309053-.2990145 0-4.9814145-4.152935-9.0343271-9.2572866-9.0343271-.0907218 0-.1781206.01394537-.2655193.02594487-.0880633-.0119995-.1747974-.02594487-.2655193-.02594487-5.1046839 0-9.25761889 4.0529126-9.25761889 9.0343271 0 .1011849.01395722.1981539.03057294.2947985-.01694804.0976176-.03090525.1958838-.03090525.2986903 0 4.9814145 4.1526027 9.0346514 9.2572866 9.0346514.0907218 0 .1777882-.0139454.2658516-.0262692.0873987.0123238.1741328.0262692.265187.0262692 1.7306942 0 3.3467399-.4747911 4.7338208-1.2852439l8.2882574 8.0886366c.3652137.3564177.843082.53414 1.3212826.53414.4782007 0 .9567336-.1780467 1.3212827-.53414.7294304-.7118622.7294304-1.8660845-.0003323-2.5782711zm-15.9526364-7.8875889c-.0832667-.0118703-.1652765-.0253024-.2513711-.0253024-2.8781993 0-5.2197212-2.3278242-5.2197212-5.1891862 0-.0974612-.013197-.1908615-.0289077-.2836371.0160249-.0940251.0292219-.1889874.0292219-.2880105 0-2.861362 2.3418361-5.1891861 5.2200354-5.1891861.0854662 0 .1677902-.0131198.2510569-.0246777.0826383.0115579.1649623.0246777.2510569.0246777 2.8781993 0 5.2197212 2.3278241 5.2197212 5.1891861 0 .0974612.0135112.1908616.0289077.2839496-.0157107.0940251-.0295361.1886749-.0295361.287698 0 2.861362-2.3415219 5.1891862-5.2197212 5.1891862-.0860946 0-.1684187.0134321-.2507427.0253024z" fill-rule="evenodd"></path>
+  </svg>
+
+        </button>
+      </form>
+    </div><!----></nav-search>
+
+        <a class="upload style-scope primary-nav" href="https://archive.org/create/">
+
+  <svg width="40" height="41" viewBox="0 0 40 41" xmlns="http://www.w3.org/2000/svg" aria-labelledby="uploadTitleID uploadDescID" class="style-scope primary-nav">
+    <title id="uploadTitleID" class="style-scope primary-nav">Upload icon</title>
+    <desc id="uploadDescID" class="style-scope primary-nav">An illustration of a horizontal line over an up pointing arrow.</desc>
+    <path class="fill-color style-scope primary-nav" d="m20 12.8 8 10.4h-4.8v8.8h-6.4v-8.8h-4.8zm12-4.8v3.2h-24v-3.2z" fill-rule="evenodd"></path>
+  </svg>
+
+          <span class="style-scope primary-nav">Upload</span>
+        </a>
+        <div class="user-info style-scope primary-nav">
+
+      <login-button class="style-scope primary-nav x-scope login-button-1"><!---->
+      <div class="logged-out-toolbar style-scope login-button">
+        <a class="dropdown-toggle style-scope login-button" data-event-click-tracking="BetaTopNav|NavLoginIcon">
+
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="userTitleID userDescID" class="style-scope login-button">
+    <title id="userTitleID" class="style-scope login-button">User icon</title>
+    <desc id="userDescID" class="style-scope login-button">An illustration of a person\'s head and chest.</desc>
+    <path class="fill-color style-scope login-button" d="m20.7130435 18.0434783c-3.5658385 0-6.4565218-2.9198821-6.4565218-6.5217392 0-3.60185703 2.8906833-6.5217391 6.4565218-6.5217391s6.4565217 2.91988207 6.4565217 6.5217391c0 3.6018571-2.8906832 6.5217392-6.4565217 6.5217392zm-12.9130435 16.9565217c0-7.9240855 5.7813665-14.3478261 12.9130435-14.3478261s12.9130435 6.4237406 12.9130435 14.3478261z" fill-rule="evenodd"></path>
+  </svg>
+
+        </a>
+        <span class="style-scope login-button">
+          <a class="style-scope login-button" href="https://archive.org/account/signup">Sign up</a>
+          |
+          <a class="style-scope login-button" href="https://archive.org/account/login">Log in</a>
+        </span>
+      </div>
+    <!----></login-button>
+
+        </div>
+        <media-menu class="style-scope primary-nav x-scope media-menu-1" tabindex="-1"><!---->
+      <nav class="media-menu tx-slide closed style-scope media-menu" aria-hidden="true" aria-expanded="false">
+        <div class="menu-group style-scope media-menu">
+          <!---->
+        <media-button class="style-scope media-menu x-scope media-button-1" data-mediatype="web"><!---->
+      <a class="menu-item web  style-scope media-button" href="https://archive.org/web/" data-event-click-tracking="BetaTopNav|NavMenuWeb">
+
+      <span class="icon  style-scope media-button">
+
+  <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="webTitleID webDescID" class="style-scope media-button">
+    <title id="webTitleID" class="style-scope media-button">Web icon</title>
+    <desc id="webDescID" class="style-scope media-button">An illustration of a computer application window</desc>
+    <path class="fill-color style-scope media-button" d="m8 28.7585405v-8.1608108-9.3577297h24v9.3577297 8.1608108zm14.2702703-15.8863783h-12.43243246v2.6114594h12.43243246zm7.7837838 14.0365946v-7.0727027-1.8497838h-20.21621626v1.8497838 7.0727027zm-3.7837838-14.0365946h-2.7027027v2.6114594h2.7027027zm4 0h-2.7027027v2.6114594h2.7027027z" fill-rule="evenodd"></path>
+  </svg>
+
+      </span>
+      <span class="label style-scope media-button"><!---->Wayback Machine<!----></span>
+
+      </a>
+    <!----></media-button>
+      <!---->
+        <media-button class="style-scope media-menu x-scope media-button-1" data-mediatype="texts"><!---->
+      <a class="menu-item texts  style-scope media-button" href="https://archive.org/details/texts" data-event-click-tracking="BetaTopNav|NavMenuTexts">
+
+      <span class="icon  style-scope media-button">
+
+  <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="textsTitleID textsDescID" class="style-scope media-button">
+    <title id="textsTitleID" class="style-scope media-button">Texts icon</title>
+    <desc id="textsDescID" class="style-scope media-button">An illustration of an open book.</desc>
+    <path class="fill-color style-scope media-button" d="m10.3323235 11.0007023h6.9060825c.8851083 0 1.5847122.3064258 2.0988114.9192774v14.4324451h-.6460032c-.1435563-.120323-.3528315-.2434552-.6278257-.3693964-.2749942-.1259413-.5201585-.2191097-.7354929-.2795053l-.3048241-.1081503h-5.7042647c-.3108832 0-.5621067-.0601615-.7536705-.1804846-.0717781-.0599274-.1256117-.1439663-.1615008-.2521166-.0358891-.1081502-.0598928-.2043619-.0720112-.2886348v-13.8741368zm19.1752505 0v13.603761c-.0717781.3361555-.2211606.5943584-.4481473.7746089-.0717781.0599274-.1733862.1079162-.304824.1439663-.1314379.0360501-.2451643.0601615-.3411793.0723343h-5.5965975c-.9568865.2640552-1.5068748.5164059-1.649965.757052h-.6634817v-14.4324451c.5140992-.6128516 1.2076439-.9192774 2.0806339-.9192774h6.92426zm1.3814961.6489017-.1796783 15.2976474c-.0955489 0-1.0342578.0119386-2.8161268.035816-1.7818691.0238773-3.3006293.0898911-4.5562806.1980414-1.2556514.1081503-1.9613144.2884008-2.1169891.5407514-.0955488.1924233-.5439291.273419-1.345141.2429871-.8012118-.0304319-1.3155441-.1776755-1.5429969-.4417308-.334654-.3843783-3.4558378-.5765674-9.36355164-.5765674v-15.3875385l-.96830576.3960828v16.2702977c6.4096947-.2041278 9.7760429-.0840388 10.0990445.3602669.2391051.276228.9864833.414342 2.2421347.414342.1915638 0 .4187835-.0210682.6816593-.0632047s.4810068-.0870821.6543929-.1348367c.1733862-.0477547.2719646-.0838048.2957353-.1081503.0838965-.1563732.9599161-.2675666 2.6280587-.3335805 1.6681426-.0660138 3.3213703-.0931684 4.9596831-.0814638l2.4392915.0182591v-16.2344816z"></path>
+  </svg>
+
+      </span>
+      <span class="label style-scope media-button"><!---->Books<!----></span>
+
+      </a>
+    <!----></media-button>
+      <!---->
+        <media-button class="style-scope media-menu x-scope media-button-1" data-mediatype="video"><!---->
+      <a class="menu-item video  style-scope media-button" href="https://archive.org/details/movies" data-event-click-tracking="BetaTopNav|NavMenuVideo">
+
+      <span class="icon  style-scope media-button">
+
+  <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="videoTitleID videoDescID" class="style-scope media-button">
+    <title id="videoTitleID" class="style-scope media-button">Video icon</title>
+    <desc id="videoDescID" class="style-scope media-button">An illustration of two cells of a film strip.</desc>
+    <path class="fill-color style-scope media-button" d="m31.0117647 12.0677966c0 .4067797-.2823529.6779661-.7058823.6779661h-1.2705883c-.4235294 0-.7058823-.2711864-.7058823-.6779661v-.6779661c0-.4067797.2823529-.6779661.7058823-.6779661h1.2705883c.4235294 0 .7058823.2711864.7058823.6779661zm0 3.2542373c0 .4067797-.2823529.6779661-.7058823.6779661h-1.2705883c-.4235294 0-.7058823-.2711864-.7058823-.6779661v-.6779661c0-.4067797.2823529-.6779661.7058823-.6779661h1.2705883c.4235294 0 .7058823.2711864.7058823.6779661zm0 3.2542373c0 .4067796-.2823529.6779661-.7058823.6779661h-1.2705883c-.4235294 0-.7058823-.2711865-.7058823-.6779661v-.6779661c0-.4067797.2823529-.6779661.7058823-.6779661h1.2705883c.4235294 0 .7058823.2711864.7058823.6779661zm0 3.3898305c0 .4067797-.2823529.6779661-.7058823.6779661h-1.2705883c-.4235294 0-.7058823-.2711864-.7058823-.6779661v-.6779661c0-.4067797.2823529-.6779661.7058823-.6779661h1.2705883c.4235294 0 .7058823.2711864.7058823.6779661zm0 3.2542373c0 .4067796-.2823529.6779661-.7058823.6779661h-1.2705883c-.4235294 0-.7058823-.2711865-.7058823-.6779661v-.6779661c0-.4067797.2823529-.6779661.7058823-.6779661h1.2705883c.4235294 0 .7058823.2711864.7058823.6779661zm0 3.2542373c0 .4067796-.2823529.6779661-.7058823.6779661h-1.2705883c-.4235294 0-.7058823-.2711865-.7058823-.6779661v-.6779661c0-.4067797.2823529-.6779661.7058823-.6779661h1.2705883c.4235294 0 .7058823.2711864.7058823.6779661zm-4.0941176-10.440678c0 .5423729-.4235295.9491525-.9882353.9491525h-11.5764706c-.5647059 0-.9882353-.4067796-.9882353-.9491525v-6.9152542c0-.5423729.4235294-.9491526.9882353-.9491526h11.5764706c.5647058 0 .9882353.4067797.9882353.9491526zm-.1411765 11.2542373c0 .5423729-.4235294.9491525-.9882353.9491525h-11.5764706c-.5647059 0-.9882353-.4067796-.9882353-.9491525v-6.9152542c0-.5423729.4235294-.9491526.9882353-.9491526h11.5764706c.5647059 0 .9882353.4067797.9882353.9491526zm-14.9647059-17.220339c0 .4067797-.2823529.6779661-.7058823.6779661h-1.27058828c-.42352941 0-.70588236-.2711864-.70588236-.6779661v-.6779661c0-.4067797.28235295-.6779661.70588236-.6779661h1.27058828c.4235294 0 .7058823.2711864.7058823.6779661zm0 3.2542373c0 .4067797-.2823529.6779661-.7058823.6779661h-1.27058828c-.42352941 0-.70588236-.2711864-.70588236-.6779661v-.6779661c0-.4067797.28235295-.6779661.70588236-.6779661h1.27058828c.4235294 0 .7058823.2711864.7058823.6779661zm0 3.2542373c0 .4067796-.2823529.6779661-.7058823.6779661h-1.27058828c-.42352941 0-.70588236-.2711865-.70588236-.6779661v-.6779661c0-.4067797.28235295-.6779661.70588236-.6779661h1.27058828c.4235294 0 .7058823.2711864.7058823.6779661zm0 3.3898305c0 .4067797-.2823529.6779661-.7058823.6779661h-1.27058828c-.42352941 0-.70588236-.2711864-.70588236-.6779661v-.6779661c0-.4067797.28235295-.6779661.70588236-.6779661h1.27058828c.4235294 0 .7058823.2711864.7058823.6779661zm0 3.2542373c0 .4067796-.2823529.6779661-.7058823.6779661h-1.27058828c-.42352941 0-.70588236-.2711865-.70588236-.6779661v-.6779661c0-.4067797.28235295-.6779661.70588236-.6779661h1.27058828c.4235294 0 .7058823.2711864.7058823.6779661zm0 3.2542373c0 .4067796-.2823529.6779661-.7058823.6779661h-1.27058828c-.42352941 0-.70588236-.2711865-.70588236-.6779661v-.6779661c0-.4067797.28235295-.6779661.70588236-.6779661h1.27058828c.4235294 0 .7058823.2711864.7058823.6779661zm20.0470588-20.4745763h-.8470588v.27118644.6779661c0 .40677966-.2823529.6779661-.7058823.6779661h-1.2705883c-.4235294 0-.7058823-.27118644-.7058823-.6779661v-.6779661-.27118644h-16.5176471v.27118644.6779661c0 .40677966-.2823529.6779661-.7058823.6779661h-1.27058828c-.42352941 0-.70588236-.27118644-.70588236-.6779661v-.6779661-.27118644h-1.12941176v24h1.12941176v-.2711864-.6779661c0-.4067797.28235295-.6779661.70588236-.6779661h1.27058828c.4235294 0 .7058823.2711864.7058823.6779661v.6779661.2711864h16.6588235v-.2711864-.6779661c0-.4067797.282353-.6779661.7058824-.6779661h1.2705882c.4235294 0 .7058824.2711864.7058824.6779661v.6779661.2711864h.8470588v-24z" fill-rule="evenodd"></path>
+  </svg>
+
+      </span>
+      <span class="label style-scope media-button"><!---->Video<!----></span>
+
+      </a>
+    <!----></media-button>
+      <!---->
+        <media-button class="style-scope media-menu x-scope media-button-1" data-mediatype="audio"><!---->
+      <a class="menu-item audio  style-scope media-button" href="https://archive.org/details/audio" data-event-click-tracking="BetaTopNav|NavMenuAudio">
+
+      <span class="icon  style-scope media-button">
+
+  <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-labelledby="audioTitleID audioDescID" class="style-scope media-button">
+    <title id="audioTitleID" class="style-scope media-button">Audio icon</title>
+    <desc id="audioDescID" class="style-scope media-button">An illustration of an audio speaker.</desc>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="style-scope media-button">
+      <g transform="translate(10, 8)" class="fill-color style-scope media-button">
+        <path d="M19.4264564,11.8585048 L19.4264564,20.7200433 C19.4264564,22.3657576 18.8838179,23.2519114 16.8489237,23.2519114 C12.2364969,23.125318 7.75972977,23.125318 3.14730298,23.2519114 C1.24806842,23.2519114 0.569770368,22.492351 0.569770368,20.7200433 L0.569770368,2.74377955 C0.569770368,1.09806526 1.11240881,0.211911416 3.14730298,0.211911416 C7.75972977,0.338504822 12.2364969,0.338504822 16.8489237,0.211911416 C18.7481583,0.211911416 19.4264564,0.971471855 19.4264564,2.74377955 C19.2907967,5.78202131 19.4264564,8.82026306 19.4264564,11.8585048 L19.4264564,11.8585048 Z M10.0659432,2.74377955 C8.16670861,2.74377955 6.67445288,4.13630702 6.67445288,5.90861471 C6.67445288,7.6809224 8.16670861,9.07344988 10.0659432,9.07344988 C11.9651777,9.07344988 13.4574335,7.6809224 13.4574335,5.90861471 C13.4574335,4.13630702 11.8295181,2.74377955 10.0659432,2.74377955 L10.0659432,2.74377955 Z M10.0659432,11.4787246 C7.21709133,11.4787246 5.04653754,13.6308125 5.04653754,16.1626806 C5.04653754,18.8211422 7.35275094,20.8466367 10.0659432,20.8466367 C12.914795,20.8466367 15.0853488,18.6945488 15.0853488,16.1626806 C15.0853488,13.6308125 12.7791354,11.4787246 10.0659432,11.4787246 L10.0659432,11.4787246 Z" class="style-scope media-button"></path>
+        <ellipse cx="10.2016028" cy="16.5690777" rx="1.35659611" ry="1.34075134" class="style-scope media-button"></ellipse>
+      </g>
+    </g>
+  </svg>
+
+      </span>
+      <span class="label style-scope media-button"><!---->Audio<!----></span>
+
+      </a>
+    <!----></media-button>
+      <!---->
+        <media-button class="style-scope media-menu x-scope media-button-1" data-mediatype="software"><!---->
+      <a class="menu-item software  style-scope media-button" href="https://archive.org/details/software" data-event-click-tracking="BetaTopNav|NavMenuSoftware">
+
+      <span class="icon  style-scope media-button">
+
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="softwareTitleID softwareDescID" class="style-scope media-button">
+    <title id="softwareTitleID" class="style-scope media-button">Software icon</title>
+    <desc id="softwareDescID" class="style-scope media-button">An illustration of a 3.5" floppy disk.</desc>
+    <path class="fill-color style-scope media-button" d="m32 30.6900373v-21.44521088c0-.82988428-.4156786-1.24482642-1.2470357-1.24482642h-21.50592858c-.83135715 0-1.24703572.4221795-1.24703572 1.26653851v21.44521089c0 .8588337.41567857 1.2882506 1.24703572 1.2882506h21.48327168c.8458575 0 1.2687863-.4366542 1.2687863-1.3099627zm-5.9950155-20.4410268v6.114667c0 .6694561-.3428744 1.0041841-1.0286232 1.0041841h-10.1294464c-.2622159 0-.4773054-.0802141-.6452685-.2406423s-.2519447-.3642806-.2519447-.6115572v-6.1363791l.0217506-.1311772h12.0326259zm-4.9437353.8295827v5.0010178h3.0405558v-5.0010178zm-9.7134658 18.8035735v-7.753025c0-.5241057.1604108-.9025595.4812325-1.1353613.1897138-.1453504.4011782-.2180256.6343932-.2180256h14.7451099c.3208217 0 .5905898.1091636.8093044.3274907s.3280719.5023936.3280719.8521995v7.8181612l-.0217506.1094652h-16.9772676z"></path>
+  </svg>
+
+      </span>
+      <span class="label style-scope media-button"><!---->Software<!----></span>
+
+      </a>
+    <!----></media-button>
+      <!---->
+        <media-button class="style-scope media-menu x-scope media-button-1" data-mediatype="images"><!---->
+      <a class="menu-item images  style-scope media-button" href="https://archive.org/details/image" data-event-click-tracking="BetaTopNav|NavMenuImages">
+
+      <span class="icon  style-scope media-button">
+
+  <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="imagesTitleID imagesDescID" class="style-scope media-button">
+    <title id="imagesTitleID" class="style-scope media-button">Images icon</title>
+    <desc id="imagesDescID" class="style-scope media-button">An illustration of two photographs.</desc>
+    <path class="fill-color style-scope media-button" d="m20.8219178 15.3769871c0 1.1136708-.8767123 1.8932404-1.8630137 1.8932404s-1.9726027-.8909367-1.9726027-1.8932404c0-1.0023038.8767123-1.8932404 1.9726027-1.8932404.9863014 0 1.8630137.8909366 1.8630137 1.8932404zm-5.9178082-3.7864808h15.4520548v6.0138225l-1.9726028-3.3410125-2.6301369 6.3479237-2.1917809-2.67281-6.1369863 5.1228859h-2.5205479zm-1.7534247-1.6705063v14.9231892h18.8493151v-14.9231892zm-2.9589041 7.2388604c.2191781 0 1.9726028-.3341012 1.9726028-.3341012v-2.0046075l-4.1643836.5568354c.43835616 4.7887846.87671233 9.9116704 1.31506849 14.700455 6.02739731-.5568354 13.26027401-1.5591391 19.39726031-2.1159746-.1095891-.5568354-.1095891-2.0046075-.2191781-2.67281-.4383562.1113671-1.4246575 0-1.8630137.1113671v.8909367c-5.1506849.4454683-10.3013699 1.1136708-15.4520548 1.6705062.109589-.111367-.5479452-7.0161262-.9863014-10.8026071z" fill-rule="evenodd"></path>
+  </svg>
+
+      </span>
+      <span class="label style-scope media-button"><!---->Images<!----></span>
+
+      </a>
+    <!----></media-button>
+      <!---->
+        <media-button class="style-scope media-menu x-scope media-button-1" data-mediatype="donate"><!---->
+      <a class="menu-item donate  style-scope media-button" href="https://archive.org/donate/" data-event-click-tracking="BetaTopNav|NavMenuDonate">
+
+      <span class="icon  style-scope media-button">
+
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="donateTitleID donateDescID" class="style-scope media-button">
+    <title id="donateTitleID" class="style-scope media-button">Donate icon</title>
+    <desc id="donateDescID" class="style-scope media-button">An illustration of a heart shape</desc>
+    <path class="fill-color style-scope media-button" d="m30.0120362 11.0857287c-1.2990268-1.12627221-2.8599641-1.65258786-4.682812-1.57894699-.8253588.02475323-1.7674318.3849128-2.8262192 1.08047869-1.0587873.6955659-1.89622 1.5724492-2.512298 2.63065-.591311-1.0588196-1.4194561-1.9357029-2.4844351-2.63065-1.0649791-.69494706-2.0039563-1.05510663-2.8169316-1.08047869-1.2067699-.04950647-2.318187.17203498-3.3342513.66462439-1.0160643.4925893-1.82594378 1.2002224-2.42963831 2.1228992-.60369453.9226769-.91173353 1.9629315-.92411701 3.1207641-.03715043 1.9202322.70183359 3.7665141 2.21695202 5.5388457 1.2067699 1.4035084 2.912594 3.1606786 5.1174721 5.2715107 2.2048782 2.1108321 3.7565279 3.5356901 4.6549492 4.2745742.8253588-.6646243 2.355647-2.0647292 4.5908647-4.2003145s3.9747867-3.9171994 5.218707-5.3448422c1.502735-1.7723316 2.2355273-3.6186135 2.1983769-5.5388457-.0256957-1.7608832-.6875926-3.2039968-1.9866194-4.3302689z"></path>
+  </svg>
+
+      </span>
+      <span class="label style-scope media-button"><!---->Donate<!----></span>
+
+      </a>
+    <!----></media-button>
+      <!---->
+        <media-button class="style-scope media-menu x-scope media-button-1" data-mediatype="more"><!---->
+      <a class="menu-item more  style-scope media-button" href="https://archive.org/about/" data-event-click-tracking="BetaTopNav|NavMenuMore">
+
+      <span class="icon  style-scope media-button">
+
+  <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ellipsesTitleID ellipsesDescID" class="style-scope media-button">
+    <title id="ellipsesTitleID" class="style-scope media-button">Ellipses icon</title>
+    <desc id="ellipsesDescID" class="style-scope media-button">An illustration of text ellipses.</desc>
+    <path class="fill-color style-scope media-button" d="m10.5 17.5c1.3807119 0 2.5 1.1192881 2.5 2.5s-1.1192881 2.5-2.5 2.5c-1.38071187 0-2.5-1.1192881-2.5-2.5s1.11928813-2.5 2.5-2.5zm9.5 0c1.3807119 0 2.5 1.1192881 2.5 2.5s-1.1192881 2.5-2.5 2.5-2.5-1.1192881-2.5-2.5 1.1192881-2.5 2.5-2.5zm9.5 0c1.3807119 0 2.5 1.1192881 2.5 2.5s-1.1192881 2.5-2.5 2.5-2.5-1.1192881-2.5-2.5 1.1192881-2.5 2.5-2.5z" fill-rule="evenodd"></path>
+  </svg>
+
+      </span>
+      <span class="label style-scope media-button"><!---->More<!----></span>
+
+      </a>
+    <!----></media-button>
+      <!---->
+        </div>
+      </nav>
+    <!----></media-menu>
+        <button class="hamburger style-scope primary-nav" tabindex="1" data-event-click-tracking="BetaTopNav|NavHamburger">
+          <icon-hamburger class="style-scope primary-nav x-scope icon-hamburger-1"><!---->
+      <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="hamburgerTitleID hamburgerDescID" class="style-scope icon-hamburger">
+        <title id="hamburgerTitleID" class="style-scope icon-hamburger">Hamburger icon</title>
+        <desc id="hamburgerDescID" class="style-scope icon-hamburger">An icon used to represent a menu that can be toggled by interacting with this icon.</desc>
+        <path d="m30.5 26.5c.8284271 0 1.5.6715729 1.5 1.5s-.6715729 1.5-1.5 1.5h-21c-.82842712 0-1.5-.6715729-1.5-1.5s.67157288-1.5 1.5-1.5zm0-8c.8284271 0 1.5.6715729 1.5 1.5s-.6715729 1.5-1.5 1.5h-21c-.82842712 0-1.5-.6715729-1.5-1.5s.67157288-1.5 1.5-1.5zm0-8c.8284271 0 1.5.6715729 1.5 1.5s-.6715729 1.5-1.5 1.5h-21c-.82842712 0-1.5-.6715729-1.5-1.5s.67157288-1.5 1.5-1.5z" fill="#999" fill-rule="evenodd" class="style-scope icon-hamburger"></path>
+      </svg>
+    <!----></icon-hamburger>
+        </button>
+      </nav>
+    <!----></primary-nav>
+        <media-slider class="style-scope ia-topnav x-scope media-slider-1"><!---->
+      <div class="overflow-clip closed style-scope media-slider">
+        <div class="information-menu closed style-scope media-slider">
+          <div class="info-box style-scope media-slider">
+            <media-subnav class="style-scope media-slider x-scope media-subnav-1"><!----><!----></media-subnav>
           </div>
+        </div>
+      </div>
+    <!----></media-slider>
+      </div>
+      <desktop-subnav class="style-scope ia-topnav x-scope desktop-subnav-1"><!---->
+      <ul class="style-scope desktop-subnav">
+        <!---->
+        <li class="style-scope desktop-subnav">
+          <a class="about style-scope desktop-subnav" href="https://archive.org/about/"><!---->About<!----><!----></a>
+        </li>
+      <!---->
+        <li class="style-scope desktop-subnav">
+          <a class="blog style-scope desktop-subnav" href="https://blog.archive.org/"><!---->Blog<!----><!----></a>
+        </li>
+      <!---->
+        <li class="style-scope desktop-subnav">
+          <a class="projects style-scope desktop-subnav" href="https://archive.org/projects/"><!---->Projects<!----><!----></a>
+        </li>
+      <!---->
+        <li class="style-scope desktop-subnav">
+          <a class="help style-scope desktop-subnav" href="https://archive.org/about/faqs.php"><!---->Help<!----><!----></a>
+        </li>
+      <!---->
+        <li class="style-scope desktop-subnav">
+          <a class="donate style-scope desktop-subnav" href="https://archive.org/donate/"><!---->Donate<!---->
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="donateTitleID donateDescID" class="style-scope desktop-subnav">
+    <title id="donateTitleID" class="style-scope desktop-subnav">Donate icon</title>
+    <desc id="donateDescID" class="style-scope desktop-subnav">An illustration of a heart shape</desc>
+    <path class="fill-color style-scope desktop-subnav" d="m30.0120362 11.0857287c-1.2990268-1.12627221-2.8599641-1.65258786-4.682812-1.57894699-.8253588.02475323-1.7674318.3849128-2.8262192 1.08047869-1.0587873.6955659-1.89622 1.5724492-2.512298 2.63065-.591311-1.0588196-1.4194561-1.9357029-2.4844351-2.63065-1.0649791-.69494706-2.0039563-1.05510663-2.8169316-1.08047869-1.2067699-.04950647-2.318187.17203498-3.3342513.66462439-1.0160643.4925893-1.82594378 1.2002224-2.42963831 2.1228992-.60369453.9226769-.91173353 1.9629315-.92411701 3.1207641-.03715043 1.9202322.70183359 3.7665141 2.21695202 5.5388457 1.2067699 1.4035084 2.912594 3.1606786 5.1174721 5.2715107 2.2048782 2.1108321 3.7565279 3.5356901 4.6549492 4.2745742.8253588-.6646243 2.355647-2.0647292 4.5908647-4.2003145s3.9747867-3.9171994 5.218707-5.3448422c1.502735-1.7723316 2.2355273-3.6186135 2.1983769-5.5388457-.0256957-1.7608832-.6875926-3.2039968-1.9866194-4.3302689z"></path>
+  </svg>
+<!----></a>
+        </li>
+      <!---->
+        <li class="style-scope desktop-subnav">
+          <a class="contact style-scope desktop-subnav" href="https://archive.org/about/contact.php"><!---->Contact<!----><!----></a>
+        </li>
+      <!---->
+        <li class="style-scope desktop-subnav">
+          <a class="jobs style-scope desktop-subnav" href="https://archive.org/about/jobs.php"><!---->Jobs<!----><!----></a>
+        </li>
+      <!---->
+        <li class="style-scope desktop-subnav">
+          <a class="volunteer style-scope desktop-subnav" href="https://archive.org/about/volunteerpositions.php"><!---->Volunteer<!----><!----></a>
+        </li>
+      <!---->
+        <li class="style-scope desktop-subnav">
+          <a class="people style-scope desktop-subnav" href="https://archive.org/about/bios.php"><!---->People<!----><!----></a>
+        </li>
+      <!---->
+      </ul>
+    <!----></desktop-subnav>
+      <search-menu class="style-scope ia-topnav x-scope search-menu-1" tabindex="-1"><!---->
+      <div class="search-menu tx-slide closed style-scope search-menu" aria-hidden="true" aria-expanded="false">
+        <!---->
+        <label class="style-scope search-menu">
+          <input form="nav-search" type="radio" name="sin" class="style-scope search-menu" value="" checked="">
+          Search Metadata
+        </label>
+      <!---->
+        <label class="style-scope search-menu">
+          <input form="nav-search" type="radio" name="sin" class="style-scope search-menu" value="TXT">
+          Search text contents
+        </label>
+      <!---->
+        <label class="style-scope search-menu">
+          <input form="nav-search" type="radio" name="sin" class="style-scope search-menu" value="TV">
+          Search TV news captions
+        </label>
+      <!----><!---->
+        <label class="style-scope search-menu">
+          <input form="nav-search" type="radio" name="sin" class="style-scope search-menu" value="WEB">
+          Search archived websites
+        </label>
+      <!---->
+        <a class="advanced-search style-scope search-menu" href="https://archive.org/advancedsearch.php" data-event-click-tracking="BetaTopNav|NavAdvancedSearch">Advanced Search</a>
+      </div>
+    <!----></search-menu>
+
+      <signed-out-dropdown class="style-scope ia-topnav x-scope signed-out-dropdown-1" tabindex="-1"><!---->
+      <nav class="initial style-scope signed-out-dropdown" aria-hidden="true" aria-expanded="false">
+        <ul class="style-scope signed-out-dropdown">
+          <!---->
+        <li class="style-scope signed-out-dropdown"><!----><a class="style-scope signed-out-dropdown" href="https://archive.org/account/signup" data-event-click-tracking="BetaTopNav|NavSignUpDropdown"><!---->Sign up for free<!----></a><!----></li>
+      <!---->
+        <li class="style-scope signed-out-dropdown"><!----><a class="style-scope signed-out-dropdown" href="https://archive.org/account/login" data-event-click-tracking="BetaTopNav|NavLogInDropdown"><!---->Log in<!----></a><!----></li>
+      <!---->
+        </ul>
+      </nav>
+    <!----></signed-out-dropdown>
+
+    </noscript>                      </ia-topnav>
+        </div>
+            <input class="js-tvsearch" type="hidden" value=\'{"ands":[],"minday":"06/04/2009","maxday":"09/23/2020"}\'/>
     
-                              <input class="js-tvsearch" type="hidden" value=\'{"ands":[],"minday":"06/04/2009","maxday":"05/20/2020"}\'/>
-    
-                        <input type="submit" value="Search"/>
-                      </form>
-                    </div><!--/.searchbar -->
-                  </li>
-                
-                <li class="nav-right-tool pull-right">
-                  <a class="nav-upload" href="https://archive.org/create" _target="top"
-                    data-event-click-tracking="TopNav|UploadIcon"
-                  ><span class="iconochive-upload"  aria-hidden="true"></span><span class="sr-only">upload</span><span class="hidden-xs-span hidden-sm-span">UPLOAD</span></a>
-                </li>
-
-                <li class="nav-right-tool pull-right leftmost dropdown-ia">
-                                      <div class="nav-user dropdown-ia">
-                      <span class="ghost80 person-icon"
-                        id="guest-menu"
-                        data-handler="dropdown"
-                        ><span class="iconochive-person"  aria-hidden="true"></span><span class="sr-only">person</span>                      </span>
-                      <ul class="dropdown-menu guest mydrop" role="menu" aria-labelledby="guest">
-                        <li><a
-                          href="https://archive.org/account/signup"
-                          data-event-click-tracking="TopNav|AvatarMenu-Signup"
-                          >Sign up for free</a></li>
-                        <li><a
-                          href="https://archive.org/account/login"
-                          data-event-click-tracking="TopNav|AvatarMenu-Login"
-                          >Log in</a></li>
-                      </ul>
-                      <a href="https://archive.org/account/signup"
-                        class="nav-user-link hidden-xs-span hidden-sm-span"
-                        _target="top"
-                        data-event-click-tracking="TopNav|SignupIcon"
-                      ><span>SIGN UP</span></a>
-                      <span class="hidden-xs-span hidden-sm-span pipe-separate">|</span>
-                      <a href="https://archive.org/account/login"
-                        class="nav-user-link hidden-xs-span hidden-sm-span"
-                        _target="top"
-                        data-event-click-tracking="TopNav|LoginIcon"
-                      ><span>LOG IN</span></a>
-                    </div>
-                                  </li>
-
-                              </ul>
-
-                  <ul id="nav-abouts" class="">
-            <li><a target="_top" data-event-click-tracking="TopNav|AboutLink" href="https://archive.org/about/">ABOUT</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|ContactLink" href="https://archive.org/about/contact.php">CONTACT</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|BlogLink" href="//blog.archive.org">BLOG</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|ProjectsLink" href="https://archive.org/projects">PROJECTS</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|HelpLink" href="https://archive.org/about/faqs.php">HELP</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|DonateLink" href="https://archive.org/donate">DONATE <span class="iconochive-heart"></span></a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|JobsLink" href="https://archive.org/about/jobs.php">JOBS</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|VolunteerLink" href="https://archive.org/about/volunteerpositions.php">VOLUNTEER</a></li>
-      <li><a target="_top" data-event-click-tracking="TopNav|PeopleLink" href="https://archive.org/about/bios.php">PEOPLE</a></li>
-          </ul>
-                </div><!--/.navbar-->
-
-                        <div id="nav-tophat" class="collapse">
-                                                                <div class="row toprow web" style="max-width:1000px;margin:auto;display:block;">
-                    <div class="col-xs-12">
-                      <div class="wayback-txt">
-                        Search the history of over 431 billion                        <a style="display:inline"
-                          data-event-click-tracking="TopNav|WaybackMachineStatsLink"
-                          href="https://blog.archive.org/2016/10/23/defining-web-pages-web-sites-and-web-captures/"
-                          >web pages</a> on the Internet.
-                      </div>
-                      <div class="roundbox7 wayback-main">
-                        <div class="row">
-                          <div class="col-sm-6" style="padding-left:0; padding-right:0;">
-                            <a style="padding-bottom:0"
-                              data-event-click-tracking="TopNav|WaybackMachineLogoLink"
-                              href="https://archive.org/web/"
-                              ><img src="https://archive.org/images/WaybackLogoSmall.png" alt="Wayback Machine"/></a>
-                          </div>
-                          <div class="col-sm-6" style="padding-top:13px;">
-                            <form style="position:relative;">
-                              <span class="iconochive-search"  aria-hidden="true"></span><span class="sr-only">search</span>                              <label for="nav-wb-url" class="sr-only">Search the Wayback Machine</label>
-                              <input id="nav-wb-url" class="form-control input-sm roundbox20" type="text"
-                                placeholder="enter URL or keywords" name="url" autocomplete="off"
-                                onclick="$(this).css(\'padding-left\',\'\').parent().find(\'.iconochive-search\').hide()"/>
-                            </form>
-                          </div>
-                        </div><!--/.row-->
-                      </div><!--/.wayback-main-->
-                    </div>
-                  </div><!--./row-->
-
-                                                                                <div class="row toprow fivecolumns texts">
-
-                                                                <div class="col-sm-2 col-xs-7 col-sm-push-4">
-                                                  <div class="linx">
-                            <h5>Featured</h5>
-                                                        <a
-                              href="https://archive.org/details/books"
-                              data-event-click-tracking="TopNav|FeaturedLink-AllBooks"
-                              ><span class="iconochive-texts"  aria-hidden="true"></span><span class="sr-only">texts</span> All Books</a>
-                            <a
-                              href="https://archive.org/details/texts"
-                              data-event-click-tracking="TopNav|FeaturedLink-AllTexts"
-                              >All Texts</a>
-                                                        <a
-                              href="https://archive.org/search.php?query=mediatype:texts&sort=-publicdate"
-                              data-event-click-tracking="TopNav|FeaturedLink-ThisJustInTexts"
-                              ><span class="iconochive-latest"  aria-hidden="true"></span><span class="sr-only">latest</span> This Just In</a>
-                                                          <a href="https://archive.org/details/smithsonian" title="Smithsonian Libraries" data-event-click-tracking="TopNav|FeaturedLink-SmithsonianLibraries">Smithsonian Libraries</a>                                                          <a href="https://archive.org/details/fedlink" title="FEDLINK (US)" data-event-click-tracking="TopNav|FeaturedLink-FEDLINKUS">FEDLINK (US)</a>                                                          <a href="https://archive.org/details/genealogy" title="Genealogy" data-event-click-tracking="TopNav|FeaturedLink-Genealogy">Genealogy</a>                                                          <a href="https://archive.org/details/lincolncollection" title="Lincoln Collection" data-event-click-tracking="TopNav|FeaturedLink-LincolnCollection">Lincoln Collection</a>                                                      </div>
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-5 col-sm-pull-2">
-                                                  <div class="widgets">
-                                        <center class="items_list">
-              <div class="items_list_img">
-                <a
-                  href="https://archive.org/details/nationalemergencylibrary"
-                  style="background-image: url(\'https://archive.org/images/national-emergency-library-logo-padded.png\');"
-                  aria-hidden="true"
-                  data-event-click-tracking="TopNav|CircleWidget-NationalEmergencyBrLibrary"
-                  ></a>
-              </div>
-              <a
-                class="stealth boxy-label"
-                data-event-click-tracking="TopNav|CircleWidget-NationalEmergencyBrLibrary"
-                href="https://archive.org/details/nationalemergencylibrary"
-                >National Emergency<br>Library</a>
-            </center>
-                                    </div><!--/.widgets-->
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-7 col-sm-push-2">
-                                                  <div class="linx ">
-                                                          <h5>Top</h5>
-                                                                                      <a href="https://archive.org/details/americana" title="American Libraries" data-event-click-tracking="TopNav|TopLink-AmericanLibraries">American Libraries</a>                                                          <a href="https://archive.org/details/toronto" title="Canadian Libraries" data-event-click-tracking="TopNav|TopLink-CanadianLibraries">Canadian Libraries</a>                                                          <a href="https://archive.org/details/universallibrary" title="Universal Library" data-event-click-tracking="TopNav|TopLink-UniversalLibrary">Universal Library</a>                                                          <a href="https://archive.org/details/opensource" title="Community Texts" data-event-click-tracking="TopNav|TopLink-CommunityTexts">Community Texts</a>                                                          <a href="https://archive.org/details/gutenberg" title="Project Gutenberg" data-event-click-tracking="TopNav|TopLink-ProjectGutenberg">Project Gutenberg</a>                                                          <a href="https://archive.org/details/biodiversity" title="Biodiversity Heritage Library" data-event-click-tracking="TopNav|TopLink-BiodiversityHeritageLibrary">Biodiversity Heritage Library</a>                                                          <a href="https://archive.org/details/iacl" title="Children\'s Library" data-event-click-tracking="TopNav|TopLink-ChildrenSLibrary">Children\'s Library</a>                                                      </div>
-
-                          
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-5 col-sm-pull-4">
-                                                  <div class="widgets">
-                                        <center class="items_list">
-              <div class="items_list_img">
-                <a
-                  href="https://openlibrary.org"
-                  style="background-image: url(\'https://archive.org/images/widgetOL.png\');"
-                  aria-hidden="true"
-                  data-event-click-tracking="TopNav|CircleWidget-OpenLibrary"
-                  ></a>
-              </div>
-              <a
-                class="stealth boxy-label"
-                data-event-click-tracking="TopNav|CircleWidget-OpenLibrary"
-                href="https://openlibrary.org"
-                >Open Library</a>
-            </center>
-                                    </div><!--/.widgets-->
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-7">
-                                                  <div class="linx linx-topped">
-                                                                                  </div>
-
-                          
-                                              </div><!--/.col-sm-2-->
-                    
-                  </div><!--/.row-->
-                                                                                <div class="row toprow fivecolumns movies">
-
-                                                                <div class="col-sm-2 col-xs-7 col-sm-push-4">
-                                                  <div class="linx">
-                            <h5>Featured</h5>
-                                                        <a
-                              href="https://archive.org/details/movies"
-                              data-event-click-tracking="TopNav|FeaturedLink-AllVideo"
-                              ><span class="iconochive-movies"  aria-hidden="true"></span><span class="sr-only">movies</span> All video</a>
-                                                        <a
-                              href="https://archive.org/search.php?query=mediatype:movies&sort=-publicdate"
-                              data-event-click-tracking="TopNav|FeaturedLink-ThisJustInVideo"
-                              ><span class="iconochive-latest"  aria-hidden="true"></span><span class="sr-only">latest</span> This Just In</a>
-                                                          <a href="https://archive.org/details/prelinger" title="Prelinger Archives" data-event-click-tracking="TopNav|FeaturedLink-PrelingerArchives">Prelinger Archives</a>                                                          <a href="https://archive.org/details/democracy_now_vid" title="Democracy Now!" data-event-click-tracking="TopNav|FeaturedLink-DemocracyNow">Democracy Now!</a>                                                          <a href="https://archive.org/details/occupywallstreet" title="Occupy Wall Street" data-event-click-tracking="TopNav|FeaturedLink-OccupyWallStreet">Occupy Wall Street</a>                                                          <a href="https://archive.org/details/nsa" title="TV NSA Clip Library" data-event-click-tracking="TopNav|FeaturedLink-TVNSAClipLibrary">TV NSA Clip Library</a>                                                      </div>
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-5 col-sm-pull-2">
-                                                  <div class="widgets">
-                            <center class="items_list">        <div class="items_list_img">
-          <a
-            href="https://archive.org/details/tv"
-            style="background-image: url(\'https://archive.org/services/img/tv\');"
-            aria-hidden="true"
-            data-event-click-tracking="ItemList|ItemListLink"
-          ></a>
-        </div>
-        <a class="stealth boxy-label" data-event-click-tracking="ItemList|ItemListLink" href="https://archive.org/details/tv">TV News</a></center>                          </div><!--/.widgets-->
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-7 col-sm-push-2">
-                                                  <div class="linx ">
-                                                          <h5>Top</h5>
-                                                                                      <a href="https://archive.org/details/animationandcartoons" title="Animation &amp; Cartoons" data-event-click-tracking="TopNav|TopLink-AnimationCartoons">Animation & Cartoons</a>                                                          <a href="https://archive.org/details/artsandmusicvideos" title="Arts &amp; Music" data-event-click-tracking="TopNav|TopLink-ArtsMusic">Arts & Music</a>                                                          <a href="https://archive.org/details/computersandtechvideos" title="Computers &amp; Technology" data-event-click-tracking="TopNav|TopLink-ComputersTechnology">Computers & Technology</a>                                                          <a href="https://archive.org/details/culturalandacademicfilms" title="Cultural &amp; Academic Films" data-event-click-tracking="TopNav|TopLink-CulturalAcademicFilms">Cultural & Academic Films</a>                                                          <a href="https://archive.org/details/ephemera" title="Ephemeral Films" data-event-click-tracking="TopNav|TopLink-EphemeralFilms">Ephemeral Films</a>                                                          <a href="https://archive.org/details/moviesandfilms" title="Movies" data-event-click-tracking="TopNav|TopLink-Movies">Movies</a>                                                          <a href="https://archive.org/details/newsandpublicaffairs" title="News &amp; Public Affairs" data-event-click-tracking="TopNav|TopLink-NewsPublicAffairs">News & Public Affairs</a>                                                      </div>
-
-                          
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-5 col-sm-pull-4">
-                                                  <div class="widgets">
-                            <center class="items_list">        <div class="items_list_img">
-          <a
-            href="https://archive.org/details/911"
-            style="background-image: url(\'https://archive.org/services/img/911\');"
-            aria-hidden="true"
-            data-event-click-tracking="ItemList|ItemListLink"
-          ></a>
-        </div>
-        <a class="stealth boxy-label" data-event-click-tracking="ItemList|ItemListLink" href="https://archive.org/details/911">Understanding 9/11</a></center>                          </div><!--/.widgets-->
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-7">
-                                                  <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/spiritualityandreligion" title="Spirituality &amp; Religion" data-event-click-tracking="TopNav|TopLink-SpiritualityReligion">Spirituality & Religion</a>                                                          <a href="https://archive.org/details/sports" title="Sports Videos" data-event-click-tracking="TopNav|TopLink-SportsVideos">Sports Videos</a>                                                          <a href="https://archive.org/details/television" title="Television" data-event-click-tracking="TopNav|TopLink-Television">Television</a>                                                          <a href="https://archive.org/details/gamevideos" title="Videogame Videos" data-event-click-tracking="TopNav|TopLink-VideogameVideos">Videogame Videos</a>                                                          <a href="https://archive.org/details/vlogs" title="Vlogs" data-event-click-tracking="TopNav|TopLink-Vlogs">Vlogs</a>                                                          <a href="https://archive.org/details/youth_media" title="Youth Media" data-event-click-tracking="TopNav|TopLink-YouthMedia">Youth Media</a>                                                      </div>
-
-                          
-                                              </div><!--/.col-sm-2-->
-                    
-                  </div><!--/.row-->
-                                                                                <div class="row toprow fivecolumns audio">
-
-                                                                <div class="col-sm-2 col-xs-7 col-sm-push-4">
-                                                  <div class="linx">
-                            <h5>Featured</h5>
-                                                        <a
-                              href="https://archive.org/details/audio"
-                              data-event-click-tracking="TopNav|FeaturedLink-AllAudio"
-                              ><span class="iconochive-audio"  aria-hidden="true"></span><span class="sr-only">audio</span> All audio</a>
-                                                        <a
-                              href="https://archive.org/search.php?query=mediatype:audio&sort=-publicdate"
-                              data-event-click-tracking="TopNav|FeaturedLink-ThisJustInAudio"
-                              ><span class="iconochive-latest"  aria-hidden="true"></span><span class="sr-only">latest</span> This Just In</a>
-                                                          <a href="https://archive.org/details/GratefulDead" title="Grateful Dead" data-event-click-tracking="TopNav|FeaturedLink-GratefulDead">Grateful Dead</a>                                                          <a href="https://archive.org/details/netlabels" title="Netlabels" data-event-click-tracking="TopNav|FeaturedLink-Netlabels">Netlabels</a>                                                          <a href="https://archive.org/details/oldtimeradio" title="Old Time Radio" data-event-click-tracking="TopNav|FeaturedLink-OldTimeRadio">Old Time Radio</a>                                                          <a href="https://archive.org/details/78rpm" title="78 RPMs and Cylinder Recordings" data-event-click-tracking="TopNav|FeaturedLink-78RPMsAndCylinderRecordings">78 RPMs and Cylinder Recordings</a>                                                      </div>
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-5 col-sm-pull-2">
-                                                  <div class="widgets">
-                            <center class="items_list">        <div class="items_list_img">
-          <a
-            href="https://archive.org/details/etree"
-            style="background-image: url(\'https://archive.org/services/img/etree\');"
-            aria-hidden="true"
-            data-event-click-tracking="ItemList|ItemListLink"
-          ></a>
-        </div>
-        <a class="stealth boxy-label" data-event-click-tracking="ItemList|ItemListLink" href="https://archive.org/details/etree">Live Music Archive</a></center>                          </div><!--/.widgets-->
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-7 col-sm-push-2">
-                                                  <div class="linx ">
-                                                          <h5>Top</h5>
-                                                                                      <a href="https://archive.org/details/audio_bookspoetry" title="Audio Books &amp; Poetry" data-event-click-tracking="TopNav|TopLink-AudioBooksPoetry">Audio Books & Poetry</a>                                                          <a href="https://archive.org/details/opensource_audio" title="Community Audio" data-event-click-tracking="TopNav|TopLink-CommunityAudio">Community Audio</a>                                                          <a href="https://archive.org/details/audio_tech" title="Computers, Technology and Science" data-event-click-tracking="TopNav|TopLink-ComputersTechnologyAndScience">Computers, Technology and Science</a>                                                          <a href="https://archive.org/details/audio_music" title="Music, Arts &amp; Culture" data-event-click-tracking="TopNav|TopLink-MusicArtsCulture">Music, Arts & Culture</a>                                                          <a href="https://archive.org/details/audio_news" title="News &amp; Public Affairs" data-event-click-tracking="TopNav|TopLink-NewsPublicAffairs">News & Public Affairs</a>                                                          <a href="https://archive.org/details/audio_foreign" title="Non-English Audio" data-event-click-tracking="TopNav|TopLink-NonEnglishAudio">Non-English Audio</a>                                                          <a href="https://archive.org/details/audio_religion" title="Spirituality &amp; Religion" data-event-click-tracking="TopNav|TopLink-SpiritualityReligion">Spirituality & Religion</a>                                                      </div>
-
-                          
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-5 col-sm-pull-4">
-                                                  <div class="widgets">
-                            <center class="items_list">        <div class="items_list_img">
-          <a
-            href="https://archive.org/details/librivoxaudio"
-            style="background-image: url(\'https://archive.org/services/img/librivoxaudio\');"
-            aria-hidden="true"
-            data-event-click-tracking="ItemList|ItemListLink"
-          ></a>
-        </div>
-        <a class="stealth boxy-label" data-event-click-tracking="ItemList|ItemListLink" href="https://archive.org/details/librivoxaudio">Librivox Free Audiobook</a></center>                          </div><!--/.widgets-->
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-7">
-                                                  <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/podcast_neues-von-der-a31_1404422420" title="Neues von der A31" data-event-click-tracking="TopNav|TopLink-NeuesVonDerA31">Neues von der A31</a>                                                          <a href="https://archive.org/details/podcast_hallo-norge_1436886844" title="Hallo Norge" data-event-click-tracking="TopNav|TopLink-HalloNorge">Hallo Norge</a>                                                          <a href="https://archive.org/details/podcast_biscoitocast_701646901" title="BiscoitoCast" data-event-click-tracking="TopNav|TopLink-BiscoitoCast">BiscoitoCast</a>                                                          <a href="https://archive.org/details/podcast_r1918_1331405080" title="R1918" data-event-click-tracking="TopNav|TopLink-R1918">R1918</a>                                                          <a href="https://archive.org/details/podcast_holiday-force_298302697" title="Holiday Force" data-event-click-tracking="TopNav|TopLink-HolidayForce">Holiday Force</a>                                                          <a href="https://archive.org/details/podcast_40-years-punk-milton-keyne_1107397818" title="40 years of punk: Milton Keynes" data-event-click-tracking="TopNav|TopLink-40YearsOfPunkMiltonKeynes">40 years of punk: Milton Keynes</a>                                                          <a href="https://archive.org/details/podcast_mundane-movie-trailers_1217867537" title="Mundane Movie Trailers" data-event-click-tracking="TopNav|TopLink-MundaneMovieTrailers">Mundane Movie Trailers</a>                                                      </div>
-
-                          
-                                              </div><!--/.col-sm-2-->
-                    
-                  </div><!--/.row-->
-                                                                                <div class="row toprow fivecolumns software">
-
-                                                                <div class="col-sm-2 col-xs-7 col-sm-push-4">
-                                                  <div class="linx">
-                            <h5>Featured</h5>
-                                                        <a
-                              href="https://archive.org/details/software"
-                              data-event-click-tracking="TopNav|FeaturedLink-AllSoftware"
-                              ><span class="iconochive-software"  aria-hidden="true"></span><span class="sr-only">software</span> All software</a>
-                                                        <a
-                              href="https://archive.org/search.php?query=mediatype:software&sort=-publicdate"
-                              data-event-click-tracking="TopNav|FeaturedLink-ThisJustInSoftware"
-                              ><span class="iconochive-latest"  aria-hidden="true"></span><span class="sr-only">latest</span> This Just In</a>
-                                                          <a href="https://archive.org/details/tosec" title="Old School Emulation" data-event-click-tracking="TopNav|FeaturedLink-OldSchoolEmulation">Old School Emulation</a>                                                          <a href="https://archive.org/details/softwarelibrary_msdos_games" title="MS-DOS Games" data-event-click-tracking="TopNav|FeaturedLink-MSDOSGames">MS-DOS Games</a>                                                          <a href="https://archive.org/details/historicalsoftware" title="Historical Software" data-event-click-tracking="TopNav|FeaturedLink-HistoricalSoftware">Historical Software</a>                                                          <a href="https://archive.org/details/classicpcgames" title="Classic PC Games" data-event-click-tracking="TopNav|FeaturedLink-ClassicPCGames">Classic PC Games</a>                                                          <a href="https://archive.org/details/softwarelibrary" title="Software Library" data-event-click-tracking="TopNav|FeaturedLink-SoftwareLibrary">Software Library</a>                                                      </div>
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-5 col-sm-pull-2">
-                                                  <div class="widgets">
-                            <center class="items_list">        <div class="items_list_img">
-          <a
-            href="https://archive.org/details/internetarcade"
-            style="background-image: url(\'https://archive.org/services/img/internetarcade\');"
-            aria-hidden="true"
-            data-event-click-tracking="ItemList|ItemListLink"
-          ></a>
-        </div>
-        <a class="stealth boxy-label" data-event-click-tracking="ItemList|ItemListLink" href="https://archive.org/details/internetarcade">Internet Arcade</a></center>                          </div><!--/.widgets-->
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-7 col-sm-push-2">
-                                                  <div class="linx ">
-                                                          <h5>Top</h5>
-                                                                                      <a href="https://archive.org/details/kodi_archive" title="Kodi Archive and Support File" data-event-click-tracking="TopNav|TopLink-KodiArchiveAndSupportFile">Kodi Archive and Support File</a>                                                          <a href="https://archive.org/details/vintagesoftware" title="Vintage Software" data-event-click-tracking="TopNav|TopLink-VintageSoftware">Vintage Software</a>                                                          <a href="https://archive.org/details/apkarchive" title="APK" data-event-click-tracking="TopNav|TopLink-APK">APK</a>                                                          <a href="https://archive.org/details/open_source_software" title="Community Software" data-event-click-tracking="TopNav|TopLink-CommunitySoftware">Community Software</a>                                                          <a href="https://archive.org/details/softwarelibrary_msdos" title="MS-DOS" data-event-click-tracking="TopNav|TopLink-MSDOS">MS-DOS</a>                                                          <a href="https://archive.org/details/cd-roms" title="CD-ROM Software" data-event-click-tracking="TopNav|TopLink-CDROMSoftware">CD-ROM Software</a>                                                          <a href="https://archive.org/details/cdromsoftware" title="CD-ROM Software Library" data-event-click-tracking="TopNav|TopLink-CDROMSoftwareLibrary">CD-ROM Software Library</a>                                                      </div>
-
-                          
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-5 col-sm-pull-4">
-                                                  <div class="widgets">
-                            <center class="items_list">        <div class="items_list_img">
-          <a
-            href="https://archive.org/details/consolelivingroom"
-            style="background-image: url(\'https://archive.org/services/img/consolelivingroom\');"
-            aria-hidden="true"
-            data-event-click-tracking="ItemList|ItemListLink"
-          ></a>
-        </div>
-        <a class="stealth boxy-label" data-event-click-tracking="ItemList|ItemListLink" href="https://archive.org/details/consolelivingroom">Console Living Room</a></center>                          </div><!--/.widgets-->
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-7">
-                                                  <div class="linx linx-topped">
-                                                                                      <a href="https://archive.org/details/softwaresites" title="Software Sites" data-event-click-tracking="TopNav|TopLink-SoftwareSites">Software Sites</a>                                                          <a href="https://archive.org/details/tucows" title="Tucows Software Library" data-event-click-tracking="TopNav|TopLink-TucowsSoftwareLibrary">Tucows Software Library</a>                                                          <a href="https://archive.org/details/softwarecapsules" title="Software Capsules Compilation" data-event-click-tracking="TopNav|TopLink-SoftwareCapsulesCompilation">Software Capsules Compilation</a>                                                          <a href="https://archive.org/details/cdbbsarchive" title="Shareware CD-ROMs" data-event-click-tracking="TopNav|TopLink-SharewareCDROMs">Shareware CD-ROMs</a>                                                          <a href="https://archive.org/details/cdromimages" title="CD-ROM Images" data-event-click-tracking="TopNav|TopLink-CDROMImages">CD-ROM Images</a>                                                          <a href="https://archive.org/details/softwarelibrary_zx_spectrum" title="ZX Spectrum" data-event-click-tracking="TopNav|TopLink-ZXSpectrum">ZX Spectrum</a>                                                          <a href="https://archive.org/details/doom-cds" title="DOOM Level CD" data-event-click-tracking="TopNav|TopLink-DOOMLevelCD">DOOM Level CD</a>                                                      </div>
-
-                          
-                                              </div><!--/.col-sm-2-->
-                    
-                  </div><!--/.row-->
-                                                                                <div class="row toprow fivecolumns image">
-
-                                                                <div class="col-sm-2 col-xs-7 col-sm-push-4">
-                                                  <div class="linx">
-                            <h5>Featured</h5>
-                                                        <a
-                              href="https://archive.org/details/image"
-                              data-event-click-tracking="TopNav|FeaturedLink-AllImage"
-                              ><span class="iconochive-image"  aria-hidden="true"></span><span class="sr-only">image</span> All images</a>
-                                                        <a
-                              href="https://archive.org/search.php?query=mediatype:image&sort=-publicdate"
-                              data-event-click-tracking="TopNav|FeaturedLink-ThisJustInImage"
-                              ><span class="iconochive-latest"  aria-hidden="true"></span><span class="sr-only">latest</span> This Just In</a>
-                                                          <a href="https://archive.org/details/flickrcommons" title="Flickr Commons" data-event-click-tracking="TopNav|FeaturedLink-FlickrCommons">Flickr Commons</a>                                                          <a href="https://archive.org/details/flickr-ows" title="Occupy Wall Street Flickr" data-event-click-tracking="TopNav|FeaturedLink-OccupyWallStreetFlickr">Occupy Wall Street Flickr</a>                                                          <a href="https://archive.org/details/coverartarchive" title="Cover Art" data-event-click-tracking="TopNav|FeaturedLink-CoverArt">Cover Art</a>                                                          <a href="https://archive.org/details/maps_usgs" title="USGS Maps" data-event-click-tracking="TopNav|FeaturedLink-USGSMaps">USGS Maps</a>                                                      </div>
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-5 col-sm-pull-2">
-                                                  <div class="widgets">
-                            <center class="items_list">        <div class="items_list_img">
-          <a
-            href="https://archive.org/details/metropolitanmuseumofart-gallery"
-            style="background-image: url(\'https://archive.org/services/img/metropolitanmuseumofart-gallery\');"
-            aria-hidden="true"
-            data-event-click-tracking="ItemList|ItemListLink"
-          ></a>
-        </div>
-        <a class="stealth boxy-label" data-event-click-tracking="ItemList|ItemListLink" href="https://archive.org/details/metropolitanmuseumofart-gallery">Metropolitan Museum</a></center>                          </div><!--/.widgets-->
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-7 col-sm-push-2">
-                                                  <div class="linx ">
-                                                          <h5>Top</h5>
-                                                                                      <a href="https://archive.org/details/nasa" data-event-click-tracking="TopNav|TopLink-NASAImages">NASA Images</a>                                                          <a href="https://archive.org/details/solarsystemcollection" data-event-click-tracking="TopNav|TopLink-SolarSystemCollection">Solar System Collection</a>                                                          <a href="https://archive.org/details/amesresearchcenterimagelibrary" data-event-click-tracking="TopNav|TopLink-AmesResearchCenter">Ames Research Center</a>                                                      </div>
-
-                          
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-5 col-sm-pull-4">
-                                                  <div class="widgets">
-                            <center class="items_list">        <div class="items_list_img">
-          <a
-            href="https://archive.org/details/brooklynmuseum"
-            style="background-image: url(\'https://archive.org/services/img/brooklynmuseum\');"
-            aria-hidden="true"
-            data-event-click-tracking="ItemList|ItemListLink"
-          ></a>
-        </div>
-        <a class="stealth boxy-label" data-event-click-tracking="ItemList|ItemListLink" href="https://archive.org/details/brooklynmuseum">Brooklyn Museum</a></center>                          </div><!--/.widgets-->
-
-                                              </div><!--/.col-sm-2-->
-                                                                <div class="col-sm-2 col-xs-7">
-                                                  <div class="linx linx-topped">
-                                                                                  </div>
-
-                          
-                                              </div><!--/.col-sm-2-->
-                    
-                  </div><!--/.row-->
-                                          </div><!--/#nav-tophat-->
-    
-          </div><!--#navwrap2-->
-        </div><!--#navwrap1-->
-        
         <!-- Begin page content -->
         <main id="maincontent">
-          <div class="container container-ia">
+                    <div class="container container-ia">
 
           
 <!--HTML-->
@@ -860,8 +1862,8 @@ return [
   <div class="container container-ia">
       <div class="relative-row row">
     <div class="thats-right col-sm-4 col-sm-push-8">
-                <section class="action-buttons-section">
-                <div class=\'topinblock favorite-btn\'>
+            <section class="action-buttons-section">
+              <div class=\'topinblock favorite-btn\'>
         <button
           class=\'button js-manage-toggle_list_status \'
           type=\'button\'
@@ -913,11 +1915,11 @@ return [
                       </ul>
         </div> <!-- /#flag-popover -->
       </div> <!--/.dropdown -->
-              </div>        </section>
+              </div>      </section>
     </div><!--/.thats-right-->
     <div class="thats-left item-details-metadata col-sm-8 col-sm-pull-4">
-      <h1 style="font-size:30px; margin-bottom:0;">
-        <div class="left-icon"><span class="iconochive-movies movies"  aria-hidden="true"></span><span class="sr-only">movies</span></div>
+      <div class="left-icon"><span class="iconochive-movies movies"  aria-hidden="true"></span><span class="sr-only">movies</span></div>
+      <h1 class="item-title">
         <span class="breaker-breaker" itemprop="name">Democracy Now! Friday, February 20, 2015</span>
       </h1>
                   <br/>
@@ -952,7 +1954,7 @@ return [
       <div class="col-sm-8 thats-left item-details-metadata">
             <div class="actions-ia">
       
-                            </div>
+                                  </div>
         <div class="row metadata-list" role="list">
           <dl class="metadata-definition">
         <dt>Publication date</dt>
@@ -1096,7 +2098,7 @@ return [
         <span
           class="item-stats-summary__count"
                       itemprop="userInteractionCount"
-                  >123</span>
+                  >126</span>
 
         Views      </p>
 
@@ -1237,8 +2239,11 @@ return [
           </div><!--/.thats-right-->
     </div><!--/.row-->
       </div><!--//.container-ia-->
-  <div id="also-found" class="container container-ia width-max"
-    data-identifier="dn2015-0220_vid" data-host-name="www15.us.archive.org">
+  <div id="also-found"
+    class="container container-ia width-max"
+    data-identifier="dn2015-0220_vid"
+    data-host-name="www14.us.archive.org"
+    data-mediatype="movies">
     <div class="row">
       <div class="col-xs-12 tilebars">
                 <h5 class=\'small-label\'>SIMILAR ITEMS (based on metadata)</h5>
@@ -1275,41 +2280,41 @@ return [
     
     
     <!-- Timing ...
-     rendered on: www15.us.archive.org
+     rendered on: www14.us.archive.org
  seconds diff sec               message   stack(file:line:function)
 =========================================================
   0.0000   0.0000         petabox start   var/cache/petabox/petabox/www/sf/details.php:1:require
                                              |common/ia:66:require_once
-                                             |setup.php:386:log
-  0.0114   0.0114      redis_read start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |setup.php:384:log
+  0.0071   0.0071      redis_read start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:183:getItem
                                              |common/Item.inc:77:parseMetadata
                                              |Item.inc:132:get_obj
-                                             |Metadata.inc:537:_get_obj
-                                             |Metadata.inc:567:run_pipeline
-                                             |Metadata.inc:1432:read
+                                             |Metadata.inc:538:_get_obj
+                                             |Metadata.inc:568:run_pipeline
+                                             |Metadata.inc:1433:read
                                              |Metadata/AdapterPipeline.inc:259:_read
                                              |AdapterPipeline.inc:292:pipeline
                                              |AdapterPipeline.inc:377:fetch
-                                             |AdapterPipeline.inc:608:fetch
+                                             |AdapterPipeline.inc:613:fetch
                                              |RecordServer.inc:144:execute
                                              |RecordServer/FetchRecordOp.inc:52:log
-  0.0167   0.0052     redis_read finish   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+  0.0123   0.0052     redis_read finish   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:183:getItem
                                              |common/Item.inc:77:parseMetadata
                                              |Item.inc:132:get_obj
-                                             |Metadata.inc:537:_get_obj
-                                             |Metadata.inc:567:run_pipeline
-                                             |Metadata.inc:1432:read
+                                             |Metadata.inc:538:_get_obj
+                                             |Metadata.inc:568:run_pipeline
+                                             |Metadata.inc:1433:read
                                              |Metadata/AdapterPipeline.inc:259:_read
                                              |AdapterPipeline.inc:292:pipeline
                                              |AdapterPipeline.inc:377:fetch
-                                             |AdapterPipeline.inc:608:fetch
+                                             |AdapterPipeline.inc:613:fetch
                                              |RecordServer.inc:144:execute
                                              |RecordServer/FetchRecordOp.inc:58:log
-  0.0350   0.0183                render   var/cache/petabox/petabox/www/sf/details.php:82:log
-  0.0354   0.0004      start db connect   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4803:setupAndActionsFlags
+  0.0538   0.0415                render   var/cache/petabox/petabox/www/sf/details.php:82:log
+  0.0540   0.0002      start db connect   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4805:setupAndActionsFlags
                                              |DetailsFlags.inc:22:getFlags
                                              |DetailsFlags.inc:116:__callStatic
                                              |ValidateArgs.inc:63:counts_by_flag_VALIDATED
@@ -1318,14 +2323,14 @@ return [
                                              |SimpleLists.inc:22:get_records
                                              |SimpleLists/Storage.inc:27:q
                                              |DB.inc:381:execute
-                                             |DB.inc:1054:query
+                                             |DB.inc:1065:query
                                              |DB.inc:136:query0
                                              |DB.inc:165:ping
-                                             |DB.inc:754:connect
+                                             |DB.inc:765:connect
                                              |DB.inc:105:conn
-                                             |DB.inc:856:log
-  0.0780   0.0426                got db   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4803:setupAndActionsFlags
+                                             |DB.inc:867:log
+  0.0644   0.0104                got db   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4805:setupAndActionsFlags
                                              |DetailsFlags.inc:22:getFlags
                                              |DetailsFlags.inc:116:__callStatic
                                              |ValidateArgs.inc:63:counts_by_flag_VALIDATED
@@ -1334,47 +2339,91 @@ return [
                                              |SimpleLists.inc:22:get_records
                                              |SimpleLists/Storage.inc:27:q
                                              |DB.inc:381:execute
-                                             |DB.inc:1054:query
+                                             |DB.inc:1065:query
                                              |DB.inc:136:query0
                                              |DB.inc:165:ping
-                                             |DB.inc:754:connect
+                                             |DB.inc:765:connect
                                              |DB.inc:105:conn
-                                             |DB.inc:903:log
-  0.0823   0.0043   begin session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4809:nav
-                                             |Details.inc:4621:head
-                                             |Nav.inc:120:__construct
-                                             |Nav.inc:190:session_start
+                                             |DB.inc:914:log
+  0.0711   0.0067   begin session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4811:nav
+                                             |Details.inc:4618:head
+                                             |Nav.inc:124:__construct
+                                             |Nav.inc:200:session_start
                                              |Cookies.inc:56:log
-  0.0825   0.0001    done session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4809:nav
-                                             |Details.inc:4621:head
-                                             |Nav.inc:120:__construct
-                                             |Nav.inc:190:session_start
+  0.0712   0.0001    done session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4811:nav
+                                             |Details.inc:4618:head
+                                             |Nav.inc:124:__construct
+                                             |Nav.inc:200:session_start
                                              |Cookies.inc:62:log
-  0.1332   0.0507          header drawn   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4809:nav
-                                             |Details.inc:4625:log
-  0.1777   0.0445              bug dump   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4864:footer
-                                             |setup.php:155:footer
-                                             |Nav.inc:1571:dump
+  0.0746   0.0033          header drawn   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4811:nav
+                                             |Details.inc:4622:log
+  0.0913   0.0168      redis_read start   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4843:info_right
+                                             |Details.inc:3006:get_status
+                                             |Lending/LendingACL.php:116:get_metadata_fields
+                                             |LendingUtils.php:526:cached_metadata
+                                             |LendingUtils.php:70:get_obj
+                                             |Metadata.inc:538:_get_obj
+                                             |Metadata.inc:568:run_pipeline
+                                             |Metadata.inc:1433:read
+                                             |Metadata/AdapterPipeline.inc:259:_read
+                                             |AdapterPipeline.inc:292:pipeline
+                                             |AdapterPipeline.inc:377:fetch
+                                             |AdapterPipeline.inc:613:fetch
+                                             |RecordServer.inc:144:execute
+                                             |RecordServer/FetchRecordOp.inc:52:log
+  0.0935   0.0021     redis_read finish   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4843:info_right
+                                             |Details.inc:3006:get_status
+                                             |Lending/LendingACL.php:116:get_metadata_fields
+                                             |LendingUtils.php:526:cached_metadata
+                                             |LendingUtils.php:70:get_obj
+                                             |Metadata.inc:538:_get_obj
+                                             |Metadata.inc:568:run_pipeline
+                                             |Metadata.inc:1433:read
+                                             |Metadata/AdapterPipeline.inc:259:_read
+                                             |AdapterPipeline.inc:292:pipeline
+                                             |AdapterPipeline.inc:377:fetch
+                                             |AdapterPipeline.inc:613:fetch
+                                             |RecordServer.inc:144:execute
+                                             |RecordServer/FetchRecordOp.inc:58:log
+  0.1144   0.0209              bug dump   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4866:footer
+                                             |setup.php:153:footer
+                                             |Nav.inc:1193:dump
                                              |Bug.inc:102:log
     -->
     <script type="text/javascript">
 if (window.archive_analytics) {
+  window.archive_analytics.send_pageview_on_load(window.archive_analytics);
+  window.archive_analytics.process_url_events(window.location);
   var vs = window.archive_analytics.get_data_packets();
   for (var i in vs) {
     vs[i][\'cache_bust\']=Math.random();
-    vs[i][\'server_ms\']=177;
-    vs[i][\'server_name\']="www15.us.archive.org";
+    vs[i][\'server_ms\']=114;
+    vs[i][\'server_name\']="www14.us.archive.org";
       }
 
-  if ($(".more_search").size()>0) {
+  if (document.querySelectorAll(\'.more_search\').length) {
     window.archive_analytics.send_scroll_fetch_base_event();
   }
 }
 </script>
+              <img src="//analytics.archive.org/0.gif?kind=track_js&track_js_case=control&cache_bust=1672003311" />
+          <noscript>
+        <img src="//analytics.archive.org/0.gif?kind=track_js&track_js_case=disabled&cache_bust=607573042" />
+      </noscript>
+          <script>
+        document.addEventListener(\'DOMContentLoaded\', function() {
+          if (typeof AJS === \'undefined\') {
+            return;
+          }
+          AJS.createTrackingImage(\'in_page_executes\');
+        });
+      </script>
       </div>
   </body>
 </html>

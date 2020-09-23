@@ -3,6 +3,9 @@ declare(strict_types = 1);
 
 return [
     'headers' => [
+        'content-type' => [
+            'application/json; charset=utf-8'
+        ],
         'access-control-allow-origin' => [
             '*'
         ],
@@ -19,10 +22,10 @@ return [
             'https://www.twitch.tv'
         ],
         'date' => [
-            'Sat, 23 May 2020 23:02:25 GMT'
+            'Wed, 23 Sep 2020 21:47:20 GMT'
         ],
         'x-served-by' => [
-            'cache-sea4472-SEA, cache-mad22046-MAD'
+            'cache-sea4443-SEA, cache-mad22025-MAD'
         ],
         'x-cache' => [
             'MISS, MISS'
@@ -31,7 +34,7 @@ return [
             '0, 0'
         ],
         'x-timer' => [
-            'S1590274945.952174,VS0,VS0,VE158'
+            'S1600897641.542320,VS0,VS0,VE161'
         ],
         'vary' => [
             'Accept-Encoding'
@@ -39,14 +42,17 @@ return [
         'strict-transport-security' => [
             'max-age=300'
         ],
+        'content-length' => [
+            '61'
+        ],
         'Content-Location' => [
             'https://api.twitch.tv/v5/oembed?url=https%3A%2F%2Fwww.twitch.tv%2Ftwit&format=json'
         ],
         'X-Request-Time' => [
-            '0.252 ms'
+            '0.255 ms'
         ]
     ],
-    'statusCode' => 204,
-    'reasonPhrase' => 'No Content',
-    'body' => ''
+    'statusCode' => 410,
+    'reasonPhrase' => 'Gone',
+    'body' => '{"error":"Gone","status":410,"message":"Endpoint deprecated"}'
 ];

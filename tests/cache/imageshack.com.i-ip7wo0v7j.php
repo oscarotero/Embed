@@ -9,9 +9,9 @@ return [
             'nginx/1.2.8'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:52 GMT',
-            'Wed, 20 May 2020 17:53:52 GMT',
-            'Wed, 20 May 2020 17:53:53 GMT'
+            'Wed, 23 Sep 2020 21:46:46 GMT',
+            'Wed, 23 Sep 2020 21:46:46 GMT',
+            'Wed, 23 Sep 2020 21:46:47 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -43,20 +43,20 @@ return [
             'bytes'
         ],
         'x-varnish' => [
-            '413271415 413264907',
-            '1020430155 1006183496'
+            '1123646441 1099895418',
+            '1200228578 1186515176'
         ],
         'age' => [
-            '422',
-            '885026'
+            '2195093',
+            '812720'
         ],
         'via' => [
             '1.1 varnish',
             '1.1 varnish'
         ],
         'x-varnish-hits' => [
-            '2',
-            '12'
+            '15',
+            '16'
         ],
         'x-varnish-ip' => [
             '208.94.3.35',
@@ -69,7 +69,11 @@ return [
         'vary' => [
             'Accept-Encoding, User-Agent  HTTP/1.1 200 OK'
         ],
+        'x-hw' => [
+            '1600897607.cds025.ma1.h2,1600897607.cds033.ma1.sc,1600897607.cds033.ma1.p'
+        ],
         'access-control-allow-origin' => [
+            '*',
             '*',
             'imageshack.com'
         ],
@@ -83,7 +87,7 @@ return [
             '54800'
         ],
         'x-origin-fetch-time' => [
-            '46'
+            '44'
         ],
         'x-original-resolution' => [
             '500x500'
@@ -114,9 +118,6 @@ return [
         'x-cache-hits' => [
             '0'
         ],
-        'expires' => [
-            'Fri, 19 Jun 2020 17:53:53 GMT'
-        ],
         'cache-control' => [
             'max-age=2592000',
             'public'
@@ -128,7 +129,7 @@ return [
             'http://imagizer.imageshack.com/img673/0/7wO0v7.jpg'
         ],
         'X-Request-Time' => [
-            '2.109 ms'
+            '1.790 ms'
         ]
     ],
     'statusCode' => 200,

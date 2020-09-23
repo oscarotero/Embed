@@ -8,8 +8,8 @@ return [
             'nginx/1.18.0'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:13 GMT',
-            'Wed, 20 May 2020 17:53:14 GMT'
+            'Wed, 23 Sep 2020 21:46:00 GMT',
+            'Wed, 23 Sep 2020 21:46:01 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -35,7 +35,7 @@ return [
             'https://chirb.it/7A9L9B'
         ],
         'X-Request-Time' => [
-            '0.982 ms'
+            '1.014 ms'
         ]
     ],
     'statusCode' => 200,
@@ -48,8 +48,8 @@ return [
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
    <meta name="twitter:card" content="player">
    <meta name="twitter:site" content="@chirbit">
-   <meta name="twitter:url" content="http://chirb.it/7A9L9B">
-   <meta name="twitter:image" content="http://img.chirbit.com/chirbit_twitter_image.png">
+   <meta name="twitter:url" content="https://chirb.it/7A9L9B">
+   <meta name="twitter:image" content="https://img.chirbit.com/chirbit_twitter_image.png">
    <meta name="twitter:title" content="Chirbit [] Encana conference call">
    <meta name="twitter:description" content="Audio:  - social audio">
    <meta name="twitter:player" content="https://chirb.it/wp/7A9L9B">
@@ -63,7 +63,7 @@ return [
    <meta property="og:type" content="video.other">
    <meta property="fb:admins" content="764234192">
    <meta property="fb:app_id" content="122566454446">
-   <meta property="og:url" content="http://chirb.it/7A9L9B">
+   <meta property="og:url" content="https://chirb.it/7A9L9B">
    <meta itemprop="image" property="og:image" content="https://chirb.it/images/chirbit_fbpic.png">
    <meta property="og:description" content="Audio:  - social audio">
    <meta property="og:video:secure_url" content="https://chirb.it/fb_chirbit_player.swf?key=7A9L9B">
@@ -74,8 +74,8 @@ return [
    <meta name="juicyads-site-verification" content="cfdf45f5f3df17e77cbc5c5d8794f3f1">
    <link rel="image_src" href="//www.chirbit.com/images/users/user_bigger.jpg" / >
    <title>Chirbit - Encana conference call -  - share audio easily</title>
-   <link rel="alternate" type="application/json+oembed" href="/oembed.json?url=http://chirb.it/7A9L9B" >
-   <link rel="alternate" type="application/xml+oembed" href="/oembed.xml?url=http://chirb.it/7A9L9B" >
+   <link rel="alternate" type="application/json+oembed" href="/oembed.json?url=https://chirb.it/7A9L9B" >
+   <link rel="alternate" type="application/xml+oembed" href="/oembed.xml?url=https://chirb.it/7A9L9B" >
    <title>Chirbit - Listen | Encana conference call
 </title>
 </head>
@@ -105,7 +105,7 @@ return [
                	     class="stopbutton fa fa-stop fa-4x"></i> &nbsp;
                	  <i id="cplayer_235058"
                	     data-cid="235058"
-               	     data-fd="==gN4UGOlRDZiZGZjJWOhRDMmljZyQGZzUWY4ADNhdjYlNjNlNGO1EzYiFTN5EWMiVWZhVDOkJTM0AzYllTN5MmY9Umc1RXYudWaT1ietFULYZCMwITM9MXZylGc4VUL61WQtglJ0N3bo1zcyVGZhVGSkVmbnl2UtoXbB1CWmoFNxMTN3EDVwITNwAjMwITPlRXYE1ietFULYZCdzVWdxVmcfRzc3FmRyUyMzZkMlETL0NXYl1yc1ZkMlAjM1ADMyAjMGJTJBNkVy0UTRdkT2Q1NEpESJFUSLFUPsFWa05WZkVmcD1ietFULYZiN1ITQINVLDFUTI1CNTdVQ90Ga0lmcvdGbB1ietFULYZCRB9ETZFEUtQUROdUST5UV9YTNyEGaT1CduVGdu92QtoXbB1CW/MDct5yN1QTM3gDM2MTMfVGcwlGbrJXZk5WY252Lt92YuQXaiJXaoNmLvlGZ1F2Lt92YuM3dh52b6FWbh5yMz9yL6MHc0RHa"
+               	     data-fd="==AZxcDNjFzYhJDNiVTM0MDN5Q2Y5kDNxEmZ0AzN1MGO4QmYmdzMkJGM5cjM0gTMxkDZ1ADNhhTMkVDN1EzYkBTZ9Umc1RXYudWaT1ietFULYZCMwITM9MXZylGc4VUL61WQtglJ0N3bo1zcyVGZhVGSkVmbnl2UtoXbB1CWmoVMwYDNxIDVzITOwAjMwITPlRXYE1ietFULYZCdzVWdxVmcfRzc3FmRyUyMzZkMlETL0NXYl1yc1ZkMlMjM5ADMyAjMGJTJBNkVy0UTRdkT2Q1NEpESJFUSLFUPsFWa05WZkVmcD1ietFULYZiN1ITQINVLDFUTI1CNTdVQ90Ga0lmcvdGbB1ietFULYZCRB9ETZFEUtQUROdUST5UV9YTNyEGaT1CduVGdu92QtoXbB1CW/MDct5yN1QTM3gDM2MTMfVGcwlGbrJXZk5WY252Lt92YuQXaiJXaoNmLvlGZ1F2Lt92YuM3dh52b6FWbh5yMz9yL6MHc0RHa"
                	     class="sm2_button fa fa-play-circle fa-4x"></i>
                </span>
             </div>
@@ -114,7 +114,7 @@ return [
 
          <div class="">
             <span class="chirbit-tags"><i class="fa fa-tags"></i>
-            <span class="label label-default tag-label-05">#conference</span>
+            <span class="label label-default tag-label-04">#conference</span>
             </span>
          </div>
 
@@ -204,7 +204,7 @@ return [
             <div class="col-md-6 col-sm-6 col-xs-8 ">
                <form class="form-inline">
                   <div class="input-group">
-                     <input id="copy-btn-7A9L9B" class="form-control col-md-6" type="text" value="http://chirb.it/7A9L9B"/>
+                     <input id="copy-btn-7A9L9B" class="form-control col-md-6" type="text" value="https://chirb.it/7A9L9B"/>
                      <div class="clip-it-btn input-group-addon" data-clipboard-target="#copy-btn-7A9L9B"   ><i class="fa fa-clipboard"></i></div>
                   </div>
                   <div class="inline" id="copy-shorturl-alert"></div>
@@ -214,7 +214,7 @@ return [
                <div class="sharebox-buttons">
                   <a   class="addtt sharebox"
                   	   title="Tweet this Chirbit"
-                  	   href="https://twitter.com/intent/tweet?text=Encana conference call&url=http%3A%2F%2Fchirb.it%2F7A9L9B&hashtags=audio&via=chirbit&related=chirbit"
+                  	   href="https://twitter.com/intent/tweet?text=Encana conference call&url=https%3A%2F%2Fchirb.it%2F7A9L9B&hashtags=audio&via=chirbit&related=chirbit"
                   	   role="button"><i class="fa fa-twitter fa-lg"></i></a>
                   <a class="addtt" title="Share on Facebook" data-toggle="modal" data-target="#multi-modal" href="/facebookshare/7A9L9B" role="button"><i class="fa fa-facebook fa-lg"></i></a>
                   <a class="addtt" title="Get embed code for this Chirbit" data-toggle="modal" data-target="#multi-modal" href="/embedcode/7A9L9B" role="button"><i class="fa fa-code fa-lg"></i></a>
@@ -248,78 +248,46 @@ return [
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
 <script>
-$(document).ready(function() {
-
-   $(\'#button-show\').click(function() {
-      $(\'#main\').addClass(\'use-sb\');
-      });
-   $(\'#button-hide\').click(function() {
-      $(\'#main\').removeClass(\'use-sb\');
-      });
-   $(\'#button-toggle\').click(function() {
-      $(\'#main\').toggleClass(\'use-sb\');
-      });
-   $(\'#listen-share-button\').click(function() {
-      $(\'#main\').toggleClass(\'use-sb\');
-      });
+document.addEventListener("DOMContentLoaded", () => {
+   var main_el = document.querySelector(\'#main\');
+   var btnshow =  document.querySelector(\'#button-show\');
+   var btnhide =  document.querySelector(\'#button-hide\');
+   var btntoggle = document.querySelector(\'#button-toggle\');
+   var btnlistenshare = document.querySelector(\'#listen-share-button\');
+   if(btnshow) {
+      btnshow.addEventListener(\'click\', () => {
+         main_el.classList.add(\'use-sb\');
+         });
+      }
+   if(btnhide) {
+      btnhide.addEventListener(\'click\', () => {
+         main_el.classList.remove(\'use-sb\');
+         });
+      }
+   if(btntoggle) {
+      btntoggle.addEventListener(\'click\', () => {
+         main_el.classList.toggle(\'use-sb\');
+         });
+      }
+   if(btnlistenshare) {
+      btnlistenshare.addEventListener(\'click\', () => {
+         main_el.classList.toggle(\'use-sb\');
+         });
+      }
    });
 </script>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
     var clipboard = new Clipboard(\'.clip-it-btn\');
     clipboard.on(\'success\', function(e) {
-        console.log(\'clipboard clicked\');
         e.clearSelection();
-        console.info(\'Action:\', e.action);
-        console.info(\'Text:\', e.text);
-        console.info(\'Trigger:\', e.trigger);
         toastr.info(\'Copied! \' + e.text);
     });
-
     clipboard.on(\'error\', function(e) {
-        console.error(\'Action:\', e.action);
-        console.error(\'Trigger:\', e.trigger);
         showTooltip(e.trigger, fallbackMessage(e.action));
     });
-
-    $(document).ready(function() {
-        var commentform = $(\'.comment-form\');
-        $(\'.reply-btn\').click(function() {
-            var commentid = $(this).data(\'commentid\');
-            var shortkey = $(\'#comment-body\').data(\'chirbitid\');
-            $(this).parent().append(commentform);
-            $(this).parent().find(\'.comment-form\').removeClass(\'hidden\').attr(\'id\',\'c_\'+commentid);
-            $(\'#c_\'+commentid).attr(\'data-commentid\',commentid);
-            $(\'#c_\'+commentid).find(\'input[name=shortkey]\').val(shortkey);
-            $(\'#c_\'+commentid).find(\'input[name=parentid]\').val(commentid);
-        });
-
-        $(\'.comment-form\').submit(function(e){
-            var ffd = $(this).attr(\'id\');
-            e.preventDefault();
-            var postData = $(this).serializeArray();
-            var formURL = $(this).attr("action");
-            $.ajax( {
-                url: formURL,
-                type: "POST",
-                data: postData,
-                success: function(data,textStatus,jqXHR) {
-                    if(data.status == \'success\') {
-                        $(\'#\'+ffd).html(\'Your comment was posted. - \'+data.response.comment);
-                        location.reload();
-                    }
-                    else if (data.status == \'error\') {
-                        $(\'#\'+ffd).html(\'Error - \'+data.message);
-                    }
-                    else {
-                    }
-                },
-                error: function(jqXHR,textStatus,errorThrown) {
-                    alert(jqXHR + textStatus + errorThrown);
-                }
-            });
-        });
-    });
+});
 </script>
 <style>
 html {
@@ -343,7 +311,7 @@ body {background-color:#f5f5f5;margin-bottom:50px;}
 .wavholder {
 	width:100%;
 	height:100px;
-	background:linear-gradient( rgba(208, 247, 166, 0.25),rgba(181, 252, 246, 0.75)), url(http://img.chirbit.com/wave/) no-repeat;
+	background:linear-gradient( rgba(208, 247, 166, 0.25),rgba(181, 252, 246, 0.75)), url(https://img.chirbit.com/wave/) no-repeat;
 	background-size:100% 100%;
 	}
 

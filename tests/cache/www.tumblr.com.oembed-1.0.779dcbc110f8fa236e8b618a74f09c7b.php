@@ -7,13 +7,13 @@ return [
             'br'
         ],
         'content-security-policy-report-only' => [
-            'script-src \'self\' https://assets.tumblr.com https://sb.scorecardresearch.com/beacon.js https://ssl.google-analytics.com/ga.js https://www.google-analytics.com/analytics.js https://fc.yahoo.com/sdarla/php/client.php https://s.yimg.com/rq/darla/ https://www.googletagservices.com/tag/js/gpt.js https://securepubads.g.doubleclick.net/gpt/ https://securepubads.g.doubleclick.net/gampad/ads https://pagead2.googlesyndication.com/pagead/osd.js https://www.google.com/recaptcha/api.js https://consent.cmp.oath.com https://*.gemini.yahoo.com https://s.yimg.com/av/gemini/ga/gemini-iframe.js https://s.yimg.com/av/curveball/ \'unsafe-eval\' \'nonce-26GA9dzsd6sNyUcGYSzRhsfq1Zs\'; object-src \'none\'; worker-src blob:; base-uri \'self\';'
+            'script-src \'self\' https://assets.tumblr.com https://sb.scorecardresearch.com/beacon.js https://ssl.google-analytics.com/ga.js https://www.google-analytics.com/analytics.js https://fc.yahoo.com/sdarla/php/client.php https://s.yimg.com/rq/darla/ https://www.googletagservices.com/tag/js/gpt.js https://securepubads.g.doubleclick.net/gpt/ https://securepubads.g.doubleclick.net/gampad/ads https://pagead2.googlesyndication.com/pagead/osd.js https://www.google.com/recaptcha/api.js https://consent.cmp.oath.com https://*.gemini.yahoo.com https://s.yimg.com/av/gemini/ga/gemini-iframe.js https://s.yimg.com/av/curveball/ https://*.quantserve.com https://*.quantcount.com https://quantcast.mgr.consensu.org \'unsafe-eval\' \'nonce-xNvyWq6oGYr1RUXQG0CLRdy6yM\'; object-src \'none\'; worker-src blob:; base-uri \'self\'; report-uri https://www.tumblr.com/svc/cspreports;'
         ],
         'content-type' => [
             'application/json; charset=utf-8'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:44 GMT'
+            'Wed, 23 Sep 2020 21:47:59 GMT'
         ],
         'p3p' => [
             'CP="Tumblr\'s privacy policy is available here: https://www.tumblr.com/policy/en/privacy"'
@@ -37,7 +37,7 @@ return [
             'deny'
         ],
         'x-rid' => [
-            '141639524941640736402613567265986862856'
+            '842355836113760070117276370646143101107'
         ],
         'x-ua-compatible' => [
             'IE=Edge,chrome=1'
@@ -49,7 +49,7 @@ return [
             'https://www.tumblr.com/oembed/1.0?url=https://he-who-photographs-rather-ok.tumblr.com/post/165326273724'
         ],
         'X-Request-Time' => [
-            '0.626 ms'
+            '0.600 ms'
         ]
     ],
     'statusCode' => 200,

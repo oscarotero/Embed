@@ -77,9 +77,7 @@ return [
                 ]
             ],
             [
-                '@type' => [
-                    'Person'
-                ],
+                '@type' => 'Person',
                 '@id' => 'https://graffica.info/#/schema/person/e061170e01040cb6444c3edea24a464b',
                 'name' => 'Gràffica',
                 'image' => [

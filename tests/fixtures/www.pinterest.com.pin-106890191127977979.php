@@ -11,7 +11,7 @@ return [
         'height' => 442,
         'ratio' => 187.288
     ],
-    'description' => '30-dic-2012 - Questo Pin è stato scoperto da Leslie Carruthers. Scopri (e salva) i tuoi Pin su Pinterest.',
+    'description' => '27-ott-2017 - Questo Pin è stato scoperto da Leslie Carruthers. Scopri (e salva) i tuoi Pin su Pinterest.',
     'favicon' => 'https://s.pinimg.com/webapp/style/images/favicon-54a5b2af.png',
     'feeds' => [],
     'icon' => 'https://s.pinimg.com/webapp/style/images/logo_trans_144x144-5e37c0c6.png',
@@ -24,7 +24,7 @@ return [
     'providerUrl' => 'https://www.pinterest.com',
     'publishedTime' => null,
     'redirect' => null,
-    'title' => 'Pin di Leslie Carruthers su Icons | Jack nicholson, Stelle di hollywood, Personaggi',
+    'title' => 'Pin su Movie Addiction',
     'url' => 'https://www.pinterest.com/pin/106890191127977979/',
     'linkedData' => [],
     'oEmbed' => []

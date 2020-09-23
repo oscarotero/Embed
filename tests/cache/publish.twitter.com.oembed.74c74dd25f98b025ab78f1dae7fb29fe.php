@@ -19,13 +19,13 @@ return [
             'application/json; charset=utf-8'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:54:31 GMT'
+            'Wed, 23 Sep 2020 21:47:21 GMT'
         ],
         'expires' => [
-            'Fri, 26 Apr 2120 17:54:31 GMT'
+            'Fri, 30 Aug 2120 21:47:21 GMT'
         ],
         'last-modified' => [
-            'Wed, 20 May 2020 17:54:31 GMT'
+            'Wed, 23 Sep 2020 21:47:21 GMT'
         ],
         'server' => [
             'tsa_f'
@@ -34,7 +34,7 @@ return [
             'max-age=631138519'
         ],
         'x-connection-hash' => [
-            'ef42dc18a650438a9c4cfa9ecf48eeee'
+            '97c917d5a05d0c741e5338c834b34fa0'
         ],
         'x-content-type-options' => [
             'nosniff'
@@ -43,7 +43,7 @@ return [
             'SAMEORIGIN'
         ],
         'x-response-time' => [
-            '187'
+            '167'
         ],
         'x-xss-protection' => [
             '0'
@@ -52,7 +52,7 @@ return [
             'https://publish.twitter.com/oembed?url=https%3A%2F%2Ftwitter.com%2Fpepephone%2Fstatus%2F436461658601713664&format=json'
         ],
         'X-Request-Time' => [
-            '0.406 ms'
+            '0.378 ms'
         ]
     ],
     'statusCode' => 200,

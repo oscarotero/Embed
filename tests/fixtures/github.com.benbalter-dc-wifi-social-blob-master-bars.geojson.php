@@ -8,7 +8,8 @@ return [
     'code' => [
         'html' => '<script src="https://embed.githubusercontent.com/view/geojson/benbalter/dc-wifi-social/master/bars.geojson"></script>',
         'width' => null,
-        'height' => null
+        'height' => null,
+        'ratio' => null
     ],
     'description' => 'A collaborative list of DC locations that serve up both Internet and Alcohol - benbalter/dc-wifi-social',
     'favicon' => 'https://github.githubassets.com/favicons/favicon.svg',

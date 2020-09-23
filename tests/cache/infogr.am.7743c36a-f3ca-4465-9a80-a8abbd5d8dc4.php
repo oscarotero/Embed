@@ -4,8 +4,8 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 20 May 2020 17:53:25 GMT',
-            'Wed, 20 May 2020 17:53:25 GMT'
+            'Wed, 23 Sep 2020 21:46:12 GMT',
+            'Wed, 23 Sep 2020 21:46:13 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -43,7 +43,7 @@ return [
             '1; mode=block'
         ],
         'etag' => [
-            'W/"33152-DCgU8vL+J10p3CqQkqbyYfqh3BE"'
+            'W/"34932-SghqQRmjkklViyHPrIUYUbrkSbA"'
         ],
         'content-encoding' => [
             'gzip'
@@ -52,7 +52,7 @@ return [
             'https://infogram.com/7743c36a-f3ca-4465-9a80-a8abbd5d8dc4'
         ],
         'X-Request-Time' => [
-            '0.621 ms'
+            '0.644 ms'
         ]
     ],
     'statusCode' => 200,
@@ -62,7 +62,7 @@ return [
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Frost Bank Advisors (online graphic) by Tony Quesada - Infogram</title>
+        <title>Frost Bank Advisors (online graphic) - Infogram</title>
         <base href = "https://infogram.com" />
         
 
@@ -91,19 +91,19 @@ return [
             <script async src="https://s.infogram.com/t.js?v3" data-infogram-track-id="1g8e205xdj03pod" data-tag="web" data-track-url="https://s.infogram.com/t2"></script>
         
         <meta property="fb:app_id" content="346759272005624">
-        <meta property="og:image" content="https://infogram-thumbs-1024.s3-eu-west-1.amazonaws.com/4e31a649-39af-4bfd-a6a9-384e727e36e2.jpg">
+        <meta property="og:image" content="https://infogram-thumbs-1024.s3-eu-west-1.amazonaws.com/4e31a649-39af-4bfd-a6a9-384e727e36e2.jpg?1600897573187">
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1024" />
         <meta property="og:url" content="https://infogram.com/frost-bank-advisors-online-graphic-1g8e205xdj03pod">
         <meta property="og:type" content="website" />
 
-        <link rel="alternate" type="application/json+oembed" href="https://infogram.com/oembed/?url=https%3A%2F%2Finfogram.com%2Ffrost-bank-advisors-online-graphic-1g8e205xdj03pod" title="Frost Bank Advisors (online graphic) by Tony Quesada - Infogram" />
+        <link rel="alternate" type="application/json+oembed" href="https://infogram.com/oembed/?url=https%3A%2F%2Finfogram.com%2Ffrost-bank-advisors-online-graphic-1g8e205xdj03pod" title="Frost Bank Advisors (online graphic) - Infogram" />
 
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Frost Bank Advisors (online graphic) by Tony Quesada - Infogram">
+        <meta name="twitter:title" content="Frost Bank Advisors (online graphic) - Infogram">
         <meta name="twitter:description" content="">
         <meta name="twitter:site" content="@infogram">
-        <meta name="twitter:image" content="https://infogram-thumbs-1024.s3-eu-west-1.amazonaws.com/4e31a649-39af-4bfd-a6a9-384e727e36e2.jpg">
+        <meta name="twitter:image" content="https://infogram-thumbs-1024.s3-eu-west-1.amazonaws.com/4e31a649-39af-4bfd-a6a9-384e727e36e2.jpg?1600897573187">
         <meta name="twitter:url" content="https://infogram.com/frost-bank-advisors-online-graphic-1g8e205xdj03pod">
 
         <meta name="theme-color" content="#45989c">
@@ -113,14 +113,14 @@ return [
         <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jifo.co/favicon/favicon-16x16.png" />
         <link rel="mask-icon" href="https://cdn.jifo.co/favicon/safari-pinned-tab.svg" color="#45989c" />
         <link rel="preload" href="/api/stylesheets/265" as="style">
-        <link rel="preload" as="script" href="https://cdn.jifo.co/js/dist/bundle_vendor-45812f3f22b0dc87ad33-1-webpack.js" crossorigin="anonymous"/>
-        <link rel="preload" as="script" href="https://cdn.jifo.co/js/dist/assets-web_view-3a74a6821307ae8900ad-1-webpack.js" crossorigin="anonymous"/>
-        <link rel="preload" as="script" href="https://cdn.jifo.co/js/dist/web_viewer-7576e3a7d25d6799d683-1-webpack.js" crossorigin="anonymous"/>
+        <link rel="preload" as="script" href="https://cdn.jifo.co/js/dist/bundle_vendor-7480515a7c20823262e7-1-webpack.js" crossorigin="anonymous"/>
+        <link rel="preload" as="script" href="https://cdn.jifo.co/js/dist/assets-web_view-69aa1545b11d65441f98-1-webpack.js" crossorigin="anonymous"/>
+        <link rel="preload" as="script" href="https://cdn.jifo.co/js/dist/web_viewer-dadadaeecc50c96f4a6f-1-webpack.js" crossorigin="anonymous"/>
         <link rel="dns-prefetch" href="https://cdn.jifo.co">
 <link rel="preconnect" href="https://cdn.jifo.co" />
 
 
-        <link rel="stylesheet"href="https://cdn.jifo.co/css/dist/web_view-2aa563551ca06be4be61808b9f3e92e292b8a158.css" media="all">
+        <link rel="stylesheet"href="https://cdn.jifo.co/css/dist/web_view-1c7d7e66b07ccf6afed01449fba2fdb19d9d669c.css" media="all">
         <link rel="canonical" href="https://infogram.com/frost-bank-advisors-online-graphic-1g8e205xdj03pod">
 <style>.chart *{line-height:normal}.moveable{margin-bottom:20px!important}.capture-mode .moveable_w:last-child .moveable:last-child,.download-mode .moveable_w:last-child .moveable:last-child,.embed-mode .moveable_w:last-child .moveable:last-child,.web-mode .moveable_w:last-child .moveable:last-child{margin-bottom:0!important}.ig-separator{margin-bottom:0!important;margin-top:-20px;padding-bottom:20px;padding-top:20px}.video{padding-bottom:75%;height:0}.video iframe{border:0;width:100%;height:100%;position:absolute;top:0;left:0}.ig-items{margin:0;padding-top:0}svg .igc-pie-center-text .igc-pie-center-text-node{font-family:\'PT Sans Narrow\',\'Arial Narrow\';font-size:24px;fill:#626262;font-weight:400;font-style:normal}svg .igc-wc-node{cursor:default}.igc-treemap-node-text-name{font-family:Graphik,PT Sans;font-weight:400}.igc-treemap-node-text-value{font-family:Graphik,PT Sans}.chart-title,.headline{text-transform:uppercase}svg .igc-pie-center-text .igc-pie-center-text-node{font-family:\'Graphik X Cond\',PT Sans;font-weight:600;fill:#464646;font-size:29px}.igc-sheet{margin-bottom:15px}.igc-sheets{margin-bottom:15px}.igc-sheets .igc-sheet .igc-sheet-label,.igc-sheets .igc-sheet.active .igc-sheet-label,.igc-sheets .igc-sheet:hover .igc-sheet-label{color:#464646;margin-left:5px;font-family:Graphik,PT Sans!important;font-size:12px!important;font-weight:400!important}.igc-sheets .igc-sheet.active .igc-sheet-label,.igc-sheets .igc-sheet:hover .igc-sheet-label{color:rgba(70,70,70,.7)}.igc-sheets .igc-sheet .igc-sheet-ico,.igc-sheets .igc-sheet:hover .igc-sheet-ico{background:rgba(167,167,167,.3);border-color:#464646;transition:.2s}.igc-sheets .igc-sheet:hover .igc-sheet-ico{background:#a7a7a7}.igc-sheets .igc-sheet.active .igc-sheet-ico{background:#464646}.igc-sheets .igc-sheet.active .igc-sheet-ico::after,.igc-sheets .igc-sheet:hover .igc-sheet-ico::after{height:6px;width:6px;left:6px;top:6px;background:#fff}.igc-textual-figure{font-family:\'Graphik X Cond\',PT Sans;font-size:40;font-weight:600}.igc-textual-fact{color:#464646;font-family:Graphik,PT Sans;font-size:20px;font-weight:400}.igc-textual-icon{padding-right:30px;padding-top:7px}.igc-table .igc-table-cell{font-family:Graphik,PT Sans;font-size:12px;font-weight:400}.igc-table .igc-table-header{font-family:Graphik,PT Sans;font-size:12px;font-weight:400;padding-left:9px}.ig-container{background:#fff}.headline{font-family:\'Graphik X Cond\',PT Sans Narrow;font-size:50px;font-weight:600;color:#464646;text-align:left;line-height:53px}.chart-title{font-family:\'Graphik X Cond\',PT Sans Narrow;font-size:40px;font-weight:600;color:#464646;text-align:left;line-height:43px}.bodytext{font-family:Graphik;font-size:20px;font-weight:400;color:#464646;text-align:left;line-height:25px}.quote{background:url(https://cdn.jifo.co/i/templates/250/quote.svg) left 5px no-repeat;background-size:33px;padding-left:63px;font-family:\'Graphik X Cond\',sans-serif;font-size:40px;font-weight:600;color:#464646;line-height:43px;text-align:left}.quotetitle{font-family:Graphik,sans-serif;font-size:20px;font-weight:400;color:#464646;margin-top:5px;line-height:25px}.tt_tooltip{color:#fff;font-family:Graphik;font-size:20px;font-weight:400}.igc-legend-entry{margin-top:15px}.igc-legend{padding-top:10px;padding-bottom:0}div[data-chart=bubble],div[data-chart=candle],div[data-chart=pyramid],div[data-chart=scatter],div[data-chart=semi-circle],div[data-chart=streamgraph]{display:none}.ig-separator-line{background:rgba(70,70,70,.5)}.heatmap-legend{background:rgba(255,255,255,.7)}.heatmap-label,.heatmap-legend-item{color:#464646;font-size:12px;font-weight:400;font-family:Graphik,PT Sans}.igc-graph-pie-piece{stroke:rgba(255,255,255,.7)}.tt_tooltip .tt_value{font-weight:400}.tt_tooltip .tt_body{background:#464646}.tt_tooltip .tt_left{border-right:8px solid #464646}.tt_tooltip .tt_right{border-left:8px solid #464646}.igc-tabs .igc-tab-active{background:#fff}.igc-tabs .igc-tab .igc-tab-content,.igc-tabs .igc-tab.icon-down:after{font-family:Graphik,PT Sans;color:#464646;font-weight:400}.igc-tab-switcher,.igc-tabs .igc-tab{color:#464646}.igc-tabs.igc-tabs-dropdown .igc-tab-name{font-family:Graphik,PT Sans;color:#464646}.captiontext{font-family:Graphik,PT Sans;color:#464646;font-weight:400}.captiontext .innertext{line-height:1.5}.igc-legend-entry .igc-legend-label{height:auto}.igc-tab-ico svg path{fill:#464646}.igc-tab-switcher-ico svg path{fill:#464646}.igc-table-search{color:#666;font-size:12px;font-weight:400;font-family:Graphik,PT Sans}#footer{margin-left:0;margin-right:0}.bodytext .innertext a,.bodytext .innertext a:visited{color:#00e}</style>
 
@@ -380,6 +380,8 @@ localesConfig.resources[\'en\'] = {translation: {
             "world_map": "World map"
         },
         "add_media": {
+            "createNewVideo": "Create new video",
+            "search_only_my_videos": "Search only my videos",
             "search_placeholder": {
                 "by_provider": "Search %{provider}",
                 "others": "Search %{provider} or enter URL",
@@ -389,12 +391,14 @@ localesConfig.resources[\'en\'] = {translation: {
                 "flickr": "Flickr",
                 "giphy": "Giphy",
                 "iframe": "IFrame",
+                "preziVideo": "Prezi Video",
                 "slideshare": "Slideshare",
                 "upload": "Upload",
                 "url": "URL",
                 "vimeo": "Vimeo",
                 "youtube": "YouTube"
-            }
+            },
+            "tryOutPreziVideo": "Try out Prezi Video and create your own video or search for public Prezi videos."
         },
         "add_shape": "Add shape",
         "add_text": {
@@ -530,6 +534,25 @@ localesConfig.resources[\'en\'] = {translation: {
                 "text_sorting": "Arranging texts",
                 "using_styles": "Using elements original style"
             }
+        },
+        "brandkit": {
+            "applyBranding": "Apply brand kit",
+            "promo": {
+                "body": "Build a customized brand kit with your logo and colors, then reuse it anytime creating design.",
+                "link": "Click here to learn more",
+                "title": "Branded presentations, videos, and designs at your fingertips"
+            },
+            "section": "Brandkit",
+            "thumbnail": {
+                "body": "Body text",
+                "custom": "Custom brandkit",
+                "noColors": "Colors not set",
+                "noLogo": "No logo added",
+                "noText": "Text styles not set",
+                "select": "Change",
+                "title": "Title"
+            },
+            "upgradeButton": "Upgrade"
         },
         "callout": {
             "add_callout": "Add callout",
@@ -757,6 +780,7 @@ localesConfig.resources[\'en\'] = {translation: {
                 "export_as": "Export as..."
             },
             "duplicate": "Duplicate",
+            "element_text": "Element text",
             "ending": "Minimum value",
             "enter_url_from_json_feed": "Enter JSON feed URL",
             "example_here": "example here",
@@ -981,6 +1005,8 @@ localesConfig.resources[\'en\'] = {translation: {
             "edit_brand_colors": "Edit",
             "edit_brand_title": "Edit colors in brand kit editor",
             "section_brand": "Brand colors",
+            "section_colors": "Colors",
+            "section_palette": "Palette colors",
             "section_theme": "Theme colors"
         },
         "contentLibrary": {
@@ -1257,9 +1283,13 @@ localesConfig.resources[\'en\'] = {translation: {
             "download_html": "Download (ZIP)",
             "download_print": "Download (PDF)",
             "download_quality": "Download (PNG)",
+            "download_video": "Download (MP4)",
             "download_web": "Download (JPG)",
+            "duration_in_seconds": "Duration (sec)",
+            "frame_duration": "Frame duration",
             "load_error": "Could not load project",
             "low_resolution": "This page contains low resolution images that may appear blurry when printed. Return to the editor to upload high-resolution image files.",
+            "max_allowed_video_length": "Maximum allowed video length is %{lengthInSeconds} seconds",
             "media_type_image": "Image",
             "media_type_link": "Link",
             "media_type_slides": "Slides",
@@ -1269,11 +1299,14 @@ localesConfig.resources[\'en\'] = {translation: {
             "outline_title": "Select objects to include",
             "page_list_title": "Select pages to include",
             "particle_type_separator": "Separator",
+            "preview": "Preview",
             "print_pdf": "For Print (PDF)",
             "printing_mode_as_is": "Actual project size",
+            "reset_duration_to_defaults": "Reset video duration to defaults",
             "reset_size": "Reset size",
             "save_social": "Save for Facebook",
             "select_all": "Select all",
+            "set_frame_duration": "Set duration for all frames",
             "size": "Output page image size (px)",
             "size_quality": "Quality/Size multiplier",
             "tabs": {
@@ -1296,11 +1329,18 @@ localesConfig.resources[\'en\'] = {translation: {
                     "subtitle": "PDF",
                     "title": "Print/Vector",
                     "tooltip_2": "The PDF file is ideal for print and vector graphics."
+                },
+                "video": {
+                    "subtitle": "MP4",
+                    "title": "Video",
+                    "tooltip": "Download MP4 video for social media and video sharing sites."
                 }
             },
             "transparent_background": "Transparent background",
             "untitled_file_name": "Untitled",
             "upgrade": "Upgrade to download",
+            "video_length": "Video length:",
+            "video_size": "Video size:",
             "web_png": "For Web (PNG)"
         },
         "drag_and_drop": {
@@ -1311,11 +1351,11 @@ localesConfig.resources[\'en\'] = {translation: {
             "drag_here": "Drag object here",
             "object_deleted": "Object deleted",
             "product_updates": "Product updates",
-            "saved": "All changes saved",
-            "saved_time_min": "All changes saved %{count} minute ago",
-            "saved_time_min_plural": "All changes saved %{count} minutes ago",
-            "saved_time_sec": "All changes saved less than a minute ago",
-            "saving": "Saving...",
+            "synced": "All your changes are synced",
+            "synced_time_min": "All changes synced %{count} minute ago",
+            "synced_time_min_plural": "All changes synced %{count} minutes ago",
+            "synced_time_sec": "All changes synced less than a minute ago",
+            "syncing": "Syncing your changes...",
             "text_element_initial_contents": "Type something",
             "undo": "undo"
         },
@@ -1330,6 +1370,7 @@ localesConfig.resources[\'en\'] = {translation: {
             "copyStyle": "Copy style",
             "delete": "Delete",
             "duplicate": "Duplicate",
+            "editData": "Edit data",
             "exportAs": "Export as...",
             "group": "Group",
             "jpgImage": "JPG image",
@@ -1347,6 +1388,9 @@ localesConfig.resources[\'en\'] = {translation: {
             "unlock": "Unlock",
             "zoomIn": "Zoom in",
             "zoomOut": "Zoom out"
+        },
+        "editor_toolbar": {
+            "export_to_video": "Export to video"
         },
         "element_menu": {
             "branding_images": {
@@ -1366,6 +1410,25 @@ localesConfig.resources[\'en\'] = {translation: {
                 "sort_by_usecase": "Use case"
             },
             "close": "Close",
+            "elements": {
+                "addElement": "Add element",
+                "back": "Back",
+                "categories": {
+                    "callouts": "Callouts",
+                    "diagrams": "Diagrams",
+                    "flowcharts": "Flowcharts",
+                    "galleries": "Galleries",
+                    "iconBlocks": "Icon blocks",
+                    "imageBlocks": "Image blocks",
+                    "lists": "Lists",
+                    "notes": "Notes",
+                    "plans": "Plans",
+                    "timelines": "Timelines"
+                },
+                "loadingFailed": "Failed to load elements",
+                "search": "Search elements",
+                "viewAll": "View all"
+            },
             "images": {
                 "loading_error": "Could not load images"
             },
@@ -1468,7 +1531,7 @@ localesConfig.resources[\'en\'] = {translation: {
         "freelayout_editor": {
             "delete_page_dialog_description": "All content on that page will be removed",
             "delete_page_dialog_title": "Delete Page %{page_number}?",
-            "enter_fullscreen_mode": "Enter fullscreen mode",
+            "edit": "Edit",
             "entity_actions": {
                 "align_bottom": "Align bottom",
                 "align_center": "Align center",
@@ -1483,18 +1546,45 @@ localesConfig.resources[\'en\'] = {translation: {
             },
             "entity_type_MAP": "Map",
             "error_could_not_load_module": "Error initializing the editor",
+            "fit_to_screen": "Fit to screen",
+            "full_screen": "Full screen",
+            "grid": {
+                "buttonTitle": "Grid",
+                "buttonTooltip": "Grid",
+                "popupTitle": "Guidelines & grid",
+                "showGrid": "Show grid",
+                "showGridTooltip": "Turn on \'grid\' to align elements and achieve an organized design."
+            },
             "layout": {
+                "add": {
+                    "mobile": "Add mobile layout"
+                },
                 "buttonTitle": "Layout",
                 "buttonTooltip_1": "Turn on \'guides\' and \'layout\' to easily align objects.",
                 "columnSlider2": "Number of columns",
+                "description": "Learn how to create responsive content for desktop and mobile <a href=\\"%{descriptionLinkUrl}\\" target=\\"_blank\\">%{descriptionLink}</a>",
+                "descriptionLink": "here",
                 "guidesTooltip": "Turn on \'guides\' to snap objects into place.",
-                "layoutTooltip": "Turn on \'layout\' to view columns that will help with your design.",
-                "popupTitle2": "Layout",
+                "overflow": {
+                    "info": "View all objects located outside of the canvas border.<br/><br/>Use keyboard shortcut “O” to toggle on and off.",
+                    "label": "Show overflow"
+                },
+                "popupTitle3": "Layout settings",
+                "shortcut": "%{shortcut} (switch layout)",
                 "showGuides": "Show guides",
-                "showLayout": "Show layout",
+                "type": {
+                    "desktop": "Desktop",
+                    "mobile": "Mobile"
+                },
+                "typeStatus": {
+                    "desktop": "Editing desktop layout",
+                    "mobile": "Remove mobile layout"
+                },
                 "whitespaceSlider2": "Spacing"
             },
             "page_n_of_m": "Page %{current} of %{total}",
+            "pin_map": "Pin map",
+            "reset_zoom": "Zoom to 100%",
             "size_template": {
                 "a4": "A4",
                 "a4_landscape": "A4 landscape",
@@ -1512,9 +1602,7 @@ localesConfig.resources[\'en\'] = {translation: {
                 "us_letter_landscape": "US letter landscape",
                 "youtube": "YouTube thumbnail"
             },
-            "stretch_to_screen_width": "Stretch to screen width",
             "thumbnails": "Thumbnails",
-            "toggle_minimap": "Toggle mini map on/off",
             "zoom_and_resize": "Zoom and resize",
             "zoom_in": "Zoom in",
             "zoom_out": "Zoom out"
@@ -1551,7 +1639,6 @@ localesConfig.resources[\'en\'] = {translation: {
                 "filter_title": "Show:",
                 "menu_options": {
                     "c_icons": "Custom icons",
-                    "elements": "Elements",
                     "flags": "Flags",
                     "gifs": "GIF\'s",
                     "icons": "Icons",
@@ -1633,7 +1720,7 @@ localesConfig.resources[\'en\'] = {translation: {
         "integrations": {
             "account": "Account",
             "acquisition": "Acquisition channels",
-            "add_integration": "Integrations",
+            "addIntegration": "Add integration",
             "auth": "Authorize",
             "back": "Back",
             "browsers": "Top 10 browsers",
@@ -1758,8 +1845,8 @@ localesConfig.resources[\'en\'] = {translation: {
                 "social_media": "Social media",
                 "team_templates": "Team Templates",
                 "twitter_post": "Twitter post",
-                "youtube_thumbnail": "YouTube thumbnail",
-                "zoom_layout": "Zoom layout"
+                "whiteboards": "Whiteboards",
+                "youtube_thumbnail": "YouTube thumbnail"
             },
             "sort_dropdown_title": "Sort by",
             "sorting": {
@@ -1835,6 +1922,7 @@ localesConfig.resources[\'en\'] = {translation: {
                     "standard": "Standard",
                     "team_templates": "Team templates",
                     "timeline": "Timeline",
+                    "whiteboards": "Whiteboards",
                     "youtube_thumbnails": "YouTube thumbnails"
                 },
                 "upgrade_to_use": "Upgrade and use this template",
@@ -1881,7 +1969,8 @@ localesConfig.resources[\'en\'] = {translation: {
             "infographic_moved_plural": "%{count} projects moved"
         },
         "palettes": {
-            "change": "Change palette"
+            "back": "Back",
+            "section": "Palette"
         },
         "pay": {
             "automatically_renew": "Your subscription will automatically renew on a recurring basis.",
@@ -1931,6 +2020,18 @@ localesConfig.resources[\'en\'] = {translation: {
         "project_loading_error_dialog": {
             "button_text": "Close",
             "description": "You will be switched to your library!"
+        },
+        "project_menu": {
+            "copy": "Copy",
+            "help": "Help",
+            "keyboard_shortcuts": "Keyboard shortcuts",
+            "my_designs": "My designs",
+            "new_project": "New project",
+            "paste": "Paste",
+            "redo": "Redo",
+            "save": "Save",
+            "select_all": "Select all",
+            "undo": "Undo"
         },
         "promotions": {
             "basic_plan": "You are now using Infogram Basic for free. Find more about <a href=\\"%{url}\\">plans and features here</a>",
@@ -2352,9 +2453,11 @@ localesConfig.resources[\'en\'] = {translation: {
                 "down": "Count Down",
                 "up": "Count Up"
             },
+            "reset_ig": "Reset to theme default",
+            "reset_pd": "Reset to palette default",
             "show_as_legend": "Show as legend",
             "time_duration": "Time/Duration",
-            "timer_name_1": "Timer name:",
+            "timer_name_2": "Timer name",
             "units": {
                 "date": "Date",
                 "days": "Days",
@@ -2762,57 +2865,6 @@ localesConfig.resources[\'en\'] = {translation: {
     "duplicate": "Duplicate",
     "edit_data": "Edit data",
     "edit_text": "Edit text",
-    "elementPresets": {
-        "iconBlocks": {
-            "iconAndText": "Icon and text",
-            "iconAndTextCentered": "Icon and text centered",
-            "iconOnTheLeft": "Icon on the left",
-            "title": "Icon blocks",
-            "titleAndIcon": "Title and icon"
-        },
-        "imageBlocksSection": {
-            "imageOnTheLeft": "Image on the left",
-            "imageOnTheRight": "Image on the right",
-            "imageWithDescription": "Image with description",
-            "title": "Image blocks",
-            "titleAndImage": "Title and image"
-        },
-        "imageGalleries": {
-            "cascadeGallery": "Cascade gallery",
-            "gridGallery": "Grid gallery",
-            "horizontalGallery": "Horizontal gallery",
-            "squareGallery": "Square gallery",
-            "tilesGallery": "Tiles gallery",
-            "title": "Image galleries"
-        },
-        "imageTexts": {
-            "highlitedTitle": "Highlited title",
-            "messageImage": "Message image",
-            "overlayTitle": "Overlay title",
-            "title": "Image texts",
-            "titleFrame": "Title frame"
-        },
-        "schemas": {
-            "horizontalFlow": "Horizontal flow",
-            "title": "Schemas",
-            "topToBottom": "Top to bottom",
-            "topToBottomAngles": "Top to bottom angles",
-            "verticalFlow": "Vertical flow"
-        },
-        "timelines": {
-            "bottomHorizontal": "Bottom horizontal",
-            "leftVertical": "Left vertical",
-            "rightVertical": "Right vertical",
-            "title": "Timelines",
-            "topHorizontal": "Top horizontal"
-        },
-        "vennDiagrams": {
-            "doubleVenn": "Double venn",
-            "horizontalVenn": "Horizontal venn",
-            "title": "Venn diagrams",
-            "tripleVenn": "Triple venn"
-        }
-    },
     "errors": {
         "bad_request": "Bad request",
         "blocked_email": "This email address is blocked",
@@ -2917,6 +2969,7 @@ localesConfig.resources[\'en\'] = {translation: {
                     "start": "Start point"
                 },
                 "mask": "Mask",
+                "opacity": "Opacity (%)",
                 "remove_background": {
                     "default_error": "An error occurred while processing the image",
                     "remove_background_button": "Remove background",
@@ -3036,6 +3089,7 @@ localesConfig.resources[\'en\'] = {translation: {
             "page_transitions": "Page transitions",
             "pages": "Pages",
             "palette": "Palette",
+            "palette_and_branding": "Palette & Branding",
             "project_background_1": "Background",
             "project_property_reset": "Reset to theme default",
             "project_size_1": "Size",
@@ -3045,6 +3099,7 @@ localesConfig.resources[\'en\'] = {translation: {
             "settings": "Settings",
             "theme": "Theme",
             "transitions": {
+                "cross-fade": "Crossfade",
                 "no-animation": "No animation",
                 "rotate": "Rotate",
                 "scale-fade": "Scale & fade",
@@ -3055,7 +3110,25 @@ localesConfig.resources[\'en\'] = {translation: {
             },
             "ungroup": "Ungroup element",
             "unlock": "Unlock",
-            "unlock_more_pages": "Upgrade to unlock more pages"
+            "unlock_more_pages": "Upgrade to unlock more pages",
+            "watermark": {
+                "add_logo": "Add your own logo here",
+                "big_upgrade_button": "Upgrade now",
+                "brandkit_defaults_link": "Apply brandkit defaults",
+                "brandkit_label": "Brandkit",
+                "custom_url_label": "Add custom link",
+                "edit_watermark": "Edit watermark",
+                "image": "Image",
+                "invalid_URL_error": "Please enter a valid URL",
+                "logo_background": "Logo background",
+                "remove_watermark": "Remove watermark",
+                "reset_watermark_link": "Revert to Prezi watermark",
+                "title": "Watermark",
+                "upgrade_body": "Upload and customize your own logo and get much more by upgrading your Prezi license.",
+                "upgrade_button": "Upgrade",
+                "upgrade_title": "Ready to unlock more features?",
+                "upload_button": "Upload logo"
+            }
         },
         "open_viewer_settings": "Charts & maps viewer experience",
         "panels": {
@@ -3092,7 +3165,6 @@ localesConfig.resources[\'en\'] = {translation: {
         "privacy_policy": "Privacy Policy",
         "terms_of_use": "Terms of Use"
     },
-    "new": "New",
     "next": "Next",
     "nextSlide": "Next slide",
     "no": "no",
@@ -3153,6 +3225,7 @@ localesConfig.resources[\'en\'] = {translation: {
         "start_with": "Start your %{title} plan and enjoy:",
         "success_upgraded": "Success. You are upgraded",
         "trust": "Trusted by the world’s smartest companies",
+        "unlock_features": "Unlock features",
         "upgrade_now": "Upgrade now"
     },
     "plans": {
@@ -3572,6 +3645,7 @@ localesConfig.resources[\'en\'] = {translation: {
         "trendline": "Trendline"
     },
     "tooltips": {
+        "change_title": "Change title",
         "download": "Download your projects as PDF, PNG or JPEG.",
         "redo": "Redo",
         "team": "Add Team members",
@@ -3596,6 +3670,45 @@ localesConfig.resources[\'en\'] = {translation: {
         "register": "Create your own",
         "register_mobile": "Create",
         "related_infographics": "Related infographics",
+        "report": {
+            "button": "Report",
+            "confirm": {
+                "text": "Thanks for contacting us. We\'ll get in touch with you shortly using the email address you provided."
+            },
+            "details": {
+                "checkbox_accurate": "This report is accurate",
+                "checkbox_individual": "You are the individual whose privacy has been violated",
+                "checkbox_purpose": "You agree to use this reporting tool for its intended purpose, and know that missusing it can lead to legal consequences as well as cancellation of your Infogram account.",
+                "disclaimer": "Please note that copyright and trademark owners must make a report themselves.",
+                "email_label": "Your email",
+                "email_placeholder": "Email",
+                "explanation_label": "Explain the abuse you would like to report in as much detail as possible",
+                "explanation_placeholder": "Explanation...",
+                "link_label": "Project link",
+                "name_label": "Your name",
+                "name_placeholder": "Name",
+                "permision_label": "Please confirm:",
+                "permission_note": "Please note that we will only remove the reported content if it violates our <a href=\'https://infogram.com/terms\'>Terms of Use</a>.",
+                "reason_label": "What\'s going on?",
+                "required": "This field is required.",
+                "send": "Send"
+            },
+            "error": {
+                "back_button": "Go back",
+                "text": "Something went wrong and your message was not sent. Please try again."
+            },
+            "reason": {
+                "cancel": "Cancel",
+                "copyright": "Copyright infringement",
+                "disclaimer": "Content and users that have been flagged are monitored by Prezi staff to determine whether they violate our community guidelines. Accounts that violate our community guidelines are penalized, and serious or repeated violations can lead to account termination.",
+                "inappropriate": "Inappropriate content such as violence or nudity",
+                "next": "Next",
+                "permission": "I appear in the presentation without permission",
+                "spam": "Spam or misleading"
+            },
+            "subtitle": "We take reports of inappropriate content seriously",
+            "title": "Report Content"
+        },
         "search": {
             "error": "Search is currently unavailable. Please try again later.",
             "heading": "Discover Charts and Infographics",
@@ -3614,23 +3727,23 @@ localesConfig.resources[\'en\'] = {translation: {
 };
 </script>
 
-        <script src="https://cdn.jifo.co/js/dist/bundle_vendor-45812f3f22b0dc87ad33-1-webpack.js" class="app-bundle" crossorigin="anonymous"></script>
+        <script src="https://cdn.jifo.co/js/dist/bundle_vendor-7480515a7c20823262e7-1-webpack.js" class="app-bundle" crossorigin="anonymous"></script>
 
-        <script src="https://cdn.jifo.co/js/dist/assets-web_view-3a74a6821307ae8900ad-1-webpack.js" class="app-bundle" crossorigin="anonymous"></script>
+        <script src="https://cdn.jifo.co/js/dist/assets-web_view-69aa1545b11d65441f98-1-webpack.js" class="app-bundle" crossorigin="anonymous"></script>
 
-        <script>window.infographicData={"id":16334075,"type":0,"block_id":"4e31a649-39af-4bfd-a6a9-384e727e36e2","theme_id":265,"user_id":2334605,"team_user_id":null,"path":"7743c36a-f3ca-4465-9a80-a8abbd5d8dc4","title":"Frost Bank Advisors (online graphic)","description":"","tags":"","public":true,"publicAccess":false,"private_link_enabled":0,"thumb":"https:\\u002F\\u002Finfogram-thumbs-200.s3-eu-west-1.amazonaws.com\\u002F4e31a649-39af-4bfd-a6a9-384e727e36e2.jpg","embedImageUrl":"https:\\u002F\\u002Finfogram.io\\u002Fp\\u002F14459b3e5b96655e234784ec547955d7.png","previewImageUrl":"https:\\u002F\\u002Finfogram.io\\u002Fp\\u002F26f1ac1553b2ed28ebd88638d1947187.png","width":550,"copyright":"","properties":{"tabs":true,"embed_button":"disabled","custom_logo":"none","zeropaddingembed":true,"custom_link_status":"infogram","custom_link_url":"","publishType":0,"transparent":false,"rtl":false,"language":"en","export_settings":{"showGrid":true,"showValues":true},"whitelabel":true,"noTracking":false,"decimal_separator":".,","title_link":"infogram","logoName":"Infogram logo","showChartsOnScroll":false,"pro":true},"elements":[{"type":"particle","particle_id":53298245,"object_id":"5f059835-a20f-4746-a265-63d99a6946a5","particle_type":"maintitle","picture":null,"accessibility":{"enabled":true},"text":"\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cspan style=\\"font-family: &#34;Graphik X Cond&#34;, &#34;PT Sans Narrow&#34;\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E&nbsp;Frost Bank Advisors Investment Returns\\u003C\\u002Ffont\\u003E\\u003C\\u002Fspan\\u003E\\u003C\\u002Fp\\u003E\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cspan style=\\"font-size: 41px\\"\\u003E(Q3 2016 &amp; YTD)\\u003C\\u002Fspan\\u003E\\u003C\\u002Fp\\u003E","content_type":"text\\u002Fhtml","title":"","shrink":null},{"type":"chart","chart_id":37268465,"object_id":"67071f49-a502-4d38-8685-e3d53044baef","chart_type_nr":4,"data":[[["","Frost Advisors Net Returns as of Sept 30","Respective Index as of Sept 30","Frost Advisors Net Returns YTD","Respective index YTD"],["Frost Mid Cap Equity Fund","6.01%","4.52%","3.30%","10.26%"],["Frost Growth Equity Fund","6.03%","4.58%","0.96%","6%"],["Frost Total Return Bond Fund","1.51%","0.46%","6.31%","5.80%"],["Frost Municipal Bond Fund","-0.19%","-0.30%","2.22%","4.01%"]]],"custom":{"absoluteDistribution":true,"decimalSeparator":".","groupingSymbol":",","switchRowsColumns":false,"showInLineValues":true,"suffix":"%"},"colors":["#c9520c","#1f3a7d","#d16a0a","#097799","#8dacfc"],"defaultColors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColorsHeatmap":[],"dimensions":[],"modifier":1,"sheetnames":[],"sheets_settings":[],"accessibility":{"enabled":true,"label":"Chart","description":""}},{"type":"particle","particle_id":53376422,"object_id":"d4b4bf06-637d-4b39-9c64-24b16e571adb","particle_type":"bodytext","picture":null,"accessibility":{"enabled":true},"text":"\\u003Cfont style=\\"font-size: 14px\\"\\u003E&nbsp;Note: Respective indexes refer to the Russell Midcap Index, Russell 1000 Growth Index, Barclays U.S. Aggregate Bond Index, &nbsp;Barclays Municipal Bond Index\\u003C\\u002Ffont\\u003E","content_type":"text\\u002Fhtml","title":"","shrink":null},{"type":"particle","particle_id":53304875,"object_id":"995eef27-e970-45cc-9005-da9633dd21bf","particle_type":"maintitle","picture":null,"accessibility":{"enabled":true},"text":"\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cspan style=\\"font-family: &#34;Graphik X Cond&#34;, &#34;PT Sans Narrow&#34;\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E&nbsp;Total Fund Assets\\u003C\\u002Ffont\\u003E\\u003C\\u002Fspan\\u003E\\u003C\\u002Fp\\u003E\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E(As of Sept. 30)\\u003C\\u002Ffont\\u003E\\u003C\\u002Fp\\u003E","content_type":"text\\u002Fhtml","title":"","shrink":null},{"type":"chart","chart_id":37275755,"object_id":"df11049f-58f1-4d0e-9446-cc1d37b027e3","chart_type_nr":7,"data":[[["","Total Fund Assets"],["Frost Mid Cap Equity Fund","$13,790,484"],["Frost Growth Equity Fund","$405,496,017"],["Frost Total Return Bond Fund","$1,912,817,778 "],["Frost Municipal Bond Fund","$284,882,571 "]]],"custom":{"categoryWidthAuto":true,"absoluteDistribution":true,"useAllColumns":true,"decimalSeparator":".","groupingSymbol":",","showInLineValues":true,"switchRowsColumns":false,"useSIPrefixes":false,"prefix":"$"},"colors":["#1cd446","#078716","#065706","#1f7d50","#065706"],"defaultColors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColorsHeatmap":[],"dimensions":[],"modifier":0,"sheetnames":[],"sheets_settings":[],"accessibility":{"enabled":true,"label":"Chart","description":""}},{"type":"chart","chart_id":37275395,"object_id":"41e9d646-468c-437a-8618-422962301ed5","chart_type_nr":23,"data":[[["$1,000,000","Minimum investment for the above Frost Bank Advisor Funds","nounProject_67670Path",""]]],"custom":{"decimalSeparator":".","groupingSymbol":"none"},"colors":["#138f21"],"defaultColors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColorsHeatmap":[],"dimensions":[],"modifier":0,"sheetnames":[],"sheets_settings":[],"accessibility":{"enabled":true,"label":"Chart","description":""}},{"type":"particle","particle_id":53315222,"object_id":"10dd2b51-1c79-4c0f-a8d9-ea8da6f410c8","particle_type":"maintitle","picture":null,"accessibility":{"enabled":true},"text":"\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cspan style=\\"font-family: &#34;Graphik X Cond&#34;, &#34;PT Sans Narrow&#34;\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E&nbsp;Inside Frost Growth Equity Fund\\u003C\\u002Ffont\\u003E\\u003C\\u002Fspan\\u003E\\u003C\\u002Fp\\u003E\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E(As of Sept. 30)\\u003C\\u002Ffont\\u003E\\u003C\\u002Fp\\u003E","content_type":"text\\u002Fhtml","title":"","shrink":null},{"type":"chart","chart_id":37279565,"object_id":"3539aef4-3bbb-47e5-b438-0bad3cf48a87","chart_type_nr":2,"data":[[["","Frost Growth Equity Fund"],["Consumer Discretionary","25.30%"],["Consumer Staples ","4.90%"],["Energy","2.90%"],["Financial","5.20%"],["Healthcare","16.20%"],["Industrials","5.50%"],["Information Technology","38.90%"],["Materials ","1.20%"]]],"custom":{"decimalSeparator":".","groupingSymbol":"none","showInLineValues":true,"suffix":"%"},"colors":["#136e8a","#1eb0ab","#12b076","#0d8f6a","#0eb034","#0c6e14","#69a14a","#182b03","#3b71ff"],"defaultColors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColorsHeatmap":[],"dimensions":[],"modifier":2,"sheetnames":[],"sheets_settings":[],"accessibility":{"enabled":true,"label":"Chart","description":""}},{"type":"particle","particle_id":53310005,"object_id":"9c6263f1-b7ee-4878-a850-061755d2dbfb","particle_type":"maintitle","picture":null,"accessibility":{"enabled":true},"text":"\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cspan style=\\"font-size: 41px;font-family: &#34;Graphik X Cond&#34;, &#34;PT Sans Narrow&#34;\\"\\u003E&nbsp;Frost Growth Equity Fund\\u003C\\u002Fspan\\u003E\\u003C\\u002Fp\\u003E\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E(Top Ten Holdings as of Sept. 30)\\u003C\\u002Ffont\\u003E\\u003C\\u002Fp\\u003E","content_type":"text\\u002Fhtml","title":"","shrink":null},{"type":"chart","chart_id":37280525,"object_id":"dbaa5325-9d27-4c6b-bdfc-2d0361da873b","chart_type_nr":4,"data":[[["","Top Ten Holdings as of Sept. 30 for Frost Growth Equtiy Fund"],["Alphabet Inc.","7.10%"],["Amazon.com Inc.","5.80%"],["Facebook Inc.","5.20%"],["Visa Inc.","4.10%"],["Apple Inc.","3.30%"],["Home Depot Inc.","3.30%"],["Mastercard Inc","2.80%"],["Becton, Dickinson and Co.","2.70%"],["Celgene Corp.","2.50%"]]],"custom":{"absoluteDistribution":true,"useAllColumns":true,"decimalSeparator":".","groupingSymbol":",","showInLineValues":true,"suffix":"%"},"colors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColorsHeatmap":[],"dimensions":[],"modifier":0,"sheetnames":[],"sheets_settings":[],"accessibility":{"enabled":true,"label":"Chart","description":""}},{"type":"particle","particle_id":53303375,"object_id":"92ae311a-3082-4e68-adff-0658b18e3994","particle_type":"bodytext","picture":null,"accessibility":{"enabled":true},"text":"&nbsp;Source: Cullen\\u002FFrost Bankers Inc.","content_type":"text\\u002Fhtml","title":"","shrink":null}],"publishedURLId":"1g8e205xdj03pod","updatedAt":"2017-02-28T15:33:39.000Z","embed_image_data":{"height":589},"theme":{"createdAt":"2016-04-22T04:54:11.000Z","updatedAt":"2019-06-26T08:06:52.000Z","title":"Sapphire","usergroup":"businessjournal_old","picture":"https:\\u002F\\u002Fs3.amazonaws.com\\u002Finfogram-themes\\u002F265\\u002Fthumbnail.png","order":0,"public":0,"width":550,"fonts":"PT+Sans:400,700,PT+Sans+Narrow:400,700","colors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"logocolor":"ce3737","logoImages":["\\u002Fi\\u002Ftemplates\\u002F250\\u002Flogo.png"],"logoUrl":"","showLogo":"none","showEmbed":"disabled","embedButtonText":"Share","top":0,"padding":0,"spacing":20,"shrinkMargin":30,"shrinkPadding":0,"spacingElementMin":null,"spacingElementMax":null,"css":".headline, .chart-title {\\n\\ttext-transform: uppercase;\\n}\\nsvg .igc-pie-center-text .igc-pie-center-text-node {\\n\\tfont-family: \'Graphik X Cond\', PT Sans;\\n\\tfont-weight: 600;\\n\\tfill: #464646;\\n\\tfont-size: 29px;\\n}\\n.igc-sheet {\\n\\tmargin-bottom: 15px;\\n}\\n.igc-sheets {\\n\\tmargin-bottom: 15px;\\n}\\n.igc-sheets .igc-sheet .igc-sheet-label,\\n    .igc-sheets .igc-sheet:hover .igc-sheet-label,\\n        .igc-sheets .igc-sheet.active .igc-sheet-label {\\n\\tcolor: #464646;\\n\\tmargin-left: 5px;\\n\\tfont-family: Graphik, PT Sans !important;\\n\\tfont-size: 12px !important;\\n\\tfont-weight: 400 !important;\\n}\\n.igc-sheets .igc-sheet:hover .igc-sheet-label,.igc-sheets .igc-sheet.active .igc-sheet-label {\\n\\tcolor: rgba(70,70,70,0.7);\\n}\\n.igc-sheets .igc-sheet .igc-sheet-ico,\\n    .igc-sheets .igc-sheet:hover .igc-sheet-ico {\\n\\tbackground: rgba(167,167,167,0.3);\\n\\tborder-color: #464646;\\n\\ttransition: .2s;\\n}\\n.igc-sheets .igc-sheet:hover .igc-sheet-ico {\\n\\tbackground: #A7A7A7;\\n}\\n.igc-sheets .igc-sheet.active .igc-sheet-ico {\\n\\tbackground: #464646;\\n}\\n.igc-sheets .igc-sheet.active .igc-sheet-ico::after,\\n    .igc-sheets .igc-sheet:hover .igc-sheet-ico::after {\\n\\theight: 6px;\\n\\twidth: 6px;\\n\\tleft: 6px;\\n\\ttop: 6px;\\n\\tbackground: #fff;\\n}\\n.igc-textual-figure {\\n\\tfont-family: \'Graphik X Cond\', PT Sans;\\n\\tfont-size: 40;\\n\\tfont-weight: 600;\\n}\\n.igc-textual-fact {\\n\\tcolor: #464646;\\n\\tfont-family: Graphik, PT Sans;\\n\\tfont-size: 20px;\\n\\tfont-weight: 400;\\n}\\n.igc-textual-icon {\\n\\tpadding-right: 30px;\\n\\tpadding-top: 7px;\\n}\\n.igc-table .igc-table-cell {\\n\\tfont-family: Graphik, PT Sans;\\n\\tfont-size: 12px;\\n\\tfont-weight: 400;\\n}\\n.igc-table .igc-table-header {\\n\\tfont-family: Graphik, PT Sans;\\n\\tfont-size: 12px;\\n\\tfont-weight: 400;\\n\\tpadding-left: 9px;\\n}\\n.ig-container {\\n\\tbackground: #fff;\\n}\\n.headline {\\n\\tfont-family: \'Graphik X Cond\', PT Sans Narrow;\\n\\tfont-size: 50px;\\n\\tfont-weight: 600;\\n\\tcolor: #464646;\\n\\ttext-align: left;\\n\\tline-height: 53px;\\n}\\n.chart-title {\\n\\tfont-family: \'Graphik X Cond\', PT Sans Narrow;\\n\\tfont-size: 40px;\\n\\tfont-weight: 600;\\n\\tcolor: #464646;\\n\\ttext-align: left;\\n\\tline-height: 43px;\\n}\\n.bodytext {\\n\\tfont-family: Graphik;\\n\\tfont-size: 20px;\\n\\tfont-weight: 400;\\n\\tcolor: #464646;\\n\\ttext-align: left;\\n\\tline-height: 25px;\\n}\\n.quote {\\n\\tbackground: url(\\u002Fi\\u002Ftemplates\\u002F250\\u002Fquote.svg) left 5px no-repeat;\\n\\tbackground-size: 33px;\\n\\tpadding-left: 63px;\\n\\tfont-family: \'Graphik X Cond\', sans-serif;\\n\\tfont-size: 40px;\\n\\tfont-weight: 600;\\n\\tcolor: #464646;\\n\\tline-height: 43px;\\n\\ttext-align: left;\\n}\\n.quotetitle {\\n\\tfont-family: Graphik, sans-serif;\\n\\tfont-size: 20px;\\n\\tfont-weight: 400;\\n\\tcolor: #464646;\\n\\tmargin-top: 5px;\\n\\tline-height: 25px;\\n}\\n.tt_tooltip {\\n\\tcolor: #FFF;\\n\\tfont-family: Graphik;\\n\\tfont-size: 20px;\\n\\tfont-weight: 400;\\n}\\n.igc-legend-entry {\\n\\tmargin-top: 15px;\\n}\\n.igc-legend {\\n\\tpadding-top: 10px;\\n\\tpadding-bottom: 0;\\n}\\ndiv[data-chart=\\"semi-circle\\"],\\ndiv[data-chart=\\"streamgraph\\"],\\ndiv[data-chart=\\"scatter\\"],\\ndiv[data-chart=\\"bubble\\"],\\ndiv[data-chart=\\"pyramid\\"],\\ndiv[data-chart=\\"candle\\"] {\\n\\tdisplay: none;\\n}\\n.ig-separator-line {\\n\\tbackground: rgba(70, 70, 70, 0.5);\\n}\\n.heatmap-legend {\\n\\tbackground: rgba(255, 255, 255, 0.7);\\n}\\n.heatmap-legend-item,\\n.heatmap-label {\\n\\tcolor: #464646;\\n\\tfont-size: 12px;\\n\\tfont-weight: 400;\\n\\tfont-family: Graphik, PT Sans;\\n}\\n.igc-graph-pie-piece {\\n\\tstroke: rgba(255, 255, 255, 0.7);\\n}\\n.tt_tooltip .tt_value {\\n\\tfont-weight: 400;\\n}\\n.tt_tooltip .tt_body {\\n\\tbackground: #464646;\\n}\\n.tt_tooltip .tt_left {\\n\\tborder-right: 8px solid #464646;\\n}\\n.tt_tooltip .tt_right {\\n\\tborder-left: 8px solid #464646;\\n}\\n.igc-tabs .igc-tab-active {\\n\\tbackground: #fff;\\n}\\n.igc-tabs .igc-tab .igc-tab-content,\\n          .igc-tabs .igc-tab.icon-down:after {\\n\\tfont-family: Graphik, PT Sans;\\n\\tcolor: #464646;\\n\\tfont-weight: 400;\\n}\\n.igc-tabs .igc-tab,\\n          .igc-tab-switcher {\\n\\tcolor: #464646;\\n}\\n.igc-tabs.igc-tabs-dropdown .igc-tab-name {\\n\\tfont-family: Graphik, PT Sans;\\n\\tcolor: #464646;\\n}\\n.captiontext {\\n\\tfont-family: Graphik, PT Sans;\\n\\tcolor: #464646;\\n\\tfont-weight: 400;\\n}\\n.captiontext .innertext {\\n\\tline-height: 1.5;\\n}\\n.igc-legend-entry .igc-legend-label {\\n\\theight: auto;\\n}\\n.igc-tab-ico svg path {\\n\\tfill: #464646;\\n}\\n.igc-tab-switcher-ico svg path {\\n\\tfill: #464646;\\n}\\n.igc-table-search {\\n\\tcolor: #666;\\n\\tfont-size: 12px;\\n\\tfont-weight: 400;\\n\\tfont-family: Graphik, PT Sans;\\n}\\n","charts":{"treemap":{"labels":{"value":{"fontFamily":"Graphik, PT Sans"},"name":{"fontWeight":"400","fontFamily":"Graphik, PT Sans"}}},"wordcloud":{"labels":{"fontFamily":"Graphik, PT Sans","fontWeight":"400"}},"table":{"cellBackground":"#fff","headerBackground":"#ececec","cellColor":"#666","headerColor":"#464646","shapeFill":"#8ec3a7"},"legend":{"color":{"label":{"active":"rgb(70, 70, 70)","hover":"rgba(70, 70, 70, 0.7)","inactive":"rgb(70, 70, 70)"},"icon":{"inactive":"rgba(70, 70, 70, 0.2)"}},"layouts":{"bottom":{"legend":{"entry":{"marginTop":"15px"},"marginTop":"10px","marginBottom":"0"}}}},"sheetSwitch":{"style":{"tab":{"font-family":"Graphik, PT Sans","font-weight":500,"font-style":"normal","colors":{"dropdown":{"selectIcon":"#464646","leftSwitcherIcon":"#464646","rightSwitcherIcon":"#464646"}},"font-size":"13px","color":"#464646"}}},"gauge":{"colors":{"background":"#c0c0c0"}},"waterfall":{"colors":"305bcf 1f3a7d 3b71ff"},"candle":{"colors":{"up":"#1f3a7d","down":"#305bcf"}},"barRadial":{"colors":{"background":"#c0c0c0"}},"pictorialBar":{"style":{"graph":{"item":{"value":{"font-family":"\'Graphik X Cond\', PT Sans","font-size":"60px","font-weight":600}}}},"colors":{"background":"#e8e8e8"}},"barProgress":{"colors":{"background":"#c0c0c0"}},"map":{"countryFill":"#c0c0c0","hotColor":"#305bcf","coldColor":"#cecece"}},"chartOptions":{"bar":{"axesTitleStyle":{"labelFontStyle":{"font-family":"Graphik, PT Sans","font-size":12,"fill":"#464646","font-weight":400}}},"gauge":{"gaugeFillStyle":{"stroke-width":0},"gaugeStyle":{"fill":"#c0c0c0"},"_gaugeTextOptions":{"labelFontStyle":{"font-family":"Graphik, PT Sans","font-size":12,"fill":"#464646","font-weight":400}}},"datetime":{"fontStyle":{"font-family":"\'Graphik X Cond\', PT Sans","font-weight":600,"font-size":40},"dotStyle":{"fill":"#ce3737"},"fontStyleText":{"font-family":"Graphik, PT Sans","font-weight":400,"font-size":20,"fill":"#464646"}},"wordcloud":{"fontStyle":{"font-family":"Graphik, PT Sans","font-weight":"400"}},"hierarchy":{"cellTextWrapperOptions":{"text":{"labelFontStyle":{"font-family":"Graphik, PT Sans","font-weight":"400"}}}},"pictobar":{"shapeStyleEmpty":{"fill":"#e8e8e8"},"cellTextWrapperOptions":{"text":{"labelFontStyle":{"font-family":"\'Graphik X Cond\', PT Sans","font-weight":600,"font-size":60,"fill":"#464646"}}}},"line":{"showPoints":true,"circleStyle":{"fill":"#fff"}},"area":{"showPoints":true,"circleStyle":{"fill":"#fff"}},"progress":{"backgroundInactive":{"fill":"#c0c0c0"}},"map":{"countryStroke":"#c0c0c0","countryFill":"#c0c0c0","hotColor":"#305bcf","coldColor":"#cecece"},"candle":{"colors":"305bcf 1f3a7d 3b71ff"},"waterfall":{"colors":"305bcf 1f3a7d 3b71ff"},"common":{"_labelWrapperOptions":{"marginY":5},"panelMarginY":8,"_categoryOptions":{"backgroundStyle":{"fill":"transparent"},"text":{"labelFontStyle":{"font-family":"Graphik, PT Sans","font-weight":400,"font-size":12}}},"inTextStyle":{"font-family":"Graphik, PT Sans","font-weight":400},"axesTitleStyle":{"labelFontStyle":{"font-family":"Graphik, PT Sans","fill":"#464646","font-weight":400,"font-size":12}},"legendOptions":{},"_gridOptions":{"lineStyle":{"stroke":"#464646","stroke-dasharray":"","stroke-opacity":0.5},"baseLineStyle":{"stroke-width":1,"stroke":"#464646","stroke-dasharray":"","stroke-opacity":0.5},"marginLineStyle":{"stroke-width":1,"stroke":"#464646","stroke-dasharray":"","stroke-opacity":0.5},"fontStyle":{"font-family":"Graphik, PT Sans","fill":"#464646","font-weight":400,"font-size":12}}}},"chartDefaults":{},"color":{"bg":"#fff","text":"#464646","chart":{"bg":"transparent","text":"#464646"},"element":{"bg":"transparent","text":"#464646"}},"colorPresets":[],"localFonts":{"google":[{"fontFamily":"PT Sans","fontWeights":[400,700,null]}],"local":[{"fontFamily":"Graphik","styles":[{"fontWeight":400,"fontStyle":"normal","src":["url(\\u002Fi\\u002Ftemplates\\u002F250\\u002Ffonts\\u002FGraphik-Regular-1.woff) format(\\"woff\\")"]}]},{"fontFamily":"Graphik X Cond","styles":[{"fontWeight":600,"fontStyle":"normal","src":["url(\\u002Fi\\u002Ftemplates\\u002F250\\u002Ffonts\\u002FGraphik-X-Cond-Semibold-1.woff) format(\\"woff\\")"]}]}],"typekit":[]},"font":{"common":{"fontFamily":"Graphik, PT Sans","fontWeight":"400","fontStyle":"normal","fontSize":"12","textAlign":"initial"},"legend":{"fontSize":"20","fontWeight":"400","fontFamily":"Graphik, sans-serif"},"label":{"fontSize":12,"fontWeight":400}},"fontPresets":[],"fontFamilies":["PT Sans","Graphik","Graphik X Cond","PT Sans Narrow"],"footerOptions":{"common":{"borderColor":"#dadada","borderWidth":1},"copyrightNotice":{"enabled":false,"fontFamily":"PT Sans Narrow","fontSize":14,"color":"#4b4b4b","fontWeight":400,"fontStyle":"normal"},"shareButton":{"enabled":true,"background":"#ce3737","text":"Share","color":"#ffffff","fontFamily":"Roboto, Arial, sans-serif","fontSize":13,"fontWeight":400,"fontStyle":"normal","position":"left"},"logo":{"position":"right","enabled":true,"background":"#ce3737"}},"archived":false,"tabs":true,"zeroPaddingEmbed":true,"freelayoutContents":{"defaults":{"foregroundColor":"#464646","backgroundColor":"#fff","fontFamily":"Graphik","fontSize":12,"lineHeight":1.5,"textAlign":"ALIGN_LEFT"},"fontFamilies":{"font1":"Roboto"},"fontSizes":{"extraLarge":64,"large":48,"medium":18,"small":12},"elements":{"TEXT":{"h1":{"fontSize":"50px","fontFamily":"\'Graphik X Cond\'"},"h2":{"fontSize":"40px","fontFamily":"\'Graphik X Cond\'"},"body":{"fontSize":"20px","fontFamily":"Graphik"},"caption":{"fontSize":"13px","fontFamily":"Graphik"}},"SHAPE":{"fillColor":"#305bcf","strokeColor":"#305bcf"},"IMAGE":{"fillColor":"#305bcf"}},"colors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"]},"id":265,"thumb":"https:\\u002F\\u002Fs3.amazonaws.com\\u002Finfogram-themes\\u002F265\\u002Fsmall.png","version":1,"parentId":0,"enabledResponsive":true,"enabledFreeLayout":true,"created_at":"2016-04-22T04:54:11.000Z","updated_at":"2019-06-26T08:06:52.000Z"},"embed":"\\u003Cscript id=\\"infogram_0_7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" title=\\"Frost Bank Advisors (online graphic)\\" src=\\"https:\\u002F\\u002Fe.infogram.com\\u002Fjs\\u002Fdist\\u002Fembed.js?8zD\\" type=\\"text\\u002Fjavascript\\"\\u003E\\u003C\\u002Fscript\\u003E","embedIframe":"\\u003Ciframe src=\\"https:\\u002F\\u002Fe.infogram.com\\u002F7743c36a-f3ca-4465-9a80-a8abbd5d8dc4?src=embed\\" title=\\"Frost Bank Advisors (online graphic)\\" width=\\"550\\" height=\\"\\" scrolling=\\"no\\" frameborder=\\"0\\" style=\\"border:none;\\" allowfullscreen=\\"allowfullscreen\\"\\u003E\\u003C\\u002Fiframe\\u003E","embedImageResponsive":"\\u003Cscript id=\\"infogramimg_0_7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" title=\\"Frost Bank Advisors (online graphic)\\" src=\\"https:\\u002F\\u002Fe.infogram.com\\u002Fjs\\u002Fdist\\u002Fembed.js?skZ\\" type=\\"text\\u002Fjavascript\\"\\u003E\\u003C\\u002Fscript\\u003E","embedImageIframe":"","embedAMP":"\\u003Camp-iframe width=\\"550\\" height=\\"\\" layout=\\"responsive\\" sandbox=\\"allow-scripts allow-same-origin allow-popups\\" resizable allowfullscreen frameborder=\\"0\\" src=\\"https:\\u002F\\u002Fe.infogram.com\\u002F7743c36a-f3ca-4465-9a80-a8abbd5d8dc4?src=embed\\"\\u003E\\u003Cdiv style=\\"visibility: hidden\\" overflow tabindex=0 role=button aria-label=\\"Loading...\\" placeholder\\u003ELoading...\\u003C\\u002Fdiv\\u003E\\u003C\\u002Famp-iframe\\u003E","embedAMPImage":"\\u003Camp-iframe width=\\"550\\" height=\\"\\" layout=\\"responsive\\" sandbox=\\"allow-scripts allow-same-origin allow-popups\\" resizable allowfullscreen frameborder=\\"0\\" src=\\"https:\\u002F\\u002Fe.infogram.com\\u002F7743c36a-f3ca-4465-9a80-a8abbd5d8dc4?src=embed\\"\\u003E\\u003Cdiv style=\\"visibility: hidden\\" overflow tabindex=0 role=button aria-label=\\"Loading...\\" placeholder\\u003ELoading...\\u003C\\u002Fdiv\\u003E\\u003C\\u002Famp-iframe\\u003E","embedWordpress":"[infogram id=\\"7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" prefix=\\"054\\" format=\\"interactive\\" title=\\"Frost Bank Advisors (online graphic)\\"]","embedWordpressImage":"[infogram id=\\"7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" prefix=\\"3it\\" format=\\"image\\" title=\\"Frost Bank Advisors (online graphic)\\"]","embedAsync":"\\u003Cdiv class=\\"infogram-embed\\" data-id=\\"7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" data-type=\\"interactive\\" data-title=\\"Frost Bank Advisors (online graphic)\\"\\u003E\\u003C\\u002Fdiv\\u003E\\u003Cscript\\u003E!function(e,i,n,s){var t=\\"InfogramEmbeds\\",d=e.getElementsByTagName(\\"script\\")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement(\\"script\\");o.async=1,o.id=n,o.src=\\"https:\\u002F\\u002Fe.infogram.com\\u002Fjs\\u002Fdist\\u002Fembed-loader-min.js\\",d.parentNode.insertBefore(o,d)}}(document,0,\\"infogram-async\\");\\u003C\\u002Fscript\\u003E","embedImageAsync":"\\u003Cdiv class=\\"infogram-embed\\" data-id=\\"7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" data-type=\\"image\\" data-title=\\"Frost Bank Advisors (online graphic)\\"\\u003E\\u003C\\u002Fdiv\\u003E\\u003Cscript\\u003E!function(e,i,n,s){var t=\\"InfogramEmbeds\\",d=e.getElementsByTagName(\\"script\\")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement(\\"script\\");o.async=1,o.id=n,o.src=\\"https:\\u002F\\u002Fe.infogram.com\\u002Fjs\\u002Fdist\\u002Fembed-loader-min.js\\",d.parentNode.insertBefore(o,d)}}(document,0,\\"infogram-async\\");\\u003C\\u002Fscript\\u003E","indexStatus":true};</script>
+        <script>window.infographicData={"id":16334075,"type":0,"block_id":"4e31a649-39af-4bfd-a6a9-384e727e36e2","theme_id":265,"user_id":2334605,"team_user_id":null,"path":"7743c36a-f3ca-4465-9a80-a8abbd5d8dc4","title":"Frost Bank Advisors (online graphic)","description":"","tags":"","public":true,"publicAccess":false,"private_link_enabled":0,"thumb":"https:\\u002F\\u002Finfogram-thumbs-200.s3-eu-west-1.amazonaws.com\\u002F4e31a649-39af-4bfd-a6a9-384e727e36e2.jpg","embedImageUrl":"https:\\u002F\\u002Finfogram.io\\u002Fp\\u002F14459b3e5b96655e234784ec547955d7.png","previewImageUrl":"https:\\u002F\\u002Finfogram.io\\u002Fp\\u002F26f1ac1553b2ed28ebd88638d1947187.png","width":550,"copyright":"","properties":{"tabs":true,"embed_button":"disabled","custom_logo":"none","zeropaddingembed":true,"custom_link_status":"infogram","custom_link_url":"","publishType":0,"transparent":false,"rtl":false,"language":"en","export_settings":{"showGrid":true,"showValues":true},"whitelabel":true,"noTracking":false,"decimal_separator":".,","title_link":"infogram","logoName":"Infogram logo","showChartsOnScroll":false,"pro":true},"elements":[{"type":"particle","particle_id":53298245,"object_id":"5f059835-a20f-4746-a265-63d99a6946a5","particle_type":"maintitle","picture":null,"accessibility":{"enabled":true},"text":"\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cspan style=\\"font-family: &#34;Graphik X Cond&#34;, &#34;PT Sans Narrow&#34;\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E&nbsp;Frost Bank Advisors Investment Returns\\u003C\\u002Ffont\\u003E\\u003C\\u002Fspan\\u003E\\u003C\\u002Fp\\u003E\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cspan style=\\"font-size: 41px\\"\\u003E(Q3 2016 &amp; YTD)\\u003C\\u002Fspan\\u003E\\u003C\\u002Fp\\u003E","content_type":"text\\u002Fhtml","title":"","shrink":null},{"type":"chart","chart_id":37268465,"object_id":"67071f49-a502-4d38-8685-e3d53044baef","chart_type_nr":4,"data":[[["","Frost Advisors Net Returns as of Sept 30","Respective Index as of Sept 30","Frost Advisors Net Returns YTD","Respective index YTD"],["Frost Mid Cap Equity Fund","6.01%","4.52%","3.30%","10.26%"],["Frost Growth Equity Fund","6.03%","4.58%","0.96%","6%"],["Frost Total Return Bond Fund","1.51%","0.46%","6.31%","5.80%"],["Frost Municipal Bond Fund","-0.19%","-0.30%","2.22%","4.01%"]]],"custom":{"absoluteDistribution":true,"decimalSeparator":".","groupingSymbol":",","switchRowsColumns":false,"showInLineValues":true,"suffix":"%"},"colors":["#c9520c","#1f3a7d","#d16a0a","#097799","#8dacfc"],"defaultColors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColorsHeatmap":[],"dimensions":[],"modifier":1,"sheetnames":[],"sheets_settings":[],"accessibility":{"enabled":true,"label":"Chart","description":""}},{"type":"particle","particle_id":53376422,"object_id":"d4b4bf06-637d-4b39-9c64-24b16e571adb","particle_type":"bodytext","picture":null,"accessibility":{"enabled":true},"text":"\\u003Cfont style=\\"font-size: 14px\\"\\u003E&nbsp;Note: Respective indexes refer to the Russell Midcap Index, Russell 1000 Growth Index, Barclays U.S. Aggregate Bond Index, &nbsp;Barclays Municipal Bond Index\\u003C\\u002Ffont\\u003E","content_type":"text\\u002Fhtml","title":"","shrink":null},{"type":"particle","particle_id":53304875,"object_id":"995eef27-e970-45cc-9005-da9633dd21bf","particle_type":"maintitle","picture":null,"accessibility":{"enabled":true},"text":"\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cspan style=\\"font-family: &#34;Graphik X Cond&#34;, &#34;PT Sans Narrow&#34;\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E&nbsp;Total Fund Assets\\u003C\\u002Ffont\\u003E\\u003C\\u002Fspan\\u003E\\u003C\\u002Fp\\u003E\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E(As of Sept. 30)\\u003C\\u002Ffont\\u003E\\u003C\\u002Fp\\u003E","content_type":"text\\u002Fhtml","title":"","shrink":null},{"type":"chart","chart_id":37275755,"object_id":"df11049f-58f1-4d0e-9446-cc1d37b027e3","chart_type_nr":7,"data":[[["","Total Fund Assets"],["Frost Mid Cap Equity Fund","$13,790,484"],["Frost Growth Equity Fund","$405,496,017"],["Frost Total Return Bond Fund","$1,912,817,778 "],["Frost Municipal Bond Fund","$284,882,571 "]]],"custom":{"categoryWidthAuto":true,"absoluteDistribution":true,"useAllColumns":true,"decimalSeparator":".","groupingSymbol":",","showInLineValues":true,"switchRowsColumns":false,"useSIPrefixes":false,"prefix":"$"},"colors":["#1cd446","#078716","#065706","#1f7d50","#065706"],"defaultColors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColorsHeatmap":[],"dimensions":[],"modifier":0,"sheetnames":[],"sheets_settings":[],"accessibility":{"enabled":true,"label":"Chart","description":""}},{"type":"chart","chart_id":37275395,"object_id":"41e9d646-468c-437a-8618-422962301ed5","chart_type_nr":23,"data":[[["$1,000,000","Minimum investment for the above Frost Bank Advisor Funds","nounProject_67670Path",""]]],"custom":{"decimalSeparator":".","groupingSymbol":"none"},"colors":["#138f21"],"defaultColors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColorsHeatmap":[],"dimensions":[],"modifier":0,"sheetnames":[],"sheets_settings":[],"accessibility":{"enabled":true,"label":"Chart","description":""}},{"type":"particle","particle_id":53315222,"object_id":"10dd2b51-1c79-4c0f-a8d9-ea8da6f410c8","particle_type":"maintitle","picture":null,"accessibility":{"enabled":true},"text":"\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cspan style=\\"font-family: &#34;Graphik X Cond&#34;, &#34;PT Sans Narrow&#34;\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E&nbsp;Inside Frost Growth Equity Fund\\u003C\\u002Ffont\\u003E\\u003C\\u002Fspan\\u003E\\u003C\\u002Fp\\u003E\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E(As of Sept. 30)\\u003C\\u002Ffont\\u003E\\u003C\\u002Fp\\u003E","content_type":"text\\u002Fhtml","title":"","shrink":null},{"type":"chart","chart_id":37279565,"object_id":"3539aef4-3bbb-47e5-b438-0bad3cf48a87","chart_type_nr":2,"data":[[["","Frost Growth Equity Fund"],["Consumer Discretionary","25.30%"],["Consumer Staples ","4.90%"],["Energy","2.90%"],["Financial","5.20%"],["Healthcare","16.20%"],["Industrials","5.50%"],["Information Technology","38.90%"],["Materials ","1.20%"]]],"custom":{"decimalSeparator":".","groupingSymbol":"none","showInLineValues":true,"suffix":"%"},"colors":["#136e8a","#1eb0ab","#12b076","#0d8f6a","#0eb034","#0c6e14","#69a14a","#182b03","#3b71ff"],"defaultColors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColorsHeatmap":[],"dimensions":[],"modifier":2,"sheetnames":[],"sheets_settings":[],"accessibility":{"enabled":true,"label":"Chart","description":""}},{"type":"particle","particle_id":53310005,"object_id":"9c6263f1-b7ee-4878-a850-061755d2dbfb","particle_type":"maintitle","picture":null,"accessibility":{"enabled":true},"text":"\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cspan style=\\"font-size: 41px;font-family: &#34;Graphik X Cond&#34;, &#34;PT Sans Narrow&#34;\\"\\u003E&nbsp;Frost Growth Equity Fund\\u003C\\u002Fspan\\u003E\\u003C\\u002Fp\\u003E\\u003Cp style=\\"text-align: center\\"\\u003E\\u003Cfont style=\\"font-size: 41px\\"\\u003E(Top Ten Holdings as of Sept. 30)\\u003C\\u002Ffont\\u003E\\u003C\\u002Fp\\u003E","content_type":"text\\u002Fhtml","title":"","shrink":null},{"type":"chart","chart_id":37280525,"object_id":"dbaa5325-9d27-4c6b-bdfc-2d0361da873b","chart_type_nr":4,"data":[[["","Top Ten Holdings as of Sept. 30 for Frost Growth Equtiy Fund"],["Alphabet Inc.","7.10%"],["Amazon.com Inc.","5.80%"],["Facebook Inc.","5.20%"],["Visa Inc.","4.10%"],["Apple Inc.","3.30%"],["Home Depot Inc.","3.30%"],["Mastercard Inc","2.80%"],["Becton, Dickinson and Co.","2.70%"],["Celgene Corp.","2.50%"]]],"custom":{"absoluteDistribution":true,"useAllColumns":true,"decimalSeparator":".","groupingSymbol":",","showInLineValues":true,"suffix":"%"},"colors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"defaultColorsHeatmap":[],"dimensions":[],"modifier":0,"sheetnames":[],"sheets_settings":[],"accessibility":{"enabled":true,"label":"Chart","description":""}},{"type":"particle","particle_id":53303375,"object_id":"92ae311a-3082-4e68-adff-0658b18e3994","particle_type":"bodytext","picture":null,"accessibility":{"enabled":true},"text":"&nbsp;Source: Cullen\\u002FFrost Bankers Inc.","content_type":"text\\u002Fhtml","title":"","shrink":null}],"publishedURLId":"1g8e205xdj03pod","updatedAt":"2017-02-28T15:33:39.000Z","embed_image_data":{"height":589},"theme":{"title":"Sapphire","usergroup":"businessjournal_old","picture":"https:\\u002F\\u002Fs3.amazonaws.com\\u002Finfogram-themes\\u002F265\\u002Fthumbnail.png","order":0,"public":0,"width":550,"fonts":"PT+Sans:400,700,PT+Sans+Narrow:400,700","colors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"],"logocolor":"ce3737","logoImages":["\\u002Fi\\u002Ftemplates\\u002F250\\u002Flogo.png"],"logoUrl":"","showLogo":"none","showEmbed":"disabled","embedButtonText":"Share","top":0,"padding":0,"spacing":20,"shrinkMargin":30,"shrinkPadding":0,"spacingElementMin":null,"spacingElementMax":null,"css":".headline, .chart-title {\\n\\ttext-transform: uppercase;\\n}\\nsvg .igc-pie-center-text .igc-pie-center-text-node {\\n\\tfont-family: \'Graphik X Cond\', PT Sans;\\n\\tfont-weight: 600;\\n\\tfill: #464646;\\n\\tfont-size: 29px;\\n}\\n.igc-sheet {\\n\\tmargin-bottom: 15px;\\n}\\n.igc-sheets {\\n\\tmargin-bottom: 15px;\\n}\\n.igc-sheets .igc-sheet .igc-sheet-label,\\n    .igc-sheets .igc-sheet:hover .igc-sheet-label,\\n        .igc-sheets .igc-sheet.active .igc-sheet-label {\\n\\tcolor: #464646;\\n\\tmargin-left: 5px;\\n\\tfont-family: Graphik, PT Sans !important;\\n\\tfont-size: 12px !important;\\n\\tfont-weight: 400 !important;\\n}\\n.igc-sheets .igc-sheet:hover .igc-sheet-label,.igc-sheets .igc-sheet.active .igc-sheet-label {\\n\\tcolor: rgba(70,70,70,0.7);\\n}\\n.igc-sheets .igc-sheet .igc-sheet-ico,\\n    .igc-sheets .igc-sheet:hover .igc-sheet-ico {\\n\\tbackground: rgba(167,167,167,0.3);\\n\\tborder-color: #464646;\\n\\ttransition: .2s;\\n}\\n.igc-sheets .igc-sheet:hover .igc-sheet-ico {\\n\\tbackground: #A7A7A7;\\n}\\n.igc-sheets .igc-sheet.active .igc-sheet-ico {\\n\\tbackground: #464646;\\n}\\n.igc-sheets .igc-sheet.active .igc-sheet-ico::after,\\n    .igc-sheets .igc-sheet:hover .igc-sheet-ico::after {\\n\\theight: 6px;\\n\\twidth: 6px;\\n\\tleft: 6px;\\n\\ttop: 6px;\\n\\tbackground: #fff;\\n}\\n.igc-textual-figure {\\n\\tfont-family: \'Graphik X Cond\', PT Sans;\\n\\tfont-size: 40;\\n\\tfont-weight: 600;\\n}\\n.igc-textual-fact {\\n\\tcolor: #464646;\\n\\tfont-family: Graphik, PT Sans;\\n\\tfont-size: 20px;\\n\\tfont-weight: 400;\\n}\\n.igc-textual-icon {\\n\\tpadding-right: 30px;\\n\\tpadding-top: 7px;\\n}\\n.igc-table .igc-table-cell {\\n\\tfont-family: Graphik, PT Sans;\\n\\tfont-size: 12px;\\n\\tfont-weight: 400;\\n}\\n.igc-table .igc-table-header {\\n\\tfont-family: Graphik, PT Sans;\\n\\tfont-size: 12px;\\n\\tfont-weight: 400;\\n\\tpadding-left: 9px;\\n}\\n.ig-container {\\n\\tbackground: #fff;\\n}\\n.headline {\\n\\tfont-family: \'Graphik X Cond\', PT Sans Narrow;\\n\\tfont-size: 50px;\\n\\tfont-weight: 600;\\n\\tcolor: #464646;\\n\\ttext-align: left;\\n\\tline-height: 53px;\\n}\\n.chart-title {\\n\\tfont-family: \'Graphik X Cond\', PT Sans Narrow;\\n\\tfont-size: 40px;\\n\\tfont-weight: 600;\\n\\tcolor: #464646;\\n\\ttext-align: left;\\n\\tline-height: 43px;\\n}\\n.bodytext {\\n\\tfont-family: Graphik;\\n\\tfont-size: 20px;\\n\\tfont-weight: 400;\\n\\tcolor: #464646;\\n\\ttext-align: left;\\n\\tline-height: 25px;\\n}\\n.quote {\\n\\tbackground: url(\\u002Fi\\u002Ftemplates\\u002F250\\u002Fquote.svg) left 5px no-repeat;\\n\\tbackground-size: 33px;\\n\\tpadding-left: 63px;\\n\\tfont-family: \'Graphik X Cond\', sans-serif;\\n\\tfont-size: 40px;\\n\\tfont-weight: 600;\\n\\tcolor: #464646;\\n\\tline-height: 43px;\\n\\ttext-align: left;\\n}\\n.quotetitle {\\n\\tfont-family: Graphik, sans-serif;\\n\\tfont-size: 20px;\\n\\tfont-weight: 400;\\n\\tcolor: #464646;\\n\\tmargin-top: 5px;\\n\\tline-height: 25px;\\n}\\n.tt_tooltip {\\n\\tcolor: #FFF;\\n\\tfont-family: Graphik;\\n\\tfont-size: 20px;\\n\\tfont-weight: 400;\\n}\\n.igc-legend-entry {\\n\\tmargin-top: 15px;\\n}\\n.igc-legend {\\n\\tpadding-top: 10px;\\n\\tpadding-bottom: 0;\\n}\\ndiv[data-chart=\\"semi-circle\\"],\\ndiv[data-chart=\\"streamgraph\\"],\\ndiv[data-chart=\\"scatter\\"],\\ndiv[data-chart=\\"bubble\\"],\\ndiv[data-chart=\\"pyramid\\"],\\ndiv[data-chart=\\"candle\\"] {\\n\\tdisplay: none;\\n}\\n.ig-separator-line {\\n\\tbackground: rgba(70, 70, 70, 0.5);\\n}\\n.heatmap-legend {\\n\\tbackground: rgba(255, 255, 255, 0.7);\\n}\\n.heatmap-legend-item,\\n.heatmap-label {\\n\\tcolor: #464646;\\n\\tfont-size: 12px;\\n\\tfont-weight: 400;\\n\\tfont-family: Graphik, PT Sans;\\n}\\n.igc-graph-pie-piece {\\n\\tstroke: rgba(255, 255, 255, 0.7);\\n}\\n.tt_tooltip .tt_value {\\n\\tfont-weight: 400;\\n}\\n.tt_tooltip .tt_body {\\n\\tbackground: #464646;\\n}\\n.tt_tooltip .tt_left {\\n\\tborder-right: 8px solid #464646;\\n}\\n.tt_tooltip .tt_right {\\n\\tborder-left: 8px solid #464646;\\n}\\n.igc-tabs .igc-tab-active {\\n\\tbackground: #fff;\\n}\\n.igc-tabs .igc-tab .igc-tab-content,\\n          .igc-tabs .igc-tab.icon-down:after {\\n\\tfont-family: Graphik, PT Sans;\\n\\tcolor: #464646;\\n\\tfont-weight: 400;\\n}\\n.igc-tabs .igc-tab,\\n          .igc-tab-switcher {\\n\\tcolor: #464646;\\n}\\n.igc-tabs.igc-tabs-dropdown .igc-tab-name {\\n\\tfont-family: Graphik, PT Sans;\\n\\tcolor: #464646;\\n}\\n.captiontext {\\n\\tfont-family: Graphik, PT Sans;\\n\\tcolor: #464646;\\n\\tfont-weight: 400;\\n}\\n.captiontext .innertext {\\n\\tline-height: 1.5;\\n}\\n.igc-legend-entry .igc-legend-label {\\n\\theight: auto;\\n}\\n.igc-tab-ico svg path {\\n\\tfill: #464646;\\n}\\n.igc-tab-switcher-ico svg path {\\n\\tfill: #464646;\\n}\\n.igc-table-search {\\n\\tcolor: #666;\\n\\tfont-size: 12px;\\n\\tfont-weight: 400;\\n\\tfont-family: Graphik, PT Sans;\\n}\\n","charts":{"treemap":{"labels":{"value":{"fontFamily":"Graphik, PT Sans"},"name":{"fontWeight":"400","fontFamily":"Graphik, PT Sans"}}},"wordcloud":{"labels":{"fontFamily":"Graphik, PT Sans","fontWeight":"400"}},"table":{"cellBackground":"#fff","headerBackground":"#ececec","cellColor":"#666","headerColor":"#464646","shapeFill":"#8ec3a7"},"legend":{"color":{"label":{"active":"rgb(70, 70, 70)","hover":"rgba(70, 70, 70, 0.7)","inactive":"rgb(70, 70, 70)"},"icon":{"inactive":"rgba(70, 70, 70, 0.2)"}},"layouts":{"bottom":{"legend":{"entry":{"marginTop":"15px"},"marginTop":"10px","marginBottom":"0"}}}},"sheetSwitch":{"style":{"tab":{"font-family":"Graphik, PT Sans","font-weight":500,"font-style":"normal","colors":{"dropdown":{"selectIcon":"#464646","leftSwitcherIcon":"#464646","rightSwitcherIcon":"#464646"}},"font-size":"13px","color":"#464646"}}},"gauge":{"colors":{"background":"#c0c0c0"}},"waterfall":{"colors":"305bcf 1f3a7d 3b71ff"},"candle":{"colors":{"up":"#1f3a7d","down":"#305bcf"}},"barRadial":{"colors":{"background":"#c0c0c0"}},"pictorialBar":{"style":{"graph":{"item":{"value":{"font-family":"\'Graphik X Cond\', PT Sans","font-size":"60px","font-weight":600}}}},"colors":{"background":"#e8e8e8"}},"barProgress":{"colors":{"background":"#c0c0c0"}},"map":{"countryFill":"#c0c0c0","hotColor":"#305bcf","coldColor":"#cecece"}},"chartOptions":{"bar":{"axesTitleStyle":{"labelFontStyle":{"font-family":"Graphik, PT Sans","font-size":12,"fill":"#464646","font-weight":400}}},"gauge":{"gaugeFillStyle":{"stroke-width":0},"gaugeStyle":{"fill":"#c0c0c0"},"_gaugeTextOptions":{"labelFontStyle":{"font-family":"Graphik, PT Sans","font-size":12,"fill":"#464646","font-weight":400}}},"datetime":{"fontStyle":{"font-family":"\'Graphik X Cond\', PT Sans","font-weight":600,"font-size":40},"dotStyle":{"fill":"#ce3737"},"fontStyleText":{"font-family":"Graphik, PT Sans","font-weight":400,"font-size":20,"fill":"#464646"}},"wordcloud":{"fontStyle":{"font-family":"Graphik, PT Sans","font-weight":"400"}},"hierarchy":{"cellTextWrapperOptions":{"text":{"labelFontStyle":{"font-family":"Graphik, PT Sans","font-weight":"400"}}}},"pictobar":{"shapeStyleEmpty":{"fill":"#e8e8e8"},"cellTextWrapperOptions":{"text":{"labelFontStyle":{"font-family":"\'Graphik X Cond\', PT Sans","font-weight":600,"font-size":60,"fill":"#464646"}}}},"line":{"showPoints":true,"circleStyle":{"fill":"#fff"}},"area":{"showPoints":true,"circleStyle":{"fill":"#fff"}},"progress":{"backgroundInactive":{"fill":"#c0c0c0"}},"map":{"countryStroke":"#c0c0c0","countryFill":"#c0c0c0","hotColor":"#305bcf","coldColor":"#cecece"},"candle":{"colors":"305bcf 1f3a7d 3b71ff"},"waterfall":{"colors":"305bcf 1f3a7d 3b71ff"},"common":{"_labelWrapperOptions":{"marginY":5},"panelMarginY":8,"_categoryOptions":{"backgroundStyle":{"fill":"transparent"},"text":{"labelFontStyle":{"font-family":"Graphik, PT Sans","font-weight":400,"font-size":12}}},"inTextStyle":{"font-family":"Graphik, PT Sans","font-weight":400},"axesTitleStyle":{"labelFontStyle":{"font-family":"Graphik, PT Sans","fill":"#464646","font-weight":400,"font-size":12}},"legendOptions":{},"_gridOptions":{"lineStyle":{"stroke":"#464646","stroke-dasharray":"","stroke-opacity":0.5},"baseLineStyle":{"stroke-width":1,"stroke":"#464646","stroke-dasharray":"","stroke-opacity":0.5},"marginLineStyle":{"stroke-width":1,"stroke":"#464646","stroke-dasharray":"","stroke-opacity":0.5},"fontStyle":{"font-family":"Graphik, PT Sans","fill":"#464646","font-weight":400,"font-size":12}}}},"chartDefaults":{},"color":{"bg":"#fff","text":"#464646","chart":{"bg":"transparent","text":"#464646"},"element":{"bg":"transparent","text":"#464646"}},"colorPresets":[],"localFonts":{"google":[{"fontFamily":"PT Sans","fontWeights":[400,700,null]}],"local":[{"fontFamily":"Graphik","styles":[{"fontWeight":400,"fontStyle":"normal","src":["url(\\u002Fi\\u002Ftemplates\\u002F250\\u002Ffonts\\u002FGraphik-Regular-1.woff) format(\\"woff\\")"]}]},{"fontFamily":"Graphik X Cond","styles":[{"fontWeight":600,"fontStyle":"normal","src":["url(\\u002Fi\\u002Ftemplates\\u002F250\\u002Ffonts\\u002FGraphik-X-Cond-Semibold-1.woff) format(\\"woff\\")"]}]}],"typekit":[]},"font":{"common":{"fontFamily":"Graphik, PT Sans","fontWeight":"400","fontStyle":"normal","fontSize":"12","textAlign":"initial"},"legend":{"fontSize":"20","fontWeight":"400","fontFamily":"Graphik, sans-serif"},"label":{"fontSize":12,"fontWeight":400}},"fontPresets":[],"fontFamilies":["PT Sans","Graphik","Graphik X Cond","PT Sans Narrow"],"footerOptions":{"common":{"borderColor":"#dadada","borderWidth":1},"copyrightNotice":{"enabled":false,"fontFamily":"PT Sans Narrow","fontSize":14,"color":"#4b4b4b","fontWeight":400,"fontStyle":"normal"},"shareButton":{"enabled":true,"background":"#ce3737","text":"Share","color":"#ffffff","fontFamily":"Roboto, Arial, sans-serif","fontSize":13,"fontWeight":400,"fontStyle":"normal","position":"left"},"logo":{"position":"right","enabled":true,"background":"#ce3737"}},"archived":false,"tabs":true,"zeroPaddingEmbed":true,"freelayoutContents":{"defaults":{"foregroundColor":"#464646","backgroundColor":"#fff","fontFamily":"Graphik","fontSize":12,"lineHeight":1.5,"textAlign":"ALIGN_LEFT"},"fontFamilies":{"font1":"Roboto"},"fontSizes":{"extraLarge":64,"large":48,"medium":18,"small":12},"elements":{"TEXT":{"h1":{"fontSize":"50px","fontFamily":"\'Graphik X Cond\'","fontWeight":700},"h2":{"fontSize":"40px","fontFamily":"\'Graphik X Cond\'","fontWeight":700},"body":{"fontSize":"20px","fontFamily":"Graphik"},"caption":{"fontSize":"13px","fontFamily":"Graphik"}},"SHAPE":{"fillColor":"#305bcf","strokeColor":"#305bcf"},"IMAGE":{"fillColor":"#305bcf"}},"colors":["#305bcf","#1f3a7d","#3b71ff","#08215f","#8dacfc","#5d87fb"]},"id":265,"thumb":"https:\\u002F\\u002Fs3.amazonaws.com\\u002Finfogram-themes\\u002F265\\u002Fsmall.png","version":1,"parentId":0,"enabledResponsive":true,"enabledFreeLayout":true,"createdAt":"2016-04-22T04:54:11.000Z","updatedAt":"2019-06-26T08:06:52.000Z","created_at":"2016-04-22T04:54:11.000Z","updated_at":"2019-06-26T08:06:52.000Z"},"embed":"\\u003Cscript id=\\"infogram_0_7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" title=\\"Frost Bank Advisors (online graphic)\\" src=\\"https:\\u002F\\u002Fe.infogram.com\\u002Fjs\\u002Fdist\\u002Fembed.js?9nM\\" type=\\"text\\u002Fjavascript\\"\\u003E\\u003C\\u002Fscript\\u003E","embedIframe":"\\u003Ciframe src=\\"https:\\u002F\\u002Fe.infogram.com\\u002F7743c36a-f3ca-4465-9a80-a8abbd5d8dc4?src=embed\\" title=\\"Frost Bank Advisors (online graphic)\\" width=\\"550\\" height=\\"\\" scrolling=\\"no\\" frameborder=\\"0\\" style=\\"border:none;\\" allowfullscreen=\\"allowfullscreen\\"\\u003E\\u003C\\u002Fiframe\\u003E","embedImageResponsive":"\\u003Cscript id=\\"infogramimg_0_7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" title=\\"Frost Bank Advisors (online graphic)\\" src=\\"https:\\u002F\\u002Fe.infogram.com\\u002Fjs\\u002Fdist\\u002Fembed.js?7NX\\" type=\\"text\\u002Fjavascript\\"\\u003E\\u003C\\u002Fscript\\u003E","embedImageIframe":"","embedAMP":"\\u003Camp-iframe width=\\"550\\" height=\\"\\" layout=\\"responsive\\" sandbox=\\"allow-scripts allow-same-origin allow-popups\\" resizable allowfullscreen frameborder=\\"0\\" src=\\"https:\\u002F\\u002Fe.infogram.com\\u002F7743c36a-f3ca-4465-9a80-a8abbd5d8dc4?src=embed\\"\\u003E\\u003Cdiv style=\\"visibility: hidden\\" overflow tabindex=0 role=button aria-label=\\"Loading...\\" placeholder\\u003ELoading...\\u003C\\u002Fdiv\\u003E\\u003C\\u002Famp-iframe\\u003E","embedAMPImage":"\\u003Camp-iframe width=\\"550\\" height=\\"\\" layout=\\"responsive\\" sandbox=\\"allow-scripts allow-same-origin allow-popups\\" resizable allowfullscreen frameborder=\\"0\\" src=\\"https:\\u002F\\u002Fe.infogram.com\\u002F7743c36a-f3ca-4465-9a80-a8abbd5d8dc4?src=embed\\"\\u003E\\u003Cdiv style=\\"visibility: hidden\\" overflow tabindex=0 role=button aria-label=\\"Loading...\\" placeholder\\u003ELoading...\\u003C\\u002Fdiv\\u003E\\u003C\\u002Famp-iframe\\u003E","embedWordpress":"[infogram id=\\"7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" prefix=\\"QP7\\" format=\\"interactive\\" title=\\"Frost Bank Advisors (online graphic)\\"]","embedWordpressImage":"[infogram id=\\"7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" prefix=\\"cEj\\" format=\\"image\\" title=\\"Frost Bank Advisors (online graphic)\\"]","embedAsync":"\\u003Cdiv class=\\"infogram-embed\\" data-id=\\"7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" data-type=\\"interactive\\" data-title=\\"Frost Bank Advisors (online graphic)\\"\\u003E\\u003C\\u002Fdiv\\u003E\\u003Cscript\\u003E!function(e,i,n,s){var t=\\"InfogramEmbeds\\",d=e.getElementsByTagName(\\"script\\")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement(\\"script\\");o.async=1,o.id=n,o.src=\\"https:\\u002F\\u002Fe.infogram.com\\u002Fjs\\u002Fdist\\u002Fembed-loader-min.js\\",d.parentNode.insertBefore(o,d)}}(document,0,\\"infogram-async\\");\\u003C\\u002Fscript\\u003E","embedImageAsync":"\\u003Cdiv class=\\"infogram-embed\\" data-id=\\"7743c36a-f3ca-4465-9a80-a8abbd5d8dc4\\" data-type=\\"image\\" data-title=\\"Frost Bank Advisors (online graphic)\\"\\u003E\\u003C\\u002Fdiv\\u003E\\u003Cscript\\u003E!function(e,i,n,s){var t=\\"InfogramEmbeds\\",d=e.getElementsByTagName(\\"script\\")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement(\\"script\\");o.async=1,o.id=n,o.src=\\"https:\\u002F\\u002Fe.infogram.com\\u002Fjs\\u002Fdist\\u002Fembed-loader-min.js\\",d.parentNode.insertBefore(o,d)}}(document,0,\\"infogram-async\\");\\u003C\\u002Fscript\\u003E","indexStatus":true};</script>
 
 
         <script>
-            window.author = {"business":true,"enterprise":true,"pro":true,"avatar":"https:\\u002F\\u002Finfogram-avatars-127.s3-eu-west-1.amazonaws.com\\u002F2334605_1480958674443.jpg","fullName":"Tony Quesada","name":"sabjnewsroom01","colors":[],"publicProfileHidden":true};
+            window.author = {"business":true,"enterprise":true,"pro":true,"colors":[],"publicProfileHidden":true};
             window.mode = \'infographic\';
             window.noTrack = false;
             window.passwordProtected = false;
             window.user = {"isAuthenticated":false};
-            window.publicViewConfig = {"cdn":"https:\\u002F\\u002Fcdn.jifo.co","mapCDN":"https:\\u002F\\u002Fmaps.jifo.co","infogramMapCDN":"https:\\u002F\\u002Fmaps.jifo.co\\u002Finfogram","assetsCDN":""};
+            window.publicViewConfig = {"cdn":"https:\\u002F\\u002Fcdn.jifo.co","mapCDN":"https:\\u002F\\u002Fmaps.jifo.co","infogramMapCDN":"https:\\u002F\\u002Fmaps.jifo.co\\u002Finfogram","assetsCDN":"","env":"production","atlasURL":"https:\\u002F\\u002Fatlas.jifo.co"};
         </script>
 
-        <script src="https://cdn.jifo.co/js/dist/web_viewer-7576e3a7d25d6799d683-1-webpack.js" class="app-bundle" crossorigin="anonymous"></script>
+        <script src="https://cdn.jifo.co/js/dist/web_viewer-dadadaeecc50c96f4a6f-1-webpack.js" class="app-bundle" crossorigin="anonymous"></script>
 
         
         <script src="https://cdn.jifo.co/js/libs/oneTrust/onetrustConsent.min.js?v=3" type="text/javascript" charset="UTF-8"></script>

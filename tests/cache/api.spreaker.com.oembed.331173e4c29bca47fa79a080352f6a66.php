@@ -7,7 +7,7 @@ return [
             'application/json'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:43 GMT'
+            'Wed, 23 Sep 2020 21:47:56 GMT'
         ],
         'server' => [
             'Spreaker Proxy Cache'
@@ -22,7 +22,7 @@ return [
             '*'
         ],
         'access-control-allow-headers' => [
-            'X-Spreaker-Auth, X-Spreaker-Account, Authorization, Content-Type'
+            'Authorization, Content-Type'
         ],
         'access-control-max-age' => [
             '86400'
@@ -34,19 +34,19 @@ return [
             'Miss from cloudfront'
         ],
         'via' => [
-            '1.1 5c24e13f00e6f8c5afb53f2e8ee02df2.cloudfront.net (CloudFront)'
+            '1.1 77fcce204f96e329df7227f192690939.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
-            'MAD51-C1'
+            'MAD50-C1'
         ],
         'x-amz-cf-id' => [
-            'vEJAMFUB_imwC8XCkXXS3l67kgbtsq8i7qzjOV0h7jp_yfAYrGNZcA=='
+            'NaUxANcDrqWq1oxF-ex8-7aQYyRXjTRQG7H8ghpprHnJvicbJ6rIUA=='
         ],
         'Content-Location' => [
             'https://api.spreaker.com/oembed?url=https%3A%2F%2Fwww.spreaker.com%2Fuser%2Fangelclark%2Fangel-clark-ice-cream-tocos&format=json'
         ],
         'X-Request-Time' => [
-            '0.164 ms'
+            '0.131 ms'
         ]
     ],
     'statusCode' => 200,

@@ -4,9 +4,9 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 20 May 2020 17:53:09 GMT',
-            'Wed, 20 May 2020 17:53:10 GMT',
-            'Wed, 20 May 2020 17:53:10 GMT'
+            'Wed, 23 Sep 2020 21:45:57 GMT',
+            'Wed, 23 Sep 2020 21:45:57 GMT',
+            'Wed, 23 Sep 2020 21:45:57 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -33,23 +33,23 @@ return [
             'DYNAMIC',
             'DYNAMIC'
         ],
+        'cf-request-id' => [
+            '055e87397d0000c69ba30e9200000001',
+            '055e873ab1000014f155b87200000001',
+            '055e873c04000014f155b9b200000001'
+        ],
         'server' => [
             'cloudflare',
             'cloudflare',
             'cloudflare'
         ],
         'cf-ray' => [
-            '5967ea608aebff58-MAD',
-            '5967ea63183aff64-MAD',
-            '5967ea65df78ff64-MAD'
+            '5d7774a26eb4c69b-MAD',
+            '5d7774a44a9114f1-MAD  HTTP/2 200',
+            '5d7774a66fca14f1-MAD'
         ],
         'alt-svc' => [
-            'h2=":443"; ma=60'
-        ],
-        'cf-request-id' => [
-            '02d4d0d0500000ff58c9070200000001  HTTP/2 301',
-            '02d4d0d1ed0000ff644f831200000001  HTTP/2 200',
-            '02d4d0d3ab0000ff644f845200000001'
+            'h2=":443"; ma=60  HTTP/2 301'
         ],
         'expect-ct' => [
             'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
@@ -68,7 +68,7 @@ return [
             'https://live.amcharts.com/czNjJ/'
         ],
         'X-Request-Time' => [
-            '1.408 ms'
+            '1.119 ms'
         ]
     ],
     'statusCode' => 200,
@@ -138,7 +138,7 @@ return [
 			AmCharts.Editor.CONSTANT.URL_API			= \'//www.amcharts.com/wp-admin/admin-ajax.php\';
 			AmCharts.Editor.CONSTANT.URL_PATH			= \'/\';
 			AmCharts.Editor.CONSTANT.RND_KEY			= \'20191009-01\';
-			AmCharts.Editor.CONSTANT.CHARTS_CREATED		= 140381;
+			AmCharts.Editor.CONSTANT.CHARTS_CREATED		= 157449;
 		</script>
 <script type="text/javascript" src="//live.amcharts.com/dist/ameditor.handler.js?20191009-01"></script>
 <script type="text/javascript" src="//live.amcharts.com/dist/section/ameditor.share.js?20191009-01"></script>

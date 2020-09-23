@@ -34,13 +34,13 @@ return [
             '"70f2e6fb017446050780256c8fc4213d"'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:54:28 GMT'
+            'Wed, 23 Sep 2020 21:47:17 GMT'
         ],
         'x-frame-options' => [
             'SAMEORIGIN'
         ],
         'strict-transport-security' => [
-            'max-age=63072000'
+            'max-age=604800; includeSubdomains'
         ],
         'content-encoding' => [
             'gzip'
@@ -52,19 +52,19 @@ return [
             'Miss from cloudfront'
         ],
         'via' => [
-            '1.1 d7f531af10bfff5400817f213f0b7761.cloudfront.net (CloudFront)'
+            '1.1 d8c266ed74a4ecc05eeffe79fa473f7e.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
-            'MAD51-C1'
+            'MAD50-C1'
         ],
         'x-amz-cf-id' => [
-            'vYhJkvgvXGd_WECJSusc02QaR5ZG_k_MjYP5utARMlkt6_RCp72jbw=='
+            'KP9wmtbSFFGWFMot-4FKu-HHPZTZp9wv9t1yxCBTWPckqUqtLkNAOw=='
         ],
         'Content-Location' => [
             'https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Fididthat-1%2Flowe-ct-cape-times-world-cup&format=json'
         ],
         'X-Request-Time' => [
-            '0.166 ms'
+            '0.146 ms'
         ]
     ],
     'statusCode' => 200,

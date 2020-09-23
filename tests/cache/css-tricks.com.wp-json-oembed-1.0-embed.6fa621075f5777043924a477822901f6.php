@@ -4,13 +4,10 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 27 May 2020 14:39:49 GMT'
+            'Wed, 23 Sep 2020 21:45:52 GMT'
         ],
         'content-type' => [
             'application/json; charset=UTF-8'
-        ],
-        'set-cookie' => [
-            '__cfduid=dbf34c4cf59dc1a18c51e9fb9333a033d1590590388; expires=Fri, 26-Jun-20 14:39:48 GMT; path=/; domain=.css-tricks.com; HttpOnly; SameSite=Lax; Secure'
         ],
         'x-robots-tag' => [
             'noindex'
@@ -55,7 +52,7 @@ return [
             '1'
         ],
         'x-served-by' => [
-            'cache-mad22030-MAD'
+            'cache-mad22034-MAD'
         ],
         'x-cache' => [
             'MISS'
@@ -64,7 +61,7 @@ return [
             '0'
         ],
         'x-timer' => [
-            'S1590590388.448955,VS0,VE685'
+            'S1600897552.514729,VS0,VE843'
         ],
         'vary' => [
             'Accept-Encoding, Origin, Authorization'
@@ -82,7 +79,7 @@ return [
             'DYNAMIC'
         ],
         'cf-request-id' => [
-            '02f82c50da0000ff103f1fb200000001'
+            '055e8724920000c683f59fe200000001'
         ],
         'expect-ct' => [
             'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
@@ -94,19 +91,19 @@ return [
             'cloudflare'
         ],
         'cf-ray' => [
-            '59a07cc7ca34ff10-MAD'
+            '5d777480e9afc683-MAD'
         ],
         'content-encoding' => [
             'br'
         ],
         'alt-svc' => [
-            'h3-27=":443"; ma=86400, h3-25=":443"; ma=86400, h3-24=":443"; ma=86400, h3-23=":443"; ma=86400'
+            'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'
         ],
         'Content-Location' => [
             'https://css-tricks.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcss-tricks.com%2Fcss-scrollbar-with-progress-meter%2F'
         ],
         'X-Request-Time' => [
-            '0.923 ms'
+            '0.962 ms'
         ]
     ],
     'statusCode' => 200,

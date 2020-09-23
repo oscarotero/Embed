@@ -7,11 +7,11 @@ return [
     'cms' => null,
     'code' => null,
     'description' => 'We curate and organise deep-diving, single-track, content-focused web conferences and workshops in Amsterdam.',
-    'favicon' => 'https://www.youtube.com/s/desktop/24be5db0/img/favicon.ico',
+    'favicon' => 'https://www.youtube.com/s/desktop/4aac258c/img/favicon.ico',
     'feeds' => [
         'https://www.youtube.com/feeds/videos.xml?channel_id=UCuZeHD5SGecQomz2pVDHGzg'
     ],
-    'icon' => 'https://www.youtube.com/s/desktop/24be5db0/img/favicon_144.png',
+    'icon' => 'https://www.youtube.com/s/desktop/4aac258c/img/favicon_144.png',
     'image' => 'https://yt3.ggpht.com/a/AATXAJxxP0Q_vwYbT2k4AAt1SMY3E0imm-JyMLo-N7HK=s900-c-k-c0xffffffff-no-rj-mo',
     'keywords' => [
         'css',

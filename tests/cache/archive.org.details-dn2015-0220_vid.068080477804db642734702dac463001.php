@@ -7,7 +7,7 @@ return [
             'nginx/1.16.1 (Ubuntu)'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:54:06 GMT'
+            'Wed, 23 Sep 2020 21:46:52 GMT'
         ],
         'content-type' => [
             'application/json'
@@ -25,7 +25,7 @@ return [
             'https://archive.org/details/dn2015-0220_vid?output=json'
         ],
         'X-Request-Time' => [
-            '1.001 ms'
+            '0.809 ms'
         ]
     ],
     'statusCode' => 200,
@@ -39,5 +39,5 @@ return [
 "misc":
 {"image":"https:\\/\\/ia802600.us.archive.org\\/20\\/items\\/dn2015-0220_vid\\/dn2015-0220.gif","collection-title":"Democracy Now!"},
 "item":
-{"downloads":123,"month":1}}'
+{"downloads":126,"month":0}}'
 ];

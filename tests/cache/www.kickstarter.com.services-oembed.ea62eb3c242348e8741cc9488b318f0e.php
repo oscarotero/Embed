@@ -22,8 +22,8 @@ return [
             'bytes'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:30 GMT',
-            'Wed, 20 May 2020 17:53:30 GMT'
+            'Wed, 23 Sep 2020 21:46:17 GMT',
+            'Wed, 23 Sep 2020 21:46:17 GMT'
         ],
         'via' => [
             '1.1 varnish',
@@ -32,9 +32,13 @@ return [
         'connection' => [
             'close'
         ],
+        'set-cookie' => [
+            '_pxhd=ddff26fcec3860246848bb7520a02de495d4cc54e8e7c9e5ad1406804b23f7fa:b2034891-fde1-11ea-a582-0f5c470aaab4; Expires=Thu, 23 Sep 2021 21:46:17 GMT; path=/;',
+            '_pxhd=ddff26fcec3860246848bb7520a02de495d4cc54e8e7c9e5ad1406804b23f7fa:b2034891-fde1-11ea-a582-0f5c470aaab4; Expires=Thu, 23 Sep 2021 21:46:17 GMT; path=/;'
+        ],
         'x-served-by' => [
-            'cache-mad22046-MAD',
-            'cache-mad22041-MAD'
+            'cache-mad22058-MAD',
+            'cache-mad22062-MAD'
         ],
         'x-cache' => [
             'HIT',
@@ -43,10 +47,6 @@ return [
         'x-cache-hits' => [
             '0',
             '0'
-        ],
-        'x-timer' => [
-            'S1589997210.295021,VS0,VE0',
-            'S1589997210.410924,VS0,VE153'
         ],
         'strict-transport-security' => [
             'max-age=31557600  HTTP/2 200',
@@ -71,13 +71,16 @@ return [
             'max-age=0, private, must-revalidate'
         ],
         'x-request-id' => [
-            'f4905a4c-337b-487a-939c-54ac78cd07e7'
+            '12308c77-fe84-4963-b75c-cb54cd263641'
         ],
         'x-runtime' => [
-            '0.052027'
+            '0.058746'
         ],
         'content-encoding' => [
             'gzip'
+        ],
+        'fastly-restarts' => [
+            '1'
         ],
         'age' => [
             '0',
@@ -87,7 +90,7 @@ return [
             'https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1452363698%2Fgood-seed-craft-veggie-burgers&format=json'
         ],
         'X-Request-Time' => [
-            '0.318 ms'
+            '0.409 ms'
         ]
     ],
     'statusCode' => 200,

@@ -18,15 +18,15 @@ return [
             'bytes'
         ],
         'date' => [
-            'Wed, 20 May 2020 17:53:24 GMT',
-            'Wed, 20 May 2020 17:53:24 GMT'
+            'Wed, 23 Sep 2020 21:46:12 GMT',
+            'Wed, 23 Sep 2020 21:46:12 GMT'
         ],
         'connection' => [
             'close'
         ],
         'x-served-by' => [
-            'cache-mad22049-MAD',
-            'cache-bwi5138-BWI, cache-mad22021-MAD'
+            'cache-mad22043-MAD',
+            'cache-bwi5132-BWI, cache-mad22076-MAD'
         ],
         'x-cache' => [
             'HIT',
@@ -37,8 +37,8 @@ return [
             '1, 1'
         ],
         'x-timer' => [
-            'S1589997205.560909,VS0,VE1',
-            'S1589997205.693681,VS0,VE3'
+            'S1600897572.249195,VS0,VE0',
+            'S1600897572.351338,VS0,VE3'
         ],
         'access-control-allow-methods' => [
             'GET, OPTIONS',
@@ -68,7 +68,7 @@ return [
             'public, max-age=31536000'
         ],
         'age' => [
-            '1985902'
+            '2941610'
         ],
         'x-content-type-options' => [
             'nosniff'
@@ -77,7 +77,7 @@ return [
             'https://i.imgur.com/X6rkCc5.jpg'
         ],
         'X-Request-Time' => [
-            '0.348 ms'
+            '0.264 ms'
         ]
     ],
     'statusCode' => 200,

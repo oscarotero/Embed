@@ -12,7 +12,7 @@ return [
         'ratio' => 56.25
     ],
     'description' => 'Professional live streaming is here. Learn more at vimeo.com/live',
-    'favicon' => 'https://f.vimeocdn.com/images_v6/favicon.ico?cc5d45271834f31ac4a19fe034740eb14713c558',
+    'favicon' => 'https://f.vimeocdn.com/images_v6/favicon.ico?653ee9296e316651ae3929db39ce4f65edbdd49a',
     'feeds' => [],
     'icon' => 'https://i.vimeocdn.com/favicon/main-touch_180',
     'image' => 'https://i.vimeocdn.com/video/657162424_640.jpg',
@@ -39,7 +39,7 @@ return [
             'videoQuality' => 'HD',
             'duration' => 'PT00H01M15S',
             'uploadDate' => '2017-09-25T10:36:56-04:00',
-            'dateModified' => '2020-08-28T07:04:50-04:00',
+            'dateModified' => '2020-09-23T17:23:07-04:00',
             'thumbnail' => [
                 '@type' => 'ImageObject',
                 'url' => 'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F657162424_1280x720.jpg&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png',
