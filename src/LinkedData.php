@@ -24,11 +24,15 @@ class LinkedData
             return null;
         }
 
-        foreach ($graph->getNodes() as $node) {
-            $value = self::getValue($node, ...$keys);
+        foreach ($keys as $key) {
+            $subkeys = explode('.', $key);
 
-            if ($value) {
-                return $value;
+            foreach ($graph->getNodes() as $node) {
+                $value = self::getValue($node, ...$subkeys);
+
+                if ($value) {
+                    return $value;
+                }
             }
         }
 

@@ -23,8 +23,10 @@ class PublishedTime extends Detector
                 'video:release_date',
                 'newsrepublic:publish_date'
             )
-            ?: $ld->time('pagePublished')
-            ?: $ld->time('datePublished')
+            ?: $ld->time(
+                'pagePublished',
+                'datePublished'
+            )
             ?: $this->detectFromPath()
             ?: $metas->time(
                 'pagerender',
