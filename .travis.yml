@@ -3,7 +3,7 @@ sudo: false
 
 php:
   - 7.4
-  - 8.0
+  - nightly
 
 before_install:
   - composer install
