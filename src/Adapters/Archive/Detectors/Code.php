@@ -6,7 +6,7 @@ namespace Embed\Adapters\Archive\Detectors;
 use Embed\Detectors\Code as Detector;
 use Embed\EmbedCode;
 use function Embed\html;
-use function Embed\match;
+use function Embed\matchPath;
 
 class Code extends Detector
 {
@@ -15,7 +15,7 @@ class Code extends Detector
         $uri = $this->extractor->getUri();
         $path = $uri->getPath();
 
-        if (!match('/details/*', $path)) {
+        if (!matchPath('/details/*', $path)) {
             return null;
         }
 

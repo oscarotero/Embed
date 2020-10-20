@@ -6,7 +6,7 @@ namespace Embed\Adapters\Snipplr\Detectors;
 use Embed\Detectors\Code as Detector;
 use Embed\EmbedCode;
 use function Embed\html;
-use function Embed\match;
+use function Embed\matchPath;
 
 class Code extends Detector
 {
@@ -20,7 +20,7 @@ class Code extends Detector
     {
         $uri = $this->extractor->getUri();
 
-        if (!match('/view/*', $uri->getPath())) {
+        if (!matchPath('/view/*', $uri->getPath())) {
             return null;
         }
 

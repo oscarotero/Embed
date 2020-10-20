@@ -5,7 +5,7 @@ namespace Embed\Adapters\Wikipedia;
 
 use function Embed\getDirectory;
 use Embed\HttpApiTrait;
-use function Embed\match;
+use function Embed\matchPath;
 
 class Api
 {
@@ -15,7 +15,7 @@ class Api
     {
         $uri = $this->extractor->getUri();
 
-        if (!match('/wiki/*', $uri->getPath())) {
+        if (!matchPath('/wiki/*', $uri->getPath())) {
             return [];
         }
 
