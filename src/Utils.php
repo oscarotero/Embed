@@ -274,7 +274,11 @@ class Utils
     public static function parse($html)
     {
         $errors = libxml_use_internal_errors(true);
-        $entities = libxml_disable_entity_loader(true);
+
+        // PHP 8 deprecates libxml_disable_entity_loader() as it is no longer needed
+        if (\PHP_VERSION_ID < 80000) {
+            $entities = libxml_disable_entity_loader(true);
+        }
 
         $html = trim(self::normalize($html));
 
@@ -282,7 +286,10 @@ class Utils
         $document->loadHTML($html);
 
         libxml_use_internal_errors($errors);
-        libxml_disable_entity_loader($entities);
+
+        if (\PHP_VERSION_ID < 80000) {
+            libxml_disable_entity_loader($entities);
+        }
 
         return $document;
     }
