@@ -24,17 +24,29 @@ class Instagram extends EndPoint implements EndPointInterface
         $key = $adapter->getConfig('facebook[key]');
 
         if (!empty($key)) {
-            return new static($adapter->getResponse(), $key);
+            $response = $adapter->getResponse();
+
+            if ($response->getUrl()->match(static::$pattern)) {
+                return new static($response, null, $key);
+            }
+
+            if ($response->getStartingUrl()->match(static::$pattern)) {
+                return new static($response, $response->getStartingUrl(), $key);
+            }
         }
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function __construct(Response $response, $key = null)
+    protected function __construct(Response $response, $url = null, $key = null)
     {
         $this->response = $response;
         $this->key = $key;
+
+        if ($url) {
+            $this->url = $url;
+        }
     }
 
     /**
