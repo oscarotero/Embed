@@ -21,15 +21,15 @@ class Code extends Detector
         $parent = $this->extractor->getSetting('twitch:parent');
 
         if ($id = self::getVideoId($path)) {
-            $code = $parent 
-                ? self::generateIframeCode(['id' => $id, 'parent' => $parent]) 
+            $code = $parent
+                ? self::generateIframeCode(['id' => $id, 'parent' => $parent])
                 : self::generateJsCode('video', $id);
             return new EmbedCode($code, 620, 378);
         }
 
         if ($id = self::getChannelId($path)) {
             $code = $parent
-                ? self::generateIframeCode(['channel' => $id, 'parent' => $parent]) 
+                ? self::generateIframeCode(['channel' => $id, 'parent' => $parent])
                 : self::generateJsCode('channel', $id);
             return new EmbedCode($code, 620, 378);
         }

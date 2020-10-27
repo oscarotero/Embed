@@ -195,7 +195,7 @@ $detectors = [
                 ]);
                 $info = $embed->get(getUrl());
                 $info->setSettings([
-                    'twitch:parent' => $_SERVER['SERVER_NAME'] === 'localhost' ? null : $_SERVER['SERVER_NAME']
+                    'twitch:parent' => $_SERVER['SERVER_NAME'] === 'localhost' ? null : $_SERVER['SERVER_NAME'],
                 ]);
             } catch (Exception $exception) {
                 echo '<pre>';
