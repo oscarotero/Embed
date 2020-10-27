@@ -25,11 +25,11 @@ class OEmbed extends Base
         $queryParameters['access_token'] = $token;
 
         return $this->extractor->getCrawler()
-            ->createUri($this->getEndpoint($uri->getPath()))
+            ->createUri($this->getEndpointByPath($uri->getPath()))
             ->withQuery($queryParameters);
     }
 
-    private function getEndpoint(string $path): string
+    private function getEndpointByPath(string $path): string
     {
         /* Videos
         https://www.facebook.com/{page-name}/videos/{video-id}/

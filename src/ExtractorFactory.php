@@ -26,6 +26,7 @@ class ExtractorFactory
         'archive.org' => Adapters\Archive\Extractor::class,
         'sassmeister.com' => Adapters\Sassmeister\Extractor::class,
         'facebook.com' => Adapters\Facebook\Extractor::class,
+        'instagram.com' => Adapters\Instagram\Extractor::class,
         'imageshack.com' => Adapters\ImageShack\Extractor::class,
         'imagizer.imageshack.com' => Adapters\ImageShack\Extractor::class,
         'youtube.com' => Adapters\Youtube\Extractor::class,
