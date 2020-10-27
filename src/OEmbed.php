@@ -49,7 +49,7 @@ class OEmbed
         return $this->extractJSON((string) $response->getBody());
     }
 
-    private function detectEndpoint(): ?UriInterface
+    protected function detectEndpoint(): ?UriInterface
     {
         $document = $this->extractor->getDocument();
 

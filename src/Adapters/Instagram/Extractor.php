@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Embed\Adapters\Facebook;
+namespace Embed\Adapters\Instagram;
 
 use Embed\Extractor as Base;
 use Embed\Http\Crawler;
@@ -16,6 +16,5 @@ class Extractor extends Base
         parent::__construct($uri, $request, $response, $crawler);
 
         $this->oembed = new OEmbed($this);
-        $this->title = new Detectors\Title($this);
     }
 }

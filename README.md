@@ -331,8 +331,10 @@ If you need to pass settings to your detectors, you can use the `setSettings` me
 $info = $embed->get($url);
 
 $info->setSettings([
-    'oembed:query_parameters' => []  //Extra parameters send to oembed
-    'twitch:parent' => 'example.com' //Required to embed twitch videos as iframe
+    'oembed:query_parameters' => [],  //Extra parameters send to oembed
+    'twitch:parent' => 'example.com', //Required to embed twitch videos as iframe
+    'facebook:token' => '1234|5678',  //Required to embed content from Facebook
+    'instagram:token' => '1234|5678', //Required to embed content from Instagram
 ]);
 ```
 
