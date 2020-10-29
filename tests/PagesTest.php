@@ -33,7 +33,6 @@ class PagesTest extends PagesTestCase
         $this->assertEmbed('http://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/');
         $this->assertEmbed('http://i.imgur.com/X6rkCc5.jpg');
         $this->assertEmbed('https://infogr.am/7743c36a-f3ca-4465-9a80-a8abbd5d8dc4');
-        $this->assertEmbed('https://www.instagram.com/p/ySl7G9tO_q/');
         $this->assertEmbed('http://output.jsbin.com/vonesu/10');
         $this->assertEmbed('http://jsfiddle.net/zhm5rjnz/');
         $this->assertEmbed('https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers');
@@ -91,7 +90,11 @@ class PagesTest extends PagesTestCase
 
     public function testInstagram()
     {
-        $this->assertEmbed('http://instagram.com/p/ySl7G9tO_q/');
+        if ($_ENV['INSTAGRAM_TOKEN'] ?? false) {
+            $this->assertEmbed('http://instagram.com/p/ySl7G9tO_q/');
+        } else {
+            self::markTestSkipped('Environment variable `INSTAGRAM_TOKEN` must be provided to test instagram. See https://developers.facebook.com/docs/instagram/oembed/');
+        }
     }
 
     public function testMeetup()
@@ -127,8 +130,12 @@ class PagesTest extends PagesTestCase
 
     public function testFacebook()
     {
-        $this->assertEmbed('https://www.facebook.com/permalink.php?story_fbid=827163017327807&id=149460691764713');
-        $this->assertEmbed('https://www.facebook.com/acolono/videos/10154107990797381/');
+        if ($_ENV['FACEBOOK_TOKEN'] ?? false) {
+            $this->assertEmbed('https://www.facebook.com/permalink.php?story_fbid=827163017327807&id=149460691764713');
+            $this->assertEmbed('https://www.facebook.com/acolono/videos/10154107990797381/');
+        } else {
+            self::markTestSkipped('Environment variable `FACEBOOK_TOKEN` must be provided to test facebook. See https://developers.facebook.com/docs/plugins/oembed');
+        }
     }
 
     public function testGithub()
