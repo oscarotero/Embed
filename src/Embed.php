@@ -81,4 +81,9 @@ class Embed
 
         return $extractor->redirect !== null;
     }
+
+    public function setExtractorFactory(ExtractorFactory $extractorFactory): void
+    {
+        $this->extractorFactory = $extractorFactory;
+    }
 }

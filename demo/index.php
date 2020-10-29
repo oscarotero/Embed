@@ -6,15 +6,16 @@ include __DIR__.'/../vendor/autoload.php';
 
 function getUrl(): ?string
 {
-    $url = $_GET['url'] ?? null;
+    $skipParams = ['url', 'instagram_token', 'facebook_token'];
+    $url = getParam('url');
 
-    if (empty($url)) {
+    if (!$url) {
         return null;
     }
 
     //fix for unescaped urls
     foreach ($_GET as $name => $value) {
-        if ($name === 'url') {
+        if (in_array($name, $skipParams, true)) {
             continue;
         }
 
@@ -22,6 +23,10 @@ function getUrl(): ?string
     }
 
     return $url;
+}
+
+function getParam(string $paramName): ?string {
+    return $_GET[$paramName] ?? null;
 }
 
 function getEscapedUrl(): ?string
@@ -120,7 +125,6 @@ $detectors = [
     'cms' => 'printText',
     'language' => 'printText',
     'languages' => 'printArray',
-    'cms' => 'printText',
 ];
 ?>
 
@@ -173,6 +177,14 @@ $detectors = [
                     <span>Url to test:</span>
                     <input type="url" name="url" autofocus placeholder="http://" value="<?php echo getEscapedUrl(); ?>">
                 </label>
+                <label>
+                    <span>Instagram Token:</span>
+                    <input type="text" name="instagram_token" placeholder="1234|5678" value="<?php echo getParam('instagram_token'); ?>">
+                </label>
+                <label>
+                    <span>Facebook Token:</span>
+                    <input type="text" name="facebook_token" placeholder="1234|5678" value="<?php echo getParam('facebook_token') ?>">
+                </label>
             </fieldset>
 
             <fieldset class="action">
@@ -193,10 +205,16 @@ $detectors = [
                     'Accept-Language' => 'en-US,en;q=0.2',
                     'Cache-Control' => 'max-age=0,no-cache',
                 ]);
+
+                $extractorFactory = new \Embed\ExtractorFactory(
+                    [
+                        'twitch:parent' => $_SERVER['SERVER_NAME'] === 'localhost' ? null : $_SERVER['SERVER_NAME'],
+                        'instagram:token' => getParam('instagram_token'),
+                        'facebook:token' => getParam('facebook_token'),
+                    ]
+                );
+                $embed->setExtractorFactory($extractorFactory);
                 $info = $embed->get(getUrl());
-                $info->setSettings([
-                    'twitch:parent' => $_SERVER['SERVER_NAME'] === 'localhost' ? null : $_SERVER['SERVER_NAME'],
-                ]);
             } catch (Exception $exception) {
                 echo '<pre>';
                 echo $exception;
