@@ -62,7 +62,7 @@ class Extractor
     private Crawler $crawler;
 
     private Document $document;
-    private OEmbed $oembed;
+    protected OEmbed $oembed;
     private LinkedData $linkedData;
     private Metas $metas;
 
