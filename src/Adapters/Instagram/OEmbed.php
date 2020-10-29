@@ -24,6 +24,6 @@ class OEmbed extends Base
 
         return $this->extractor->getCrawler()
             ->createUri(self::ENDPOINT)
-            ->withQuery($queryParameters);
+            ->withQuery(http_build_query($queryParameters));
     }
 }
