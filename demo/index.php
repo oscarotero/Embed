@@ -25,7 +25,8 @@ function getUrl(): ?string
     return $url;
 }
 
-function getParam(string $paramName): ?string {
+function getParam(string $paramName): ?string
+{
     return $_GET[$paramName] ?? null;
 }
 
@@ -183,7 +184,7 @@ $detectors = [
                 </label>
                 <label>
                     <span>Facebook Token:</span>
-                    <input type="text" name="facebook_token" placeholder="1234|5678" value="<?php echo getParam('facebook_token') ?>">
+                    <input type="text" name="facebook_token" placeholder="1234|5678" value="<?php echo getParam('facebook_token'); ?>">
                 </label>
             </fieldset>
 
@@ -194,7 +195,7 @@ $detectors = [
             </fieldset>
         </form>
 
-        <?php if (getUrl()): ?>
+        <?php if (getUrl()) : ?>
         <main>
             <h1>Result:</h1>
 
@@ -224,7 +225,7 @@ $detectors = [
             ?>
 
             <table>
-                <?php foreach ($detectors as $name => $fn): ?>
+                <?php foreach ($detectors as $name => $fn) : ?>
                 <tr>
                     <th><?php echo $name; ?></th>
                     <td><?php $fn($info->$name); ?></td>
@@ -268,7 +269,7 @@ $detectors = [
                         </tr>
                     </table>
 
-                    <?php if (method_exists($info, 'getApi')): ?>
+                    <?php if (method_exists($info, 'getApi')) : ?>
                     <h2>API data</h2>
 
                     <table>
