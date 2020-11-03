@@ -33,6 +33,12 @@ class ExtractorFactory
         'twitch.tv' => Adapters\Twitch\Extractor::class,
     ];
     private array $customDetectors = [];
+    private array $settings;
+
+    public function __construct(?array $settings = [])
+    {
+        $this->settings = $settings ?? [];
+    }
 
     public function createExtractor(UriInterface $uri, RequestInterface $request, ResponseInterface $response, Crawler $crawler): Extractor
     {
@@ -41,7 +47,9 @@ class ExtractorFactory
 
         $class = $this->adapters[$host] ?? $this->default;
 
+        /** @var Extractor $extractor */
         $extractor = new $class($uri, $request, $response, $crawler);
+        $extractor->setSettings($this->settings);
 
         foreach ($this->customDetectors as $name => $detector) {
             $extractor->addDetector($name, new $detector($extractor));
@@ -68,5 +76,10 @@ class ExtractorFactory
     public function setDefault(string $class): void
     {
         $this->default = $class;
+    }
+
+    public function setSettings(array $settings): void
+    {
+        $this->settings = $settings;
     }
 }

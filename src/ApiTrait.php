@@ -9,7 +9,7 @@ use Throwable;
 
 trait ApiTrait
 {
-    private Extractor $extractor;
+    protected Extractor $extractor;
     private array $data;
 
     public function __construct(Extractor $extractor)

@@ -324,18 +324,19 @@ $client->setSettings([
 $embed = new Embed(new Crawler($client));
 ```
 
-If you need to pass settings to your detectors, you can use the `setSettings` method:
+If you need to pass settings to your detectors, you can add settings to the `ExtractorFactory`:
 
 ```php
-//Create the extractor
-$info = $embed->get($url);
+use Embed\Embed;
 
-$info->setSettings([
+$embed = new Embed();
+$embed->setSettings([
     'oembed:query_parameters' => [],  //Extra parameters send to oembed
     'twitch:parent' => 'example.com', //Required to embed twitch videos as iframe
     'facebook:token' => '1234|5678',  //Required to embed content from Facebook
     'instagram:token' => '1234|5678', //Required to embed content from Instagram
 ]);
+$info = $embed->get($url);
 ```
 
 Note: The built-in detectors does not require settings. This feature is only for convenience if you create a specific detector that requires settings.

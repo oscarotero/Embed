@@ -57,6 +57,11 @@ class Embed
         return $this->extractorFactory;
     }
 
+    public function setSettings(array $settings): void
+    {
+        $this->extractorFactory->setSettings($settings);
+    }
+
     private function extract(RequestInterface $request, ResponseInterface $response, bool $redirect = true): Extractor
     {
         $uri = $this->crawler->getResponseUri($response) ?: $request->getUri();

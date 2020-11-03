@@ -26,7 +26,7 @@ class OEmbed extends Base
 
         return $this->extractor->getCrawler()
             ->createUri($this->getEndpointByPath($uri->getPath()))
-            ->withQuery($queryParameters);
+            ->withQuery(http_build_query($queryParameters));
     }
 
     private function getEndpointByPath(string $path): string

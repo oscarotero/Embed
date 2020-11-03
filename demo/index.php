@@ -6,15 +6,16 @@ include __DIR__.'/../vendor/autoload.php';
 
 function getUrl(): ?string
 {
-    $url = $_GET['url'] ?? null;
+    $skipParams = ['url', 'settings'];
+    $url = getParam('url');
 
-    if (empty($url)) {
+    if (!$url) {
         return null;
     }
 
     //fix for unescaped urls
     foreach ($_GET as $name => $value) {
-        if ($name === 'url') {
+        if (in_array($name, $skipParams, true)) {
             continue;
         }
 
@@ -22,6 +23,17 @@ function getUrl(): ?string
     }
 
     return $url;
+}
+
+function getParam(string $paramName): ?string
+{
+    return $_GET[$paramName] ?? null;
+}
+
+function getJsonSettings(): array
+{
+    $jsonString = getParam('settings') ?: '{}';
+    return json_decode($jsonString, true, 512, JSON_THROW_ON_ERROR);
 }
 
 function getEscapedUrl(): ?string
@@ -120,7 +132,6 @@ $detectors = [
     'cms' => 'printText',
     'language' => 'printText',
     'languages' => 'printArray',
-    'cms' => 'printText',
 ];
 ?>
 
@@ -143,7 +154,7 @@ $detectors = [
             form { background: #EEE; border-bottom: solid 1px #DDD; color: #666; padding: 3em 1.5em; }
             fieldset { border: none; padding: 0; }
             label { display: block; cursor: pointer; font-weight: bold; }
-            input[type="url"] { border: none; background: white; border-radius: 2px; box-sizing: border-box; width: 100%; margin: 5px 0; font-size: 1.3em; padding: 0.5em; color: #666; }
+            input[type="url"], textarea { border: none; background: white; border-radius: 2px; box-sizing: border-box; min-width: 100%; margin: 5px 0; font-size: 1.3em; padding: 0.5em; color: #666; }
             button, summary { font-size: 1.6rem; font-weight: bold; font-family: Arial; background: yellowgreen; border: none; border-radius: 3px; padding: 0.3em 1em; cursor: pointer; margin-top: 5px; }
             button:hover, summary:hover { background: black; color: white; }
             details {
@@ -154,7 +165,7 @@ $detectors = [
                 width: max-content;
                 margin: auto;
             }
-
+            .helptext { font-weight: normal; font-size: 0.75em; }
             /* result */
             main { padding: 1.5em; }
             main h1, main h2 { font-size: 2em; color: #666; letter-spacing: -0.02em; }
@@ -173,6 +184,19 @@ $detectors = [
                     <span>Url to test:</span>
                     <input type="url" name="url" autofocus placeholder="http://" value="<?php echo getEscapedUrl(); ?>">
                 </label>
+                <label>
+                    <span>Settings:</span>
+                    <?php
+                    $placeholderJson = json_encode(['instagram:token' => null], JSON_PRETTY_PRINT);
+                    $currentJson = getJsonSettings();
+                    ?>
+                    <textarea name="settings" rows="3" placeholder='<?php echo $placeholderJson; ?>'><?php
+                         echo !empty($currentJson)
+                             ? json_encode($currentJson, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT)
+                             : '';
+                    ?></textarea>
+                    <span class="helptext">Add settings like "instagram:token", "facebook:token", ...</span>
+                </label>
             </fieldset>
 
             <fieldset class="action">
@@ -182,7 +206,7 @@ $detectors = [
             </fieldset>
         </form>
 
-        <?php if (getUrl()): ?>
+        <?php if (getUrl()) : ?>
         <main>
             <h1>Result:</h1>
 
@@ -193,10 +217,16 @@ $detectors = [
                     'Accept-Language' => 'en-US,en;q=0.2',
                     'Cache-Control' => 'max-age=0,no-cache',
                 ]);
+
+                $embed->setSettings(
+                    array_merge(
+                        [
+                            'twitch:parent' => $_SERVER['SERVER_NAME'] === 'localhost' ? null : $_SERVER['SERVER_NAME'],
+                        ],
+                        getJsonSettings()
+                    )
+                );
                 $info = $embed->get(getUrl());
-                $info->setSettings([
-                    'twitch:parent' => $_SERVER['SERVER_NAME'] === 'localhost' ? null : $_SERVER['SERVER_NAME'],
-                ]);
             } catch (Exception $exception) {
                 echo '<pre>';
                 echo $exception;
@@ -206,7 +236,7 @@ $detectors = [
             ?>
 
             <table>
-                <?php foreach ($detectors as $name => $fn): ?>
+                <?php foreach ($detectors as $name => $fn) : ?>
                 <tr>
                     <th><?php echo $name; ?></th>
                     <td><?php $fn($info->$name); ?></td>
@@ -250,7 +280,7 @@ $detectors = [
                         </tr>
                     </table>
 
-                    <?php if (method_exists($info, 'getApi')): ?>
+                    <?php if (method_exists($info, 'getApi')) : ?>
                     <h2>API data</h2>
 
                     <table>

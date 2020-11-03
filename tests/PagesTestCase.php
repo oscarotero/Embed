@@ -7,6 +7,7 @@ use Brick\VarExporter\VarExporter;
 use Datetime;
 use Embed\Embed;
 use Embed\Extractor;
+use Embed\ExtractorFactory;
 use Embed\Http\Crawler;
 use JsonSerializable;
 use PHPUnit\Framework\TestCase;
@@ -50,7 +51,7 @@ abstract class PagesTestCase extends TestCase
         $dispatcher = new FileClient(__DIR__.'/cache');
         $dispatcher->setMode(static::CACHE);
 
-        return self::$embed = new Embed(new Crawler($dispatcher));
+        return self::$embed = new Embed(new Crawler($dispatcher), self::getExtractorFactory());
     }
 
     protected function assertEmbed(string $url)
@@ -65,6 +66,7 @@ abstract class PagesTestCase extends TestCase
         if (!$expected || static::FIXTURES === 1) {
             self::writeData($uri, $data);
             echo PHP_EOL."Save fixture: {$url}";
+            $this->markTestSkipped('Skipped assertion for '.$url);
         } else {
             $this->assertEquals($expected, $data, $url);
         }
@@ -132,5 +134,15 @@ abstract class PagesTestCase extends TestCase
         }
 
         return $value;
+    }
+
+    private static function getExtractorFactory()
+    {
+        $settings = [
+            'instagram:token' => $_ENV['INSTAGRAM_TOKEN'] ?? null,
+            'facebook:token' => $_ENV['FACEBOOK_TOKEN'] ?? null,
+        ];
+
+        return new ExtractorFactory($settings);
     }
 }
