@@ -207,14 +207,13 @@ $detectors = [
                     'Cache-Control' => 'max-age=0,no-cache',
                 ]);
 
-                $extractorFactory = new \Embed\ExtractorFactory(
+                $embed->setSettings(
                     [
                         'twitch:parent' => $_SERVER['SERVER_NAME'] === 'localhost' ? null : $_SERVER['SERVER_NAME'],
                         'instagram:token' => getParam('instagram_token'),
                         'facebook:token' => getParam('facebook_token'),
                     ]
                 );
-                $embed->setExtractorFactory($extractorFactory);
                 $info = $embed->get(getUrl());
             } catch (Exception $exception) {
                 echo '<pre>';

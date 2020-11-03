@@ -328,17 +328,14 @@ If you need to pass settings to your detectors, you can add settings to the `Ext
 
 ```php
 use Embed\Embed;
-use Embed\ExtractorFactory;
 
 $embed = new Embed();
-$extractorFactory = new ExtractorFactory([
+$embed->setSettings([
     'oembed:query_parameters' => [],  //Extra parameters send to oembed
     'twitch:parent' => 'example.com', //Required to embed twitch videos as iframe
     'facebook:token' => '1234|5678',  //Required to embed content from Facebook
     'instagram:token' => '1234|5678', //Required to embed content from Instagram
 ]);
-$embed->setExtractorFactory($extractorFactory);
-
 $info = $embed->get($url);
 ```
 

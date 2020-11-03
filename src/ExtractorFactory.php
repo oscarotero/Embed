@@ -77,4 +77,9 @@ class ExtractorFactory
     {
         $this->default = $class;
     }
+
+    public function setSettings(array $settings): void
+    {
+        $this->settings = $settings;
+    }
 }
