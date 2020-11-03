@@ -34,25 +34,25 @@ use Psr\Http\Message\UriInterface;
 /**
  * Class to extract the info
  *
- * @property-read string|null          $authorName
- * @property-read UriInterface|null    $authorUrl
- * @property-read string|null          $cms
- * @property-read EmbedCode|null       $code
- * @property-read string|null          $description
- * @property-read UriInterface         $favicon
- * @property-read array|UriInterface[] $feeds
- * @property-read UriInterface|null    $icon
- * @property-read UriInterface|null    $image
- * @property-read array|string[]       $keywords
- * @property-read string|null          $language
- * @property-read array|UriInterface[] $languages
- * @property-read string|null          $license
- * @property-read string               $providerName
- * @property-read UriInterface         $providerUrl
- * @property-read DateTime|null        $publishedTime
- * @property-read UriInterface|null    $redirect
- * @property-read string|null          $title
- * @property-read UriInterface         $url
+ * @property string|null          $authorName
+ * @property UriInterface|null    $authorUrl
+ * @property string|null          $cms
+ * @property EmbedCode|null       $code
+ * @property string|null          $description
+ * @property UriInterface         $favicon
+ * @property array|UriInterface[] $feeds
+ * @property UriInterface|null    $icon
+ * @property UriInterface|null    $image
+ * @property array|string[]       $keywords
+ * @property string|null          $language
+ * @property array|UriInterface[] $languages
+ * @property string|null          $license
+ * @property string               $providerName
+ * @property UriInterface         $providerUrl
+ * @property DateTime|null        $publishedTime
+ * @property UriInterface|null    $redirect
+ * @property string|null          $title
+ * @property UriInterface         $url
  */
 class Extractor
 {
@@ -61,10 +61,10 @@ class Extractor
     private UriInterface $uri;
     private Crawler $crawler;
 
-    private Document $document;
+    protected Document $document;
     protected OEmbed $oembed;
-    private LinkedData $linkedData;
-    private Metas $metas;
+    protected LinkedData $linkedData;
+    protected Metas $metas;
 
     private array $settings = [];
     private array $customDetectors = [];

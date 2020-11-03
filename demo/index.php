@@ -151,10 +151,10 @@ $detectors = [
             pre { overflow: auto; background: #EEE; padding: 1em; }
 
             /* form */
-            form { background: #EEE; border-bottom: solid 1px #DDD; color: #666; padding: 3em 1.5em; }
-            fieldset { border: none; padding: 0; }
+            form { background: #EEE; border-bottom: solid 1px #DDD; color: #666; padding: 1em 1.5em; }
+            fieldset { border: none; padding: 1em 0; }
             label { display: block; cursor: pointer; font-weight: bold; }
-            input[type="url"], textarea { border: none; background: white; border-radius: 2px; box-sizing: border-box; min-width: 100%; margin: 5px 0; font-size: 1.3em; padding: 0.5em; color: #666; }
+            input[type="url"], textarea { border: none; background: white; border-radius: 2px; box-sizing: border-box; min-width: 100%; margin: 5px 0; font-size: 1.3em; padding: 0.5em; color: #666; resize: vertical; }
             button, summary { font-size: 1.6rem; font-weight: bold; font-family: Arial; background: yellowgreen; border: none; border-radius: 3px; padding: 0.3em 1em; cursor: pointer; margin-top: 5px; }
             button:hover, summary:hover { background: black; color: white; }
             details {
@@ -184,21 +184,22 @@ $detectors = [
                     <span>Url to test:</span>
                     <input type="url" name="url" autofocus placeholder="http://" value="<?php echo getEscapedUrl(); ?>">
                 </label>
+                <br>
                 <label>
                     <span>Settings:</span>
                     <?php
                     $placeholderJson = json_encode(['instagram:token' => null], JSON_PRETTY_PRINT);
                     $currentJson = getJsonSettings();
                     ?>
-                    <textarea name="settings" rows="3" placeholder='<?php echo $placeholderJson; ?>'><?php
+                    <textarea name="settings" rows="2" placeholder='<?php echo $placeholderJson; ?>'><?php
                          echo !empty($currentJson)
                              ? json_encode($currentJson, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT)
                              : '';
                     ?></textarea>
-                    <span class="helptext">Add settings like "instagram:token", "facebook:token", ...</span>
+                    <span class="helptext">Add settings in JSON like "instagram:token", "facebook:token", ...</span>
                 </label>
             </fieldset>
-
+            
             <fieldset class="action">
                 <button type="submit">Test</button>
                 &nbsp;&nbsp;&nbsp;
