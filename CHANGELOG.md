@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.0] - 2020-11-04
+### Added
+- New function `$embed->setSettings()` to pass the settings before get the site info
+
+### Fixed
+- PHP 8 compatibility [#394]
+- Facebook and Instagram adapted to the new API changes [#392] [#399]
+
 ## [4.2.7] - 2020-09-23
 ### Added
 - New option `twitch:parent` to fix Twitch embed with iframes [#384]
@@ -97,7 +105,11 @@ Full library refactoring.
 [#386]: https://github.com/oscarotero/Embed/issues/386
 [#387]: https://github.com/oscarotero/Embed/issues/387
 [#388]: https://github.com/oscarotero/Embed/issues/388
+[#392]: https://github.com/oscarotero/Embed/issues/392
+[#394]: https://github.com/oscarotero/Embed/issues/394
+[#399]: https://github.com/oscarotero/Embed/issues/399
 
+[4.3.0]: https://github.com/oscarotero/Embed/compare/v4.2.7...v4.3.0
 [4.2.7]: https://github.com/oscarotero/Embed/compare/v4.2.6...v4.2.7
 [4.2.6]: https://github.com/oscarotero/Embed/compare/v4.2.5...v4.2.6
 [4.2.5]: https://github.com/oscarotero/Embed/compare/v4.2.4...v4.2.5
