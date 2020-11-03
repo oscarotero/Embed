@@ -24,7 +24,7 @@
         "issues": "https://github.com/oscarotero/Embed/issues"
     },
     "require": {
-        "php": "^7.4",
+        "php": "^7.4|^8",
         "ext-curl": "*",
         "ext-dom": "*",
         "ext-json": "*",
