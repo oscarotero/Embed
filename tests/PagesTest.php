@@ -90,7 +90,7 @@ class PagesTest extends PagesTestCase
 
     public function testInstagram()
     {
-        if ($_ENV['INSTAGRAM_TOKEN'] ?? false) {
+        if (getenv('INSTAGRAM_TOKEN') ?? false) {
             $this->assertEmbed('http://instagram.com/p/ySl7G9tO_q/');
         } else {
             self::markTestSkipped('Environment variable `INSTAGRAM_TOKEN` must be provided to test instagram. See https://developers.facebook.com/docs/instagram/oembed/');
@@ -130,7 +130,7 @@ class PagesTest extends PagesTestCase
 
     public function testFacebook()
     {
-        if ($_ENV['FACEBOOK_TOKEN'] ?? false) {
+        if (getenv('FACEBOOK_TOKEN') ?? false) {
             $this->assertEmbed('https://www.facebook.com/permalink.php?story_fbid=827163017327807&id=149460691764713');
             $this->assertEmbed('https://www.facebook.com/acolono/videos/10154107990797381/');
         } else {
