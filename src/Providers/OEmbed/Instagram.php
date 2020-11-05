@@ -11,6 +11,7 @@ class Instagram extends EndPoint implements EndPointInterface
     protected static $pattern = [
         'instagram.com/p/*',
         'www.instagram.com/p/*',
+        'www.instagram.com/tv/*',
         'instagr.am/p/*',
     ];
     protected static $endPoint = 'https://graph.facebook.com/v8.0/instagram_oembed';
