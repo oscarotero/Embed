@@ -53,9 +53,12 @@ class OEmbed extends Base
         https://www.facebook.com/media/set?set={set-id}
         https://www.facebook.com/questions/{question-id}
         https://www.facebook.com/notes/{username}/{note-url}/{note-id}
+
+        Not in the facebook docs:
+        https://www.facebook.com/{page-name}/photos/{post-id}/{photo-id}
         */
         if (strpos($path, '/photo.php') === 0
-            || strpos($path, '/photos/') === 0
+            || strpos($path, '/photos/') !== false
             || strpos($path, '/permalink.php') === 0
             || strpos($path, '/media/') === 0
             || strpos($path, '/questions/') === 0
