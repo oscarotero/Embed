@@ -52,6 +52,21 @@ class PagesTest extends PagesTestCase
         $this->assertEmbed('http://www.wired.com/?p=2064839');
     }
 
+    public function testImageFile()
+    {
+        $this->assertEmbed('https://cdn2.thecatapi.com/images/cjd.jpg');
+    }
+
+    public function testAudioFile()
+    {
+        $this->assertEmbed('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+    }
+
+    public function testVideoFile()
+    {
+        $this->assertEmbed('http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4');
+    }
+
     public function testSnipplr()
     {
         $this->assertEmbed('http://snipplr.com/view/72914/better-html-5-basic-starter-template');
