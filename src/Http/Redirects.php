@@ -15,17 +15,19 @@ abstract class Redirects
         'tumblr' => 't.umblr.com/redirect',
     ];
     
-     /**
-     * Resolve a facebook redirection url.
+    /**
+     * Resolve the url redirection.
      *
      * @param Url $url
      *
      * @return Url
      */
-    public static function facebook(Url $url)
+    public static function resolve(Url $url)
     {
-        if (($value = $url->getQueryParameter('next'))) {
-            return Url::create($value);
+        foreach (self::$patterns as $method => $pattern) {
+            if ($url->match($pattern)) {
+                return self::$method($url);
+            }
         }
 
         return $url;
