@@ -13,6 +13,7 @@ abstract class Redirects
         'hashBang' => '*#!*',
         'spotify' => 'play.spotify.com/*',
         'tumblr' => 't.umblr.com/redirect',
+        'facebook' => 'www.facebook.com/login/*',
     ];
 
     /**
@@ -28,6 +29,22 @@ abstract class Redirects
             if ($url->match($pattern)) {
                 return self::$method($url);
             }
+        }
+
+        return $url;
+    }
+    
+     /**
+     * Resolve a facebook redirection url.
+     *
+     * @param Url $url
+     *
+     * @return Url
+     */
+    public static function facebook(Url $url)
+    {
+        if (($value = $url->getQueryParameter('next'))) {
+            return Url::create($value);
         }
 
         return $url;
