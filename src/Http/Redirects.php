@@ -14,7 +14,7 @@ abstract class Redirects
         'spotify' => 'play.spotify.com/*',
         'tumblr' => 't.umblr.com/redirect',
     ];
-
+    
     /**
      * Resolve the url redirection.
      *
