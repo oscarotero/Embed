@@ -53,11 +53,12 @@ class OEmbed
     {
         $document = $this->extractor->getDocument();
 
-        return $document->link('alternate', ['type' => 'application/json+oembed'])
+        return $this->detectEndpointFromProviders()
+            ?: $document->link('alternate', ['type' => 'application/json+oembed'])
             ?: $document->link('alternate', ['type' => 'text/json+oembed'])
             ?: $document->link('alternate', ['type' => 'application/xml+oembed'])
             ?: $document->link('alternate', ['type' => 'text/xml+oembed'])
-            ?: $this->detectEndpointFromProviders();
+        ;
     }
 
     private function detectEndpointFromProviders(): ?UriInterface
