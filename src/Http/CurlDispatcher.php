@@ -102,9 +102,9 @@ class CurlDispatcher implements DispatcherInterface
 
         $response = $this->exec($url, $options);
 
-        //Some sites returns 403 with the default user-agent
-        if ($response->getStatusCode() === 403) {
-            $options[CURLOPT_USERAGENT] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36';
+        //Some sites returns 400 or 403 with the default user-agent
+        if ($response->getStatusCode() === 400 || $response->getStatusCode() === 403) {
+            $options[CURLOPT_USERAGENT] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36';
 
             return $this->exec($url, $options);
         }
