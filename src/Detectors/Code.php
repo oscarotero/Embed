@@ -12,7 +12,8 @@ class Code extends Detector
     {
         return $this->detectFromEmbed()
             ?: $this->detectFromOpenGraph()
-            ?: $this->detectFromTwitter();
+            ?: $this->detectFromTwitter()
+            ?: $this->detectFromContentType();
     }
 
     private function detectFromEmbed(): ?EmbedCode
@@ -102,5 +103,40 @@ class Code extends Detector
         ]);
 
         return new EmbedCode($code, $width, $height);
+    }
+
+    private function detectFromContentType()
+    {
+        if (!$this->extractor->getResponse()->hasHeader('content-type')) {
+            return null;
+        }
+
+        $contentType = $this->extractor->getResponse()->getHeader('content-type')[0];
+        $isBinary = !preg_match('/(text|html|json)/', strtolower($contentType));
+        if (!$isBinary) {
+            return null;
+        }
+
+        $url = $this->extractor->getRequest()->getUri();
+
+        if (strpos($contentType, 'video/') === 0 || $contentType === 'application/mp4') {
+            $code = html('video', [
+                'src' => $url,
+                'controls' => true,
+            ]);
+        } elseif (strpos($contentType, 'audio/') === 0) {
+            $code = html('audio', [
+                'src' => $url,
+                'controls' => true,
+            ]);
+        } elseif (strpos($contentType, 'image/') === 0) {
+            $code = html('img', [
+                'src' => $url,
+            ]);
+        } else {
+            return null;
+        }
+
+        return new EmbedCode($code);
     }
 }
