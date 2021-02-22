@@ -18,6 +18,7 @@ class Keywords extends Detector
             'og:video:tag',
             'og:book:tag',
             'lp.article:section',
+            'dcterms.subject',
         ];
 
         foreach ($types as $type) {
