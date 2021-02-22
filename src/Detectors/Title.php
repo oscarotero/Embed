@@ -12,7 +12,7 @@ class Title extends Detector
         $metas = $this->extractor->getMetas();
 
         return $oembed->str('title')
-            ?: $metas->str('og:title', 'twitter:title', 'lp:title')
+            ?: $metas->str('og:title', 'twitter:title', 'lp:title', 'dcterms.title')
             ?: $document->select('.//head/title')->str();
     }
 }
