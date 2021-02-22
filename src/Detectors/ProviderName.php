@@ -13,7 +13,12 @@ class ProviderName extends Detector
         $metas = $this->extractor->getMetas();
 
         return $oembed->str('provider_name')
-            ?: $metas->str('og:site_name')
+            ?: $metas->str(
+                'og:site_name', 
+                'dcterms.publisher',
+                'publisher',
+                'article:publisher'
+            )
             ?: ucfirst($this->fallback());
     }
 

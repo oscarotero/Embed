@@ -38,7 +38,8 @@ class PublishedTime extends Detector
                 'rc.datecreation',
                 'timestamp',
                 'sailthru.date',
-                'article:modified_time'
+                'article:modified_time',
+                'dcterms.date'
             );
     }
 
