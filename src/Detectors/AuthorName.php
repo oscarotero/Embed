@@ -17,7 +17,8 @@ class AuthorName extends Detector
                 'sailthru.author',
                 'lp.article:author',
                 'twitter:creator',
-                'dcterms.creator'
+                'dcterms.creator',
+                'author'
             );
     }
 }
