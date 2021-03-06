@@ -28,6 +28,7 @@ class ExtractorFactory
         'imageshack.com' => Adapters\ImageShack\Extractor::class,
         'youtube.com' => Adapters\Youtube\Extractor::class,
         'twitch.tv' => Adapters\Twitch\Extractor::class,
+        'bandcamp.com' => Adapters\Bandcamp\Extractor::class,
     ];
     private array $customDetectors = [];
     private array $settings;
