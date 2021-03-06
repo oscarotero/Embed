@@ -18,19 +18,17 @@ class ExtractorFactory
         'snipplr.com' => Adapters\Snipplr\Extractor::class,
         'play.cadenaser.com' => Adapters\CadenaSer\Extractor::class,
         'ideone.com' => Adapters\Ideone\Extractor::class,
-        'github.com' => Adapters\Github\Extractor::class,
         'gist.github.com' => Adapters\Gist\Extractor::class,
-        'en.wikipedia.org' => Adapters\Wikipedia\Extractor::class,
-        'es.wikipedia.org' => Adapters\Wikipedia\Extractor::class,
-        'gl.wikipedia.org' => Adapters\Wikipedia\Extractor::class,
+        'github.com' => Adapters\Github\Extractor::class,
+        'wikipedia.org' => Adapters\Wikipedia\Extractor::class,
         'archive.org' => Adapters\Archive\Extractor::class,
         'sassmeister.com' => Adapters\Sassmeister\Extractor::class,
         'facebook.com' => Adapters\Facebook\Extractor::class,
         'instagram.com' => Adapters\Instagram\Extractor::class,
         'imageshack.com' => Adapters\ImageShack\Extractor::class,
-        'imagizer.imageshack.com' => Adapters\ImageShack\Extractor::class,
         'youtube.com' => Adapters\Youtube\Extractor::class,
         'twitch.tv' => Adapters\Twitch\Extractor::class,
+        'bandcamp.com' => Adapters\Bandcamp\Extractor::class,
     ];
     private array $customDetectors = [];
     private array $settings;
@@ -43,9 +41,13 @@ class ExtractorFactory
     public function createExtractor(UriInterface $uri, RequestInterface $request, ResponseInterface $response, Crawler $crawler): Extractor
     {
         $host = $uri->getHost();
-        $host = str_replace('www.', '', $host);
+        $class = $this->default;
 
-        $class = $this->adapters[$host] ?? $this->default;
+        foreach ($this->adapters as $adapterHost => $adapter) {
+            if (substr($host, -strlen($adapterHost)) === $adapterHost) {
+                $class = $adapter;
+            }
+        }
 
         /** @var Extractor $extractor */
         $extractor = new $class($uri, $request, $response, $crawler);
