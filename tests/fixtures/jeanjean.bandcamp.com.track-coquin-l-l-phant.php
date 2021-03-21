@@ -20,7 +20,7 @@ return [
     'language' => null,
     'languages' => [],
     'license' => null,
-    'providerName' => 'Jean Jean',
+    'providerName' => 'Bandcamp',
     'providerUrl' => 'https://jeanjean.bandcamp.com',
     'publishedTime' => '2013-09-14 00:00:00',
     'redirect' => null,

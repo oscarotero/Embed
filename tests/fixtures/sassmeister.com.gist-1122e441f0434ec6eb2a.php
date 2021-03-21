@@ -2,7 +2,7 @@
 declare(strict_types = 1);
 
 return [
-    'authorName' => null,
+    'authorName' => 'Jed Foster and Dale Sande',
     'authorUrl' => null,
     'cms' => null,
     'code' => [
