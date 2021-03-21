@@ -46,6 +46,7 @@ class ExtractorFactory
         foreach ($this->adapters as $adapterHost => $adapter) {
             if (substr($host, -strlen($adapterHost)) === $adapterHost) {
                 $class = $adapter;
+                break;
             }
         }
 
