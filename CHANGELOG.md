@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.1] - 2021-03-21
+### Added
+- Support for binary files (video, audio, images, etc) [#412] [#413]
+
+### Fixed
+- Oembed for facebook photos [#405] [#406]
+- Oembed for facebook videos [#432] [#433]
+- Added more ways to detect data using meta tags [#427]
+- Bandcamp provider name [#429] [#430]
+
 ## [4.3.0] - 2020-11-04
 ### Added
 - New function `$embed->setSettings()` to pass the settings before get the site info
@@ -108,7 +118,17 @@ Full library refactoring.
 [#392]: https://github.com/oscarotero/Embed/issues/392
 [#394]: https://github.com/oscarotero/Embed/issues/394
 [#399]: https://github.com/oscarotero/Embed/issues/399
+[#405]: https://github.com/oscarotero/Embed/issues/405
+[#406]: https://github.com/oscarotero/Embed/issues/406
+[#412]: https://github.com/oscarotero/Embed/issues/412
+[#413]: https://github.com/oscarotero/Embed/issues/413
+[#427]: https://github.com/oscarotero/Embed/issues/427
+[#429]: https://github.com/oscarotero/Embed/issues/429
+[#430]: https://github.com/oscarotero/Embed/issues/430
+[#432]: https://github.com/oscarotero/Embed/issues/432
+[#433]: https://github.com/oscarotero/Embed/issues/433
 
+[4.3.1]: https://github.com/oscarotero/Embed/compare/v4.3.0...v4.3.1
 [4.3.0]: https://github.com/oscarotero/Embed/compare/v4.2.7...v4.3.0
 [4.2.7]: https://github.com/oscarotero/Embed/compare/v4.2.6...v4.2.7
 [4.2.6]: https://github.com/oscarotero/Embed/compare/v4.2.5...v4.2.6
