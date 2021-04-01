@@ -6,7 +6,7 @@ use Embed\Adapters\Adapter;
 
 class Youtube extends EndPoint implements EndPointInterface
 {
-    protected static $pattern = ['*youtube.*', '*youtu\.be.*'];
+    protected static $pattern = ['*youtube.*', '*youtu.be*'];
     protected static $endPoint = 'https://www.youtube.com/oembed';
 
     public static function create(Adapter $adapter)
