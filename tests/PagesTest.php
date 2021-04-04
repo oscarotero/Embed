@@ -6,11 +6,12 @@ namespace Embed\Tests;
 class PagesTest extends PagesTestCase
 {
     /**
+     * -1 = Read from cache (throws an exception if the cache doesn't exist)
      * 0 = Read from cache (generate the files the first time)
      * 1 = Read from net without override the cache files
      * 2 = Read from net and override the cache files
      */
-    const CACHE = 0;
+    const CACHE = -1;
 
     /**
      * 0 = Do not override the fixtures
