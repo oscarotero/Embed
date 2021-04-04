@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.2] - 2021-04-04
+### Fixed
+- Add configured oEmbed query parameters to all oEmbed endpoints [#437]
+
 ## [4.3.1] - 2021-03-21
 ### Added
 - Support for binary files (video, audio, images, etc) [#412] [#413]
@@ -127,7 +131,9 @@ Full library refactoring.
 [#430]: https://github.com/oscarotero/Embed/issues/430
 [#432]: https://github.com/oscarotero/Embed/issues/432
 [#433]: https://github.com/oscarotero/Embed/issues/433
+[#437]: https://github.com/oscarotero/Embed/issues/437
 
+[4.3.2]: https://github.com/oscarotero/Embed/compare/v4.3.1...v4.3.2
 [4.3.1]: https://github.com/oscarotero/Embed/compare/v4.3.0...v4.3.1
 [4.3.0]: https://github.com/oscarotero/Embed/compare/v4.2.7...v4.3.0
 [4.2.7]: https://github.com/oscarotero/Embed/compare/v4.2.6...v4.2.7
