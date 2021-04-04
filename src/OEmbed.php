@@ -53,11 +53,22 @@ class OEmbed
     {
         $document = $this->extractor->getDocument();
 
-        return $document->link('alternate', ['type' => 'application/json+oembed'])
+        $endpoint = $document->link('alternate', ['type' => 'application/json+oembed'])
             ?: $document->link('alternate', ['type' => 'text/json+oembed'])
             ?: $document->link('alternate', ['type' => 'application/xml+oembed'])
             ?: $document->link('alternate', ['type' => 'text/xml+oembed'])
-            ?: $this->detectEndpointFromProviders();
+            ?: null;
+
+        if ($endpoint === null) {
+            return $this->detectEndpointFromProviders();
+        }
+
+        // Add configured OEmbed query parameters
+        parse_str($endpoint->getQuery(), $query);
+        $query = array_merge($query, $this->extractor->getSetting('oembed:query_parameters') ?? []);
+        $endpoint = $endpoint->withQuery(http_build_query($query));
+
+        return $endpoint;
     }
 
     private function detectEndpointFromProviders(): ?UriInterface
