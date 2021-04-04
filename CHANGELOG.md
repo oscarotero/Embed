@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [4.3.2] - 2021-04-04
 ### Fixed
 - Add configured oEmbed query parameters to all oEmbed endpoints [#437]
+- Updated oEmbed endpoints.
+- Replace Travis with Github workflows for testing
 
 ## [4.3.1] - 2021-03-21
 ### Added
