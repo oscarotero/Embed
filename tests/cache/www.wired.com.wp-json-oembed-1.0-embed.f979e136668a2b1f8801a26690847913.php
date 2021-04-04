@@ -31,16 +31,26 @@ return [
             'none'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:47:45 GMT'
+            'Sun, 04 Apr 2021 15:20:01 GMT'
         ],
         'via' => [
             '1.1 varnish'
         ],
         'age' => [
-            '0'
+            '465'
         ],
         'cache-control' => [
             'no-cache'
+        ],
+        'set-cookie' => [
+            'pay_ent_smp=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInZlciI6MX0.eyJ1cmxzIjpbXSwiY250IjowLCJtYXgiOjQsImV4cCI6MjAyMTA0fQ.Zb-TlJeIXb3ZmGBKgqLyxTrlPPfw4rtxVUdU0T39e4M; Path=/; Expires=Mon, 04 Apr 2022 21:20:01 GMT; Domain=wired.com; Secure;',
+            'pay_events=grant-new-smp; Max-Age=20; SameSite=Strict; Secure;',
+            'CN_xid=a0325b0a-e616-4f0f-8672-0f400bbf8e4b; Expires=Fri, 01 Oct 2021 15:20:01 GMT; Domain=.wired.com; path=/; Secure; SameSite=None;',
+            'CN_xid_refresh=a0325b0a-e616-4f0f-8672-0f400bbf8e4b; Expires=Wed, 02 Apr 2031 15:20:01 GMT; Domain=.wired.com; path=/; Secure; httponly; SameSite=None;',
+            'xid1=1; Expires=Sun, 04 Apr 2021 15:20:16 GMT; path=/;',
+            'CN_segments=co.w2113; Expires=Fri, 01 Oct 2021 15:20:01 GMT; path=/;',
+            'verso_bucket=696; Expires=Mon, 04 Apr 2022 15:20:01 GMT; path=/;',
+            'CN_geo_country_code=ES; Expires=Fri, 01 Oct 2021 15:20:01 GMT; Path=/; Domain=wired.com; Samesite=None; Secure'
         ],
         'apple-news-services-host' => [
             'www.wired.com'
@@ -54,33 +64,29 @@ return [
         'apple-news-services-handled' => [
             'false'
         ],
-        'set-cookie' => [
-            'CN_xid=59216703-56d6-4a4b-9f3d-102aa465618c; Expires=Mon, 22 Mar 2021 21:47:45 GMT; path=/;',
-            'verso_bucket=527; Expires=Thu, 23 Sep 2021 21:47:45 GMT; path=/;'
-        ],
         'content-security-policy' => [
-            'default-src https: data: \'unsafe-inline\' \'unsafe-eval\'; child-src https: data: blob:; connect-src https: data: blob: wss://*.hotjar.com; font-src https: data:; img-src https: blob: data:; media-src blob: data: https:; object-src https:; script-src https: data: blob: \'unsafe-inline\' \'unsafe-eval\'; style-src https: \'unsafe-inline\'; block-all-mixed-content; upgrade-insecure-requests'
+            'default-src https: data: \'unsafe-inline\' \'unsafe-eval\'; child-src https: data: blob:; connect-src https: data: blob: wss://*.hotjar.com; font-src https: data:; img-src https: blob: data: android-webview-video-poster:; media-src blob: data: https:; object-src https:; script-src https: data: blob: \'unsafe-inline\' \'unsafe-eval\'; style-src https: \'unsafe-inline\'; block-all-mixed-content; upgrade-insecure-requests;'
         ],
         'strict-transport-security' => [
             'max-age=31536000; preload'
         ],
         'x-served-by' => [
-            'cache-mad22069-MAD'
+            'cache-mad22063-MAD'
         ],
         'x-cache' => [
-            'MISS'
+            'HIT'
         ],
         'x-cache-hits' => [
-            '0'
+            '1'
         ],
         'x-timer' => [
-            'S1600897665.381070,VS0,VE525'
+            'S1617549602.700250,VS0,VE1'
         ],
         'x-ua-device' => [
             'desktop'
         ],
         'vary' => [
-            'accept-payment, accept-encoding, Verso'
+            'accept-payment, Verso, accept-encoding'
         ],
         'content-encoding' => [
             'br'
@@ -89,7 +95,7 @@ return [
             'https://www.wired.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.wired.com%2F2016%2F07%2Freview-yi-4k-action-camera%2F'
         ],
         'X-Request-Time' => [
-            '0.619 ms'
+            '0.112 ms'
         ]
     ],
     'statusCode' => 200,

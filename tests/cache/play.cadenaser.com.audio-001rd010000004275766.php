@@ -15,41 +15,40 @@ return [
         ],
         'content-length' => [
             '0',
-            '114758'
+            '115119'
         ],
         'accept-ranges' => [
             'bytes',
             'bytes'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:49 GMT',
-            'Wed, 23 Sep 2020 21:46:49 GMT'
+            'Sun, 04 Apr 2021 15:20:19 GMT',
+            'Sun, 04 Apr 2021 15:20:25 GMT'
         ],
         'via' => [
             '1.1 varnish',
-            '1.1 varnish',
-            '1.1 varnish'
+            '1.1 varnish, 1.1 varnish'
         ],
         'connection' => [
             'close'
         ],
         'x-served-by' => [
-            'cache-mad22078-MAD',
-            'cache-mad22053-MAD'
+            'cache-mad22043-MAD',
+            'cache-mad22022-MAD'
         ],
         'x-cache' => [
             'HIT',
-            'MISS, HIT'
+            'MISS, MISS'
         ],
         'x-cache-hits' => [
             '0  HTTP/2 200',
-            '1'
+            '0'
         ],
         'cache-control' => [
             'public'
         ],
         'expires' => [
-            'Wed, 23 Sep 2020 21:17:53 GMT'
+            'Sun, 04 Apr 2021 15:25:24 GMT'
         ],
         'access-control-allow-origin' => [
             '*'
@@ -61,10 +60,10 @@ return [
             'text/html; charset=UTF-8'
         ],
         'age' => [
-            '2036'
+            '0'
         ],
         'x-timer' => [
-            'S1600897610.500222,VS0,VE1'
+            'S1617549619.410756,VS0,VE5675'
         ],
         'vary' => [
             'Accept-Encoding'
@@ -73,7 +72,7 @@ return [
             'https://play.cadenaser.com/audio/001RD010000004275766/'
         ],
         'X-Request-Time' => [
-            '0.259 ms'
+            '5.982 ms'
         ]
     ],
     'statusCode' => 200,
@@ -400,6 +399,32 @@ return [
             $("#alacarta").addClass("activo");
     });
     </script>
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136496200-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag(\'js\', new Date());
+  gtag(\'config\', \'UA-136496200-1\');
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,\'script\',
+\'https://connect.facebook.net/en_US/fbevents.js\');
+fbq(\'init\', \'375503209485935\');
+fbq(\'track\', \'PageView\');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=375503209485935&ev=PageView&noscript=1"/>
+</noscript>
+    
 </head>
 
     
@@ -416,7 +441,7 @@ return [
     </script>
     <script async src="//static.chartbeat.com/js/chartbeat_mab.js"></script>    
     <body onload="if (typeof getMarcado == \'function\') { getMarcado(); }">
-        <script src="//ep00.epimg.net/js/prisa/user.js?i=5"></script>
+        <script src="//ep00.epimg.net/js/prisa/user.js?i=3"></script>
         <script src="https://ep00.epimg.net/js/comun/avisopcdidomi2.js"></script>
         <script src="https://ak-ads-ns.prisasd.com/slot/cdial/slot.js"></script>
         <script src="/js/publi.js"></script>
@@ -695,7 +720,7 @@ return [
         <meta itemprop="name" content="Debate electoral gallego, en &#039;Hoy por Hoy&#039;" />
         <meta itemprop="encodingFormat" content="audio/mp3" />	<meta itemprop="duration" content="00:50:15" />	<meta itemprop="thumbnailUrl" content="https://cadenaser05.epimg.net/iconos/v1.x/v1.0/redes/imagenes_og/1200x630_imagen_control_play-ser.jpg" />
         	<meta itemprop="description" content="en la Cadena SER Hoy por Hoy desde Galicia comenzamos ya ese debate en la SER desde Santiago de Compostela a la capital de una comunidad que es la sexta economía española por PIB con cifras de paro por debajo de la media española ahora mismo están en el diecisiete con siete por ciento según la última epa del una comunidad que ha perdido en el último año catorce mil quinientos habitantes es una día demográfica que no es de ahora no es nueva desde el dos mil nueve la pérdida de población es constante en total hay ochenta mil gallegos menos ahora que cuando Feijóo llegó al Gobierno una comunidad histórica donde según el CIS el veinticinco por ciento de la población se sitúa en espacios nacionalistas luego no vota en esa proporción ha partido los nacionalistas una comunidad donde desde las primeras elecciones autonómicas el PP ha gobernado en total veintiocho años Galicia batalla por su propio relato aprisionado en esta ocasión entre la atención que se lleva la Euskadi pos ETA los cálculos de todos los partidos sobre la repercusión que pueden tener los resultados aquí en el bloqueo español así que debaten en la Ser con cuatro candidatos que les voy a presentar con la ayuda de la directora de contenidos de la Ser en Galicia Aida Pena bos días buenos días pues vamos a ello Pedro Puy números cinco de la lista del PP por A Coruña bos días es doctor en Derecho cuando no ejerce de político es profesor de la Universidad de Santiago tiene cincuenta y tres años y se lo consideran hombre próximo a Alberto Núñez Feijóo de esos a los que presidente consulta cuando tiene que tomar una decisión complicada fue director general de Relaciones Institucionales con Fraga como presidente portavoz parlamentario puesto que asumió en la mitad de la primera legislatura de Feijóo en esta ocasión como en otras ha sido el coordinador del programa electoral al Xaquín Fernández Leiceaga candidato a la Presidencia de la Xunta por el PSD y el Partido Socialista de Galicia bos días hola muy buenos días también es profesor de la Universidad de Santos qué hago es doctor en Economía tiene cincuenta y cinco años inició su relación con la política en el Bloque Nacionalista Galego en el dos mil dos ingresó en el PSOE con Touriño como secretario general hace más de una década Leiceaga se convirtió en candidato a la Presidencia de la Xunta por el PSC PSOE tras ganar unas primarias al entonces portavoz parlamentario José Luis Méndez Romeu de esta forma se he visto obligado a ir ganando batallas dentro y fuera de su partido ahora insiste se presenta para encabezar una alternativa al Gobierno del PP Ana Pontón Cani candidata del BNG a la Presidencia de la Xunta bos días motivo día Ana Pontón desde la adolescencia tiene clara su vocación política empezó a militar en la organización juvenil del BNG a los dieciséis años y también en foco por ese camino su formación académica es licenciada en Políticas tiene treinta y nueve años lleva tres legislaturas en el Parlamento de Galicia es también la portavoz nacional del BNG a la primera mujer que ocupa ese puesto ahora tiene entre otros objetivos frenar la sangría de votos que viene sufriendo el bloque en las últimas citas con las además Luis Villares candidato de Marea bos días que el de los días Luis Villares abandonado a la carrera judicial para meterse de lleno en esta aventura él como magistrado del Tribunal Superior de Xustiza de Galicia era uno de los portavoces de la organización Jueces para la Democracia en Galicia ahora recorre su tierra para tratar de convencernos de que otra forma de hacer política es posible tiene treinta y siete años ha asumido en la candidatura de En Marea después de pasar por un proceso de primarias para el que no tuvo vale gracias hasta luego hasta luego en Euskadi hace una semana les digo que hay muchas e importantes cuestiones que se sustancian en una en unas elecciones autonómicas y que tienen que ver con el día a día de los ciudad Nos de esa comunidad pero este es un debate para los oyentes de la SER de toda España así que nos vamos a detener en aquellos asuntos que tienen que ver con la realidad española que ponen a Galicia en el mapa del Estado español a que aspira Galicia en esa foto española del dos mil dieciséis hay que tocar el modelo territorial hay que reformar la Constitución hay que modular el mapa de competencias Pedro Puy nosotros estamos convencidos de que la Constitución Española ha sido una historia de éxito sobre todo en el campo de la organización territorial Galicia tiene una autonomía muy consolidada es verdad es que siempre se pueden mejorar las cosas nunca nos hemos opuesto a reformar la Constitución para dejar claras cuáles son las competencias décadas de cada orden administrativo y por lo tanto nosotros estamos abiertos a un debate que permita que esta preciosa y única parte de la historia española que es la Constitución del setenta y ocho pues sí dando progreso a todos los gallegos que todos los españoles misma finca no no he dicho que somos abiertos a reformarla porque hay cosas que se pueden mejorar si pena que cosas pues por ejemplo la distribución de competencias el Mi partido ha dicho oí yo estoy muy de acuerdo con esa decisión que el informe que se hizo por el Consejo de Estado para reformar la Constitución española entre otras cosas en materia de distribución de competencias entre el Estado y las comunidades autónomas os parece un buen documento para hablar crea decir que competencias que Kosovo ejemplo una una decisión que pone ese informe que creemos que es muy interesante es la de que en vez de ser el Estado el que se queda con las competencias que no tiene las comunidades autónomas que las competencias residuales estén en las comunidades autónomas de tal manera que lo que fije la constitución son las competencias que no se pueden delegar en estas no es un cambio total de modelo en el sentido de que ahora competencia que no ejerce una comunidad autónoma que no está en su Estatuto la ejerce el Estado lo que dice ese informe yo creo que es una buena línea de avance es justo lo contrario que sea el Estado el que tenga unas competencias y el resto de forma residual sean de las comunidades autónomas Leiceaga pese a cómo afectaría ese modelo de de la España federal que defiende el PSOE a Galicia bueno yo creo que permitiría consolidar un poco más nuestra autonomía nuestro autogobierno y permitiría hacerlo en condiciones en que ésta sea un poco más amplia y más generosa digamos en términos competenciales con Galicia no yo creo que no existe una demanda gallega de reforma de la Constitución podemos ampliar y mejorar nuestro autogobierno en la Constitución actual pero dada la situación española en donde esta reforma posiblemente tenga lugar yo creo que nosotros debemos aspirar a que nuestra posición de nacionalidad histórica quede reforzada la reconocida sabor Salgado ha rodada en esa reforma no perder bien me que yo quiero vamos tanto tiempo hablando de lo mismo que si yo no me entero cómo se van a enterar los oyentes reforma federal que que traducción concreta tendría para Galicia no pues pues tendría por ejemplo que lo que los criterios que rigen en el modelo de financiación autonómica que no están en la Constitución si deben quedar reflejados no garantizando la igualdad de trato de todos los españoles por tanto la solidaridad no rige pues que en términos Coppel competenciales se blinda haría digamos el el mínimo de competencias para Galicia de una forma diferente pues un poco en la línea de que ha propuesto el el el portavoz del Partido Popular en estos momentos no Pontón BNG bueno yo lo primero que que y a resaltar es que me parece una pena que hoy no esté aquí el señor Feijóo para debatir yo creo que los debates son un derecho de los ciudadanos no un privilegio de los candidatos ni un privilegio de los partidos en todo caso no sé si la presencia del señor Puig lo podemos interpretar en clave sucesoria después del veinticinco de septiembre a respeto de la pregunta que acabas de hablar como es evidente que venían es una organización nacionalista nosotros reclamamos no que como gallegos y gallegas si mejoramos nuestra capacidad para decidir vamos a mejorar la calidad de vida de no otra gente y aspiramos a que en este marco no sólo sino reconozca como nación sino que eso tenga efectos jurídicos prácticos a la hora de tener mayor capacidad de enfrentar los problemas que tiene nuestro pueblo estamos hoy viendo por ejemplo como infraestructuras que son claves en nuestro país está especulando con ellas como es la AP nueve que pueden acabar en manos especulativa es seguir especulando y eso puede tener un incremento mayor de las peajes para nuestro país vemos como en el desenvolvimiento de nuestros sectores productivos pues el hecho de no tener capacidad de decisión hizo que en muchas ocasiones se utilizarán como moneda de cambio en el Estado español también vemos cómo se nos están imponiendo leyes injustas como la reforma laboral la ley eh la Lomce retrocesos importantes en derechos sociales y nosotros queremos pues dar un paso más adelante en nuestra capacidad de decisión y tener un marco que bling de esos derechos que no votan nacionalista los los gallegos no han votado históricamente de una manera mayoritaria votan al Partido Popular bueno yo creo que el hecho de que un partido pueda tener una mayoría en un momento no desacredita la defensa de las ideas yo voy a seguir defendiendo las estamos en en unas elecciones en la que los gallegos y gallegas van a tener la ocasión de decidir qué tipo de Gobierno tienen nosotros lo vamos a aceptar pero vamos a seguir de vendiendo nuestras ideas porque eso es democrático Villares pues nosotros consideramos que una constitución son de esto político o religioso y por lo tanto es posible una reforma constitucional acorde con lo que la sociedad española demanda en cada momento la sociedad española a la sociedad catalana la social Galega a la sociedad vasca ha manifestado en diversas ocasiones que quiere encontrar una forma propia de entenderse en el conjunto del Estado y por lo tanto es posible establecer una reforma constitucional que de encaje en eso nosotros ofrecemos un proyecto nacional para Galicia consideramos que además de reconocimiento ya que tenemos como nacionalidad histórica somos realmente una nación de por lo tanto el encaje dentro del conjunto del Estado debe de de acomodarse a esa a esa realidad nacional no la reforma para que cómo afectaría a Galicia una la reforma afectaría al conjunto del Estado de tal manera que las comunidades nacionales que están que es que conviven dentro del Estado español puedan decidir su futuro apasionadamente con el conjunto del Estado como en Galicia para nosotros en este momento con un refuerzo en primer lugar del autogobierno un blindaje completo de competencias es el aumento de las competencias no solamente están recogidas para Estatuto de Autonomía sino las que permite el artículo ciento cincuenta que todavía no han sido desarrolladas ni asumidas porque hemos tenido un agente gobernar en Galicia que no ha creído en autogobierno ni una sola competencia en los últimos siete años han sido transferida a pesar de todas las que quedaban por transferir de ciento cincuenta y además de todas que quedan desarrolla con el propio Estatuto de Autonomía creemos que eso es bueno para Galicia y además existen otras reformas constitucionales que podrían afectar al conjunto del son muy esenciales por ejemplo el derecho a la vivienda se encuentra el artículo cuarenta y siete que es un principio rector de la política económica pero que no son del lo fundamental creemos que hay derechos fundamentales sicos que deben de cambiar en el ámbito constitucional garantizados como de fondos en En Marea está incluido Podemos que defiende el derecho a decidir en Cataluña en Euskadi en dicho que si lo piden los gallegos también usted cree que existe una demanda de de referéndum por el por la independencia en Galicia si su partido lo promoviera perdón si podemos lo promoviera En Marea lo defendería nosotros en en En Marea entendemos que la sociedad gallega no tiene en este momento ese esa preocupación la agenda no existe esa esa pulsión social no existe por una razón porque porque hasta ahora no sé entre otras cosas no se ha desarrollado el autogobierno hemos un o un traje que te perfectamente porque el Estatuto de Autonomía no ha sido desarrollado en parte es tan importantes como la estructuración territorial del país por comarcas o en el artículo ciento cincuenta la transferencia en materia suban marítima en materia Inspección de Trabajo en materia de de de ferrocarriles de cercanías tenemos mucho camino por recorrer y poroso la sociedad no demanda otra cosa esto no es una sucesión de entrevistas ello trato de puntualizar para aclarar Mello ITEL de que nos aclaremos todos pero empieza el debate me haya pedido la palabra apuntó sí yo a mí me parece que es Pontón BNG aspirar muy poco a decir que nos quedemos que nos tenemos que quedar con el traje de los años ochenta estamos en el año dos mil dieciséis mismo vemos como en muchos territorios que no tiene la condición de nación como es Galicia reformaron sus estatutos y mejoraron su autogobierno y nosotros como nacionalistas pensamos que quién tiene que decidir el marco de autogobierno tienen que ser los gallegos y las gallegas no en el marco de una reforma de la Constitución en la que no tengamos realmente capacidad para decidir estoy convencida de que muchos problemas que hoy tenemos estarían mejor resueltos con capacidad real de decisión podemos hablar por ejemplo de financiamiento nosotros tenemos un financiamiento que es insuficiente el Partido Popular el señor Núñez Feijóo ausente en este debate firmó un sistema de financiamiento que espero judicial para el mantenimiento para el mantenimiento de nuestros servicios públicos otros defendemos un sistema que es un sistema donde tengamos una hacienda pública en nuestro país que recaude todos los impuestos y que también tenga capacidad para hacerle frente a esos recortes que nos están impone Leiceaga PSOE si nosotros ya en la época de Emilio Pérez Touriño como presidente promovemos una reforma del Estatuto de Autonomía que finalmente no llegó a buen puerto por por la la negativa del Partido Popular avanzar en ese camino no era necesario poner al día digamos ese ese traje en el que estamos con el que estamos conviviendo todos entre otras cosas para blindar derechos sociales para marcar las políticas preferente sobre esto no había en ese momento graves discrepancias entre el conjunto de los partidos no pero más allá de eso yo creo que que la la apertura del debate territorial en España va a poner en cuestión algunas algunos asuntos importantes entre ellas la solidaridad entre territorios no porque yo sin eso eso es esa en quiebra de la solidaridad es lo que está reclamando algún territorio importante en España y es ahí donde tenemos que defender con claridad nuestra posición no nosotros también apostamos por por una reforma del modelo de financiación autonómica pero manteniendo sus principios básicos esos principios básicos para una comunidad para Galicia significa que debe que ten tenemos que ser conscientes de que gracias a la solidaridad de otros territorios nosotros podemos financiar nuestros servicios y no debemos ponerse en cuestión nosotros como hemos dicho antes ha dicho también me partido España estamos dispuestos a mejorar la Constitución dentro de lo que es una estructura que insisten sistema político se llama de corte federal para mejorar algunos aspectos España en estos momentos es uno de los países más descentralizados del mundo los länder alemanes no tienen la capacidad legislativa que tienen las comunidades autónomas por ejemplo cualquier cambio tiene que ir y esto es digamos la condición que ponemos por consenso de la misma forma que la Constitución del setenta y ocho fue capaz de poner de acuerdo a nacionalistas a personas de izquierdas de derechas de toda condición eh lo que no podemos es confundir es decir que queremos reformar la Constitución para cargar nos lo que es la Constitución que establece un Estado que tiene capacidad redistributiva en lo personal y en lo territorial con decisiones unilaterales como por ejemplo sacada de decir aquí pues por la vía de los referendos de autodeterminación eso es distinto de reformar una constitución como también creo que es engañar decir que hay que reformar la Constitución para hacer cosas que ya están son posibles siempre y cuando haya voluntad de hacerlas como por ejemplo pues cambiar la estructura local de Galicia no se puede cambiar la estructura local de Galicia sin necesidad de reformar la Constitución lo que pasa es que no hay una voluntad mayoritaria en estos momentos por parte de los partidos políticos que están representados en Galicia de sustituir a hacer desaparecer todos los ayuntamientos que conforman nuestra planta Villares En Marea puede seguir interviniendo en el orden en que yo voy señalando pueden ir interviniendo sí si nosotros consideramos que lo que es necesario en estos momentos es abordar el autogobierno creer en autogobierno gobernar en clave de país algo que no se ha hecho hasta ahora la dejación absoluta por parte del desarrollo estatutario que han hecho otros partidos hasta ahora particularmente el Partido Popular que es el que más oportunidad de gobernar hasta este momento ha dejado claro que no se creen el autogobierno y que no se cree en este país nosotros sí que queremos a este país por eso decimos idea de de cara a estas elecciones que serán la semana que viene lo vamos a hacer promesas basadas en reformas que no vamos a poder ejecutar de aquel día veinticinco eso en primer lugar y en segundo lugar sabiendo que el marco normativo nos permite desarrollar todavía competencias que son esenciales para abonar en clave de país en clave democracia enclaves justicia social esas son nuestras prioridades como nación a partir de ahora por lo tanto esa esa es nuestra prioridad hay una idea que escuchamos mucho en boca de los partidos estatales y que creo que es importante que se conozcan los datos Se vende la idea de que Galicia no paga sus servicios públicos es impuestos y eso es falso Nuestros nosotros como gallegos y gallegas pagamos impuestos igual que el resto de los ciudadanos del Estado español y cuando vamos a la liquidación que hace el propio ministerio datos oficiales lo que comprobamos es como es como esos impuestos que se recaudan en Galicia supera en once mil millones de euros la recaudación lo que nosotros estamos recibe yendo para financiar nuestra sanidad nuestra educación nuestro sistema de atención a las personas mayores son siete mil millones de euros aproximadamente luego hay algunas otras inversiones que hace el Estado pero haciéndose cálculo lo que vemos es como los gallegos estamos pagando más impuestos de lo que luego nosotros estamos recibiendo lo que defendemos desde el BNG es que tengamos esa capacidad para recaudar esos impuestos y utilizarlos para atender las necesidades sociales que hay en nuestro país que son muy importantes que fíjense la solidaridad del Estado con Galicia se se puede saldar en que tenemos los salarios más bajos de todo el Estado trabajamos más horas o que tenemos las pensiones más bajas también espero que quiere replicar uno de esos partidos de ámbito estatal que decía usted haga PSDB no des desgraciadamente en fin yo siento que que los datos que maneja la señora Pontón no sean verdad no no hay no hay no hay ningún economista solvente en España en ninguno que defienda que esa es la situación de Galicia porque fíjense ustedes si nosotros una comunidad con una renta por habitante inferior a la media si tuviéramos ese superávit fiscal que pasarían las comunidades que tienen una situación mucho mejor que nosotros no no es así es decir España funciona como un mecanismo de redistribución territorial que nos beneficia que beneficia a Galicia el problema no está ahí el problema está en cuando se tienen las competencias que tiene la capacidad política pero no se ejerce decía antes el candidato de En Marea es un dato interesante en los últimos ocho años Galicia no ha recibido ninguna competencia de las que ahora exclama el señor Feijóo que no está aquí para responder por por qué no se ha hecho si había mayoría absoluta aquí mayoría absoluta en Madrid por ejemplo tráfico por ejemplo la AP nueve por ejemplo de inspección de litoral por ejemplo la inspección de trabajo que son competencias interesantes para Alicia réplica bien vamos a ver nosotros evidentemente creemos en el autogobierno y una de las ventajas del Estado autonómico es que en cada comunidad autónoma incluso el mismo partido puede desarrollar políticas distintas nosotros en esta legislatura hemos reforzado la capacidad del Tribunal de Cuentas autonómico en el Consello de Contas para prevenir la corrupción nosotros en esta legislatura hemos incrementado la capacidad de fiscalizar y controlar a la administración la figura del Defensor del Pueblo nosotros hemos reforzado en esta legislatura al propio Consello Consultivo de la Comunidad Autónoma por lo tanto hemos reforzado en esta legislatura tanto las competencias como la eficiencia de las instituciones autonómicas es la excelente hay más competencias que podrían P dir tráfico acabamos de aprobar en el Parlamento de Galicia y la verdad es una pena que acabamos de esta iniciativa del BNG no es la única propuesta que hubo de autogobierno la oposición del Partido Popular Carlos Venegas porque Popular por lo tanto es una petición en una petición de del Parlamento de Galicia que hemos apoyado todos dosis de manera de disfrazar como son los hechos porque es curioso que el Partido Popular y Núñez Feijóo dice que no es lo que quiere la transferencia de la AP nueve resulta que cada vez que nosotros pedimos que se bajen las peajes vota en contra y cuando su partido estuvo gobernando no convocó ni una sola vez la comisión para solicitar la transferencia en toda la legislatura que acaba de rematar lavar no se solicitó esa comisión detrás del sábado pero sí es verdad que es que realmente no habido ninguna es competencia ninguna comunidad autónoma y que las que quieran como que en relación a las que hubo en el pasado la sanidad la educación las políticas sociales la justicia eh el empleo etcétera Todo eso pues hombre es interesante porque eso lo apoyamos pero realmente decir que en España pues no ha habido un proceso de transferencias que está prácticamente en el punto final pues es también decir lo que realmente están diciendo los soberanistas que es que lo que se quieren es que desaparezca el Estado español su capacidad de redistribuir no sólo territorial sino hacerlo es decir el señor pero fíjate si era por donde tienen que hablar los demás señor Pedro Puy acaba de decir que se reforzó el Concello de Coto estas de cuentas pero se reforzó en competencias pero no en medios entonces cómo va a hacer un Consello de Contas más más actividad cuando tiene menos medios y mire sobre la posición de los partidos estatales porque hay que decir las cosas con claridad las competencias de tráfico el Parlamento de Galicia aprobara una solicitud de la con las de la competencia de Tráfico todos por unanimidad llegó a Madrid y todos los partidos estatales votaron en contra de esto y con el sida estoy convencida Villa Liquigas originarios ya eres de Miyagi que de la biología hacer porque ya los viales y luego ya la izada y terminamos eh para que no se transmite por si no se esconda detrás de la realidad señor es usted igual que el señor Feijóo le gusta esconderse de no dar la cara porque su partido sostuvo en esa votación porque si llega a votar a favor que habría una transferencia entonces eso es igual que decir no Villares Alberto Núñez desertor de ser todo del régimen de autogobierno con las competencias pues no es cierto que todas las competencias de las comunidades autónomas estén en el mismo punto por eso no es cierto que todas haya llegado al final por eso es incorrecto decir que se defendió el autogobierno cuando no se siguió con las trasferencias en ámbito de la financiación autonómica Núñez desertor desertó también de un nuevo plano de financiación autonómica que tú que sean cuenta firmemente entre otras cosas la dispersión poblacional y el envejecimiento de nuestra población a establecer un plan de financiación de financiación que permitiese atender correctamente a estos servicios eso es el principio de solidaridad que ustedes reclaman para el conjunto del Estado español nosotros entendemos que no defenderemos un nuevo sistema de financiación al que ustedes han renunciado porque son los desertores igual que viendo y a Feijóo de este día no voy a pedir a la palabra Alicia casi por por alusiones muy brevemente hiciera por qué cambiamos de todo mi no es Núñez desertores que es el aludido ya hay otro hijo el señor Núñez Feijóo es el presidente de la historia de la comunidad autónoma que más control soportó o eso por no es un derecho democrático no son suficientes es estoy diciendo no aceptaba no se preocupe lamento de Galicia contestó más preguntas que ningún presidente de la Comunidad autónoma por pleno y a lo largo de toda la legislatura señor donde fijo por lo tanto no ser de nada es más los que han desertado son los los los portavoces de la oposición que tuvo ocho en esta en esta la legislatura le a veces a nuestro querido decir una cosa y eso que sí autogobierno en Galicia donde está blindado es en el ámbito financiero somos la única comunidad junto con Canarias que no tenemos intervenidas las cuentas y podemos gastar como hemos gastado siempre a diferencia de lo que ha ocurrido en el sector a gastar pero no me di combinados vuelva a una política porque no dice Abanto no sólo sólo dos dos puntualizaciones no es cierto que el señor Núñez dijo es que me ha contestado porque antes antes del presidente Touriño no suele ser antes no contestaba en el pleno hito Dña estaba bueno está muy muchísimo menos ir Touriño estuvo sólo cuatro años y estuvo dos la reformamos el reglamento para que no estaba en el reglamento lo hicimos nosotros con vosotros no no no sé si con con Emilio pero esto sido el presidente que el reglamento fue ahora eh no habrá forma de incorporar a través de control ahora otra vez otra vez tres pero no suele contestar preguntas y eso luego vino aquí al debate tan contestó yo cuando estaba te Lidia Pérez Touriño presidente de la Xunta que gobernó entre el dos mil cinco y el dos mil nueve en en un gobierno de coalición con el BNG da una experiencia que dio lugar a la primera mayoría absoluta de Núñez Feijóo Leiceaga por favor de Fórmula uno vamos a ver yo yo yo creo que que en en esta cuestión del autogobierno tenemos que ser por una parte realista por otro ambiciosos no Galicia está bien con el régimen autonómico yo creo que responde bien a nuestras necesidades responde bien el modelo de un modelo que tenemos en España que puede ser perfeccionado pero no se puede ser no se puede desconocer la realidad ejemplo no se puede decir que el modelo actual no recoge el envejecimiento y la dispersión porque forma parte del modelo de financiación ya podemos mejorar esto claro pues seguramente hay que introducir otros criterios como el envejecimiento o cuestiones de este tipo pero no decir pues algo que es absolutamente incorrecto son las nueve y veintiocho las ocho y veintiocho en Canarias debate en Santiago de Compostela en la SER sobre las elecciones en Galicia Galicia que parece haber sido el laboratorio de la estrategia política o de la formación de líderes del Partido Popular desde el comienzo de las obras de la democracia gobernada aquí veintiocho años además de aquí salió Fraga de aquí salió Rajoy aquí se fraguó como casi en primer lugar el la la fusión de las derechas en España Núñez Feijóo es un candidato de paso para irse mañana o pasado mañana a sustituir a Rajoy si es que el PP en algún momento se decide la renovación señor Puig el señor Feijóo primero estuvo en Galicia después fue reclamado a Madrid donde hizo una buena labor tanto en en Correos como en el Sistema Nacional de Salud volvió a Galicia en el año encima lo recuerdo en el año dos mil tres dos mil cuatro y desde entonces se lleva diciendo que el señor Feijóo se quiere de Galicia eso lo pregunto concreto porque es que es el Marbella se lo pregunto enfrenta porque se resiste a aceptar esta candidatura porque dijo en una entrevista con Europa Press el treinta y uno de julio que si no ganaba se iba que no se ve como jefe de la oposición pero eso no quiere decir que se vaya a Madrid este lo que entendimos todos y sobre todo las personas que estábamos próximo era no su oración de retirar de de la política el fijó como usted es funcionario no tienen ningún lo trabajar para volver a la vida civil lo tendrá oportunidad a partir del día de visita el señor dijo ha demostrado su compromiso con Galicia ha estado aquí se ha vuelto a presentar entre otras cosas porque el partido entonces nosotros hemos considerado que era el mejor candidato y no tenemos la menor duda que va que va a cumplir sus compromisos como dices está ahora adelante Leiceaga sino yo sí yo creo que justamente ofrecen su presencia en este debate es la mejor demostración de que no cumple sus compromisos con Galicia no a su no presencia en este debate no no no fíjese usted el compromiso era un IVA tenga publica interpretarlo me interesaba o no pero déjenme hacer mi interpretación después usted la crítica mi interpretación es que no está aquí justamente porque quiere proteger su carrera en España este es un debate que se emite para toda España en un en una institución controlada como es la Televisión de Galicia que sigue hoy controlada desde el Partido Popular es fácil estar pero cuando un debate es más vivo más abierta como es este para todas España es más difícil y por eso no está aquí el señor Feijóo señor circo es acusado de una cosa y la contraria hace poco estaban ustedes diciendo que está todo el día en Madrid en los medios en las televisiones en la radio claro claro sí sí hay extremistas y en entrevistas les voy a leer los oyentes que nosotros habíamos invitado al señor Núñez Feijóo que no hubiera encantado que estuviera aquí porque invitamos a los cabezas de lista a la Presidencia de los gobiernos respecto digo yo soy la cuestión es que yo la verdad no va a estar muy que se eh que no estuvieran y yo le agradezco de calle que haya que eso aquí el asunto de fondo es si están ustedes promoviendo una candidatura para gobernar esta comunidad o un trampolín para gobernar parece evidente que no después de que esta es la pregunta daba si es quiero decir que Bono se atreve a venir al debate porque evidentemente perdió el debate el pasado lunes en la televisión gallega sino hoy estaría aquí estoy convencidísimo ir yo lo vuelvo a lamentar porque insisto creo que es importante que haya debate en los extremos una democracia muy precaria no el simple hecho de que el señor Puig viniera aquí a hacer gala no de que tenemos un reglamento donde se pueden hacer preguntas al presidente lo creo que en sí mismo es una denuncia del grave problema democrático que hay de una concepción bastante autor Italia a partir de ahí la verdad a todos los españoles y españolas que nos están escuchando ya mejor no conocen al señor Núñez Feijóo no se lo recomendaría porque es muy bueno en la propaganda pero luego las consecuencias de sus políticas las estamos pagando los gallegos y las gallegas porque te hemos más paro más desigualdad y más precariedad rescató las ayudas a los centros públicos que segregan a niños y niñas en función de su sexo no esa alianza con el Opus Dei a nosotros nos parece que es uno de los peores presidentes de la historia de este país de verdad esa joya no se la recomiendo a niños Villares el trampolín de ausente Núñez Feijóo para para Madrid es un trampolín para una piscina sin agua porque aquí lo vamos a derrotar el día veinticinco por lo tanto no va a tener ocasión de de bueno igual si le vale porque así va a tener más tiempo libre para que yo no las políticas de sufrimiento las que ha sometido a población de Galicia durante estos años le van a valer una contundente derrota electoral y lo sabe por eso no ha venido aquí a debatir una curiosidad personal Se va a Rajoy es usted el sustituto sustitutos lo vais a verdad pues vaya que va a ser una buena pregunta a suceder a nadie no en estos momentos no no él no tenemos ningún motivo para tener que pensar en qué sucede a Feijóo que le digo que a nivel personal se planteó si en lo que ha dicho es que es que se lo hemos pedido todos por lo tanto yo el primero además que se lo dije antes que que muchas otras personas cuando lo planteo en privado no yo que quería decir es que este debate lo que está haciendo ver es que lo que se supone que es la alternativa que es lo que se vio en el debate del otro día tiene una cosa en común que es criticar a fijos criticar al Partido Popular pero conectamos que la gente lo que intentando paliar cómo se resuelven los problemas de cuál es el programa el futuro enseguida lo que es que son las contradicciones sea la organización tres tiene al Estado sea en la financiación autonómica por señalar dos temas que han surgido aquí que son muy importantes por eso ayer Feijóo lo que propuso es que dado que la alternativa está compuesta por dos o tres fuerzas políticas alguna de las cuales tiene cuarenta y dos fuerzas políticas en su interior como son las mareas de Podemos digan marear municipales un proyecto para Galicia cuatro sustancias social del Gobierno sirvo suyo déjeme ven el candidato esto de la supuesta normalidad que hasta aquí bueno lo que pero pero quería era claro a Rajoy no lo que ir usted a sustituir a Feijóo tampoco entonces qué pinta aquí en el debate pero otras cosas poner evidenció sus con sus múltiples formulaba ahora mismo el señor puede y lo dice constantemente tanto Feijóo como Rajoy yo o el caos no el PP o el caos el caos son todos ustedes señores que están a la izquierda que representan a varios partidos que hemos visto en el en en el conjunto de España la incapacidad para entenderse la desconfianza brutal serán si el PP no tiene mayoría absoluta señor Leiceaga usted para presidente a un candidato alternativo sea quién sea el partido que ocupa la segunda posición o facilitará que gobierne Feijóo tres tres cuestiones muy rápidas la primera lo normal en los países democráticos es que el debate sea el principal partido de la oposición que somos nosotros segundo en España en estos momentos hay no y digamos ocho comunidades autónomas gobiernos plurales presidido por un socialista que tienen un apoyo parlamentario o o o en el propio Gobierno de otras fuerzas políticas normalmente a su izquierda por tanto esto ya está funcionando con total estabilidad tanto en fin este esta idea del caos no aparece ningún sitio con cuando se analiza lo que ocurre en Galicia lo que ocurre en España y tercero nosotros decimos que somos la garantía del cambio nosotros creo vemos que para que exista cambio en Galicia como ya ha ocurrido con Fernando González las y con Emilio Pérez Touriño el presidente debe ser socialista porque eso más da más confianza más estabilidad a la sociedad gallega da más confianza porque nosotros somos un partido de gobierno que ya hemos gobernado aquí que estamos gobernando en más de cien en cien ayuntamientos en tres diputaciones provinciales y que por tanto naturalmente somos los llamados a encabezar las cabeza Isidro son la segunda opción la segunda opción ese marea el PSdG votarán presidenta alterna digo la verdad es que no contemplamos esa posibilidad porque no os parece parece que no va no va a ocurrir nada de esto en todo caso nosotros decimos que debemos explorar todas las vías para construir alternativas a la derecha Villares ustedes van a ser capaces de darle la presidencia de la Xunta al PSdG si les saca un voto nosotros somos gente honesta sensata y tenemos muy claro cuáles son nuestros enemigos su cuáles son nuestros amigos nuestros enemigos son las políticas antisociales y de sufrimiento el Partido Popular lo hemos dicho desde el principio la dinámica política Galega no es la dinámica política española y nos pareció en su momento y responsabilidad que las fuerzas políticas estatales contrarias al Gobierno antisocial y de recortes el Partido Popular no se pusiesen de acuerdo para gobernar pues eso nosotros garantizamos la Alicia garantizó hemos que un proyecto liderado por la marea como sabemos que va a suceder pero que en todo caso un proyecto alternativo a Feijóo va a tener lugar nosotros lo garantizamos porque sabemos que ante todo es necesario restaurar la justicia social y los derechos de toda la ciudadanía que nadie tenga duda de que nosotros garantizamos eso por eso somos una fuerza que nos presentamos con solvencia y con credibilidad porque hicimos cosas claras entre déjeme decirle una cosa los tres eh a los que no son el señor Puig que cada uno de ustedes garantiza que no están de acuerdo con las políticas del PP está claro en España por lo menos está claro lo que no está claro es que sean capaces de armar una alternativa de gobierno o no en todos los y nosotros estamos de acuerdo decís es más le estamos diciendo que nosotros vamos anticipar la derrota del Partido Popular en España porque aquí vamos a demostrar que es posible crear una dinámica política diferente que acabe con las políticas de sufrimiento del PP en cuanto a mi lo venderá si lo primero que me gustaría decir es que entiendo que hay no muchas personas que están decepcionadas mismo están cansadas de tanta selecciones porque efectivamente las fuerzas políticas de la izquierda española a las que de la nuevo de la vieja prometieron durante toda la campaña electoral que iban derrotar al señor Mariano Rajoy que esa era su prioridad y resulta que cuando lo tenían derrotado empezaron su particular guerra de tronos y le dieron una vida extra al señor Rajoy es una irresponsabilidad que estamos pagando email en este momento yo también me pregunto cómo puede ser que no teniendo mayoría el Partido Popular haya legislación injusta que está siendo muy perjudicial para todo el mundo y que no hay no hubo ni en su momento ni ahora una prioridad porque esas leyes como la Lomce como la reforma laboral no como los de pago los eh a los medicamentos no haya una acción desde parlamento para para solucionar esos problemas porque los diputados y diputadas cobran todos los días por estar en ese Parlamento y lo que tienen que hacer es ser útiles para solucionar problemas yo sé que el Partido Popular tiene un único argumento porque no tiene proyecto de país y porque no tiene gestión que presentar porque hay un desastre total su único proyecto es criticar a la oposición el Partido Popular en el Estado español se presentó en una coalición sin embargo sus coaliciones son malas las de los demás las demoniza el Partido Popular está defendiendo un tripartito para el Estado y sin embargo lo critica para Galicia estaría bien que el señor Pedro Puig nos lo explica que tienen que hablar los demás ya había pedido la palabra ah sí bueno vamos a ver eh yo creo yo creo que está claro que que en Galicia digamos hay hay dos alternativas no hay una alternativa es la continuidad de las políticas del Partido Popular que significa pues una defensa débil de los sectores productivos de Galicia significa eh si se quiere un recorte de los servicios públicos introducir políticas y un clara impronta de derechas en en muchos aspectos incluso sobre todo en aquellos que no tienen un contenido puramente financiero presupuestario sino ideológico no pues hablábamos antes de de los de los colegios concertados ya hay otro camino que nosotros defendemos que es un camino de defensa de los servicios públicos de apoyo a las personas impulso al empleo de calidad es estábamos que ejecuta eso en el caso de que el PP pierda la mayoría absoluta tienen esos dos caminos en esos dos caminos yo creo que no hay indecisión en la sociedad gallega no hay decisión la mayoría de la sociedad gallega quiere este segundo camino por tanto las fuerzas que estamos en disposición de de de hacer avanzar a la sociedad en ese camino tenemos que ponernos de acuerdo y por eso después de las selecciones seguramente va a ser necesario establecer un diálogo entre nosotros eso ese algo está bien veremos el resultado está claro que sí el Partido Popular no tiene la capacidad de continuar gobernando en lo que se va a abrir es una exploración para ver cómo se puede llegar a gobernar que además va a haber acuerdos y entonces iba a haber acuerdo pueden poner de acuerdo con cuál de ellos quiere debatir con el señor Feijóo como cabeza de la alternativa no lo que sí quisiera decir es que lejos de lo que se ha dicho ya por aquí más de una ocasión en Galicia como en toda España Vida efectivamente hay una crisis que ha dejado unas consecuencias muy graves para muchas personas pero quisiera señalar que hay informes por ejemplo Line que dice que Galicia es la Uno es una de las cuatro únicas comunidades autónomas donde la tasa de pobreza se redujo entre dos mil ocho y dos mil quince que sólo Galicia y Aragón aumentaron la renta media por persona este mismo dos mil seis abrió el debate y que empezamos estamos ese ese debate es decir la reales del debate pero es que lo porque aquí se está de negar categóricamente a la gente que está muriendo por falta de medicamentos ustedes lo saben no es verdad que tiene la verdad porque lo dice la fiscalía dos de Galicia el juez no no no no no el juez admitió la denuncia por prevaricación por negar medicamentos prevaricación prevaricación transporte negarme lo que lo que dice el juez por prevaricación medicamentos gente enferma de Patito altos cargos del Partido Popular en sanidad sí que es verdad la prevaricación lo bueno lo es la prevaricación lo eso no lo es la prevaricación por denegar pero no lo es por eso los eh y por eso lo digo no usted porque la gente tiene derecho a saber que ustedes están denegando medicamentos y son decisiones que son prevaricación porque la gente tiene derecho a ellos para restaurar los salud y ustedes horneado los no han pagado hablado lo está investigado pero claro es la fiscalía ha expresado inicial llegó adelante una al que usted un cambio a tus enemigos la Fiscalía y la realidad también es de Marea está muy bien con los no lo explicita fiscales nueve son las no B cuarenta y dos las ocho y cuarenta y dos en en Canarias quedan todavía ocho días de campaña ya ven que hay muchos asuntos que podríamos estar mucho tiempo pero nuestro tiempo es limitado veinte segundos veinte s el el déficit a toda costa abrupta de la salud de la gente a de el tratamiento de la gente eso no puede ser que sabemos que para la gente no para la troika mientras en España la situación política estaba bloqueada en Galicia se firmó una agenda social única con todos los representantes de los municipios de Galicia precisamente para luchar contra las desigualdades y la nueve cuarenta y dos h cuarenta y dos ya sé que no están de acuerdo ninguno lo que acaba decir el señor Puig eh de alguna manera han venido contando pero quiero hacerles una última pregunta que aparece poco en el debate político sobre la corrupción Galicia tiene como todas como otras con todas no como otras comunidades autónomas y como el conjunto de España sus casos de corrupción como muy muy sonoro el el el caso Pokémon que afectado practica mucho al PP al PP también al PSOE e incluso concejal del Benega tienen un caso de fraude en los cursos de formación pero tiene una cosa muy concreta hemos visto al candidato popular y al presidente de Gobierno en funciones hacerse fotografías y pasearse con un dirigente popular presidente de la Diputación de Ourense que está siendo investigado por acoso sexual no es corrupción pedir sexo a cambio de un puesto de trabajo sólo es corrupción la económica es este caso el caso Rita Barberá local quién responde creo que tendría que contestar el señor Pujol sería señal no correr yo yo tema ciertamente sorprendente si la pregunta se plantea como usted lo ha hecho no hay la menor duda de que sí de que tendría que dimitir el problema es que eso no lo sabemos lo que hay es una ruta Zubiri de Rita Barberá haya hecho en el partido hay hay un hagan lo mismo con Baltar pero que este escrito decisiones y a favor de la escuela se encuentra el machismo usted desautoricen públicamente porque las escuchas las Scott las usamos todos son la radio dejarlo claro decir que la fiscalía es algo así como el que decide quién es culpable y la fiscal en su charla por mucha pero sin todos las puedes escuchar hay que archivo no por lo tanto si finalmente se sabe tenemos constancia de que eso eso sí evidentemente eso es una situación absolutamente inaudito pedimos algo algo simple como la verdad es los para ver lo que está la ética política pero que responde que no dejarle responder por qué se aplica la presunción de inocencia al señor Baltar y no a Rita Barberá porque él estaba diciendo a Barberá que tras el escándalo hasta hemos aplicado a todo el mundo y una cosa es la presunción de inocencia y otra cosa es la responsabilidad en el partido y por lo tanto nosotros en Galicia lo que le puedo decir es que no hay ni una sola persona de mi partido que esté investigada o imputada en el Tribunal Superior de Justicia de Galicia y eso es porque siempre que ha habido algún o alguna circunstancia hemos actuado con todas las dos no yo creo que si el Partido Popular no sólo tiene su financiación en vez también tiene su lucha contra la corrupción en menos la B de Barberá con la B de Bárcenas y con la vez de Baltar en el caso de Baltar es un para mí es un caso muy grave porque estamos hablando de que hay escuchas que todos y todas pudimos escuchar porque están en Internet y a mí me parece que detrás de esto no hay dos cosas que sería importante que nos aclara el Partido Popular y su representante y aquí primero si considera que es normal después de escuchar lo que todos y todas pudimos escuchar que un señor siga al frente de un cargo institucional sea del partido que sea esta claro es increíble llegando lo que nos tiene que explicar si es por qué el señor Feijóo no le puede pedir la dimisión a Baltar que hay detrás que sabe el señor Baltar o qué poder tienen que dar para que no le tenga que diario de meter yo creo que el caso Baltar lo que indica es que el señor muy fijo prefiere antes que la ejemplaridad institucional el apoyo político en la provincia de Ourense que le garantiza al señor Baltar no hay no se ha hecho fotos con él pero si quiere sus votos y está haciendo campaña nosotros los lo que proponemos es abrir una nueva etapa de ejemplaridad es institucional en Galicia por eso proponemos entre otras cosas crear una Oficina Anticorrupción dependiente del Parlamento que investigue todos los casos de fraude corrupción de abusos que se pueden producir en el ámbito propio de la Comunidad Autónoma creemos también que debemos eliminar los privilegios de los parlamentarios hemos puesto que con la reforma del Estatuto de Autonomía se elimine el aforamiento de los parlamentarios que es un privilegio inaceptable que los defiende más que al resto de los ciudadanos ya que se prevén te llame los las mareas municipales sean me han barrido la corrupción de los ayuntamientos gobernados por el Partido Popular lo hemos hecho aquí en Santiago de Compostela la dudosa honra de tener tres alcaldes del Partido Popular todos ellos imputados por prevaricación distintos esos la corrupción nosotros demostramos que es posible una forma honesta de hacer política frontera forma deshonesta de permitir que estén en política otros cargos del Partido Popular y así lo haremos lo mismo que hemos hecho en las ciudades del cambio hablaremos a partir del día veinticinco con Galicia yo sólo quiero decir que uno de los motivos de la degradación de la clase política es mala prensa es precisamente este tipo de actuaciones el amor se convierte inmediatamente en condenas y quiero recordar que en Galicia las personas más destacadas que han tenido que dimitir por casos de corrupción son los dos últimos responsables del Partido Social los civiles los ahora desde el Partido Popular es vamos hasta alcaldes unos a otros siempre le dije a problemas lo que sí que que echándose un osado otro la responsabilidad no terminamos nunca este debate público acabará de sus de toda la polémica soy que simplemente voy a decir que el Partido Socialista tiene un código ético que cumple a rajatabla todas aquellas personas que tienen un problema de este tipo ya no es tan no tiene ningún cargo terminamos terminamos de la siguiente manera yo les voy a pedir a cada uno de ellos que formule una pregunta a otro candidato y quién responde tiene treinta segundos para hacerlo empieza el candidato que nos acompaña del Partido Popular Pedro Puy a quién a qué candidato formuló una pregunta pregunta no la pregunta que le haría el candidato es que van a hacer si tienen la posibilidad de gobernar en materias como las que hemos discutido hoy la financiación autonómica como van a proponer un referéndum doctor mediación sí o no van a apoyar el de Cataluña sino que aquí se van a quitar la educación concertada sí o no me dirigiría al que ellos mismos consideren la persona que encabezará la alta ah pues no dirige la pregunta nadie al que ellos creían que iba a ser la alta nativa porque yo tengo mucho después de escucharlo no vamos a ser nosotros van a ser los gallegos y las gallegas bordando en la voluntad de diseño realizada a quién a quién dirige la pregunta no les preguntó a su hijo si sigue estando dispuesto a que diez mil emigrantes retornados no tengan acceso a la sanidad pública en Galicia porque no pueden acreditar su condición de trabajadores en la comunidad autónoma o si va a seguir permitiendo que enfermos de hepatitis C no tengo ahora el virus hasta las FAS como errores el señor Millet fijos responde señor a grandes viejos los cien mil emigrantes retornados hasta los hasta los diez mil emigrantes retornados en cuanto se pudo porque esa aprobó el Plan Nacional pero Pakistán más de ciento los diez mil emigrantes tornados han atendido a todos aquí los los emigrantes retornados como usted sabe en Galicia los acuerdos que tomamos en su momento están atendidos Comando Madrid sí por supuesto es cuando es la de ayer donde ellos mismos antes sí de Gales por cierto aquí también se descubrió pronto en Galicia en la sanidad pública para todos y también para esto pregunta la señora pontón del BNG a quién dirige pregunta yo también tengo que dirigirse la al candidato ausente en primero lugar a mí me gustaría saber porque creo que es importante porque nos están diciendo que salimos de la crisis que estamos mejor cuando en el último año en Galicia se incrementó la pobreza un veinticinco por ciento ese es el mejor síntoma del fracaso del Partido Popular responde el candidato porque no está aquí que varios unos datos que sí que reiteró que la última año generó mucho dolor en muchos familias Pero Galicia es una de las cuatro únicas comunidades autónomas de España en donde la tasa de pobreza se redujo señoras y creador de cuarenta y cinco a partir de la cuarta comunidad autónoma que de acuerdo con el índice que mide la desigualdad que es el índice Hellín y es la cuarta que tiene el mejor índice no por lo tanto es verdad que hay que atender a muchas personas pues aprobamos la agenda social única pero también es verdad que en Galicia la situación que dejó la crisis no es tan grave ni tan preocupantes como que no lo que vean que tiene su morbo para una periodista verles de desde su propia medicina eh que no responden que tienen que preguntar los políticos eso que hacen cualquiera de ellos luego en entrevista pregunta al señor Villar para quién la pregunta es para el candidato como ausente Núñez Feijoo y la pregunta es por qué se esconde que silencios tapa y que verdad destapa la ausencia el señor Feijóo como lo acaba de decir no se esconde es el presidente autonómico más donde está no veré debajo de esta no ustedes saben que los partidos políticos pactaron un único debate efectivamente como no lo es no vale gracias a la democracia y las elecciones al Parlament la presidencia de la República pero torpe torpeza olvidar normal del presidente en campaña de que su propio color realizarlos no pactan un imputado que haya debates todos los días a ver si en alguno de ellos datos que el debate eso sabes que para dar a conocer las Cortes granadina se pactó un largo debate de hecho estaba prevista para el lunes estaba previsto para no es un debate que no se va a hacer porque el hijo no va a ir Vallés estuvo es se estuvo discutiendo sobre esa propuesta Abbas discutiendo sobre ello porque tal vez podría haber único debate cuando se discutía complejo occidente de la autonomía que más sujeto a control de la oposición ha estado no yo creo brevemente el señor Núñez Feijóo no está aquí porque sabe que pierden los debates porque él también es un candidato de plasma no me gusta escuchar las verdades pues tenemos que irnos yo le agradezco a todos los que haya estado aquí al señor Puy especialmente eh porque es verdad que nosotros invitamos a a Núñez Feijóo no ha venido las críticas políticas las han hecho sus contendientes yo tengo que ser agradecida como anfitriona a quien ha querido venir a debatir con los demás señora Leiceaga muy lares gracias eso es muy doloroso Grace asesor te también para todos los gallegos son ahora las nueve y cincuenta y tres las ocho y cincuenta y tres en Canarias en la Cadena SER Hoy por Hoy con Pepa Bueno " />
-        	<meta itemprop="contentUrl" content="https://prisa-es.mc.tritondigital.com/HOY_POR_HOY_CADENASER_222_P/media/2016/9/16/001RD010000004275766.mp3" />
+        	<meta itemprop="contentUrl" content="https://prisa-es.mc.tritondigital.com/HOY_POR_HOY_SER_PODCAST_222_P/media/2016/9/16/001RD010000004275766.mp3" />
 	<meta itemprop="embedURL" content="https://play.cadenaser.com/widget/audio/001RD010000004275766/" />
 
             <div id="topui_container_grande"></div>
@@ -752,7 +777,7 @@ return [
                 <li><a href="/socialnetworks/facebook/audio/001RD010000004275766"  data-toggle="openWindow" data-seguimiento="&#x5B;&quot;Facebook&quot;,&quot;audio&quot;,&quot;Debate&#x20;electoral&#x20;gallego,&#x20;en&#x20;&#x27;Hoy&#x20;por&#x20;Hoy&#x27;&quot;,&quot;001RD010000004275766&quot;,&quot;aod&quot;,&quot;hoy_por_hoy&quot;,&quot;cadena_ser&quot;,&quot;politica&quot;,3015120,&quot;manual&quot;,&quot;hoy_por_hoy&quot;,null,null,&quot;con_transcripcion&quot;,&quot;Pepa&#x20;Bueno&#x3B;Xaqu&#x5C;u00edn&#x20;Fern&#x5C;u00e1ndez&#x20;Leiceaga&quot;,&quot;cadena_ser&#x3B;hoy_por_hoy&#x3B;politica&quot;&#x5D;"><span class="icono_facebook">Facebook</span></a></li>
                 <li><a href="/socialnetworks/twitter/audio/001RD010000004275766" data-toggle="openWindow" data-seguimiento="&#x5B;&quot;Twitter&quot;,&quot;audio&quot;,&quot;Debate&#x20;electoral&#x20;gallego,&#x20;en&#x20;&#x27;Hoy&#x20;por&#x20;Hoy&#x27;&quot;,&quot;001RD010000004275766&quot;,&quot;aod&quot;,&quot;hoy_por_hoy&quot;,&quot;cadena_ser&quot;,&quot;politica&quot;,3015120,&quot;manual&quot;,&quot;hoy_por_hoy&quot;,null,null,&quot;con_transcripcion&quot;,&quot;Pepa&#x20;Bueno&#x3B;Xaqu&#x5C;u00edn&#x20;Fern&#x5C;u00e1ndez&#x20;Leiceaga&quot;,&quot;cadena_ser&#x3B;hoy_por_hoy&#x3B;politica&quot;&#x5D;"><span class="icono_twitter">Twitter</span></a></li>
                 <li class="no-desktop no-tablet"><a rel="nofollow" href="/socialnetworks/whatsapp/audio/001RD010000004275766" data-toggle="openWindow" data-seguimiento="&#x5B;&quot;Whatsapp&quot;,&quot;audio&quot;,&quot;Debate&#x20;electoral&#x20;gallego,&#x20;en&#x20;&#x27;Hoy&#x20;por&#x20;Hoy&#x27;&quot;,&quot;001RD010000004275766&quot;,&quot;aod&quot;,&quot;hoy_por_hoy&quot;,&quot;cadena_ser&quot;,&quot;politica&quot;,3015120,&quot;manual&quot;,&quot;hoy_por_hoy&quot;,null,null,&quot;con_transcripcion&quot;,&quot;Pepa&#x20;Bueno&#x3B;Xaqu&#x5C;u00edn&#x20;Fern&#x5C;u00e1ndez&#x20;Leiceaga&quot;,&quot;cadena_ser&#x3B;hoy_por_hoy&#x3B;politica&quot;&#x5D;"><span class="icono_whatsapp">Whatsapp</span></a></li>
-                                <li><a id="enl_download" href="https://prisa-es.mc.tritondigital.com/HOY_POR_HOY_CADENASER_222_P/media/2016/9/16/001RD010000004275766.mp3?dist=cadenaser-web-aod_download&amp;csegid=22000&amp;dl=1" rel="nofollow" data-seguimiento-download="&#x5B;&quot;descargar&#x20;&quot;,&quot;audio&quot;,&quot;Debate&#x20;electoral&#x20;gallego,&#x20;en&#x20;&#x27;Hoy&#x20;por&#x20;Hoy&#x27;&quot;,&quot;001RD010000004275766&quot;,&quot;aod&quot;,&quot;hoy_por_hoy&quot;,&quot;cadena_ser&quot;,&quot;politica&quot;,3015120,&quot;manual&quot;,&quot;hoy_por_hoy&quot;,null,null,&quot;con_transcripcion&quot;,&quot;Pepa&#x20;Bueno&#x3B;Xaqu&#x5C;u00edn&#x20;Fern&#x5C;u00e1ndez&#x20;Leiceaga&quot;,&quot;cadena_ser&#x3B;hoy_por_hoy&#x3B;politica&quot;&#x5D;" download><span class="icono_descargar"></span> Descargar</a></li>
+                                <li><a id="enl_download" href="https://prisa-es.mc.tritondigital.com/HOY_POR_HOY_SER_PODCAST_222_P/media/2016/9/16/001RD010000004275766.mp3?dist=cadenaser-web-aod_download&amp;csegid=22000&amp;dl=1" rel="nofollow" data-seguimiento-download="&#x5B;&quot;descargar&#x20;&quot;,&quot;audio&quot;,&quot;Debate&#x20;electoral&#x20;gallego,&#x20;en&#x20;&#x27;Hoy&#x20;por&#x20;Hoy&#x27;&quot;,&quot;001RD010000004275766&quot;,&quot;aod&quot;,&quot;hoy_por_hoy&quot;,&quot;cadena_ser&quot;,&quot;politica&quot;,3015120,&quot;manual&quot;,&quot;hoy_por_hoy&quot;,null,null,&quot;con_transcripcion&quot;,&quot;Pepa&#x20;Bueno&#x3B;Xaqu&#x5C;u00edn&#x20;Fern&#x5C;u00e1ndez&#x20;Leiceaga&quot;,&quot;cadena_ser&#x3B;hoy_por_hoy&#x3B;politica&quot;&#x5D;" download><span class="icono_descargar"></span> Descargar</a></li>
                             </ul>
         </div>
     </div>
@@ -11973,91 +11998,22 @@ return [
             <ol class="listado">
     
 	                <li class="btnlistener">
-                <a href="/audio/1600794144_649920/" class="programa" title="Una doctora de Madrid abandona la sanidad pública por sus precarias condiciones. &quot;No nos van. Nos echan&quot;."
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1600794144_649920" onclick="return false;">
-                    Una doctora de Madrid abandona la sanidad pública por sus precarias condiciones. &quot;No nos van. Nos echan&quot;.
-                </a>
-                <span class="info">
-                    <span class="horario">
-                                                                                                   
-                                                             
-                              
-                                                00:10:07 | Los cafeteros | La Ventana
-                    </span>
-                </span>
-
-                <div class="btn">
-                    <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1600794144_649920">
-                            Escuchar
-                        </a>
-                    </span>
-                    <span class="icon-equalizer"></span>
-                </div>
-            </li>
-                    <li class="btnlistener">
-                <a href="/audio/1600796768_002191/" class="programa" title="Héctor Melero, el primer fiscal ciego en España: &quot;Si se cree, se trabaja y se estudia, se consigue la plaza&quot;"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1600796768_002191" onclick="return false;">
-                    Héctor Melero, el primer fiscal ciego en España: &quot;Si se cree, se trabaja y se estudia, se consigue la plaza&quot;
-                </a>
-                <span class="info">
-                    <span class="horario">
-                                                                                                   
-                                                             
-                              
-                                                00:15:52 | Los cafeteros | La Ventana
-                    </span>
-                </span>
-
-                <div class="btn">
-                    <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1600796768_002191">
-                            Escuchar
-                        </a>
-                    </span>
-                    <span class="icon-equalizer"></span>
-                </div>
-            </li>
-                    <li class="btnlistener">
-                <a href="/audio/1600818437_358_cut/" class="programa" title="El Larguero: Todos los detalles de la llegada de Luis Suárez al Atlético y hablamos con Hugo Sánchez (22/09/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1600818437_358_cut" onclick="return false;">
-                    El Larguero: Todos los detalles de la llegada de Luis Suárez al Atlético y hablamos con Hugo Sánchez (22/09/2020)
-                </a>
-                <span class="info">
-                    <span class="horario">
-                                                                                                   
-                                                           
-                              
-                                                01:58:59 | El Larguero
-                    </span>
-                </span>
-
-                <div class="btn">
-                    <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1600818437_358_cut">
-                            Escuchar
-                        </a>
-                    </span>
-                    <span class="icon-equalizer"></span>
-                </div>
-            </li>
-                    <li class="btnlistener">
-                <a href="/audio/001RD010000006111886/" class="programa" title="Play Segunda: Castellón pisa fuerte (17/09/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006111886" onclick="return false;">
-                    Play Segunda: Castellón pisa fuerte (17/09/2020)
+                <a href="/audio/1616657963849/" class="programa" title="Toni Cantó: una historia de idas y venidas"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1616657963849" onclick="return false;">
+                    Toni Cantó: una historia de idas y venidas
                 </a>
                 <span class="info">
                     <span class="horario">
                                                                                                      
                                                            
                               
-                                                17-09-2020 20:51:59 | 00:48:38 | Play Segunda
+                                                25-03-2021 08:40:11 | 00:02:35 | Hora 25
                     </span>
                 </span>
 
                 <div class="btn">
                     <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006111886">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1616657963849">
                             Escuchar
                         </a>
                     </span>
@@ -12065,22 +12021,45 @@ return [
                 </div>
             </li>
                     <li class="btnlistener">
-                <a href="/audio/001RD010000006111920/" class="programa" title="Hora 25 Deportes: Setién contesta al Barça (17/09/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006111920" onclick="return false;">
-                    Hora 25 Deportes: Setién contesta al Barça (17/09/2020)
+                <a href="/audio/cadenaser_hora25_20210325_200000_203000/" class="programa" title="Hora 25, 20h-20h30 (25/03/2021)"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="cadenaser_hora25_20210325_200000_203000" onclick="return false;">
+                    Hora 25, 20h-20h30 (25/03/2021)
+                </a>
+                <span class="info">
+                    <span class="horario">
+                                                                                                     
+                                                           
+                              
+                                                25-03-2021 20:52:23 | 00:30:00 | Hora 25
+                    </span>
+                </span>
+
+                <div class="btn">
+                    <span class="txt">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="cadenaser_hora25_20210325_200000_203000">
+                            Escuchar
+                        </a>
+                    </span>
+                    <span class="icon-equalizer"></span>
+                </div>
+            </li>
+                    <li class="btnlistener">
+                <a href="/audio/001RD010000006326574/" class="programa" title="Infalibles, inefables y vacío"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006326574" onclick="return false;">
+                    Infalibles, inefables y vacío
                 </a>
                 <span class="info">
                     <span class="horario">
                                                                                                      
                                                              
                               
-                                                17-09-2020 21:09:54 | 00:27:38 | Deportes | Hora 25
+                                                23-03-2021 11:46:02 | 00:00:44 | El revés y el derecho | Hora 14
                     </span>
                 </span>
 
                 <div class="btn">
                     <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006111920">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006326574">
                             Escuchar
                         </a>
                     </span>
@@ -12088,22 +12067,22 @@ return [
                 </div>
             </li>
                     <li class="btnlistener">
-                <a href="/audio/001RD010000006114656/" class="programa" title="Flash Deportes SER, 15:00 (21/09/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006114656" onclick="return false;">
-                    Flash Deportes SER, 15:00 (21/09/2020)
+                <a href="/audio/001RD010000006328196/" class="programa" title="Versos contra los egos"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006328196" onclick="return false;">
+                    Versos contra los egos
                 </a>
                 <span class="info">
                     <span class="horario">
                                                                                                      
-                                                           
+                                                             
                               
-                                                21-09-2020 16:55:13 | 00:02:08 | Flash Deportes SER
+                                                24-03-2021 10:37:08 | 00:00:45 | El revés y el derecho | Hora 14
                     </span>
                 </span>
 
                 <div class="btn">
                     <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006114656">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006328196">
                             Escuchar
                         </a>
                     </span>
@@ -12111,68 +12090,22 @@ return [
                 </div>
             </li>
                     <li class="btnlistener">
-                <a href="/audio/cadenaser_serdeportivos_20200916_150000_160000/" class="programa" title="SER Deportivos (16/09/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="cadenaser_serdeportivos_20200916_150000_160000" onclick="return false;">
-                    SER Deportivos (16/09/2020)
-                </a>
-                <span class="info">
-                    <span class="horario">
-                                                                                                     
-                                                           
-                              
-                                                16-09-2020 16:28:48 | 00:55:59 | SER Deportivos
-                    </span>
-                </span>
-
-                <div class="btn">
-                    <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="cadenaser_serdeportivos_20200916_150000_160000">
-                            Escuchar
-                        </a>
-                    </span>
-                    <span class="icon-equalizer"></span>
-                </div>
-            </li>
-                    <li class="btnlistener">
-                <a href="/audio/001RD010000006111066/" class="programa" title="SER Historia: Anne Bonny (20/09/2020)"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006111066" onclick="return false;">
-                    SER Historia: Anne Bonny (20/09/2020)
-                </a>
-                <span class="info">
-                    <span class="horario">
-                                                                                                     
-                                                           
-                              
-                                                20-09-2020 02:31:01 | 01:01:26 | SER Historia
-                    </span>
-                </span>
-
-                <div class="btn">
-                    <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006111066">
-                            Escuchar
-                        </a>
-                    </span>
-                    <span class="icon-equalizer"></span>
-                </div>
-            </li>
-                    <li class="btnlistener">
-                <a href="/audio/1600592280_100273/" class="programa" title="Juanjo Millás y el peligro de una sociedad en pausa"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1600592280_100273" onclick="return false;">
-                    Juanjo Millás y el peligro de una sociedad en pausa
+                <a href="/audio/1617060429394/" class="programa" title="El Sanedrín | El futuro de Agüero y Gareth Bale"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1617060429394" onclick="return false;">
+                    El Sanedrín | El futuro de Agüero y Gareth Bale
                 </a>
                 <span class="info">
                     <span class="horario">
                                                                                                    
                                                              
                               
-                                                00:51:25 | Las edades de Millás | A vivir que son dos días
+                                                00:38:30 | El Sanedrín de El Larguero | El Larguero
                     </span>
                 </span>
 
                 <div class="btn">
                     <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1600592280_100273">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1617060429394">
                             Escuchar
                         </a>
                     </span>
@@ -12180,22 +12113,114 @@ return [
                 </div>
             </li>
                     <li class="btnlistener">
-                <a href="/audio/001RD010000006110087/" class="programa" title="La Vida Moderna | 7x10 | ¿Quién levantó los olivos?"
-                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006110087" onclick="return false;">
-                    La Vida Moderna | 7x10 | ¿Quién levantó los olivos?
+                <a href="/audio/1617379517722/" class="programa" title="Las cosas claras"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1617379517722" onclick="return false;">
+                    Las cosas claras
+                </a>
+                <span class="info">
+                    <span class="horario">
+                                                                                                   
+                                                           
+                              
+                                                00:59:10 | Play Segunda
+                    </span>
+                </span>
+
+                <div class="btn">
+                    <span class="txt">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1617379517722">
+                            Escuchar
+                        </a>
+                    </span>
+                    <span class="icon-equalizer"></span>
+                </div>
+            </li>
+                    <li class="btnlistener">
+                <a href="/audio/1617268189079/" class="programa" title="Nadie Sabe Nada | La radio con tintes de podcast | 03/04/2021"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1617268189079" onclick="return false;">
+                    Nadie Sabe Nada | La radio con tintes de podcast | 03/04/2021
                 </a>
                 <span class="info">
                     <span class="horario">
                                                                                                      
                                                            
                               
-                                                16-09-2020 20:00:51 | 00:32:07 | La vida moderna
+                                                01-04-2021 11:12:10 | 00:52:36 | Nadie Sabe Nada
                     </span>
                 </span>
 
                 <div class="btn">
                     <span class="txt">
-                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="001RD010000006110087">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1617268189079">
+                            Escuchar
+                        </a>
+                    </span>
+                    <span class="icon-equalizer"></span>
+                </div>
+            </li>
+                    <li class="btnlistener">
+                <a href="/audio/cadenaser_serdeportivos_20210331_150000_160000/" class="programa" title="SER Deportivos (31/03/2021)"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="cadenaser_serdeportivos_20210331_150000_160000" onclick="return false;">
+                    SER Deportivos (31/03/2021)
+                </a>
+                <span class="info">
+                    <span class="horario">
+                                                                                                     
+                                                           
+                              
+                                                31-03-2021 16:27:44 | 00:57:01 | SER Deportivos
+                    </span>
+                </span>
+
+                <div class="btn">
+                    <span class="txt">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="cadenaser_serdeportivos_20210331_150000_160000">
+                            Escuchar
+                        </a>
+                    </span>
+                    <span class="icon-equalizer"></span>
+                </div>
+            </li>
+                    <li class="btnlistener">
+                <a href="/audio/1616908900001/" class="programa" title="El cadáver olvidado"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1616908900001" onclick="return false;">
+                    El cadáver olvidado
+                </a>
+                <span class="info">
+                    <span class="horario">
+                                                                                                   
+                                                             
+                              
+                                                01:05:49 | A Vivir a las 9 | Reportajes
+                    </span>
+                </span>
+
+                <div class="btn">
+                    <span class="txt">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1616908900001">
+                            Escuchar
+                        </a>
+                    </span>
+                    <span class="icon-equalizer"></span>
+                </div>
+            </li>
+                    <li class="btnlistener">
+                <a href="/audio/1616961514020/" class="programa" title="Carreteras Secundarias | IX. Multiculturalidad"
+                   data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1616961514020" onclick="return false;">
+                    Carreteras Secundarias | IX. Multiculturalidad
+                </a>
+                <span class="info">
+                    <span class="horario">
+                                                                                                   
+                                                             
+                              
+                                                00:54:34 | Carreteras Secundarias | Carreteras secundarias
+                    </span>
+                </span>
+
+                <div class="btn">
+                    <span class="txt">
+                        <a class="play" data-player-action="playpause" data-player-mediatype="audio" data-player-idmedia="1616961514020">
                             Escuchar
                         </a>
                     </span>
@@ -12257,43 +12282,43 @@ return [
 <div id="ser">
 <ol>
 <li>
-<a href="https://cadenaser.com/programa/2020/09/23/el_larguero/1600815106_273982.html?int=PLAYSER_lomasleidoSER" title="&quot;Desde que se divorciaron...&quot;: Hugo Sánchez señala el origen del problema del Real Madrid con el gol" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/09/23/el_larguero/1600815106_273982_1600816711_miniatura_normal.jpg" alt="&quot;Desde que se divorciaron...&quot;: Hugo Sánchez señala el origen del problema del Real Madrid con el gol" />
+<a href="https://cadenaser.com/programa/2021/04/03/carrusel_deportivo/1617471557_406799.html?int=PLAYSER_lomasleidoSER" title="Los vídeos de la vergüenza en la previa de la final de Copa: una mujer herida, quema de contenedores..." target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2021/04/03/carrusel_deportivo/1617471557_406799_1617471846_miniatura_normal.jpg" alt="Los vídeos de la vergüenza en la previa de la final de Copa: una mujer herida, quema de contenedores..." />
 </a>
 <h4>
-<a href="https://cadenaser.com/programa/2020/09/23/el_larguero/1600815106_273982.html?int=PLAYSER_lomasleidoSER" title="&quot;Desde que se divorciaron...&quot;: Hugo Sánchez señala el origen del problema del Real Madrid con el gol" target="_blank">&quot;Desde que se divorciaron...&quot;: Hugo Sánchez señala el origen del problema del Real Madrid con el gol</a>
+<a href="https://cadenaser.com/programa/2021/04/03/carrusel_deportivo/1617471557_406799.html?int=PLAYSER_lomasleidoSER" title="Los vídeos de la vergüenza en la previa de la final de Copa: una mujer herida, quema de contenedores..." target="_blank">Los vídeos de la vergüenza en la previa de la final de Copa: una mujer herida, quema de contenedores...</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/ser/2020/09/22/deportes/1600800495_811841.html?int=PLAYSER_lomasleidoSER" title="Barcelona y Atlético de Madrid alcanzan un acuerdo para el traspaso de Luis Suárez" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/09/22/deportes/1600800495_811841_1600800658_miniatura_normal.jpg" alt="Barcelona y Atlético de Madrid alcanzan un acuerdo para el traspaso de Luis Suárez" />
+<a href="https://cadenaser.com/ser/2021/04/03/sociedad/1617459351_208485.html?int=PLAYSER_lomasleidoSER" title="La incidencia desciende tres puntos en plena Semana Santa, aunque Sanidad suma 9.571 contagios y 157 muertes" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2021/04/03/sociedad/1617459351_208485_1617463251_miniatura_normal.jpg" alt="La incidencia desciende tres puntos en plena Semana Santa, aunque Sanidad suma 9.571 contagios y 157 muertes" />
 </a>
 <h4>
-<a href="https://cadenaser.com/ser/2020/09/22/deportes/1600800495_811841.html?int=PLAYSER_lomasleidoSER" title="Barcelona y Atlético de Madrid alcanzan un acuerdo para el traspaso de Luis Suárez" target="_blank">Barcelona y Atlético de Madrid alcanzan un acuerdo para el traspaso de Luis Suárez</a>
+<a href="https://cadenaser.com/ser/2021/04/03/sociedad/1617459351_208485.html?int=PLAYSER_lomasleidoSER" title="La incidencia desciende tres puntos en plena Semana Santa, aunque Sanidad suma 9.571 contagios y 157 muertes" target="_blank">La incidencia desciende tres puntos en plena Semana Santa, aunque Sanidad suma 9.571 contagios y 157 muertes</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/ser/2020/09/22/deportes/1600801287_653918.html?int=PLAYSER_lomasleidoSER" title="Asesinan a puñaladas al árbitro italiano Daniele De Santis y a su prometida en el hogar de la pareja" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/09/22/deportes/1600801287_653918_1600802991_miniatura_normal.jpg" alt="Asesinan a puñaladas al árbitro italiano Daniele De Santis y a su prometida en el hogar de la pareja" />
+<a href="https://cadenaser.com/programa/2021/04/03/carrusel_deportivo/1617443940_684665.html?int=PLAYSER_lomasleidoSER" title="Oyarzabal regala la gloria de la Copa a la Real Sociedad tres décadas después" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2021/04/03/carrusel_deportivo/1617443940_684665_1617484847_miniatura_normal.jpg" alt="Oyarzabal regala la gloria de la Copa a la Real Sociedad tres décadas después" />
 </a>
 <h4>
-<a href="https://cadenaser.com/ser/2020/09/22/deportes/1600801287_653918.html?int=PLAYSER_lomasleidoSER" title="Asesinan a puñaladas al árbitro italiano Daniele De Santis y a su prometida en el hogar de la pareja" target="_blank">Asesinan a puñaladas al árbitro italiano Daniele De Santis y a su prometida en el hogar de la pareja</a>
+<a href="https://cadenaser.com/programa/2021/04/03/carrusel_deportivo/1617443940_684665.html?int=PLAYSER_lomasleidoSER" title="Oyarzabal regala la gloria de la Copa a la Real Sociedad tres décadas después" target="_blank">Oyarzabal regala la gloria de la Copa a la Real Sociedad tres décadas después</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/emisora/2020/09/22/radio_palencia/1600800947_490123.html?int=PLAYSER_lomasleidoSER" title="Estas son las nuevas medidas restrictivas de la Junta para Palencia ante el repunte del Covid" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/09/22/radio_palencia/1600800947_490123_1600801498_miniatura_normal.jpg" alt="Estas son las nuevas medidas restrictivas de la Junta para Palencia ante el repunte del Covid" />
+<a href="https://cadenaser.com/programa/2021/04/03/carrusel_deportivo/1617459174_915454.html?int=PLAYSER_lomasleidoSER" title="El consejo de Roncero a Ramos: &quot;Yo las he tenido todas, pero mi amor por el Madrid no lo ha tocado nadie&quot;" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2021/04/03/carrusel_deportivo/1617459174_915454_1617459394_miniatura_normal.jpg" alt="El consejo de Roncero a Ramos: &quot;Yo las he tenido todas, pero mi amor por el Madrid no lo ha tocado nadie&quot;" />
 </a>
 <h4>
-<a href="https://cadenaser.com/emisora/2020/09/22/radio_palencia/1600800947_490123.html?int=PLAYSER_lomasleidoSER" title="Estas son las nuevas medidas restrictivas de la Junta para Palencia ante el repunte del Covid" target="_blank">Estas son las nuevas medidas restrictivas de la Junta para Palencia ante el repunte del Covid</a>
+<a href="https://cadenaser.com/programa/2021/04/03/carrusel_deportivo/1617459174_915454.html?int=PLAYSER_lomasleidoSER" title="El consejo de Roncero a Ramos: &quot;Yo las he tenido todas, pero mi amor por el Madrid no lo ha tocado nadie&quot;" target="_blank">El consejo de Roncero a Ramos: &quot;Yo las he tenido todas, pero mi amor por el Madrid no lo ha tocado nadie&quot;</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/programa/2020/09/23/hoy_por_hoy/1600842686_944562.html?int=PLAYSER_lomasleidoSER" title="Las hospitalizaciones por COVID aumentan un 100% en el último mes" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/09/23/hoy_por_hoy/1600842686_944562_1600843229_miniatura_normal.jpg" alt="Las hospitalizaciones por COVID aumentan un 100% en el último mes" />
+<a href="https://cadenaser.com/programa/2021/04/03/carrusel_deportivo/1617443089_887220.html?int=PLAYSER_lomasleidoSER" title="Asensio y Benzema retienen al Real Madrid en el pulso por LaLiga antes del &#039;Clásico&#039;" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2021/04/03/carrusel_deportivo/1617443089_887220_1617463378_miniatura_normal.jpg" alt="Asensio y Benzema retienen al Real Madrid en el pulso por LaLiga antes del &#039;Clásico&#039;" />
 </a>
 <h4>
-<a href="https://cadenaser.com/programa/2020/09/23/hoy_por_hoy/1600842686_944562.html?int=PLAYSER_lomasleidoSER" title="Las hospitalizaciones por COVID aumentan un 100% en el último mes" target="_blank">Las hospitalizaciones por COVID aumentan un 100% en el último mes</a>
+<a href="https://cadenaser.com/programa/2021/04/03/carrusel_deportivo/1617443089_887220.html?int=PLAYSER_lomasleidoSER" title="Asensio y Benzema retienen al Real Madrid en el pulso por LaLiga antes del &#039;Clásico&#039;" target="_blank">Asensio y Benzema retienen al Real Madrid en el pulso por LaLiga antes del &#039;Clásico&#039;</a>
 </h4>
 </li>
 </ol>
@@ -12301,43 +12326,43 @@ return [
 <div id="twitter">
 <ol>
 <li>
-<a href="https://cadenaser.com/programa/2020/09/22/hoy_por_hoy/1600747710_473624.html?int=PLAYSER_lomasleidoSER" title="No todos somos buenos" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/09/22/hoy_por_hoy/1600747710_473624_1600747769_miniatura_normal.jpg" alt="No todos somos buenos" />
+<a href="https://cadenaser.com/emisora/2021/04/03/radio_madrid/1617443993_471357.html?int=PLAYSER_lomasleidoSER" title="El Wizink Center, nuevo punto de vacunación masiva en Madrid" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2021/04/03/radio_madrid/1617443993_471357_1617444523_miniatura_normal.jpg" alt="El Wizink Center, nuevo punto de vacunación masiva en Madrid" />
 </a>
 <h4>
-<a href="https://cadenaser.com/programa/2020/09/22/hoy_por_hoy/1600747710_473624.html?int=PLAYSER_lomasleidoSER" title="No todos somos buenos" target="_blank">No todos somos buenos</a>
+<a href="https://cadenaser.com/emisora/2021/04/03/radio_madrid/1617443993_471357.html?int=PLAYSER_lomasleidoSER" title="El Wizink Center, nuevo punto de vacunación masiva en Madrid" target="_blank">El Wizink Center, nuevo punto de vacunación masiva en Madrid</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/ser/2020/09/22/sociedad/1600783661_669295.html?int=PLAYSER_lomasleidoSER" title="Sanidad suma 10.799 nuevos contagios por coronavirus y 241 fallecidos" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/09/22/sociedad/1600783661_669295_1600783777_miniatura_normal.jpg" alt="Sanidad suma 10.799 nuevos contagios por coronavirus y 241 fallecidos" />
+<a href="https://cadenaser.com/emisora/2021/04/03/ser_gijon/1617474205_922759.html?int=PLAYSER_lomasleidoSER" title="Atacan la sede de Podemos en Gijón con huevos y pegada de carteles: &quot;Comunismo es muerte&quot;" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2021/04/03/ser_gijon/1617474205_922759_1617474502_miniatura_normal.jpg" alt="Atacan la sede de Podemos en Gijón con huevos y pegada de carteles: &quot;Comunismo es muerte&quot;" />
 </a>
 <h4>
-<a href="https://cadenaser.com/ser/2020/09/22/sociedad/1600783661_669295.html?int=PLAYSER_lomasleidoSER" title="Sanidad suma 10.799 nuevos contagios por coronavirus y 241 fallecidos" target="_blank">Sanidad suma 10.799 nuevos contagios por coronavirus y 241 fallecidos</a>
+<a href="https://cadenaser.com/emisora/2021/04/03/ser_gijon/1617474205_922759.html?int=PLAYSER_lomasleidoSER" title="Atacan la sede de Podemos en Gijón con huevos y pegada de carteles: &quot;Comunismo es muerte&quot;" target="_blank">Atacan la sede de Podemos en Gijón con huevos y pegada de carteles: &quot;Comunismo es muerte&quot;</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/ser/2020/09/22/tribunales/1600804376_925920.html?int=PLAYSER_lomasleidoSER" title="La inspección fiscal abre diligencias por las presiones a Navajas" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/09/22/tribunales/1600804376_925920_1600804675_miniatura_normal.jpg" alt="La inspección fiscal abre diligencias por las presiones a Navajas" />
+<a href="https://cadenaser.com/emisora/2021/04/03/radio_murcia/1617445117_885450.html?int=PLAYSER_lomasleidoSER" title="La Marea Verde estalla frente a San Esteban: &quot;Vosotros fascistas, sois los terroristas&quot;" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2021/04/03/radio_murcia/1617445117_885450_1617445704_miniatura_normal.jpg" alt="La Marea Verde estalla frente a San Esteban: &quot;Vosotros fascistas, sois los terroristas&quot;" />
 </a>
 <h4>
-<a href="https://cadenaser.com/ser/2020/09/22/tribunales/1600804376_925920.html?int=PLAYSER_lomasleidoSER" title="La inspección fiscal abre diligencias por las presiones a Navajas" target="_blank">La inspección fiscal abre diligencias por las presiones a Navajas</a>
+<a href="https://cadenaser.com/emisora/2021/04/03/radio_murcia/1617445117_885450.html?int=PLAYSER_lomasleidoSER" title="La Marea Verde estalla frente a San Esteban: &quot;Vosotros fascistas, sois los terroristas&quot;" target="_blank">La Marea Verde estalla frente a San Esteban: &quot;Vosotros fascistas, sois los terroristas&quot;</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/emisora/2020/09/23/radio_valencia/1600870582_648105.html?int=PLAYSER_lomasleidoSER" title="Roban más de 5.000 euros de la taquilla del Palau de la Música de València" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/09/23/radio_valencia/1600870582_648105_1600870860_miniatura_normal.jpg" alt="Roban más de 5.000 euros de la taquilla del Palau de la Música de València" />
+<a href="https://cadenaser.com/emisora/2021/04/04/ser_gijon/1617488732_745317.html?int=PLAYSER_lomasleidoSER" title="200.000 personas apoyan la candidatura de Springsteen al Premio Princesa de Asturias de las Artes" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2021/04/04/ser_gijon/1617488732_745317_1617489473_miniatura_normal.jpg" alt="200.000 personas apoyan la candidatura de Springsteen al Premio Princesa de Asturias de las Artes" />
 </a>
 <h4>
-<a href="https://cadenaser.com/emisora/2020/09/23/radio_valencia/1600870582_648105.html?int=PLAYSER_lomasleidoSER" title="Roban más de 5.000 euros de la taquilla del Palau de la Música de València" target="_blank">Roban más de 5.000 euros de la taquilla del Palau de la Música de València</a>
+<a href="https://cadenaser.com/emisora/2021/04/04/ser_gijon/1617488732_745317.html?int=PLAYSER_lomasleidoSER" title="200.000 personas apoyan la candidatura de Springsteen al Premio Princesa de Asturias de las Artes" target="_blank">200.000 personas apoyan la candidatura de Springsteen al Premio Princesa de Asturias de las Artes</a>
 </h4>
 </li>
 <li>
-<a href="https://cadenaser.com/emisora/2020/09/23/radio_madrid/1600839897_055288.html?int=PLAYSER_lomasleidoSER" title="Los Centros de Salud de Madrid llevan más de un año sin material para realizar curas" target="_blank">
-<img src="https://cadenaser00.epimg.net/ser/imagenes/2020/09/22/radio_madrid/1600800140_928171_1600800310_miniatura_normal.jpg" alt="Los Centros de Salud de Madrid llevan más de un año sin material para realizar curas" />
+<a href="https://cadenaser.com/emisora/2021/04/03/ser_gijon/1617404340_549248.html?int=PLAYSER_lomasleidoSER" title="Un avión supersónico podría conectar Asturias con Alicante en menos de 15 minutos" target="_blank">
+<img src="https://cadenaser00.epimg.net/ser/imagenes/2021/04/03/ser_gijon/1617404340_549248_1617404481_miniatura_normal.jpg" alt="Un avión supersónico podría conectar Asturias con Alicante en menos de 15 minutos" />
 </a>
 <h4>
-<a href="https://cadenaser.com/emisora/2020/09/23/radio_madrid/1600839897_055288.html?int=PLAYSER_lomasleidoSER" title="Los Centros de Salud de Madrid llevan más de un año sin material para realizar curas" target="_blank">Los Centros de Salud de Madrid llevan más de un año sin material para realizar curas</a>
+<a href="https://cadenaser.com/emisora/2021/04/03/ser_gijon/1617404340_549248.html?int=PLAYSER_lomasleidoSER" title="Un avión supersónico podría conectar Asturias con Alicante en menos de 15 minutos" target="_blank">Un avión supersónico podría conectar Asturias con Alicante en menos de 15 minutos</a>
 </h4>
 </li>
 </ol>

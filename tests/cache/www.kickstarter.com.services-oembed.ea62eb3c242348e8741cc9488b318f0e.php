@@ -18,12 +18,11 @@ return [
         ],
         'accept-ranges' => [
             'bytes',
-            'bytes',
             'bytes'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:17 GMT',
-            'Wed, 23 Sep 2020 21:46:17 GMT'
+            'Sun, 04 Apr 2021 15:27:29 GMT',
+            'Sun, 04 Apr 2021 15:27:29 GMT'
         ],
         'via' => [
             '1.1 varnish',
@@ -33,12 +32,12 @@ return [
             'close'
         ],
         'set-cookie' => [
-            '_pxhd=ddff26fcec3860246848bb7520a02de495d4cc54e8e7c9e5ad1406804b23f7fa:b2034891-fde1-11ea-a582-0f5c470aaab4; Expires=Thu, 23 Sep 2021 21:46:17 GMT; path=/;',
-            '_pxhd=ddff26fcec3860246848bb7520a02de495d4cc54e8e7c9e5ad1406804b23f7fa:b2034891-fde1-11ea-a582-0f5c470aaab4; Expires=Thu, 23 Sep 2021 21:46:17 GMT; path=/;'
+            '_pxhd=41d993775e102341a7342f41f84da559f5d91ab81e518cef429b8ecb5e9202aa:447efba0-955a-11eb-80c6-97d433578031; Expires=Mon, 04 Apr 2022 15:27:29 GMT; path=/;',
+            '_pxhd=41d993775e102341a7342f41f84da559f5d91ab81e518cef429b8ecb5e9202aa:447efba0-955a-11eb-80c6-97d433578031; Expires=Mon, 04 Apr 2022 15:27:29 GMT; path=/;'
         ],
         'x-served-by' => [
-            'cache-mad22058-MAD',
-            'cache-mad22062-MAD'
+            'cache-mad22076-MAD',
+            'cache-mad22034-MAD'
         ],
         'x-cache' => [
             'HIT',
@@ -71,10 +70,10 @@ return [
             'max-age=0, private, must-revalidate'
         ],
         'x-request-id' => [
-            '12308c77-fe84-4963-b75c-cb54cd263641'
+            '7878d4d5-346a-48c5-b174-089acdddc4ea'
         ],
         'x-runtime' => [
-            '0.058746'
+            '0.069338'
         ],
         'content-encoding' => [
             'gzip'
@@ -82,15 +81,11 @@ return [
         'fastly-restarts' => [
             '1'
         ],
-        'age' => [
-            '0',
-            '0'
-        ],
         'Content-Location' => [
             'https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1452363698%2Fgood-seed-craft-veggie-burgers&format=json'
         ],
         'X-Request-Time' => [
-            '0.409 ms'
+            '0.423 ms'
         ]
     ],
     'statusCode' => 200,

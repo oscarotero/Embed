@@ -7,7 +7,7 @@ return [
     'cms' => null,
     'code' => null,
     'description' => null,
-    'favicon' => 'https://calendar.google.com/favicon.ico',
+    'favicon' => 'https://calendar.google.com/googlecalendar/images/favicons_2020q4/calendar_31.ico',
     'feeds' => [],
     'icon' => null,
     'image' => null,

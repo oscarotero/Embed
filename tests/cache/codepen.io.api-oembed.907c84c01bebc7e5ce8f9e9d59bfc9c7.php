@@ -4,10 +4,15 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 23 Sep 2020 21:46:03 GMT'
+            'Sun, 04 Apr 2021 15:24:04 GMT'
         ],
         'content-type' => [
             'application/json; charset=utf-8'
+        ],
+        'set-cookie' => [
+            '__cfduid=d786e74caaf8e60f124ab9ac5ed34c8031617549844; expires=Tue, 04-May-21 15:24:04 GMT; path=/; domain=.codepen.io; HttpOnly; SameSite=Lax; Secure',
+            '__cf_bm=69cca2f5c8bc9982ea174cff8da732db1d9167e8-1617549844-1800-AehBV503D6CGVouxBxLBidF65Vp89StIhTF+9UVETpFPchvH+s2a+xb19HKNS7tl8+T6nLNOozHBfUTuKfTbMDU=; path=/; expires=Sun, 04-Apr-21 15:54:04 GMT; domain=.codepen.io; HttpOnly; Secure; SameSite=None',
+            '__cfruid=6d7decd0072298e094eb196a0c9be050bf8f5d88-1617549844; path=/; domain=.codepen.io; HttpOnly; Secure; SameSite=None'
         ],
         'status' => [
             '200 OK'
@@ -25,28 +30,22 @@ return [
             '1; mode=block'
         ],
         'x-request-id' => [
-            '56a8aa7d-b4a5-4663-830e-9a8b7bf04eb3'
+            '652b7b65-1720-42d4-831d-44cbbe5894cd'
         ],
         'x-download-options' => [
             'noopen'
         ],
-        'x-env' => [
-            'production'
-        ],
         'etag' => [
             'W/"e10bb6a71c502ffc6ae3e02c6993b236"'
         ],
-        'x-frame-options' => [
-            'ALLOWALL'
-        ],
         'x-runtime' => [
-            '0.017303'
+            '0.017706'
         ],
         'x-content-type-options' => [
             'nosniff'
         ],
-        'set-cookie' => [
-            'codepen_session=cFJpTkl6M0ZmZFRkOXJjTFN0TzRvUHBpTlF3dHM2VXBkZStJT1N6WXFLVi9qQ0pma2p1VkkyTzVVNC8xdkdPRmRPMlRiVzJneXhzQW5wSjBvd1g4WUc5YVdPTit3bUpnbkJkZkRXQko3VE9nOUxBTkQveDY2RzJHQzJTUEFISTVuSStENmRLdS8xU1YvTE9PcVR3SjdDR3JjSVQrOWxGTTdzankweTJ5bkUya0lROUV0NUo0cnlnZVFJRVMveHJtS3Rkbm0xVXh3TExCZzQyWVV3VzVuc01QTEhaVml4Q29pdW85andFSTE0bWpSbUxNeWFJSnhVdko1dzRzTHQ0TGYvbElFeHFWU2xLaXNMNStOSEZadnpUc1lWVURIejNKUlVrOVZnUHRqaHNuVGFRSDB6aWJzWXZlZno4ZW1HcmpOYlU3MU5DRlc5Qnk4emlmV0ZhbmNvWWVVYnlVa09HMXNtODJxZEpEcDhJPS0tSVVQZm9lUkJSYVVaTnRUYVFIWk5Ldz09--f331c2051463a30502ddb73e871287553fa24605; path=/; expires=Fri, 23 Oct 2020 21:46:03 GMT; secure; HttpOnly; SameSite=Lax'
+        'content-security-policy' => [
+            'default-src \'self\'; base-uri \'self\'; block-all-mixed-content; connect-src blob: *; font-src data: *; frame-src data: blob: *; img-src data: blob: *; form-action \'self\'; media-src \'self\' assets.codepen.io blog.codepen.io; object-src \'none\'; script-src \'self\' \'unsafe-eval\' \'nonce-LTFpw80C+14=\' cpwebassets.codepen.io *.appcues.com *.buysellads.com *.carbonads.com *.carbonads.net *.filestackapi.com *.firebaseio.com *.stripe.com *.wufoo.com *.speedcurve.com wufoo.com www.google.com; style-src \'unsafe-inline\' *; report-uri /cp/internal/csp'
         ],
         'x-powered-by' => [
             'Phusion Passenger Enterprise'
@@ -55,16 +54,19 @@ return [
             'DYNAMIC'
         ],
         'cf-request-id' => [
-            '055e8751a30000ff1c0285f200000001'
+            '093f14f79d000015093b8d9000000001'
         ],
         'expect-ct' => [
             'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
+        ],
+        'strict-transport-security' => [
+            'max-age=31536000; includeSubDomains; preload'
         ],
         'server' => [
             'cloudflare'
         ],
         'cf-ray' => [
-            '5d7774c90ff0ff1c-MAD'
+            '63ab8a9f59d91509-MAD'
         ],
         'content-encoding' => [
             'br'
@@ -76,7 +78,7 @@ return [
             'https://codepen.io/api/oembed?url=https%3A%2F%2Fcodepen.io%2FZhouzi%2Fpen%2FJoRazP&format=json'
         ],
         'X-Request-Time' => [
-            '0.810 ms'
+            '0.324 ms'
         ]
     ],
     'statusCode' => 200,

@@ -4,13 +4,13 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'x-guploader-uploadid' => [
-            'ABg5-UxA3aE4ha-J6yJj6T2_w35hrI3w8q0i3OqMpAVe12aV5dVmshDI-ZZDSKmC_mrtxhdOanZH7EC1uzwHMd19YHE'
+            'ABg5-Uy47CXkjK-fEZh6qx5MWBdHP36On-KQ50fxOQB-DC0bfsRIUzwf82NJv5_nOh-n7v2GE8QYC1kUPUbxqWzFRtE'
         ],
         'expires' => [
-            'Mon, 14 Dec 2020 15:00:04 GMT'
+            'Sun, 04 Apr 2021 16:20:11 GMT'
         ],
         'date' => [
-            'Mon, 14 Dec 2020 14:00:04 GMT'
+            'Sun, 04 Apr 2021 15:20:11 GMT'
         ],
         'cache-control' => [
             'public, max-age=3600'
@@ -62,7 +62,7 @@ return [
             'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
         ],
         'X-Request-Time' => [
-            '0.305 ms'
+            '0.252 ms'
         ]
     ],
     'statusCode' => 200,

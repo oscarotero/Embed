@@ -19,22 +19,25 @@ return [
             'nosniff'
         ],
         'etag' => [
-            'W/"129759b96e599e8949a6e24911d91021"'
+            'W/"f0d828317f257c4492514548024e228c"'
         ],
         'cache-control' => [
             'max-age=0, private, must-revalidate'
         ],
         'set-cookie' => [
-            'last_page=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1452363698%2Fgood-seed-craft-veggie-burgers; path=/; expires=Wed, 23 Sep 2020 22:16:16 GMT; HttpOnly; secure',
-            '_ksr_session=bE01UE5ZbE04TFVpR0pFVE5pQmQ3eks2b0RuWDlIWktGbnhBaEV6ZGNIN0k4eGZlcHJKOFNwWjB4VzZUZU82ZW11ZzlHUTBVK3Y3M21PQmRuYUJEL0FmaE5CTk9PQWJoVm5yL2dkY3JlaTl5c3BkOCtYV240RU8veHA1L1dTQjNxSVUvR2hrM0ZYSmRvZStMNnFxYjZRPT0tLWZDU0FKcTBYendtNnZ4TzMxVzN6RHc9PQ%3D%3D--826d2fdff09d0597504053a6c5df189288ab1f33; path=/; secure; HttpOnly',
-            'request_time=Wed%2C+23+Sep+2020+21%3A46%3A16+-0000; path=/; secure',
-            '_pxhd=ddff26fcec3860246848bb7520a02de495d4cc54e8e7c9e5ad1406804b23f7fa:b2034891-fde1-11ea-a582-0f5c470aaab4; Expires=Thu, 23 Sep 2021 21:46:16 GMT; path=/;'
+            'vis=5071cdb5a8a44a62-1b3aff00842edf29-a56d63b74d1de30cv1; path=/; expires=Thu, 04 Apr 2041 15:27:27 GMT; secure',
+            'lang=en; path=/; secure',
+            'last_page=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1452363698%2Fgood-seed-craft-veggie-burgers; path=/; expires=Sun, 04 Apr 2021 15:57:27 GMT; HttpOnly; secure',
+            'optimizely_current_variations=%7B%7D; path=/; secure',
+            '_ksr_session=aWNzRXZqNGVIRzB2QmlyTGozNE9QU2tTazhFbGJBQ0l6SGFxWFYwdVZXMXowc25nNUl3eHpVekxCK2plQ3JmV1pPRGYyNFBVVm9pdjZlY3ZuWlJJZ09wcW0zc3dlOFZvL213WENHWVlOaDg0OHkrVkpPaGJZT0xiRkNxc0Y5NEgzMjNBanhwc1JMYzBaT3Vhc1pIVk53PT0tLXVhSkhXQ2V6YUdMTnRwZWdXQnRRR3c9PQ%3D%3D--5c17e0b5b2f2e0d6b3b20c687e0b0570178a72ba; path=/; secure; HttpOnly',
+            'request_time=Sun%2C+04+Apr+2021+15%3A27%3A28+-0000; path=/; secure',
+            '_pxhd=d94c40904eb0b48ce6294a1f6e846a46307d8ff4d6763431c61a813b81a9a12d:43774fa0-955a-11eb-9b8d-4d3c58d8c7b8; Expires=Mon, 04 Apr 2022 15:27:29 GMT; path=/;'
         ],
         'x-request-id' => [
-            'd7aff66a-ed58-44f7-a48e-1b2cd9f986dd'
+            '4e353b28-b18b-4497-b428-649efdac06c6'
         ],
         'x-runtime' => [
-            '0.646240'
+            '1.265294'
         ],
         'content-encoding' => [
             'gzip'
@@ -43,21 +46,16 @@ return [
             '1'
         ],
         'accept-ranges' => [
-            'bytes',
             'bytes'
         ],
-        'age' => [
-            '0',
-            '0'
-        ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:16 GMT'
+            'Sun, 04 Apr 2021 15:27:29 GMT'
         ],
         'via' => [
             '1.1 varnish'
         ],
         'x-served-by' => [
-            'cache-mad22070-MAD'
+            'cache-mad22050-MAD'
         ],
         'x-cache' => [
             'MISS'
@@ -72,13 +70,13 @@ return [
             'https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers'
         ],
         'X-Request-Time' => [
-            '1.169 ms'
+            '1.791 ms'
         ]
     ],
     'statusCode' => 200,
     'reasonPhrase' => 'OK',
     'body' => '<!DOCTYPE html>
-<html class="projects_show fontface no-js" data-request-id="d7aff66a-ed58-44f7-a48e-1b2cd9f986dd" lang="en">
+<html class="projects_show fontface no-js" data-request-id="4e353b28-b18b-4497-b428-649efdac06c6" lang="en">
 <script>
   docElement = this.document.documentElement;
   docElement.className=docElement.className.replace(/\\bno-js\\b/,\'\') + \'js\';
@@ -94,6 +92,37 @@ return [
       s.src = \'/Uy3R669N/init.js\';
       p.parentNode.insertBefore(s,p);
   }());
+</script>
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.13.1";
+  analytics.load(\'whtTAcIwM5UX4i8IQO7VCLA6YnLJOynL\');
+  var get_cookie = (cookieName) => document.cookie.match(\'(^|;)\\\\s*\' + cookieName + \'\\\\s*=\\\\s*([^;]+)\')?.pop() || \'\'
+  var vis = get_cookie(\'vis\')
+  analytics.setAnonymousId(vis);
+  var hasUserIdBeenSet = () => {
+    if (get_cookie(\'ajs_user_id\')) { return true; }
+    var localId = localStorage.getItem("ajs_user_id")
+    // :( segment can set "null" in this key
+    if (localId !== null && localId !== "null") { return true; }
+    return false;
+  }
+  if (false){
+    if (false && !hasUserIdBeenSet()) {
+      var traits = JSON.parse(`{}`);
+      analytics.identify("", traits);
+    }
+    if (false) {
+      var properties = JSON.parse(`null`);
+      properties[\'session_apple_pay_capable\'] = !!window.ApplePaySession;
+  
+      if (false) {
+        context = JSON.parse(`null`);
+        properties = { ...properties, ...context };
+      }
+      analytics.track("Page Viewed", {context_page: "", ...properties})
+    }
+  }
+  }}();
 </script><title>Good Seed Craft Veggie Burgers by Oliver Ponce and Erin Shotwell &mdash; Kickstarter</title><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 <meta name="title" content="Kickstarter &gt;&gt; Good Seed Craft Veggie Burgers by Oliver Ponce and Erin Shotwell"/>
 <meta name="description" content="Oliver Ponce and Erin Shotwell is raising funds for Good Seed Craft Veggie Burgers on Kickstarter! 
@@ -130,17 +159,17 @@ return [
 <meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/1452363698/1508881112?app_banner=1"/>
 <meta property="twitter:maxage" content="60"/>
 <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="ohjnD9v6Hfxhqrt5e6CHTdXwcknp/DBAPaFM2ka/Eyg5DZIRPGMZmc09TmU1ZSoBeKVWT5JXZwr0vgHcprDwxQ==" />
-<link rel="stylesheet" media="screen" href="https://a.kickstarter.com/assets/packages/mobile_web-b8af32d908ce91bb6a7902f43fd382ca1f623a7c10fc57672658310a543ae463.css" />
+<meta name="csrf-token" content="M4oUrdtu0ImZ000PBUY/nJ8aUieprG5CTGuTrDHYszQmlO864D08t0c6F07njOil4pjv4mT9OkPJnxuNx8SwPw==" />
+<link rel="stylesheet" media="screen" href="https://a.kickstarter.com/assets/packages/mobile_web-8734e948feefa61b3cf546cdf5faad19ed4ac4fc9f0ee3f44057a446bfc48553.css" />
 <script id="schwamm_formatting_options">
 //<![CDATA[
 (function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[{"min":5,"i18n_key":"schwamm.just_now"},{"min":29,"i18n_key":"schwamm.less_than_a_minute_ago"},{"min":2640,"i18n_key":"schwamm.m_minutes_ago","count_key":"m"},{"min":82800,"i18n_key":"schwamm.about_h_hours_ago","count_key":"h"},{"min":604800,"i18n_key":"schwamm.d_days_ago","count_key":"d"},{"min":15778476,"i18n_key":"schwamm.on_datetime","count_key":"t"},{"min":0,"i18n_key":"schwamm.on_year","count_key":"y"}],"currency_symbol_mappings":{"AED":"AED","AFN":"؋","ALL":"Lek","AMD":"AMD","AOA":"AOA","ARS":"$","EUR":"€","AUD":"AU$ ","AWG":"ƒ","AZN":"ман","BAM":"KM","BBD":"$","BDT":"BDT","BGN":"лв","BHD":"BHD","BIF":"BIF","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BTN":"BTN","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"CA$ ","CDF":"CDF","CHF":"CHF ","CLP":"$","CNY":"¥","COP":"$","CRC":"₡","CUP":"₱","CVE":"CVE","CZK":"Kč","DJF":"DJF","DKK":"DKK ","DOP":"RD$","DZD":"DZD","EGP":"£","ERN":"ERN","ETB":"ETB","FJD":"$","FKP":"£","GBP":"£","GEL":"GEL","GHS":"GHS","GIP":"£","GMD":"GMD","GNF":"GNF","GTQ":"Q","GYD":"$","HKD":"HK$ ","HNL":"L","HRK":"kn","HTG":"HTG","HUF":"Ft","IDR":"Rp","ILS":"₪","INR":"INR","IQD":"IQD","IRR":"﷼","ISK":"kr","JMD":"J$","JOD":"JOD","JPY":"¥","KES":"KES","KGS":"лв","KHR":"៛","KMF":"KMF","KPW":"₩","KRW":"₩","KWD":"KWD","KYD":"$","KZT":"лв","LAK":"₭","LBP":"£","LKR":"₨","LRD":"$","LSL":"LSL","LTL":"Lt","LVL":"Ls","LYD":"LYD","MAD":"MAD","MDL":"MDL","MGA":"MGA","MKD":"ден","MMK":"MMK","MNT":"₮","MOP":"MOP","MRO":"MRO","MUR":"₨","MVR":"MVR","MWK":"MWK","MXN":"MX$ ","MYR":"RM","MZN":"MT","NAD":"$","NGN":"₦","NIO":"C$","NOK":"NOK ","NPR":"₨","NZD":"NZ$ ","OMR":"﷼","PAB":"B/.","PEN":"S/.","PGK":"PGK","PHP":"₱","PKR":"₨","PLN":"PLN ","PYG":"Gs","QAR":"﷼","RON":"lei","RSD":"Дин.","RUB":"руб","RWF":"RWF","SAR":"﷼","SBD":"$","SCR":"₨","SDG":"SDG","SEK":"SEK ","SGD":"S$ ","SHP":"£","SLL":"SLL","SOS":"S","SRD":"$","SSP":"SSP","STD":"STD","SVC":"$","SYP":"£","SZL":"SZL","THB":"฿","TJS":"TJS","TMT":"TMT","TND":"TND","TOP":"TOP","TRY":"TL","TTD":"TT$","TWD":"NT$","TZS":"TZS","UAH":"₴","UGX":"UGX","USD":"$","UYU":"$U","UZS":"лв","VEF":"Bs","VND":"₫","VUV":"VUV","WST":"WST","YER":"﷼","ZAR":"R","ZMK":"ZMK","ZWL":"ZWL"}}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
 //]]>
 </script>
 <script>
-  window.current_ip = \'159.147.214.6\';
+  window.current_ip = \'89.6.157.99\';
   window.current_ip_datacenter = \'false\';
-  window.enabled_features = {"show_posts_feed":true,"mobile_project_collection_optimizations":true,"ios_crashlytics":true,"ios_koala":true,"ios_i18n":true,"ios_tappable_category_location":true,"ios_favorite_categories":true,"ios_qualtrics":true,"ios_native_checkout":true,"ios_native_checkout_pledge_view":true,"ios_live_stream_chat":true,"ios_backer_dashboard":true,"android_native_checkout":true,"new_project_feedback":true,"new_project_preview":true,"new_build_header":true,"message_spam":true,"emoji_locale":true,"default_to_campaign_on_mobile":true,"pinned_posts_on_feed":true,"accounts_upgrade":true,"project_build_claims_detection":true,"project_build_rewards_explorer":true,"project_build_zendesk":true,"user_menu_draft_project":true,"make_100_2020":true,"funding_build":true,"funding_sheet":true,"budget_module":true,"drip_sunset_pledging":true,"qualtrics":true,"profile_projects_react":true,"go_rewardless":true,"lazysizes":true,"budget_viz_fashion":true,"budget_viz_arts":true,"project_update_requests":true,"add_on_creator_beta_test":true,"project_header_media_carousel_hero":true,"inside_voices_footer":true,"ch_currency_selector":true,"dk_currency_selector":true,"no_currency_selector":true,"se_currency_selector":true,"projects_on_project_page":true,"june_2020_privacy_policy":true};
+  window.enabled_features = {"show_posts_feed":true,"mobile_project_collection_optimizations":true,"ios_crashlytics":true,"ios_koala":true,"ios_i18n":true,"ios_tappable_category_location":true,"ios_favorite_categories":true,"ios_qualtrics":true,"ios_native_checkout":true,"ios_native_checkout_pledge_view":true,"ios_live_stream_chat":true,"ios_backer_dashboard":true,"android_native_checkout":true,"new_project_feedback":true,"new_project_preview":true,"new_build_header":true,"message_spam":true,"emoji_locale":true,"default_to_campaign_on_mobile":true,"pinned_posts_on_feed":true,"accounts_upgrade":true,"project_build_claims_detection":true,"project_build_rewards_explorer":true,"project_build_zendesk":true,"user_menu_draft_project":true,"make_100_2020":true,"funding_build":true,"funding_sheet":true,"budget_module":true,"drip_sunset_pledging":true,"qualtrics":true,"profile_projects_react":true,"go_rewardless":true,"lazysizes":true,"budget_viz_fashion":true,"budget_viz_arts":true,"project_update_requests":true,"project_header_media_carousel_hero":true,"PL":true,"GR":true,"SI":true,"addons_in_build":true,"allowed_addons_list":true,"IBAN_flexibility":true,"inside_voices_footer":true,"ch_currency_selector":true,"dk_currency_selector":true,"no_currency_selector":true,"se_currency_selector":true,"projects_on_project_page":true,"recs_on_no_results_page":true,"june_2020_privacy_policy":true,"creator_demographics_survey":true,"uk_shipping_rule_tip":true};
   window.fb_app_id = \'69103156693\';
   window.recaptcha_v2_site_key = \'6LcvXZ4UAAAAAHG33vLYekJNAfdFwkLh6Zk0dQJe\';
   window.recaptcha_v3_site_key = \'6Ldnq5UUAAAAAIyJ4W5iCRZDxgU7e3r2THPHaCQ-\';
@@ -157,19 +186,21 @@ return [
   I18n.display_language = \'en\';
   I18n.available_locales = [["English","en"],["Deutsch","de"],["Español","es"],["Français","fr"],["Italiano","it"],["日本語","ja"],["繁體中文","zh"]]
   
-  window.current_currency = \'EUR\'
+  window.current_currency = \'USD\'
   
   var _sf_startpt=(new Date()).getTime();
   
-  window.current_project = "{&quot;id&quot;:1508881112,&quot;photo&quot;:{&quot;key&quot;:&quot;assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg&quot;,&quot;full&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=560&amp;h=315&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=551e5f9430e497f3954a21ab81b30c6a&quot;,&quot;ed&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=352&amp;h=198&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=198ba037795c61355956c7b2174076f6&quot;,&quot;med&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=272&amp;h=153&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=5e1afca8c74677f524d228fa5273a329&quot;,&quot;little&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=208&amp;h=117&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=47fc824052a69cfbbecb65e96584037a&quot;,&quot;small&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=160&amp;h=90&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=586f08b9f058535065ba19e797e119cb&quot;,&quot;thumb&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=48&amp;h=27&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=fab87dd6bf220f5d5687a13d9df5cf76&quot;,&quot;1024x576&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=1024&amp;h=576&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=eab19fa2f547416189fec062421898ba&quot;,&quot;1536x864&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=1552&amp;h=873&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=8121611e6ad724f65e52d4cc47b46745&quot;},&quot;name&quot;:&quot;Good Seed Craft Veggie Burgers&quot;,&quot;blurb&quot;:&quot;Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends &amp; sprouted superfood ingredients.&quot;,&quot;goal&quot;:20000.0,&quot;pledged&quot;:3422.0,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;good-seed-craft-veggie-burgers&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;country_displayable_name&quot;:&quot;the United States&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1404913719,&quot;state_changed_at&quot;:1404913721,&quot;created_at&quot;:1391702070,&quot;launched_at&quot;:1402062519,&quot;staff_pick&quot;:true,&quot;is_starrable&quot;:false,&quot;backers_count&quot;:78,&quot;static_usd_rate&quot;:1.0,&quot;usd_pledged&quot;:&quot;3422.0&quot;,&quot;converted_pledged_amount&quot;:2929,&quot;fx_rate&quot;:0.856054,&quot;current_currency&quot;:&quot;EUR&quot;,&quot;usd_type&quot;:null,&quot;creator&quot;:{&quot;id&quot;:1452363698,&quot;name&quot;:&quot;Oliver Ponce and Erin Shotwell&quot;,&quot;is_registered&quot;:null,&quot;chosen_currency&quot;:null,&quot;is_superbacker&quot;:null,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://ksr-ugc.imgix.net/assets/008/391/164/a84c71f0a2cb7eae03353906c439edb7_original.jpg?ixlib=rb-2.1.0&amp;w=40&amp;h=40&amp;fit=crop&amp;v=1461521275&amp;auto=format&amp;frame=1&amp;q=92&amp;s=3700be3af76fe6f00df96be761343f39&quot;,&quot;small&quot;:&quot;https://ksr-ugc.imgix.net/assets/008/391/164/a84c71f0a2cb7eae03353906c439edb7_original.jpg?ixlib=rb-2.1.0&amp;w=80&amp;h=80&amp;fit=crop&amp;v=1461521275&amp;auto=format&amp;frame=1&amp;q=92&amp;s=1e3d5d1a5c0592fc3d12a1ac6a2ba93b&quot;,&quot;medium&quot;:&quot;https://ksr-ugc.imgix.net/assets/008/391/164/a84c71f0a2cb7eae03353906c439edb7_original.jpg?ixlib=rb-2.1.0&amp;w=160&amp;h=160&amp;fit=crop&amp;v=1461521275&amp;auto=format&amp;frame=1&amp;q=92&amp;s=9f6ae363cac4fb4dfdf4f1c4ae1824a9&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1452363698&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1452363698?signature=1600983976.eee1639bf9ea6f94b8075f56e7c2291f7826e031&quot;}}},&quot;location&quot;:{&quot;id&quot;:2357536,&quot;name&quot;:&quot;Austin&quot;,&quot;slug&quot;:&quot;austin-tx&quot;,&quot;short_name&quot;:&quot;Austin, TX&quot;,&quot;displayable_name&quot;:&quot;Austin, TX&quot;,&quot;localized_name&quot;:&quot;Austin&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;type&quot;:&quot;Town&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/austin-tx&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/austin-tx&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600953357.fa92081ae0814315242598c8a337cbde47305317&amp;woe_id=2357536&quot;}}},&quot;category&quot;:{&quot;id&quot;:315,&quot;name&quot;:&quot;Vegan&quot;,&quot;slug&quot;:&quot;food/vegan&quot;,&quot;position&quot;:12,&quot;parent_id&quot;:10,&quot;parent_name&quot;:&quot;Food&quot;,&quot;color&quot;:16725570,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/food/vegan&quot;}}},&quot;profile&quot;:{&quot;id&quot;:879621,&quot;project_id&quot;:879621,&quot;state&quot;:&quot;inactive&quot;,&quot;state_changed_at&quot;:1425915848,&quot;name&quot;:null,&quot;blurb&quot;:null,&quot;background_color&quot;:null,&quot;text_color&quot;:null,&quot;link_background_color&quot;:null,&quot;link_text_color&quot;:null,&quot;link_text&quot;:null,&quot;link_url&quot;:null,&quot;show_feature_image&quot;:false,&quot;background_image_opacity&quot;:0.8,&quot;should_show_feature_image_section&quot;:true,&quot;feature_image_attributes&quot;:{&quot;image_urls&quot;:{&quot;default&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=1552&amp;h=873&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=8121611e6ad724f65e52d4cc47b46745&quot;,&quot;baseball_card&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=560&amp;h=315&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=551e5f9430e497f3954a21ab81b30c6a&quot;}}},&quot;spotlight&quot;:false,&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers&quot;,&quot;rewards&quot;:&quot;https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers/rewards&quot;,&quot;project_short&quot;:&quot;http://kck.st/1i8Ct6M&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112?signature=1600983976.72b10eaa14dfea3621adea340958bf34855e8a6f&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/comments?signature=1600983976.e286ac05b865c48f50ceeefe4210f5dd3d102217&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/updates?signature=1600983976.557af695e0bae4346dbcc275a1841a72a6a8c557&quot;}},&quot;updated_at&quot;:1463686200,&quot;failed_at&quot;:1404913721,&quot;video&quot;:{&quot;id&quot;:392537,&quot;status&quot;:&quot;successful&quot;,&quot;hls&quot;:null,&quot;high&quot;:&quot;https://v.kickstarter.com/1601060327_e4e606ae11bef4c9eb096504ae4bcc7b0b11ee6b/projects/859806/video-392537-h264_high.mp4&quot;,&quot;base&quot;:&quot;https://v.kickstarter.com/1601060327_e4e606ae11bef4c9eb096504ae4bcc7b0b11ee6b/projects/859806/video-392537-h264_base.mp4&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d15chbti7ht62o.cloudfront.net/projects/859806/video-392537-h264_high.jpg?2014&quot;},&quot;comments_count&quot;:4,&quot;updates_count&quot;:3,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;description&quot;:&quot;No Reward&quot;,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;,&quot;converted_minimum&quot;:1.0},{&quot;id&quot;:2535705,&quot;minimum&quot;:10.0,&quot;converted_minimum&quot;:9.0,&quot;reward&quot;:&quot;STICKER + BUTTONS + THANK YOU\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nYou will receive a Good Seed sticker, buttons, and \\\\t\\\\t\\\\t\\\\t\\\\r\\\\na hand written thank you card for your generous support.&quot;,&quot;description&quot;:&quot;STICKER + BUTTONS + THANK YOU\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nYou will receive a Good Seed sticker, buttons, and \\\\t\\\\t\\\\t\\\\t\\\\r\\\\na hand written thank you card for your generous support.&quot;,&quot;title_for_backing_tier&quot;:&quot;$10 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1486286637,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2535705?signature=1600983976.6561ebcc4c9327a5afdaf73d214ae09cc2c65122&quot;}}},{&quot;id&quot;:2603560,&quot;minimum&quot;:25.0,&quot;converted_minimum&quot;:22.0,&quot;reward&quot;:&quot;BURGERS!! Get two boxes of each flavor for a total of 4 boxes. Please add the proper shipping cost when completing your pledge. Local Austin residents can pick up on one of our pick up dates.  We will be in touch about pick up dates.  We know shipping is high, but our product is frozen and requires 2 day air.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $36 for shipping.  Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $48.  All other states add $13.&quot;,&quot;description&quot;:&quot;BURGERS!! Get two boxes of each flavor for a total of 4 boxes. Please add the proper shipping cost when completing your pledge. Local Austin residents can pick up on one of our pick up dates.  We will be in touch about pick up dates.  We know shipping is high, but our product is frozen and requires 2 day air.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $36 for shipping.  Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $48.  All other states add $13.&quot;,&quot;title_for_backing_tier&quot;:&quot;$25 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;backers_count&quot;:20,&quot;updated_at&quot;:1486303947,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2603560?signature=1600983976.e254b2a56bfcfa77f9691aa349c938db7fd6c387&quot;}}},{&quot;id&quot;:2535706,&quot;minimum&quot;:30.0,&quot;converted_minimum&quot;:26.0,&quot;reward&quot;:&quot;GOOD SEED PINT GLASS + STICKERS + BUTTONS\\\\r\\\\nYou will get a stainless steel Good Seed pint glass, Good Seed\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nstickers, and buttons.&quot;,&quot;description&quot;:&quot;GOOD SEED PINT GLASS + STICKERS + BUTTONS\\\\r\\\\nYou will get a stainless steel Good Seed pint glass, Good Seed\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nstickers, and buttons.&quot;,&quot;title_for_backing_tier&quot;:&quot;$30 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1486283007,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2535706?signature=1600983976.bf973048bca38d6798934734085c7942cbc36907&quot;}}},{&quot;id&quot;:2538326,&quot;minimum&quot;:30.0,&quot;converted_minimum&quot;:26.0,&quot;reward&quot;:&quot;GOOD SEED HEMP TOTE\\\\r\\\\nYou will receive a tote bag made of hemp with the good seed logo, stickers, and buttons.&quot;,&quot;description&quot;:&quot;GOOD SEED HEMP TOTE\\\\r\\\\nYou will receive a tote bag made of hemp with the good seed logo, stickers, and buttons.&quot;,&quot;title_for_backing_tier&quot;:&quot;$30 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486303308,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2538326?signature=1600983976.ad8e3d813c9129288ae2c9593dab0296a72193d4&quot;}}},{&quot;id&quot;:2535707,&quot;minimum&quot;:35.0,&quot;converted_minimum&quot;:30.0,&quot;reward&quot;:&quot;GOOD SEED T-SHIRT\\\\r\\\\nA men&#39;s or women&#39;s t-shirt, Good Seed stickers and buttons.  We will be in touch for size and color options.&quot;,&quot;description&quot;:&quot;GOOD SEED T-SHIRT\\\\r\\\\nA men&#39;s or women&#39;s t-shirt, Good Seed stickers and buttons.  We will be in touch for size and color options.&quot;,&quot;title_for_backing_tier&quot;:&quot;$35 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1409529600,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486270483,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2535707?signature=1600983976.ae67a538db186e6a6667a71b754a1eb293df02d7&quot;}}},{&quot;id&quot;:2538334,&quot;minimum&quot;:55.0,&quot;converted_minimum&quot;:48.0,&quot;reward&quot;:&quot;GOOD WATER + GOOD FOOD PACK\\\\r\\\\nYou get a stainless steel Kleen Kanteen branded Good Seed water bottle, 1 pack of local Zap! Ayurverdic herbal drink packets and 2 boxes of Good Seed burgers.  Please add the proper shipping cost when completing your pledge.  Local Austin residents can pick up on one of our pick up dates.  We will be in touch about pick up dates.  We know shipping is high, but our product is frozen so they must be sent by 2 day air.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $36 for shipping.  Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $48.  All other states add $13.&quot;,&quot;description&quot;:&quot;GOOD WATER + GOOD FOOD PACK\\\\r\\\\nYou get a stainless steel Kleen Kanteen branded Good Seed water bottle, 1 pack of local Zap! Ayurverdic herbal drink packets and 2 boxes of Good Seed burgers.  Please add the proper shipping cost when completing your pledge.  Local Austin residents can pick up on one of our pick up dates.  We will be in touch about pick up dates.  We know shipping is high, but our product is frozen so they must be sent by 2 day air.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $36 for shipping.  Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $48.  All other states add $13.&quot;,&quot;title_for_backing_tier&quot;:&quot;$55 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1486285365,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2538334?signature=1600983976.4d9a70b688a83b9c42430885f60ff9a5cdfb8322&quot;}}},{&quot;id&quot;:2538616,&quot;minimum&quot;:60.0,&quot;converted_minimum&quot;:52.0,&quot;reward&quot;:&quot;GOOD SEED HOODIE\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nSport a Good Seed hoodie with our burger emblem on the front and logo on the back.&quot;,&quot;description&quot;:&quot;GOOD SEED HOODIE\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nSport a Good Seed hoodie with our burger emblem on the front and logo on the back.&quot;,&quot;limit&quot;:50,&quot;title_for_backing_tier&quot;:&quot;$60 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1409529600,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:47,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486271647,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2538616?signature=1600983976.da33175bcce54117a99f0a7bcedfab3c3b694d29&quot;}}},{&quot;id&quot;:2538615,&quot;minimum&quot;:65.0,&quot;converted_minimum&quot;:56.0,&quot;reward&quot;:&quot;CRAFT BURGER PACK  2 boxes of each flavor plus local artisan condiments from Dai Due, Oh Khimchi, and Grandma&#39;s Hummus. Just add fresh veggies of your choice! Delivered to your door from Farmhouse Delivery. Available in Austin and Houston. Vegan options available.&quot;,&quot;description&quot;:&quot;CRAFT BURGER PACK  2 boxes of each flavor plus local artisan condiments from Dai Due, Oh Khimchi, and Grandma&#39;s Hummus. Just add fresh veggies of your choice! Delivered to your door from Farmhouse Delivery. Available in Austin and Houston. Vegan options available.&quot;,&quot;title_for_backing_tier&quot;:&quot;$65 reward&quot;,&quot;shipping_enabled&quot;:false,&quot;shipping_type&quot;:&quot;no_shipping&quot;,&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1413870130,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2538615?signature=1600983976.faaae05009d2640802f641fb75c0ec929eb6a54b&quot;}}},{&quot;id&quot;:2644269,&quot;minimum&quot;:65.0,&quot;converted_minimum&quot;:56.0,&quot;reward&quot;:&quot;LOCAL BREAKFAST PACK\\\\r\\\\nTwo boxes of our spicy Italian sausage patties,  Salt &amp; Rosemary\\\\r\\\\nRockstar Bagels, Vital Farms eggs, Confituras seasonal jelly, and  Full Quiver seasonal Cheese spread delivered to your door from Greenling Organic. Available in Austin and Houston. Vegan options available.&quot;,&quot;description&quot;:&quot;LOCAL BREAKFAST PACK\\\\r\\\\nTwo boxes of our spicy Italian sausage patties,  Salt &amp; Rosemary\\\\r\\\\nRockstar Bagels, Vital Farms eggs, Confituras seasonal jelly, and  Full Quiver seasonal Cheese spread delivered to your door from Greenling Organic. Available in Austin and Houston. Vegan options available.&quot;,&quot;title_for_backing_tier&quot;:&quot;$65 reward&quot;,&quot;shipping_enabled&quot;:false,&quot;shipping_type&quot;:&quot;no_shipping&quot;,&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1486266886,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2644269?signature=1600983976.1671fce24a11ca9e49c2fae67a57d9b7dc406619&quot;}}},{&quot;id&quot;:2538618,&quot;minimum&quot;:75.0,&quot;converted_minimum&quot;:65.0,&quot;reward&quot;:&quot;BURGER STASH &amp; T-SHIRT\\\\r\\\\nEight boxes of Good Seed Burgers (flavor of your choice) plus a t-shirt.\\\\r\\\\nPlease add the proper shipping costs when completing your pledge.\\\\r\\\\nWe know shipping is high but our product requires 2 day air because it is frozen.  Local Austin residents can pick up at set pick up times.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $55 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $78.  All other states add $14.&quot;,&quot;description&quot;:&quot;BURGER STASH &amp; T-SHIRT\\\\r\\\\nEight boxes of Good Seed Burgers (flavor of your choice) plus a t-shirt.\\\\r\\\\nPlease add the proper shipping costs when completing your pledge.\\\\r\\\\nWe know shipping is high but our product requires 2 day air because it is frozen.  Local Austin residents can pick up at set pick up times.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $55 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $78.  All other states add $14.&quot;,&quot;title_for_backing_tier&quot;:&quot;$75 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486303898,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2538618?signature=1600983976.5eb9b998108593c07096c5c95ea1aa0d896266e7&quot;}}},{&quot;id&quot;:2542641,&quot;minimum&quot;:100.0,&quot;converted_minimum&quot;:86.0,&quot;reward&quot;:&quot;TASTE OF AUSTIN SUPERFOOD PACK\\\\r\\\\nEnjoy the superfood tastes of Austin with this pack of products and stickers from health conscious Austin artisans packed in a Good Seed tote bag!  Includes two boxes of Good Seed burgers, Love Bean raw chocolate spread, Bearded Brothers Energy Bars, Happy Hemp seeds, Rhythm Superfoods Kale Chips, and Thunderbird Energetica Bars!\\\\r\\\\nPlease add the proper shipping costs when completing your pledge.\\\\r\\\\nLocal Austin residents get pick up or free delivery.  Shipping requires 2 day air because our product is frozen.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $48 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $56.  All other states add $12.&quot;,&quot;description&quot;:&quot;TASTE OF AUSTIN SUPERFOOD PACK\\\\r\\\\nEnjoy the superfood tastes of Austin with this pack of products and stickers from health conscious Austin artisans packed in a Good Seed tote bag!  Includes two boxes of Good Seed burgers, Love Bean raw chocolate spread, Bearded Brothers Energy Bars, Happy Hemp seeds, Rhythm Superfoods Kale Chips, and Thunderbird Energetica Bars!\\\\r\\\\nPlease add the proper shipping costs when completing your pledge.\\\\r\\\\nLocal Austin residents get pick up or free delivery.  Shipping requires 2 day air because our product is frozen.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $48 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $56.  All other states add $12.&quot;,&quot;limit&quot;:75,&quot;title_for_backing_tier&quot;:&quot;$100 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:72,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486288841,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2542641?signature=1600983976.386a8df98e4c4ed62e5c255877305648d013f2df&quot;}}},{&quot;id&quot;:2563846,&quot;minimum&quot;:150.0,&quot;converted_minimum&quot;:129.0,&quot;reward&quot;:&quot;SEED TO PLATE FARMHOUSE DINNER\\\\t\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nJoin us for a 5 course farmhouse dinner at the local Springdale farm prepared by Good Seed and talented Austin chef Gabe Erales.  Gabe has worked at some of the best restaurants in town including Odd Duck, Barley Swine, and La Condesa.  We will work with Gabe to create an unforgettable dining experience sourced from local farms and food artisans.&quot;,&quot;description&quot;:&quot;SEED TO PLATE FARMHOUSE DINNER\\\\t\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nJoin us for a 5 course farmhouse dinner at the local Springdale farm prepared by Good Seed and talented Austin chef Gabe Erales.  Gabe has worked at some of the best restaurants in town including Odd Duck, Barley Swine, and La Condesa.  We will work with Gabe to create an unforgettable dining experience sourced from local farms and food artisans.&quot;,&quot;limit&quot;:40,&quot;title_for_backing_tier&quot;:&quot;$150 reward&quot;,&quot;shipping_enabled&quot;:false,&quot;shipping_type&quot;:&quot;no_shipping&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:37,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486303027,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2563846?signature=1600983976.c2f39ba82f9aa05fbe9874b129e4e18ffdf99fe5&quot;}}},{&quot;id&quot;:2542894,&quot;minimum&quot;:200.0,&quot;converted_minimum&quot;:172.0,&quot;reward&quot;:&quot;TASTE OF AUSTIN SUPERFOOD + SWAG PACK\\\\r\\\\nAustin Superfood Pack plus one of all swag: t-shirt, hoodie, stainless steel water bottle, and Good Seed tote bag.  Please add the proper shipping cost when completing your pledge. \\\\r\\\\nShipping requires 2 day air because our burgers are frozen.  Local Austin residents get pick up or free delivery.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $54 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $60.  All other states add $12.&quot;,&quot;description&quot;:&quot;TASTE OF AUSTIN SUPERFOOD + SWAG PACK\\\\r\\\\nAustin Superfood Pack plus one of all swag: t-shirt, hoodie, stainless steel water bottle, and Good Seed tote bag.  Please add the proper shipping cost when completing your pledge. \\\\r\\\\nShipping requires 2 day air because our burgers are frozen.  Local Austin residents get pick up or free delivery.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $54 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $60.  All other states add $12.&quot;,&quot;title_for_backing_tier&quot;:&quot;$200 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1413870190,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2542894?signature=1600983976.73eaec6fdf6bd251e9d40ecae214bf5263f27e32&quot;}}},{&quot;id&quot;:2542895,&quot;minimum&quot;:260.0,&quot;converted_minimum&quot;:223.0,&quot;reward&quot;:&quot;512 BREWERY TOUR + BURGER PARTY \\\\r\\\\nYou and a guest are invited to enjoy a tour and burger party at 512 Brewing.  If you are a fan of craft burgers and local artisinal foods, you will not want to miss this!   We will provide cheese selections from Antoinele&#39;s Cheese Shop.  Each person will receive a Good Seed gift basket including 512 and Good Seed pint glasses, Good Seed tote, and t-shirts (value $80).&quot;,&quot;description&quot;:&quot;512 BREWERY TOUR + BURGER PARTY \\\\r\\\\nYou and a guest are invited to enjoy a tour and burger party at 512 Brewing.  If you are a fan of craft burgers and local artisinal foods, you will not want to miss this!   We will provide cheese selections from Antoinele&#39;s Cheese Shop.  Each person will receive a Good Seed gift basket including 512 and Good Seed pint glasses, Good Seed tote, and t-shirts (value $80).&quot;,&quot;limit&quot;:35,&quot;title_for_backing_tier&quot;:&quot;$260 reward&quot;,&quot;shipping_enabled&quot;:false,&quot;shipping_type&quot;:&quot;no_shipping&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:34,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1486270470,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2542895?signature=1600983976.0f2cdfa7c6adea959173ffd88d6e3892554588a2&quot;}}},{&quot;id&quot;:2563844,&quot;minimum&quot;:500.0,&quot;converted_minimum&quot;:429.0,&quot;reward&quot;:&quot;PIZZA PARTY!! \\\\t\\\\t\\\\t\\\\t\\\\r\\\\nYou and 15-20 friends will enjoy a pizza party with some of the best pizza in town, loaded with Good Seed sausage and other locally sourced fresh toppings!\\\\t The party will be held at The ABGB (Austin Beer Garden Brewery) a popular \\\\tAustin brewpub in your own reserved party area.  Gluten free and vegan options available. Good Seed pint cups included. Pick your date and stick around for some great live music!&quot;,&quot;description&quot;:&quot;PIZZA PARTY!! \\\\t\\\\t\\\\t\\\\t\\\\r\\\\nYou and 15-20 friends will enjoy a pizza party with some of the best pizza in town, loaded with Good Seed sausage and other locally sourced fresh toppings!\\\\t The party will be held at The ABGB (Austin Beer Garden Brewery) a popular \\\\tAustin brewpub in your own reserved party area.  Gluten free and vegan options available. Good Seed pint cups included. Pick your date and stick around for some great live music!&quot;,&quot;limit&quot;:5,&quot;title_for_backing_tier&quot;:&quot;$500 reward&quot;,&quot;shipping_enabled&quot;:false,&quot;shipping_type&quot;:&quot;no_shipping&quot;,&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1413870497,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2563844?signature=1600983976.bc8071eb9c61191438dd3066b636a6672b2070f4&quot;}}},{&quot;id&quot;:2661506,&quot;minimum&quot;:1300.0,&quot;converted_minimum&quot;:1113.0,&quot;reward&quot;:&quot;ONE OF EVERYTHING\\\\r\\\\nYou get one of every reward including an 8 pack of Good Seed burgers, all Good Seed swag and all local products offered in our prize packs.  You are also invited to attend the brewery tour, come to our 5 course farmhouse dinner, and get your own ABGB pizza party.&quot;,&quot;description&quot;:&quot;ONE OF EVERYTHING\\\\r\\\\nYou get one of every reward including an 8 pack of Good Seed burgers, all Good Seed swag and all local products offered in our prize packs.  You are also invited to attend the brewery tour, come to our 5 course farmhouse dinner, and get your own ABGB pizza party.&quot;,&quot;limit&quot;:5,&quot;title_for_backing_tier&quot;:&quot;$1,300 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.4e97d764f755bd9a806fc53f87e5d82faf7516a3&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1413871926,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2661506?signature=1600983976.5a7318088ae6753847539dc15d2d0d91c9aa079d&quot;}}}],&quot;add_ons&quot;:[],&quot;items&quot;:[],&quot;prelaunch_activated&quot;:false,&quot;display_prelaunch&quot;:false,&quot;available_card_types&quot;:[&quot;VISA&quot;,&quot;MASTERCARD&quot;,&quot;AMEX&quot;,&quot;DISCOVER&quot;,&quot;JCB&quot;,&quot;DINERS&quot;,&quot;UNION_PAY&quot;],&quot;supports_addons&quot;:false,&quot;addons_pledge_url&quot;:&quot;https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers/pledge/new?clicked_reward=false&quot;}";
+  window.current_project = "{&quot;id&quot;:1508881112,&quot;photo&quot;:{&quot;key&quot;:&quot;assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg&quot;,&quot;full&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=560&amp;h=315&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=551e5f9430e497f3954a21ab81b30c6a&quot;,&quot;ed&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=352&amp;h=198&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=198ba037795c61355956c7b2174076f6&quot;,&quot;med&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=272&amp;h=153&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=5e1afca8c74677f524d228fa5273a329&quot;,&quot;little&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=208&amp;h=117&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=47fc824052a69cfbbecb65e96584037a&quot;,&quot;small&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=160&amp;h=90&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=586f08b9f058535065ba19e797e119cb&quot;,&quot;thumb&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=48&amp;h=27&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=fab87dd6bf220f5d5687a13d9df5cf76&quot;,&quot;1024x576&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=1024&amp;h=576&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=eab19fa2f547416189fec062421898ba&quot;,&quot;1536x864&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=1552&amp;h=873&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=8121611e6ad724f65e52d4cc47b46745&quot;},&quot;name&quot;:&quot;Good Seed Craft Veggie Burgers&quot;,&quot;blurb&quot;:&quot;Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends &amp; sprouted superfood ingredients.&quot;,&quot;goal&quot;:20000.0,&quot;pledged&quot;:3422.0,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;good-seed-craft-veggie-burgers&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;country_displayable_name&quot;:&quot;the United States&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1404913719,&quot;state_changed_at&quot;:1404913721,&quot;created_at&quot;:1391702070,&quot;launched_at&quot;:1402062519,&quot;staff_pick&quot;:true,&quot;is_starrable&quot;:false,&quot;backers_count&quot;:78,&quot;static_usd_rate&quot;:1.0,&quot;usd_pledged&quot;:&quot;3422.0&quot;,&quot;converted_pledged_amount&quot;:3422,&quot;fx_rate&quot;:1.0,&quot;current_currency&quot;:&quot;USD&quot;,&quot;usd_type&quot;:&quot;international&quot;,&quot;creator&quot;:{&quot;id&quot;:1452363698,&quot;name&quot;:&quot;Oliver Ponce and Erin Shotwell&quot;,&quot;is_registered&quot;:null,&quot;is_email_verified&quot;:null,&quot;chosen_currency&quot;:null,&quot;is_superbacker&quot;:null,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://ksr-ugc.imgix.net/assets/008/391/164/a84c71f0a2cb7eae03353906c439edb7_original.jpg?ixlib=rb-2.1.0&amp;w=40&amp;h=40&amp;fit=crop&amp;v=1461521275&amp;auto=format&amp;frame=1&amp;q=92&amp;s=3700be3af76fe6f00df96be761343f39&quot;,&quot;small&quot;:&quot;https://ksr-ugc.imgix.net/assets/008/391/164/a84c71f0a2cb7eae03353906c439edb7_original.jpg?ixlib=rb-2.1.0&amp;w=80&amp;h=80&amp;fit=crop&amp;v=1461521275&amp;auto=format&amp;frame=1&amp;q=92&amp;s=1e3d5d1a5c0592fc3d12a1ac6a2ba93b&quot;,&quot;medium&quot;:&quot;https://ksr-ugc.imgix.net/assets/008/391/164/a84c71f0a2cb7eae03353906c439edb7_original.jpg?ixlib=rb-2.1.0&amp;w=160&amp;h=160&amp;fit=crop&amp;v=1461521275&amp;auto=format&amp;frame=1&amp;q=92&amp;s=9f6ae363cac4fb4dfdf4f1c4ae1824a9&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1452363698&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1452363698?signature=1617636448.44a4db0d08c67619f87e022449461be5499b0ca0&quot;}}},&quot;location&quot;:{&quot;id&quot;:2357536,&quot;name&quot;:&quot;Austin&quot;,&quot;slug&quot;:&quot;austin-tx&quot;,&quot;short_name&quot;:&quot;Austin, TX&quot;,&quot;displayable_name&quot;:&quot;Austin, TX&quot;,&quot;localized_name&quot;:&quot;Austin&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;type&quot;:&quot;Town&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/austin-tx&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/austin-tx&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617628641.4e8fa21f8411b9c4600cf62c78484523e9680179&amp;woe_id=2357536&quot;}}},&quot;category&quot;:{&quot;id&quot;:315,&quot;name&quot;:&quot;Vegan&quot;,&quot;slug&quot;:&quot;food/vegan&quot;,&quot;position&quot;:12,&quot;parent_id&quot;:10,&quot;parent_name&quot;:&quot;Food&quot;,&quot;color&quot;:16725570,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/food/vegan&quot;}}},&quot;profile&quot;:{&quot;id&quot;:879621,&quot;project_id&quot;:879621,&quot;state&quot;:&quot;inactive&quot;,&quot;state_changed_at&quot;:1425915848,&quot;name&quot;:null,&quot;blurb&quot;:null,&quot;background_color&quot;:null,&quot;text_color&quot;:null,&quot;link_background_color&quot;:null,&quot;link_text_color&quot;:null,&quot;link_text&quot;:null,&quot;link_url&quot;:null,&quot;show_feature_image&quot;:false,&quot;background_image_opacity&quot;:0.8,&quot;should_show_feature_image_section&quot;:true,&quot;feature_image_attributes&quot;:{&quot;image_urls&quot;:{&quot;default&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=1552&amp;h=873&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=8121611e6ad724f65e52d4cc47b46745&quot;,&quot;baseball_card&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=560&amp;h=315&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=551e5f9430e497f3954a21ab81b30c6a&quot;}}},&quot;spotlight&quot;:false,&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers&quot;,&quot;rewards&quot;:&quot;https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers/rewards&quot;,&quot;project_short&quot;:&quot;http://kck.st/1i8Ct6M&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112?signature=1617636448.dc5391378b637be959596cf14171d3c62d33bad5&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/comments?signature=1617636448.22e1403bbb2aa12d1abafdeacf5e5b55c12f78cd&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/updates?signature=1617636448.85a4daafd93e4d28c94918a4d89f31b7a9d36af5&quot;}},&quot;updated_at&quot;:1463686200,&quot;failed_at&quot;:1404913721,&quot;video&quot;:{&quot;id&quot;:392537,&quot;status&quot;:&quot;successful&quot;,&quot;hls&quot;:null,&quot;high&quot;:&quot;https://v.kickstarter.com/1617722848_a3f33b4f46b570fbc23bdc73c82cba369dbe6d1a/projects/859806/video-392537-h264_high.mp4&quot;,&quot;base&quot;:&quot;https://v.kickstarter.com/1617722848_a3f33b4f46b570fbc23bdc73c82cba369dbe6d1a/projects/859806/video-392537-h264_base.mp4&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d15chbti7ht62o.cloudfront.net/projects/859806/video-392537-h264_high.jpg?2014&quot;},&quot;comments_count&quot;:4,&quot;updates_count&quot;:3,&quot;tags&quot;:[],&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;description&quot;:&quot;No Reward&quot;,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;,&quot;converted_minimum&quot;:1.0},{&quot;id&quot;:2535705,&quot;minimum&quot;:10.0,&quot;converted_minimum&quot;:10.0,&quot;reward&quot;:&quot;STICKER + BUTTONS + THANK YOU\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nYou will receive a Good Seed sticker, buttons, and \\\\t\\\\t\\\\t\\\\t\\\\r\\\\na hand written thank you card for your generous support.&quot;,&quot;description&quot;:&quot;STICKER + BUTTONS + THANK YOU\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nYou will receive a Good Seed sticker, buttons, and \\\\t\\\\t\\\\t\\\\t\\\\r\\\\na hand written thank you card for your generous support.&quot;,&quot;title_for_backing_tier&quot;:&quot;$10 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;available&quot;:true,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1486286637,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2535705?signature=1617636448.53af5b65c727c84e46581575de555df830464a8d&quot;}}},{&quot;id&quot;:2603560,&quot;minimum&quot;:25.0,&quot;converted_minimum&quot;:25.0,&quot;reward&quot;:&quot;BURGERS!! Get two boxes of each flavor for a total of 4 boxes. Please add the proper shipping cost when completing your pledge. Local Austin residents can pick up on one of our pick up dates.  We will be in touch about pick up dates.  We know shipping is high, but our product is frozen and requires 2 day air.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $36 for shipping.  Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $48.  All other states add $13.&quot;,&quot;description&quot;:&quot;BURGERS!! Get two boxes of each flavor for a total of 4 boxes. Please add the proper shipping cost when completing your pledge. Local Austin residents can pick up on one of our pick up dates.  We will be in touch about pick up dates.  We know shipping is high, but our product is frozen and requires 2 day air.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $36 for shipping.  Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $48.  All other states add $13.&quot;,&quot;title_for_backing_tier&quot;:&quot;$25 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;available&quot;:true,&quot;backers_count&quot;:20,&quot;updated_at&quot;:1486303947,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2603560?signature=1617636448.22cc1dbfae15c367d3732890b0346b966a2aefb4&quot;}}},{&quot;id&quot;:2535706,&quot;minimum&quot;:30.0,&quot;converted_minimum&quot;:30.0,&quot;reward&quot;:&quot;GOOD SEED PINT GLASS + STICKERS + BUTTONS\\\\r\\\\nYou will get a stainless steel Good Seed pint glass, Good Seed\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nstickers, and buttons.&quot;,&quot;description&quot;:&quot;GOOD SEED PINT GLASS + STICKERS + BUTTONS\\\\r\\\\nYou will get a stainless steel Good Seed pint glass, Good Seed\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nstickers, and buttons.&quot;,&quot;title_for_backing_tier&quot;:&quot;$30 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;available&quot;:true,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1486283007,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2535706?signature=1617636448.205bfe2dd02eabc8f779a89b3a8384b2a4d6f786&quot;}}},{&quot;id&quot;:2538326,&quot;minimum&quot;:30.0,&quot;converted_minimum&quot;:30.0,&quot;reward&quot;:&quot;GOOD SEED HEMP TOTE\\\\r\\\\nYou will receive a tote bag made of hemp with the good seed logo, stickers, and buttons.&quot;,&quot;description&quot;:&quot;GOOD SEED HEMP TOTE\\\\r\\\\nYou will receive a tote bag made of hemp with the good seed logo, stickers, and buttons.&quot;,&quot;title_for_backing_tier&quot;:&quot;$30 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;available&quot;:true,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486303308,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2538326?signature=1617636448.d3fe863100ec5076bcfb2267015ee350397d486b&quot;}}},{&quot;id&quot;:2535707,&quot;minimum&quot;:35.0,&quot;converted_minimum&quot;:35.0,&quot;reward&quot;:&quot;GOOD SEED T-SHIRT\\\\r\\\\nA men&#39;s or women&#39;s t-shirt, Good Seed stickers and buttons.  We will be in touch for size and color options.&quot;,&quot;description&quot;:&quot;GOOD SEED T-SHIRT\\\\r\\\\nA men&#39;s or women&#39;s t-shirt, Good Seed stickers and buttons.  We will be in touch for size and color options.&quot;,&quot;title_for_backing_tier&quot;:&quot;$35 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1409529600,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;available&quot;:true,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486270483,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2535707?signature=1617636448.5f76c78944346c56326d154000793ab63e234a83&quot;}}},{&quot;id&quot;:2538334,&quot;minimum&quot;:55.0,&quot;converted_minimum&quot;:55.0,&quot;reward&quot;:&quot;GOOD WATER + GOOD FOOD PACK\\\\r\\\\nYou get a stainless steel Kleen Kanteen branded Good Seed water bottle, 1 pack of local Zap! Ayurverdic herbal drink packets and 2 boxes of Good Seed burgers.  Please add the proper shipping cost when completing your pledge.  Local Austin residents can pick up on one of our pick up dates.  We will be in touch about pick up dates.  We know shipping is high, but our product is frozen so they must be sent by 2 day air.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $36 for shipping.  Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $48.  All other states add $13.&quot;,&quot;description&quot;:&quot;GOOD WATER + GOOD FOOD PACK\\\\r\\\\nYou get a stainless steel Kleen Kanteen branded Good Seed water bottle, 1 pack of local Zap! Ayurverdic herbal drink packets and 2 boxes of Good Seed burgers.  Please add the proper shipping cost when completing your pledge.  Local Austin residents can pick up on one of our pick up dates.  We will be in touch about pick up dates.  We know shipping is high, but our product is frozen so they must be sent by 2 day air.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $36 for shipping.  Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $48.  All other states add $13.&quot;,&quot;title_for_backing_tier&quot;:&quot;$55 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;available&quot;:true,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1486285365,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2538334?signature=1617636448.f711b43943699377e9c14bf242921f226fc90d96&quot;}}},{&quot;id&quot;:2538616,&quot;minimum&quot;:60.0,&quot;converted_minimum&quot;:60.0,&quot;reward&quot;:&quot;GOOD SEED HOODIE\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nSport a Good Seed hoodie with our burger emblem on the front and logo on the back.&quot;,&quot;description&quot;:&quot;GOOD SEED HOODIE\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nSport a Good Seed hoodie with our burger emblem on the front and logo on the back.&quot;,&quot;limit&quot;:50,&quot;title_for_backing_tier&quot;:&quot;$60 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1409529600,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:47,&quot;available&quot;:true,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486271647,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2538616?signature=1617636448.de1e117d0c36b519264b1adc7bc171a4c132a613&quot;}}},{&quot;id&quot;:2538615,&quot;minimum&quot;:65.0,&quot;converted_minimum&quot;:65.0,&quot;reward&quot;:&quot;CRAFT BURGER PACK  2 boxes of each flavor plus local artisan condiments from Dai Due, Oh Khimchi, and Grandma&#39;s Hummus. Just add fresh veggies of your choice! Delivered to your door from Farmhouse Delivery. Available in Austin and Houston. Vegan options available.&quot;,&quot;description&quot;:&quot;CRAFT BURGER PACK  2 boxes of each flavor plus local artisan condiments from Dai Due, Oh Khimchi, and Grandma&#39;s Hummus. Just add fresh veggies of your choice! Delivered to your door from Farmhouse Delivery. Available in Austin and Houston. Vegan options available.&quot;,&quot;title_for_backing_tier&quot;:&quot;$65 reward&quot;,&quot;shipping_enabled&quot;:false,&quot;shipping_type&quot;:&quot;no_shipping&quot;,&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;available&quot;:true,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1413870130,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2538615?signature=1617636448.f872aee9d837919154c336e9c9581db0bd04aa79&quot;}}},{&quot;id&quot;:2644269,&quot;minimum&quot;:65.0,&quot;converted_minimum&quot;:65.0,&quot;reward&quot;:&quot;LOCAL BREAKFAST PACK\\\\r\\\\nTwo boxes of our spicy Italian sausage patties,  Salt &amp; Rosemary\\\\r\\\\nRockstar Bagels, Vital Farms eggs, Confituras seasonal jelly, and  Full Quiver seasonal Cheese spread delivered to your door from Greenling Organic. Available in Austin and Houston. Vegan options available.&quot;,&quot;description&quot;:&quot;LOCAL BREAKFAST PACK\\\\r\\\\nTwo boxes of our spicy Italian sausage patties,  Salt &amp; Rosemary\\\\r\\\\nRockstar Bagels, Vital Farms eggs, Confituras seasonal jelly, and  Full Quiver seasonal Cheese spread delivered to your door from Greenling Organic. Available in Austin and Houston. Vegan options available.&quot;,&quot;title_for_backing_tier&quot;:&quot;$65 reward&quot;,&quot;shipping_enabled&quot;:false,&quot;shipping_type&quot;:&quot;no_shipping&quot;,&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;available&quot;:true,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1486266886,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2644269?signature=1617636448.6cb980acc6c6e1f7dbad3db608359306b3a06d2f&quot;}}},{&quot;id&quot;:2538618,&quot;minimum&quot;:75.0,&quot;converted_minimum&quot;:75.0,&quot;reward&quot;:&quot;BURGER STASH &amp; T-SHIRT\\\\r\\\\nEight boxes of Good Seed Burgers (flavor of your choice) plus a t-shirt.\\\\r\\\\nPlease add the proper shipping costs when completing your pledge.\\\\r\\\\nWe know shipping is high but our product requires 2 day air because it is frozen.  Local Austin residents can pick up at set pick up times.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $55 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $78.  All other states add $14.&quot;,&quot;description&quot;:&quot;BURGER STASH &amp; T-SHIRT\\\\r\\\\nEight boxes of Good Seed Burgers (flavor of your choice) plus a t-shirt.\\\\r\\\\nPlease add the proper shipping costs when completing your pledge.\\\\r\\\\nWe know shipping is high but our product requires 2 day air because it is frozen.  Local Austin residents can pick up at set pick up times.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $55 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $78.  All other states add $14.&quot;,&quot;title_for_backing_tier&quot;:&quot;$75 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;available&quot;:true,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486303898,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2538618?signature=1617636448.382b2f674accdd8c2d7bb3e740469fd667bbb8f8&quot;}}},{&quot;id&quot;:2542641,&quot;minimum&quot;:100.0,&quot;converted_minimum&quot;:100.0,&quot;reward&quot;:&quot;TASTE OF AUSTIN SUPERFOOD PACK\\\\r\\\\nEnjoy the superfood tastes of Austin with this pack of products and stickers from health conscious Austin artisans packed in a Good Seed tote bag!  Includes two boxes of Good Seed burgers, Love Bean raw chocolate spread, Bearded Brothers Energy Bars, Happy Hemp seeds, Rhythm Superfoods Kale Chips, and Thunderbird Energetica Bars!\\\\r\\\\nPlease add the proper shipping costs when completing your pledge.\\\\r\\\\nLocal Austin residents get pick up or free delivery.  Shipping requires 2 day air because our product is frozen.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $48 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $56.  All other states add $12.&quot;,&quot;description&quot;:&quot;TASTE OF AUSTIN SUPERFOOD PACK\\\\r\\\\nEnjoy the superfood tastes of Austin with this pack of products and stickers from health conscious Austin artisans packed in a Good Seed tote bag!  Includes two boxes of Good Seed burgers, Love Bean raw chocolate spread, Bearded Brothers Energy Bars, Happy Hemp seeds, Rhythm Superfoods Kale Chips, and Thunderbird Energetica Bars!\\\\r\\\\nPlease add the proper shipping costs when completing your pledge.\\\\r\\\\nLocal Austin residents get pick up or free delivery.  Shipping requires 2 day air because our product is frozen.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $48 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $56.  All other states add $12.&quot;,&quot;limit&quot;:75,&quot;title_for_backing_tier&quot;:&quot;$100 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:72,&quot;available&quot;:true,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486288841,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2542641?signature=1617636448.3e5803717689f7a8a15d6212585ff1851f3f7c08&quot;}}},{&quot;id&quot;:2563846,&quot;minimum&quot;:150.0,&quot;converted_minimum&quot;:150.0,&quot;reward&quot;:&quot;SEED TO PLATE FARMHOUSE DINNER\\\\t\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nJoin us for a 5 course farmhouse dinner at the local Springdale farm prepared by Good Seed and talented Austin chef Gabe Erales.  Gabe has worked at some of the best restaurants in town including Odd Duck, Barley Swine, and La Condesa.  We will work with Gabe to create an unforgettable dining experience sourced from local farms and food artisans.&quot;,&quot;description&quot;:&quot;SEED TO PLATE FARMHOUSE DINNER\\\\t\\\\t\\\\t\\\\t\\\\t\\\\r\\\\nJoin us for a 5 course farmhouse dinner at the local Springdale farm prepared by Good Seed and talented Austin chef Gabe Erales.  Gabe has worked at some of the best restaurants in town including Odd Duck, Barley Swine, and La Condesa.  We will work with Gabe to create an unforgettable dining experience sourced from local farms and food artisans.&quot;,&quot;limit&quot;:40,&quot;title_for_backing_tier&quot;:&quot;$150 reward&quot;,&quot;shipping_enabled&quot;:false,&quot;shipping_type&quot;:&quot;no_shipping&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:37,&quot;available&quot;:true,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1486303027,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2563846?signature=1617636448.1c3ab83e02c2519dea9a7db31ce1022fbfbd19b3&quot;}}},{&quot;id&quot;:2542894,&quot;minimum&quot;:200.0,&quot;converted_minimum&quot;:200.0,&quot;reward&quot;:&quot;TASTE OF AUSTIN SUPERFOOD + SWAG PACK\\\\r\\\\nAustin Superfood Pack plus one of all swag: t-shirt, hoodie, stainless steel water bottle, and Good Seed tote bag.  Please add the proper shipping cost when completing your pledge. \\\\r\\\\nShipping requires 2 day air because our burgers are frozen.  Local Austin residents get pick up or free delivery.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $54 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $60.  All other states add $12.&quot;,&quot;description&quot;:&quot;TASTE OF AUSTIN SUPERFOOD + SWAG PACK\\\\r\\\\nAustin Superfood Pack plus one of all swag: t-shirt, hoodie, stainless steel water bottle, and Good Seed tote bag.  Please add the proper shipping cost when completing your pledge. \\\\r\\\\nShipping requires 2 day air because our burgers are frozen.  Local Austin residents get pick up or free delivery.  Residents of AZ, UT, WY, MT, ND, SD, MN, IA, WI, MI, IN, OH, KY, WV, VA, NC, SC, GA, FL, CO,IL add $54 for shipping     Residents of WA, OR, NV, CA, NY, CT, RI, MA, ME, VT, HI, AL  add $60.  All other states add $12.&quot;,&quot;title_for_backing_tier&quot;:&quot;$200 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;available&quot;:true,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1413870190,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2542894?signature=1617636448.e3531c6014df325ae71597184e592ebc39c2b439&quot;}}},{&quot;id&quot;:2542895,&quot;minimum&quot;:260.0,&quot;converted_minimum&quot;:260.0,&quot;reward&quot;:&quot;512 BREWERY TOUR + BURGER PARTY \\\\r\\\\nYou and a guest are invited to enjoy a tour and burger party at 512 Brewing.  If you are a fan of craft burgers and local artisinal foods, you will not want to miss this!   We will provide cheese selections from Antoinele&#39;s Cheese Shop.  Each person will receive a Good Seed gift basket including 512 and Good Seed pint glasses, Good Seed tote, and t-shirts (value $80).&quot;,&quot;description&quot;:&quot;512 BREWERY TOUR + BURGER PARTY \\\\r\\\\nYou and a guest are invited to enjoy a tour and burger party at 512 Brewing.  If you are a fan of craft burgers and local artisinal foods, you will not want to miss this!   We will provide cheese selections from Antoinele&#39;s Cheese Shop.  Each person will receive a Good Seed gift basket including 512 and Good Seed pint glasses, Good Seed tote, and t-shirts (value $80).&quot;,&quot;limit&quot;:35,&quot;title_for_backing_tier&quot;:&quot;$260 reward&quot;,&quot;shipping_enabled&quot;:false,&quot;shipping_type&quot;:&quot;no_shipping&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:34,&quot;available&quot;:true,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1486270470,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2542895?signature=1617636448.98c34b4575c5222f4b1e0ce9e99a1442101f4589&quot;}}},{&quot;id&quot;:2563844,&quot;minimum&quot;:500.0,&quot;converted_minimum&quot;:500.0,&quot;reward&quot;:&quot;PIZZA PARTY!! \\\\t\\\\t\\\\t\\\\t\\\\r\\\\nYou and 15-20 friends will enjoy a pizza party with some of the best pizza in town, loaded with Good Seed sausage and other locally sourced fresh toppings!\\\\t The party will be held at The ABGB (Austin Beer Garden Brewery) a popular \\\\tAustin brewpub in your own reserved party area.  Gluten free and vegan options available. Good Seed pint cups included. Pick your date and stick around for some great live music!&quot;,&quot;description&quot;:&quot;PIZZA PARTY!! \\\\t\\\\t\\\\t\\\\t\\\\r\\\\nYou and 15-20 friends will enjoy a pizza party with some of the best pizza in town, loaded with Good Seed sausage and other locally sourced fresh toppings!\\\\t The party will be held at The ABGB (Austin Beer Garden Brewery) a popular \\\\tAustin brewpub in your own reserved party area.  Gluten free and vegan options available. Good Seed pint cups included. Pick your date and stick around for some great live music!&quot;,&quot;limit&quot;:5,&quot;title_for_backing_tier&quot;:&quot;$500 reward&quot;,&quot;shipping_enabled&quot;:false,&quot;shipping_type&quot;:&quot;no_shipping&quot;,&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:5,&quot;available&quot;:true,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1413870497,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2563844?signature=1617636448.b664d986e61aa94670b165fe49c0ff1b5724fd92&quot;}}},{&quot;id&quot;:2661506,&quot;minimum&quot;:1300.0,&quot;converted_minimum&quot;:1300.0,&quot;reward&quot;:&quot;ONE OF EVERYTHING\\\\r\\\\nYou get one of every reward including an 8 pack of Good Seed burgers, all Good Seed swag and all local products offered in our prize packs.  You are also invited to attend the brewery tour, come to our 5 course farmhouse dinner, and get your own ABGB pizza party.&quot;,&quot;description&quot;:&quot;ONE OF EVERYTHING\\\\r\\\\nYou get one of every reward including an 8 pack of Good Seed burgers, all Good Seed swag and all local products offered in our prize packs.  You are also invited to attend the brewery tour, come to our 5 course farmhouse dinner, and get your own ABGB pizza party.&quot;,&quot;limit&quot;:5,&quot;title_for_backing_tier&quot;:&quot;$1,300 reward&quot;,&quot;shipping_enabled&quot;:true,&quot;shipping_preference&quot;:&quot;restricted&quot;,&quot;shipping_summary&quot;:&quot;Only United States&quot;,&quot;shipping_type&quot;:&quot;single_location&quot;,&quot;shipping_single_location&quot;:{&quot;id&quot;:23424977,&quot;name&quot;:&quot;United States&quot;,&quot;slug&quot;:null,&quot;short_name&quot;:&quot;United States&quot;,&quot;displayable_name&quot;:&quot;United States&quot;,&quot;localized_name&quot;:&quot;United States&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:null,&quot;type&quot;:&quot;Country&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;United States&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/23424977&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/23424977&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1617636448.99b0f2c42ebbc9f1f9830af9613e3039abfde239&amp;woe_id=23424977&quot;}},&quot;projects_count&quot;:0},&quot;estimated_delivery_on&quot;:1406851200,&quot;has_addons&quot;:false,&quot;reward_type&quot;:&quot;base&quot;,&quot;project_id&quot;:1508881112,&quot;remaining&quot;:5,&quot;available&quot;:true,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1413871926,&quot;rewards_items&quot;:[],&quot;urls&quot;:{&quot;api&quot;:{&quot;reward&quot;:&quot;https://api.kickstarter.com/v1/projects/1508881112/rewards/2661506?signature=1617636448.e17e950706cd4edc33fa7b6f14c841b4bce2cbee&quot;}}}],&quot;add_ons&quot;:[],&quot;items&quot;:[],&quot;prelaunch_activated&quot;:false,&quot;display_prelaunch&quot;:false,&quot;available_card_types&quot;:[&quot;VISA&quot;,&quot;MASTERCARD&quot;,&quot;AMEX&quot;,&quot;DISCOVER&quot;,&quot;JCB&quot;,&quot;DINERS&quot;,&quot;UNION_PAY&quot;],&quot;supports_addons&quot;:false,&quot;addons_pledge_url&quot;:&quot;https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers/pledge/new?clicked_reward=false&quot;}";
   
   
   
-  window.current_location = "{&quot;id&quot;:29372248,&quot;name&quot;:&quot;Ribeira&quot;,&quot;slug&quot;:&quot;ribeira-lugo-es&quot;,&quot;short_name&quot;:&quot;Ribeira, Spain&quot;,&quot;displayable_name&quot;:&quot;Ribeira, Spain&quot;,&quot;localized_name&quot;:&quot;Ribeira&quot;,&quot;country&quot;:&quot;ES&quot;,&quot;state&quot;:&quot;Galicia&quot;,&quot;type&quot;:&quot;Town&quot;,&quot;is_root&quot;:false,&quot;expanded_country&quot;:&quot;Spain&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/ribeira-lugo-es&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/ribeira-lugo-es&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1600983976.b2099aaa82b1ddb3cbe9d8faa900b2d6cd35bd5a&amp;woe_id=29372248&quot;}}}";
+  
   
   
   
   window.datalake_properties = {}
+  
+  window.ksr_track_properties = {}
   
   window.timeRemaining = function timeRemaining(epochTime){
   
@@ -216,7 +247,7 @@ return [
 <link href="http://kck.st/1i8Ct6M" rel="shorturl">
 <script>
   if (typeof window.current_checkout === \'undefined\') {
-    window.current_checkout = "{&quot;id&quot;:0,&quot;location_id&quot;:23424950,&quot;amount&quot;:0.0,&quot;shipping_amount&quot;:0.0,&quot;net_amount&quot;:0.0,&quot;usd_amount_in_cents&quot;:0,&quot;reward&quot;:{&quot;id&quot;:0,&quot;description&quot;:&quot;No Reward&quot;,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},&quot;addons_count&quot;:0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+    window.current_checkout = "{&quot;id&quot;:0,&quot;location_id&quot;:null,&quot;amount&quot;:0.0,&quot;shipping_amount&quot;:0.0,&quot;net_amount&quot;:0.0,&quot;usd_amount_in_cents&quot;:0,&quot;reward&quot;:{&quot;id&quot;:0,&quot;description&quot;:&quot;No Reward&quot;,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},&quot;addons_count&quot;:0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
   }
 </script>
 
@@ -239,8 +270,8 @@ return [
 <div class="Campaign-state-failed" id="main_content">
 
 <div id="content-wrap">
-<div class="bg-grey-100" data-initial="{&quot;project&quot;:{&quot;id&quot;:&quot;UHJvamVjdC0xNTA4ODgxMTEy&quot;,&quot;pid&quot;:1508881112,&quot;name&quot;:&quot;Good Seed Craft Veggie Burgers&quot;,&quot;imageUrl&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=1024&amp;h=576&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=eab19fa2f547416189fec062421898ba&quot;,&quot;verifiedIdentity&quot;:null,&quot;currency&quot;:&quot;USD&quot;,&quot;creator&quot;:{&quot;id&quot;:&quot;VXNlci0xNDUyMzYzNjk4&quot;,&quot;name&quot;:&quot;Oliver Ponce and Erin Shotwell&quot;,&quot;imageUrl&quot;:&quot;https://ksr-ugc.imgix.net/assets/008/391/164/a84c71f0a2cb7eae03353906c439edb7_original.jpg?ixlib=rb-2.1.0&amp;w=160&amp;h=160&amp;fit=crop&amp;v=1461521275&amp;auto=format&amp;frame=1&amp;q=92&amp;s=9f6ae363cac4fb4dfdf4f1c4ae1824a9&quot;,&quot;url&quot;:&quot;https://www.kickstarter.com/profile/1452363698&quot;,&quot;lastLogin&quot;:1547007145,&quot;biography&quot;:&quot;Erin&#39;s background is in Interior Design project management, consumer product goods financial management, and sales. She managed the bookkeeping for 512 Brewing and opened the food truck Good Seed Organic. \\r\\n\\r\\nOliver has over 12 years in the grocery and natural foods industry. He studied healing foods at the Natural Epicurean School of Culinary Arts. He has managed natural grocery, been a private chef, and managed Casa De Luz, a macrobiotic community center and restaurant.  He opened one of the first food trucks in Austin, Good Seed Organic.&quot;,&quot;isFacebookConnected&quot;:true,&quot;allowsFollows&quot;:true,&quot;backingsCount&quot;:5,&quot;location&quot;:{&quot;displayableName&quot;:&quot;Austin, TX&quot;},&quot;launchedProjects&quot;:{&quot;totalCount&quot;:1},&quot;websites&quot;:[{&quot;url&quot;:&quot;http://www.goodseedburger.com&quot;,&quot;domain&quot;:&quot;goodseedburger.com&quot;}]},&quot;description&quot;:&quot;Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends &amp; sprouted superfood ingredients.&quot;,&quot;video&quot;:{&quot;videoSources&quot;:{&quot;hls&quot;:null,&quot;high&quot;:{&quot;src&quot;:&quot;https://v.kickstarter.com/1601068439_7f0fd5ba6e2b5d8a0e60c2e1295ddce2a9e3f5d6/projects/859806/video-392537-h264_high.mp4&quot;,&quot;type&quot;:&quot;video/mp4; codecs=\\&quot;avc1.64001E, mp4a.40.2\\&quot;&quot;},&quot;base&quot;:{&quot;src&quot;:&quot;https://v.kickstarter.com/1601068439_7f0fd5ba6e2b5d8a0e60c2e1295ddce2a9e3f5d6/projects/859806/video-392537-h264_base.mp4&quot;,&quot;type&quot;:&quot;video/mp4; codecs=\\&quot;avc1.42E01E, mp4a.40.2\\&quot;&quot;}},&quot;previewImageUrl&quot;:&quot;https://d15chbti7ht62o.cloudfront.net/projects/859806/video-392537-h264_high.jpg?2014&quot;,&quot;tracks&quot;:{&quot;nodes&quot;:[]}},&quot;isProjectWeLove&quot;:true,&quot;category&quot;:{&quot;name&quot;:&quot;Vegan&quot;,&quot;url&quot;:&quot;https://www.kickstarter.com/discover/categories/food/vegan&quot;,&quot;parentCategory&quot;:{&quot;id&quot;:&quot;Q2F0ZWdvcnktMTA=&quot;,&quot;name&quot;:&quot;Food&quot;}},&quot;location&quot;:{&quot;displayableName&quot;:&quot;Austin, TX&quot;,&quot;discoverUrl&quot;:&quot;https://www.kickstarter.com/discover/places/austin-tx&quot;},&quot;curatedCollection&quot;:{},&quot;isSharingProjectBudget&quot;:false,&quot;backersCount&quot;:78,&quot;percentFunded&quot;:17,&quot;goal&quot;:{&quot;currency&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;amount&quot;:&quot;20000.0&quot;},&quot;pledged&quot;:{&quot;currency&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;amount&quot;:&quot;3422.0&quot;},&quot;deadlineAt&quot;:1404913719,&quot;duration&quot;:33,&quot;url&quot;:&quot;https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers&quot;,&quot;stateChangedAt&quot;:1404913721,&quot;statsInterval&quot;:5000,&quot;commentsCount&quot;:4,&quot;state&quot;:&quot;FAILED&quot;,&quot;canceledAt&quot;:null,&quot;slug&quot;:&quot;1452363698/good-seed-craft-veggie-burgers&quot;,&quot;isLaunched&quot;:true,&quot;isWatchable&quot;:false,&quot;isWatched&quot;:false,&quot;projectShortLink&quot;:&quot;http://kck.st/1i8Ct6M&quot;,&quot;emailShortLink&quot;:&quot;http://kck.st/1i8Ct6M&quot;,&quot;collaborators&quot;:{&quot;edges&quot;:[]},&quot;showCtaToLiveProjects&quot;:false,&quot;timeline&quot;:{&quot;edges&quot;:[{&quot;node&quot;:{&quot;type&quot;:&quot;failure&quot;,&quot;timestamp&quot;:1404913722,&quot;data&quot;:{}}}]}},&quot;projectModal&quot;:{&quot;opened&quot;:false,&quot;modalType&quot;:null},&quot;watching&quot;:{&quot;projectIsLaunched&quot;:true,&quot;projectCanRemind&quot;:false,&quot;projectId&quot;:&quot;UHJvamVjdC0xNTA4ODgxMTEy&quot;},&quot;currentUser&quot;:{}}" data-photo_assets="[]" data-project_pid="1508881112" id="react-project-header">
-<div><div class="grid-container flex flex-column"><div class="grid-row grid-row mb5-lg mb0-md order1-md order2-lg"><div class="grid-col-12 grid-col-8-lg"><div class="mx-4 mx-12-md mx0-lg relative clip"><div class="aspect-ratio aspect-ratio--16x9 w100p ksr-video-player bg-black"><div class="aspect-ratio--object flex z4"><button class="m-auto w20p h20p w15p-md h15p-md p1 p2-md bg-green-700 border border-white border2px"><svg class="svg-icon__icon--play icon-20 fill-white" aria-hidden="true"><use xlink:href="#icon--play"></use></svg></button></div><img class="aspect-ratio--object bg-black z3" src="https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=1024&amp;h=576&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=eab19fa2f547416189fec062421898ba" alt="Project image"/><video class="aspect-ratio--object z1 hide" preload="none"><source src="https://v.kickstarter.com/1601068439_7f0fd5ba6e2b5d8a0e60c2e1295ddce2a9e3f5d6/projects/859806/video-392537-h264_high.mp4" type="video/mp4; codecs=&quot;avc1.64001E, mp4a.40.2&quot;"/><source src="https://v.kickstarter.com/1601068439_7f0fd5ba6e2b5d8a0e60c2e1295ddce2a9e3f5d6/projects/859806/video-392537-h264_base.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;"/>You&#x27;ll need an HTML5 capable browser to see this content.</video><div class="aspect-ratio--object flex items-end justify-center p4"><div class="h7 w100p max-w200 bg-black flex items-center transition-all relative z2 o100p"><button class="hover-bg-green-700 transition-all transition-150 h100p p0 w10 keyboard-focusable bg-green-700"><svg class="svg-icon__icon--play icon-small fill-white" aria-hidden="true"><use xlink:href="#icon--play"></use></svg></button><div class="flex flex-auto items-center mx2"><time class="white type-14 mr2 basis5">0:00</time><div class="ksr-progress-slider ksr-progress-slider--video-player"><progress class="ksr-progress-slider__buffer" value="0" max="0"></progress><progress class="ksr-progress-slider__progress-bar" value="0" max="0"></progress><input type="range" title="Video Progress" class="ksr-progress-slider__slider" min="0" max="0" value="0" step="0" aria-hidden="false"/></div><time class="white type-14 ml2 basis5">0:00</time></div><button class="p0 bg-transparent flex h100p mx2 keyboard-focusable"><svg class="svg-icon__icon--sound-hi icon-20 fill-white m-auto" aria-hidden="true"><use xlink:href="#icon--sound-hi"></use></svg></button><div class="basis15p mr2 flex"><div class="ksr-progress-slider ksr-progress-slider--video-player"><progress class="ksr-progress-slider__progress-bar" value="1" max="1"></progress><input type="range" title="Video Progress" class="ksr-progress-slider__slider" min="0" max="1" value="1" step="0.001" aria-hidden="true"/></div></div><button class="p0 bg-transparent flex h100p mx2 keyboard-focusable"><svg class="svg-icon__icon--expand icon-20 fill-white m-auto" aria-hidden="true"><use xlink:href="#icon--expand"></use></svg></button></div></div>)}</div></div><div class="hide block-lg"><div class="border-top border-bottom border-top-none-md border-none-lg nested-full-width-xs nested-full-width-sm nested-full-width-md mb4 mb5-sm mb0-md"><div class="grid-row"><div class="grid-col-12"><div class="py2 py3-lg flex items-center auto-scroll-x"><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="/discover/pwl?ref=project_pwl_badge"><div class="radius100p bg-ksr-green-700 inline-block h4 w4 flex items-center justify-center"><svg class="svg-icon__icon--small-k icon-14 fill-white" aria-hidden="true"><use xlink:href="#icon--small-k"></use></svg></div><span class="ml1"><span>Project We Love</span></span></a><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="https://www.kickstarter.com/discover/categories/food/vegan?ref=project_category_badge"><svg class="svg-icon__icon--compass icon-20 fill-soft-black" aria-hidden="true"><use xlink:href="#icon--compass"></use></svg><span class="ml1"><span>Vegan</span></span></a><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="https://www.kickstarter.com/discover/places/austin-tx?ref=project_location_badge"><svg class="svg-icon__map-pin icon-20 fill-soft-black" aria-hidden="true"><use xlink:href="#map-pin"></use></svg><span class="ml1">Austin, TX</span></a></div></div></div></div></div></div><div class="grid-col-12 grid-col-4-md hide block-lg"><div class="bg-grey-400 w100p mb3" role="progressbar" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"><div class="bg-soft-black h1 " style="width:17%"></div></div><div class="flex flex-column-lg mb4 mb5-sm"><div class="mb4-lg"><div class="num nowrap"></div><div class="flex items-center"><span class="ksr-green-700 inline-block bold type-16 type-28-md"><span class="soft-black"></span></span></div><span class="block dark-grey-500 type-12 type-14-md lh3-lg"><span class="inline-block hide-sm">pledged of <span class="money">$20,000</span></span><span class="inline-block-sm hide">pledged of <span class="money">$20,000</span> goal</span></span></div><div class="ml5 ml0-lg mb4-lg"><div class="block type-16 type-28-md bold dark-grey-500"><span></span></div><span class="block dark-grey-500 type-12 type-14-md lh3-lg">backers</span></div><div class="ml5 ml0-lg"><div><div></div></div></div></div><div class="border p3 soft-black border-grey-500 bg-grey-300"><div data-test-id="project-state-title" class="normal type-18">Funding Unsuccessful</div><div class="type-14 pt1">The project&#x27;s funding goal was not reached on Wed, July 9 2014 1:48 PM UTC +00:00</div></div><div class="flex items-center mt4"><svg class="svg-icon__icon--calendar icon-16 mr1" aria-hidden="true"><use xlink:href="#icon--calendar"></use></svg><span class="bold">Last updated <a class="soft-black normal text-underline" href="/projects/1452363698/good-seed-craft-veggie-burgers/posts">July 9, 2014</a></span></div></div></div><div class="grid-row pt7-lg mt3 mt0-lg mb6-lg order2-md order1-lg"><div class="grid-col-12"><div class="grid-row hide-md flex flex-column flex-row-md relative"><div class="grid-col-12"><h2 class="type-28 type-24-md soft-black mb1 project-name">Good Seed Craft Veggie Burgers</h2></div><div class="grid-col-12 grid-col-2-md flex items-center mb3"></div><div class="grid-col-12"><p class="type-14 type-18-md soft-black project-description mb1">Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends &amp; sprouted superfood ingredients.</p></div><div class="grid-col-12"><div class="block hide-md border-top border-bottom border-grey-500 nested-full-width-xs nested-full-width-sm my2 mb5"><button class="type-14 flex w100p"><div class="my2 flex justify-between w100p"><div class="flex"><img class="border-box radius100p bg-grey-400 w7 h7 shrink0 mr2" src="https://ksr-ugc.imgix.net/assets/008/391/164/a84c71f0a2cb7eae03353906c439edb7_original.jpg?ixlib=rb-2.1.0&amp;w=160&amp;h=160&amp;fit=crop&amp;v=1461521275&amp;auto=format&amp;frame=1&amp;q=92&amp;s=9f6ae363cac4fb4dfdf4f1c4ae1824a9" alt="Oliver Ponce and Erin Shotwell"/><div class="mr2 text-left w50p text-nowrap"><div class="type-14 bold clip ellipsis">Oliver Ponce and Erin Shotwell</div><div class="mr2">First created<span class="divider"> · </span>5 backed</div></div><div class="border border-grey-500 bg-white p2 type-16 align-right flex items-center">More</div></div></div></button></div></div></div><div class="grid-row hide flex-md flex-column flex-row-md relative"><div class="grid-col-10 grid-col-10-lg grid-col-offset-1-md block-md order2-md type-center"><h2 class="type-28 type-24-md soft-black mb1 project-name">Good Seed Craft Veggie Burgers</h2><p class="type-14 type-18-md soft-black project-description mb1">Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends &amp; sprouted superfood ingredients.</p></div></div></div></div><div class="grid-row order2-md hide-lg"><div class="grid-col-12 grid-col-10-md grid-col-offset-1-md"><div class="bg-grey-400 w100p mb3" role="progressbar" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"><div class="bg-soft-black h1 " style="width:17%"></div></div><div class="flex flex-column-lg mb4 mb5-sm"><div class="mb4-lg"><div class="num nowrap"></div><div class="flex items-center"><span class="ksr-green-700 inline-block bold type-16 type-28-md"><span class="soft-black"></span></span></div><span class="block dark-grey-500 type-12 type-14-md lh3-lg"><span class="inline-block hide-sm">pledged of <span class="money">$20,000</span></span><span class="inline-block-sm hide">pledged of <span class="money">$20,000</span> goal</span></span></div><div class="ml5 ml0-lg mb4-lg"><div class="block type-16 type-28-md bold dark-grey-500"><span></span></div><span class="block dark-grey-500 type-12 type-14-md lh3-lg">backers</span></div><div class="ml5 ml0-lg"><div><div></div></div></div></div></div></div><div class="order1-md hide-lg border-top border-bottom border-top-none-md border-none-lg nested-full-width-xs nested-full-width-sm nested-full-width-md mb4 mb5-sm mb0-md"><div class="grid-row"><div class="grid-col-12"><div class="py2 py3-lg flex items-center auto-scroll-x"><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="/discover/pwl?ref=project_pwl_badge"><div class="radius100p bg-ksr-green-700 inline-block h4 w4 flex items-center justify-center"><svg class="svg-icon__icon--small-k icon-14 fill-white" aria-hidden="true"><use xlink:href="#icon--small-k"></use></svg></div><span class="ml1"><span>Project We Love</span></span></a><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="https://www.kickstarter.com/discover/categories/food/vegan?ref=project_category_badge"><svg class="svg-icon__icon--compass icon-20 fill-soft-black" aria-hidden="true"><use xlink:href="#icon--compass"></use></svg><span class="ml1"><span>Vegan</span></span></a><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="https://www.kickstarter.com/discover/places/austin-tx?ref=project_location_badge"><svg class="svg-icon__map-pin icon-20 fill-soft-black" aria-hidden="true"><use xlink:href="#map-pin"></use></svg><span class="ml1">Austin, TX</span></a></div></div></div></div><div class="grid-row order2-md hide-lg mb3-md"><div class="grid-col-12 grid-col-10-md grid-col-offset-1-md"><div class="border p3 soft-black border-grey-500 bg-grey-300"><div data-test-id="project-state-title" class="normal type-18">Funding Unsuccessful</div><div class="type-14 pt1">The project&#x27;s funding goal was not reached on Wed, July 9 2014 1:48 PM UTC +00:00</div></div><div class="flex items-center mt4"><svg class="svg-icon__icon--calendar icon-16 mr1" aria-hidden="true"><use xlink:href="#icon--calendar"></use></svg><span class="bold">Last updated <a class="soft-black normal text-underline" href="/projects/1452363698/good-seed-craft-veggie-burgers/posts">July 9, 2014</a></span></div></div></div><div class="grid-row mb5 hide-md"><div class="grid-col-12 grid-col-offset-1-md"></div></div><div class="grid-row"><div class="grid-col-12"></div></div></div></div>
+<div class="bg-grey-100" data-initial="{&quot;project&quot;:{&quot;id&quot;:&quot;UHJvamVjdC0xNTA4ODgxMTEy&quot;,&quot;pid&quot;:1508881112,&quot;name&quot;:&quot;Good Seed Craft Veggie Burgers&quot;,&quot;imageUrl&quot;:&quot;https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=1024&amp;h=576&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=eab19fa2f547416189fec062421898ba&quot;,&quot;verifiedIdentity&quot;:null,&quot;currency&quot;:&quot;USD&quot;,&quot;creator&quot;:{&quot;id&quot;:&quot;VXNlci0xNDUyMzYzNjk4&quot;,&quot;name&quot;:&quot;Oliver Ponce and Erin Shotwell&quot;,&quot;imageUrl&quot;:&quot;https://ksr-ugc.imgix.net/assets/008/391/164/a84c71f0a2cb7eae03353906c439edb7_original.jpg?ixlib=rb-2.1.0&amp;w=160&amp;h=160&amp;fit=crop&amp;v=1461521275&amp;auto=format&amp;frame=1&amp;q=92&amp;s=9f6ae363cac4fb4dfdf4f1c4ae1824a9&quot;,&quot;url&quot;:&quot;https://www.kickstarter.com/profile/1452363698&quot;,&quot;lastLogin&quot;:1547007145,&quot;biography&quot;:&quot;Erin&#39;s background is in Interior Design project management, consumer product goods financial management, and sales. She managed the bookkeeping for 512 Brewing and opened the food truck Good Seed Organic. \\r\\n\\r\\nOliver has over 12 years in the grocery and natural foods industry. He studied healing foods at the Natural Epicurean School of Culinary Arts. He has managed natural grocery, been a private chef, and managed Casa De Luz, a macrobiotic community center and restaurant.  He opened one of the first food trucks in Austin, Good Seed Organic.&quot;,&quot;isFacebookConnected&quot;:true,&quot;allowsFollows&quot;:true,&quot;backingsCount&quot;:5,&quot;location&quot;:{&quot;displayableName&quot;:&quot;Austin, TX&quot;},&quot;launchedProjects&quot;:{&quot;totalCount&quot;:1},&quot;websites&quot;:[{&quot;url&quot;:&quot;http://www.goodseedburger.com&quot;,&quot;domain&quot;:&quot;goodseedburger.com&quot;}]},&quot;description&quot;:&quot;Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends &amp; sprouted superfood ingredients.&quot;,&quot;video&quot;:{&quot;videoSources&quot;:{&quot;hls&quot;:null,&quot;high&quot;:{&quot;src&quot;:&quot;https://v.kickstarter.com/1617722847_4720b9663174678cfcac250a4d6048519ae4b3b6/projects/859806/video-392537-h264_high.mp4&quot;,&quot;type&quot;:&quot;video/mp4; codecs=\\&quot;avc1.64001E, mp4a.40.2\\&quot;&quot;},&quot;base&quot;:{&quot;src&quot;:&quot;https://v.kickstarter.com/1617722847_4720b9663174678cfcac250a4d6048519ae4b3b6/projects/859806/video-392537-h264_base.mp4&quot;,&quot;type&quot;:&quot;video/mp4; codecs=\\&quot;avc1.42E01E, mp4a.40.2\\&quot;&quot;}},&quot;previewImageUrl&quot;:&quot;https://d15chbti7ht62o.cloudfront.net/projects/859806/video-392537-h264_high.jpg?2014&quot;,&quot;tracks&quot;:{&quot;nodes&quot;:[]}},&quot;isProjectWeLove&quot;:true,&quot;category&quot;:{&quot;name&quot;:&quot;Vegan&quot;,&quot;url&quot;:&quot;https://www.kickstarter.com/discover/categories/food/vegan&quot;,&quot;parentCategory&quot;:{&quot;id&quot;:&quot;Q2F0ZWdvcnktMTA=&quot;,&quot;name&quot;:&quot;Food&quot;}},&quot;location&quot;:{&quot;displayableName&quot;:&quot;Austin, TX&quot;,&quot;discoverUrl&quot;:&quot;https://www.kickstarter.com/discover/places/austin-tx&quot;},&quot;curatedCollection&quot;:{},&quot;isSharingProjectBudget&quot;:false,&quot;backersCount&quot;:78,&quot;percentFunded&quot;:17,&quot;goal&quot;:{&quot;currency&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;amount&quot;:&quot;20000.0&quot;},&quot;pledged&quot;:{&quot;currency&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;amount&quot;:&quot;3422.0&quot;},&quot;deadlineAt&quot;:1404913719,&quot;duration&quot;:33,&quot;url&quot;:&quot;https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers&quot;,&quot;stateChangedAt&quot;:1404913721,&quot;statsInterval&quot;:5000,&quot;commentsCount&quot;:4,&quot;state&quot;:&quot;FAILED&quot;,&quot;canceledAt&quot;:null,&quot;slug&quot;:&quot;1452363698/good-seed-craft-veggie-burgers&quot;,&quot;isLaunched&quot;:true,&quot;isWatchable&quot;:false,&quot;isWatched&quot;:false,&quot;projectShortLink&quot;:&quot;http://kck.st/1i8Ct6M&quot;,&quot;emailShortLink&quot;:&quot;http://kck.st/1i8Ct6M&quot;,&quot;collaborators&quot;:{&quot;edges&quot;:[]},&quot;showCtaToLiveProjects&quot;:false,&quot;showBackerTrustModule&quot;:false,&quot;timeline&quot;:{&quot;edges&quot;:[{&quot;node&quot;:{&quot;type&quot;:&quot;failure&quot;,&quot;timestamp&quot;:1404913722,&quot;data&quot;:{}}}]}},&quot;projectModal&quot;:{&quot;opened&quot;:false,&quot;modalType&quot;:null},&quot;watching&quot;:{&quot;projectIsLaunched&quot;:true,&quot;projectCanRemind&quot;:false,&quot;projectId&quot;:&quot;UHJvamVjdC0xNTA4ODgxMTEy&quot;},&quot;currentUser&quot;:{}}" data-photo_assets="[]" data-project_pid="1508881112" id="react-project-header">
+<div><div class="grid-container flex flex-column"><div class="grid-row grid-row mb5-lg mb0-md order1-md order2-lg"><div class="grid-col-12 grid-col-8-lg"><div class="mx-4 mx-12-md mx0-lg relative clip"><div class="aspect-ratio aspect-ratio--16x9 w100p ksr-video-player bg-black"><div class="aspect-ratio--object flex z4"><button class="m-auto w20p h20p w15p-md h15p-md p1 p2-md bg-green-700 border border-white border2px"><svg class="svg-icon__icon--play icon-20 fill-white" aria-hidden="true"><use xlink:href="#icon--play"></use></svg></button></div><img class="aspect-ratio--object bg-black z3" src="https://ksr-ugc.imgix.net/assets/011/647/643/9e80f11b5b125b5b50d1694cbf7f0ba0_original.jpg?ixlib=rb-2.1.0&amp;crop=faces&amp;w=1024&amp;h=576&amp;fit=crop&amp;v=1463686200&amp;auto=format&amp;frame=1&amp;q=92&amp;s=eab19fa2f547416189fec062421898ba" alt="Project image"/><video class="aspect-ratio--object z1 hide" preload="none"><source src="https://v.kickstarter.com/1617722847_4720b9663174678cfcac250a4d6048519ae4b3b6/projects/859806/video-392537-h264_high.mp4" type="video/mp4; codecs=&quot;avc1.64001E, mp4a.40.2&quot;"/><source src="https://v.kickstarter.com/1617722847_4720b9663174678cfcac250a4d6048519ae4b3b6/projects/859806/video-392537-h264_base.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;"/>You&#x27;ll need an HTML5 capable browser to see this content.</video><div class="aspect-ratio--object flex items-end justify-center p4"><div class="h7 w100p max-w200 bg-black flex items-center transition-all relative z2 o100p"><button class="hover-bg-green-700 transition-all transition-150 h100p p0 w10 keyboard-focusable bg-green-700"><svg class="svg-icon__icon--play icon-small fill-white" aria-hidden="true"><use xlink:href="#icon--play"></use></svg></button><div class="flex flex-auto items-center mx2"><time class="white type-14 mr2 basis5">0:00</time><div class="ksr-progress-slider ksr-progress-slider--video-player"><progress class="ksr-progress-slider__buffer" value="0" max="0"></progress><progress class="ksr-progress-slider__progress-bar" value="0" max="0"></progress><input type="range" title="Video Progress" class="ksr-progress-slider__slider" min="0" max="0" value="0" step="0" aria-hidden="false"/></div><time class="white type-14 ml2 basis5">0:00</time></div><button class="p0 bg-transparent flex h100p mx2 keyboard-focusable"><svg class="svg-icon__icon--sound-hi icon-20 fill-white m-auto" aria-hidden="true"><use xlink:href="#icon--sound-hi"></use></svg></button><div class="basis15p mr2 flex"><div class="ksr-progress-slider ksr-progress-slider--video-player"><progress class="ksr-progress-slider__progress-bar" value="1" max="1"></progress><input type="range" title="Video Progress" class="ksr-progress-slider__slider" min="0" max="1" value="1" step="0.001" aria-hidden="true"/></div></div><button class="p0 bg-transparent flex h100p mx2 keyboard-focusable"><svg class="svg-icon__icon--expand icon-20 fill-white m-auto" aria-hidden="true"><use xlink:href="#icon--expand"></use></svg></button></div></div>)}</div></div><div class="hide block-lg"><div class="border-top border-bottom border-top-none-md border-none-lg nested-full-width-xs nested-full-width-sm nested-full-width-md mb4 mb5-sm mb0-md"><div class="grid-row"><div class="grid-col-12"><div class="py2 py3-lg flex items-center auto-scroll-x"><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="/discover/pwl?ref=project_pwl_badge"><div class="radius100p bg-ksr-green-700 inline-block h4 w4 flex items-center justify-center"><svg class="svg-icon__icon--small-k icon-14 fill-white" aria-hidden="true"><use xlink:href="#icon--small-k"></use></svg></div><span class="ml1"><span>Project We Love</span></span></a><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="https://www.kickstarter.com/discover/categories/food/vegan?ref=project_category_badge"><svg class="svg-icon__icon--compass icon-20 fill-soft-black" aria-hidden="true"><use xlink:href="#icon--compass"></use></svg><span class="ml1"><span>Vegan</span></span></a><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="https://www.kickstarter.com/discover/places/austin-tx?ref=project_location_badge"><svg class="svg-icon__map-pin icon-20 fill-soft-black" aria-hidden="true"><use xlink:href="#map-pin"></use></svg><span class="ml1">Austin, TX</span></a></div></div></div></div></div></div><div class="grid-col-12 grid-col-4-md hide block-lg"><div class="bg-grey-400 w100p mb3" role="progressbar" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"><div class="bg-soft-black h1 " style="width:17%"></div></div><div class="flex flex-column-lg mb4 mb5-sm"><div class="mb4-lg"><div class="num nowrap"></div><div class="flex items-center"><span class="ksr-green-700 inline-block bold type-16 type-28-md"><span class="soft-black"></span></span></div><span class="block dark-grey-500 type-12 type-14-md lh3-lg"><span class="inline-block hide-sm">pledged of <span class="money">$20,000</span></span><span class="inline-block-sm hide">pledged of <span class="money">$20,000</span> goal</span></span></div><div class="ml5 ml0-lg mb4-lg"><div class="block type-16 type-28-md bold dark-grey-500"><span></span></div><span class="block dark-grey-500 type-12 type-14-md lh3-lg">backers</span></div><div class="ml5 ml0-lg"><div><div></div></div></div></div><div class="border p3 soft-black border-grey-500 bg-grey-300"><div data-test-id="project-state-title" class="normal type-18">Funding Unsuccessful</div><div class="type-14 pt1">The project&#x27;s funding goal was not reached on Wed, July 9 2014 1:48 PM UTC +00:00</div></div><div class="flex items-center mt4"><svg class="svg-icon__icon--calendar icon-16 mr1" aria-hidden="true"><use xlink:href="#icon--calendar"></use></svg><span class="bold">Last updated <a class="soft-black normal text-underline" href="/projects/1452363698/good-seed-craft-veggie-burgers/posts">July 9, 2014</a></span></div></div></div><div class="grid-row pt7-lg mt3 mt0-lg mb6-lg order2-md order1-lg"><div class="grid-col-12"><div class="grid-row hide-md flex flex-column flex-row-md relative"><div class="grid-col-12"><h2 class="type-28 type-24-md soft-black mb1 project-name">Good Seed Craft Veggie Burgers</h2></div><div class="grid-col-12 grid-col-2-md flex items-center mb3"></div><div class="grid-col-12"><p class="type-14 type-18-md soft-black project-description mb1">Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends &amp; sprouted superfood ingredients.</p></div><div class="grid-col-12"><div class="block hide-md border-top border-bottom border-grey-500 nested-full-width-xs nested-full-width-sm my2 mb5"><button class="type-14 flex w100p"><div class="my2 flex justify-between w100p"><div class="flex"><img class="border-box radius100p bg-grey-400 w7 h7 shrink0 mr2" src="https://ksr-ugc.imgix.net/assets/008/391/164/a84c71f0a2cb7eae03353906c439edb7_original.jpg?ixlib=rb-2.1.0&amp;w=160&amp;h=160&amp;fit=crop&amp;v=1461521275&amp;auto=format&amp;frame=1&amp;q=92&amp;s=9f6ae363cac4fb4dfdf4f1c4ae1824a9" alt="Oliver Ponce and Erin Shotwell"/><div class="mr2 text-left w50p text-nowrap"><div class="type-14 bold clip ellipsis">Oliver Ponce and Erin Shotwell</div><div class="mr2">First created<span class="divider"> · </span>5 backed</div></div><div class="border border-grey-500 bg-white p2 type-16 align-right flex items-center">More</div></div></div></button></div></div></div><div class="grid-row hide flex-md flex-column flex-row-md relative"><div class="grid-col-10 grid-col-10-lg grid-col-offset-1-md block-md order2-md type-center"><h2 class="type-28 type-24-md soft-black mb1 project-name">Good Seed Craft Veggie Burgers</h2><p class="type-14 type-18-md soft-black project-description mb1">Nutrient-dense Real Food! Good Seed hemp patties transform the veggie burger with bold flavor blends &amp; sprouted superfood ingredients.</p></div></div></div></div><div class="grid-row order2-md hide-lg"><div class="grid-col-12 grid-col-10-md grid-col-offset-1-md"><div class="bg-grey-400 w100p mb3" role="progressbar" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"><div class="bg-soft-black h1 " style="width:17%"></div></div><div class="flex flex-column-lg mb4 mb5-sm"><div class="mb4-lg"><div class="num nowrap"></div><div class="flex items-center"><span class="ksr-green-700 inline-block bold type-16 type-28-md"><span class="soft-black"></span></span></div><span class="block dark-grey-500 type-12 type-14-md lh3-lg"><span class="inline-block hide-sm">pledged of <span class="money">$20,000</span></span><span class="inline-block-sm hide">pledged of <span class="money">$20,000</span> goal</span></span></div><div class="ml5 ml0-lg mb4-lg"><div class="block type-16 type-28-md bold dark-grey-500"><span></span></div><span class="block dark-grey-500 type-12 type-14-md lh3-lg">backers</span></div><div class="ml5 ml0-lg"><div><div></div></div></div></div></div></div><div class="order1-md hide-lg border-top border-bottom border-top-none-md border-none-lg nested-full-width-xs nested-full-width-sm nested-full-width-md mb4 mb5-sm mb0-md"><div class="grid-row"><div class="grid-col-12"><div class="py2 py3-lg flex items-center auto-scroll-x"><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="/discover/pwl?ref=project_pwl_badge"><div class="radius100p bg-ksr-green-700 inline-block h4 w4 flex items-center justify-center"><svg class="svg-icon__icon--small-k icon-14 fill-white" aria-hidden="true"><use xlink:href="#icon--small-k"></use></svg></div><span class="ml1"><span>Project We Love</span></span></a><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="https://www.kickstarter.com/discover/categories/food/vegan?ref=project_category_badge"><svg class="svg-icon__icon--compass icon-20 fill-soft-black" aria-hidden="true"><use xlink:href="#icon--compass"></use></svg><span class="ml1"><span>Vegan</span></span></a><a class="nowrap navy-700 flex items-center medium mr3 type-12 keyboard-focusable" href="https://www.kickstarter.com/discover/places/austin-tx?ref=project_location_badge"><svg class="svg-icon__map-pin icon-20 fill-soft-black" aria-hidden="true"><use xlink:href="#map-pin"></use></svg><span class="ml1">Austin, TX</span></a></div></div></div></div><div class="grid-row order2-md hide-lg mb3-md"><div class="grid-col-12 grid-col-10-md grid-col-offset-1-md"><div class="border p3 soft-black border-grey-500 bg-grey-300"><div data-test-id="project-state-title" class="normal type-18">Funding Unsuccessful</div><div class="type-14 pt1">The project&#x27;s funding goal was not reached on Wed, July 9 2014 1:48 PM UTC +00:00</div></div><div class="flex items-center mt4"><svg class="svg-icon__icon--calendar icon-16 mr1" aria-hidden="true"><use xlink:href="#icon--calendar"></use></svg><span class="bold">Last updated <a class="soft-black normal text-underline" href="/projects/1452363698/good-seed-craft-veggie-burgers/posts">July 9, 2014</a></span></div></div></div><div class="grid-row mb5 hide-md"><div class="grid-col-12 grid-col-offset-1-md"></div></div><div class="grid-row"><div class="grid-col-12"></div></div></div></div>
 </div>
 
 <div class="NS_projects__content">
@@ -254,24 +285,24 @@ return [
 <div class="grid-container js-project-nav-scroll">
 <div class="row">
 <div class="campaign-side-nav project-nav__links">
-<a class="is-active js-load-project-content js-load-project-description mx3 project-nav__link--campaign tabbed-nav__link type-14" data-content="description" href="/projects/1452363698/good-seed-craft-veggie-burgers/description" id="campaign-emoji">
+<a class="is-active js-analytics-section js-load-project-content js-load-project-description mx3 project-nav__link--campaign tabbed-nav__link type-14" data-analytics="campaign" data-content="description" href="/projects/1452363698/good-seed-craft-veggie-burgers/description" id="campaign-emoji">
 Campaign
 </a>
-<a class="js-load-project-content js-load-project-rewards mx3 project-nav__link--rewards tabbed-nav__link type-14" data-content="rewards" href="/projects/1452363698/good-seed-craft-veggie-burgers/rewards" id="rewards-emoji">
+<a class="js-analytics-section js-load-project-content js-load-project-rewards mx3 project-nav__link--rewards tabbed-nav__link type-14" data-analytics="rewards" data-content="rewards" href="/projects/1452363698/good-seed-craft-veggie-burgers/rewards" id="rewards-emoji">
 Rewards
 </a>
-<a class="js-load-project-content js-load-project-faqs mx3 project-nav__link--faqs tabbed-nav__link type-14" data-content="faqs" emoji-data="0" href="/projects/1452363698/good-seed-craft-veggie-burgers/faqs" id="faq-emoji">
+<a class="js-analytics-section js-load-project-content js-load-project-faqs mx3 project-nav__link--faqs tabbed-nav__link type-14" data-analytics="faq" data-content="faqs" emoji-data="0" href="/projects/1452363698/good-seed-craft-veggie-burgers/faqs" id="faq-emoji">
 FAQ
 </a>
-<a class="js-load-project-content js-load-project-updates mx3 project-nav__link--updates tabbed-nav__link type-14" data-content="updates" emoji-data="3" href="/projects/1452363698/good-seed-craft-veggie-burgers/posts" id="updates-emoji">
+<a class="js-analytics-section js-load-project-content js-load-project-updates mx3 project-nav__link--updates tabbed-nav__link type-14" data-analytics="updates" data-content="updates" emoji-data="3" href="/projects/1452363698/good-seed-craft-veggie-burgers/posts" id="updates-emoji">
 Updates
 <span class="count">3</span>
 </a>
-<a class="js-load-project-comments js-load-project-content mx3 project-nav__link--comments tabbed-nav__link type-14" data-comments-count="4" data-content="comments" emoji-data="&amp;lt;data class=&amp;quot;Project1508881112&amp;quot; data-format=&amp;quot;number&amp;quot; data-value=&amp;quot;4&amp;quot; itemprop=&amp;quot;Project[comments_count]&amp;quot;&amp;gt;4&amp;lt;/data&amp;gt;" href="/projects/1452363698/good-seed-craft-veggie-burgers/comments" id="comments-emoji">
+<a class="js-analytics-section js-load-project-comments js-load-project-content mx3 project-nav__link--comments tabbed-nav__link type-14" data-analytics="comments" data-comments-count="4" data-content="comments" emoji-data="&amp;lt;data class=&amp;quot;Project1508881112&amp;quot; data-format=&amp;quot;number&amp;quot; data-value=&amp;quot;4&amp;quot; itemprop=&amp;quot;Project[comments_count]&amp;quot;&amp;gt;4&amp;lt;/data&amp;gt;" href="/projects/1452363698/good-seed-craft-veggie-burgers/comments" id="comments-emoji">
 Comments
 <span class="count"><data class="Project1508881112" data-format="number" data-value="4" itemprop="Project[comments_count]">4</data></span>
 </a>
-<a class="js-load-project-community js-load-project-content mx3 project-nav__link--community tabbed-nav__link type-14" data-content="community" href="/projects/1452363698/good-seed-craft-veggie-burgers/community" id="community-emoji">
+<a class="js-analytics-section js-load-project-community js-load-project-content mx3 project-nav__link--community tabbed-nav__link type-14" data-analytics="community" data-content="community" href="/projects/1452363698/good-seed-craft-veggie-burgers/community" id="community-emoji">
 Community
 </a>
 </div>
@@ -311,7 +342,7 @@ Community
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 10</span> or more
 <span class="pledge__currency-conversion">
-About <span>€9</span>
+About <span>US$ 10</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -334,15 +365,21 @@ About <span>€9</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 6 backers
-</span>
 </div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -605,7 +642,7 @@ About <span>€9</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -667,7 +704,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 25</span> or more
 <span class="pledge__currency-conversion">
-About <span>€22</span>
+About <span>US$ 25</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -688,15 +725,21 @@ About <span>€22</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 20 backers
-</span>
 </div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -959,7 +1002,7 @@ About <span>€22</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -1021,7 +1064,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 30</span> or more
 <span class="pledge__currency-conversion">
-About <span>€26</span>
+About <span>US$ 30</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -1044,15 +1087,21 @@ About <span>€26</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 4 backers
-</span>
 </div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -1315,7 +1364,7 @@ About <span>€26</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -1377,7 +1426,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 30</span> or more
 <span class="pledge__currency-conversion">
-About <span>€26</span>
+About <span>US$ 30</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -1399,15 +1448,21 @@ About <span>€26</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 3 backers
-</span>
 </div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -1670,7 +1725,7 @@ About <span>€26</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -1732,7 +1787,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 35</span> or more
 <span class="pledge__currency-conversion">
-About <span>€30</span>
+About <span>US$ 35</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -1754,15 +1809,21 @@ About <span>€30</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 3 backers
-</span>
 </div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -2025,7 +2086,7 @@ About <span>€30</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -2087,7 +2148,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 55</span> or more
 <span class="pledge__currency-conversion">
-About <span>€48</span>
+About <span>US$ 55</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -2109,15 +2170,21 @@ About <span>€48</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 4 backers
-</span>
 </div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -2380,7 +2447,7 @@ About <span>€48</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -2442,7 +2509,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 60</span> or more
 <span class="pledge__currency-conversion">
-About <span>€52</span>
+About <span>US$ 60</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -2464,18 +2531,27 @@ About <span>€52</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__limit">
-<span class="pledge__limit">Limited</span>
-</span>
-<span class="block pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 3 backers
-</span>
 </div>
+
+</div>
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-celebrate-100">
+Limited (47 left of 50)
+</div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -2738,7 +2814,7 @@ About <span>€52</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -2800,7 +2876,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 65</span> or more
 <span class="pledge__currency-conversion">
-About <span>€56</span>
+About <span>US$ 65</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -2817,10 +2893,16 @@ About <span>€56</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 0 backers
-</span>
 </div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout " action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
@@ -2834,7 +2916,7 @@ About <span>€56</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -2896,7 +2978,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 65</span> or more
 <span class="pledge__currency-conversion">
-About <span>€56</span>
+About <span>US$ 65</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -2915,10 +2997,16 @@ About <span>€56</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 1 backer
-</span>
 </div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout " action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
@@ -2932,7 +3020,7 @@ About <span>€56</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -2994,7 +3082,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 75</span> or more
 <span class="pledge__currency-conversion">
-About <span>€65</span>
+About <span>US$ 75</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -3018,15 +3106,21 @@ About <span>€65</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 3 backers
-</span>
 </div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -3289,7 +3383,7 @@ About <span>€65</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -3351,7 +3445,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 100</span> or more
 <span class="pledge__currency-conversion">
-About <span>€86</span>
+About <span>US$ 100</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -3375,18 +3469,27 @@ About <span>€86</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__limit">
-<span class="pledge__limit">Limited</span>
-</span>
-<span class="block pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 3 backers
-</span>
 </div>
+
+</div>
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-celebrate-100">
+Limited (72 left of 75)
+</div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -3649,7 +3752,7 @@ About <span>€86</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -3711,7 +3814,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 150</span> or more
 <span class="pledge__currency-conversion">
-About <span>€129</span>
+About <span>US$ 150</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -3729,13 +3832,22 @@ About <span>€129</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__limit">
-<span class="pledge__limit">Limited</span>
-</span>
-<span class="block pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 3 backers
-</span>
 </div>
+
+</div>
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-celebrate-100">
+Limited (37 left of 40)
+</div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout " action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
@@ -3749,7 +3861,7 @@ About <span>€129</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -3811,7 +3923,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 200</span> or more
 <span class="pledge__currency-conversion">
-About <span>€172</span>
+About <span>US$ 200</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -3834,15 +3946,21 @@ About <span>€172</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 0 backers
-</span>
 </div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -4105,7 +4223,7 @@ About <span>€172</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -4167,7 +4285,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 260</span> or more
 <span class="pledge__currency-conversion">
-About <span>€223</span>
+About <span>US$ 260</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -4185,13 +4303,22 @@ About <span>€223</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__limit">
-<span class="pledge__limit">Limited</span>
-</span>
-<span class="block pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 1 backer
-</span>
 </div>
+
+</div>
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-celebrate-100">
+Limited (34 left of 35)
+</div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout " action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
@@ -4205,7 +4332,7 @@ About <span>€223</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -4267,7 +4394,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 500</span> or more
 <span class="pledge__currency-conversion">
-About <span>€429</span>
+About <span>US$ 500</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -4285,13 +4412,22 @@ About <span>€429</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__limit">
-<span class="pledge__limit">Limited</span>
-</span>
-<span class="block pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 0 backers
-</span>
 </div>
+
+</div>
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-celebrate-100">
+Limited (5 left of 5)
+</div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout " action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
@@ -4305,7 +4441,7 @@ About <span>€429</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -4367,7 +4503,7 @@ It\'s a way to bring creative projects to life.
 <h2 class="pledge__amount">
 Pledge <span class="money">US$ 1,300</span> or more
 <span class="pledge__currency-conversion">
-About <span>€1,113</span>
+About <span>US$ 1,300</span>
 </span>
 </h2>
 <div class="pledge__reward-description pledge__reward-description--expanded">
@@ -4389,18 +4525,27 @@ About <span>€1,113</span>
 </div>
 </div>
 <div class="pledge__backer-stats">
-<span class="pledge__limit">
-<span class="pledge__limit">Limited</span>
-</span>
-<span class="block pledge__backer-count">
+<div class="flex flex-wrap">
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-support-100">
 0 backers
-</span>
 </div>
+
+</div>
+<div class="mr1 mb1">
+<div class="text-nowrap type-12 support-500 radius6px px2 py4px bg-celebrate-100">
+Limited (5 left of 5)
+</div>
+
+</div>
+</div>
+</div>
+
 </div>
 
 <form class="NS_pledges__shipping_select js-form-wrapper new-form new-form--block pledge__checkout pledge__checkout--with-shipping" action="/projects/1452363698/good-seed-craft-veggie-burgers/pledge" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
 <div class="pledge__checkout-form">
-<div class="form-group" id="shipping-select-7412084">
+<div class="form-group" id="shipping-select-4441911">
 <label for="backing_location_id">Shipping destination</label>
 <div class="ksr-select js-ksr-select" role="button" tabindex="-1">
 <div class="title"></div>
@@ -4663,7 +4808,7 @@ About <span>€1,113</span>
 <input name="clicked_reward" type="hidden" value="true">
 </div>
 <div class="pledge__continue js-continue">
-<button class="bttn bttn-green bttn-medium w100p pledge__button">
+<button class="bttn bttn-primary theme--create bttn-medium w100p pledge__button">
 <span class="btn-text">
 Continue
 </span>
@@ -4732,6 +4877,7 @@ It\'s a way to bring creative projects to life.
 
 </div>
 </div>
+<div id="creator-bio-modal-portal"></div>
 </div>
 </div>
 </div>
@@ -4762,7 +4908,7 @@ It\'s a way to bring creative projects to life.
 
 </div>
 </main>
-<div data="{&quot;sections&quot;:[{&quot;name&quot;:&quot;Arts&quot;,&quot;path&quot;:&quot;/arts&quot;},{&quot;name&quot;:&quot;Comics &amp; Illustration&quot;,&quot;path&quot;:&quot;/comics-illustration&quot;},{&quot;name&quot;:&quot;Design &amp; Tech&quot;,&quot;path&quot;:&quot;/design-tech&quot;},{&quot;name&quot;:&quot;Film&quot;,&quot;path&quot;:&quot;/film&quot;},{&quot;name&quot;:&quot;Food &amp; Craft&quot;,&quot;path&quot;:&quot;/food-craft&quot;},{&quot;name&quot;:&quot;Games&quot;,&quot;path&quot;:&quot;/games&quot;},{&quot;name&quot;:&quot;Music&quot;,&quot;path&quot;:&quot;/music&quot;},{&quot;name&quot;:&quot;Publishing&quot;,&quot;path&quot;:&quot;/publishing&quot;}],&quot;currencies&quot;:[[&quot;€  Euro   (EUR)&quot;,&quot;EUR&quot;],[&quot;$  Australian Dollar   (AUD)&quot;,&quot;AUD&quot;],[&quot;$  Canadian Dollar   (CAD)&quot;,&quot;CAD&quot;],[&quot;Fr   Swiss Franc   (CHF)&quot;,&quot;CHF&quot;],[&quot;kr  Danish Krone   (DKK)&quot;,&quot;DKK&quot;],[&quot;£  Pound Sterling   (GBP)&quot;,&quot;GBP&quot;],[&quot;$  Hong Kong Dollar   (HKD)&quot;,&quot;HKD&quot;],[&quot;¥  Japanese Yen   (JPY)&quot;,&quot;JPY&quot;],[&quot;$  Mexican Peso   (MXN)&quot;,&quot;MXN&quot;],[&quot;kr  Norwegian Krone   (NOK)&quot;,&quot;NOK&quot;],[&quot;$  New Zealand Dollar   (NZD)&quot;,&quot;NZD&quot;],[&quot;kr  Swedish Krona   (SEK)&quot;,&quot;SEK&quot;],[&quot;$  Singapore Dollar   (SGD)&quot;,&quot;SGD&quot;],[&quot;$  US Dollar   (USD)&quot;,&quot;USD&quot;]],&quot;current_currency&quot;:&quot;EUR&quot;}" id="global-footer"></div>
+<div data="{&quot;sections&quot;:[{&quot;name&quot;:&quot;Arts&quot;,&quot;path&quot;:&quot;/arts&quot;},{&quot;name&quot;:&quot;Comics &amp; Illustration&quot;,&quot;path&quot;:&quot;/comics-illustration&quot;},{&quot;name&quot;:&quot;Design &amp; Tech&quot;,&quot;path&quot;:&quot;/design-tech&quot;},{&quot;name&quot;:&quot;Film&quot;,&quot;path&quot;:&quot;/film&quot;},{&quot;name&quot;:&quot;Food &amp; Craft&quot;,&quot;path&quot;:&quot;/food-craft&quot;},{&quot;name&quot;:&quot;Games&quot;,&quot;path&quot;:&quot;/games&quot;},{&quot;name&quot;:&quot;Music&quot;,&quot;path&quot;:&quot;/music&quot;},{&quot;name&quot;:&quot;Publishing&quot;,&quot;path&quot;:&quot;/publishing&quot;}],&quot;currencies&quot;:[[&quot;€  Euro   (EUR)&quot;,&quot;EUR&quot;],[&quot;$  Australian Dollar   (AUD)&quot;,&quot;AUD&quot;],[&quot;$  Canadian Dollar   (CAD)&quot;,&quot;CAD&quot;],[&quot;Fr   Swiss Franc   (CHF)&quot;,&quot;CHF&quot;],[&quot;kr  Danish Krone   (DKK)&quot;,&quot;DKK&quot;],[&quot;£  Pound Sterling   (GBP)&quot;,&quot;GBP&quot;],[&quot;$  Hong Kong Dollar   (HKD)&quot;,&quot;HKD&quot;],[&quot;¥  Japanese Yen   (JPY)&quot;,&quot;JPY&quot;],[&quot;$  Mexican Peso   (MXN)&quot;,&quot;MXN&quot;],[&quot;kr  Norwegian Krone   (NOK)&quot;,&quot;NOK&quot;],[&quot;$  New Zealand Dollar   (NZD)&quot;,&quot;NZD&quot;],[&quot;zł  Zloty   (PLN)&quot;,&quot;PLN&quot;],[&quot;kr  Swedish Krona   (SEK)&quot;,&quot;SEK&quot;],[&quot;$  Singapore Dollar   (SGD)&quot;,&quot;SGD&quot;],[&quot;$  US Dollar   (USD)&quot;,&quot;USD&quot;]],&quot;current_currency&quot;:&quot;USD&quot;}" id="global-footer"></div>
 <script>
   try{(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -4801,20 +4947,20 @@ It\'s a way to bring creative projects to life.
 
 <script src="https://js.stripe.com/v2/"></script>
 <script src="https://js.stripe.com/v3/"></script>
-<script src="https://a.kickstarter.com/assets/modules/core.4a8413806acf2cc892d36c0fb1204bdf2f45f541342668b0f54ad9ced9d5c905.js"></script>
-<script src="https://a.kickstarter.com/assets/modules/mobile_web.5f51b9cb709ff2614549d140757a416eb85e10f484ea033dc3d7c7d315a111ba.js"></script>
+<script src="https://a.kickstarter.com/assets/modules/core.131351b820a994bde93eae3c5213978a28195ddc93ad4f1600dc210187968990.js"></script>
+<script src="https://a.kickstarter.com/assets/modules/mobile_web.4646d59084f4eebae852bec166b70c99061c29cf39093ab525efc6ad02ba8c25.js"></script>
 <script>
   window.STRIPE_PUBLISHABLE_KEY = \'pk_live_zjuK52lEUYcvBhIXEUnOEJzk\';
   window.IDENTITY_DOC_UPLOAD_URL = \'https://uploads.stripe.com/v1/files\';
 </script>
-<script src="https://a.kickstarter.com/assets/modules/runtime.f7b7faf07efdad7bc23c57b84efb08954db84d3c083b7bb52bfec25b9dac041a.js"></script>
-<script src="https://a.kickstarter.com/assets/modules/vendor.b8e684d5827b65c4dbc5a4f38f6d790778a6285295686dd4459e34b4cd8ebdd7.js"></script>
-<script src="https://a.kickstarter.com/assets/modules/project-header.30acc5930b1b13ae17a0a8e6791c6452db3e739a13490d89bde9af5b04f11d05.js"></script>
-<script src="https://a.kickstarter.com/assets/modules/flagging.c41b8aa5a4190233658aa3b60988bdf123b46b441d8cd9d27b53fc2aad1b674d.js"></script>
-<script src="https://a.kickstarter.com/assets/modules/project-page.287681f0d52ea4900b9e4aac4d8fdfa10bf8491ab5d7a4cb957d557e5b7a3274.js"></script>
-<script src="https://a.kickstarter.com/assets/modules/project-post-interface.bea09807c1e1d0749ca972010c44f62ddcbf42a48df5798f8a2b8324279d7dec.js"></script>
-<script src="https://a.kickstarter.com/assets/modules/videoplayer.7932b5a472ba8a4de24b4a2ae1a90ea7c5fbb1eda96b1fac7b5b4f96d58a3be5.js"></script>
-<script src="https://a.kickstarter.com/assets/modules/watching.beb9cd1861305b7e0286cb518ca451089a884982883fe9c3733d1131cc15d775.js"></script>
+<script src="https://a.kickstarter.com/assets/modules/runtime.3dc153c2677f39946f40d04a798a00fd221e43790429f210df4a9027e8f5977f.js"></script>
+<script src="https://a.kickstarter.com/assets/modules/vendor.d0056220cd73d00a844f44b6c9c616acf606cd401848dd8b2dfecaf406a989b0.js"></script>
+<script src="https://a.kickstarter.com/assets/modules/project-header.ab16438de54320e31e3dbf17e5af044ba3a659e1cef38331ffea5d6080cf54ac.js"></script>
+<script src="https://a.kickstarter.com/assets/modules/flagging.f2649a14f2d99f33bdd58a96e997b0e57ac17e8f50dd99ce09be5d00b422d827.js"></script>
+<script src="https://a.kickstarter.com/assets/modules/project-page.af508a0e9563ee5f2f4f38d7d5175aecd10745c5b0d52bd661ddda541a723197.js"></script>
+<script src="https://a.kickstarter.com/assets/modules/project-post-interface.99e5ddf90cb5f79c62dff03577691590777b55347d029a85ab375ab894176dd7.js"></script>
+<script src="https://a.kickstarter.com/assets/modules/videoplayer.7d4f0c7cc56d8eacabb311f71eb714e0e4d9624cc51fb7b07bf7fdb094ad0a36.js"></script>
+<script src="https://a.kickstarter.com/assets/modules/watching.e0f038e56e436d0043d2e4f59673157dd55523b7b1eaeb06df996380e7de637b.js"></script>
 
 
 <div id="growl_section" class="center jGrowl"></div>
@@ -5204,17 +5350,17 @@ It\'s a way to bring creative projects to life.
       <title>icon--cpu icon</title>
       <g fill-rule="nonzero"><path d="M19 7v12H7V7h12zm2.5-3h-17c-.276 0-.5.224-.5.5v17c0 .276.224.5.5.5h17c.276 0 .5-.224.5-.5v-17c0-.276-.224-.5-.5-.5zM15 22h2v4h-2zM9 22h2v4H9zM22 15h4v2h-4zM22 9h4v2h-4zM0 15h4v2H0zM0 9h4v2H0zM15 0h2v4h-2zM9 0h2v4H9z"/></g>
     </symbol>
-    <symbol id="icon--curve-right" viewBox="0 0 33 33">
-      <title>icon--curve-right icon</title>
-      <title>icon--curve-right</title><path d="M2.5 5c0-.276.224-.5.5-.5s.5.224.5.5h-1zM31 29.5c.276 0 .5.224.5.5s-.224.5-.5.5v-1zM3 20h-.5.5zm.5-15v15h-1V5h1zM13 29.5h18v1H13v-1zM3.5 20c0 5.247 4.253 9.5 9.5 9.5v1C7.2 30.5 2.5 25.8 2.5 20h1z"/><path d="M27.763 32.228c.683-1.438.72-3.01.015-4.446L31.938 30l-4.175 2.228z" stroke="#0A007D"/><circle r="2.25" transform="matrix(0 1 1 0 3 3)" stroke="#0A007D" stroke-width="1.5"/>
-    </symbol>
     <symbol id="icon--cross" viewBox="0 0 60 60">
       <title>icon--cross icon</title>
       <title>icon--cross</title><path d="M34.242 30.3l15.556-15.557c.392-.392.392-1.024 0-1.414L46.97 10.5c-.39-.39-1.022-.39-1.414 0L30 26.058 14.444 10.5c-.392-.39-1.024-.39-1.414 0l-2.83 2.83c-.39.39-.39 1.02 0 1.413L25.758 30.3 10.2 45.854c-.39.392-.39 1.024 0 1.414l2.83 2.827c.39.392 1.022.392 1.414 0L30 34.54l15.556 15.557c.392.392 1.024.392 1.414 0l2.828-2.828c.392-.39.392-1.023 0-1.415L34.242 30.3z" fill-rule="evenodd"/>
     </symbol>
+    <symbol id="icon--curve-right" viewBox="0 0 33 33">
+      <title>icon--curve-right icon</title>
+      <title>icon--curve-right</title><path d="M2.5 5c0-.276.224-.5.5-.5s.5.224.5.5h-1zM31 29.5c.276 0 .5.224.5.5s-.224.5-.5.5v-1zM3 20h-.5.5zm.5-15v15h-1V5h1zM13 29.5h18v1H13v-1zM3.5 20c0 5.247 4.253 9.5 9.5 9.5v1C7.2 30.5 2.5 25.8 2.5 20h1z"/><path d="M27.763 32.228c.683-1.438.72-3.01.015-4.446L31.938 30l-4.175 2.228z" stroke="#0A007D"/><circle r="2.25" transform="matrix(0 1 1 0 3 3)" stroke="#0A007D" stroke-width="1.5"/>
+    </symbol>
     <symbol id="icon--delta-down" viewBox="0 0 60 60">
       <title>icon--delta-down icon</title>
-      <title>icon--delta-down</title><defs><path d="M0 60h60V0H0z"/></defs><g fill-rule="evenodd"><path d="M13.05 20h33.9c.915 0 1.39 1.09.767 1.762L30.77 40.016c-.417.446-1.123.446-1.54 0L12.284 21.762C11.66 21.09 12.135 20 13.05 20z"/></g>
+      <title>icon--delta-down</title><defs><path id="a" d="M0 60h60V0H0z"/></defs><g fill-rule="evenodd"><path d="M13.05 20h33.9c.915 0 1.39 1.09.767 1.762L30.77 40.016c-.417.446-1.123.446-1.54 0L12.284 21.762C11.66 21.09 12.135 20 13.05 20z"/></g>
     </symbol>
     <symbol id="icon--delta-left" viewBox="0 0 60 60">
       <title>icon--delta-left icon</title>
@@ -5312,14 +5458,14 @@ It\'s a way to bring creative projects to life.
       <title>icon--heart icon</title>
       <title>icon--heart</title><g fill-rule="evenodd"><path d="M50.977 10.664c4.402 3.202 6.03 8.916 4.41 14.052-1.216 3.858-3.88 7.266-6.706 10.092-4.99 4.99-15.327 14.174-18.023 16.56-.38.336-.934.336-1.312 0-2.698-2.386-13.034-11.57-18.024-16.56-2.825-2.826-5.49-6.234-6.707-10.092-1.618-5.136.008-10.85 4.41-14.052 3.434-2.498 8.102-3.17 12.192-2.162C25.197 9.51 28.2 12.506 30 16.004c1.8-3.498 4.803-6.494 8.785-7.502 4.09-1.008 8.758-.336 12.192 2.162z"/></g>
     </symbol>
+    <symbol id="icon--home-with-door" viewBox="0 0 18 18">
+      <title>icon--home-with-door icon</title>
+      <path fill-rule="evenodd" d="M9.155 1.89c-.118-.12-.31-.12-.43 0L1.59 9.025c-.19.19-.056.516.213.516h1.19c.276 0 .5.224.5.5v5.856c0 .166.136.302.303.302H4.5c.276 0 .5-.224.5-.5v-4.2c0-.276.224-.5.5-.5h3c.276 0 .5.224.5.5v4.2c0 .276.224.5.5.5h4.704c.166 0 .303-.136.303-.302v-5.856c0-.276.224-.5.5-.5h1.19c.27 0 .404-.325.214-.516L9.156 1.89z"/>
+    </symbol>
     <symbol id="icon--home" viewBox="0 0 60 60">
       <title>icon--home icon</title>
       <title>icon--home</title><g fill-rule="evenodd"><path d="M29.088 6.296c.394-.394 1.034-.394 1.428 0l24.188 23.792c.634.634.184 1.72-.714 1.72h-5.634v21.184c0 .556-.454 1.008-1.01 1.008H12.654c-.556 0-1.01-.452-1.01-1.008V31.808H6.01c-.898 0-1.348-1.086-.714-1.72L29.088 6.296z"/></g>
     </symbol>
-    <symbol id="icon--home-with-door" viewBox="0 0 18 18">
-     <title>icon--home-with-door icon</title>
-     <path fill-rule="evenodd" d="M9.155 1.89c-.118-.12-.31-.12-.43 0L1.59 9.025c-.19.19-.056.516.213.516h1.19c.276 0 .5.224.5.5v5.856c0 .166.136.302.303.302H4.5c.276 0 .5-.224.5-.5v-4.2c0-.276.224-.5.5-.5h3c.276 0 .5.224.5.5v4.2c0 .276.224.5.5.5h4.704c.166 0 .303-.136.303-.302v-5.856c0-.276.224-.5.5-.5h1.19c.27 0 .404-.325.214-.516L9.156 1.89z"/>
-   </symbol>
     <symbol id="icon--human" viewBox="0 0 60 60">
       <title>icon--human icon</title>
       <title>icon--human</title><g fill-rule="evenodd"><path d="M42 18c0 6.626-5.374 12-12 12s-12-5.374-12-12S23.374 6 30 6s12 5.374 12 12zM10 52v-8.278C14.982 38.984 22.086 36 30 36s15.018 2.984 20 7.722V52H10z"/></g>
@@ -5438,11 +5584,15 @@ It\'s a way to bring creative projects to life.
     </symbol>
     <symbol id="icon--reorder" viewBox="0 0 60 60">
       <title>icon--reorder icon</title>
-      <title>icon-reorder</title><defs><path d="M16.017 8.418L8.7.538c-.27-.29-.73-.29-1 0L.383 8.42c-.408.438-.097 1.148.5 1.148H6.15V34.85c0 .378.306.683.683.683h2.733c.38 0 .684-.305.684-.683V9.566h5.267c.596 0 .906-.71.5-1.148" id="a"/><path d="M16.017 8.418L8.7.538c-.27-.29-.73-.29-1 0L.383 8.42c-.408.438-.097 1.148.5 1.148H6.15V34.85c0 .378.306.683.683.683h2.733c.38 0 .684-.305.684-.683V9.566h5.267c.596 0 .906-.71.5-1.148" id="c"/></defs><g fill-rule="evenodd"><g stroke="#979797" stroke-width=".1"><path d="M0 0h60v4H0z"/><path d="M0 0h4v60H0zM56 0h4v60h-4z"/><path d="M0 56h60v4H0z"/><circle cx="30" cy="30" r="26"/><path d="M12 4h36v52H12z"/><path d="M4 12h52v36H4z"/><path d="M8.05 8.05h43.9v43.9H8.05z"/></g><g transform="translate(22.3 7.733)"><mask><use xlink:href="#a"/></mask><use xlink:href="#a"/><path d="M0 0h41v41H0z" transform="translate(-12.3 -2.733)" mask="url(#b)"/></g><g transform="rotate(-180 19.35 26.133)"><mask id="d"><use xlink:href="#c"/></mask><use xlink:href="#c"/><path d="M0 0h41v41H0z" transform="translate(-12.3 -2.733)" mask="url(#d)"/></g></g>
+      <title>icon-reorder</title><defs><path d="M16.017 8.418L8.7.538c-.27-.29-.73-.29-1 0L.383 8.42c-.408.438-.097 1.148.5 1.148H6.15V34.85c0 .378.306.683.683.683h2.733c.38 0 .684-.305.684-.683V9.566h5.267c.596 0 .906-.71.5-1.148" id="a"/><path d="M16.017 8.418L8.7.538c-.27-.29-.73-.29-1 0L.383 8.42c-.408.438-.097 1.148.5 1.148H6.15V34.85c0 .378.306.683.683.683h2.733c.38 0 .684-.305.684-.683V9.566h5.267c.596 0 .906-.71.5-1.148" id="c"/></defs><g fill-rule="evenodd"><g stroke="#979797" stroke-width=".1"><path d="M0 0h60v4H0z"/><path d="M0 0h4v60H0zM56 0h4v60h-4z"/><path d="M0 56h60v4H0z"/><circle cx="30" cy="30" r="26"/><path d="M12 4h36v52H12z"/><path d="M4 12h52v36H4z"/><path d="M8.05 8.05h43.9v43.9H8.05z"/></g><g transform="translate(22.3 7.733)"><mask id="b"><use xlink:href="#a"/></mask><use xlink:href="#a"/><path d="M0 0h41v41H0z" transform="translate(-12.3 -2.733)" mask="url(#b)"/></g><g transform="rotate(-180 19.35 26.133)"><mask id="d"><use xlink:href="#c"/></mask><use xlink:href="#c"/><path d="M0 0h41v41H0z" transform="translate(-12.3 -2.733)" mask="url(#d)"/></g></g>
     </symbol>
     <symbol id="icon--reply" viewBox="0 0 60 60">
       <title>icon--reply icon</title>
       <title>icon--reply</title><g fill-rule="evenodd"><path d="M55.738 28.182c.478.44.478 1.196 0 1.636L31.86 51.708c-.712.652-1.86.146-1.86-.818V38.152c-13.012.93-18.378 6.538-23.866 15.3-.63 1.01-2.154.532-2.154-.664 0-22.45 13.14-32.74 26.02-34.486V7.112c0-.966 1.148-1.47 1.86-.818l23.878 21.888z"/></g>
+    </symbol>
+    <symbol id="icon--reward" viewBox="0 0 15 14">
+      <title>icon--reward icon</title>
+      <path d="M3.93 4.144c.923-.048 1.84-.173 2.742-.376.15-.038.29-.106.415-.198.07.042.145.074.223.096.892.24 1.804.405 2.724.49 1.218.09 2.073-.1 2.59-.56.22-.21.383-.472.472-.763.088-.29.1-.6.03-.896-.05-.37-.192-.724-.415-1.025-.223-.3-.518-.54-.858-.697C10.467-.36 8.44.655 6.978 1.6 5.55.635 3.648-.367 2.29.13c-.35.137-.658.362-.896.652-.238.29-.397.637-.463 1.006-.08.294-.08.603-.005.897.076.294.228.564.44.78.498.486 1.346.71 2.564.677zM10.58 1.49c.08.003.16.02.236.052.07 0 .287.12.383.555.04.274-.056.363-.095.395-.49.472-2.66-.16-2.66-.16.618-.478 1.36-.77 2.137-.84zm-7.73.543c.108-.434.33-.51.4-.536.077-.028.157-.043.237-.045.776.105 1.507.43 2.104.938 0 0-2.2.536-2.666.045-.032-.04-.128-.128-.077-.402zm10.543 2.953H.638c-.453 0-.638.16-.638.638v1.078c0 .478.166.676.638.676h.344v5.103c0 .205.043.406.122.593.08.187.197.357.343.498.146.143.32.253.51.327.19.073.39.108.594.102h8.932c.402-.002.787-.163 1.07-.447.286-.285.446-.67.448-1.072V7.38h.395c.453 0 .677-.166.638-.638V5.662c0-.484-.172-.69-.638-.676zm-7.342 7.017h-3.15c-.018 0-.036-.004-.052-.01-.015-.007-.03-.017-.042-.03-.013-.012-.023-.027-.03-.043-.006-.016-.01-.034-.01-.05V7.403h3.26l.025 4.6zm5.237-.134c0 .016 0 .033-.007.05-.006.016-.016.03-.028.043-.012.013-.026.023-.042.03-.016.006-.033.01-.05.01H8.037V7.36h3.253v4.51z"/>
     </symbol>
     <symbol id="icon--save" viewBox="0 0 60 60">
       <title>icon--save icon</title>
@@ -5630,7 +5780,7 @@ It\'s a way to bring creative projects to life.
     </symbol>
     <symbol id="menu" viewBox="0 0 17 12">
       <title>menu icon</title>
-      <title>Group</title><defs><path d="M8.03 12H0v-2h16.06v2H8.03z"/></defs><g fill-rule="evenodd"><path d="M15.783 0H.276C.124 0 0 .124 0 .276v1.448C0 1.876.124 2 .276 2h15.507c.153 0 .276-.124.276-.276V.276c0-.152-.124-.276-.277-.276M.276 7H12.16c.154 0 .277-.124.277-.276V5.276c0-.152-.123-.276-.276-.276H.277C.124 5 0 5.124 0 5.276v1.448C0 6.876.124 7 .276 7"/><mask><use xlink:href="#a"/></mask><path d="M15.783 10H.276c-.152 0-.276.124-.276.276v1.448c0 .152.124.276.276.276h15.507c.153 0 .276-.124.276-.276v-1.448c0-.152-.124-.276-.277-.276" mask="url(#b)"/></g>
+      <title>Group</title><defs><path id="a" d="M8.03 12H0v-2h16.06v2H8.03z"/></defs><g fill-rule="evenodd"><path d="M15.783 0H.276C.124 0 0 .124 0 .276v1.448C0 1.876.124 2 .276 2h15.507c.153 0 .276-.124.276-.276V.276c0-.152-.124-.276-.277-.276M.276 7H12.16c.154 0 .277-.124.277-.276V5.276c0-.152-.123-.276-.276-.276H.277C.124 5 0 5.124 0 5.276v1.448C0 6.876.124 7 .276 7"/><mask id="b"><use xlink:href="#a"/></mask><path d="M15.783 10H.276c-.152 0-.276.124-.276.276v1.448c0 .152.124.276.276.276h15.507c.153 0 .276-.124.276-.276v-1.448c0-.152-.124-.276-.277-.276" mask="url(#b)"/></g>
     </symbol>
     <symbol id="message" viewBox="0 0 20 16">
       <title>message icon</title>
@@ -5710,7 +5860,7 @@ It\'s a way to bring creative projects to life.
     </symbol>
     <symbol id="stopwatch" viewBox="0 0 644 750">
       <title>stopwatch icon</title>
-      <title>Group 2</title><defs><path d="M0 0h646.327v749.308H0z"/></defs><g fill-rule="evenodd"><path d="M271 478.308h58.77V302H271"/><path d="M461.675 609.237c-42.952 43.003-100.057 66.686-160.794 66.686-60.737 0-117.842-23.683-160.793-66.686C97.123 566.222 73.462 509.03 73.462 448.19c0-60.836 23.66-118.03 66.624-161.044 42.952-43.002 100.057-66.685 160.795-66.685 60.738 0 117.843 23.684 160.795 66.686C504.64 330.16 528.3 387.354 528.3 448.19c0 60.84-23.66 118.032-66.625 161.047zm184.65-396.153l-51.974-51.915-77.378 77.47c-1.103-1.14-2.198-2.284-3.32-3.408C456.82 178.334 381.256 147 300.88 147c-80.377 0-155.94 31.334-212.77 88.232C31.29 292.118 0 367.748 0 448.192c0 80.442 31.292 156.073 88.11 212.96 56.83 56.897 132.394 88.23 212.77 88.23 80.377 0 155.94-31.333 212.77-88.23 56.82-56.887 88.11-132.518 88.11-212.96 0-53.65-13.934-105.148-40.06-150.382l84.626-84.726z"/><mask><use xlink:href="#a"/></mask><path mask="url(#b)" d="M409.04 0H198v73.462h211.04"/></g>
+      <title>Group 2</title><defs><path id="a" d="M0 0h646.327v749.308H0z"/></defs><g fill-rule="evenodd"><path d="M271 478.308h58.77V302H271"/><path d="M461.675 609.237c-42.952 43.003-100.057 66.686-160.794 66.686-60.737 0-117.842-23.683-160.793-66.686C97.123 566.222 73.462 509.03 73.462 448.19c0-60.836 23.66-118.03 66.624-161.044 42.952-43.002 100.057-66.685 160.795-66.685 60.738 0 117.843 23.684 160.795 66.686C504.64 330.16 528.3 387.354 528.3 448.19c0 60.84-23.66 118.032-66.625 161.047zm184.65-396.153l-51.974-51.915-77.378 77.47c-1.103-1.14-2.198-2.284-3.32-3.408C456.82 178.334 381.256 147 300.88 147c-80.377 0-155.94 31.334-212.77 88.232C31.29 292.118 0 367.748 0 448.192c0 80.442 31.292 156.073 88.11 212.96 56.83 56.897 132.394 88.23 212.77 88.23 80.377 0 155.94-31.333 212.77-88.23 56.82-56.887 88.11-132.518 88.11-212.96 0-53.65-13.934-105.148-40.06-150.382l84.626-84.726z"/><mask id="b"><use xlink:href="#a"/></mask><path mask="url(#b)" d="M409.04 0H198v73.462h211.04"/></g>
     </symbol>
     <symbol id="thumbs-up" viewBox="0 0 733 740">
       <title>thumbs-up icon</title>
@@ -5756,7 +5906,6 @@ It\'s a way to bring creative projects to life.
       <title>youtube icon</title>
       <title>Combined Shape</title><path d="M22.226 2.91C21.796 1.19 20.99.527 19.504.287 18.648.162 14.54 0 11.278 0h.014c-3.26 0-7.37.162-8.226.287C1.58.527.774 1.19.344 2.91.2 3.49 0 6.658 0 7.868v.264c0 1.21.2 4.38.344 4.958.43 1.72 1.237 2.383 2.722 2.623.856.125 4.965.287 8.226.287h-.014c3.26 0 7.37-.162 8.226-.287 1.485-.24 2.292-.903 2.722-2.623.145-.58.344-3.748.344-4.958v-.264c0-1.21-.2-4.38-.344-4.958zM8.94 4.758l5.997 3.13-5.996 3.28V4.76z" fill-rule="evenodd"/>
     </symbol></svg>
-
 <!-- / render admin nav last to ensure use of all feature flags is captured -->
 
 </body>

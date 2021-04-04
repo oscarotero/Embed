@@ -4,7 +4,7 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 23 Sep 2020 21:46:13 GMT'
+            'Sun, 04 Apr 2021 15:27:25 GMT'
         ],
         'content-type' => [
             'application/json; charset=utf-8'
@@ -36,6 +36,9 @@ return [
         'x-frame-options' => [
             'SAMEORIGIN'
         ],
+        'set-cookie' => [
+            'ig_putma=s%3A%7B%22id%22%3A%22a0c3a081-7ca0-4977-9392-816c5edc54ed%22%2C%22createdAt%22%3A%222021-04-04T15%3A27%3A25.437Z%22%7D.kCVAukLYajDDpEtyrkS7EZOB30hHkZ7NHZ84%2ByWcnMs; Domain=.infogram.com; Path=/; HttpOnly; Secure'
+        ],
         'etag' => [
             'W/"3f8-DfH5kwRceUdfGVZv3R5A4eXvn54"'
         ],
@@ -49,7 +52,7 @@ return [
             'https://infogram.com/oembed/?url=https%3A%2F%2Finfogram.com%2Ffrost-bank-advisors-online-graphic-1g8e205xdj03pod'
         ],
         'X-Request-Time' => [
-            '0.248 ms'
+            '0.330 ms'
         ]
     ],
     'statusCode' => 200,

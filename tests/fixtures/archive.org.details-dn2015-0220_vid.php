@@ -803,8 +803,13 @@ return [
             'collection-title' => 'Democracy Now!'
         ],
         'item' => [
-            'downloads' => 126,
-            'month' => 0
+            'downloads' => 132,
+            'month' => 2,
+            'item_size' => 3667677269,
+            'files_count' => 68,
+            'item_count' => null,
+            'collection_files_count' => null,
+            'collection_size' => null
         ]
     ]
 ];

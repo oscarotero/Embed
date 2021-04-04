@@ -63,7 +63,19 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'AG'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'AL'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'AM'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'AO'
                     ],
                     [
                         '@type' => 'Country',
@@ -79,11 +91,27 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'AZ'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'BA'
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'BB'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BD'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'BE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BF'
                     ],
                     [
                         '@type' => 'Country',
@@ -95,6 +123,18 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'BI'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BJ'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BN'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'BO'
                     ],
                     [
@@ -103,7 +143,23 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'BS'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BW'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'BY'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'BZ'
                     ],
                     [
                         '@type' => 'Country',
@@ -115,7 +171,15 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'CI'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'CL'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'CM'
                     ],
                     [
                         '@type' => 'Country',
@@ -124,6 +188,14 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'CR'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'CV'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'CW'
                     ],
                     [
                         '@type' => 'Country',
@@ -139,7 +211,15 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'DJ'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'DK'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'DM'
                     ],
                     [
                         '@type' => 'Country',
@@ -171,11 +251,47 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'FJ'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'FM'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'FR'
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'GA'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'GB'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GD'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GH'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GM'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GN'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GQ'
                     ],
                     [
                         '@type' => 'Country',
@@ -184,6 +300,14 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'GT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GW'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'GY'
                     ],
                     [
                         '@type' => 'Country',
@@ -196,6 +320,10 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'HR'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'HT'
                     ],
                     [
                         '@type' => 'Country',
@@ -227,11 +355,43 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'JM'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'JO'
                     ],
                     [
                         '@type' => 'Country',
                         'name' => 'JP'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'KE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'KG'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'KH'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'KI'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'KM'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'KN'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'KR'
                     ],
                     [
                         '@type' => 'Country',
@@ -243,11 +403,31 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'LA'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'LB'
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'LC'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'LI'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'LK'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'LR'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'LS'
                     ],
                     [
                         '@type' => 'Country',
@@ -279,11 +459,47 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'MG'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MH'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'MK'
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'ML'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MN'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MO'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MR'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'MT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MU'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MV'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MW'
                     ],
                     [
                         '@type' => 'Country',
@@ -292,6 +508,22 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'MY'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'MZ'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'NA'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'NE'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'NG'
                     ],
                     [
                         '@type' => 'Country',
@@ -304,6 +536,14 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'NO'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'NP'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'NR'
                     ],
                     [
                         '@type' => 'Country',
@@ -323,7 +563,15 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'PG'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'PH'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'PK'
                     ],
                     [
                         '@type' => 'Country',
@@ -336,6 +584,10 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'PT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'PW'
                     ],
                     [
                         '@type' => 'Country',
@@ -359,7 +611,19 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'RW'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'SA'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SB'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SC'
                     ],
                     [
                         '@type' => 'Country',
@@ -379,7 +643,39 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'SL'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SM'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SN'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SR'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'ST'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'SV'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'SZ'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'TD'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'TG'
                     ],
                     [
                         '@type' => 'Country',
@@ -387,7 +683,15 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'TL'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'TN'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'TO'
                     ],
                     [
                         '@type' => 'Country',
@@ -395,11 +699,27 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'TT'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'TV'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'TW'
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'TZ'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'UA'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'UG'
                     ],
                     [
                         '@type' => 'Country',
@@ -411,7 +731,23 @@ return [
                     ],
                     [
                         '@type' => 'Country',
+                        'name' => 'UZ'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'VC'
+                    ],
+                    [
+                        '@type' => 'Country',
                         'name' => 'VN'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'VU'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'WS'
                     ],
                     [
                         '@type' => 'Country',
@@ -420,6 +756,14 @@ return [
                     [
                         '@type' => 'Country',
                         'name' => 'ZA'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'ZM'
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'ZW'
                     ]
                 ]
             ]

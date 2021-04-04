@@ -4,9 +4,9 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 23 Sep 2020 21:45:57 GMT',
-            'Wed, 23 Sep 2020 21:45:57 GMT',
-            'Wed, 23 Sep 2020 21:45:57 GMT'
+            'Sun, 04 Apr 2021 15:22:26 GMT',
+            'Sun, 04 Apr 2021 15:22:27 GMT',
+            'Sun, 04 Apr 2021 15:22:27 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -18,6 +18,9 @@ return [
         ],
         'connection' => [
             'keep-alive'
+        ],
+        'set-cookie' => [
+            '__cfduid=da1ba9f09151b076e803e023376232a501617549746; expires=Tue, 04-May-21 15:22:26 GMT; path=/; domain=.amcharts.com; HttpOnly; SameSite=Lax'
         ],
         'location' => [
             'https://live.amcharts.com/czNjJ',
@@ -34,9 +37,19 @@ return [
             'DYNAMIC'
         ],
         'cf-request-id' => [
-            '055e87397d0000c69ba30e9200000001',
-            '055e873ab1000014f155b87200000001',
-            '055e873c04000014f155b9b200000001'
+            '093f1379b60000408f353d0000000001',
+            '093f137b970000540423b5f000000001',
+            '093f137cee000054045e8b6000000001'
+        ],
+        'report-to' => [
+            '{"max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=b9fXMf9CXbZ1YzOFQprQjJGkaue129OZUHNA%2FGkm1x%2Fu2Or8TUsQfzpzOVwzSGXGXtMdxujkGNIoncUAwjgfXgmRAvKpG8BxQ2ii5Ix6rUSkvw%3D%3D"}],"group":"cf-nel"}',
+            '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=vzzNvv8gN2GYC3i%2FggkJvGL1XYL2xb5Wz%2FE8tK0zs3pdV87P7vjTqkMiSp%2BfGlIkFJgHpZDPs%2BBYTjJmV8sYCCjAL1f9CaoJQ47%2FwD9sKeBMGw%3D%3D"}]}',
+            '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=LGUxjdLWyitQWNDgLzP9k0j5bGloxVj55t4tNgwi%2Bf%2BUYHc4VH9w9Tjt3xlW66kLsedqlqAWn57wuaGtmrbvTyTYpo83i0Lns0EkRLJdYY46mg%3D%3D"}]}'
+        ],
+        'nel' => [
+            '{"report_to":"cf-nel","max_age":604800}',
+            '{"report_to":"cf-nel","max_age":604800}',
+            '{"report_to":"cf-nel","max_age":604800}'
         ],
         'server' => [
             'cloudflare',
@@ -44,9 +57,9 @@ return [
             'cloudflare'
         ],
         'cf-ray' => [
-            '5d7774a26eb4c69b-MAD',
-            '5d7774a44a9114f1-MAD  HTTP/2 200',
-            '5d7774a66fca14f1-MAD'
+            '63ab883c5f6d408f-LHR',
+            '63ab883f5af05404-LHR  HTTP/2 200',
+            '63ab884178525404-LHR'
         ],
         'alt-svc' => [
             'h2=":443"; ma=60  HTTP/2 301'
@@ -68,7 +81,7 @@ return [
             'https://live.amcharts.com/czNjJ/'
         ],
         'X-Request-Time' => [
-            '1.119 ms'
+            '1.348 ms'
         ]
     ],
     'statusCode' => 200,
@@ -138,7 +151,7 @@ return [
 			AmCharts.Editor.CONSTANT.URL_API			= \'//www.amcharts.com/wp-admin/admin-ajax.php\';
 			AmCharts.Editor.CONSTANT.URL_PATH			= \'/\';
 			AmCharts.Editor.CONSTANT.RND_KEY			= \'20191009-01\';
-			AmCharts.Editor.CONSTANT.CHARTS_CREATED		= 157449;
+			AmCharts.Editor.CONSTANT.CHARTS_CREATED		= 167662;
 		</script>
 <script type="text/javascript" src="//live.amcharts.com/dist/ameditor.handler.js?20191009-01"></script>
 <script type="text/javascript" src="//live.amcharts.com/dist/section/ameditor.share.js?20191009-01"></script>

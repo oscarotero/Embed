@@ -7,19 +7,21 @@ return [
             'nginx/1.16.1 (Ubuntu)'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:51 GMT'
+            'Sun, 04 Apr 2021 15:20:27 GMT'
         ],
         'content-type' => [
             'text/html; charset=UTF-8'
         ],
-        'transfer-encoding' => [
-            'chunked'
-        ],
-        'connection' => [
-            'keep-alive'
+        'set-cookie' => [
+            'donation-identifier=ecdb3642f9c394adafb1940be08a1bc3; expires=Mon, 04-Apr-2022 15:20:27 GMT; Max-Age=31536000; path=/; domain=.archive.org',
+            'abtest-identifier=5d4a7ce8e898f648951e3cf01a09bd48; expires=Mon, 04-Apr-2022 15:20:27 GMT; Max-Age=31536000; path=/; domain=.archive.org',
+            'PHPSESSID=l2am3hthvianpa7lfl4vf9stg2; path=/; domain=.archive.org'
         ],
         'strict-transport-security' => [
             'max-age=15724800'
+        ],
+        'referrer-policy' => [
+            'no-referrer-when-downgrade'
         ],
         'content-encoding' => [
             'gzip'
@@ -28,7 +30,7 @@ return [
             'https://archive.org/details/dn2015-0220_vid'
         ],
         'X-Request-Time' => [
-            '0.975 ms'
+            '1.117 ms'
         ]
     ],
     'statusCode' => 200,
@@ -38,7 +40,7 @@ return [
 <!-- __ _ _ _ __| |_ (_)__ _____
     / _` | \'_/ _| \' \\| |\\ V / -_)
     \\__,_|_| \\__|_||_|_| \\_/\\___| -->
-  <head>
+  <head data-release=d9060d4a>
     <title>Democracy Now! Friday, February 20, 2015 : Free Download, Borrow, and Streaming : Internet Archive</title>
 
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -72,21 +74,22 @@ return [
     <script src="//archive.org/includes/jquery-1.10.2.min.js?v1.10.2" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/jquery-ui.min.js?v1.12.1" type="text/javascript"></script>
     <script src="//archive.org/includes/bootstrap.min.js?v3.0.0" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/clipboard/dist/clipboard.js?v=02405d2f" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/@babel/polyfill/dist/polyfill.min.js?v=02405d2f" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/ie-dom-node-remove-polyfill.min.js?v=02405d2f" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/polyfill.min.js?v=02405d2f" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/clipboard/dist/clipboard.js?v=d9060d4a" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/@babel/polyfill/dist/polyfill.min.js?v=d9060d4a" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/ie-dom-node-remove-polyfill.min.js?v=d9060d4a" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/polyfill.min.js?v=d9060d4a" type="text/javascript"></script>
                       <meta property="mediatype" content="movies">
                       <meta property="primary_collection" content="democracy_now_vid">
-            <script src="//archive.org/includes/analytics.js?v=02405d2f" type="text/javascript"></script>
-    <script src="//archive.org/components/npm/@webcomponents/webcomponentsjs/webcomponents-bundle.js?v=02405d2f" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/more-facets.min.js?v=02405d2f" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/ia-topnav.min.js?v=02405d2f" type="text/javascript"></script>
+            <script src="//archive.org/includes/analytics.js?v=d9060d4a" type="text/javascript"></script>
+    <script src="//archive.org/components/npm/@webcomponents/webcomponentsjs/webcomponents-bundle.js?v=d9060d4a" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/more-facets.min.js?v=d9060d4a" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/ia-topnav.min.js?v=d9060d4a" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/react/umd/react.production.min.js?v16.7.0" type="text/javascript"></script>
     <script src="//archive.org/includes/build/npm/react-dom/umd/react-dom.production.min.js?v16.7.0" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/play8.min.js?v=02405d2f" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/playset.min.js?v=02405d2f" type="text/javascript"></script>
-    <script src="//archive.org/includes/build/js/areact.min.js?v=02405d2f" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/play8.min.js?v=d9060d4a" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/playset.min.js?v=d9060d4a" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/areact.min.js?v=d9060d4a" type="text/javascript"></script>
+    <script src="//archive.org/includes/build/js/details-carousel.min.js?v=d9060d4a" type="text/javascript"></script>
 <meta name="description" content="Democracy Now! television program for Friday, February 20, 2015 Headlines for February 20, 2015 An Unsolved Case of Racial Terror: FBI Probes 1946..."/>
                       <meta property="og:title" content="Democracy Now! Friday, February 20, 2015 : Free Download, Borrow, and Streaming : Internet Archive">
                       <meta property="og:description" content="Democracy Now! television program for Friday, February 20, 2015 Headlines for February 20, 2015 An Unsolved Case of Racial Terror: FBI Probes 1946...">
@@ -113,7 +116,7 @@ return [
 <link rel="canonical" href="https://archive.org/details/dn2015-0220_vid">
     <script type="application/ld+json">
       {"@context":"http:\\/\\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\\/\\/archive.org\\/details\\/movies","name":"Videos","image":"https:\\/\\/archive.org\\/services\\/img\\/movies"}}]}    </script>
-        <link href="//archive.org/includes/build/css/archive.min.css?v=02405d2f" rel="stylesheet" type="text/css"/>
+        <link href="//archive.org/includes/build/css/archive.min.css?v=d9060d4a" rel="stylesheet" type="text/css"/>
     <link rel="SHORTCUT ICON" href="https://archive.org/images/glogo.jpg"/>
       </head>
   <body class="navia ia-module tiles responsive">
@@ -138,7 +141,7 @@ return [
           </div>
                     
         <div id="topnav">
-                              <ia-topnav config="eyJiYXNlSG9zdCI6ImFyY2hpdmUub3JnIiwic2NyZWVuTmFtZSI6ZmFsc2UsInVzZXJuYW1lIjoiIiwidXBsb2FkVVJMIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9jcmVhdGUiLCJldmVudENhdGVnb3J5IjoiVG9wTmF2Iiwid2F5YmFja1BhZ2VzQXJjaGl2ZWQiOiI0NzggYmlsbGlvbiIsImlzQWRtaW4iOjAsImhpZGVTZWFyY2giOmZhbHNlfQ==" menus="eyJhdWRpbyI6eyJoZWFkaW5nIjoiSW50ZXJuZXQgQXJjaGl2ZSBBdWRpbyIsImljb25MaW5rcyI6W3siaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvZXRyZWUiLCJ0aXRsZSI6IkxpdmUgTXVzaWMgQXJjaGl2ZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvZXRyZWUifSx7Imljb24iOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlcnZpY2VzXC9pbWdcL2xpYnJpdm94YXVkaW8iLCJ0aXRsZSI6IkxpYnJpdm94IEZyZWUgQXVkaW8iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2xpYnJpdm94YXVkaW8ifV0sImZlYXR1cmVkTGlua3MiOlt7InRpdGxlIjoiQWxsIGF1ZGlvIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpbyJ9LHsidGl0bGUiOiJUaGlzIEp1c3QgSW4iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlYXJjaC5waHA/cXVlcnk9bWVkaWF0eXBlOmF1ZGlvJnNvcnQ9LXB1YmxpY2RhdGUifSx7InRpdGxlIjoiR3JhdGVmdWwgRGVhZCIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvR3JhdGVmdWxEZWFkIn0seyJ0aXRsZSI6Ik5ldGxhYmVscyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvbmV0bGFiZWxzIn0seyJ0aXRsZSI6Ik9sZCBUaW1lIFJhZGlvIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9vbGR0aW1lcmFkaW8ifSx7InRpdGxlIjoiNzggUlBNcyBhbmQgQ3lsaW5kZXIgUmVjb3JkaW5ncyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvNzhycG0ifV0sImxpbmtzIjpbeyJ0aXRsZSI6IkF1ZGlvIEJvb2tzICYgUG9ldHJ5IiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpb19ib29rc3BvZXRyeSJ9LHsidGl0bGUiOiJDb21tdW5pdHkgQXVkaW8iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL29wZW5zb3VyY2VfYXVkaW8ifSx7InRpdGxlIjoiQ29tcHV0ZXJzLCBUZWNobm9sb2d5IGFuZCBTY2llbmNlIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpb190ZWNoIn0seyJ0aXRsZSI6Ik11c2ljLCBBcnRzICYgQ3VsdHVyZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvYXVkaW9fbXVzaWMifSx7InRpdGxlIjoiTmV3cyAmIFB1YmxpYyBBZmZhaXJzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpb19uZXdzIn0seyJ0aXRsZSI6Ik5vbi1FbmdsaXNoIEF1ZGlvIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpb19mb3JlaWduIn0seyJ0aXRsZSI6IlNwaXJpdHVhbGl0eSAmIFJlbGlnaW9uIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hdWRpb19yZWxpZ2lvbiJ9LHsidGl0bGUiOiJQb2RjYXN0cyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvcG9kY2FzdHMifV19LCJpbWFnZXMiOnsiaGVhZGluZyI6IkltYWdlcyIsImljb25MaW5rcyI6W3siaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvbWV0cm9wb2xpdGFubXVzZXVtb2ZhcnQtZ2FsbGVyeSIsInRpdGxlIjoiTWV0cm9wb2xpdGFuIE11c2V1bSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvbWV0cm9wb2xpdGFubXVzZXVtb2ZhcnQtZ2FsbGVyeSJ9LHsiaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvYnJvb2tseW5tdXNldW0iLCJ0aXRsZSI6IkJyb29rbHluIE11c2V1bSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvYnJvb2tseW5tdXNldW0ifV0sImZlYXR1cmVkTGlua3MiOlt7InRpdGxlIjoiQWxsIGltYWdlcyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvaW1hZ2UifSx7InRpdGxlIjoiVGhpcyBKdXN0IEluIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9zZWFyY2gucGhwP3F1ZXJ5PW1lZGlhdHlwZTppbWFnZSZzb3J0PS1wdWJsaWNkYXRlIn0seyJ0aXRsZSI6IkZsaWNrciBDb21tb25zIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9mbGlja3Jjb21tb25zIn0seyJ0aXRsZSI6Ik9jY3VweSBXYWxsIFN0cmVldCBGbGlja3IiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2ZsaWNrci1vd3MifSx7InRpdGxlIjoiQ292ZXIgQXJ0IiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9jb3ZlcmFydGFyY2hpdmUifSx7InRpdGxlIjoiVVNHUyBNYXBzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9tYXBzX3VzZ3MifV0sImxpbmtzIjpbeyJ0aXRsZSI6Ik5BU0EgSW1hZ2VzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9uYXNhIn0seyJ0aXRsZSI6IlNvbGFyIFN5c3RlbSBDb2xsZWN0aW9uIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9zb2xhcnN5c3RlbWNvbGxlY3Rpb24ifSx7InRpdGxlIjoiQW1lcyBSZXNlYXJjaCBDZW50ZXIiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2FtZXNyZXNlYXJjaGNlbnRlcmltYWdlbGlicmFyeSJ9XX0sIm1vcmUiOlt7InRpdGxlIjoiQWJvdXQiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2Fib3V0XC8ifSx7InRpdGxlIjoiQmxvZyIsInVybCI6Imh0dHBzOlwvXC9ibG9nLmFyY2hpdmUub3JnXC8ifSx7InRpdGxlIjoiUHJvamVjdHMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3Byb2plY3RzXC8ifSx7InRpdGxlIjoiSGVscCIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvYWJvdXRcL2ZhcXMucGhwIn0seyJ0aXRsZSI6IkRvbmF0ZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZG9uYXRlIn0seyJ0aXRsZSI6IkNvbnRhY3QiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2Fib3V0XC9jb250YWN0LnBocCJ9LHsidGl0bGUiOiJKb2JzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9hYm91dFwvam9icy5waHAifSx7InRpdGxlIjoiVm9sdW50ZWVyIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9hYm91dFwvdm9sdW50ZWVycG9zaXRpb25zLnBocCJ9LHsidGl0bGUiOiJQZW9wbGUiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2Fib3V0XC9iaW9zLnBocCJ9XSwic29mdHdhcmUiOnsiaGVhZGluZyI6IlNvZnR3YXJlIiwiaWNvbkxpbmtzIjpbeyJpY29uIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9zZXJ2aWNlc1wvaW1nXC9pbnRlcm5ldGFyY2FkZSIsInRpdGxlIjoiSW50ZXJuZXQgQXJjYWRlIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9pbnRlcm5ldGFyY2FkZSJ9LHsiaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvY29uc29sZWxpdmluZ3Jvb20iLCJ0aXRsZSI6IkNvbnNvbGUgTGl2aW5nIFJvb20iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2NvbnNvbGVsaXZpbmdyb29tIn1dLCJmZWF0dXJlZExpbmtzIjpbeyJ0aXRsZSI6IkFsbCBzb2Z0d2FyZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvc29mdHdhcmUifSx7InRpdGxlIjoiVGhpcyBKdXN0IEluIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9zZWFyY2gucGhwP3F1ZXJ5PW1lZGlhdHlwZTpzb2Z0d2FyZSZzb3J0PS1wdWJsaWNkYXRlIn0seyJ0aXRsZSI6Ik9sZCBTY2hvb2wgRW11bGF0aW9uIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC90b3NlYyJ9LHsidGl0bGUiOiJNUy1ET1MgR2FtZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3NvZnR3YXJlbGlicmFyeV9tc2Rvc19nYW1lcyJ9LHsidGl0bGUiOiJIaXN0b3JpY2FsIFNvZnR3YXJlIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9oaXN0b3JpY2Fsc29mdHdhcmUifSx7InRpdGxlIjoiQ2xhc3NpYyBQQyBHYW1lcyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvY2xhc3NpY3BjZ2FtZXMifSx7InRpdGxlIjoiU29mdHdhcmUgTGlicmFyeSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvc29mdHdhcmVsaWJyYXJ5In1dLCJsaW5rcyI6W3sidGl0bGUiOiJLb2RpIEFyY2hpdmUgYW5kIFN1cHBvcnQgRmlsZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wva29kaV9hcmNoaXZlIn0seyJ0aXRsZSI6IkNvbW11bml0eSBTb2Z0d2FyZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvb3Blbl9zb3VyY2Vfc29mdHdhcmUifSx7InRpdGxlIjoiVmludGFnZSBTb2Z0d2FyZSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvdmludGFnZXNvZnR3YXJlIn0seyJ0aXRsZSI6IkFQSyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvYXBrYXJjaGl2ZSJ9LHsidGl0bGUiOiJNUy1ET1MiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3NvZnR3YXJlbGlicmFyeV9tc2RvcyJ9LHsidGl0bGUiOiJDRC1ST00gU29mdHdhcmUiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2NkLXJvbXMifSx7InRpdGxlIjoiQ0QtUk9NIFNvZnR3YXJlIExpYnJhcnkiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2Nkcm9tc29mdHdhcmUifSx7InRpdGxlIjoiU29mdHdhcmUgU2l0ZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3NvZnR3YXJlc2l0ZXMifSx7InRpdGxlIjoiVHVjb3dzIFNvZnR3YXJlIExpYnJhcnkiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3R1Y293cyJ9LHsidGl0bGUiOiJTaGFyZXdhcmUgQ0QtUk9NcyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvY2RiYnNhcmNoaXZlIn0seyJ0aXRsZSI6IlNvZnR3YXJlIENhcHN1bGVzIENvbXBpbGF0aW9uIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9zb2Z0d2FyZWNhcHN1bGVzIn0seyJ0aXRsZSI6IkNELVJPTSBJbWFnZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2Nkcm9taW1hZ2VzIn0seyJ0aXRsZSI6IlpYIFNwZWN0cnVtIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9zb2Z0d2FyZWxpYnJhcnlfenhfc3BlY3RydW0ifSx7InRpdGxlIjoiRE9PTSBMZXZlbCBDRCIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvZG9vbS1jZHMifV19LCJ0ZXh0cyI6eyJoZWFkaW5nIjoiQm9va3MiLCJpY29uTGlua3MiOlt7InRpdGxlIjoiQm9va3MgdG8gQm9ycm93IiwiaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvaW1hZ2VzXC9ib29rLWxlbmQucG5nIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9pbmxpYnJhcnkifSx7InRpdGxlIjoiT3BlbiBMaWJyYXJ5IiwiaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvaW1hZ2VzXC93aWRnZXRPTC5wbmciLCJ1cmwiOiJodHRwczpcL1wvb3BlbmxpYnJhcnkub3JnXC8ifV0sImZlYXR1cmVkTGlua3MiOlt7InRpdGxlIjoiQWxsIEJvb2tzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9ib29rcyJ9LHsidGl0bGUiOiJBbGwgVGV4dHMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3RleHRzIn0seyJ0aXRsZSI6IlRoaXMgSnVzdCBJbiIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VhcmNoLnBocD9xdWVyeT1tZWRpYXR5cGU6dGV4dHMmc29ydD0tcHVibGljZGF0ZSJ9LHsidGl0bGUiOiJTbWl0aHNvbmlhbiBMaWJyYXJpZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3NtaXRoc29uaWFuIn0seyJ0aXRsZSI6IkZFRExJTksgKFVTKSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvZmVkbGluayJ9LHsidGl0bGUiOiJHZW5lYWxvZ3kiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2dlbmVhbG9neSJ9LHsidGl0bGUiOiJMaW5jb2xuIENvbGxlY3Rpb24iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2xpbmNvbG5jb2xsZWN0aW9uIn1dLCJsaW5rcyI6W3sidGl0bGUiOiJBbWVyaWNhbiBMaWJyYXJpZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2FtZXJpY2FuYSJ9LHsidGl0bGUiOiJDYW5hZGlhbiBMaWJyYXJpZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3Rvcm9udG8ifSx7InRpdGxlIjoiVW5pdmVyc2FsIExpYnJhcnkiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3VuaXZlcnNhbGxpYnJhcnkifSx7InRpdGxlIjoiQ29tbXVuaXR5IFRleHRzIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9vcGVuc291cmNlIn0seyJ0aXRsZSI6IlByb2plY3QgR3V0ZW5iZXJnIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9ndXRlbmJlcmcifSx7InRpdGxlIjoiQmlvZGl2ZXJzaXR5IEhlcml0YWdlIExpYnJhcnkiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2Jpb2RpdmVyc2l0eSJ9LHsidGl0bGUiOiJDaGlsZHJlbidzIExpYnJhcnkiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2lhY2wifSx7InRpdGxlIjoiQm9va3MgYnkgTGFuZ3VhZ2UiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2Jvb2tzYnlsYW5ndWFnZSJ9LHsidGl0bGUiOiJBZGRpdGlvbmFsIENvbGxlY3Rpb25zIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hZGRpdGlvbmFsX2NvbGxlY3Rpb25zIn1dfSwid2ViIjp7Im1vYmlsZUFwcHNMaW5rcyI6W3sidXJsIjoiaHR0cHM6XC9cL2FwcHMuYXBwbGUuY29tXC91c1wvYXBwXC93YXliYWNrLW1hY2hpbmVcL2lkMTIwMTg4ODMxMyIsInRpdGxlIjoiV2F5YmFjayBNYWNoaW5lIChpT1MpIiwiZXh0ZXJuYWwiOnRydWV9LHsidXJsIjoiaHR0cHM6XC9cL3BsYXkuZ29vZ2xlLmNvbVwvc3RvcmVcL2FwcHNcL2RldGFpbHM/aWQ9Y29tLmFyY2hpdmUud2F5YmFja21hY2hpbmUmaGw9ZW5fVVMiLCJ0aXRsZSI6IldheWJhY2sgTWFjaGluZSAoQW5kcm9pZCkiLCJleHRlcm5hbCI6dHJ1ZX1dLCJicm93c2VyRXh0ZW5zaW9uc0xpbmtzIjpbeyJ1cmwiOiJodHRwczpcL1wvYWRkb25zLm1vemlsbGEub3JnXC9lbi1VU1wvZmlyZWZveFwvYWRkb25cL3dheWJhY2stbWFjaGluZV9uZXdcLyIsInRpdGxlIjoiRmlyZWZveCIsImV4dGVybmFsIjp0cnVlfSx7InVybCI6Imh0dHBzOlwvXC9hcHBzLmFwcGxlLmNvbVwvdXNcL2FwcFwvd2F5YmFjay1tYWNoaW5lXC9pZDE0NzI0MzI0MjI/bXQ9MTIiLCJ0aXRsZSI6IlNhZmFyaSIsImV4dGVybmFsIjp0cnVlfV0sImFyY2hpdmVJdExpbmtzIjpbeyJ1cmwiOiJodHRwczpcL1wvd3d3LmFyY2hpdmUtaXQub3JnXC9leHBsb3JlIiwidGl0bGUiOiJFeHBsb3JlIHRoZSBDb2xsZWN0aW9ucyJ9LHsidXJsIjoiaHR0cHM6XC9cL3d3dy5hcmNoaXZlLWl0Lm9yZ1wvYmxvZ1wvbGVhcm4tbW9yZVwvIiwidGl0bGUiOiJMZWFybiBNb3JlIn0seyJ1cmwiOiJodHRwczpcL1wvd3d3LmFyY2hpdmUtaXQub3JnXC9jb250YWN0LXVzIiwidGl0bGUiOiJCdWlsZCBDb2xsZWN0aW9ucyJ9XX0sInZpZGVvIjp7ImhlYWRpbmciOiJWaWRlbyIsImljb25MaW5rcyI6W3siaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvdHYiLCJ0aXRsZSI6IlRWIE5ld3MiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3R2In0seyJpY29uIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9zZXJ2aWNlc1wvaW1nXC85MTEiLCJ0aXRsZSI6IlVuZGVyc3RhbmRpbmcgOVwvMTEiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcLzkxMSJ9XSwiZmVhdHVyZWRMaW5rcyI6W3sidGl0bGUiOiJBbGwgdmlkZW8iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL21vdmllcyJ9LHsidGl0bGUiOiJUaGlzIEp1c3QgSW4iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlYXJjaC5waHA/cXVlcnk9bWVkaWF0eXBlOm1vdmllcyZzb3J0PS1wdWJsaWNkYXRlIn0seyJ0aXRsZSI6IlByZWxpbmdlciBBcmNoaXZlcyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvcHJlbGluZ2VyIn0seyJ0aXRsZSI6IkRlbW9jcmFjeSBOb3chIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9kZW1vY3JhY3lfbm93X3ZpZCJ9LHsidGl0bGUiOiJPY2N1cHkgV2FsbCBTdHJlZXQiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL29jY3VweXdhbGxzdHJlZXQifSx7InRpdGxlIjoiVFYgTlNBIENsaXAgTGlicmFyeSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvbnNhIn1dLCJsaW5rcyI6W3sidGl0bGUiOiJBbmltYXRpb24gJiBDYXJ0b29ucyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvYW5pbWF0aW9uYW5kY2FydG9vbnMifSx7InRpdGxlIjoiQXJ0cyAmIE11c2ljIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9hcnRzYW5kbXVzaWN2aWRlb3MifSx7InRpdGxlIjoiQ29tcHV0ZXJzICYgVGVjaG5vbG9neSIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvY29tcHV0ZXJzYW5kdGVjaHZpZGVvcyJ9LHsidGl0bGUiOiJDdWx0dXJhbCAmIEFjYWRlbWljIEZpbG1zIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9jdWx0dXJhbGFuZGFjYWRlbWljZmlsbXMifSx7InRpdGxlIjoiRXBoZW1lcmFsIEZpbG1zIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC9lcGhlbWVyYSJ9LHsidGl0bGUiOiJNb3ZpZXMiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL21vdmllc2FuZGZpbG1zIn0seyJ0aXRsZSI6Ik5ld3MgJiBQdWJsaWMgQWZmYWlycyIsInVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvZGV0YWlsc1wvbmV3c2FuZHB1YmxpY2FmZmFpcnMifSx7InRpdGxlIjoiU3Bpcml0dWFsaXR5ICYgUmVsaWdpb24iLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3NwaXJpdHVhbGl0eWFuZHJlbGlnaW9uIn0seyJ0aXRsZSI6IlNwb3J0cyBWaWRlb3MiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3Nwb3J0cyJ9LHsidGl0bGUiOiJUZWxldmlzaW9uIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC90ZWxldmlzaW9uIn0seyJ0aXRsZSI6IlZpZGVvZ2FtZSBWaWRlb3MiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL2dhbWV2aWRlb3MifSx7InRpdGxlIjoiVmxvZ3MiLCJ1cmwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2RldGFpbHNcL3Zsb2dzIn0seyJ0aXRsZSI6IllvdXRoIE1lZGlhIiwidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9kZXRhaWxzXC95b3V0aF9tZWRpYSJ9XX0sInVzZXIiOltdLCJzaWduZWRPdXQiOlt7InVybCI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvYWNjb3VudFwvc2lnbnVwIiwidGl0bGUiOiJTaWduIHVwIGZvciBmcmVlIiwiYW5hbHl0aWNzRXZlbnQiOiJBdmF0YXJNZW51LVNpZ251cCJ9LHsidXJsIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9hY2NvdW50XC9sb2dpbiIsInRpdGxlIjoiTG9nIGluIiwiYW5hbHl0aWNzRXZlbnQiOiJBdmF0YXJNZW51LUxvZ2luIn1dfQ==">
+                              <ia-topnav baseHost="https://archive.org" config="eyJzY3JlZW5OYW1lIjpmYWxzZSwidXNlcm5hbWUiOiIiLCJ1cGxvYWRVUkwiOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2NyZWF0ZSIsImV2ZW50Q2F0ZWdvcnkiOiJUb3BOYXYiLCJ3YXliYWNrUGFnZXNBcmNoaXZlZCI6IjU1MiBiaWxsaW9uIiwiaXNBZG1pbiI6MCwiaGlkZVNlYXJjaCI6ZmFsc2V9" menus="eyJhdWRpbyI6eyJoZWFkaW5nIjoiSW50ZXJuZXQgQXJjaGl2ZSBBdWRpbyIsImljb25MaW5rcyI6W3siaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvZXRyZWUiLCJ0aXRsZSI6IkxpdmUgTXVzaWMgQXJjaGl2ZSIsInVybCI6IlwvZGV0YWlsc1wvZXRyZWUifSx7Imljb24iOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlcnZpY2VzXC9pbWdcL2xpYnJpdm94YXVkaW8iLCJ0aXRsZSI6IkxpYnJpdm94IEZyZWUgQXVkaW8iLCJ1cmwiOiJcL2RldGFpbHNcL2xpYnJpdm94YXVkaW8ifV0sImZlYXR1cmVkTGlua3MiOlt7InRpdGxlIjoiQWxsIEF1ZGlvIiwidXJsIjoiXC9kZXRhaWxzXC9hdWRpbyJ9LHsidGl0bGUiOiJUaGlzIEp1c3QgSW4iLCJ1cmwiOiJcL3NlYXJjaC5waHA/cXVlcnk9bWVkaWF0eXBlOmF1ZGlvJnNvcnQ9LXB1YmxpY2RhdGUifSx7InRpdGxlIjoiR3JhdGVmdWwgRGVhZCIsInVybCI6IlwvZGV0YWlsc1wvR3JhdGVmdWxEZWFkIn0seyJ0aXRsZSI6Ik5ldGxhYmVscyIsInVybCI6IlwvZGV0YWlsc1wvbmV0bGFiZWxzIn0seyJ0aXRsZSI6Ik9sZCBUaW1lIFJhZGlvIiwidXJsIjoiXC9kZXRhaWxzXC9vbGR0aW1lcmFkaW8ifSx7InRpdGxlIjoiNzggUlBNcyBhbmQgQ3lsaW5kZXIgUmVjb3JkaW5ncyIsInVybCI6IlwvZGV0YWlsc1wvNzhycG0ifV0sImxpbmtzIjpbeyJ0aXRsZSI6IkF1ZGlvIEJvb2tzICYgUG9ldHJ5IiwidXJsIjoiXC9kZXRhaWxzXC9hdWRpb19ib29rc3BvZXRyeSJ9LHsidGl0bGUiOiJDb21wdXRlcnMsIFRlY2hub2xvZ3kgYW5kIFNjaWVuY2UiLCJ1cmwiOiJcL2RldGFpbHNcL2F1ZGlvX3RlY2gifSx7InRpdGxlIjoiTXVzaWMsIEFydHMgJiBDdWx0dXJlIiwidXJsIjoiXC9kZXRhaWxzXC9hdWRpb19tdXNpYyJ9LHsidGl0bGUiOiJOZXdzICYgUHVibGljIEFmZmFpcnMiLCJ1cmwiOiJcL2RldGFpbHNcL2F1ZGlvX25ld3MifSx7InRpdGxlIjoiTm9uLUVuZ2xpc2ggQXVkaW8iLCJ1cmwiOiJcL2RldGFpbHNcL2F1ZGlvX2ZvcmVpZ24ifSx7InRpdGxlIjoiU3Bpcml0dWFsaXR5ICYgUmVsaWdpb24iLCJ1cmwiOiJcL2RldGFpbHNcL2F1ZGlvX3JlbGlnaW9uIn0seyJ0aXRsZSI6IlBvZGNhc3RzIiwidXJsIjoiXC9kZXRhaWxzXC9wb2RjYXN0cyJ9LHsidGl0bGUiOiJSYWRpbyBOZXdzIEFyY2hpdmUiLCJ1cmwiOiJcL2RldGFpbHNcL3JhZGlvIn1dfSwiaW1hZ2VzIjp7ImhlYWRpbmciOiJJbWFnZXMiLCJpY29uTGlua3MiOlt7Imljb24iOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlcnZpY2VzXC9pbWdcL21ldHJvcG9saXRhbm11c2V1bW9mYXJ0LWdhbGxlcnkiLCJ0aXRsZSI6Ik1ldHJvcG9saXRhbiBNdXNldW0iLCJ1cmwiOiJcL2RldGFpbHNcL21ldHJvcG9saXRhbm11c2V1bW9mYXJ0LWdhbGxlcnkifSx7Imljb24iOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlcnZpY2VzXC9pbWdcL2Jyb29rbHlubXVzZXVtIiwidGl0bGUiOiJCcm9va2x5biBNdXNldW0iLCJ1cmwiOiJcL2RldGFpbHNcL2Jyb29rbHlubXVzZXVtIn1dLCJmZWF0dXJlZExpbmtzIjpbeyJ0aXRsZSI6IkFsbCBJbWFnZXMiLCJ1cmwiOiJcL2RldGFpbHNcL2ltYWdlIn0seyJ0aXRsZSI6IlRoaXMgSnVzdCBJbiIsInVybCI6Ilwvc2VhcmNoLnBocD9xdWVyeT1tZWRpYXR5cGU6aW1hZ2Umc29ydD0tcHVibGljZGF0ZSJ9LHsidGl0bGUiOiJGbGlja3IgQ29tbW9ucyIsInVybCI6IlwvZGV0YWlsc1wvZmxpY2tyY29tbW9ucyJ9LHsidGl0bGUiOiJPY2N1cHkgV2FsbCBTdHJlZXQgRmxpY2tyIiwidXJsIjoiXC9kZXRhaWxzXC9mbGlja3Itb3dzIn0seyJ0aXRsZSI6IkNvdmVyIEFydCIsInVybCI6IlwvZGV0YWlsc1wvY292ZXJhcnRhcmNoaXZlIn0seyJ0aXRsZSI6IlVTR1MgTWFwcyIsInVybCI6IlwvZGV0YWlsc1wvbWFwc191c2dzIn1dLCJsaW5rcyI6W3sidGl0bGUiOiJOQVNBIEltYWdlcyIsInVybCI6IlwvZGV0YWlsc1wvbmFzYSJ9LHsidGl0bGUiOiJTb2xhciBTeXN0ZW0gQ29sbGVjdGlvbiIsInVybCI6IlwvZGV0YWlsc1wvc29sYXJzeXN0ZW1jb2xsZWN0aW9uIn0seyJ0aXRsZSI6IkFtZXMgUmVzZWFyY2ggQ2VudGVyIiwidXJsIjoiXC9kZXRhaWxzXC9hbWVzcmVzZWFyY2hjZW50ZXJpbWFnZWxpYnJhcnkifV19LCJtb3JlIjpbeyJ0aXRsZSI6IkFib3V0IiwidXJsIjoiXC9hYm91dFwvIn0seyJ0aXRsZSI6IkJsb2ciLCJ1cmwiOiJodHRwczpcL1wvYmxvZy5hcmNoaXZlLm9yZ1wvIn0seyJ0aXRsZSI6IlByb2plY3RzIiwidXJsIjoiXC9wcm9qZWN0c1wvIn0seyJ0aXRsZSI6IkhlbHAiLCJ1cmwiOiJcL2Fib3V0XC9mYXFzLnBocCJ9LHsidGl0bGUiOiJEb25hdGUiLCJ1cmwiOiJcL2RvbmF0ZT9vcmlnaW49aWF3d3ctVG9wTmF2RG9uYXRlQnV0dG9uIn0seyJ0aXRsZSI6IkNvbnRhY3QiLCJ1cmwiOiJcL2Fib3V0XC9jb250YWN0LnBocCJ9LHsidGl0bGUiOiJKb2JzIiwidXJsIjoiXC9hYm91dFwvam9icy5waHAifSx7InRpdGxlIjoiVm9sdW50ZWVyIiwidXJsIjoiXC9hYm91dFwvdm9sdW50ZWVycG9zaXRpb25zLnBocCJ9LHsidGl0bGUiOiJQZW9wbGUiLCJ1cmwiOiJcL2Fib3V0XC9iaW9zLnBocCJ9XSwic29mdHdhcmUiOnsiaGVhZGluZyI6IlNvZnR3YXJlIiwiaWNvbkxpbmtzIjpbeyJpY29uIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9zZXJ2aWNlc1wvaW1nXC9pbnRlcm5ldGFyY2FkZSIsInRpdGxlIjoiSW50ZXJuZXQgQXJjYWRlIiwidXJsIjoiXC9kZXRhaWxzXC9pbnRlcm5ldGFyY2FkZSJ9LHsiaWNvbiI6Imh0dHBzOlwvXC9hcmNoaXZlLm9yZ1wvc2VydmljZXNcL2ltZ1wvY29uc29sZWxpdmluZ3Jvb20iLCJ0aXRsZSI6IkNvbnNvbGUgTGl2aW5nIFJvb20iLCJ1cmwiOiJcL2RldGFpbHNcL2NvbnNvbGVsaXZpbmdyb29tIn1dLCJmZWF0dXJlZExpbmtzIjpbeyJ0aXRsZSI6IkFsbCBTb2Z0d2FyZSIsInVybCI6IlwvZGV0YWlsc1wvc29mdHdhcmUifSx7InRpdGxlIjoiVGhpcyBKdXN0IEluIiwidXJsIjoiXC9zZWFyY2gucGhwP3F1ZXJ5PW1lZGlhdHlwZTpzb2Z0d2FyZSZzb3J0PS1wdWJsaWNkYXRlIn0seyJ0aXRsZSI6Ik9sZCBTY2hvb2wgRW11bGF0aW9uIiwidXJsIjoiXC9kZXRhaWxzXC90b3NlYyJ9LHsidGl0bGUiOiJNUy1ET1MgR2FtZXMiLCJ1cmwiOiJcL2RldGFpbHNcL3NvZnR3YXJlbGlicmFyeV9tc2Rvc19nYW1lcyJ9LHsidGl0bGUiOiJIaXN0b3JpY2FsIFNvZnR3YXJlIiwidXJsIjoiXC9kZXRhaWxzXC9oaXN0b3JpY2Fsc29mdHdhcmUifSx7InRpdGxlIjoiQ2xhc3NpYyBQQyBHYW1lcyIsInVybCI6IlwvZGV0YWlsc1wvY2xhc3NpY3BjZ2FtZXMifSx7InRpdGxlIjoiU29mdHdhcmUgTGlicmFyeSIsInVybCI6IlwvZGV0YWlsc1wvc29mdHdhcmVsaWJyYXJ5In1dLCJsaW5rcyI6W3sidGl0bGUiOiJLb2RpIEFyY2hpdmUgYW5kIFN1cHBvcnQgRmlsZSIsInVybCI6IlwvZGV0YWlsc1wva29kaV9hcmNoaXZlIn0seyJ0aXRsZSI6IlZpbnRhZ2UgU29mdHdhcmUiLCJ1cmwiOiJcL2RldGFpbHNcL3ZpbnRhZ2Vzb2Z0d2FyZSJ9LHsidGl0bGUiOiJBUEsiLCJ1cmwiOiJcL2RldGFpbHNcL2Fwa2FyY2hpdmUifSx7InRpdGxlIjoiTVMtRE9TIiwidXJsIjoiXC9kZXRhaWxzXC9zb2Z0d2FyZWxpYnJhcnlfbXNkb3MifSx7InRpdGxlIjoiQ0QtUk9NIFNvZnR3YXJlIiwidXJsIjoiXC9kZXRhaWxzXC9jZC1yb21zIn0seyJ0aXRsZSI6IkNELVJPTSBTb2Z0d2FyZSBMaWJyYXJ5IiwidXJsIjoiXC9kZXRhaWxzXC9jZHJvbXNvZnR3YXJlIn0seyJ0aXRsZSI6IlNvZnR3YXJlIFNpdGVzIiwidXJsIjoiXC9kZXRhaWxzXC9zb2Z0d2FyZXNpdGVzIn0seyJ0aXRsZSI6IlR1Y293cyBTb2Z0d2FyZSBMaWJyYXJ5IiwidXJsIjoiXC9kZXRhaWxzXC90dWNvd3MifSx7InRpdGxlIjoiU2hhcmV3YXJlIENELVJPTXMiLCJ1cmwiOiJcL2RldGFpbHNcL2NkYmJzYXJjaGl2ZSJ9LHsidGl0bGUiOiJTb2Z0d2FyZSBDYXBzdWxlcyBDb21waWxhdGlvbiIsInVybCI6IlwvZGV0YWlsc1wvc29mdHdhcmVjYXBzdWxlcyJ9LHsidGl0bGUiOiJDRC1ST00gSW1hZ2VzIiwidXJsIjoiXC9kZXRhaWxzXC9jZHJvbWltYWdlcyJ9LHsidGl0bGUiOiJaWCBTcGVjdHJ1bSIsInVybCI6IlwvZGV0YWlsc1wvc29mdHdhcmVsaWJyYXJ5X3p4X3NwZWN0cnVtIn0seyJ0aXRsZSI6IkRPT00gTGV2ZWwgQ0QiLCJ1cmwiOiJcL2RldGFpbHNcL2Rvb20tY2RzIn1dfSwidGV4dHMiOnsiaGVhZGluZyI6IkJvb2tzIiwiaWNvbkxpbmtzIjpbeyJ0aXRsZSI6IkJvb2tzIHRvIEJvcnJvdyIsImljb24iOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlcnZpY2VzXC9pbWdcL2lubGlicmFyeSIsInVybCI6IlwvZGV0YWlsc1wvaW5saWJyYXJ5In0seyJ0aXRsZSI6Ik9wZW4gTGlicmFyeSIsImljb24iOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL2ltYWdlc1wvd2lkZ2V0T0wucG5nIiwidXJsIjoiaHR0cHM6XC9cL29wZW5saWJyYXJ5Lm9yZ1wvIn1dLCJmZWF0dXJlZExpbmtzIjpbeyJ0aXRsZSI6IkFsbCBCb29rcyIsInVybCI6IlwvZGV0YWlsc1wvYm9va3MifSx7InRpdGxlIjoiQWxsIFRleHRzIiwidXJsIjoiXC9kZXRhaWxzXC90ZXh0cyJ9LHsidGl0bGUiOiJUaGlzIEp1c3QgSW4iLCJ1cmwiOiJcL3NlYXJjaC5waHA/cXVlcnk9bWVkaWF0eXBlOnRleHRzJnNvcnQ9LXB1YmxpY2RhdGUifSx7InRpdGxlIjoiU21pdGhzb25pYW4gTGlicmFyaWVzIiwidXJsIjoiXC9kZXRhaWxzXC9zbWl0aHNvbmlhbiJ9LHsidGl0bGUiOiJGRURMSU5LIChVUykiLCJ1cmwiOiJcL2RldGFpbHNcL2ZlZGxpbmsifSx7InRpdGxlIjoiR2VuZWFsb2d5IiwidXJsIjoiXC9kZXRhaWxzXC9nZW5lYWxvZ3kifSx7InRpdGxlIjoiTGluY29sbiBDb2xsZWN0aW9uIiwidXJsIjoiXC9kZXRhaWxzXC9saW5jb2xuY29sbGVjdGlvbiJ9XSwibGlua3MiOlt7InRpdGxlIjoiQW1lcmljYW4gTGlicmFyaWVzIiwidXJsIjoiXC9kZXRhaWxzXC9hbWVyaWNhbmEifSx7InRpdGxlIjoiQ2FuYWRpYW4gTGlicmFyaWVzIiwidXJsIjoiXC9kZXRhaWxzXC90b3JvbnRvIn0seyJ0aXRsZSI6IlVuaXZlcnNhbCBMaWJyYXJ5IiwidXJsIjoiXC9kZXRhaWxzXC91bml2ZXJzYWxsaWJyYXJ5In0seyJ0aXRsZSI6IlByb2plY3QgR3V0ZW5iZXJnIiwidXJsIjoiXC9kZXRhaWxzXC9ndXRlbmJlcmcifSx7InRpdGxlIjoiQ2hpbGRyZW4ncyBMaWJyYXJ5IiwidXJsIjoiXC9kZXRhaWxzXC9pYWNsIn0seyJ0aXRsZSI6IkJpb2RpdmVyc2l0eSBIZXJpdGFnZSBMaWJyYXJ5IiwidXJsIjoiXC9kZXRhaWxzXC9iaW9kaXZlcnNpdHkifSx7InRpdGxlIjoiVGhlIHJlcG9ydCBvZiB0aGUgRGVwYXJ0bWVudCBvZiBQYXRob2xvZ3kgb2YgVW5pdmVyc2l0eSBDb2xsZWdlLCBMb25kb24uLi4gdG9nZXRoZXIgd2l0aCBhIGNvbGxlY3Rpb24gb2YgcGFwZXJzIGFuZCBhYnN0cmFjdHMgcHVibGlzaGVkIGZyb20gdGhlIExhYm9yYXRvcnkiLCJ1cmwiOiJcL2RldGFpbHNcL2IzMTUxMzI3eCJ9LHsidGl0bGUiOiJCb29rcyBieSBMYW5ndWFnZSIsInVybCI6IlwvZGV0YWlsc1wvYm9va3NieWxhbmd1YWdlIn0seyJ0aXRsZSI6IkFkZGl0aW9uYWwgQ29sbGVjdGlvbnMiLCJ1cmwiOiJcL2RldGFpbHNcL2FkZGl0aW9uYWxfY29sbGVjdGlvbnMifV19LCJ3ZWIiOnsibW9iaWxlQXBwc0xpbmtzIjpbeyJ1cmwiOiJodHRwczpcL1wvYXBwcy5hcHBsZS5jb21cL3VzXC9hcHBcL3dheWJhY2stbWFjaGluZVwvaWQxMjAxODg4MzEzIiwidGl0bGUiOiJXYXliYWNrIE1hY2hpbmUgKGlPUykiLCJleHRlcm5hbCI6dHJ1ZX0seyJ1cmwiOiJodHRwczpcL1wvcGxheS5nb29nbGUuY29tXC9zdG9yZVwvYXBwc1wvZGV0YWlscz9pZD1jb20uYXJjaGl2ZS53YXliYWNrbWFjaGluZSZobD1lbl9VUyIsInRpdGxlIjoiV2F5YmFjayBNYWNoaW5lIChBbmRyb2lkKSIsImV4dGVybmFsIjp0cnVlfV0sImJyb3dzZXJFeHRlbnNpb25zTGlua3MiOlt7InVybCI6Imh0dHBzOlwvXC9jaHJvbWUuZ29vZ2xlLmNvbVwvd2Vic3RvcmVcL2RldGFpbFwvc2F2ZS10by10aGUtd2F5YmFjay1tYWNoaVwvZWVicGlvYWFpbGJqb2ptZGJtbHBvbWZnaWpubGNlbWs/aGw9ZW4iLCJ0aXRsZSI6IkNocm9tZSIsImV4dGVybmFsIjp0cnVlfSx7InVybCI6Imh0dHBzOlwvXC9hZGRvbnMubW96aWxsYS5vcmdcL2VuLVVTXC9maXJlZm94XC9hZGRvblwvd2F5YmFjay1tYWNoaW5lX25ld1wvIiwidGl0bGUiOiJGaXJlZm94IiwiZXh0ZXJuYWwiOnRydWV9LHsidXJsIjoiaHR0cHM6XC9cL2FwcHMuYXBwbGUuY29tXC91c1wvYXBwXC93YXliYWNrLW1hY2hpbmVcL2lkMTQ3MjQzMjQyMj9tdD0xMiIsInRpdGxlIjoiU2FmYXJpIiwiZXh0ZXJuYWwiOnRydWV9XSwiYXJjaGl2ZUl0TGlua3MiOlt7InVybCI6Imh0dHBzOlwvXC93d3cuYXJjaGl2ZS1pdC5vcmdcL2V4cGxvcmUiLCJ0aXRsZSI6IkV4cGxvcmUgdGhlIENvbGxlY3Rpb25zIn0seyJ1cmwiOiJodHRwczpcL1wvd3d3LmFyY2hpdmUtaXQub3JnXC9ibG9nXC9sZWFybi1tb3JlXC8iLCJ0aXRsZSI6IkxlYXJuIE1vcmUifSx7InVybCI6Imh0dHBzOlwvXC93d3cuYXJjaGl2ZS1pdC5vcmdcL2NvbnRhY3QtdXMiLCJ0aXRsZSI6IkJ1aWxkIENvbGxlY3Rpb25zIn1dfSwidmlkZW8iOnsiaGVhZGluZyI6IlZpZGVvIiwiaWNvbkxpbmtzIjpbeyJpY29uIjoiaHR0cHM6XC9cL2FyY2hpdmUub3JnXC9zZXJ2aWNlc1wvaW1nXC90diIsInRpdGxlIjoiVFYgTmV3cyIsInVybCI6IlwvZGV0YWlsc1wvdHYifSx7Imljb24iOiJodHRwczpcL1wvYXJjaGl2ZS5vcmdcL3NlcnZpY2VzXC9pbWdcLzkxMSIsInRpdGxlIjoiVW5kZXJzdGFuZGluZyA5XC8xMSIsInVybCI6IlwvZGV0YWlsc1wvOTExIn1dLCJmZWF0dXJlZExpbmtzIjpbeyJ0aXRsZSI6IkFsbCBWaWRlbyIsInVybCI6IlwvZGV0YWlsc1wvbW92aWVzIn0seyJ0aXRsZSI6IlRoaXMgSnVzdCBJbiIsInVybCI6Ilwvc2VhcmNoLnBocD9xdWVyeT1tZWRpYXR5cGU6bW92aWVzJnNvcnQ9LXB1YmxpY2RhdGUifSx7InRpdGxlIjoiUHJlbGluZ2VyIEFyY2hpdmVzIiwidXJsIjoiXC9kZXRhaWxzXC9wcmVsaW5nZXIifSx7InRpdGxlIjoiRGVtb2NyYWN5IE5vdyEiLCJ1cmwiOiJcL2RldGFpbHNcL2RlbW9jcmFjeV9ub3dfdmlkIn0seyJ0aXRsZSI6Ik9jY3VweSBXYWxsIFN0cmVldCIsInVybCI6IlwvZGV0YWlsc1wvb2NjdXB5d2FsbHN0cmVldCJ9LHsidGl0bGUiOiJUViBOU0EgQ2xpcCBMaWJyYXJ5IiwidXJsIjoiXC9kZXRhaWxzXC9uc2EifV0sImxpbmtzIjpbeyJ0aXRsZSI6IkFuaW1hdGlvbiAmIENhcnRvb25zIiwidXJsIjoiXC9kZXRhaWxzXC9hbmltYXRpb25hbmRjYXJ0b29ucyJ9LHsidGl0bGUiOiJBcnRzICYgTXVzaWMiLCJ1cmwiOiJcL2RldGFpbHNcL2FydHNhbmRtdXNpY3ZpZGVvcyJ9LHsidGl0bGUiOiJDb21wdXRlcnMgJiBUZWNobm9sb2d5IiwidXJsIjoiXC9kZXRhaWxzXC9jb21wdXRlcnNhbmR0ZWNodmlkZW9zIn0seyJ0aXRsZSI6IkN1bHR1cmFsICYgQWNhZGVtaWMgRmlsbXMiLCJ1cmwiOiJcL2RldGFpbHNcL2N1bHR1cmFsYW5kYWNhZGVtaWNmaWxtcyJ9LHsidGl0bGUiOiJFcGhlbWVyYWwgRmlsbXMiLCJ1cmwiOiJcL2RldGFpbHNcL2VwaGVtZXJhIn0seyJ0aXRsZSI6Ik1vdmllcyIsInVybCI6IlwvZGV0YWlsc1wvbW92aWVzYW5kZmlsbXMifSx7InRpdGxlIjoiTmV3cyAmIFB1YmxpYyBBZmZhaXJzIiwidXJsIjoiXC9kZXRhaWxzXC9uZXdzYW5kcHVibGljYWZmYWlycyJ9LHsidGl0bGUiOiJTcGlyaXR1YWxpdHkgJiBSZWxpZ2lvbiIsInVybCI6IlwvZGV0YWlsc1wvc3Bpcml0dWFsaXR5YW5kcmVsaWdpb24ifSx7InRpdGxlIjoiU3BvcnRzIFZpZGVvcyIsInVybCI6IlwvZGV0YWlsc1wvc3BvcnRzIn0seyJ0aXRsZSI6IlRlbGV2aXNpb24iLCJ1cmwiOiJcL2RldGFpbHNcL3RlbGV2aXNpb24ifSx7InRpdGxlIjoiVmlkZW9nYW1lIFZpZGVvcyIsInVybCI6IlwvZGV0YWlsc1wvZ2FtZXZpZGVvcyJ9LHsidGl0bGUiOiJWbG9ncyIsInVybCI6IlwvZGV0YWlsc1wvdmxvZ3MifSx7InRpdGxlIjoiWW91dGggTWVkaWEiLCJ1cmwiOiJcL2RldGFpbHNcL3lvdXRoX21lZGlhIn1dfSwidXNlciI6W10sInNpZ25lZE91dCI6W3sidXJsIjoiXC9hY2NvdW50XC9zaWdudXAiLCJ0aXRsZSI6IlNpZ24gdXAgZm9yIGZyZWUiLCJhbmFseXRpY3NFdmVudCI6IkF2YXRhck1lbnUtU2lnbnVwIn0seyJ1cmwiOiJcL2FjY291bnRcL2xvZ2luIiwidGl0bGUiOiJMb2cgaW4iLCJhbmFseXRpY3NFdmVudCI6IkF2YXRhck1lbnUtTG9naW4ifV19">
                                       <noscript class=\'static-content\'>      <style scope="icon-hamburger-1">.icon-hamburger-1 svg.icon-hamburger {
         display: block;
       }
@@ -1699,8 +1702,9 @@ return [
     <!----></signed-out-dropdown>
 
     </noscript>                      </ia-topnav>
-        </div>
-            <input class="js-tvsearch" type="hidden" value=\'{"ands":[],"minday":"06/04/2009","maxday":"09/23/2020"}\'/>
+
+                  </div>
+            <input class="js-tvsearch" type="hidden" value=\'{"ands":[],"minday":"06/04/2009","maxday":"04/04/2021"}\'/>
     
         <!-- Begin page content -->
         <main id="maincontent">
@@ -1932,6 +1936,7 @@ return [
         $(".toggle-flag-overlay").click(function(e) {
           e.preventDefault();
           $("#theatre-ia-wrap").removeClass(\'flagged\');
+          $(\'.bookreader-playlist-container\').removeClass(\'hide\');
         });
 
         // overlay - checkboxes
@@ -2098,7 +2103,7 @@ return [
         <span
           class="item-stats-summary__count"
                       itemprop="userInteractionCount"
-                  >126</span>
+                  >132</span>
 
         Views      </p>
 
@@ -2190,7 +2195,7 @@ return [
       
                 </section>
         
-    <div class="boxy collection-list">
+    <div class="boxy white-bg collection-list">
               <section class="collection-list">
           <h5 class="collection-title">IN COLLECTIONS</h5>
                               <div class="collection-item">
@@ -2211,7 +2216,7 @@ return [
           <a
             href="/details/newsandpublicaffairs"
             data-event-click-tracking="CollectionList|newsandpublicaffairs"
-          >News & Public Affairs</a>
+          >News &amp; Public Affairs</a>
                       <div class="item-img">
               <a
                 href="/details/newsandpublicaffairs"
@@ -2224,7 +2229,7 @@ return [
                           </section>
           </div>
 
-              <section class="boxy item-upload-info">
+              <section class="boxy white-bg item-upload-info">
       <p>
         Uploaded by
                   <a href="/details/@democracy_now" class="item-upload-info__uploader-name">
@@ -2242,7 +2247,7 @@ return [
   <div id="also-found"
     class="container container-ia width-max"
     data-identifier="dn2015-0220_vid"
-    data-host-name="www14.us.archive.org"
+    data-host-name="www23.us.archive.org"
     data-mediatype="movies">
     <div class="row">
       <div class="col-xs-12 tilebars">
@@ -2280,48 +2285,51 @@ return [
     
     
     <!-- Timing ...
-     rendered on: www14.us.archive.org
- seconds diff sec               message   stack(file:line:function)
+     rendered on: www23.us.archive.org
+ seconds diff sec                       message   stack(file:line:function)
 =========================================================
-  0.0000   0.0000         petabox start   var/cache/petabox/petabox/www/sf/details.php:1:require
+  0.0000   0.0000                 petabox start   var/cache/petabox/petabox/www/sf/details.php:1:require
                                              |common/ia:66:require_once
-                                             |setup.php:384:log
-  0.0071   0.0071      redis_read start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |setup.php:383:log
+  0.0145   0.0145              redis_read start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:183:getItem
                                              |common/Item.inc:77:parseMetadata
                                              |Item.inc:132:get_obj
-                                             |Metadata.inc:538:_get_obj
-                                             |Metadata.inc:568:run_pipeline
-                                             |Metadata.inc:1433:read
-                                             |Metadata/AdapterPipeline.inc:259:_read
+                                             |Metadata.inc:477:_get_obj
+                                             |Metadata.inc:507:run_pipeline
+                                             |Metadata.inc:1352:read
+                                             |Metadata/AdapterPipeline.inc:256:_read
                                              |AdapterPipeline.inc:292:pipeline
                                              |AdapterPipeline.inc:377:fetch
-                                             |AdapterPipeline.inc:613:fetch
-                                             |RecordServer.inc:144:execute
-                                             |RecordServer/FetchRecordOp.inc:52:log
-  0.0123   0.0052     redis_read finish   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |AdapterPipeline.inc:639:fetch
+                                             |RecordServer.inc:148:execute
+                                             |RecordServer/FetchRecordOp.inc:57:log
+  0.0369   0.0224             redis_read finish   var/cache/petabox/petabox/www/sf/details.php:62:getItem
                                              |details.php:183:getItem
                                              |common/Item.inc:77:parseMetadata
                                              |Item.inc:132:get_obj
-                                             |Metadata.inc:538:_get_obj
-                                             |Metadata.inc:568:run_pipeline
-                                             |Metadata.inc:1433:read
-                                             |Metadata/AdapterPipeline.inc:259:_read
+                                             |Metadata.inc:477:_get_obj
+                                             |Metadata.inc:507:run_pipeline
+                                             |Metadata.inc:1352:read
+                                             |Metadata/AdapterPipeline.inc:256:_read
                                              |AdapterPipeline.inc:292:pipeline
                                              |AdapterPipeline.inc:377:fetch
-                                             |AdapterPipeline.inc:613:fetch
-                                             |RecordServer.inc:144:execute
-                                             |RecordServer/FetchRecordOp.inc:58:log
-  0.0538   0.0415                render   var/cache/petabox/petabox/www/sf/details.php:82:log
-  0.0540   0.0002      start db connect   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4805:setupAndActionsFlags
-                                             |DetailsFlags.inc:22:getFlags
-                                             |DetailsFlags.inc:116:__callStatic
-                                             |ValidateArgs.inc:63:counts_by_flag_VALIDATED
-                                             |Flags.inc:188:get_VALIDATED
-                                             |Flags.inc:99:get_memberships
-                                             |SimpleLists.inc:22:get_records
-                                             |SimpleLists/Storage.inc:27:q
+                                             |AdapterPipeline.inc:639:fetch
+                                             |RecordServer.inc:148:execute
+                                             |RecordServer/FetchRecordOp.inc:63:log
+  0.0561   0.0192   cache_calling_closure start   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |details.php:201:getExtraInfo
+                                             |common/Item.inc:621:value
+                                             |Cache.inc:120:value
+                                             |RedisCache.inc:321:log
+  0.0575   0.0015              start db connect   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |details.php:201:getExtraInfo
+                                             |common/Item.inc:621:value
+                                             |Cache.inc:120:value
+                                             |RedisCache.inc:350:{closure}
+                                             |Item.inc:573:title
+                                             |Collection.inc:37:q1
+                                             |DB.inc:397:q
                                              |DB.inc:381:execute
                                              |DB.inc:1065:query
                                              |DB.inc:136:query0
@@ -2329,15 +2337,14 @@ return [
                                              |DB.inc:765:connect
                                              |DB.inc:105:conn
                                              |DB.inc:867:log
-  0.0644   0.0104                got db   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4805:setupAndActionsFlags
-                                             |DetailsFlags.inc:22:getFlags
-                                             |DetailsFlags.inc:116:__callStatic
-                                             |ValidateArgs.inc:63:counts_by_flag_VALIDATED
-                                             |Flags.inc:188:get_VALIDATED
-                                             |Flags.inc:99:get_memberships
-                                             |SimpleLists.inc:22:get_records
-                                             |SimpleLists/Storage.inc:27:q
+  0.1020   0.0445                        got db   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |details.php:201:getExtraInfo
+                                             |common/Item.inc:621:value
+                                             |Cache.inc:120:value
+                                             |RedisCache.inc:350:{closure}
+                                             |Item.inc:573:title
+                                             |Collection.inc:37:q1
+                                             |DB.inc:397:q
                                              |DB.inc:381:execute
                                              |DB.inc:1065:query
                                              |DB.inc:136:query0
@@ -2345,55 +2352,91 @@ return [
                                              |DB.inc:765:connect
                                              |DB.inc:105:conn
                                              |DB.inc:914:log
-  0.0711   0.0067   begin session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4811:nav
-                                             |Details.inc:4618:head
-                                             |Nav.inc:124:__construct
-                                             |Nav.inc:200:session_start
+  0.1045   0.0025              start db connect   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |details.php:201:getExtraInfo
+                                             |common/Item.inc:621:value
+                                             |Cache.inc:120:value
+                                             |RedisCache.inc:350:{closure}
+                                             |Item.inc:595:connectReadOnly
+                                             |DB.inc:106:conn
+                                             |DB.inc:867:log
+  0.1046   0.0001    got existing db connection   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |details.php:201:getExtraInfo
+                                             |common/Item.inc:621:value
+                                             |Cache.inc:120:value
+                                             |RedisCache.inc:350:{closure}
+                                             |Item.inc:595:connectReadOnly
+                                             |DB.inc:106:conn
+                                             |DB.inc:872:log
+  0.1049   0.0002   getting "search" item stats   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |details.php:201:getExtraInfo
+                                             |common/Item.inc:621:value
+                                             |Cache.inc:120:value
+                                             |RedisCache.inc:350:{closure}
+                                             |Item.inc:613:get
+                                             |ItemStats.inc:22:log
+  0.1378   0.0329       got "search" item stats   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |details.php:201:getExtraInfo
+                                             |common/Item.inc:621:value
+                                             |Cache.inc:120:value
+                                             |RedisCache.inc:350:{closure}
+                                             |Item.inc:613:get
+                                             |ItemStats.inc:28:log
+  0.1379   0.0001    cache_calling_closure done   var/cache/petabox/petabox/www/sf/details.php:62:getItem
+                                             |details.php:201:getExtraInfo
+                                             |common/Item.inc:621:value
+                                             |Cache.inc:120:value
+                                             |RedisCache.inc:357:log
+  0.1448   0.0069                        render   var/cache/petabox/petabox/www/sf/details.php:82:log
+  0.1566   0.0119           begin session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4998:nav
+                                             |Details.inc:4794:head
+                                             |Nav.inc:129:__construct
+                                             |Nav.inc:221:session_start
                                              |Cookies.inc:56:log
-  0.0712   0.0001    done session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4811:nav
-                                             |Details.inc:4618:head
-                                             |Nav.inc:124:__construct
-                                             |Nav.inc:200:session_start
-                                             |Cookies.inc:62:log
-  0.0746   0.0033          header drawn   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4811:nav
-                                             |Details.inc:4622:log
-  0.0913   0.0168      redis_read start   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4843:info_right
-                                             |Details.inc:3006:get_status
-                                             |Lending/LendingACL.php:116:get_metadata_fields
+  0.1568   0.0002            done session_start   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4998:nav
+                                             |Details.inc:4794:head
+                                             |Nav.inc:129:__construct
+                                             |Nav.inc:221:session_start
+                                             |Cookies.inc:66:log
+  0.1649   0.0081                  header drawn   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:4998:nav
+                                             |Details.inc:4798:log
+  0.1804   0.0155              redis_read start   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:5030:info_right
+                                             |Details.inc:3186:get_status
+                                             |Lending/LendingACL.php:117:get_metadata_fields
                                              |LendingUtils.php:526:cached_metadata
                                              |LendingUtils.php:70:get_obj
-                                             |Metadata.inc:538:_get_obj
-                                             |Metadata.inc:568:run_pipeline
-                                             |Metadata.inc:1433:read
-                                             |Metadata/AdapterPipeline.inc:259:_read
+                                             |Metadata.inc:477:_get_obj
+                                             |Metadata.inc:507:run_pipeline
+                                             |Metadata.inc:1352:read
+                                             |Metadata/AdapterPipeline.inc:256:_read
                                              |AdapterPipeline.inc:292:pipeline
                                              |AdapterPipeline.inc:377:fetch
-                                             |AdapterPipeline.inc:613:fetch
-                                             |RecordServer.inc:144:execute
-                                             |RecordServer/FetchRecordOp.inc:52:log
-  0.0935   0.0021     redis_read finish   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4843:info_right
-                                             |Details.inc:3006:get_status
-                                             |Lending/LendingACL.php:116:get_metadata_fields
+                                             |AdapterPipeline.inc:639:fetch
+                                             |RecordServer.inc:148:execute
+                                             |RecordServer/FetchRecordOp.inc:57:log
+  0.1820   0.0016             redis_read finish   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:5030:info_right
+                                             |Details.inc:3186:get_status
+                                             |Lending/LendingACL.php:117:get_metadata_fields
                                              |LendingUtils.php:526:cached_metadata
                                              |LendingUtils.php:70:get_obj
-                                             |Metadata.inc:538:_get_obj
-                                             |Metadata.inc:568:run_pipeline
-                                             |Metadata.inc:1433:read
-                                             |Metadata/AdapterPipeline.inc:259:_read
+                                             |Metadata.inc:477:_get_obj
+                                             |Metadata.inc:507:run_pipeline
+                                             |Metadata.inc:1352:read
+                                             |Metadata/AdapterPipeline.inc:256:_read
                                              |AdapterPipeline.inc:292:pipeline
                                              |AdapterPipeline.inc:377:fetch
-                                             |AdapterPipeline.inc:613:fetch
-                                             |RecordServer.inc:144:execute
-                                             |RecordServer/FetchRecordOp.inc:58:log
-  0.1144   0.0209              bug dump   var/cache/petabox/petabox/www/sf/details.php:83:render
-                                             |common/Details.inc:4866:footer
-                                             |setup.php:153:footer
-                                             |Nav.inc:1193:dump
+                                             |AdapterPipeline.inc:639:fetch
+                                             |RecordServer.inc:148:execute
+                                             |RecordServer/FetchRecordOp.inc:63:log
+  0.1905   0.0085                      bug dump   var/cache/petabox/petabox/www/sf/details.php:83:render
+                                             |common/Details.inc:5053:footer
+                                             |setup.php:152:footer
+                                             |Nav.inc:1143:dump
                                              |Bug.inc:102:log
     -->
     <script type="text/javascript">
@@ -2403,8 +2446,8 @@ if (window.archive_analytics) {
   var vs = window.archive_analytics.get_data_packets();
   for (var i in vs) {
     vs[i][\'cache_bust\']=Math.random();
-    vs[i][\'server_ms\']=114;
-    vs[i][\'server_name\']="www14.us.archive.org";
+    vs[i][\'server_ms\']=190;
+    vs[i][\'server_name\']="www23.us.archive.org";
       }
 
   if (document.querySelectorAll(\'.more_search\').length) {
@@ -2412,9 +2455,9 @@ if (window.archive_analytics) {
   }
 }
 </script>
-              <img src="//analytics.archive.org/0.gif?kind=track_js&track_js_case=control&cache_bust=1672003311" />
+              <img src="//analytics.archive.org/0.gif?kind=track_js&track_js_case=control&cache_bust=1400663919" alt="" />
           <noscript>
-        <img src="//analytics.archive.org/0.gif?kind=track_js&track_js_case=disabled&cache_bust=607573042" />
+        <img src="//analytics.archive.org/0.gif?kind=track_js&track_js_case=disabled&cache_bust=1342860571" />
       </noscript>
           <script>
         document.addEventListener(\'DOMContentLoaded\', function() {

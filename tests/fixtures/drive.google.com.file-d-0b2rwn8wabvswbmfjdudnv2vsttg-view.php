@@ -7,7 +7,7 @@ return [
     'cms' => null,
     'code' => null,
     'description' => null,
-    'favicon' => 'https://ssl.gstatic.com/docs/doclist/images/icon_14_audio_favicon.ico',
+    'favicon' => 'https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png',
     'feeds' => [],
     'icon' => null,
     'image' => null,

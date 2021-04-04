@@ -9,9 +9,9 @@ return [
             'envoy'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:47:17 GMT',
-            'Wed, 23 Sep 2020 21:47:17 GMT',
-            'Wed, 23 Sep 2020 21:47:17 GMT'
+            'Sun, 04 Apr 2021 15:20:48 GMT',
+            'Sun, 04 Apr 2021 15:20:48 GMT',
+            'Sun, 04 Apr 2021 15:20:48 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -32,15 +32,15 @@ return [
             'nosniff',
             'nosniff'
         ],
-        'vary' => [
-            'Accept-Encoding',
-            'Accept-Encoding',
-            'Accept-Encoding,Accept-Encoding'
-        ],
         'content-encoding' => [
             'gzip',
             'gzip',
             'gzip'
+        ],
+        'vary' => [
+            'Accept-Encoding',
+            'Accept-Encoding',
+            'Accept-Encoding,Accept-Encoding'
         ],
         'via' => [
             'HTTP/2 edgeproxy, 1.1 google',
@@ -52,14 +52,18 @@ return [
             'clear  HTTP/2 200',
             'clear'
         ],
+        'spotify-request-id' => [
+            'd23d3b20-0868-423e-9d1e-fc3c1bcf9703'
+        ],
         'set-cookie' => [
-            'sp_t=53c6e9a6a48a6ff01cd59ce25f202bef; path=/; expires=Sun, 22 Nov 2020 21:47:17 GMT; domain=.spotify.com; samesite=none; secure'
+            'sp_t=f1fda6f431b00e9d674a0f5e4a2a58d2; path=/; expires=Mon, 04 Apr 2022 15:20:48 GMT; domain=.spotify.com; samesite=none; secure',
+            'sp_landing=https%3A%2F%2Fopen.spotify.com%2Foembed; path=/; expires=Mon, 05 Apr 2021 15:20:48 GMT; domain=.spotify.com; samesite=none; secure; httponly'
         ],
         'Content-Location' => [
             'https://open.spotify.com/oembed?url=https%3A%2F%2Fopen.spotify.com%2Falbum%2F7s66wU1XJ2NsUuWM2NKiUV&format=json'
         ],
         'X-Request-Time' => [
-            '0.260 ms'
+            '0.240 ms'
         ]
     ],
     'statusCode' => 200,

@@ -15,7 +15,7 @@ return [
     'favicon' => 'http://slides.com/favicon.ico',
     'feeds' => [],
     'icon' => null,
-    'image' => 'https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg',
+    'image' => 'https://media.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg',
     'keywords' => [],
     'language' => null,
     'languages' => [],

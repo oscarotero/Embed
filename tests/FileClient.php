@@ -11,6 +11,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
+use Exception;
 
 /**
  * Decorator to cache requests into files
@@ -39,8 +40,10 @@ final class FileClient implements ClientInterface
         $uri = $request->getUri();
         $filename = $this->path.'/'.self::getFilename($uri);
 
-        if ($this->mode === 0 && is_file($filename)) {
+        if ($this->mode < 1 && is_file($filename)) {
             $response = $this->readResponse($filename);
+        } elseif ($this->mode === -1) {
+            throw new Exception("New unexpected request to {$uri}");
         } else {
             $response = $this->client->sendRequest($request);
         }

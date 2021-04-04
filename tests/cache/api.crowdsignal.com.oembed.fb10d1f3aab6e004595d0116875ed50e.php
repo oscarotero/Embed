@@ -7,7 +7,7 @@ return [
             'nginx'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:32 GMT'
+            'Sun, 04 Apr 2021 15:27:37 GMT'
         ],
         'content-type' => [
             'application/json'
@@ -28,7 +28,7 @@ return [
             'https://api.crowdsignal.com/oembed?url=https%3A%2F%2Fpoll.fm%2F7012505&format=json'
         ],
         'X-Request-Time' => [
-            '0.619 ms'
+            '0.697 ms'
         ]
     ],
     'statusCode' => 200,

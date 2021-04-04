@@ -7,7 +7,7 @@ return [
             'nginx'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:47:03 GMT'
+            'Sun, 04 Apr 2021 15:20:41 GMT'
         ],
         'content-type' => [
             'application/json; charset=UTF-8'
@@ -17,6 +17,9 @@ return [
         ],
         'x-hacker' => [
             'If you\'re reading this, you should visit automattic.com/jobs and apply to join the fun, mention this header.'
+        ],
+        'host-header' => [
+            'WordPress.com'
         ],
         'content-encoding' => [
             'gzip'
@@ -31,7 +34,7 @@ return [
             'https://public-api.wordpress.com/oembed/?format=json&url=https%3A%2F%2Fwordpress.tv%2F2013%2F09%2F06%2Fdave-ross-optimize-image-files-like-a-pro%2F&for=wpcom-auto-discovery'
         ],
         'X-Request-Time' => [
-            '0.254 ms'
+            '0.277 ms'
         ]
     ],
     'statusCode' => 200,

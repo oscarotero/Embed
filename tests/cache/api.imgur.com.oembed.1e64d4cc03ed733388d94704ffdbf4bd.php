@@ -16,13 +16,13 @@ return [
             'bytes'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:12 GMT'
+            'Sun, 04 Apr 2021 15:27:24 GMT'
         ],
         'age' => [
             '0'
         ],
         'x-served-by' => [
-            'cache-bwi5122-BWI, cache-mad22047-MAD'
+            'cache-bwi5162-BWI, cache-mad22049-MAD'
         ],
         'x-cache' => [
             'MISS, MISS'
@@ -31,7 +31,7 @@ return [
             '0, 0'
         ],
         'x-timer' => [
-            'S1600897573.563918,VS0,VE96'
+            'S1617550044.424972,VS0,VE91'
         ],
         'vary' => [
             'Accept-Encoding'
@@ -61,7 +61,7 @@ return [
             'https://api.imgur.com/oembed?url=https%3A%2F%2Fi.imgur.com%2FX6rkCc5.jpg&format=json'
         ],
         'X-Request-Time' => [
-            '0.195 ms'
+            '0.182 ms'
         ]
     ],
     'statusCode' => 200,

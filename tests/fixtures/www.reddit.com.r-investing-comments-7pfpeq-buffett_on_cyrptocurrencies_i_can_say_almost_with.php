@@ -11,7 +11,7 @@ return [
         'height' => null,
         'ratio' => null
     ],
-    'description' => '1,935 votes and 1,274 comments so far on Reddit',
+    'description' => '1,937 votes and 1,263 comments so far on Reddit',
     'favicon' => 'https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png',
     'feeds' => [],
     'icon' => 'https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png',

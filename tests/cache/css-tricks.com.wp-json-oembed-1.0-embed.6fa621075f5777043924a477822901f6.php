@@ -4,55 +4,55 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 23 Sep 2020 21:45:52 GMT'
+            'Sun, 04 Apr 2021 15:20:02 GMT'
         ],
         'content-type' => [
             'application/json; charset=UTF-8'
         ],
-        'x-robots-tag' => [
-            'noindex'
+        'set-cookie' => [
+            '__cfduid=dab9d4d918c5dea242d69a2a45f89476c1617549602; expires=Tue, 04-May-21 15:20:02 GMT; path=/; domain=.css-tricks.com; HttpOnly; SameSite=Lax; Secure'
         ],
-        'link' => [
-            '<https://css-tricks.com/wp-json/>; rel="https://api.w.org/"'
-        ],
-        'x-content-type-options' => [
-            'nosniff'
-        ],
-        'access-control-expose-headers' => [
-            'X-WP-Total, X-WP-TotalPages'
-        ],
-        'access-control-allow-headers' => [
-            'Authorization, Content-Type'
+        'cf-ray' => [
+            '63ab84b688ac0026-LHR'
         ],
         'allow' => [
             'GET'
         ],
-        'x-xss-protection' => [
-            '1'
+        'link' => [
+            '<https://css-tricks.com/wp-json/>; rel="https://api.w.org/"'
         ],
-        'referrer-policy' => [
-            'no-referrer-when-downgrade'
+        'strict-transport-security' => [
+            'max-age=31536000; includeSubDomains; preload'
         ],
-        'x-fw-server' => [
-            'Flywheel/5.1.0'
+        'vary' => [
+            'Accept-Encoding, Origin, Authorization'
         ],
-        'x-fw-dynamic' => [
-            'TRUE'
+        'cf-cache-status' => [
+            'BYPASS'
         ],
-        'x-fw-hash' => [
-            'lwxgywlq8s'
+        'access-control-allow-headers' => [
+            'Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type'
         ],
-        'x-fw-version' => [
-            '5.0.0'
+        'access-control-expose-headers' => [
+            'X-WP-Total, X-WP-TotalPages, Link'
         ],
-        'x-cacheable' => [
-            'YES'
+        'cf-apo-via' => [
+            'origin,qs'
+        ],
+        'cf-edge-cache' => [
+            'cache,platform=wordpress'
+        ],
+        'cf-request-id' => [
+            '093f11461b00000026cd826000000001'
+        ],
+        'expect-ct' => [
+            'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
         ],
         'fastly-restarts' => [
             '1'
         ],
-        'x-served-by' => [
-            'cache-mad22034-MAD'
+        'referrer-policy' => [
+            'no-referrer-when-downgrade'
         ],
         'x-cache' => [
             'MISS'
@@ -60,14 +60,23 @@ return [
         'x-cache-hits' => [
             '0'
         ],
-        'x-timer' => [
-            'S1600897552.514729,VS0,VE843'
+        'x-cacheable' => [
+            'YES'
         ],
-        'vary' => [
-            'Accept-Encoding, Origin, Authorization'
+        'x-content-type-options' => [
+            'nosniff'
+        ],
+        'x-fw-dynamic' => [
+            'TRUE'
+        ],
+        'x-fw-hash' => [
+            'lwxgywlq8s'
         ],
         'x-fw-serve' => [
             'TRUE'
+        ],
+        'x-fw-server' => [
+            'Flywheel/5.1.0'
         ],
         'x-fw-static' => [
             'YES'
@@ -75,23 +84,29 @@ return [
         'x-fw-type' => [
             'VISIT'
         ],
-        'cf-cache-status' => [
-            'DYNAMIC'
+        'x-fw-version' => [
+            '5.0.0'
         ],
-        'cf-request-id' => [
-            '055e8724920000c683f59fe200000001'
+        'x-robots-tag' => [
+            'noindex'
         ],
-        'expect-ct' => [
-            'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
+        'x-served-by' => [
+            'cache-lcy19260-LCY'
         ],
-        'strict-transport-security' => [
-            'max-age=31536000; includeSubDomains; preload'
+        'x-timer' => [
+            'S1617549602.363610,VS0,VE493'
+        ],
+        'x-xss-protection' => [
+            '1'
+        ],
+        'report-to' => [
+            '{"group":"cf-nel","endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=HwxScNeMtOe4xcnoQG1wR9DNPJsS1iT%2BzuuWwSmK8BjImMTBUHYnvjfS2fHuXhcE41%2FpAN1cRb0kPuq9ElltddQxg8j7vCksKWfVtsRWKQ%3D%3D"}],"max_age":604800}'
+        ],
+        'nel' => [
+            '{"report_to":"cf-nel","max_age":604800}'
         ],
         'server' => [
             'cloudflare'
-        ],
-        'cf-ray' => [
-            '5d777480e9afc683-MAD'
         ],
         'content-encoding' => [
             'br'
@@ -103,10 +118,10 @@ return [
             'https://css-tricks.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcss-tricks.com%2Fcss-scrollbar-with-progress-meter%2F'
         ],
         'X-Request-Time' => [
-            '0.962 ms'
+            '2.121 ms'
         ]
     ],
     'statusCode' => 200,
     'reasonPhrase' => 'OK',
-    'body' => '{"version":"1.0","provider_name":"CSS-Tricks","provider_url":"https:\\/\\/css-tricks.com","author_name":"Chris Coyier","author_url":"https:\\/\\/css-tricks.com\\/author\\/chriscoyier\\/","title":"CSS Scrollbar With Progress Meter | CSS-Tricks","type":"rich","width":600,"height":338,"html":"<blockquote class=\\"wp-embedded-content\\"><a href=\\"https:\\/\\/css-tricks.com\\/css-scrollbar-with-progress-meter\\/\\">CSS Scrollbar With Progress Meter<\\/a><\\/blockquote>\\n<script type=\'text\\/javascript\'>\\n<!--\\/\\/--><![CDATA[\\/\\/><!--\\n\\t\\t\\/*! This file is auto-generated *\\/\\n\\t\\t!function(d,l){\\"use strict\\";var e=!1,o=!1;if(l.querySelector)if(d.addEventListener)e=!0;if(d.wp=d.wp||{},!d.wp.receiveEmbedMessage)if(d.wp.receiveEmbedMessage=function(e){var t=e.data;if(t)if(t.secret||t.message||t.value)if(!\\/[^a-zA-Z0-9]\\/.test(t.secret)){var r,a,i,s,n,o=l.querySelectorAll(\'iframe[data-secret=\\"\'+t.secret+\'\\"]\'),c=l.querySelectorAll(\'blockquote[data-secret=\\"\'+t.secret+\'\\"]\');for(r=0;r<c.length;r++)c[r].style.display=\\"none\\";for(r=0;r<o.length;r++)if(a=o[r],e.source===a.contentWindow){if(a.removeAttribute(\\"style\\"),\\"height\\"===t.message){if(1e3<(i=parseInt(t.value,10)))i=1e3;else if(~~i<200)i=200;a.height=i}if(\\"link\\"===t.message)if(s=l.createElement(\\"a\\"),n=l.createElement(\\"a\\"),s.href=a.getAttribute(\\"src\\"),n.href=t.value,n.host===s.host)if(l.activeElement===a)d.top.location.href=t.value}}},e)d.addEventListener(\\"message\\",d.wp.receiveEmbedMessage,!1),l.addEventListener(\\"DOMContentLoaded\\",t,!1),d.addEventListener(\\"load\\",t,!1);function t(){if(!o){o=!0;var e,t,r,a,i=-1!==navigator.appVersion.indexOf(\\"MSIE 10\\"),s=!!navigator.userAgent.match(\\/Trident.*rv:11\\\\.\\/),n=l.querySelectorAll(\\"iframe.wp-embedded-content\\");for(t=0;t<n.length;t++){if(!(r=n[t]).getAttribute(\\"data-secret\\"))a=Math.random().toString(36).substr(2,10),r.src+=\\"#?secret=\\"+a,r.setAttribute(\\"data-secret\\",a);if(i||s)(e=r.cloneNode(!0)).removeAttribute(\\"security\\"),r.parentNode.replaceChild(e,r)}}}}(window,document);\\n\\/\\/--><!]]>\\n<\\/script><iframe sandbox=\\"allow-scripts\\" security=\\"restricted\\" src=\\"https:\\/\\/css-tricks.com\\/css-scrollbar-with-progress-meter\\/embed\\/\\" width=\\"600\\" height=\\"338\\" title=\\"&#8220;CSS Scrollbar With Progress Meter&#8221; &#8212; CSS-Tricks\\" frameborder=\\"0\\" marginwidth=\\"0\\" marginheight=\\"0\\" scrolling=\\"no\\" class=\\"wp-embedded-content\\"><\\/iframe>","thumbnail_url":"https:\\/\\/i1.wp.com\\/css-tricks.com\\/wp-content\\/uploads\\/2020\\/04\\/scrollbar-progress.png?fit=1200%2C600&ssl=1","thumbnail_width":1200,"thumbnail_height":600,"description":"Scrollbars are natural progress meters. How far the scrollbar is down or across is how much progress has been made scrolling through that element (often"}'
+    'body' => '{"version":"1.0","provider_name":"CSS-Tricks","provider_url":"https:\\/\\/css-tricks.com","author_name":"Chris Coyier","author_url":"https:\\/\\/css-tricks.com\\/author\\/chriscoyier\\/","title":"CSS Scrollbar With Progress Meter | CSS-Tricks","type":"rich","width":600,"height":338,"html":"<blockquote class=\\"wp-embedded-content\\"><a href=\\"https:\\/\\/css-tricks.com\\/css-scrollbar-with-progress-meter\\/\\">CSS Scrollbar With Progress Meter<\\/a><\\/blockquote>\\n<script type=\'text\\/javascript\'>\\n<!--\\/\\/--><![CDATA[\\/\\/><!--\\n\\t\\t\\/*! This file is auto-generated *\\/\\n\\t\\t!function(c,d){\\"use strict\\";var e=!1,n=!1;if(d.querySelector)if(c.addEventListener)e=!0;if(c.wp=c.wp||{},!c.wp.receiveEmbedMessage)if(c.wp.receiveEmbedMessage=function(e){var t=e.data;if(t)if(t.secret||t.message||t.value)if(!\\/[^a-zA-Z0-9]\\/.test(t.secret)){for(var r,a,i,s=d.querySelectorAll(\'iframe[data-secret=\\"\'+t.secret+\'\\"]\'),n=d.querySelectorAll(\'blockquote[data-secret=\\"\'+t.secret+\'\\"]\'),o=0;o<n.length;o++)n[o].style.display=\\"none\\";for(o=0;o<s.length;o++)if(r=s[o],e.source===r.contentWindow){if(r.removeAttribute(\\"style\\"),\\"height\\"===t.message){if(1e3<(i=parseInt(t.value,10)))i=1e3;else if(~~i<200)i=200;r.height=i}if(\\"link\\"===t.message)if(a=d.createElement(\\"a\\"),i=d.createElement(\\"a\\"),a.href=r.getAttribute(\\"src\\"),i.href=t.value,i.host===a.host)if(d.activeElement===r)c.top.location.href=t.value}}},e)c.addEventListener(\\"message\\",c.wp.receiveEmbedMessage,!1),d.addEventListener(\\"DOMContentLoaded\\",t,!1),c.addEventListener(\\"load\\",t,!1);function t(){if(!n){n=!0;for(var e,t,r=-1!==navigator.appVersion.indexOf(\\"MSIE 10\\"),a=!!navigator.userAgent.match(\\/Trident.*rv:11\\\\.\\/),i=d.querySelectorAll(\\"iframe.wp-embedded-content\\"),s=0;s<i.length;s++){if(!(e=i[s]).getAttribute(\\"data-secret\\"))t=Math.random().toString(36).substr(2,10),e.src+=\\"#?secret=\\"+t,e.setAttribute(\\"data-secret\\",t);if(r||a)(t=e.cloneNode(!0)).removeAttribute(\\"security\\"),e.parentNode.replaceChild(t,e)}}}}(window,document);\\n\\/\\/--><!]]>\\n<\\/script><iframe sandbox=\\"allow-scripts\\" security=\\"restricted\\" src=\\"https:\\/\\/css-tricks.com\\/css-scrollbar-with-progress-meter\\/embed\\/\\" width=\\"600\\" height=\\"338\\" title=\\"&#8220;CSS Scrollbar With Progress Meter&#8221; &#8212; CSS-Tricks\\" frameborder=\\"0\\" marginwidth=\\"0\\" marginheight=\\"0\\" scrolling=\\"no\\" class=\\"wp-embedded-content\\"><\\/iframe>","thumbnail_url":"https:\\/\\/css-tricks.com\\/wp-content\\/uploads\\/2020\\/04\\/scrollbar-progress.png","thumbnail_width":1200,"thumbnail_height":600,"description":"Scrollbars are natural progress meters. How far the scrollbar is down or across is how much progress has been made scrolling through that element (often"}'
 ];

@@ -8,8 +8,8 @@ return [
             'nginx'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:47:02 GMT',
-            'Wed, 23 Sep 2020 21:47:02 GMT'
+            'Sun, 04 Apr 2021 15:20:40 GMT',
+            'Sun, 04 Apr 2021 15:20:40 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -35,6 +35,9 @@ return [
         'x-hacker' => [
             'If you\'re reading this, you should visit automattic.com/jobs and apply to join the fun, mention this header.'
         ],
+        'host-header' => [
+            'WordPress.com'
+        ],
         'x-frame-options' => [
             'SAMEORIGIN'
         ],
@@ -51,7 +54,7 @@ return [
             'https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/'
         ],
         'X-Request-Time' => [
-            '0.437 ms'
+            '0.500 ms'
         ]
     ],
     'statusCode' => 200,
@@ -80,18 +83,19 @@ return [
 	<script type="text/javascript" src="https://use.typekit.com/mgi6udv.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<title>Dave Ross: Optimize Image Files Like a Pro &#8211; WordPress.tv</title>
+<meta name=\'robots\' content=\'max-image-preview:large\' />
 
 <!-- Async WordPress.com Remote Login -->
 <script id="wpcom_remote_login_js">
 var wpcom_remote_login_extra_auth = \'\';
 function wpcom_remote_login_remove_dom_node_id( element_id ) {
 	var dom_node = document.getElementById( element_id );
-	if ( dom_node ) { dom_node.remove(); }
+	if ( dom_node ) { dom_node.parentNode.removeChild( dom_node ); }
 }
 function wpcom_remote_login_remove_dom_node_classes( class_name ) {
 	var dom_nodes = document.querySelectorAll( \'.\' + class_name );
 	for ( var i = 0; i < dom_nodes.length; i++ ) {
-		dom_nodes[i].remove();
+		dom_nodes[ i ].parentNode.removeChild( dom_nodes[ i ] );
 	}
 }
 function wpcom_remote_login_final_cleanup() {
@@ -216,7 +220,7 @@ window.addEventListener( "DOMContentLoaded", function( e ) {
 		+ "?wpcom_remote_login=key"
 		+ "&origin=aHR0cHM6Ly93b3JkcHJlc3MudHY%3D"
 		+ "&wpcomid=5089392"
-		+ "&time=1600897622";
+		+ "&time=1617549640";
 	document.body.appendChild( iframe );
 }, false );
 </script>
@@ -240,8 +244,8 @@ window.addEventListener( "DOMContentLoaded", function( e ) {
 		/* ]]> */
 	</script>
 			<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\\/\\/s0.wp.com\\/wp-content\\/mu-plugins\\/wpcom-smileys\\/twemoji\\/2\\/72x72\\/","ext":".png","svgUrl":"https:\\/\\/s0.wp.com\\/wp-content\\/mu-plugins\\/wpcom-smileys\\/twemoji\\/2\\/svg\\/","svgExt":".svg","source":{"concatemoji":"https:\\/\\/s0.wp.com\\/wp-includes\\/js\\/wp-emoji-release.min.js?m=1596548281h&ver=5.5-wpcom-48929"}};
-			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+			window._wpemojiSettings = {"baseUrl":"https:\\/\\/s0.wp.com\\/wp-content\\/mu-plugins\\/wpcom-smileys\\/twemoji\\/2\\/72x72\\/","ext":".png","svgUrl":"https:\\/\\/s0.wp.com\\/wp-content\\/mu-plugins\\/wpcom-smileys\\/twemoji\\/2\\/svg\\/","svgExt":".svg","source":{"concatemoji":"https:\\/\\/s0.wp.com\\/wp-includes\\/js\\/wp-emoji-release.min.js?m=1612197847h&ver=5.7.1-alpha-50603"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
 		</script>
 		<style type="text/css">
 img.wp-smiley,
@@ -257,16 +261,24 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-	<link rel=\'stylesheet\' id=\'all-css-0-1\' href=\'https://s0.wp.com/_static/??-eJyVUVlOAzEMvRBpVAQt/UCcJYsV3GZT7HSY25MmULrASPxE9stbYkdOWZgUGSLLUEX21WEkOWWTgqCAHuabbmWIHuTvMo8HILkHzsocRO/OdIzGV9uuGyAtEkvtU2fpososiWcPq4DxLuDb3dXWaihOdOVFkJpTZeEK2i+bf1sUxRgd/SG/GNGkAg0PWfGJEcCiAg+h0ZZkE1oHPIYftWD4WJb0rWudCxCJdgasQfB7y1r8hKY6vWasvwdeIUOKMibGpqZzcec5oqR6MQ3l4+PPct7C6/p5t3vabDfr7f4T/eHa0g==?cssminify=yes\' type=\'text/css\' media=\'all\' />
+	<link rel=\'stylesheet\' id=\'all-css-0-1\' href=\'https://s0.wp.com/_static/??-eJyVUdtSAyEM/SEptlZnXxy/hUsG03IbElz376VQa7W6M74wyeFcSJBzFiZFhsgyVJF9dRhJztmkICigh+VHtzFEd/J3mccjkDwAZ2WOoncXOkbjq23XDZAWiaX2qbN0UWWRxIuHTcB4E/Dp7mprNRQnuvIqSC2psnAF7dnm3xZFMUZHf8ivRjSpQMNDVnxiBLCowENotDXZjNYBj+FHLRje1yV961rnAkSinQFrEPzaslY/oalOrxnr74HfkCFFGRNjU9OluPEcUVJNpqH8tvtazkt43j5tHx+m/f1uOnwA/WbawQ==?cssminify=yes\' type=\'text/css\' media=\'all\' />
 <!--[if IE 6]>
-<link rel=\'stylesheet\' id=\'wptv-ie-css\'  href=\'https://s0.wp.com/wp-content/themes/a8c/wptv2/ie6.css?m=1412160810h&#038;ver=5.5-wpcom-48929\' media=\'all\' />
+<link rel=\'stylesheet\' id=\'wptv-ie-css\'  href=\'https://s0.wp.com/wp-content/themes/a8c/wptv2/ie6.css?m=1412160810h&#038;ver=5.7.1-alpha-50603\' media=\'all\' />
 <![endif]-->
-<link rel=\'stylesheet\' id=\'all-css-2-1\' href=\'https://s0.wp.com/_static/??-eJx9jMsKgCAUBX8ouwkpuIi+xcTEUK/4oN9PVxVEuzkwc+CMRGEoOhTwlURXjQ0ZjEbiUMliMbwG2Z20aVQ5D/CdJr05NA0NNOsx/yKp+vkm001dX/1CGZ9mLqhgxwX8KD+O?cssminify=yes\' type=\'text/css\' media=\'all\' />
+<link rel=\'stylesheet\' id=\'all-css-2-1\' href=\'https://s0.wp.com/_static/??-eJzTLy/QTc7PK0nNK9HPLdUtyClNz8wr1k9PzdfNyU9OLMnMz0Ph6KblJGYW6SUXF+voY9dalJqUk58OZKbrA1UhcUGa7HNtDU1MLU1MLMwNTbIAmkQtqg==?cssminify=yes\' type=\'text/css\' media=\'all\' />
 <style id=\'jetpack-global-styles-frontend-style-inline-css\'>
 :root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
 </style>
-<link rel=\'stylesheet\' id=\'all-css-4-1\' href=\'https://s0.wp.com/_static/??-eJxti8sKgCAQAH8oW6KHdoi+xcTUWF1pjX4/OnSIOg0DM3BmYSgVmwrEQ2Q8XEgMmbiIFXXYgb3eQ3IPa8Ncwf/FZIJGgeToLZ+peBstg+/AIS0a72COU9OPUg69atV2AWWKN+I=?cssminify=yes\' type=\'text/css\' media=\'all\' />
-<script type=\'text/javascript\' src=\'https://s0.wp.com/_static/??-eJxdjOEKgzAMhF9oLgyp7I/4LFqjtNSm67UT336ZbDAGgSN39x3tqXHRhjozyOs9KufjI1ePC2nBSiwcyzvfZHKBmwrO46qewot8e79D2BeZPNvyP5JCXV0EPd3MQiPA5QTOP2UGlBi2/mbMvTVdZ1r/AiIzPK4=\'></script>
+<link rel=\'stylesheet\' id=\'all-css-4-1\' href=\'https://s0.wp.com/_static/??-eJxti0EKgCAQAD+ULUaJl+gtJqbG6opr9P3o0CHqNAzMwFmEpdxcbpAOUfDwMTMU4iY2NLECB1Nj9g97y9zB/8Vko0GB5Oktn6kFlxxDGMEjrQbvYEmzVHIclNZy2i9lFDfR?cssminify=yes\' type=\'text/css\' media=\'all\' />
+<script id=\'wpcom-actionbar-placeholder-js-extra\'>
+var actionbardata = {"siteID":"5089392","siteName":"WordPress.tv","siteURL":"https:\\/\\/wordpress.tv","icon":"<img alt=\'\' src=\'https:\\/\\/s0.wp.com\\/i\\/logo\\/wpcom-gray-white.png\' class=\'avatar avatar-50\' height=\'50\' width=\'50\' \\/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"a8c\\/wptv2","signupURL":"https:\\/\\/wordpress.com\\/start\\/","loginURL":"https:\\/\\/wordpress.com\\/log-in?redirect_to=https%3A%2F%2Fwordpress.tv%2F2013%2F09%2F06%2Fdave-ross-optimize-image-files-like-a-pro%2F&signup_flow=account&domain=wordpress.tv","themeURL":"","xhrURL":"https:\\/\\/wordpress.tv\\/wp-admin\\/admin-ajax.php","nonce":"7b596771a2","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\\"hidden\\" id=\\"_wpnonce\\" name=\\"_wpnonce\\" value=\\"7e93b3bd24\\" \\/>","referer":"https:\\/\\/wordpress.tv\\/2013\\/09\\/06\\/dave-ross-optimize-image-files-like-a-pro\\/","canFollow":"1","feedID":"34277","statusMessage":"","customizeLink":"https:\\/\\/wptv.wordpress.com\\/wp-admin\\/customize.php?url=https%3A%2F%2Fwptv.wordpress.com%2F2013%2F09%2F06%2Fdave-ross-optimize-image-files-like-a-pro%2F","postID":"21728","shortlink":"https:\\/\\/wp.me\\/pllYY-5Es","canEditPost":"","editLink":"https:\\/\\/wordpress.com\\/post\\/wordpress.tv\\/21728","statsLink":"https:\\/\\/wordpress.com\\/stats\\/post\\/21728\\/wordpress.tv","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: WordPress.tv v2","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\\"https:\\/\\/wordpress.com\\/read\\">Reader<\\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"Join 25,349 other followers","alreadyUser":"Already have a WordPress.com account? <a href=\\"https:\\/\\/wordpress.com\\/log-in?redirect_to=https%3A%2F%2Fwordpress.tv%2F2013%2F09%2F06%2Fdave-ross-optimize-image-files-like-a-pro%2F&signup_flow=account&domain=wordpress.tv\\">Log in now.<\\/a>","stats":"Stats"}};
+</script>
+<script type=\'text/javascript\' src=\'https://s0.wp.com/_static/??-eJyFjUEKwyAQRS9UIxJI6KL0LMZMZEQd62iT3L42dBFKoavhf977I9ckDMUCsUjHMtCEHkRlyNq2TmBcqHN8kY3DaHydgd+ge1TI++d0AeNfSAS0WRc4w6fP2ReRMm37ryFeF5ocmPItJl8tRpZPnIGkZoZyCEdOGZibcQ83NaixV/0wXt0LLwRZkQ==\'></script>
+<script type=\'text/javascript\'>
+	window.addEventListener( \'DOMContentLoaded\', function() {
+		rltInitialize( {"token":null,"iframeOrigins":["https:\\/\\/widgets.wp.com"]} );
+	} );
+</script>
 <link rel=\'stylesheet\' id=\'all-css-0-2\' href=\'https://s0.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1530132353h&cssminify=yes\' type=\'text/css\' media=\'all\' />
 <!--[if lt IE 8]>
 <link rel=\'stylesheet\' id=\'highlander-comments-ie7-css\'  href=\'https://s0.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606\' media=\'all\' />
@@ -326,11 +338,43 @@ img.emoji {
 <link rel=\'openid.delegate\' href=\'https://wordpress.tv/\' />
 <link rel="search" type="application/opensearchdescription+xml" href="https://wordpress.tv/osd.xml" title="WordPress.tv" />
 <link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+
+<script type="application/ld+json">{
+    "@context": "https:\\/\\/schema.org",
+    "@graph": [
+        {
+            "@type": "VideoObject",
+            "actor": [
+                {
+                    "@type": "Person",
+                    "name": "Dave Ross",
+                    "url": "https:\\/\\/wordpress.tv\\/speakers\\/dave-ross\\/"
+                }
+            ],
+            "name": "Dave Ross: Optimize Image Files Like a&nbsp;Pro",
+            "url": "https:\\/\\/wordpress.tv\\/2013\\/09\\/06\\/dave-ross-optimize-image-files-like-a-pro\\/",
+            "contentUrl": [
+                "https:\\/\\/videos.files.wordpress.com\\/TqDCJmoq\\/optimize-image-files_hd.mp4",
+                "https:\\/\\/videos.files.wordpress.com\\/TqDCJmoq\\/optimize-image-files_dvd.mp4",
+                "https:\\/\\/videos.files.wordpress.com\\/TqDCJmoq\\/optimize-image-files_std.mp4"
+            ],
+            "description": "Images, even small ones, can be the biggest files that make up your site. Learn the tools, plugins, and theming techniques you\\u2019ll want to start using to shrink your page load times and save your mobile users a few bucks without sacrificing image quality.\\r\\n\\r\\n<a href=\\"http:\\/\\/slides.davidmichaelross.com\\/image_optimization\\/#\\/\\" target=\\"_blank\\">Presentation Slides &raquo;<\\/a>",
+            "duration": "P0DT00H29M20S",
+            "height": "1080",
+            "inLanguage": "en",
+            "isFamilyFriendly": true,
+            "thumbnailUrl": "https:\\/\\/videos.files.wordpress.com\\/TqDCJmoq\\/optimize-image-files_scruberthumbnail_0.jpg",
+            "uploadDate": "2013-09-06",
+            "width": "1920"
+        }
+    ]
+}</script>
 <link rel="alternate" type="application/json+oembed" href="https://wordpress.tv/oembed/?url=https%3A%2F%2Fwordpress.tv%2F2013%2F09%2F06%2Fdave-ross-optimize-image-files-like-a-pro%2F&#038;format=json" title="Dave Ross: Optimize Image Files Like a&nbsp;Pro" />
 <link rel="alternate" type="text/xml+oembed" href="https://wordpress.tv/oembed/?url=https%3A%2F%2Fwordpress.tv%2F2013%2F09%2F06%2Fdave-ross-optimize-image-files-like-a-pro%2F&#038;format=xml" title="Dave Ross: Optimize Image Files Like a&nbsp;Pro" />
 <meta name="application-name" content="WordPress.tv" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Engage Yourself with WordPress.tv" /><meta name="msapplication-task" content="name=Subscribe;action-uri=https://wordpress.tv/feed/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="description" content="Images, even small ones, can be the biggest files that make up your site. Learn the tools, plugins, and theming techniques you’ll want to start using to shrink your page load times and save your mobile users a few bucks without sacrificing image quality. Presentation Slides &raquo;" />
 <link rel="amphtml" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/amp/">		<link rel="stylesheet" id="custom-css-css" type="text/css" href="https://s0.wp.com/?custom-css=1&#038;csblog=llYY&#038;cscache=6&#038;csrev=3" />
-		</head>
+		<!-- Your Google Analytics Plugin is missing the tracking ID -->
+</head>
 
 <body class="post-template-default single single-post postid-21728 single-format-standard customizer-styles-applied highlander-enabled highlander-light">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P24PF4B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -351,7 +395,6 @@ img.emoji {
 <li id="menu-item-43586" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-43586"><a href="https://wordpress.tv/category/wordpress-related-events/">Related Events</a></li>
 <li id="menu-item-10487" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10487"><a href="https://wordpress.tv/category/how-to/">How To</a></li>
 <li id="menu-item-39536" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39536"><a href="https://wordpress.tv/get-involved/">Get Involved</a></li>
-<li id="menu-item-10488" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10488"><a href="http://blog.wordpress.tv">Blog</a></li>
 </ul></div>			</div>
 
 		</div><!-- .sleeve -->
@@ -366,7 +409,7 @@ img.emoji {
 
 		<div class="the-video">
 			<iframe width=\'940\' height=\'530\' src=\'https://video.wordpress.com/embed/TqDCJmoq?hd=1&amp;autoPlay=0&amp;permalink=0&amp;loop=0\' frameborder=\'0\' allowfullscreen></iframe><script src=\'https://v0.wordpress.com/js/next/videopress-iframe.js?m=1435166243\'></script>
-<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sd-block sd-rating"><h3 class="sd-title">Rate this:</h3><div class="cs-rating pd-rating" id="pd_rating_holder_29399_post_21728"></div></div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-21728" class="share-twitter sd-button share-icon" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-21728" class="share-facebook sd-button share-icon" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-21728" class="share-linkedin sd-button share-icon" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div><div class=\'sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded\' id=\'like-post-wrapper-5089392-21728-5f6bc2568f1ea\' data-src=\'//widgets.wp.com/likes/index.html?ver=20200826#blog_id=5089392&amp;post_id=21728&amp;origin=wptv.wordpress.com&amp;obj_id=5089392-21728-5f6bc2568f1ea&amp;domain=wordpress.tv\' data-name=\'like-post-frame-5089392-21728-5f6bc2568f1ea\'><h3 class=\'sd-title\'>Like this:</h3><div class=\'likes-widget-placeholder post-likes-widget-placeholder\' style=\'height: 55px;\'><span class=\'button\'><span>Like</span></span> <span class="loading">Loading...</span></div><span class=\'sd-text-color\'></span><a class=\'sd-link-color\'></a></div></div>		</div>
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sd-block sd-rating"><h3 class="sd-title">Rate this:</h3><div class="cs-rating pd-rating" id="pd_rating_holder_29399_post_21728"></div></div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-21728" class="share-twitter sd-button share-icon" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-21728" class="share-facebook sd-button share-icon" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-21728" class="share-linkedin sd-button share-icon" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div><div class=\'sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded\' id=\'like-post-wrapper-5089392-21728-6069d948a1238\' data-src=\'//widgets.wp.com/likes/index.html?ver=20210317#blog_id=5089392&amp;post_id=21728&amp;origin=wptv.wordpress.com&amp;obj_id=5089392-21728-6069d948a1238&amp;domain=wordpress.tv\' data-name=\'like-post-frame-5089392-21728-6069d948a1238\'><h3 class=\'sd-title\'>Like this:</h3><div class=\'likes-widget-placeholder post-likes-widget-placeholder\' style=\'height: 55px;\'><span class=\'button\'><span>Like</span></span> <span class="loading">Loading...</span></div><span class=\'sd-text-color\'></span><a class=\'sd-link-color\'></a></div></div>		</div>
 
 	</div><!-- .container -->
 </div><!-- .wptv-hero -->
@@ -394,14 +437,14 @@ img.emoji {
 			<div class="commenttext">
 				
 				<p>Some of the tools Dave mentioned are Mac-only. Windows users, what are your favorite tools for image optimization?</p>
-<p id="comment-like-207402" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?like_comment=207402&#038;_wpnonce=720fedf1c2" class="comment-like-link needs-login" rel="nofollow" data-blog="5089392"><span>Like</span></a><span id="comment-like-count-207402" class="comment-like-feedback">Like</span></p>
+<p id="comment-like-207402" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://wordpress.tv/2013/09/06/dave-ross-optimize-image-files-like-a-pro/?like_comment=207402&#038;_wpnonce=91286f8fd4" class="comment-like-link needs-login" rel="nofollow" data-blog="5089392"><span>Like</span></a><span id="comment-like-count-207402" class="comment-like-feedback">Like</span></p>
 			</div>
 			<div class="clear"></div>
 		</li>
 	</li><!-- #comment-## -->
 	</ol>
 	<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Continue the discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2013/09/06/dave-ross-optimize-image-files-like-a-pro/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://wordpress.tv/wp-comments-post.php" method="post" id="commentform" class="comment-form"><input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="113ed849d9" /><input type="hidden" name="_wp_http_referer" value="/2013/09/06/dave-ross-optimize-image-files-like-a-pro/" />
+		<h3 id="reply-title" class="comment-reply-title">Continue the discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2013/09/06/dave-ross-optimize-image-files-like-a-pro/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://wordpress.tv/wp-comments-post.php" method="post" id="commentform" class="comment-form"><input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="81d7790bc0" /><input type="hidden" name="_wp_http_referer" value="/2013/09/06/dave-ross-optimize-image-files-like-a-pro/" />
 <input type="hidden" name="hc_post_as" id="hc_post_as" value="guest" />
 
 <div class="comment-form-field comment-textarea">
@@ -561,28 +604,69 @@ img.emoji {
 </div>
 
 <script type="text/javascript">
-var highlander_expando_javascript = function(){
-	var input = document.createElement( \'input\' ),
-	    comment = jQuery( \'#comment\' );
+var highlander_expando_javascript = function () {
 
-	if ( \'placeholder\' in input ) {
-		comment.attr( \'placeholder\', jQuery( \'.comment-textarea label\' ).remove().text() );
+	function hide( sel ) {
+		var el = document.querySelector( sel );
+		if ( el ) {
+			el.style.setProperty( \'display\', \'none\' );
+		}
+	}
+
+	function show( sel ) {
+		var el = document.querySelector( sel );
+		if ( el ) {
+			el.style.removeProperty( \'display\' );
+		}
+	}
+
+	var input = document.createElement( \'input\' );
+	var comment = document.querySelector( \'#comment\' );
+
+	if ( input && comment && \'placeholder\' in input ) {
+		var label = document.querySelector( \'.comment-textarea label\' );
+		if ( label ) {
+			var text = label.textContent;
+			label.parentNode.removeChild( label );
+			comment.setAttribute( \'placeholder\', text );
+		}
 	}
 
 	// Expando Mode: start small, then auto-resize on first click + text length
-	jQuery( \'#comment-form-identity\' ).hide();
-	jQuery( \'#comment-form-subscribe\' ).hide();
-	jQuery( \'#commentform .form-submit\' ).hide();
+	hide( \'#comment-form-identity\' );
+	hide( \'#comment-form-subscribe\' );
+	hide( \'#commentform .form-submit\' );
 
-	comment.css( { \'height\':\'10px\' } ).one( \'focus\', function() {
-		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
-		jQuery( this ).animate( { \'height\': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
-		jQuery( \'#comment-form-identity\' ).slideDown();
-		jQuery( \'#comment-form-subscribe\' ).slideDown();
-		jQuery( \'#commentform .form-submit\' ).slideDown();
-	});
+	if ( comment ) {
+		comment.style.height = \'10px\';
+
+		var handler = function () {
+			comment.style.height = HighlanderComments.initialHeight + \'px\';
+			show( \'#comment-form-identity\' );
+			show( \'#comment-form-subscribe\' );
+			show( \'#commentform .form-submit\' );
+			HighlanderComments.resizeCallback();
+
+			comment.removeEventListener( \'focus\', handler );
+		};
+
+		comment.addEventListener( \'focus\', handler );
+	}
 }
-jQuery(document).ready( highlander_expando_javascript );
+
+if ( document.readyState !== \'loading\' ) {
+	highlander_expando_javascript();
+} else {
+	if ( typeof window.jQuery === \'function\' ) {
+		// Use jQuery\'s `ready` if available.
+		// This solves some scheduling issues between this script and the main highlander script.
+		jQuery( document ).ready( highlander_expando_javascript );
+	} else {
+		// If not available, add a vanilla event listener.
+		document.addEventListener( \'DOMContentLoaded\', highlander_expando_javascript );
+	}
+}
+
 </script>
 
 <div id="comment-form-subscribe">
@@ -593,9 +677,9 @@ jQuery(document).ready( highlander_expando_javascript );
 
 <p class="form-submit"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment" /> <input type=\'hidden\' name=\'comment_post_ID\' value=\'21728\' id=\'comment_post_ID\' />
 <input type=\'hidden\' name=\'comment_parent\' id=\'comment_parent\' value=\'0\' />
-</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="cf3f7389b0" /></p>
-<input type="hidden" name="genseq" value="1600897622" />
-<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="181"/></p></form>	</div><!-- #respond -->
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b90c503df5" /></p>
+<input type="hidden" name="genseq" value="1617549640" />
+<input type="hidden" id="ak_js" name="ak_js" value="184"/><textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea></form>	</div><!-- #respond -->
 	<div style="clear: both"></div>			</div>
 		</div><!-- #content -->
 	</div><!-- .primary-content -->
@@ -607,7 +691,7 @@ jQuery(document).ready( highlander_expando_javascript );
 							<div class="video-description"><p>Images, even small ones, can be the biggest files that make up your site. Learn the tools, plugins, and theming techniques you’ll want to start using to shrink your page load times and save your mobile users a few bucks without sacrificing image quality.</p>
 <p><a href="http://slides.davidmichaelross.com/image_optimization/#/" target="_blank">Presentation Slides &raquo;</a></p>
 <div class="sd-block sd-rating"><h3 class="sd-title">Rate this:</h3><div class="cs-rating pd-rating" id="pd_rating_holder_29399_post_21728"></div></div></div>
-			<h5>Event</h5><p class="video-event"><a href="https://wordpress.tv/event/wordcamp-providence-2013/">WordCamp Providence 2013 <span class="tag-count">26</span></a></p><h5>Speakers</h5><p class="video-speakers"><a href="https://wordpress.tv/speakers/dave-ross/">Dave Ross <span class="tag-count">3</span></a></p><h5>Tags</h5><p class="video-tags"><a href="https://wordpress.tv/tag/images/">images <span class="tag-count">50</span></a></p><h5>Language</h5><p class="video-lang"><a href="https://wordpress.tv/language/english/">English <span class="tag-count">8885</span></a></p>			<h5>Download</h5>
+			<h5>Event</h5><p class="video-event"><a href="https://wordpress.tv/event/wordcamp-providence-2013/">WordCamp Providence 2013 <span class="tag-count">26</span></a></p><h5>Speakers</h5><p class="video-speakers"><a href="https://wordpress.tv/speakers/dave-ross/">Dave Ross <span class="tag-count">3</span></a></p><h5>Tags</h5><p class="video-tags"><a href="https://wordpress.tv/tag/images/">images <span class="tag-count">50</span></a></p><h5>Language</h5><p class="video-lang"><a href="https://wordpress.tv/language/english/">English <span class="tag-count">9183</span></a></p>			<h5>Download</h5>
 			<div class="video-downloads">
 MP4: <a href=\'https://videos.files.wordpress.com/TqDCJmoq/optimize-image-files_std.mp4\'>Low</a>, <a href=\'https://videos.files.wordpress.com/TqDCJmoq/optimize-image-files_dvd.mp4\'>Med</a>, <a href=\'https://videos.files.wordpress.com/TqDCJmoq/optimize-image-files_hd.mp4\'>High</a><br/>OGG: <a href=\'https://videos.files.wordpress.com/TqDCJmoq/optimize-image-files_fmt1.ogv\'>Low</a>			</div>
 <h5>Subtitles</h5><a href="https://wordpress.tv/subtitle/?video=21744">Subtitle this video &rarr;</a>
@@ -629,36 +713,44 @@ MP4: <a href=\'https://videos.files.wordpress.com/TqDCJmoq/optimize-image-files_
 <li id="menu-item-39312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39312"><a href="https://wordpress.tv/get-involved/">Get Involved</a></li>
 <li id="menu-item-81780" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-81780"><a href="https://wordpress.org/about/privacy/">Privacy</a></li>
 <li id="menu-item-39310" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39310"><a href="http://videopress.com/">Powered by VideoPress</a></li>
-</ul></div>			<p class="automattic">An <a href="https://automattic.com/"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxvZ28iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDk0LjQgMzguMiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNDk0LjQgMzguMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjODg4ODg4IiBkPSJNMTc5LjMsMzguMmMtMTIuNiwwLTIwLjctOS4xLTIwLjctMTguNXYtMS4yYzAtOS42LDguMi0xOC41LDIwLjctMTguNWMxMi42LDAsMjAuOCw4LjksMjAuOCwxOC41djEuMg0KCUMyMDAuMSwyOS4xLDE5MS45LDM4LjIsMTc5LjMsMzguMnogTTE5My4zLDE4LjZjMC02LjktNS0xMy0xNC4xLTEzYy05LjEsMC0xNCw2LjEtMTQsMTN2MC45YzAsNi45LDUsMTMuMSwxNCwxMy4xDQoJYzkuMSwwLDE0LjEtNi4yLDE0LjEtMTMuMVYxOC42eiIvPg0KPHBhdGggZmlsbD0iIzg4ODg4OCIgZD0iTTM3LjEsMzYuOEwzMi40LDI4SDExLjZMNywzNi44SDBMMTkuMiwxLjNoNS41bDE5LjUsMzUuNUgzNy4xeiBNMjEuOCw4LjJsLTcuNywxNC45aDE1LjdMMjEuOCw4LjJ6Ii8+DQo8cGF0aCBmaWxsPSIjODg4ODg4IiBkPSJNNzQuNiwzOC4yYy0xMi43LDAtMTguNy02LjktMTguNy0xNi4yVjEuM2g2LjZ2MjAuOWMwLDYuNiw0LjMsMTAuNSwxMi41LDEwLjVjOC40LDAsMTEuOS0zLjksMTEuOS0xMC41VjEuMw0KCWg2LjdWMjJDOTMuNiwzMC44LDg3LjksMzguMiw3NC42LDM4LjJ6Ii8+DQo8cGF0aCBmaWxsPSIjODg4ODg4IiBkPSJNMTMwLjcsNi44djMwaC02Ljd2LTMwaC0xNS41VjEuM2gzNy43djUuNUgxMzAuN3oiLz4NCjxwYXRoIGZpbGw9IiM4ODg4ODgiIGQ9Ik0yNTkuNSwzNi44VjguN2wtMS44LDMuMWwtMTQuOSwyNWgtMy4zbC0xNC43LTI1bC0xLjgtMy4xdjI4LjFoLTYuNVYxLjNoOS4ybDE0LDI0LjRsMS43LDNsMS43LTNMMjU3LDEuMw0KCWg5LjF2MzUuNUgyNTkuNXoiLz4NCjxwYXRoIGZpbGw9IiM4ODg4ODgiIGQ9Ik0zMTYuNSwzNi44bC00LjctOC44SDI5MWwtNC41LDguOGgtN2wxOS4yLTM1LjVoNS41bDE5LjUsMzUuNUgzMTYuNXogTTMwMS4yLDguMmwtNy43LDE0LjloMTUuN0wzMDEuMiw4LjJ6DQoJIi8+DQo8cGF0aCBmaWxsPSIjODg4ODg4IiBkPSJNMzUwLjYsNi44djMwaC02Ljd2LTMwaC0xNS41VjEuM2gzNy43djUuNUgzNTAuNnoiLz4NCjxwYXRoIGZpbGw9IiM4ODg4ODgiIGQ9Ik0zOTkuNSw2Ljh2MzBoLTYuN3YtMzBoLTE1LjVWMS4zSDQxNXY1LjVIMzk5LjV6Ii8+DQo8cGF0aCBmaWxsPSIjODg4ODg4IiBkPSJNNDMxLjQsMzYuOFY0LjZjMi43LDAsMy43LTEuNCwzLjctMy40aDIuOHYzNS41SDQzMS40eiIvPg0KPHBhdGggZmlsbD0iIzg4ODg4OCIgZD0iTTQ5MC4yLDExLjNjLTMuMi0yLjktNy45LTUuNy0xNC4yLTUuN2MtOS41LDAtMTQuOCw2LjUtMTQuOCwxMy4zdjAuN2MwLDYuNyw1LjQsMTMsMTUuMywxMw0KCWM1LjksMCwxMC44LTIuOCwxMy45LTUuN2w0LDQuMmMtMy45LDMuOC0xMC41LDcuMS0xOC4zLDcuMWMtMTMuNCwwLTIxLjYtOC43LTIxLjYtMTguM3YtMS4yYzAtOS42LDguOS0xOC43LDIxLjktMTguNw0KCWM3LjUsMCwxNC4zLDMuMSwxOCw3LjFMNDkwLjIsMTEuM3oiLz4NCjxwYXRoIGZpbGw9IiM4ODg4ODgiIGQ9Ik0xODMuNiwxMi40YzEuMiwwLjgsMS41LDIuNCwwLjgsMy42bC02LjEsOS40Yy0wLjgsMS4yLTIuNCwxLjYtMy42LDAuOGwwLDBjLTEuMi0wLjgtMS41LTIuNC0wLjgtMy42DQoJbDYuMS05LjRDMTgwLjgsMTEuOSwxODIuNCwxMS42LDE4My42LDEyLjRMMTgzLjYsMTIuNHoiLz4NCjwvc3ZnPg0K" alt="Automattic" width="165" height="14" /></a> Joint</p>
+</ul></div>			<p class="automattic">An <a href="https://automattic.com/"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxvZ28iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDk0LjQgMzguMiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNDk0LjQgMzguMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjODg4ODg4IiBkPSJNMTc5LjMsMzguMmMtMTIuNiwwLTIwLjctOS4xLTIwLjctMTguNXYtMS4yYzAtOS42LDguMi0xOC41LDIwLjctMTguNWMxMi42LDAsMjAuOCw4LjksMjAuOCwxOC41djEuMg0KCUMyMDAuMSwyOS4xLDE5MS45LDM4LjIsMTc5LjMsMzguMnogTTE5My4zLDE4LjZjMC02LjktNS0xMy0xNC4xLTEzYy05LjEsMC0xNCw2LjEtMTQsMTN2MC45YzAsNi45LDUsMTMuMSwxNCwxMy4xDQoJYzkuMSwwLDE0LjEtNi4yLDE0LjEtMTMuMVYxOC42eiIvPg0KPHBhdGggZmlsbD0iIzg4ODg4OCIgZD0iTTM3LjEsMzYuOEwzMi40LDI4SDExLjZMNywzNi44SDBMMTkuMiwxLjNoNS41bDE5LjUsMzUuNUgzNy4xeiBNMjEuOCw4LjJsLTcuNywxNC45aDE1LjdMMjEuOCw4LjJ6Ii8+DQo8cGF0aCBmaWxsPSIjODg4ODg4IiBkPSJNNzQuNiwzOC4yYy0xMi43LDAtMTguNy02LjktMTguNy0xNi4yVjEuM2g2LjZ2MjAuOWMwLDYuNiw0LjMsMTAuNSwxMi41LDEwLjVjOC40LDAsMTEuOS0zLjksMTEuOS0xMC41VjEuMw0KCWg2LjdWMjJDOTMuNiwzMC44LDg3LjksMzguMiw3NC42LDM4LjJ6Ii8+DQo8cGF0aCBmaWxsPSIjODg4ODg4IiBkPSJNMTMwLjcsNi44djMwaC02Ljd2LTMwaC0xNS41VjEuM2gzNy43djUuNUgxMzAuN3oiLz4NCjxwYXRoIGZpbGw9IiM4ODg4ODgiIGQ9Ik0yNTkuNSwzNi44VjguN2wtMS44LDMuMWwtMTQuOSwyNWgtMy4zbC0xNC43LTI1bC0xLjgtMy4xdjI4LjFoLTYuNVYxLjNoOS4ybDE0LDI0LjRsMS43LDNsMS43LTNMMjU3LDEuMw0KCWg5LjF2MzUuNUgyNTkuNXoiLz4NCjxwYXRoIGZpbGw9IiM4ODg4ODgiIGQ9Ik0zMTYuNSwzNi44bC00LjctOC44SDI5MWwtNC41LDguOGgtN2wxOS4yLTM1LjVoNS41bDE5LjUsMzUuNUgzMTYuNXogTTMwMS4yLDguMmwtNy43LDE0LjloMTUuN0wzMDEuMiw4LjJ6DQoJIi8+DQo8cGF0aCBmaWxsPSIjODg4ODg4IiBkPSJNMzUwLjYsNi44djMwaC02Ljd2LTMwaC0xNS41VjEuM2gzNy43djUuNUgzNTAuNnoiLz4NCjxwYXRoIGZpbGw9IiM4ODg4ODgiIGQ9Ik0zOTkuNSw2Ljh2MzBoLTYuN3YtMzBoLTE1LjVWMS4zSDQxNXY1LjVIMzk5LjV6Ii8+DQo8cGF0aCBmaWxsPSIjODg4ODg4IiBkPSJNNDMxLjQsMzYuOFY0LjZjMi43LDAsMy43LTEuNCwzLjctMy40aDIuOHYzNS41SDQzMS40eiIvPg0KPHBhdGggZmlsbD0iIzg4ODg4OCIgZD0iTTQ5MC4yLDExLjNjLTMuMi0yLjktNy45LTUuNy0xNC4yLTUuN2MtOS41LDAtMTQuOCw2LjUtMTQuOCwxMy4zdjAuN2MwLDYuNyw1LjQsMTMsMTUuMywxMw0KCWM1LjksMCwxMC44LTIuOCwxMy45LTUuN2w0LDQuMmMtMy45LDMuOC0xMC41LDcuMS0xOC4zLDcuMWMtMTMuNCwwLTIxLjYtOC43LTIxLjYtMTguM3YtMS4yYzAtOS42LDguOS0xOC43LDIxLjktMTguNw0KCWM3LjUsMCwxNC4zLDMuMSwxOCw3LjFMNDkwLjIsMTEuM3oiLz4NCjxwYXRoIGZpbGw9IiM4ODg4ODgiIGQ9Ik0xODMuNiwxMi40YzEuMiwwLjgsMS41LDIuNCwwLjgsMy42bC02LjEsOS40Yy0wLjgsMS4yLTIuNCwxLjYtMy42LDAuOGwwLDBjLTEuMi0wLjgtMS41LTIuNC0wLjgtMy42DQoJbDYuMS05LjRDMTgwLjgsMTEuOSwxODIuNCwxMS42LDE4My42LDEyLjRMMTgzLjYsMTIuNHoiLz4NCjwvc3ZnPg0K" alt="Automattic" width="165" height="14" /></a> Experiment</p>
 		</div>
 	</div><!-- #footer -->
 </div><!-- #page -->
 
 <!--  -->
-<script type="text/javascript">if(jQuery.VideoPress){jQuery.VideoPress.video.flash.params.wmode="opaque";}</script><script src=\'//0.gravatar.com/js/gprofiles.js?ver=202039y\' id=\'grofiles-cards-js\'></script>
+<script type="text/javascript">if(jQuery.VideoPress){jQuery.VideoPress.video.flash.params.wmode="opaque";}</script><script src=\'//0.gravatar.com/js/gprofiles.js?ver=202113y\' id=\'grofiles-cards-js\'></script>
 <script id=\'wpgroho-js-extra\'>
 var WPGroHo = {"my_hash":""};
 </script>
-<script type=\'text/javascript\' src=\'https://s0.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781h\'></script>
+<script type=\'text/javascript\' src=\'https://s0.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1610363240h\'></script>
 
 	<script>
-		//initialize and attach hovercards to all gravatars
-		jQuery( document ).ready( function( $ ) {
+		// Initialize and attach hovercards to all gravatars
+		( function() {
+			function init() {
+				if ( typeof Gravatar === \'undefined\' ) {
+					return;
+				}
 
-			if (typeof Gravatar === "undefined"){
-				return;
+				if ( typeof Gravatar.init !== \'function\' ) {
+					return;
+				}
+
+				Gravatar.profile_cb = function ( hash, id ) {
+					WPGroHo.syncProfileData( hash, id );
+				};
+
+				Gravatar.my_hash = WPGroHo.my_hash;
+				Gravatar.init( \'body\', \'#wp-admin-bar-my-account\' );
 			}
 
-			if ( typeof Gravatar.init !== "function" ) {
-				return;
-			}			
-
-			Gravatar.profile_cb = function( hash, id ) {
-				WPGroHo.syncProfileData( hash, id );
-			};
-			Gravatar.my_hash = WPGroHo.my_hash;
-			Gravatar.init( \'body\', \'#wp-admin-bar-my-account\' );
-		});
+			if ( document.readyState !== \'loading\' ) {
+				init();
+			} else {
+				document.addEventListener( \'DOMContentLoaded\', init );
+			}
+		} )();
 	</script>
 
 		<div style="display:none">
@@ -666,10 +758,26 @@ var WPGroHo = {"my_hash":""};
 	</div>
 	</div>
 <script id=\'highlander-comments-js-extra\'>
-var HighlanderComments = {"loggingInText":"Logging In\\u2026","submittingText":"Posting Comment\\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\\/\\/wptv.wordpress.com\\/public.api\\/connect\\/?action=request&domain=wordpress.tv","logoutURL":"https:\\/\\/wptv.wordpress.com\\/wp-login.php?action=logout&_wpnonce=79c491d38b","homeURL":"https:\\/\\/wordpress.tv\\/","postID":"21728","gravDefault":"mystery","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"","text_direction":"ltr"};
+var HighlanderComments = {"loggingInText":"Logging In\\u2026","submittingText":"Posting Comment\\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\\/\\/wptv.wordpress.com\\/public.api\\/connect\\/?action=request&domain=wordpress.tv","logoutURL":"https:\\/\\/wptv.wordpress.com\\/wp-login.php?action=logout&_wpnonce=30f6aeebb5","homeURL":"https:\\/\\/wordpress.tv\\/","postID":"21728","gravDefault":"mystery","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"","text_direction":"ltr"};
 </script>
 <script type=\'text/javascript\' src=\'https://s0.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1573483029j\'></script>
 
+<script>
+window.addEventListener( "load", function( event ) {
+	var link = document.createElement( "link" );
+	link.href = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.css?v=20201002";
+	link.type = "text/css";
+	link.rel = "stylesheet";
+	document.head.appendChild( link );
+
+	var script = document.createElement( "script" );
+	script.src = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.js?v=20201002";
+	script.defer = true;
+	document.body.appendChild( script );
+} );
+</script>
+
+	
 	<script type="text/javascript">
 		window.WPCOM_sharing_counts = {"https:\\/\\/wordpress.tv\\/2013\\/09\\/06\\/dave-ross-optimize-image-files-like-a-pro\\/":21728};
 	</script>
@@ -692,8 +800,9 @@ var HighlanderComments = {"loggingInText":"Logging In\\u2026","submittingText":"
 				data-sitekey="6LcmyE0UAAAAALID28yVNg7pFCodGaArJzHitez_"
 				data-theme="light"
 				data-type="image"
-				data-tabindex="0"></div>
-			<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en" async></script>
+				data-tabindex="0"
+				data-lazy="true"
+				data-url="https://www.google.com/recaptcha/api.js?hl=en"></div>
 			
 			<img style="float: right; display: none" class="loading" src="https://s0.wp.com/wp-content/mu-plugins/post-flair/sharing/images/loading.gif" alt="loading" width="16" height="16" />
 			<input type="submit" value="Send Email" class="sharing_send" />
@@ -712,10 +821,7 @@ var HighlanderComments = {"loggingInText":"Logging In\\u2026","submittingText":"
 <script id=\'comment-like-js-extra\'>
 var comment_like_text = {"loading":"Loading..."};
 </script>
-<script id=\'wpcom-actionbar-bar-js-extra\'>
-var actionbardata = {"siteID":"5089392","siteName":"WordPress.tv","siteURL":"https:\\/\\/wordpress.tv","icon":"<img alt=\'\' src=\'https:\\/\\/s0.wp.com\\/i\\/logo\\/wpcom-gray-white.png\' class=\'avatar avatar-50\' height=\'50\' width=\'50\' \\/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"a8c\\/wptv2","signupURL":"https:\\/\\/wordpress.com\\/start\\/","loginURL":"https:\\/\\/wordpress.com\\/log-in?redirect_to=https%3A%2F%2Fwordpress.tv%2F2013%2F09%2F06%2Fdave-ross-optimize-image-files-like-a-pro%2F&signup_flow=account&domain=wordpress.tv","themeURL":"","xhrURL":"https:\\/\\/wordpress.tv\\/wp-admin\\/admin-ajax.php","nonce":"399d6a8091","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\\"hidden\\" id=\\"_wpnonce\\" name=\\"_wpnonce\\" value=\\"37bb040c30\\" \\/>","referer":"https:\\/\\/wordpress.tv\\/2013\\/09\\/06\\/dave-ross-optimize-image-files-like-a-pro\\/","canFollow":"1","feedID":"34277","statusMessage":"","customizeLink":"https:\\/\\/wptv.wordpress.com\\/wp-admin\\/customize.php?url=https%3A%2F%2Fwptv.wordpress.com%2F2013%2F09%2F06%2Fdave-ross-optimize-image-files-like-a-pro%2F","postID":"21728","shortlink":"https:\\/\\/wp.me\\/pllYY-5Es","canEditPost":"","editLink":"https:\\/\\/wordpress.com\\/block-editor\\/post\\/wordpress.tv\\/21728","statsLink":"https:\\/\\/wordpress.com\\/stats\\/post\\/21728\\/wordpress.tv","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: WordPress.tv v2","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\\"https:\\/\\/wordpress.com\\/read\\">Reader<\\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"Join 24,967 other followers","alreadyUser":"Already have a WordPress.com account? <a href=\\"https:\\/\\/wordpress.com\\/log-in?redirect_to=https%3A%2F%2Fwordpress.tv%2F2013%2F09%2F06%2Fdave-ross-optimize-image-files-like-a-pro%2F&signup_flow=account&domain=wordpress.tv\\">Log in now.<\\/a>","stats":"Stats"}};
-</script>
-<script type=\'text/javascript\' src=\'https://s0.wp.com/_static/??-eJyVkOtOwzAMhV+I1EODif5APArKUjOc5jY7aRlPT6pdpGooiF+2zjnfiWKYkzIxZAwZrMCAExlMX52VB1hbKUr2KKIP+ItrjwX5dBkdhYlw/jNmMSdtRsUo9H3X6otKrhwoCDgaUaBCBT91GBxyI2yi91VSZ8gu9B5kptR64Q5aCVeQgnFlWAcYkzt1nkKjXQ/VV3vN4LVk5LqpOCEzLWU37Z8NmevxpAWZTDEs0G1rpUcSj1ltuw2815/CR2Rf82/+9fG5f+l3T9tNb38A+tPRsQ==\'></script>
+<script type=\'text/javascript\' src=\'https://s0.wp.com/_static/??-eJyFj02OwjAMhS80qalGGmCBOApKEwNO4zTECR04PUHAogKVlX/e+55lGKMyQ8gYMjgBi2cyGP8bJz8wleIgmVFEH/CD6k4F0+VZGgpnwvGrzWGO2vQqodD1LZWLir4cKAh46lGgQgWPOliPacZsBua6Ug/I3ekOZKQ4d+ENmixeIAXji50aEkZ/aZjCTLq2VVedTsBaMqbaqZzq6x+T64jcof0W2pMwZvXbLGBXedgPiat/y5v2r12261W7WLobBUWyiw==\'></script>
 <script id=\'crowdsignal-rating-js-before\'>
 <!--//--><![CDATA[//><!--
 PDRTJS_settings_29399_post_21728={"id":29399,"unique_id":"wp-post-21728","title":"Dave%20Ross%3A%20Optimize%20Image%20Files%20Like%20a%26nbsp%3BPro","permalink":"https:\\/\\/wordpress.tv\\/2013\\/09\\/06\\/dave-ross-optimize-image-files-like-a-pro\\/","item_id":"_post_21728"}; if ( typeof PDRTJS_RATING !== \'undefined\' ){if ( typeof PDRTJS_29399_post_21728 == \'undefined\' ){PDRTJS_29399_post_21728 = new PDRTJS_RATING( PDRTJS_settings_29399_post_21728 );}}PDRTJS_settings_29399_post_21728={"id":29399,"unique_id":"wp-post-21728","title":"Dave%20Ross%3A%20Optimize%20Image%20Files%20Like%20a%26nbsp%3BPro","permalink":"https:\\/\\/wordpress.tv\\/2013\\/09\\/06\\/dave-ross-optimize-image-files-like-a-pro\\/","item_id":"_post_21728"}; if ( typeof PDRTJS_RATING !== \'undefined\' ){if ( typeof PDRTJS_29399_post_21728 == \'undefined\' ){PDRTJS_29399_post_21728 = new PDRTJS_RATING( PDRTJS_settings_29399_post_21728 );}}
@@ -725,44 +831,140 @@ PDRTJS_settings_29399_post_21728={"id":29399,"unique_id":"wp-post-21728","title"
 <script id=\'sharing-js-js-extra\'>
 var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
 </script>
-<script type=\'text/javascript\' src=\'https://s0.wp.com/wp-content/mu-plugins/post-flair/sharing/sharing.js?m=1595340102h\'></script>
+<script type=\'text/javascript\' src=\'https://s0.wp.com/wp-content/mu-plugins/post-flair/sharing/sharing.js?m=1611055338h\'></script>
 <script type=\'text/javascript\'>
 var windowOpen;
-			jQuery( document.body ).on( \'click\', \'a.share-twitter\', function() {
-				// If there\'s another sharing window open, close it.
-				if ( \'undefined\' !== typeof windowOpen ) {
-					windowOpen.close();
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
 				}
-				windowOpen = window.open( jQuery( this ).attr( \'href\' ), \'wpcomtwitter\', \'menubar=1,resizable=1,width=600,height=350\' );
-				return false;
-			});
+
+				document.body.addEventListener( \'click\', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, \'a.share-twitter\' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, \'a.share-twitter\' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there\'s another sharing window open, close it.
+						if ( typeof windowOpen !== \'undefined\' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( \'href\' ), \'wpcomtwitter\', \'menubar=1,resizable=1,width=600,height=350\' );
+						return false;
+					}
+				} );
+			} )();
 var windowOpen;
-			jQuery( document.body ).on( \'click\', \'a.share-facebook\', function() {
-				// If there\'s another sharing window open, close it.
-				if ( \'undefined\' !== typeof windowOpen ) {
-					windowOpen.close();
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
 				}
-				windowOpen = window.open( jQuery( this ).attr( \'href\' ), \'wpcomfacebook\', \'menubar=1,resizable=1,width=600,height=400\' );
-				return false;
-			});
+
+				document.body.addEventListener( \'click\', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, \'a.share-facebook\' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, \'a.share-facebook\' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there\'s another sharing window open, close it.
+						if ( typeof windowOpen !== \'undefined\' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( \'href\' ), \'wpcomfacebook\', \'menubar=1,resizable=1,width=600,height=400\' );
+						return false;
+					}
+				} );
+			} )();
 var windowOpen;
-			jQuery( document.body ).on( \'click\', \'a.share-linkedin\', function() {
-				// If there\'s another sharing window open, close it.
-				if ( \'undefined\' !== typeof windowOpen ) {
-					windowOpen.close();
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
 				}
-				windowOpen = window.open( jQuery( this ).attr( \'href\' ), \'wpcomlinkedin\', \'menubar=1,resizable=1,width=580,height=450\' );
-				return false;
-			});
+
+				document.body.addEventListener( \'click\', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, \'a.share-linkedin\' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, \'a.share-linkedin\' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there\'s another sharing window open, close it.
+						if ( typeof windowOpen !== \'undefined\' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( \'href\' ), \'wpcomlinkedin\', \'menubar=1,resizable=1,width=580,height=450\' );
+						return false;
+					}
+				} );
+			} )();
 var windowOpen;
-			jQuery( document.body ).on( \'click\', \'a.share-pocket\', function() {
-				// If there\'s another sharing window open, close it.
-				if ( \'undefined\' !== typeof windowOpen ) {
-					windowOpen.close();
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
 				}
-				windowOpen = window.open( jQuery( this ).attr( \'href\' ), \'wpcompocket\', \'menubar=1,resizable=1,width=450,height=450\' );
-				return false;
-			});
+
+				document.body.addEventListener( \'click\', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, \'a.share-pocket\' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, \'a.share-pocket\' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there\'s another sharing window open, close it.
+						if ( typeof windowOpen !== \'undefined\' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( \'href\' ), \'wpcompocket\', \'menubar=1,resizable=1,width=450,height=450\' );
+						return false;
+					}
+				} );
+			} )();
 </script>
 <script type="text/javascript">
 // <![CDATA[
@@ -781,18 +983,17 @@ try{
 }catch(e){}
 })();
 // ]]>
-</script>		<iframe src=\'https://widgets.wp.com/likes/master.html?ver=20200826#ver=20200826\' scrolling=\'no\' id=\'likes-master\' name=\'likes-master\' style=\'display:none;\'></iframe>
+</script>		<iframe src=\'https://widgets.wp.com/likes/master.html?ver=20210317#ver=20210317&amp;origin=https://wordpress.tv\' scrolling=\'no\' id=\'likes-master\' name=\'likes-master\' style=\'display:none;\'></iframe>
 		<div id=\'likes-other-gravatars\'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
-<script src="//stats.wp.com/w.js?61" type="text/javascript" async defer></script>
-<script type="text/javascript">
+<script src="//stats.wp.com/w.js?61" defer></script> <script type="text/javascript">
 _tkq = window._tkq || [];
 _stq = window._stq || [];
 _tkq.push([\'storeContext\', {\'blog_id\':\'5089392\',\'blog_tz\':\'-7\',\'user_lang\':\'en\',\'blog_lang\':\'en\',\'user_id\':\'0\'}]);
 _stq.push([\'view\', {\'blog\':\'5089392\',\'v\':\'wpcom\',\'tz\':\'-7\',\'user_id\':\'0\',\'post\':\'21728\',\'subd\':\'wptv\'}]);
-_stq.push([\'extra\', {\'crypt\':\'UE40eW5QN0p8M2Y/RE1lSiYrZXhzUkM5fD1uTDNLUGt6QzVbd3FKb3Q4aWxFU0VMK3ppSU9RRkVyRmw/bFF4N29ZdnF3Lnxoc0xRaWorQ09SJS14UzNlbj9xNTEsMWpEXUoyZUtHeW9sd01OTS5sZ3BdU3ExbTM4d3gyLlotQzJSXyVyR2xtdWYrVnM/dFBVV244fmx1bWd4fDV5ZVlMdGZ6W1h1SFFsd2cudlRIYVQvY1tWc0pBTU1vPWZHTE92R1s1NjdMLUpibSVLYnRjeCtvd3xGaU4uNEhYd0JPdiUxWmQydzhXZ241Li42VVBETjQvME8sSjNYd3N0SUIsK1RGTGFEYV83N0xYQThWZjJ5RTE3WCYwd1VOUkpITmxBNDd5LFErTGZMbkJmYURZMFVlfFZ+PQ==\'}]);
+_stq.push([\'extra\', {\'crypt\':\'UE40eW5QN0p8M2Y/RE1lSiYrZXhzUkM5fD1uTDNLUGt6QzVbd3FKb3Q4aWxFU0VMK3ppSU9RRkVyRmw/bFF4N29ZdnF3Lnxoc0xRaWorQ09SJS14UzNlbj9xNTEsMWpEXUoyZUtHeW9sd01OTS5sZ3BdU3ExbTM4d3gyLlotQzJSXyVyR2xtdWYrVnM/dFBVV244fmx1bTlUaD9BOWldNEpmLGdzTVZCPSxjZ2d0dlFxNSVpXWxrJnd8dU5pdk5fQyZ0WUhSUkdaLWJvbTMldVZOakF+Z3E4fC4laGl4UFRIX1UlP35PdGJXLyx2a3V+WXJkSHlCLy5LPXYxdlolWUh4aVQwJXVnZWpXRSZ0RXIvLWEuWEJLXXhQW2s4OXpWMTJnV2lWdU9ULVJmdXo2JVN+Rll4RGY=\'}]);
 _stq.push([ \'clickTrackerInit\', \'5089392\', \'21728\' ]);
 	</script>
-<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:1px;width:1px;overflow:hidden;position:absolute;bottom:1px;" alt="" /></noscript>
 <script>
 if ( \'object\' === typeof wpcom_mobile_user_agent_info ) {
 

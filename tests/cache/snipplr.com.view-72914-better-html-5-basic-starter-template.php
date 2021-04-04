@@ -4,8 +4,8 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 23 Sep 2020 21:46:43 GMT',
-            'Wed, 23 Sep 2020 21:46:43 GMT'
+            'Sun, 04 Apr 2021 15:20:11 GMT',
+            'Sun, 04 Apr 2021 15:20:14 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -17,6 +17,9 @@ return [
         'connection' => [
             'keep-alive'
         ],
+        'set-cookie' => [
+            '__cfduid=d1c65bcf642143aa3a72e7c1cc02fb1101617549611; expires=Tue, 04-May-21 15:20:11 GMT; path=/; domain=.snipplr.com; HttpOnly; SameSite=Lax'
+        ],
         'location' => [
             'https://snipplr.com/view/72914/better-html-5-basic-starter-template'
         ],
@@ -25,16 +28,24 @@ return [
             'DYNAMIC'
         ],
         'cf-request-id' => [
-            '055e87ed330000ff18128ea200000001',
-            '055e87ee780000111d701a5200000001'
+            '093f1168f90000ff38d995f000000001',
+            '093f11715b0000d665f7af2000000001'
+        ],
+        'report-to' => [
+            '{"group":"cf-nel","endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=SsCGSwqPOaDYvJJeTWI56YqFSb9PAuRWpeod2uvi3d4%2BiGHZpNB6cWojSBtiUIGggCBai8CE6J%2BuwvwoQVD4L%2B8r05JkkoD0%2BDuqRA%3D%3D"}],"max_age":604800}',
+            '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=YLTcbx%2BY5LOLov9Ku09LP0aoEkd%2FPqCJkec5hLJjtlRP5nY%2Bb%2FWVzjaxQ9284w7zCN2%2B1FUipuNCFSudrGCCH6Ty9kxMugqvMHqgwQ%3D%3D"}],"group":"cf-nel","max_age":604800}'
+        ],
+        'nel' => [
+            '{"max_age":604800,"report_to":"cf-nel"}',
+            '{"max_age":604800,"report_to":"cf-nel"}'
         ],
         'server' => [
             'cloudflare',
             'cloudflare'
         ],
         'cf-ray' => [
-            '5d7775c1ef49ff18-MAD',
-            '5d7775c3f8f6111d-MAD'
+            '63ab84ee5a48ff38-MAD',
+            '63ab84fbcb1ed665-MAD'
         ],
         'alt-svc' => [
             'h2=":443"; ma=60  HTTP/2 200'
@@ -46,7 +57,7 @@ return [
             'max-age=0, must-revalidate, private'
         ],
         'expires' => [
-            'Wed, 23 Sep 2020 21:46:43 GMT'
+            'Sun, 04 Apr 2021 15:20:14 GMT'
         ],
         'strict-transport-security' => [
             'max-age=63072000; includeSubDomains; preload'
@@ -64,7 +75,7 @@ return [
             'https://snipplr.com/view/72914/better-html-5-basic-starter-template'
         ],
         'X-Request-Time' => [
-            '1.008 ms'
+            '2.891 ms'
         ]
     ],
     'statusCode' => 200,
@@ -169,62 +180,62 @@ at 11/15/13 10:22pm</a>
 </div> <div class="s-div-container">
 <h1>Statistics</h1>
 <hr>
-<div><i class="fa fa-eye"></i> Viewed 825 times</div>
+<div><i class="fa fa-eye"></i> Viewed 1059 times</div>
 <div><i class="fa fa-star"></i> Favorited by 8 user(s)</div>
 </div> <div class="s-div-container">
 <h1>Related snippets</h1>
 <hr>
 <div class="related-snippet-container">
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 172 times">172</div>
+<div class="col-2 snippet-view-count" title="Viewed 298 times">298</div>
 <div class="col-10">
 <a href="/view/17816/htmlcss-template--html-4-transitional">HTML/CSS Template - HTML 4 Transitional</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 187 times">187</div>
+<div class="col-2 snippet-view-count" title="Viewed 333 times">333</div>
 <div class="col-10">
 <a href="/view/21910/xhtml-10-transitional-template--basic">XHTML 1.0 Transitional Template -- BASIC</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 153 times">153</div>
+<div class="col-2 snippet-view-count" title="Viewed 267 times">267</div>
 <div class="col-10">
 <a href="/view/25002/html-5-template">HTML 5 Template</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 209 times">209</div>
+<div class="col-2 snippet-view-count" title="Viewed 364 times">364</div>
 <div class="col-10">
 <a href="/view/51878/html5-basic-page-template">HTML5 Basic Page Template</a>
 </div>
 </div>
  <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 195 times">195</div>
+<div class="col-2 snippet-view-count" title="Viewed 320 times">320</div>
 <div class="col-10">
 <a href="/view/53258/html5-blank-template--jquery">HTML5 Blank Template + jQuery</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 192 times">192</div>
+<div class="col-2 snippet-view-count" title="Viewed 345 times">345</div>
 <div class="col-10">
 <a href="/view/67701/blank-html-template-with-hosted-src-viewport--respondjs">Blank HTML template with hosted src, viewport &amp; respond.js</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 177 times">177</div>
+<div class="col-2 snippet-view-count" title="Viewed 295 times">295</div>
 <div class="col-10">
 <a href="/view/71788/basic-html5-template">Basic HTML5 Template</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 258 times">258</div>
+<div class="col-2 snippet-view-count" title="Viewed 415 times">415</div>
 <div class="col-10">
 <a href="/view/72752/html5-basic-template-w-comments">HTML5 Basic Template (w/ Comments)</a>
 </div>
 </div>
 <div class="row related-snippet-row">
-<div class="col-2 snippet-view-count" title="Viewed 217 times">217</div>
+<div class="col-2 snippet-view-count" title="Viewed 388 times">388</div>
 <div class="col-10">
 <a href="/view/100819/html-starter-template">HTML Starter Template</a>
 </div>
@@ -239,7 +250,7 @@ at 11/15/13 10:22pm</a>
 <div>
 <div class="rgt"> / Published in: <a href="/all?language=html">HTML</a>
 </div>
-<div class="savebtn" onclick="if (!window.__cfRLUnblockHandlers) return false; loadFolderList(72914);" data-snippet="72914" data-cf-modified-8ea8b7bf81a740d01263ae15-="">
+<div class="savebtn" onclick="if (!window.__cfRLUnblockHandlers) return false; loadFolderList(72914);" data-snippet="72914" data-cf-modified-9482db9761c5f7450f2eb328-="">
 <img src="/img/icon_sav.png?v3" /></div>
 <div id="folder-menu" style="z-index: 10;">
 <b>Save to your folder(s)</b>
@@ -261,7 +272,7 @@ at 11/15/13 10:22pm</a>
 <div class="sourcenav">
 <span class="rgt">
 <a href="javascript:expand()" id="toggleexpand">Expand</a> |
-<a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; $(\'#embed_div\').toggle();$(\'#embed_code\').focus();$(\'#embed_code\').select();return false;" data-cf-modified-8ea8b7bf81a740d01263ae15-="">Embed</a> | <a rel="nofollow" href="/view/72914?codeview=">Plain Text</a></span>
+<a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; $(\'#embed_div\').toggle();$(\'#embed_code\').focus();$(\'#embed_code\').select();return false;" data-cf-modified-9482db9761c5f7450f2eb328-="">Embed</a> | <a rel="nofollow" href="/view/72914?codeview=">Plain Text</a></span>
 <br />
 </div>
 <div id="innersource" class="nowrap">
@@ -271,7 +282,7 @@ at 11/15/13 10:22pm</a>
         - Better HTML 5 basic starter template &lt;/a&gt; on Snipplr
 &lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;https://snipplr.com/js/embed.js?v3&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://snipplr.com/json/72914&quot;&gt;&lt;/script&gt;" onclick="if (!window.__cfRLUnblockHandlers) return false; this.select();" size="35" data-cf-modified-8ea8b7bf81a740d01263ae15-="" />
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://snipplr.com/json/72914&quot;&gt;&lt;/script&gt;" onclick="if (!window.__cfRLUnblockHandlers) return false; this.select();" size="35" data-cf-modified-9482db9761c5f7450f2eb328-="" />
 <br />
 <em>Copy this code and paste it in your HTML</em>
 </div>
@@ -281,11 +292,11 @@ at 11/15/13 10:22pm</a>
 <p>URL: <a href=\'http://www.barattalo.it\' target="_blank" class="external_link" rel=\'external nofollow\'>http://www.barattalo.it</a></p>
 <p>
 <span class="rgt" id="spam">
-<a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; alert(\'You must be logged in to report a snippet.\');" title="Use this to report spam" data-cf-modified-8ea8b7bf81a740d01263ae15-="">Report this snippet</a>
+<a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; alert(\'You must be logged in to report a snippet.\');" title="Use this to report spam" data-cf-modified-9482db9761c5f7450f2eb328-="">Report this snippet</a>
 </span>
 <span class="rgt"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="snipplr">Tweet</a></span>
 <span class="rgt"><div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=216635682829155&autoLogAppEvents=1" type="8ea8b7bf81a740d01263ae15-text/javascript"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=216635682829155&autoLogAppEvents=1" type="9482db9761c5f7450f2eb328-text/javascript"></script>
 <div class="fb-like rgt" data-href="/view/72914/better-html-5-basic-starter-template" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div></span>
 <br>
 </p>
@@ -410,7 +421,7 @@ Subscribe to comments
 </ul>
 <br /><br />
 </div>
-<script type="8ea8b7bf81a740d01263ae15-text/javascript">
+<script type="9482db9761c5f7450f2eb328-text/javascript">
 
     var _gaq = _gaq || [];
     _gaq.push([\'_setAccount\', \'UA-157360646-1\']);
@@ -426,12 +437,12 @@ Subscribe to comments
     })();
 
 </script>
-<script type="8ea8b7bf81a740d01263ae15-text/javascript" src="https://platform.twitter.com/widgets.js"></script>
-<script type="8ea8b7bf81a740d01263ae15-text/javascript" src="/js/jscharts.js?v3" charset="utf-8"></script>
-<script type="8ea8b7bf81a740d01263ae15-text/javascript" src="//www.google.com/recaptcha/api.js?hl=en"></script>
-<script type="8ea8b7bf81a740d01263ae15-text/javascript" src="/js/jquery-3.4.1.min.js?v3"></script>
-<script type="8ea8b7bf81a740d01263ae15-text/javascript" src="/js/chosen.jquery.js?v3"></script>
-<script type="8ea8b7bf81a740d01263ae15-text/javascript">
+<script type="9482db9761c5f7450f2eb328-text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+<script type="9482db9761c5f7450f2eb328-text/javascript" src="/js/jscharts.js?v3" charset="utf-8"></script>
+<script type="9482db9761c5f7450f2eb328-text/javascript" src="//www.google.com/recaptcha/api.js?hl=en"></script>
+<script type="9482db9761c5f7450f2eb328-text/javascript" src="/js/jquery-3.4.1.min.js?v3"></script>
+<script type="9482db9761c5f7450f2eb328-text/javascript" src="/js/chosen.jquery.js?v3"></script>
+<script type="9482db9761c5f7450f2eb328-text/javascript">
 
         /**
          *
@@ -527,7 +538,7 @@ Subscribe to comments
         });
 
     </script>
-<script type="8ea8b7bf81a740d01263ae15-text/javascript">
+<script type="9482db9761c5f7450f2eb328-text/javascript">
                                 $(function () {
             loadAllComments();
         });
@@ -624,7 +635,7 @@ Subscribe to comments
         }
 
     </script>
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="8ea8b7bf81a740d01263ae15-|49" defer=""></script></body>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="9482db9761c5f7450f2eb328-|49" defer=""></script></body>
 </html>
 '
 ];

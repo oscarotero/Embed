@@ -9,9 +9,9 @@ return [
             'nginx'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:30 GMT',
-            'Wed, 23 Sep 2020 21:46:31 GMT',
-            'Wed, 23 Sep 2020 21:46:32 GMT'
+            'Sun, 04 Apr 2021 15:27:35 GMT',
+            'Sun, 04 Apr 2021 15:27:36 GMT',
+            'Sun, 04 Apr 2021 15:27:36 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -35,7 +35,7 @@ return [
             'en'
         ],
         'set-cookie' => [
-            'PD_REQ_AUTH=668e39b0250ec10248ecdd26e6b41f5b; path=/; domain=.poll.fm; secure; SameSite=None; expires=Wed, 23 Sep 2020 21:51:32 GMT;HttpOnly'
+            'PD_REQ_AUTH=ef9a162ad06f1630d9855fecdc4bc399; path=/; domain=.poll.fm; secure; SameSite=None; expires=Sun, 04 Apr 2021 15:32:36 GMT;HttpOnly'
         ],
         'strict-transport-security' => [
             'max-age=31536000'
@@ -47,7 +47,7 @@ return [
             'https://poll.fm/7012505'
         ],
         'X-Request-Time' => [
-            '1.668 ms'
+            '1.745 ms'
         ]
     ],
     'statusCode' => 200,
@@ -74,7 +74,7 @@ return [
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 
 	  
-<link rel="stylesheet" href="https://poll.fm/css/production/styles.css?m=1600887438" type="text/css" media="all"/>
+<link rel="stylesheet" href="https://poll.fm/css/production/styles.css?m=1616613540" type="text/css" media="all"/>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/jquery/jquery.js"></script>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/validate.js"></script>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/community.js"></script>
@@ -645,9 +645,7 @@ return [
 	{
 		width:50px;
 	}
-}</style>
-
-	<meta name="twitter:card" content="summary_large_image" />
+}</style>	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@Crowdsignalcom" />
 	<meta name="twitter:description" content="Poll Answers: Option #1, Option #2, " />
 	<meta name="twitter:title" content="Which design do you prefer?" />
@@ -671,7 +669,7 @@ return [
 	<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 </head>
 
-<body data-ajax-nonce="8daa4ab78e" class="shadow logged-out cs-poll">
+<body data-ajax-nonce="5a7bf103ac" class="shadow logged-out cs-poll">
 	<div class="cs-site-content">
 			<div id="page">
 						
@@ -750,7 +748,7 @@ return [
 				<a
 					href="vote"
 					style="cursor:pointer;"
-					data-vote="{&quot;id&quot;:7012505,&quot;o&quot;:&quot;0&quot;,&quot;b&quot;:&quot;1&quot;,&quot;m&quot;:&quot;0&quot;,&quot;at&quot;:&quot;10&quot;,&quot;t&quot;:140,&quot;v&quot;:0,&quot;e&quot;:7257600,&quot;n&quot;:&quot;5826fdcf8058fa83fe4c1205a8905c8b&quot;}"
+					data-vote="{&quot;id&quot;:7012505,&quot;o&quot;:&quot;0&quot;,&quot;b&quot;:&quot;1&quot;,&quot;m&quot;:&quot;0&quot;,&quot;at&quot;:&quot;10&quot;,&quot;t&quot;:141,&quot;v&quot;:0,&quot;e&quot;:7257600,&quot;n&quot;:&quot;50393df9ac2abcc3215bf38ab72e90a7&quot;}"
 					class="vote-button css-vote-button pds-vote-button">
 					Vote				</a>
 									<span class="css-links pds-links"><a href="/7012505/results" class="css-view-results pds-view-results">View Results</a>
@@ -760,7 +758,7 @@ return [
 					<span class="css-clear pds-clear"></span>
 							</div>
 		</div>
-			<input type=\'hidden\' name=\'pz\' value=\'592\'>
+			<input type=\'hidden\' name=\'pz\' value=\'853\'>
 
 </form>
 
@@ -779,7 +777,7 @@ return [
 						<strong>
 				Tecia Beulens			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -796,7 +794,7 @@ return [
 						<strong>
 				Rivcah			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -813,7 +811,7 @@ return [
 						<strong>
 				Lisa			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -830,7 +828,7 @@ return [
 						<strong>
 				Michelle			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -847,7 +845,7 @@ return [
 						<strong>
 				B			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -864,7 +862,7 @@ return [
 						<strong>
 				Barb 			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -883,7 +881,7 @@ return [
 						<strong>
 				angela			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -900,7 +898,7 @@ return [
 						<strong>
 				Jodie			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -917,7 +915,7 @@ return [
 						<strong>
 				Tanya 			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -935,7 +933,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Tanyaut 			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -953,7 +951,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Gail			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -970,7 +968,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Michelle\'s Sew Biz - Michelle			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -987,7 +985,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Uniq Boutiq			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1004,7 +1002,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Kelly keno			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1021,7 +1019,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Kelly keno			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1038,7 +1036,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Kelly keno			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1055,7 +1053,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Danika			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1072,7 +1070,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Danika			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1089,7 +1087,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Danika			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1106,7 +1104,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Danika			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1123,7 +1121,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Adrianna			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1140,7 +1138,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Sofie			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1157,7 +1155,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Kelsey			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1174,7 +1172,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Casey Bell			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1191,7 +1189,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Tasha 			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1208,7 +1206,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Catherine			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1225,7 +1223,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				<a rel="nofollow" href="http://richardbott.com">Richard</a>			</strong>
 
-			<em> - 7 years ago</em>
+			<em> - 8 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1244,7 +1242,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 	<form method="post" action="/comment" name="formcomment" id="formcomment">
 
 		<input type="hidden" name="poll_id" id="poll_id" value="7012505" />
-		<input type="hidden" name="nonce" value="7707ad9715"/>
+		<input type="hidden" name="nonce" value="954596fc2a"/>
 
 		
 		<label for="cname">Your Name</label>
@@ -1351,7 +1349,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 		jQuery( \'a.del-embed-url\' ).click( function() {
 			var data = {};
 
-			data[\'_pd_nonce\'] = \'5ecbdc66a4\';
+			data[\'_pd_nonce\'] = \'e5aff22f3b\';
 			data[\'id\']        = 7012505;
 
 			jQuery.post( \'\', data, function( response ) {
@@ -1369,7 +1367,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 			var open = \'Open Poll\';
 			var close = \'Close Poll\';
 
-			data[\'_pd_nonce\'] = \'42bc76ff88\';
+			data[\'_pd_nonce\'] = \'3c9acf6d09\';
 			data[\'id\']        = 7012505;
 
 			jQuery.post( \'\', data, function( response ) {

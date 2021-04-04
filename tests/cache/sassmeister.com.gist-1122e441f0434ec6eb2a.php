@@ -4,14 +4,14 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'x-amz-id-2' => [
-            'VUEPNMS+YrEQlL1yJxB/wAUYv52LPT0MyJfDWIE6dCwk+DWheYg8LKUmRXQKr43GzGoOFInWJ9E='
+            'QGGEnKVddXsYOYFeR4oNPTibA3v6DttKUD5Fzpom5Y9ETiC8j4k2BFo6Ik7vuU36t8hnPQDBwxc='
         ],
         'x-amz-request-id' => [
-            'F669A7F3BB78588B'
+            'XQ6FVJK6X716PJJH'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:45 GMT',
-            'Wed, 23 Sep 2020 21:46:46 GMT'
+            'Sun, 04 Apr 2021 15:20:15 GMT',
+            'Tue, 23 Mar 2021 07:43:35 GMT'
         ],
         'location' => [
             'https://www.sassmeister.com/gist/1122e441f0434ec6eb2a'
@@ -28,10 +28,13 @@ return [
             'text/html'
         ],
         'last-modified' => [
-            'Wed, 23 Sep 2020 17:24:54 GMT'
+            'Fri, 02 Oct 2020 19:55:41 GMT'
         ],
         'etag' => [
             '"118c0bbb60968c403b703f235973bcad"'
+        ],
+        'cache-control' => [
+            'max-age=315360000, no-transform, public'
         ],
         'accept-ranges' => [
             'bytes'
@@ -40,19 +43,22 @@ return [
             'Error from cloudfront'
         ],
         'via' => [
-            '1.1 0ef74e866fd3a98abc576c37ab84cf4f.cloudfront.net (CloudFront)'
+            '1.1 cc72e11091e31a0a77444238a337579f.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
-            'MAD50-C1'
+            'MAD51-C1'
         ],
         'x-amz-cf-id' => [
-            'foVgzfc63nn92ddqYMIGGZnL7CaY7xNYExtaLBehB-OSTo0oFphCog=='
+            '8-gib24P2pBQLgGcEXh9eWb0Wq1cyvhP_ALlzzVRIWeGZiUNEfMozg=='
+        ],
+        'age' => [
+            '1064201'
         ],
         'Content-Location' => [
             'https://www.sassmeister.com/gist/1122e441f0434ec6eb2a'
         ],
         'X-Request-Time' => [
-            '1.864 ms'
+            '1.165 ms'
         ]
     ],
     'statusCode' => 200,

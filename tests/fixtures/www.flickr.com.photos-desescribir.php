@@ -11,15 +11,15 @@ return [
         'height' => 600,
         'ratio' => 75.0
     ],
-    'description' => '¡Explora las 618 fotos de Flickr de desescribir!',
+    'description' => 'Explore desescribir\'s 618 photos on Flickr!',
     'favicon' => 'https://combo.staticflickr.com/pw/favicon.ico',
     'feeds' => [
-        'https://www.flickr.com/services/feeds/photos_public.gne?id=34912442@N03&lang=es-us&format=atom'
+        'https://www.flickr.com/services/feeds/photos_public.gne?id=34912442@N03&lang=en-us&format=atom'
     ],
     'icon' => 'https://combo.staticflickr.com/pw/images/favicons/favicon-120.png',
     'image' => 'https://live.staticflickr.com/8765/17244790083_d2f40f713f_b.jpg',
     'keywords' => [],
-    'language' => 'es-us',
+    'language' => 'en-us',
     'languages' => [],
     'license' => 'https://creativecommons.org/licenses/by-nc-nd/2.0/',
     'providerName' => 'Flickr',

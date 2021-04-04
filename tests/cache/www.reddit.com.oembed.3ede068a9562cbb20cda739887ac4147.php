@@ -28,13 +28,17 @@ return [
             'bytes'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:47:53 GMT'
+            'Sun, 04 Apr 2021 15:27:40 GMT'
         ],
         'via' => [
             '1.1 varnish'
         ],
         'vary' => [
             'accept-encoding'
+        ],
+        'set-cookie' => [
+            'csv=1; Max-Age=63072000; Domain=.reddit.com; Path=/; Secure; SameSite=None',
+            'edgebucket=pIsVfIq9vXZdZFxGRS; Domain=reddit.com; Max-Age=63071999; Path=/;  secure'
         ],
         'strict-transport-security' => [
             'max-age=15552000; includeSubDomains; preload'
@@ -49,7 +53,7 @@ return [
             'https://www.reddit.com/oembed?url=https%3A%2F%2Fwww.reddit.com%2Fr%2Finvesting%2Fcomments%2F7pfpeq%2Fbuffett_on_cyrptocurrencies_i_can_say_almost_with%2F&format=json'
         ],
         'X-Request-Time' => [
-            '0.201 ms'
+            '0.184 ms'
         ]
     ],
     'statusCode' => 200,

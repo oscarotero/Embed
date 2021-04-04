@@ -6,44 +6,46 @@ return [
         'content-type' => [
             'application/json'
         ],
-        'cache-control' => [
-            'no-cache'
+        'vary' => [
+            'Origin',
+            'X-Origin',
+            'Referer'
         ],
         'content-encoding' => [
-            'br'
-        ],
-        'expires' => [
-            'Tue, 27 Apr 1971 19:44:06 GMT'
-        ],
-        'content-length' => [
-            '368'
-        ],
-        'x-content-type-options' => [
-            'nosniff'
-        ],
-        'strict-transport-security' => [
-            'max-age=31536000'
+            'gzip'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:47:27 GMT'
+            'Sun, 04 Apr 2021 15:22:40 GMT'
         ],
         'server' => [
-            'YouTube Frontend Proxy'
+            'scaffolding on HTTPServer2'
+        ],
+        'cache-control' => [
+            'private'
+        ],
+        'content-length' => [
+            '408'
         ],
         'x-xss-protection' => [
             '0'
         ],
+        'x-frame-options' => [
+            'SAMEORIGIN'
+        ],
+        'x-content-type-options' => [
+            'nosniff'
+        ],
         'alt-svc' => [
-            'h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'
+            'h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'
         ],
         'Content-Location' => [
             'https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fplaylist%3Flist%3DPL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST&format=json'
         ],
         'X-Request-Time' => [
-            '0.168 ms'
+            '0.136 ms'
         ]
     ],
     'statusCode' => 200,
     'reasonPhrase' => 'OK',
-    'body' => '{"thumbnail_height":360,"provider_name":"YouTube","version":"1.0","html":"\\u003ciframe width=\\"480\\" height=\\"270\\" src=\\"https:\\/\\/www.youtube.com\\/embed\\/videoseries?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\\" allowfullscreen\\u003e\\u003c\\/iframe\\u003e","title":"De espaldas al patriarcado","thumbnail_width":480,"width":480,"author_name":"Scadrei5","height":270,"thumbnail_url":"https:\\/\\/i.ytimg.com\\/vi\\/s7b4ap2_Ht0\\/hqdefault.jpg","type":"video","provider_url":"https:\\/\\/www.youtube.com\\/","author_url":"https:\\/\\/www.youtube.com\\/user\\/Scadrei5"}'
+    'body' => '{"title":"De espaldas al patriarcado","author_name":"Scadrei5","author_url":"/user/Scadrei5","type":"video","height":113,"width":200,"version":"1.0","provider_name":"YouTube","provider_url":"https://www.youtube.com/","thumbnail_height":360,"thumbnail_width":480,"thumbnail_url":"https://i.ytimg.com/vi/CdbnVwot6lc/hqdefault.jpg","html":"\\u003ciframe width=\\u0022200\\u0022 height=\\u0022113\\u0022 src=\\u0022https://www.youtube.com/embed/videoseries?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST\\u0022 frameborder=\\u00220\\u0022 allow=\\u0022accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\\u0022 allowfullscreen\\u003e\\u003c/iframe\\u003e"}'
 ];

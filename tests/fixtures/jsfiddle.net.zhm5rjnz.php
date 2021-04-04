@@ -2,7 +2,7 @@
 declare(strict_types = 1);
 
 return [
-    'authorName' => null,
+    'authorName' => 'JSFiddle',
     'authorUrl' => null,
     'cms' => null,
     'code' => null,

@@ -6,12 +6,12 @@ return [
     'authorUrl' => null,
     'cms' => null,
     'code' => [
-        'html' => '<iframe id="vp1GjsJ1" title="Video Player" width="640" height="360" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1600897556&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=p&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq" allowfullscreen></iframe>',
+        'html' => '<iframe id="vp1GjsJ1" title="Video Player" width="640" height="360" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1617549702&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=p&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq" allowfullscreen></iframe>',
         'width' => 640,
         'height' => 360,
         'ratio' => 56.25
     ],
-    'description' => 'Animoto\'s video maker turns your photos and video clips into professional videos in minutes. Fast and shockingly simple - we make video creation easy.',
+    'description' => 'Animoto makes video creation easy! Animoto\'s video maker turns your photos and video clips into professional videos in minutes. Fast and shockingly simple!',
     'favicon' => 'https://d14pr3cu5atb0x.cloudfront.net/images/icons/favicon-fbb19e53d0.ico',
     'feeds' => [],
     'icon' => 'https://d14pr3cu5atb0x.cloudfront.net/images/icons/touchicon-144-4a42d97241.png',
@@ -44,7 +44,7 @@ return [
         'width' => 640,
         'height' => 360,
         'cache_age' => 604800,
-        'video_url' => 'https://d150hyw1dtprld.cloudfront.net/swf/w.swf?w=swf/production/vp1&e=1600897556&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=p&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq',
-        'html' => '<iframe id="vp1GjsJ1" title="Video Player" width="640" height="360" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1600897556&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=p&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq" allowfullscreen></iframe>'
+        'video_url' => 'https://d150hyw1dtprld.cloudfront.net/swf/w.swf?w=swf/production/vp1&e=1617549702&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=p&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq',
+        'html' => '<iframe id="vp1GjsJ1" title="Video Player" width="640" height="360" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1617549702&f=GjsJ1gu0WDRfr4pGw12xZQ&d=0&m=p&r=360p&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=start_hq" allowfullscreen></iframe>'
     ]
 ];

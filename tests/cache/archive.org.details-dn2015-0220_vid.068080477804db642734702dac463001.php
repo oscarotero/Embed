@@ -7,25 +7,22 @@ return [
             'nginx/1.16.1 (Ubuntu)'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:52 GMT'
+            'Sun, 04 Apr 2021 15:20:28 GMT'
         ],
         'content-type' => [
             'application/json'
         ],
-        'transfer-encoding' => [
-            'chunked'
-        ],
-        'connection' => [
-            'keep-alive'
-        ],
         'strict-transport-security' => [
             'max-age=15724800'
+        ],
+        'referrer-policy' => [
+            'no-referrer-when-downgrade'
         ],
         'Content-Location' => [
             'https://archive.org/details/dn2015-0220_vid?output=json'
         ],
         'X-Request-Time' => [
-            '0.809 ms'
+            '0.914 ms'
         ]
     ],
     'statusCode' => 200,
@@ -39,5 +36,5 @@ return [
 "misc":
 {"image":"https:\\/\\/ia802600.us.archive.org\\/20\\/items\\/dn2015-0220_vid\\/dn2015-0220.gif","collection-title":"Democracy Now!"},
 "item":
-{"downloads":126,"month":0}}'
+{"downloads":132,"month":2,"item_size":3667677269,"files_count":68,"item_count":null,"collection_files_count":null,"collection_size":null}}'
 ];

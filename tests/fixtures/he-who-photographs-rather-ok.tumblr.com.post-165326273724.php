@@ -17,7 +17,7 @@ return [
         'https://he-who-photographs-rather-ok.tumblr.com/rss'
     ],
     'icon' => 'https://64.media.tumblr.com/avatar_235be11f6ae4_128.pnj',
-    'image' => 'https://64.media.tumblr.com/0a0fac1ef8faa0c466d9224567af06aa/tumblr_ow8r0nMybA1spmyulo1_640.jpg',
+    'image' => 'https://64.media.tumblr.com/0a0fac1ef8faa0c466d9224567af06aa/tumblr_ow8r0nMybA1spmyulo1_1280.jpg',
     'keywords' => [
         'panda',
         'aesthetic photography',

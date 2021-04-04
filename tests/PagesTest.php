@@ -18,38 +18,48 @@ class PagesTest extends PagesTestCase
      */
     const FIXTURES = 0;
 
-    public function testPages()
+    public function urlDataProvider(): array
     {
-        $this->assertEmbed('https://www.abanca.com/gl');
-        $this->assertEmbed('https://animoto.com/play/GjsJ1gu0WDRfr4pGw12xZQ');
-        $this->assertEmbed('http://live.amcharts.com/czNjJ');
-        $this->assertEmbed('https://www.aol.com/video/view/pile-of-recovering-foster-kittens-is-purrfect/595fe75985eb42109b69bedb/');
-        $this->assertEmbed('http://jeanjean.bandcamp.com/track/coquin-l-l-phant');
-        $this->assertEmbed('http://chirb.it/7A9L9B');
-        $this->assertEmbed('http://codepen.io/Zhouzi/pen/JoRazP');
-        $this->assertEmbed('http://www.dailymotion.com/video/xy0wd');
-        $this->assertEmbed('http://www.deviantart.com/art/Misty-510056679');
-        $this->assertEmbed('http://pachunka.deviantart.com/art/Cope-145564099');
-        $this->assertEmbed('http://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/');
-        $this->assertEmbed('http://i.imgur.com/X6rkCc5.jpg');
-        $this->assertEmbed('https://infogr.am/7743c36a-f3ca-4465-9a80-a8abbd5d8dc4');
-        $this->assertEmbed('http://output.jsbin.com/vonesu/10');
-        $this->assertEmbed('http://jsfiddle.net/zhm5rjnz/');
-        $this->assertEmbed('https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers');
-        $this->assertEmbed('http://www.23hq.com/Zzleeper/photo/16600737');
-        $this->assertEmbed('https://500px.com/photo/138251239/taganay-park-by-daniel-kordan');
-        $this->assertEmbed('https://pastebin.com/d4biUtRm');
-        $this->assertEmbed('http://media.photobucket.com/user/Ignwar/media/Album%20Deserts/MoonriseMonumentValleyUtah.jpg.html?filters[term]=sunsets&filters[primary]=images');
-        $this->assertEmbed('http://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314.html');
-        $this->assertEmbed('http://polldaddy.com/poll/7012505/');
-        $this->assertEmbed('https://www.reddit.com/r/investing/comments/7pfpeq/buffett_on_cyrptocurrencies_i_can_say_almost_with/');
-        $this->assertEmbed('http://www.scribd.com/doc/110799637/Synthesis-of-Knowledge-Effects-of-Fire-and-Thinning-Treatments-on-Understory-Vegetation-in-Dry-U-S-Forests');
-        $this->assertEmbed('http://www.spreaker.com/user/angelclark/angel-clark-ice-cream-tocos');
-        $this->assertEmbed('http://www.ted.com/talks/george_monbiot_for_more_wonder_rewild_the_world?language=en#t-689901');
-        $this->assertEmbed('http://he-who-photographs-rather-ok.tumblr.com/post/165326273724');
-        $this->assertEmbed('http://www.ustream.tv/channel/red-shoes-billiards-60803-camera-1');
-        $this->assertEmbed('http://www.viddler.com/v/bdce8c7');
-        $this->assertEmbed('http://www.wired.com/?p=2064839');
+        return [
+            ['https://www.abanca.com/gl'],
+            ['https://animoto.com/play/GjsJ1gu0WDRfr4pGw12xZQ'],
+            ['http://live.amcharts.com/czNjJ'],
+            ['https://www.aol.com/video/view/pile-of-recovering-foster-kittens-is-purrfect/595fe75985eb42109b69bedb/'],
+            ['http://jeanjean.bandcamp.com/track/coquin-l-l-phant'],
+            ['http://chirb.it/7A9L9B'],
+            ['http://codepen.io/Zhouzi/pen/JoRazP'],
+            ['http://www.dailymotion.com/video/xy0wd'],
+            ['http://www.deviantart.com/art/Misty-510056679'],
+            ['http://pachunka.deviantart.com/art/Cope-145564099'],
+            ['http://www.hookem.com/story/texas-shortstop-joe-baker-arrested-public-intoxication/'],
+            ['http://i.imgur.com/X6rkCc5.jpg'],
+            ['https://infogr.am/7743c36a-f3ca-4465-9a80-a8abbd5d8dc4'],
+            ['http://output.jsbin.com/vonesu/10'],
+            ['http://jsfiddle.net/zhm5rjnz/'],
+            ['https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers'],
+            ['http://www.23hq.com/Zzleeper/photo/16600737'],
+            ['https://500px.com/photo/138251239/taganay-park-by-daniel-kordan'],
+            ['https://pastebin.com/d4biUtRm'],
+            ['http://media.photobucket.com/user/Ignwar/media/Album%20Deserts/MoonriseMonumentValleyUtah.jpg.html?filters[term]=sunsets&filters[primary]=images'],
+            ['http://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314.html'],
+            ['http://polldaddy.com/poll/7012505/'],
+            ['https://www.reddit.com/r/investing/comments/7pfpeq/buffett_on_cyrptocurrencies_i_can_say_almost_with/'],
+            ['http://www.scribd.com/doc/110799637/Synthesis-of-Knowledge-Effects-of-Fire-and-Thinning-Treatments-on-Understory-Vegetation-in-Dry-U-S-Forests'],
+            ['http://www.spreaker.com/user/angelclark/angel-clark-ice-cream-tocos'],
+            ['http://www.ted.com/talks/george_monbiot_for_more_wonder_rewild_the_world?language=en#t-689901'],
+            ['http://he-who-photographs-rather-ok.tumblr.com/post/165326273724'],
+            ['http://www.ustream.tv/channel/red-shoes-billiards-60803-camera-1'],
+            ['http://www.viddler.com/v/bdce8c7'],
+            ['http://www.wired.com/?p=2064839'],
+        ];
+    }
+
+    /**
+     * @dataProvider urlDataProvider
+     */
+    public function testPages(string $url)
+    {
+        $this->assertEmbed($url);
     }
 
     public function testImageFile()

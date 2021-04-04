@@ -7,7 +7,7 @@ return [
             'nginx/1.10.1'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:50 GMT'
+            'Sun, 04 Apr 2021 15:20:26 GMT'
         ],
         'content-type' => [
             'text/html; charset=utf-8'
@@ -31,25 +31,25 @@ return [
             'deflate'
         ],
         'etag' => [
-            'W/"6955e91c1fa8b0f8ef4a241518a466c3"'
+            'W/"60b73d3ea9ac2d293be20fa49ffb60f4"'
         ],
         'cache-control' => [
             'max-age=0, private, must-revalidate'
         ],
         'set-cookie' => [
-            '_slides_app_session=QkZBS2w1ZlpPU29nSUVzMlBPTXVyeG1zT2tPblhLcEMzems0SFlPUTFSYTdUK3ZRSE1sSE5zaEMxaWw2RzJMVUxLV0VGVFVFUHl2N1QrNEZtL1g4MTdvSkpsUHFPZytCdWZ6S1BQaG5uWWNCU3grREVsKysxTGxQRnc0RkFpeTdnMDVjQXhCMzhURjlWR0pqRTMyeWJrd28wcFRDREc1UDNMeVpOS3dqRlo1OWl2Q1dGeG5iUE8xOTArV2ZHRHpJMGpBYWZ6SEl0Rk5rQXhIVzdGWU1MV05pRGVBUWZPVEloMlQxOGpkM0pCNUV1WDU4VVF6NU5PaXFpNHh1ajRNbkZjYStINGR6Y3pLcWRuWVFvTk1sMGozYUgxeEU5K3ZjbVpiOFFobm95SXUxR1dyRGxONG0xNGRkT095RkdsTVotLUpyMVlOQ2cwME1YMnU5VUxWdE0vY2c9PQ%3D%3D--640544ab40b9755bce85bfebe764c04688c7e614; domain=.slides.com; path=/; HttpOnly'
+            '_slides_app_session=UVJDdWd2dkwwRzZCeFFUL21CUFg2dk16US9HbTFkdGpzTmRUd3QrcmVUaTlza2JvRjhSc3Fua090MTVHOHVzR1BrR0F4YTdxeDFHMEJOWDl5NDBvdlNMWVRpdEJENGNnZ1BxSWg4UzQxUWExSkdKMWdVRVRvME9EL1UwQ1M2eWg0M2FQM242RjNaK2x6dnoySHhDbERHcFhIeXphRHlhVTN3bWdHWjNxYzZ6b2VidU4xbnpqZTBJZ0o0RjY2WjhmWncvNGQvclRCZkY1eEM4Wmc1a1NYSVM2NDA5azZCYjIxTGZOa3ljTXAzRk5WTFlnR1JyVExDeXc5WmdOMWtFWDdkc1RrN0hpRU5jOWdXZVdINEhZK2tyL05IMnN1RWtHdGM1KzJ6TjRPb1dyK1FJS0tCeHc2UW1PakkxWFdJRTktLWJpcFUyL1dtMSsxaFAyOEtmdHdWY3c9PQ%3D%3D--d3613c55f1a763a6a98b44511465de96f0dc4940; domain=.slides.com; path=/; HttpOnly'
         ],
         'x-request-id' => [
-            '93f21abb-97de-419d-befb-2526c2d7dcd3'
+            'bfae329e-54d7-4a4e-9964-05ae1deaccef'
         ],
         'x-runtime' => [
-            '0.156773'
+            '0.066047'
         ],
         'Content-Location' => [
             'http://slides.com/alexwalker/responsive-svg/'
         ],
         'X-Request-Time' => [
-            '0.520 ms'
+            '0.420 ms'
         ]
     ],
     'statusCode' => 200,
@@ -66,7 +66,7 @@ return [
     <meta property="og:title" content="responsive-svg" />
     <meta property="og:description" content="A presentation created with Slides." />
     <meta property="og:site_name" content="Slides" />
-    <meta property="og:image" content="https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg" />
+    <meta property="og:image" content="https://media.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://slides.com/alexwalker/responsive-svg" />
     <meta property="fb:app_id" content="146002942236376" />
@@ -80,15 +80,15 @@ return [
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" type="text/css" data-application-font="inter">
 
     <link rel="stylesheet" media="all" href="//assets.slid.es/assets/slides/slides-5463dbbad1a68c6e9a85872698fd43e74078271bfd42f08aadf3e7324137e99c.css" />
-    <link rel="stylesheet" media="all" href="//assets.slid.es/assets/application-f44f19368e26ce7b142c85f91cbedc3ea7ec094e3c1fbd9398b82992c5c2004b.css" />
-    	<link rel="stylesheet" media="all" href="//assets.slid.es/assets/deck-v2-decc9fc7e7d11e7781743b9cbd47c0d6b223b3ba2ee96c784d0f1355d5e8b1d5.css" />
+    <link rel="stylesheet" media="all" href="//assets.slid.es/assets/application-7c4aaa6a5a25f1cc0c409a604b1d9e23feeca0c2279eb354fa2d1204b4e7dbd1.css" />
+    	<link rel="stylesheet" media="all" href="//assets.slid.es/assets/deck-v2-48db2ff32fa8faa2f0d1fe3b017788bb2f1515d0f0fb07e6784e4d2abf58ffe9.css" />
 
 
 
 <style id="user-css-output" type="text/css"></style>
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="uq6hYQdVINWZnC2Kucb2jy5JSdVJJVkz+IDXKyH1+zdtST4t4Cn8GlgYWKGAJdTAC/1Otl+tJ8vvCM6+KyyLpQ==" />
+<meta name="csrf-token" content="GaZ+SmRbUaXFixEp7b4DK+Sg6qFI//d+dufWuHva6HMWigSWbQA2N/Ubv9RSledh8eBkD5iBT2fL2Fzhg1BGmQ==" />
     <script type="text/javascript">
   if( navigator.doNotTrack !== \'1\' && !/dnt=1/.test( window.location.search ) ) {
     (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
@@ -105,7 +105,7 @@ return [
 	<meta name="twitter:site" content="@Slides">
 	<meta name="twitter:title" content="responsive-svg">
 	<meta name="twitter:description" content="A presentation created with Slides.">
-	<meta name="twitter:image" content="https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg">
+	<meta name="twitter:image" content="https://media.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   </head>
@@ -810,7 +810,7 @@ Helpers</h1>
 					</li>
 					<li data-tooltip="Views" data-tooltip-delay="500">
 						<span class="icon i-eye"></span>
-						<span class="value">9,631</span>
+						<span class="value">10,013</span>
 					</li>
 				</ul>
 			</div>
@@ -841,9 +841,11 @@ Helpers</h1>
 	<section class="deck-list">
 		<h2>More from <a href="/alexwalker">Alex Walker</a></h2>
 		<ul class="carousel">
-			<li class="deck-thumbnail">
+			<li class="sl-deck-thumbnail" data-preview-url="/alexwalker/deck-5">
   <a class="deck-link" href="/alexwalker/deck-5"></a>
-  <img class="deck-image" src="https://s3.amazonaws.com/media-p.slid.es/thumbnails/9d13ae1926a027a81751c390850944d4/thumb.jpg?1217098687" loading="lazy" />
+  <div class="deck-thumb">
+    <img class="deck-thumb-image" src="https://media.slid.es/thumbnails/9d13ae1926a027a81751c390850944d4/thumb.jpg?1217098687" loading="lazy" />
+  </div>
   <footer class="deck-details">
     <div class="top">
       <div class="title">deck</div>
@@ -859,9 +861,11 @@ Helpers</h1>
     </div>
   </footer>
 </li>
-<li class="deck-thumbnail">
+<li class="sl-deck-thumbnail" data-preview-url="/alexwalker/deck-4">
   <a class="deck-link" href="/alexwalker/deck-4"></a>
-  <img class="deck-image" src="https://s3.amazonaws.com/media-p.slid.es/thumbnails/0c1d240d1f3ddcd05d192c6a167d3a60/thumb.jpg" loading="lazy" />
+  <div class="deck-thumb">
+    <img class="deck-thumb-image" src="https://media.slid.es/thumbnails/0c1d240d1f3ddcd05d192c6a167d3a60/thumb.jpg" loading="lazy" />
+  </div>
   <footer class="deck-details">
     <div class="top">
       <div class="title">deck</div>
@@ -872,14 +876,16 @@ Helpers</h1>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>722<span class="icon i-eye"></span></div>
+        <div>858<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
 </li>
-<li class="deck-thumbnail">
+<li class="sl-deck-thumbnail" data-preview-url="/alexwalker/the-rules-for-stock-imagery">
   <a class="deck-link" href="/alexwalker/the-rules-for-stock-imagery"></a>
-  <img class="deck-image" src="https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/b83c71/decks.jpg" loading="lazy" />
+  <div class="deck-thumb">
+    <img class="deck-thumb-image" src="https://media.slid.es/thumbnails/secure/b83c71/decks.jpg" loading="lazy" />
+  </div>
   <footer class="deck-details">
     <div class="top">
       <div class="title">The 15-minute Stock Imagery Survival Guide</div>
@@ -890,14 +896,16 @@ Helpers</h1>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>997<span class="icon i-eye"></span></div>
+        <div>1137<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
 </li>
-<li class="deck-thumbnail">
+<li class="sl-deck-thumbnail" data-preview-url="/alexwalker/css-3d">
   <a class="deck-link" href="/alexwalker/css-3d"></a>
-  <img class="deck-image" src="https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/3a407b/decks.jpg" loading="lazy" />
+  <div class="deck-thumb">
+    <img class="deck-thumb-image" src="https://media.slid.es/thumbnails/secure/3a407b/decks.jpg" loading="lazy" />
+  </div>
   <footer class="deck-details">
     <div class="top">
       <div class="title">CSS 3D</div>
@@ -908,7 +916,7 @@ Helpers</h1>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>964<span class="icon i-eye"></span></div>
+        <div>1093<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
@@ -957,17 +965,17 @@ Helpers</h1>
     <div class="legal">
       <a href="http://slides.com/terms?root=true">Terms</a>
       &bull; <a href="http://slides.com/privacy?root=true">Privacy</a>
-      &bull; <span class="copyright">&copy; 2020 Slides, Inc.</span>
+      &bull; <span class="copyright">&copy; 2021 Slides, Inc.</span>
     </div>
 </footer>
 
     </div> <!--! end of #container -->
     
 <script>
-	var SLConfig = {"deck":{"id":216172,"slug":"responsive-svg","title":"responsive-svg","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2014-08-28T04:43:38.820Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg","view_count":9631,"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","account_type":"default","team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"fade","transition":"default","theme_id":null,"theme_font":"josefine","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":35,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":null,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":null},"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","account_type":"default","team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
+	var SLConfig = {"deck":{"id":216172,"slug":"responsive-svg","title":"responsive-svg","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2014-08-28T04:43:38.820Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg","view_count":10013,"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","account_type":"default","team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"fade","transition":"default","theme_id":null,"theme_font":"josefine","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":35,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":null,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":null},"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","account_type":"default","team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
 </script>
-    <script src="//assets.slid.es/assets/application-06f73b4184927043d738bfa56cbd5513286d34ae33c2d63c685ca577a8f7bbc4.js" defer="defer"></script>
-    	<script src="//assets.slid.es/assets/deck-64ae628b82524293d5ddd125f34d5be25e5c6549517c3698a8da02fe24e10534.js" defer="defer"></script>
+    <script src="//assets.slid.es/assets/application-93b6e55f93473096810fb855195d406f4ebd7a9c4daa1f7367f74a9f0587d89e.js" defer="defer"></script>
+    	<script src="//assets.slid.es/assets/deck-eba980553838a5ff4072da9eb97e3da07cb1a3e99d78c1fda04f62eba7833db3.js" defer="defer"></script>
 	
 
 

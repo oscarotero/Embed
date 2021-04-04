@@ -8,8 +8,8 @@ return [
             'nginx/1.18.0'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:00 GMT',
-            'Wed, 23 Sep 2020 21:46:01 GMT'
+            'Sun, 04 Apr 2021 15:23:44 GMT',
+            'Sun, 04 Apr 2021 15:23:44 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -35,7 +35,7 @@ return [
             'https://chirb.it/7A9L9B'
         ],
         'X-Request-Time' => [
-            '1.014 ms'
+            '1.018 ms'
         ]
     ],
     'statusCode' => 200,
@@ -105,7 +105,7 @@ return [
                	     class="stopbutton fa fa-stop fa-4x"></i> &nbsp;
                	  <i id="cplayer_235058"
                	     data-cid="235058"
-               	     data-fd="==AZxcDNjFzYhJDNiVTM0MDN5Q2Y5kDNxEmZ0AzN1MGO4QmYmdzMkJGM5cjM0gTMxkDZ1ADNhhTMkVDN1EzYkBTZ9Umc1RXYudWaT1ietFULYZCMwITM9MXZylGc4VUL61WQtglJ0N3bo1zcyVGZhVGSkVmbnl2UtoXbB1CWmoVMwYDNxIDVzITOwAjMwITPlRXYE1ietFULYZCdzVWdxVmcfRzc3FmRyUyMzZkMlETL0NXYl1yc1ZkMlMjM5ADMyAjMGJTJBNkVy0UTRdkT2Q1NEpESJFUSLFUPsFWa05WZkVmcD1ietFULYZiN1ITQINVLDFUTI1CNTdVQ90Ga0lmcvdGbB1ietFULYZCRB9ETZFEUtQUROdUST5UV9YTNyEGaT1CduVGdu92QtoXbB1CW/MDct5yN1QTM3gDM2MTMfVGcwlGbrJXZk5WY252Lt92YuQXaiJXaoNmLvlGZ1F2Lt92YuM3dh52b6FWbh5yMz9yL6MHc0RHa"
+               	     data-fd="==AMwYTMiVTOzQjZmJzNlJGNjNmNjNGO5YWNwUGN2UGN0ITMwETMzYTOmRjYzQGZyEGNjJ2MkRzYjJGO3cjYhJDO9Umc1RXYudWaT1ietFULYZCMwITM9MXZylGc4VUL61WQtglJ0N3bo1zcyVGZhVGSkVmbnl2UtoXbB1CWmoFN0MjM1EDV0ADNwEjMwITPlRXYE1ietFULYZCdzVWdxVmcfRzc3FmRyUyMzZkMlETL0NXYl1yc1ZkMlQDM0ATMyAjMGJTJBNkVy0UTRdkT2Q1NEpESJFUSLFUPsFWa05WZkVmcD1ietFULYZiN1ITQINVLDFUTI1CNTdVQ90Ga0lmcvdGbB1ietFULYZCRB9ETZFEUtQUROdUST5UV9YTNyEGaT1CduVGdu92QtoXbB1CW/MDct5yN1QTM3gDM2MTMfVGcwlGbrJXZk5WY252Lt92YuQXaiJXaoNmLvlGZ1F2Lt92YuM3dh52b6FWbh5yMz9yL6MHc0RHa"
                	     class="sm2_button fa fa-play-circle fa-4x"></i>
                </span>
             </div>
@@ -114,7 +114,7 @@ return [
 
          <div class="">
             <span class="chirbit-tags"><i class="fa fa-tags"></i>
-            <span class="label label-default tag-label-04">#conference</span>
+            <span class="label label-default tag-label-03">#conference</span>
             </span>
          </div>
 

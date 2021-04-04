@@ -4,10 +4,10 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Mon, 14 Dec 2020 14:00:02 GMT'
+            'Sun, 04 Apr 2021 15:20:10 GMT'
         ],
         'server' => [
-            'Apache/2.4.43 (Unix)'
+            'Apache/2.4.46 (Unix)'
         ],
         'x-content-type-options' => [
             'nosniff'
@@ -28,7 +28,7 @@ return [
             'max-age=1209600'
         ],
         'expires' => [
-            'Mon, 28 Dec 2020 14:00:02 GMT'
+            'Sun, 18 Apr 2021 15:20:10 GMT'
         ],
         'content-type' => [
             'audio/mpeg'
@@ -37,7 +37,7 @@ return [
             'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
         ],
         'X-Request-Time' => [
-            '0.100 ms'
+            '0.198 ms'
         ]
     ],
     'statusCode' => 200,

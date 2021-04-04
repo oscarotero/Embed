@@ -11,10 +11,10 @@ return [
         'height' => 442,
         'ratio' => 187.288
     ],
-    'description' => '27-ott-2017 - Questo Pin è stato scoperto da Leslie Carruthers. Scopri (e salva) i tuoi Pin su Pinterest.',
-    'favicon' => 'https://s.pinimg.com/webapp/style/images/favicon-54a5b2af.png',
+    'description' => 'Apr 21, 2012 - This Pin was discovered by Leslie Carruthers. Discover (and save!) your own Pins on Pinterest',
+    'favicon' => 'https://s.pinimg.com/webapp/favicon-54a5b2af.png',
     'feeds' => [],
-    'icon' => 'https://s.pinimg.com/webapp/style/images/logo_trans_144x144-5e37c0c6.png',
+    'icon' => 'https://s.pinimg.com/webapp/logo_trans_144x144-5e37c0c6.png',
     'image' => 'https://i.pinimg.com/736x/b5/34/13/b53413787f3a42c8b9d5b08a6fbb2124--jack-nicholson-jack-oconnell.jpg',
     'keywords' => [],
     'language' => 'en',
@@ -24,7 +24,7 @@ return [
     'providerUrl' => 'https://www.pinterest.com',
     'publishedTime' => null,
     'redirect' => null,
-    'title' => 'Pin su Movie Addiction',
+    'title' => 'Jack !!!! | Jack nicholson, Nicholson, Movie stars',
     'url' => 'https://www.pinterest.com/pin/106890191127977979/',
     'linkedData' => [],
     'oEmbed' => []

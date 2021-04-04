@@ -7,7 +7,7 @@ return [
             'nginx'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:46:14 GMT'
+            'Sun, 04 Apr 2021 15:27:25 GMT'
         ],
         'content-type' => [
             'text/html; charset=utf-8'
@@ -18,11 +18,16 @@ return [
         'connection' => [
             'keep-alive'
         ],
+        'set-cookie' => [
+            'jsbin=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
+            'session=eyJ2ZXJzaW9uIjoiNC4xLjgiLCJjc3JmU2VjcmV0IjoidkVHbXA4b3lHSFo2S3c3REVReXIwVnBDIn0=; path=/; expires=Mon, 04 Apr 2022 15:27:25 GMT; domain=.jsbin.com; httponly',
+            'session.sig=kDMmuVEzDTc_rII2Q_bYjFovVFw; path=/; expires=Mon, 04 Apr 2022 15:27:25 GMT; domain=.jsbin.com; httponly'
+        ],
         'x-robots-tag' => [
             'nofollow'
         ],
         'etag' => [
-            'W/"f55-PKwmq6xazdo3/VfKriuW+axT/OA"'
+            'W/"f55-2MFZ2+4epjmZ3dd1cLFiOw6LRRQ"'
         ],
         'vary' => [
             'Accept-Encoding'
@@ -37,7 +42,7 @@ return [
             'http://output.jsbin.com/vonesu/10'
         ],
         'X-Request-Time' => [
-            '0.260 ms'
+            '0.253 ms'
         ]
     ],
     'statusCode' => 200,
@@ -50,7 +55,7 @@ return [
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2020 by thatemil (http://jsbin.com/vonesu/10/edit)
+Copyright (c) 2021 by thatemil (http://jsbin.com/vonesu/10/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->

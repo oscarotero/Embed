@@ -16,16 +16,16 @@ return [
             'text/html; charset=utf-8'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:47:21 GMT'
+            'Sun, 04 Apr 2021 15:22:00 GMT'
         ],
         'expires' => [
-            'Wed, 23 Sep 2020 21:52:21 GMT'
+            'Sun, 04 Apr 2021 15:26:59 GMT'
         ],
         'server' => [
             'tsa_f'
         ],
         'set-cookie' => [
-            'muc=aa9a3e1f-3ebe-474b-a394-d8b7156c65a0; Max-Age=63072000; Expires=Fri, 23 Sep 2022 21:47:21 GMT; Domain=t.co; Secure; SameSite=None'
+            'muc=43ad3941-dd44-41d0-86a0-db40d36da4db; Max-Age=63072000; Expires=Tue, 04 Apr 2023 15:21:59 GMT; Domain=t.co; Secure; SameSite=None'
         ],
         'strict-transport-security' => [
             'max-age=0'
@@ -34,10 +34,10 @@ return [
             'Origin'
         ],
         'x-connection-hash' => [
-            '58977396a349c68b7c64e9b2d877261e'
+            '3df298a187eae57ac3788beb08f622e3'
         ],
         'x-response-time' => [
-            '112'
+            '111'
         ],
         'x-xss-protection' => [
             '0'
@@ -46,7 +46,7 @@ return [
             'https://t.co/4DK3Jc2BTt'
         ],
         'X-Request-Time' => [
-            '0.325 ms'
+            '0.336 ms'
         ]
     ],
     'statusCode' => 200,

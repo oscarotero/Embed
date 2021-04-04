@@ -19,7 +19,7 @@ return [
             'Accept, Authorization, Content-Type, Origin'
         ],
         'cache-control' => [
-            'private, max-age=0, must-revalidate'
+            'max-age=0, private, must-revalidate'
         ],
         'access-control-allow-origin' => [
             '*'
@@ -30,44 +30,50 @@ return [
         'access-control-expose-headers' => [
             'Date'
         ],
-        'etag' => [
-            '"70f2e6fb017446050780256c8fc4213d"'
+        'x-ua-compatible' => [
+            'IE=Edge,chrome=1'
         ],
         'date' => [
-            'Wed, 23 Sep 2020 21:47:17 GMT'
+            'Sun, 04 Apr 2021 15:22:38 GMT'
         ],
         'x-frame-options' => [
             'SAMEORIGIN'
         ],
         'strict-transport-security' => [
-            'max-age=604800; includeSubdomains'
+            'max-age=63072000; includeSubdomains; preload'
+        ],
+        'server' => [
+            'am/2'
         ],
         'content-encoding' => [
             'gzip'
         ],
-        'server' => [
-            'am/2'
+        'etag' => [
+            'W/"cb62c16cfad142cb9b93823269f4d3e2"'
+        ],
+        'vary' => [
+            'Accept-Encoding'
         ],
         'x-cache' => [
             'Miss from cloudfront'
         ],
         'via' => [
-            '1.1 d8c266ed74a4ecc05eeffe79fa473f7e.cloudfront.net (CloudFront)'
+            '1.1 c02c12149d44c9deefaab126c94c3d3f.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
-            'MAD50-C1'
+            'MAD51-C1'
         ],
         'x-amz-cf-id' => [
-            'KP9wmtbSFFGWFMot-4FKu-HHPZTZp9wv9t1yxCBTWPckqUqtLkNAOw=='
+            'CAbmZ-XusAByNbPCymnI2wmhexjH9OFBPSQc71qJhCPEP4YMvw3LHQ=='
         ],
         'Content-Location' => [
             'https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Fididthat-1%2Flowe-ct-cape-times-world-cup&format=json'
         ],
         'X-Request-Time' => [
-            '0.146 ms'
+            '0.127 ms'
         ]
     ],
     'statusCode' => 200,
     'reasonPhrase' => 'OK',
-    'body' => '{"version":1.0,"type":"rich","provider_name":"SoundCloud","provider_url":"https://soundcloud.com","height":400,"width":"100%","title":"LOWE CT Cape Times - World Cup by IDIDTHAT.co","description":"","thumbnail_url":"https://soundcloud.com/images/fb_placeholder.png","html":"\\u003Ciframe width=\\"100%\\" height=\\"400\\" scrolling=\\"no\\" frameborder=\\"no\\" src=\\"https://w.soundcloud.com/player/?visual=true\\u0026url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624\\u0026show_artwork=true\\"\\u003E\\u003C/iframe\\u003E","author_name":"IDIDTHAT.co","author_url":"https://soundcloud.com/ididthat-1"}'
+    'body' => '{"version":1.0,"type":"rich","provider_name":"SoundCloud","provider_url":"https://soundcloud.com","height":400,"width":"100%","title":"LOWE CT Cape Times - World Cup by IDIDTHAT.co","description":"","thumbnail_url":"https://soundcloud.com/images/fb_placeholder.png","html":"<iframe width=\\"100%\\" height=\\"400\\" scrolling=\\"no\\" frameborder=\\"no\\" src=\\"https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&show_artwork=true\\"></iframe>","author_name":"IDIDTHAT.co","author_url":"https://soundcloud.com/ididthat-1"}'
 ];

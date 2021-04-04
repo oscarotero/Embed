@@ -8,11 +8,9 @@ return [
     'code' => null,
     'description' => 'Get info from any web service or page. Contribute to oscarotero/Embed development by creating an account on GitHub.',
     'favicon' => 'https://github.githubassets.com/favicons/favicon.svg',
-    'feeds' => [
-        'https://github.com/oscarotero/Embed/commits/master.atom'
-    ],
+    'feeds' => [],
     'icon' => null,
-    'image' => 'https://avatars3.githubusercontent.com/u/377873?s=400&v=4',
+    'image' => 'https://avatars.githubusercontent.com/u/377873?s=400&v=4',
     'keywords' => [],
     'language' => 'en',
     'languages' => [],

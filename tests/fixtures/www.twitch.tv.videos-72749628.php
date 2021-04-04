@@ -16,7 +16,7 @@ return [
         'ratio' => 60.968
     ],
     'description' => 'Twitch is the world\'s leading video platform and community for gamers.',
-    'favicon' => 'https://static.twitchcdn.net/assets/favicon-32-d6025c14e900565d6177.png',
+    'favicon' => 'https://static.twitchcdn.net/assets/favicon-32-e29e246c157142c94346.png',
     'feeds' => [],
     'icon' => null,
     'image' => 'https://static-cdn.jtvnw.net/ttv-static-metadata/twitch_logo3.jpg',
@@ -31,9 +31,5 @@ return [
     'title' => 'Twitch',
     'url' => 'https://www.twitch.tv/videos/72749628',
     'linkedData' => [],
-    'oEmbed' => [
-        'error' => 'Gone',
-        'status' => 410,
-        'message' => 'Endpoint deprecated'
-    ]
+    'oEmbed' => []
 ];

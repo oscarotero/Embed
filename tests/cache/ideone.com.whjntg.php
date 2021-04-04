@@ -4,13 +4,16 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Wed, 23 Sep 2020 21:46:49 GMT'
+            'Sun, 04 Apr 2021 15:20:19 GMT'
         ],
         'content-type' => [
             'text/html; charset=UTF-8'
         ],
         'content-length' => [
-            '8158'
+            '8156'
+        ],
+        'set-cookie' => [
+            'PHPSESSID=2shjspi49kpg0dhlbkjb0oa4a4; path=/'
         ],
         'expires' => [
             'Thu, 19 Nov 1981 08:52:00 GMT'
@@ -34,7 +37,7 @@ return [
             'https://ideone.com/Whjntg'
         ],
         'X-Request-Time' => [
-            '0.705 ms'
+            '0.715 ms'
         ]
     ],
     'statusCode' => 200,
@@ -143,7 +146,8 @@ return [
 	<script type="text/javascript" src="//stx1.ideone.com/gfx2/libs/ace-2017-06/ace.js?1" data-ace-base="/gfx2/libs/ace-2017-06"></script>
 	<script type="text/javascript" src="//stx1.ideone.com/gfx2/js/ideone-common.js?12"></script>
 	<!-- end of rzeczy przeniesione tymczasowo z bundle -->
-	
+
+	<script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 </head>
 
 
@@ -338,9 +342,9 @@ int main() {
 --></style><pre class="c"><ol><li class="li1"><div class="de1"><span class="co2">#include&lt;stdio.h&gt;</span></div></li><li class="li1"><div class="de1"><span class="co2">#include&lt;stdlib.h&gt;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">	<span class="kw4">int</span> n<span class="sy0">;</span></div></li><li class="li1"><div class="de1">	<span class="kw4">char</span> <span class="sy0">*</span>s <span class="sy0">=</span> <a href="http://www.opengroup.org/onlinepubs/009695399/functions/malloc.html"><span class="kw3">malloc</span></a><span class="br0">&#40;</span><span class="nu0">20</span><span class="sy0">*</span><span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">	<a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\\n</span>&quot;</span><span class="sy0">,</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">	<a href="http://www.opengroup.org/onlinepubs/009695399/functions/sscanf.html"><span class="kw3">sscanf</span></a><span class="br0">&#40;</span>s<span class="sy0">,</span><span class="st0">&quot;%d&quot;</span><span class="sy0">,&amp;</span>n<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">	<a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%d, %d<span class="es1">\\n</span>&quot;</span><span class="sy0">,</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span><span class="sy0">,</span>n<span class="sy0">+</span><span class="nu0">9</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre></pre>
 				<div id="source-text" class="hidden">I2luY2x1ZGU8c3RkaW8uaD4KI2luY2x1ZGU8c3RkbGliLmg+CgppbnQgbWFpbigpIHsKCWludCBuOwoJY2hhciAqcyA9IG1hbGxvYygyMCpzaXplb2YoY2hhcikpOwoJcHJpbnRmKCIlZFxuIixzaXplb2YocykpOwoJc3NjYW5mKHMsIiVkIiwmbik7CglwcmludGYoIiVkLCAlZFxuIixzaXplb2Yobiksbis5KTsKfQ==</div>
 				
-				<input type="hidden" name="p1" id="p1" value="de161158e87cd03ef21ab58bc24b7aff"/>
-				<input type="hidden" name="p2" id="p2" value="2"/>
-				<input type="hidden" name="p3" id="p3" value="18"/>
+				<input type="hidden" name="p1" id="p1" value="d70aefb1ab20d6496773ba93de5fa93b"/>
+				<input type="hidden" name="p2" id="p2" value="4"/>
+				<input type="hidden" name="p3" id="p3" value="12"/>
 				<input type="hidden" name="p4" id="p4" value=""/>
 			</div>
 			
@@ -614,7 +618,7 @@ $(document).ready(function(){
 				<a href="/ideone/Tools/bug/form/1/link/Whjntg/compiler/11" id="show_bug_dialog" data-toggle="modal" data-target="#bug-dialog">Feedback &amp; Bugs</a>
 					
 				<!-- 
-				<p class="values">13, 0.24s, 0.36s</p>
+				<p class="values">13, 0.23s, 0.33s</p>
 				-->
 				
 				<br>
@@ -721,12 +725,11 @@ $(function(){
 </script>
 
 
-<script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <script>
 (function(){
 		if(typeof _bsa !== \'undefined\' && _bsa) {
 			  		// format, zoneKey, segment:value, options
-			  		_bsa.init(\'flexbar\', \'CK7D4KJJ\', \'placement:ideonecom\');
+			  		_bsa.init(\'flexbar\', \'CE7D42QN\', \'placement:ideonecom\');
 					  	}
 })();
 </script>
