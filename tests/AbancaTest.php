@@ -13,19 +13,14 @@ class AbancaTest extends AbstractTestCase
                     (object) [
                         '@context' => 'http://schema.org',
                         '@type' => 'Organization',
-                        'name' => 'ABANCA',
+                        'name' => '',
                         'url' => '//www.abanca.com',
                         'logo' => '//www.abanca.com/img/logo-social.jpg',
-                        'sameAs' => [
-                            'https://www.facebook.com/SomosABANCA',
-                            'https://twitter.com/somosABANCA',
-                            'https://www.youtube.com/user/somosABANCAtv',
-                            'https://www.flickr.com/photos/125188945@N05/',
-                        ],
+                        'sameAs' => [],
                         'contactPoint' => [
                             (object) [
                                 '@type' => 'ContactPoint',
-                                'telephone' => '+34-981 910 522',
+                                'telephone' => '-',
                                 'contactType' => 'customer service',
                             ],
                         ],
