@@ -42,7 +42,7 @@ class Iframely implements EndPointInterface
     {
         return Url::create('http://open.iframe.ly/api/oembed')
                 ->withQueryParameters([
-                    'url' => (string) $this->getUrl(),
+                    'url' => (string) $this->response->getUrl(),
                     'format' => 'json',
                     'api_key' => $this->key,
                 ]);
