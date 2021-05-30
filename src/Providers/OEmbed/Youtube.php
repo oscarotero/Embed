@@ -21,7 +21,7 @@ class Youtube extends EndPoint implements EndPointInterface
             // The Adapter URL should be forced to starting URL as well
             // to prevent consumers of the packages having to deal
             // with a URL to a consent page (#441)
-            $adapter->url = $response->getStartingUrl();
+            $adapter->url = (string) $response->getStartingUrl();
             return new static($response, $response->getStartingUrl());
         }
 
