@@ -8,9 +8,9 @@ use Psr\Http\Message\UriInterface;
 
 class OEmbed extends Base
 {
-    const ENDPOINT_PAGE = 'https://graph.facebook.com/v8.0/oembed_page';
-    const ENDPOINT_POST = 'https://graph.facebook.com/v8.0/oembed_post';
-    const ENDPOINT_VIDEO = 'https://graph.facebook.com/v8.0/oembed_video';
+    const ENDPOINT_PAGE = 'https://graph.facebook.com/v11.0/oembed_page';
+    const ENDPOINT_POST = 'https://graph.facebook.com/v11.0/oembed_post';
+    const ENDPOINT_VIDEO = 'https://graph.facebook.com/v11.0/oembed_video';
 
     protected function detectEndpoint(): ?UriInterface
     {
@@ -21,6 +21,16 @@ class OEmbed extends Base
         }
 
         $uri = $this->extractor->getUri();
+        if (strpos($uri->getPath(), 'login') !== false) {
+            $query = $uri->getQuery();
+            $params = explode('&', $query);
+            foreach ($params as $param) {
+                $keyval = explode('=', $param);
+                if ($keyval[0] == 'next') {
+                    $uri = $this->extractor->getCrawler()->createUri(rawurldecode($keyval[1]));
+                }
+            }
+        }
         $queryParameters = $this->getOembedQueryParameters((string) $uri);
         $queryParameters['access_token'] = $token;
 
