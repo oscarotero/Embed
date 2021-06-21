@@ -22,13 +22,9 @@ class OEmbed extends Base
 
         $uri = $this->extractor->getUri();
         if (strpos($uri->getPath(), 'login') !== false) {
-            $query = $uri->getQuery();
-            $params = explode('&', $query);
-            foreach ($params as $param) {
-                $keyval = explode('=', $param);
-                if ($keyval[0] == 'next') {
-                    $uri = $this->extractor->getCrawler()->createUri(rawurldecode($keyval[1]));
-                }
+            parse_str($uri->getQuery(), $params);
+            if (isset($params['next']) && $params['next']) {
+                $uri = $this->extractor->getCrawler()->createUri($params['next']);
             }
         }
         $queryParameters = $this->getOembedQueryParameters((string) $uri);
