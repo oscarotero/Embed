@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.4] - 2021-06-22
+### Fixed
+- Urls of images should include the same url for the `$info->image` value. [#452]
+
 ## [4.3.3] - 2021-06-22
 ### Fixed
 - Facebook embed redirects to `/login`. [#450], [#451]
@@ -140,7 +144,9 @@ Full library refactoring.
 [#437]: https://github.com/oscarotero/Embed/issues/437
 [#450]: https://github.com/oscarotero/Embed/issues/450
 [#451]: https://github.com/oscarotero/Embed/issues/451
+[#452]: https://github.com/oscarotero/Embed/issues/452
 
+[4.3.4]: https://github.com/oscarotero/Embed/compare/v4.3.3...v4.3.4
 [4.3.3]: https://github.com/oscarotero/Embed/compare/v4.3.2...v4.3.3
 [4.3.2]: https://github.com/oscarotero/Embed/compare/v4.3.1...v4.3.2
 [4.3.1]: https://github.com/oscarotero/Embed/compare/v4.3.0...v4.3.1
