@@ -15,7 +15,7 @@ return [
     'favicon' => 'https://i.imgur.com/favicon.ico',
     'feeds' => [],
     'icon' => null,
-    'image' => null,
+    'image' => 'http://i.imgur.com/X6rkCc5.jpg',
     'keywords' => [],
     'language' => null,
     'languages' => [],

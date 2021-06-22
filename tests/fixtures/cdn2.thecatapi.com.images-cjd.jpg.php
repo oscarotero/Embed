@@ -15,7 +15,7 @@ return [
     'favicon' => 'https://cdn2.thecatapi.com/favicon.ico',
     'feeds' => [],
     'icon' => null,
-    'image' => null,
+    'image' => 'https://cdn2.thecatapi.com/images/cjd.jpg',
     'keywords' => [],
     'language' => null,
     'languages' => [],
