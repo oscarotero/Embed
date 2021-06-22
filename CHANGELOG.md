@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.3] - 2021-06-22
+### Fixed
+- Facebook embed redirects to `/login`. [#450], [#451]
+
 ## [4.3.2] - 2021-04-04
 ### Fixed
 - Add configured oEmbed query parameters to all oEmbed endpoints [#437]
@@ -134,7 +138,10 @@ Full library refactoring.
 [#432]: https://github.com/oscarotero/Embed/issues/432
 [#433]: https://github.com/oscarotero/Embed/issues/433
 [#437]: https://github.com/oscarotero/Embed/issues/437
+[#450]: https://github.com/oscarotero/Embed/issues/450
+[#451]: https://github.com/oscarotero/Embed/issues/451
 
+[4.3.3]: https://github.com/oscarotero/Embed/compare/v4.3.2...v4.3.3
 [4.3.2]: https://github.com/oscarotero/Embed/compare/v4.3.1...v4.3.2
 [4.3.1]: https://github.com/oscarotero/Embed/compare/v4.3.0...v4.3.1
 [4.3.0]: https://github.com/oscarotero/Embed/compare/v4.2.7...v4.3.0
