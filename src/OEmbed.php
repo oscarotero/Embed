@@ -136,6 +136,8 @@ class OEmbed
     private function extractXML(string $xml): array
     {
         try {
+            // Remove the DOCTYPE declaration for to prevent XML Quadratic Blowup vulnerability
+            $xml = preg_replace('/^<!DOCTYPE[^>]*+>/i', '', $xml, 1);
             $data = [];
             $errors = libxml_use_internal_errors(true);
             $content = new SimpleXMLElement($xml);
