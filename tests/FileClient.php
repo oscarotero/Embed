@@ -6,12 +6,12 @@ namespace Embed\Tests;
 use Brick\VarExporter\VarExporter;
 use Embed\Http\CurlClient;
 use Embed\Http\FactoryDiscovery;
+use Exception;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
-use Exception;
 
 /**
  * Decorator to cache requests into files

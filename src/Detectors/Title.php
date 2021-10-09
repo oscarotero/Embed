@@ -13,13 +13,13 @@ class Title extends Detector
 
         return $oembed->str('title')
             ?: $metas->str(
-                'og:title', 
-                'twitter:title', 
-                'lp:title', 
-                'dcterms.title', 
-                'article:title', 
-                'headline', 
-                'article.headline', 
+                'og:title',
+                'twitter:title',
+                'lp:title',
+                'dcterms.title',
+                'article:title',
+                'headline',
+                'article.headline',
                 'parsely-title'
             )
             ?: $document->select('.//head/title')->str();

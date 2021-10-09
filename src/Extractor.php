@@ -135,6 +135,11 @@ class Extractor
         return $detector->get();
     }
 
+    public function createCustomDetectors(): array
+    {
+        return [];
+    }
+
     public function addDetector(string $name, Detector $detector): void
     {
         $this->customDetectors[$name] = $detector;

@@ -13,13 +13,13 @@ class Description extends Detector
 
         return $oembed->str('description')
             ?: $metas->str(
-                'og:description', 
-                'twitter:description', 
-                'lp:description', 
-                'description', 
+                'og:description',
+                'twitter:description',
+                'lp:description',
+                'description',
                 'article:description',
-                'dcterms.description', 
-                'sailthru.description', 
+                'dcterms.description',
+                'sailthru.description',
                 'excerpt',
                 'article.summary'
             )

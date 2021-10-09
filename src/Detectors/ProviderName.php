@@ -14,7 +14,7 @@ class ProviderName extends Detector
 
         return $oembed->str('provider_name')
             ?: $metas->str(
-                'og:site_name', 
+                'og:site_name',
                 'dcterms.publisher',
                 'publisher',
                 'article:publisher'

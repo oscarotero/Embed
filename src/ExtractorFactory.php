@@ -58,6 +58,10 @@ class ExtractorFactory
             $extractor->addDetector($name, new $detector($extractor));
         }
 
+        foreach ($extractor->createCustomDetectors() as $name => $detector) {
+            $extractor->addDetector($name, $detector);
+        }
+
         return $extractor;
     }
 
