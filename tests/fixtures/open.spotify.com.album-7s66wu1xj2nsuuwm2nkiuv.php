@@ -6,10 +6,10 @@ return [
     'authorUrl' => null,
     'cms' => null,
     'code' => [
-        'html' => '<iframe width="300" height="380" allowtransparency="true" frameborder="0" allow="encrypted-media" title="Spotify Embed: A Cantar con Xabarin (Vol. I &amp; II)" src="https://open.spotify.com/embed/album/7s66wU1XJ2NsUuWM2NKiUV"></iframe>',
+        'html' => '<iframe width="100%" height="380" title="Spotify Embed: A Cantar con Xabarin (Vol. I &amp; II)" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/album/7s66wU1XJ2NsUuWM2NKiUV"></iframe>',
         'width' => 300,
         'height' => 380,
-        'ratio' => 126.667
+        'ratio' => 83.333
     ],
     'description' => 'Various Artists · Compilation · 1996 · 44 songs.',
     'favicon' => 'https://open.scdn.co/cdn/images/favicon32.a19b4f5b.png',

@@ -18,6 +18,9 @@ return [
         '|^https?://alpha\\.app\\.net/.*/post/.*$|i',
         '|^https?://photos\\.app\\.net/.*/.*$|i',
     ],
+    'https://viewer.altium.com/shell/oembed' => [
+        '|^https?://altium\\.com/viewer/.*$|i',
+    ],
     'https://api.altrulabs.com/api/v1/social/oembed' => [
         '|^https?://app\\.altrulabs\\.com/.*/.*\\?answer_id\\=.*$|i',
         '|^https?://app\\.altrulabs\\.com/player/.*$|i',
@@ -59,6 +62,9 @@ return [
         '|^https?://audiomack\\.com/.*/album/.*$|i',
         '|^https?://audiomack\\.com/.*/playlist/.*$|i',
     ],
+    'https://podcasts.audiomeans.fr/services/oembed' => [
+        '|^https?://podcasts\\.audiomeans\\.fr/.*$|i',
+    ],
     'https://stage-embed.avocode.com/api/oembed' => [
         '|^https?://app\\.avocode\\.com/view/.*$|i',
     ],
@@ -82,6 +88,9 @@ return [
         '|^https?://blogcast\\.host/embed/.*$|i',
         '|^https?://blogcast\\.host/embedly/.*$|i',
     ],
+    'http://api.bopp.tk/v1/oembed' => [
+        '|^https?://i\\.bopp\\.tk/.*$|i',
+    ],
     'http://boxofficebuz.com/oembed' => [
         '|^https?://boxofficebuz\\.com.*$|i',
     ],
@@ -100,6 +109,10 @@ return [
     'http://carbonhealth.com/oembed' => [
         '|^https?://carbonhealth\\.com/practice/.*$|i',
     ],
+    'https://www.catapult.app/_hcms/api/video/oembed' => [
+        '|^https?://www\\-catapult\\-app\\.sandbox\\.hs\\-sites\\.com/video\\-page.*$|i',
+        '|^https?://www\\-catapult\\.app/video\\-page.*$|i',
+    ],
     'http://img.catbo.at/oembed.json' => [
         '|^https?://img\\.catbo\\.at/.*$|i',
     ],
@@ -117,6 +130,10 @@ return [
     ],
     'http://chirb.it/oembed.json' => [
         '|^https?://chirb\\.it/.*$|i',
+    ],
+    'https://chroco.ooo/embed' => [
+        '|^https?://chroco\\.ooo/mypage/.*$|i',
+        '|^https?://chroco\\.ooo/story/.*$|i',
     ],
     'https://www.circuitlab.com/circuit/oembed/' => [
         '|^https?://www\\.circuitlab\\.com/circuit/.*$|i',
@@ -161,6 +178,9 @@ return [
     'https://gql.cueup.io/oembed' => [
         '|^https?://cueup\\.io/user/.*/sounds/.*$|i',
     ],
+    'https://api.curated.co/oembed' => [
+        '|^https?://.*\\.curated\\.co/.*$|i',
+    ],
     'https://app.customerdb.com/embed' => [
         '|^https?://app\\.customerdb\\.com/share/.*$|i',
     ],
@@ -186,7 +206,7 @@ return [
         '|^https?://sta\\.sh/.*",$|i',
         '|^https?://.*\\.deviantart\\.com/.*\\#/d.*"$|i',
     ],
-    'https://*.didacte.com/cards/oembed\'' => [
+    'https://*.didacte.com/cards/oembed' => [
         '|^https?://.*\\.didacte\\.com/a/course/.*$|i',
     ],
     'https://www.ultimedia.com/api/search/oembed' => [
@@ -229,6 +249,9 @@ return [
     'http://api.embed.ly/1/oembed' => [
         '|^https?://api\\.embed\\.ly/.*$|i',
     ],
+    'https://music.enystre.com/oembed' => [
+        '|^https?://music\\.enystre\\.com/lyrics/.*$|i',
+    ],
     'https://ethfiddle.com/services/oembed/' => [
         '|^https?://ethfiddle\\.com/.*$|i',
     ],
@@ -240,9 +263,10 @@ return [
         '|^https?://eyrie\\.io/board/.*$|i',
         '|^https?://eyrie\\.io/sparkfun/.*$|i',
     ],
-    'https://graph.facebook.com/v9.0/oembed_post' => [
+    'https://graph.facebook.com/v10.0/oembed_post' => [
         '|^https?://www\\.facebook\\.com/.*/posts/.*$|i',
         '|^https?://www\\.facebook\\.com/.*/activity/.*$|i',
+        '|^https?://www\\.facebook\\.com/.*/photos/.*$|i',
         '|^https?://www\\.facebook\\.com/photo\\.php\\?fbid\\=.*$|i',
         '|^https?://www\\.facebook\\.com/photos/.*$|i',
         '|^https?://www\\.facebook\\.com/permalink\\.php\\?story_fbid\\=.*$|i',
@@ -250,12 +274,12 @@ return [
         '|^https?://www\\.facebook\\.com/questions/.*$|i',
         '|^https?://www\\.facebook\\.com/notes/.*/.*/.*$|i',
     ],
-    'https://graph.facebook.com/v9.0/oembed_video' => [
+    'https://graph.facebook.com/v10.0/oembed_video' => [
         '|^https?://www\\.facebook\\.com/.*/videos/.*$|i',
         '|^https?://www\\.facebook\\.com/video\\.php\\?id\\=.*$|i',
         '|^https?://www\\.facebook\\.com/video\\.php\\?v\\=.*$|i',
     ],
-    'https://graph.facebook.com/v9.0/oembed_page' => [
+    'https://graph.facebook.com/v10.0/oembed_page' => [
         '|^https?://www\\.facebook\\.com/.*$|i',
     ],
     'https://app.getfader.com/api/oembed' => [
@@ -293,6 +317,10 @@ return [
     'https://framebuzz.com/oembed/' => [
         '|^https?://framebuzz\\.com/v/.*$|i',
     ],
+    'https://api.framer.com/web/oembed' => [
+        '|^https?://framer\\.com/share/.*$|i',
+        '|^https?://framer\\.com/embed/.*$|i',
+    ],
     'http://www.funnyordie.com/oembed.json' => [
         '|^https?://www\\.funnyordie\\.com/videos/.*$|i',
     ],
@@ -326,6 +354,7 @@ return [
     ],
     'https://giphy.com/services/oembed' => [
         '|^https?://giphy\\.com/gifs/.*$|i',
+        '|^https?://giphy\\.com/clips/.*$|i',
         '|^https?://gph\\.is/.*$|i',
         '|^https?://media\\.giphy\\.com/media/.*/giphy\\.gif$|i',
     ],
@@ -348,7 +377,7 @@ return [
         '|^https?://hearthis\\.at/.*/.*/$|i',
         '|^https?://hearthis\\.at/.*/set/.*/$|i',
     ],
-    'https://player.hihaho.com/services/oembed/*' => [
+    'https://player.hihaho.com/services/oembed' => [
         '|^https?://player\\.hihaho\\.com/.*$|i',
     ],
     'https://www.hippovideo.io/services/oembed' => [
@@ -366,6 +395,9 @@ return [
     ],
     'http://www.hulu.com/api/oembed.json' => [
         '|^https?://www\\.hulu\\.com/watch/.*$|i',
+    ],
+    'https://oembed.idomoo.com/oembed' => [
+        '|^https?://.*\\.idomoo\\.com/.*$|i',
     ],
     'http://www.ifixit.com/Embed' => [
         '|^https?://www\\.ifixit\\.com/Guide/View/.*$|i',
@@ -395,7 +427,7 @@ return [
     'http://api.inphood.com/oembed' => [
         '|^https?://.*\\.inphood\\.com/.*$|i',
     ],
-    'https://graph.facebook.com/v9.0/instagram_oembed' => [
+    'https://graph.facebook.com/v10.0/instagram_oembed' => [
         '|^https?://instagram\\.com/.*/p/.*,$|i',
         '|^https?://www\\.instagram\\.com/.*/p/.*,$|i',
         '|^https?://instagram\\.com/p/.*$|i',
@@ -426,8 +458,10 @@ return [
     ],
     'https://tv.kakao.com/oembed' => [
         '|^https?://tv\\.kakao\\.com/channel/.*/cliplink/.*$|i',
+        '|^https?://tv\\.kakao\\.com/m/channel/.*/cliplink/.*$|i',
         '|^https?://tv\\.kakao\\.com/channel/v/.*$|i',
         '|^https?://tv\\.kakao\\.com/channel/.*/livelink/.*$|i',
+        '|^https?://tv\\.kakao\\.com/m/channel/.*/livelink/.*$|i',
         '|^https?://tv\\.kakao\\.com/channel/l/.*$|i',
     ],
     'http://www.kickstarter.com/services/oembed' => [
@@ -473,6 +507,10 @@ return [
         '|^https?://livestream\\.com/.*/events/.*/videos/.*$|i',
         '|^https?://livestream\\.com/.*/.*$|i',
         '|^https?://livestream\\.com/.*/.*/videos/.*$|i',
+    ],
+    'https://embed.lottiefiles.com/oembed' => [
+        '|^https?://lottiefiles\\.com/.*$|i',
+        '|^https?://.*\\.lottiefiles\\.com/.*$|i',
     ],
     'https://app.ludus.one/oembed' => [
         '|^https?://app\\.ludus\\.one/.*$|i',
@@ -565,6 +603,9 @@ return [
     'http://www.nfb.ca/remote/services/oembed/' => [
         '|^https?://.*\\.nfb\\.ca/film/.*$|i',
     ],
+    'https://www.nftndx.io/oembed' => [
+        '|^https?://www\\.nftndx\\.io/.*$|i',
+    ],
     'https://oembed.nopaste.ml' => [
         '|^https?://nopaste\\.ml/.*$|i',
     ],
@@ -598,6 +639,9 @@ return [
     ],
     'http://on.aol.com/api' => [
         '|^https?://on\\.aol\\.com/video/.*$|i',
+    ],
+    'https://test-bysa.opsismedia.com/oembed.php' => [
+        '|^https?://.*\\.opsismedia\\.com/.*$|i',
     ],
     'https://www.ora.tv/oembed/*?format=json' => [
         '|^https?://www\\.ora\\.tv/.*$|i',
@@ -635,6 +679,12 @@ return [
     'https://tools.pinpoll.com/oembed' => [
         '|^https?://tools\\.pinpoll\\.com/embed/.*$|i',
     ],
+    'https://www.pinterest.com/oembed.json' => [
+        '|^https?://www\\.pinterest\\.com/.*$|i',
+    ],
+    'https://*.pitchhub.com.com/en/public/oembed' => [
+        '|^https?://.*\\.pitchhub\\.com/en/public/player/.*$|i',
+    ],
     'https://store.pixdor.com/oembed' => [
         '|^https?://store\\.pixdor\\.com/place\\-marker\\-widget/.*/show$|i',
         '|^https?://store\\.pixdor\\.com/map/.*/show$|i',
@@ -660,6 +710,9 @@ return [
         '|^https?://posixion\\.com/question/.*$|i',
         '|^https?://posixion\\.com/.*/question/.*$|i',
     ],
+    'https://gateway.cobalt.run/present/decks/oembed' => [
+        '|^https?://present\\.do/decks/.*$|i',
+    ],
     'https://prezi.com/v/oembed' => [
         '|^https?://prezi\\.com/v/.*$|i',
         '|^https?://.*\\.prezi\\.com/v/.*$|i',
@@ -679,6 +732,12 @@ return [
         '|^https?://www\\.radiopublic\\.com/.*$|i',
         '|^https?://.*\\.radiopublic\\.com/.*\'$|i',
     ],
+    'https://pub.raindrop.io/api/oembed' => [
+        '|^https?://raindrop\\.io/.*$|i',
+        '|^https?://raindrop\\.io/.*/.*$|i',
+        '|^https?://raindrop\\.io/.*/.*/.*$|i',
+        '|^https?://raindrop\\.io/.*/.*/.*/.*$|i',
+    ],
     'https://animatron.com/oembed' => [
         '|^https?://www\\.rcvis\\.com/v/.*$|i',
         '|^https?://www\\.rcvis\\.com/visualize\\=.*$|i',
@@ -697,6 +756,9 @@ return [
     ],
     'http://repubhub.icopyright.net/oembed.act' => [
         '|^https?://repubhub\\.icopyright\\.net/freePost\\.act\\?.*$|i',
+    ],
+    'https://h5.resso.com/oembed/' => [
+        '|^https?://h5\\.resso\\.com/.*$|i',
     ],
     'https://www.reverbnation.com/oembed' => [
         '|^https?://www\\.reverbnation\\.com/.*$|i',
@@ -799,18 +861,26 @@ return [
     'https://api.bespotful.com/oembed' => [
         '|^https?://play\\.bespotful\\.com/.*$|i',
     ],
-    'https://embed.spotify.com/oembed/' => [
-        '|^https?://.*\\.spotify\\.com/.*$|i',
+    'https://open.spotify.com/oembed/' => [
+        '|^https?://open\\.spotify\\.com/.*$|i',
         '|^https?://spotify\\:.*$|i',
     ],
     'https://api.spreaker.com/oembed' => [
         '|^https?://.*\\.spreaker\\.com/.*$|i',
+    ],
+    'http://sproutvideo.com/oembed.json' => [
+        '|^https?://sproutvideo\\.com/videos/.*$|i',
+        '|^https?://.*\\.vids\\.io/videos/.*$|i',
     ],
     'https://purl.stanford.edu/embed.json' => [
         '|^https?://purl\\.stanford\\.edu/.*$|i',
     ],
     'https://api.streamable.com/oembed.json' => [
         '|^https?://streamable\\.com/.*$|i',
+    ],
+    'https://streamio.com/api/v1/oembed' => [
+        '|^https?://s3m\\.io/.*$|i',
+        '|^https?://23m\\.io/.*$|i',
     ],
     'https://content.streamonecloud.net/oembed' => [
         '|^https?://content\\.streamonecloud\\.net/embed/.*$|i',
@@ -860,8 +930,14 @@ return [
     'http://www.topy.se/oembed/' => [
         '|^https?://www\\.topy\\.se/image/.*$|i',
     ],
+    'https://app-test.totango.com/oembed' => [
+        '|^https?://app\\-test\\.totango\\.com/.*$|i',
+    ],
     'https://oembed.tourhero.com/' => [
         '|^https?://www\\.tourhero\\.com/.*$|i',
+    ],
+    'https://trinitymedia.ai/player/trinity-oembed' => [
+        '|^https?://trinitymedia\\.ai/player/.*$|i',
     ],
     'https://www.tumblr.com/oembed/1.0' => [
         '|^https?://.*\\.tumblr\\.com/post/.*$|i',
@@ -876,8 +952,6 @@ return [
     'https://publish.twitter.com/oembed' => [
         '|^https?://twitter\\.com/.*/status/.*$|i',
         '|^https?://.*\\.twitter\\.com/.*/status/.*$|i',
-        '|^https?://twitter\\.com/.*/moments/.*$|i',
-        '|^https?://.*\\.twitter\\.com/.*/moments/.*$|i',
     ],
     'https://play.typecast.ai/oembed' => [
         '|^https?://play\\.typecast\\.ai/s/.*$|i',
@@ -886,6 +960,9 @@ return [
     ],
     'https://typlog.com/oembed' => [
         '|^https?://typlog\\.com.*$|i',
+    ],
+    'https://uapod.univ-antilles.fr/oembed' => [
+        '|^https?://uapod\\.univ\\-antilles\\.fr/video/.*$|i',
     ],
     'https://player.ubideo.com/api/oembed.json' => [
         '|^https?://player\\.ubideo\\.com/.*$|i',
@@ -899,6 +976,9 @@ return [
     'https://mais.uol.com.br/apiuol/v3/oembed/view' => [
         '|^https?://.*\\.uol\\.com\\.br/view/.*$|i',
         '|^https?://.*\\.uol\\.com\\.br/video/.*$|i',
+    ],
+    'https://pod.u-pec.fr/oembed' => [
+        '|^https?://pod\\.u\\-pec\\.fr/video/.*$|i',
     ],
     'https://api.uppy.jp/v1/oembed' => [
         '|^https?://app\\.uppy\\.jp/_shares/video/.*$|i',
@@ -973,6 +1053,9 @@ return [
     'https://data.voxsnap.com/oembed' => [
         '|^https?://article\\.voxsnap\\.com/.*/.*$|i',
     ],
+    'https://waltrack.net/oembed' => [
+        '|^https?://waltrack\\.net/product/.*$|i',
+    ],
     'https://embed.wave.video/oembed' => [
         '|^https?://watch\\.wave\\.video/.*$|i',
         '|^https?://embed\\.wave\\.video/.*$|i',
@@ -1019,6 +1102,7 @@ return [
         '|^https?://.*\\.youtube\\.com/watch.*$|i',
         '|^https?://.*\\.youtube\\.com/v/.*$|i',
         '|^https?://youtu\\.be/.*$|i',
+        '|^https?://.*\\.youtube\\.com/playlist\\?list\\=.*$|i',
         '|^https?://.*\\.youtube\\.com/playlist\\?.*$|i',
     ],
     'https://app.zeplin.io/embed' => [
