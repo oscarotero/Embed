@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [4.3.5] - Unreleased
+## [4.3.5] - 2021-10-10
 ### Fixed
 - Updated oEmbed endpoints
 - Fixed embed code for Instagram [#456], [#459]
@@ -156,7 +156,7 @@ Full library refactoring.
 [#456]: https://github.com/oscarotero/Embed/issues/456
 [#459]: https://github.com/oscarotero/Embed/issues/459
 
-[4.3.5]: https://github.com/oscarotero/Embed/compare/v4.3.4...HEAD
+[4.3.5]: https://github.com/oscarotero/Embed/compare/v4.3.4...v4.3.5
 [4.3.4]: https://github.com/oscarotero/Embed/compare/v4.3.3...v4.3.4
 [4.3.3]: https://github.com/oscarotero/Embed/compare/v4.3.2...v4.3.3
 [4.3.2]: https://github.com/oscarotero/Embed/compare/v4.3.1...v4.3.2
