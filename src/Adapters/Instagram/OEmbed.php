@@ -22,7 +22,7 @@ class OEmbed extends Base
         if (strpos($uri->getPath(), 'login') !== false) {
             $uri = $this->extractor->getRequest()->getUri();
         }
-        
+
         $queryParameters = $this->getOembedQueryParameters((string) $uri);
         $queryParameters['access_token'] = $token;
 

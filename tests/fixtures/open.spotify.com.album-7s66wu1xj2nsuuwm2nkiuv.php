@@ -7,7 +7,7 @@ return [
     'cms' => null,
     'code' => [
         'html' => '<iframe width="100%" height="380" title="Spotify Embed: A Cantar con Xabarin (Vol. I &amp; II)" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/album/7s66wU1XJ2NsUuWM2NKiUV"></iframe>',
-        'width' => 300,
+        'width' => 456,
         'height' => 380,
         'ratio' => 83.333
     ],
@@ -770,8 +770,8 @@ return [
         ]
     ],
     'oEmbed' => [
-        'html' => '<iframe width="300" height="380" allowtransparency="true" frameborder="0" allow="encrypted-media" title="Spotify Embed: A Cantar con Xabarin (Vol. I &amp; II)" src="https://open.spotify.com/embed/album/7s66wU1XJ2NsUuWM2NKiUV"></iframe>',
-        'width' => 300,
+        'html' => '<iframe width="100%" height="380" title="Spotify Embed: A Cantar con Xabarin (Vol. I &amp; II)" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/album/7s66wU1XJ2NsUuWM2NKiUV"></iframe>',
+        'width' => 456,
         'height' => 380,
         'version' => '1.0',
         'provider_name' => 'Spotify',
