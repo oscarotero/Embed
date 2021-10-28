@@ -22,7 +22,7 @@ class TwitterCards extends Provider
         }
 
         foreach ($html->getElementsByTagName('meta') as $meta) {
-            $name = trim(strtolower($meta->getAttribute('name')));
+            $name = trim(strtolower($meta->getAttribute('name') ?: $meta->getAttribute('property')));
             $value = $meta->getAttribute('content') ?: $meta->getAttribute('value');
 
             if (empty($name) || empty($value)) {
