@@ -131,7 +131,7 @@ class TwitterCards extends Provider
      */
     public function getWidth()
     {
-        return $this->bag->get('player:width');
+        return (int) $this->bag->get('player:width');
     }
 
     /**
@@ -139,6 +139,6 @@ class TwitterCards extends Provider
      */
     public function getHeight()
     {
-        return $this->bag->get('player:height');
+        return (int) $this->bag->get('player:height');
     }
 }
