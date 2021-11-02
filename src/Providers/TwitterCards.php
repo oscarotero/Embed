@@ -22,7 +22,7 @@ class TwitterCards extends Provider
         }
 
         foreach ($html->getElementsByTagName('meta') as $meta) {
-            $name = trim(strtolower($meta->getAttribute('name')));
+            $name = trim(strtolower($meta->getAttribute('name') ?: $meta->getAttribute('property')));
             $value = $meta->getAttribute('content') ?: $meta->getAttribute('value');
 
             if (empty($name) || empty($value)) {
@@ -131,7 +131,7 @@ class TwitterCards extends Provider
      */
     public function getWidth()
     {
-        return $this->bag->get('player:width');
+        return (int) $this->bag->get('player:width');
     }
 
     /**
@@ -139,6 +139,6 @@ class TwitterCards extends Provider
      */
     public function getHeight()
     {
-        return $this->bag->get('player:height');
+        return (int) $this->bag->get('player:height');
     }
 }
