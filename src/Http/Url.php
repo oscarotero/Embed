@@ -636,6 +636,13 @@ class Url
      */
     private static function parse($url)
     {
+        preg_match('/^(http|https)?\:\/\/([\w\.]+)wikipedia.org\/wiki\//', $url, $matches);
+        if (count($matches)) {
+            $wikiUrl = urldecode(trim(preg_replace('/^(http|https)?\:\/\/([\w\.]+)wikipedia.org\/wiki\//', '', $url)));
+            $encodeUrlWiki = urlencode($wikiUrl);
+            $url = $matches[0] . $encodeUrlWiki;
+        }
+
         $enc_url = preg_replace_callback(
             '%[^:/@?&=#]+%usD',
             function ($matches) {
