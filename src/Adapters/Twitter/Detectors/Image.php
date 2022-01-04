@@ -11,8 +11,18 @@ class Image extends Detector
     public function detect(): ?UriInterface
     {
         $api = $this->extractor->getApi();
+        $preview = $api->url('includes', 'media', '0', 'preview_image_url');
+        
+        if ($preview) {
+            return $preview;
+        }
 
-        return $api->url('includes', 'media', '0', 'preview_image_url')
-            ?: parent::detect();
+        $regular = $api->url('includes', 'media', '0', 'url');
+
+        if ($regular) {
+            return $regular;
+        }
+
+        return parent::detect();
     }
 }
