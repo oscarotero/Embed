@@ -166,7 +166,7 @@ final class CurlDispatcher
                 case 'user-agent':
                 break;
                 default:
-                $headers[$name] = implode(', ', $values);
+                $headers[] = $name . ':' . implode(', ', $values);
             }
         }
 
