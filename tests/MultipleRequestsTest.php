@@ -18,7 +18,7 @@ class MultipleRequestsTest extends TestCase
         );
 
         $this->assertCount(3, $infos);
-        $this->assertEquals('https://oscarotero.com/en/', (string) $infos[0]->url);
+        $this->assertEquals('https://oscarotero.com/', (string) $infos[0]->url);
         $this->assertEquals('Óscar Otero - Web designer and developer', $infos[0]->title);
 
         $this->assertEquals('https://github.com/oscarotero', $infos[1]->url);

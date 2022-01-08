@@ -332,6 +332,7 @@ $embed->setSettings([
     'twitch:parent' => 'example.com', //Required to embed twitch videos as iframe
     'facebook:token' => '1234|5678',  //Required to embed content from Facebook
     'instagram:token' => '1234|5678', //Required to embed content from Instagram
+    'twitter:token' => 'asdf',        //Improve the data from twitter
 ]);
 $info = $embed->get($url);
 ```

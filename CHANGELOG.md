@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.4.0] - 2022-01-08
+### Added
+- New settings option `twitter:token` to use Twitter API to get the data [#364] [#468].
+
+### Fixed
+- Headers not sent properly by curl [#466], [#467].
+
 ## [4.3.5] - 2021-10-10
 ### Fixed
 - Updated oEmbed endpoints
@@ -98,7 +105,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Document::removeCss()` function to remove elements using css selectors instead xpath (it requires `symfony/css-selector`)
 - Ability to configure OEmbed parameters from the outside using the `oembed:query_parameters` setting [#346]
 
-## 4.0.0 - 2020-03-13
+## [4.0.0] - 2020-03-13
 Full library refactoring.
 
 ### Added
@@ -129,6 +136,7 @@ Full library refactoring.
 [#355]: https://github.com/oscarotero/Embed/issues/355
 [#356]: https://github.com/oscarotero/Embed/issues/356
 [#357]: https://github.com/oscarotero/Embed/issues/357
+[#364]: https://github.com/oscarotero/Embed/issues/364
 [#366]: https://github.com/oscarotero/Embed/issues/366
 [#375]: https://github.com/oscarotero/Embed/issues/375
 [#380]: https://github.com/oscarotero/Embed/issues/380
@@ -155,7 +163,11 @@ Full library refactoring.
 [#452]: https://github.com/oscarotero/Embed/issues/452
 [#456]: https://github.com/oscarotero/Embed/issues/456
 [#459]: https://github.com/oscarotero/Embed/issues/459
+[#466]: https://github.com/oscarotero/Embed/issues/466
+[#467]: https://github.com/oscarotero/Embed/issues/467
+[#468]: https://github.com/oscarotero/Embed/issues/468
 
+[4.4.0]: https://github.com/oscarotero/Embed/compare/v4.3.5...v4.4.0
 [4.3.5]: https://github.com/oscarotero/Embed/compare/v4.3.4...v4.3.5
 [4.3.4]: https://github.com/oscarotero/Embed/compare/v4.3.3...v4.3.4
 [4.3.3]: https://github.com/oscarotero/Embed/compare/v4.3.2...v4.3.3
@@ -172,3 +184,4 @@ Full library refactoring.
 [4.2.0]: https://github.com/oscarotero/Embed/compare/v4.1.1...v4.2.0
 [4.1.1]: https://github.com/oscarotero/Embed/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/oscarotero/Embed/compare/v4.0.0...v4.1.0
+[4.0.0]: https://github.com/oscarotero/Embed/releases/tag/v4.0.0
