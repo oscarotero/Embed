@@ -15,7 +15,7 @@ class Api
         $token = $this->extractor->getSetting('twitter:token');
 
         if (!$token) {
-            return null;
+            return [];
         }
         
         $uri = $this->extractor->getUri();
