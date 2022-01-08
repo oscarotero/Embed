@@ -93,5 +93,6 @@ return [
         'provider_name' => 'Twitter',
         'provider_url' => 'https://twitter.com',
         'version' => '1.0'
-    ]
+    ],
+    'api' => [],
 ];
