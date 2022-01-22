@@ -3,11 +3,11 @@ declare(strict_types = 1);
 
 namespace Embed\Detectors;
 
-use Datetime;
+use DateTime;
 
 class PublishedTime extends Detector
 {
-    public function detect(): ?Datetime
+    public function detect(): ?DateTime
     {
         $oembed = $this->extractor->getOEmbed();
         $metas = $this->extractor->getMetas();
@@ -47,7 +47,7 @@ class PublishedTime extends Detector
      * Some sites using WordPress have the published time in the url
      * For example: mysite.com/2020/05/19/post-title
      */
-    private function detectFromPath(): ?Datetime
+    private function detectFromPath(): ?DateTime
     {
         $path = $this->extractor->getUri()->getPath();
 

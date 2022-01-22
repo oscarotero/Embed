@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Embed;
 
-use Datetime;
+use DateTime;
 use Psr\Http\Message\UriInterface;
 use Throwable;
 
@@ -91,7 +91,7 @@ trait ApiTrait
         }
     }
 
-    public function time(string ...$keys): ?Datetime
+    public function time(string ...$keys): ?DateTime
     {
         $time = $this->str(...$keys);
         $datetime = $time ? date_create($time) : null;

@@ -3,12 +3,12 @@ declare(strict_types = 1);
 
 namespace Embed\Adapters\Twitter\Detectors;
 
-use Datetime;
+use DateTime;
 use Embed\Detectors\PublishedTime as Detector;
 
 class PublishedTime extends Detector
 {
-    public function detect(): ?Datetime
+    public function detect(): ?DateTime
     {
         $api = $this->extractor->getApi();
 
