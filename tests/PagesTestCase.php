@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace Embed\Tests;
 
 use Brick\VarExporter\VarExporter;
-use Datetime;
+use DateTime;
 use Embed\Embed;
 use Embed\Extractor;
 use Embed\ExtractorFactory;
@@ -125,7 +125,7 @@ abstract class PagesTestCase extends TestCase
             return (string) $value;
         }
 
-        if ($value instanceof Datetime) {
+        if ($value instanceof DateTime) {
             return $value->format('Y-m-d H:i:s');
         }
 
