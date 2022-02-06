@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace Embed;
 
 use JsonSerializable;
+use ReturnTypeWillChange;
 
 class EmbedCode implements JsonSerializable
 {
@@ -28,6 +29,7 @@ class EmbedCode implements JsonSerializable
         return $this->html;
     }
 
+    #[ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return [
