@@ -172,7 +172,7 @@ Full library refactoring.
 [#468]: https://github.com/oscarotero/Embed/issues/468
 [#473]: https://github.com/oscarotero/Embed/issues/473
 
-[4.4.0]: https://github.com/oscarotero/Embed/compare/v4.4.0...v4.4.0
+[4.4.1]: https://github.com/oscarotero/Embed/compare/v4.4.0...v4.4.1
 [4.4.0]: https://github.com/oscarotero/Embed/compare/v4.3.5...v4.4.0
 [4.3.5]: https://github.com/oscarotero/Embed/compare/v4.3.4...v4.3.5
 [4.3.4]: https://github.com/oscarotero/Embed/compare/v4.3.3...v4.3.4
