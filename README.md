@@ -315,7 +315,14 @@ use Embed\Http\CurlClient;
 $client = new CurlClient();
 $client->setSettings([
     'cookies_path' => $cookies_path,
-    'ignored_errors' => [18]
+    'ignored_errors' => [18],
+    'max_redirs' => 3,               // see CURLOPT_MAXREDIRS
+    'connect_timeout' => 2,          // see CURLOPT_CONNECTTIMEOUT
+    'timeout' => 2,                  // see CURLOPT_TIMEOUT
+    'ssl_verify_host' => 2,          // see CURLOPT_SSL_VERIFYHOST
+    'ssl_verify_peer' => 1,          // see CURLOPT_SSL_VERIFYPEER
+    'follow_location' => true,       // see CURLOPT_FOLLOWLOCATION
+    'user_agent' => 'Mozilla',       // see CURLOPT_USERAGENT
 ]);
 
 $embed = new Embed(new Crawler($client));
