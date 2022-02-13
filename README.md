@@ -14,7 +14,7 @@ Requirements:
 * Curl library installed
 * PSR-17 implementation. By default these libraries are detected automatically:
   * [laminas/laminas-diactoros](https://github.com/laminas/laminas-diactoros)
-  * [guzzle/psr7](https://github.com/guzzle/psr7) (Only the unreleased version 2.x, installed as `dev-master`)
+  * [guzzle/psr7](https://github.com/guzzle/psr7)
   * [nyholm/psr7](https://github.com/Nyholm/psr7)
   * [sunrise/http-message](https://github.com/sunrise-php/http-message)
 
