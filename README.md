@@ -348,8 +348,6 @@ Note: The built-in detectors does not require settings. This feature is only for
 
 ---
 
-If this library is useful for you, say thanks [buying me a beer :beer:](https://www.paypal.me/oscarotero)!
-
 [ico-version]: https://poser.pugx.org/embed/embed/v/stable
 [ico-license]: https://poser.pugx.org/embed/embed/license
 [ico-downloads]: https://poser.pugx.org/embed/embed/downloads
