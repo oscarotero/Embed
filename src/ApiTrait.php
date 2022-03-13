@@ -96,7 +96,7 @@ trait ApiTrait
         $time = $this->str(...$keys);
         $datetime = $time ? date_create($time) : null;
 
-        if (!$datetime && ctype_digit($time)) {
+        if (!$datetime && $time && ctype_digit($time)) {
             $datetime = date_create_from_format('U', $time);
         }
 
