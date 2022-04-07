@@ -72,14 +72,14 @@ class LinkedData
     private static function getValue(Node $node, string ...$keys)
     {
         foreach ($keys as $key) {
-            $node = $node->getProperty("http://schema.org/{$key}");
+            $value = $node->getProperty("http://schema.org/{$key}");
 
-            if (!$node) {
+            if (!$value) {
                 return null;
             }
         }
 
-        return self::detectValue($node);
+        return self::detectValue($value);
     }
 
     private static function detectValue($value)
