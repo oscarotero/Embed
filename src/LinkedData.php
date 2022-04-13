@@ -72,6 +72,13 @@ class LinkedData
     private static function getValue(Node $node, string ...$keys)
     {
         foreach ($keys as $key) {
+            if (is_array($node)) {
+                $node = array_shift($node);
+            }
+            if (!$node instanceof Node) {
+                return null;
+            }
+
             $node = $node->getProperty("http://schema.org/{$key}");
 
             if (!$node) {
