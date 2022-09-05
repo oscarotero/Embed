@@ -1104,6 +1104,7 @@ return [
         '|^https?://youtu\\.be/.*$|i',
         '|^https?://.*\\.youtube\\.com/playlist\\?list\\=.*$|i',
         '|^https?://.*\\.youtube\\.com/playlist\\?.*$|i',
+        '|^https?://.*\\.youtube\\.com/shorts/.*$|i',
     ],
     'https://app.zeplin.io/embed' => [
         '|^https?://app\\.zeplin\\.io/project/.*/screen/.*$|i',
