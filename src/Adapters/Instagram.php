@@ -15,6 +15,8 @@ class Instagram extends Webpage
      */
     public static function check(Response $response)
     {
-        return $response->isValid([200, 429]);
+        return $response->isValid([200, 429]) && $response->getUrl()->match([
+            '*.instagram.*',
+        ]);
     }
 }
