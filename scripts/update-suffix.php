@@ -10,7 +10,7 @@ $lines = array_filter($lines, fn ($line) => $line[0] !== '/');
 
 file_put_contents(
     dirname(__DIR__).'/src/resources/suffix.php',
-    sprintf("<?php\ndeclare(strict_types = 1);\n\nreturn %s;\n", VarExporter::export(array_values($lines)))
+    sprintf("<?php\ndeclare(strict_types = 1);\n\nreturn %s;\n", VarExporter::export(array_values($lines), VarExporter::TRAILING_COMMA_IN_ARRAY))
 );
 
 echo 'Suffix saved'.PHP_EOL;
