@@ -38,15 +38,40 @@ class OEmbed
             return [];
         }
 
-        $crawler = $this->extractor->getCrawler();
-        $request = $crawler->createRequest('GET', $this->endpoint);
-        $response = $crawler->sendRequest($request);
+        [$request, $response] = $this->makeRequest($this->endpoint);
 
         if (self::isXML($request->getUri())) {
             return $this->extractXML((string) $response->getBody());
         }
 
         return $this->extractJSON((string) $response->getBody());
+    }
+
+    /**
+     * @param UriInterface|string $endpoint
+     * @return array
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     */
+    protected function makeRequest($endpoint)
+    {
+        $crawler = $this->extractor->getCrawler();
+        $request = $crawler->createRequest('GET', $endpoint);
+        $response = $crawler->sendRequest($request);
+
+        if ($response->getStatusCode() == 403) {
+            if (is_string($endpoint) && strpos('http://', $endpoint) === 0) {
+                $newEndpoint = str_replace('http://','https://', $endpoint);
+            }
+
+            if ($endpoint instanceof UriInterface && $endpoint->getScheme() == 'http') {
+                $newEndpoint = $endpoint->withScheme('https');
+            }
+            if (isset($newEndpoint)) {
+                return $this->makeRequest($newEndpoint);
+            }
+        }
+
+        return [$request, $response];
     }
 
     protected function detectEndpoint(): ?UriInterface
