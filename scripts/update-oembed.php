@@ -18,14 +18,6 @@ foreach ($providers as $provider) {
     }
 }
 
-//Add missing endpoints
-saveEndpoint('http://jsbin.com/oembed', ['output.jsbin.com/*']);
-saveEndpoint('https://api.crowdsignal.com/oembed', ['polldaddy.com/poll/*', 'poll.fm/*']);
-saveEndpoint('http://www.scribd.com/services/oembed/', ['www.scribd.com/document/*']);
-saveEndpoint('https://api.imgur.com/oembed', ['imgur.com/*', 'i.imgur.com/*']);
-saveEndpoint('https://www.youtube.com/oembed', ['*.youtube.com/playlist?*']);
-saveEndpoint('https://www.tiktok.com/oembed', ['*.tiktok.com/*']);
-
 //Export the endpoints
 file_put_contents(
     dirname(__DIR__).'/src/resources/oembed.php',
