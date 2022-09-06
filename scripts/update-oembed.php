@@ -29,7 +29,7 @@ saveEndpoint('https://www.tiktok.com/oembed', ['*.tiktok.com/*']);
 //Export the endpoints
 file_put_contents(
     dirname(__DIR__).'/src/resources/oembed.php',
-    sprintf("<?php\ndeclare(strict_types = 1);\n\nreturn %s;\n", VarExporter::export($endpoints))
+    sprintf("<?php\ndeclare(strict_types = 1);\n\nreturn %s;\n", VarExporter::export($endpoints, VarExporter::TRAILING_COMMA_IN_ARRAY))
 );
 
 echo 'Endpoints saved'.PHP_EOL;
