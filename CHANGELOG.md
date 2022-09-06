@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.4.5] - 2022-09-06
+### Fixed
+- Updated oembed endpoints [#494]
+
 ## [4.4.4] - 2022-04-13
 ### Fixed
 - Error getting data from Linked data [#481].
@@ -186,7 +190,9 @@ Full library refactoring.
 [#474]: https://github.com/oscarotero/Embed/issues/474
 [#480]: https://github.com/oscarotero/Embed/issues/480
 [#481]: https://github.com/oscarotero/Embed/issues/481
+[#494]: https://github.com/oscarotero/Embed/issues/494
 
+[4.4.5]: https://github.com/oscarotero/Embed/compare/v4.4.4...v4.4.5
 [4.4.4]: https://github.com/oscarotero/Embed/compare/v4.4.3...v4.4.4
 [4.4.3]: https://github.com/oscarotero/Embed/compare/v4.4.2...v4.4.3
 [4.4.2]: https://github.com/oscarotero/Embed/compare/v4.4.1...v4.4.2
