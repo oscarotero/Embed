@@ -741,9 +741,6 @@ return [
     'https://gateway.cobalt.run/present/decks/oembed' => [
         '|^https?://present\\.do/decks/.*$|i',
     ],
-    'https://gateway.cobalt.run/present/decks/oembed' => [
-        '|^https?://present\\.do/decks/.*$|i',
-    ],
     'https://prezi.com/v/oembed' => [
         '|^https?://prezi\\.com/v/.*$|i',
         '|^https?://.*\\.prezi\\.com/v/.*$|i',
