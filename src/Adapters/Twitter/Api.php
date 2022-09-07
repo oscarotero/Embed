@@ -29,8 +29,6 @@ class Api
         $this->extractor->getCrawler()->addDefaultHeaders(array('Authorization' => "Bearer $token"));
         $this->endpoint = $this->extractor->getCrawler()->createUri("https://api.twitter.com/2/tweets/{$id}?expansions=author_id,attachments.media_keys&tweet.fields=created_at&media.fields=preview_image_url,url&user.fields=id,name");
 
-        $data = $this->fetchJSON($this->endpoint);
-
-        return $data ?? [];
+        return $this->fetchJSON($this->endpoint);
     }
 }
