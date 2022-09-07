@@ -16,7 +16,7 @@ class Code extends Detector
             ?: $this->fallback();
     }
 
-    private function fallback(): ?EmbedCode
+    private function fallback(): EmbedCode
     {
         $uri = $this->extractor->getUri();
 
