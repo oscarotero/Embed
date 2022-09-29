@@ -18,7 +18,7 @@ class Redirect extends Detector
     private function extract(string $value): ?UriInterface
     {
         if (preg_match('/url=(.+)$/i', $value, $match)) {
-            return $this->extractor->resolveUri($match[1]);
+            return $this->extractor->resolveUri(trim($match[1], '\'"'));
         }
 
         return null;
