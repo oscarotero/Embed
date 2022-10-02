@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.4.6] - 2022-10-02
+### Fixed
+- Some code issues detected by phpstan: [#495], [#496], [#497], [#498].
+- Fix for quotation marks in redirect URL [#499]
+
 ## [4.4.5] - 2022-09-06
 ### Fixed
 - Updated oembed endpoints [#494]
@@ -191,7 +196,13 @@ Full library refactoring.
 [#480]: https://github.com/oscarotero/Embed/issues/480
 [#481]: https://github.com/oscarotero/Embed/issues/481
 [#494]: https://github.com/oscarotero/Embed/issues/494
+[#495]: https://github.com/oscarotero/Embed/issues/495
+[#496]: https://github.com/oscarotero/Embed/issues/496
+[#497]: https://github.com/oscarotero/Embed/issues/497
+[#498]: https://github.com/oscarotero/Embed/issues/498
+[#499]: https://github.com/oscarotero/Embed/issues/499
 
+[4.4.6]: https://github.com/oscarotero/Embed/compare/v4.4.5...v4.4.6
 [4.4.5]: https://github.com/oscarotero/Embed/compare/v4.4.4...v4.4.5
 [4.4.4]: https://github.com/oscarotero/Embed/compare/v4.4.3...v4.4.4
 [4.4.3]: https://github.com/oscarotero/Embed/compare/v4.4.2...v4.4.3
