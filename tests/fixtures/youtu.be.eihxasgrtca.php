@@ -23,7 +23,7 @@ return [
     'providerName' => 'YouTube',
     'providerUrl' => 'https://www.youtube.com/',
     'publishedTime' => null,
-    'redirect' => 'https://consent.youtube.com/\'https:/consent.youtube.com/ml?continue=https://www.youtube.com/watch?v%3DeiHXASgRTcA%26feature%3Dyoutu.be&gl=ES&hl=es&pc=yt&uxe=23983172&src=1&rffu=true\'',
+    'redirect' => 'https://consent.youtube.com/ml?continue=https://www.youtube.com/watch?v%3DeiHXASgRTcA%26feature%3Dyoutu.be&gl=ES&hl=es&pc=yt&uxe=23983172&src=1&rffu=true',
     'title' => 'Noisy kittens waiting for dinner!',
     'url' => 'http://youtu.be/eiHXASgRTcA',
     'linkedData' => [],

@@ -23,7 +23,7 @@ return [
     'providerName' => 'YouTube',
     'providerUrl' => 'https://www.youtube.com/',
     'publishedTime' => null,
-    'redirect' => 'https://consent.youtube.com/\'https:/consent.youtube.com/ml?continue=https://www.youtube.com/playlist?list%3DPL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST&gl=ES&hl=es&pc=yt&uxe=23983172&src=1&rffu=true\'',
+    'redirect' => 'https://consent.youtube.com/ml?continue=https://www.youtube.com/playlist?list%3DPL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST&gl=ES&hl=es&pc=yt&uxe=23983172&src=1&rffu=true',
     'title' => 'De espaldas al patriarcado',
     'url' => 'https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST',
     'linkedData' => [],
