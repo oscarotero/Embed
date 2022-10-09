@@ -17,7 +17,7 @@ class Languages extends Detector
             $language = $node->getAttribute('hreflang');
             $href = $node->getAttribute('href');
 
-            if (isEmpty()) {
+            if (self::isEmpty($language) || self::isEmpty($href)) {
                 continue;
             }
 
@@ -27,7 +27,7 @@ class Languages extends Detector
         return $languages;
     }
 
-    private function isEmpty($value): boolval
+    private function isEmpty(string $value): bool
     {
         $skipValues = array(
             'undefined',
