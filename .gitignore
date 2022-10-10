@@ -1,5 +1,6 @@
-vendor
-composer.lock
-phpunit.xml
-env.php
 *.cache
+*.code-workspace
+composer.lock
+env.php
+phpunit.xml
+vendor
