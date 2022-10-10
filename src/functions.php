@@ -132,3 +132,18 @@ function getDirectory(string $path, int $position): ?string
     $dirs = explode('/', $path);
     return $dirs[$position + 1] ?? null;
 }
+
+function isEmpty(mixed ...$values): bool
+{
+    $skipValues = array(
+        'undefined',
+    );
+
+    foreach ($values as $value) {
+        if (empty($value) || in_array($value, $skipValues)) {
+            return true;
+        }
+    }
+
+    return false;
+}

@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Embed\Detectors;
 
+use function Embed\isEmpty;
+
 class Languages extends Detector
 {
     /**
@@ -17,7 +19,7 @@ class Languages extends Detector
             $language = $node->getAttribute('hreflang');
             $href = $node->getAttribute('href');
 
-            if (self::isEmpty($language) || self::isEmpty($href)) {
+            if (isEmpty($language, $href)) {
                 continue;
             }
 
@@ -25,14 +27,5 @@ class Languages extends Detector
         }
 
         return $languages;
-    }
-
-    private function isEmpty(string $value): bool
-    {
-        $skipValues = array(
-            'undefined',
-        );
-
-        return empty($value) || in_array($value, $skipValues);
     }
 }
