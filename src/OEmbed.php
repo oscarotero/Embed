@@ -165,7 +165,7 @@ class OEmbed
         try {
             $data = json_decode($json, true);
 
-            return $data ? ($data + $this->defaults) : [];
+            return is_array($data) ? ($data + $this->defaults) : [];
         } catch (Exception $exception) {
             return [];
         }
