@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.4.7] - 2022-12-12
+### Fixed
+- Href attributes with `undefined` values [#501], [#502]
+- Deprecated warning for var interpolation in PHP 8.2 [#506]
+- Prevent unsupported operand types exception [#507]
+
 ## [4.4.6] - 2022-10-02
 ### Fixed
 - Some code issues detected by phpstan: [#495], [#496], [#497], [#498].
@@ -201,7 +207,12 @@ Full library refactoring.
 [#497]: https://github.com/oscarotero/Embed/issues/497
 [#498]: https://github.com/oscarotero/Embed/issues/498
 [#499]: https://github.com/oscarotero/Embed/issues/499
+[#501]: https://github.com/oscarotero/Embed/issues/501
+[#502]: https://github.com/oscarotero/Embed/issues/502
+[#506]: https://github.com/oscarotero/Embed/issues/506
+[#507]: https://github.com/oscarotero/Embed/issues/507
 
+[4.4.7]: https://github.com/oscarotero/Embed/compare/v4.4.6...v4.4.7
 [4.4.6]: https://github.com/oscarotero/Embed/compare/v4.4.5...v4.4.6
 [4.4.5]: https://github.com/oscarotero/Embed/compare/v4.4.4...v4.4.5
 [4.4.4]: https://github.com/oscarotero/Embed/compare/v4.4.3...v4.4.4
