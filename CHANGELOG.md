@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.4.8] - 2023-05-22
+### Fixed
+- Support for `psr/http-message@2` [#514], [#515]
+
 ## [4.4.7] - 2022-12-12
 ### Fixed
 - Href attributes with `undefined` values [#501], [#502]
@@ -211,7 +215,10 @@ Full library refactoring.
 [#502]: https://github.com/oscarotero/Embed/issues/502
 [#506]: https://github.com/oscarotero/Embed/issues/506
 [#507]: https://github.com/oscarotero/Embed/issues/507
+[#514]: https://github.com/oscarotero/Embed/issues/514
+[#515]: https://github.com/oscarotero/Embed/issues/515
 
+[4.4.8]: https://github.com/oscarotero/Embed/compare/v4.4.7...v4.4.8
 [4.4.7]: https://github.com/oscarotero/Embed/compare/v4.4.6...v4.4.7
 [4.4.6]: https://github.com/oscarotero/Embed/compare/v4.4.5...v4.4.6
 [4.4.5]: https://github.com/oscarotero/Embed/compare/v4.4.4...v4.4.5
