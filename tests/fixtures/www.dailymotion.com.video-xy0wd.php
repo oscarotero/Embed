@@ -42,5 +42,6 @@ return [
         'thumbnail_url' => 'https://s2.dmcdn.net/v/63aD1VtIdtBWR7nC/x240',
         'thumbnail_width' => 320,
         'thumbnail_height' => 240
-    ]
+    ],
+    'allLinkedData' => []
 ];

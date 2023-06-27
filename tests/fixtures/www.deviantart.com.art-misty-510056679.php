@@ -22,5 +22,6 @@ return [
     'title' => 'Misty by sakimichan on DeviantArt',
     'url' => 'https://www.deviantart.com/sakimichan/art/Misty-510056679',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

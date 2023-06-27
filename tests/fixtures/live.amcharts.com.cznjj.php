@@ -42,5 +42,6 @@ return [
         'thumbnail_url' => 'http://generated.amcharts.com/cz/czNjJ-full.png',
         'thumbnail_width' => 404,
         'thumbnail_height' => 300
-    ]
+    ],
+    'allLinkedData' => []
 ];

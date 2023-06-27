@@ -102,5 +102,6 @@ return [
         'thumbnail_url' => 'https://p77-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/165175e006354d838501378cfb325b79_1584652367?x-expires=1617570000&x-signature=ug9Nat5BeroYU6zWPlDXVO6EDak%3D',
         'provider_url' => 'https://www.tiktok.com',
         'provider_name' => 'TikTok'
-    ]
+    ],
+    'allLinkedData' => []
 ];

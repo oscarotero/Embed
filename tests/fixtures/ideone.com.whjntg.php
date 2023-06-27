@@ -44,5 +44,6 @@ return [
     'title' => 'Ideone.com',
     'url' => 'https://ideone.com/Whjntg',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

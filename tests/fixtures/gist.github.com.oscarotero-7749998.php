@@ -308,5 +308,6 @@ return [
 </div>
 ',
         'stylesheet' => 'https://github.githubassets.com/assets/gist-embed-33b98015caf26cfcbee6ce1a5d1fc768.css'
-    ]
+    ],
+    'allLinkedData' => []
 ];

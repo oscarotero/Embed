@@ -81,5 +81,69 @@ return [
         'cache_age' => 3600,
         'provider_name' => 'Flickr',
         'provider_url' => 'https://www.flickr.com/'
+    ],
+    'allLinkedData' => [
+        [
+            '@context' => 'http://schema.org',
+            '@type' => 'WebSite',
+            'name' => 'Flickr',
+            'url' => 'https://www.flickr.com',
+            'potentialAction' => [
+                '@type' => 'SearchAction',
+                'target' => 'https://www.flickr.com/search?text={search_term_string}&structured=yes',
+                'query-input' => 'required name=search_term_string'
+            ]
+        ],
+        [
+            '@context' => 'http://schema.org',
+            '@type' => 'Organization',
+            'url' => 'http://www.flickr.com',
+            'logo' => 'https://www.flickr.com/images/opensearch-flickr-logo.png'
+        ],
+        [
+            '@context' => 'http://schema.org',
+            '@type' => 'Person',
+            'name' => 'Flickr',
+            'url' => 'https://www.flickr.com',
+            'sameAs' => [
+                'https://www.facebook.com/flickr',
+                'https://instagram.com/flickr',
+                'https://flickr.tumblr.com',
+                'https://twitter.com/flickr',
+                'https://plus.google.com/+flickr',
+                'https://www.pinterest.com/flickr'
+            ]
+        ],
+        [
+            '@context' => 'https://schema.org',
+            '@type' => 'BlogPosting',
+            'mainEntityOfPage' => [
+                '@type' => 'WebPage',
+                '@id' => 'https://www.flickr.com/photos/desescribir/'
+            ],
+            'headline' => 'desescribir',
+            'image' => [
+                '@type' => 'ImageObject',
+                'url' => 'https://live.staticflickr.com/8765/17244790083_d2f40f713f_z.jpg',
+                'height' => 454,
+                'width' => 640
+            ],
+            'author' => [
+                '@type' => 'Person',
+                'name' => 'desescribir',
+                'sameAs' => 'https://www.flickr.com/photos/desescribir/'
+            ],
+            'publisher' => [
+                '@type' => 'Organization',
+                'name' => 'Flickr',
+                'logo' => [
+                    '@type' => 'ImageObject',
+                    'url' => 'https://www.flickr.com/images/opensearch-flickr-logo.png',
+                    'width' => 64,
+                    'height' => 64
+                ]
+            ],
+            'description' => 'Explore desescribir&#x27;s 618 photos on Flickr!'
+        ]
     ]
 ];

@@ -35,5 +35,6 @@ return [
         'width' => 320,
         'height' => 240,
         'html' => '<iframe src="http://output.jsbin.com/vonesu/10" width="320" height="240" frameborder="0"></iframe>'
-    ]
+    ],
+    'allLinkedData' => []
 ];

@@ -31,5 +31,6 @@ return [
     'title' => 'Edit fiddle - JSFiddle - Code Playground',
     'url' => 'http://jsfiddle.net/zhm5rjnz/',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

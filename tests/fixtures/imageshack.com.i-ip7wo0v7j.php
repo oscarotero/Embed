@@ -72,5 +72,6 @@ return [
         ],
         'next_images' => [],
         'prev_images' => []
-    ]
+    ],
+    'allLinkedData' => []
 ];

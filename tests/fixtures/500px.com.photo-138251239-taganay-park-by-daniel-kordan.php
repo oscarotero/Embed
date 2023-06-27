@@ -22,5 +22,6 @@ return [
     'title' => '500px',
     'url' => 'https://500px.com/photo/138251239/taganay-park-by-daniel-kordan',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

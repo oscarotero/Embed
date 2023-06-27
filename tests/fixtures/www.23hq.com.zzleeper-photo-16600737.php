@@ -63,5 +63,6 @@ return [
         'thumbnail_width' => 756,
         'thumbnail_height' => 567,
         'thumbnail_url' => 'http://www.23hq.com/16171062/16600737_ac392e8a4d667e4726fbafc8a21728d5_large.jpg'
-    ]
+    ],
+    'allLinkedData' => []
 ];

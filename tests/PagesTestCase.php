@@ -107,6 +107,7 @@ abstract class PagesTestCase extends TestCase
         if (method_exists($extractor, 'getApi')) {
             $data['api'] = $extractor->getApi()->all();
         }
+        $data['allLinkedData'] = $extractor->getLinkedData()->getAll();
 
         return $data;
     }

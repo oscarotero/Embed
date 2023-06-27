@@ -91,5 +91,79 @@ Si estás interesado en saber más y aprender sobre Flutter apúntate. Haremos u
             'url' => 'https://www.meetup.com/es/GPUL-Labs/'
         ]
     ],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => [
+        [
+            '@context' => 'http://schema.org',
+            '@type' => 'Event',
+            'name' => 'Introducción a Flutter',
+            'url' => 'https://www.meetup.com/es/GPUL-Labs/events/248885422/',
+            'description' => 'Fernando Souto - MOBGEN
+
+Desde que Google anunció en el MWC que Flutter entraba en oficialmente beta, el interés por esta plataforma se ha multiplicado.
+
+Flutter es un SDK en lenguaje Dart para generar apps nativas multiplataforma, que permite un desarrollo eficaz, una interfaz de usuario expresiva y un buen rendimiento.
+
+Si estás interesado en saber más y aprender sobre Flutter apúntate. Haremos una introducción práctica al funcionamiento de Flutter desarollando un ejemplo práctico aplicando un',
+            'startDate' => '2018-05-24T19:00+02:00',
+            'endDate' => '2018-05-24T22:00+02:00',
+            'eventStatus' => 'https://schema.org/EventScheduled',
+            'eventAttendanceMode' => 'https://schema.org/OfflineEventAttendanceMode',
+            'location' => [
+                '@type' => 'Place',
+                'name' => 'Vivero de empresas Accede Papagaio',
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'addressLocality' => 'A Coruña',
+                    'addressCountry' => 'España',
+                    'streetAddress' => 'Rúa Hospital, 19, 15002'
+                ],
+                'geo' => [
+                    '@type' => 'GeoCoordinates',
+                    'latitude' => 43.37335968017578,
+                    'longitude' => -8.399272918701172
+                ]
+            ],
+            'offers' => [
+                '@type' => 'Offer',
+                'price' => '0',
+                'priceCurrency' => 'USD'
+            ],
+            'organizer' => [
+                '@type' => 'Organization',
+                'name' => 'GPUL',
+                'url' => 'https://www.meetup.com/es/GPUL-Labs/'
+            ]
+        ],
+        [
+            '@context' => 'http://schema.org',
+            '@type' => 'BreadcrumbList',
+            'itemListElement' => [
+                [
+                    '@type' => 'ListItem',
+                    'position' => 1,
+                    'item' => [
+                        '@id' => 'https://www.meetup.com/es/GPUL-Labs/',
+                        'name' => 'GPUL'
+                    ]
+                ],
+                [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'item' => [
+                        '@id' => 'https://www.meetup.com/es/GPUL-Labs/events/',
+                        'name' => 'Events'
+                    ]
+                ],
+                [
+                    '@type' => 'ListItem',
+                    'position' => 3,
+                    'item' => [
+                        '@id' => 'https://www.meetup.com/es/GPUL-Labs/events/248885422/',
+                        'name' => 'Introducción a Flutter'
+                    ]
+                ]
+            ]
+        ]
+    ]
 ];

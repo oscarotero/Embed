@@ -41,5 +41,6 @@ return [
     <script async src="https://embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
 ',
         'author_name' => 'dennisrieves'
-    ]
+    ],
+    'allLinkedData' => []
 ];

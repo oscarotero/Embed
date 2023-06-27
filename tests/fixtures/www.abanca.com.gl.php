@@ -48,5 +48,22 @@ return [
             ]
         ]
     ],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => [
+        [
+            '@context' => 'http://schema.org',
+            '@type' => 'Organization',
+            'name' => '',
+            'url' => '//www.abanca.com',
+            'logo' => '//www.abanca.com/img/logo-social.jpg',
+            'sameAs' => [],
+            'contactPoint' => [
+                [
+                    '@type' => 'ContactPoint',
+                    'telephone' => '-',
+                    'contactType' => 'customer service'
+                ]
+            ]
+        ]
+    ]
 ];

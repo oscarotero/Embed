@@ -154,3 +154,25 @@ function isEmpty(mixed ...$values): bool
 
     return false;
 }
+
+if (!function_exists("array_is_list")) {
+    /**
+     * Polyfil for https://www.php.net/manual/en/function.array-is-list.php
+     * which is only available in PHP 8.1+
+     *
+     * @param      array  $array  The array
+     *
+     * @return     bool
+     */
+    function array_is_list(array $array): bool
+    {
+        $i = -1;
+        foreach ($array as $k => $v) {
+            ++$i;
+            if ($k !== $i) {
+                return false;
+            }
+        }
+        return true;
+    }
+}

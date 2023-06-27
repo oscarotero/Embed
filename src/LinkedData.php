@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace Embed;
 
 use Exception;
+use ML\JsonLD\JsonLD;
 use ML\JsonLD\Document as LdDocument;
 use ML\JsonLD\DocumentInterface;
 use ML\JsonLD\GraphInterface;
@@ -16,7 +17,9 @@ class LinkedData
 
     private ?DocumentInterface $document;
 
-    private function get(string ...$keys)
+    private array $allData;
+
+    public function get(string ...$keys)
     {
         $graph = $this->getGraph();
 
@@ -39,6 +42,15 @@ class LinkedData
         return null;
     }
 
+    public function getAll()
+    {
+        if (!isset($this->allData)) {
+            $this->fetchData();
+        }
+
+        return $this->allData;
+    }
+
     private function getGraph(string $name = null): ?GraphInterface
     {
         if (!isset($this->document)) {
@@ -50,20 +62,55 @@ class LinkedData
             }
         }
 
-        return $this->document->getGraph();
+        return $this->document->getGraph($name);
     }
 
     protected function fetchData(): array
     {
-        $document = $this->extractor->getDocument();
-        $content = $document->select('.//script', ['type' => 'application/ld+json'])->str();
+        $this->allData = [];
 
-        if (empty($content)) {
+        $document = $this->extractor->getDocument();
+        $nodes = $document->select('.//script', ['type' => 'application/ld+json'])->strAll();
+
+        if (empty($nodes)) {
             return [];
         }
 
         try {
-            return json_decode($content, true) ?: [];
+            $data = [];
+            $request_uri = (string)$this->extractor->getUri();
+            foreach ($nodes as $node) {
+                $ldjson = json_decode($node, true);
+                if (!empty($ldjson)) {
+
+                    if (empty($data)) {
+                        $data = $ldjson;
+                    } elseif (isset($ldjson['mainEntityOfPage'])) {
+                        $url = '';
+                        if (is_string($ldjson['mainEntityOfPage'])) {
+                            $url = $ldjson['mainEntityOfPage'];
+                        } elseif (isset($ldjson['mainEntityOfPage']['@id'])) {
+                            $url = $ldjson['mainEntityOfPage']['@id'];
+                        }
+                        if (!empty($url) && $url == $request_uri) {
+                            $data = $ldjson;
+                        }
+                    }
+
+                    // some pages with multiple ld+json blocks will put
+                    // each block into an array (Flickr does this). Most
+                    // appear to put an object in each ld+json block. To
+                    // prevent them from stepping on one another, the ones
+                    // that are not arrays will be put into an array.
+                    if (!array_is_list($ldjson)) {
+                        $ldjson = [$ldjson];
+                    }
+
+                    $this->allData = array_merge($this->allData, $ldjson);
+                }
+            }
+
+            return $data;
         } catch (Exception $exception) {
             return [];
         }

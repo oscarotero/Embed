@@ -27,5 +27,6 @@ return [
     'title' => 'skalnik/secret-bear-clip',
     'url' => 'https://github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

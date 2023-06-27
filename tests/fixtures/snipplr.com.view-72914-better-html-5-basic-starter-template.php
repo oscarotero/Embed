@@ -27,5 +27,6 @@ return [
     'title' => 'Better HTML 5 basic starter template - HTML Snipplr Social Repository',
     'url' => 'https://snipplr.com/view/72914/better-html-5-basic-starter-template',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

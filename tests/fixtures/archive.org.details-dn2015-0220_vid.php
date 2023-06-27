@@ -811,5 +811,22 @@ return [
             'collection_files_count' => null,
             'collection_size' => null
         ]
+    ],
+    'allLinkedData' => [
+        [
+            '@context' => 'http://schema.org',
+            '@type' => 'BreadcrumbList',
+            'itemListElement' => [
+                [
+                    '@type' => 'ListItem',
+                    'position' => 1,
+                    'item' => [
+                        '@id' => 'https://archive.org/details/movies',
+                        'name' => 'Videos',
+                        'image' => 'https://archive.org/services/img/movies'
+                    ]
+                ]
+            ]
+        ]
     ]
 ];

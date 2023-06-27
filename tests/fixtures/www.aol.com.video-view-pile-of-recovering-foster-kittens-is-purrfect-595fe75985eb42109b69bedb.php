@@ -22,5 +22,6 @@ return [
     'title' => 'AOL Video - Serving the best video content from AOL and around the web',
     'url' => 'https://www.aol.com/video/view/pile-of-recovering-foster-kittens-is-purrfect/595fe75985eb42109b69bedb/',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

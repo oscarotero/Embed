@@ -41,5 +41,6 @@ return [
         'width' => 480,
         'height' => 270.0,
         'html' => '<iframe src="https://www.kickstarter.com/projects/1452363698/good-seed-craft-veggie-burgers/widget/video.html" height="270.0" width="480" frameborder="0" scrolling="no"></iframe>'
-    ]
+    ],
+    'allLinkedData' => []
 ];

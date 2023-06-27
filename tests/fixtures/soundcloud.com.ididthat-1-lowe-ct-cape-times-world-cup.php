@@ -49,5 +49,6 @@ return [
         'html' => '<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F191904624&show_artwork=true"></iframe>',
         'author_name' => 'IDIDTHAT.co',
         'author_url' => 'https://soundcloud.com/ididthat-1'
-    ]
+    ],
+    'allLinkedData' => []
 ];

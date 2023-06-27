@@ -31,5 +31,6 @@ return [
     'title' => 'Twitch',
     'url' => 'https://www.twitch.tv/twit',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

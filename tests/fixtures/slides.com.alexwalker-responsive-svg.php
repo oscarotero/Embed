@@ -27,5 +27,6 @@ return [
     'title' => 'responsive-svg',
     'url' => 'http://slides.com/alexwalker/responsive-svg/',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

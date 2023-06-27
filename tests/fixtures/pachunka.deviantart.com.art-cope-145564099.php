@@ -22,5 +22,6 @@ return [
     'title' => 'Cope by pachunka on DeviantArt',
     'url' => 'https://www.deviantart.com/pachunka/art/Cope-145564099',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

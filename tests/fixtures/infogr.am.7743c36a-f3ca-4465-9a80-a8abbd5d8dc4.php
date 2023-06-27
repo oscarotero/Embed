@@ -41,5 +41,6 @@ return [
         'height' => 600,
         'author_url' => 'https://infogram.com/sabjnewsroom01',
         'author_name' => 'Tony Quesada'
-    ]
+    ],
+    'allLinkedData' => []
 ];
