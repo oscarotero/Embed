@@ -83,20 +83,6 @@ class LinkedData
                 $ldjson = json_decode($node, true);
                 if (!empty($ldjson)) {
 
-                    if (empty($data)) {
-                        $data = $ldjson;
-                    } elseif (isset($ldjson['mainEntityOfPage'])) {
-                        $url = '';
-                        if (is_string($ldjson['mainEntityOfPage'])) {
-                            $url = $ldjson['mainEntityOfPage'];
-                        } elseif (isset($ldjson['mainEntityOfPage']['@id'])) {
-                            $url = $ldjson['mainEntityOfPage']['@id'];
-                        }
-                        if (!empty($url) && $url == $request_uri) {
-                            $data = $ldjson;
-                        }
-                    }
-
                     // some pages with multiple ld+json blocks will put
                     // each block into an array (Flickr does this). Most
                     // appear to put an object in each ld+json block. To
@@ -105,6 +91,23 @@ class LinkedData
                     if (!array_is_list($ldjson)) {
                         $ldjson = [$ldjson];
                     }
+
+                    foreach ($ldjson as $node) {
+                        if (empty($data)) {
+                            $data = $node;
+                        } elseif (isset($node['mainEntityOfPage'])) {
+                            $url = '';
+                            if (is_string($node['mainEntityOfPage'])) {
+                                $url = $node['mainEntityOfPage'];
+                            } elseif (isset($node['mainEntityOfPage']['@id'])) {
+                                $url = $node['mainEntityOfPage']['@id'];
+                            }
+                            if (!empty($url) && $url == $request_uri) {
+                                $data = $node;
+                            }
+                        }
+                    }
+
 
                     $this->allData = array_merge($this->allData, $ldjson);
                 }
