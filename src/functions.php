@@ -10,7 +10,7 @@ function clean(string $value, bool $allowHTML = false): ?string
     $value = trim($value);
 
     if (!$allowHTML) {
-        $value = html_entity_decode($value);
+        $value = html_entity_decode($value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401);
         $value = strip_tags($value);
     }
 
