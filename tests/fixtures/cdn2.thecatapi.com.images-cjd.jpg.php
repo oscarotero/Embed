@@ -27,5 +27,6 @@ return [
     'title' => null,
     'url' => 'https://cdn2.thecatapi.com/images/cjd.jpg',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

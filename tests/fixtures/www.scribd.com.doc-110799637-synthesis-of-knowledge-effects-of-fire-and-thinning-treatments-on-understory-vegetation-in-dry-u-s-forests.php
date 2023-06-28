@@ -66,5 +66,28 @@ return [
         'html' => '<iframe class="scribd_iframe_embed" src="https://www.scribd.com/embeds/110799637/content" data-aspect-ratio="1.2941176470588236" scrolling="no" id="110799637" width="100%" height="500" frameborder="0"></iframe><script type="text/javascript">
           (function() { var scribd = document.createElement("script"); scribd.type = "text/javascript"; scribd.async = true; scribd.src = "https://www.scribd.com/javascripts/embed_code/inject.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(scribd, s); })()
         </script>'
+    ],
+    'allLinkedData' => [
+        [
+            '@context' => 'http://schema.org',
+            '@type' => 'MediaObject',
+            'additionalType' => 'Product',
+            'name' => 'Synthesis of Knowledge: Effects of Fire and Thinning Treatments on Understory Vegetation in Dry U.S. Forests',
+            'image' => [
+                'https://imgv2-1-f.scribdassets.com/img/document/110799637/149x198/ca766a678b/1521312948?v=1',
+                'https://imgv2-2-f.scribdassets.com/img/document/110799637/298x396/889f159160/1521312948?v=1'
+            ],
+            'aggregateRating' => [
+                '@type' => 'AggregateRating',
+                'ratingValue' => 5.0,
+                'ratingCount' => 1
+            ],
+            'isAccessibleForFree' => 'False',
+            'hasPart' => [
+                '@type' => 'WebPageElement',
+                'isAccessibleForFree' => 'False',
+                'cssSelector' => '.blurred_page'
+            ]
+        ]
     ]
 ];

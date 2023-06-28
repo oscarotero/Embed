@@ -48,5 +48,42 @@ return [
             ]
         ]
     ],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => [
+        [
+            '@context' => 'https://schema.org',
+            '@type' => 'BreadcrumbList',
+            'itemListElement' => [
+                [
+                    '@type' => 'ListItem',
+                    'position' => 1,
+                    'item' => [
+                        '@id' => 'https://play.cadenaser.com/',
+                        'name' => 'PlaySER'
+                    ]
+                ],
+                [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'item' => [
+                        '@id' => 'https://play.cadenaser.com/programa/hoy_por_hoy/',
+                        'name' => 'Hoy por Hoy'
+                    ]
+                ]
+            ]
+        ],
+        [
+            '@context' => 'https://schema.org',
+            '@type' => 'Corporation',
+            'name' => 'cadenaser.com',
+            'url' => 'https://cadenaser.com',
+            'logo' => 'https://play.cadenaser.com/bundles/playserweb/img/logo_playser.svg',
+            'sameAs' => [
+                'https://www.facebook.com/cadenaser',
+                'https://twitter.com/La_SER',
+                'https://plus.google.com/+cadenaser/',
+                'https://www.youtube.com/user/cadenaser'
+            ]
+        ]
+    ]
 ];

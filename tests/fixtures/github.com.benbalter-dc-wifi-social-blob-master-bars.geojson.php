@@ -27,5 +27,6 @@ return [
     'title' => 'benbalter/dc-wifi-social',
     'url' => 'https://github.com/benbalter/dc-wifi-social/blob/master/bars.geojson',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

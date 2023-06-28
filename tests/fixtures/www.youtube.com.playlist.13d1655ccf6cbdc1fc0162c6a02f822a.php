@@ -42,5 +42,6 @@ return [
         'thumbnail_url' => 'https://i.ytimg.com/vi/CdbnVwot6lc/hqdefault.jpg',
         'html' => '<iframe width="200" height="113" src="https://www.youtube.com/embed/videoseries?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
         'url' => 'https://www.youtube.com/playlist?list=PL4qTakKkQATKOyZPJG_cAMnRtF7fAIdST'
-    ]
+    ],
+    'allLinkedData' => []
 ];

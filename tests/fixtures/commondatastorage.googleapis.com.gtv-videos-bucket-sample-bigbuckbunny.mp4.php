@@ -27,5 +27,6 @@ return [
     'title' => null,
     'url' => 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

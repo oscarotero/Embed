@@ -22,5 +22,6 @@ return [
     'title' => 'Pushing new git submodule to Heroku - Pastebin.com',
     'url' => 'https://pastebin.com/d4biUtRm',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

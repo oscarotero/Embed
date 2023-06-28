@@ -188,8 +188,8 @@ class PagesTest extends PagesTestCase
 
     public function testSpotify()
     {
-        $this->assertEmbed('https://play.spotify.com/album/7s66wU1XJ2NsUuWM2NKiUV');
         $this->assertEmbed('https://open.spotify.com/album/7s66wU1XJ2NsUuWM2NKiUV');
+        $this->assertEmbed('https://play.spotify.com/album/7s66wU1XJ2NsUuWM2NKiUV');
     }
 
     public function testTwitch()

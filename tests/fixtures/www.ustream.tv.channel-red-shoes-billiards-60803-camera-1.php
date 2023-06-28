@@ -40,5 +40,6 @@ return [
         'thumbnail_url' => 'https://ustvstaticcdn2-a.akamaihd.net/i/channel/picture/1/1/9/5/11958409/11958409,120x90,r:2.jpg',
         'type' => 'video',
         'thumbnail_height' => 90
-    ]
+    ],
+    'allLinkedData' => []
 ];

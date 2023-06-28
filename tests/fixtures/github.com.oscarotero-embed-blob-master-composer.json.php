@@ -22,5 +22,6 @@ return [
     'title' => 'oscarotero/Embed',
     'url' => 'https://github.com/oscarotero/Embed/blob/master/composer.json',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

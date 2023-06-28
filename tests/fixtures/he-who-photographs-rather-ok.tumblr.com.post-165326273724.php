@@ -55,5 +55,16 @@ return [
         'html' => '<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/3sZLmGKnNg-4n8G7mNtxOA/165326273724" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"  ><a href="https://he-who-photographs-rather-ok.tumblr.com/post/165326273724">https://he-who-photographs-rather-ok.tumblr.com/post/165326273724</a></div><script async src="https://assets.tumblr.com/post.js"></script>',
         'height' => null,
         'width' => 540
+    ],
+    'allLinkedData' => [
+        [
+            '@type' => 'SocialMediaPosting',
+            'url' => 'https://he-who-photographs-rather-ok.tumblr.com/post/165326273724',
+            'mainEntityOfPage' => true,
+            'datePublished' => '2017-09-14T10:20:35-04:00',
+            'author' => 'he-who-photographs-rather-ok',
+            'image' => 'https://64.media.tumblr.com/0a0fac1ef8faa0c466d9224567af06aa/tumblr_ow8r0nMybA1spmyulo1_1280.jpg',
+            '@context' => 'http://schema.org'
+        ]
     ]
 ];

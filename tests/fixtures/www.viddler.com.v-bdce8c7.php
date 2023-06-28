@@ -33,5 +33,6 @@ return [
     'title' => 'Viddler Platform Overview',
     'url' => 'https://www.viddler.com/v/bdce8c7',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

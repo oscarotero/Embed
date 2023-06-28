@@ -87,5 +87,6 @@ return [
         'thumbnail_height' => 316,
         'author_url' => 'https://www.ted.com/speakers/george_monbiot',
         'html' => '<iframe src="https://embed.ted.com/talks/george_monbiot_for_more_wonder_rewild_the_world" width="560" height="316" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>'
-    ]
+    ],
+    'allLinkedData' => []
 ];

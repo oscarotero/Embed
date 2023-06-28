@@ -42,5 +42,6 @@ return [
         'thumbnail_height' => '225',
         'thumbnail_url' => 'https://assets.codepen.io/99102/internal/screenshots/pens/JoRazP.default.png?fit=cover&amp;format=auto&amp;ha=true&amp;height=360&amp;quality=75&amp;v=2&amp;version=1467971314&amp;width=640',
         'html' => '<iframe id="cp_embed_JoRazP" src="https://codepen.io/Zhouzi/embed/preview/JoRazP?height=300&amp;slug-hash=JoRazP&amp;default-tabs=js,result&amp;host=https://codepen.io" title="TheaterJS" scrolling="no" frameborder="0" height="300" allowtransparency="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>'
-    ]
+    ],
+    'allLinkedData' => []
 ];

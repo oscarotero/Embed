@@ -30,5 +30,6 @@ return [
     'url' => 'https://archive.org/details/librivoxaudio',
     'linkedData' => [],
     'oEmbed' => [],
-    'api' => []
+    'api' => [],
+    'allLinkedData' => []
 ];

@@ -37,5 +37,6 @@ return [
         'version' => '1.0',
         'type' => 'rich',
         'html' => '<script type="text/javascript" src="https://www.politico.com/story/2013/12/presidents-barack-obama-george-w-bush-second-term-101314?_embed=true&amp;_format=js"></script>'
-    ]
+    ],
+    'allLinkedData' => []
 ];

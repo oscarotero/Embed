@@ -27,5 +27,6 @@ return [
     'title' => 'SassMeister | The Sass Playground!',
     'url' => 'https://www.sassmeister.com/gist/1122e441f0434ec6eb2a',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];

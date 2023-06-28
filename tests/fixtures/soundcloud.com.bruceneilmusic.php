@@ -49,5 +49,6 @@ return [
         'html' => '<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F6538603&show_artwork=true"></iframe>',
         'author_name' => 'Bruce Neil',
         'author_url' => 'https://soundcloud.com/bruceneilmusic'
-    ]
+    ],
+    'allLinkedData' => []
 ];

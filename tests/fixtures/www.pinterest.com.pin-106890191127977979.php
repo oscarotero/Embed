@@ -41,5 +41,6 @@ return [
         'thumbnail_url' => 'https://i.pinimg.com/236x/b5/34/13/b53413787f3a42c8b9d5b08a6fbb2124--jack-nicholson-jack-oconnell.jpg',
         'thumbnail_width' => 236,
         'thumbnail_height' => 295
-    ]
+    ],
+    'allLinkedData' => []
 ];

@@ -39,5 +39,6 @@ return [
         'width' => 640,
         'height' => 480,
         'thumbnail_url' => 'https://d3wo5wojvuv7l.cloudfront.net/t_widget_player_cover_medium/images.spreaker.com/original/07176451fd3625d19c5e5d88d9f1bfbb.jpg'
-    ]
+    ],
+    'allLinkedData' => []
 ];

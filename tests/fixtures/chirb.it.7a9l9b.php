@@ -45,5 +45,6 @@ return [
         'author_name' => 'nvanderklippe',
         'author_url' => 'https://www.chirbit.com/nvanderklippe',
         'html' => '<iframe height="120" frameborder="0" width="380" scrolling="NO" src="https://chirb.it/wp/7A9L9B">This browser does not show iframe content. Listen to this chirbit here <a href="https://chirb.it/7A9L9B">https://chirb.it/7A9L9B</a></iframe>'
-    ]
+    ],
+    'allLinkedData' => []
 ];

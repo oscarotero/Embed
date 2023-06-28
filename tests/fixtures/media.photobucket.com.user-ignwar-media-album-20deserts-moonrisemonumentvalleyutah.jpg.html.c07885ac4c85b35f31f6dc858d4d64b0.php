@@ -22,5 +22,6 @@ return [
     'title' => 'My Library',
     'url' => 'https://app.photobucket.com/u/Ignwar?filters%5Bterm%5D=sunsets&filters%5Bprimary%5D=images',
     'linkedData' => [],
-    'oEmbed' => []
+    'oEmbed' => [],
+    'allLinkedData' => []
 ];
