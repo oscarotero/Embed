@@ -121,7 +121,7 @@ return [
                     'height' => 64
                 ]
             ],
-            'description' => 'Explore desescribir&#x27;s 618 photos on Flickr!'
+            'description' => 'Explore desescribir\'s 618 photos on Flickr!'
         ]
     ]
 ];

@@ -6,7 +6,7 @@ return [
     'authorUrl' => 'https://www.wired.com/author/wired-staff/',
     'cms' => null,
     'code' => [
-        'html' => '<blockquote class="wp-embedded-content"><a href="https://www.wired.com/2016/07/review-yi-4k-action-camera/">Review: Yi 4K Action Camera</a></blockquote> <script type=\'text/javascript\'> <!--//--><![CDATA[//><!-- !function(a,b){"use strict";function c(){if(!e){e=!0;var a,c,d,f,g=-1!==navigator.appVersion.indexOf("MSIE 10"),h=!!navigator.userAgent.match(/Trident.*rv:11\\./),i=b.querySelectorAll("iframe.wp-embedded-content");for(c=0;c<i.length;c++)if(d=i[c],!d.getAttribute("data-secret")){if(f=Math.random().toString(36).substr(2,10),d.src+="#?secret="+f,d.setAttribute("data-secret",f),g||h)a=d.cloneNode(!0),a.removeAttribute("security"),d.parentNode.replaceChild(a,d)}else;}}var d=!1,e=!1;if(b.querySelector)if(a.addEventListener)d=!0;if(a.wp=a.wp||{},!a.wp.receiveEmbedMessage)if(a.wp.receiveEmbedMessage=function(c){var d=c.data;if(d.secret||d.message||d.value)if(!/[^a-zA-Z0-9]/.test(d.secret)){var e,f,g,h,i,j=b.querySelectorAll(\'iframe[data-secret="\'+d.secret+\'"]\'),k=b.querySelectorAll(\'blockquote[data-secret="\'+d.secret+\'"]\');for(e=0;e<k.length;e++)k[e].style.display="none";for(e=0;e<j.length;e++)if(f=j[e],c.source===f.contentWindow){if(f.removeAttribute("style"),"height"===d.message){if(g=parseInt(d.value,10),g>1e3)g=1e3;else if(~~g<200)g=200;f.height=g}if("link"===d.message)if(h=b.createElement("a"),i=b.createElement("a"),h.href=f.getAttribute("src"),i.href=d.value,i.host===h.host)if(b.activeElement===f)a.top.location.href=d.value}else;}},d)a.addEventListener("message",a.wp.receiveEmbedMessage,!1),b.addEventListener("DOMContentLoaded",c,!1),a.addEventListener("load",c,!1)}(window,document); //--><!]]> </script><iframe sandbox="allow-scripts" security="restricted" src="https://www.wired.com/2016/07/review-yi-4k-action-camera/embed/" width="600" height="338" title="&#8220;Review: Yi 4K Action Camera&#8221; &#8212; WIRED" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" class="wp-embedded-content"></iframe>',
+        'html' => '<blockquote class="wp-embedded-content"><a href="https://www.wired.com/2016/07/review-yi-4k-action-camera/">Review: Yi 4K Action Camera</a></blockquote> <script type=\'text/javascript\'> <!--//--><![CDATA[//><!-- !function(a,b){"use strict";function c(){if(!e){e=!0;var a,c,d,f,g=-1!==navigator.appVersion.indexOf("MSIE 10"),h=!!navigator.userAgent.match(/Trident.*rv:11\\./),i=b.querySelectorAll("iframe.wp-embedded-content");for(c=0;c<i.length;c++)if(d=i[c],!d.getAttribute("data-secret")){if(f=Math.random().toString(36).substr(2,10),d.src+="#?secret="+f,d.setAttribute("data-secret",f),g||h)a=d.cloneNode(!0),a.removeAttribute("security"),d.parentNode.replaceChild(a,d)}else;}}var d=!1,e=!1;if(b.querySelector)if(a.addEventListener)d=!0;if(a.wp=a.wp||{},!a.wp.receiveEmbedMessage)if(a.wp.receiveEmbedMessage=function(c){var d=c.data;if(d.secret||d.message||d.value)if(!/[^a-zA-Z0-9]/.test(d.secret)){var e,f,g,h,i,j=b.querySelectorAll(\'iframe[data-secret="\'+d.secret+\'"]\'),k=b.querySelectorAll(\'blockquote[data-secret="\'+d.secret+\'"]\');for(e=0;e<k.length;e++)k[e].style.display="none";for(e=0;e<j.length;e++)if(f=j[e],c.source===f.contentWindow){if(f.removeAttribute("style"),"height"===d.message){if(g=parseInt(d.value,10),g>1e3)g=1e3;else if (~~g<200)g=200;f.height=g}if("link"===d.message)if(h=b.createElement("a"),i=b.createElement("a"),h.href=f.getAttribute("src"),i.href=d.value,i.host===h.host)if(b.activeElement===f)a.top.location.href=d.value}else;}},d)a.addEventListener("message",a.wp.receiveEmbedMessage,!1),b.addEventListener("DOMContentLoaded",c,!1),a.addEventListener("load",c,!1)}(window,document); //--><!]]> </script><iframe sandbox="allow-scripts" security="restricted" src="https://www.wired.com/2016/07/review-yi-4k-action-camera/embed/" width="600" height="338" title="&#8220;Review: Yi 4K Action Camera&#8221; &#8212; WIRED" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" class="wp-embedded-content"></iframe>',
         'width' => 600,
         'height' => 338,
         'ratio' => 56.333
@@ -80,7 +80,7 @@ return [
         'html' => '<blockquote class="wp-embedded-content"><a href="https://www.wired.com/2016/07/review-yi-4k-action-camera/">Review: Yi 4K Action Camera</a></blockquote>
 <script type=\'text/javascript\'>
 <!--//--><![CDATA[//><!--
-		!function(a,b){"use strict";function c(){if(!e){e=!0;var a,c,d,f,g=-1!==navigator.appVersion.indexOf("MSIE 10"),h=!!navigator.userAgent.match(/Trident.*rv:11\\./),i=b.querySelectorAll("iframe.wp-embedded-content");for(c=0;c<i.length;c++)if(d=i[c],!d.getAttribute("data-secret")){if(f=Math.random().toString(36).substr(2,10),d.src+="#?secret="+f,d.setAttribute("data-secret",f),g||h)a=d.cloneNode(!0),a.removeAttribute("security"),d.parentNode.replaceChild(a,d)}else;}}var d=!1,e=!1;if(b.querySelector)if(a.addEventListener)d=!0;if(a.wp=a.wp||{},!a.wp.receiveEmbedMessage)if(a.wp.receiveEmbedMessage=function(c){var d=c.data;if(d.secret||d.message||d.value)if(!/[^a-zA-Z0-9]/.test(d.secret)){var e,f,g,h,i,j=b.querySelectorAll(\'iframe[data-secret="\'+d.secret+\'"]\'),k=b.querySelectorAll(\'blockquote[data-secret="\'+d.secret+\'"]\');for(e=0;e<k.length;e++)k[e].style.display="none";for(e=0;e<j.length;e++)if(f=j[e],c.source===f.contentWindow){if(f.removeAttribute("style"),"height"===d.message){if(g=parseInt(d.value,10),g>1e3)g=1e3;else if(~~g<200)g=200;f.height=g}if("link"===d.message)if(h=b.createElement("a"),i=b.createElement("a"),h.href=f.getAttribute("src"),i.href=d.value,i.host===h.host)if(b.activeElement===f)a.top.location.href=d.value}else;}},d)a.addEventListener("message",a.wp.receiveEmbedMessage,!1),b.addEventListener("DOMContentLoaded",c,!1),a.addEventListener("load",c,!1)}(window,document);
+        !function(a,b){"use strict";function c(){if(!e){e=!0;var a,c,d,f,g=-1!==navigator.appVersion.indexOf("MSIE 10"),h=!!navigator.userAgent.match(/Trident.*rv:11\\./),i=b.querySelectorAll("iframe.wp-embedded-content");for(c=0;c<i.length;c++)if(d=i[c],!d.getAttribute("data-secret")){if(f=Math.random().toString(36).substr(2,10),d.src+="#?secret="+f,d.setAttribute("data-secret",f),g||h)a=d.cloneNode(!0),a.removeAttribute("security"),d.parentNode.replaceChild(a,d)}else;}}var d=!1,e=!1;if(b.querySelector)if(a.addEventListener)d=!0;if(a.wp=a.wp||{},!a.wp.receiveEmbedMessage)if(a.wp.receiveEmbedMessage=function(c){var d=c.data;if(d.secret||d.message||d.value)if(!/[^a-zA-Z0-9]/.test(d.secret)){var e,f,g,h,i,j=b.querySelectorAll(\'iframe[data-secret="\'+d.secret+\'"]\'),k=b.querySelectorAll(\'blockquote[data-secret="\'+d.secret+\'"]\');for(e=0;e<k.length;e++)k[e].style.display="none";for(e=0;e<j.length;e++)if(f=j[e],c.source===f.contentWindow){if(f.removeAttribute("style"),"height"===d.message){if(g=parseInt(d.value,10),g>1e3)g=1e3;else if (~~g<200)g=200;f.height=g}if("link"===d.message)if(h=b.createElement("a"),i=b.createElement("a"),h.href=f.getAttribute("src"),i.href=d.value,i.host===h.host)if(b.activeElement===f)a.top.location.href=d.value}else;}},d)a.addEventListener("message",a.wp.receiveEmbedMessage,!1),b.addEventListener("DOMContentLoaded",c,!1),a.addEventListener("load",c,!1)}(window,document);
 //--><!]]>
 </script><iframe sandbox="allow-scripts" security="restricted" src="https://www.wired.com/2016/07/review-yi-4k-action-camera/embed/" width="600" height="338" title="&#8220;Review: Yi 4K Action Camera&#8221; &#8212; WIRED" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" class="wp-embedded-content"></iframe>',
         'thumbnail_url' => 'https://www.wired.com/wp-content/uploads/2016/07/Yi-4KHP.jpg',
@@ -152,7 +152,7 @@ return [
             'articleSection' => 'culture',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'Geek&#039;s Guide to the Galaxy'
+                'name' => 'Geek\'s Guide to the Galaxy'
             ],
             'description' => 'Ursula K. Le Guin\'s 1974 novel, about a society with no government or laws, remains a thoughtful exploration of politics and economics decades later.',
             'image' => [
@@ -189,7 +189,7 @@ return [
             'articleSection' => 'culture',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'Geek&#039;s Guide to the Galaxy'
+                'name' => 'Geek\'s Guide to the Galaxy'
             ],
             'description' => 'The story-driven genre is enjoying an indie renaissance, thanks to new tools that are making the coding process simpler than ever.',
             'image' => [
@@ -226,7 +226,7 @@ return [
             'articleSection' => 'culture',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'Geek&#039;s Guide to the Galaxy'
+                'name' => 'Geek\'s Guide to the Galaxy'
             ],
             'description' => 'But Everybody Has a Podcast (Except You) author Griffin McElroy can help.',
             'image' => [
@@ -263,7 +263,7 @@ return [
             'articleSection' => 'culture',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'Geek&#039;s Guide to the Galaxy'
+                'name' => 'Geek\'s Guide to the Galaxy'
             ],
             'description' => 'The Amazon series Upload shows a comedic—and probably more realistic—version of what would happen if humans could live online after they die.',
             'image' => [
@@ -300,7 +300,7 @@ return [
             'articleSection' => 'culture',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'Geek&#039;s Guide to the Galaxy'
+                'name' => 'Geek\'s Guide to the Galaxy'
             ],
             'description' => 'Ultima artist Denis Loubet knows this for a fact.',
             'image' => [
@@ -338,7 +338,7 @@ return [
             'articleSection' => 'culture',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'Geek&#039;s Guide to the Galaxy'
+                'name' => 'Geek\'s Guide to the Galaxy'
             ],
             'description' => 'The new Netflix animated series puts a new spin on old tales.',
             'image' => [
@@ -375,7 +375,7 @@ return [
             'articleSection' => 'culture',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'Geek&#039;s Guide to the Galaxy'
+                'name' => 'Geek\'s Guide to the Galaxy'
             ],
             'description' => 'David Gerrold\'s new novel Hella is about a low-gravity planet inhabited by dinosaur-like aliens. It does deep on the logistics of settling an alien planet.',
             'image' => [
@@ -412,7 +412,7 @@ return [
             'articleSection' => 'culture',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'Geek&#039;s Guide to the Galaxy'
+                'name' => 'Geek\'s Guide to the Galaxy'
             ],
             'description' => 'Ruth Wilson\'s character is the highlight of HBO\'s His Dark Materials.',
             'image' => [
@@ -526,7 +526,7 @@ return [
             'articleSection' => 'culture',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'Geek&#039;s Guide to the Galaxy'
+                'name' => 'Geek\'s Guide to the Galaxy'
             ],
             'description' => 'The story-driven genre is enjoying an indie renaissance, thanks to new tools that are making the coding process simpler than ever.',
             'image' => [
@@ -640,7 +640,7 @@ return [
             'articleSection' => 'culture',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'Geek&#039;s Guide to the Galaxy'
+                'name' => 'Geek\'s Guide to the Galaxy'
             ],
             'description' => 'Ursula K. Le Guin\'s 1974 novel, about a society with no government or laws, remains a thoughtful exploration of politics and economics decades later.',
             'image' => [
