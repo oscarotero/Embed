@@ -5,6 +5,7 @@ namespace Embed\Http;
 
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\UriFactoryInterface;
 use RuntimeException;
 
@@ -34,6 +35,14 @@ abstract class FactoryDiscovery
         'Sunrise\Http\Message\UriFactory',
     ];
 
+    private const STREAM = [
+        'Laminas\Diactoros\StreamFactory',
+        'GuzzleHttp\Psr7\HttpFactory',
+        'Slim\Psr7\Factory\StreamFactory',
+        'Nyholm\Psr7\Factory\Psr17Factory',
+        'Sunrise\Http\Message\StreamFactory',
+    ];
+
     public static function getRequestFactory(): RequestFactoryInterface
     {
         if ($class = self::searchClass(self::REQUEST)) {
@@ -57,6 +66,17 @@ abstract class FactoryDiscovery
         if ($class = self::searchClass(self::URI)) {
             return new $class();
         }
+
+        throw new RuntimeException('No UriFactoryInterface detected');
+    }
+
+    public static function getStreamFactory(): StreamFactoryInterface
+    {
+        if ($class = self::searchClass(self::STREAM)) {
+            return new $class();
+        }
+
+        throw new RuntimeException('No StreamFactoryInterface detected');
     }
 
     private static function searchClass($classes): ?string
