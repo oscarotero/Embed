@@ -18,6 +18,7 @@ final class CurlDispatcher
 
     private RequestInterface $request;
     private $curl;
+    private $result;
     private array $headers = [];
     private $isBinary = false;
     private ?StreamInterface $body = null;
