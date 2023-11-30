@@ -34,7 +34,8 @@ final class CurlDispatcher
     {
         if (count($requests) === 1) {
             $connection = new static($settings, $requests[0]);
-            return [$connection->exec($responseFactory)];
+            curl_exec($connection->curl);
+            return [$connection->getResponse($responseFactory)];
         }
 
         //Init connections
@@ -77,7 +78,7 @@ final class CurlDispatcher
         curl_multi_close($multi);
 
         return array_map(
-            fn ($connection) => $connection->exec($responseFactory),
+            fn ($connection) => $connection->getResponse($responseFactory),
             $connections
         );
     }
@@ -113,10 +114,8 @@ final class CurlDispatcher
         ]);
     }
 
-    private function exec(ResponseFactoryInterface $responseFactory): ResponseInterface
+    private function getResponse(ResponseFactoryInterface $responseFactory): ResponseInterface
     {
-        curl_exec($this->curl);
-
         $info = curl_getinfo($this->curl);
 
         if ($this->error) {
