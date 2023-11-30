@@ -7,6 +7,7 @@ use Composer\CaBundle\CaBundle;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\StreamInterface;
 
 /**
@@ -17,6 +18,7 @@ final class CurlDispatcher
     private static int $contentLengthThreshold = 5000000;
 
     private RequestInterface $request;
+    private StreamFactoryInterface $streamFactory;
     private $curl;
     private $result;
     private array $headers = [];
@@ -80,11 +82,12 @@ final class CurlDispatcher
         );
     }
 
-    private function __construct(array $settings, RequestInterface $request)
+    private function __construct(array $settings, RequestInterface $request, StreamFactoryInterface $streamFactory = null)
     {
         $this->request = $request;
         $this->curl = curl_init((string) $request->getUri());
         $this->settings = $settings;
+        $this->streamFactory = $streamFactory ?? FactoryDiscovery::getStreamFactory();
 
         $cookies = $settings['cookies_path'] ?? str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
 
@@ -204,7 +207,7 @@ final class CurlDispatcher
         }
 
         if (!$this->body) {
-            $this->body = FactoryDiscovery::getStreamFactory()->createStreamFromFile('php://temp', 'w+');
+            $this->body = $this->streamFactory->createStreamFromFile('php://temp', 'w+');
         }
 
         if ($this->body->getSize() > self::$contentLengthThreshold) {
