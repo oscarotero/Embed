@@ -7,18 +7,23 @@ use Composer\CaBundle\CaBundle;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+use Psr\Http\Message\StreamInterface;
 
 /**
  * Class to fetch html pages
  */
 final class CurlDispatcher
 {
+    private static int $contentLengthThreshold = 5000000;
+
     private RequestInterface $request;
+    private StreamFactoryInterface $streamFactory;
     private $curl;
     private $result;
     private array $headers = [];
     private $isBinary = false;
-    private $body;
+    private ?StreamInterface $body = null;
     private ?int $error = null;
     private array $settings;
 
@@ -77,11 +82,12 @@ final class CurlDispatcher
         );
     }
 
-    private function __construct(array $settings, RequestInterface $request)
+    private function __construct(array $settings, RequestInterface $request, StreamFactoryInterface $streamFactory = null)
     {
         $this->request = $request;
         $this->curl = curl_init((string) $request->getUri());
         $this->settings = $settings;
+        $this->streamFactory = $streamFactory ?? FactoryDiscovery::getStreamFactory();
 
         $cookies = $settings['cookies_path'] ?? str_replace('//', '/', sys_get_temp_dir().'/embed-cookies.txt');
 
@@ -136,7 +142,9 @@ final class CurlDispatcher
 
         if ($this->body) {
             //5Mb max
-            $response->getBody()->write(stream_get_contents($this->body, 5000000, 0));
+            $this->body->rewind();
+            $response = $response->withBody($this->body);
+            $this->body = null;
         }
 
         return $response;
@@ -199,9 +207,13 @@ final class CurlDispatcher
         }
 
         if (!$this->body) {
-            $this->body = fopen('php://temp', 'w+');
+            $this->body = $this->streamFactory->createStreamFromFile('php://temp', 'w+');
         }
 
-        return fwrite($this->body, $string);
+        if ($this->body->getSize() > self::$contentLengthThreshold) {
+            return count($string);
+        }
+
+        return $this->body->write($string);
     }
 }
