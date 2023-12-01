@@ -1,9 +1,12 @@
 # Changelog
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [4.4.9] - 2023-12-01
+### Fixed
+- Performance and memory leak issues [#525], [#527].
 
 ## [4.4.8] - 2023-05-22
 ### Fixed
@@ -217,7 +220,10 @@ Full library refactoring.
 [#507]: https://github.com/oscarotero/Embed/issues/507
 [#514]: https://github.com/oscarotero/Embed/issues/514
 [#515]: https://github.com/oscarotero/Embed/issues/515
+[#525]: https://github.com/oscarotero/Embed/issues/525
+[#527]: https://github.com/oscarotero/Embed/issues/527
 
+[4.4.9]: https://github.com/oscarotero/Embed/compare/v4.4.8...v4.4.9
 [4.4.8]: https://github.com/oscarotero/Embed/compare/v4.4.7...v4.4.8
 [4.4.7]: https://github.com/oscarotero/Embed/compare/v4.4.6...v4.4.7
 [4.4.6]: https://github.com/oscarotero/Embed/compare/v4.4.5...v4.4.6
