@@ -140,7 +140,7 @@ function getDirectory(string $path, int $position): ?string
  *
  * @return boolean
  */
-function isEmpty(mixed ...$values): bool
+function isEmpty(...$values): bool
 {
     $skipValues = array(
         'undefined',
