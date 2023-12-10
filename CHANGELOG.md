@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.4.10] - 2023-12-10
+### Fixed
+- PHP 7.4 support
+- Use correct method for string length [#529]
+
 ## [4.4.9] - 2023-12-01
 ### Fixed
 - Performance and memory leak issues [#525], [#527].
@@ -222,7 +227,9 @@ Full library refactoring.
 [#515]: https://github.com/oscarotero/Embed/issues/515
 [#525]: https://github.com/oscarotero/Embed/issues/525
 [#527]: https://github.com/oscarotero/Embed/issues/527
+[#529]: https://github.com/oscarotero/Embed/issues/529
 
+[4.4.10]: https://github.com/oscarotero/Embed/compare/v4.4.9...v4.4.10
 [4.4.9]: https://github.com/oscarotero/Embed/compare/v4.4.8...v4.4.9
 [4.4.8]: https://github.com/oscarotero/Embed/compare/v4.4.7...v4.4.8
 [4.4.7]: https://github.com/oscarotero/Embed/compare/v4.4.6...v4.4.7
