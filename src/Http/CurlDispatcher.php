@@ -210,7 +210,7 @@ final class CurlDispatcher
         }
 
         if ($this->body->getSize() > self::$contentLengthThreshold) {
-            return count($string);
+            return strlen($string);
         }
 
         return $this->body->write($string);
