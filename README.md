@@ -58,7 +58,7 @@ $info->image; //The thumbnail or main image
 $info->code->html; //The code to embed the image, video, etc
 $info->code->width; //The exact width of the embed code (if exists)
 $info->code->height; //The exact height of the embed code (if exists)
-$info->code->ratio; //The percentage of height / width to emulate the aspect ratio using the paddings.
+$info->code->ratio; //The percentage of height / width to emulate the aspect ratio using paddings.
 
 $info->authorName; //The resource author
 $info->authorUrl; //The author url
