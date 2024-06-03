@@ -984,6 +984,9 @@ return [
         '|^https?://twitter\\.com/.*$|i',
         '|^https?://twitter\\.com/.*/status/.*$|i',
         '|^https?://.*\\.twitter\\.com/.*/status/.*$|i',
+        '|^https?://x\\.com/.*$|i',
+        '|^https?://x\\.com/.*/status/.*$|i',
+        '|^https?://.*\\.x\\.com/.*/status/.*$|i',
     ],
     'https://play.typecast.ai/oembed' => [
         '|^https?://play\\.typecast\\.ai/s/.*$|i',
