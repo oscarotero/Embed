@@ -7998,5 +7998,5 @@ return [
     'router.management',
     'yolasite.com',
     'za.net',
-    'za.org'
+    'za.org',
 ];
