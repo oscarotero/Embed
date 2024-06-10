@@ -9,9 +9,9 @@ return [
             'nginx'
         ],
         'date' => [
-            'Sun, 04 Apr 2021 15:27:35 GMT',
-            'Sun, 04 Apr 2021 15:27:36 GMT',
-            'Sun, 04 Apr 2021 15:27:36 GMT'
+            'Mon, 10 Jun 2024 15:58:52 GMT',
+            'Mon, 10 Jun 2024 15:58:52 GMT',
+            'Mon, 10 Jun 2024 15:58:53 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -26,7 +26,11 @@ return [
         ],
         'location' => [
             'https://polldaddy.com/poll/7012505/  HTTP/2 301',
-            'https://poll.fm/7012505  HTTP/2 200'
+            'https://poll.fm/7012505'
+        ],
+        'alt-svc' => [
+            'h3=":443"; ma=86400  HTTP/2 200',
+            'h3=":443"; ma=86400'
         ],
         'vary' => [
             'Accept-Encoding'
@@ -35,19 +39,19 @@ return [
             'en'
         ],
         'set-cookie' => [
-            'PD_REQ_AUTH=ef9a162ad06f1630d9855fecdc4bc399; path=/; domain=.poll.fm; secure; SameSite=None; expires=Sun, 04 Apr 2021 15:32:36 GMT;HttpOnly'
+            'PD_REQ_AUTH=e3141d36479a149dfe610c601032d9c5; path=/; domain=.poll.fm; secure; SameSite=None; expires=Mon, 10 Jun 2024 16:03:53 GMT;HttpOnly'
+        ],
+        'content-encoding' => [
+            'br'
         ],
         'strict-transport-security' => [
             'max-age=31536000'
-        ],
-        'content-encoding' => [
-            'gzip'
         ],
         'Content-Location' => [
             'https://poll.fm/7012505'
         ],
         'X-Request-Time' => [
-            '1.745 ms'
+            '1.666 ms'
         ]
     ],
     'statusCode' => 200,
@@ -71,37 +75,106 @@ return [
 		document.documentElement.className += " js";
 	</script>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 
 	  
-<link rel="stylesheet" href="https://poll.fm/css/production/styles.css?m=1616613540" type="text/css" media="all"/>
+<link rel="stylesheet" href="https://poll.fm/css/production/styles.css?m=1710953687" type="text/css" media="all"/>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/jquery/jquery.js"></script>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/validate.js"></script>
   <script type="text/javascript" charset="utf-8" src="https://poll.fm/js/community.js"></script>
 <link rel="canonical" href="https://poll.fm/7012505" />
 <link rel="alternate" type="application/rss+xml" title="Which design do you prefer?" href="https://poll.fm/7012505/feed" />
-<meta name="robots" content="noindex, nofollow, noarchive" /><!-- cookie banner [start] -->
-<script type="text/javascript">
-(function() {
-	\'use strict\';
-	var CACHE_INTERVAL = 7 * 24 * 60 * 60 * 1000;
-	var v = Math.floor( new Date().getTime() / CACHE_INTERVAL );
-	jQuery.ajax({
-		async: true,
-		cache: true,
-		url: \'https://s1.wp.com/wp-content/lib/cookie-banner/cookie-banner-v3.0.js?v=\' + v,
-		dataType: "script",
-		success: function() {
-			window.a8cCookieBanner.init( {"text":"Our websites and dashboards use cookies. By continuing, you agree to their use. <a target=\\"_blank\\" href=\\"https:\\/\\/automattic.com\\/cookies\\">Learn more<\\/a>, including how to control cookies.","buttonText":"Got It!","cookieName":"eu_cb","skipBanner":false} );
-		},
-	});
-})();
-</script>
-<!-- cookie banner [end] -->
-    
+<meta name="robots" content="noindex, nofollow, noarchive" />			<!-- A8C Analytics [start] -->
+			<script type="text/javascript">
+				( function() {
+					\'use strict\';
+
+					var setupAnalytics = function() {
+						window.a8cAnalyticsConfig = {"cookieBanner":{"version":"2","cssZIndex":50001,"skipBanner":false,"cookieDomain":"poll.fm","v1CookieName":"sensitive_pixel_option","v2CookieName":"sensitive_pixel_options","v1Text":"Our websites and dashboards use cookies. By continuing, you agree to their use. <a target=\\"_blank\\" href=\\"https:\\/\\/automattic.com\\/cookies\\/\\">Learn more<\\/a>, including how to control cookies.","v2Text":"We and our partners process your personal data (such as browsing data, IP addresses, cookie information, and other unique identifiers) based on your consent and\\/or our legitimate interest to optimize our website and your user experience.","v2OptionsText":"Your privacy is critically important to us. We and our partners use, store, and process your personal data to optimize: our <strong>website<\\/strong> such as by improving security or conducting analytics, and your <strong>user experience<\\/strong> such as by remembering your account name, language settings, or cart information, where applicable. You can customize your cookie settings below. Learn more in our <a href=\\"https:\\/\\/automattic.com\\/privacy\\/\\" target=\\"_blank\\">Privacy Policy<\\/a> and <a href=\\"https:\\/\\/automattic.com\\/cookies\\/\\" target=\\"_blank\\">Cookie Policy<\\/a>.","v2EssentialOptionHeading":"Required","v2EssentialOptionText":"These cookies are essential for our websites and services to perform basic functions and are necessary for us to operate certain features, like allowing registered users to authenticate and perform account-related functions, storing preferences set by users (like account name, language, and location), and ensuring our services operate properly.","v2AnalyticsOptionHeading":"Analytics","v2AnalyticsOptionText":"These cookies allow us to optimize performance by collecting information on how users interact with our websites.","v2AdvertisingOptionHeading":"Advertising","v2AdvertisingOptionText":"We and our advertising partners set these cookies to provide you with relevant content and to understand that content\\u2019s effectiveness.","v1ButtonText":"Got It!","v2CustomizeButtonText":"Customize","v2AcceptAllButtonText":"Accept all","v2AcceptSelectionButtonText":"Accept selection","hiddenConsents":["advertising"]},"doNotSellDialog":{"contactEmailAddress":"privacypolicyupdates@automattic.com"},"fireAnalyticsOptions":[]};
+					};
+
+					if ( window.defQueue && defQueue.isLOHP && defQueue.isLOHP === 2020 ) {
+						defQueue.items.push( setupAnalytics );
+					} else {
+						setupAnalytics();
+					}
+				} )();
+			</script>
+
+			<div style="display: none;" id="a8c-analytics">
+	<script type="text/javascript">
+		( function () {
+			\'use strict\';
+
+			document.addEventListener( \'a8c-analytics:loaded\', function () {
+				var cb = window.a8cAnalytics.cb;
+				var kit = window.a8cAnalytics.kit;
+
+				var gaOptimize = window.a8cGAOptimize || null;
+				gaOptimize = gaOptimize && gaOptimize.isEnabled() ? gaOptimize : null;
+
+				function fireGoogleAnalytics() {
+					kit.loadGtag( \'UA-114919094-4\', {
+						anonymize_ip: true,
+						transport_type: typeof navigator.sendBeacon === \'function\' ? \'beacon\' : \'xhr\',
+						optimize_id: gaOptimize ? gaOptimize.config.id : \'\',
+					} );
+
+					if ( gaOptimize ) {
+						gaOptimize.a8cAnalyticsSetup( cb, kit, {} );
+					}
+				}
+
+				function loadGoogleAdsGtag() {
+					kit.loadGtag( \'AW-828724892\' );
+					kit.loadGoogleTagManager( \'GTM-WQF7499\' );
+				}
+
+				// ------- Fire Normal Pixels -------
+
+				if ( kit.doNotTrack() ) {
+					if ( gaOptimize ) {
+						gaOptimize.endAsyncDim();
+					}
+					return;
+				}
+
+				cb.addTracker( \'analytics\', true, fireGoogleAnalytics );
+
+			} );
+		} )();
+	</script>
+</div>
+
+			<script type="text/javascript">
+				( function() {
+					\'use strict\';
+					var currentScript = document.currentScript;
+
+					var setupAnalytics = function() {
+						function getScript() {
+							var script = document.createElement( \'script\' );
+							var prev = currentScript || document.getElementsByTagName( \'script\' )[ 0 ];
+							script.setAttribute( \'src\', "https:\\/\\/s0.wp.com\\/wp-content\\/mu-plugins\\/a8c-analytics\\/a8c-analytics.js?v=1524522265" );
+							script.setAttribute( \'async\', true );
+							prev.parentNode.insertBefore( script, prev );
+						}
+
+													getScript();
+											};
+
+					if ( window.defQueue && defQueue.isLOHP && defQueue.isLOHP === 2020 ) {
+						defQueue.items.push( setupAnalytics );
+					} else {
+						setupAnalytics();
+					}
+				} )();
+			</script>
+			<!-- A8C Analytics [end] -->
+		    
 <script type="text/javascript" src="https://stats.wp.com/w.js" async defer></script>
 
-<meta name="google-site-verification" content="Vb-nO0TU1JmhUxrqIO0VI06y5UbGraDa62wy5BgLrg0" />
+<script defer id="bilmur" data-provider="crowdsignal" data-service="admin" src="https://s0.wp.com/wp-content/js/bilmur.min.js?i=8&m=202424"></script><meta name="google-site-verification" content="Vb-nO0TU1JmhUxrqIO0VI06y5UbGraDa62wy5BgLrg0" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=1"/><style>/* line 4, ../../../../../stylesheets/polldaddy.com/poll-style/106.scss */
 .pds-box
 {
@@ -294,7 +367,7 @@ return [
 	color:#464646;
 	padding:3px 25px;
 	white-space:nowrap;
-	background:#f2f2f2 url(\'https://polldaddy.com/images/white-grad.png\') repeat-x scroll left top;
+	background:#f2f2f2 url(\'https://app.crowdsignal.com/pollfm-images/white-grad.png\') repeat-x scroll left top;
 	-webkit-border-radius:11px;
 	-moz-border-radius:11px;
 	border-radius:11px;
@@ -331,7 +404,7 @@ return [
 	line-height:25px;
 	font-weight:bold;
 	white-space:nowrap;
-	background:#eee url(\'https://polldaddy.com/polls/vote-loader-eeeeee.gif\') no-repeat scroll 50% 50%;
+	background:#eee url(\'https://app.crowdsignal.com/polls/vote-loader-eeeeee.gif\') no-repeat scroll 50% 50%;
 }
 
 /* line 184, ../../../../../stylesheets/partials/poll-style/_base.scss */
@@ -669,10 +742,10 @@ return [
 	<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 </head>
 
-<body data-ajax-nonce="5a7bf103ac" class="shadow logged-out cs-poll">
+<body data-ajax-nonce="f5b643f34e" class="shadow logged-out cs-poll">
 	<div class="cs-site-content">
 			<div id="page">
-						
+														
 			<div id="stage">
  <script type="text/javascript">
 
@@ -697,49 +770,49 @@ return [
 			<div class="css-question-inner pds-question-inner">
 				<div class="css-question-top pds-question-top" style="">
 					
-					<div>Which design do you prefer?</div>
+					<h2>Which design do you prefer?</h2>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="css-answer pds-answer">
-	<span>
-					<div class="css-answer-group pds-answer-group">
+		<span role="group" aria-label="Which design do you prefer?">
+							<div class="css-answer-group pds-answer-group">
 
-									<div class="poll__answer-media-public">
-								<div>
-			<img style="top: -3.1045751633987%; left: 0; width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/1199f5f94bc504baa495739602f7c683.jpg" />
+											<div class="poll__answer-media-public">
+									<div>
+			<img style="top: -3.1045751633987%; left: 0; width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/c696ff7a8681f3da79c32bc2d1dcda05.jpg" alt="Option image" title="Option image" />
 		</div>
-							</div>
-									<div class="css-answer-row pds-answer-row">
-					<span class="css-answer-input pds-answer-input">
-															<input type="radio" name="PDI_answer" id="PDI_answer31818288" value="31818288" />
-												</span>
-					<label for="PDI_answer31818288"  style="word-break:break-word;">
-						<span class="css-answer-span pds-answer-span">Option #1</span>
-					</label>
-					<span class="css-clear pds-clear"></span>
+								</div>
+											<div class="css-answer-row pds-answer-row">
+						<span class="css-answer-input pds-answer-input">
+																	<input type="radio" name="PDI_answer" id="PDI_answer31818289" value="31818289" />
+														</span>
+						<label for="PDI_answer31818289"  style="word-break:break-word;">
+							<span class="css-answer-span pds-answer-span">Option #2</span>
+						</label>
+						<span class="css-clear pds-clear"></span>
+					</div>
 				</div>
-			</div>
-						<div class="css-answer-group pds-answer-group">
+								<div class="css-answer-group pds-answer-group">
 
-									<div class="poll__answer-media-public">
-								<div>
-			<img style="top: -3.1045751633987%; left: 0; width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/c696ff7a8681f3da79c32bc2d1dcda05.jpg" />
+											<div class="poll__answer-media-public">
+									<div>
+			<img style="top: -3.1045751633987%; left: 0; width: 100%; height: auto;" src="https://i1.wp.com/files.polldaddy.com/images/1199f5f94bc504baa495739602f7c683.jpg" alt="Option image" title="Option image" />
 		</div>
-							</div>
-									<div class="css-answer-row pds-answer-row">
-					<span class="css-answer-input pds-answer-input">
-															<input type="radio" name="PDI_answer" id="PDI_answer31818289" value="31818289" />
-												</span>
-					<label for="PDI_answer31818289"  style="word-break:break-word;">
-						<span class="css-answer-span pds-answer-span">Option #2</span>
-					</label>
-					<span class="css-clear pds-clear"></span>
+								</div>
+											<div class="css-answer-row pds-answer-row">
+						<span class="css-answer-input pds-answer-input">
+																	<input type="radio" name="PDI_answer" id="PDI_answer31818288" value="31818288" />
+														</span>
+						<label for="PDI_answer31818288"  style="word-break:break-word;">
+							<span class="css-answer-span pds-answer-span">Option #1</span>
+						</label>
+						<span class="css-clear pds-clear"></span>
+					</div>
 				</div>
-			</div>
-				</span>
+						</span>
 </div>
 
 	
@@ -747,8 +820,10 @@ return [
 			<div class="css-votebutton-outer pds-votebutton-outer">
 				<a
 					href="vote"
+					id="pd-vote-button7012505"
+					role="button"
 					style="cursor:pointer;"
-					data-vote="{&quot;id&quot;:7012505,&quot;o&quot;:&quot;0&quot;,&quot;b&quot;:&quot;1&quot;,&quot;m&quot;:&quot;0&quot;,&quot;at&quot;:&quot;10&quot;,&quot;t&quot;:141,&quot;v&quot;:0,&quot;e&quot;:7257600,&quot;n&quot;:&quot;50393df9ac2abcc3215bf38ab72e90a7&quot;}"
+					data-vote="{&quot;id&quot;:7012505,&quot;o&quot;:&quot;0&quot;,&quot;b&quot;:&quot;1&quot;,&quot;m&quot;:&quot;0&quot;,&quot;at&quot;:&quot;10&quot;,&quot;t&quot;:141,&quot;v&quot;:0,&quot;e&quot;:7257600,&quot;n&quot;:&quot;79d0df7c1e90fc2ca6877e7c8a1fdecd&quot;}"
 					class="vote-button css-vote-button pds-vote-button">
 					Vote				</a>
 									<span class="css-links pds-links"><a href="/7012505/results" class="css-view-results pds-view-results">View Results</a>
@@ -758,7 +833,7 @@ return [
 					<span class="css-clear pds-clear"></span>
 							</div>
 		</div>
-			<input type=\'hidden\' name=\'pz\' value=\'853\'>
+			<input type=\'hidden\' name=\'pz\' value=\'345\'>
 
 </form>
 
@@ -777,7 +852,7 @@ return [
 						<strong>
 				Tecia Beulens			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -794,7 +869,7 @@ return [
 						<strong>
 				Rivcah			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -811,7 +886,7 @@ return [
 						<strong>
 				Lisa			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -828,7 +903,7 @@ return [
 						<strong>
 				Michelle			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -845,7 +920,7 @@ return [
 						<strong>
 				B			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -862,7 +937,7 @@ return [
 						<strong>
 				Barb 			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -881,7 +956,7 @@ return [
 						<strong>
 				angela			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -898,7 +973,7 @@ return [
 						<strong>
 				Jodie			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -915,7 +990,7 @@ return [
 						<strong>
 				Tanya 			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -933,7 +1008,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Tanyaut 			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -951,7 +1026,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Gail			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -968,7 +1043,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Michelle\'s Sew Biz - Michelle			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -985,7 +1060,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Uniq Boutiq			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1002,7 +1077,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Kelly keno			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1019,7 +1094,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Kelly keno			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1036,7 +1111,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Kelly keno			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1053,7 +1128,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Danika			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1070,7 +1145,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Danika			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1087,7 +1162,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Danika			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1104,7 +1179,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Danika			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1121,7 +1196,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Adrianna			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1138,7 +1213,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Sofie			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1155,7 +1230,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Kelsey			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1172,7 +1247,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Casey Bell			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1189,7 +1264,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Tasha 			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1206,7 +1281,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				Catherine			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1223,7 +1298,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 						<strong>
 				<a rel="nofollow" href="http://richardbott.com">Richard</a>			</strong>
 
-			<em> - 8 years ago</em>
+			<em> - 11 years ago</em>
 
 			
 			 			<p class="clear"></p>
@@ -1242,7 +1317,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 	<form method="post" action="/comment" name="formcomment" id="formcomment">
 
 		<input type="hidden" name="poll_id" id="poll_id" value="7012505" />
-		<input type="hidden" name="nonce" value="954596fc2a"/>
+		<input type="hidden" name="nonce" value="92b87ef908"/>
 
 		
 		<label for="cname">Your Name</label>
@@ -1349,7 +1424,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 		jQuery( \'a.del-embed-url\' ).click( function() {
 			var data = {};
 
-			data[\'_pd_nonce\'] = \'e5aff22f3b\';
+			data[\'_pd_nonce\'] = \'5c48fc8403\';
 			data[\'id\']        = 7012505;
 
 			jQuery.post( \'\', data, function( response ) {
@@ -1367,7 +1442,7 @@ Option 2 looks cleaner/sleeker, but option 1 means I don\'t have to click on eve
 			var open = \'Open Poll\';
 			var close = \'Close Poll\';
 
-			data[\'_pd_nonce\'] = \'3c9acf6d09\';
+			data[\'_pd_nonce\'] = \'f9726a26e7\';
 			data[\'id\']        = 7012505;
 
 			jQuery.post( \'\', data, function( response ) {

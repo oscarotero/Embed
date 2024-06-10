@@ -3,14 +3,11 @@ declare(strict_types = 1);
 
 return [
     'headers' => [
-        'date' => [
-            'Sun, 04 Apr 2021 15:20:10 GMT'
-        ],
-        'server' => [
-            'Apache/2.4.46 (Unix)'
-        ],
         'x-content-type-options' => [
             'nosniff'
+        ],
+        'vary' => [
+            'User-Agent'
         ],
         'last-modified' => [
             'Sat, 05 Mar 2011 18:33:59 GMT'
@@ -28,16 +25,22 @@ return [
             'max-age=1209600'
         ],
         'expires' => [
-            'Sun, 18 Apr 2021 15:20:10 GMT'
+            'Mon, 24 Jun 2024 15:59:05 GMT'
         ],
         'content-type' => [
             'audio/mpeg'
+        ],
+        'date' => [
+            'Mon, 10 Jun 2024 15:59:05 GMT'
+        ],
+        'server' => [
+            'Apache/2.4.59 (Unix)'
         ],
         'Content-Location' => [
             'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
         ],
         'X-Request-Time' => [
-            '0.198 ms'
+            '0.206 ms'
         ]
     ],
     'statusCode' => 200,

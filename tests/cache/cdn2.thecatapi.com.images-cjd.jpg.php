@@ -4,16 +4,13 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Sun, 04 Apr 2021 15:20:10 GMT'
+            'Mon, 10 Jun 2024 15:59:04 GMT'
         ],
         'content-type' => [
             'image/jpeg'
         ],
         'content-length' => [
             '115080'
-        ],
-        'set-cookie' => [
-            '__cfduid=d872ecb3abccf25b8d6edd533b0c588d91617549610; expires=Tue, 04-May-21 15:20:10 GMT; path=/; domain=.thecatapi.com; HttpOnly; SameSite=Lax'
         ],
         'last-modified' => [
             'Thu, 27 Sep 2018 01:08:20 GMT'
@@ -25,37 +22,28 @@ return [
             'Hit from cloudfront'
         ],
         'via' => [
-            '1.1 1cc6ed0d2d3dd9529ce544f9dfe61a53.cloudfront.net (CloudFront)'
+            '1.1 a971b2b62b734c0aed2e82b19df64026.cloudfront.net (CloudFront)'
         ],
         'x-amz-cf-pop' => [
-            'HIO50-C1'
+            'MAD56-P3'
         ],
         'x-amz-cf-id' => [
-            'XdSskKK6Gh8uVoS8vrjaTTgkCxh0XUtGH-yLTgzWhEzJAOWvgKHtHA=='
-        ],
-        'age' => [
-            '6410'
+            'fOg4lsIA-UWP5Y2R0_06gp56Pu7S6FrrRwht2svV3qGDh7gSEKL-eA=='
         ],
         'cache-control' => [
             'max-age=14400'
         ],
         'cf-cache-status' => [
-            'HIT'
+            'MISS'
         ],
         'accept-ranges' => [
             'bytes'
         ],
-        'cf-request-id' => [
-            '093f11669e000014f1140b0000000001'
-        ],
-        'expect-ct' => [
-            'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
-        ],
         'report-to' => [
-            '{"group":"cf-nel","endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=jAq3jlrSJNc6WgvYsn5qyThG9saPTqIa%2Bgd4o4eUBE%2Bg5oAQ6GNlHNhe4VGxNl0GK9bux0NFnE79LwYx%2FpsB4MZHXKb%2BiBWGb1d746YQ67GvjRE%3D"}],"max_age":604800}'
+            '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=3WDfKJMEJ0rBrXW%2FXOU2sKArj29VhU%2F5qiUgGLs6sQD2%2BWgJQG%2BdTPFjlrW%2BCE1lqr8kcFinvr7Y52udCOmgcdgnf9xSspYimnP4jUhtzFP%2BCPVlFG%2F%2F1OPEKyqg32%2BjhHyQ8%2BA%3D"}],"group":"cf-nel","max_age":604800}'
         ],
         'nel' => [
-            '{"report_to":"cf-nel","max_age":604800}'
+            '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
         ],
         'vary' => [
             'Accept-Encoding'
@@ -64,16 +52,16 @@ return [
             'cloudflare'
         ],
         'cf-ray' => [
-            '63ab84ea9d0514f1-MAD'
+            '891a9106dc28668f-MAD'
         ],
         'alt-svc' => [
-            'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'
+            'h3=":443"; ma=86400'
         ],
         'Content-Location' => [
             'https://cdn2.thecatapi.com/images/cjd.jpg'
         ],
         'X-Request-Time' => [
-            '0.101 ms'
+            '0.148 ms'
         ]
     ],
     'statusCode' => 200,

@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.4.11] - 2024-06-10
+### Fixed
+- Updated oEmbed entry points [#537]
+
 ## [4.4.10] - 2023-12-10
 ### Fixed
 - PHP 7.4 support
@@ -228,7 +232,9 @@ Full library refactoring.
 [#525]: https://github.com/oscarotero/Embed/issues/525
 [#527]: https://github.com/oscarotero/Embed/issues/527
 [#529]: https://github.com/oscarotero/Embed/issues/529
+[#537]: https://github.com/oscarotero/Embed/issues/537
 
+[4.4.11]: https://github.com/oscarotero/Embed/compare/v4.4.10...v4.4.11
 [4.4.10]: https://github.com/oscarotero/Embed/compare/v4.4.9...v4.4.10
 [4.4.9]: https://github.com/oscarotero/Embed/compare/v4.4.8...v4.4.9
 [4.4.8]: https://github.com/oscarotero/Embed/compare/v4.4.7...v4.4.8

@@ -3,42 +3,42 @@ declare(strict_types = 1);
 
 return [
     'headers' => [
+        'connection' => [
+            'close'
+        ],
+        'content-length' => [
+            '0',
+            '565369'
+        ],
         'retry-after' => [
             '0'
         ],
         'location' => [
             'https://i.imgur.com/X6rkCc5.jpg'
         ],
-        'content-length' => [
-            '0',
-            '565369'
-        ],
         'accept-ranges' => [
             'bytes',
             'bytes'
         ],
         'date' => [
-            'Sun, 04 Apr 2021 15:27:24 GMT',
-            'Sun, 04 Apr 2021 15:27:24 GMT'
-        ],
-        'connection' => [
-            'close'
+            'Mon, 10 Jun 2024 15:58:47 GMT',
+            'Mon, 10 Jun 2024 15:58:47 GMT'
         ],
         'x-served-by' => [
-            'cache-mad22048-MAD',
-            'cache-bwi5140-BWI, cache-mad22062-MAD'
+            'cache-mad2200140-MAD',
+            'cache-iad-kiad7000051-IAD, cache-mad2200135-MAD'
         ],
         'x-cache' => [
             'HIT',
-            'HIT, HIT'
+            'Miss from cloudfront, HIT, HIT'
         ],
         'x-cache-hits' => [
             '0',
-            '1, 1'
+            '3, 0'
         ],
         'x-timer' => [
-            'S1617550044.241577,VS0,VE0',
-            'S1617550044.328381,VS0,VE4'
+            'S1718035128.759419,VS0,VE0',
+            'S1718035128.831783,VS0,VE1'
         ],
         'strict-transport-security' => [
             'max-age=300',
@@ -56,6 +56,9 @@ return [
             'cat factory 1.0  HTTP/2 200',
             'cat factory 1.0'
         ],
+        'content-type' => [
+            'image/jpeg'
+        ],
         'last-modified' => [
             'Wed, 21 Jan 2015 15:15:05 GMT'
         ],
@@ -65,14 +68,17 @@ return [
         'x-amz-storage-class' => [
             'STANDARD_IA'
         ],
-        'content-type' => [
-            'image/jpeg'
+        'x-amz-cf-pop' => [
+            'IAD89-P1'
+        ],
+        'x-amz-cf-id' => [
+            '10DGv7ZcAIqQI7G6jGcHt1Ch4v8jNH0NBkczbt6mQMxJ0gWALFeEPQ=='
         ],
         'cache-control' => [
             'public, max-age=31536000'
         ],
         'age' => [
-            '3207190'
+            '824835'
         ],
         'x-content-type-options' => [
             'nosniff'
@@ -81,7 +87,7 @@ return [
             'https://i.imgur.com/X6rkCc5.jpg'
         ],
         'X-Request-Time' => [
-            '0.192 ms'
+            '0.118 ms'
         ]
     ],
     'statusCode' => 200,

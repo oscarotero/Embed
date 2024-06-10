@@ -9,9 +9,9 @@ return [
             'nginx/1.2.8'
         ],
         'date' => [
-            'Sun, 04 Apr 2021 15:20:16 GMT',
-            'Sun, 04 Apr 2021 15:20:16 GMT',
-            'Sun, 04 Apr 2021 15:20:17 GMT'
+            'Mon, 10 Jun 2024 15:59:08 GMT',
+            'Mon, 10 Jun 2024 15:59:08 GMT',
+            'Mon, 10 Jun 2024 15:59:09 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -21,57 +21,62 @@ return [
         'content-length' => [
             '160',
             '26',
-            '54800'
+            '43630'
         ],
         'connection' => [
-            'keep-alive',
             'keep-alive',
             'keep-alive'
         ],
         'location' => [
-            'http://imageshack.com/d/ip7wO0v7j  HTTP/1.1 301 Moved Permanently',
-            'http://imagizer.imageshack.com/img673/0/7wO0v7.jpg'
+            'https://imageshack.com/d/ip7wO0v7j',
+            'https://imagizer.imageshack.com/img673/0/7wO0v7.jpg'
         ],
-        'x-powered-by' => [
-            'PHP/5.2.9'
-        ],
-        'content-encoding' => [
-            'gzip'
+        'x-frame-options' => [
+            'SAMEORIGIN',
+            'SAMEORIGIN'
         ],
         'accept-ranges' => [
+            'bytes',
             'bytes',
             'bytes'
         ],
         'x-varnish' => [
-            '2101841776 2084869935',
-            '1488550866 1466312919'
+            '684845256',
+            '1417234088',
+            '3637154758 3606704929'
         ],
         'age' => [
-            '1480794',
-            '1307930'
+            '0',
+            '0'
         ],
         'via' => [
             '1.1 varnish',
             '1.1 varnish'
         ],
         'x-varnish-hits' => [
-            '13',
-            '29'
+            '0',
+            '0',
+            '34'
         ],
         'x-varnish-ip' => [
-            '208.94.3.35',
-            '38.99.77.71'
+            '208.94.3.34',
+            '208.94.3.33',
+            '38.99.77.68'
         ],
         'x-varnish-port' => [
+            '17001',
             '17001',
             '17001'
         ],
         'vary' => [
-            'Accept-Encoding, User-Agent  HTTP/1.1 200 OK'
+            'User-Agent  HTTP/1.1 301 Moved Permanently',
+            'Accept-Encoding, User-Agent  HTTP/2 200'
         ],
-        'access-control-allow-origin' => [
-            '*',
-            'imageshack.com'
+        'x-powered-by' => [
+            'PHP/5.2.9'
+        ],
+        'content-encoding' => [
+            'gzip'
         ],
         'x-original-quality' => [
             '80'
@@ -83,7 +88,7 @@ return [
             '54800'
         ],
         'x-origin-fetch-time' => [
-            '69'
+            '72'
         ],
         'x-original-resolution' => [
             '500x500'
@@ -95,20 +100,21 @@ return [
             'imageshack.imagizer.com'
         ],
         'etag' => [
-            '76656ba613bd686c869b0d6c89cb090a'
+            'c4ca4238a0b923820dcc509a6f75849b'
         ],
         'x-ops' => [
-            '{"quality":80,"dpr":1}'
-        ],
-        's3-cache-processed' => [
-            'MISS:imageshack.imagizer.com/processed/3b8c2e335001ee9c7318598bf4d0d201'
+            '{"quality":60}'
         ],
         'access-control-allow-methods' => [
             'GET, POST, OPTIONS, HEAD',
+            'GET, POST, OPTIONS',
+            'GET, POST, OPTIONS',
             'GET, POST, OPTIONS'
         ],
         'access-control-allow-headers' => [
             'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Length,X-Original-Filesize,X-Original-Resolution,X-CSRF-TOKEN',
+            'Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,Keep-Alive,X-Requested-With,If-Modified-Since',
+            'Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,Keep-Alive,X-Requested-With,If-Modified-Since',
             'Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,Keep-Alive,X-Requested-With,If-Modified-Since'
         ],
         'access-control-expose-headers' => [
@@ -117,21 +123,25 @@ return [
         'x-cache-hits' => [
             '0'
         ],
-        'expires' => [
-            'Tue, 04 May 2021 15:20:17 GMT'
-        ],
-        'cache-control' => [
-            'max-age=2592000',
-            'public'
-        ],
         'access-control-allow-credentials' => [
+            'true',
+            'true',
             'true'
         ],
+        'cache-control' => [
+            'public, max-age=1979132'
+        ],
+        'akamai-cache-status' => [
+            'Hit from child'
+        ],
+        'access-control-allow-origin' => [
+            '*'
+        ],
         'Content-Location' => [
-            'http://imagizer.imageshack.com/img673/0/7wO0v7.jpg'
+            'https://imagizer.imageshack.com/img673/0/7wO0v7.jpg'
         ],
         'X-Request-Time' => [
-            '1.899 ms'
+            '1.305 ms'
         ]
     ],
     'statusCode' => 200,

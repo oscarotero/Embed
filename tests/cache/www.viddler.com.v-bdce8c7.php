@@ -8,8 +8,8 @@ return [
             'nginx'
         ],
         'date' => [
-            'Sun, 04 Apr 2021 15:27:50 GMT',
-            'Sun, 04 Apr 2021 15:27:51 GMT'
+            'Mon, 10 Jun 2024 15:59:03 GMT',
+            'Mon, 10 Jun 2024 15:59:03 GMT'
         ],
         'content-type' => [
             'text/html',
@@ -41,23 +41,23 @@ return [
             'nosniff'
         ],
         'set-cookie' => [
-            'JSESSIONID=4E49E88C97CD39606537F121C4953364.viddler-api_h; domain=.viddler.com; path=/',
-            '_vlrb_session=VkhhSXkxS1lkK1h3VW4zcjg4SUxxNXFWUG1MbzF5dWZBTWVqdnpVQ2FRN09oMUloOVRnNmxPNkRBTVMweUx3QkJ4dzhmWHBhbmF2NE9xbDhmeXRvcGJtblEwYTRNaThIVkdNM3hoT0VOTUh6RHQvOFRlM3BDV2t2TmNjQmp5QUQ0TEFOOU9vUUN1YzQ2ZlpmcW9GT1ovYVdmeXJ2NVc4V1Z6ZGgrYStFQ0o2Mi9sbmUvdzN0UmZYc1FZdlV3L0U1LS00UVBRdk5uWXJBQTFaV1VKNFUxQkdnPT0%3D--afba22d1a82d70580ea81438d1ca5124bb0f1aa4; path=/; HttpOnly'
+            'JSESSIONID=CD6B9745DE2E230D860140D33565E3F8.viddler-api_h; domain=.viddler.com; path=/',
+            '_vlrb_session=bUFEOU1KdjdJZUxLK1RxWlhxRUtpbmdYU3ErU1RobVJJQlN4K1RNNXlCNzVWbXBUVldHcjNRdlBFTnlsWjR6ZWNCc3paS2FrdDNtYnJtOTFTNTFSTGdoa0w2dC9sWmFiNFBJVnpIY1FoRSs2WmoxTFoxeUZiaEpWeldGVTFpdm5jb0FUOEJDbExmanZSMmZaN0tEL1Jldk05Y3RsL2hPaGkxK3JZY3NLYWNEaFB1eStVb1lFdnBENGRHZFIrMlMvLS1KNU1FYk5VWUpBdG1PUCtZQU40SHpBPT0%3D--c15c81fe551c1b4acb9442c5118e766f0628e7a5; path=/; HttpOnly'
         ],
         'etag' => [
-            'W/"2ed0677e9644eb5f9964e18bb557bc50"'
+            'W/"23d4f80bd50e3400b0a4331ea07825c6"'
         ],
         'cache-control' => [
             'max-age=0, private, must-revalidate'
         ],
         'x-request-id' => [
-            'de92340d-1e79-4419-b619-3e138d912ba1'
+            '92e2a17d-bf38-477d-b2a9-85013a5abc21'
         ],
         'x-runtime' => [
-            '0.077509'
+            '0.047459'
         ],
         'x-node' => [
-            'rails3'
+            'rails1'
         ],
         'content-encoding' => [
             'gzip'
@@ -66,7 +66,7 @@ return [
             'https://www.viddler.com/v/bdce8c7'
         ],
         'X-Request-Time' => [
-            '0.929 ms'
+            '0.798 ms'
         ]
     ],
     'statusCode' => 200,
@@ -85,16 +85,16 @@ return [
   <meta name="keywords" content="Viddler, Video Sharing, Business Video Hosting" />
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="n1S899feQ9efg32qvfSEwvwhKRvDEkV8tMoYNNsLJyBhui1xBe38UtOcUOuTRtAhFbXGB0kuzmu5y+CB0AxLfQ==" />
+<meta name="csrf-token" content="yKzNedbfIymIzsV+mBPCl7CLVFvSEW7j+OKvR7cJYcpgpOLsOTDjhxgUEBxqfQUhV3cW3S8chzi7XI8UtCntbQ==" />
 
   <link rel="shortcut icon" href="//static1.cdn-ec.viddler.com/rails/assets/layout/favicon-a9c9c887d52b5d9a765dd3468a2285b8.png" />
 
   <link rel="stylesheet" media="screen" href="//static6.cdn-ec.viddler.com/rails/assets/application-990af8997ca5c5b719a0626cd7965782.css" />
-  <script src="//static9.cdn-ec.viddler.com/rails/assets/application-984ff3c4e8e5a115995f1cac6d7288a1.js"></script>
+  <script src="//static6.cdn-ec.viddler.com/rails/assets/application-6718d2cc8f95f274010c9d0903cae156.js"></script>
   
   
 
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.viddler.com/rss/viddler" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.viddler.com/rss/viddler" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <script type="text/javascript">
@@ -127,8 +127,8 @@ return [
 <meta property="twitter:player" content="https://www.viddler.com/embed/bdce8c7" />
 <meta property="twitter:player:width" content="1280" />
 <meta property="twitter:player:height" content="720" />
-    <meta rel="alternate" type="application/json+oembed" href="http://www.viddler.com/oembed/?format=json&amp;url=http%3A%2F%2Fwww.viddler.com%2Fv%2Fbdce8c7" title="Viddler Platform Overview" />
-    <meta rel="alternate" type="text/xml+oembed" href="http://www.viddler.com/oembed/?format=xml&amp;url=http%3A%2F%2Fwww.viddler.com%2Fv%2Fbdce8c7" title="Viddler Platform Overview" />
+    <meta rel="alternate" type="application/json+oembed" href="https://www.viddler.com/oembed/?format=json&amp;url=https%3A%2F%2Fwww.viddler.com%2Fv%2Fbdce8c7" title="Viddler Platform Overview" />
+    <meta rel="alternate" type="text/xml+oembed" href="https://www.viddler.com/oembed/?format=xml&amp;url=https%3A%2F%2Fwww.viddler.com%2Fv%2Fbdce8c7" title="Viddler Platform Overview" />
 
   
   <script>
@@ -149,7 +149,7 @@ window.gon={};
   if (match && version) {
     version = parseFloat(version);
     if (version < 8) {
-      document.write("<div id=\\"upgrade-ie\\"><h3>We currently only support <b>Internet Explorer 8</b> and higher</h3><p>We have chosen to do this to increase functionality and security for our users.<br />Please <b><a href=\\"http://windows.microsoft.com/en-US/internet\\">upgrade your version of Internet Explorer</a></b> in order to take advantage<br />of all the functionality Viddler has to offer.</p></div>");
+      document.write("<div id=\\"upgrade-ie\\"><h3>We currently only support <b>Internet Explorer 8</b> and higher</h3><p>We have chosen to do this to increase functionality and security for our users.<br />Please <b><a href=\\"https://windows.microsoft.com/en-US/internet\\">upgrade your version of Internet Explorer</a></b> in order to take advantage<br />of all the functionality Viddler has to offer.</p></div>");
 	}
 	//document.getElementById(\'upgrade-ie\').style.display = \'block\';
   }
@@ -178,8 +178,8 @@ window.gon={};
 
     <p id="single-stats">
       <span>Uploaded on Jan 19, 2012 /</span>
-      <span><b>167639 </b> views /</span>
-      <span><b>998443 </b> impressions /</span>
+      <span><b>167664 </b> views /</span>
+      <span><b>1002202 </b> impressions /</span>
     <span><b><span class="comment-count">0 </span></b> comments</span>
     </p>
 
@@ -216,16 +216,16 @@ window.gon={};
   <h3>Tags</h3>
   <ul>
       <li>
-        <span class="tag-text">Video Hosting For Business</span>
-      </li>
-      <li>
         <span class="tag-text">Business Video Host</span>
       </li>
       <li>
-        <span class="tag-text">Video Platform for Business</span>
+        <span class="tag-text">Video Hosting For Business</span>
       </li>
       <li>
         <span class="tag-text">Viddler</span>
+      </li>
+      <li>
+        <span class="tag-text">Video Platform for Business</span>
       </li>
   </ul>
 </div>

@@ -4,16 +4,16 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Sun, 04 Apr 2021 15:20:19 GMT'
+            'Mon, 10 Jun 2024 15:59:10 GMT'
         ],
         'content-type' => [
             'text/html; charset=UTF-8'
         ],
         'content-length' => [
-            '8156'
+            '8369'
         ],
         'set-cookie' => [
-            'PHPSESSID=2shjspi49kpg0dhlbkjb0oa4a4; path=/'
+            'PHPSESSID=g9103qksgd9g7b6m7jgpupqci2; path=/'
         ],
         'expires' => [
             'Thu, 19 Nov 1981 08:52:00 GMT'
@@ -37,7 +37,7 @@ return [
             'https://ideone.com/Whjntg'
         ],
         'X-Request-Time' => [
-            '0.715 ms'
+            '0.875 ms'
         ]
     ],
     'statusCode' => 200,
@@ -56,9 +56,9 @@ return [
 	<meta property="og:image" content="http://profile.ak.fbcdn.net/hprofile-ak-prn1/50232_245768360841_3377786_q.jpg"/>
 	<meta property="og:description" content="Ideone is something more than a pastebin; it\'s an online compiler and debugging tool which allows to compile and run code online in more than 40 programming languages."/>
 	<meta property="og:title" content="Ideone.com"/>
-	<link rel="shortcut icon" type="image/png" href="//stx1.ideone.com/gfx2/img/favicon.png" />
+	<link rel="shortcut icon" type="image/png" href="//d2c5ubcnqbm27w.cloudfront.net/gfx2/img/favicon.png" />
 			
-				<link href="//stx1.ideone.com/gfx2/libs/bootstrap/css/bootstrap-with-responsive-1200-only.min.css" rel="stylesheet" media="all"/>
+				<link href="//d2c5ubcnqbm27w.cloudfront.net/gfx2/libs/bootstrap/css/bootstrap-with-responsive-1200-only.min.css" rel="stylesheet" media="all"/>
 				
 		 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -93,20 +93,20 @@ return [
 	</style>
 	
 	
-	<link href="//stx1.ideone.com/gfx2/libs/fontello-8f7d2dfe/css/fontello.css?3" rel="stylesheet"/>
+	<link href="//d2c5ubcnqbm27w.cloudfront.net/gfx2/libs/fontello-8f7d2dfe/css/fontello.css?3" rel="stylesheet"/>
 	<!--[if IE 7]>
-		<link rel="stylesheet" href="//stx1.ideone.com/gfx2/libs/fontello-8f7d2dfe/css/fontello-ie7.min.css?3">
+		<link rel="stylesheet" href="//d2c5ubcnqbm27w.cloudfront.net/gfx2/libs/fontello-8f7d2dfe/css/fontello-ie7.min.css?3">
 	<![endif]-->
 	
 	
-	<link href="//stx1.ideone.com/themes/smoothness/jquery-ui-1.10.1.custom.min.css" type="text/css" rel="stylesheet"/> <!-- jak sie wrzuci do bundle to nie dziala -->
+	<link href="//d2c5ubcnqbm27w.cloudfront.net/themes/smoothness/jquery-ui-1.10.1.custom.min.css" type="text/css" rel="stylesheet"/> <!-- jak sie wrzuci do bundle to nie dziala -->
 	<!-- <link href="/gfx2/css/jquery-ui-bootstrap/jquery-ui-1.10.0.custom.css" type="text/css" rel="stylesheet" /> --> <!-- mozna ew wlaczyc zamiast tego powyzej -->
 		
 	<!-- 2013-02-07 by wiele: na czas develu wyrzucam to z bundle zeby moc latwiej debugowac w firebugu -->
 	
 	
 	
-	<link href="//stx1.ideone.com/gfx2/css/ideone-bundle.css?3" rel="stylesheet"/>
+	<link href="//d2c5ubcnqbm27w.cloudfront.net/gfx2/css/ideone-bundle.css?3" rel="stylesheet"/>
 	<!-- end of rzeczy przeniesione tymczasowo z bundle -->
 	
 	
@@ -142,12 +142,28 @@ return [
 	
 	
 	
-	<script type="text/javascript" src="//stx1.ideone.com/gfx2/js/ideone-libs-bundle.js?2"></script>
-	<script type="text/javascript" src="//stx1.ideone.com/gfx2/libs/ace-2017-06/ace.js?1" data-ace-base="/gfx2/libs/ace-2017-06"></script>
-	<script type="text/javascript" src="//stx1.ideone.com/gfx2/js/ideone-common.js?12"></script>
+	<script type="text/javascript" src="//d2c5ubcnqbm27w.cloudfront.net/gfx2/js/ideone-libs-bundle.js?2"></script>
+	<script type="text/javascript" src="//d2c5ubcnqbm27w.cloudfront.net/gfx2/libs/ace-2017-06/ace.js?1" data-ace-base="/gfx2/libs/ace-2017-06"></script>
+	<script type="text/javascript" src="//d2c5ubcnqbm27w.cloudfront.net/gfx2/js/ideone-common.js?12"></script>
 	<!-- end of rzeczy przeniesione tymczasowo z bundle -->
 
-	<script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+	
+
+	
+	<script type="text/javascript">
+	(function(){
+		var bsa_optimize=document.createElement(\'script\');
+		bsa_optimize.type=\'text/javascript\';
+		bsa_optimize.async=true;
+		bsa_optimize.src=\'https://cdn4.buysellads.net/pub/ideone.js?\'+(new Date()-new Date()%600000);
+		(document.getElementsByTagName(\'head\')[0]||document.getElementsByTagName(\'body\')[0]).appendChild(bsa_optimize);
+	})();
+	</script>
+
+
+			<script
+  src="https://sentry2.sphere-research.com/js-sdk-loader/521256c075c8543be62ed54469fffe42.min.js"    crossorigin="anonymous"    ></script>
+	
 </head>
 
 
@@ -240,7 +256,7 @@ return [
 </div>
 
 
-<script type="text/javascript" src="//stx1.ideone.com/gfx2/js/ideone-view.js?7"></script>
+<script type="text/javascript" src="//d2c5ubcnqbm27w.cloudfront.net/gfx2/js/ideone-view.js?7"></script>
 
 
 <div class="container page-view">
@@ -258,6 +274,9 @@ return [
 		
 			<!-- ad -->
 						
+<!-- Ideone_S2S_Leaderboard_ROS_ATF -->
+<div id="bsa-zone_1620919776507-0_123456"></div>
+
 
 
 			
@@ -279,7 +298,7 @@ return [
 					
 															
 					<span class="inline_info pull-right" id="view_set_visibility_loader_1" style="display: none;">
-						<img src="//stx1.ideone.com/gfx/loader.gif" style="width: 14px; height: 14px;" alt="loading..."/>
+						<img src="//d2c5ubcnqbm27w.cloudfront.net/gfx/loader.gif" style="width: 14px; height: 14px;" alt="loading..."/>
 					</span>
 					
 											<div class="pull-right">
@@ -342,9 +361,9 @@ int main() {
 --></style><pre class="c"><ol><li class="li1"><div class="de1"><span class="co2">#include&lt;stdio.h&gt;</span></div></li><li class="li1"><div class="de1"><span class="co2">#include&lt;stdlib.h&gt;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">	<span class="kw4">int</span> n<span class="sy0">;</span></div></li><li class="li1"><div class="de1">	<span class="kw4">char</span> <span class="sy0">*</span>s <span class="sy0">=</span> <a href="http://www.opengroup.org/onlinepubs/009695399/functions/malloc.html"><span class="kw3">malloc</span></a><span class="br0">&#40;</span><span class="nu0">20</span><span class="sy0">*</span><span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">	<a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\\n</span>&quot;</span><span class="sy0">,</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">	<a href="http://www.opengroup.org/onlinepubs/009695399/functions/sscanf.html"><span class="kw3">sscanf</span></a><span class="br0">&#40;</span>s<span class="sy0">,</span><span class="st0">&quot;%d&quot;</span><span class="sy0">,&amp;</span>n<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">	<a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%d, %d<span class="es1">\\n</span>&quot;</span><span class="sy0">,</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span><span class="sy0">,</span>n<span class="sy0">+</span><span class="nu0">9</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre></pre>
 				<div id="source-text" class="hidden">I2luY2x1ZGU8c3RkaW8uaD4KI2luY2x1ZGU8c3RkbGliLmg+CgppbnQgbWFpbigpIHsKCWludCBuOwoJY2hhciAqcyA9IG1hbGxvYygyMCpzaXplb2YoY2hhcikpOwoJcHJpbnRmKCIlZFxuIixzaXplb2YocykpOwoJc3NjYW5mKHMsIiVkIiwmbik7CglwcmludGYoIiVkLCAlZFxuIixzaXplb2Yobiksbis5KTsKfQ==</div>
 				
-				<input type="hidden" name="p1" id="p1" value="d70aefb1ab20d6496773ba93de5fa93b"/>
-				<input type="hidden" name="p2" id="p2" value="4"/>
-				<input type="hidden" name="p3" id="p3" value="12"/>
+				<input type="hidden" name="p1" id="p1" value="5cfc41917d5596f680a56a29ac1d255c"/>
+				<input type="hidden" name="p2" id="p2" value="9"/>
+				<input type="hidden" name="p3" id="p3" value="15"/>
 				<input type="hidden" name="p4" id="p4" value=""/>
 			</div>
 			
@@ -356,7 +375,7 @@ int main() {
 																																							<span class="info green" title="Success">Success</span>							
 							
 							<a href="#stdin">#stdin</a>
-														<a href="#stdin">#stdout</a>
+														<a href="#stdout">#stdout</a>
 														
 							0s 2244KB
 						</span>
@@ -436,7 +455,11 @@ int main() {
 		<div class="span4">
 			
 
-			                        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7D65QE&placement=ideonecom" id="_carbonads_js"></script>
+			                        
+
+<!-- Ideone_S2S_Sidebar_ROS_ATF -->
+<div id="bsa-zone_1620921930965-5_123456"></div>
+
 
 
 			
@@ -466,7 +489,7 @@ int main() {
 					</div>
 					<div class="row">
 						<div class="span1">created:</div>								
-						<div class="span3" id="solution_date"><span class="rel-tooltip" title="2016-07-23 12:06:39 CET">4&nbsp;years&nbsp;ago</span></div>
+						<div class="span3" id="solution_date"><span class="rel-tooltip" title="2016-07-23 12:06:39 CET">7&nbsp;years&nbsp;ago</span></div>
 					</div>
 					<div class="row">
 						<div class="span1">visibility:</div>
@@ -618,7 +641,7 @@ $(document).ready(function(){
 				<a href="/ideone/Tools/bug/form/1/link/Whjntg/compiler/11" id="show_bug_dialog" data-toggle="modal" data-target="#bug-dialog">Feedback &amp; Bugs</a>
 					
 				<!-- 
-				<p class="values">13, 0.23s, 0.33s</p>
+				<p class="values">13, 0.32s, 0.51s</p>
 				-->
 				
 				<br>
@@ -656,7 +679,7 @@ $(document).ready(function(){
     <h3>Report bug / make suggestion</h3>
   </div>
   <div class="modal-body">
-	<img src="//stx1.ideone.com/gfx/loader.gif" style="width: 14px; height: 14px;" alt="loading..."/>
+	<img src="//d2c5ubcnqbm27w.cloudfront.net/gfx/loader.gif" style="width: 14px; height: 14px;" alt="loading..."/>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn" data-dismiss="modal">Close</a>

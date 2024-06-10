@@ -4,14 +4,10 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'date' => [
-            'Sun, 04 Apr 2021 15:27:31 GMT'
+            'Mon, 10 Jun 2024 15:58:51 GMT'
         ],
         'content-type' => [
             'text/html; charset=UTF-8'
-        ],
-        'set-cookie' => [
-            '__cfduid=d8045b98da5c45be74386a5667862ef291617550051; expires=Tue, 04-May-21 15:27:31 GMT; path=/; domain=.pastebin.com; HttpOnly; SameSite=Lax; Secure',
-            '_csrf-frontend=d13649ab2c2ffd1430465d6aaef0ee821a32d838236fe370e2f0f18627d1279ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22yCmfgRTblRcsY25RaI2BFt7ZNqeszDex%22%3B%7D; path=/; HttpOnly'
         ],
         'x-frame-options' => [
             'DENY'
@@ -22,29 +18,26 @@ return [
         'x-xss-protection' => [
             '1;mode=block'
         ],
+        'set-cookie' => [
+            '_csrf-frontend=2433125ad79b5109a6ad2c413905810af4eba2abcb8e0167826438b8c2333d4da%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22wVd_L-2EqkMrw0ejMMCuULiY6YJ71SK9%22%3B%7D; path=/; HttpOnly'
+        ],
         'content-encoding' => [
             'gzip'
         ],
         'cf-cache-status' => [
             'DYNAMIC'
         ],
-        'cf-request-id' => [
-            '093f181fc900001131622b0000000001'
-        ],
-        'expect-ct' => [
-            'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
-        ],
         'server' => [
             'cloudflare'
         ],
         'cf-ray' => [
-            '63ab8fac79e41131-MAD'
+            '891a90afe8dd384d-MAD'
         ],
         'Content-Location' => [
             'https://pastebin.com/d4biUtRm'
         ],
         'X-Request-Time' => [
-            '0.713 ms'
+            '0.280 ms'
         ]
     ],
     'statusCode' => 200,
@@ -52,12 +45,13 @@ return [
     'body' => '<!DOCTYPE html>
 <html lang="en">
 <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58643-34"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=5.0, user-scalable=yes" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S72LBY47R8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag(\'js\', new Date());
-      gtag(\'config\', "UA-58643-34");
+      gtag(\'config\', "G-S72LBY47R8");
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Pushing new git submodule to Heroku - Pastebin.com</title>
@@ -72,22 +66,37 @@ return [
     <meta property="og:site_name" content="Pastebin" />
     <meta name="google-site-verification" content="jkUAIOE8owUXu8UXIhRLB9oHJsWBfOgJbZzncqHoF4A" />
     <link rel="canonical" href="https://pastebin.com/d4biUtRm" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=1.0, user-scalable=yes">
         <meta name="csrf-param" content="_csrf-frontend">
-<meta name="csrf-token" content="utGgCjzugce138vW7aqpfcQqcPJpjAMbqv2lU6F956LDks1sW7zVpdmNqKW0mJwvpWNCsC_4NEHkjMAg2zmC2g==">
+<meta name="csrf-token" content="BbFUnUyrtwi0lu41rewphyShZpN0EC4pLh0hmnp6L4Zy5zDCAIaFTcX9o0fa3Eztaewl5iFcR3AYRGutSylkvw==">
 
-<link href="/assets/c80611c4/css/bootstrap.min.css" rel="stylesheet">        
-<link href="/themes/pastebin/css/vendors.bundle.css?92579aa911bacc5e7d3e" rel="stylesheet">
-<link href="/themes/pastebin/css/app.bundle.css?92579aa911bacc5e7d3e" rel="stylesheet">
+<link href="/assets/c80611c4/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/72fc434d/dist/bootstrap-tagsinput.css" rel="stylesheet">        
+<link href="/themes/pastebin/css/vendors.bundle.css?30d6ece6979ee0cf5531" rel="stylesheet">
+<link href="/themes/pastebin/css/app.bundle.css?30d6ece6979ee0cf5531" rel="stylesheet">
     
-<!-- 0-MzCZRcex -->
+<!-- 1-x2xy94pJ -->
 <script type="text/javascript" src="//services.vlitag.com/adv1/?q=adf050ece17b957604b4bbfc1829059f" defer="" async=""></script><script> var vitag = vitag || {};</script>
 <!-- End Valueimpression Head Script -->
+<script>
+     vitag.smartBannerConfig= {
+          disablePosition:  "top right left",
+     }
+</script>
+<script type="text/javascript">
+        if (window.location.pathname === "/") {
+            vitag = vitag || {};
+            vitag.outStreamConfig = vitag.outStreamConfig || {};
+            vitag.outStreamConfig.enablePC = false;
+        }
+    </script>
 </head>
-<body class="night-auto " data-pr="MzCZRcex" data-pa="" data-sar="1" data-abd="1">
+<body class="night-auto " data-pr="" data-pa="x2xy94pJ" data-sar="1" data-abd="1" data-bd="1">
 
 
-
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="add" viewBox="0 0 1024 1024"><path fill="#ccc" d="M512 16C238 16 16 238 16 512s222 496 496 496 496-222 496-496S786 16 512 16z m288 552c0 13.2-10.8 24-24 24h-184v184c0 13.2-10.8 24-24 24h-112c-13.2 0-24-10.8-24-24v-184h-184c-13.2 0-24-10.8-24-24v-112c0-13.2 10.8-24 24-24h184v-184c0-13.2 10.8-24 24-24h112c13.2 0 24 10.8 24 24v184h184c13.2 0 24 10.8 24 24v112z"/></symbol>
+    <symbol id="search" viewBox="0 0 512 512"><path fill="#ccc" d="M354.2,216c0-38.2-13-70.7-40-97.7c-27-27-59.6-40-97.7-40s-70.7,13-97.7,40s-40,59.6-40,97.7 s13,70.7,40,97.7s59.6,40,97.7,40s70.7-13,97.7-40C340.2,285.8,354.2,253.2,354.2,216z M511.5,472c0,10.2-3.7,19.5-12.1,27.9 c-8.4,8.4-16.8,12.1-27.9,12.1c-11.2,0-20.5-3.7-27.9-12.1L339.3,393.8c-37.2,26.1-78.2,38.2-122.9,38.2 c-29.8,0-57.7-5.6-83.8-16.8c-27-11.2-50.3-27-68.9-46.5s-34.4-42.8-46.5-68.9C6.1,272.8,0.5,244.8,0.5,216s5.6-57.7,16.8-83.8 c11.2-27,27-50.3,46.5-68.9s42.8-34.4,68.9-46.5C159.7,5.6,187.6,0,216.4,0s57.7,5.6,83.8,16.8c27,11.2,50.3,27,68.9,46.5 c18.6,19.5,34.4,42.8,46.5,68.9c11.2,27,16.8,54.9,16.8,83.8c0,44.7-13,85.6-38.2,122.9L499.4,444 C507.8,451.5,511.5,460.8,511.5,472z"/></g></symbol>
+</svg>
 <div class="wrap">
 
         
@@ -102,14 +111,26 @@ return [
 
                 <div class="header__links h_1024">
                     
-                    <a href="/doc_api">API</a>
+                                        <a href="/doc_api">API</a>
                     <a href="/tools">tools</a>
                     <a href="/faq">faq</a>
                                     </div>
 
-                
                 <a class="header__btn" href="/">
-                    paste                </a>
+                    <span>paste</span>
+                </a>
+
+                
+                <div class="header__search">
+                                            <form id="w0" class="search_form" action="https://pastebin.com/search" method="get">
+                            
+<input type="text" id="q" class="search_input" name="q" maxlength="128" placeholder="Search...">
+
+
+
+                            <button type="submit" class="search_btn" aria-label="Search"><svg class="icon search"><use xlink:href="#search"></use></svg></button>
+                        </form>                                    </div>
+
             </div>
 
                         <div class="header__right">
@@ -131,8 +152,10 @@ return [
         <div class="content">
 
                         
-<!-- 0-MzCZRcex -->
-<div style="padding-bottom:10px;">
+                        
+<!-- 1-x2xy94pJ -->
+<div style="padding-bottom:30px; padding-top:5px;width:998px;height:290px;">
+<div style="color: #999; font-size: 12px; text-align: center;">Advertisement</div>
 <div class="adsbyvli" data-ad-slot="vi_1282550010"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_1282550010")})</script>
 </div>
 
@@ -141,7 +164,9 @@ return [
             
 <link href="/themes/pastebin/css/geshi/light/bash.css?694707f98000ed24d865" rel="stylesheet">
 
-<div class="post-view">
+<div class="post-view js-post-view">
+
+    <div class="error-summary js-rating-error hide"><ul><li></li></ul></div>
 
     
     <div class="details">
@@ -156,8 +181,8 @@ return [
 
                 
                 
-                <h1>Pushing new git submodule to Heroku</h1>
-            </div>
+                                    <h1>Pushing new git submodule to Heroku</h1>
+                            </div>
             <div class="info-bottom">
 
                                     <div class="username">
@@ -173,14 +198,25 @@ return [
                                     </div>
 
                 <div class="visits" title="Unique visits to this paste">
-                    183                </div>
+                    235                </div>
 
+                                    <div class="rating js-post-rating" data-key="d4biUtRm" title="Rating">
+                        0                    </div>
+                
                 <div class="expire" title="When this paste gets automatically deleted">
                     Never                </div>
-            </div>
+
+                                    <div class="comments-info" title="Comments">
+
+                        
+                                                            <a href="/login?return_url=%2Fd4biUtRm%23add_comment">Add comment</a>                            
+                                            </div>
+                            </div>
         </div>
     </div>
 
+    
+    
                         <div class="page">
                 <div class="content__text -no-padding">
                     <div class="notice -post-view">
@@ -194,9 +230,15 @@ return [
     <div class="highlighted-code">
         <div class="top-buttons">
             <div class="left">
-                <a href="/archive/bash" class="btn -small h_800">Bash</a> 1.36 KB            </div>
+                <a href="/archive/bash" class="btn -small h_800">Bash</a> 1.36 KB
+                                    <span title="Category">
+                        | None                    </span>
+                
+                                        |
+    <a class="btn -small -like" href="/login?return_url=%2Fd4biUtRm" title="Like" data-rating="1" data-key="d4biUtRm">0</a>    <a class="btn -small -dislike" href="/login?return_url=%2Fd4biUtRm" title="Dislike" data-rating="-1" data-key="d4biUtRm">0</a>                            </div>
 
             <div class="right">
+                
                                     <a href="/raw/d4biUtRm" class="btn -small">raw</a>
                     <a href="/dl/d4biUtRm" class="btn -small">download</a>
                     <a href="/clone/d4biUtRm" class="btn -small h_800">clone</a>
@@ -208,7 +250,7 @@ return [
                 
                             </div>
         </div>
-        <div class="source" style=" ">
+        <div class="source bash" style="font-size: px; line-height: px;">
             <ol class="bash"><li class="li1"><div class="de1">$ <span class="kw2">git push</span> heroku</div></li>
 <li class="li1"><div class="de1">Counting objects: <span class="nu0">32</span>, done.</div></li>
 <li class="li1"><div class="de1">Delta compression using up to <span class="nu0">2</span> threads.</div></li>
@@ -242,49 +284,41 @@ return [
     </div>
 
     
-                
-<!-- 0-MzCZRcex -->
-<div style="padding-bottom:10px;">
-<div class="adsbyvli" data-ad-slot="vi_1282550010"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_1282550010")})</script>
+
+        
+<!-- 1-x2xy94pJ -->
+<div style="padding-bottom:10px; padding-top:10px;">
+<div style="color: #999; font-size: 12px; text-align: center;">Advertisement</div>
+<div class="adsbyvli" style="width:970px; height:250px" data-ad-slot="vi_1282567605"></div> <script>(vitag.Init = window.vitag.Init || []).push(function () { viAPItag.display("vi_1282567605") })</script>
 </div>
 
-        <div class="content__title -no-border">
-            RAW Paste Data        </div>
-
-        <textarea class="textarea">$ git push heroku
-Counting objects: 32, done.
-Delta compression using up to 2 threads.
-Compressing objects: 100% (21/21), done.
-Writing objects: 100% (26/26), 25.15 KiB, done.
-Total 26 (delta 7), reused 0 (delta 0)
-
------&gt; Git submodules detected, installing
-       Submodule &#039;lib/Gettext&#039; (https://github.com/oscarotero/Gettext) registered for path &#039;lib/Gettext&#039;
-       Submodule &#039;sdk&#039; (https://github.com/facebook/facebook-php-sdk.git) registered for path &#039;sdk&#039;
-       warning: templates not found /app/vendor/share/git-core/templates
-       Initialized empty Git repository in /tmp/build_3qsptm4y0jv8u/lib/Gettext/.git/
-       Submodule path &#039;lib/Gettext&#039;: checked out &#039;6dada5d2293633509d01325dbd069bf8b38b7d3b&#039;
-       warning: templates not found /app/vendor/share/git-core/templates
-       Initialized empty Git repository in /tmp/build_3qsptm4y0jv8u/sdk/.git/
-       Submodule path &#039;sdk&#039;: checked out &#039;98f2be163c96a51166354e467b95dd38aa4b0a19&#039;
------&gt; PHP app detected
------&gt; Bundling Apache version 2.2.22
------&gt; Bundling PHP version 5.3.10
------&gt; Discovering process types
-       Procfile declares types -&gt; (none)
-       Default types for PHP   -&gt; web
-
------&gt; Compiled slug size: 9.7MB
------&gt; Launching... done, v7
-       http://project-drillwriter.herokuapp.com deployed to Heroku
-
-To git@heroku.com:project-drillwriter.git
-   e734d16..f3c4a09  master -&gt; master</textarea>
     
+        
+<div class="comments">
+
+    
+            
+            <div class="page">
+                <div class="content__title -no-border">
+                    Add Comment                </div>
+
+                <div class="content__text -no-padding">
+                    <div class="notice -post-view">
+                        Please, <a href="/login?return_url=%2Fd4biUtRm%23add_comment"><b><u>Sign In</u></b></a> to add comment                    </div>
+                </div>
+            </div>
+
+            </div>
         
 </div>            <div style="clear: both;"></div>
 
-                                </div>
+                        
+<!-- 1-x2xy94pJ -->
+<div style="padding-bottom:20px; padding-top:20px;">
+<div style="color: #999; font-size: 12px; text-align: center;">Advertisement</div>
+<div class="adsbyvli" data-ad-slot="vi_1282577474" style="width: 970px; height: 90px"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_1282577474")})</script>
+</div>
+        </div>
 
         <div class="sidebar h_1024">
             
@@ -298,72 +332,79 @@ To git@heroku.com:project-drillwriter.git
     <ul class="sidebar__menu">
 
                     <li>
-                <a href="/895ebNz5">TTGO IMU Starfield...</a>
+                <a href="/FRHvmYVa">🤑G2A.com Free Gift Card Guide June 2024 Fix🎁</a>
                 <div class="details">
-                                            Arduino |
+                                            JavaScript |
                     
-                    43 sec ago                </div>
+                    1 min ago
+                    | 0.32 KB                </div>
             </li>
                     <li>
-                <a href="/gviRmZLt">RJ322108 むすんで、ひらいて...</a>
+                <a href="/xvpHct4k">🤑G2A.com Free Gift Card Guide June 2024 NEW🎁</a>
                 <div class="details">
-                                            C |
+                                            GetText |
                     
-                    3 min ago                </div>
+                    5 min ago
+                    | 0.36 KB                </div>
             </li>
                     <li>
-                <a href="/fmgZph8E">Untitled</a>
+                <a href="/0Tk5s3RK">🤑G2A.com Free Gift Card Guide June 2024 Fix🤑</a>
                 <div class="details">
-                                            C# |
+                                            JavaScript |
                     
-                    8 min ago                </div>
+                    7 min ago
+                    | 0.34 KB                </div>
             </li>
                     <li>
-                <a href="/iNXtPxxp">RJ322096 おカタい委員長、実...</a>
+                <a href="/ZQWtzS0q">🤑G2A.com Free Gift Card Guide June 2024 NEW🤑</a>
                 <div class="details">
-                                            C |
+                                            GetText |
                     
-                    11 min ago                </div>
+                    8 min ago
+                    | 0.36 KB                </div>
             </li>
                     <li>
-                <a href="/mCHSS14r">RJ322083 ふたなり彼女 ひみ...</a>
+                <a href="/Xyhaj1WR">🤑G2A.com Free Gift Card Guide June 2024 Fix🎁</a>
                 <div class="details">
-                                            C |
+                                            JavaScript |
                     
-                    19 min ago                </div>
+                    13 min ago
+                    | 0.31 KB                </div>
             </li>
                     <li>
-                <a href="/WS5iCyzr">autoscan config</a>
+                <a href="/yjeE2gKw">❤️G2A.com Free Gift Card Guide June 2024 Fix🤑</a>
                 <div class="details">
-                                            YAML |
+                                            JavaScript |
                     
-                    20 min ago                </div>
+                    19 min ago
+                    | 0.32 KB                </div>
             </li>
                     <li>
-                <a href="/kxz3b9xX">summer</a>
+                <a href="/dD3Zk4Eu">🎁G2A.com Free Gift Card Guide June 2024 NEW🎁</a>
                 <div class="details">
-                                            C# |
+                                            GetText |
                     
-                    26 min ago                </div>
+                    22 min ago
+                    | 0.36 KB                </div>
             </li>
                     <li>
-                <a href="/e8bXAeXc">RJ322079 あらぶる～SEX総...</a>
+                <a href="/bLcrNWpy">❤️G2A.com Free Gift Card Guide June 2024 Fix🤑</a>
                 <div class="details">
-                                            C |
+                                            JavaScript |
                     
-                    27 min ago                </div>
+                    25 min ago
+                    | 0.33 KB                </div>
             </li>
         
     </ul>
             
 
-
-
-    <div class="sidebar__sticky">
+    <div class="sidebar__sticky -on">
                 
-<!-- 0-MzCZRcex -->
-<div style="padding-top:10px;">
-<div class="adsbyvli" data-ad-slot="vi_1282550008"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_1282550008")})</script>
+<!-- 1-x2xy94pJ -->
+<div style="padding-bottom:10px; padding-top:20px;">
+<div style="color: #999; font-size: 12px; text-align: center;">Advertisement</div>
+<div class="adsbyvli" data-ad-slot="vi_1282578983" style="width: 300px; height: 600px"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_1282578983")})</script>
 </div>
     </div>
         </div>
@@ -395,14 +436,14 @@ To git@heroku.com:project-drillwriter.git
                 <a href="/tools">tools</a> <span class="footer__devider">&nbsp;/&nbsp;</span>
                 <a href="/night_mode">night mode</a> <span class="footer__devider">&nbsp;/&nbsp;</span>
                 <a href="/doc_api">api</a> <span class="footer__devider">&nbsp;/&nbsp;</span>
-                <a href="/doc_scraping_api">scraping api</a>
-                                    &nbsp;<span class="footer__devider">&nbsp;/&nbsp;</span>
-                    <a href="/pro" class="pro">pro</a>
-                
+                <a href="/doc_scraping_api">scraping api</a> <span class="footer__devider">&nbsp;/&nbsp;</span>
+                <a href="/news">news</a> <span class="footer__devider">&nbsp;/&nbsp;</span>
+                <a href="/pro" class="pro">pro</a>
+
                 <br>
                 <a href="/doc_privacy_statement">privacy statement</a> <span class="footer__devider">&nbsp;/&nbsp;</span>
                 <a href="/doc_cookies_policy">cookies policy</a> <span class="footer__devider">&nbsp;/&nbsp;</span>
-                <a href="/doc_terms_of_service">terms of service</a><sup style="color:#999">updated</sup> <span class="footer__devider">&nbsp;/&nbsp;</span>
+                <a href="/doc_terms_of_service">terms of service</a><span class="footer__devider">&nbsp;/&nbsp;</span>
                 <a href="/doc_security_disclosure">security disclosure</a> <span class="footer__devider">&nbsp;/&nbsp;</span>
                 <a href="/dmca">dmca</a> <span class="footer__devider">&nbsp;/&nbsp;</span>
                 <a href="/report-abuse">report abuse</a> <span class="footer__devider">&nbsp;/&nbsp;</span>
@@ -417,7 +458,7 @@ To git@heroku.com:project-drillwriter.git
 <span class="footer__bottom h_800">
     By using Pastebin.com you agree to our <a href="/doc_cookies_policy">cookies policy</a> to enhance your experience.
     <br>
-    Site design &amp; logo &copy; 2021 Pastebin</span>
+    Site design &amp; logo &copy; 2024 Pastebin</span>
             </div>
 
             <div class="footer__right h_1024">
@@ -440,8 +481,8 @@ To git@heroku.com:project-drillwriter.git
     
                 <div class="popup-box -pro" data-name="l2c_2_pg">
             <div class="pro-promo-img">
-                <a href="/signup">
-                    <img src="/themes/pastebin/img/hello.png" alt=""/>
+                <a href="/signup" aria-label="Sign Up">
+                    <img src="/themes/pastebin/img/hello.webp" alt=""/>
                 </a>
             </div>
             <div class="pro-promo-text">
@@ -459,18 +500,16 @@ To git@heroku.com:project-drillwriter.git
 
 <script src="/assets/9ce1885/jquery.min.js"></script>
 <script src="/assets/f04f76b8/yii.js"></script>
+<script src="/assets/72fc434d/dist/bootstrap-tagsinput.js"></script>
 <script>
     const POST_EXPIRATION_NEVER = \'N\';
     const POST_EXPIRATION_BURN = \'B\';
     const POST_STATUS_PUBLIC = \'0\';
     const POST_STATUS_UNLISTED = \'1\';
 </script>
-<script src="/themes/pastebin/js/vendors.bundle.js?92579aa911bacc5e7d3e"></script>
-<script src="/themes/pastebin/js/app.bundle.js?92579aa911bacc5e7d3e"></script>
+<script src="/themes/pastebin/js/vendors.bundle.js?30d6ece6979ee0cf5531"></script>
+<script src="/themes/pastebin/js/app.bundle.js?30d6ece6979ee0cf5531"></script>
 
-
-<!-- 0-MzCZRcex -->
-<style> #__vliadb83{ display: none; position: fixed; background: rgb(221, 221, 221); z-index: 9999999; opacity: 1; visibility: visible; top: 100px; right: 0px; left: 0px; max-width: 640px; margin-right: auto; margin-left: auto; box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px 2px; font-family: Arial, Helvetica, sans-serif; } #__vliadb83 .__vliadb83-content{ padding: 30px 30px 15px; } #__vliadb83 #__vliadb83-cls{ display: inline-block; position: absolute; top: 15px; right: 15px; width: 30px; height: 30px; color: #bbb; font-size: 32px; font-weight: 700; line-height: 30px; text-align: center; cursor: pointer; -webkit-transition: 0.3s; transition: 0.3s; } #__vliadb83 #__vliadb83-cls:hover{color: #5f5e5e;} #__vliadb83-bg{ display: none; position: fixed; z-index: 999999; background: rgba(0, 0, 0, 0.8); top: 0px; left: 0px; width: 100%; height: 100%;} </style> <div id="__vliadb83"> <div class="__vliadb83-content"> <h1 style="margin-bottom: 15px; padding: 0 30px; color: #252b37; font-size: 28px; line-height: 1.25; text-align: center;">Adblocker detected! Please consider disabling it...</h1> <p style="text-align: left;"> We\'ve detected <b>AdBlock Plus</b> or some other <b>adblocking</b> software preventing Pastebin.com from fully loading. </p> <p style="text-align: left;"> We don\'t have any obnoxious sound, or popup ads, we actively block these annoying types of ads!</p> <p style="text-align: left;"> <strong>Please add <a href="https://pastebin.com" target="_blank" rel="noopener">Pastebin.com</a> to your ad blocker whitelist or disable your adblocking software.</strong> </p> </div> <a id="__vliadb83-cls">×</a> </div> <div id="__vliadb83-bg"></div> <script src="//cdn.jsdelivr.net/gh/vli-platform/adb-analytics@77bebb/v1.0.min.js"></script> <script> (function () { (window.adblockDetector = window.adblockDetector || []).push(function () { window.adbDetector.init({ id: \'adf050ece17b957604b4bbfc1829059f\', debug: true, cookieExpire: 0, found: function () { window.adbDetector.alert({ hiddenCloseButton: false, clickBackgroundToClose: false }); } }); }) }()); </script>
 </body>
 </html>
 '

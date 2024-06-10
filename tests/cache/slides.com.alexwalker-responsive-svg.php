@@ -4,19 +4,25 @@ declare(strict_types = 1);
 return [
     'headers' => [
         'server' => [
-            'nginx/1.10.1'
+            'awselb/2.0',
+            'nginx/1.18.0 (Ubuntu)'
         ],
         'date' => [
-            'Sun, 04 Apr 2021 15:20:26 GMT'
+            'Mon, 10 Jun 2024 15:59:11 GMT',
+            'Mon, 10 Jun 2024 15:59:12 GMT'
         ],
         'content-type' => [
+            'text/html',
             'text/html; charset=utf-8'
         ],
-        'transfer-encoding' => [
-            'chunked'
+        'content-length' => [
+            '134'
         ],
         'connection' => [
             'keep-alive'
+        ],
+        'location' => [
+            'https://slides.com:443/alexwalker/responsive-svg/  HTTP/2 200'
         ],
         'x-xss-protection' => [
             '1; mode=block'
@@ -24,83 +30,101 @@ return [
         'x-content-type-options' => [
             'nosniff'
         ],
+        'x-download-options' => [
+            'noopen'
+        ],
+        'x-permitted-cross-domain-policies' => [
+            'none'
+        ],
+        'referrer-policy' => [
+            'strict-origin-when-cross-origin'
+        ],
         'vary' => [
-            'Accept-Encoding'
+            'Accept,Accept-Encoding'
         ],
         'content-encoding' => [
-            'deflate'
-        ],
-        'etag' => [
-            'W/"60b73d3ea9ac2d293be20fa49ffb60f4"'
-        ],
-        'cache-control' => [
-            'max-age=0, private, must-revalidate'
+            'gzip'
         ],
         'set-cookie' => [
-            '_slides_app_session=UVJDdWd2dkwwRzZCeFFUL21CUFg2dk16US9HbTFkdGpzTmRUd3QrcmVUaTlza2JvRjhSc3Fua090MTVHOHVzR1BrR0F4YTdxeDFHMEJOWDl5NDBvdlNMWVRpdEJENGNnZ1BxSWg4UzQxUWExSkdKMWdVRVRvME9EL1UwQ1M2eWg0M2FQM242RjNaK2x6dnoySHhDbERHcFhIeXphRHlhVTN3bWdHWjNxYzZ6b2VidU4xbnpqZTBJZ0o0RjY2WjhmWncvNGQvclRCZkY1eEM4Wmc1a1NYSVM2NDA5azZCYjIxTGZOa3ljTXAzRk5WTFlnR1JyVExDeXc5WmdOMWtFWDdkc1RrN0hpRU5jOWdXZVdINEhZK2tyL05IMnN1RWtHdGM1KzJ6TjRPb1dyK1FJS0tCeHc2UW1PakkxWFdJRTktLWJpcFUyL1dtMSsxaFAyOEtmdHdWY3c9PQ%3D%3D--d3613c55f1a763a6a98b44511465de96f0dc4940; domain=.slides.com; path=/; HttpOnly'
+            '_slides_app_session=RjgxaGJGVDZtYW5KWGoyOWczU0JGZ3dqQTBWa0lBWlM4NW44dDM5WGcyNzRYeTVvZ3lqM093UW5FZTYxUDdPcU81M2hodHNGY2NHR09KTlk3c1dlVGdtNzdWbzZtUit5aDFqTm1aVXJ0S2xkWmVKb2dUYmU1SERFMURjVVpHaG8rdmVpT1laRk5nVHdQS2pPNEx0M1A3SnNZTjhFTEt0aEl2d3BVbnhmb3VuNmVzZzhlVVpmL1dzN1dlZERZTzc1dDNRZEdEMkphVHlKUm9LY1NSWEtmc2J2R0pOZHVFUmJDcVZkbENpNVVLNFB5Z0Y0MVBUbHhIVytuRFFqNnpVUWNJektOZXppTDA5dDJRUGE5L2VRSWQ1MVVBNlByald4bVg3SHQwWkhPSXdyei9TMVViMEU2ZUE5UmJKM3NraUlNTm1sbWtiUXU1RFBuSDBVNnNaL1ZISDQ4RkxpYis2K0szNnNUNHlPTS9IeHd5Uk5rMFdlbVVPd0Zva3JkVk9RLS1Fd3gvRlZJZG5WQ2k4NTRuU09ObFFBPT0%3D--1c80ee86feceab3b1c268a246078fc14f35726a6; domain=.slides.com; path=/; secure; HttpOnly'
         ],
         'x-request-id' => [
-            'bfae329e-54d7-4a4e-9964-05ae1deaccef'
+            'd556abf1-07ae-44a3-9543-0765282093e6'
         ],
         'x-runtime' => [
-            '0.066047'
+            '0.032674'
         ],
         'Content-Location' => [
-            'http://slides.com/alexwalker/responsive-svg/'
+            'https://slides.com:443/alexwalker/responsive-svg/'
         ],
         'X-Request-Time' => [
-            '0.420 ms'
+            '0.836 ms'
         ]
     ],
     'statusCode' => 200,
     'reasonPhrase' => 'OK',
     'body' => '<!DOCTYPE html>
-<html class="sl-root decks show " data-account="" >
+<html class="sl-root decks show " data-account=""  lang="en">
   <head>
     <meta charset="utf-8" />
 
     <title>responsive-svg</title>
     <meta name="description" content="A presentation created with Slides." />
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1.0" />
+
+    <meta name="theme-color" content="#2f2f33" />
 
     <meta property="og:title" content="responsive-svg" />
     <meta property="og:description" content="A presentation created with Slides." />
     <meta property="og:site_name" content="Slides" />
     <meta property="og:image" content="https://media.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://slides.com/alexwalker/responsive-svg" />
+    <meta property="og:url" content="https://slides.com/alexwalker/responsive-svg" />
     <meta property="fb:app_id" content="146002942236376" />
 
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="msapplication-tap-highlight" content="no" />
 
+    <link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://slides.com/alexwalker/responsive-svg" />
     <link rel="manifest" href="/manifest.json">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" type="text/css" data-application-font="inter">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" media="print" onload="this.onload=null;this.removeAttribute(\'media\');" rel="stylesheet" data-application-font="inter">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" data-application-font="inter">
+</noscript>
 
-    <link rel="stylesheet" media="all" href="//assets.slid.es/assets/slides/slides-5463dbbad1a68c6e9a85872698fd43e74078271bfd42f08aadf3e7324137e99c.css" />
-    <link rel="stylesheet" media="all" href="//assets.slid.es/assets/application-7c4aaa6a5a25f1cc0c409a604b1d9e23feeca0c2279eb354fa2d1204b4e7dbd1.css" />
-    	<link rel="stylesheet" media="all" href="//assets.slid.es/assets/deck-v2-48db2ff32fa8faa2f0d1fe3b017788bb2f1515d0f0fb07e6784e4d2abf58ffe9.css" />
+    <link rel="stylesheet" media="all" href="//assets-v2.slid.es/assets/slides/slides-9c25ece2476c8bf5a292aee738b856615560afa562b87317c421312b668451c1.css" />
+    <link rel="stylesheet" media="all" href="//assets-v2.slid.es/assets/deck-consumption-15dfe52c7ad1669cb54f3f68ebb272736608c157c8bccefcc9383d2ab90216c9.css" />
+    	<link rel="stylesheet" media="all" href="//assets-v2.slid.es/assets/deck-v2-11e5d4704233d3de6917951f950813fbca871e294b5bafc56fd910a2c390009a.css" />
 
 
 
 <style id="user-css-output" type="text/css"></style>
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="GaZ+SmRbUaXFixEp7b4DK+Sg6qFI//d+dufWuHva6HMWigSWbQA2N/Ubv9RSledh8eBkD5iBT2fL2Fzhg1BGmQ==" />
-    <script type="text/javascript">
+<meta name="csrf-token" content="K9ADjhBZtbWmCFf019vMDxHL+2OAgBSdSlRJmAMSUph5SbaNsZlLMkYKV9LERtkC2WBVATuILFgwSNs+/XwiHQ==" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWVDH9STBJ"></script>
+<script type="text/javascript">
   if( navigator.doNotTrack !== \'1\' && !/dnt=1/.test( window.location.search ) ) {
-    (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');
-
-    ga(\'create\', \'UA-39670045-1\', \'auto\');
-    ga(\'send\', \'pageview\');
+    window.slidesMeasurementId = \'G-LWVDH9STBJ\';
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag(\'js\', new Date());
+    gtag(\'config\', \'G-LWVDH9STBJ\', {
+      page_title: \'decks-show\'
+    });
 
   }
 </script>
+<script type="text/javascript">
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init(\'phc_QkZFJaDCIpVoVE127ePiwD5cyZPo1TPDulbTzPPO9uM\',{api_host:\'https://us.i.posthog.com\'})
+</script>
+
     	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@Slides">
 	<meta name="twitter:title" content="responsive-svg">
@@ -109,7 +133,7 @@ return [
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   </head>
-  <body>
+  <body >
     
     <div id="container" class="container">
       
@@ -117,42 +141,61 @@ return [
 <header class="global-header show-on-scroll">
   <div class="wrapper">
     <div class="slides-logo logo-animation">
-      <a class="symbol" href="/">
+      <a class="symbol" href="/" aria-label="Go to the Slides homepage">
         <div class="box-1"></div>
         <div class="box-2"></div>
         <div class="box-3"></div>
       </a>
-      <a class="word" href="/"></a>
+      <a class="word" href="/" aria-label="Go to the Slides homepage"></a>
     </div>
     <div class="nav-wrapper">
-      <ul class="nav">
+        <ul class="nav nav-full">
           <li class="nav-item " data-page-id="home/explore">
-            <a class="nav-item-anchor" href="/explore"><span class="nav-item-label wide">Made with Slides</span></a>
+            <a class="nav-item-anchor" href="/explore"><span class="nav-item-label wide">Presentations</span></a>
           </li>
-          <li class="nav-item " data-page-id="static/pricing">
-            <a class="nav-item-anchor" href="/pricing?h=1"><span class="nav-item-label">Pricing</span></a>
+          <li class="nav-item " data-page-id="home/templates">
+            <a class="nav-item-anchor" href="/templates"><span class="nav-item-label wide">Templates</span></a>
           </li>
           <li class="nav-item " data-page-id="home/features">
             <a class="nav-item-anchor" href="/features"><span class="nav-item-label">Features</span></a>
           </li>
-          <li class="nav-item " data-page-id="funnels/teams">
+          <li class="nav-item " data-page-id="marketing/teams">
             <a class="nav-item-anchor" href="/for-teams"><span class="nav-item-label wide">Teams</span></a>
           </li>
-          <li class="nav-item-divider"></li>
+          <li class="nav-item " data-page-id="static/pricing">
+            <a class="nav-item-anchor" href="/pricing?h=1"><span class="nav-item-label">Pricing</span></a>
+          </li>
+          <li class="nav-item-divider hide-in-overlay-menu"></li>
+          <li class="nav-item hide-in-overlay-menu" data-page-id="sessions/new">
+            <a class="nav-item-anchor" href="/users/sign_in"><span class="nav-item-label">Log in</span></a>
+          </li>
+          <li class="nav-item hide-in-overlay-menu nav-item-highlighted">
+            <a class="nav-item-anchor" href="/pricing"><span class="nav-item-label">Sign up</span></a>
+          </li>
+        </ul>
+        <ul class="nav nav-compact">
           <li class="nav-item" data-page-id="sessions/new">
             <a class="nav-item-anchor" href="/users/sign_in"><span class="nav-item-label">Log in</span></a>
           </li>
-          <li class="nav-item nav-item-highlighted">
+          <li class="nav-item">
             <a class="nav-item-anchor" href="/pricing"><span class="nav-item-label">Sign up</span></a>
           </li>
-      </ul>
+          <li class="nav-item menu-button nav-item-highlighted">
+            <button class="nav-item-anchor">
+              <span class="nav-item-label wide">Menu</span>
+              <svg class="menu-arrow" viewBox="0 0 20 20" width="18" height="18" style="vertical-align: middle;">
+                <path fill="currentColor" d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
     </div>
   </div>
 </header>
 
 
       
-      <div id="main" class="main " role="main">
+      <main id="main" class="main " role="main">
         
 
 
@@ -165,7 +208,7 @@ return [
 
 	<div class="reveal-frame">
 		<div class="reveal-viewport theme-font-josefine theme-color-black-blue">
-			<div class="reveal">
+			<div class="reveal" lang="en">
 				<div class="slides">
 					<section data-id="b4c1257f4cfd2384550183b30741de65"><div class="sl-block" data-block-type="text" style="width: 832px; left: 60px; top: 133px; height: auto;" data-block-id="7752757e0fc3ed012d28808fae28b7c1"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 130%; color: rgb(255, 199, 36);">
 <h1>Responsive SVG</h1>
@@ -750,7 +793,7 @@ Helpers</h1>
 	</div>
 
 	<div class="pill summary-pill">
-		<div class="pill-picture" style="background-image: url(https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg)"></div>
+		<div class="pill-picture" style="background-image: url(https://media.slid.es/avatars/180017/aw-508.jpg)"></div>
 		<div class="pill-content">
 			<h4 class="pill-title">responsive-svg</h4>
 			<p class="pill-description">By Alex Walker</p>
@@ -771,6 +814,10 @@ Helpers</h1>
 <div class="column">
 	<header class="deck-card showing-ad">
 		<div class="deck-card-header">
+			<div class="deck-sharing">
+					<div class="deck-promotion">
+						<a class="button cta made-with-slides" href="/?ref=capltfs">Made with Slides.com</a>
+					</div>
 				<div class="deck-social">
 					<a href="#" class="deck-social-button facebook-share-button" data-tooltip="Share on Facebook">
 					</a>
@@ -778,15 +825,11 @@ Helpers</h1>
 						<span class="icon i-twitter"></span>
 					</a>
 				</div>
+			</div>
 
 			<div class="deck-options">
 				<a class="button white fullscreen-button" data-tooltip="Fullscreen" href="/alexwalker/responsive-svg/fullscreen"><span class="icon i-fullscreen"></span></a>
-				<a class="button white comment-button" data-tooltip="Comments" data-scroll-to href="#comments" data-scroll-to data-scroll-to-offset="-90"><span class="icon i-comment-stroke"></span></a>
 				<button class="button white share-button" data-tooltip="Share"><span class="icon i-share"></span></button>
-			</div>
-
-			<div class="deck-promotion">
-				<a class="button cta white made-with-slides" href="/?ref=caplt">Made with <b>Slides.com</b></a>
 			</div>
 		</div>
 
@@ -810,18 +853,18 @@ Helpers</h1>
 					</li>
 					<li data-tooltip="Views" data-tooltip-delay="500">
 						<span class="icon i-eye"></span>
-						<span class="value">10,013</span>
+						<span class="value">11,914</span>
 					</li>
 				</ul>
 			</div>
 
 			<div class="user-info">
-	<div class="picture" style="background-image: url(https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg)"></div>
+	<div class="picture" style="background-image: url(https://media.slid.es/avatars/180017/aw-508.jpg)"></div>
 	<div class="text">
 		<h3 class="title">
 			<a href="/alexwalker" class="username">Alex Walker</a>
 		</h3>
-		<p class="description"></p>
+		<p class="description">Doing cruel and strange things to CSS since 2001</p>
 		<ul class="links">
 			
 			
@@ -834,17 +877,13 @@ Helpers</h1>
 		</div>
 	</header>
 
-	<section class="comments" id="comments">
-		<div id="disqus_thread"><span class="placeholder">Loading comments...</span></div>
-	</section>
-
-	<section class="deck-list">
+	<section class="deck-list related-decks">
 		<h2>More from <a href="/alexwalker">Alex Walker</a></h2>
 		<ul class="carousel">
 			<li class="sl-deck-thumbnail" data-preview-url="/alexwalker/deck-5">
   <a class="deck-link" href="/alexwalker/deck-5"></a>
   <div class="deck-thumb">
-    <img class="deck-thumb-image" src="https://media.slid.es/thumbnails/9d13ae1926a027a81751c390850944d4/thumb.jpg?1217098687" loading="lazy" />
+      <img class="deck-thumb-image" data-src="https://media.slid.es/thumbnails/9d13ae1926a027a81751c390850944d4/thumb.jpg?1217098687" />
   </div>
   <footer class="deck-details">
     <div class="top">
@@ -852,7 +891,7 @@ Helpers</h1>
     </div>
     <div class="bottom">
       <a class="author" href="/alexwalker">
-        <span class="picture" style="background-image: url(https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg)"></span>
+        <span class="picture" style="background-image: url(https://media.slid.es/avatars/180017/aw-508.jpg)"></span>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
@@ -864,7 +903,7 @@ Helpers</h1>
 <li class="sl-deck-thumbnail" data-preview-url="/alexwalker/deck-4">
   <a class="deck-link" href="/alexwalker/deck-4"></a>
   <div class="deck-thumb">
-    <img class="deck-thumb-image" src="https://media.slid.es/thumbnails/0c1d240d1f3ddcd05d192c6a167d3a60/thumb.jpg" loading="lazy" />
+      <img class="deck-thumb-image" data-src="https://media.slid.es/thumbnails/0c1d240d1f3ddcd05d192c6a167d3a60/thumb.jpg" />
   </div>
   <footer class="deck-details">
     <div class="top">
@@ -872,11 +911,11 @@ Helpers</h1>
     </div>
     <div class="bottom">
       <a class="author" href="/alexwalker">
-        <span class="picture" style="background-image: url(https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg)"></span>
+        <span class="picture" style="background-image: url(https://media.slid.es/avatars/180017/aw-508.jpg)"></span>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>858<span class="icon i-eye"></span></div>
+        <div>1687<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
@@ -884,7 +923,7 @@ Helpers</h1>
 <li class="sl-deck-thumbnail" data-preview-url="/alexwalker/the-rules-for-stock-imagery">
   <a class="deck-link" href="/alexwalker/the-rules-for-stock-imagery"></a>
   <div class="deck-thumb">
-    <img class="deck-thumb-image" src="https://media.slid.es/thumbnails/secure/b83c71/decks.jpg" loading="lazy" />
+      <img class="deck-thumb-image" data-src="https://media.slid.es/thumbnails/secure/b83c71/decks.jpg" />
   </div>
   <footer class="deck-details">
     <div class="top">
@@ -892,11 +931,11 @@ Helpers</h1>
     </div>
     <div class="bottom">
       <a class="author" href="/alexwalker">
-        <span class="picture" style="background-image: url(https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg)"></span>
+        <span class="picture" style="background-image: url(https://media.slid.es/avatars/180017/aw-508.jpg)"></span>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>1137<span class="icon i-eye"></span></div>
+        <div>1959<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
@@ -904,7 +943,7 @@ Helpers</h1>
 <li class="sl-deck-thumbnail" data-preview-url="/alexwalker/css-3d">
   <a class="deck-link" href="/alexwalker/css-3d"></a>
   <div class="deck-thumb">
-    <img class="deck-thumb-image" src="https://media.slid.es/thumbnails/secure/3a407b/decks.jpg" loading="lazy" />
+      <img class="deck-thumb-image" data-src="https://media.slid.es/thumbnails/secure/3a407b/decks.jpg" />
   </div>
   <footer class="deck-details">
     <div class="top">
@@ -912,11 +951,11 @@ Helpers</h1>
     </div>
     <div class="bottom">
       <a class="author" href="/alexwalker">
-        <span class="picture" style="background-image: url(https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg)"></span>
+        <span class="picture" style="background-image: url(https://media.slid.es/avatars/180017/aw-508.jpg)"></span>
         <span class="name">Alex Walker</span>
       </a>
       <div class="stats">
-        <div>1093<span class="icon i-eye"></span></div>
+        <div>1887<span class="icon i-eye"></span></div>
       </div>
     </div>
   </footer>
@@ -926,57 +965,76 @@ Helpers</h1>
 	</section>
 
 </div>
+      </main>
+      <footer class="global-footer ">
+    <div class="global-footer-links">
+      <div class="link-group">
+        <h4>Tour</h4>
+        <a href="https://slides.com/explore">Presentations</a>
+        <a href="https://slides.com/recent">Trending decks</a>
+        <a href="https://slides.com/templates">Templates</a>
+        <a href="https://slides.com/features">Features</a>
+        <a href="https://slides.com/pricing">Pricing</a>
+        <a href="https://slides.com/for-teams">Slides for Teams</a>
+        <a href="https://slides.com/for-developers">Slides for Developers</a>
       </div>
-      <footer class="global-footer">
-    <div class="link-group">
-      <h5>Tour</h5>
-      <a href="http://slides.com/?root=true">Home</a>
-      <a href="http://slides.com/features?root=true">Features</a>
-      <a href="http://slides.com/pricing?root=true">Pricing</a>
-      <a href="http://slides.com/explore?root=true">Made with Slides</a>
-      <a href="http://slides.com/for-teams?root=true">Slides for Teams</a>
-      <a href="http://slides.com/for-developers?root=true">Slides for Developers</a>
+
+      <div class="link-group">
+        <h4>Help</h4>
+        <a href="https://help.slides.com" target="_blank" rel="noopener">Forum</a>
+        <a href="https://help.slides.com/knowledgebase" target="_blank" rel="noopener">Knowledge Base</a>
+        <a href="https://slides.com/developers">Developers Docs</a>
+        <a href="https://help.slides.com" data-feedback-mode="smartvote">Leave Feedback</a>
+        <a href="https://help.slides.com" data-feedback-mode="contact">Report an Issue</a>
+      </div>
+
+      <div class="link-group">
+        <h4>Company</h4>
+        <a href="https://slides.com/news">News</a>
+        <a href="https://slides.com/changelog">Changelog</a>
+        <a href="https://slides.com/about">About Slides</a>
+        <a href="https://slides.com/security">Security</a>
+        <a href="https://slides.com/partners">Partners</a>
+      </div>
+
+      <div class="link-group">
+        <h4>Resources</h4>
+        <a href="https://slides.com/slides-ai-gpt">Make slides with AI</a>
+        <a href="https://slides.com/embed-google-maps">Embed Google Maps</a>
+        <a href="https://slides.com/embed-google-forms">Embed Google Forms</a>
+        <a href="https://slides.com/embed-youtube">Embed YouTube</a>
+        <a href="https://slides.com/import-pdf">Convert PDF to Slides</a>
+        <a href="https://slides.com/import-ppt">Convert PPT to Slides</a>
+        <a href="https://slides.com/tools/markdown-to-presentation">Convert Markdown to Slides</a>
+      </div>
     </div>
 
-    <div class="link-group">
-      <h5>Help</h5>
-      <a href="http://help.slides.com" target="_blank">Forum</a>
-      <a href="http://help.slides.com/knowledgebase" target="_blank">Knowledge Base</a>
-      <a href="http://slides.com/developers?root=true">Developers Docs</a>
-      <a href="http://help.slides.com" data-feedback-mode="smartvote">Leave Feedback</a>
-      <a href="http://help.slides.com" data-feedback-mode="contact">Report an Issue</a>
-    </div>
-
-    <div class="link-group">
-      <h5>Updates</h5>
-      <a href="http://slides.com/changelog?root=true">Changelog</a>
-      <a href="https://slides.com/news">News</a>
-      <a href="https://twitter.com/slides" target="_blank">Twitter</a>
-      <a href="https://facebook.com/slidesapp" target="_blank">Facebook</a>
-    </div>
-
-    <div class="link-group">
-      <h5>Company</h5>
-      <a href="http://slides.com/about?root=true">About Slides</a>
-      <a href="http://slides.com/security?root=true">Security</a>
-      <a href="http://slides.com/partners?root=true">Partners</a>
-    </div>
-
-    <div class="legal">
-      <a href="http://slides.com/terms?root=true">Terms</a>
-      &bull; <a href="http://slides.com/privacy?root=true">Privacy</a>
-      &bull; <span class="copyright">&copy; 2021 Slides, Inc.</span>
+    <div class="global-footer-bottom">
+      <div class="social">
+        <a href="https://twitter.com/slides" target="_blank" rel="noopener" class="twitter-link" aria-label="Go to Slides\' Twitter profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="32" viewBox="0 0 34 32"><path fill="currentColor" d="M33.482 5.964q0 .179-.089.321-1.143 1.857-3.196 3.393v.589q.071 4.054-1.786 8.161-2.393 5.304-7.098 8.295T10.75 29.714q-4.732 0-8.929-2.179-1.143-.589-1.554-.893-.268-.214-.268-.482 0-.232.17-.402t.402-.17q.25 0 .786.045t.804.045q3.643 0 6.696-1.893-1.839-.429-3.232-1.714t-1.982-3.089q-.036-.143-.036-.196 0-.214.161-.384t.393-.17q.089 0 .25.036t.214.036q-1.589-.982-2.536-2.625t-.946-3.5q0-.268.205-.455t.491-.188q.179 0 .625.205t.536.241q-1.643-1.964-1.643-4.571 0-.911.259-1.929t.723-1.696q.179-.286.446-.286.286 0 .482.214 1.357 1.5 1.964 2.054 2.196 1.982 4.929 3.17t5.661 1.438q-.071-.375-.071-.875 0-2.982 2.116-5.098t5.098-2.116q2.911 0 5.036 2.036 1.696-.357 3.732-1.464.143-.089.286-.089.232 0 .402.17t.17.402q0 .429-.5 1.304t-.911 1.357q.125-.036.536-.188t.768-.286.429-.134q.232 0 .402.17t.17.402z"/></svg>
+        </a>
+        <a href="https://facebook.com/slidesapp" target="_blank" rel="noopener" class="facebook-link" aria-label="Go to Slides\' Facebook profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="32" viewBox="0 0 14 32"><path fill="currentColor" d="M10 7.339q-.875 0-1.107.277t-.232 1.188v1.571h3.875q.286 0 .482.214.196.232.179.518l-.25 3.571q-.036.268-.223.455t-.455.188H8.662v13.714q0 .286-.196.482t-.464.196H3.538q-.286 0-.482-.196t-.196-.482V15.321H.681q-.286 0-.482-.205t-.196-.491v-3.571q0-.286.196-.482t.482-.196H2.86V8.537q0-3.161 1.571-4.705t4.768-1.545q2.143 0 4.018.536.25.071.393.286t.107.464l-.482 3.482q-.036.286-.286.464-.25.161-.536.107-1.357-.286-2.411-.286z"/></svg>
+        </a>
+      </div>
+      <div class="legal">
+        <a href="https://slides.com/terms">Terms</a>
+        &bull; <a href="https://slides.com/privacy?root=true">Privacy</a>
+        &bull; <span class="copyright">&copy;&nbsp;2024&nbsp;Slides,&nbsp;Inc.</span>
+      </div>
     </div>
 </footer>
 
     </div> <!--! end of #container -->
     
 <script>
-	var SLConfig = {"deck":{"id":216172,"slug":"responsive-svg","title":"responsive-svg","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2014-08-28T04:43:38.820Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg","view_count":10013,"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","account_type":"default","team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"fade","transition":"default","theme_id":null,"theme_font":"josefine","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":35,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":null,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":null},"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":null,"thumbnail_url":"https://lh3.googleusercontent.com/-hc-FhVH1ZdU/AAAAAAAAAAI/AAAAAAAAQn8/FDdyVgxX32Y/photo.jpg","account_type":"default","team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
+	var SLConfig = {"deck":{"id":216172,"slug":"responsive-svg","title":"responsive-svg","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2014-08-28T04:43:38.820Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/alexwalker/0b188c/responsive-svg.jpg","view_count":11914,"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":"Doing cruel and strange things to CSS since 2001","thumbnail_url":"https://media.slid.es/avatars/180017/aw-508.jpg","account_type":"default","team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"fade","transition":"default","theme_id":null,"theme_font":"josefine","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":35,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":null,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":null,"language":"en"},"user":{"id":180017,"username":"alexwalker","name":"Alex Walker","description":"Doing cruel and strange things to CSS since 2001","thumbnail_url":"https://media.slid.es/avatars/180017/aw-508.jpg","account_type":"default","team_id":null,"settings":{"id":5309,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
 </script>
-    <script src="//assets.slid.es/assets/application-93b6e55f93473096810fb855195d406f4ebd7a9c4daa1f7367f74a9f0587d89e.js" defer="defer"></script>
-    	<script src="//assets.slid.es/assets/deck-eba980553838a5ff4072da9eb97e3da07cb1a3e99d78c1fda04f62eba7833db3.js" defer="defer"></script>
+    <script src="//assets-v2.slid.es/assets/deck-consumption-e779c14067f21456895856ac12567a2a30e6e5bd84d7ffe41f0e5873ad43bdad.js" defer="defer"></script>
+    	<script src="//assets-v2.slid.es/assets/deck-ac846159306d45d19d0fb7c181bdaff4ebea39a7a91f14c5c682c3005019ab6d.js" defer="defer"></script>
 	
+
 
 
     <script>
