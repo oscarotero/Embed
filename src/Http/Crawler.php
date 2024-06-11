@@ -23,6 +23,9 @@ class Crawler implements ClientInterface, RequestFactoryInterface, UriFactoryInt
     public function __construct(ClientInterface $client = null, RequestFactoryInterface $requestFactory = null, UriFactoryInterface $uriFactory = null)
     {
         $this->client = $client ?: new CurlClient();
+        $this->client->setSettings([
+          'follow_location' => false,
+        ]);
         $this->requestFactory = $requestFactory ?: FactoryDiscovery::getRequestFactory();
         $this->uriFactory = $uriFactory ?: FactoryDiscovery::getUriFactory();
     }
