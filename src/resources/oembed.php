@@ -37,9 +37,11 @@ return [
     'https://live.amcharts.com/oembed' => [
         '|^https?://live\\.amcharts\\.com/.*$|i',
     ],
-    'https://api.amtraker.com/v2/oembed' => [
+    'https://api.amtraker.com/v3/oembed' => [
         '|^https?://amtraker\\.com/trains/.*$|i',
-        '|^https?://beta\\.amtraker\\.com/trains/.*$|i',
+        '|^https?://amtraker\\.com/trains/.*/.*$|i',
+        '|^https?://.*\\.amtraker\\.com/trains/.*$|i',
+        '|^https?://.*\\.amtraker\\.com/trains/.*/.*$|i',
     ],
     'https://animatron.com/oembed/json' => [
         '|^https?://www\\.animatron\\.com/project/.*$|i',
@@ -517,6 +519,9 @@ return [
     'http://api.inphood.com/oembed' => [
         '|^https?://.*\\.inphood\\.com/.*$|i',
     ],
+    'https://widgets.insighttimer.com/services/oembed' => [
+        '|^https?://insighttimer\\.com/.*$|i',
+    ],
     'https://graph.facebook.com/v16.0/instagram_oembed' => [
         '|^https?://instagram\\.com/.*/p/.*,$|i',
         '|^https?://www\\.instagram\\.com/.*/p/.*,$|i',
@@ -537,6 +542,9 @@ return [
     ],
     'https://issuu.com/oembed' => [
         '|^https?://issuu\\.com/.*/docs/.*$|i',
+    ],
+    'https://samay.itabtechinfosys.com/oembed/' => [
+        '|^https?://samay\\.itabtechinfosys\\.com/.*$|i',
     ],
     'https://create.storage.api.itemis.io/api/embed' => [
         '|^https?://play\\.itemis\\.io/.*$|i',
@@ -911,6 +919,9 @@ return [
     'https://embed.sendtonews.com/services/oembed' => [
         '|^https?://embed\\.sendtonews\\.com/oembed/.*$|i',
     ],
+    'https://shared-file-kappa.vercel.app/file/api/oembed' => [
+        '|^https?://shared\\-file\\-kappa\\.vercel\\.app/file/.*$|i',
+    ],
     'https://shopshare.tv/api/shopcast/oembed' => [
         '|^https?://shopshare\\.tv/shopboard/.*$|i',
         '|^https?://shopshare\\.tv/shopcast/.*$|i',
@@ -1098,9 +1109,6 @@ return [
         '|^https?://twitter\\.com/.*$|i',
         '|^https?://twitter\\.com/.*/status/.*$|i',
         '|^https?://.*\\.twitter\\.com/.*/status/.*$|i',
-        '|^https?://x\\.com/.*$|i',
-        '|^https?://x\\.com/.*/status/.*$|i',
-        '|^https?://.*\\.x\\.com/.*/status/.*$|i',
     ],
     'https://play.typecast.ai/oembed' => [
         '|^https?://play\\.typecast\\.ai/s/.*$|i',
@@ -1230,6 +1238,7 @@ return [
         '|^https?://.*\\.youtube\\.com/playlist\\?list\\=.*$|i',
         '|^https?://youtube\\.com/playlist\\?list\\=.*$|i',
         '|^https?://.*\\.youtube\\.com/shorts.*$|i',
+        '|^https?://youtube\\.com/shorts.*$|i',
         '|^https?://.*\\.youtube\\.com/embed/.*$|i',
     ],
     'https://www.yumpu.com/services/oembed' => [
