@@ -22,7 +22,7 @@ Requirements:
 
 ## Online demo
 
-http://oscarotero.com/embed/demo
+Run `php -S localhost:8888 demo/index.php`
 
 ## Video Tutorial
  [<img src="https://img.youtube.com/vi/4YCLRpKY1cs/0.jpg" width="250">](https://youtu.be/4YCLRpKY1cs)
