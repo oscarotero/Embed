@@ -26,7 +26,18 @@ class Document
         $html = str_replace('<br>', "\n<br>", $html);
         $html = str_replace('<br ', "\n<br ", $html);
 
-        $this->document = !empty($html) ? Parser::parse($html) : new DOMDocument();
+        $encoding = null;
+        $contentType = $extractor->getResponse()->getHeaderLine('content-type');
+        preg_match('/charset="?(.*?)(?=$|\s|;|")/i', $contentType, $match);
+        if (!empty($match[1])) {
+            $encoding = $match[1];
+        } elseif (!empty($html)) {
+            preg_match('/charset="?(.*?)(?=$|\s|;|")/i', $html, $match);
+            if (!empty($match[1])) {
+                $encoding = $match[1];
+            }
+        }
+        $this->document = !empty($html) ? Parser::parse($html, $encoding) : new DOMDocument();
         $this->initXPath();
     }
 
