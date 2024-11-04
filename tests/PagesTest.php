@@ -52,6 +52,8 @@ class PagesTest extends PagesTestCase
             ['http://www.ustream.tv/channel/red-shoes-billiards-60803-camera-1'],
             ['http://www.viddler.com/v/bdce8c7'],
             ['http://www.wired.com/?p=2064839'],
+            ['https://www.itmedia.co.jp/news/articles/2410/28/news159.html'],
+            ['https://4pda.to/2022/12/04/406834/sostoyalsya_reliz_clown_of_duty_parodii_na_call_of_duty/'],
         ];
     }
 
