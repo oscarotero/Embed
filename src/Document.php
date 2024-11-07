@@ -34,7 +34,7 @@ class Document
         } elseif (!empty($html)) {
             preg_match('/charset="?(.*?)(?=$|\s|;|")/i', $html, $match);
             if (!empty($match[1])) {
-                $encoding = $match[1];
+                $encoding = trim($match[1], ',');
             }
         }
         $this->document = !empty($html) ? Parser::parse($html, $encoding) : new DOMDocument();
