@@ -18,7 +18,7 @@ function clean(string $value, bool $allowHTML = false): ?string
     return $value === '' ? null : $value;
 }
 
-function html(string $tagName, array $attributes, string $content = null): string
+function html(string $tagName, array $attributes, ?string $content = null): string
 {
     $html = "<{$tagName}";
 
