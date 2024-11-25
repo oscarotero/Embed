@@ -28,11 +28,11 @@ class Document
 
         $encoding = null;
         $contentType = $extractor->getResponse()->getHeaderLine('content-type');
-        preg_match('/charset="?(.*?)(?=$|\s|;|")/i', $contentType, $match);
+        preg_match('/charset=(?:"|\')?(.*?)(?=$|\s|;|"|\'|>)/i', $contentType, $match);
         if (!empty($match[1])) {
             $encoding = trim($match[1], ',');
         } elseif (!empty($html)) {
-            preg_match('/charset="?(.*?)(?=$|\s|;|")/i', $html, $match);
+            preg_match('/charset=(?:"|\')?(.*?)(?=$|\s|;|"|\'|>)/i', $html, $match);
             if (!empty($match[1])) {
                 $encoding = trim($match[1], ',');
             }
