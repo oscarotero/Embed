@@ -28,13 +28,30 @@ class Document
 
         $encoding = null;
         $contentType = $extractor->getResponse()->getHeaderLine('content-type');
-        preg_match('/charset="?(.*?)(?=$|\s|;|")/i', $contentType, $match);
+        preg_match('/charset=(?:"|\')?(.*?)(?=$|\s|;|"|\'|>)/i', $contentType, $match);
         if (!empty($match[1])) {
             $encoding = trim($match[1], ',');
-        } elseif (!empty($html)) {
-            preg_match('/charset="?(.*?)(?=$|\s|;|")/i', $html, $match);
+            try {
+                $ret = mb_encoding_aliases($encoding);
+                if ($ret === false) {
+                    $encoding = null;
+                }
+            } catch (\ValueError $exception) {
+                $encoding = null;
+            }
+        }
+        if (is_null($encoding) && !empty($html)) {
+            preg_match('/charset=(?:"|\')?(.*?)(?=$|\s|;|"|\'|>)/i', $html, $match);
             if (!empty($match[1])) {
                 $encoding = trim($match[1], ',');
+            }
+            try {
+                $ret = mb_encoding_aliases($encoding);
+                if ($ret === false) {
+                    $encoding = null;
+                }
+            } catch (\ValueError $exception) {
+                $encoding = null;
             }
         }
         $this->document = !empty($html) ? Parser::parse($html, $encoding) : new DOMDocument();
