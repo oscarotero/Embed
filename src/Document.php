@@ -107,7 +107,7 @@ class Document
     /**
      * Select a element in the dom
      */
-    public function select(string $query, array $attributes = null, DOMNode $context = null): QueryResult
+    public function select(string $query, ?array $attributes = null, ?DOMNode $context = null): QueryResult
     {
         if (!empty($attributes)) {
             $query = self::buildQuery($query, $attributes);
@@ -119,7 +119,7 @@ class Document
     /**
      * Select a element in the dom using a css selector
      */
-    public function selectCss(string $query, DOMNode $context = null): QueryResult
+    public function selectCss(string $query, ?DOMNode $context = null): QueryResult
     {
         return $this->select(self::cssToXpath($query), null, $context);
     }

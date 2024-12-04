@@ -51,7 +51,7 @@ class LinkedData
         return $this->allData;
     }
 
-    private function getGraph(string $name = null): ?GraphInterface
+    private function getGraph(?string $name = null): ?GraphInterface
     {
         if (!isset($this->document)) {
             try {

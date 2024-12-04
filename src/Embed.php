@@ -12,7 +12,7 @@ class Embed
     private Crawler $crawler;
     private ExtractorFactory $extractorFactory;
 
-    public function __construct(Crawler $crawler = null, ExtractorFactory $extractorFactory = null)
+    public function __construct(?Crawler $crawler = null, ?ExtractorFactory $extractorFactory = null)
     {
         $this->crawler = $crawler ?: new Crawler();
         $this->extractorFactory = $extractorFactory ?: new ExtractorFactory();

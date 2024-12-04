@@ -13,7 +13,7 @@ class EmbedCode implements JsonSerializable
     public ?int $height;
     public ?float $ratio = null;
 
-    public function __construct(string $html, int $width = null, int $height = null)
+    public function __construct(string $html, ?int $width = null, ?int $height = null)
     {
         $this->html = $html;
         $this->width = $width;

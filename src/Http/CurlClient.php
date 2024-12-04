@@ -16,7 +16,7 @@ final class CurlClient implements ClientInterface
     private ResponseFactoryInterface $responseFactory;
     private array $settings = [];
 
-    public function __construct(ResponseFactoryInterface $responseFactory = null)
+    public function __construct(?ResponseFactoryInterface $responseFactory = null)
     {
         $this->responseFactory = $responseFactory ?: FactoryDiscovery::getResponseFactory();
     }

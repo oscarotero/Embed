@@ -37,7 +37,7 @@ class QueryResult
         return $this;
     }
 
-    public function get(string $attribute = null)
+    public function get(?string $attribute = null)
     {
         $node = $this->node();
 
@@ -48,7 +48,7 @@ class QueryResult
         return $attribute ? self::getAttribute($node, $attribute) : $node->nodeValue;
     }
 
-    public function getAll(string $attribute = null): array
+    public function getAll(?string $attribute = null): array
     {
         $nodes = $this->nodes();
 
@@ -60,26 +60,26 @@ class QueryResult
         );
     }
 
-    public function str(string $attribute = null): ?string
+    public function str(?string $attribute = null): ?string
     {
         $value = $this->get($attribute);
 
         return $value ? clean($value) : null;
     }
 
-    public function strAll(string $attribute = null): array
+    public function strAll(?string $attribute = null): array
     {
         return array_filter(array_map(fn ($value) => clean($value), $this->getAll($attribute)));
     }
 
-    public function int(string $attribute = null): ?int
+    public function int(?string $attribute = null): ?int
     {
         $value = $this->get($attribute);
 
         return $value ? (int) $value : null;
     }
 
-    public function url(string $attribute = null): ?UriInterface
+    public function url(?string $attribute = null): ?UriInterface
     {
         $value = $this->get($attribute);
 
