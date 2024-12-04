@@ -83,7 +83,7 @@ final class CurlDispatcher
         );
     }
 
-    private function __construct(array $settings, RequestInterface $request, StreamFactoryInterface $streamFactory = null)
+    private function __construct(array $settings, RequestInterface $request, ?StreamFactoryInterface $streamFactory = null)
     {
         $this->request = $request;
         $this->curl = curl_init((string) $request->getUri());

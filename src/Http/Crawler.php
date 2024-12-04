@@ -20,7 +20,7 @@ class Crawler implements ClientInterface, RequestFactoryInterface, UriFactoryInt
         'Cache-Control' => 'max-age=0',
     ];
 
-    public function __construct(ClientInterface $client = null, RequestFactoryInterface $requestFactory = null, UriFactoryInterface $uriFactory = null)
+    public function __construct(?ClientInterface $client = null, ?RequestFactoryInterface $requestFactory = null, ?UriFactoryInterface $uriFactory = null)
     {
         $this->client = $client ?: new CurlClient();
         $this->requestFactory = $requestFactory ?: FactoryDiscovery::getRequestFactory();
