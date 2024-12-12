@@ -32,7 +32,7 @@ class Document
         if (!empty($match[1])) {
             $encoding = trim($match[1], ',');
             try {
-                $ret = mb_encoding_aliases($encoding);
+                $ret = mb_encoding_aliases($encoding ?? '');
                 if ($ret === false) {
                     $encoding = null;
                 }
@@ -46,7 +46,7 @@ class Document
                 $encoding = trim($match[1], ',');
             }
             try {
-                $ret = mb_encoding_aliases($encoding);
+                $ret = mb_encoding_aliases($encoding ?? '');
                 if ($ret === false) {
                     $encoding = null;
                 }
