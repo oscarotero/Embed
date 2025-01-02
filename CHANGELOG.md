@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.4.15] - 2025-01-02
+### Fixed
+- Type bug [#553].
+
 ## [4.4.14] - 2024-12-04
 ### Fixed
 - Php 8.4 support [#551].
@@ -249,7 +253,9 @@ Full library refactoring.
 [#540]: https://github.com/oscarotero/Embed/issues/540
 [#548]: https://github.com/oscarotero/Embed/issues/548
 [#551]: https://github.com/oscarotero/Embed/issues/551
+[#553]: https://github.com/oscarotero/Embed/issues/553
 
+[4.4.15]: https://github.com/oscarotero/Embed/compare/v4.4.14...v4.4.15
 [4.4.14]: https://github.com/oscarotero/Embed/compare/v4.4.13...v4.4.14
 [4.4.13]: https://github.com/oscarotero/Embed/compare/v4.4.12...v4.4.13
 [4.4.12]: https://github.com/oscarotero/Embed/compare/v4.4.11...v4.4.12
